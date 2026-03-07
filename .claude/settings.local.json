@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(for f in extracted_*.md)",
+      "Bash(do echo \"=== $f ===\")",
+      "Read(//d/work/KnowFabric/**)",
+      "Bash(done)",
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
