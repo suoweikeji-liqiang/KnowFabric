@@ -1,0 +1,33 @@
+labels:
+  equipment_type:
+    - chiller
+    - pump
+    - cooling_tower
+    - ahu
+    - vrf_system
+    - valve
+    - sensor
+    - controller
+
+  document_type:
+    - technical_manual
+    - maintenance_guide
+    - fault_code_reference
+    - parameter_manual
+    - installation_guide
+    - training_material
+
+  knowledge_type:
+    - fault_diagnosis
+    - control_strategy
+    - parameter_setting
+    - maintenance_procedure
+    - troubleshooting
+
+  brand:
+    - Carrier
+    - Trane
+    - York
+    - Daikin
+    - McQuay
+    - Midea

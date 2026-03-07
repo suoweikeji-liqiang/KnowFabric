@@ -1,0 +1,10 @@
+#!/bin/bash
+# Run all quality gate checks
+
+echo "Running all quality gates..."
+
+./scripts/check-docs
+./scripts/check-boundaries
+./scripts/check-forbidden-deps
+
+echo "All quality gates completed."

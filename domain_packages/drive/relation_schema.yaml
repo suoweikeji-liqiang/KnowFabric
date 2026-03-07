@@ -1,0 +1,42 @@
+relations:
+  has_parameter:
+    domain: drive
+    range: parameter
+    description: Drive has configurable parameter
+    examples:
+      - "ABB ACS880 has_parameter P01"
+
+  indicates:
+    domain: fault_code
+    range: fault
+    description: Fault code indicates fault condition
+    examples:
+      - "F0001 indicates overcurrent"
+
+  requires_action:
+    domain: fault_code
+    range: repair_action
+    description: Fault requires specific action
+    examples:
+      - "F0001 requires_action check motor load"
+
+  applies_to:
+    domain: parameter
+    range: application
+    description: Parameter applies to application
+    examples:
+      - "Acceleration time applies_to pump control"
+
+  controls:
+    domain: drive
+    range: equipment
+    description: Drive controls equipment
+    examples:
+      - "VFD controls pump motor"
+
+  affects:
+    domain: parameter
+    range: behavior
+    description: Parameter affects system behavior
+    examples:
+      - "Acceleration time affects startup smoothness"

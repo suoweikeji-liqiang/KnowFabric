@@ -1,0 +1,36 @@
+domain_id: hvac
+domain_name: HVAC Systems
+version: "1.0.0"
+description: |
+  HVAC domain package covering chillers, pumps, cooling towers,
+  AHU, VRF systems, valves, sensors, and control strategies.
+
+maintainers:
+  - name: Knowledge Engineering Team
+    email: knowledge@example.com
+
+coverage:
+  equipment_types:
+    - chiller
+    - pump
+    - cooling_tower
+    - ahu
+    - vrf_system
+    - valve
+    - sensor
+
+  knowledge_types:
+    - fault_diagnosis
+    - control_strategy
+    - parameter_setting
+    - maintenance_procedure
+
+priority_brands:
+  - Carrier
+  - Trane
+  - York
+  - Daikin
+
+supported_languages:
+  - en
+  - zh

@@ -1,0 +1,63 @@
+relations:
+  has_component:
+    domain: equipment
+    range: component
+    description: Equipment contains component
+    examples:
+      - "Chiller has_component compressor"
+
+  monitors:
+    domain: sensor
+    range: parameter
+    description: Sensor monitors parameter
+    examples:
+      - "Temperature sensor monitors chilled water temperature"
+
+  controls:
+    domain: controller
+    range: equipment
+    description: Controller controls equipment
+    examples:
+      - "DDC controller controls AHU"
+
+  indicates:
+    domain: fault_code
+    range: symptom
+    description: Fault code indicates symptom
+    examples:
+      - "E01 indicates high pressure"
+
+  causes:
+    domain: symptom
+    range: fault
+    description: Symptom causes fault
+    examples:
+      - "Low refrigerant causes low cooling capacity"
+
+  may_cause:
+    domain: symptom
+    range: fault
+    description: Symptom may cause fault (probabilistic)
+    examples:
+      - "Dirty filter may_cause high pressure drop"
+
+  requires:
+    domain: fault
+    range: repair_action
+    description: Fault requires repair action
+    examples:
+      - "Compressor failure requires replacement"
+
+  applies_to:
+    domain: control_strategy
+    range: equipment
+    description: Strategy applies to equipment type
+    examples:
+      - "Temperature reset applies_to chiller"
+
+  manipulates:
+    domain: control_strategy
+    range: parameter
+    description: Strategy manipulates parameter
+    examples:
+      - "VFD control manipulates pump speed"

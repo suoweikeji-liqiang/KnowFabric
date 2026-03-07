@@ -1,0 +1,26 @@
+labels:
+  equipment_type:
+    - frequency_converter
+    - vfd
+    - motor_controller
+    - soft_starter
+
+  document_type:
+    - technical_manual
+    - parameter_guide
+    - fault_code_reference
+    - commissioning_guide
+    - application_note
+
+  knowledge_type:
+    - fault_diagnosis
+    - parameter_setting
+    - commissioning
+    - wiring
+    - application
+
+  brand:
+    - ABB
+    - Siemens
+    - Schneider
+    - Danfoss

@@ -1,0 +1,62 @@
+entities:
+  equipment:
+    description: Physical equipment or system
+    attributes:
+      - name
+      - model
+      - brand
+      - capacity
+      - power_rating
+    examples:
+      - "Carrier 30XA chiller"
+      - "Grundfos CR pump"
+
+  component:
+    description: Equipment component or subsystem
+    attributes:
+      - name
+      - parent_equipment
+      - function
+    examples:
+      - "compressor"
+      - "evaporator"
+
+  fault_code:
+    description: Equipment fault or alarm code
+    attributes:
+      - code
+      - equipment_type
+      - severity
+    examples:
+      - "E01"
+      - "ALM-003"
+
+  parameter:
+    description: Configurable parameter
+    attributes:
+      - parameter_name
+      - parameter_group
+      - default_value
+      - valid_range
+    examples:
+      - "Setpoint temperature"
+      - "Flow rate setting"
+
+  symptom:
+    description: Observable fault symptom
+    attributes:
+      - description
+      - severity
+    examples:
+      - "High discharge pressure"
+      - "Low cooling capacity"
+
+  control_strategy:
+    description: Control algorithm or strategy
+    attributes:
+      - name
+      - target_variable
+      - applicable_scenario
+    examples:
+      - "Chilled water temperature reset"
+      - "VFD pump staging control"

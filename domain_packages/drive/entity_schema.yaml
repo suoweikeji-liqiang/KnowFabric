@@ -1,0 +1,50 @@
+entities:
+  drive:
+    description: Frequency converter or VFD
+    attributes:
+      - model
+      - brand
+      - power_rating
+      - voltage_rating
+    examples:
+      - "ABB ACS880"
+      - "Siemens G120"
+
+  parameter:
+    description: Drive parameter
+    attributes:
+      - parameter_code
+      - parameter_group
+      - default_value
+      - valid_range
+    examples:
+      - "P01 - Acceleration time"
+      - "P02 - Deceleration time"
+
+  fault_code:
+    description: Drive fault or alarm code
+    attributes:
+      - code
+      - severity
+      - category
+    examples:
+      - "F0001 - Overcurrent"
+      - "A0003 - Motor overload"
+
+  control_mode:
+    description: Drive control mode
+    attributes:
+      - mode_name
+      - application
+    examples:
+      - "V/f control"
+      - "Vector control"
+
+  application:
+    description: Application scenario
+    attributes:
+      - application_type
+      - equipment_controlled
+    examples:
+      - "HVAC pump control"
+      - "Fan speed control"

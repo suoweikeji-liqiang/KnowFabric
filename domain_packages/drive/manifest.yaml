@@ -1,0 +1,37 @@
+domain_id: drive
+domain_name: Frequency Converters and Drives
+version: "1.0.0"
+description: |
+  Drive domain package covering frequency converters (ABB primary focus),
+  parameter settings, fault codes, commissioning, and HVAC applications.
+
+maintainers:
+  - name: Knowledge Engineering Team
+    email: knowledge@example.com
+
+coverage:
+  equipment_types:
+    - frequency_converter
+    - vfd
+    - motor_controller
+    - soft_starter
+
+  knowledge_types:
+    - fault_diagnosis
+    - parameter_setting
+    - commissioning
+    - wiring
+    - hvac_application
+
+priority_brands:
+  - ABB
+  - Siemens
+  - Schneider
+
+supported_languages:
+  - en
+  - zh
+
+dependencies:
+  - domain_id: hvac
+    reason: Drives used in HVAC pump and fan control
