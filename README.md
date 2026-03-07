@@ -58,6 +58,65 @@ Every knowledge output MUST trace through this pipeline. No shortcuts permitted.
 - Fine-tuning factory
 - Rich admin web interface
 
+## Local Development Setup
+
+### Prerequisites
+
+- Python 3.11+
+- PostgreSQL 14+
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/suoweikeji-liqiang/KnowFabric.git
+cd KnowFabric
+```
+
+2. Create virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Setup environment:
+```bash
+cp .env.example .env
+# Edit .env with your database credentials
+```
+
+5. Initialize database:
+```bash
+# Create database (PostgreSQL must be installed and running)
+createdb knowfabric
+
+# Run migrations
+alembic upgrade head
+```
+
+### Running Services
+
+**API Service:**
+```bash
+cd apps/api
+python main.py
+```
+
+API will be available at http://localhost:8000
+- Health check: http://localhost:8000/health
+- API docs: http://localhost:8000/docs
+
+**Worker Service:**
+```bash
+cd apps/worker
+python main.py
+```
+
 ## Monorepo Structure
 
 ```

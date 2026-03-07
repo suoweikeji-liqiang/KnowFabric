@@ -1,16 +1,40 @@
 # Chunking Package
 
-Chunk generation from pages.
+Chunk generation module for splitting pages into semantic knowledge units.
 
 ## Responsibility
 
-- Split pages into semantic chunks
-- Classify chunk types
-- Generate summaries and keywords
-- Maintain traceability to pages
+- Split pages into semantic knowledge units
+- Identify chunk types (title, paragraph, table, procedure)
+- Generate chunk summaries and keywords
+- Maintain traceability to source pages
 
-## Constraints
+## Phase 1 P0 Status
 
-- ❌ MUST NOT extract facts
-- ❌ MUST NOT build indexes
-- ✅ Chunk generation only
+✅ Implemented in P0-5 (Minimal Chunk Generation).
+
+## Components
+
+- `service.py` - ChunkingService for chunk generation
+
+## Usage
+
+```bash
+# Generate chunks for a document
+python scripts/chunk_document.py doc_abc123
+```
+
+## Module Boundaries
+
+**May Depend On:**
+- core, db, domain-kit
+
+**Must NOT Depend On:**
+- extraction, retrieval, review, exporter
+
+**Forbidden Behaviors:**
+- ❌ Extracting structured facts (extraction's responsibility)
+- ❌ Building vector indexes (retrieval's responsibility)
+- ❌ Modifying source pages
+
+See [System Boundaries](../../docs/01_system-boundaries.md) for details.

@@ -1,41 +1,36 @@
-#!/usr/bin/env bash
-# Run all quality gate checks
+#!/bin/bash
+# Run all quality gates
 
-set -e
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$REPO_ROOT"
-
-echo "=== Running All Quality Gates ==="
+echo "Running all quality gates..."
 echo ""
 
 FAILED=0
 
-# Run check-docs
-if bash scripts/check-docs; then
-  echo ""
-else
-  FAILED=1
+echo "=== Gate 1: Documentation ==="
+bash scripts/check-docs
+if [ $? -ne 0 ]; then
+    FAILED=$((FAILED + 1))
 fi
+echo ""
 
-# Run check-boundaries
-if bash scripts/check-boundaries; then
-  echo ""
-else
-  FAILED=1
+echo "=== Gate 2: Boundaries ==="
+bash scripts/check-boundaries
+if [ $? -ne 0 ]; then
+    FAILED=$((FAILED + 1))
 fi
+echo ""
 
-# Run check-forbidden-deps
-if bash scripts/check-forbidden-deps; then
-  echo ""
-else
-  FAILED=1
+echo "=== Gate 3: Forbidden Dependencies ==="
+bash scripts/check-forbidden-deps
+if [ $? -ne 0 ]; then
+    FAILED=$((FAILED + 1))
 fi
+echo ""
 
-echo "=== Quality Gates Summary ==="
 if [ $FAILED -eq 0 ]; then
-  echo "✅ ALL GATES PASSED"
-  exit 0
+    echo "✓ All quality gates passed"
+    exit 0
 else
-  echo "❌ SOME GATES FAILED"
-  exit 1
+    echo "✗ $FAILED quality gate(s) failed"
+    exit 1
 fi

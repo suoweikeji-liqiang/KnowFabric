@@ -1,15 +1,23 @@
 # Storage Package
 
-File and object storage abstraction.
+File and object storage layer for KnowFabric.
 
 ## Responsibility
 
 - Store and retrieve raw documents
-- Store and retrieve page assets
-- Store and retrieve export files
-- Handle file hashing and deduplication
+- Manage page assets (images, tables)
+- Handle file operations with proper error handling
 
-## Constraints
+## Phase 1 P0 Status
 
-- ❌ MUST NOT parse file contents
-- ✅ Storage operations only
+Storage baseline will be implemented in P0-3 (Document Ingest).
+
+## Module Boundaries
+
+**May Depend On:**
+- core (domain models)
+
+**Must NOT Depend On:**
+- domain-kit, processing modules
+
+See [System Boundaries](../../docs/01_system-boundaries.md) for details.

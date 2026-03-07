@@ -1,0 +1,2 @@
+"""Retrieval and search module."""
+__version__ = "0.1.0"

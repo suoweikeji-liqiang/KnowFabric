@@ -2,17 +2,32 @@
 
 REST API service providing external access to KnowFabric knowledge assets.
 
-## Endpoints
+## Phase 1 P0 Endpoints
 
-- `/api/v1/documents` - Document management
-- `/api/v1/chunks/search` - Chunk retrieval
-- `/api/v1/facts/query` - Structured fact queries
-- `/api/v1/exports` - Knowledge export
+- `GET /health` - Health check endpoint
+- `GET /` - Root endpoint with service info
 
-## Running
+## Running Locally
 
 ```bash
-npm run dev
+# From repository root
+cd apps/api
+python main.py
 ```
 
-See [API documentation](../../docs/) for endpoint specifications.
+API will be available at http://localhost:8000
+- Health check: http://localhost:8000/health
+- API docs: http://localhost:8000/docs
+
+## Configuration
+
+Configuration is loaded from environment variables or `.env` file:
+
+```
+API_HOST=0.0.0.0
+API_PORT=8000
+DATABASE_URL=postgresql://user:pass@localhost:5432/knowfabric
+LOG_LEVEL=INFO
+```
+
+See [Engineering Standards](../../docs/04_engineering-standards.md) for API conventions.

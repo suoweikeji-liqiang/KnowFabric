@@ -1,15 +1,26 @@
 # Core Package
 
-Domain models, interfaces, and types used across all packages.
+Core domain models, interfaces, and shared utilities for KnowFabric.
 
 ## Responsibility
 
-- Define domain entities (Document, Page, Chunk, Fact)
-- Define interfaces for repositories and services
-- Define shared types and enums
+- Define domain models and interfaces
+- Provide type definitions for all entities
+- Define contracts between modules
+- Configuration management
+- Logging setup
 
-## Constraints
+## Phase 1 P0 Components
 
-- ❌ MUST NOT depend on any other package
-- ❌ MUST NOT contain business logic
-- ✅ Pure data models and interfaces only
+- `config.py` - Application configuration
+- `logging.py` - Structured logging setup
+
+## Module Boundaries
+
+**May Depend On:**
+- Standard library only
+
+**Must NOT Depend On:**
+- ANY other package in this repository
+
+See [System Boundaries](../../docs/01_system-boundaries.md) for details.

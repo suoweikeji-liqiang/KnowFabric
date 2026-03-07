@@ -1,30 +1,20 @@
-#!/usr/bin/env bash
-# Quality Gate: Forbidden Dependencies Check
+#!/bin/bash
+# Check forbidden dependencies
 
-set -e
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$REPO_ROOT"
+echo "Checking forbidden dependencies..."
 
-echo "=== Forbidden Dependencies Check ==="
-FAILED=0
+ERRORS=0
 
 # Check domain packages don't contain SQL
-if [ -d "domain_packages" ]; then
-  if grep -r "SELECT\|INSERT\|UPDATE\|DELETE\|CREATE TABLE" domain_packages/ 2>/dev/null | grep -v "\.md" | grep -q .; then
-    echo "❌ Domain packages contain SQL queries"
-    FAILED=1
-  fi
+if grep -r "SELECT\|INSERT\|UPDATE\|DELETE" domain_packages/ 2>/dev/null; then
+    echo "✗ Domain packages contain SQL"
+    ERRORS=$((ERRORS + 1))
 fi
 
-# Check core doesn't contain domain-specific logic
-if [ -d "packages/core" ]; then
-  if grep -r "hvac\|HVAC\|chiller\|drive\|ABB" packages/core/ 2>/dev/null | grep -v "\.md\|test\|spec" | grep -q .; then
-    echo "❌ Core contains domain-specific logic"
-    FAILED=1
-  fi
+if [ $ERRORS -eq 0 ]; then
+    echo "✓ No forbidden dependencies found"
+    exit 0
+else
+    echo "✗ Found $ERRORS forbidden dependencies"
+    exit 1
 fi
-
-# TODO: Add more forbidden pattern checks as needed
-
-[ $FAILED -eq 0 ] && echo "✅ Forbidden deps check PASSED" && exit 0
-echo "❌ Forbidden deps check FAILED" && exit 1

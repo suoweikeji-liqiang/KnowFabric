@@ -1,15 +1,23 @@
 # Database Package
 
-Database access layer providing repositories for all entities.
+Database layer for KnowFabric providing session management and models.
 
 ## Responsibility
 
-- Database connection management
-- Repository implementations
-- Migration execution
-- Query builders
+- Database connection and session management
+- SQLAlchemy models for all entities
+- Migration management via Alembic
 
-## Constraints
+## Phase 1 P0 Components
 
-- ❌ MUST NOT contain domain-specific logic
-- ✅ Domain-agnostic data access only
+- `session.py` - Database session factory and management
+
+## Module Boundaries
+
+**May Depend On:**
+- core (domain models)
+
+**Must NOT Depend On:**
+- domain-kit, processing modules
+
+See [System Boundaries](../../docs/01_system-boundaries.md) for details.

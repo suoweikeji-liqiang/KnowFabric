@@ -13,7 +13,12 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git remote:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(bash:*)",
+      "Bash(alembic revision:*)",
+      "Bash(D:/work/KnowFabric/scripts/check-docs:*)",
+      "Bash(D:/work/KnowFabric/scripts/check-all:*)",
+      "Bash(chmod +x:*)"
     ]
   }
 }

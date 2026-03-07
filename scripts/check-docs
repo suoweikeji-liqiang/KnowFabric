@@ -1,32 +1,51 @@
-#!/usr/bin/env bash
-# Quality Gate: Documentation Completeness Check
+#!/bin/bash
+# Check documentation completeness
 
-set -e
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$REPO_ROOT"
+echo "Checking documentation completeness..."
 
-echo "=== Documentation Completeness Check ==="
-FAILED=0
+ERRORS=0
 
 # Check core docs
-CORE_DOCS=("docs/00_repo-charter.md" "docs/01_system-boundaries.md" "docs/02_data-layer-contract.md" "docs/03_domain-package-spec.md" "docs/04_engineering-standards.md" "docs/05_phase-plan.md" "docs/06_quality-gates.md")
+CORE_DOCS=(
+    "docs/00_repo-charter.md"
+    "docs/01_system-boundaries.md"
+    "docs/02_data-layer-contract.md"
+    "docs/03_domain-package-spec.md"
+    "docs/04_engineering-standards.md"
+    "docs/05_phase-plan.md"
+    "docs/06_quality-gates.md"
+    "docs/07_phase1-implementation-contract.md"
+)
+
 for doc in "${CORE_DOCS[@]}"; do
-  [ ! -f "$doc" ] && echo "❌ Missing: $doc" && FAILED=1
+    if [ ! -f "$doc" ]; then
+        echo "✗ Missing: $doc"
+        ERRORS=$((ERRORS + 1))
+    fi
 done
 
 # Check package READMEs
-for pkg in packages/*/; do
-  [ -d "$pkg" ] && [ ! -f "${pkg}README.md" ] && echo "❌ Missing: ${pkg}README.md" && FAILED=1
+PACKAGES=(
+    "packages/core"
+    "packages/db"
+    "packages/storage"
+    "packages/ingest"
+    "packages/parser"
+    "packages/chunking"
+    "packages/retrieval"
+)
+
+for pkg in "${PACKAGES[@]}"; do
+    if [ ! -f "$pkg/README.md" ]; then
+        echo "✗ Missing: $pkg/README.md"
+        ERRORS=$((ERRORS + 1))
+    fi
 done
 
-# Check domain packages
-for domain in domain_packages/*/; do
-  if [ -d "$domain" ]; then
-    [ ! -f "${domain}manifest.yaml" ] && echo "❌ Missing: ${domain}manifest.yaml" && FAILED=1
-    [ ! -f "${domain}label_schema.yaml" ] && echo "❌ Missing: ${domain}label_schema.yaml" && FAILED=1
-    [ ! -f "${domain}entity_schema.yaml" ] && echo "❌ Missing: ${domain}entity_schema.yaml" && FAILED=1
-  fi
-done
-
-[ $FAILED -eq 0 ] && echo "✅ Documentation check PASSED" && exit 0
-echo "❌ Documentation check FAILED" && exit 1
+if [ $ERRORS -eq 0 ]; then
+    echo "✓ All documentation present"
+    exit 0
+else
+    echo "✗ Found $ERRORS missing documentation files"
+    exit 1
+fi

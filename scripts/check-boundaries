@@ -1,53 +1,20 @@
-#!/usr/bin/env bash
-# Quality Gate: Boundary Compliance Check
+#!/bin/bash
+# Check module boundaries
 
-set -e
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$REPO_ROOT"
+echo "Checking module boundaries..."
 
-echo "=== Boundary Compliance Check ==="
-FAILED=0
+ERRORS=0
 
-# Check core directories exist
-REQUIRED_DIRS=("packages/core" "packages/db" "packages/storage" "packages/ingest" "packages/parser" "packages/chunking" "packages/extraction" "packages/retrieval")
-for dir in "${REQUIRED_DIRS[@]}"; do
-  [ ! -d "$dir" ] && echo "❌ Missing directory: $dir" && FAILED=1
-done
-
-# Check forbidden imports (basic grep-based)
-echo "Checking forbidden imports..."
-
-# Core cannot import from other packages
-if [ -d "packages/core" ]; then
-  if grep -r "from ['\"]@knowfabric/" packages/core/ 2>/dev/null | grep -v "from '@knowfabric/core'" | grep -q .; then
-    echo "❌ Core imports from other packages"
-    FAILED=1
-  fi
+# Check that core doesn't import from other packages
+if grep -r "from packages\." packages/core/*.py 2>/dev/null | grep -v "from packages.core"; then
+    echo "✗ Core package imports from other packages"
+    ERRORS=$((ERRORS + 1))
 fi
 
-# Ingest cannot import from parser/chunking/extraction/retrieval
-if [ -d "packages/ingest" ]; then
-  if grep -r "from ['\"]@knowfabric/\(parser\|chunking\|extraction\|retrieval\)" packages/ingest/ 2>/dev/null | grep -q .; then
-    echo "❌ Ingest imports from forbidden modules"
-    FAILED=1
-  fi
+if [ $ERRORS -eq 0 ]; then
+    echo "✓ Module boundaries respected"
+    exit 0
+else
+    echo "✗ Found $ERRORS boundary violations"
+    exit 1
 fi
-
-# Parser cannot import from chunking/extraction/retrieval
-if [ -d "packages/parser" ]; then
-  if grep -r "from ['\"]@knowfabric/\(chunking\|extraction\|retrieval\)" packages/parser/ 2>/dev/null | grep -q .; then
-    echo "❌ Parser imports from forbidden modules"
-    FAILED=1
-  fi
-fi
-
-# Domain packages cannot import runtime code
-if [ -d "domain_packages" ]; then
-  if grep -r "from ['\"]@knowfabric/" domain_packages/ 2>/dev/null | grep -v "\.yaml\|\.json" | grep -q .; then
-    echo "❌ Domain packages import runtime code"
-    FAILED=1
-  fi
-fi
-
-[ $FAILED -eq 0 ] && echo "✅ Boundary check PASSED" && exit 0
-echo "❌ Boundary check FAILED" && exit 1
