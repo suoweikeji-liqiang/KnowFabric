@@ -1,52 +1,59 @@
 # Data Layer Contract
 
+**Status:** Data Contract - Enforced by Schema and Code Review
+**Last Updated:** 2026-03-07
+
+This document defines the mandatory six-layer data architecture. All data flows MUST follow this contract.
+
 ## Six-Layer Data Model
 
 KnowFabric uses a six-layer data architecture where each layer has a specific purpose and truth source status.
+
+---
 
 ## Layer 1: Raw Document Layer
 
 ### Purpose
 Store original files as the ultimate truth source for all knowledge in the system.
 
-### Storage Objects
-- PDF, Word, PPT, images, scanned documents, text files
-- Original file metadata and hash
-
 ### Truth Source Status
 **PRIMARY TRUTH SOURCE** - All knowledge must trace back to this layer.
 
-### Core Requirements
-1. Original files are immutable (no in-place modification)
-2. Each file gets unique `doc_id`
-3. File hash recorded for deduplication
-4. Original path and import source preserved
-5. Version history maintained
-
-### Key Fields
+### Required Fields
 ```
-doc_id              # Unique document identifier
+doc_id              # Unique document identifier (REQUIRED)
+file_hash           # SHA-256 hash (REQUIRED)
+storage_path        # Storage location (REQUIRED)
 file_name           # Original filename
 file_ext            # File extension
 mime_type           # MIME type
 original_path       # Original file path
-storage_path        # Storage location
-file_hash           # SHA-256 hash
 file_size           # File size in bytes
-created_time        # File creation time
-modified_time       # File modification time
 import_time         # Import timestamp
-source_domain       # Domain tag (hvac, drive, etc.)
+source_domain       # Domain tag (hvac, drive)
 source_batch_id     # Import batch identifier
 doc_version         # Document version
 is_active           # Active status flag
 ```
 
-### Constraints
+### Source of Truth Status
+PRIMARY - This is the root truth source. All other layers derive from this.
+
+### Rebuildability
+NOT rebuildable - This is the source. All other layers rebuild from this.
+
+### Allowed Producers
+- ingest module ONLY
+
+### Allowed Consumers
+- parser module (reads for page generation)
+- storage module (manages file storage)
+
+### Forbidden Shortcuts
 - ❌ NEVER delete original files without explicit approval
 - ❌ NEVER modify original files in place
-- ✅ ALWAYS maintain file hash for integrity verification
-- ✅ ALWAYS support version tracking
+- ❌ NEVER skip this layer to generate pages directly
+- ❌ NEVER treat derived assets as replacement for originals
 
 ---
 
@@ -55,42 +62,42 @@ is_active           # Active status flag
 ### Purpose
 Split documents into page-level objects for traceability and multimodal processing.
 
-### Storage Objects
-- Page raw text and cleaned text
-- Page rendered images
-- Page summaries
-- Page structure information
-- OCR results
-- Multimodal enhancement results
-
 ### Truth Source Status
 **TRACEABILITY ANCHOR** - Critical for evidence linking and page-level citations.
 
-### Key Fields
+### Required Fields
 ```
-page_id             # Unique page identifier
-doc_id              # Parent document ID
-page_no             # Page number in document
+page_id             # Unique page identifier (REQUIRED)
+doc_id              # Parent document ID (REQUIRED)
+page_no             # Page number in document (REQUIRED)
+cleaned_text        # Cleaned text (REQUIRED)
 page_image_path     # Path to page image
-page_image_hash     # Page image hash
 raw_text            # Raw extracted text
-cleaned_text        # Cleaned text
 page_type           # Page type (text, table, diagram, mixed)
 has_table           # Contains table flag
 has_diagram         # Contains diagram flag
-has_fault_code      # Contains fault code flag
-has_procedure       # Contains procedure flag
 ocr_status          # OCR processing status
-multimodal_status   # Multimodal processing status
-page_summary        # Page summary
-page_confidence     # Confidence score
 ```
 
-### Constraints
-- ✅ MUST link to parent document via `doc_id`
-- ✅ MUST preserve page order via `page_no`
-- ✅ MUST store page images for visual traceability
+### Source of Truth Status
+DERIVED - Rebuildable from Layer 1 (Raw Document).
+
+### Rebuildability
+MUST be rebuildable from raw documents using parser module.
+
+### Allowed Producers
+- parser module ONLY
+
+### Allowed Consumers
+- chunking module (reads for chunk generation)
+- retrieval module (reads for context)
+- review module (reads for display)
+
+### Forbidden Shortcuts
 - ❌ NEVER skip page layer to go directly from document to chunks
+- ❌ NEVER create chunks without page linkage
+- ❌ NEVER modify pages after creation (regenerate instead)
+- ❌ NEVER delete pages while chunks reference them
 
 ---
 
@@ -99,142 +106,87 @@ page_confidence     # Confidence score
 ### Purpose
 Split pages into retrieval-optimized, extraction-ready knowledge units.
 
-### Storage Objects
-- Semantic chunks with type classification
-- Text excerpts and summaries
-- Keywords and entity lists
-- Evidence anchors (bbox, text offsets)
-
 ### Truth Source Status
 **RETRIEVAL TRUTH SOURCE** - Primary unit for search and knowledge extraction.
 
-### Chunk Types
+### Required Fields
 ```
-title               # Document/section titles
-heading             # Section headings
-paragraph           # Text paragraphs
-list                # List items
-table_block         # Table content
-figure_caption      # Figure captions
-procedure_block     # Step-by-step procedures
-fault_code_block    # Fault code entries
-parameter_block     # Parameter descriptions
-diagram_description # Diagram descriptions
-mixed_block         # Mixed content
-```
-
-### Key Fields
-```
-chunk_id            # Unique chunk identifier
-doc_id              # Source document ID
-page_id             # Source page ID
-page_no             # Source page number
+chunk_id            # Unique chunk identifier (REQUIRED)
+doc_id              # Source document ID (REQUIRED)
+page_id             # Source page ID (REQUIRED)
+page_no             # Source page number (REQUIRED)
+cleaned_text        # Cleaned chunk text (REQUIRED)
+chunk_type          # Chunk type (REQUIRED)
 chunk_index         # Chunk order within page
-chunk_type          # Chunk type (see above)
-chunk_title         # Chunk title/heading
 raw_text            # Raw chunk text
-cleaned_text        # Cleaned chunk text
 text_excerpt        # Short excerpt for display
-summary             # Chunk summary
-keyword_list        # Extracted keywords
-entity_list         # Extracted entities
-relation_candidates # Relation candidates
-embedding_status    # Embedding generation status
-embedding_model     # Embedding model used
-confidence_score    # Chunk quality score
 evidence_anchor     # Evidence location data
-bbox_json           # Bounding box coordinates
-review_status       # Review status
 ```
 
-### Constraints
-- ✅ MUST link to source page via `page_id` and `doc_id`
-- ✅ MUST maintain chunk order via `chunk_index`
-- ✅ MUST include evidence anchors for traceability
-- ✅ MUST be semantically complete (not fragmented)
-- ❌ NEVER create chunks without page linkage
+### Source of Truth Status
+DERIVED - Rebuildable from Layer 2 (Page).
+
+### Rebuildability
+MUST be rebuildable from pages using chunking module.
+
+### Allowed Producers
+- chunking module ONLY
+
+### Allowed Consumers
+- extraction module (reads for fact extraction)
+- retrieval module (reads for indexing)
+- exporter module (reads for export)
+
+### Forbidden Shortcuts
+- ❌ NEVER create chunks without page linkage (doc_id, page_id, page_no required)
+- ❌ NEVER create chunks directly from documents (must go through pages)
+- ❌ NEVER create facts directly from pages (must go through chunks)
+- ❌ NEVER treat embeddings as replacement for chunk text
 
 ---
 
 ## Layer 4: Fact Layer
 
 ### Purpose
-Extract structured business knowledge from chunks for structured queries, graph candidates, and sample export.
-
-### Storage Objects
-- Structured facts (subject-relation-object triples)
-- Evidence text and source traceability
-- Normalized entity references
-- Confidence and trust scores
+Extract structured business knowledge from chunks for structured queries and export.
 
 ### Truth Source Status
 **STRUCTURED KNOWLEDGE TRUTH SOURCE** - Primary source for structured queries and exports.
 
-### Fact Types (Examples)
+### Required Fields
 ```
-Equipment Facts:
-- equipment → has_component → component
-- component → monitors → parameter
-- sensor → measures → variable
-
-Fault Facts:
-- fault_code → means → description
-- symptom → may_cause → fault
-- fault → requires → repair_action
-- symptom → check → diagnostic_step
-
-Control Facts:
-- strategy → controls → target_variable
-- strategy → manipulates → actuator
-- strategy → applies_to → scenario
-- parameter → affects → behavior
-
-Parameter Facts:
-- parameter → belongs_to → parameter_group
-- parameter → default_value → value
-- parameter → valid_range → range
-- parameter → setting_effect → effect
-```
-
-### Key Fields
-```
-fact_id                 # Unique fact identifier
+fact_id                 # Unique fact identifier (REQUIRED)
+source_doc_id           # Source document ID (REQUIRED)
+source_page_no          # Source page number (REQUIRED)
+source_chunk_id         # Source chunk ID (REQUIRED)
+evidence_text           # Evidence text snippet (REQUIRED)
+subject                 # Subject entity (REQUIRED)
+relation                # Relation type (REQUIRED)
+object                  # Object entity (REQUIRED)
 fact_type               # Fact type category
-subject                 # Subject entity
-relation                # Relation type
-object                  # Object entity
-condition_text          # Conditional context
-normalized_subject_id   # Normalized subject reference
-normalized_object_id    # Normalized object reference
-source_doc_id           # Source document ID
-source_page_id          # Source page ID
-source_page_no          # Source page number
-source_chunk_id         # Source chunk ID
-evidence_text           # Evidence text snippet
-evidence_bbox           # Evidence bounding box
-extraction_method       # Extraction method used
-extraction_model        # Model used for extraction
 confidence_score        # Extraction confidence
 trust_level             # Trust level (L1-L4)
-review_status           # Review status
-fact_version            # Fact version
 ```
 
-### Trust Levels
-```
-L1: Manufacturer explicit rules (highest trust)
-L2: Engineering experience knowledge
-L3: Research paper conclusions
-L4: Model inference or candidates (lowest trust)
-```
+### Source of Truth Status
+DERIVED - Rebuildable from Layer 3 (Chunk).
 
-### Constraints
-- ✅ MUST include evidence text (not just triples)
-- ✅ MUST link to source chunk, page, and document
-- ✅ MUST include confidence and trust level
-- ✅ MUST support version tracking
-- ❌ NEVER create facts without evidence
+### Rebuildability
+MUST be rebuildable from chunks using extraction module.
+
+### Allowed Producers
+- extraction module ONLY
+
+### Allowed Consumers
+- review module (reads for review workflow)
+- exporter module (reads for export)
+- retrieval module (reads for fact queries)
+
+### Forbidden Shortcuts
+- ❌ NEVER create facts without evidence_text
+- ❌ NEVER create facts without source traceability (doc_id, page_no, chunk_id)
 - ❌ NEVER skip chunk layer to extract directly from pages
+- ❌ NEVER create facts directly from documents
 
 ---
 
@@ -243,31 +195,32 @@ L4: Model inference or candidates (lowest trust)
 ### Purpose
 Accelerate queries through full-text and vector indexes.
 
-### Storage Objects
-- Full-text search indexes
-- Vector embeddings and indexes
-- Tag and filter indexes
-- Brand, equipment type, fault code indexes
-
 ### Truth Source Status
 **NOT A TRUTH SOURCE** - Indexes are derived and rebuildable from chunks.
 
-### Index Types
+### Required Fields
 ```
-full_text_index     # Full-text search
-vector_index        # Vector similarity search
-label_index         # Tag-based filtering
-brand_index         # Brand filtering
-equipment_index     # Equipment type filtering
-fault_code_index    # Fault code lookup
-domain_index        # Domain filtering
+# Indexes reference chunk_id only
+# No independent truth stored here
 ```
 
-### Constraints
-- ✅ MUST be rebuildable from chunk layer
-- ✅ MUST NOT be treated as truth source
+### Source of Truth Status
+DERIVED - Rebuildable from Layer 3 (Chunk).
+
+### Rebuildability
+MUST be rebuildable from chunks at any time.
+
+### Allowed Producers
+- retrieval module ONLY
+
+### Allowed Consumers
+- retrieval module (uses for search)
+
+### Forbidden Shortcuts
 - ❌ NEVER use index as primary data storage
 - ❌ NEVER assume index is always in sync with chunks
+- ❌ NEVER return indexed data without fetching source chunk
+- ❌ NEVER store chunk text only in index (must exist in chunk table)
 
 ---
 
@@ -276,40 +229,51 @@ domain_index        # Domain filtering
 ### Purpose
 Generate application-specific knowledge products for export and external use.
 
-### Storage Objects
-- RAG knowledge base snapshots
-- Topic-specific knowledge packages
-- Graph node and edge sets
-- Fine-tuning JSONL samples
-- FAQ sample sets
-- Diagnostic templates
-- External API cache results
-
 ### Truth Source Status
 **NOT A TRUTH SOURCE** - All assets are derived and regenerable from previous layers.
 
-### Asset Types
+### Required Fields
 ```
-rag_snapshot            # RAG knowledge base export
-topic_package           # Topic-specific knowledge
-graph_candidate_package # Graph nodes and edges
-finetune_jsonl          # Fine-tuning samples
-faq_samples             # FAQ pairs
-diagnostic_templates    # Diagnostic workflows
-api_cache               # API response cache
+# Assets must include source traceability metadata
+asset_id            # Unique asset identifier
+source_layer        # Source layer (chunk/fact)
+generation_time     # When asset was generated
 ```
 
-### Constraints
-- ✅ MUST be regenerable from chunks and facts
-- ✅ MUST include source traceability metadata
+### Source of Truth Status
+DERIVED - Rebuildable from Layers 3 and 4 (Chunk and Fact).
+
+### Rebuildability
+MUST be regenerable from chunks and facts at any time.
+
+### Allowed Producers
+- exporter module ONLY
+
+### Allowed Consumers
+- External systems (via export files)
+
+### Forbidden Shortcuts
 - ❌ NEVER treat as primary truth source
 - ❌ NEVER modify without regenerating from source
+- ❌ NEVER export without source traceability metadata
+- ❌ NEVER use as input for fact extraction
 
 ---
 
-## Traceability Chain Requirements
+## Traceability Contract
 
-### Four-Level Traceability
+Every external output MUST include these mandatory fields:
+
+### Mandatory Traceability Fields
+```
+source_doc_id       # Source document (REQUIRED)
+source_page_no      # Page number (REQUIRED)
+evidence_text       # Evidence snippet (REQUIRED)
+source_chunk_id     # Chunk identifier (if from chunk/fact)
+confidence_score    # Confidence level
+```
+
+### Four-Level Traceability Chain
 
 **Level 1: Result → Knowledge Unit**
 ```
@@ -323,72 +287,127 @@ chunk/fact → doc_id, page_id, page_no, evidence_text
 
 **Level 3: Page → Raw Document**
 ```
-page → doc_id, file_path, file_hash, doc_version
+page → doc_id, file_path, file_hash
 ```
 
 **Level 4: Version Lineage**
 ```
-Any entity → doc_version, parse_version, extraction_version,
-             embedding_version, multimodal_version
-```
-
-### Mandatory Traceability Fields
-
-All external outputs MUST include:
-```
-source_doc_id       # Source document
-source_doc_name     # Document name
-source_page_no      # Page number
-source_chunk_id     # Chunk identifier (if applicable)
-evidence_text       # Evidence snippet
-confidence_score    # Confidence level
-review_status       # Review status
+Any entity → doc_version, parse_version, extraction_version
 ```
 
 ---
 
-## Version Chain Requirements
+## Version Lineage Contract
+
+All entities MUST track version lineage:
 
 ### Version Types
-
 ```
 doc_version         # Document version (file changes)
 parse_version       # Parser version (parsing logic changes)
 extraction_version  # Extraction version (extraction rules change)
 embedding_version   # Embedding model version
-multimodal_version  # Multimodal model version
 ```
 
 ### Version Change Scenarios
 
-1. **Original unchanged, parser upgraded** → parse_version increments
-2. **Original updated, page numbers change** → doc_version increments
-3. **Extraction rules changed** → extraction_version increments
-4. **Multimodal model changed** → multimodal_version increments
+1. **Original unchanged, parser upgraded** → parse_version increments, regenerate pages
+2. **Original updated** → doc_version increments, regenerate all downstream
+3. **Extraction rules changed** → extraction_version increments, regenerate facts
+4. **Embedding model changed** → embedding_version increments, rebuild indexes
 
 ---
 
-## Data Flow Constraints
+## Forbidden Shortcuts (Hard Rules)
 
-### Mandatory Flow
+These shortcuts are explicitly forbidden and will cause code review rejection:
+
+### Layer Skipping Shortcuts
+
+1. **Document → Chunk (skipping Page)**
+   - ❌ FORBIDDEN: Generating chunks directly from documents
+   - ✅ REQUIRED: Document → Page → Chunk
+
+2. **Document → Fact (skipping Page and Chunk)**
+   - ❌ FORBIDDEN: Extracting facts directly from documents
+   - ✅ REQUIRED: Document → Page → Chunk → Fact
+
+3. **Page → Fact (skipping Chunk)**
+   - ❌ FORBIDDEN: Extracting facts directly from pages
+   - ✅ REQUIRED: Page → Chunk → Fact
+
+4. **Document → Output (skipping all intermediate layers)**
+   - ❌ FORBIDDEN: Generating outputs directly from raw documents
+   - ✅ REQUIRED: Document → Page → Chunk → (Fact) → Output
+
+### Truth Source Shortcuts
+
+5. **Index as Truth Source**
+   - ❌ FORBIDDEN: Treating index as primary data storage
+   - ❌ FORBIDDEN: Returning indexed data without fetching source chunk
+   - ✅ REQUIRED: Index references chunks; chunks are truth source
+
+6. **Derived Assets as Truth Source**
+   - ❌ FORBIDDEN: Using export packages as input for extraction
+   - ❌ FORBIDDEN: Modifying derived assets without regenerating from source
+   - ✅ REQUIRED: Derived assets are read-only outputs
+
+### Traceability Shortcuts
+
+7. **Output without Evidence**
+   - ❌ FORBIDDEN: Returning facts without evidence_text
+   - ❌ FORBIDDEN: Returning results without source_doc_id, source_page_no
+   - ✅ REQUIRED: All outputs include traceability fields
+
+8. **Embedding-Only Storage**
+   - ❌ FORBIDDEN: Storing only embeddings without chunk text
+   - ❌ FORBIDDEN: Deleting chunk text after embedding generation
+   - ✅ REQUIRED: Chunk text must always be preserved
+
+### Data Flow Shortcuts
+
+9. **Reverse Flow**
+   - ❌ FORBIDDEN: Modifying source layers from downstream layers
+   - ❌ FORBIDDEN: Facts modifying chunks
+   - ❌ FORBIDDEN: Chunks modifying pages
+   - ✅ REQUIRED: Data flows forward only (Document → Page → Chunk → Fact)
+
+10. **Cross-Layer Modification**
+    - ❌ FORBIDDEN: Extraction module modifying chunks
+    - ❌ FORBIDDEN: Retrieval module modifying facts
+    - ❌ FORBIDDEN: Review module modifying source chunks
+    - ✅ REQUIRED: Each layer is read-only to downstream consumers
+
+---
+
+## Mandatory Data Flow
+
+The ONLY valid data flow path:
 
 ```
-Raw Document → Page → Chunk → Fact → Index/Export
+Raw Document (Layer 1)
+    ↓ parser
+Page (Layer 2)
+    ↓ chunking
+Chunk (Layer 3)
+    ↓ extraction
+Fact (Layer 4)
+    ↓ retrieval/exporter
+Index/Derived Assets (Layers 5-6)
 ```
 
-### Forbidden Shortcuts
+**No shortcuts. No exceptions.**
 
-```
-❌ Document → Chunk (skipping page layer)
-❌ Document → Fact (skipping page and chunk layers)
-❌ Page → Fact (skipping chunk layer)
-❌ Index → Truth source (index is derived only)
-```
+---
 
-### Rebuild Requirements
+## Rebuild Requirements
 
-- Indexes MUST be rebuildable from chunks
-- Facts MUST be rebuildable from chunks
-- Derived assets MUST be rebuildable from chunks and facts
-- Chunks MUST be rebuildable from pages
-- Pages MUST be rebuildable from raw documents
+All derived layers MUST be rebuildable:
+
+- **Pages** MUST be rebuildable from raw documents
+- **Chunks** MUST be rebuildable from pages
+- **Facts** MUST be rebuildable from chunks
+- **Indexes** MUST be rebuildable from chunks
+- **Derived Assets** MUST be rebuildable from chunks and facts
+
+If any layer cannot be rebuilt from its source layer, the architecture is violated.

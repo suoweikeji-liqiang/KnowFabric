@@ -1,59 +1,83 @@
 # Phase Plan
 
-## Phase Delivery Principles
+**Status:** Delivery Contract - Binding Acceptance Criteria
+**Last Updated:** 2026-03-07
 
-1. **Standards before scale** - Establish contracts before building features
-2. **Assets before intelligence** - Build stable data layers before advanced reasoning
-3. **Traceability before optimization** - Ensure evidence chains before performance tuning
-4. **Incremental delivery** - Each phase must be independently valuable
+This document defines phase delivery contracts with hard acceptance criteria.
+
+---
 
 ## Phase 1: Foundation Layer
 
 ### Goal
 Establish document/page/chunk/retrieval foundation with full traceability.
 
+### In Scope
+
+1. Document ingestion with deduplication
+2. Page generation with traceability
+3. Chunk generation with semantic typing
+4. Basic retrieval (full-text + vector)
+5. Minimal job tracking and logging
+6. Two domain packages: hvac, drive
+
+### Out of Scope
+
+- ❌ Heavy fact extraction engine
+- ❌ Full review workflow platform
+- ❌ Graph reasoning capabilities
+- ❌ Fine-tuning factory
+- ❌ Rich admin web interface
+- ❌ Multi-tenant features
+
 ### Deliverables
 
 **Data Layer:**
-- ✅ Document ingestion with deduplication
-- ✅ Page-level parsing and asset generation
-- ✅ Chunk generation with semantic typing
-- ✅ Traceability chain (chunk → page → document)
+- document table with deduplication
+- document_page table with traceability
+- content_chunk table with semantic typing
+- Traceability chain: chunk → page → document
 
 **Processing:**
-- ✅ Document import pipeline
-- ✅ Page parsing pipeline
-- ✅ Chunk generation pipeline
-- ✅ Basic multimodal enhancement (high-value pages only)
+- Document import pipeline
+- Page parsing pipeline
+- Chunk generation pipeline
 
 **Retrieval:**
-- ✅ Full-text search on chunks
-- ✅ Vector search on chunks
-- ✅ Hybrid search with filtering
-- ✅ Domain/brand/equipment filtering
+- Full-text search on chunks
+- Vector search on chunks
+- Hybrid search with domain/brand filtering
 
 **Infrastructure:**
-- ✅ Database schema (document, page, chunk tables)
-- ✅ File storage for documents and page assets
-- ✅ Processing job tracking
-- ✅ Stage-level logging
+- Database schema baseline
+- File storage for documents and page assets
+- Job tracking table
+- Stage-level logging
 
 ### Acceptance Criteria
 
-1. Can import 100+ documents successfully
-2. Can generate stable document/page/chunk structure
-3. Chunks are searchable via full-text and vector search
-4. Search results include traceability fields (doc_id, page_no, evidence_text)
-5. Supports incremental import (new documents only)
-6. Supports partial re-processing (by doc_id)
-7. Processing failures are logged and recoverable
+Phase 1 is complete ONLY when ALL criteria are met:
 
-### Out of Scope (Phase 1)
+1. ✅ Can import 100+ documents successfully
+2. ✅ Document/page/chunk structure is stable (no data loss)
+3. ✅ Chunks are searchable via full-text and vector search
+4. ✅ Search results include: doc_id, page_no, chunk_id, evidence_text
+5. ✅ Supports incremental import (new documents only)
+6. ✅ Supports partial re-processing (by doc_id)
+7. ✅ Processing failures are logged with stage information
+8. ✅ All quality gates pass (check-docs, check-boundaries, check-forbidden-deps)
+9. ✅ hvac and drive domain packages have complete manifest/schema
+10. ✅ All packages have README files
 
-- ❌ Structured fact extraction
-- ❌ Human review workflow
-- ❌ Knowledge export
-- ❌ External API (beyond basic search)
+### Exit Criteria
+
+Cannot proceed to Phase 2 until:
+
+1. All acceptance criteria met
+2. Sample document set (100+ docs) processed successfully
+3. Traceability chain validated end-to-end
+4. Quality gates passing consistently
+5. Documentation complete
 
 ---
 
@@ -62,50 +86,59 @@ Establish document/page/chunk/retrieval foundation with full traceability.
 ### Goal
 Extract structured facts from chunks with human review workflow.
 
-### Deliverables
+### In Scope
 
-**Data Layer:**
-- ✅ Fact extraction from chunks
-- ✅ Entity normalization
-- ✅ Relation candidates
-- ✅ Review status tracking
+1. Fact extraction from chunks
+2. Entity normalization
+3. Review workflow (approve/reject/modify)
+4. Structured fact query API
 
-**Processing:**
-- ✅ Fact extraction pipeline
-- ✅ Confidence scoring
-- ✅ Trust level assignment (L1-L4)
-
-**Review Workflow:**
-- ✅ Review queue management
-- ✅ Approve/reject/modify operations
-- ✅ Review audit trail
-- ✅ Batch review operations
-
-**Query:**
-- ✅ Structured fact query API
-- ✅ Filter by trust level, review status
-- ✅ Fact results include evidence and traceability
-
-**Infrastructure:**
-- ✅ Fact and review tables
-- ✅ Review workflow backend
-- ✅ Basic admin interface for review
-
-### Acceptance Criteria
-
-1. Can extract facts from chunks with evidence
-2. Facts include subject-relation-object structure
-3. Facts link to source chunk/page/document
-4. Can query facts by entity, relation, domain
-5. Can review and approve/reject facts
-6. Review operations are audited
-7. Approved facts have higher trust level
-
-### Out of Scope (Phase 2)
+### Out of Scope
 
 - ❌ Advanced graph reasoning
 - ❌ Fine-tuning sample export
 - ❌ Complex multimodal processing
+
+### Deliverables
+
+**Data Layer:**
+- extracted_fact table
+- review_record table
+- Entity normalization mappings
+
+**Processing:**
+- Fact extraction pipeline
+- Confidence scoring
+- Trust level assignment (L1-L4)
+
+**Review Workflow:**
+- Review queue management
+- Approve/reject/modify operations
+- Review audit trail
+
+**Query:**
+- Structured fact query API
+- Filter by trust level, review status
+- Fact results include evidence and traceability
+
+### Acceptance Criteria
+
+1. ✅ Can extract facts from chunks with evidence
+2. ✅ Facts include subject-relation-object structure
+3. ✅ Facts link to source chunk/page/document
+4. ✅ Can query facts by entity, relation, domain
+5. ✅ Can review and approve/reject facts
+6. ✅ Review operations are audited
+7. ✅ Approved facts have higher trust level
+
+### Exit Criteria
+
+Cannot proceed to Phase 3 until:
+
+1. All acceptance criteria met
+2. At least 1000 facts reviewed and approved
+3. Fact quality validated (sample 100 facts)
+4. Review workflow tested with real users
 
 ---
 
@@ -114,47 +147,60 @@ Extract structured facts from chunks with human review workflow.
 ### Goal
 Strengthen domain package mechanism and provide complete external APIs.
 
-### Deliverables
+### In Scope
 
-**Domain Packages:**
-- ✅ HVAC domain package complete
-- ✅ Drive domain package complete
-- ✅ Domain package validation tools
-- ✅ Cross-domain reference support
+1. Complete HVAC and drive domain packages
+2. Fine-tuning sample export (JSONL)
+3. External APIs (document, chunk, fact query)
+4. Export API
 
-**Export:**
-- ✅ Fine-tuning sample export (JSONL)
-- ✅ Topic knowledge package export
-- ✅ RAG snapshot export
-- ✅ Graph candidate export
-
-**External API:**
-- ✅ Document query API
-- ✅ Chunk search API
-- ✅ Fact query API
-- ✅ Export API
-- ✅ Review API (for external systems)
-
-**Infrastructure:**
-- ✅ API gateway and rate limiting
-- ✅ API documentation (OpenAPI)
-- ✅ Export file storage and versioning
-
-### Acceptance Criteria
-
-1. HVAC and drive domain packages are complete and validated
-2. Can export fine-tuning samples filtered by domain/trust level
-3. Can export topic-specific knowledge packages
-4. External APIs return consistent response format
-5. All API responses include traceability fields
-6. API documentation is complete and accurate
-7. Rate limiting prevents abuse
-
-### Out of Scope (Phase 3)
+### Out of Scope
 
 - ❌ Advanced graph inference
 - ❌ Automatic model training
 - ❌ Real-time device control
+
+### Deliverables
+
+**Domain Packages:**
+- HVAC domain package complete
+- Drive domain package complete
+- Domain package validation tools
+
+**Export:**
+- Fine-tuning sample export (JSONL)
+- Topic knowledge package export
+- RAG snapshot export
+
+**External API:**
+- Document query API
+- Chunk search API
+- Fact query API
+- Export API
+
+**Infrastructure:**
+- API gateway and rate limiting
+- API documentation (OpenAPI)
+- Export file storage
+
+### Acceptance Criteria
+
+1. ✅ HVAC and drive domain packages complete and validated
+2. ✅ Can export fine-tuning samples filtered by domain/trust level
+3. ✅ Can export topic-specific knowledge packages
+4. ✅ External APIs return consistent response format
+5. ✅ All API responses include traceability fields
+6. ✅ API documentation is complete
+7. ✅ Rate limiting prevents abuse
+
+### Exit Criteria
+
+Cannot proceed to Phase 4 until:
+
+1. All acceptance criteria met
+2. External APIs tested by integration partners
+3. Export formats validated
+4. Domain packages complete and documented
 
 ---
 
@@ -163,134 +209,55 @@ Strengthen domain package mechanism and provide complete external APIs.
 ### Goal
 Add graph reasoning, fine-tuning sample factory, and additional domains.
 
+### In Scope
+
+1. Graph candidate generation
+2. Sample generation templates
+3. Energy storage domain package
+4. Photovoltaics domain package
+
+### Out of Scope
+
+- TBD based on Phase 3 learnings
+
 ### Deliverables
 
 **Graph:**
-- ✅ Graph candidate generation
-- ✅ Entity resolution and merging
-- ✅ Relation validation
-- ✅ Graph query API
+- Graph candidate generation
+- Entity resolution and merging
+- Graph query API
 
 **Fine-tuning:**
-- ✅ Sample generation templates
-- ✅ Sample quality scoring
-- ✅ Sample diversity optimization
-- ✅ Evaluation dataset generation
+- Sample generation templates
+- Sample quality scoring
 
 **Domain Expansion:**
-- ✅ Energy storage domain package
-- ✅ Photovoltaics domain package
-- ✅ Cross-domain knowledge linking
-
-**Advanced Processing:**
-- ✅ Enhanced multimodal processing
-- ✅ Diagram understanding
-- ✅ Table structure extraction
+- Energy storage domain package
+- Photovoltaics domain package
 
 ### Acceptance Criteria
 
-1. Can generate graph candidates from facts
-2. Can query graph relationships
-3. Can generate diverse fine-tuning samples
-4. Energy storage and PV domain packages operational
-5. Cross-domain queries work correctly
+1. ✅ Can generate graph candidates from facts
+2. ✅ Can query graph relationships
+3. ✅ Can generate diverse fine-tuning samples
+4. ✅ Energy storage and PV domain packages operational
+
+### Exit Criteria
+
+TBD based on Phase 3 completion.
 
 ---
 
 ## Phase Transition Rules
 
-### Transition from Phase 1 to Phase 2
+### Moving Between Phases
 
-**Prerequisites:**
-- All Phase 1 acceptance criteria met
+**General Rule:** Cannot start Phase N+1 until Phase N exit criteria are met.
+
+**Validation Required:**
+- All acceptance criteria met
+- Exit criteria validated
 - Quality gates passing
 - Documentation complete
-- Sample document set processed successfully
 
-**Validation:**
-- Run full regression test suite
-- Verify traceability chain integrity
-- Confirm incremental processing works
-
-### Transition from Phase 2 to Phase 3
-
-**Prerequisites:**
-- All Phase 2 acceptance criteria met
-- Fact extraction quality validated
-- Review workflow tested with real users
-- At least 1000 facts reviewed and approved
-
-**Validation:**
-- Fact quality spot check (sample 100 facts)
-- Review workflow performance test
-- Traceability chain validation
-
-### Transition from Phase 3 to Phase 4
-
-**Prerequisites:**
-- All Phase 3 acceptance criteria met
-- External APIs tested by integration partners
-- Export formats validated
-- Domain packages complete and documented
-
-**Validation:**
-- API integration tests passing
-- Export quality validation
-- Domain package coverage check
-
----
-
-## Delivery Artifacts (Each Phase)
-
-Each phase must deliver:
-
-1. **Runnable Code**
-   - All features implemented and tested
-   - No critical bugs
-
-2. **Documentation**
-   - README updated
-   - API documentation (if applicable)
-   - Configuration guide
-
-3. **Tests**
-   - Unit tests passing
-   - Integration tests passing
-   - Regression tests passing
-
-4. **Data Schema**
-   - Migration scripts
-   - Schema documentation
-   - Sample data
-
-5. **Known Limitations**
-   - Document what's not included
-   - Document known issues
-   - Document workarounds
-
----
-
-## Phase Timeline Estimates
-
-**Phase 1:** 6-8 weeks
-- Week 1-2: Database schema and ingestion
-- Week 3-4: Parsing and chunking
-- Week 5-6: Retrieval and search
-- Week 7-8: Testing and refinement
-
-**Phase 2:** 4-6 weeks
-- Week 1-2: Fact extraction
-- Week 3-4: Review workflow
-- Week 5-6: Testing and refinement
-
-**Phase 3:** 4-6 weeks
-- Week 1-2: Domain packages
-- Week 3-4: Export and API
-- Week 5-6: Testing and documentation
-
-**Phase 4:** 6-8 weeks
-- Week 1-3: Graph and fine-tuning
-- Week 4-5: Domain expansion
-- Week 6-8: Testing and refinement
-
-**Note:** These are estimates. Actual timeline depends on team size and complexity encountered.
+**No Exceptions:** Phase boundaries are hard gates.

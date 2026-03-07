@@ -1,383 +1,138 @@
 # Quality Gates
 
-## Purpose
+**Status:** Enforcement Contract - Automated CI Checks
+**Last Updated:** 2026-03-07
 
-Quality gates ensure all code meets repository standards before merge. These gates are automated checks that validate documentation completeness, boundary compliance, code quality, and test coverage.
-
-## Gate Categories
-
-### 1. Documentation Completeness Gate
-
-**Command:** `npm run check:docs`
-
-**Validates:**
-- All modules have README files
-- All domain packages have required files (manifest, schemas)
-- API endpoints are documented
-- Migration scripts have descriptions
-- ADRs are properly formatted
-
-**Failure Conditions:**
-- Missing README in any package
-- Missing manifest.yaml in domain package
-- Undocumented API endpoint
-- Migration without description
+Quality gates are automated checks that validate repository standards before merge. All gates must pass - no exceptions.
 
 ---
 
-### 2. Boundary Compliance Gate
+## Gate 1: Documentation Completeness
 
-**Command:** `npm run check:boundaries`
+**Purpose:** Ensure all modules and domain packages have required documentation.
 
-**Validates:**
-- No forbidden imports between modules
-- No circular dependencies
-- Core module has no external dependencies
-- Domain packages don't import code modules
+**Command:** `scripts/check-docs`
 
-**Failure Conditions:**
-- `ingest` imports from `parser`
-- `parser` imports from `chunking`
-- `extraction` imports from `retrieval`
-- Circular dependency detected
-- Domain package imports core code
+**What it checks:**
+- Core docs exist (00-06 series)
+- All packages have README files
+- All domain packages have manifest.yaml, label_schema.yaml, entity_schema.yaml
+- Root README has standards entry
 
-**Example Violations:**
-```typescript
-// ❌ FORBIDDEN: parser importing from chunking
-import { chunkText } from '@knowfabric/chunking';
+**Minimum implementation for now:**
+- File existence checks only
+- No content validation yet
 
-// ❌ FORBIDDEN: core importing from db
-import { Database } from '@knowfabric/db';
+**What causes failure:**
+- Missing core doc files
+- Missing package README
+- Missing domain package required files
+- Missing root README standards section
 
-// ✅ ALLOWED: chunking importing from core
-import { Chunk } from '@knowfabric/core';
-```
+**When it must run:**
+- Pre-commit hook
+- CI pipeline on PR
+- Before merge
 
----
-
-### 3. Forbidden Dependencies Gate
-
-**Command:** `npm run check:forbidden-deps`
-
-**Validates:**
-- No direct database access from domain packages
-- No hardcoded domain logic in core modules
-- No skipping of intermediate layers
-
-**Failure Conditions:**
-- Domain package contains SQL queries
-- Core module contains HVAC-specific logic
-- Code creates facts directly from documents (skipping chunks)
+**What it does not yet check:**
+- Documentation content quality
+- API documentation completeness
+- Migration script descriptions
 
 ---
 
-### 4. Lint Gate
+## Gate 2: Boundary Compliance
 
-**Command:** `npm run lint`
+**Purpose:** Ensure modules respect dependency boundaries and no forbidden imports exist.
 
-**Validates:**
-- Code style consistency
-- No unused variables
-- No console.log statements
-- Proper TypeScript types
+**Command:** `scripts/check-boundaries`
 
-**Failure Conditions:**
-- ESLint errors
-- Unused imports
-- Any/unknown types without justification
+**What it checks:**
+- Core directories exist (packages/core, packages/db, etc.)
+- Simple static import/path checks
+- Core package doesn't import from other packages
+- Ingest doesn't import from parser/chunking/extraction/retrieval
+- Parser doesn't import from chunking/extraction/retrieval
+- Domain packages don't have runtime code imports
 
----
+**Minimum implementation for now:**
+- Directory structure validation
+- Basic import pattern matching (grep-based)
+- Covers critical boundaries only
 
-### 5. Type Check Gate
+**What causes failure:**
+- Forbidden import detected (e.g., ingest → parser)
+- Core importing from any other package
+- Domain package importing runtime code
 
-**Command:** `npm run typecheck`
+**When it must run:**
+- Pre-commit hook
+- CI pipeline on PR
+- Before merge
 
-**Validates:**
-- All TypeScript code type-checks
-- No implicit any
-- Proper interface definitions
-
-**Failure Conditions:**
-- Type errors
-- Missing type definitions
-- Unsafe type assertions
-
----
-
-### 6. Test Gate
-
-**Command:** `npm run test`
-
-**Validates:**
-- All tests pass
-- Minimum 70% code coverage
-- Critical paths have 100% coverage
-
-**Failure Conditions:**
-- Any test failure
-- Coverage below 70%
-- Critical path not covered
-
-**Critical Paths:**
-- Document ingestion
-- Page parsing
-- Chunk generation
-- Fact extraction
-- Traceability chain
-- API endpoints
+**What it does not yet check:**
+- Circular dependencies (complex analysis)
+- All possible boundary violations
+- Transitive dependencies
 
 ---
 
-### 7. Build Gate
+## Gate 3: Forbidden Dependencies
 
-**Command:** `npm run build`
+**Purpose:** Catch specific forbidden patterns beyond basic boundaries.
 
-**Validates:**
-- All packages build successfully
-- No build errors or warnings
-- Output artifacts are valid
+**Command:** `scripts/check-forbidden-deps`
 
-**Failure Conditions:**
-- Build errors
-- Missing dependencies
-- Invalid configuration
+**What it checks:**
+- Domain packages don't contain SQL queries
+- Core modules don't contain domain-specific logic
+- No layer-skipping shortcuts in code
 
----
+**Minimum implementation for now:**
+- Simple pattern matching
+- Checks for obvious violations
+- Minimal but functional
 
-## Phase-Specific Gates
+**What causes failure:**
+- SQL in domain package files
+- Domain-specific keywords in core package
+- Direct chunk creation from documents
 
-### Phase 1 Acceptance Gate
+**When it must run:**
+- Pre-commit hook
+- CI pipeline on PR
+- Before merge
 
-**Command:** `npm run check:phase1`
-
-**Validates:**
-1. Can import 100+ documents
-2. Document/page/chunk structure is stable
-3. Chunks are searchable
-4. Traceability fields present in results
-5. Incremental import works
-6. Partial re-processing works
-
-**Test Procedure:**
-```bash
-# Import sample documents
-npm run test:import -- --sample-set phase1
-
-# Verify structure
-npm run test:verify-structure
-
-# Test search
-npm run test:search
-
-# Test traceability
-npm run test:traceability
-
-# Test incremental
-npm run test:incremental
-```
+**What it does not yet check:**
+- Complex semantic analysis
+- All possible forbidden patterns
+- Runtime behavior violations
 
 ---
 
-### Phase 2 Acceptance Gate
+## Gate 4: All Gates Combined
 
-**Command:** `npm run check:phase2`
+**Purpose:** Run all quality gates in sequence and report aggregate results.
 
-**Validates:**
-1. Facts extracted with evidence
-2. Facts link to source chunks
-3. Fact query API works
-4. Review workflow operational
-5. Review audit trail complete
+**Command:** `scripts/check-all`
 
----
+**What it checks:**
+- Runs check-docs
+- Runs check-boundaries
+- Runs check-forbidden-deps
+- Aggregates exit codes
 
-### Phase 3 Acceptance Gate
+**Minimum implementation for now:**
+- Sequential execution
+- Proper exit code handling
+- Clear summary output
 
-**Command:** `npm run check:phase3`
+**What causes failure:**
+- Any individual gate fails
 
-**Validates:**
-1. Domain packages validated
-2. Export APIs functional
-3. External APIs documented
-4. Traceability in all responses
-5. Rate limiting works
+**When it must run:**
+- Before PR merge
+- CI pipeline final check
 
----
-
-## Pre-Commit Checks
-
-**Automated via Git hooks:**
-
-```bash
-# Run before every commit
-npm run pre-commit
-```
-
-**Includes:**
-- Lint staged files
-- Type check affected files
-- Run affected tests
-- Validate commit message format
-
----
-
-## Pre-Merge Checks
-
-**Required before PR merge:**
-
-```bash
-# Run full gate suite
-npm run check:all
-```
-
-**Includes:**
-- All documentation gates
-- All boundary gates
-- All code quality gates
-- All test gates
-- Phase-specific gates (if applicable)
-
----
-
-## Quality Metrics
-
-### Code Quality Metrics
-
-```
-Lines per file:        < 800
-Lines per function:    < 50
-Cyclomatic complexity: < 10
-Test coverage:         > 70%
-Critical path coverage: 100%
-```
-
-### Documentation Metrics
-
-```
-Modules with README:     100%
-APIs documented:         100%
-Domain packages complete: 100%
-```
-
-### Boundary Metrics
-
-```
-Forbidden imports:     0
-Circular dependencies: 0
-Boundary violations:   0
-```
-
----
-
-## Continuous Monitoring
-
-### Daily Checks
-
-- Run full gate suite on main branch
-- Monitor test flakiness
-- Track coverage trends
-- Check for new boundary violations
-
-### Weekly Reviews
-
-- Review failed gate reports
-- Update quality thresholds if needed
-- Address technical debt
-- Update documentation
-
----
-
-## Exemption Process
-
-In rare cases, a gate failure may need exemption:
-
-1. Document reason in ADR
-2. Get approval from tech lead
-3. Create tracking issue for resolution
-4. Set deadline for fix
-5. Add exemption to gate config
-
-**Example exemption:**
-```yaml
-# .quality-gates.yaml
-exemptions:
-  - gate: boundary-check
-    module: legacy-parser
-    reason: "Temporary coupling during migration"
-    issue: "#123"
-    deadline: "2026-04-01"
-    approved_by: "tech-lead"
-```
-
----
-
-## Gate Failure Response
-
-### When a Gate Fails
-
-1. **Identify root cause** - Review failure logs
-2. **Fix immediately** - Don't bypass gates
-3. **Verify fix** - Re-run gate locally
-4. **Update tests** - Add regression test if needed
-5. **Document** - Update docs if gate revealed gap
-
-### Common Failures and Fixes
-
-**Boundary violation:**
-```
-Error: packages/parser imports from packages/chunking
-Fix: Remove import, use core interfaces instead
-```
-
-**Missing traceability:**
-```
-Error: API response missing source_doc_id
-Fix: Add traceability fields to response schema
-```
-
-**Test coverage low:**
-```
-Error: Coverage 65% (threshold 70%)
-Fix: Add tests for uncovered code paths
-```
-
----
-
-## Quality Gate Configuration
-
-**File:** `.quality-gates.yaml`
-
-```yaml
-gates:
-  documentation:
-    enabled: true
-    required_files:
-      - README.md
-      - manifest.yaml (domain packages)
-
-  boundaries:
-    enabled: true
-    forbidden_imports:
-      - from: "packages/ingest"
-        to: "packages/parser"
-      - from: "packages/parser"
-        to: "packages/chunking"
-
-  tests:
-    enabled: true
-    min_coverage: 70
-    critical_paths:
-      - "packages/ingest/**"
-      - "packages/parser/**"
-      - "packages/chunking/**"
-      - "packages/extraction/**"
-
-  lint:
-    enabled: true
-    rules: ".eslintrc.json"
-
-  typecheck:
-    enabled: true
-    strict: true
-```
+**What it does not yet check:**
+- Lint, typecheck, tests (future gates)

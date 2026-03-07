@@ -1,178 +1,127 @@
 # Repository Charter
 
-## Project Positioning
+**Status:** Governance Document - Binding Contract
+**Last Updated:** 2026-03-07
 
-**KnowFabric** is an industrial and energy domain knowledge injection platform that transforms scattered industry documentation into structured, traceable, and serviceable knowledge assets.
+## What KnowFabric Is
 
-### What It Is
+KnowFabric is an industrial knowledge injection platform that transforms raw technical documentation into structured, traceable knowledge assets through a mandatory six-layer data pipeline.
 
-- A **knowledge engineering platform** for industrial and energy domains
-- A **domain-agnostic foundation** with pluggable domain packages
-- A **multi-layer data architecture** ensuring full traceability
-- A **service-oriented platform** providing retrieval, query, and export APIs
+**Core Identity:**
+- Knowledge engineering platform for industrial/energy domains
+- Domain-agnostic foundation with pluggable domain packages
+- Six-layer data architecture with mandatory traceability
+- Service-oriented platform providing retrieval and query APIs
 
-### What It Is NOT
+## What KnowFabric Is NOT
 
-- ❌ A general-purpose chatbot or conversational AI shell
-- ❌ A simple document management or file storage system
-- ❌ An automatic knowledge graph inference engine (not in Phase 1)
-- ❌ A direct device control or real-time automation system
-- ❌ A multi-tenant commercial SaaS platform (not in Phase 1)
-- ❌ A one-size-fits-all solution covering all domains simultaneously
+- ❌ NOT a chatbot or conversational AI shell
+- ❌ NOT a document management or file storage system
+- ❌ NOT an automatic knowledge graph inference engine
+- ❌ NOT a device control or real-time automation system
+- ❌ NOT a multi-tenant SaaS platform
+- ❌ NOT a general-purpose RAG demo
 
-## Target Users and Scenarios
+## Mandatory Data Pipeline
 
-### Primary Users
+**The Only Valid Path:**
+```
+Raw Document → Page → Chunk → Fact → Retrieval/Export
+```
 
-1. **Knowledge Engineers**
-   - Ingest raw industry documents
-   - Configure domain packages and extraction rules
-   - Maintain indexes and knowledge assets
+Every knowledge output MUST trace through this pipeline. No shortcuts permitted.
 
-2. **Domain Experts**
-   - Review extracted facts and relationships
-   - Validate fault codes, parameters, and control strategies
-   - Approve high-value knowledge for export
+## First Phase Scope - Hard Boundaries
 
-3. **Algorithm/Platform Engineers**
-   - Maintain domain package configurations
-   - Optimize extraction strategies
-   - Export fine-tuning samples and knowledge packages
+### Phase 1 ONLY Does
 
-4. **External Business Systems**
-   - Query knowledge via retrieval APIs
-   - Access structured facts via query APIs
-   - Import domain-specific knowledge packages
+1. Document ingestion with deduplication
+2. Page generation with traceability
+3. Chunk generation with semantic typing
+4. Basic retrieval (full-text + vector)
+5. Minimal job tracking and logging
+6. Two domain packages: hvac, drive
 
-### Key Scenarios (Phase 1)
+### Phase 1 Explicitly Does NOT Do
 
-1. Import HVAC and ABB drive documentation into unified knowledge base
-2. Query fault codes with evidence traceability to original manuals
-3. Retrieve control strategies and parameter settings with source citations
-4. Extract structured knowledge entries from technical documents
-5. Export knowledge samples for model fine-tuning or downstream systems
-6. Provide retrieval and structured query APIs to external systems
+1. ❌ Heavy fact extraction engine
+2. ❌ Full review workflow platform
+3. ❌ Graph reasoning capabilities
+4. ❌ Fine-tuning factory
+5. ❌ Rich admin web interface
+6. ❌ Multi-tenant features
+7. ❌ Real-time device control
 
-## First Phase Scope
+## Non-Negotiable Constraints (Hard Rules)
 
-### Included Domains
+These constraints are binding and cannot be bypassed:
 
-**Phase 1 focuses on TWO domain packages:**
+### Data Pipeline Constraints
 
-1. **hvac** - HVAC Domain Package
-   - Chillers, pumps, cooling towers
-   - AHU, VRF systems, valves, sensors
-   - HVAC fault diagnosis and control optimization
+1. **No Layer Skipping** - Every output MUST flow through: Raw Document → Page → Chunk → (Fact) → Output
+2. **No Direct Shortcuts** - Cannot generate facts directly from documents without intermediate chunk layer
+3. **Traceability Mandatory** - Every output MUST include: source_doc_id, source_page_no, evidence_text
+4. **Raw Document Immutability** - Original files are never modified in place
+5. **Chunk as Truth Source** - Indexes and derived assets are NOT truth sources; chunks are
 
-2. **drive** - Drive/Converter Domain Package
-   - ABB frequency converters (primary focus)
-   - Parameter settings and fault codes
-   - Commissioning, wiring, and control interfaces
-   - HVAC-specific applications (fan/pump control)
+### Module Boundary Constraints
 
-### Included Capabilities
+6. **No Reverse Dependencies** - ingest cannot depend on parser; parser cannot depend on chunking; chunking cannot depend on extraction
+7. **Core Isolation** - core package cannot import from any other package
+8. **Domain Package Purity** - domain packages contain only configuration, no runtime business logic
+9. **No Circular Dependencies** - Zero tolerance for circular imports between packages
 
-Phase 1 delivers:
+### Quality Gate Constraints
 
-- ✅ Raw document ingestion and archival
-- ✅ Page-level parsing and asset generation
-- ✅ Chunk-level knowledge unit creation
-- ✅ Retrieval knowledge base construction
-- ✅ Structured fact extraction
-- ✅ Document/page/chunk/fact traceability chain
-- ✅ Basic human review workflow
-- ✅ Basic external query interfaces
-- ✅ Domain package mechanism foundation
+10. **All Gates Must Pass** - No merge without passing: docs check, boundary check, forbidden deps check
+11. **Migration-First Schema** - All database schema changes go through migration scripts
+12. **No Bypass Flags** - No --skip-checks, --force, or --no-verify flags in CI/CD
 
-### Explicitly Excluded (Phase 1)
+## Phase 1 Success Criteria (Acceptance Contract)
 
-Phase 1 does NOT include:
+Phase 1 is complete ONLY when ALL criteria are met:
 
-- ❌ Automatic high-precision knowledge graph reasoning
-- ❌ Automatic fine-tuning training platform
-- ❌ Direct control of field devices with closed-loop execution
-- ❌ Commercial multi-tenant SaaS features
-- ❌ One-time coverage of all domains (HVAC, storage, PV, etc.)
-- ❌ Full-scale deep multimodal reprocessing of all documents
+### Functional Criteria
 
-### Reserved for Future Phases
+1. **Import Capability** - Can import 100+ documents with deduplication working
+2. **Data Chain Stability** - document/page/chunk records generated without data loss
+3. **Retrieval Working** - Full-text and vector search return results with <2s latency
+4. **Traceability Present** - Every search result includes: doc_id, page_no, chunk_id, evidence_text
+5. **Incremental Import** - Can add new documents without reprocessing existing ones
+6. **Partial Rerun** - Can reprocess specific doc_id without affecting others
+7. **Failure Recovery** - Failed jobs logged with stage information; can resume
 
-- Energy storage domain package
-- Photovoltaics domain package
-- Integrated energy domain package
-- Advanced graph reasoning and rule capabilities
-- Higher-level diagnostic and control advisory services
-- Fine-tuning sample factory with evaluation capabilities
+### Quality Criteria
 
-## Success Criteria (Phase 1)
+8. **All Quality Gates Pass** - check-docs, check-boundaries, check-forbidden-deps all return exit code 0
+9. **Domain Packages Valid** - hvac and drive packages have complete manifest/schema/profile
+10. **Documentation Complete** - All packages have README; all core docs exist
 
-Phase 1 is considered successful when:
+### Non-Criteria (Explicitly NOT Required for Phase 1)
 
-1. ✅ Can import a batch of raw documents successfully
-2. ✅ Can stably generate document/page/chunk/fact data chain
-3. ✅ Chunks are retrievable and traceable back to original pages
-4. ✅ Facts are generated with evidence text
-5. ✅ Supports hvac and drive domain packages
-6. ✅ Supports incremental import and partial re-processing
-7. ✅ Supports basic review and revision workflow
-8. ✅ External API responses include traceability fields
-9. ✅ Can export at least one type of knowledge asset package
+- ❌ Heavy fact extraction (minimal extraction acceptable)
+- ❌ Full review workflow (basic status tracking acceptable)
+- ❌ Rich admin interface (API-only acceptable)
+- ❌ Graph reasoning
+- ❌ Fine-tuning export
 
-## Evolution Principles
+## Evolution Principles (Development Priorities)
 
-### 1. Standards Before Scale
+These principles govern all development decisions:
 
-Establish boundaries, contracts, and quality gates before pursuing feature volume.
+1. **Platform Before Shell** - Build data pipeline and APIs before building UI layers
+2. **Traceability Before Performance** - Ensure evidence chains work before optimizing speed
+3. **Boundaries Before Implementation** - Define module contracts before writing code
+4. **Domain Packages Before Hardcoding** - Use pluggable domain configs, not hardcoded logic
+5. **Migration Before Schema Change** - All DB changes go through versioned migration scripts
+6. **Gates Before Merge** - All quality gates must pass; no bypass permitted
 
-### 2. Assets Before Intelligence
+## Governance Model
 
-Transform raw documents into stable knowledge assets before adding advanced reasoning capabilities.
+This repository operates under strict governance:
 
-### 3. Traceability Before Optimization
-
-Ensure every result can trace back to original evidence before optimizing for speed or accuracy.
-
-### 4. Foundation Before Domain
-
-Build domain-agnostic foundation capabilities before embedding domain-specific logic.
-
-### 5. Incremental Before Complete
-
-Support incremental processing and partial re-runs before attempting full-scale batch processing.
-
-### 6. Evidence Before Answers
-
-Prioritize original evidence over answer quality - users must be able to verify sources.
-
-### 7. Contracts Before Implementation
-
-Define module boundaries and data contracts before writing implementation code.
-
-## Non-Goals
-
-To maintain focus, the following are explicitly NOT goals for this platform:
-
-1. **Not a general AI platform** - Focus on industrial/energy knowledge, not general Q&A
-2. **Not a training platform** - Export samples for training, but don't manage training itself
-3. **Not a device controller** - Provide knowledge for control decisions, not direct control
-4. **Not a data lake** - Structured knowledge assets, not raw data storage
-5. **Not a BI platform** - Knowledge retrieval and query, not analytics dashboards
-6. **Not a CMS** - Document processing for knowledge extraction, not content management
-
-## Governance Principles
-
-### Migration-First
-
-All data schema changes must go through migration scripts. No ad-hoc schema modifications.
-
-### Boundaries Before Implementation
-
-Define module responsibilities and forbidden dependencies before writing code.
-
-### Quality Gates Before Merge
-
-All code must pass documentation, boundary, dependency, lint, type, and test checks.
-
-### Monorepo Layout Clear and Intentional
-
-Directory structure reflects architectural boundaries. No "utils" or "common" dumping grounds.
+- **Charter Status**: Binding contract, not aspirational document
+- **Boundary Violations**: Automatic PR rejection via CI checks
+- **Quality Gates**: Mandatory for all merges, no exceptions
+- **Documentation**: Required for all packages and domain packages
+- **Review Authority**: Tech lead has final authority on boundary disputes

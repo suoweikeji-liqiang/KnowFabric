@@ -1,67 +1,62 @@
 # KnowFabric
 
+**Industrial Knowledge Injection Platform**
+
 ## What KnowFabric Is
 
-KnowFabric is an **industrial and energy domain knowledge injection platform** that transforms scattered industry documentation into structured, traceable, and serviceable knowledge assets.
+KnowFabric is an industrial knowledge injection platform that transforms raw technical documentation into structured, traceable knowledge assets through a mandatory six-layer data pipeline.
 
-It is NOT a general chatbot or document management tool. It is a knowledge engineering platform with:
-
-- **Domain-agnostic foundation** + **domain package mechanism**
-- **Multi-layer data architecture** (document → page → chunk → fact → index → derived assets)
-- **Full traceability chain** from any result back to original evidence
-- **Incremental processing** with stage-level recovery
-- **Service-oriented output** (retrieval API, structured query, knowledge export)
+**Core Identity:**
+- Knowledge engineering platform for industrial/energy domains
+- Domain-agnostic foundation with pluggable domain packages
+- Six-layer data architecture with mandatory traceability
+- Service-oriented platform providing retrieval and query APIs
 
 ## What KnowFabric Is NOT
 
-- ❌ Not a general-purpose chatbot shell
-- ❌ Not a one-time document converter
-- ❌ Not an automatic knowledge graph inference engine (first phase)
-- ❌ Not a direct device control system
-- ❌ Not a multi-tenant commercial SaaS (first phase)
+- ❌ NOT a chatbot or conversational AI shell
+- ❌ NOT a document management system
+- ❌ NOT an automatic knowledge graph inference engine
+- ❌ NOT a device control system
+- ❌ NOT a multi-tenant SaaS platform
 
-## First Phase Scope
+## Current Priority: Governance and Main Chain
 
-**Target Domains (Phase 1):**
-- `hvac` - HVAC equipment, faults, control strategies
-- `drive` - Frequency converters (ABB focus), parameters, fault codes
+**This repository is currently in governance hardening phase.**
 
-**Reserved for Future:**
-- `energy_storage` - Energy storage systems
-- `photovoltaics` - Photovoltaic systems
-- `integrated_energy` - Integrated energy solutions
+Priority is establishing:
+1. Hard boundaries between modules
+2. Mandatory data pipeline contracts
+3. Runnable quality gates
+4. Phase 1 implementation contract
 
-**Core Capabilities (Phase 1):**
-- Raw document ingestion and archival
-- Page-level parsing and asset generation
-- Chunk-level knowledge unit creation
-- Structured fact extraction
-- Retrieval knowledge base construction
-- Document/page/chunk/fact traceability chain
-- Basic human review workflow
-- Basic external query interfaces
-- Domain package mechanism foundation
+**Not prioritizing:** Feature volume, UI shells, or advanced capabilities.
 
-## Core Data Chain
+## Mandatory Data Pipeline
 
-All processing follows this mandatory chain:
-
+**The Only Valid Path:**
 ```
-Raw Document → Page → Chunk → Fact → Index/Export
+Raw Document → Page → Chunk → Fact → Retrieval/Export
 ```
 
-**Truth Source Hierarchy:**
-1. **Raw Document Layer** - Ultimate truth source
-2. **Page Layer** - Traceability and multimodal processing anchor
-3. **Chunk Layer** - Retrieval and extraction primary unit
-4. **Fact Layer** - Structured knowledge truth source
-5. **Index Layer** - Query acceleration only (NOT truth source)
-6. **Derived Assets Layer** - Exportable products (NOT truth source)
+Every knowledge output MUST trace through this pipeline. No shortcuts permitted.
 
-**Forbidden:**
-- ❌ Skipping page/chunk layers to build direct Q&A
-- ❌ Treating index as primary truth source
-- ❌ Hardcoding domain-specific logic into global foundation
+## Phase 1 Scope
+
+**Phase 1 ONLY builds:**
+- Document ingestion with deduplication
+- Page generation with traceability
+- Chunk generation with semantic typing
+- Basic retrieval (full-text + vector)
+- Minimal job tracking and logging
+- Two domain packages: hvac, drive
+
+**Phase 1 explicitly does NOT build:**
+- Heavy fact extraction engine
+- Full review workflow platform
+- Graph reasoning capabilities
+- Fine-tuning factory
+- Rich admin web interface
 
 ## Monorepo Structure
 
@@ -93,58 +88,50 @@ KnowFabric/
 └── final_docs/            # Original requirement documents
 ```
 
-## Local Commands
+## Quality Gates
+
+Run quality gates to validate repository standards:
 
 ```bash
-# Quality gates
-npm run check:docs              # Verify documentation completeness
-npm run check:boundaries        # Verify module boundaries
-npm run check:forbidden-deps    # Check for forbidden dependencies
-npm run check:all              # Run all quality checks
+# Individual gates
+scripts/check-docs              # Documentation completeness
+scripts/check-boundaries        # Module boundary compliance
+scripts/check-forbidden-deps    # Forbidden dependency patterns
 
-# Development
-npm run dev                    # Start development environment
-npm run build                  # Build all packages
-npm run test                   # Run test suites
-
-# Database
-npm run db:migrate            # Run database migrations
-npm run db:seed               # Seed initial data
+# All gates
+scripts/check-all              # Run all quality checks
 ```
 
-## Standards Entry
+**All gates must pass before merge. No exceptions.**
 
-All development must follow the standards defined in `docs/`:
+## Standards and Governance
 
-- **[Repo Charter](docs/00_repo-charter.md)** - Project positioning and principles
-- **[System Boundaries](docs/01_system-boundaries.md)** - Module responsibilities and constraints
-- **[Data Layer Contract](docs/02_data-layer-contract.md)** - Six-layer data model specification
-- **[Domain Package Spec](docs/03_domain-package-spec.md)** - Domain package structure and rules
-- **[Engineering Standards](docs/04_engineering-standards.md)** - Coding and naming conventions
-- **[Phase Plan](docs/05_phase-plan.md)** - Delivery phases and acceptance criteria
-- **[Quality Gates](docs/06_quality-gates.md)** - Repository-level quality requirements
+All development must follow the governance documents in `docs/`:
 
-## Phase Delivery Principle
+**Core Governance (Read First):**
+- **[00_repo-charter.md](docs/00_repo-charter.md)** - Repository constitution with hard constraints
+- **[01_system-boundaries.md](docs/01_system-boundaries.md)** - Module boundaries and forbidden dependencies
+- **[02_data-layer-contract.md](docs/02_data-layer-contract.md)** - Six-layer data architecture with forbidden shortcuts
 
-**Standards First, Features Second:**
-1. Establish boundaries and contracts before implementation
-2. Build data layers before intelligence layers
-3. Ensure traceability before optimization
-4. Validate with minimal scope before scaling
+**Implementation Contracts:**
+- **[05_phase-plan.md](docs/05_phase-plan.md)** - Phase delivery contracts with acceptance criteria
+- **[06_quality-gates.md](docs/06_quality-gates.md)** - Quality gate specifications
+- **[07_phase1-implementation-contract.md](docs/07_phase1-implementation-contract.md)** - Phase 1 hard boundaries
 
-**Phase Progression:**
-- Phase 1: Document/Page/Chunk/Retrieval foundation
-- Phase 2: Fact extraction, review, structured query
-- Phase 3: Domain package strengthening, external API
-- Phase 4: Advanced capabilities (graph, fine-tuning samples)
+**Additional Standards:**
+- **[03_domain-package-spec.md](docs/03_domain-package-spec.md)** - Domain package structure
+- **[04_engineering-standards.md](docs/04_engineering-standards.md)** - Coding conventions
 
-Each phase must deliver:
-- ✅ Runnable code
-- ✅ Complete documentation
-- ✅ Test coverage
-- ✅ Acceptance validation
+**These documents are binding contracts, not aspirational guidelines.**
 
 ## Getting Started
+
+**New developers should:**
+1. Read [docs/00_repo-charter.md](docs/00_repo-charter.md) - Understand what KnowFabric is and is NOT
+2. Read [docs/01_system-boundaries.md](docs/01_system-boundaries.md) - Understand module boundaries
+3. Read [docs/02_data-layer-contract.md](docs/02_data-layer-contract.md) - Understand the data pipeline
+4. Read [docs/07_phase1-implementation-contract.md](docs/07_phase1-implementation-contract.md) - Understand Phase 1 scope
+5. Run `scripts/check-all` to validate repository state
 
 See [docs/README.md](docs/README.md) for complete documentation navigation.
 

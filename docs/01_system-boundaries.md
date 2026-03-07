@@ -1,56 +1,103 @@
 # System Boundaries
 
+**Status:** Boundary Contract - Enforced by CI
+**Last Updated:** 2026-03-07
+
+This document defines hard boundaries between modules. Violations result in automatic PR rejection.
+
 ## Module Boundary Principles
 
 1. **High cohesion, low coupling** - Each module has clear responsibility
 2. **Explicit dependencies** - No circular dependencies between modules
 3. **Interface-based contracts** - Modules communicate through defined interfaces
 4. **Domain isolation** - Domain-specific logic stays in domain packages
+5. **Enforcement** - Boundaries validated by `scripts/check-boundaries`
 
-## Core Modules
-
-### Ingest Module
+## Core Module
 
 **Responsibility:**
-- Scan local directories for raw documents
-- Generate unique document IDs
-- Calculate file hashes for deduplication
+- Define domain models and interfaces
+- Provide type definitions for all entities
+- Define contracts between modules
+
+**Owns:**
+- Entity type definitions (Document, Page, Chunk, Fact)
+- Interface contracts (IParser, IChunker, IExtractor)
+- Shared constants and enums
+
+**Inputs:**
+- None (foundation layer)
+
+**Outputs:**
+- Type definitions for other modules
+- Interface contracts
+
+**May Depend On:**
+- Standard library only
+
+**Must Not Depend On:**
+- ANY other package in this repository
+
+**Forbidden Behaviors:**
+- ❌ Importing from db, storage, or any domain package
+- ❌ Containing business logic or processing code
+- ❌ Containing domain-specific logic (belongs in domain packages)
+- ❌ Direct database access or file I/O
+
+## Ingest Module
+
+**Responsibility:**
+- Scan directories for raw documents
+- Generate unique document IDs and calculate file hashes
 - Record import metadata and batch information
 - Apply initial domain/brand tagging based on path/filename
+
+**Owns:**
+- Document import logic
+- File deduplication
+- Initial metadata extraction
 
 **Inputs:**
 - Local directory paths
 - Supported file format list
 - Import batch metadata
-- Initial domain mapping rules
 
 **Outputs:**
 - `document` records in database
 - Deduplication results
 - Initial tag assignments
-- Import logs
 
-**Forbidden:**
-- ❌ Must NOT parse document content (parser's job)
-- ❌ Must NOT generate chunks (chunking's job)
-- ❌ Must NOT perform extraction (extraction's job)
-- ❌ Must NOT build indexes (retrieval's job)
+**May Depend On:**
+- core (domain models)
+- db (database access)
+- storage (file operations)
 
-**Dependencies:**
-- `core` - Domain models
-- `db` - Database access
-- `storage` - File storage operations
+**Must Not Depend On:**
+- parser, chunking, extraction, retrieval, review, exporter
+
+**Forbidden Behaviors:**
+- ❌ Parsing document content (parser's responsibility)
+- ❌ Generating chunks (chunking's responsibility)
+- ❌ Extracting facts (extraction's responsibility)
+- ❌ Building indexes (retrieval's responsibility)
+- ❌ Reading document text content beyond metadata
 
 ---
 
 ### Parser Module
 
+## Parser Module
+
 **Responsibility:**
 - Split documents into page-level objects
-- Extract raw text and cleaned text from pages
+- Extract raw and cleaned text from pages
 - Generate page images for traceability
 - Identify page types (table, diagram, fault code, procedure)
-- Record OCR and multimodal processing status
+
+**Owns:**
+- Page generation logic
+- Text extraction
+- Page asset generation
 
 **Inputs:**
 - `document` records with file paths
@@ -58,29 +105,37 @@
 
 **Outputs:**
 - `document_page` records
-- `page_asset` records (images, extracted tables)
+- `page_asset` records (images, tables)
 - Page-level text and metadata
 
-**Forbidden:**
-- ❌ Must NOT create chunks (chunking's job)
-- ❌ Must NOT extract facts (extraction's job)
-- ❌ Must NOT build search indexes (retrieval's job)
+**May Depend On:**
+- core, db, storage
 
-**Dependencies:**
-- `core` - Domain models
-- `db` - Database access
-- `storage` - Page asset storage
+**Must Not Depend On:**
+- chunking, extraction, retrieval, review, exporter
+
+**Forbidden Behaviors:**
+- ❌ Creating chunks (chunking's responsibility)
+- ❌ Extracting facts (extraction's responsibility)
+- ❌ Building search indexes (retrieval's responsibility)
+- ❌ Semantic analysis beyond page type classification
 
 ---
 
 ### Chunking Module
+
+## Chunking Module
 
 **Responsibility:**
 - Split pages into semantic knowledge units
 - Identify chunk types (title, paragraph, table, procedure, fault code)
 - Generate chunk summaries and keywords
 - Maintain traceability to source pages
-- Prepare chunks for retrieval and extraction
+
+**Owns:**
+- Chunk generation logic
+- Semantic segmentation
+- Chunk metadata extraction
 
 **Inputs:**
 - `document_page` records with text
@@ -93,26 +148,34 @@
 - Entity and keyword lists
 - Evidence anchors (bbox, text offsets)
 
-**Forbidden:**
-- ❌ Must NOT extract structured facts (extraction's job)
-- ❌ Must NOT build vector indexes (retrieval's job)
-- ❌ Must NOT perform review (review's job)
+**May Depend On:**
+- core, db, domain-kit
 
-**Dependencies:**
-- `core` - Domain models
-- `db` - Database access
-- `domain-kit` - Domain-specific chunking rules
+**Must Not Depend On:**
+- extraction, retrieval, review, exporter
+
+**Forbidden Behaviors:**
+- ❌ Extracting structured facts (extraction's responsibility)
+- ❌ Building vector indexes (retrieval's responsibility)
+- ❌ Performing review operations (review's responsibility)
+- ❌ Modifying source pages
 
 ---
 
 ### Extraction Module
+
+## Extraction Module
 
 **Responsibility:**
 - Extract structured facts from chunks
 - Identify entities, relations, and conditions
 - Normalize subjects and objects
 - Maintain evidence text and source traceability
-- Calculate confidence scores
+
+**Owns:**
+- Fact extraction logic
+- Entity normalization
+- Confidence scoring
 
 **Inputs:**
 - `content_chunk` records
@@ -122,29 +185,36 @@
 **Outputs:**
 - `extracted_fact` records
 - Normalized entity mappings
-- Relation candidates
 - Confidence scores and trust levels
 
-**Forbidden:**
-- ❌ Must NOT modify source chunks (read-only)
-- ❌ Must NOT build indexes (retrieval's job)
-- ❌ Must NOT approve facts (review's job)
+**May Depend On:**
+- core, db, domain-kit
 
-**Dependencies:**
-- `core` - Domain models
-- `db` - Database access
-- `domain-kit` - Extraction templates and schemas
+**Must Not Depend On:**
+- retrieval, review, exporter
+
+**Forbidden Behaviors:**
+- ❌ Modifying source chunks (read-only access)
+- ❌ Building indexes (retrieval's responsibility)
+- ❌ Approving facts (review's responsibility)
+- ❌ Exporting assets (exporter's responsibility)
 
 ---
 
 ### Retrieval Module
 
+## Retrieval Module
+
 **Responsibility:**
 - Build and maintain full-text indexes
 - Build and maintain vector indexes
 - Provide hybrid search capabilities
-- Support filtering by domain, brand, equipment type, trust level
-- Return results with traceability fields
+- Support filtering by domain, brand, equipment type
+
+**Owns:**
+- Index construction and maintenance
+- Search query execution
+- Result ranking
 
 **Inputs:**
 - `content_chunk` records
@@ -156,26 +226,34 @@
 - Relevance scores
 - Traceability metadata (doc_id, page_no, evidence_text)
 
-**Forbidden:**
-- ❌ Must NOT modify chunks or facts (read-only)
-- ❌ Must NOT extract new facts (extraction's job)
-- ❌ Indexes are NOT truth source (chunks are truth source)
+**May Depend On:**
+- core, db, search engine/vector database
 
-**Dependencies:**
-- `core` - Domain models
-- `db` - Database access
-- Search engine / vector database
+**Must Not Depend On:**
+- extraction, review, exporter
+
+**Forbidden Behaviors:**
+- ❌ Modifying chunks or facts (read-only access)
+- ❌ Extracting new facts (extraction's responsibility)
+- ❌ Treating indexes as truth source (chunks are truth source)
+- ❌ Returning results without traceability fields
 
 ---
 
 ### Review Module
 
+## Review Module
+
 **Responsibility:**
 - Provide review workflow for facts and chunks
-- Support approve, reject, modify, merge, split operations
+- Support approve, reject, modify operations
 - Record review history and audit trail
 - Manage review status transitions
-- Track reviewer identity and timestamps
+
+**Owns:**
+- Review workflow logic
+- Audit trail management
+- Review status tracking
 
 **Inputs:**
 - `extracted_fact` records pending review
@@ -187,25 +265,34 @@
 - `review_record` audit entries
 - Modified fact versions
 
-**Forbidden:**
-- ❌ Must NOT extract new facts (extraction's job)
-- ❌ Must NOT rebuild indexes automatically (retrieval's job)
-- ❌ Must NOT export assets (exporter's job)
+**May Depend On:**
+- core, db
 
-**Dependencies:**
-- `core` - Domain models
-- `db` - Database access
+**Must Not Depend On:**
+- extraction, retrieval, exporter
+
+**Forbidden Behaviors:**
+- ❌ Extracting new facts (extraction's responsibility)
+- ❌ Rebuilding indexes automatically (retrieval's responsibility)
+- ❌ Exporting assets (exporter's responsibility)
+- ❌ Modifying source chunks
 
 ---
 
 ### Exporter Module
 
+## Exporter Module
+
 **Responsibility:**
 - Export knowledge assets in various formats
 - Generate fine-tuning samples (JSONL)
 - Create topic-specific knowledge packages
-- Export graph candidate packages
 - Apply filtering by domain, trust level, review status
+
+**Owns:**
+- Export logic and formatting
+- Asset packaging
+- Filter application
 
 **Inputs:**
 - `content_chunk` and `extracted_fact` records
@@ -218,26 +305,34 @@
 - Graph candidate exports
 - RAG snapshots
 
-**Forbidden:**
-- ❌ Must NOT modify source data (read-only)
-- ❌ Must NOT perform extraction (extraction's job)
-- ❌ Must NOT approve facts (review's job)
+**May Depend On:**
+- core, db, storage
 
-**Dependencies:**
-- `core` - Domain models
-- `db` - Database access
-- `storage` - Export file storage
+**Must Not Depend On:**
+- extraction, retrieval, review
+
+**Forbidden Behaviors:**
+- ❌ Modifying source data (read-only access)
+- ❌ Performing extraction (extraction's responsibility)
+- ❌ Approving facts (review's responsibility)
+- ❌ Building indexes (retrieval's responsibility)
 
 ---
 
 ### Domain-Package Module
+
+## Domain-Package Module
 
 **Responsibility:**
 - Define domain-specific schemas (entities, relations, labels)
 - Provide extraction templates
 - Configure retrieval profiles
 - Define export profiles
-- Maintain domain manifest
+
+**Owns:**
+- Domain schema definitions
+- Extraction templates
+- Configuration files only
 
 **Inputs:**
 - Domain package configuration files (YAML/JSON)
@@ -246,51 +341,118 @@
 - Domain schemas loaded into system
 - Extraction templates for extraction module
 - Retrieval profiles for retrieval module
-- Export profiles for exporter module
 
-**Forbidden:**
-- ❌ Must NOT contain business logic (only configuration)
-- ❌ Must NOT directly access database (provides config only)
-- ❌ Must NOT hardcode domain logic into core modules
+**May Depend On:**
+- core (domain model interfaces only)
 
-**Dependencies:**
-- `core` - Domain model interfaces
-- Configuration files only (no runtime dependencies)
+**Must Not Depend On:**
+- db, storage, or any processing modules
+
+**Forbidden Behaviors:**
+- ❌ Containing runtime business logic (configuration only)
+- ❌ Direct database access
+- ❌ Hardcoding domain logic into core modules
+- ❌ Importing from processing modules
 
 ---
 
-## Dependency Rules
+## Module Dependency Matrix
 
-### Allowed Dependencies
+| Module | May Depend On | Must NOT Depend On |
+|--------|---------------|-------------------|
+| core | stdlib only | ALL other packages |
+| db | core | domain-kit, processing modules |
+| storage | core | domain-kit, processing modules |
+| domain-kit | core | db, storage, processing modules |
+| ingest | core, db, storage | parser, chunking, extraction, retrieval, review, exporter |
+| parser | core, db, storage | chunking, extraction, retrieval, review, exporter |
+| chunking | core, db, domain-kit | extraction, retrieval, review, exporter |
+| extraction | core, db, domain-kit | retrieval, review, exporter |
+| retrieval | core, db | extraction, review, exporter |
+| review | core, db | extraction, retrieval, exporter |
+| exporter | core, db, storage | extraction, retrieval, review |
 
-```
-apps/* → packages/*
-packages/ingest → core, db, storage
-packages/parser → core, db, storage
-packages/chunking → core, db, domain-kit
-packages/extraction → core, db, domain-kit
-packages/retrieval → core, db
-packages/review → core, db
-packages/exporter → core, db, storage
-packages/domain-kit → core
-```
+---
 
-### Forbidden Dependencies
+## Forbidden Dependency Rules
 
-```
-❌ core → any other package (core is foundation)
-❌ db → domain-kit (db is domain-agnostic)
-❌ ingest → parser, chunking, extraction, retrieval
-❌ parser → chunking, extraction, retrieval
-❌ chunking → extraction, retrieval
-❌ extraction → retrieval, review, exporter
-❌ retrieval → extraction, review, exporter
-❌ Circular dependencies between any modules
-```
+These dependencies are explicitly forbidden and will cause CI failure:
+
+1. **No Reverse Pipeline Flow**
+   - ❌ ingest → parser
+   - ❌ parser → chunking
+   - ❌ chunking → extraction
+   - ❌ extraction → retrieval
+
+2. **No Core Contamination**
+   - ❌ core → ANY other package
+
+3. **No Domain Package Runtime Dependencies**
+   - ❌ domain_packages → ANY runtime code imports
+
+4. **No Circular Dependencies**
+   - ❌ ANY module → module that depends on it
+
+5. **No Layer Skipping**
+   - ❌ ingest → chunking (must go through parser)
+   - ❌ parser → extraction (must go through chunking)
+
+---
+
+## Forbidden Behavior Rules
+
+These behaviors are explicitly forbidden:
+
+### Ingest Module
+- ❌ Reading document text content beyond metadata
+- ❌ Parsing semantic content
+- ❌ Generating chunks or facts
+
+### Parser Module
+- ❌ Semantic analysis beyond page type classification
+- ❌ Creating chunks
+- ❌ Extracting structured facts
+
+### Chunking Module
+- ❌ Extracting structured facts (only keywords/entities allowed)
+- ❌ Building vector indexes
+- ❌ Modifying source pages
+
+### Extraction Module
+- ❌ Modifying source chunks
+- ❌ Building indexes
+- ❌ Approving or reviewing facts
+
+### Retrieval Module
+- ❌ Treating indexes as truth source
+- ❌ Modifying chunks or facts
+- ❌ Returning results without traceability
+
+### Review Module
+- ❌ Extracting new facts
+- ❌ Modifying source chunks
+- ❌ Automatically rebuilding indexes
+
+### Exporter Module
+- ❌ Modifying source data
+- ❌ Performing extraction
+- ❌ Approving facts
+
+### Domain Packages
+- ❌ Containing runtime business logic
+- ❌ Direct database access
+- ❌ Importing from processing modules
+
+---
 
 ## Boundary Validation
 
-Run `npm run check:boundaries` to validate:
+Run boundary checks:
+```bash
+scripts/check-boundaries
+```
+
+This validates:
 - No forbidden imports between modules
 - No circular dependencies
-- All modules respect interface contracts
+- Module dependency matrix compliance
