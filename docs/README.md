@@ -1,7 +1,7 @@
 # KnowFabric Documentation
 
 **Status:** Governance Documents - Binding Contracts
-**Last Updated:** 2026-03-07
+**Last Updated:** 2026-03-13
 
 This directory contains the governance and standards documentation for KnowFabric. These are binding contracts, not aspirational guidelines.
 
@@ -37,6 +37,7 @@ This directory contains the governance and standards documentation for KnowFabri
 6. **[06_quality-gates.md](06_quality-gates.md)** - Quality gate specifications
 7. **[03_domain-package-spec.md](03_domain-package-spec.md)** - Domain package structure
 8. **[04_engineering-standards.md](04_engineering-standards.md)** - Coding conventions
+9. **[08_ai-consumer-contract.md](08_ai-consumer-contract.md)** - AI consumer interface contract
 
 ---
 
@@ -51,6 +52,7 @@ These documents define hard boundaries and are enforced by CI:
 - **02_data-layer-contract.md** - Enforced by code review and architecture review
 - **06_quality-gates.md** - Enforced by `scripts/check-all`
 - **07_phase1-implementation-contract.md** - Enforced by acceptance testing
+- **08_ai-consumer-contract.md** - Defines AI consumer interface standards
 
 ### Implementation Contracts
 

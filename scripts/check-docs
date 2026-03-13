@@ -15,6 +15,7 @@ CORE_DOCS=(
     "docs/05_phase-plan.md"
     "docs/06_quality-gates.md"
     "docs/07_phase1-implementation-contract.md"
+    "docs/08_ai-consumer-contract.md"
 )
 
 for doc in "${CORE_DOCS[@]}"; do

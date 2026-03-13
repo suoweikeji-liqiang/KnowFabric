@@ -1,17 +1,22 @@
 # Repository Charter
 
 **Status:** Governance Document - Binding Contract
-**Last Updated:** 2026-03-07
+**Last Updated:** 2026-03-13
 
 ## What KnowFabric Is
 
-KnowFabric is an industrial knowledge injection platform that transforms raw technical documentation into structured, traceable knowledge assets through a mandatory six-layer data pipeline.
+KnowFabric is an embeddable knowledge engineering engine for industrial domains. It transforms raw technical documentation into structured, traceable knowledge assets through a mandatory six-layer data pipeline, and delivers them via integration APIs to three classes of consumers.
 
 **Core Identity:**
-- Knowledge engineering platform for industrial/energy domains
+- Embeddable knowledge engineering engine (not a standalone application)
 - Domain-agnostic foundation with pluggable domain packages
 - Six-layer data architecture with mandatory traceability
-- Service-oriented platform providing retrieval and query APIs
+- Integration-first: REST API, MCP Server, and SDK as primary interfaces
+
+**Three Consumer Classes:**
+1. **AI Agents** — Consume knowledge via MCP tools and context-optimized APIs (first-class consumer)
+2. **Developers** — Integrate knowledge via REST API and Python SDK into their applications
+3. **Upstream Applications** — Embed KnowFabric as a knowledge backend (chatbots, dashboards, copilots)
 
 ## What KnowFabric Is NOT
 
@@ -21,6 +26,8 @@ KnowFabric is an industrial knowledge injection platform that transforms raw tec
 - ❌ NOT a device control or real-time automation system
 - ❌ NOT a multi-tenant SaaS platform
 - ❌ NOT a general-purpose RAG demo
+- ❌ NOT an end-user application (it is an engine that powers applications)
+- ❌ NOT a chat frontend or UI-first product
 
 ## Mandatory Data Pipeline
 
@@ -41,6 +48,9 @@ Every knowledge output MUST trace through this pipeline. No shortcuts permitted.
 4. Basic retrieval (full-text + vector)
 5. Minimal job tracking and logging
 6. Two domain packages: hvac, drive
+7. Integration API baseline (document upload, processing status, traceability chain, chunk search)
+8. MCP Server baseline (search_knowledge, trace_evidence, list_domains)
+9. Docker deployment baseline (docker-compose)
 
 ### Phase 1 Explicitly Does NOT Do
 
@@ -51,6 +61,8 @@ Every knowledge output MUST trace through this pipeline. No shortcuts permitted.
 5. ❌ Rich admin web interface
 6. ❌ Multi-tenant features
 7. ❌ Real-time device control
+8. ❌ AI-optimized knowledge delivery (context assembly, token budgets — Phase 2)
+9. ❌ Python SDK or AI prompt templates (Phase 3)
 
 ## Non-Negotiable Constraints (Hard Rules)
 
@@ -109,12 +121,14 @@ Phase 1 is complete ONLY when ALL criteria are met:
 
 These principles govern all development decisions:
 
-1. **Platform Before Shell** - Build data pipeline and APIs before building UI layers
-2. **Traceability Before Performance** - Ensure evidence chains work before optimizing speed
-3. **Boundaries Before Implementation** - Define module contracts before writing code
-4. **Domain Packages Before Hardcoding** - Use pluggable domain configs, not hardcoded logic
-5. **Migration Before Schema Change** - All DB changes go through versioned migration scripts
-6. **Gates Before Merge** - All quality gates must pass; no bypass permitted
+1. **API Before Implementation** - Define and expose integration APIs before building internal features
+2. **AI-Consumable Before Human-Only** - Ensure outputs are structured for AI consumption, not just human reading
+3. **Platform Before Shell** - Build data pipeline and APIs before building UI layers
+4. **Traceability Before Performance** - Ensure evidence chains work before optimizing speed
+5. **Boundaries Before Implementation** - Define module contracts before writing code
+6. **Domain Packages Before Hardcoding** - Use pluggable domain configs, not hardcoded logic
+7. **Migration Before Schema Change** - All DB changes go through versioned migration scripts
+8. **Gates Before Merge** - All quality gates must pass; no bypass permitted
 
 ## Governance Model
 

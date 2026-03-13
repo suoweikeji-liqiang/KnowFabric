@@ -1,16 +1,17 @@
 # KnowFabric
 
-**Industrial Knowledge Injection Platform**
+**Embeddable Knowledge Engineering Engine for Industrial Domains**
 
 ## What KnowFabric Is
 
-KnowFabric is an industrial knowledge injection platform that transforms raw technical documentation into structured, traceable knowledge assets through a mandatory six-layer data pipeline.
+KnowFabric is an embeddable knowledge engineering engine that transforms raw technical documentation into structured, traceable knowledge assets through a mandatory six-layer data pipeline, and delivers them via integration APIs to AI agents, developers, and applications.
 
 **Core Identity:**
-- Knowledge engineering platform for industrial/energy domains
+- Embeddable knowledge engineering engine (not a standalone application)
 - Domain-agnostic foundation with pluggable domain packages
 - Six-layer data architecture with mandatory traceability
-- Service-oriented platform providing retrieval and query APIs
+- Integration-first: REST API, MCP Server, and SDK as primary interfaces
+- AI agents are first-class consumers
 
 ## What KnowFabric Is NOT
 
@@ -19,18 +20,51 @@ KnowFabric is an industrial knowledge injection platform that transforms raw tec
 - ❌ NOT an automatic knowledge graph inference engine
 - ❌ NOT a device control system
 - ❌ NOT a multi-tenant SaaS platform
+- ❌ NOT an end-user application (it powers applications)
+- ❌ NOT a chat frontend or UI-first product
 
-## Current Priority: Governance and Main Chain
+## Integration Examples
 
-**This repository is currently in governance hardening phase.**
+### REST API
 
-Priority is establishing:
-1. Hard boundaries between modules
-2. Mandatory data pipeline contracts
-3. Runnable quality gates
-4. Phase 1 implementation contract
+```bash
+# Upload a document (async)
+curl -X POST http://localhost:8000/api/v1/documents/upload \
+  -F "file=@manual.pdf" -F "domain=hvac"
+# → 202 Accepted {"data": {"job_id": "job_abc123", "poll_url": "/api/v1/jobs/job_abc123"}}
 
-**Not prioritizing:** Feature volume, UI shells, or advanced capabilities.
+# Search knowledge with traceability
+curl -X POST http://localhost:8000/api/v1/chunks/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "chiller fault E01", "domain": "hvac"}'
+# → Results with doc_id, page_no, chunk_id, evidence_text
+```
+
+### MCP Server (for AI Agents)
+
+```json
+// AI agent calls search_knowledge via MCP
+{
+  "tool": "search_knowledge",
+  "arguments": {
+    "query": "ACS880 overcurrent fault diagnosis",
+    "domain": "drive",
+    "limit": 5
+  }
+}
+// → Structured results with citations and traceability
+```
+
+### Python SDK (Phase 3)
+
+```python
+from knowfabric import KnowFabric
+
+kf = KnowFabric(base_url="http://localhost:8000")
+results = kf.search("chiller fault codes", domain="hvac", limit=10)
+for r in results:
+    print(f"{r.content} [Source: {r.citation.doc_name} p.{r.citation.page_no}]")
+```
 
 ## Mandatory Data Pipeline
 
@@ -43,13 +77,16 @@ Every knowledge output MUST trace through this pipeline. No shortcuts permitted.
 
 ## Phase 1 Scope
 
-**Phase 1 ONLY builds:**
+**Phase 1 builds:**
 - Document ingestion with deduplication
 - Page generation with traceability
 - Chunk generation with semantic typing
 - Basic retrieval (full-text + vector)
 - Minimal job tracking and logging
 - Two domain packages: hvac, drive
+- Integration API baseline (document upload, status, trace, search)
+- MCP Server baseline (search_knowledge, trace_evidence, list_domains)
+- Docker deployment baseline
 
 **Phase 1 explicitly does NOT build:**
 - Heavy fact extraction engine
@@ -57,6 +94,8 @@ Every knowledge output MUST trace through this pipeline. No shortcuts permitted.
 - Graph reasoning capabilities
 - Fine-tuning factory
 - Rich admin web interface
+- AI-optimized knowledge delivery (Phase 2)
+- Python SDK (Phase 3)
 
 ## Local Development Setup
 
@@ -117,6 +156,17 @@ cd apps/worker
 python main.py
 ```
 
+**MCP Server:**
+```bash
+cd apps/mcp
+python main.py
+```
+
+**Docker (Full Stack):**
+```bash
+docker-compose up
+```
+
 ## Monorepo Structure
 
 ```
@@ -124,6 +174,7 @@ KnowFabric/
 ├── apps/                    # Application entry points
 │   ├── api/                # REST API service
 │   ├── worker/             # Background processing workers
+│   ├── mcp/               # MCP Server for AI agent integration
 │   └── admin-web/          # Admin dashboard
 ├── packages/               # Shared packages
 │   ├── core/              # Core domain models
@@ -144,7 +195,8 @@ KnowFabric/
 ├── scripts/               # Utility scripts and quality gates
 ├── tests/                 # Test suites
 ├── docs/                  # Documentation and standards
-└── final_docs/            # Original requirement documents
+├── final_docs/            # Original requirement documents
+└── docker-compose.yml     # Docker deployment configuration
 ```
 
 ## Quality Gates
@@ -180,6 +232,7 @@ All development must follow the governance documents in `docs/`:
 **Additional Standards:**
 - **[03_domain-package-spec.md](docs/03_domain-package-spec.md)** - Domain package structure
 - **[04_engineering-standards.md](docs/04_engineering-standards.md)** - Coding conventions
+- **[08_ai-consumer-contract.md](docs/08_ai-consumer-contract.md)** - AI consumer interface contract
 
 **These documents are binding contracts, not aspirational guidelines.**
 
@@ -190,7 +243,8 @@ All development must follow the governance documents in `docs/`:
 2. Read [docs/01_system-boundaries.md](docs/01_system-boundaries.md) - Understand module boundaries
 3. Read [docs/02_data-layer-contract.md](docs/02_data-layer-contract.md) - Understand the data pipeline
 4. Read [docs/07_phase1-implementation-contract.md](docs/07_phase1-implementation-contract.md) - Understand Phase 1 scope
-5. Run `scripts/check-all` to validate repository state
+5. Read [docs/08_ai-consumer-contract.md](docs/08_ai-consumer-contract.md) - Understand AI consumer interfaces
+6. Run `scripts/check-all` to validate repository state
 
 See [docs/README.md](docs/README.md) for complete documentation navigation.
 

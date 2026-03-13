@@ -20,9 +20,11 @@ domain_packages/{domain_name}/
 │   ├── fault_extraction.yaml
 │   ├── parameter_extraction.yaml
 │   └── control_extraction.yaml
-└── export_profiles/           # Export configurations
-    ├── finetune_profile.yaml
-    └── graph_profile.yaml
+├── export_profiles/           # Export configurations
+│   ├── finetune_profile.yaml
+│   └── graph_profile.yaml
+├── ai_prompt_templates.yaml   # AI prompt templates (Phase 3)
+└── terminology.yaml           # Terminology mapping (Phase 3)
 ```
 
 ## Manifest Schema
@@ -411,6 +413,160 @@ include_metadata: true
 max_samples_per_type: 10000
 ```
 
+## AI Prompt Templates (Phase 3)
+
+**File:** `ai_prompt_templates.yaml`
+
+AI prompt templates help AI agents formulate domain-appropriate queries and structure responses using domain knowledge.
+
+### Schema
+
+```yaml
+templates:
+  {template_id}:
+    description: string           # What this template is for
+    system_context: string        # System prompt context for the AI
+    query_template: string        # Query template with {variables}
+    response_guidance: string     # How to structure the response
+    required_knowledge_types:     # Which knowledge types to retrieve
+      - string
+    variables:                    # Template variable definitions
+      - name: string
+        description: string
+        required: boolean
+```
+
+### Example (HVAC)
+
+```yaml
+templates:
+  fault_diagnosis:
+    description: Guide AI to diagnose equipment faults using HVAC knowledge
+    system_context: |
+      You are an industrial HVAC expert. Use the provided knowledge
+      to diagnose equipment faults. Always cite your sources with
+      document name and page number.
+    query_template: |
+      Equipment: {equipment_type}
+      Brand: {brand}
+      Symptom: {symptom}
+      Find relevant fault codes and recommended actions.
+    response_guidance: |
+      Structure your response as:
+      1. Most likely fault code and cause
+      2. Recommended diagnostic steps
+      3. Repair actions with estimated time
+      Always include source citations.
+    required_knowledge_types:
+      - fault_diagnosis
+      - troubleshooting
+    variables:
+      - name: equipment_type
+        description: Type of HVAC equipment (chiller, pump, AHU, etc.)
+        required: true
+      - name: brand
+        description: Equipment brand/manufacturer
+        required: false
+      - name: symptom
+        description: Observed symptom or fault description
+        required: true
+
+  parameter_lookup:
+    description: Guide AI to find and explain equipment parameters
+    system_context: |
+      You are an industrial HVAC commissioning expert.
+      Help users understand equipment parameters and their settings.
+    query_template: |
+      Equipment: {equipment_type}
+      Parameter: {parameter_name}
+      Explain this parameter and its recommended settings.
+    response_guidance: |
+      Include: parameter description, default value, valid range,
+      effect of changing, and common use cases.
+    required_knowledge_types:
+      - parameter_setting
+    variables:
+      - name: equipment_type
+        description: Type of equipment
+        required: true
+      - name: parameter_name
+        description: Parameter name or code
+        required: true
+```
+
+### Constraints
+
+- Templates are pure YAML configuration (no executable code)
+- Template variables use `{variable_name}` syntax
+- Templates reference knowledge_types defined in the domain's label_schema
+- Templates are consumed by AI agents, not executed by KnowFabric directly
+
+## Terminology Mapping (Phase 3)
+
+**File:** `terminology.yaml`
+
+Terminology mappings provide consistent vocabulary normalization for AI agents working across languages and synonym variations.
+
+### Schema
+
+```yaml
+terms:
+  - canonical: string             # Canonical term (snake_case)
+    aliases: [string]             # All known aliases and translations
+    domain: string                # Which domain this term belongs to
+    description: string           # Definition of the term
+    category: string              # Term category (equipment, parameter, etc.)
+```
+
+### Example (HVAC)
+
+```yaml
+terms:
+  - canonical: "variable_frequency_drive"
+    aliases: ["VFD", "frequency converter", "inverter", "变频器", "变频驱动"]
+    domain: hvac
+    description: "Device that controls motor speed by varying electrical frequency"
+    category: equipment
+
+  - canonical: "chilled_water_supply_temperature"
+    aliases: ["CHWST", "supply temp", "冷冻水供水温度", "供水温度"]
+    domain: hvac
+    description: "Temperature of chilled water leaving the chiller evaporator"
+    category: parameter
+
+  - canonical: "coefficient_of_performance"
+    aliases: ["COP", "性能系数", "能效比"]
+    domain: hvac
+    description: "Ratio of cooling/heating output to energy input"
+    category: metric
+```
+
+### Constraints
+
+- Terminology files are pure YAML configuration
+- Canonical terms use snake_case
+- Aliases include Chinese equivalents where applicable
+- Terms reference categories consistent with label_schema
+
+## Distribution Mechanism (Phase 3)
+
+Domain packages will support independent versioning and distribution:
+
+### Planned Capabilities
+
+- **Versioning:** Each domain package has a `version` field in manifest.yaml (semver)
+- **Packaging:** Domain packages can be packaged as tarballs for distribution
+- **Registry:** Local or remote registry for publishing/discovering domain packages
+- **Installation:** CLI tool to install/update domain packages into a KnowFabric instance
+
+### Constraints
+
+- Distribution mechanism must not change the domain package directory structure
+- Installed packages must pass the same validation as locally authored packages
+- Version conflicts between dependent domains must be detected and reported
+
+**Note:** Detailed distribution specification will be defined when Phase 3 implementation begins.
+
 ## Phase 1 Domain Packages
 
 ### HVAC Domain Package
@@ -443,9 +599,11 @@ max_samples_per_type: 10000
 
 1. ✅ Domain packages contain ONLY configuration (no code)
 2. ✅ Domain-specific logic implemented via templates and schemas
-3. ❌ Domain packages MUST NOT import core modules
-4. ❌ Domain packages MUST NOT contain hardcoded business logic
-5. ❌ Domain packages MUST NOT directly access database
+3. ✅ AI prompt templates and terminology files are also pure configuration
+4. ❌ Domain packages MUST NOT import core modules
+5. ❌ Domain packages MUST NOT contain hardcoded business logic
+6. ❌ Domain packages MUST NOT directly access database
+7. ❌ AI prompt templates MUST NOT contain executable logic
 
 ### Cross-Domain References
 

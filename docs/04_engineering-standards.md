@@ -198,6 +198,79 @@ DROP TABLE IF EXISTS document;
 }
 ```
 
+### Async Task API Standard
+
+Long-running operations (document upload, batch processing) MUST follow this pattern:
+
+**Initiation:**
+```
+POST /api/v1/documents/upload
+→ 202 Accepted
+{
+  "success": true,
+  "data": {
+    "job_id": "job_abc123",
+    "status": "pending",
+    "poll_url": "/api/v1/jobs/job_abc123"
+  }
+}
+```
+
+**Polling:**
+```
+GET /api/v1/jobs/{job_id}
+→ 200 OK
+{
+  "success": true,
+  "data": {
+    "job_id": "job_abc123",
+    "status": "running",
+    "stages": [
+      {"name": "parsing", "status": "success", "elapsed_ms": 1234},
+      {"name": "chunking", "status": "running", "elapsed_ms": 567}
+    ],
+    "progress_pct": 60
+  }
+}
+```
+
+**Rules:**
+- ✅ Return 202 Accepted (never block on long tasks)
+- ✅ Include job_id in response
+- ✅ Include poll_url for status checking
+- ✅ Status endpoint returns stage-level progress
+- ❌ Never return 200 for an operation that will take >5s
+
+### AI Consumer API Standard
+
+Endpoints consumed by AI agents MUST follow these additional rules:
+
+**Context Block Format:**
+- All knowledge responses include context blocks (see `08_ai-consumer-contract.md`)
+- Every context block includes: content, citation, confidence, trust_level, token_count
+- Phase 1: confidence may be null, trust_level defaults to L4
+
+**Token Counting:**
+- All knowledge responses include `token_count` per block
+- Token count is computed server-side
+- Aggregated `total_tokens_used` in response metadata
+
+**Confidence Required (Phase 2+):**
+- All knowledge responses include confidence scores (0.0-1.0)
+- No knowledge delivered without confidence annotation
+
+### API Version Stability
+
+**v1 Stability Promise:**
+- No breaking changes to v1 endpoints once released
+- Additive changes (new fields, new endpoints) are allowed
+- Breaking changes require new version (v2) with deprecation period
+
+**Deprecation Policy:**
+- Deprecated endpoints are marked with `Deprecation` header
+- Deprecated endpoints remain functional for at least 3 months
+- Migration guide provided for each deprecation
+
 ### Pagination
 
 All list endpoints must support:
@@ -409,6 +482,16 @@ database_config      # Database connection settings
 ❌ Using verbs in endpoint names
 ❌ Omitting version prefix
 ❌ Returning unbounded result sets
+```
+
+### AI Consumer Practices
+
+```
+❌ Delivering knowledge to AI without confidence scores (Phase 2+)
+❌ Exceeding the requested token budget in responses
+❌ Blocking on long-running tasks (must use async pattern)
+❌ Returning context blocks without citations
+❌ Omitting token_count from context blocks
 ```
 
 ## Code Quality Checklist
