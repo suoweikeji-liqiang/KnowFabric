@@ -48,6 +48,8 @@ This directory contains the governance and standards documentation for KnowFabri
 14. **[12_domain-package-v2-migration-checklist.md](12_domain-package-v2-migration-checklist.md)** - Legacy-to-v2 package migration checklist
 15. **[13_rebuild-storage-contract.md](13_rebuild-storage-contract.md)** - Draft storage contract for ontology anchors and knowledge objects
 16. **[14_semantic-api-mcp-contract.md](14_semantic-api-mcp-contract.md)** - Draft semantic REST and MCP delivery contracts
+17. **[15_manual-validation-round1.md](15_manual-validation-round1.md)** - First manual-driven validation note for module-unit HVAC manuals
+18. **[16_manual-validation-drive-round1.md](16_manual-validation-drive-round1.md)** - First manual-driven validation note for VFD manuals
 
 ---
 
@@ -83,6 +85,8 @@ These documents govern the ontology-first rebuild track:
 - **12_domain-package-v2-migration-checklist.md** - File-by-file migration checklist for legacy packages
 - **13_rebuild-storage-contract.md** - Proposed additive storage model for ontology-first persistence
 - **14_semantic-api-mcp-contract.md** - Proposed read-only semantic REST and MCP contract set
+- **15_manual-validation-round1.md** - Findings from the first real-manual validation round
+- **16_manual-validation-drive-round1.md** - Findings from the first real VFD manual validation round
 
 ### Standards Documents
 

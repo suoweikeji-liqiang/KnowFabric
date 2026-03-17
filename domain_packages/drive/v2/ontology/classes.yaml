@@ -34,6 +34,8 @@ classes:
       - wiring_guidance
       - maintenance_procedure
       - application_guidance
+      - symptom
+      - diagnostic_step
 
   - id: frequency_converter
     label:
@@ -51,6 +53,8 @@ classes:
       - wiring_guidance
       - maintenance_procedure
       - application_guidance
+      - symptom
+      - diagnostic_step
 
   - id: motor_controller
     label:

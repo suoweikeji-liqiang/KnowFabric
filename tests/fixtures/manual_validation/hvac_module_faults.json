@@ -1,0 +1,245 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "air_cooled_modular_heat_pump",
+  "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+  "manual_entries": [
+    {
+      "knowledge_object_id": "ko_aux_e01",
+      "canonical_key": "E01",
+      "title": "AUX E01 Water Flow Switch Protection",
+      "summary": "Water flow switch protection stops module compressors and may lock after repeated occurrences.",
+      "structured_payload": {
+        "fault_code": "E01",
+        "fault_name": "Water Flow Switch Protection",
+        "trigger_condition": "Protection switch open",
+        "recommended_actions": [
+          "Check the water flow switch",
+          "Check linked pump status and wiring"
+        ]
+      },
+      "applicability": {
+        "brand": "AUX",
+        "model_family": "X Module Unit"
+      },
+      "confidence_score": 0.93,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_aux_module_faults",
+        "file_name": "AUX Central AC Fault Codes (Modular and VRF).pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_aux_module_faults_3",
+        "page_no": 3,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_aux_module_faults_e01",
+        "chunk_index": 0,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "Water flow switch protection; protection switch open; stop compressors; repeated occurrences lock the fault.",
+        "text_excerpt": "E01 water flow switch protection"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_aux_e01",
+        "evidence_role": "primary",
+        "evidence_text": "水流量开关保护 保护开关断开 E01"
+      },
+      "source_manual": {
+        "path": "/Users/asteroida/a00238/11、奥克斯/【奥克斯】中央空调故障代码(模块机、多联机).pdf",
+        "page_no": 3
+      }
+    },
+    {
+      "knowledge_object_id": "ko_aux_e22",
+      "canonical_key": "E22",
+      "title": "AUX E22 High Pressure Switch Protection",
+      "summary": "High pressure switch protection stops the affected module compressor and locks after repeated occurrences.",
+      "structured_payload": {
+        "fault_code": "E22",
+        "fault_name": "High Pressure Switch Protection",
+        "trigger_condition": "Protection switch open",
+        "recommended_actions": [
+          "Inspect high-pressure switch state",
+          "Check condenser airflow and refrigerant side restrictions"
+        ]
+      },
+      "applicability": {
+        "brand": "AUX",
+        "model_family": "X Module Unit"
+      },
+      "confidence_score": 0.92,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_aux_module_faults",
+        "file_name": "AUX Central AC Fault Codes (Modular and VRF).pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_aux_module_faults_4",
+        "page_no": 4,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_aux_module_faults_e22",
+        "chunk_index": 1,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "High pressure switch protection; protection switch open; stop the affected compressor; repeated occurrences lock the fault.",
+        "text_excerpt": "E22 high pressure switch protection"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_aux_e22",
+        "evidence_role": "primary",
+        "evidence_text": "高压压力开关保护 保护开关断开 E22"
+      },
+      "source_manual": {
+        "path": "/Users/asteroida/a00238/11、奥克斯/【奥克斯】中央空调故障代码(模块机、多联机).pdf",
+        "page_no": 4
+      }
+    },
+    {
+      "knowledge_object_id": "ko_aux_e23",
+      "canonical_key": "E23",
+      "title": "AUX E23 Low Pressure Switch Protection",
+      "summary": "Low pressure switch protection stops the affected module compressor and locks after repeated occurrences.",
+      "structured_payload": {
+        "fault_code": "E23",
+        "fault_name": "Low Pressure Switch Protection",
+        "trigger_condition": "Protection switch open",
+        "recommended_actions": [
+          "Inspect low-pressure switch state",
+          "Check refrigerant charge and expansion valve condition"
+        ]
+      },
+      "applicability": {
+        "brand": "AUX",
+        "model_family": "X Module Unit"
+      },
+      "confidence_score": 0.92,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_aux_module_faults",
+        "file_name": "AUX Central AC Fault Codes (Modular and VRF).pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_aux_module_faults_4",
+        "page_no": 4,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_aux_module_faults_e23",
+        "chunk_index": 2,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "Low pressure switch protection; protection switch open; stop the affected compressor; repeated occurrences lock the fault.",
+        "text_excerpt": "E23 low pressure switch protection"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_aux_e23",
+        "evidence_role": "primary",
+        "evidence_text": "低压压力开关保护 保护开关断开 E23"
+      },
+      "source_manual": {
+        "path": "/Users/asteroida/a00238/11、奥克斯/【奥克斯】中央空调故障代码(模块机、多联机).pdf",
+        "page_no": 4
+      }
+    },
+    {
+      "knowledge_object_id": "ko_guoxiang_49",
+      "canonical_key": "49",
+      "title": "Guoxiang 49 1#/3# Compressor High Pressure",
+      "summary": "Fault code 49 indicates high pressure for compressor group 1#/3# on the modular unit.",
+      "structured_payload": {
+        "fault_code": "49",
+        "fault_name": "1#/3# Compressor High Pressure",
+        "recommended_actions": [
+          "Investigate high-pressure causes listed in the manual",
+          "Clear the high-pressure trip cause before restart"
+        ]
+      },
+      "applicability": {
+        "brand": "Guoxiang",
+        "model_family": "KMS"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_guoxiang_kms_manual",
+        "file_name": "Guoxiang KMS Modular Unit User Manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_guoxiang_kms_48",
+        "page_no": 48,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_guoxiang_kms_49",
+        "chunk_index": 0,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "Fault code 49 for 1#/3# compressor high pressure on the modular unit.",
+        "text_excerpt": "49 1#/3# compressor high pressure"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_guoxiang_49",
+        "evidence_role": "primary",
+        "evidence_text": "49 1# / 3#压机高压"
+      },
+      "source_manual": {
+        "path": "/Users/asteroida/a00238/21、国祥/【国祥】KMS模块机操作用户手册-20RT30RT40RT（56页）.pdf",
+        "page_no": 48
+      }
+    },
+    {
+      "knowledge_object_id": "ko_guoxiang_50",
+      "canonical_key": "50",
+      "title": "Guoxiang 50 1#/3# Compressor Overload",
+      "summary": "Fault code 50 indicates overload for compressor group 1#/3# on the modular unit.",
+      "structured_payload": {
+        "fault_code": "50",
+        "fault_name": "1#/3# Compressor Overload",
+        "recommended_actions": [
+          "Check supply voltage and phase balance",
+          "Inspect compressor electrical protection and pressure conditions"
+        ]
+      },
+      "applicability": {
+        "brand": "Guoxiang",
+        "model_family": "KMS"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_guoxiang_kms_manual",
+        "file_name": "Guoxiang KMS Modular Unit User Manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_guoxiang_kms_48",
+        "page_no": 48,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_guoxiang_kms_50",
+        "chunk_index": 1,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "Fault code 50 for 1#/3# compressor overload on the modular unit.",
+        "text_excerpt": "50 1#/3# compressor overload"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_guoxiang_50",
+        "evidence_role": "primary",
+        "evidence_text": "50 1# / 3#压机过载"
+      },
+      "source_manual": {
+        "path": "/Users/asteroida/a00238/21、国祥/【国祥】KMS模块机操作用户手册-20RT30RT40RT（56页）.pdf",
+        "page_no": 48
+      }
+    }
+  ]
+}

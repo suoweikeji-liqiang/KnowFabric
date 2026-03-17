@@ -21,6 +21,7 @@ def test_hvac_v2_package_loads() -> None:
     assert bundle.package.domain_id == "hvac"
     assert bundle.package.package_version == "2.0.0-alpha"
     assert "centrifugal_chiller" in class_ids
+    assert "air_cooled_modular_heat_pump" in class_ids
     assert "project_a_chiller_01" not in class_ids
 
 

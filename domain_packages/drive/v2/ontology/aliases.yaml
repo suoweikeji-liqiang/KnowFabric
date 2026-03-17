@@ -5,9 +5,13 @@ aliases:
         - variable frequency drive
         - vfd
         - inverter drive
+        - hvac drive
+        - flow drive
       zh:
         - 变频驱动器
         - 变频器
+        - 暖通变频器
+        - 流体变频器
 
   - canonical_id: frequency_converter
     terms:

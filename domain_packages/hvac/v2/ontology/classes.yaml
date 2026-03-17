@@ -47,6 +47,42 @@ classes:
       - maintenance_procedure
       - performance_spec
 
+  - id: modular_chiller
+    label:
+      en: Modular Chiller
+      zh: 模块式冷水机组
+    parent_id: chiller
+    kind: equipment
+    aliases:
+      - modular chiller
+      - modular unit
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+      - diagnostic_step
+
+  - id: air_cooled_modular_heat_pump
+    label:
+      en: Air-Cooled Modular Heat Pump Unit
+      zh: 风冷冷热水模块机组
+    parent_id: modular_chiller
+    kind: equipment
+    aliases:
+      - air-cooled modular heat pump
+      - air-cooled modular unit
+      - modular air-cooled chiller
+      - modular heat pump unit
+      - module machine
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+      - symptom
+      - diagnostic_step
+
   - id: pump
     label:
       en: Pump
