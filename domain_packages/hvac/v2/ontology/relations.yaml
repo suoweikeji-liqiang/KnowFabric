@@ -1,0 +1,49 @@
+relations:
+  - id: has_component
+    label:
+      en: Has Component
+      zh: 具有部件
+    family: composition
+    description: Equipment classes may be composed of one or more component classes.
+
+  - id: applies_to
+    label:
+      en: Applies To
+      zh: 适用于
+    family: applicability
+    description: Knowledge objects apply to a canonical equipment class.
+
+  - id: indicates
+    label:
+      en: Indicates
+      zh: 指示
+    family: diagnostic_causality
+    description: A fault code or symptom can indicate another knowledge object.
+
+  - id: causes
+    label:
+      en: Causes
+      zh: 导致
+    family: diagnostic_causality
+    description: A symptom or condition can cause another symptom or fault state.
+
+  - id: may_cause
+    label:
+      en: May Cause
+      zh: 可能导致
+    family: diagnostic_causality
+    description: A probabilistic causal relationship used for troubleshooting paths.
+
+  - id: requires
+    label:
+      en: Requires
+      zh: 需要
+    family: maintenance_dependency
+    description: A maintenance or diagnostic action requires another action or prerequisite.
+
+  - id: same_as_standard_class
+    label:
+      en: Same As Standard Class
+      zh: 对应标准类
+    family: standard_mapping
+    description: Canonical class interoperates with an external standard identifier.

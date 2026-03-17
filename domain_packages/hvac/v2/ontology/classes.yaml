@@ -1,0 +1,253 @@
+classes:
+  - id: chiller
+    label:
+      en: Chiller
+      zh: 冷水机组
+    kind: equipment
+    external_mappings:
+      brick: brick:Chiller
+    aliases:
+      - chiller
+      - chilled water machine
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+
+  - id: centrifugal_chiller
+    label:
+      en: Centrifugal Chiller
+      zh: 离心式冷水机组
+    parent_id: chiller
+    kind: equipment
+    external_mappings:
+      brick: brick:Centrifugal_Chiller
+    aliases:
+      - centrifugal chiller
+      - turbo chiller
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+
+  - id: screw_chiller
+    label:
+      en: Screw Chiller
+      zh: 螺杆式冷水机组
+    parent_id: chiller
+    kind: equipment
+    aliases:
+      - screw chiller
+      - rotary screw chiller
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+
+  - id: pump
+    label:
+      en: Pump
+      zh: 泵
+    kind: equipment
+    external_mappings:
+      brick: brick:Pump
+    aliases:
+      - pump
+    knowledge_anchors:
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+
+  - id: chilled_water_pump
+    label:
+      en: Chilled Water Pump
+      zh: 冷冻水泵
+    parent_id: pump
+    kind: equipment
+    aliases:
+      - chilled water pump
+      - chw pump
+    knowledge_anchors:
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+
+  - id: condenser_water_pump
+    label:
+      en: Condenser Water Pump
+      zh: 冷却水泵
+    parent_id: pump
+    kind: equipment
+    aliases:
+      - condenser water pump
+      - cdw pump
+    knowledge_anchors:
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+
+  - id: cooling_tower
+    label:
+      en: Cooling Tower
+      zh: 冷却塔
+    kind: equipment
+    external_mappings:
+      brick: brick:Cooling_Tower
+    aliases:
+      - cooling tower
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+
+  - id: ahu
+    label:
+      en: Air Handling Unit
+      zh: 空气处理机组
+    kind: equipment
+    external_mappings:
+      brick: brick:AHU
+    aliases:
+      - ahu
+      - air handling unit
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+
+  - id: vrf_system
+    label:
+      en: Variable Refrigerant Flow System
+      zh: 多联机系统
+    kind: equipment
+    aliases:
+      - vrf system
+      - vrv system
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - maintenance_procedure
+      - performance_spec
+
+  - id: valve
+    label:
+      en: Valve
+      zh: 阀门
+    kind: equipment
+    external_mappings:
+      brick: brick:Valve
+    aliases:
+      - valve
+      - control valve
+    knowledge_anchors:
+      - parameter_spec
+      - maintenance_procedure
+
+  - id: sensor
+    label:
+      en: Sensor
+      zh: 传感器
+    kind: equipment
+    external_mappings:
+      brick: brick:Sensor
+    aliases:
+      - sensor
+      - field sensor
+    knowledge_anchors:
+      - parameter_spec
+      - performance_spec
+
+  - id: controller
+    label:
+      en: Controller
+      zh: 控制器
+    kind: equipment
+    external_mappings:
+      brick: brick:Controller
+    aliases:
+      - controller
+      - ddc controller
+    knowledge_anchors:
+      - parameter_spec
+      - performance_spec
+
+  - id: compressor
+    label:
+      en: Compressor
+      zh: 压缩机
+    kind: component
+    aliases:
+      - compressor
+    knowledge_anchors:
+      - maintenance_procedure
+      - performance_spec
+
+  - id: heat_exchanger
+    label:
+      en: Heat Exchanger
+      zh: 换热器
+    kind: component
+    aliases:
+      - heat exchanger
+    knowledge_anchors:
+      - maintenance_procedure
+      - performance_spec
+
+  - id: fault_code
+    label:
+      en: Fault Code
+      zh: 故障代码
+    kind: concept
+    aliases:
+      - fault code
+      - alarm code
+
+  - id: parameter_spec
+    label:
+      en: Parameter Specification
+      zh: 参数规范
+    kind: concept
+    aliases:
+      - parameter specification
+      - parameter setting
+
+  - id: maintenance_procedure
+    label:
+      en: Maintenance Procedure
+      zh: 维护规程
+    kind: concept
+    aliases:
+      - maintenance procedure
+      - service procedure
+
+  - id: performance_spec
+    label:
+      en: Performance Specification
+      zh: 性能规范
+    kind: concept
+    aliases:
+      - performance specification
+      - performance rating
+
+  - id: symptom
+    label:
+      en: Symptom
+      zh: 故障现象
+    kind: concept
+    aliases:
+      - symptom
+      - observed issue
+
+  - id: diagnostic_step
+    label:
+      en: Diagnostic Step
+      zh: 诊断步骤
+    kind: concept
+    aliases:
+      - diagnostic step
+      - troubleshooting step

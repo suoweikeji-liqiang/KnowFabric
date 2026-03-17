@@ -1,0 +1,18 @@
+confidence_rules:
+  - knowledge_object_type: fault_code
+    default_confidence: 0.85
+    evidence_preference:
+      - fault table
+      - alarm reference
+
+  - knowledge_object_type: parameter_spec
+    default_confidence: 0.8
+    evidence_preference:
+      - parameter table
+      - settings section
+
+  - knowledge_object_type: maintenance_procedure
+    default_confidence: 0.75
+    evidence_preference:
+      - maintenance chapter
+      - service bulletin

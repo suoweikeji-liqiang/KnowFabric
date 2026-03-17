@@ -1,0 +1,15 @@
+relations:
+  - relation_id: applies_to
+    source_type: knowledge_object
+    target_type: equipment_class
+    description: Link every extracted knowledge object to a canonical equipment anchor.
+
+  - relation_id: indicates
+    source_type: fault_code
+    target_type: symptom
+    description: Diagnostic relation for fault tables and troubleshooting trees.
+
+  - relation_id: requires
+    source_type: maintenance_procedure
+    target_type: diagnostic_step
+    description: Sequence relation between maintenance actions and prerequisite checks.

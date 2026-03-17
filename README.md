@@ -2,6 +2,14 @@
 
 **Embeddable Knowledge Engineering Engine for Industrial Domains**
 
+KnowFabric is entering a rebuild track to become an ontology-first domain knowledge authority and publishing engine for industrial equipment knowledge.
+
+Rebuild entry points:
+
+- [ADR-0003](docs/adr/0003-promote-knowfabric-to-domain-knowledge-authority.md)
+- [Ontology Authority Architecture](docs/09_ontology-authority-architecture.md)
+- [Rebuild Plan](docs/10_rebuild-plan.md)
+
 ## What KnowFabric Is
 
 KnowFabric is an embeddable knowledge engineering engine that transforms raw technical documentation into structured, traceable knowledge assets through a mandatory six-layer data pipeline, and delivers them via integration APIs to AI agents, developers, and applications.

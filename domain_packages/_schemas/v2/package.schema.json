@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowfabric.dev/schemas/domain-package-v2/package.schema.json",
+  "title": "KnowFabric Domain Package V2 Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "domain_id",
+    "domain_name",
+    "package_version",
+    "ontology_version",
+    "supported_languages",
+    "supported_knowledge_objects",
+    "maintainers"
+  ],
+  "properties": {
+    "domain_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "domain_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "package_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ontology_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supported_languages": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "supported_knowledge_objects": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      }
+    },
+    "maintainers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "email": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

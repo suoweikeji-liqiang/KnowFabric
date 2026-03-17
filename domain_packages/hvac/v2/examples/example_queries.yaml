@@ -1,0 +1,12 @@
+examples:
+  - id: chiller_fault_lookup
+    query: fault knowledge for centrifugal_chiller code E01
+    expected_contract: fault_knowledge_by_equipment_class
+
+  - id: pump_parameter_profile
+    query: parameter profile for chilled_water_pump start stop settings
+    expected_contract: parameter_profile_by_equipment_class
+
+  - id: tower_maintenance_guidance
+    query: maintenance guidance for cooling_tower basin cleaning
+    expected_contract: maintenance_guidance_by_equipment_class

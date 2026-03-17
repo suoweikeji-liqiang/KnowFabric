@@ -1,0 +1,10 @@
+brands:
+  priority:
+    - ABB
+    - Siemens
+    - Schneider
+
+  initial_focus:
+    - ABB ACS880
+    - ABB ACH580
+    - Siemens G120

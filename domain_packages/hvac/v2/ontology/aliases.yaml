@@ -1,0 +1,31 @@
+aliases:
+  - canonical_id: chiller
+    terms:
+      en:
+        - chiller
+        - chilled water machine
+      zh:
+        - 冷水机组
+
+  - canonical_id: centrifugal_chiller
+    terms:
+      en:
+        - centrifugal chiller
+        - turbo chiller
+      zh:
+        - 离心式冷水机组
+
+  - canonical_id: chilled_water_pump
+    terms:
+      en:
+        - chilled water pump
+        - chw pump
+      zh:
+        - 冷冻水泵
+
+  - canonical_id: cooling_tower
+    terms:
+      en:
+        - cooling tower
+      zh:
+        - 冷却塔

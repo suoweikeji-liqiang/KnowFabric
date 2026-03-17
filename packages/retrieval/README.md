@@ -16,6 +16,7 @@ Search and retrieval module for querying chunks.
 ## Components
 
 - `service.py` - RetrievalService for chunk search
+- `semantic_service.py` - Rebuild-track ontology metadata read helpers
 
 ## Usage
 

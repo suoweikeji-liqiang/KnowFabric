@@ -8,6 +8,22 @@ KnowFabric is an embeddable knowledge engineering engine for industrial domains.
 
 The project is in early Phase 1, focused on: the minimal traceable "main chain" (Document → Page → Chunk → Retrieval), integration API baseline, MCP Server baseline, and Docker deployment. Fact extraction, review workflows, graph reasoning, AI-optimized delivery, SDK, and admin UI are explicitly out of scope for Phase 1.
 
+## Rebuild Track Note
+
+The repository also has an approved ontology-first rebuild track. If the task is about the rebuild, read these first and treat them as the active direction:
+
+- `docs/adr/0003-promote-knowfabric-to-domain-knowledge-authority.md`
+- `docs/09_ontology-authority-architecture.md`
+- `docs/10_rebuild-plan.md`
+- `docs/11_rebuild-session-kickoff.md`
+
+On the rebuild track:
+
+- preserve the six-layer evidence discipline
+- keep project-instance/runtime modeling out of KnowFabric
+- prefer `v2` package structures beside legacy files before deleting legacy files
+- use legacy Phase 1 docs as baseline context, not as the target end-state
+
 ## Commands
 
 ```bash

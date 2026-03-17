@@ -1,0 +1,16 @@
+terminology:
+  equipment_class_id:
+    chiller:
+      en: Chiller
+      zh: 冷水机组
+    cooling_tower:
+      en: Cooling Tower
+      zh: 冷却塔
+
+  knowledge_object_type:
+    fault_code:
+      en: Fault Code
+      zh: 故障代码
+    maintenance_procedure:
+      en: Maintenance Procedure
+      zh: 维护规程

@@ -19,3 +19,5 @@ Each ADR follows this structure:
 ## Index
 
 - [ADR-0001](0001-repo-governance-and-platform-shape.md) - Repository governance and platform shape
+- [ADR-0002](0002-repositioning-as-embeddable-engine.md) - Repositioning as embeddable knowledge engineering engine
+- [ADR-0003](0003-promote-knowfabric-to-domain-knowledge-authority.md) - Promote KnowFabric to domain knowledge authority and ontology owner

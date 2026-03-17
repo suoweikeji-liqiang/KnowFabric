@@ -1,0 +1,12 @@
+entities:
+  - canonical_class_id: variable_frequency_drive
+    extraction_role: equipment_class
+    description: Canonical equipment class anchor for ABB, Siemens, and similar drive documents.
+
+  - canonical_class_id: fault_code
+    extraction_role: knowledge_object
+    description: Knowledge object extracted from alarm tables and troubleshooting sections.
+
+  - canonical_class_id: parameter_spec
+    extraction_role: knowledge_object
+    description: Knowledge object extracted from parameter groups and settings tables.

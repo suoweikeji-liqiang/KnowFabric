@@ -31,13 +31,23 @@ This directory contains the governance and standards documentation for KnowFabri
    - What Phase 1 must NOT deliver
    - Definition of done
 
+**If you are working on the rebuild track, read next:**
+
+5. **[adr/0003-promote-knowfabric-to-domain-knowledge-authority.md](adr/0003-promote-knowfabric-to-domain-knowledge-authority.md)** - Why KnowFabric is being rebuilt as an ontology-first product
+6. **[09_ontology-authority-architecture.md](09_ontology-authority-architecture.md)** - Target architecture and ownership boundaries
+7. **[10_rebuild-plan.md](10_rebuild-plan.md)** - Execution plan and workstream sequencing
+
 **Then read:**
 
-5. **[05_phase-plan.md](05_phase-plan.md)** - Phase delivery contracts
-6. **[06_quality-gates.md](06_quality-gates.md)** - Quality gate specifications
-7. **[03_domain-package-spec.md](03_domain-package-spec.md)** - Domain package structure
-8. **[04_engineering-standards.md](04_engineering-standards.md)** - Coding conventions
-9. **[08_ai-consumer-contract.md](08_ai-consumer-contract.md)** - AI consumer interface contract
+8. **[05_phase-plan.md](05_phase-plan.md)** - Legacy phase delivery contracts
+9. **[06_quality-gates.md](06_quality-gates.md)** - Quality gate specifications
+10. **[03_domain-package-spec.md](03_domain-package-spec.md)** - Legacy domain package structure
+11. **[04_engineering-standards.md](04_engineering-standards.md)** - Coding conventions
+12. **[08_ai-consumer-contract.md](08_ai-consumer-contract.md)** - AI consumer interface contract
+13. **[11_rebuild-session-kickoff.md](11_rebuild-session-kickoff.md)** - Recommended prompt and startup checklist for new rebuild sessions
+14. **[12_domain-package-v2-migration-checklist.md](12_domain-package-v2-migration-checklist.md)** - Legacy-to-v2 package migration checklist
+15. **[13_rebuild-storage-contract.md](13_rebuild-storage-contract.md)** - Draft storage contract for ontology anchors and knowledge objects
+16. **[14_semantic-api-mcp-contract.md](14_semantic-api-mcp-contract.md)** - Draft semantic REST and MCP delivery contracts
 
 ---
 
@@ -60,6 +70,19 @@ These documents define delivery expectations:
 
 - **05_phase-plan.md** - Phase acceptance criteria
 - **07_phase1-implementation-contract.md** - Phase 1 boundaries
+- **10_rebuild-plan.md** - Rebuild-track execution plan
+
+### Rebuild Architecture
+
+These documents govern the ontology-first rebuild track:
+
+- **adr/0003-promote-knowfabric-to-domain-knowledge-authority.md** - Rebuild decision and product boundary
+- **09_ontology-authority-architecture.md** - Target architecture for ontology-first KnowFabric
+- **10_rebuild-plan.md** - Workstream-based execution plan
+- **11_rebuild-session-kickoff.md** - Session startup guide and reusable kickoff prompt
+- **12_domain-package-v2-migration-checklist.md** - File-by-file migration checklist for legacy packages
+- **13_rebuild-storage-contract.md** - Proposed additive storage model for ontology-first persistence
+- **14_semantic-api-mcp-contract.md** - Proposed read-only semantic REST and MCP contract set
 
 ### Standards Documents
 

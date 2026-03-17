@@ -1,0 +1,25 @@
+aliases:
+  - canonical_id: variable_frequency_drive
+    terms:
+      en:
+        - variable frequency drive
+        - vfd
+        - inverter drive
+      zh:
+        - 变频驱动器
+        - 变频器
+
+  - canonical_id: frequency_converter
+    terms:
+      en:
+        - frequency converter
+        - converter
+      zh:
+        - 变频器
+
+  - canonical_id: soft_starter
+    terms:
+      en:
+        - soft starter
+      zh:
+        - 软启动器

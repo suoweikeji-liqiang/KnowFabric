@@ -14,6 +14,8 @@ Core domain models, interfaces, and shared utilities for KnowFabric.
 
 - `config.py` - Application configuration
 - `logging.py` - Structured logging setup
+- `models.py` - Legacy chunk-search response models
+- `semantic_contract_v2.py` - Draft rebuild-track semantic API and MCP contracts
 
 ## Module Boundaries
 

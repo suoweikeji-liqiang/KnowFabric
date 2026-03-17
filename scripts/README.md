@@ -14,6 +14,8 @@ Utility scripts and quality gate checks.
 - Database migration scripts
 - Data import/export utilities
 - Development helpers
+- `validate_domain_package_v2.py` - Validate rebuild-track ontology packages
+- `sync_ontology_package_v2.py` - Sync ontology package metadata into additive rebuild tables
 
 ## Usage
 

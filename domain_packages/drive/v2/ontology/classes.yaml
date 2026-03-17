@@ -1,0 +1,177 @@
+classes:
+  - id: drive
+    label:
+      en: Drive
+      zh: 驱动器
+    kind: equipment
+    aliases:
+      - drive
+      - motor drive
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - commissioning_step
+      - wiring_guidance
+      - maintenance_procedure
+      - application_guidance
+
+  - id: variable_frequency_drive
+    label:
+      en: Variable Frequency Drive
+      zh: 变频驱动器
+    parent_id: drive
+    kind: equipment
+    external_mappings:
+      brick: brick:Variable_Frequency_Drive
+    aliases:
+      - variable frequency drive
+      - vfd
+      - inverter drive
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - commissioning_step
+      - wiring_guidance
+      - maintenance_procedure
+      - application_guidance
+
+  - id: frequency_converter
+    label:
+      en: Frequency Converter
+      zh: 变频器
+    parent_id: drive
+    kind: equipment
+    aliases:
+      - frequency converter
+      - converter
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - commissioning_step
+      - wiring_guidance
+      - maintenance_procedure
+      - application_guidance
+
+  - id: motor_controller
+    label:
+      en: Motor Controller
+      zh: 电机控制器
+    parent_id: drive
+    kind: equipment
+    aliases:
+      - motor controller
+    knowledge_anchors:
+      - parameter_spec
+      - commissioning_step
+      - wiring_guidance
+      - maintenance_procedure
+
+  - id: soft_starter
+    label:
+      en: Soft Starter
+      zh: 软启动器
+    parent_id: drive
+    kind: equipment
+    aliases:
+      - soft starter
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - commissioning_step
+      - wiring_guidance
+      - maintenance_procedure
+
+  - id: braking_resistor
+    label:
+      en: Braking Resistor
+      zh: 制动电阻
+    kind: component
+    aliases:
+      - braking resistor
+    knowledge_anchors:
+      - wiring_guidance
+      - maintenance_procedure
+
+  - id: keypad
+    label:
+      en: Keypad
+      zh: 操作面板
+    kind: component
+    aliases:
+      - keypad
+      - operator panel
+    knowledge_anchors:
+      - parameter_spec
+      - commissioning_step
+
+  - id: fault_code
+    label:
+      en: Fault Code
+      zh: 故障代码
+    kind: concept
+    aliases:
+      - fault code
+      - alarm code
+
+  - id: parameter_spec
+    label:
+      en: Parameter Specification
+      zh: 参数规范
+    kind: concept
+    aliases:
+      - parameter specification
+      - parameter setting
+
+  - id: commissioning_step
+    label:
+      en: Commissioning Step
+      zh: 调试步骤
+    kind: concept
+    aliases:
+      - commissioning step
+      - startup step
+
+  - id: wiring_guidance
+    label:
+      en: Wiring Guidance
+      zh: 接线指导
+    kind: concept
+    aliases:
+      - wiring guidance
+      - wiring instruction
+
+  - id: maintenance_procedure
+    label:
+      en: Maintenance Procedure
+      zh: 维护规程
+    kind: concept
+    aliases:
+      - maintenance procedure
+      - service procedure
+
+  - id: application_guidance
+    label:
+      en: Application Guidance
+      zh: 应用指导
+    kind: concept
+    aliases:
+      - application guidance
+      - application note
+
+  - id: symptom
+    label:
+      en: Symptom
+      zh: 故障现象
+    kind: concept
+    aliases:
+      - symptom
+      - observed issue
+
+  - id: diagnostic_step
+    label:
+      en: Diagnostic Step
+      zh: 诊断步骤
+    kind: concept
+    aliases:
+      - diagnostic step
+      - troubleshooting step

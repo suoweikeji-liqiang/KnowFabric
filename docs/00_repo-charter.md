@@ -3,6 +3,8 @@
 **Status:** Governance Document - Binding Contract
 **Last Updated:** 2026-03-13
 
+> Rebuild note: the approved ontology-first reboot is defined in [ADR-0003](adr/0003-promote-knowfabric-to-domain-knowledge-authority.md), [09_ontology-authority-architecture.md](09_ontology-authority-architecture.md), and [10_rebuild-plan.md](10_rebuild-plan.md). This charter remains the baseline contract for the current foundation until the rebuild replaces it.
+
 ## What KnowFabric Is
 
 KnowFabric is an embeddable knowledge engineering engine for industrial domains. It transforms raw technical documentation into structured, traceable knowledge assets through a mandatory six-layer data pipeline, and delivers them via integration APIs to three classes of consumers.
