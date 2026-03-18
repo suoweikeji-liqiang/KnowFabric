@@ -1,4 +1,4 @@
-"""Manual-backed validation for drive fault knowledge delivery."""
+"""Manual-backed validation for the semantic parameter profile route."""
 
 import sys
 from pathlib import Path
@@ -32,7 +32,7 @@ from scripts import seed_manual_validation_fixtures as seed_script
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DRIVE_V2_ROOT = REPO_ROOT / "domain_packages/drive/v2"
-MANUAL_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_vfd_faults.json"
+MANUAL_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_parameter_profiles.json"
 
 
 def _build_client() -> tuple[TestClient, sessionmaker]:
@@ -79,7 +79,8 @@ def _seed_drive_ontology(session_factory: sessionmaker) -> None:
     finally:
         db.close()
 
-def _seed_drive_manual_fault_entries(session_factory: sessionmaker) -> None:
+
+def _seed_manual_parameter_entries(session_factory: sessionmaker) -> None:
     original_session_local = seed_script.SessionLocal
     try:
         seed_script.SessionLocal = session_factory
@@ -88,50 +89,29 @@ def _seed_drive_manual_fault_entries(session_factory: sessionmaker) -> None:
         seed_script.SessionLocal = original_session_local
 
 
-def test_drive_manual_validation_route_for_abb_fault() -> None:
-    """ABB ACH531 fieldbus fault should resolve via the semantic route."""
+def test_manual_validation_parameter_route_for_siemens_temperature_thresholds() -> None:
+    """Manual-backed Siemens parameter entries should resolve via parameter-profiles."""
 
     client, session_factory = _build_client()
     try:
         _seed_drive_ontology(session_factory)
-        _seed_drive_manual_fault_entries(session_factory)
+        _seed_manual_parameter_entries(session_factory)
         response = client.get(
-            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
-            "?fault_code=A7C1&brand=ABB"
+            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/parameter-profiles"
+            "?parameter_category=temperature_protection&brand=Siemens"
         )
         payload = response.json()
 
         assert response.status_code == 200
-        assert payload["data"]["equipment_class"]["equipment_class_id"] == "variable_frequency_drive"
-        assert payload["data"]["items"][0]["canonical_key"] == "A7C1"
-        assert payload["data"]["items"][0]["structured_payload"]["fault_name"] == "Fieldbus Adapter A Communication"
-        assert payload["data"]["items"][0]["evidence"][0]["page_no"] == 133
-    finally:
-        app.dependency_overrides.clear()
-
-
-def test_drive_manual_validation_route_for_siemens_fault() -> None:
-    """Siemens G120XA motor overtemperature fault should resolve via the same class id."""
-
-    client, session_factory = _build_client()
-    try:
-        _seed_drive_ontology(session_factory)
-        _seed_drive_manual_fault_entries(session_factory)
-        response = client.get(
-            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
-            "?fault_code=F07011&brand=Siemens"
-        )
-        payload = response.json()
-
-        assert response.status_code == 200
-        assert payload["data"]["items"][0]["canonical_key"] == "F07011"
-        assert payload["data"]["items"][0]["structured_payload"]["fault_name"] == "Motor Overtemperature Fault"
-        assert payload["data"]["items"][0]["evidence"][0]["page_no"] == 400
+        assert len(payload["data"]["items"]) == 2
+        assert {item["canonical_key"] for item in payload["data"]["items"]} == {
+            "p0604_motor_temperature_alarm_threshold",
+            "p0605_motor_temperature_fault_threshold",
+        }
     finally:
         app.dependency_overrides.clear()
 
 
 if __name__ == "__main__":
-    test_drive_manual_validation_route_for_abb_fault()
-    test_drive_manual_validation_route_for_siemens_fault()
-    print("Drive manual-backed fault knowledge validation checks passed")
+    test_manual_validation_parameter_route_for_siemens_temperature_thresholds()
+    print("Manual-backed parameter profile validation checks passed")

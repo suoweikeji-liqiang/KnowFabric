@@ -1,4 +1,4 @@
-"""Manual-backed validation for drive fault knowledge delivery."""
+"""Manual-backed validation for the semantic maintenance guidance route."""
 
 import sys
 from pathlib import Path
@@ -31,8 +31,8 @@ from packages.domain_kit_v2.projection import (
 from scripts import seed_manual_validation_fixtures as seed_script
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DRIVE_V2_ROOT = REPO_ROOT / "domain_packages/drive/v2"
-MANUAL_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_vfd_faults.json"
+HVAC_V2_ROOT = REPO_ROOT / "domain_packages/hvac/v2"
+MANUAL_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_maintenance_guidance.json"
 
 
 def _build_client() -> tuple[TestClient, sessionmaker]:
@@ -68,8 +68,8 @@ def _build_client() -> tuple[TestClient, sessionmaker]:
     return TestClient(app), testing_session
 
 
-def _seed_drive_ontology(session_factory: sessionmaker) -> None:
-    bundle = load_domain_package_v2(DRIVE_V2_ROOT)
+def _seed_hvac_ontology(session_factory: sessionmaker) -> None:
+    bundle = load_domain_package_v2(HVAC_V2_ROOT)
     db = session_factory()
     try:
         db.execute(OntologyClassV2.__table__.insert(), build_ontology_class_rows(bundle))
@@ -79,7 +79,8 @@ def _seed_drive_ontology(session_factory: sessionmaker) -> None:
     finally:
         db.close()
 
-def _seed_drive_manual_fault_entries(session_factory: sessionmaker) -> None:
+
+def _seed_manual_maintenance_entries(session_factory: sessionmaker) -> None:
     original_session_local = seed_script.SessionLocal
     try:
         seed_script.SessionLocal = session_factory
@@ -88,50 +89,29 @@ def _seed_drive_manual_fault_entries(session_factory: sessionmaker) -> None:
         seed_script.SessionLocal = original_session_local
 
 
-def test_drive_manual_validation_route_for_abb_fault() -> None:
-    """ABB ACH531 fieldbus fault should resolve via the semantic route."""
+def test_manual_validation_maintenance_route_for_guoxiang_cleaning() -> None:
+    """Manual-backed HVAC maintenance entries should resolve via maintenance-guidance."""
 
     client, session_factory = _build_client()
     try:
-        _seed_drive_ontology(session_factory)
-        _seed_drive_manual_fault_entries(session_factory)
+        _seed_hvac_ontology(session_factory)
+        _seed_manual_maintenance_entries(session_factory)
         response = client.get(
-            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
-            "?fault_code=A7C1&brand=ABB"
+            "/api/v2/domains/hvac/equipment-classes/air_cooled_modular_heat_pump/maintenance-guidance"
+            "?task_type=cleaning&brand=Guoxiang"
         )
         payload = response.json()
 
         assert response.status_code == 200
-        assert payload["data"]["equipment_class"]["equipment_class_id"] == "variable_frequency_drive"
-        assert payload["data"]["items"][0]["canonical_key"] == "A7C1"
-        assert payload["data"]["items"][0]["structured_payload"]["fault_name"] == "Fieldbus Adapter A Communication"
-        assert payload["data"]["items"][0]["evidence"][0]["page_no"] == 133
-    finally:
-        app.dependency_overrides.clear()
-
-
-def test_drive_manual_validation_route_for_siemens_fault() -> None:
-    """Siemens G120XA motor overtemperature fault should resolve via the same class id."""
-
-    client, session_factory = _build_client()
-    try:
-        _seed_drive_ontology(session_factory)
-        _seed_drive_manual_fault_entries(session_factory)
-        response = client.get(
-            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
-            "?fault_code=F07011&brand=Siemens"
-        )
-        payload = response.json()
-
-        assert response.status_code == 200
-        assert payload["data"]["items"][0]["canonical_key"] == "F07011"
-        assert payload["data"]["items"][0]["structured_payload"]["fault_name"] == "Motor Overtemperature Fault"
-        assert payload["data"]["items"][0]["evidence"][0]["page_no"] == 400
+        assert len(payload["data"]["items"]) == 2
+        assert {item["knowledge_object_type"] for item in payload["data"]["items"]} == {
+            "maintenance_procedure",
+            "diagnostic_step",
+        }
     finally:
         app.dependency_overrides.clear()
 
 
 if __name__ == "__main__":
-    test_drive_manual_validation_route_for_abb_fault()
-    test_drive_manual_validation_route_for_siemens_fault()
-    print("Drive manual-backed fault knowledge validation checks passed")
+    test_manual_validation_maintenance_route_for_guoxiang_cleaning()
+    print("Manual-backed maintenance guidance validation checks passed")
