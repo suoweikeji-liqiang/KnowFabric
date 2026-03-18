@@ -1,0 +1,4 @@
+mappings:
+  brick:
+    - canonical_id: variable_frequency_drive
+      external_id: brick:Variable_Frequency_Drive

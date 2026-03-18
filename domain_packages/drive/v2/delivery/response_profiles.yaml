@@ -1,0 +1,18 @@
+response_profiles:
+  semantic_default:
+    required_fields:
+      - knowledge_object_id
+      - equipment_class_id
+      - source_doc_id
+      - source_page_no
+      - chunk_id
+      - evidence_text
+      - confidence
+      - trust_level
+
+  semantic_compact:
+    required_fields:
+      - knowledge_object_id
+      - equipment_class_id
+      - evidence_text
+      - trust_level

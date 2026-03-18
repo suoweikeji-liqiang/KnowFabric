@@ -10,5 +10,6 @@ htmlcov/
 venv/
 .venv/
 storage/
+tmp/
 *.log
 .DS_Store

@@ -1,0 +1,11 @@
+brands:
+  priority:
+    - Carrier
+    - Trane
+    - York
+    - Daikin
+
+  initial_focus:
+    - Carrier centrifugal chiller
+    - Trane screw chiller
+    - York cooling tower

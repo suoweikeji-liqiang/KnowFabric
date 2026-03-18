@@ -1,0 +1,48 @@
+knowledge_anchors:
+  - id: fault_code
+    label:
+      en: Fault Code
+      zh: 故障代码
+    description: Alarm and fault identifiers attached to a drive class.
+
+  - id: parameter_spec
+    label:
+      en: Parameter Specification
+      zh: 参数规范
+    description: Named settings, ranges, defaults, and parameter group semantics.
+
+  - id: commissioning_step
+    label:
+      en: Commissioning Step
+      zh: 调试步骤
+    description: Startup, tuning, and acceptance actions attached to a drive class.
+
+  - id: wiring_guidance
+    label:
+      en: Wiring Guidance
+      zh: 接线指导
+    description: Wiring constraints, terminal usage, and connection checks with evidence.
+
+  - id: maintenance_procedure
+    label:
+      en: Maintenance Procedure
+      zh: 维护规程
+    description: Preventive and corrective work instructions with evidence.
+
+  - id: application_guidance
+    label:
+      en: Application Guidance
+      zh: 应用指导
+    description: Canonical application notes for pump, fan, and similar drive use cases.
+
+  - id: symptom
+    label:
+      en: Symptom
+      zh: 故障现象
+    description: Observable conditions that may trigger diagnostic guidance.
+
+  - id: diagnostic_step
+    label:
+      en: Diagnostic Step
+      zh: 诊断步骤
+    description: Evidence-backed troubleshooting actions attached to a drive class.

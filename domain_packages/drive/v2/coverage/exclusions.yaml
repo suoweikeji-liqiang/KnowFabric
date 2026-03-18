@@ -1,0 +1,5 @@
+exclusions:
+  - project-instance motor topology
+  - site-specific point bindings
+  - runtime actuation logic
+  - live telemetry and optimization loops

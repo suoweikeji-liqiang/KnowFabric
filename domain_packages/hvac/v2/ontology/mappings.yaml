@@ -1,0 +1,21 @@
+mappings:
+  brick:
+    - canonical_id: chiller
+      external_id: brick:Chiller
+    - canonical_id: centrifugal_chiller
+      external_id: brick:Centrifugal_Chiller
+    - canonical_id: pump
+      external_id: brick:Pump
+    - canonical_id: cooling_tower
+      external_id: brick:Cooling_Tower
+    - canonical_id: ahu
+      external_id: brick:AHU
+    - canonical_id: valve
+      external_id: brick:Valve
+    - canonical_id: sensor
+      external_id: brick:Sensor
+      mapping_metadata:
+        semantic_scope: physical_device_proxy
+        note: Maps a physical field sensor device for interoperability; this is not a Brick point-level assertion.
+    - canonical_id: controller
+      external_id: brick:Controller

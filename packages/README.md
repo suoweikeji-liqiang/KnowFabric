@@ -21,6 +21,7 @@ Shared packages providing core functionality for KnowFabric.
 ## Support Packages
 
 - **domain-kit/** - Domain package toolkit
+- **domain_kit_v2/** - Rebuild-track ontology package validation helpers
 
 ## Dependency Rules
 

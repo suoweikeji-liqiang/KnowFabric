@@ -1,0 +1,5 @@
+exclusions:
+  - project-instance topology
+  - site-specific point bindings
+  - runtime supervisory control
+  - live telemetry and optimization logic

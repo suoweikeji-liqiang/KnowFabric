@@ -1,0 +1,196 @@
+{
+  "domain_id": "drive",
+  "equipment_class_id": "variable_frequency_drive",
+  "equipment_class_key": "drive:variable_frequency_drive",
+  "manual_entries": [
+    {
+      "knowledge_object_id": "ko_abb_a7c1",
+      "canonical_key": "A7C1",
+      "title": "ABB A7C1 Fieldbus Adapter A Communication Warning",
+      "summary": "Cyclic communication between the drive and fieldbus adapter A, or between PLC and the adapter, is lost.",
+      "structured_payload": {
+        "fault_code": "A7C1",
+        "fault_name": "Fieldbus Adapter A Communication",
+        "recommended_actions": [
+          "Check fieldbus communication status",
+          "Check parameter groups 50 to 53",
+          "Check cable connections and bus master communication"
+        ]
+      },
+      "applicability": {
+        "brand": "ABB",
+        "model_family": "ACH531"
+      },
+      "confidence_score": 0.93,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_abb_ach531_fw_manual",
+        "file_name": "ABB ACH531 HVAC Firmware Manual.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_abb_ach531_133",
+        "page_no": 133,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_abb_ach531_a7c1",
+        "chunk_index": 0,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "A7C1 fieldbus adapter A communication lost; check fieldbus status, fieldbus parameters, cable connections, and bus master communication.",
+        "text_excerpt": "A7C1 fieldbus adapter A communication"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_abb_a7c1",
+        "evidence_role": "primary",
+        "evidence_text": "A7C1 现场总线适配器A通讯 传动与总线适配器模块A之间，或PLC和总线适配器模块A之间的循环通讯信号丢失。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/ABB/ABB_ACH531 HVAC控制程序固件手册_CN_revD.pdf",
+        "page_no": 133
+      }
+    },
+    {
+      "knowledge_object_id": "ko_abb_d50c",
+      "canonical_key": "D50C",
+      "title": "ABB D50C Maximum Flow Protection",
+      "summary": "Measured flow exceeds the defined warning threshold in pump and flow applications.",
+      "structured_payload": {
+        "fault_code": "D50C",
+        "fault_name": "Maximum Flow Protection",
+        "recommended_actions": [
+          "Check the system for leakage",
+          "Check maximum flow protection settings in parameters 80.15, 80.17, and 80.19"
+        ]
+      },
+      "applicability": {
+        "brand": "ABB",
+        "model_family": "ACH531"
+      },
+      "confidence_score": 0.91,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_abb_ach531_fw_manual",
+        "file_name": "ABB ACH531 HVAC Firmware Manual.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_abb_ach531_138",
+        "page_no": 138,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_abb_ach531_d50c",
+        "chunk_index": 1,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "D50C maximum flow protection; measured flow exceeds defined warning level; check leakage and flow protection settings.",
+        "text_excerpt": "D50C maximum flow protection"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_abb_d50c",
+        "evidence_role": "primary",
+        "evidence_text": "D50C 最大流量保护 实际流量超过定义的警告液位。 检查系统是否有泄漏。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/ABB/ABB_ACH531 HVAC控制程序固件手册_CN_revD.pdf",
+        "page_no": 138
+      }
+    },
+    {
+      "knowledge_object_id": "ko_siemens_f07011",
+      "canonical_key": "F07011",
+      "title": "Siemens F07011 Motor Overtemperature Fault",
+      "summary": "The drive trips on motor overtemperature when the measured or modeled motor temperature exceeds the configured fault threshold.",
+      "structured_payload": {
+        "fault_code": "F07011",
+        "fault_name": "Motor Overtemperature Fault",
+        "recommended_actions": [
+          "Check motor temperature threshold parameters p0604 and p0605",
+          "Check sensor wiring and motor temperature conditions"
+        ]
+      },
+      "applicability": {
+        "brand": "Siemens",
+        "model_family": "G120XA"
+      },
+      "confidence_score": 0.92,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_siemens_g120xa_manual",
+        "file_name": "Siemens G120XA Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_siemens_g120xa_400",
+        "page_no": 400,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_siemens_g120xa_f07011",
+        "chunk_index": 0,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "F07011 motor overtemperature fault; the drive faults when motor temperature exceeds p0605 or exceeds p0604 with response configured.",
+        "text_excerpt": "F07011 motor overtemperature fault"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_siemens_f07011",
+        "evidence_role": "primary",
+        "evidence_text": "过热故障 (F07011): 发生以下情况，变频器作出故障响应： 电机温度 > p0605。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/西门子/G120XA.pdf",
+        "page_no": 400
+      }
+    },
+    {
+      "knowledge_object_id": "ko_siemens_a01098",
+      "canonical_key": "A01098",
+      "title": "Siemens A01098 RTC Date and Time Required",
+      "summary": "The real-time clock date and time are no longer valid after long power interruption and must be set again.",
+      "structured_payload": {
+        "fault_code": "A01098",
+        "fault_name": "RTC Date and Time Required",
+        "recommended_actions": [
+          "Set the real-time clock date and time",
+          "Check parameter p8405 if the warning should be active"
+        ]
+      },
+      "applicability": {
+        "brand": "Siemens",
+        "model_family": "G120XA"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_siemens_g120xa_manual",
+        "file_name": "Siemens G120XA Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_siemens_g120xa_912",
+        "page_no": 912,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_siemens_g120xa_a01098",
+        "chunk_index": 1,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "A01098 RTC date and time required; after long power interruption the clock is no longer valid and must be set again.",
+        "text_excerpt": "A01098 RTC date and time required"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_siemens_a01098",
+        "evidence_role": "primary",
+        "evidence_text": "A01098 RTC：需要设置日期和时间 控制单元的电源长时间中断。实时时钟显示的日期和时间不再有效。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/西门子/G120XA.pdf",
+        "page_no": 912
+      }
+    }
+  ]
+}

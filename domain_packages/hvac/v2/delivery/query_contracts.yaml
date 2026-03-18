@@ -1,0 +1,39 @@
+queries:
+  - id: fault_knowledge_by_equipment_class
+    required_filters:
+      - equipment_class_id
+    optional_filters:
+      - fault_code
+      - brand
+      - model_family
+    returns:
+      - knowledge_object_id
+      - equipment_class_id
+      - fault_code
+      - evidence
+      - trust
+
+  - id: parameter_profile_by_equipment_class
+    required_filters:
+      - equipment_class_id
+    optional_filters:
+      - category
+      - brand
+    returns:
+      - knowledge_object_id
+      - parameter_name
+      - parameter_category
+      - evidence
+      - trust
+
+  - id: maintenance_guidance_by_equipment_class
+    required_filters:
+      - equipment_class_id
+    optional_filters:
+      - task_type
+      - brand
+    returns:
+      - knowledge_object_id
+      - maintenance_step
+      - evidence
+      - trust

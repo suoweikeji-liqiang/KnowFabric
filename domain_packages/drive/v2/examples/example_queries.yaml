@@ -1,0 +1,12 @@
+examples:
+  - id: drive_fault_lookup
+    query: fault knowledge for variable_frequency_drive code F0001
+    expected_contract: fault_knowledge_by_equipment_class
+
+  - id: parameter_profile_lookup
+    query: parameter profile for variable_frequency_drive acceleration time
+    expected_contract: parameter_profile_by_equipment_class
+
+  - id: commissioning_guidance_lookup
+    query: maintenance guidance for variable_frequency_drive startup checklist
+    expected_contract: maintenance_guidance_by_equipment_class

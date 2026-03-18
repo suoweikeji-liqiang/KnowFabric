@@ -1,0 +1,15 @@
+document_profiles:
+  - id: technical_manual
+    preferred_knowledge_objects:
+      - parameter_spec
+      - performance_spec
+
+  - id: fault_code_reference
+    preferred_knowledge_objects:
+      - fault_code
+      - diagnostic_step
+
+  - id: maintenance_guide
+    preferred_knowledge_objects:
+      - maintenance_procedure
+      - diagnostic_step

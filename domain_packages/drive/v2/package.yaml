@@ -1,0 +1,24 @@
+domain_id: drive
+domain_name: Frequency Converters and Drives
+package_version: 2.0.0-alpha
+ontology_version: 2.0.0-alpha
+supported_languages:
+  - en
+  - zh
+supported_knowledge_objects:
+  - fault_code
+  - parameter_spec
+  - commissioning_step
+  - wiring_guidance
+  - maintenance_procedure
+  - application_guidance
+  - symptom
+  - diagnostic_step
+maintainers:
+  - name: KnowFabric Knowledge Engineering
+    email: knowledge@example.com
+description: |
+  Ontology-first drive package for the rebuild track. This v2 skeleton
+  coexists with the legacy manifest-based package and focuses on
+  canonical drive classes, evidence-grounded knowledge anchors, and
+  semantic delivery placeholders.

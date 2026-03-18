@@ -21,3 +21,4 @@ whoosh==2.7.4
 
 # Utilities
 python-dotenv==1.0.0
+PyYAML==6.0.2

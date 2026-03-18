@@ -1,0 +1,18 @@
+confidence_rules:
+  - knowledge_object_type: fault_code
+    default_confidence: 0.88
+    evidence_preference:
+      - fault table
+      - alarm reference
+
+  - knowledge_object_type: parameter_spec
+    default_confidence: 0.84
+    evidence_preference:
+      - parameter table
+      - parameter guide
+
+  - knowledge_object_type: commissioning_step
+    default_confidence: 0.78
+    evidence_preference:
+      - commissioning chapter
+      - startup checklist

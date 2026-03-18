@@ -1,0 +1,15 @@
+relations:
+  - relation_id: applies_to
+    source_type: knowledge_object
+    target_type: equipment_class
+    description: Link every extracted knowledge object to a canonical drive anchor.
+
+  - relation_id: indicates
+    source_type: fault_code
+    target_type: symptom
+    description: Diagnostic relation for fault tables and troubleshooting sections.
+
+  - relation_id: requires
+    source_type: commissioning_step
+    target_type: wiring_guidance
+    description: Sequence relation between startup actions and wiring prerequisites.

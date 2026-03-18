@@ -1,0 +1,22 @@
+domain_id: hvac
+domain_name: HVAC Systems
+package_version: 2.0.0-alpha
+ontology_version: 2.0.0-alpha
+supported_languages:
+  - en
+  - zh
+supported_knowledge_objects:
+  - fault_code
+  - parameter_spec
+  - maintenance_procedure
+  - performance_spec
+  - symptom
+  - diagnostic_step
+maintainers:
+  - name: KnowFabric Knowledge Engineering
+    email: knowledge@example.com
+description: |
+  Ontology-first HVAC package for the rebuild track. This v2 skeleton
+  coexists with the legacy manifest-based package and only covers
+  canonical equipment classes, knowledge anchors, and semantic delivery
+  placeholders.

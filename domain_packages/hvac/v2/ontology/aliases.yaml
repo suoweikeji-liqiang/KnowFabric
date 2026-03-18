@@ -1,0 +1,54 @@
+aliases:
+  - canonical_id: chiller
+    terms:
+      en:
+        - chiller
+        - chilled water machine
+      zh:
+        - 冷水机组
+
+  - canonical_id: centrifugal_chiller
+    terms:
+      en:
+        - centrifugal chiller
+        - turbo chiller
+      zh:
+        - 离心式冷水机组
+
+  - canonical_id: chilled_water_pump
+    terms:
+      en:
+        - chilled water pump
+        - chw pump
+      zh:
+        - 冷冻水泵
+
+  - canonical_id: modular_chiller
+    terms:
+      en:
+        - modular chiller
+        - modular unit
+      zh:
+        - 模块式冷水机组
+        - 模块机
+
+  - canonical_id: air_cooled_modular_heat_pump
+    terms:
+      en:
+        - air-cooled modular heat pump
+        - modular air-cooled chiller
+        - air-cooled modular unit
+        - module machine
+      zh:
+        - 风冷冷热水模块机组
+        - 模块式风冷冷热水机组
+        - 模块化风冷冷水热泵机组
+        - 风冷模块机
+        - 模块机
+
+  - canonical_id: cooling_tower
+    terms:
+      en:
+        - cooling tower
+      zh:
+        - 冷却塔

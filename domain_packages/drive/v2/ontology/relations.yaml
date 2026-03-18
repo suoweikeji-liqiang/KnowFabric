@@ -1,0 +1,35 @@
+relations:
+  - id: has_component
+    label:
+      en: Has Component
+      zh: 具有部件
+    family: composition
+    description: Drive classes may include control panels, braking resistors, and related components.
+
+  - id: applies_to
+    label:
+      en: Applies To
+      zh: 适用于
+    family: applicability
+    description: Knowledge objects apply to a canonical drive class.
+
+  - id: indicates
+    label:
+      en: Indicates
+      zh: 指示
+    family: diagnostic_causality
+    description: A fault code or symptom can indicate another troubleshooting object.
+
+  - id: requires
+    label:
+      en: Requires
+      zh: 需要
+    family: maintenance_dependency
+    description: A commissioning or maintenance step requires another action or prerequisite.
+
+  - id: same_as_standard_class
+    label:
+      en: Same As Standard Class
+      zh: 对应标准类
+    family: standard_mapping
+    description: Canonical class interoperates with an external standard identifier.

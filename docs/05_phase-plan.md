@@ -3,6 +3,8 @@
 **Status:** Delivery Contract - Binding Acceptance Criteria
 **Last Updated:** 2026-03-13
 
+> Rebuild note: the ontology-first rebuild track is planned in [10_rebuild-plan.md](10_rebuild-plan.md). This document describes the legacy phase sequencing for the current baseline.
+
 This document defines phase delivery contracts with hard acceptance criteria.
 
 ---

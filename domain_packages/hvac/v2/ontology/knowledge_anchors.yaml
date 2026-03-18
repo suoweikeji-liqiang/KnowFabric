@@ -1,0 +1,36 @@
+knowledge_anchors:
+  - id: fault_code
+    label:
+      en: Fault Code
+      zh: 故障代码
+    description: Alarm and fault identifiers attached to an equipment class.
+
+  - id: parameter_spec
+    label:
+      en: Parameter Specification
+      zh: 参数规范
+    description: Named settings, ranges, defaults, and configuration constraints.
+
+  - id: maintenance_procedure
+    label:
+      en: Maintenance Procedure
+      zh: 维护规程
+    description: Scheduled or corrective work instructions with evidence.
+
+  - id: performance_spec
+    label:
+      en: Performance Specification
+      zh: 性能规范
+    description: Rated capacities, efficiencies, limits, and operating envelopes.
+
+  - id: symptom
+    label:
+      en: Symptom
+      zh: 故障现象
+    description: Observable conditions that may trigger diagnostic guidance.
+
+  - id: diagnostic_step
+    label:
+      en: Diagnostic Step
+      zh: 诊断步骤
+    description: Evidence-backed troubleshooting actions attached to an equipment class.

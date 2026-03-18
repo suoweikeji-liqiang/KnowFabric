@@ -1,0 +1,16 @@
+terminology:
+  equipment_class_id:
+    variable_frequency_drive:
+      en: Variable Frequency Drive
+      zh: 变频驱动器
+    soft_starter:
+      en: Soft Starter
+      zh: 软启动器
+
+  knowledge_object_type:
+    commissioning_step:
+      en: Commissioning Step
+      zh: 调试步骤
+    wiring_guidance:
+      en: Wiring Guidance
+      zh: 接线指导
