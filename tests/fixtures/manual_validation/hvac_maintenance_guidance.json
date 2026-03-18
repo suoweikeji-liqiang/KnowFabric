@@ -1,0 +1,99 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "air_cooled_modular_heat_pump",
+  "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "maintenance_procedure",
+      "knowledge_object_id": "ko_guoxiang_clean_coil",
+      "canonical_key": "clean_heat_exchange_fins",
+      "title": "Guoxiang Clean Heat Exchange Fins",
+      "summary": "Keep the heat exchange fins clean and wash them regularly when blockage is severe.",
+      "structured_payload": {
+        "maintenance_task": "cleaning",
+        "task_type": "cleaning",
+        "steps": [
+          "Inspect the heat exchange fins for severe blockage",
+          "Clean the heat exchange fins regularly"
+        ]
+      },
+      "applicability": {
+        "brand": "Guoxiang",
+        "model_family": "KMS"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_guoxiang_kms_manual",
+        "file_name": "Guoxiang KMS Modular Unit User Manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_guoxiang_kms_46",
+        "page_no": 46,
+        "page_type": "maintenance_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_guoxiang_clean_coil",
+        "chunk_index": 0,
+        "chunk_type": "procedure_block",
+        "cleaned_text": "When fin blockage is severe, keep the heat exchange fins clean and wash them regularly.",
+        "text_excerpt": "keep heat exchange fins clean and wash regularly"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_guoxiang_clean_coil",
+        "evidence_role": "primary",
+        "evidence_text": "散热盘管铝片被堵塞严重（制冷） 保持散热盘管清洁，请定期清洗"
+      },
+      "source_manual": {
+        "path": "/Users/asteroida/a00238/21、国祥/【国祥】KMS模块机操作用户手册-20RT30RT40RT（56页）.pdf",
+        "page_no": 46
+      }
+    },
+    {
+      "knowledge_object_type": "diagnostic_step",
+      "knowledge_object_id": "ko_guoxiang_check_flow_air",
+      "canonical_key": "check_water_flow_and_vent_air",
+      "title": "Guoxiang Check Water Flow and Vent Air",
+      "summary": "Increase water flow and vent trapped air after low-pressure trip conditions.",
+      "structured_payload": {
+        "task_type": "cleaning",
+        "step": "Increase water flow and vent trapped air from the water circuit"
+      },
+      "applicability": {
+        "brand": "Guoxiang",
+        "model_family": "KMS"
+      },
+      "confidence_score": 0.88,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_guoxiang_kms_manual",
+        "file_name": "Guoxiang KMS Modular Unit User Manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_guoxiang_kms_47",
+        "page_no": 47,
+        "page_type": "maintenance_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_guoxiang_check_flow_air",
+        "chunk_index": 1,
+        "chunk_type": "procedure_block",
+        "cleaned_text": "Check the cause, increase water flow, and vent air from the water path.",
+        "text_excerpt": "increase water flow and vent air"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_guoxiang_check_flow_air",
+        "evidence_role": "primary",
+        "evidence_text": "检查原因，增大水流量 打开水路排气阀排除空气"
+      },
+      "source_manual": {
+        "path": "/Users/asteroida/a00238/21、国祥/【国祥】KMS模块机操作用户手册-20RT30RT40RT（56页）.pdf",
+        "page_no": 47
+      }
+    }
+  ]
+}

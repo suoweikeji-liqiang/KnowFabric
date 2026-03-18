@@ -16,6 +16,7 @@ Utility scripts and quality gate checks.
 - Development helpers
 - `validate_domain_package_v2.py` - Validate rebuild-track ontology packages
 - `sync_ontology_package_v2.py` - Sync ontology package metadata into additive rebuild tables
+- `seed_manual_validation_fixtures.py` - Seed chunk anchors and semantic knowledge objects from manual validation fixtures
 
 ## Usage
 

@@ -1,0 +1,99 @@
+{
+  "domain_id": "drive",
+  "equipment_class_id": "variable_frequency_drive",
+  "equipment_class_key": "drive:variable_frequency_drive",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_siemens_p0604",
+      "canonical_key": "p0604_motor_temperature_alarm_threshold",
+      "title": "Siemens p0604 Motor Temperature Alarm Threshold",
+      "summary": "Parameter p0604 defines the motor temperature alarm threshold.",
+      "structured_payload": {
+        "parameter_name": "p0604",
+        "parameter_category": "temperature_protection",
+        "default_value": "130 C",
+        "description": "Motor temperature model 2/KTY alarm threshold."
+      },
+      "applicability": {
+        "brand": "Siemens",
+        "model_family": "G120XA"
+      },
+      "confidence_score": 0.92,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_siemens_g120xa_manual",
+        "file_name": "Siemens G120XA Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_siemens_g120xa_402",
+        "page_no": 402,
+        "page_type": "parameter_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_siemens_g120xa_p0604",
+        "chunk_index": 0,
+        "chunk_type": "parameter_block",
+        "cleaned_text": "p0604 motor temperature model 2/KTY alarm threshold default 130 C.",
+        "text_excerpt": "p0604 alarm threshold 130 C"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_siemens_p0604",
+        "evidence_role": "primary",
+        "evidence_text": "p0604[M] 电机温度模型 2/传感器报警阈值 130 °C"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/西门子/G120XA.pdf",
+        "page_no": 402
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_siemens_p0605",
+      "canonical_key": "p0605_motor_temperature_fault_threshold",
+      "title": "Siemens p0605 Motor Temperature Fault Threshold",
+      "summary": "Parameter p0605 defines the motor temperature fault threshold.",
+      "structured_payload": {
+        "parameter_name": "p0605",
+        "parameter_category": "temperature_protection",
+        "default_value": "145 C",
+        "description": "Motor temperature model fault threshold and temperature value."
+      },
+      "applicability": {
+        "brand": "Siemens",
+        "model_family": "G120XA"
+      },
+      "confidence_score": 0.92,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_siemens_g120xa_manual",
+        "file_name": "Siemens G120XA Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_siemens_g120xa_402",
+        "page_no": 402,
+        "page_type": "parameter_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_siemens_g120xa_p0605",
+        "chunk_index": 1,
+        "chunk_type": "parameter_block",
+        "cleaned_text": "p0605 motor temperature fault threshold default 145 C.",
+        "text_excerpt": "p0605 fault threshold 145 C"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_siemens_p0605",
+        "evidence_role": "primary",
+        "evidence_text": "p0605[M] 电机温度模型 1/2/传感器阈值和温度值 145 °C"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/西门子/G120XA.pdf",
+        "page_no": 402
+      }
+    }
+  ]
+}

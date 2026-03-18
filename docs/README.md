@@ -50,6 +50,7 @@ This directory contains the governance and standards documentation for KnowFabri
 16. **[14_semantic-api-mcp-contract.md](14_semantic-api-mcp-contract.md)** - Draft semantic REST and MCP delivery contracts
 17. **[15_manual-validation-round1.md](15_manual-validation-round1.md)** - First manual-driven validation note for module-unit HVAC manuals
 18. **[16_manual-validation-drive-round1.md](16_manual-validation-drive-round1.md)** - First manual-driven validation note for VFD manuals
+19. **[17_manual-validation-round2.md](17_manual-validation-round2.md)** - Second manual-driven validation note for parameter and maintenance material
 
 ---
 
@@ -87,6 +88,7 @@ These documents govern the ontology-first rebuild track:
 - **14_semantic-api-mcp-contract.md** - Proposed read-only semantic REST and MCP contract set
 - **15_manual-validation-round1.md** - Findings from the first real-manual validation round
 - **16_manual-validation-drive-round1.md** - Findings from the first real VFD manual validation round
+- **17_manual-validation-round2.md** - Findings from the second manual-backed semantic validation round
 
 ### Standards Documents
 
