@@ -14,5 +14,8 @@ mappings:
       external_id: brick:Valve
     - canonical_id: sensor
       external_id: brick:Sensor
+      mapping_metadata:
+        semantic_scope: physical_device_proxy
+        note: Maps a physical field sensor device for interoperability; this is not a Brick point-level assertion.
     - canonical_id: controller
       external_id: brick:Controller

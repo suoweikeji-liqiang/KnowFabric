@@ -161,6 +161,14 @@ def build_ontology_mapping_rows(bundle: DomainPackageV2) -> list[dict[str, Any]]
         for index, item in enumerate(definitions):
             canonical_id = item["canonical_id"]
             external_id = item["external_id"]
+            metadata = {
+                key: value
+                for key, value in item.items()
+                if key not in {"canonical_id", "external_id", "is_primary", "mapping_metadata"}
+            }
+            if isinstance(item.get("mapping_metadata"), dict):
+                metadata.update(item["mapping_metadata"])
+            metadata["source"] = "mappings.yaml"
             key = (canonical_id, mapping_system, external_id)
             if key in seen:
                 continue
@@ -173,8 +181,8 @@ def build_ontology_mapping_rows(bundle: DomainPackageV2) -> list[dict[str, Any]]
                     "ontology_class_id": canonical_id,
                     "mapping_system": mapping_system,
                     "external_id": external_id,
-                    "mapping_metadata_json": {"source": "mappings.yaml"},
-                    "is_primary": index == 0,
+                    "mapping_metadata_json": metadata,
+                    "is_primary": item.get("is_primary", index == 0),
                 }
             )
 

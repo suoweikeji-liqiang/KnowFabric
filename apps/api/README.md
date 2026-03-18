@@ -16,6 +16,8 @@ The first minimal read-only route is wired in `main.py`:
 
 - `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}`
 - `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/fault-knowledge`
+- `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/parameter-profiles`
+- `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/maintenance-guidance`
 
 Additional semantic routes remain draft-only until semantic persistence is populated.
 

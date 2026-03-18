@@ -46,8 +46,23 @@ def test_drive_projection_emits_aliases_and_mappings() -> None:
     assert any(row["mapping_system"] == "brick" for row in mapping_rows)
 
 
+def test_hvac_sensor_mapping_keeps_semantic_scope_metadata() -> None:
+    """HVAC sensor Brick mapping should preserve the physical-device scope note."""
+
+    bundle = load_domain_package_v2(HVAC_V2_ROOT)
+    mapping_rows = build_ontology_mapping_rows(bundle)
+
+    sensor_mapping = next(
+        row
+        for row in mapping_rows
+        if row["ontology_class_id"] == "sensor" and row["mapping_system"] == "brick"
+    )
+    assert sensor_mapping["mapping_metadata_json"]["semantic_scope"] == "physical_device_proxy"
+
+
 if __name__ == "__main__":
     test_domain_scoped_keys_do_not_collide()
     test_hvac_projection_contains_scoped_class_rows()
     test_drive_projection_emits_aliases_and_mappings()
+    test_hvac_sensor_mapping_keeps_semantic_scope_metadata()
     print("Ontology projection v2 checks passed")

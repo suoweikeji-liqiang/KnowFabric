@@ -189,8 +189,6 @@ classes:
       en: Sensor
       zh: 传感器
     kind: equipment
-    external_mappings:
-      brick: brick:Sensor
     aliases:
       - sensor
       - field sensor

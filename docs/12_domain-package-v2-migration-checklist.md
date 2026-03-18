@@ -62,5 +62,6 @@ consumer.
 2. `ontology/classes.yaml` validates against `domain_packages/_schemas/v2/ontology.classes.schema.json`.
 3. Every class id is stable snake_case and deployment-agnostic.
 4. Every equipment class maps back to at least one legacy label or package term.
-5. Every semantic delivery placeholder still preserves chunk-level evidence fields.
-6. Legacy package files remain untouched until storage and API consumers are ready.
+5. Every `supported_knowledge_object` has a matching `kind: concept` metadata class.
+6. Every semantic delivery placeholder still preserves chunk-level evidence fields.
+7. Legacy package files remain untouched until storage and API consumers are ready.

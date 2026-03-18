@@ -187,4 +187,16 @@ class DomainPackageV2(BaseModel):
         if unknown:
             joined = ", ".join(sorted(unknown))
             raise ValueError(f"unsupported knowledge_anchors: {joined}")
+        concept_ids = {
+            item.id
+            for item in self.ontology_classes.classes
+            if item.kind == "concept"
+        }
+        missing_metadata = sorted(supported - concept_ids)
+        if missing_metadata:
+            joined = ", ".join(missing_metadata)
+            raise ValueError(
+                "supported_knowledge_objects must have matching concept metadata classes: "
+                f"{joined}"
+            )
         return self

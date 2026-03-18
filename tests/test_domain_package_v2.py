@@ -35,6 +35,19 @@ def test_hvac_v2_anchors_match_package_metadata() -> None:
         assert set(ontology_class.knowledge_anchors).issubset(supported)
 
 
+def test_hvac_v2_supported_knowledge_objects_have_concept_metadata() -> None:
+    """Supported knowledge object ids should have matching concept classes."""
+
+    bundle = load_domain_package_v2(HVAC_V2_ROOT)
+    concept_ids = {
+        item.id
+        for item in bundle.ontology_classes.classes
+        if item.kind == "concept"
+    }
+
+    assert set(bundle.package.supported_knowledge_objects).issubset(concept_ids)
+
+
 def test_drive_v2_package_loads() -> None:
     """Drive v2 package should validate against the rebuild schema."""
 
@@ -57,9 +70,24 @@ def test_drive_v2_anchors_match_package_metadata() -> None:
         assert set(ontology_class.knowledge_anchors).issubset(supported)
 
 
+def test_drive_v2_supported_knowledge_objects_have_concept_metadata() -> None:
+    """Drive supported knowledge object ids should have matching concept classes."""
+
+    bundle = load_domain_package_v2(DRIVE_V2_ROOT)
+    concept_ids = {
+        item.id
+        for item in bundle.ontology_classes.classes
+        if item.kind == "concept"
+    }
+
+    assert set(bundle.package.supported_knowledge_objects).issubset(concept_ids)
+
+
 if __name__ == "__main__":
     test_hvac_v2_package_loads()
     test_hvac_v2_anchors_match_package_metadata()
+    test_hvac_v2_supported_knowledge_objects_have_concept_metadata()
     test_drive_v2_package_loads()
     test_drive_v2_anchors_match_package_metadata()
+    test_drive_v2_supported_knowledge_objects_have_concept_metadata()
     print("Domain package v2 contract checks passed")

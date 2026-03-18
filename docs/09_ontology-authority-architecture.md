@@ -202,6 +202,26 @@ classes:
       - performance_spec
 ```
 
+#### Knowledge Anchor Authority
+
+`knowledge_anchors` is the authoritative capability list attached to an
+equipment or component class.
+
+The corresponding `kind: concept` classes such as `fault_code`,
+`parameter_spec`, or `maintenance_procedure` are metadata carriers for those
+anchors. They provide:
+
+- multilingual labels
+- aliases
+- optional standard-facing metadata
+
+They do **not** replace the `knowledge_anchors` list as the source of truth for
+"what knowledge can attach to this equipment class".
+
+Every `supported_knowledge_object` in `package.yaml` should therefore have a
+matching `kind: concept` class so that semantic delivery can carry labels and
+aliases consistently.
+
 ### `ontology/relations.yaml`
 
 Defines canonical relation vocabulary.
@@ -229,6 +249,16 @@ Future targets may include:
 - Haystack
 - vendor catalogs
 - customer-specific adapter maps
+
+When a downstream standard uses a different semantic abstraction than
+KnowFabric, the mapping entry should carry metadata that explains the scope of
+the mapping.
+
+Example:
+
+- a physical field sensor device in KnowFabric may map to `brick:Sensor` for
+  interoperability, but the entry should declare that the mapping is being used
+  as a physical-device proxy rather than as a point-level assertion.
 
 ---
 
