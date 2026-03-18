@@ -32,7 +32,6 @@ def seed_manual_fixture(path: str | Path) -> tuple[str, int]:
     """Seed one manual validation fixture into semantic tables."""
 
     fixture = load_manual_fixture(path)
-    rows = build_manual_fixture_rows(fixture)
     session = SessionLocal()
     try:
         ontology_class = (
@@ -45,6 +44,11 @@ def seed_manual_fixture(path: str | Path) -> tuple[str, int]:
                 "Missing ontology class for fixture. Run scripts/sync_ontology_package_v2.py first: "
                 f'{fixture["equipment_class_key"]}'
             )
+        rows = build_manual_fixture_rows(
+            fixture,
+            package_version=ontology_class.package_version,
+            ontology_version=ontology_class.ontology_version,
+        )
 
         _merge_rows(session, Document, rows["documents"])
         _merge_rows(session, DocumentPage, rows["pages"])
