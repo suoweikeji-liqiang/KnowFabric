@@ -41,6 +41,23 @@ A matching drive-domain demo query set is also available:
 python3 scripts/run_semantic_demo_queries.py domain_packages/drive/v2/examples/example_queries.yaml --output-dir output/demo
 ```
 
+## Service Smoke Path
+
+After bootstrapping the demo knowledge, start the API service and verify the
+same demo queries through real HTTP routes:
+
+```bash
+cd apps/api
+python main.py
+```
+
+From another terminal at the repository root:
+
+```bash
+python3 scripts/run_api_demo_smoke.py domain_packages/hvac/v2/examples/example_queries.yaml --base-url http://127.0.0.1:8000 --output-dir output/demo
+python3 scripts/run_api_demo_smoke.py domain_packages/drive/v2/examples/example_queries.yaml --base-url http://127.0.0.1:8000 --output-dir output/demo
+```
+
 ## Running Locally
 
 ```bash

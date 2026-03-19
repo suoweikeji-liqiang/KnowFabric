@@ -33,7 +33,9 @@ Utility scripts and quality gate checks.
 - `apply_ready_review_bundle.py` - Apply only ready packs from a prepared bundle and refresh apply report, stats, and summary text
 - `backfill_manual_knowledge_from_chunks.py` - Backfill chunk anchors and semantic knowledge objects from existing chunk rows plus manual fixtures
 - `run_semantic_demo_queries.py` - Run a fixed semantic demo query set and validate expected canonical knowledge objects
+- `run_api_demo_smoke.py` - Run the fixed semantic demo queries against a live API service over HTTP
 - `build_v1_demo_brief.py` - Build a Markdown v1 demo brief from generated semantic demo reports
+- `bootstrap_v1_demo.py` - One-shot bootstrap for the external-evaluable v1 demo: migrate, sync, seed, run demo queries, and build the brief
 
 ## Usage
 
@@ -113,6 +115,13 @@ python3 scripts/run_semantic_demo_queries.py domain_packages/hvac/v2/examples/ex
 # Run the fixed drive semantic demo query set
 python3 scripts/run_semantic_demo_queries.py domain_packages/drive/v2/examples/example_queries.yaml --output-dir output/demo
 
+# With the API service running, verify the same demo queries through real HTTP routes
+python3 scripts/run_api_demo_smoke.py domain_packages/hvac/v2/examples/example_queries.yaml --base-url http://localhost:8000 --output-dir output/demo
+python3 scripts/run_api_demo_smoke.py domain_packages/drive/v2/examples/example_queries.yaml --base-url http://localhost:8000 --output-dir output/demo
+
 # Build a one-page v1 demo brief from the generated demo reports
 python3 scripts/build_v1_demo_brief.py --report-dir output/demo --output output/demo/v1_demo_brief.md
+
+# Or bootstrap the full v1 demo from a clean database
+python3 scripts/bootstrap_v1_demo.py --output-dir output/demo --brief-output output/demo/v1_demo_brief.md
 ```
