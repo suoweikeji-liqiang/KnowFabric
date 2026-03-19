@@ -29,8 +29,11 @@ Utility scripts and quality gate checks.
 - `export_review_pipeline_artifacts.py` - Export candidates, review packs, stats, and an artifact manifest for one scoped review bundle
 - `print_review_pipeline_summary.py` - Render review pipeline stats as a terminal-friendly summary
 - `prepare_review_pipeline_bundle.py` - One-shot prepare a full review bundle: export, bootstrap, readiness-check, stats, and summary text
+- `prepare_pdf_review_bundle.py` - Bootstrap selected PDF page groups and immediately prepare a ready-to-review bundle
 - `apply_ready_review_bundle.py` - Apply only ready packs from a prepared bundle and refresh apply report, stats, and summary text
 - `backfill_manual_knowledge_from_chunks.py` - Backfill chunk anchors and semantic knowledge objects from existing chunk rows plus manual fixtures
+- `run_semantic_demo_queries.py` - Run a fixed semantic demo query set and validate expected canonical knowledge objects
+- `build_v1_demo_brief.py` - Build a Markdown v1 demo brief from generated semantic demo reports
 
 ## Usage
 
@@ -46,12 +49,25 @@ See [Quality Gates](../docs/06_quality-gates.md) for details.
 
 ## Chunk Review Flow
 
+Current candidate-supported knowledge types:
+- `fault_code`
+- `parameter_spec`
+- `performance_spec`
+- `maintenance_procedure`
+- `diagnostic_step`
+- `commissioning_step`
+- `wiring_guidance`
+- `application_guidance`
+
 ```bash
 # 1. Generate chunk-backed candidates
 python3 scripts/generate_chunk_backfill_candidates.py hvac --doc-id <doc_id> --equipment-class-id <equipment_class_id> --output candidates.json
 
 # Recommended shortcut: prepare a full review bundle in one command
 python3 scripts/prepare_review_pipeline_bundle.py hvac review_bundle --doc-id <doc_id> --equipment-class-id <equipment_class_id>
+
+# Or go straight from one external PDF into a ready-to-review bundle
+python3 scripts/prepare_pdf_review_bundle.py "/path/to/file.pdf" hvac review_bundle --equipment-class-id ahu --page-group "67-72:application_guide" --page-group "93-96:maintenance_guide"
 
 # After editing bootstrapped packs, apply only the packs that are ready
 python3 scripts/apply_ready_review_bundle.py review_bundle
@@ -87,4 +103,16 @@ python3 scripts/export_review_pipeline_artifacts.py hvac review_bundle --doc-id 
 
 # Print a terminal-friendly summary from exported stats
 python3 scripts/print_review_pipeline_summary.py --stats-file review_bundle/review_pipeline_stats.json
+
+# Run the fixed HVAC semantic demo query set against the current knowledge store
+python3 scripts/run_semantic_demo_queries.py domain_packages/hvac/v2/examples/example_queries.yaml
+
+# Or write a stable JSON demo artifact under output/demo/
+python3 scripts/run_semantic_demo_queries.py domain_packages/hvac/v2/examples/example_queries.yaml --output-dir output/demo
+
+# Run the fixed drive semantic demo query set
+python3 scripts/run_semantic_demo_queries.py domain_packages/drive/v2/examples/example_queries.yaml --output-dir output/demo
+
+# Build a one-page v1 demo brief from the generated demo reports
+python3 scripts/build_v1_demo_brief.py --report-dir output/demo --output output/demo/v1_demo_brief.md
 ```

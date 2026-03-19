@@ -1,0 +1,51 @@
+{
+  "domain_id": "drive",
+  "equipment_class_id": "variable_frequency_drive",
+  "equipment_class_key": "drive:variable_frequency_drive",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "application_guidance",
+      "knowledge_object_id": "ko_danfoss_pump_fan_control",
+      "canonical_key": "pump_fan_application_control",
+      "title": "Danfoss Pump and Fan Application Control",
+      "summary": "The flow drive provides direct guidance for pump and fan control applications.",
+      "structured_payload": {
+        "application_type": "pump_fan",
+        "guidance": "Use the drive's application functions for pump and fan control scenarios."
+      },
+      "applicability": {
+        "brand": "Danfoss",
+        "model_family": "FC111"
+      },
+      "confidence_score": 0.86,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_danfoss_fc111_manual",
+        "file_name": "Danfoss FC111 Flow Drive Design Guide.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_danfoss_fc111_14",
+        "page_no": 14,
+        "page_type": "application_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_danfoss_pump_fan_control",
+        "chunk_index": 0,
+        "chunk_type": "guidance_block",
+        "cleaned_text": "Use the flow drive in pump and fan control applications to support flow and pressure behavior.",
+        "text_excerpt": "pump and fan control applications"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_danfoss_pump_fan_control",
+        "evidence_role": "primary",
+        "evidence_text": "fan and pump control flow and pressure behavior"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/丹佛斯/VLT_Flow_Drive_FC_111_DG_M0029202_AJ363928382091zh-000101.pdf",
+        "page_no": 14
+      }
+    }
+  ]
+}

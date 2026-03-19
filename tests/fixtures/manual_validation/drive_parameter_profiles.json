@@ -21,7 +21,7 @@
       },
       "confidence_score": 0.92,
       "trust_level": "L2",
-      "review_status": "pending",
+      "review_status": "approved",
       "doc": {
         "doc_id": "doc_siemens_g120xa_manual",
         "file_name": "Siemens G120XA Operating Instructions.pdf",
@@ -67,7 +67,7 @@
       },
       "confidence_score": 0.92,
       "trust_level": "L2",
-      "review_status": "pending",
+      "review_status": "approved",
       "doc": {
         "doc_id": "doc_siemens_g120xa_manual",
         "file_name": "Siemens G120XA Operating Instructions.pdf",

@@ -328,6 +328,128 @@ async def get_maintenance_guidance(
     }
 
 
+@app.get(
+    "/api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/application-guidance",
+    response_model=SemanticApiEnvelope,
+)
+async def get_application_guidance(
+    domain_id: str,
+    equipment_class_id: str,
+    application_type: Optional[str] = Query(None, description="Optional application type filter"),
+    brand: Optional[str] = Query(None, description="Optional brand filter"),
+    model_family: Optional[str] = Query(None, description="Optional model family filter"),
+    min_confidence: Optional[float] = Query(None, ge=0.0, le=1.0, description="Minimum confidence score"),
+    min_trust_level: str = Query("L4", pattern="^L[1-4]$", description="Minimum trust level"),
+    limit: int = Query(20, ge=1, le=100, description="Result limit"),
+    db: Session = Depends(get_db),
+):
+    """Retrieve evidence-grounded application guidance by canonical equipment class."""
+
+    semantic = SemanticRetrievalService()
+    try:
+        result = semantic.get_application_guidance(
+            db=db,
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            application_type=application_type,
+            brand=brand,
+            model_family=model_family,
+            min_confidence=min_confidence,
+            min_trust_level=min_trust_level,
+            limit=limit,
+        )
+    except OperationalError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Semantic knowledge store not ready. Run migrations and populate knowledge objects first.",
+        ) from exc
+
+    if result is None:
+        raise HTTPException(status_code=404, detail="Equipment class not found")
+
+    return {
+        "success": True,
+        "data": result,
+        "metadata": {
+            "contract_version": "2026-03-17",
+            "query_type": "application_guidance",
+            "filters_applied": {
+                "domain_id": domain_id,
+                "equipment_class_id": equipment_class_id,
+                "application_type": application_type,
+                "brand": brand,
+                "model_family": model_family,
+                "min_confidence": min_confidence,
+                "min_trust_level": min_trust_level,
+            },
+            "total": len(result["items"]),
+            "limit": limit,
+            "compatibility_surfaces": ["/api/v1/chunks/search", "trace_evidence", "search_knowledge"],
+        },
+    }
+
+
+@app.get(
+    "/api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/operational-guidance",
+    response_model=SemanticApiEnvelope,
+)
+async def get_operational_guidance(
+    domain_id: str,
+    equipment_class_id: str,
+    guidance_type: Optional[str] = Query(None, description="Optional operational guidance type filter"),
+    brand: Optional[str] = Query(None, description="Optional brand filter"),
+    model_family: Optional[str] = Query(None, description="Optional model family filter"),
+    min_confidence: Optional[float] = Query(None, ge=0.0, le=1.0, description="Minimum confidence score"),
+    min_trust_level: str = Query("L4", pattern="^L[1-4]$", description="Minimum trust level"),
+    limit: int = Query(20, ge=1, le=100, description="Result limit"),
+    db: Session = Depends(get_db),
+):
+    """Retrieve evidence-grounded commissioning, wiring, and application guidance."""
+
+    semantic = SemanticRetrievalService()
+    try:
+        result = semantic.get_operational_guidance(
+            db=db,
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            guidance_type=guidance_type,
+            brand=brand,
+            model_family=model_family,
+            min_confidence=min_confidence,
+            min_trust_level=min_trust_level,
+            limit=limit,
+        )
+    except OperationalError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Semantic knowledge store not ready. Run migrations and populate knowledge objects first.",
+        ) from exc
+
+    if result is None:
+        raise HTTPException(status_code=404, detail="Equipment class not found")
+
+    return {
+        "success": True,
+        "data": result,
+        "metadata": {
+            "contract_version": "2026-03-17",
+            "query_type": "operational_guidance",
+            "filters_applied": {
+                "domain_id": domain_id,
+                "equipment_class_id": equipment_class_id,
+                "guidance_type": guidance_type,
+                "brand": brand,
+                "model_family": model_family,
+                "min_confidence": min_confidence,
+                "min_trust_level": min_trust_level,
+            },
+            "total": len(result["items"]),
+            "limit": limit,
+            "compatibility_surfaces": ["/api/v1/chunks/search", "trace_evidence", "search_knowledge"],
+        },
+    }
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(

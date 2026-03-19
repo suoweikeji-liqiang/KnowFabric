@@ -13,3 +13,7 @@ document_profiles:
     preferred_knowledge_objects:
       - maintenance_procedure
       - diagnostic_step
+
+  - id: application_guide
+    preferred_knowledge_objects:
+      - application_guidance

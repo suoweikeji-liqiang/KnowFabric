@@ -1,12 +1,90 @@
 examples:
-  - id: chiller_fault_lookup
-    query: fault knowledge for centrifugal_chiller code E01
-    expected_contract: fault_knowledge_by_equipment_class
+  - id: ahu_application_guidance_demo
+    description: Verify the authority-backed AHU application guidance carried from Guideline 36.
+    query: application guidance for ahu zone-group operating mode
+    query_type: application_guidance
+    expected_contract: application_guidance_by_equipment_class
+    request:
+      domain_id: hvac
+      equipment_class_id: ahu
+      application_type: ahu_sequence
+      min_trust_level: L3
+      limit: 5
+    required_review_status: approved
+    expected_canonical_keys:
+      - ahu_zone_group_operating_mode
 
-  - id: pump_parameter_profile
-    query: parameter profile for chilled_water_pump start stop settings
-    expected_contract: parameter_profile_by_equipment_class
-
-  - id: tower_maintenance_guidance
-    query: maintenance guidance for cooling_tower basin cleaning
+  - id: ahu_maintenance_guidance_demo
+    description: Verify the AHU maintenance guidance slice curated from HVAC efficiency and maintenance authority material.
+    query: maintenance guidance for ahu airflow inspection and preventive maintenance
+    query_type: maintenance_guidance
     expected_contract: maintenance_guidance_by_equipment_class
+    request:
+      domain_id: hvac
+      equipment_class_id: ahu
+      min_trust_level: L3
+      include_diagnostic_steps: true
+      limit: 10
+    required_review_status: approved
+    expected_canonical_keys:
+      - ahu_airflow_inspection_and_calibration
+      - ahu_preventive_airflow_maintenance_plan
+
+  - id: chiller_parameter_profile_demo
+    description: Verify authority-backed chiller design performance information from Guideline 36.
+    query: parameter profiles for chiller design capacity and minimum lift
+    query_type: parameter_profile
+    expected_contract: parameter_profile_by_equipment_class
+    request:
+      domain_id: hvac
+      equipment_class_id: chiller
+      min_trust_level: L3
+      limit: 10
+    required_review_status: approved
+    expected_canonical_keys:
+      - design_chiller_capacity
+      - minimum_chiller_lift_at_minimum_load
+
+  - id: condenser_water_pump_parameter_profile_demo
+    description: Verify authority-backed condenser water pump speed constraints from Guideline 36.
+    query: parameter profiles for condenser water pump design and minimum speed
+    query_type: parameter_profile
+    expected_contract: parameter_profile_by_equipment_class
+    request:
+      domain_id: hvac
+      equipment_class_id: condenser_water_pump
+      min_trust_level: L3
+      limit: 10
+    required_review_status: approved
+    expected_canonical_keys:
+      - design_condenser_water_pump_speed_by_stage
+      - minimum_condenser_water_pump_speed
+
+  - id: chilled_water_pump_parameter_profile_demo
+    description: Verify authority-backed primary chilled water pump stage speed constraints from Guideline 36.
+    query: parameter profiles for chilled water pump design and minimum speed by stage
+    query_type: parameter_profile
+    expected_contract: parameter_profile_by_equipment_class
+    request:
+      domain_id: hvac
+      equipment_class_id: chilled_water_pump
+      min_trust_level: L3
+      limit: 10
+    required_review_status: approved
+    expected_canonical_keys:
+      - design_primary_chilled_water_pump_speed_by_stage
+      - minimum_primary_chilled_water_pump_speed_by_stage
+
+  - id: cooling_tower_parameter_profile_demo
+    description: Verify authority-backed cooling tower design wetbulb and approach information from Guideline 36.
+    query: parameter profile for cooling tower design wetbulb and approach
+    query_type: parameter_profile
+    expected_contract: parameter_profile_by_equipment_class
+    request:
+      domain_id: hvac
+      equipment_class_id: cooling_tower
+      min_trust_level: L3
+      limit: 10
+    required_review_status: approved
+    expected_canonical_keys:
+      - cooling_tower_design_wetbulb_and_approach

@@ -11,6 +11,12 @@ knowledge_anchors:
       zh: 参数规范
     description: Named settings, ranges, defaults, and configuration constraints.
 
+  - id: application_guidance
+    label:
+      en: Application Guidance
+      zh: 应用指导
+    description: Canonical application and operating-sequence guidance attached to an HVAC class.
+
   - id: maintenance_procedure
     label:
       en: Maintenance Procedure

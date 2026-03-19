@@ -78,6 +78,7 @@ classes:
     knowledge_anchors:
       - fault_code
       - parameter_spec
+      - application_guidance
       - maintenance_procedure
       - performance_spec
       - symptom
@@ -153,6 +154,7 @@ classes:
     knowledge_anchors:
       - fault_code
       - parameter_spec
+      - application_guidance
       - maintenance_procedure
       - performance_spec
 
@@ -249,6 +251,15 @@ classes:
     aliases:
       - parameter specification
       - parameter setting
+
+  - id: application_guidance
+    label:
+      en: Application Guidance
+      zh: 应用指导
+    kind: concept
+    aliases:
+      - application guidance
+      - operation sequence guidance
 
   - id: maintenance_procedure
     label:

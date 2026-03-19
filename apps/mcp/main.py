@@ -13,8 +13,10 @@ from packages.core.config import settings
 from packages.core.logging import setup_logging
 from packages.core.semantic_contract_v2 import (
     MCP_TOOL_EXPLAIN_EQUIPMENT_CLASS,
+    MCP_TOOL_GET_APPLICATION_GUIDANCE,
     MCP_TOOL_GET_FAULT_KNOWLEDGE,
     MCP_TOOL_GET_MAINTENANCE_GUIDANCE,
+    MCP_TOOL_GET_OPERATIONAL_GUIDANCE,
     MCP_TOOL_GET_PARAMETER_PROFILE,
 )
 from packages.db.models import ContentChunk, Document, DocumentPage
@@ -86,6 +88,8 @@ class KnowFabricMcpServer:
             MCP_TOOL_GET_FAULT_KNOWLEDGE,
             MCP_TOOL_GET_PARAMETER_PROFILE,
             MCP_TOOL_GET_MAINTENANCE_GUIDANCE,
+            MCP_TOOL_GET_APPLICATION_GUIDANCE,
+            MCP_TOOL_GET_OPERATIONAL_GUIDANCE,
             MCP_TOOL_EXPLAIN_EQUIPMENT_CLASS,
         ]
 
@@ -144,6 +148,10 @@ class KnowFabricMcpServer:
             payload = self._semantic_parameter_profile(arguments)
         elif tool_name == "get_maintenance_guidance":
             payload = self._semantic_maintenance_guidance(arguments)
+        elif tool_name == "get_application_guidance":
+            payload = self._semantic_application_guidance(arguments)
+        elif tool_name == "get_operational_guidance":
+            payload = self._semantic_operational_guidance(arguments)
         elif tool_name == "explain_equipment_class":
             payload = self._semantic_explain_equipment_class(arguments)
         else:
@@ -306,6 +314,50 @@ class KnowFabricMcpServer:
                 brand=arguments.get("brand"),
                 model_family=arguments.get("model_family"),
                 include_diagnostic_steps=bool(arguments.get("include_diagnostic_steps", True)),
+                min_confidence=arguments.get("min_confidence"),
+                min_trust_level=arguments.get("min_trust_level", "L4"),
+                limit=int(arguments.get("limit", 20)),
+            )
+            if result is None:
+                raise McpProtocolError(-32004, "Equipment class not found")
+            return result
+
+        return self._with_session(run)
+
+    def _semantic_application_guidance(self, arguments: dict[str, Any]) -> dict[str, Any]:
+        if not arguments.get("domain_id") or not arguments.get("equipment_class_id"):
+            raise McpProtocolError(-32602, "get_application_guidance requires 'domain_id' and 'equipment_class_id'")
+
+        def run(session):
+            result = self.semantic.get_application_guidance(
+                db=session,
+                domain_id=arguments["domain_id"],
+                equipment_class_id=arguments["equipment_class_id"],
+                application_type=arguments.get("application_type"),
+                brand=arguments.get("brand"),
+                model_family=arguments.get("model_family"),
+                min_confidence=arguments.get("min_confidence"),
+                min_trust_level=arguments.get("min_trust_level", "L4"),
+                limit=int(arguments.get("limit", 20)),
+            )
+            if result is None:
+                raise McpProtocolError(-32004, "Equipment class not found")
+            return result
+
+        return self._with_session(run)
+
+    def _semantic_operational_guidance(self, arguments: dict[str, Any]) -> dict[str, Any]:
+        if not arguments.get("domain_id") or not arguments.get("equipment_class_id"):
+            raise McpProtocolError(-32602, "get_operational_guidance requires 'domain_id' and 'equipment_class_id'")
+
+        def run(session):
+            result = self.semantic.get_operational_guidance(
+                db=session,
+                domain_id=arguments["domain_id"],
+                equipment_class_id=arguments["equipment_class_id"],
+                guidance_type=arguments.get("guidance_type"),
+                brand=arguments.get("brand"),
+                model_family=arguments.get("model_family"),
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
                 limit=int(arguments.get("limit", 20)),

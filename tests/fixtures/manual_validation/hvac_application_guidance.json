@@ -1,0 +1,51 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "ahu",
+  "equipment_class_key": "hvac:ahu",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "application_guidance",
+      "knowledge_object_id": "ko_ashrae_ahu_mode_hierarchy",
+      "canonical_key": "ahu_system_mode_hierarchy",
+      "title": "ASHRAE AHU System Mode Hierarchy",
+      "summary": "AHU system mode follows the highest-priority zone group mode in a defined hierarchy.",
+      "structured_payload": {
+        "application_type": "ahu_sequence",
+        "guidance": "When zone groups served by an air-handling system are in different modes, the AHU mode follows the highest-priority hierarchy: Occupied, Cooldown, Setup, Warmup, Setback, Unoccupied."
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36"
+      },
+      "confidence_score": 0.88,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_ashrae_guideline_36",
+        "file_name": "ASHRAE Guideline 36 High-Performance Sequences of Operation for HVAC Systems.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ashrae_guideline_36_111",
+        "page_no": 111,
+        "page_type": "application_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ashrae_ahu_mode_hierarchy",
+        "chunk_index": 0,
+        "chunk_type": "guidance_block",
+        "cleaned_text": "AHU system mode follows the highest-priority zone group mode hierarchy: Occupied, Cooldown, Setup, Warmup, Setback, Unoccupied.",
+        "text_excerpt": "AHU system mode hierarchy occupied cooldown setup warmup setback unoccupied"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_ashrae_ahu_mode_hierarchy",
+        "evidence_role": "primary",
+        "evidence_text": "AHU system modes are the same as the mode of the Zone Group served by the system. When Zone Group served by an air-handling system are in different modes, the following hierarchy applies: Occupied, Cooldown, Setup, Warmup, Setback, Unoccupied."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+        "page_no": 111
+      }
+    }
+  ]
+}

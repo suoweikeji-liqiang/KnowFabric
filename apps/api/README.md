@@ -18,8 +18,28 @@ The first minimal read-only route is wired in `main.py`:
 - `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/fault-knowledge`
 - `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/parameter-profiles`
 - `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/maintenance-guidance`
+- `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/application-guidance`
+- `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/operational-guidance`
 
 Additional semantic routes remain draft-only until semantic persistence is populated.
+
+## Demo Query Set
+
+Once semantic knowledge has been populated, run the fixed HVAC authority demo
+queries from the repository root:
+
+```bash
+python3 scripts/run_semantic_demo_queries.py domain_packages/hvac/v2/examples/example_queries.yaml
+```
+
+The current demo query set expects HVAC authority-backed objects to be present
+at trust level `L3`, so the bundled examples apply `min_trust_level=L3`.
+
+A matching drive-domain demo query set is also available:
+
+```bash
+python3 scripts/run_semantic_demo_queries.py domain_packages/drive/v2/examples/example_queries.yaml --output-dir output/demo
+```
 
 ## Running Locally
 

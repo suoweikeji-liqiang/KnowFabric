@@ -20,6 +20,8 @@ TRUST_RANK = {"L1": 0, "L2": 1, "L3": 2, "L4": 3}
 FAULT_KNOWLEDGE_TYPES = ("fault_code", "symptom", "diagnostic_step")
 PARAMETER_PROFILE_TYPES = ("parameter_spec", "performance_spec")
 MAINTENANCE_GUIDANCE_TYPES = ("maintenance_procedure", "diagnostic_step")
+APPLICATION_GUIDANCE_TYPES = ("application_guidance",)
+OPERATIONAL_GUIDANCE_TYPES = ("commissioning_step", "wiring_guidance", "application_guidance")
 
 
 class SemanticRetrievalService:
@@ -160,6 +162,49 @@ class SemanticRetrievalService:
             return True
         payload = knowledge_object.structured_payload_json
         return payload.get("task_type") == task_type or payload.get("maintenance_task") == task_type
+
+    def _matches_application_filters(
+        self,
+        knowledge_object: KnowledgeObjectV2,
+        application_type: str | None,
+        brand: str | None,
+        model_family: str | None,
+        min_confidence: float | None,
+        min_trust_level: str,
+    ) -> bool:
+        if not self._matches_common_filters(
+            knowledge_object,
+            brand,
+            model_family,
+            min_confidence,
+            min_trust_level,
+        ):
+            return False
+        if not application_type:
+            return True
+        payload = knowledge_object.structured_payload_json
+        return payload.get("application_type") == application_type
+
+    def _matches_operational_filters(
+        self,
+        knowledge_object: KnowledgeObjectV2,
+        guidance_type: str | None,
+        brand: str | None,
+        model_family: str | None,
+        min_confidence: float | None,
+        min_trust_level: str,
+    ) -> bool:
+        if not self._matches_common_filters(
+            knowledge_object,
+            brand,
+            model_family,
+            min_confidence,
+            min_trust_level,
+        ):
+            return False
+        if not guidance_type:
+            return True
+        return knowledge_object.knowledge_object_type == guidance_type
 
     def _sort_fault_knowledge(self, knowledge_objects: list[KnowledgeObjectV2]) -> list[KnowledgeObjectV2]:
         return sorted(
@@ -418,6 +463,84 @@ class SemanticRetrievalService:
             if self._matches_maintenance_filters(
                 item,
                 task_type,
+                brand,
+                model_family,
+                min_confidence,
+                min_trust_level,
+            )
+        ]
+        ranked = self._sort_semantic_items(filtered)[:limit]
+        return self._build_semantic_collection(db, ontology_class, ranked)
+
+    def get_application_guidance(
+        self,
+        db: Session,
+        domain_id: str,
+        equipment_class_id: str,
+        application_type: str | None = None,
+        brand: str | None = None,
+        model_family: str | None = None,
+        min_confidence: float | None = None,
+        min_trust_level: str = "L4",
+        limit: int = 20,
+    ) -> dict[str, Any] | None:
+        """Return evidence-grounded application guidance attached to an equipment class."""
+
+        ontology_class = self._get_equipment_class(db, domain_id, equipment_class_id)
+        if ontology_class is None:
+            return None
+        knowledge_objects = (
+            db.query(KnowledgeObjectV2)
+            .filter(KnowledgeObjectV2.domain_id == domain_id)
+            .filter(KnowledgeObjectV2.ontology_class_id == equipment_class_id)
+            .filter(KnowledgeObjectV2.knowledge_object_type.in_(APPLICATION_GUIDANCE_TYPES))
+            .all()
+        )
+        filtered = [
+            item
+            for item in knowledge_objects
+            if self._matches_application_filters(
+                item,
+                application_type,
+                brand,
+                model_family,
+                min_confidence,
+                min_trust_level,
+            )
+        ]
+        ranked = self._sort_semantic_items(filtered)[:limit]
+        return self._build_semantic_collection(db, ontology_class, ranked)
+
+    def get_operational_guidance(
+        self,
+        db: Session,
+        domain_id: str,
+        equipment_class_id: str,
+        guidance_type: str | None = None,
+        brand: str | None = None,
+        model_family: str | None = None,
+        min_confidence: float | None = None,
+        min_trust_level: str = "L4",
+        limit: int = 20,
+    ) -> dict[str, Any] | None:
+        """Return evidence-grounded commissioning, wiring, and application guidance."""
+
+        ontology_class = self._get_equipment_class(db, domain_id, equipment_class_id)
+        if ontology_class is None:
+            return None
+        knowledge_objects = (
+            db.query(KnowledgeObjectV2)
+            .filter(KnowledgeObjectV2.domain_id == domain_id)
+            .filter(KnowledgeObjectV2.ontology_class_id == equipment_class_id)
+            .filter(KnowledgeObjectV2.knowledge_object_type.in_(OPERATIONAL_GUIDANCE_TYPES))
+            .all()
+        )
+        filtered = [
+            item
+            for item in knowledge_objects
+            if self._matches_operational_filters(
+                item,
+                guidance_type,
                 brand,
                 model_family,
                 min_confidence,

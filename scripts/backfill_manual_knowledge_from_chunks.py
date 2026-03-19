@@ -76,7 +76,9 @@ def backfill_manual_fixture_from_chunks(path: str | Path) -> tuple[str, int]:
             match_method="manual_backfill",
         )
         _merge_rows(session, ChunkOntologyAnchorV2, rows["anchors"])
+        session.flush()
         _merge_rows(session, KnowledgeObjectV2, rows["knowledge_objects"])
+        session.flush()
         _merge_rows(session, KnowledgeObjectEvidenceV2, rows["evidence"])
         session.commit()
         return fixture["equipment_class_key"], len(rows["knowledge_objects"])

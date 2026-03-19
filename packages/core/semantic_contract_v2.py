@@ -163,6 +163,32 @@ class MaintenanceGuidanceQuery(SemanticBaseModel):
     limit: int = Field(default=20, ge=1, le=100)
 
 
+class ApplicationGuidanceQuery(SemanticBaseModel):
+    """Request contract for application guidance retrieval."""
+
+    domain_id: str
+    equipment_class_id: str
+    application_type: str | None = None
+    brand: str | None = None
+    model_family: str | None = None
+    min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
+    min_trust_level: TrustLevel = "L4"
+    limit: int = Field(default=20, ge=1, le=100)
+
+
+class OperationalGuidanceQuery(SemanticBaseModel):
+    """Request contract for combined operational guidance retrieval."""
+
+    domain_id: str
+    equipment_class_id: str
+    guidance_type: Literal["commissioning_step", "wiring_guidance", "application_guidance"] | None = None
+    brand: str | None = None
+    model_family: str | None = None
+    min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
+    min_trust_level: TrustLevel = "L4"
+    limit: int = Field(default=20, ge=1, le=100)
+
+
 class ExplainEquipmentClassQuery(SemanticBaseModel):
     """Request contract for ontology class explanation."""
 
@@ -339,6 +365,111 @@ MCP_TOOL_GET_MAINTENANCE_GUIDANCE: dict[str, Any] = {
 }
 
 
+MCP_TOOL_GET_APPLICATION_GUIDANCE: dict[str, Any] = {
+    "name": "get_application_guidance",
+    "description": (
+        "Retrieve application guidance knowledge objects by canonical "
+        "equipment class id and optional application filters."
+    ),
+    "inputSchema": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "equipment_class_id": {
+                "type": "string",
+                "description": "Canonical ontology class id such as 'variable_frequency_drive'.",
+            },
+            "domain_id": {
+                "type": "string",
+                "description": "Domain package scope such as 'drive'.",
+            },
+            "application_type": {
+                "type": "string",
+                "description": "Optional application type filter such as 'pump', 'fan', or 'pump_fan'.",
+            },
+            "brand": {
+                "type": "string",
+                "description": "Optional brand filter for applicability.",
+            },
+            "model_family": {
+                "type": "string",
+                "description": "Optional model family filter for applicability.",
+            },
+            "min_confidence": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 1.0,
+            },
+            "min_trust_level": {
+                "type": "string",
+                "enum": ["L1", "L2", "L3", "L4"],
+                "default": "L4",
+            },
+            "limit": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100,
+                "default": 20,
+            },
+        },
+        "required": ["domain_id", "equipment_class_id"],
+    },
+}
+
+
+MCP_TOOL_GET_OPERATIONAL_GUIDANCE: dict[str, Any] = {
+    "name": "get_operational_guidance",
+    "description": (
+        "Retrieve commissioning, wiring, and application guidance knowledge "
+        "objects by canonical equipment class id."
+    ),
+    "inputSchema": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "equipment_class_id": {
+                "type": "string",
+                "description": "Canonical ontology class id such as 'variable_frequency_drive'.",
+            },
+            "domain_id": {
+                "type": "string",
+                "description": "Domain package scope such as 'drive'.",
+            },
+            "guidance_type": {
+                "type": "string",
+                "enum": ["commissioning_step", "wiring_guidance", "application_guidance"],
+                "description": "Optional operational guidance type filter.",
+            },
+            "brand": {
+                "type": "string",
+                "description": "Optional brand filter for applicability.",
+            },
+            "model_family": {
+                "type": "string",
+                "description": "Optional model family filter for applicability.",
+            },
+            "min_confidence": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 1.0,
+            },
+            "min_trust_level": {
+                "type": "string",
+                "enum": ["L1", "L2", "L3", "L4"],
+                "default": "L4",
+            },
+            "limit": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100,
+                "default": 20,
+            },
+        },
+        "required": ["domain_id", "equipment_class_id"],
+    },
+}
+
+
 MCP_TOOL_EXPLAIN_EQUIPMENT_CLASS: dict[str, Any] = {
     "name": "explain_equipment_class",
     "description": "Explain a canonical equipment class, its aliases, mappings, and supported knowledge anchors.",
@@ -369,5 +500,7 @@ SEMANTIC_MCP_TOOLS_V2: list[dict[str, Any]] = [
     MCP_TOOL_GET_FAULT_KNOWLEDGE,
     MCP_TOOL_GET_PARAMETER_PROFILE,
     MCP_TOOL_GET_MAINTENANCE_GUIDANCE,
+    MCP_TOOL_GET_APPLICATION_GUIDANCE,
+    MCP_TOOL_GET_OPERATIONAL_GUIDANCE,
     MCP_TOOL_EXPLAIN_EQUIPMENT_CLASS,
 ]

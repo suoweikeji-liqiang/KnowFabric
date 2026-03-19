@@ -1,0 +1,95 @@
+{
+  "domain_id": "drive",
+  "equipment_class_id": "variable_frequency_drive",
+  "equipment_class_key": "drive:variable_frequency_drive",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "wiring_guidance",
+      "knowledge_object_id": "ko_abb_ground_control_cable_shield",
+      "canonical_key": "shield_grounding_control_cable_shield_360",
+      "title": "ABB Ground Control Cable Shield 360 Degrees",
+      "summary": "Ground the external shield of the control cable 360 degrees on the grounding rack under the clamp.",
+      "structured_payload": {
+        "wiring_topic": "shield_grounding",
+        "guidance": "Ground the external shield of the control cable 360 degrees on the grounding rack under the clamp"
+      },
+      "applicability": {
+        "brand": "ABB",
+        "model_family": "ACH531"
+      },
+      "confidence_score": 0.87,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_abb_ach531_fw_manual",
+        "file_name": "ABB ACH531 HVAC Control Program Firmware Manual.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_abb_ach531_51",
+        "page_no": 51,
+        "page_type": "commissioning_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_abb_ach531_ground_shield",
+        "chunk_index": 0,
+        "chunk_type": "wiring_block",
+        "cleaned_text": "For control cables, ground the external shield 360 degrees on the grounding rack under the grounding clamp.",
+        "text_excerpt": "ground the external shield 360 degrees on the grounding rack"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_abb_ach531_ground_shield",
+        "evidence_role": "primary",
+        "evidence_text": "对于控制电缆，在接地夹下方的接地架上对电缆的外屏蔽层进行360度接地"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/ABB/ABB_ACH531 HVAC控制程序固件手册_CN_revD.pdf",
+        "page_no": 51
+      }
+    },
+    {
+      "knowledge_object_type": "commissioning_step",
+      "knowledge_object_id": "ko_siemens_backup_drive_settings",
+      "canonical_key": "backup_drive_settings_after_commissioning",
+      "title": "Siemens Backup Drive Settings After Commissioning",
+      "summary": "After commissioning, back up the inverter settings to external storage media.",
+      "structured_payload": {
+        "step": "Back up the drive settings to storage media after commissioning",
+        "commissioning_phase": "post_commissioning"
+      },
+      "applicability": {
+        "brand": "Siemens",
+        "model_family": "G120XA"
+      },
+      "confidence_score": 0.85,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_siemens_g120xa_manual",
+        "file_name": "Siemens G120XA Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_siemens_g120xa_151",
+        "page_no": 151,
+        "page_type": "commissioning_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_siemens_backup_settings",
+        "chunk_index": 1,
+        "chunk_type": "checklist_block",
+        "cleaned_text": "After commissioning, upload and back up the drive settings to external storage media.",
+        "text_excerpt": "upload and back up the drive settings to external storage media"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_siemens_backup_settings",
+        "evidence_role": "primary",
+        "evidence_text": "调试后，设置会永久保存到变频器中。建议通过上传将设置额外备份到变频器以外的存储介质中"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/西门子/G120XA.pdf",
+        "page_no": 151
+      }
+    }
+  ]
+}

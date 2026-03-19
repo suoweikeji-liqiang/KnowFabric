@@ -1,12 +1,60 @@
 examples:
-  - id: drive_fault_lookup
-    query: fault knowledge for variable_frequency_drive code F0001
+  - id: drive_fault_knowledge_demo
+    description: Verify fault knowledge for the drive domain from reviewed VFD fault fixtures.
+    query: fault knowledge for variable frequency drive code A7C1
+    query_type: fault_knowledge
     expected_contract: fault_knowledge_by_equipment_class
+    request:
+      domain_id: drive
+      equipment_class_id: variable_frequency_drive
+      fault_code: A7C1
+      min_trust_level: L2
+      limit: 5
+    required_review_status: approved
+    expected_canonical_keys:
+      - A7C1
 
-  - id: parameter_profile_lookup
-    query: parameter profile for variable_frequency_drive acceleration time
+  - id: drive_parameter_profile_demo
+    description: Verify parameter-profile delivery for reviewed drive parameter fixtures.
+    query: parameter profile for variable frequency drive parameter p0604
+    query_type: parameter_profile
     expected_contract: parameter_profile_by_equipment_class
+    request:
+      domain_id: drive
+      equipment_class_id: variable_frequency_drive
+      parameter_name: p0604
+      min_trust_level: L2
+      limit: 5
+    required_review_status: approved
+    expected_canonical_keys:
+      - p0604_motor_temperature_alarm_threshold
 
-  - id: commissioning_guidance_lookup
-    query: maintenance guidance for variable_frequency_drive startup checklist
-    expected_contract: maintenance_guidance_by_equipment_class
+  - id: drive_application_guidance_demo
+    description: Verify application guidance for pump and fan control scenarios.
+    query: application guidance for variable frequency drive pump and fan control
+    query_type: application_guidance
+    expected_contract: application_guidance_by_equipment_class
+    request:
+      domain_id: drive
+      equipment_class_id: variable_frequency_drive
+      application_type: pump_fan
+      min_trust_level: L2
+      limit: 5
+    required_review_status: approved
+    expected_canonical_keys:
+      - pump_fan_application_control
+
+  - id: drive_operational_guidance_demo
+    description: Verify operational guidance for reviewed drive wiring knowledge.
+    query: operational guidance for variable frequency drive control cable shield grounding
+    query_type: operational_guidance
+    expected_contract: operational_guidance_by_equipment_class
+    request:
+      domain_id: drive
+      equipment_class_id: variable_frequency_drive
+      guidance_type: wiring_guidance
+      min_trust_level: L2
+      limit: 5
+    required_review_status: approved
+    expected_canonical_keys:
+      - shield_grounding_control_cable_shield_360

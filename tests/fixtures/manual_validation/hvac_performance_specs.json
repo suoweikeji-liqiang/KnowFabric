@@ -1,0 +1,97 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "screw_chiller",
+  "equipment_class_key": "hvac:screw_chiller",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "performance_spec",
+      "knowledge_object_id": "ko_tica_capacity_rating",
+      "canonical_key": "capacity_rated_cooling_output",
+      "title": "TICA Rated Cooling Capacity",
+      "summary": "Rated cooling capacity for the screw chiller model.",
+      "structured_payload": {
+        "parameter_name": "rated_cooling_capacity",
+        "parameter_category": "capacity",
+        "rated_value": "350 RT"
+      },
+      "applicability": {
+        "brand": "TICA",
+        "model_family": "Water-Cooled Screw Chiller"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_tica_screw_chiller_manual",
+        "file_name": "TICA Water-Cooled Screw Chiller Manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_tica_screw_chiller_12",
+        "page_no": 12,
+        "page_type": "technical_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_tica_capacity_rating",
+        "chunk_index": 0,
+        "chunk_type": "spec_block",
+        "cleaned_text": "Rated cooling capacity 350 RT under nominal conditions.",
+        "text_excerpt": "rated cooling capacity 350 RT"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_tica_capacity_rating",
+        "evidence_role": "primary",
+        "evidence_text": "额定制冷量 350 RT"
+      },
+      "source_manual": {
+        "path": "/Users/asteroida/a00238/13、天加中央空调/【天加】水冷螺杆式冷水机组操作使用说明书.3.pdf",
+        "page_no": 12
+      }
+    },
+    {
+      "knowledge_object_type": "performance_spec",
+      "knowledge_object_id": "ko_tica_cop_rating",
+      "canonical_key": "efficiency_nominal_cop",
+      "title": "TICA Nominal COP",
+      "summary": "Nominal coefficient of performance for the screw chiller.",
+      "structured_payload": {
+        "parameter_name": "nominal_cop",
+        "parameter_category": "efficiency",
+        "rated_value": "5.6 COP"
+      },
+      "applicability": {
+        "brand": "TICA",
+        "model_family": "Water-Cooled Screw Chiller"
+      },
+      "confidence_score": 0.89,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_tica_screw_chiller_manual",
+        "file_name": "TICA Water-Cooled Screw Chiller Manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_tica_screw_chiller_13",
+        "page_no": 13,
+        "page_type": "technical_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_tica_cop_rating",
+        "chunk_index": 1,
+        "chunk_type": "spec_block",
+        "cleaned_text": "Nominal COP 5.6 under AHRI rating conditions.",
+        "text_excerpt": "nominal COP 5.6"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_tica_cop_rating",
+        "evidence_role": "primary",
+        "evidence_text": "名义 COP 5.6"
+      },
+      "source_manual": {
+        "path": "/Users/asteroida/a00238/13、天加中央空调/【天加】水冷螺杆式冷水机组操作使用说明书.3.pdf",
+        "page_no": 13
+      }
+    }
+  ]
+}

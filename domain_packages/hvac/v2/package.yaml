@@ -8,6 +8,7 @@ supported_languages:
 supported_knowledge_objects:
   - fault_code
   - parameter_spec
+  - application_guidance
   - maintenance_procedure
   - performance_spec
   - symptom

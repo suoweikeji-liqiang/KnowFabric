@@ -25,6 +25,10 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 HVAC_V2_ROOT = REPO_ROOT / "domain_packages/hvac/v2"
 DRIVE_V2_ROOT = REPO_ROOT / "domain_packages/drive/v2"
 HVAC_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_module_faults.json"
+HVAC_MAINTENANCE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_maintenance_guidance.json"
+HVAC_PERFORMANCE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_performance_specs.json"
+HVAC_APPLICATION_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_application_guidance.json"
+DRIVE_GUIDE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_commissioning_guidance.json"
 DRIVE_PARAMETER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_parameter_profiles.json"
 
 
@@ -129,6 +133,61 @@ def _seed_alias_match_chunk(session_factory) -> None:
         db.close()
 
 
+def _seed_profile_guard_chunk(session_factory) -> None:
+    db = session_factory()
+    try:
+        db.execute(
+            Document.__table__.insert(),
+            [
+                {
+                    "doc_id": "doc_profile_guard",
+                    "file_hash": "hash_doc_profile_guard",
+                    "storage_path": "/tmp/doc_profile_guard.pdf",
+                    "file_name": "Maintenance guide with rating text.pdf",
+                    "file_ext": "pdf",
+                    "mime_type": "application/pdf",
+                    "file_size": 1,
+                    "source_domain": "hvac",
+                    "parse_status": "complete",
+                    "is_active": True,
+                }
+            ],
+        )
+        db.execute(
+            DocumentPage.__table__.insert(),
+            [
+                {
+                    "page_id": "page_profile_guard_1",
+                    "doc_id": "doc_profile_guard",
+                    "page_no": 1,
+                    "raw_text": "Rated cooling capacity 350 RT and clean condenser regularly.",
+                    "cleaned_text": "Rated cooling capacity 350 RT and clean condenser regularly.",
+                    "page_type": "maintenance_guide",
+                }
+            ],
+        )
+        db.execute(
+            ContentChunk.__table__.insert(),
+            [
+                {
+                    "chunk_id": "chunk_profile_guard_1",
+                    "doc_id": "doc_profile_guard",
+                    "page_id": "page_profile_guard_1",
+                    "page_no": 1,
+                    "chunk_index": 0,
+                    "raw_text": "Rated cooling capacity 350 RT and clean condenser regularly.",
+                    "cleaned_text": "Rated cooling capacity 350 RT and clean condenser regularly.",
+                    "text_excerpt": "rated cooling capacity 350 RT and clean condenser regularly",
+                    "chunk_type": "procedure_block",
+                    "evidence_anchor": "{\"line\": 1}",
+                }
+            ],
+        )
+        db.commit()
+    finally:
+        db.close()
+
+
 def test_generate_chunk_backfill_candidates_for_hvac_faults(monkeypatch) -> None:
     """Known HVAC equipment class should yield fault-code review candidates."""
 
@@ -207,6 +266,108 @@ def test_generate_chunk_backfill_candidates_can_alias_match_equipment_class(monk
     assert "hvac drive" in candidate["equipment_class_candidate"]["matched_aliases"]
 
 
+def test_generate_chunk_backfill_candidates_for_hvac_maintenance_guidance(monkeypatch) -> None:
+    """Maintenance guide chunks should yield maintenance and diagnostic candidates."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_fixture_chunks(session_factory, HVAC_MAINTENANCE_FIXTURE)
+    monkeypatch.setattr("scripts.generate_chunk_backfill_candidates.SessionLocal", session_factory)
+
+    payload = generate_chunk_backfill_candidates(
+        "hvac",
+        doc_id="doc_guoxiang_kms_manual",
+        equipment_class_id="air_cooled_modular_heat_pump",
+    )
+
+    assert payload["metadata"]["candidate_knowledge_types"] == ["diagnostic_step", "maintenance_procedure"]
+    assert len(payload["candidate_entries"]) == 2
+    by_type = {item["knowledge_object_type"]: item for item in payload["candidate_entries"]}
+    assert by_type["maintenance_procedure"]["structured_payload_candidate"]["task_type"] == "cleaning"
+    assert by_type["diagnostic_step"]["structured_payload_candidate"]["task_type"] == "inspection"
+    assert by_type["diagnostic_step"]["structured_payload_candidate"]["step"] == "increase water flow and vent air"
+
+
+def test_generate_chunk_backfill_candidates_for_hvac_performance_specs(monkeypatch) -> None:
+    """Technical manual chunks should yield performance spec candidates."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_fixture_chunks(session_factory, HVAC_PERFORMANCE_FIXTURE)
+    monkeypatch.setattr("scripts.generate_chunk_backfill_candidates.SessionLocal", session_factory)
+
+    payload = generate_chunk_backfill_candidates(
+        "hvac",
+        doc_id="doc_tica_screw_chiller_manual",
+        equipment_class_id="screw_chiller",
+    )
+
+    assert payload["metadata"]["candidate_knowledge_types"] == ["performance_spec"]
+    assert len(payload["candidate_entries"]) == 2
+    categories = {item["structured_payload_candidate"]["parameter_category"] for item in payload["candidate_entries"]}
+    assert categories == {"capacity", "efficiency"}
+    rated_values = {item["structured_payload_candidate"]["rated_value"] for item in payload["candidate_entries"]}
+    assert rated_values == {"350 RT", "COP 5.6"}
+
+
+def test_generate_chunk_backfill_candidates_for_hvac_application_guidance(monkeypatch) -> None:
+    """Authority-style HVAC guide chunks should yield application guidance candidates."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_fixture_chunks(session_factory, HVAC_APPLICATION_FIXTURE)
+    monkeypatch.setattr("scripts.generate_chunk_backfill_candidates.SessionLocal", session_factory)
+
+    payload = generate_chunk_backfill_candidates(
+        "hvac",
+        doc_id="doc_ashrae_guideline_36",
+        equipment_class_id="ahu",
+    )
+
+    assert payload["metadata"]["candidate_knowledge_types"] == ["application_guidance"]
+    assert len(payload["candidate_entries"]) == 1
+    candidate = payload["candidate_entries"][0]
+    assert candidate["knowledge_object_type"] == "application_guidance"
+    assert candidate["structured_payload_candidate"]["application_type"] == "application"
+
+
+def test_generate_chunk_backfill_candidates_for_drive_commissioning_guidance(monkeypatch) -> None:
+    """Commissioning guide chunks should yield commissioning and wiring candidates."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_fixture_chunks(session_factory, DRIVE_GUIDE_FIXTURE)
+    monkeypatch.setattr("scripts.generate_chunk_backfill_candidates.SessionLocal", session_factory)
+
+    payload = generate_chunk_backfill_candidates(
+        "drive",
+        equipment_class_id="variable_frequency_drive",
+    )
+
+    assert payload["metadata"]["candidate_knowledge_types"] == ["commissioning_step", "wiring_guidance"]
+    assert len(payload["candidate_entries"]) == 2
+    by_type = {item["knowledge_object_type"]: item for item in payload["candidate_entries"]}
+    assert by_type["commissioning_step"]["structured_payload_candidate"]["commissioning_phase"] == "startup"
+    assert by_type["wiring_guidance"]["structured_payload_candidate"]["wiring_topic"] == "shield_grounding"
+
+
+def test_generate_chunk_backfill_candidates_respects_document_profile_preferences(monkeypatch) -> None:
+    """Maintenance-guide page types should suppress unrelated performance candidates."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_profile_guard_chunk(session_factory)
+    monkeypatch.setattr("scripts.generate_chunk_backfill_candidates.SessionLocal", session_factory)
+
+    payload = generate_chunk_backfill_candidates(
+        "hvac",
+        doc_id="doc_profile_guard",
+        equipment_class_id="screw_chiller",
+    )
+
+    assert {item["knowledge_object_type"] for item in payload["candidate_entries"]} == {"maintenance_procedure"}
+
+
 def test_generate_chunk_backfill_candidates_includes_multi_doc_summaries(monkeypatch) -> None:
     """Cross-document candidate generation should expose per-doc hit statistics."""
 
@@ -268,6 +429,21 @@ if __name__ == "__main__":
     monkeypatch.undo()
     monkeypatch = _MonkeyPatch()
     test_generate_chunk_backfill_candidates_can_alias_match_equipment_class(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_generate_chunk_backfill_candidates_for_hvac_maintenance_guidance(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_generate_chunk_backfill_candidates_for_hvac_performance_specs(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_generate_chunk_backfill_candidates_for_hvac_application_guidance(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_generate_chunk_backfill_candidates_for_drive_commissioning_guidance(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_generate_chunk_backfill_candidates_respects_document_profile_preferences(monkeypatch)
     monkeypatch.undo()
     monkeypatch = _MonkeyPatch()
     test_generate_chunk_backfill_candidates_includes_multi_doc_summaries(monkeypatch)

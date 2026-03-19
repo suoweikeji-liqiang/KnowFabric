@@ -13,3 +13,7 @@ document_profiles:
     preferred_knowledge_objects:
       - commissioning_step
       - wiring_guidance
+
+  - id: application_guide
+    preferred_knowledge_objects:
+      - application_guidance

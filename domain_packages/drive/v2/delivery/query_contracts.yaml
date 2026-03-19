@@ -40,3 +40,31 @@ queries:
       - maintenance_step
       - evidence
       - trust
+
+  - id: application_guidance_by_equipment_class
+    required_filters:
+      - equipment_class_id
+    optional_filters:
+      - application_type
+      - brand
+      - model_family
+    returns:
+      - knowledge_object_id
+      - application_type
+      - guidance
+      - evidence
+      - trust
+
+  - id: operational_guidance_by_equipment_class
+    required_filters:
+      - equipment_class_id
+    optional_filters:
+      - guidance_type
+      - brand
+      - model_family
+    returns:
+      - knowledge_object_id
+      - knowledge_object_type
+      - guidance
+      - evidence
+      - trust

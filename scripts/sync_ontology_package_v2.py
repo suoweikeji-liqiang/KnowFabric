@@ -37,12 +37,14 @@ def sync_domain_package(package_root: Path) -> tuple[str, int, int, int]:
     session = SessionLocal()
     try:
         _upsert_classes(session, class_rows)
+        session.flush()
         session.execute(
             update(OntologyClassV2)
             .where(OntologyClassV2.domain_id == bundle.package.domain_id)
             .where(OntologyClassV2.ontology_class_key.not_in(active_keys))
             .values(is_active=False)
         )
+        session.flush()
 
         session.execute(delete(OntologyAliasV2).where(OntologyAliasV2.domain_id == bundle.package.domain_id))
         if alias_rows:
