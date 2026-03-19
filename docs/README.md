@@ -1,7 +1,7 @@
 # KnowFabric Documentation
 
 **Status:** Governance Documents - Binding Contracts
-**Last Updated:** 2026-03-13
+**Last Updated:** 2026-03-19
 
 This directory contains the governance and standards documentation for KnowFabric. These are binding contracts, not aspirational guidelines.
 
@@ -51,6 +51,10 @@ This directory contains the governance and standards documentation for KnowFabri
 17. **[15_manual-validation-round1.md](15_manual-validation-round1.md)** - First manual-driven validation note for module-unit HVAC manuals
 18. **[16_manual-validation-drive-round1.md](16_manual-validation-drive-round1.md)** - First manual-driven validation note for VFD manuals
 19. **[17_manual-validation-round2.md](17_manual-validation-round2.md)** - Second manual-driven validation note for parameter and maintenance material
+20. **[18_authority-source-validation-round3.md](18_authority-source-validation-round3.md)** - Real-corpus validation note across chillers, VFDs, and authority reference material
+21. **[19_authority-source-validation-round4.md](19_authority-source-validation-round4.md)** - Validation note for performance specs plus drive commissioning and wiring guidance
+22. **[20_authority-source-validation-round5.md](20_authority-source-validation-round5.md)** - Validation note for drive-side application guidance and broader guide knowledge
+23. **[21_authority-source-validation-round6.md](21_authority-source-validation-round6.md)** - Validation note for HVAC-side authority application guidance from ASHRAE guide material
 
 ---
 
@@ -89,6 +93,10 @@ These documents govern the ontology-first rebuild track:
 - **15_manual-validation-round1.md** - Findings from the first real-manual validation round
 - **16_manual-validation-drive-round1.md** - Findings from the first real VFD manual validation round
 - **17_manual-validation-round2.md** - Findings from the second manual-backed semantic validation round
+- **18_authority-source-validation-round3.md** - Findings from source-level validation against local chiller, VFD, and authority-reference corpora
+- **19_authority-source-validation-round4.md** - Findings from expanding the semi-automated flow to performance, commissioning, and wiring guidance
+- **20_authority-source-validation-round5.md** - Findings from adding drive-side application guidance to the semi-automated flow
+- **21_authority-source-validation-round6.md** - Findings from adding HVAC-side authority application guidance to the semi-automated flow
 
 ### Standards Documents
 
