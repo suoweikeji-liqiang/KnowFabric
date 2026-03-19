@@ -6,10 +6,9 @@
 This document defines the minimum semantic delivery contract for the
 ontology-first rebuild track.
 
-It is additive and reversible. The first minimal read-only class explanation
-route and the first fault knowledge route may be wired into the API app, but
-the broader semantic knowledge-object route set and MCP implementation remain
-incomplete in this repository.
+It is additive and reversible. The rebuild repository now includes a working
+read-only semantic route set in the API app plus a minimal MCP implementation
+that mirrors the same knowledge-query vocabulary.
 
 ---
 
@@ -17,15 +16,28 @@ incomplete in this repository.
 
 Current repository reality:
 
-- REST currently exposes only legacy search at `GET /api/v1/chunks/search`.
-- REST now also exposes a first ontology metadata route at `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}`.
-- REST may also expose a first semantic knowledge route at `GET /api/v2/domains/{domain_id}/equipment-classes/{equipment_class_id}/fault-knowledge`.
-- Search returns chunk-level traceability, but not ontology-anchored semantic knowledge objects.
-- There is no `apps/mcp/` implementation directory in the current workspace.
-- The AI consumer contract defines generic MCP and context-block expectations, but not rebuild-track semantic endpoints.
+- REST exposes legacy search at `GET /api/v1/chunks/search`.
+- REST also exposes semantic ontology metadata and knowledge routes under `/api/v2/`:
+  - equipment class explanation
+  - fault knowledge
+  - parameter profiles
+  - maintenance guidance
+  - application guidance
+  - operational guidance
+- Search still returns chunk-level traceability as a compatibility surface.
+- `apps/mcp/` now exists and exposes:
+  - legacy search compatibility tools
+  - ontology class explanation
+  - semantic fault knowledge retrieval
+  - semantic parameter profile retrieval
+  - semantic maintenance guidance retrieval
+  - semantic application guidance retrieval
+  - semantic operational guidance retrieval
+- The repository also includes fixed semantic demo query sets and smoke runners for API and MCP verification.
 
-This means the rebuild still lacks a stable semantic contract even after
-ontology package and storage contracts were drafted.
+This means the rebuild now has a practical semantic contract surface, but the
+design document still serves as the normative contract and must be kept aligned
+as the implementation expands.
 
 ---
 
@@ -355,6 +367,55 @@ Semantic MCP tools must mirror the REST contract and remain read-only.
 }
 ```
 
+### `get_application_guidance`
+
+```json
+{
+  "name": "get_application_guidance",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "equipment_class_id": { "type": "string" },
+      "domain_id": { "type": "string" },
+      "application_type": { "type": "string" },
+      "brand": { "type": "string" },
+      "model_family": { "type": "string" },
+      "min_confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+      "min_trust_level": { "type": "string", "enum": ["L1", "L2", "L3", "L4"], "default": "L4" },
+      "limit": { "type": "integer", "minimum": 1, "maximum": 100, "default": 20 }
+    },
+    "required": ["domain_id", "equipment_class_id"]
+  }
+}
+```
+
+### `get_operational_guidance`
+
+```json
+{
+  "name": "get_operational_guidance",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "equipment_class_id": { "type": "string" },
+      "domain_id": { "type": "string" },
+      "guidance_type": {
+        "type": "string",
+        "enum": ["commissioning_step", "wiring_guidance", "application_guidance"]
+      },
+      "brand": { "type": "string" },
+      "model_family": { "type": "string" },
+      "min_confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+      "min_trust_level": { "type": "string", "enum": ["L1", "L2", "L3", "L4"], "default": "L4" },
+      "limit": { "type": "integer", "minimum": 1, "maximum": 100, "default": 20 }
+    },
+    "required": ["domain_id", "equipment_class_id"]
+  }
+}
+```
+
 ### `explain_equipment_class`
 
 ```json
@@ -390,8 +451,7 @@ This avoids separate semantics for agent consumers and HTTP consumers.
 
 ## What This Change Does Not Approve
 
-- no implementation of the full knowledge-object `/api/v2/...` route set yet
-- no claim that `apps/mcp/` already exists
 - no write-capable MCP tools
 - no runtime or project-instance query surface
 - no replacement of legacy search and trace endpoints
+- no claim that the current semantic route set is final or exhaustive
