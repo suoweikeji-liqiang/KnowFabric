@@ -1,0 +1,142 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "ahu",
+  "equipment_class_key": "hvac:ahu",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "application_guidance",
+      "knowledge_object_id": "ko_eed61eedc7be08dd",
+      "canonical_key": "ahu_zone_group_operating_mode",
+      "title": "ASHRAE AHU Zone Group Operating Mode Guidance",
+      "summary": "Zones served by a single AHU should be organized into zone groups that share schedules and enter the same zone-group operating mode together.",
+      "structured_payload": {
+        "application_type": "ahu_sequence",
+        "guidance": "For zones served by a single AHU, define zone groups as shared scheduling units. If any zone in a zone group enters a non-unoccupied zone-group operating mode, all zones in that group should enter the same mode so the upstream air-handling system operates against a coherent load and schedule."
+      },
+      "applicability": {},
+      "confidence_score": 0.89,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_ashrae_guideline_36_authority",
+        "file_name": "HVAC系统高性能运行序列指南.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ashrae_guideline_36_71",
+        "page_no": 71,
+        "page_type": "application_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ashrae_guideline_36_71",
+        "chunk_index": 0,
+        "chunk_type": "guidance_block",
+        "cleaned_text": "Zone Groups are sets of zones served by a single air handler that operate together. If one zone in a Zone Group enters a mode other than Unoccupied Mode, all zones in that Zone Group enter that same mode.",
+        "text_excerpt": "zone groups served by a single air handler operate together and enter the same mode"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_d6434cf43e981b8c",
+        "evidence_role": "primary",
+        "evidence_text": "Zone Groups are defined as sets of zones served by a single air handler that operate together for scheduling and stable upstream operation, and if one zone in a Zone Group enters a mode other than Unoccupied Mode, all zones in that Zone Group enter that same mode."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+        "page_no": 71
+      }
+    },
+    {
+      "knowledge_object_type": "maintenance_procedure",
+      "knowledge_object_id": "ko_008a7e34d988d336",
+      "canonical_key": "ahu_airflow_inspection_and_calibration",
+      "title": "AHU Airflow Inspection and Calibration Procedure",
+      "summary": "To restore inconsistent airflow, inspect the distribution system, maintain AHU moving components, and calibrate the unit to deliver the intended airflow rate.",
+      "structured_payload": {
+        "maintenance_task": "inspection",
+        "task_type": "inspection",
+        "steps": [
+          "Inspect the system for ductwork leaks, blockages, or improper sizing that degrade airflow.",
+          "Repair or modify the affected ductwork promptly to restore proper airflow.",
+          "Inspect AHU fan blades, belts, and motors regularly and clean or replace them as needed.",
+          "Calibrate the AHU to confirm that it is delivering the intended airflow rate."
+        ]
+      },
+      "applicability": {},
+      "confidence_score": 0.88,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_hvac_efficiency_maintenance_authority",
+        "file_name": "HVAC系统效率和维护最佳实践.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_hvac_efficiency_maintenance_94",
+        "page_no": 94,
+        "page_type": "maintenance_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_hvac_efficiency_maintenance_94",
+        "chunk_index": 0,
+        "chunk_type": "procedure_block",
+        "cleaned_text": "Inspect ductwork for leaks, blockages, or improper sizing. Inspect, maintain, and calibrate the AHU to ensure that it delivers the correct airflow rates.",
+        "text_excerpt": "inspect ductwork and calibrate the ahu to deliver the correct airflow rates"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_d095870e7fb7e938",
+        "evidence_role": "primary",
+        "evidence_text": "To address inconsistent airflow, inspect for ductwork issues, repair them promptly, and regularly inspect, maintain, and calibrate the AHU so it delivers the correct airflow rates."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统效率和维护最佳实践.pdf",
+        "page_no": 94
+      }
+    },
+    {
+      "knowledge_object_type": "maintenance_procedure",
+      "knowledge_object_id": "ko_780694eb4f3d8d37",
+      "canonical_key": "ahu_preventive_airflow_maintenance_plan",
+      "title": "AHU Preventive Airflow Maintenance Plan",
+      "summary": "A proactive AHU maintenance plan should cover regular filter service, damper inspection and adjustment, and coil cleaning to preserve airflow and efficiency.",
+      "structured_payload": {
+        "maintenance_task": "maintenance",
+        "task_type": "maintenance",
+        "steps": [
+          "Clean or replace filters on a regular schedule.",
+          "Inspect dampers and adjust them as needed.",
+          "Clean coils as part of the preventive maintenance cycle.",
+          "Use a proactive maintenance schedule to prevent airflow degradation and protect system efficiency."
+        ]
+      },
+      "applicability": {},
+      "confidence_score": 0.88,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_hvac_efficiency_maintenance_authority",
+        "file_name": "HVAC系统效率和维护最佳实践.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_hvac_efficiency_maintenance_95",
+        "page_no": 95,
+        "page_type": "maintenance_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_hvac_efficiency_maintenance_95",
+        "chunk_index": 0,
+        "chunk_type": "procedure_block",
+        "cleaned_text": "Implement a comprehensive maintenance plan that includes regular filter cleaning or replacement, damper inspection and adjustment, and coil cleaning.",
+        "text_excerpt": "implement a preventive ahu maintenance plan for filters dampers and coils"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_5b8f0e9734bfe222",
+        "evidence_role": "primary",
+        "evidence_text": "A comprehensive maintenance plan should include regular filter cleaning or replacement, damper inspection and adjustment, and coil cleaning to prevent airflow problems and preserve efficiency."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统效率和维护最佳实践.pdf",
+        "page_no": 95
+      }
+    }
+  ]
+}

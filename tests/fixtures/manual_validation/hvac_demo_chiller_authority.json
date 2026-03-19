@@ -1,0 +1,93 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "chiller",
+  "equipment_class_key": "hvac:chiller",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "performance_spec",
+      "knowledge_object_id": "ko_4386d997bf2bf51c",
+      "canonical_key": "minimum_chiller_lift_at_minimum_load",
+      "title": "ASHRAE Minimum Chiller Lift at Minimum Load",
+      "summary": "For each chiller, the minimum allowable lift at minimum load should follow manufacturer recommendations and be used to maintain acceptable head pressure during condenser-water reset control.",
+      "structured_payload": {
+        "parameter_name": "minimum_allowable_lift",
+        "parameter_category": "temperature",
+        "rated_value": "LIFTminX at minimum load per manufacturer recommendation",
+        "measurement_context": "difference between condenser water return temperature and chilled water supply temperature"
+      },
+      "applicability": {},
+      "confidence_score": 0.93,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_ashrae_guideline_36_authority",
+        "file_name": "HVAC系统高性能运行序列指南.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ashrae_guideline_36_17",
+        "page_no": 17,
+        "page_type": "technical_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ashrae_guideline_36_17",
+        "chunk_index": 0,
+        "chunk_type": "spec_block",
+        "cleaned_text": "LIFTminX is the minimum allowable lift at minimum load for Chiller X and should follow manufacturer recommendations.",
+        "text_excerpt": "minimum allowable lift at minimum load for chiller x"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_41f7228c54f4f622",
+        "evidence_role": "primary",
+        "evidence_text": "The sequence requires identifying the minimum allowable lift at minimum load for each chiller, LIFTminX, from manufacturer recommendations, and uses that value to support condenser-water temperature reset and minimum head-pressure control."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+        "page_no": 17
+      }
+    },
+    {
+      "knowledge_object_type": "performance_spec",
+      "knowledge_object_id": "ko_c57d471a7fbef058",
+      "canonical_key": "design_chiller_capacity",
+      "title": "ASHRAE Chiller Design Capacity",
+      "summary": "Chiller design capacity should be defined as QchX in tons for each chiller stage and plant design sequence.",
+      "structured_payload": {
+        "parameter_name": "design_capacity",
+        "parameter_category": "capacity",
+        "rated_value": "QchX in tons",
+        "measurement_context": "design load capacity for Chiller X"
+      },
+      "applicability": {},
+      "confidence_score": 0.93,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_ashrae_guideline_36_authority",
+        "file_name": "HVAC系统高性能运行序列指南.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ashrae_guideline_36_18",
+        "page_no": 18,
+        "page_type": "technical_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ashrae_guideline_36_18",
+        "chunk_index": 0,
+        "chunk_type": "spec_block",
+        "cleaned_text": "QchX is the design capacity of Chiller X, in tons.",
+        "text_excerpt": "qchx design capacity of chiller x in tons"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_00670967184355b1",
+        "evidence_role": "primary",
+        "evidence_text": "The chilled-water plant design information defines QchX as the design capacity of Chiller X, expressed in tons."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+        "page_no": 18
+      }
+    }
+  ]
+}

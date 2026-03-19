@@ -1,0 +1,93 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "condenser_water_pump",
+  "equipment_class_key": "hvac:condenser_water_pump",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "performance_spec",
+      "knowledge_object_id": "ko_00c75feb45c17fea",
+      "canonical_key": "design_condenser_water_pump_speed_by_stage",
+      "title": "ASHRAE Condenser Water Pump Design Speed by Stage",
+      "summary": "For water-cooled plants with variable-speed condenser water pumps, each chiller stage should define a pump speed setpoint that delivers the design condenser-water flow through the operating chillers and waterside heat exchangers.",
+      "structured_payload": {
+        "parameter_name": "design_pump_speed_by_stage",
+        "parameter_category": "flow",
+        "rated_value": "Cw-DesPumpSpdStage",
+        "measurement_context": "pump speed required to deliver design condenser water flow through the operating chillers in a stage"
+      },
+      "applicability": {},
+      "confidence_score": 0.93,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_ashrae_guideline_36_authority",
+        "file_name": "HVAC系统高性能运行序列指南.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ashrae_guideline_36_23",
+        "page_no": 23,
+        "page_type": "technical_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ashrae_guideline_36_23",
+        "chunk_index": 0,
+        "chunk_type": "spec_block",
+        "cleaned_text": "Cw-DesPumpSpdStage is the condenser water pump speed that delivers design condenser water flow through the chillers and waterside heat exchangers for a given stage.",
+        "text_excerpt": "design condenser water pump speed by stage"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_e315aa6b00168053",
+        "evidence_role": "primary",
+        "evidence_text": "Cw-DesPumpSpdStage is defined as the condenser water pump speed that delivers design condenser water flow through the chillers and waterside heat exchangers for a given chiller stage."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+        "page_no": 23
+      }
+    },
+    {
+      "knowledge_object_type": "performance_spec",
+      "knowledge_object_id": "ko_66e046c274d8ac46",
+      "canonical_key": "minimum_condenser_water_pump_speed",
+      "title": "ASHRAE Minimum Condenser Water Pump Speed",
+      "summary": "Variable-speed condenser water pumps should define a minimum speed setpoint high enough to maintain minimum condenser water flow while head-pressure control is active.",
+      "structured_payload": {
+        "parameter_name": "minimum_pump_speed",
+        "parameter_category": "flow",
+        "rated_value": "MinCWPspeed",
+        "measurement_context": "minimum condenser water pump speed that maintains required condenser flow during head-pressure control"
+      },
+      "applicability": {},
+      "confidence_score": 0.93,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_ashrae_guideline_36_authority",
+        "file_name": "HVAC系统高性能运行序列指南.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ashrae_guideline_36_24",
+        "page_no": 24,
+        "page_type": "technical_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ashrae_guideline_36_24",
+        "chunk_index": 0,
+        "chunk_type": "spec_block",
+        "cleaned_text": "MinCWPspeed is the minimum condenser water pump speed and should be set high enough to maintain minimum condenser flow while head-pressure control is enabled.",
+        "text_excerpt": "minimum condenser water pump speed"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_1c06645dc41ee246",
+        "evidence_role": "primary",
+        "evidence_text": "MinCWPspeed is the minimum condenser water pump speed and should be established high enough to maintain minimum condenser water flow while the head-pressure control loop is enabled."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+        "page_no": 24
+      }
+    }
+  ]
+}

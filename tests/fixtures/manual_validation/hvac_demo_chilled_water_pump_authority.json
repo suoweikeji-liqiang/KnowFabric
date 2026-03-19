@@ -1,0 +1,93 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "chilled_water_pump",
+  "equipment_class_key": "hvac:chilled_water_pump",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "performance_spec",
+      "knowledge_object_id": "ko_caedeb61c52fa2a2",
+      "canonical_key": "design_primary_chilled_water_pump_speed_by_stage",
+      "title": "ASHRAE Primary Chilled Water Pump Design Speed by Stage",
+      "summary": "Primary chilled water pumps should define a design speed setpoint for each operating stage that delivers design chilled-water flow through the active chillers.",
+      "structured_payload": {
+        "parameter_name": "design_primary_pump_speed_by_stage",
+        "parameter_category": "flow",
+        "rated_value": "Ch-MaxPriPumpSpdStage",
+        "measurement_context": "primary chilled water pump speed necessary to deliver design chilled water flow through the operating chillers in a stage"
+      },
+      "applicability": {},
+      "confidence_score": 0.93,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_ashrae_guideline_36_authority",
+        "file_name": "HVAC系统高性能运行序列指南.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ashrae_guideline_36_24",
+        "page_no": 24,
+        "page_type": "technical_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ashrae_guideline_36_24",
+        "chunk_index": 0,
+        "chunk_type": "spec_block",
+        "cleaned_text": "Ch-MaxPriPumpSpdStage is the primary chilled water pump speed necessary to deliver design chilled water flow through the operating chillers in a stage.",
+        "text_excerpt": "primary chilled water pump design speed by stage"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_cea9fb234c7b9903",
+        "evidence_role": "primary",
+        "evidence_text": "Ch-MaxPriPumpSpdStage is defined as the primary chilled water pump speed necessary to deliver design chilled water flow, CHW-DesFlowX, through the operating chillers in a stage."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+        "page_no": 24
+      }
+    },
+    {
+      "knowledge_object_type": "performance_spec",
+      "knowledge_object_id": "ko_e2eb8b6717e6459b",
+      "canonical_key": "minimum_primary_chilled_water_pump_speed_by_stage",
+      "title": "ASHRAE Minimum Primary Chilled Water Pump Speed by Stage",
+      "summary": "Primary chilled water pumps should define a minimum stage speed setpoint high enough to keep chiller flow above the minimum chilled-water flow requirement.",
+      "structured_payload": {
+        "parameter_name": "minimum_primary_pump_speed_by_stage",
+        "parameter_category": "flow",
+        "rated_value": "Ch-MinPriPumpSpdStage",
+        "measurement_context": "primary chilled water pump speed necessary to deliver minimum chilled water flow through the operating chillers in a stage"
+      },
+      "applicability": {},
+      "confidence_score": 0.93,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_ashrae_guideline_36_authority",
+        "file_name": "HVAC系统高性能运行序列指南.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ashrae_guideline_36_25",
+        "page_no": 25,
+        "page_type": "technical_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ashrae_guideline_36_25",
+        "chunk_index": 0,
+        "chunk_type": "spec_block",
+        "cleaned_text": "Ch-MinPriPumpSpdStage is established by reducing primary pump speed until chiller flow falls to 110% of CHW-MinFlowX.",
+        "text_excerpt": "minimum primary chilled water pump speed by stage"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_d61b37fc2a4c313c",
+        "evidence_role": "primary",
+        "evidence_text": "Ch-MinPriPumpSpdStage is established by reducing primary pump speed until chiller flow falls to 110% of CHW-MinFlowX, then using that noted speed as the minimum stage setpoint."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+        "page_no": 25
+      }
+    }
+  ]
+}

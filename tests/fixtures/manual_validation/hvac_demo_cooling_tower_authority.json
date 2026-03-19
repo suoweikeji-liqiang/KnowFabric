@@ -1,0 +1,50 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "cooling_tower",
+  "equipment_class_key": "hvac:cooling_tower",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "performance_spec",
+      "knowledge_object_id": "ko_3169cd845dca83ed",
+      "canonical_key": "cooling_tower_design_wetbulb_and_approach",
+      "title": "ASHRAE Cooling Tower Design Wetbulb and Approach",
+      "summary": "Cooling tower design information should define the design wetbulb condition, tower approach, and basin level-control thresholds used by the waterside economizer and condenser-water sequence.",
+      "structured_payload": {
+        "parameter_name": "design_wetbulb_and_approach",
+        "parameter_category": "temperature",
+        "rated_value": "DTWB and DACT",
+        "measurement_context": "design cooling tower wetbulb temperature and design cooling tower approach with associated tower level thresholds"
+      },
+      "applicability": {},
+      "confidence_score": 0.93,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_ashrae_guideline_36_authority",
+        "file_name": "HVAC系统高性能运行序列指南.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ashrae_guideline_36_18",
+        "page_no": 18,
+        "page_type": "technical_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ashrae_guideline_36_18",
+        "chunk_index": 0,
+        "chunk_type": "spec_block",
+        "cleaned_text": "Waterside economizer design information defines design cooling tower wetbulb temperature, design cooling tower approach, and tower level-control thresholds.",
+        "text_excerpt": "design cooling tower wetbulb temperature and design tower approach"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_f84c77fc64045499",
+        "evidence_role": "primary",
+        "evidence_text": "Waterside economizer design information defines DTWB as design cooling tower wetbulb temperature, DACT as design cooling tower approach, and also defines tower level-control thresholds such as high alarm, low alarm, minimum fill, and maximum fill."
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+        "page_no": 18
+      }
+    }
+  ]
+}
