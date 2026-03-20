@@ -189,7 +189,18 @@ def _primary_artifacts(
     }
 
 
-def _handoff_notes(preflight_status: str, bootstrap_status: str, api_status: str) -> list[str]:
+def _handoff_notes(preflight_status: str, bootstrap_status: str, api_status: str, *, language: str) -> list[str]:
+    if language == "zh":
+        if preflight_status != "passed":
+            return ["请先解决预检失败项，再将该环境交给外部评估方。"]
+        if bootstrap_status != "passed":
+            return ["Bootstrap 产物尚不完整；请先重新生成 demo bundle，再进行外部交接。"]
+        if api_status != "passed":
+            return ["Live API smoke 未全绿；外发前请先检查 API 日志和各项 smoke 报告。"]
+        return [
+            "该交付包已可用于外部评估。",
+            "建议先分享简报，再附上 manifest 供机器校验与记录。",
+        ]
     if preflight_status != "passed":
         return ["Resolve preflight failures before handing this environment to evaluators."]
     if bootstrap_status != "passed":
@@ -211,11 +222,13 @@ def _handoff_payload(
     cover_note_path: str | Path,
     bootstrap_result: dict[str, Any],
     statuses: dict[str, str],
+    bundle_language: str,
 ) -> dict[str, Any]:
     domain_ids = sorted(item["domain_id"] for item in bootstrap_result.get("ontology_sync", []))
     return {
         "ready_for_external_evaluation": statuses["overall"] == "passed",
         "recommended_entrypoint": f"python3 scripts/run_live_demo_evaluation.py --output-dir {Path(output_dir)}",
+        "bundle_language": bundle_language,
         "domain_ids": domain_ids,
         "primary_artifacts": _primary_artifacts(
             output_dir,
@@ -225,23 +238,58 @@ def _handoff_payload(
             manifest_path,
             cover_note_path,
         ),
-        "notes": _handoff_notes(statuses["preflight"], statuses["bootstrap"], statuses["api"]),
+        "notes": _handoff_notes(statuses["preflight"], statuses["bootstrap"], statuses["api"], language=bundle_language),
     }
 
 
-def build_evaluator_cover_note(manifest: dict[str, Any]) -> str:
+def _localized_domain_list(domain_ids: list[str], language: str) -> str:
+    labels = {
+        "en": {"hvac": "HVAC", "drive": "Drive"},
+        "zh": {"hvac": "HVAC", "drive": "变频驱动"},
+    }
+    resolved = [labels.get(language, {}).get(domain_id, domain_id) for domain_id in domain_ids]
+    return ", ".join(resolved) if resolved else ("none" if language == "en" else "无")
+
+
+def build_evaluator_cover_note(manifest: dict[str, Any], *, language: str = "en") -> str:
     """Render a concise evaluator-facing note for the bundle root."""
 
     handoff = manifest["handoff"]
     artifacts = handoff["primary_artifacts"]
-    status = manifest["statuses"]["overall"].upper()
-    domain_ids = ", ".join(handoff["domain_ids"]) if handoff["domain_ids"] else "none"
+    status = manifest["statuses"]["overall"]
+    domain_ids = _localized_domain_list(handoff["domain_ids"], language)
     notes = "\n".join(f"- {note}" for note in handoff["notes"])
+    if language == "zh":
+        return "\n".join(
+            [
+                "# KnowFabric 中文评估交付包",
+                "",
+                f"总体状态：{'通过' if status == 'passed' else '失败'}",
+                f"覆盖领域：{domain_ids}",
+                "",
+                "建议阅读顺序：",
+                f"1. `{Path(artifacts['brief']).name}`",
+                f"2. `{Path(artifacts['manifest']).name}`",
+                f"3. 按需查看 `*_api_smoke_report.json`、`*_mcp_smoke_report.json`、`*_semantic_demo_report.json`",
+                "",
+                "交付说明：",
+                notes,
+                "",
+                "主要产物：",
+                f"- 简报：`{artifacts['brief']}`",
+                f"- Manifest：`{artifacts['manifest']}`",
+                f"- 预检报告：`{artifacts['preflight_report']}`",
+                f"- API 日志：`{artifacts['api_log']}`",
+                "",
+                "该交付包为只读且证据可追溯，不包含 UI-first 外壳、项目实例建模或运行控制逻辑。",
+                "",
+            ]
+        )
     return "\n".join(
         [
             "# KnowFabric Evaluation Bundle",
             "",
-            f"Overall status: {status}",
+            f"Overall status: {status.upper()}",
             f"Domains: {domain_ids}",
             "",
             "Recommended reading order:",
@@ -278,6 +326,7 @@ def _evaluation_manifest(
     cover_note_path: str | Path,
     api_base_url: str,
     command: list[str],
+    bundle_language: str,
 ) -> dict[str, Any]:
     bootstrap_status = "passed" if _surface_status(bootstrap_result["reports"]) == "passed" and _surface_status(bootstrap_result["mcp_reports"]) == "passed" else "failed"
     api_status = _surface_status(api_reports)
@@ -291,6 +340,7 @@ def _evaluation_manifest(
         "evaluation_mode": "live_demo_evaluation_runner",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "api_base_url": api_base_url,
+        "bundle_language": bundle_language,
         "paths": {
             "output_dir": str(Path(output_dir)),
             "preflight_report": str(preflight_report_path),
@@ -318,6 +368,7 @@ def _evaluation_manifest(
             cover_note_path,
             bootstrap_result,
             statuses,
+            bundle_language,
         ),
     }
 
@@ -325,6 +376,19 @@ def _evaluation_manifest(
 def build_live_demo_evaluation_summary_text(manifest: dict[str, Any]) -> str:
     """Render a terminal-friendly summary of the live evaluation result."""
 
+    language = manifest.get("bundle_language", "en")
+    if language == "zh":
+        return "\n".join(
+            [
+                "Live Demo Evaluation Summary",
+                f"总体状态: {'通过' if manifest['statuses']['overall'] == 'passed' else '失败'}",
+                f"预检: {'通过' if manifest['statuses']['preflight'] == 'passed' else '失败'}",
+                f"Bootstrap: {'通过' if manifest['statuses']['bootstrap'] == 'passed' else '失败'}",
+                f"API 冒烟: {'通过' if manifest['statuses']['api'] == 'passed' else '失败'}",
+                f"简报: {manifest['paths']['brief']}",
+                f"API 日志: {manifest['paths']['api_log']}",
+            ]
+        )
     return "\n".join(
         [
             "Live Demo Evaluation Summary",
@@ -347,6 +411,7 @@ def run_live_demo_evaluation(
     api_log_path: str | Path | None = None,
     cover_note_path: str | Path | None = None,
     api_base_url: str = "http://127.0.0.1:8000",
+    bundle_language: str = "zh",
     startup_timeout: float = 30.0,
 ) -> dict[str, Any]:
     """Run preflight, bootstrap, live API smoke, and emit a manifest."""
@@ -365,6 +430,7 @@ def run_live_demo_evaluation(
     bootstrap_result = bootstrap_v1_demo(
         output_dir=output_root,
         brief_path=brief_path,
+        brief_language=bundle_language,
         run_preflight=False,
         run_mcp_smoke=True,
         api_base_url=None,
@@ -377,7 +443,7 @@ def run_live_demo_evaluation(
     finally:
         stop_api_service(handle)
 
-    brief_target = build_v1_demo_brief(report_dir=output_root, output_path=brief_path)
+    brief_target = build_v1_demo_brief(report_dir=output_root, output_path=brief_path, language=bundle_language)
     manifest = _evaluation_manifest(
         output_dir=output_root,
         preflight_report_path=preflight_target,
@@ -391,9 +457,10 @@ def run_live_demo_evaluation(
         cover_note_path=cover_note_target,
         api_base_url=api_base_url,
         command=handle.command,
+        bundle_language=bundle_language,
     )
     _write_json(manifest_target, manifest)
-    _write_text(cover_note_target, build_evaluator_cover_note(manifest))
+    _write_text(cover_note_target, build_evaluator_cover_note(manifest, language=bundle_language))
     return manifest
 
 
@@ -406,6 +473,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--api-log", help="Optional explicit path for the API service log")
     parser.add_argument("--cover-note", help="Optional explicit path for the evaluator cover note")
     parser.add_argument("--api-base-url", default="http://127.0.0.1:8000", help="Base URL for the temporary API service")
+    parser.add_argument("--bundle-language", default="zh", choices=["en", "zh"], help="Language for brief and evaluator-facing bundle text")
     parser.add_argument("--startup-timeout", type=float, default=30.0, help="Seconds to wait for the API /health endpoint")
     return parser
 
@@ -420,6 +488,7 @@ def main(argv: list[str] | None = None) -> int:
         api_log_path=args.api_log,
         cover_note_path=args.cover_note,
         api_base_url=args.api_base_url,
+        bundle_language=args.bundle_language,
         startup_timeout=args.startup_timeout,
     )
     print(build_live_demo_evaluation_summary_text(manifest))

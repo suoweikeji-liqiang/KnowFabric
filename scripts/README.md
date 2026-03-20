@@ -16,6 +16,7 @@ For the current operator-facing productization path, start with
 
 - `check_demo_environment.py` - Operator-facing preflight for Python version, config, database connectivity, required demo files, and optional API health
 - `run_live_demo_evaluation.py` - One-shot external evaluation runner: preflight, bootstrap, temporary API startup, live API smoke, brief rebuild, and manifest
+- `run_chinese_demo_shell.py` - One-shot Chinese demo shell launcher: refresh the bundle, then serve the read-only admin web shell
 - `bootstrap_v1_demo.py` - One-shot bootstrap for the external-evaluable v1 demo: migrate, sync, seed, run semantic queries, run MCP smoke, and build the brief
 - `build_v1_demo_brief.py` - Build a Markdown v1 demo brief from generated semantic, MCP, and API reports
 - `run_semantic_demo_queries.py` - Run a fixed semantic demo query set and validate expected canonical knowledge objects
@@ -62,6 +63,9 @@ See [Quality Gates](../docs/06_quality-gates.md) for details.
 ```bash
 # Recommended one-shot path
 python3 scripts/run_live_demo_evaluation.py --output-dir output/demo
+
+# Or refresh the bundle and launch the Chinese read-only UI in one command
+python3 scripts/run_chinese_demo_shell.py --output-dir output/demo
 ```
 
 This produces a small external handoff bundle, including:

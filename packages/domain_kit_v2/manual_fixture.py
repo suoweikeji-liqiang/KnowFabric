@@ -122,6 +122,10 @@ def _build_knowledge_row(
     package_version: str,
     ontology_version: str,
 ) -> dict[str, Any]:
+    structured_payload = dict(entry["structured_payload"])
+    localized_display = entry.get("localized_display")
+    if localized_display:
+        structured_payload["_localized_display"] = localized_display
     return {
         "knowledge_object_id": entry["knowledge_object_id"],
         "domain_id": fixture["domain_id"],
@@ -131,7 +135,7 @@ def _build_knowledge_row(
         "canonical_key": entry["canonical_key"],
         "title": entry["title"],
         "summary": entry["summary"],
-        "structured_payload_json": entry["structured_payload"],
+        "structured_payload_json": structured_payload,
         "applicability_json": entry["applicability"],
         "confidence_score": entry["confidence_score"],
         "trust_level": entry["trust_level"],

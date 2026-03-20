@@ -98,6 +98,21 @@ def _response_canonical_keys(query_type: str, payload: dict[str, Any]) -> list[s
     ]
 
 
+def _response_found_items(query_type: str, payload: dict[str, Any]) -> list[dict[str, Any]]:
+    if query_type == "equipment_class_explanation":
+        return []
+    return [
+        {
+            "canonical_key": str(item.get("canonical_key")),
+            "title": item.get("title"),
+            "summary": item.get("summary"),
+            "display_language": item.get("display_language"),
+        }
+        for item in _response_items(query_type, payload)
+        if item.get("canonical_key")
+    ]
+
+
 def _response_review_statuses(query_type: str, payload: dict[str, Any]) -> dict[str, str]:
     if query_type == "equipment_class_explanation":
         return {}
@@ -125,6 +140,7 @@ def run_api_demo_smoke(
         path, query_params = _build_route(example["query_type"], dict(example["request"]))
         status_code, payload = active_fetcher(path, query_params)
         canonical_keys = _response_canonical_keys(example["query_type"], payload)
+        found_items = _response_found_items(example["query_type"], payload)
         review_statuses = _response_review_statuses(example["query_type"], payload)
         expected_keys = example["expected_canonical_keys"]
         missing_keys = [key for key in expected_keys if key not in canonical_keys]
@@ -153,6 +169,7 @@ def run_api_demo_smoke(
                 "response_query_type": payload.get("metadata", {}).get("query_type") if isinstance(payload, dict) else None,
                 "item_count": len(_response_items(example["query_type"], payload)) if isinstance(payload, dict) else 0,
                 "found_canonical_keys": canonical_keys,
+                "found_items": found_items,
                 "found_review_statuses": review_statuses,
                 "expected_canonical_keys": expected_keys,
                 "missing_canonical_keys": missing_keys,

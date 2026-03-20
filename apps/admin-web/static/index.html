@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KnowFabric 冷站控制知识演示</title>
+    <link rel="stylesheet" href="/ui/styles.css" />
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">KnowFabric Cold Plant Control Demo</p>
+          <h1 id="scenario-title">冷站控制知识演示</h1>
+          <p id="scenario-subtitle" class="lede">
+            正在加载冷站控制场景说明...
+          </p>
+          <div class="hero-ribbon">
+            <span>中文优先</span>
+            <span>证据可追溯</span>
+            <span>只读演示壳</span>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div id="status-pill" class="status-pill">加载中</div>
+          <dl class="summary-grid">
+            <div>
+              <dt>语义演示</dt>
+              <dd id="semantic-count">-</dd>
+            </div>
+            <div>
+              <dt>MCP 冒烟</dt>
+              <dd id="mcp-count">-</dd>
+            </div>
+            <div>
+              <dt>API 冒烟</dt>
+              <dd id="api-count">-</dd>
+            </div>
+            <div>
+              <dt>生成时间</dt>
+              <dd id="generated-at">-</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="artifact-strip">
+        <a id="cover-link" class="artifact-card" href="#" target="_blank" rel="noreferrer">
+          <span>交付说明</span>
+          <strong>EVALUATOR_NOTE.md</strong>
+        </a>
+        <a id="brief-link" class="artifact-card" href="#" target="_blank" rel="noreferrer">
+          <span>中文简报</span>
+          <strong>v1_demo_brief.md</strong>
+        </a>
+        <a id="manifest-link" class="artifact-card" href="#" target="_blank" rel="noreferrer">
+          <span>机器可读</span>
+          <strong>live_demo_evaluation_manifest.json</strong>
+        </a>
+        <a id="log-link" class="artifact-card" href="#" target="_blank" rel="noreferrer">
+          <span>运行日志</span>
+          <strong>api_service.log</strong>
+        </a>
+      </section>
+
+      <section class="two-column overview-grid">
+        <article class="panel overview-panel">
+          <div class="panel-heading">
+            <span class="kicker">演示流程</span>
+            <h2>建议讲解顺序</h2>
+          </div>
+          <ol id="demo-steps" class="step-list"></ol>
+        </article>
+
+        <article class="panel overview-panel">
+          <div class="panel-heading">
+            <span class="kicker">客户问题</span>
+            <h2>这页能回答什么</h2>
+          </div>
+          <ul id="customer-questions" class="question-list"></ul>
+        </article>
+      </section>
+
+      <section class="panel system-panel">
+        <div class="panel-heading">
+          <span class="kicker">系统主链</span>
+          <h2>冷站核心知识链</h2>
+        </div>
+        <div id="cold-plant-grid" class="cold-plant-grid"></div>
+      </section>
+
+      <section class="two-column">
+        <article class="panel note-panel">
+          <div class="panel-heading">
+            <span class="kicker">交付说明</span>
+            <h2>外部评估入口</h2>
+          </div>
+          <pre id="cover-note" class="note-text">正在加载交付说明...</pre>
+        </article>
+
+        <article class="panel note-panel">
+          <div class="panel-heading">
+            <span class="kicker">简报摘要</span>
+            <h2>当前 bundle 摘要</h2>
+          </div>
+          <pre id="brief-preview" class="note-text">正在加载中文简报...</pre>
+        </article>
+      </section>
+
+      <section class="two-column">
+        <article class="panel context-panel">
+          <div class="panel-heading">
+            <span class="kicker">下游联动</span>
+            <h2>末端系统影响</h2>
+          </div>
+          <div id="downstream-grid" class="mini-grid"></div>
+        </article>
+
+        <article class="panel context-panel">
+          <div class="panel-heading">
+            <span class="kicker">扩展能力</span>
+            <h2>相关领域补充</h2>
+          </div>
+          <div id="extension-grid" class="mini-grid"></div>
+        </article>
+      </section>
+    </main>
+
+    <template id="primary-card-template">
+      <article class="plant-card">
+        <div class="plant-card-head">
+          <p class="plant-role"></p>
+          <h3 class="plant-title"></h3>
+        </div>
+        <p class="plant-focus"></p>
+        <div class="plant-count"></div>
+        <div class="plant-highlights"></div>
+      </article>
+    </template>
+
+    <template id="highlight-template">
+      <section class="highlight-item">
+        <div class="highlight-meta">
+          <span class="highlight-surface"></span>
+          <span class="highlight-type"></span>
+        </div>
+        <h4 class="highlight-title"></h4>
+        <p class="highlight-summary"></p>
+      </section>
+    </template>
+
+    <template id="mini-card-template">
+      <article class="mini-card">
+        <p class="mini-kicker"></p>
+        <h3 class="mini-title"></h3>
+        <p class="mini-summary"></p>
+      </article>
+    </template>
+
+    <template id="step-template">
+      <li class="step-item">
+        <span class="step-index"></span>
+        <p class="step-text"></p>
+      </li>
+    </template>
+
+    <template id="question-template">
+      <li class="question-item"></li>
+    </template>
+
+    <script src="/ui/app.js" defer></script>
+  </body>
+</html>

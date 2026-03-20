@@ -38,6 +38,15 @@ def _sample_report(domain: str, query_type: str, equipment_class_id: str, canoni
                 "status": "passed",
                 "item_count": len(canonical_keys),
                 "found_canonical_keys": canonical_keys,
+                "found_items": [
+                    {
+                        "canonical_key": key,
+                        "title": "sample",
+                        "summary": "sample summary",
+                        "display_language": "en",
+                    }
+                    for key in canonical_keys
+                ],
                 "found_review_statuses": {key: "approved" for key in canonical_keys},
                 "expected_canonical_keys": canonical_keys,
                 "missing_canonical_keys": [],
@@ -84,7 +93,7 @@ def test_build_v1_demo_brief_markdown_summarizes_domains_and_keys() -> None:
 
     assert "# KnowFabric V1 Demo Brief" in rendered
     assert "Domains covered: 2" in rendered
-    assert "### Hvac" in rendered
+    assert "### HVAC" in rendered
     assert "### Drive" in rendered
     assert "MCP smoke" in rendered
     assert "API smoke" in rendered
@@ -92,6 +101,7 @@ def test_build_v1_demo_brief_markdown_summarizes_domains_and_keys() -> None:
     assert "`A7C1`" in rendered
     assert rendered.count("`ahu_zone_group_operating_mode`") == 1
     assert rendered.count("`A7C1`") == 1
+    assert "`ahu_zone_group_operating_mode`: sample" in rendered
 
 
 def test_build_v1_demo_brief_discovers_reports_and_writes_markdown() -> None:

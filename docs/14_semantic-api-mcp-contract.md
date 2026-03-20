@@ -62,6 +62,9 @@ The delivery contract must preserve:
 - domain-scoped identity for ontology classes
 - compatibility with legacy search and trace surfaces
 
+It should also support language-aware delivery for operator and customer-facing
+display fields without rewriting source evidence.
+
 ---
 
 ## Minimal Reversible Path
@@ -143,6 +146,7 @@ Every semantic endpoint returns the standard envelope:
         },
         "title": "Fault Code E01",
         "summary": "Overcurrent during acceleration.",
+        "display_language": "en",
         "structured_payload": {
           "fault_code": "E01",
           "severity": "high",
@@ -175,10 +179,13 @@ Every semantic endpoint returns the standard envelope:
       "equipment_class_id": "centrifugal_chiller",
       "fault_code": "E01",
       "domain_id": "hvac",
-      "brand": "Carrier"
+      "brand": "Carrier",
+      "language": "en"
     },
     "total": 1,
     "limit": 20,
+    "requested_language": "en",
+    "display_fallback_used": false,
     "compatibility_surfaces": [
       "/api/v1/chunks/search",
       "trace_evidence",
@@ -195,6 +202,13 @@ Every semantic endpoint returns the standard envelope:
 3. Every evidence citation must include `doc_id`, `page_no`, `chunk_id`, and `evidence_text`.
 4. `structured_payload` contains semantic fields; it never replaces the evidence chain.
 5. No semantic response may include site-instance ids, point ids, runtime topology, or live telemetry.
+
+### Localization Rules
+
+1. `language` selects display fields such as ontology labels, `title`, `summary`, and presentation-oriented semantic payload text.
+2. `evidence_text` always remains source-grounded evidence and must not be rewritten for display.
+3. When the requested language is unavailable, the response may fall back to English or package-default display text.
+4. Fallback behavior should be visible in response metadata or per-item display metadata.
 
 ---
 
@@ -215,6 +229,7 @@ Query parameters:
 - `min_confidence`
 - `min_trust_level`
 - `limit`
+- `language`
 
 Notes:
 
@@ -236,6 +251,7 @@ Query parameters:
 - `min_confidence`
 - `min_trust_level`
 - `limit`
+- `language`
 
 Notes:
 
@@ -256,6 +272,7 @@ Query parameters:
 - `min_confidence`
 - `min_trust_level`
 - `limit`
+- `language`
 
 Notes:
 

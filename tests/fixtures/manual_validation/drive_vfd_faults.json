@@ -8,6 +8,20 @@
       "canonical_key": "A7C1",
       "title": "ABB A7C1 Fieldbus Adapter A Communication Warning",
       "summary": "Cyclic communication between the drive and fieldbus adapter A, or between PLC and the adapter, is lost.",
+      "localized_display": {
+        "zh": {
+          "title": "ABB A7C1 现场总线适配器 A 通讯警告",
+          "summary": "传动与现场总线适配器 A 之间，或 PLC 与该适配器之间的循环通讯信号已经丢失。",
+          "structured_payload": {
+            "fault_name": "现场总线适配器 A 通讯",
+            "recommended_actions": [
+              "检查现场总线通讯状态",
+              "检查 50 至 53 组参数设置",
+              "检查电缆连接以及主站通讯状态"
+            ]
+          }
+        }
+      },
       "structured_payload": {
         "fault_code": "A7C1",
         "fault_name": "Fieldbus Adapter A Communication",
@@ -56,6 +70,19 @@
       "canonical_key": "D50C",
       "title": "ABB D50C Maximum Flow Protection",
       "summary": "Measured flow exceeds the defined warning threshold in pump and flow applications.",
+      "localized_display": {
+        "zh": {
+          "title": "ABB D50C 最大流量保护",
+          "summary": "在泵和流量应用中，实测流量超过了定义的警告阈值。",
+          "structured_payload": {
+            "fault_name": "最大流量保护",
+            "recommended_actions": [
+              "检查系统是否存在泄漏",
+              "检查参数 80.15、80.17 和 80.19 中的最大流量保护设置"
+            ]
+          }
+        }
+      },
       "structured_payload": {
         "fault_code": "D50C",
         "fault_name": "Maximum Flow Protection",
@@ -103,6 +130,19 @@
       "canonical_key": "F07011",
       "title": "Siemens F07011 Motor Overtemperature Fault",
       "summary": "The drive trips on motor overtemperature when the measured or modeled motor temperature exceeds the configured fault threshold.",
+      "localized_display": {
+        "zh": {
+          "title": "Siemens F07011 电机过温故障",
+          "summary": "当测得或模型计算的电机温度超过设定故障阈值时，变频器会因电机过温而跳闸。",
+          "structured_payload": {
+            "fault_name": "电机过温故障",
+            "recommended_actions": [
+              "检查电机温度阈值参数 p0604 和 p0605",
+              "检查传感器接线和电机实际温度工况"
+            ]
+          }
+        }
+      },
       "structured_payload": {
         "fault_code": "F07011",
         "fault_name": "Motor Overtemperature Fault",
@@ -150,6 +190,19 @@
       "canonical_key": "A01098",
       "title": "Siemens A01098 RTC Date and Time Required",
       "summary": "The real-time clock date and time are no longer valid after long power interruption and must be set again.",
+      "localized_display": {
+        "zh": {
+          "title": "Siemens A01098 RTC 需要重新设置日期和时间",
+          "summary": "长时间断电后，实时时钟的日期和时间不再有效，必须重新设置。",
+          "structured_payload": {
+            "fault_name": "RTC 需要设置日期和时间",
+            "recommended_actions": [
+              "重新设置实时时钟日期和时间",
+              "检查参数 p8405 以确认该警告是否应启用"
+            ]
+          }
+        }
+      },
       "structured_payload": {
         "fault_code": "A01098",
         "fault_name": "RTC Date and Time Required",

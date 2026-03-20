@@ -118,6 +118,22 @@ def _result_canonical_keys(query_type: str, payload: dict[str, Any] | None) -> l
     return [str(item.get("canonical_key")) for item in items if item.get("canonical_key")]
 
 
+def _result_found_items(query_type: str, payload: dict[str, Any] | None) -> list[dict[str, Any]]:
+    if payload is None or query_type == "equipment_class_explanation":
+        return []
+    items = payload.get("items", [])
+    return [
+        {
+            "canonical_key": str(item.get("canonical_key")),
+            "title": item.get("title"),
+            "summary": item.get("summary"),
+            "display_language": item.get("display_language"),
+        }
+        for item in items
+        if item.get("canonical_key")
+    ]
+
+
 def _result_review_statuses(query_type: str, payload: dict[str, Any] | None) -> dict[str, str]:
     if payload is None or query_type == "equipment_class_explanation":
         return {}
@@ -140,6 +156,7 @@ def run_semantic_demo_queries(example_path: str | Path) -> dict[str, Any]:
         for example in examples:
             payload = _dispatch_query(service, session, example["query_type"], dict(example["request"]))
             found_keys = _result_canonical_keys(example["query_type"], payload)
+            found_items = _result_found_items(example["query_type"], payload)
             found_review_statuses = _result_review_statuses(example["query_type"], payload)
             expected_keys = example["expected_canonical_keys"]
             missing_keys = [key for key in expected_keys if key not in found_keys]
@@ -164,6 +181,7 @@ def run_semantic_demo_queries(example_path: str | Path) -> dict[str, Any]:
                     "status": status,
                     "item_count": item_count,
                     "found_canonical_keys": found_keys,
+                    "found_items": found_items,
                     "found_review_statuses": found_review_statuses,
                     "expected_canonical_keys": expected_keys,
                     "missing_canonical_keys": missing_keys,

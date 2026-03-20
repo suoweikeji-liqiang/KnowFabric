@@ -8,6 +8,7 @@ examples:
       domain_id: hvac
       equipment_class_id: ahu
       application_type: ahu_sequence
+      language: zh
       min_trust_level: L3
       limit: 5
     required_review_status: approved
@@ -22,6 +23,7 @@ examples:
     request:
       domain_id: hvac
       equipment_class_id: ahu
+      language: zh
       min_trust_level: L3
       include_diagnostic_steps: true
       limit: 10
@@ -38,6 +40,7 @@ examples:
     request:
       domain_id: hvac
       equipment_class_id: chiller
+      language: zh
       min_trust_level: L3
       limit: 10
     required_review_status: approved
@@ -53,6 +56,7 @@ examples:
     request:
       domain_id: hvac
       equipment_class_id: condenser_water_pump
+      language: zh
       min_trust_level: L3
       limit: 10
     required_review_status: approved
@@ -68,6 +72,7 @@ examples:
     request:
       domain_id: hvac
       equipment_class_id: chilled_water_pump
+      language: zh
       min_trust_level: L3
       limit: 10
     required_review_status: approved
@@ -83,6 +88,7 @@ examples:
     request:
       domain_id: hvac
       equipment_class_id: cooling_tower
+      language: zh
       min_trust_level: L3
       limit: 10
     required_review_status: approved

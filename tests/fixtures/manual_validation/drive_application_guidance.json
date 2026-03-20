@@ -9,6 +9,15 @@
       "canonical_key": "pump_fan_application_control",
       "title": "Danfoss Pump and Fan Application Control",
       "summary": "The flow drive provides direct guidance for pump and fan control applications.",
+      "localized_display": {
+        "zh": {
+          "title": "Danfoss 泵与风机应用控制指导",
+          "summary": "该流量型变频器为泵和风机控制应用提供了直接的应用指导。",
+          "structured_payload": {
+            "guidance": "在泵和风机控制场景中，应使用变频器自带的应用功能来支持流量和压力控制。"
+          }
+        }
+      },
       "structured_payload": {
         "application_type": "pump_fan",
         "guidance": "Use the drive's application functions for pump and fan control scenarios."

@@ -57,8 +57,8 @@ def test_bootstrap_v1_demo_orchestrates_steps(monkeypatch, tmp_path: Path) -> No
             {"report_path": str(tmp_path / "drive_api.json"), "passed": 4, "failed": 0},
         ]
 
-    def fake_brief(report_paths, report_dir, output_path):
-        calls.append(("brief", (list(report_paths), str(report_dir), str(output_path))))
+    def fake_brief(report_paths, report_dir, output_path, language):
+        calls.append(("brief", (list(report_paths), str(report_dir), str(output_path), language)))
         return Path(output_path)
 
     monkeypatch.setattr("scripts.bootstrap_v1_demo.ensure_demo_environment_ready", fake_preflight)
@@ -79,6 +79,7 @@ def test_bootstrap_v1_demo_orchestrates_steps(monkeypatch, tmp_path: Path) -> No
 
     assert result["brief_path"] == str(tmp_path / "demo" / "brief.md")
     assert result["preflight"] == {"summary": {"failed": 0}}
+    assert result["brief_language"] == "zh"
     assert len(result["mcp_reports"]) == 2
     assert len(result["api_reports"]) == 2
     assert [item[0] for item in calls] == ["preflight", "upgrade", "sync", "seed", "reports", "mcp", "api", "brief"]

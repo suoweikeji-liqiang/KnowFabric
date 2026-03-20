@@ -9,6 +9,18 @@
       "canonical_key": "design_primary_chilled_water_pump_speed_by_stage",
       "title": "ASHRAE Primary Chilled Water Pump Design Speed by Stage",
       "summary": "Primary chilled water pumps should define a design speed setpoint for each operating stage that delivers design chilled-water flow through the active chillers.",
+      "localized_display": {
+        "zh": {
+          "title": "ASHRAE 分阶段一次冷冻水泵设计转速",
+          "summary": "一次冷冻水泵应为每个运行阶段定义设计转速设定值，以保证运行中的冷水机组获得设计冷冻水流量。",
+          "structured_payload": {
+            "parameter_name": "分阶段一次泵设计转速",
+            "parameter_category": "流量",
+            "rated_value": "Ch-MaxPriPumpSpdStage",
+            "measurement_context": "在某一运行阶段下，为运行冷水机组提供设计冷冻水流量所需的一次冷冻水泵转速"
+          }
+        }
+      },
       "structured_payload": {
         "parameter_name": "design_primary_pump_speed_by_stage",
         "parameter_category": "flow",
@@ -52,6 +64,18 @@
       "canonical_key": "minimum_primary_chilled_water_pump_speed_by_stage",
       "title": "ASHRAE Minimum Primary Chilled Water Pump Speed by Stage",
       "summary": "Primary chilled water pumps should define a minimum stage speed setpoint high enough to keep chiller flow above the minimum chilled-water flow requirement.",
+      "localized_display": {
+        "zh": {
+          "title": "ASHRAE 分阶段一次冷冻水泵最小转速",
+          "summary": "一次冷冻水泵应定义足够高的分阶段最小转速设定值，以确保冷水机组流量始终高于最小冷冻水流量要求。",
+          "structured_payload": {
+            "parameter_name": "分阶段一次泵最小转速",
+            "parameter_category": "流量",
+            "rated_value": "Ch-MinPriPumpSpdStage",
+            "measurement_context": "在某一运行阶段下，为运行冷水机组提供最小冷冻水流量所需的一次冷冻水泵转速"
+          }
+        }
+      },
       "structured_payload": {
         "parameter_name": "minimum_primary_pump_speed_by_stage",
         "parameter_category": "flow",

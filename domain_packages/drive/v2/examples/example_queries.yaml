@@ -8,6 +8,7 @@ examples:
       domain_id: drive
       equipment_class_id: variable_frequency_drive
       fault_code: A7C1
+      language: zh
       min_trust_level: L2
       limit: 5
     required_review_status: approved
@@ -23,6 +24,7 @@ examples:
       domain_id: drive
       equipment_class_id: variable_frequency_drive
       parameter_name: p0604
+      language: zh
       min_trust_level: L2
       limit: 5
     required_review_status: approved
@@ -38,6 +40,7 @@ examples:
       domain_id: drive
       equipment_class_id: variable_frequency_drive
       application_type: pump_fan
+      language: zh
       min_trust_level: L2
       limit: 5
     required_review_status: approved
@@ -53,6 +56,7 @@ examples:
       domain_id: drive
       equipment_class_id: variable_frequency_drive
       guidance_type: wiring_guidance
+      language: zh
       min_trust_level: L2
       limit: 5
     required_review_status: approved

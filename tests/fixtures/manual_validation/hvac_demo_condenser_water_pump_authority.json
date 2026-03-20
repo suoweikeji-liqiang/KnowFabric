@@ -9,6 +9,18 @@
       "canonical_key": "design_condenser_water_pump_speed_by_stage",
       "title": "ASHRAE Condenser Water Pump Design Speed by Stage",
       "summary": "For water-cooled plants with variable-speed condenser water pumps, each chiller stage should define a pump speed setpoint that delivers the design condenser-water flow through the operating chillers and waterside heat exchangers.",
+      "localized_display": {
+        "zh": {
+          "title": "ASHRAE 分阶段冷却水泵设计转速",
+          "summary": "对于采用变频冷却水泵的水冷系统，每个冷水机组运行阶段都应定义一个泵速设定值，以保证运行机组和水侧换热器获得设计冷却水流量。",
+          "structured_payload": {
+            "parameter_name": "分阶段设计泵速",
+            "parameter_category": "流量",
+            "rated_value": "Cw-DesPumpSpdStage",
+            "measurement_context": "在某一运行阶段下，为运行中的冷水机组提供设计冷却水流量所需的水泵转速"
+          }
+        }
+      },
       "structured_payload": {
         "parameter_name": "design_pump_speed_by_stage",
         "parameter_category": "flow",
@@ -52,6 +64,18 @@
       "canonical_key": "minimum_condenser_water_pump_speed",
       "title": "ASHRAE Minimum Condenser Water Pump Speed",
       "summary": "Variable-speed condenser water pumps should define a minimum speed setpoint high enough to maintain minimum condenser water flow while head-pressure control is active.",
+      "localized_display": {
+        "zh": {
+          "title": "ASHRAE 冷却水泵最小转速",
+          "summary": "变频冷却水泵应定义足够高的最小转速设定值，以便在冷凝压力控制启用时维持最小冷却水流量。",
+          "structured_payload": {
+            "parameter_name": "最小泵速",
+            "parameter_category": "流量",
+            "rated_value": "MinCWPspeed",
+            "measurement_context": "在冷凝压力控制期间维持所需冷却水流量的最小冷却水泵转速"
+          }
+        }
+      },
       "structured_payload": {
         "parameter_name": "minimum_pump_speed",
         "parameter_category": "flow",

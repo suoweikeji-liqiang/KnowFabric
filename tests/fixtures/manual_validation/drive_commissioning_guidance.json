@@ -9,6 +9,16 @@
       "canonical_key": "shield_grounding_control_cable_shield_360",
       "title": "ABB Ground Control Cable Shield 360 Degrees",
       "summary": "Ground the external shield of the control cable 360 degrees on the grounding rack under the clamp.",
+      "localized_display": {
+        "zh": {
+          "title": "ABB 控制电缆屏蔽层 360 度接地",
+          "summary": "应在接地夹下方的接地架上，对控制电缆外屏蔽层进行 360 度接地。",
+          "structured_payload": {
+            "wiring_topic": "屏蔽接地",
+            "guidance": "在接地夹下方的接地架上，对控制电缆外屏蔽层进行 360 度接地。"
+          }
+        }
+      },
       "structured_payload": {
         "wiring_topic": "shield_grounding",
         "guidance": "Ground the external shield of the control cable 360 degrees on the grounding rack under the clamp"
@@ -53,6 +63,16 @@
       "canonical_key": "backup_drive_settings_after_commissioning",
       "title": "Siemens Backup Drive Settings After Commissioning",
       "summary": "After commissioning, back up the inverter settings to external storage media.",
+      "localized_display": {
+        "zh": {
+          "title": "Siemens 调试后备份变频器设置",
+          "summary": "调试完成后，应将变频器参数设置备份到外部存储介质。",
+          "structured_payload": {
+            "step": "调试完成后，将变频器设置备份到外部存储介质",
+            "commissioning_phase": "调试后"
+          }
+        }
+      },
       "structured_payload": {
         "step": "Back up the drive settings to storage media after commissioning",
         "commissioning_phase": "post_commissioning"

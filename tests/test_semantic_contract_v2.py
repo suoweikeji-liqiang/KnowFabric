@@ -20,6 +20,7 @@ def test_fault_query_defaults() -> None:
     assert query.limit == 20
     assert query.min_trust_level == "L4"
     assert query.include_related_symptoms is True
+    assert query.language == "en"
 
 
 def test_mcp_tool_names_present() -> None:
@@ -29,6 +30,7 @@ def test_mcp_tool_names_present() -> None:
     assert MCP_TOOL_GET_FAULT_KNOWLEDGE["name"] in tool_names
     assert "get_parameter_profile" in tool_names
     assert "get_maintenance_guidance" in tool_names
+    assert "language" in MCP_TOOL_GET_FAULT_KNOWLEDGE["inputSchema"]["properties"]
 
 
 def test_semantic_envelope_shape() -> None:
@@ -54,6 +56,7 @@ def test_semantic_envelope_shape() -> None:
                             "domain_id": "hvac",
                         },
                         "summary": "Overcurrent during acceleration.",
+                        "display_language": "en",
                         "structured_payload": {"fault_code": "E01"},
                         "trust_level": "L2",
                         "review_status": "pending",
@@ -74,11 +77,14 @@ def test_semantic_envelope_shape() -> None:
                 "filters_applied": {"domain_id": "hvac", "equipment_class_id": "centrifugal_chiller"},
                 "total": 1,
                 "limit": 20,
+                "requested_language": "en",
+                "display_fallback_used": False,
             },
         }
     )
     assert payload.data.items[0].equipment_class.equipment_class_id == "centrifugal_chiller"
     assert payload.data.items[0].evidence[0].chunk_id == "chunk_001"
+    assert payload.data.items[0].display_language == "en"
 
 
 if __name__ == "__main__":

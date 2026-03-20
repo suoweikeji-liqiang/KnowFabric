@@ -148,6 +148,7 @@ def bootstrap_v1_demo(
     output_dir: str | Path = "output/demo",
     brief_path: str | Path = "output/demo/v1_demo_brief.md",
     config_path: str | Path = "alembic.ini",
+    brief_language: str = "zh",
     run_preflight: bool = True,
     run_mcp_smoke: bool = True,
     api_base_url: str | None = None,
@@ -165,6 +166,7 @@ def bootstrap_v1_demo(
         report_paths=[item["report_path"] for item in reports],
         report_dir=output_dir,
         output_path=brief_path,
+        language=brief_language,
     )
     return {
         "bootstrap_mode": "v1_demo_bootstrap",
@@ -175,6 +177,7 @@ def bootstrap_v1_demo(
         "mcp_reports": mcp_reports,
         "api_reports": api_reports,
         "brief_path": str(brief_target),
+        "brief_language": brief_language,
     }
 
 
@@ -182,6 +185,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", default="output/demo", help="Directory for generated demo reports")
     parser.add_argument("--brief-output", default="output/demo/v1_demo_brief.md", help="Markdown brief output path")
+    parser.add_argument("--brief-language", default="zh", choices=["en", "zh"], help="Language for the generated brief")
     parser.add_argument("--alembic-config", default="alembic.ini", help="Alembic config path")
     parser.add_argument("--skip-preflight", action="store_true", help="Skip the environment preflight checks")
     parser.add_argument("--skip-mcp-smoke", action="store_true", help="Skip the in-process MCP smoke run")
@@ -195,6 +199,7 @@ def main(argv: list[str] | None = None) -> int:
         output_dir=args.output_dir,
         brief_path=args.brief_output,
         config_path=args.alembic_config,
+        brief_language=args.brief_language,
         run_preflight=not args.skip_preflight,
         run_mcp_smoke=not args.skip_mcp_smoke,
         api_base_url=args.api_base_url,

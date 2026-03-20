@@ -9,6 +9,18 @@
       "canonical_key": "p0604_motor_temperature_alarm_threshold",
       "title": "Siemens p0604 Motor Temperature Alarm Threshold",
       "summary": "Parameter p0604 defines the motor temperature alarm threshold.",
+      "localized_display": {
+        "zh": {
+          "title": "Siemens p0604 电机温度报警阈值",
+          "summary": "参数 p0604 定义电机温度报警阈值。",
+          "structured_payload": {
+            "parameter_name": "p0604",
+            "parameter_category": "温度保护",
+            "default_value": "130 C",
+            "description": "电机温度模型 2/KTY 报警阈值。"
+          }
+        }
+      },
       "structured_payload": {
         "parameter_name": "p0604",
         "parameter_category": "temperature_protection",
@@ -55,6 +67,18 @@
       "canonical_key": "p0605_motor_temperature_fault_threshold",
       "title": "Siemens p0605 Motor Temperature Fault Threshold",
       "summary": "Parameter p0605 defines the motor temperature fault threshold.",
+      "localized_display": {
+        "zh": {
+          "title": "Siemens p0605 电机温度故障阈值",
+          "summary": "参数 p0605 定义电机温度故障阈值。",
+          "structured_payload": {
+            "parameter_name": "p0605",
+            "parameter_category": "温度保护",
+            "default_value": "145 C",
+            "description": "电机温度模型故障阈值及对应温度值。"
+          }
+        }
+      },
       "structured_payload": {
         "parameter_name": "p0605",
         "parameter_category": "temperature_protection",

@@ -65,6 +65,21 @@ def _mcp_canonical_keys(query_type: str, payload: dict[str, Any]) -> list[str]:
     return [str(item.get("canonical_key")) for item in _mcp_items(query_type, payload) if item.get("canonical_key")]
 
 
+def _mcp_found_items(query_type: str, payload: dict[str, Any]) -> list[dict[str, Any]]:
+    if query_type == "equipment_class_explanation":
+        return []
+    return [
+        {
+            "canonical_key": str(item.get("canonical_key")),
+            "title": item.get("title"),
+            "summary": item.get("summary"),
+            "display_language": item.get("display_language"),
+        }
+        for item in _mcp_items(query_type, payload)
+        if item.get("canonical_key")
+    ]
+
+
 def _mcp_review_statuses(query_type: str, payload: dict[str, Any]) -> dict[str, str]:
     if query_type == "equipment_class_explanation":
         return {}
@@ -106,6 +121,7 @@ def run_mcp_demo_smoke(
         )
         payload = _parse_tool_payload(response)
         canonical_keys = _mcp_canonical_keys(example["query_type"], payload)
+        found_items = _mcp_found_items(example["query_type"], payload)
         review_statuses = _mcp_review_statuses(example["query_type"], payload)
         expected_keys = example["expected_canonical_keys"]
         missing_keys = [key for key in expected_keys if key not in canonical_keys]
@@ -132,6 +148,7 @@ def run_mcp_demo_smoke(
                 "status": status,
                 "item_count": item_count,
                 "found_canonical_keys": canonical_keys,
+                "found_items": found_items,
                 "found_review_statuses": review_statuses,
                 "expected_canonical_keys": expected_keys,
                 "missing_canonical_keys": missing_keys,

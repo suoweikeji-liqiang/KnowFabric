@@ -61,6 +61,7 @@ class SemanticKnowledgeObject(SemanticBaseModel):
     confidence: float | None = None
     trust_level: TrustLevel
     review_status: str
+    display_language: str | None = None
     evidence: list[EvidenceCitation] = Field(min_length=1)
 
 
@@ -75,6 +76,8 @@ class SemanticQueryMetadata(SemanticBaseModel):
     compatibility_surfaces: list[str] = Field(
         default_factory=lambda: ["/api/v1/chunks/search", "trace_evidence", "search_knowledge"]
     )
+    requested_language: str | None = None
+    display_fallback_used: bool | None = None
 
 
 class SemanticKnowledgeResponse(SemanticBaseModel):
@@ -133,6 +136,7 @@ class FaultKnowledgeQuery(SemanticBaseModel):
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
     limit: int = Field(default=20, ge=1, le=100)
+    language: str = "en"
 
 
 class ParameterProfileQuery(SemanticBaseModel):
@@ -147,6 +151,7 @@ class ParameterProfileQuery(SemanticBaseModel):
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
     limit: int = Field(default=20, ge=1, le=100)
+    language: str = "en"
 
 
 class MaintenanceGuidanceQuery(SemanticBaseModel):
@@ -161,6 +166,7 @@ class MaintenanceGuidanceQuery(SemanticBaseModel):
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
     limit: int = Field(default=20, ge=1, le=100)
+    language: str = "en"
 
 
 class ApplicationGuidanceQuery(SemanticBaseModel):
@@ -174,6 +180,7 @@ class ApplicationGuidanceQuery(SemanticBaseModel):
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
     limit: int = Field(default=20, ge=1, le=100)
+    language: str = "en"
 
 
 class OperationalGuidanceQuery(SemanticBaseModel):
@@ -187,6 +194,7 @@ class OperationalGuidanceQuery(SemanticBaseModel):
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
     limit: int = Field(default=20, ge=1, le=100)
+    language: str = "en"
 
 
 class ExplainEquipmentClassQuery(SemanticBaseModel):
@@ -247,6 +255,11 @@ MCP_TOOL_GET_FAULT_KNOWLEDGE: dict[str, Any] = {
                 "maximum": 100,
                 "default": 20,
             },
+            "language": {
+                "type": "string",
+                "default": "en",
+                "description": "Preferred response language for display fields such as labels, titles, and summaries.",
+            },
         },
         "required": ["domain_id", "equipment_class_id"],
     },
@@ -302,6 +315,11 @@ MCP_TOOL_GET_PARAMETER_PROFILE: dict[str, Any] = {
                 "minimum": 1,
                 "maximum": 100,
                 "default": 20,
+            },
+            "language": {
+                "type": "string",
+                "default": "en",
+                "description": "Preferred response language for display fields such as labels, titles, and summaries.",
             },
         },
         "required": ["domain_id", "equipment_class_id"],
@@ -359,6 +377,11 @@ MCP_TOOL_GET_MAINTENANCE_GUIDANCE: dict[str, Any] = {
                 "maximum": 100,
                 "default": 20,
             },
+            "language": {
+                "type": "string",
+                "default": "en",
+                "description": "Preferred response language for display fields such as labels, titles, and summaries.",
+            },
         },
         "required": ["domain_id", "equipment_class_id"],
     },
@@ -410,6 +433,11 @@ MCP_TOOL_GET_APPLICATION_GUIDANCE: dict[str, Any] = {
                 "minimum": 1,
                 "maximum": 100,
                 "default": 20,
+            },
+            "language": {
+                "type": "string",
+                "default": "en",
+                "description": "Preferred response language for display fields such as labels, titles, and summaries.",
             },
         },
         "required": ["domain_id", "equipment_class_id"],
@@ -463,6 +491,11 @@ MCP_TOOL_GET_OPERATIONAL_GUIDANCE: dict[str, Any] = {
                 "minimum": 1,
                 "maximum": 100,
                 "default": 20,
+            },
+            "language": {
+                "type": "string",
+                "default": "en",
+                "description": "Preferred response language for display fields such as labels, titles, and summaries.",
             },
         },
         "required": ["domain_id", "equipment_class_id"],

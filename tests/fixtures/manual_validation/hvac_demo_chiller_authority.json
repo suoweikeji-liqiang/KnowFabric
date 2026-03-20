@@ -9,6 +9,18 @@
       "canonical_key": "minimum_chiller_lift_at_minimum_load",
       "title": "ASHRAE Minimum Chiller Lift at Minimum Load",
       "summary": "For each chiller, the minimum allowable lift at minimum load should follow manufacturer recommendations and be used to maintain acceptable head pressure during condenser-water reset control.",
+      "localized_display": {
+        "zh": {
+          "title": "ASHRAE 冷水机组最小负荷下的最小压差要求",
+          "summary": "每台冷水机组在最小负荷下的最小允许压差应遵循厂家建议，并用于在冷却水复位控制期间维持可接受的冷凝压力。",
+          "structured_payload": {
+            "parameter_name": "最小允许压差",
+            "parameter_category": "温度",
+            "rated_value": "LIFTminX，按厂家最小负荷建议值确定",
+            "measurement_context": "冷却水回水温度与冷冻水供水温度之间的温差"
+          }
+        }
+      },
       "structured_payload": {
         "parameter_name": "minimum_allowable_lift",
         "parameter_category": "temperature",
@@ -52,6 +64,18 @@
       "canonical_key": "design_chiller_capacity",
       "title": "ASHRAE Chiller Design Capacity",
       "summary": "Chiller design capacity should be defined as QchX in tons for each chiller stage and plant design sequence.",
+      "localized_display": {
+        "zh": {
+          "title": "ASHRAE 冷水机组设计容量",
+          "summary": "冷水机组设计容量应定义为各台机组在系统设计序列中的吨位容量 QchX。",
+          "structured_payload": {
+            "parameter_name": "设计容量",
+            "parameter_category": "容量",
+            "rated_value": "QchX（冷吨）",
+            "measurement_context": "冷水机组 X 的设计负荷容量"
+          }
+        }
+      },
       "structured_payload": {
         "parameter_name": "design_capacity",
         "parameter_category": "capacity",

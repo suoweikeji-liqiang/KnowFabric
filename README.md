@@ -75,7 +75,13 @@ for the full operator-facing flow and the manual fallback path.
   rebuild-track semantic routes under `/api/v2/`
 - `apps/mcp/` exposes the read-only MCP tool surface for semantic retrieval
 - `apps/worker/` is not required for the current read-only demo evaluation path
-- `apps/admin-web/` is not part of the current productization path
+- `apps/admin-web/` now provides an optional read-only Chinese evaluation shell over `output/demo/`
+
+To launch the Chinese demo shell in one command:
+
+```bash
+python3 scripts/run_chinese_demo_shell.py --output-dir output/demo
+```
 
 ## Repository Guide
 

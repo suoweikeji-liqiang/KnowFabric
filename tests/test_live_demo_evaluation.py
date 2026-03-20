@@ -42,6 +42,7 @@ def test_run_live_demo_evaluation_orchestrates_full_flow(monkeypatch, tmp_path: 
             "reports": [{"passed": 6, "failed": 0, "report_path": str(tmp_path / "semantic.json")}],
             "mcp_reports": [{"passed": 4, "failed": 0, "report_path": str(tmp_path / "mcp.json")}],
             "brief_path": str(tmp_path / "brief.md"),
+            "brief_language": kwargs.get("brief_language"),
         }
 
     def fake_start(*, api_base_url, log_path):
@@ -61,8 +62,8 @@ def test_run_live_demo_evaluation_orchestrates_full_flow(monkeypatch, tmp_path: 
         calls.append(("api_reports", (base_url, str(output_dir))))
         return [{"passed": 10, "failed": 0, "report_path": str(tmp_path / "api.json")}]
 
-    def fake_brief(*, report_dir, output_path):
-        calls.append(("brief", (str(report_dir), str(output_path))))
+    def fake_brief(*, report_dir, output_path, language):
+        calls.append(("brief", (str(report_dir), str(output_path), language)))
         Path(output_path).write_text("# brief\n", encoding="utf-8")
         return Path(output_path)
 
@@ -87,9 +88,11 @@ def test_run_live_demo_evaluation_orchestrates_full_flow(monkeypatch, tmp_path: 
     disk_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     assert disk_manifest["statuses"]["api"] == "passed"
     assert disk_manifest["paths"]["manifest"] == str(manifest_path)
+    assert disk_manifest["bundle_language"] == "zh"
     assert disk_manifest["handoff"]["ready_for_external_evaluation"] is True
+    assert disk_manifest["handoff"]["bundle_language"] == "zh"
     assert disk_manifest["handoff"]["domain_ids"] == ["drive", "hvac"]
     assert disk_manifest["handoff"]["primary_artifacts"]["manifest"] == str(manifest_path)
-    assert "KnowFabric Evaluation Bundle" in cover_note_path.read_text(encoding="utf-8")
+    assert "KnowFabric 中文评估交付包" in cover_note_path.read_text(encoding="utf-8")
     assert "Live Demo Evaluation Summary" in build_live_demo_evaluation_summary_text(manifest)
     assert [item[0] for item in calls] == ["preflight", "bootstrap", "start_api", "wait_api", "api_reports", "stop_api", "brief"]

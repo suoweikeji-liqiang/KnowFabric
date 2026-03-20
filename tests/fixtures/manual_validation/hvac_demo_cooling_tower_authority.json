@@ -9,6 +9,18 @@
       "canonical_key": "cooling_tower_design_wetbulb_and_approach",
       "title": "ASHRAE Cooling Tower Design Wetbulb and Approach",
       "summary": "Cooling tower design information should define the design wetbulb condition, tower approach, and basin level-control thresholds used by the waterside economizer and condenser-water sequence.",
+      "localized_display": {
+        "zh": {
+          "title": "ASHRAE 冷却塔设计湿球与逼近温差",
+          "summary": "冷却塔设计信息应定义用于水侧经济器和冷却水控制序列的设计湿球条件、冷却塔逼近温差以及水盆液位控制阈值。",
+          "structured_payload": {
+            "parameter_name": "设计湿球与逼近温差",
+            "parameter_category": "温度",
+            "rated_value": "DTWB 和 DACT",
+            "measurement_context": "冷却塔设计湿球温度、设计逼近温差及相关液位控制阈值"
+          }
+        }
+      },
       "structured_payload": {
         "parameter_name": "design_wetbulb_and_approach",
         "parameter_category": "temperature",

@@ -9,6 +9,15 @@
       "canonical_key": "ahu_zone_group_operating_mode",
       "title": "ASHRAE AHU Zone Group Operating Mode Guidance",
       "summary": "Zones served by a single AHU should be organized into zone groups that share schedules and enter the same zone-group operating mode together.",
+      "localized_display": {
+        "zh": {
+          "title": "ASHRAE AHU 分区组运行模式指导",
+          "summary": "由同一台 AHU 服务的区域应组织为共享时程的分区组，并在需要时共同进入相同的分区组运行模式。",
+          "structured_payload": {
+            "guidance": "对于由同一台 AHU 服务的区域，应将分区组定义为共享时程的运行单元。当分区组中的任一区域进入非无人模式时，该组内所有区域都应进入相同模式，以确保上游空调系统面对一致的负荷与时程。"
+          }
+        }
+      },
       "structured_payload": {
         "application_type": "ahu_sequence",
         "guidance": "For zones served by a single AHU, define zone groups as shared scheduling units. If any zone in a zone group enters a non-unoccupied zone-group operating mode, all zones in that group should enter the same mode so the upstream air-handling system operates against a coherent load and schedule."
@@ -50,6 +59,20 @@
       "canonical_key": "ahu_airflow_inspection_and_calibration",
       "title": "AHU Airflow Inspection and Calibration Procedure",
       "summary": "To restore inconsistent airflow, inspect the distribution system, maintain AHU moving components, and calibrate the unit to deliver the intended airflow rate.",
+      "localized_display": {
+        "zh": {
+          "title": "AHU 风量检查与校准程序",
+          "summary": "为恢复风量不一致问题，应检查输配风系统、维护 AHU 运动部件，并校准机组以输出目标风量。",
+          "structured_payload": {
+            "steps": [
+              "检查风管系统是否存在漏风、堵塞或选型不当等影响风量的问题。",
+              "及时修复或调整受影响的风管系统，以恢复正常风量。",
+              "定期检查 AHU 风机叶轮、皮带和电机，并按需清洁或更换。",
+              "校准 AHU，确认其能够提供设计要求的风量。"
+            ]
+          }
+        }
+      },
       "structured_payload": {
         "maintenance_task": "inspection",
         "task_type": "inspection",
@@ -97,6 +120,20 @@
       "canonical_key": "ahu_preventive_airflow_maintenance_plan",
       "title": "AHU Preventive Airflow Maintenance Plan",
       "summary": "A proactive AHU maintenance plan should cover regular filter service, damper inspection and adjustment, and coil cleaning to preserve airflow and efficiency.",
+      "localized_display": {
+        "zh": {
+          "title": "AHU 预防性风量维护计划",
+          "summary": "主动式 AHU 维护计划应覆盖定期滤网维护、风阀检查与调整以及盘管清洗，以保持风量与效率。",
+          "structured_payload": {
+            "steps": [
+              "按计划定期清洗或更换过滤器。",
+              "检查风阀并根据需要进行调整。",
+              "将盘管清洗纳入预防性维护周期。",
+              "采用主动维护计划，防止风量衰减并保护系统效率。"
+            ]
+          }
+        }
+      },
       "structured_payload": {
         "maintenance_task": "maintenance",
         "task_type": "maintenance",

@@ -271,6 +271,7 @@ class KnowFabricMcpServer:
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
                 limit=int(arguments.get("limit", 20)),
+                language=arguments.get("language", "en"),
             )
             if result is None:
                 raise McpProtocolError(-32004, "Equipment class not found")
@@ -294,6 +295,7 @@ class KnowFabricMcpServer:
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
                 limit=int(arguments.get("limit", 20)),
+                language=arguments.get("language", "en"),
             )
             if result is None:
                 raise McpProtocolError(-32004, "Equipment class not found")
@@ -317,6 +319,7 @@ class KnowFabricMcpServer:
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
                 limit=int(arguments.get("limit", 20)),
+                language=arguments.get("language", "en"),
             )
             if result is None:
                 raise McpProtocolError(-32004, "Equipment class not found")
@@ -339,6 +342,7 @@ class KnowFabricMcpServer:
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
                 limit=int(arguments.get("limit", 20)),
+                language=arguments.get("language", "en"),
             )
             if result is None:
                 raise McpProtocolError(-32004, "Equipment class not found")
@@ -361,6 +365,7 @@ class KnowFabricMcpServer:
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
                 limit=int(arguments.get("limit", 20)),
+                language=arguments.get("language", "en"),
             )
             if result is None:
                 raise McpProtocolError(-32004, "Equipment class not found")

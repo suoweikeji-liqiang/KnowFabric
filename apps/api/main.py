@@ -150,6 +150,7 @@ async def get_fault_knowledge(
     min_confidence: Optional[float] = Query(None, ge=0.0, le=1.0, description="Minimum confidence score"),
     min_trust_level: str = Query("L4", pattern="^L[1-4]$", description="Minimum trust level"),
     limit: int = Query(20, ge=1, le=100, description="Result limit"),
+    language: str = Query("en", description="Preferred response language for display fields"),
     db: Session = Depends(get_db),
 ):
     """Retrieve evidence-grounded fault knowledge by canonical equipment class."""
@@ -167,6 +168,7 @@ async def get_fault_knowledge(
             min_confidence=min_confidence,
             min_trust_level=min_trust_level,
             limit=limit,
+            language=language,
         )
     except OperationalError as exc:
         raise HTTPException(
@@ -192,10 +194,13 @@ async def get_fault_knowledge(
                 "include_related_symptoms": include_related_symptoms,
                 "min_confidence": min_confidence,
                 "min_trust_level": min_trust_level,
+                "language": language,
             },
             "total": len(result["items"]),
             "limit": limit,
             "compatibility_surfaces": ["/api/v1/chunks/search", "trace_evidence", "search_knowledge"],
+            "requested_language": language,
+            "display_fallback_used": any(item.get("display_language") != language for item in result["items"]),
         },
     }
 
@@ -214,6 +219,7 @@ async def get_parameter_profiles(
     min_confidence: Optional[float] = Query(None, ge=0.0, le=1.0, description="Minimum confidence score"),
     min_trust_level: str = Query("L4", pattern="^L[1-4]$", description="Minimum trust level"),
     limit: int = Query(20, ge=1, le=100, description="Result limit"),
+    language: str = Query("en", description="Preferred response language for display fields"),
     db: Session = Depends(get_db),
 ):
     """Retrieve evidence-grounded parameter profiles by canonical equipment class."""
@@ -231,6 +237,7 @@ async def get_parameter_profiles(
             min_confidence=min_confidence,
             min_trust_level=min_trust_level,
             limit=limit,
+            language=language,
         )
     except OperationalError as exc:
         raise HTTPException(
@@ -256,10 +263,13 @@ async def get_parameter_profiles(
                 "model_family": model_family,
                 "min_confidence": min_confidence,
                 "min_trust_level": min_trust_level,
+                "language": language,
             },
             "total": len(result["items"]),
             "limit": limit,
             "compatibility_surfaces": ["/api/v1/chunks/search", "trace_evidence", "search_knowledge"],
+            "requested_language": language,
+            "display_fallback_used": any(item.get("display_language") != language for item in result["items"]),
         },
     }
 
@@ -278,6 +288,7 @@ async def get_maintenance_guidance(
     min_confidence: Optional[float] = Query(None, ge=0.0, le=1.0, description="Minimum confidence score"),
     min_trust_level: str = Query("L4", pattern="^L[1-4]$", description="Minimum trust level"),
     limit: int = Query(20, ge=1, le=100, description="Result limit"),
+    language: str = Query("en", description="Preferred response language for display fields"),
     db: Session = Depends(get_db),
 ):
     """Retrieve evidence-grounded maintenance guidance by canonical equipment class."""
@@ -295,6 +306,7 @@ async def get_maintenance_guidance(
             min_confidence=min_confidence,
             min_trust_level=min_trust_level,
             limit=limit,
+            language=language,
         )
     except OperationalError as exc:
         raise HTTPException(
@@ -320,10 +332,13 @@ async def get_maintenance_guidance(
                 "include_diagnostic_steps": include_diagnostic_steps,
                 "min_confidence": min_confidence,
                 "min_trust_level": min_trust_level,
+                "language": language,
             },
             "total": len(result["items"]),
             "limit": limit,
             "compatibility_surfaces": ["/api/v1/chunks/search", "trace_evidence", "search_knowledge"],
+            "requested_language": language,
+            "display_fallback_used": any(item.get("display_language") != language for item in result["items"]),
         },
     }
 
@@ -341,6 +356,7 @@ async def get_application_guidance(
     min_confidence: Optional[float] = Query(None, ge=0.0, le=1.0, description="Minimum confidence score"),
     min_trust_level: str = Query("L4", pattern="^L[1-4]$", description="Minimum trust level"),
     limit: int = Query(20, ge=1, le=100, description="Result limit"),
+    language: str = Query("en", description="Preferred response language for display fields"),
     db: Session = Depends(get_db),
 ):
     """Retrieve evidence-grounded application guidance by canonical equipment class."""
@@ -357,6 +373,7 @@ async def get_application_guidance(
             min_confidence=min_confidence,
             min_trust_level=min_trust_level,
             limit=limit,
+            language=language,
         )
     except OperationalError as exc:
         raise HTTPException(
@@ -381,10 +398,13 @@ async def get_application_guidance(
                 "model_family": model_family,
                 "min_confidence": min_confidence,
                 "min_trust_level": min_trust_level,
+                "language": language,
             },
             "total": len(result["items"]),
             "limit": limit,
             "compatibility_surfaces": ["/api/v1/chunks/search", "trace_evidence", "search_knowledge"],
+            "requested_language": language,
+            "display_fallback_used": any(item.get("display_language") != language for item in result["items"]),
         },
     }
 
@@ -402,6 +422,7 @@ async def get_operational_guidance(
     min_confidence: Optional[float] = Query(None, ge=0.0, le=1.0, description="Minimum confidence score"),
     min_trust_level: str = Query("L4", pattern="^L[1-4]$", description="Minimum trust level"),
     limit: int = Query(20, ge=1, le=100, description="Result limit"),
+    language: str = Query("en", description="Preferred response language for display fields"),
     db: Session = Depends(get_db),
 ):
     """Retrieve evidence-grounded commissioning, wiring, and application guidance."""
@@ -418,6 +439,7 @@ async def get_operational_guidance(
             min_confidence=min_confidence,
             min_trust_level=min_trust_level,
             limit=limit,
+            language=language,
         )
     except OperationalError as exc:
         raise HTTPException(
@@ -442,10 +464,13 @@ async def get_operational_guidance(
                 "model_family": model_family,
                 "min_confidence": min_confidence,
                 "min_trust_level": min_trust_level,
+                "language": language,
             },
             "total": len(result["items"]),
             "limit": limit,
             "compatibility_surfaces": ["/api/v1/chunks/search", "trace_evidence", "search_knowledge"],
+            "requested_language": language,
+            "display_fallback_used": any(item.get("display_language") != language for item in result["items"]),
         },
     }
 

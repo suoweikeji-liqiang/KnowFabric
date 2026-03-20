@@ -27,6 +27,52 @@ OPERATIONAL_GUIDANCE_TYPES = ("commissioning_step", "wiring_guidance", "applicat
 class SemanticRetrievalService:
     """Read-only access to rebuild-track ontology metadata."""
 
+    def _language_candidates(self, language: str | None) -> list[str]:
+        if not language:
+            return ["en"]
+        candidates = [language]
+        base_language = language.split("-", 1)[0]
+        if base_language not in candidates:
+            candidates.append(base_language)
+        if "en" not in candidates:
+            candidates.append("en")
+        return candidates
+
+    def _localized_display_payload(self, knowledge_object: KnowledgeObjectV2) -> dict[str, Any]:
+        payload = knowledge_object.structured_payload_json or {}
+        localized_display = payload.get("_localized_display", {})
+        return localized_display if isinstance(localized_display, dict) else {}
+
+    def _public_structured_payload(self, knowledge_object: KnowledgeObjectV2) -> dict[str, Any]:
+        payload = knowledge_object.structured_payload_json or {}
+        return {
+            key: value
+            for key, value in payload.items()
+            if not str(key).startswith("_")
+        }
+
+    def _resolve_display_content(
+        self,
+        knowledge_object: KnowledgeObjectV2,
+        language: str,
+    ) -> tuple[str | None, str | None, dict[str, Any], str]:
+        localized_display = self._localized_display_payload(knowledge_object)
+        structured_payload = self._public_structured_payload(knowledge_object)
+        for candidate in self._language_candidates(language):
+            candidate_payload = localized_display.get(candidate)
+            if not isinstance(candidate_payload, dict):
+                continue
+            localized_title = candidate_payload.get("title") or knowledge_object.title
+            localized_summary = candidate_payload.get("summary") or knowledge_object.summary
+            localized_structured_payload = candidate_payload.get("structured_payload")
+            if isinstance(localized_structured_payload, dict):
+                structured_payload = {
+                    **structured_payload,
+                    **localized_structured_payload,
+                }
+            return localized_title, localized_summary, structured_payload, candidate
+        return knowledge_object.title, knowledge_object.summary, structured_payload, "en"
+
     def _get_equipment_class(
         self,
         db: Session,
@@ -263,13 +309,13 @@ class SemanticRetrievalService:
     ) -> dict[str, Any]:
         evidence_map = self._load_evidence_map(db, [item.knowledge_object_id for item in knowledge_objects])
         label = ontology_class.labels_json.get(language) or ontology_class.primary_label
-        return {
-            "equipment_class": {
-                "equipment_class_id": ontology_class.ontology_class_id,
-                "label": label,
-                "domain_id": ontology_class.domain_id,
-            },
-            "items": [
+        items: list[dict[str, Any]] = []
+        for item in knowledge_objects:
+            evidence = evidence_map.get(item.knowledge_object_id)
+            if not evidence:
+                continue
+            title, summary, structured_payload, display_language = self._resolve_display_content(item, language)
+            items.append(
                 {
                     "knowledge_object_id": item.knowledge_object_id,
                     "knowledge_object_type": item.knowledge_object_type,
@@ -279,18 +325,24 @@ class SemanticRetrievalService:
                         "label": label,
                         "domain_id": ontology_class.domain_id,
                     },
-                    "title": item.title,
-                    "summary": item.summary,
-                    "structured_payload": item.structured_payload_json,
+                    "title": title,
+                    "summary": summary,
+                    "structured_payload": structured_payload,
                     "applicability": item.applicability_json or {},
                     "confidence": item.confidence_score,
                     "trust_level": item.trust_level,
                     "review_status": item.review_status,
-                    "evidence": evidence_map.get(item.knowledge_object_id, []),
+                    "display_language": display_language,
+                    "evidence": evidence,
                 }
-                for item in knowledge_objects
-                if evidence_map.get(item.knowledge_object_id)
-            ],
+            )
+        return {
+            "equipment_class": {
+                "equipment_class_id": ontology_class.ontology_class_id,
+                "label": label,
+                "domain_id": ontology_class.domain_id,
+            },
+            "items": items,
         }
 
     def explain_equipment_class(
@@ -360,6 +412,7 @@ class SemanticRetrievalService:
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
         limit: int = 20,
+        language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded fault knowledge attached to an equipment class."""
 
@@ -388,7 +441,7 @@ class SemanticRetrievalService:
             )
         ]
         ranked = self._sort_fault_knowledge(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked)
+        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
 
     def get_parameter_profiles(
         self,
@@ -402,6 +455,7 @@ class SemanticRetrievalService:
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
         limit: int = 20,
+        language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded parameter and performance knowledge."""
 
@@ -429,7 +483,7 @@ class SemanticRetrievalService:
             )
         ]
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked)
+        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
 
     def get_maintenance_guidance(
         self,
@@ -443,6 +497,7 @@ class SemanticRetrievalService:
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
         limit: int = 20,
+        language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded maintenance guidance attached to an equipment class."""
 
@@ -470,7 +525,7 @@ class SemanticRetrievalService:
             )
         ]
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked)
+        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
 
     def get_application_guidance(
         self,
@@ -483,6 +538,7 @@ class SemanticRetrievalService:
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
         limit: int = 20,
+        language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded application guidance attached to an equipment class."""
 
@@ -509,7 +565,7 @@ class SemanticRetrievalService:
             )
         ]
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked)
+        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
 
     def get_operational_guidance(
         self,
@@ -522,6 +578,7 @@ class SemanticRetrievalService:
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
         limit: int = 20,
+        language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded commissioning, wiring, and application guidance."""
 
@@ -548,4 +605,4 @@ class SemanticRetrievalService:
             )
         ]
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked)
+        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
