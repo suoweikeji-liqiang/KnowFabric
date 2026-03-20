@@ -1,6 +1,9 @@
 # Scripts
 
-Utility scripts and quality gate checks.
+Utility scripts for quality gates, external evaluation, and curation flows.
+
+For the current operator-facing productization path, start with
+[`docs/22_external-evaluation-guide.md`](../docs/22_external-evaluation-guide.md).
 
 ## Quality Gates
 
@@ -11,6 +14,13 @@ Utility scripts and quality gate checks.
 
 ## Utilities
 
+- `check_demo_environment.py` - Operator-facing preflight for Python version, config, database connectivity, required demo files, and optional API health
+- `run_live_demo_evaluation.py` - One-shot external evaluation runner: preflight, bootstrap, temporary API startup, live API smoke, brief rebuild, and manifest
+- `bootstrap_v1_demo.py` - One-shot bootstrap for the external-evaluable v1 demo: migrate, sync, seed, run semantic queries, run MCP smoke, and build the brief
+- `build_v1_demo_brief.py` - Build a Markdown v1 demo brief from generated semantic, MCP, and API reports
+- `run_semantic_demo_queries.py` - Run a fixed semantic demo query set and validate expected canonical knowledge objects
+- `run_api_demo_smoke.py` - Run the fixed semantic demo queries against a live API service over HTTP
+- `run_mcp_demo_smoke.py` - Run the fixed semantic demo queries against the MCP tool surface
 - Database migration scripts
 - Data import/export utilities
 - Development helpers
@@ -32,22 +42,59 @@ Utility scripts and quality gate checks.
 - `prepare_pdf_review_bundle.py` - Bootstrap selected PDF page groups and immediately prepare a ready-to-review bundle
 - `apply_ready_review_bundle.py` - Apply only ready packs from a prepared bundle and refresh apply report, stats, and summary text
 - `backfill_manual_knowledge_from_chunks.py` - Backfill chunk anchors and semantic knowledge objects from existing chunk rows plus manual fixtures
-- `run_semantic_demo_queries.py` - Run a fixed semantic demo query set and validate expected canonical knowledge objects
-- `run_api_demo_smoke.py` - Run the fixed semantic demo queries against a live API service over HTTP
-- `build_v1_demo_brief.py` - Build a Markdown v1 demo brief from generated semantic demo reports
-- `bootstrap_v1_demo.py` - One-shot bootstrap for the external-evaluable v1 demo: migrate, sync, seed, run demo queries, and build the brief
 
-## Usage
+## Quality Gate Usage
 
 ```bash
-# Run quality gates
-npm run check:all
+# Run all gates
+bash scripts/check-all
 
-# Run specific gate
-npm run check:boundaries
+# Run specific gates
+bash scripts/check-docs
+bash scripts/check-boundaries
+bash scripts/check-forbidden-deps
 ```
 
 See [Quality Gates](../docs/06_quality-gates.md) for details.
+
+## External Evaluation Flow
+
+```bash
+# Recommended one-shot path
+python3 scripts/run_live_demo_evaluation.py --output-dir output/demo
+```
+
+This produces a small external handoff bundle, including:
+
+- `output/demo/EVALUATOR_NOTE.md`
+- `output/demo/v1_demo_brief.md`
+- `output/demo/live_demo_evaluation_manifest.json`
+
+Manual fallback path:
+
+```bash
+python3 scripts/check_demo_environment.py --output-dir output/demo
+python3 scripts/bootstrap_v1_demo.py --output-dir output/demo --brief-output output/demo/v1_demo_brief.md
+
+cd apps/api
+python main.py
+```
+
+From the repository root:
+
+```bash
+python3 scripts/run_api_demo_smoke.py domain_packages/hvac/v2/examples/example_queries.yaml --base-url http://127.0.0.1:8000 --output-dir output/demo
+python3 scripts/run_api_demo_smoke.py domain_packages/drive/v2/examples/example_queries.yaml --base-url http://127.0.0.1:8000 --output-dir output/demo
+python3 scripts/build_v1_demo_brief.py --report-dir output/demo --output output/demo/v1_demo_brief.md
+```
+
+Bootstrap already runs MCP smoke. If you only need to refresh MCP reports:
+
+```bash
+python3 scripts/run_mcp_demo_smoke.py domain_packages/hvac/v2/examples/example_queries.yaml --output-dir output/demo
+python3 scripts/run_mcp_demo_smoke.py domain_packages/drive/v2/examples/example_queries.yaml --output-dir output/demo
+python3 scripts/build_v1_demo_brief.py --report-dir output/demo --output output/demo/v1_demo_brief.md
+```
 
 ## Chunk Review Flow
 
@@ -114,14 +161,4 @@ python3 scripts/run_semantic_demo_queries.py domain_packages/hvac/v2/examples/ex
 
 # Run the fixed drive semantic demo query set
 python3 scripts/run_semantic_demo_queries.py domain_packages/drive/v2/examples/example_queries.yaml --output-dir output/demo
-
-# With the API service running, verify the same demo queries through real HTTP routes
-python3 scripts/run_api_demo_smoke.py domain_packages/hvac/v2/examples/example_queries.yaml --base-url http://localhost:8000 --output-dir output/demo
-python3 scripts/run_api_demo_smoke.py domain_packages/drive/v2/examples/example_queries.yaml --base-url http://localhost:8000 --output-dir output/demo
-
-# Build a one-page v1 demo brief from the generated demo reports
-python3 scripts/build_v1_demo_brief.py --report-dir output/demo --output output/demo/v1_demo_brief.md
-
-# Or bootstrap the full v1 demo from a clean database
-python3 scripts/bootstrap_v1_demo.py --output-dir output/demo --brief-output output/demo/v1_demo_brief.md
 ```

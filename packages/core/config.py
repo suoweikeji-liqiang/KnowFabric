@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     storage_root: str = "./storage/documents"
     api_host: str = "0.0.0.0"
     api_port: int = 8000
+    worker_concurrency: int = 4
     log_level: str = "INFO"
 
     class Config:

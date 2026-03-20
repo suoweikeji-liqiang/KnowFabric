@@ -1,16 +1,13 @@
 # Admin Web
 
-Admin dashboard for knowledge review, quality control, and system monitoring.
+This directory is a placeholder and is not part of the current
+early-productization path.
 
-## Features
+Current productization priorities are:
 
-- Review queue management
-- Fact approval/rejection
-- Processing job monitoring
-- Domain package management
+- better environment bootstrap and startup
+- clearer operator-facing documentation
+- stronger external evaluation and handoff flow
+- read-only API and MCP demo surfaces
 
-## Running
-
-```bash
-npm run dev
-```
+Do not turn KnowFabric into a UI-first product from this entry point.

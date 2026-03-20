@@ -9,6 +9,8 @@ Worker service baseline is established. Processing pipelines will be implemented
 - P0-4: Page generation worker
 - P0-5: Chunk generation worker
 
+The worker is not required for the current read-only demo evaluation path.
+
 ## Running Locally
 
 ```bash
