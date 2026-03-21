@@ -1,0 +1,76 @@
+coverage_inventory:
+  inventory_version: "2026-03-21"
+  intent: internal_curated_coverage_planning
+  current_fixture_coverage:
+    package_supported_knowledge_objects:
+      - fault_code
+      - parameter_spec
+      - commissioning_step
+      - wiring_guidance
+      - maintenance_procedure
+      - application_guidance
+      - symptom
+      - diagnostic_step
+    package_supported_but_without_fixture_coverage: []
+    currently_uncovered_equipment_classes:
+      - drive
+      - motor_controller
+    equipment_classes:
+      - equipment_class_id: variable_frequency_drive
+        coverage_status: internal_manual_baseline
+        fixture_paths:
+          - tests/fixtures/manual_validation/drive_vfd_faults.json
+          - tests/fixtures/manual_validation/drive_parameter_profiles.json
+          - tests/fixtures/manual_validation/drive_application_guidance.json
+          - tests/fixtures/manual_validation/drive_commissioning_guidance.json
+          - tests/fixtures/manual_validation/drive_maintenance_guidance.json
+          - tests/fixtures/manual_validation/drive_symptoms.json
+        covered_knowledge_objects:
+          - fault_code
+          - parameter_spec
+          - application_guidance
+          - commissioning_step
+          - wiring_guidance
+          - maintenance_procedure
+          - symptom
+          - diagnostic_step
+        notes: Variable frequency drive now covers every currently supported drive knowledge-object type through internal curated fixtures.
+      - equipment_class_id: soft_starter
+        coverage_status: internal_manual_baseline
+        fixture_paths:
+          - tests/fixtures/manual_validation/drive_soft_starter_baseline.json
+        covered_knowledge_objects:
+          - fault_code
+          - parameter_spec
+          - maintenance_procedure
+        notes: Soft starter now has a first internal baseline for fault, parameter, and maintenance lookup, but still lacks commissioning and wiring guidance.
+      - equipment_class_id: frequency_converter
+        coverage_status: internal_manual_baseline
+        fixture_paths:
+          - tests/fixtures/manual_validation/drive_frequency_converter_baseline.json
+        covered_knowledge_objects:
+          - fault_code
+          - parameter_spec
+          - commissioning_step
+        notes: Frequency converter now has a first internal baseline for fault lookup, parameter reference, and startup commissioning guidance.
+  internal_priority_queue:
+    - priority: 1
+      equipment_class_id: motor_controller
+      target_knowledge_objects:
+        - parameter_spec
+        - commissioning_step
+        - wiring_guidance
+      rationale: Motor controller is present in the ontology but absent from curated coverage, leaving a gap for internal control-panel troubleshooting.
+    - priority: 2
+      equipment_class_id: soft_starter
+      target_knowledge_objects:
+        - commissioning_step
+        - wiring_guidance
+      rationale: Soft starter now has a usable baseline, so the next step is to round it out with startup and wiring procedures.
+    - priority: 3
+      equipment_class_id: frequency_converter
+      target_knowledge_objects:
+        - wiring_guidance
+        - maintenance_procedure
+        - application_guidance
+      rationale: Frequency converter now has a usable startup baseline, so the next step is to add wiring, maintenance, and application coverage for field deployment work.

@@ -1,0 +1,115 @@
+{
+  "domain_id": "drive",
+  "equipment_class_id": "variable_frequency_drive",
+  "equipment_class_key": "drive:variable_frequency_drive",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "symptom",
+      "knowledge_object_id": "ko_abb_fieldbus_command_loss_symptom",
+      "canonical_key": "fieldbus_command_loss_warning",
+      "title": "ABB Fieldbus Command Loss Warning Symptom",
+      "summary": "The drive shows a fieldbus communication warning and remote command updates stop arriving from the controller.",
+      "localized_display": {
+        "zh": {
+          "title": "ABB 现场总线命令丢失告警现象",
+          "summary": "变频器出现现场总线通讯告警，且来自控制器的远程命令刷新停止。",
+          "structured_payload": {
+            "fault_code": "A7C1",
+            "observed_condition": "现场总线通讯告警出现，远程控制命令刷新停止。"
+          }
+        }
+      },
+      "structured_payload": {
+        "fault_code": "A7C1",
+        "observed_condition": "Fieldbus communication warning appears and remote control commands stop updating"
+      },
+      "applicability": {
+        "brand": "ABB",
+        "model_family": "ACH531"
+      },
+      "confidence_score": 0.86,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_abb_ach531_fw_manual",
+        "file_name": "ABB ACH531 HVAC Firmware Manual.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_abb_ach531_133",
+        "page_no": 133,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_abb_ach531_a7c1_symptom",
+        "chunk_index": 2,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "A7C1 communication warning appears and remote fieldbus commands stop updating at the drive.",
+        "text_excerpt": "fieldbus communication warning and lost remote commands"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_abb_fieldbus_command_loss_symptom",
+        "evidence_role": "primary",
+        "evidence_text": "现场总线适配器通讯异常时，传动侧会出现通讯告警并丢失来自控制器的循环命令。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/ABB/ABB_ACH531 HVAC控制程序固件手册_CN_revD.pdf",
+        "page_no": 133
+      }
+    },
+    {
+      "knowledge_object_type": "symptom",
+      "knowledge_object_id": "ko_siemens_motor_temperature_alarm_symptom",
+      "canonical_key": "motor_temperature_rises_before_trip",
+      "title": "Siemens Motor Temperature Rise Before Trip Symptom",
+      "summary": "Before the overtemperature fault trips, the drive indicates that motor temperature is rising abnormally and thermal protection is nearing its threshold.",
+      "localized_display": {
+        "zh": {
+          "title": "Siemens 跳闸前电机温度异常升高现象",
+          "summary": "在过温故障跳闸前，变频器会表现为电机温度异常升高，热保护接近阈值。",
+          "structured_payload": {
+            "fault_code": "F07011",
+            "observed_condition": "电机温度异常升高，热保护接近跳闸阈值。"
+          }
+        }
+      },
+      "structured_payload": {
+        "fault_code": "F07011",
+        "observed_condition": "Motor temperature rises abnormally and thermal protection approaches its trip threshold"
+      },
+      "applicability": {
+        "brand": "Siemens",
+        "model_family": "G120XA"
+      },
+      "confidence_score": 0.87,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_siemens_g120xa_manual",
+        "file_name": "Siemens G120XA Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_siemens_g120xa_400",
+        "page_no": 400,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_siemens_g120xa_f07011_symptom",
+        "chunk_index": 2,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "Before F07011 trips, motor temperature rises abnormally and thermal protection approaches the configured threshold.",
+        "text_excerpt": "motor temperature rises abnormally before trip"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_siemens_motor_temperature_alarm_symptom",
+        "evidence_role": "primary",
+        "evidence_text": "在 F07011 跳闸前，可观察到电机温度持续升高并逐步逼近热保护阈值。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/西门子/G120XA.pdf",
+        "page_no": 400
+      }
+    }
+  ]
+}

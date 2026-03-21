@@ -33,6 +33,10 @@ HVAC_V2_ROOT = REPO_ROOT / "domain_packages/hvac/v2"
 DRIVE_V2_ROOT = REPO_ROOT / "domain_packages/drive/v2"
 HVAC_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_module_faults.json"
 DRIVE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_vfd_faults.json"
+DRIVE_MAINTENANCE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_maintenance_guidance.json"
+DRIVE_SYMPTOM_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_symptoms.json"
+DRIVE_SOFT_STARTER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_soft_starter_baseline.json"
+DRIVE_FREQUENCY_CONVERTER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_frequency_converter_baseline.json"
 
 
 def _build_session_factory():
@@ -114,6 +118,78 @@ def test_seed_manual_fixture_populates_drive_rows(monkeypatch) -> None:
         db.close()
 
 
+def test_seed_manual_fixture_populates_drive_maintenance_rows(monkeypatch) -> None:
+    """Drive maintenance fixture should seed maintenance guidance rows."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    monkeypatch.setattr("scripts.seed_manual_validation_fixtures.SessionLocal", session_factory)
+
+    equipment_class_key, knowledge_count = seed_manual_fixture(DRIVE_MAINTENANCE_FIXTURE)
+    db = session_factory()
+    try:
+        assert equipment_class_key == "drive:variable_frequency_drive"
+        assert knowledge_count == 2
+        assert db.query(KnowledgeObjectV2).filter(KnowledgeObjectV2.domain_id == "drive").count() == 2
+        assert db.query(KnowledgeObjectEvidenceV2).filter(KnowledgeObjectEvidenceV2.doc_id == "doc_siemens_g120xa_manual").count() == 2
+    finally:
+        db.close()
+
+
+def test_seed_manual_fixture_populates_drive_symptom_rows(monkeypatch) -> None:
+    """Drive symptom fixture should seed symptom knowledge rows."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    monkeypatch.setattr("scripts.seed_manual_validation_fixtures.SessionLocal", session_factory)
+
+    equipment_class_key, knowledge_count = seed_manual_fixture(DRIVE_SYMPTOM_FIXTURE)
+    db = session_factory()
+    try:
+        assert equipment_class_key == "drive:variable_frequency_drive"
+        assert knowledge_count == 2
+        assert db.query(KnowledgeObjectV2).filter(
+            KnowledgeObjectV2.domain_id == "drive",
+            KnowledgeObjectV2.knowledge_object_type == "symptom",
+        ).count() == 2
+    finally:
+        db.close()
+
+
+def test_seed_manual_fixture_populates_soft_starter_rows(monkeypatch) -> None:
+    """Soft starter baseline fixture should seed fault, parameter, and maintenance rows."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    monkeypatch.setattr("scripts.seed_manual_validation_fixtures.SessionLocal", session_factory)
+
+    equipment_class_key, knowledge_count = seed_manual_fixture(DRIVE_SOFT_STARTER_FIXTURE)
+    db = session_factory()
+    try:
+        assert equipment_class_key == "drive:soft_starter"
+        assert knowledge_count == 3
+        assert db.query(KnowledgeObjectV2).filter(KnowledgeObjectV2.ontology_class_id == "soft_starter").count() == 3
+    finally:
+        db.close()
+
+
+def test_seed_manual_fixture_populates_frequency_converter_rows(monkeypatch) -> None:
+    """Frequency converter baseline fixture should seed fault, parameter, and commissioning rows."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    monkeypatch.setattr("scripts.seed_manual_validation_fixtures.SessionLocal", session_factory)
+
+    equipment_class_key, knowledge_count = seed_manual_fixture(DRIVE_FREQUENCY_CONVERTER_FIXTURE)
+    db = session_factory()
+    try:
+        assert equipment_class_key == "drive:frequency_converter"
+        assert knowledge_count == 3
+        assert db.query(KnowledgeObjectV2).filter(KnowledgeObjectV2.ontology_class_id == "frequency_converter").count() == 3
+    finally:
+        db.close()
+
+
 if __name__ == "__main__":
     class _MonkeyPatch:
         def __init__(self) -> None:
@@ -136,5 +212,17 @@ if __name__ == "__main__":
     monkeypatch.undo()
     monkeypatch = _MonkeyPatch()
     test_seed_manual_fixture_populates_drive_rows(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_seed_manual_fixture_populates_drive_maintenance_rows(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_seed_manual_fixture_populates_drive_symptom_rows(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_seed_manual_fixture_populates_soft_starter_rows(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_seed_manual_fixture_populates_frequency_converter_rows(monkeypatch)
     monkeypatch.undo()
     print("Manual fixture seed checks passed")

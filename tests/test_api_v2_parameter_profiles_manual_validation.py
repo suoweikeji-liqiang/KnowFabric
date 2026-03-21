@@ -32,7 +32,9 @@ from scripts import seed_manual_validation_fixtures as seed_script
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DRIVE_V2_ROOT = REPO_ROOT / "domain_packages/drive/v2"
-MANUAL_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_parameter_profiles.json"
+VFD_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_parameter_profiles.json"
+SOFT_STARTER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_soft_starter_baseline.json"
+FREQUENCY_CONVERTER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_frequency_converter_baseline.json"
 
 
 def _build_client() -> tuple[TestClient, sessionmaker]:
@@ -80,11 +82,11 @@ def _seed_drive_ontology(session_factory: sessionmaker) -> None:
         db.close()
 
 
-def _seed_manual_parameter_entries(session_factory: sessionmaker) -> None:
+def _seed_manual_parameter_entries(session_factory: sessionmaker, fixture_path: Path) -> None:
     original_session_local = seed_script.SessionLocal
     try:
         seed_script.SessionLocal = session_factory
-        seed_script.seed_manual_fixture(MANUAL_FIXTURE)
+        seed_script.seed_manual_fixture(fixture_path)
     finally:
         seed_script.SessionLocal = original_session_local
 
@@ -95,7 +97,7 @@ def test_manual_validation_parameter_route_for_siemens_temperature_thresholds() 
     client, session_factory = _build_client()
     try:
         _seed_drive_ontology(session_factory)
-        _seed_manual_parameter_entries(session_factory)
+        _seed_manual_parameter_entries(session_factory, VFD_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/parameter-profiles"
             "?parameter_category=temperature_protection&brand=Siemens"
@@ -112,6 +114,48 @@ def test_manual_validation_parameter_route_for_siemens_temperature_thresholds() 
         app.dependency_overrides.clear()
 
 
+def test_manual_validation_parameter_route_for_schneider_soft_starter() -> None:
+    """Soft starter parameter entries should resolve via parameter-profiles."""
+
+    client, session_factory = _build_client()
+    try:
+        _seed_drive_ontology(session_factory)
+        _seed_manual_parameter_entries(session_factory, SOFT_STARTER_FIXTURE)
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/soft_starter/parameter-profiles"
+            "?parameter_category=startup_control&brand=Schneider"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert len(payload["data"]["items"]) == 1
+        assert payload["data"]["items"][0]["canonical_key"] == "acc_acceleration_ramp_time"
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_manual_validation_parameter_route_for_danfoss_frequency_converter() -> None:
+    """Frequency converter parameter entries should resolve via parameter-profiles."""
+
+    client, session_factory = _build_client()
+    try:
+        _seed_drive_ontology(session_factory)
+        _seed_manual_parameter_entries(session_factory, FREQUENCY_CONVERTER_FIXTURE)
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/frequency_converter/parameter-profiles"
+            "?parameter_category=speed_reference&brand=Danfoss"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert len(payload["data"]["items"]) == 1
+        assert payload["data"]["items"][0]["canonical_key"] == "003_local_reference_max_frequency"
+    finally:
+        app.dependency_overrides.clear()
+
+
 if __name__ == "__main__":
     test_manual_validation_parameter_route_for_siemens_temperature_thresholds()
+    test_manual_validation_parameter_route_for_schneider_soft_starter()
+    test_manual_validation_parameter_route_for_danfoss_frequency_converter()
     print("Manual-backed parameter profile validation checks passed")

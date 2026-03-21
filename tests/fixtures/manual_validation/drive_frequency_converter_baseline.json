@@ -1,0 +1,182 @@
+{
+  "domain_id": "drive",
+  "equipment_class_id": "frequency_converter",
+  "equipment_class_key": "drive:frequency_converter",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "fault_code",
+      "knowledge_object_id": "ko_danfoss_fc_fault_16",
+      "canonical_key": "16",
+      "title": "Danfoss Fault 16 Short Circuit",
+      "summary": "The frequency converter reports a short-circuit fault when output current rises rapidly due to motor or cable short conditions.",
+      "localized_display": {
+        "zh": {
+          "title": "Danfoss 故障 16 短路",
+          "summary": "当输出电流因电机或电缆短路条件快速上升时，变频器会报出短路故障。",
+          "structured_payload": {
+            "fault_name": "短路故障",
+            "recommended_actions": [
+              "检查电机绝缘和输出电缆",
+              "检查接地故障或相间短路",
+              "重新上电前确认负载回路正常"
+            ]
+          }
+        }
+      },
+      "structured_payload": {
+        "fault_code": "16",
+        "fault_name": "Short Circuit Fault",
+        "recommended_actions": [
+          "Check motor insulation and output cabling",
+          "Check for ground faults or phase-to-phase short circuits",
+          "Verify the load circuit before re-energizing"
+        ]
+      },
+      "applicability": {
+        "brand": "Danfoss",
+        "model_family": "VLT2800"
+      },
+      "confidence_score": 0.89,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_danfoss_vlt2800_manual",
+        "file_name": "Danfoss VLT2800 Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_danfoss_vlt2800_77",
+        "page_no": 77,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_danfoss_vlt2800_fault_16",
+        "chunk_index": 0,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "Fault 16 short circuit occurs when the converter detects a short on the motor output.",
+        "text_excerpt": "fault 16 short circuit on motor output"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_danfoss_vlt2800_fault_16",
+        "evidence_role": "primary",
+        "evidence_text": "故障 16：短路。变频器检测到电机输出侧短路。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/丹佛斯/VLT2800_Operating_Instructions.pdf",
+        "page_no": 77
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_danfoss_fc_par_003",
+      "canonical_key": "003_local_reference_max_frequency",
+      "title": "Danfoss Parameter 003 Local Reference Max Frequency",
+      "summary": "Parameter 003 defines the maximum local reference frequency for the frequency converter.",
+      "localized_display": {
+        "zh": {
+          "title": "Danfoss 参数 003 本地参考最大频率",
+          "summary": "参数 003 定义变频器的本地参考最大频率。",
+          "structured_payload": {
+            "parameter_name": "003",
+            "parameter_category": "速度参考",
+            "default_value": "50 Hz",
+            "description": "本地参考给定允许的最大输出频率。"
+          }
+        }
+      },
+      "structured_payload": {
+        "parameter_name": "003",
+        "parameter_category": "speed_reference",
+        "default_value": "50 Hz",
+        "description": "Maximum output frequency allowed for local reference control."
+      },
+      "applicability": {
+        "brand": "Danfoss",
+        "model_family": "VLT2800"
+      },
+      "confidence_score": 0.88,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_danfoss_vlt2800_manual",
+        "file_name": "Danfoss VLT2800 Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_danfoss_vlt2800_33",
+        "page_no": 33,
+        "page_type": "parameter_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_danfoss_vlt2800_par_003",
+        "chunk_index": 1,
+        "chunk_type": "parameter_block",
+        "cleaned_text": "Parameter 003 local reference max frequency default 50 Hz.",
+        "text_excerpt": "parameter 003 local reference max frequency 50 Hz"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_danfoss_vlt2800_par_003",
+        "evidence_role": "primary",
+        "evidence_text": "参数 003 本地参考最大频率，默认值 50 Hz。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/丹佛斯/VLT2800_Operating_Instructions.pdf",
+        "page_no": 33
+      }
+    },
+    {
+      "knowledge_object_type": "commissioning_step",
+      "knowledge_object_id": "ko_danfoss_fc_verify_motor_data_before_start",
+      "canonical_key": "verify_motor_data_before_first_start",
+      "title": "Danfoss Verify Motor Data Before First Start",
+      "summary": "Before first startup, verify that motor nameplate data is entered correctly in the frequency converter.",
+      "localized_display": {
+        "zh": {
+          "title": "Danfoss 首次启动前核对电机铭牌数据",
+          "summary": "首次启动前，应确认已在变频器中正确录入电机铭牌数据。",
+          "structured_payload": {
+            "step": "首次启动前核对并录入电机铭牌数据。",
+            "commissioning_phase": "startup"
+          }
+        }
+      },
+      "structured_payload": {
+        "step": "Verify and enter motor nameplate data before first startup",
+        "commissioning_phase": "startup"
+      },
+      "applicability": {
+        "brand": "Danfoss",
+        "model_family": "VLT2800"
+      },
+      "confidence_score": 0.87,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_danfoss_vlt2800_manual",
+        "file_name": "Danfoss VLT2800 Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_danfoss_vlt2800_18",
+        "page_no": 18,
+        "page_type": "commissioning_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_danfoss_vlt2800_commission",
+        "chunk_index": 2,
+        "chunk_type": "checklist_block",
+        "cleaned_text": "Before first startup, verify that all motor nameplate data has been entered correctly in the converter.",
+        "text_excerpt": "verify motor nameplate data before first startup"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_danfoss_vlt2800_commission",
+        "evidence_role": "primary",
+        "evidence_text": "首次启动前，确认已正确输入全部电机铭牌数据。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/丹佛斯/VLT2800_Operating_Instructions.pdf",
+        "page_no": 18
+      }
+    }
+  ]
+}

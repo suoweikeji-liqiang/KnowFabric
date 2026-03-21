@@ -28,10 +28,12 @@ from packages.domain_kit_v2.projection import (
     build_ontology_class_rows,
     build_ontology_mapping_rows,
 )
+from scripts import seed_manual_validation_fixtures as seed_script
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 HVAC_V2_ROOT = REPO_ROOT / "domain_packages/hvac/v2"
 DRIVE_V2_ROOT = REPO_ROOT / "domain_packages/drive/v2"
+FREQUENCY_CONVERTER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_frequency_converter_baseline.json"
 
 
 def _build_client() -> tuple[TestClient, sessionmaker]:
@@ -248,6 +250,15 @@ def _seed_operational_guidance(session_factory: sessionmaker) -> None:
         db.close()
 
 
+def _seed_manual_operational_entries(session_factory: sessionmaker, fixture_path: Path) -> None:
+    original_session_local = seed_script.SessionLocal
+    try:
+        seed_script.SessionLocal = session_factory
+        seed_script.seed_manual_fixture(fixture_path)
+    finally:
+        seed_script.SessionLocal = original_session_local
+
+
 def test_operational_guidance_route_returns_drive_guide_types() -> None:
     client, session_factory = _build_client()
     try:
@@ -286,7 +297,27 @@ def test_operational_guidance_route_can_filter_by_type() -> None:
         app.dependency_overrides.clear()
 
 
+def test_operational_guidance_route_for_frequency_converter_commissioning() -> None:
+    client, session_factory = _build_client()
+    try:
+        _seed_ontology(session_factory)
+        _seed_manual_operational_entries(session_factory, FREQUENCY_CONVERTER_FIXTURE)
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/frequency_converter/operational-guidance"
+            "?guidance_type=commissioning_step&brand=Danfoss"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert len(payload["data"]["items"]) == 1
+        assert payload["data"]["items"][0]["knowledge_object_type"] == "commissioning_step"
+        assert payload["data"]["items"][0]["canonical_key"] == "verify_motor_data_before_first_start"
+    finally:
+        app.dependency_overrides.clear()
+
+
 if __name__ == "__main__":
     test_operational_guidance_route_returns_drive_guide_types()
     test_operational_guidance_route_can_filter_by_type()
+    test_operational_guidance_route_for_frequency_converter_commissioning()
     print("Operational guidance API checks passed")

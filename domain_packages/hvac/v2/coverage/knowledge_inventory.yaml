@@ -1,0 +1,101 @@
+coverage_inventory:
+  inventory_version: "2026-03-21"
+  intent: internal_curated_coverage_planning
+  current_fixture_coverage:
+    package_supported_knowledge_objects:
+      - fault_code
+      - parameter_spec
+      - application_guidance
+      - maintenance_procedure
+      - performance_spec
+      - symptom
+      - diagnostic_step
+    package_supported_but_without_fixture_coverage:
+      - parameter_spec
+      - symptom
+    currently_uncovered_equipment_classes:
+      - centrifugal_chiller
+      - modular_chiller
+      - pump
+      - vrf_system
+      - valve
+      - sensor
+      - controller
+    equipment_classes:
+      - equipment_class_id: air_cooled_modular_heat_pump
+        coverage_status: internal_manual_baseline
+        fixture_paths:
+          - tests/fixtures/manual_validation/hvac_module_faults.json
+          - tests/fixtures/manual_validation/hvac_maintenance_guidance.json
+        covered_knowledge_objects:
+          - fault_code
+          - maintenance_procedure
+          - diagnostic_step
+        notes: Modular heat pump currently has the strongest internal troubleshooting baseline in HVAC.
+      - equipment_class_id: ahu
+        coverage_status: demo_authority_plus_internal_seed
+        fixture_paths:
+          - tests/fixtures/manual_validation/hvac_application_guidance.json
+          - tests/fixtures/manual_validation/hvac_demo_ahu_authority.json
+        covered_knowledge_objects:
+          - application_guidance
+          - maintenance_procedure
+        notes: AHU has authority-style application and maintenance content, but still lacks parameter and fault lookup coverage.
+      - equipment_class_id: screw_chiller
+        coverage_status: internal_manual_baseline
+        fixture_paths:
+          - tests/fixtures/manual_validation/hvac_performance_specs.json
+        covered_knowledge_objects:
+          - performance_spec
+        notes: Screw chiller currently has performance-only coverage from manual-derived specs.
+      - equipment_class_id: chiller
+        coverage_status: demo_authority_baseline
+        fixture_paths:
+          - tests/fixtures/manual_validation/hvac_demo_chiller_authority.json
+        covered_knowledge_objects:
+          - performance_spec
+        notes: Parent chiller class has authority-style plant design metrics but no direct fault or maintenance coverage.
+      - equipment_class_id: chilled_water_pump
+        coverage_status: demo_authority_baseline
+        fixture_paths:
+          - tests/fixtures/manual_validation/hvac_demo_chilled_water_pump_authority.json
+        covered_knowledge_objects:
+          - performance_spec
+        notes: Chilled-water pump coverage is design/performance oriented only.
+      - equipment_class_id: condenser_water_pump
+        coverage_status: demo_authority_baseline
+        fixture_paths:
+          - tests/fixtures/manual_validation/hvac_demo_condenser_water_pump_authority.json
+        covered_knowledge_objects:
+          - performance_spec
+        notes: Condenser-water pump coverage is design/performance oriented only.
+      - equipment_class_id: cooling_tower
+        coverage_status: demo_authority_baseline
+        fixture_paths:
+          - tests/fixtures/manual_validation/hvac_demo_cooling_tower_authority.json
+        covered_knowledge_objects:
+          - performance_spec
+        notes: Cooling tower currently has a thin performance-only seed.
+  internal_priority_queue:
+    - priority: 1
+      equipment_class_id: air_cooled_modular_heat_pump
+      target_knowledge_objects:
+        - parameter_spec
+        - application_guidance
+        - performance_spec
+        - symptom
+      rationale: This class already has fault and maintenance grounding, so filling operating limits and symptom coverage will create the first internally useful closed troubleshooting slice.
+    - priority: 2
+      equipment_class_id: ahu
+      target_knowledge_objects:
+        - parameter_spec
+        - performance_spec
+        - fault_code
+      rationale: AHU already has good authority-style guidance, but internal engineering still lacks direct parameter and fault lookup.
+    - priority: 3
+      equipment_class_id: centrifugal_chiller
+      target_knowledge_objects:
+        - fault_code
+        - parameter_spec
+        - maintenance_procedure
+      rationale: Centrifugal chiller is a declared brand-focus area and a better internal product anchor than adding more demo-only plant metrics.

@@ -1,0 +1,190 @@
+{
+  "domain_id": "drive",
+  "equipment_class_id": "soft_starter",
+  "equipment_class_key": "drive:soft_starter",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "fault_code",
+      "knowledge_object_id": "ko_schneider_ss_ocf",
+      "canonical_key": "OCF",
+      "title": "Schneider OCF Overcurrent Fault",
+      "summary": "The soft starter reports an overcurrent fault when the motor current exceeds the configured protection threshold during start or run.",
+      "localized_display": {
+        "zh": {
+          "title": "Schneider OCF 过电流故障",
+          "summary": "当电机电流在启动或运行期间超过设定保护阈值时，软启动器会报出过电流故障。",
+          "structured_payload": {
+            "fault_name": "过电流故障",
+            "recommended_actions": [
+              "检查电机和负载是否卡滞",
+              "检查电流保护阈值与加速时间设置",
+              "检查电源电压和接线状态"
+            ]
+          }
+        }
+      },
+      "structured_payload": {
+        "fault_code": "OCF",
+        "fault_name": "Overcurrent Fault",
+        "recommended_actions": [
+          "Check whether the motor or driven load is jammed",
+          "Check the current protection threshold and acceleration time settings",
+          "Check supply voltage and wiring condition"
+        ]
+      },
+      "applicability": {
+        "brand": "Schneider",
+        "model_family": "ATS480"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_schneider_ats480_manual",
+        "file_name": "Schneider ATS480 User Manual.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_schneider_ats480_188",
+        "page_no": 188,
+        "page_type": "fault_code_reference"
+      },
+      "chunk": {
+        "chunk_id": "chunk_schneider_ats480_ocf",
+        "chunk_index": 0,
+        "chunk_type": "fault_code_block",
+        "cleaned_text": "OCF overcurrent fault occurs when motor current exceeds the protection threshold during starting or running.",
+        "text_excerpt": "OCF overcurrent fault during starting or running"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_schneider_ats480_ocf",
+        "evidence_role": "primary",
+        "evidence_text": "OCF 过电流故障：启动或运行期间电机电流超过保护阈值。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/施耐德/ATS480_User_Manual.pdf",
+        "page_no": 188
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_schneider_ss_acc",
+      "canonical_key": "acc_acceleration_ramp_time",
+      "title": "Schneider ACC Acceleration Ramp Time",
+      "summary": "Parameter ACC defines the acceleration ramp time used by the soft starter during motor startup.",
+      "localized_display": {
+        "zh": {
+          "title": "Schneider ACC 加速斜坡时间",
+          "summary": "参数 ACC 定义软启动器在电机启动期间使用的加速斜坡时间。",
+          "structured_payload": {
+            "parameter_name": "ACC",
+            "parameter_category": "启动控制",
+            "default_value": "10 s",
+            "description": "电机从初始电压升至额定启动状态的加速时间。"
+          }
+        }
+      },
+      "structured_payload": {
+        "parameter_name": "ACC",
+        "parameter_category": "startup_control",
+        "default_value": "10 s",
+        "description": "Acceleration ramp time from initial voltage to full starting state."
+      },
+      "applicability": {
+        "brand": "Schneider",
+        "model_family": "ATS480"
+      },
+      "confidence_score": 0.89,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_schneider_ats480_manual",
+        "file_name": "Schneider ATS480 User Manual.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_schneider_ats480_96",
+        "page_no": 96,
+        "page_type": "parameter_manual"
+      },
+      "chunk": {
+        "chunk_id": "chunk_schneider_ats480_acc",
+        "chunk_index": 1,
+        "chunk_type": "parameter_block",
+        "cleaned_text": "ACC acceleration ramp time default 10 s for the soft starter startup profile.",
+        "text_excerpt": "ACC acceleration ramp time default 10 s"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_schneider_ats480_acc",
+        "evidence_role": "primary",
+        "evidence_text": "ACC 加速时间，默认值 10 s，用于电机启动过程。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/施耐德/ATS480_User_Manual.pdf",
+        "page_no": 96
+      }
+    },
+    {
+      "knowledge_object_type": "maintenance_procedure",
+      "knowledge_object_id": "ko_schneider_ss_inspect_terminals_and_ventilation",
+      "canonical_key": "inspect_terminals_and_ventilation_path",
+      "title": "Schneider Inspect Terminals And Ventilation Path",
+      "summary": "Inspect power terminals and keep the ventilation path clear to prevent overheating and nuisance trips.",
+      "localized_display": {
+        "zh": {
+          "title": "Schneider 检查端子和通风路径",
+          "summary": "应检查功率端子并保持通风路径通畅，以防止过热和误跳闸。",
+          "structured_payload": {
+            "maintenance_task": "inspection",
+            "task_type": "inspection",
+            "steps": [
+              "检查功率端子是否松动或变色",
+              "清除通风路径中的灰尘和障碍物"
+            ]
+          }
+        }
+      },
+      "structured_payload": {
+        "maintenance_task": "inspection",
+        "task_type": "inspection",
+        "steps": [
+          "Inspect power terminals for looseness or discoloration",
+          "Remove dust and obstructions from the ventilation path"
+        ]
+      },
+      "applicability": {
+        "brand": "Schneider",
+        "model_family": "ATS480"
+      },
+      "confidence_score": 0.88,
+      "trust_level": "L2",
+      "review_status": "approved",
+      "doc": {
+        "doc_id": "doc_schneider_ats480_manual",
+        "file_name": "Schneider ATS480 User Manual.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_schneider_ats480_28",
+        "page_no": 28,
+        "page_type": "maintenance_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_schneider_ats480_maintenance",
+        "chunk_index": 2,
+        "chunk_type": "procedure_block",
+        "cleaned_text": "Inspect power terminals regularly and keep the ventilation path clear to avoid overheating in the soft starter.",
+        "text_excerpt": "inspect power terminals and keep the ventilation path clear"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_schneider_ats480_maintenance",
+        "evidence_role": "primary",
+        "evidence_text": "定期检查功率端子并保持通风路径清洁，以避免软启动器过热。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/施耐德/ATS480_User_Manual.pdf",
+        "page_no": 28
+      }
+    }
+  ]
+}

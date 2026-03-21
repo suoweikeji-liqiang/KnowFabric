@@ -36,7 +36,9 @@ from scripts.prepare_review_pipeline_bundle import prepare_review_pipeline_bundl
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 HVAC_V2_ROOT = REPO_ROOT / "domain_packages/hvac/v2"
+DRIVE_V2_ROOT = REPO_ROOT / "domain_packages/drive/v2"
 HVAC_MAINTENANCE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_maintenance_guidance.json"
+DRIVE_MAINTENANCE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_maintenance_guidance.json"
 
 
 def _build_client() -> tuple[TestClient, sessionmaker]:
@@ -72,8 +74,8 @@ def _build_client() -> tuple[TestClient, sessionmaker]:
     return TestClient(app), testing_session
 
 
-def _seed_hvac_ontology(session_factory: sessionmaker) -> None:
-    bundle = load_domain_package_v2(HVAC_V2_ROOT)
+def _seed_domain_ontology(session_factory: sessionmaker, root: Path) -> None:
+    bundle = load_domain_package_v2(root)
     db = session_factory()
     try:
         db.execute(OntologyClassV2.__table__.insert(), build_ontology_class_rows(bundle))
@@ -103,7 +105,7 @@ def test_apply_ready_review_bundle_supports_maintenance_guidance_candidates() ->
     client, session_factory = _build_client()
     original_session_locals = {}
     try:
-        _seed_hvac_ontology(session_factory)
+        _seed_domain_ontology(session_factory, HVAC_V2_ROOT)
         _seed_fixture_chunks(session_factory, HVAC_MAINTENANCE_FIXTURE)
 
         for target in (
@@ -167,6 +169,77 @@ def test_apply_ready_review_bundle_supports_maintenance_guidance_candidates() ->
         app.dependency_overrides.clear()
 
 
+def test_apply_ready_review_bundle_supports_drive_maintenance_guidance_candidates() -> None:
+    """Prepared drive maintenance bundle should apply reviewed maintenance/diagnostic packs into the semantic route."""
+
+    client, session_factory = _build_client()
+    original_session_locals = {}
+    try:
+        _seed_domain_ontology(session_factory, DRIVE_V2_ROOT)
+        _seed_fixture_chunks(session_factory, DRIVE_MAINTENANCE_FIXTURE)
+
+        for target in (
+            "scripts.generate_chunk_backfill_candidates.SessionLocal",
+            "scripts.build_manual_fixture_from_review_candidates.SessionLocal",
+            "scripts.backfill_manual_knowledge_from_chunks.SessionLocal",
+        ):
+            module_name, attr_name = target.rsplit(".", 1)
+            module = __import__(module_name, fromlist=[attr_name])
+            original_session_locals[target] = getattr(module, attr_name)
+            setattr(module, attr_name, session_factory)
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            manifest = prepare_review_pipeline_bundle(
+                "drive",
+                tmp_dir,
+                doc_id="doc_siemens_g120xa_manual",
+                equipment_class_id="variable_frequency_drive",
+                default_trust_level="L2",
+            )
+            bootstrapped_pack = Path(manifest["paths"]["bootstrapped_review_pack_dir"]) / (
+                "drive__doc_siemens_g120xa_manual__variable_frequency_drive.json"
+            )
+            payload = json.loads(bootstrapped_pack.read_text(encoding="utf-8"))
+            for entry in payload["candidate_entries"]:
+                entry["review_decision"] = "accepted"
+                entry["curation"]["applicability"] = {"brand": "Siemens", "model_family": "G120XA"}
+                if entry["knowledge_object_type"] == "maintenance_procedure":
+                    entry["curation"]["title"] = "Reviewed Clean Heat Sink And Cooling Air Path"
+                    entry["curation"]["summary"] = "Reviewed maintenance guidance for drive cooling-path cleaning."
+                    entry["curation"]["structured_payload"]["task_type"] = "cleaning"
+                    entry["curation"]["structured_payload"]["maintenance_task"] = "cleaning"
+                else:
+                    entry["curation"]["title"] = "Reviewed Check Cooling Fan Operation And Airflow"
+                    entry["curation"]["summary"] = "Reviewed diagnostic guidance for drive thermal inspection."
+                    entry["curation"]["structured_payload"]["task_type"] = "inspection"
+            bootstrapped_pack.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+            from scripts.check_review_pack_readiness import check_review_pack_directory
+
+            check_review_pack_directory(manifest["paths"]["bootstrapped_review_pack_dir"])
+            result = apply_ready_review_bundle(tmp_dir, prepare_manifest_path=manifest["paths"]["prepare_manifest"])
+            assert result["summary"] == {"applied": 1, "failed": 0}
+
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/maintenance-guidance"
+            "?brand=Siemens&model_family=G120XA"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert {item["knowledge_object_type"] for item in payload["data"]["items"]} == {
+            "maintenance_procedure",
+            "diagnostic_step",
+        }
+    finally:
+        for target, original in original_session_locals.items():
+            module_name, attr_name = target.rsplit(".", 1)
+            module = __import__(module_name, fromlist=[attr_name])
+            setattr(module, attr_name, original)
+        app.dependency_overrides.clear()
+
+
 if __name__ == "__main__":
     test_apply_ready_review_bundle_supports_maintenance_guidance_candidates()
+    test_apply_ready_review_bundle_supports_drive_maintenance_guidance_candidates()
     print("Apply-ready maintenance bundle checks passed")

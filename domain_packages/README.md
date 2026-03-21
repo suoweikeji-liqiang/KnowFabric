@@ -17,7 +17,7 @@ Rebuild-track packages may also add a parallel `v2/` directory with:
 - `ontology/classes.yaml` - Canonical class identifiers and anchors
 - `ontology/relations.yaml` - Canonical relation vocabulary
 - `delivery/` - Semantic query and response placeholders
-- `coverage/` - Brand/document coverage and exclusions
+- `coverage/` - Brand/document coverage, exclusions, and internal coverage inventories
 
 ## Phase 1 Domains
 

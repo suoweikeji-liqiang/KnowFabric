@@ -1,0 +1,123 @@
+{
+  "domain_id": "drive",
+  "equipment_class_id": "variable_frequency_drive",
+  "equipment_class_key": "drive:variable_frequency_drive",
+  "manual_entries": [
+    {
+      "knowledge_object_type": "maintenance_procedure",
+      "knowledge_object_id": "ko_siemens_clean_heat_sink_air_path",
+      "canonical_key": "clean_heat_sink_and_air_path",
+      "title": "Siemens Clean Heat Sink And Cooling Air Path",
+      "summary": "Clean the heat sink and cooling air path regularly to prevent dust buildup and thermal derating.",
+      "localized_display": {
+        "zh": {
+          "title": "Siemens 清洁散热器和冷却风道",
+          "summary": "应定期清洁散热器和冷却风道，避免灰尘积聚导致降额或过热。",
+          "structured_payload": {
+            "maintenance_task": "cleaning",
+            "task_type": "cleaning",
+            "steps": [
+              "检查散热器和冷却风道是否积尘",
+              "定期清洁散热器和冷却风道"
+            ]
+          }
+        }
+      },
+      "structured_payload": {
+        "maintenance_task": "cleaning",
+        "task_type": "cleaning",
+        "steps": [
+          "Inspect the heat sink and cooling air path for dust buildup",
+          "Clean the heat sink and cooling air path regularly"
+        ]
+      },
+      "applicability": {
+        "brand": "Siemens",
+        "model_family": "G120XA"
+      },
+      "confidence_score": 0.89,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_siemens_g120xa_manual",
+        "file_name": "Siemens G120XA Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_siemens_g120xa_34",
+        "page_no": 34,
+        "page_type": "maintenance_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_siemens_g120xa_clean_air_path",
+        "chunk_index": 0,
+        "chunk_type": "procedure_block",
+        "cleaned_text": "Clean the heat sink and cooling air path regularly to avoid dust buildup and overheating.",
+        "text_excerpt": "clean the heat sink and cooling air path regularly"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_siemens_clean_heat_sink_air_path",
+        "evidence_role": "primary",
+        "evidence_text": "定期清洁散热器和冷却风道，防止灰尘积聚引起过热。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/西门子/G120XA.pdf",
+        "page_no": 34
+      }
+    },
+    {
+      "knowledge_object_type": "diagnostic_step",
+      "knowledge_object_id": "ko_siemens_check_cooling_fan_and_airflow",
+      "canonical_key": "check_cooling_fan_operation_and_airflow",
+      "title": "Siemens Check Cooling Fan Operation And Airflow",
+      "summary": "If thermal alarms persist, check cooling fan operation and confirm the air inlet and outlet remain unobstructed.",
+      "localized_display": {
+        "zh": {
+          "title": "Siemens 检查冷却风扇运行与风道通畅",
+          "summary": "如果热报警持续出现，应检查冷却风扇运行状态，并确认进风口和出风口没有堵塞。",
+          "structured_payload": {
+            "task_type": "inspection",
+            "step": "检查冷却风扇运行状态，并确认进风口和出风口无遮挡。"
+          }
+        }
+      },
+      "structured_payload": {
+        "task_type": "inspection",
+        "step": "Check cooling fan operation and confirm the air inlet and outlet are unobstructed"
+      },
+      "applicability": {
+        "brand": "Siemens",
+        "model_family": "G120XA"
+      },
+      "confidence_score": 0.88,
+      "trust_level": "L2",
+      "review_status": "pending",
+      "doc": {
+        "doc_id": "doc_siemens_g120xa_manual",
+        "file_name": "Siemens G120XA Operating Instructions.pdf",
+        "source_domain": "drive"
+      },
+      "page": {
+        "page_id": "page_siemens_g120xa_35",
+        "page_no": 35,
+        "page_type": "maintenance_guide"
+      },
+      "chunk": {
+        "chunk_id": "chunk_siemens_g120xa_check_fan_airflow",
+        "chunk_index": 1,
+        "chunk_type": "procedure_block",
+        "cleaned_text": "Check cooling fan operation and keep the air inlet and outlet clear when thermal alarms occur.",
+        "text_excerpt": "check cooling fan operation and keep the air inlet and outlet clear"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_siemens_check_cooling_fan_and_airflow",
+        "evidence_role": "primary",
+        "evidence_text": "发生热报警时，检查冷却风扇运行，并保持进风口和出风口通畅。"
+      },
+      "source_manual": {
+        "path": "/Volumes/TSD302/pan/vfd/西门子/G120XA.pdf",
+        "page_no": 35
+      }
+    }
+  ]
+}

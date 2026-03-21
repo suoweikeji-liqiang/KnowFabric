@@ -41,6 +41,7 @@ HVAC_V2_ROOT = REPO_ROOT / "domain_packages/hvac/v2"
 DRIVE_V2_ROOT = REPO_ROOT / "domain_packages/drive/v2"
 HVAC_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_module_faults.json"
 DRIVE_PARAMETER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_parameter_profiles.json"
+DRIVE_MAINTENANCE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_maintenance_guidance.json"
 
 
 def _build_session_factory():
@@ -159,6 +160,62 @@ def test_review_scaffold_file_can_round_trip_to_backfill(monkeypatch) -> None:
         db.close()
 
 
+def test_review_scaffold_file_can_round_trip_drive_maintenance_candidates(monkeypatch) -> None:
+    """Drive maintenance candidates should round-trip through scaffold, fixture build, and backfill."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_fixture_chunks(session_factory, DRIVE_MAINTENANCE_FIXTURE)
+    monkeypatch.setattr("scripts.generate_chunk_backfill_candidates.SessionLocal", session_factory)
+    monkeypatch.setattr("scripts.build_manual_fixture_from_review_candidates.SessionLocal", session_factory)
+    monkeypatch.setattr("scripts.backfill_manual_knowledge_from_chunks.SessionLocal", session_factory)
+
+    payload = generate_chunk_backfill_candidates(
+        "drive",
+        doc_id="doc_siemens_g120xa_manual",
+        equipment_class_id="variable_frequency_drive",
+    )
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        candidate_path = Path(tmp_dir) / "candidates.json"
+        scaffold_path = Path(tmp_dir) / "review_scaffold.json"
+        fixture_path = Path(tmp_dir) / "reviewed_fixture.json"
+        candidate_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        scaffold = build_review_scaffold_from_candidate_file(candidate_path, default_trust_level="L2")
+        for entry in scaffold["candidate_entries"]:
+            entry["review_decision"] = "accepted"
+            entry["curation"]["applicability"] = {"brand": "Siemens", "model_family": "G120XA"}
+            if entry["knowledge_object_type"] == "maintenance_procedure":
+                entry["curation"]["title"] = "Reviewed Drive Cooling Path Cleaning"
+                entry["curation"]["summary"] = "Reviewed maintenance procedure for drive cooling cleanup."
+                entry["curation"]["structured_payload"]["task_type"] = "cleaning"
+                entry["curation"]["structured_payload"]["maintenance_task"] = "cleaning"
+            else:
+                entry["curation"]["title"] = "Reviewed Drive Cooling Fan Inspection"
+                entry["curation"]["summary"] = "Reviewed diagnostic inspection guidance for drive thermal alarms."
+                entry["curation"]["structured_payload"]["task_type"] = "inspection"
+        scaffold_path.write_text(json.dumps(scaffold, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        fixture = build_manual_fixture_from_review_candidate_file(scaffold_path)
+        fixture_path.write_text(json.dumps(fixture, ensure_ascii=False, indent=2), encoding="utf-8")
+        equipment_class_key, knowledge_count = backfill_manual_fixture_from_chunks(fixture_path)
+
+    db = session_factory()
+    try:
+        assert equipment_class_key == "drive:variable_frequency_drive"
+        assert knowledge_count == 2
+        assert db.query(KnowledgeObjectV2).filter(
+            KnowledgeObjectV2.domain_id == "drive",
+            KnowledgeObjectV2.knowledge_object_type == "maintenance_procedure",
+        ).count() == 1
+        assert db.query(KnowledgeObjectV2).filter(
+            KnowledgeObjectV2.domain_id == "drive",
+            KnowledgeObjectV2.knowledge_object_type == "diagnostic_step",
+        ).count() == 1
+    finally:
+        db.close()
+
+
 if __name__ == "__main__":
     class _MonkeyPatch:
         def __init__(self) -> None:
@@ -181,5 +238,8 @@ if __name__ == "__main__":
     monkeypatch.undo()
     monkeypatch = _MonkeyPatch()
     test_review_scaffold_file_can_round_trip_to_backfill(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_review_scaffold_file_can_round_trip_drive_maintenance_candidates(monkeypatch)
     monkeypatch.undo()
     print("Review scaffold builder checks passed")

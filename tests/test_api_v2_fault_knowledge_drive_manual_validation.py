@@ -32,7 +32,10 @@ from scripts import seed_manual_validation_fixtures as seed_script
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DRIVE_V2_ROOT = REPO_ROOT / "domain_packages/drive/v2"
-MANUAL_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_vfd_faults.json"
+FAULT_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_vfd_faults.json"
+SYMPTOM_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_symptoms.json"
+SOFT_STARTER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_soft_starter_baseline.json"
+FREQUENCY_CONVERTER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_frequency_converter_baseline.json"
 
 
 def _build_client() -> tuple[TestClient, sessionmaker]:
@@ -79,11 +82,12 @@ def _seed_drive_ontology(session_factory: sessionmaker) -> None:
     finally:
         db.close()
 
-def _seed_drive_manual_fault_entries(session_factory: sessionmaker) -> None:
+def _seed_drive_manual_fault_entries(session_factory: sessionmaker, *fixture_paths: Path) -> None:
     original_session_local = seed_script.SessionLocal
     try:
         seed_script.SessionLocal = session_factory
-        seed_script.seed_manual_fixture(MANUAL_FIXTURE)
+        for fixture_path in fixture_paths:
+            seed_script.seed_manual_fixture(fixture_path)
     finally:
         seed_script.SessionLocal = original_session_local
 
@@ -94,7 +98,7 @@ def test_drive_manual_validation_route_for_abb_fault() -> None:
     client, session_factory = _build_client()
     try:
         _seed_drive_ontology(session_factory)
-        _seed_drive_manual_fault_entries(session_factory)
+        _seed_drive_manual_fault_entries(session_factory, FAULT_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
             "?fault_code=A7C1&brand=ABB"
@@ -116,7 +120,7 @@ def test_drive_manual_validation_route_for_siemens_fault() -> None:
     client, session_factory = _build_client()
     try:
         _seed_drive_ontology(session_factory)
-        _seed_drive_manual_fault_entries(session_factory)
+        _seed_drive_manual_fault_entries(session_factory, FAULT_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
             "?fault_code=F07011&brand=Siemens"
@@ -131,7 +135,94 @@ def test_drive_manual_validation_route_for_siemens_fault() -> None:
         app.dependency_overrides.clear()
 
 
+def test_drive_manual_validation_route_can_include_related_symptom() -> None:
+    """Fault knowledge route should return reviewed symptom entries when enabled."""
+
+    client, session_factory = _build_client()
+    try:
+        _seed_drive_ontology(session_factory)
+        _seed_drive_manual_fault_entries(session_factory, FAULT_FIXTURE, SYMPTOM_FIXTURE)
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
+            "?fault_code=F07011&brand=Siemens&include_related_symptoms=true"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert {item["knowledge_object_type"] for item in payload["data"]["items"]} == {
+            "fault_code",
+            "symptom",
+        }
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_drive_manual_validation_route_can_exclude_related_symptom() -> None:
+    """Fault knowledge route should suppress symptom entries when requested."""
+
+    client, session_factory = _build_client()
+    try:
+        _seed_drive_ontology(session_factory)
+        _seed_drive_manual_fault_entries(session_factory, FAULT_FIXTURE, SYMPTOM_FIXTURE)
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
+            "?fault_code=F07011&brand=Siemens&include_related_symptoms=false"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert [item["knowledge_object_type"] for item in payload["data"]["items"]] == ["fault_code"]
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_soft_starter_manual_validation_route_for_schneider_fault() -> None:
+    """Soft starter fault entries should resolve through the semantic fault route."""
+
+    client, session_factory = _build_client()
+    try:
+        _seed_drive_ontology(session_factory)
+        _seed_drive_manual_fault_entries(session_factory, SOFT_STARTER_FIXTURE)
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/soft_starter/fault-knowledge"
+            "?fault_code=OCF&brand=Schneider"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert payload["data"]["equipment_class"]["equipment_class_id"] == "soft_starter"
+        assert payload["data"]["items"][0]["canonical_key"] == "OCF"
+        assert payload["data"]["items"][0]["structured_payload"]["fault_name"] == "Overcurrent Fault"
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_frequency_converter_manual_validation_route_for_danfoss_fault() -> None:
+    """Frequency converter fault entries should resolve through the semantic fault route."""
+
+    client, session_factory = _build_client()
+    try:
+        _seed_drive_ontology(session_factory)
+        _seed_drive_manual_fault_entries(session_factory, FREQUENCY_CONVERTER_FIXTURE)
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/frequency_converter/fault-knowledge"
+            "?fault_code=16&brand=Danfoss"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert payload["data"]["equipment_class"]["equipment_class_id"] == "frequency_converter"
+        assert payload["data"]["items"][0]["canonical_key"] == "16"
+        assert payload["data"]["items"][0]["structured_payload"]["fault_name"] == "Short Circuit Fault"
+    finally:
+        app.dependency_overrides.clear()
+
+
 if __name__ == "__main__":
     test_drive_manual_validation_route_for_abb_fault()
     test_drive_manual_validation_route_for_siemens_fault()
+    test_drive_manual_validation_route_can_include_related_symptom()
+    test_drive_manual_validation_route_can_exclude_related_symptom()
+    test_soft_starter_manual_validation_route_for_schneider_fault()
+    test_frequency_converter_manual_validation_route_for_danfoss_fault()
     print("Drive manual-backed fault knowledge validation checks passed")

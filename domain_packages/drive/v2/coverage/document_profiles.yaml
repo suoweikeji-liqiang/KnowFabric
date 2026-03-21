@@ -4,6 +4,11 @@ document_profiles:
       - parameter_spec
       - maintenance_procedure
 
+  - id: maintenance_guide
+    preferred_knowledge_objects:
+      - maintenance_procedure
+      - diagnostic_step
+
   - id: fault_code_reference
     preferred_knowledge_objects:
       - fault_code

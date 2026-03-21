@@ -30,6 +30,7 @@ HVAC_PERFORMANCE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_pe
 HVAC_APPLICATION_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/hvac_application_guidance.json"
 DRIVE_GUIDE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_commissioning_guidance.json"
 DRIVE_PARAMETER_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_parameter_profiles.json"
+DRIVE_MAINTENANCE_FIXTURE = REPO_ROOT / "tests/fixtures/manual_validation/drive_maintenance_guidance.json"
 
 
 def _build_session_factory():
@@ -349,6 +350,28 @@ def test_generate_chunk_backfill_candidates_for_drive_commissioning_guidance(mon
     by_type = {item["knowledge_object_type"]: item for item in payload["candidate_entries"]}
     assert by_type["commissioning_step"]["structured_payload_candidate"]["commissioning_phase"] == "startup"
     assert by_type["wiring_guidance"]["structured_payload_candidate"]["wiring_topic"] == "shield_grounding"
+
+
+def test_generate_chunk_backfill_candidates_for_drive_maintenance_guidance(monkeypatch) -> None:
+    """Drive maintenance guide chunks should yield maintenance and diagnostic candidates."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_fixture_chunks(session_factory, DRIVE_MAINTENANCE_FIXTURE)
+    monkeypatch.setattr("scripts.generate_chunk_backfill_candidates.SessionLocal", session_factory)
+
+    payload = generate_chunk_backfill_candidates(
+        "drive",
+        doc_id="doc_siemens_g120xa_manual",
+        equipment_class_id="variable_frequency_drive",
+    )
+
+    assert payload["metadata"]["candidate_knowledge_types"] == ["diagnostic_step", "maintenance_procedure"]
+    assert len(payload["candidate_entries"]) == 2
+    by_type = {item["knowledge_object_type"]: item for item in payload["candidate_entries"]}
+    assert by_type["maintenance_procedure"]["structured_payload_candidate"]["task_type"] == "cleaning"
+    assert by_type["diagnostic_step"]["structured_payload_candidate"]["task_type"] == "inspection"
+    assert "cooling fan operation" in by_type["diagnostic_step"]["structured_payload_candidate"]["step"]
 
 
 def test_generate_chunk_backfill_candidates_respects_document_profile_preferences(monkeypatch) -> None:
