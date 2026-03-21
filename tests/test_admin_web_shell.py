@@ -4,6 +4,7 @@ import importlib.util
 import json
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -134,3 +135,360 @@ def test_load_demo_bundle_reads_manifest_notes_and_domain_queries(tmp_path: Path
     assert payload["scenario"]["primary_cards"][0]["equipment_class_id"] == "chiller"
     assert payload["scenario"]["downstream_cards"][0]["equipment_class_id"] == "ahu"
     assert payload["scenario"]["extension_domains"][0]["domain_id"] == "drive"
+
+
+def test_load_workbench_payload_reads_fixture_catalog_and_coverage_inventory() -> None:
+    module = _load_admin_web_module()
+    module._load_documents_from_db = lambda: []
+
+    payload = module.load_workbench_payload()
+    domains = {item["domain_id"]: item for item in payload["views"]["coverage"]["domains"]}
+    drive = domains["drive"]
+    soft_starter = next(
+        item for item in drive["equipment_classes"] if item["equipment_class_id"] == "soft_starter"
+    )
+    samples = {item["doc_id"]: item for item in payload["views"]["documents"]["fixture_samples"]}
+
+    assert payload["title"] == "KnowFabric Internal Workbench"
+    assert payload["summary"]["fixture_count"] >= 1
+    assert "fault_code" in soft_starter["covered_knowledge_objects"]
+    assert "commissioning_step" in soft_starter["missing_knowledge_objects"]
+    assert "doc_schneider_ats480_manual" in samples
+    assert "soft_starter" in samples["doc_schneider_ats480_manual"]["equipment_classes"]
+
+
+def test_load_review_workspace_reads_local_review_pack_directory(tmp_path: Path) -> None:
+    module = _load_admin_web_module()
+    review_dir = tmp_path / "review_bundle"
+    review_dir.mkdir(parents=True, exist_ok=True)
+    pack_path = review_dir / "drive__doc_demo__soft_starter.json"
+    pack_path.write_text(
+        json.dumps(
+            {
+                "review_mode": "chunk_backfill_review_pack",
+                "domain_id": "drive",
+                "doc_id": "doc_demo",
+                "doc_name": "Demo Manual.pdf",
+                "equipment_class": {
+                    "equipment_class_id": "soft_starter",
+                    "equipment_class_key": "drive:soft_starter",
+                    "label": "Soft Starter",
+                },
+                "candidate_entries": [
+                    {
+                        "candidate_id": "cand_1",
+                        "domain_id": "drive",
+                        "doc_id": "doc_demo",
+                        "doc_name": "Demo Manual.pdf",
+                        "page_id": "page_1",
+                        "page_no": 10,
+                        "chunk_id": "chunk_1",
+                        "chunk_index": 0,
+                        "chunk_type": "fault_code_block",
+                        "page_type": "fault_code_reference",
+                        "text_excerpt": "fault excerpt",
+                        "evidence_text": "fault evidence",
+                        "knowledge_object_type": "fault_code",
+                        "canonical_key_candidate": "OCF",
+                        "structured_payload_candidate": {"fault_code": "OCF"},
+                        "confidence_score": 0.9,
+                        "review_decision": "pending",
+                        "equipment_class_candidate": {
+                            "equipment_class_id": "soft_starter",
+                            "equipment_class_key": "drive:soft_starter",
+                            "label": "Soft Starter",
+                        },
+                        "curation": {},
+                    }
+                ],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    payload = module.load_review_workspace(review_root=review_dir)
+
+    assert payload["available"] is True
+    assert payload["workspace_id"] == "default"
+    assert payload["pack_count"] == 1
+    assert payload["packs"][0]["equipment_class_id"] == "soft_starter"
+    assert payload["packs"][0]["status"] == "blocked_pending"
+
+
+def test_save_review_pack_writes_updated_review_decision(tmp_path: Path) -> None:
+    module = _load_admin_web_module()
+    review_dir = tmp_path / "review_bundle"
+    review_dir.mkdir(parents=True, exist_ok=True)
+    pack_path = review_dir / "drive__doc_demo__soft_starter.json"
+    payload = {
+        "review_mode": "chunk_backfill_review_pack",
+        "domain_id": "drive",
+        "doc_id": "doc_demo",
+        "doc_name": "Demo Manual.pdf",
+        "equipment_class": {
+            "equipment_class_id": "soft_starter",
+            "equipment_class_key": "drive:soft_starter",
+            "label": "Soft Starter",
+        },
+        "candidate_entries": [
+            {
+                "candidate_id": "cand_1",
+                "domain_id": "drive",
+                "doc_id": "doc_demo",
+                "doc_name": "Demo Manual.pdf",
+                "page_id": "page_1",
+                "page_no": 10,
+                "chunk_id": "chunk_1",
+                "chunk_index": 0,
+                "chunk_type": "fault_code_block",
+                "page_type": "fault_code_reference",
+                "text_excerpt": "fault excerpt",
+                "evidence_text": "fault evidence",
+                "knowledge_object_type": "fault_code",
+                "canonical_key_candidate": "OCF",
+                "structured_payload_candidate": {"fault_code": "OCF"},
+                "confidence_score": 0.9,
+                "review_decision": "pending",
+                "equipment_class_candidate": {
+                    "equipment_class_id": "soft_starter",
+                    "equipment_class_key": "drive:soft_starter",
+                    "label": "Soft Starter",
+                },
+                "curation": {
+                    "title": "",
+                    "summary": "",
+                    "structured_payload": {},
+                    "applicability": {},
+                    "trust_level": "L2",
+                },
+            }
+        ],
+    }
+    pack_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    payload["candidate_entries"][0]["review_decision"] = "accepted"
+    payload["candidate_entries"][0]["curation"]["title"] = "Reviewed OCF"
+    payload["candidate_entries"][0]["curation"]["summary"] = "Reviewed fault entry."
+    payload["candidate_entries"][0]["curation"]["structured_payload"] = {"fault_code": "OCF"}
+
+    saved = module.save_review_pack(None, pack_path.name, payload, review_root=review_dir)
+    persisted = json.loads(pack_path.read_text(encoding="utf-8"))
+
+    assert saved["candidate_entries"][0]["review_decision"] == "accepted"
+    assert persisted["candidate_entries"][0]["curation"]["title"] == "Reviewed OCF"
+
+
+def test_bootstrap_review_pack_fills_missing_curation_fields(tmp_path: Path) -> None:
+    module = _load_admin_web_module()
+    review_dir = tmp_path / "review_bundle"
+    review_dir.mkdir(parents=True, exist_ok=True)
+    pack_path = review_dir / "drive__doc_demo__soft_starter.json"
+    pack_path.write_text(
+        json.dumps(
+            {
+                "review_mode": "chunk_backfill_review_pack",
+                "domain_id": "drive",
+                "doc_id": "doc_demo",
+                "doc_name": "Demo Manual.pdf",
+                "equipment_class": {
+                    "equipment_class_id": "soft_starter",
+                    "equipment_class_key": "drive:soft_starter",
+                    "label": "Soft Starter",
+                },
+                "candidate_entries": [
+                    {
+                        "candidate_id": "cand_1",
+                        "domain_id": "drive",
+                        "doc_id": "doc_demo",
+                        "doc_name": "Demo Manual.pdf",
+                        "page_id": "page_1",
+                        "page_no": 10,
+                        "chunk_id": "chunk_1",
+                        "chunk_index": 0,
+                        "chunk_type": "fault_code_block",
+                        "page_type": "fault_code_reference",
+                        "text_excerpt": "fault excerpt",
+                        "evidence_text": "fault evidence",
+                        "knowledge_object_type": "fault_code",
+                        "canonical_key_candidate": "OCF",
+                        "structured_payload_candidate": {"fault_code": "OCF"},
+                        "confidence_score": 0.9,
+                        "review_decision": "accepted",
+                        "equipment_class_candidate": {
+                            "equipment_class_id": "soft_starter",
+                            "equipment_class_key": "drive:soft_starter",
+                            "label": "Soft Starter",
+                        },
+                        "curation": {},
+                    }
+                ],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    bootstrapped = module.bootstrap_review_pack(None, pack_path.name, review_root=review_dir)
+
+    assert bootstrapped["candidate_entries"][0]["curation"]["title"].startswith("Draft Fault Code")
+    assert bootstrapped["candidate_entries"][0]["curation"]["trust_level"] == "L3"
+
+
+def test_load_apply_workspace_reports_pending_pack_status(tmp_path: Path) -> None:
+    module = _load_admin_web_module()
+    review_dir = tmp_path / "review_bundle"
+    review_dir.mkdir(parents=True, exist_ok=True)
+    pack_path = review_dir / "drive__doc_demo__soft_starter.json"
+    pack_path.write_text(
+        json.dumps(
+            {
+                "review_mode": "chunk_backfill_review_pack",
+                "domain_id": "drive",
+                "doc_id": "doc_demo",
+                "doc_name": "Demo Manual.pdf",
+                "equipment_class": {
+                    "equipment_class_id": "soft_starter",
+                    "equipment_class_key": "drive:soft_starter",
+                    "label": "Soft Starter",
+                },
+                "candidate_entries": [
+                    {
+                        "candidate_id": "cand_1",
+                        "domain_id": "drive",
+                        "doc_id": "doc_demo",
+                        "doc_name": "Demo Manual.pdf",
+                        "page_id": "page_1",
+                        "page_no": 10,
+                        "chunk_id": "chunk_1",
+                        "chunk_index": 0,
+                        "chunk_type": "fault_code_block",
+                        "page_type": "fault_code_reference",
+                        "text_excerpt": "fault excerpt",
+                        "evidence_text": "fault evidence",
+                        "knowledge_object_type": "fault_code",
+                        "canonical_key_candidate": "OCF",
+                        "structured_payload_candidate": {"fault_code": "OCF"},
+                        "confidence_score": 0.9,
+                        "review_decision": "pending",
+                        "equipment_class_candidate": {
+                            "equipment_class_id": "soft_starter",
+                            "equipment_class_key": "drive:soft_starter",
+                            "label": "Soft Starter",
+                        },
+                        "curation": {},
+                    }
+                ],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    payload = module.load_apply_workspace(review_root=review_dir)
+
+    assert payload["available"] is True
+    assert payload["workspace_id"] == "default"
+    assert payload["summary"]["blocked_pending"] == 1
+    assert payload["results"][0]["status"] == "blocked_pending"
+
+
+def test_load_apply_workspace_includes_latest_apply_artifacts(tmp_path: Path) -> None:
+    module = _load_admin_web_module()
+    review_dir = tmp_path / "review_bundle"
+    review_dir.mkdir(parents=True, exist_ok=True)
+    stats_path = review_dir / "bootstrapped_review_pipeline_stats.json"
+    summary_path = review_dir / "review_pipeline_summary.txt"
+    stats_path.write_text(
+        json.dumps({"overall": {"apply_status_counts": {"applied": 1}}}) + "\n",
+        encoding="utf-8",
+    )
+    summary_path.write_text("Apply: 1 applied\n", encoding="utf-8")
+    (review_dir / "apply_ready_manifest.json").write_text(
+        json.dumps(
+            {
+                "generated_at": "2026-03-21T00:00:00+00:00",
+                "ready_pack_count": 1,
+                "summary": {"applied": 1, "failed": 0},
+                "paths": {
+                    "apply_report": str(review_dir / "review_pack_apply_report.json"),
+                    "stats": str(stats_path),
+                    "summary_text": str(summary_path),
+                },
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    payload = module.load_apply_workspace(review_root=review_dir)
+
+    assert payload["latest_apply"]["summary"]["applied"] == 1
+    assert payload["latest_apply"]["stats"]["overall"]["apply_status_counts"]["applied"] == 1
+    assert "Apply: 1 applied" in payload["latest_apply"]["summary_text"]
+
+
+def test_run_prepare_bundle_refreshes_review_and_apply_workspace(monkeypatch, tmp_path: Path) -> None:
+    module = _load_admin_web_module()
+    review_dir = tmp_path / "review_bundle"
+    review_dir.mkdir(parents=True, exist_ok=True)
+
+    def fake_prepare(domain_id, output_dir, **kwargs):
+        boot_dir = Path(output_dir) / "bootstrapped_review_packs"
+        boot_dir.mkdir(parents=True, exist_ok=True)
+        pack_path = boot_dir / "drive__doc_demo__soft_starter.json"
+        pack_path.write_text(
+            json.dumps(
+                {
+                    "review_mode": "chunk_backfill_review_pack",
+                    "domain_id": "drive",
+                    "doc_id": "doc_demo",
+                    "doc_name": "Demo Manual.pdf",
+                    "equipment_class": {
+                        "equipment_class_id": "soft_starter",
+                        "equipment_class_key": "drive:soft_starter",
+                        "label": "Soft Starter",
+                    },
+                    "candidate_entries": [],
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        readiness_path = Path(output_dir) / "review_pack_readiness_report.json"
+        readiness_path.write_text(
+            json.dumps(
+                {
+                    "pack_dir": str(boot_dir),
+                    "summary": {"ready": 0, "blocked_pending": 0, "blocked_no_accepted": 1, "blocked_invalid": 0},
+                    "results": [],
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        manifest = {
+            "paths": {
+                "bootstrapped_review_pack_dir": str(boot_dir),
+                "readiness_report": str(readiness_path),
+            }
+        }
+        (Path(output_dir) / "prepare_manifest.json").write_text(
+            json.dumps(manifest) + "\n",
+            encoding="utf-8",
+        )
+        return manifest
+
+    monkeypatch.setattr(module, "prepare_review_pipeline_bundle", fake_prepare)
+
+    result = module.run_prepare_bundle(
+        "drive",
+        doc_id="doc_demo",
+        equipment_class_id="soft_starter",
+        workspace_id="demo_workspace",
+        review_root=review_dir,
+    )
+
+    assert result["review_workspace"]["available"] is True
+    assert result["workspace_id"] == "demo_workspace"
+    assert result["review_workspace"]["pack_count"] == 1
+    assert result["apply_workspace"]["available"] is True

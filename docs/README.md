@@ -56,6 +56,7 @@ This directory contains the governance and standards documentation for KnowFabri
 22. **[20_authority-source-validation-round5.md](20_authority-source-validation-round5.md)** - Validation note for drive-side application guidance and broader guide knowledge
 23. **[21_authority-source-validation-round6.md](21_authority-source-validation-round6.md)** - Validation note for HVAC-side authority application guidance from ASHRAE guide material
 24. **[22_external-evaluation-guide.md](22_external-evaluation-guide.md)** - Operator-facing quickstart for bootstrap, smoke, and handoff artifacts
+25. **[23_internal-workbench-ui-style-guide.md](23_internal-workbench-ui-style-guide.md)** - Visual and interaction guide for the internal operator workbench
 
 ---
 
@@ -99,6 +100,7 @@ These documents govern the ontology-first rebuild track:
 - **20_authority-source-validation-round5.md** - Findings from adding drive-side application guidance to the semi-automated flow
 - **21_authority-source-validation-round6.md** - Findings from adding HVAC-side authority application guidance to the semi-automated flow
 - **22_external-evaluation-guide.md** - Productization-facing operator flow for external evaluation and handoff
+- **23_internal-workbench-ui-style-guide.md** - Internal UI direction for document intake, review, apply, and coverage workflows
 
 ### Standards Documents
 
