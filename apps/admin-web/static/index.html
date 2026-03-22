@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KnowFabric Internal Workbench</title>
+    <title>KnowFabric 知识工程工作台</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141c23'/%3E%3Cpath d='M18 20h8l8 12 8-12h8L38 38v10h-8V38L18 20Z' fill='%23d4a16d'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="/ui/styles.css" />
   </head>
   <body>
@@ -13,33 +14,36 @@
       <aside class="workbench-rail">
         <div class="rail-brand">
           <p class="rail-kicker">KnowFabric</p>
-          <h1>Internal Workbench</h1>
-          <p class="rail-copy">Calm, evidence-first tooling for document intake, review, apply, and coverage control.</p>
+          <h1>知识工程工作台</h1>
+          <p class="rail-copy">围绕文档录入、证据审阅、应用执行与覆盖盘点，让内部知识工程流程保持清晰、可追溯、可操作。</p>
         </div>
-        <nav id="nav-list" class="rail-nav" aria-label="Workbench sections"></nav>
+        <nav id="nav-list" class="rail-nav" aria-label="工作台分区"></nav>
         <div class="rail-footer">
-          <p class="rail-footer-label">Operator Standard</p>
-          <p class="rail-footer-copy">Evidence visible. Review local. Apply deliberate.</p>
+          <p class="rail-footer-label">操作准则</p>
+          <p class="rail-footer-copy">证据可见，本地审阅，谨慎应用。</p>
         </div>
       </aside>
 
       <section class="workbench-main">
         <header class="topbar">
-          <div>
-            <p class="topbar-kicker">Internal Operator Console</p>
-            <h2 id="app-title">KnowFabric Internal Workbench</h2>
-            <p id="app-subtitle" class="topbar-copy">Loading workspace...</p>
+          <div class="topbar-intro">
+            <p class="topbar-kicker">内部操作台</p>
+            <h2 id="app-title">KnowFabric 知识工程工作台</h2>
+            <p id="app-subtitle" class="topbar-copy">正在加载工作区…</p>
           </div>
-          <div id="summary-strip" class="summary-strip"></div>
+          <div class="topbar-side">
+            <p class="topbar-meta-label">当前概览</p>
+            <div id="summary-strip" class="summary-strip"></div>
+          </div>
         </header>
 
         <section class="view-frame">
           <header class="view-header">
             <div>
-              <p id="view-kicker" class="view-kicker">Workspace</p>
-              <h3 id="view-title">Loading</h3>
+              <p id="view-kicker" class="view-kicker">当前工作面</p>
+              <h3 id="view-title">正在加载</h3>
             </div>
-            <p id="view-description" class="view-description">Preparing internal workbench data...</p>
+            <p id="view-description" class="view-description">正在准备工作台数据…</p>
           </header>
           <div id="view-body" class="view-body"></div>
         </section>
@@ -47,16 +51,16 @@
 
       <aside class="workbench-inspector">
         <div class="inspector-panel">
-          <p class="inspector-kicker">Next Action</p>
-          <h3 id="inspector-title">Loading</h3>
-          <p id="inspector-summary" class="inspector-summary">Preparing operator context...</p>
+          <p class="inspector-kicker">下一步</p>
+          <h3 id="inspector-title">正在加载</h3>
+          <p id="inspector-summary" class="inspector-summary">正在准备操作上下文…</p>
         </div>
         <div class="inspector-panel">
-          <p class="inspector-kicker">Constraints</p>
+          <p class="inspector-kicker">约束条件</p>
           <ul id="inspector-list" class="inspector-list"></ul>
         </div>
         <div class="inspector-panel">
-          <p class="inspector-kicker">Command Path</p>
+          <p class="inspector-kicker">命令路径</p>
           <div id="inspector-command" class="command-card"></div>
         </div>
       </aside>

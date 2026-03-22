@@ -55,6 +55,10 @@ COLD_PLANT_PRIMARY_ORDER = [
     "condenser_water_pump",
     "cooling_tower",
 ]
+COVERAGE_DOMAIN_LABELS = {
+    "hvac": "暖通空调",
+    "drive": "变频驱动",
+}
 COLD_PLANT_CARD_META = {
     "chiller": {
         "label": "冷水机组",
@@ -83,41 +87,41 @@ COLD_PLANT_CARD_META = {
     },
 }
 NAV_ITEMS = [
-    {"id": "inbox", "label": "Inbox", "description": "今日优先级"},
-    {"id": "documents", "label": "Documents", "description": "录入与资料面板"},
-    {"id": "review", "label": "Review", "description": "候选审阅与校准"},
-    {"id": "apply", "label": "Apply", "description": "准备度与应用"},
-    {"id": "coverage", "label": "Coverage", "description": "覆盖盘点"},
-    {"id": "demo", "label": "Demo", "description": "演示与交付产物"},
+    {"id": "inbox", "label": "收件箱", "description": "今日优先级"},
+    {"id": "documents", "label": "文档录入", "description": "录入与资料面板"},
+    {"id": "review", "label": "候选审阅", "description": "审阅、校准与保存"},
+    {"id": "apply", "label": "应用执行", "description": "准备度与应用"},
+    {"id": "coverage", "label": "覆盖盘点", "description": "领域与设备类覆盖"},
+    {"id": "demo", "label": "演示交付", "description": "演示与交付产物"},
 ]
 COMMAND_SHORTCUTS = [
     {
-        "label": "Prepare Review Bundle",
+        "label": "准备审阅包",
         "command": "python3 scripts/prepare_review_pipeline_bundle.py <domain> review_bundle --doc-id <doc_id> --equipment-class-id <equipment_class_id>",
-        "purpose": "从已有 chunk 直接准备可审阅 bundle。",
+        "purpose": "从已有 Chunk 直接准备可审阅包。",
     },
     {
-        "label": "Apply Ready Bundle",
+        "label": "应用就绪审阅包",
         "command": "python3 scripts/apply_ready_review_bundle.py review_bundle",
-        "purpose": "批量应用已完成审阅的 pack。",
+        "purpose": "批量应用已完成审阅的审阅包。",
     },
     {
-        "label": "Checks",
+        "label": "质量门检查",
         "command": "bash scripts/check-all",
         "purpose": "在结束会话前跑绑定质量门。",
     },
 ]
 REVIEW_STEPS = [
-    "导入文档并确认 domain 与 equipment class。",
-    "生成 chunk-backed candidate 或 review bundle。",
-    "并排查看 chunk、evidence 与 curation 字段。",
-    "接受、拒绝或保留 pending，再应用 ready pack。",
+    "导入文档并确认领域与设备类。",
+    "生成基于 Chunk 的候选项或审阅包。",
+    "并排查看 Chunk、证据与审阅字段。",
+    "接受、拒绝或保留待处理状态，再应用已就绪审阅包。",
 ]
 APPLY_RULES = [
-    "只有 ready 的 pack 可以进入 apply。",
-    "apply 前必须保留 doc / page / chunk 追溯链。",
-    "ontology class 与 knowledge object 必须同域对齐。",
-    "apply 后优先回查 API/MCP 读面，而不是只看文件写入。",
+    "只有已就绪的审阅包可以进入应用。",
+    "应用前必须保留 doc / page / Chunk 追溯链。",
+    "本体设备类与知识对象必须同域对齐。",
+    "应用后优先回查 API/MCP 读面，而不是只看文件写入。",
 ]
 
 STORAGE_MANAGER = StorageManager(settings.storage_root)
@@ -208,7 +212,6 @@ def _normalize_query_item(item: dict[str, Any], surface: str) -> dict[str, Any]:
 
 
 def _domain_payload(domain_id: str, reports: dict[str, dict[str, Any]]) -> dict[str, Any]:
-    labels = {"hvac": "HVAC", "drive": "变频驱动"}
     queries: list[dict[str, Any]] = []
     statuses: dict[str, str] = {}
     report_urls: dict[str, str | None] = {}
@@ -218,7 +221,7 @@ def _domain_payload(domain_id: str, reports: dict[str, dict[str, Any]]) -> dict[
         queries.extend(_normalize_query_item(item, surface) for item in report.get("results", []))
     return {
         "domain_id": domain_id,
-        "label": labels.get(domain_id, domain_id),
+        "label": COVERAGE_DOMAIN_LABELS.get(domain_id, domain_id),
         "statuses": statuses,
         "report_urls": report_urls,
         "queries": queries,
@@ -630,7 +633,7 @@ def _domain_workbench_payload(domain_id: str) -> dict[str, Any]:
     uncovered = sum(1 for row in rows if not row["covered_knowledge_objects"])
     return {
         "domain_id": bundle.package.domain_id,
-        "domain_name": bundle.package.domain_name,
+        "domain_name": COVERAGE_DOMAIN_LABELS.get(bundle.package.domain_id, bundle.package.domain_name),
         "supported_knowledge_objects": bundle.package.supported_knowledge_objects,
         "covered_equipment_classes": covered,
         "uncovered_equipment_classes": uncovered,
@@ -1053,8 +1056,8 @@ def load_workbench_payload() -> dict[str, Any]:
     ]
     document_catalog = _load_document_catalog()
     return {
-        "title": "KnowFabric Internal Workbench",
-        "subtitle": "面向知识工程团队的内部工作台：聚焦文档导入、候选审阅、apply 和覆盖盘点。",
+        "title": "KnowFabric 知识工程工作台",
+        "subtitle": "面向知识工程团队的内部工作台，聚焦文档录入、候选审阅、应用执行与覆盖盘点。",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "navigation": NAV_ITEMS,
         "summary": _summaries(domains, document_catalog["documents"], document_catalog["fixture_samples"]),
@@ -1062,9 +1065,9 @@ def load_workbench_payload() -> dict[str, Any]:
             "inbox": {
                 "cards": _inbox_cards(domains),
                 "rules": [
-                    "优先补能形成闭环的 equipment class，而不是平均撒开。",
-                    "先看 evidence 与 chunk，再决定 curation 字段。",
-                    "能用 apply-ready 走通的流程，优先不要回退到手写 fixture。"
+                    "优先补能形成闭环的设备类，而不是平均撒开。",
+                    "先看证据与 Chunk，再决定审阅字段。",
+                    "能用 apply-ready 走通的流程，优先不要回退到手写样例。"
                 ],
             },
             "documents": {

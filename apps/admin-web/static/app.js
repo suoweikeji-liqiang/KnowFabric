@@ -22,27 +22,53 @@ const state = {
 
 const COMMAND_SHORTCUTS = [
   {
-    label: "Prepare Review Bundle",
+    label: "准备审阅包",
     command: "python3 scripts/prepare_review_pipeline_bundle.py <domain> review_bundle --doc-id <doc_id> --equipment-class-id <equipment_class_id>",
-    purpose: "从已有 chunk 直接准备可审阅 bundle。",
+    purpose: "从已有 Chunk 直接准备可审阅包。",
   },
   {
-    label: "Apply Ready Bundle",
+    label: "应用就绪审阅包",
     command: "python3 scripts/apply_ready_review_bundle.py review_bundle",
-    purpose: "批量应用已完成审阅的 pack。",
+    purpose: "批量应用已完成审阅的审阅包。",
   },
   {
-    label: "Checks",
+    label: "质量门检查",
     command: "bash scripts/check-all",
     purpose: "在结束会话前跑绑定质量门。",
   },
 ];
 
+const DOMAIN_LABELS = {
+  hvac: "暖通空调",
+  drive: "变频驱动",
+};
+
+const KNOWLEDGE_OBJECT_LABELS = {
+  application_guidance: "应用指导",
+  commissioning_step: "调试步骤",
+  diagnostic_step: "诊断步骤",
+  fault_code: "故障代码",
+  maintenance_procedure: "维护流程",
+  parameter_spec: "参数规范",
+  performance_spec: "性能规范",
+  symptom: "症状",
+  wiring_guidance: "接线指导",
+};
+
+const PRIORITY_RATIONALES = {
+  motor_controller: "该设备类已在本体中定义，但当前策展覆盖仍为空白，内部控制柜排障链路因此缺了一块。",
+  soft_starter: "软启动器已经有可用基线，下一步应补齐启动过程与接线指导，形成更完整的现场使用面。",
+  frequency_converter: "变频转换器已有启动基线，下一步应补充接线、维护与应用指导，支撑现场部署工作。",
+  air_cooled_modular_heat_pump: "这个设备类已经具备故障与维护基础，再补运行边界和症状覆盖，就能形成第一个内部可用的闭环排障切片。",
+  ahu: "AHU 已有较好的权威型指导内容，但内部工程侧仍缺直接的参数查询与故障检索能力。",
+  centrifugal_chiller: "离心式冷水机组是明确的品牌重点方向，比继续扩展仅用于演示的冷站指标更值得优先投入。",
+};
+
 async function fetchJson(url, options) {
   const response = await fetch(url, options);
   const payload = await response.json();
   if (!response.ok || !payload.success) {
-    throw new Error(payload.detail || "Request failed");
+    throw new Error(payload.detail || "请求失败");
   }
   return payload.data;
 }
@@ -120,7 +146,7 @@ async function importDocument(formData) {
   });
   const payload = await response.json();
   if (!response.ok || !payload.success) {
-    throw new Error(payload.detail || "Import failed");
+    throw new Error(payload.detail || "导入失败");
   }
   return payload.data;
 }
@@ -146,29 +172,69 @@ function setText(id, value) {
   document.getElementById(id).textContent = value;
 }
 
+function formatDateTime(value) {
+  if (!value) {
+    return "-";
+  }
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    return String(value);
+  }
+  return new Intl.DateTimeFormat("zh-CN", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(parsed);
+}
+
+function domainLabel(value) {
+  return DOMAIN_LABELS[value] || value || "未指定";
+}
+
+function knowledgeLabel(value) {
+  return KNOWLEDGE_OBJECT_LABELS[value] || value || "未指定";
+}
+
+function knowledgeInline(values) {
+  if (!values || !values.length) {
+    return "无";
+  }
+  return values.map((item) => knowledgeLabel(item)).join("、");
+}
+
+function priorityRationale(item) {
+  return PRIORITY_RATIONALES[item.equipment_class_id] || item.rationale || "请补充该设备类的优先处理说明。";
+}
+
 function statusLabel(value) {
   const labels = {
-    covered: "Covered",
-    partial: "Partial",
-    uncovered: "Uncovered",
-    passed: "Passed",
-    failed: "Failed",
-    blocked_pending: "Pending",
-    blocked_no_accepted: "No Accepted",
-    review_complete: "Review Complete",
+    covered: "已覆盖",
+    partial: "部分覆盖",
+    uncovered: "未覆盖",
+    passed: "通过",
+    failed: "失败",
+    success: "成功",
+    error: "错误",
+    ready: "已就绪",
+    completed: "已完成",
+    pending: "待处理",
+    accepted: "已接受",
+    rejected: "已拒绝",
+    blocked_pending: "待审阅",
+    blocked_no_accepted: "无已接受项",
+    review_complete: "审阅完成",
   };
-  return labels[value] || value || "Unknown";
+  return labels[value] || value || "未知";
 }
 
 function joinInline(values) {
   if (!values || !values.length) {
-    return "None";
+    return "无";
   }
   return values.join(", ");
 }
 
 function codeBlock(value) {
-  return `<code>${escapeHtml(value)}</code>`;
+  return `<code class="block-code">${escapeHtml(value)}</code>`;
 }
 
 function notify(type, message) {
@@ -189,7 +255,7 @@ function renderNotification() {
   }
   node.innerHTML = `
     <div class="toast toast-${escapeHtml(state.notification.type)}">
-      <strong>${escapeHtml(state.notification.type.toUpperCase())}</strong>
+      <strong>${escapeHtml(statusLabel(state.notification.type))}</strong>
       <span>${escapeHtml(state.notification.message)}</span>
     </div>
   `;
@@ -198,10 +264,10 @@ function renderNotification() {
 function renderSummaryStrip(summary) {
   const node = document.getElementById("summary-strip");
   const items = [
-    ["Domains", summary.domain_count],
-    ["Documents", summary.document_count],
-    ["Fixtures", summary.fixture_count],
-    ["Covered Classes", summary.covered_equipment_classes],
+    ["领域数量", summary.domain_count],
+    ["文档数量", summary.document_count],
+    ["已覆盖类", summary.covered_equipment_classes],
+    ["重点缺口", summary.priority_target_count],
   ];
   node.innerHTML = items
     .map(
@@ -273,7 +339,7 @@ function filterBar({ searchId, searchValue, searchPlaceholder, selectId, selectV
 
 function workspaceOptions(workspaceItems) {
   return [
-    { value: "", label: "Latest Workspace" },
+    { value: "", label: "最新工作区" },
     ...(workspaceItems || []).map((item) => ({
       value: item.workspace_id,
       label: item.workspace_id,
@@ -310,7 +376,7 @@ function documentListView(view) {
       (item) => `
         <button class="list-row ${item.doc_id === state.selectedDocumentId ? "is-active" : ""}" data-doc-id="${escapeHtml(item.doc_id)}">
           <strong>${escapeHtml(item.file_name)}</strong>
-          <span>${escapeHtml(item.source_domain)} · ${escapeHtml(joinInline(item.equipment_classes))}</span>
+          <span>${escapeHtml(domainLabel(item.source_domain))} · ${escapeHtml(joinInline(item.equipment_classes))}</span>
         </button>
       `,
     )
@@ -318,42 +384,42 @@ function documentListView(view) {
   const detail = selected
     ? `
       <article class="surface-card detail-card">
-        <p class="surface-kicker">Selected Document</p>
+        <p class="surface-kicker">当前文档</p>
         <h4>${escapeHtml(selected.file_name)}</h4>
         <div class="detail-grid">
-          <div><span class="detail-label">Doc ID</span>${codeBlock(selected.doc_id)}</div>
-          <div><span class="detail-label">Domain</span><p>${escapeHtml(selected.source_domain)}</p></div>
-          <div><span class="detail-label">Equipment</span><p>${escapeHtml(joinInline(selected.equipment_classes))}</p></div>
-          <div><span class="detail-label">Parse Status</span><p>${escapeHtml(selected.parse_status || "unknown")}</p></div>
-          <div><span class="detail-label">Knowledge Types</span><p>${escapeHtml(joinInline(selected.knowledge_types))}</p></div>
-          <div><span class="detail-label">Pages</span><p>${escapeHtml(selected.page_count || joinInline(selected.page_refs))}</p></div>
-          <div><span class="detail-label">Chunks</span><p>${escapeHtml(selected.chunk_count ?? selected.entry_count ?? "-")}</p></div>
-          <div><span class="detail-label">Fixtures</span><p>${escapeHtml(joinInline(selected.fixture_paths))}</p></div>
+          <div><span class="detail-label">文档 ID</span>${codeBlock(selected.doc_id)}</div>
+          <div><span class="detail-label">领域</span><p>${escapeHtml(domainLabel(selected.source_domain))}</p></div>
+          <div><span class="detail-label">设备类</span><p>${escapeHtml(joinInline(selected.equipment_classes))}</p></div>
+          <div><span class="detail-label">解析状态</span><p>${escapeHtml(statusLabel(selected.parse_status || "unknown"))}</p></div>
+          <div><span class="detail-label">知识对象类型</span><p>${escapeHtml(knowledgeInline(selected.knowledge_types))}</p></div>
+          <div><span class="detail-label">页数</span><p>${escapeHtml(selected.page_count || joinInline(selected.page_refs))}</p></div>
+          <div><span class="detail-label">Chunk 数</span><p>${escapeHtml(selected.chunk_count ?? selected.entry_count ?? "-")}</p></div>
+          <div><span class="detail-label">样例路径</span><p>${escapeHtml(joinInline(selected.fixture_paths))}</p></div>
         </div>
         <div class="action-panel">
-          <p class="action-title">Document Actions</p>
+          <p class="action-title">文档操作</p>
           ${
             selected.actionable
               ? `
                 <div class="toolbar-actions">
-                  <button id="parse-document-button" class="secondary-button" ${state.processingDocId === selected.doc_id ? "disabled" : ""}>Parse</button>
-                  <button id="chunk-document-button" class="secondary-button" ${state.processingDocId === selected.doc_id || selected.parse_status !== "completed" ? "disabled" : ""}>Chunk</button>
+                  <button id="parse-document-button" class="secondary-button" ${state.processingDocId === selected.doc_id ? "disabled" : ""}>解析文档</button>
+                  <button id="chunk-document-button" class="secondary-button" ${state.processingDocId === selected.doc_id || selected.parse_status !== "completed" ? "disabled" : ""}>生成 Chunk</button>
                   <button id="prepare-bundle-button" class="primary-button" ${state.preparing || !selected.source_domain ? "disabled" : ""}>
-                    ${state.preparing ? "Preparing..." : "Prepare Review"}
+                    ${state.preparing ? "准备中…" : "准备审阅包"}
                   </button>
                 </div>
                 ${codeBlock(documentPrepareCommand(selected))}
               `
-              : `<p class="surface-copy">Fixture samples are reference-only. Upload a real PDF to create an actionable document.</p>`
+              : `<p class="surface-copy">样例文档仅供参考。上传真实 PDF 后，才能生成可执行的文档对象。</p>`
           }
         </div>
       </article>
     `
     : `
       <article class="surface-card empty-card">
-        <p class="surface-kicker">Documents</p>
-        <h4>No Actionable Documents Match Current Filters</h4>
-        <p class="surface-copy">Connect a real database corpus or adjust the filters. Fixture samples remain visible as references below.</p>
+        <p class="surface-kicker">文档</p>
+        <h4>当前筛选条件下没有可执行文档</h4>
+        <p class="surface-copy">请连接真实数据库语料或调整筛选条件。下方仍保留样例文档供参考。</p>
       </article>
     `;
   const samples = (view.fixture_samples || [])
@@ -362,7 +428,7 @@ function documentListView(view) {
       (item) => `
         <div class="sample-row">
           <strong>${escapeHtml(item.file_name)}</strong>
-          <span>${escapeHtml(item.source_domain)} · sample only · ${escapeHtml(joinInline(item.equipment_classes))}</span>
+          <span>${escapeHtml(domainLabel(item.source_domain))} · 仅样例 · ${escapeHtml(joinInline(item.equipment_classes))}</span>
         </div>
       `,
     )
@@ -370,43 +436,43 @@ function documentListView(view) {
   return `
     <section class="split-grid review-grid">
       <article class="surface-card list-card">
-        <p class="surface-kicker">Corpus</p>
-        <h4>Real Documents</h4>
+        <p class="surface-kicker">文档语料</p>
+        <h4>实际文档</h4>
         <form id="document-import-form" class="editor-form compact-form">
           <label>
-            <span class="detail-label">Import PDF</span>
+            <span class="detail-label">导入 PDF</span>
             <input type="file" name="file" accept="application/pdf,.pdf" />
           </label>
           <label>
-            <span class="detail-label">Domain</span>
+            <span class="detail-label">领域</span>
             <select name="source_domain">
-              <option value="">Unassigned</option>
-              <option value="hvac">hvac</option>
-              <option value="drive">drive</option>
+              <option value="">未指定</option>
+              <option value="hvac">暖通空调</option>
+              <option value="drive">变频驱动</option>
             </select>
           </label>
           <div class="editor-actions">
             <button id="import-document-button" type="submit" class="primary-button" ${state.importing ? "disabled" : ""}>
-              ${state.importing ? "Importing..." : "Import PDF"}
+              ${state.importing ? "导入中…" : "导入 PDF"}
             </button>
           </div>
         </form>
-        <p class="meta-note">${view.db_available ? "Database-backed corpus is available." : "Database unavailable. Showing fixture samples only."}</p>
+        <p class="meta-note">${view.db_available ? "已连接数据库语料。" : "数据库不可用，仅展示样例文档。"}</p>
         ${filterBar({
           searchId: "documents-query",
           searchValue: state.filters.documents.query,
-          searchPlaceholder: "Search document, doc_id, equipment...",
+          searchPlaceholder: "搜索文档、doc_id、设备类…",
           selectId: "documents-domain",
           selectValue: state.filters.documents.domain,
           selectOptions: [
-            { value: "all", label: "All Domains" },
-            ...[...new Set((view.documents || []).map((item) => item.source_domain).filter(Boolean))].sort().map((value) => ({ value, label: value })),
+            { value: "all", label: "全部领域" },
+            ...[...new Set((view.documents || []).map((item) => item.source_domain).filter(Boolean))].sort().map((value) => ({ value, label: domainLabel(value) })),
           ],
         })}
         <div class="list-column">${rows}</div>
         <div class="sample-panel">
-          <p class="surface-kicker">Fixture Samples</p>
-          <div class="list-column compact-list">${samples || "<span class=\"meta-note\">No fixture samples.</span>"}</div>
+          <p class="surface-kicker">样例文档</p>
+          <div class="list-column compact-list">${samples || "<span class=\"meta-note\">暂无样例文档。</span>"}</div>
         </div>
       </article>
       ${detail}
@@ -420,14 +486,14 @@ function inboxView(view) {
       (item) => `
         <article class="task-row">
           <div class="task-row-main">
-            <p class="task-domain">${escapeHtml(item.domain_id)}</p>
+            <p class="task-domain">${escapeHtml(domainLabel(item.domain_id))}</p>
             <h4>${escapeHtml(item.equipment_class_id)}</h4>
-            <p class="surface-copy">${escapeHtml(item.rationale)}</p>
+            <p class="surface-copy">${escapeHtml(priorityRationale(item))}</p>
           </div>
           <div class="task-row-side">
-            <span class="task-label">Next Targets</span>
+            <span class="task-label">下一批知识对象</span>
             <div class="tag-row">${item.target_knowledge_objects
-              .map((value) => `<span class="tag">${escapeHtml(value)}</span>`)
+              .map((value) => `<span class="tag">${escapeHtml(knowledgeLabel(value))}</span>`)
               .join("")}</div>
           </div>
         </article>
@@ -438,13 +504,13 @@ function inboxView(view) {
   return `
     <section class="split-grid">
       <article class="surface-card">
-        <p class="surface-kicker">Priority Queue</p>
-        <h4>Highest-Leverage Work</h4>
+        <p class="surface-kicker">优先队列</p>
+        <h4>今日最高杠杆任务</h4>
         <div class="task-list">${cards}</div>
       </article>
       <article class="surface-card note-card">
-        <p class="surface-kicker">Operator Rules</p>
-        <h4>What We Optimize For</h4>
+        <p class="surface-kicker">操作规则</p>
+        <h4>当前优化原则</h4>
         <ul class="rule-list">${rules}</ul>
       </article>
     </section>
@@ -467,14 +533,14 @@ function reviewWorkspaceView(view) {
     return `
       <section class="split-grid review-grid">
         <article class="surface-card empty-card">
-          <p class="surface-kicker">Review Packs</p>
-          <h4>No Review Packs Found</h4>
-          <p class="surface-copy">Set \`WORKBENCH_REVIEW_DIR\` or generate a bundle first, then return here to review and save pack files.</p>
+          <p class="surface-kicker">审阅包</p>
+          <h4>未找到审阅包</h4>
+          <p class="surface-copy">请先设置 <code>WORKBENCH_REVIEW_DIR</code>，或先生成审阅包，再回到这里做本地审阅与保存。</p>
           ${codeBlock(COMMAND_SHORTCUTS[0].command)}
         </article>
         <article class="surface-card">
-          <p class="surface-kicker">Workflow</p>
-          <h4>Review Path</h4>
+          <p class="surface-kicker">工作流</p>
+          <h4>审阅路径</h4>
           <ol class="timeline-list">${view.workflow_steps
             .map(
               (step, index) => `
@@ -519,87 +585,87 @@ function reviewWorkspaceView(view) {
   const detail = selectedCandidate
     ? `
       <article class="surface-card detail-card">
-        <p class="surface-kicker">Candidate Detail</p>
+        <p class="surface-kicker">候选项详情</p>
         <h4>${escapeHtml(selectedCandidate.canonical_key_candidate)}</h4>
         <div class="toolbar-row">
-          <button id="bootstrap-pack-button" class="secondary-button">Bootstrap Current Pack</button>
+          <button id="bootstrap-pack-button" class="secondary-button">补全当前审阅包草稿</button>
           <span class="meta-note">${escapeHtml(selectedPack.pack_file)}</span>
         </div>
         <form id="review-form" class="editor-form">
           <label>
-            <span class="detail-label">Review Decision</span>
+            <span class="detail-label">审阅决定</span>
             <select name="review_decision">
               ${["pending", "accepted", "rejected"]
                 .map(
-                  (value) => `<option value="${value}" ${value === (selectedCandidate.review_decision || "pending") ? "selected" : ""}>${value}</option>`,
+                  (value) => `<option value="${value}" ${value === (selectedCandidate.review_decision || "pending") ? "selected" : ""}>${statusLabel(value)}</option>`,
                 )
                 .join("")}
             </select>
           </label>
           <label>
-            <span class="detail-label">Title</span>
+            <span class="detail-label">标题</span>
             <input name="title" value="${escapeHtml(selectedCandidate.curation?.title || "")}" />
           </label>
           <label>
-            <span class="detail-label">Summary</span>
+            <span class="detail-label">摘要</span>
             <textarea name="summary" rows="4">${escapeHtml(selectedCandidate.curation?.summary || "")}</textarea>
           </label>
           <label>
-            <span class="detail-label">Structured Payload</span>
+            <span class="detail-label">结构化载荷</span>
             <textarea name="structured_payload" rows="8">${escapeHtml(JSON.stringify(selectedCandidate.curation?.structured_payload || {}, null, 2))}</textarea>
           </label>
           <label>
-            <span class="detail-label">Applicability</span>
+            <span class="detail-label">适用范围</span>
             <textarea name="applicability" rows="5">${escapeHtml(JSON.stringify(selectedCandidate.curation?.applicability || {}, null, 2))}</textarea>
           </label>
           <div class="editor-actions">
-            <button type="submit" class="primary-button" ${state.saving ? "disabled" : ""}>${state.saving ? "Saving..." : "Save Candidate"}</button>
+            <button type="submit" class="primary-button" ${state.saving ? "disabled" : ""}>${state.saving ? "保存中…" : "保存候选项"}</button>
           </div>
         </form>
       </article>
       <article class="surface-card evidence-card">
-        <p class="surface-kicker">Evidence</p>
+        <p class="surface-kicker">证据</p>
         <h4>${escapeHtml(selectedCandidate.doc_name)}</h4>
         <div class="detail-grid">
           <div><span class="detail-label">Chunk</span>${codeBlock(selectedCandidate.chunk_id)}</div>
-          <div><span class="detail-label">Page</span><p>${escapeHtml(selectedCandidate.page_no)}</p></div>
-          <div><span class="detail-label">Type</span><p>${escapeHtml(selectedCandidate.knowledge_object_type)}</p></div>
-          <div><span class="detail-label">Equipment</span><p>${escapeHtml(selectedCandidate.equipment_class_candidate?.equipment_class_id || "")}</p></div>
+          <div><span class="detail-label">页码</span><p>${escapeHtml(selectedCandidate.page_no)}</p></div>
+          <div><span class="detail-label">类型</span><p>${escapeHtml(selectedCandidate.knowledge_object_type)}</p></div>
+          <div><span class="detail-label">设备类</span><p>${escapeHtml(selectedCandidate.equipment_class_candidate?.equipment_class_id || "")}</p></div>
         </div>
         <div class="evidence-block">
-          <span class="detail-label">Excerpt</span>
+          <span class="detail-label">摘录片段</span>
           <p>${escapeHtml(selectedCandidate.text_excerpt || "")}</p>
         </div>
         <div class="evidence-block">
-          <span class="detail-label">Evidence Text</span>
+          <span class="detail-label">证据原文</span>
           <pre>${escapeHtml(selectedCandidate.evidence_text || "")}</pre>
         </div>
       </article>
     `
     : `
       <article class="surface-card empty-card">
-        <p class="surface-kicker">Candidate Detail</p>
-        <h4>Select A Candidate</h4>
-        <p class="surface-copy">Choose a candidate from the filtered pack list to start editing curation fields.</p>
+        <p class="surface-kicker">候选项详情</p>
+        <h4>先选择一个候选项</h4>
+        <p class="surface-copy">请先从候选项列表中选择一个条目，再开始编辑审阅字段。</p>
       </article>
     `;
   return `
     <section class="review-shell">
       <article class="surface-card list-card">
-        <p class="surface-kicker">Review Packs</p>
-        <h4>Pack Directory</h4>
+        <p class="surface-kicker">审阅包</p>
+        <h4>审阅包目录</h4>
         <div class="meta-note">${escapeHtml(workspace.resolved_dir)}</div>
         ${filterBar({
           searchId: "review-query",
           searchValue: state.filters.review.query,
-          searchPlaceholder: "Search pack, doc, equipment...",
+          searchPlaceholder: "搜索审阅包、文档、设备类…",
           selectId: "review-status",
           selectValue: state.filters.review.status,
           selectOptions: [
-            { value: "all", label: "All Statuses" },
-            { value: "blocked_pending", label: "Pending" },
-            { value: "blocked_no_accepted", label: "No Accepted" },
-            { value: "review_complete", label: "Review Complete" },
+            { value: "all", label: "全部状态" },
+            { value: "blocked_pending", label: "待审阅" },
+            { value: "blocked_no_accepted", label: "无已接受项" },
+            { value: "review_complete", label: "审阅完成" },
           ],
           secondarySelectId: "review-workspace",
           secondarySelectValue: state.activeWorkspaceId || "",
@@ -608,9 +674,9 @@ function reviewWorkspaceView(view) {
         <div class="list-column">${packRows}</div>
       </article>
       <article class="surface-card list-card">
-        <p class="surface-kicker">Candidates</p>
-        <h4>${escapeHtml(selectedPack?.doc_name || "No Pack Selected")}</h4>
-        <div class="meta-note">${escapeHtml(selectedPack ? `${selectedPack.equipment_class_id} · ${statusLabel(selectedPack.status)}` : "Adjust filters to select a pack")}</div>
+        <p class="surface-kicker">候选项</p>
+        <h4>${escapeHtml(selectedPack?.doc_name || "尚未选择审阅包")}</h4>
+        <div class="meta-note">${escapeHtml(selectedPack ? `${selectedPack.equipment_class_id} · ${statusLabel(selectedPack.status)}` : "请先调整筛选条件并选择一个审阅包")}</div>
         <div class="list-column">${candidateRows}</div>
       </article>
       <div class="stack-grid">${detail}</div>
@@ -627,7 +693,7 @@ function applyView(view) {
         <article class="surface-card mini-stat-card">
           <p class="surface-kicker">${escapeHtml(item.domain_id)}</p>
           <h4>${escapeHtml(item.domain_name)}</h4>
-          <p class="surface-copy">Covered ${item.covered_equipment_classes}, Uncovered ${item.uncovered_equipment_classes}</p>
+          <p class="surface-copy">已覆盖 ${item.covered_equipment_classes}，未覆盖 ${item.uncovered_equipment_classes}</p>
         </article>
       `,
     )
@@ -648,26 +714,26 @@ function applyView(view) {
         .join("")
     : `
         <tr>
-          <td colspan="5">No readiness data yet.</td>
+          <td colspan="5">暂无准备度数据。</td>
         </tr>
       `;
   const latestApply = workspace?.latest_apply;
   const latestApplyCard = latestApply
     ? `
       <article class="surface-card">
-        <p class="surface-kicker">Latest Apply</p>
-        <h4>${escapeHtml(`Applied ${latestApply.summary?.applied ?? 0} · Failed ${latestApply.summary?.failed ?? 0}`)}</h4>
-        <p class="surface-copy">Generated at ${escapeHtml(latestApply.generated_at || "-")}</p>
+        <p class="surface-kicker">最近一次应用</p>
+        <h4>${escapeHtml(`已应用 ${latestApply.summary?.applied ?? 0} · 失败 ${latestApply.summary?.failed ?? 0}`)}</h4>
+        <p class="surface-copy">生成时间 ${escapeHtml(formatDateTime(latestApply.generated_at || "-"))}</p>
         ${
           latestApply.summary_text
-            ? `<div class="evidence-block"><span class="detail-label">Summary Text</span><pre>${escapeHtml(latestApply.summary_text)}</pre></div>`
+            ? `<div class="evidence-block"><span class="detail-label">摘要文本</span><pre>${escapeHtml(latestApply.summary_text)}</pre></div>`
             : ""
         }
         ${
           latestApply.paths
             ? `<div class="detail-grid">
-                <div><span class="detail-label">Apply Report</span>${codeBlock(latestApply.paths.apply_report || "-")}</div>
-                <div><span class="detail-label">Stats</span>${codeBlock(latestApply.paths.stats || "-")}</div>
+                <div><span class="detail-label">应用报告</span>${codeBlock(latestApply.paths.apply_report || "-")}</div>
+                <div><span class="detail-label">统计</span>${codeBlock(latestApply.paths.stats || "-")}</div>
               </div>`
             : ""
         }
@@ -675,16 +741,16 @@ function applyView(view) {
     `
     : `
       <article class="surface-card">
-        <p class="surface-kicker">Latest Apply</p>
-        <h4>No Apply Run Yet</h4>
-        <p class="surface-copy">Run apply-ready after at least one pack reaches ready status to populate stats and summary artifacts here.</p>
+        <p class="surface-kicker">最近一次应用</p>
+        <h4>尚未执行应用</h4>
+        <p class="surface-copy">至少有一个审阅包达到就绪状态后，再执行 apply-ready，这里才会出现统计与摘要产物。</p>
       </article>
     `;
   return `
     <section class="split-grid">
       <article class="surface-card">
-        <p class="surface-kicker">Apply Rules</p>
-        <h4>What Must Stay True</h4>
+        <p class="surface-kicker">应用规则</p>
+        <h4>应用前必须成立</h4>
         <ul class="rule-list">${rules}</ul>
       </article>
       <div class="stack-grid">
@@ -692,8 +758,8 @@ function applyView(view) {
         <article class="surface-card table-card">
           <div class="toolbar-row">
             <div>
-              <p class="surface-kicker">Readiness</p>
-              <h4>Review Pack Status</h4>
+              <p class="surface-kicker">准备度</p>
+              <h4>审阅包状态</h4>
             </div>
             <div class="toolbar-actions">
               <select id="apply-workspace" class="filter-select">
@@ -701,22 +767,22 @@ function applyView(view) {
                   .map((item) => `<option value="${escapeHtml(item.value)}" ${item.value === (state.activeWorkspaceId || "") ? "selected" : ""}>${escapeHtml(item.label)}</option>`)
                   .join("")}
               </select>
-              <button id="refresh-apply-button" class="secondary-button">Refresh Readiness</button>
+              <button id="refresh-apply-button" class="secondary-button">刷新准备度</button>
               <button id="run-apply-button" class="primary-button" ${state.applying || !workspace?.can_apply_bundle ? "disabled" : ""}>
-                ${state.applying ? "Applying..." : "Run Apply-Ready"}
+                ${state.applying ? "应用中…" : "执行 Apply-Ready"}
               </button>
             </div>
           </div>
-          <div class="meta-note">${escapeHtml(workspace?.resolved_dir || "No review bundle configured")}</div>
+          <div class="meta-note">${escapeHtml(workspace?.resolved_dir || "尚未配置审阅包")}</div>
           <div class="table-wrap">
             <table class="data-table">
               <thead>
                 <tr>
-                  <th>Pack</th>
-                  <th>Equipment</th>
-                  <th>Status</th>
-                  <th>Accepted</th>
-                  <th>Pending</th>
+                  <th>审阅包</th>
+                  <th>设备类</th>
+                  <th>状态</th>
+                  <th>已接受</th>
+                  <th>待处理</th>
                 </tr>
               </thead>
               <tbody>${readinessRows}</tbody>
@@ -739,25 +805,25 @@ function coverageDomainCard(domain) {
             <div class="table-subtle">${escapeHtml(item.equipment_class_id)}</div>
           </td>
           <td><span class="status-chip status-${escapeHtml(item.coverage_status)}">${escapeHtml(statusLabel(item.coverage_status))}</span></td>
-          <td>${escapeHtml(joinInline(item.covered_knowledge_objects))}</td>
-          <td>${escapeHtml(joinInline(item.missing_knowledge_objects))}</td>
+          <td>${escapeHtml(knowledgeInline(item.covered_knowledge_objects))}</td>
+          <td>${escapeHtml(knowledgeInline(item.missing_knowledge_objects))}</td>
         </tr>
       `,
     )
     .join("");
   return `
     <article class="surface-card table-card">
-      <p class="surface-kicker">${escapeHtml(domain.domain_id)}</p>
+      <p class="surface-kicker">${escapeHtml(domainLabel(domain.domain_id))}</p>
       <h4>${escapeHtml(domain.domain_name)}</h4>
-      <p class="surface-copy">Supported: ${escapeHtml(joinInline(domain.supported_knowledge_objects))}</p>
+      <p class="surface-copy">支持的知识对象：${escapeHtml(knowledgeInline(domain.supported_knowledge_objects))}</p>
       <div class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Equipment</th>
-              <th>Status</th>
-              <th>Covered</th>
-              <th>Missing</th>
+              <th>设备类</th>
+              <th>状态</th>
+              <th>已覆盖</th>
+              <th>缺失</th>
             </tr>
           </thead>
           <tbody>${rows}</tbody>
@@ -790,16 +856,16 @@ function coverageView(view) {
         selectId: "coverage-domain",
         selectValue: state.filters.coverage.domain,
         selectOptions: [
-          { value: "all", label: "All Domains" },
-          ...view.domains.map((domain) => ({ value: domain.domain_id, label: domain.domain_name })),
+          { value: "all", label: "全部领域" },
+          ...view.domains.map((domain) => ({ value: domain.domain_id, label: domainLabel(domain.domain_id) })),
         ],
         secondarySelectId: "coverage-status",
         secondarySelectValue: state.filters.coverage.status,
         secondarySelectOptions: [
-          { value: "all", label: "All Statuses" },
-          { value: "covered", label: "Covered" },
-          { value: "partial", label: "Partial" },
-          { value: "uncovered", label: "Uncovered" },
+          { value: "all", label: "全部状态" },
+          { value: "covered", label: "已覆盖" },
+          { value: "partial", label: "部分覆盖" },
+          { value: "uncovered", label: "未覆盖" },
         ],
       })}
       ${cards}
@@ -811,9 +877,9 @@ function demoView(view) {
   if (!view.available) {
     return `
       <article class="surface-card empty-card">
-        <p class="surface-kicker">Demo Bundle</p>
-        <h4>Bundle Not Found</h4>
-        <p class="surface-copy">Run the evaluation flow first if you want this workbench to surface demo and handoff artifacts.</p>
+        <p class="surface-kicker">演示包</p>
+        <h4>未找到演示包</h4>
+        <p class="surface-copy">如果希望这里展示演示与交付产物，请先执行评估流程。</p>
       </article>
     `;
   }
@@ -827,15 +893,15 @@ function demoView(view) {
   return `
     <section class="split-grid">
       <article class="surface-card">
-        <p class="surface-kicker">Evaluation</p>
-        <h4>${escapeHtml(scenario.title || "Current Demo Bundle")}</h4>
-        <p class="surface-copy">${escapeHtml(scenario.subtitle || "Evidence-backed demo overview.")}</p>
+        <p class="surface-kicker">评估</p>
+        <h4>${escapeHtml(scenario.title || "当前演示包")}</h4>
+        <p class="surface-copy">${escapeHtml(scenario.subtitle || "基于证据链的演示概览。")}</p>
         <div class="artifact-row">${links}</div>
       </article>
       <article class="surface-card">
-        <p class="surface-kicker">Status</p>
+        <p class="surface-kicker">状态</p>
         <h4>${escapeHtml(statusLabel(view.overall_status))}</h4>
-        <p class="surface-copy">Generated at ${escapeHtml(view.generated_at || "-")}</p>
+        <p class="surface-copy">生成时间 ${escapeHtml(formatDateTime(view.generated_at || "-"))}</p>
       </article>
     </section>
   `;
@@ -845,89 +911,89 @@ function renderView() {
   const views = state.payload.views;
   const viewMap = {
     inbox: {
-      kicker: "Today",
-      title: "Operator Inbox",
-      description: "Start with the highest-leverage coverage gaps and keep the next action obvious.",
+      kicker: "今日优先级",
+      title: "值班收件箱",
+      description: "从最高杠杆的覆盖缺口开始，让下一步动作始终清楚可见。",
       body: inboxView(views.inbox),
       inspector: {
-        title: "Work The Highest-Leverage Gap",
-        summary: "Prefer equipment classes that can close a full review/apply loop instead of adding isolated facts.",
+        title: "先补能闭环的缺口",
+        summary: "优先处理能走通完整审阅到应用链路的设备类，而不是零散补点。",
         list: views.inbox.rules,
         command: COMMAND_SHORTCUTS[0],
       },
     },
     documents: {
-      kicker: "Intake",
-      title: "Document Intake Surface",
-      description: "Select a document, inspect its current semantic surface, and prepare the next review command without leaving the workbench.",
+      kicker: "文档录入",
+      title: "文档录入工作面",
+      description: "选中文档、查看当前语义状态，并直接准备下一步审阅命令。",
       body: documentListView(views.documents),
       inspector: {
-        title: "Documents Should Lead To Action",
-        summary: "A document panel should tell the operator what class it feeds and what command advances it into review.",
+        title: "文档必须通向动作",
+        summary: "文档面板应该明确告诉操作者：它服务哪个设备类，以及下一条推进到审阅的命令是什么。",
         list: [
-          "Keep source file, domain, class, and pages visible together.",
-          "Generate review commands from the selected doc, not from generic placeholders.",
-          "Do not hide fixture paths from operators.",
+          "源文件、领域、设备类和页数要同时可见。",
+          "审阅命令必须来自当前文档，而不是通用占位符。",
+          "不要向操作者隐藏样例或样例路径。",
         ],
         command: COMMAND_SHORTCUTS[0],
       },
     },
     review: {
-      kicker: "Review",
-      title: "Candidate Review Workspace",
-      description: "Open local review packs, edit curation fields, save locally, and bootstrap draft fields when needed.",
+      kicker: "候选审阅",
+      title: "候选项审阅工作面",
+      description: "打开本地审阅包，编辑审阅字段，按需补全草稿并本地保存。",
       body: reviewWorkspaceView(views.review),
       inspector: {
-        title: "Review And Save Locally",
-        summary: "The first useful common path is local pack editing beside evidence, not a giant workflow engine.",
+        title: "先在本地完成审阅",
+        summary: "最有价值的通用路径，是在证据旁直接编辑本地审阅包，而不是堆一个庞大的流程引擎。",
         list: [
-          "Pack list stays visible while editing.",
-          "Evidence stays adjacent to curation fields.",
-          "Save writes back to the local review pack file.",
+          "编辑时审阅包列表必须始终可见。",
+          "证据必须紧邻审阅字段展示。",
+          "保存动作必须直接回写本地审阅包文件。",
         ],
         command: COMMAND_SHORTCUTS[1],
       },
     },
     apply: {
-      kicker: "Apply",
-      title: "Readiness And Apply Control",
-      description: "Use this surface to keep ready packs visible, blocked packs obvious, and apply actions deliberate.",
+      kicker: "应用执行",
+      title: "准备度与应用控制",
+      description: "让已就绪审阅包清晰可见、阻塞原因明确、应用动作保持克制。",
       body: applyView(views.apply),
       inspector: {
-        title: "Apply Only What Is Ready",
-        summary: "The workbench should make readiness visible before it makes apply easy, and show what happened after apply completes.",
+        title: "只应用真正就绪的内容",
+        summary: "工作台应该先把准备度讲清楚，再让 apply 变得容易，并在执行后交代清楚结果。",
         list: views.apply.rules,
         command: COMMAND_SHORTCUTS[1],
       },
     },
     coverage: {
-      kicker: "Coverage",
-      title: "Coverage Inventory",
-      description: "Track which equipment classes are covered, partial, or still thin across the ontology-backed domains.",
+      kicker: "覆盖盘点",
+      title: "覆盖盘点",
+      description: "跟踪各领域设备类的已覆盖、部分覆盖与薄弱空白。",
       body: coverageView(views.coverage),
       inspector: {
-        title: "Thin Coverage Should Be Obvious",
-        summary: "Coverage views should surface missing knowledge types first so planning does not drift back into guesswork.",
+        title: "薄弱覆盖必须一眼可见",
+        summary: "覆盖视图应该优先暴露缺失的知识对象类型，避免规划重新退回到拍脑袋。",
         list: [
-          "Show supported vs covered vs missing.",
-          "Keep priority targets tied to ontology classes.",
-          "Use domain inventory as the planning source of truth.",
+          "同时展示支持项、已覆盖项和缺失项。",
+          "重点目标必须绑定到本体设备类。",
+          "以领域库存为规划真相源，而不是口头记忆。",
         ],
         command: COMMAND_SHORTCUTS[2],
       },
     },
     demo: {
-      kicker: "Demo",
-      title: "Evaluation And Handoff",
-      description: "Demo artifacts still matter, but they should sit beside the internal operator flow instead of replacing it.",
+      kicker: "演示交付",
+      title: "评估与交付",
+      description: "演示产物仍然重要，但它应该服务内部工作流，而不是替代它。",
       body: demoView(views.demo),
       inspector: {
-        title: "Demo Is A Surface, Not The Product",
-        summary: "Use the bundle to verify delivery and explain progress, but keep internal workbench workflows primary.",
+        title: "演示只是一个工作面",
+        summary: "用演示包验证交付和说明进展，但内部工作台流程必须始终是主线。",
         list: [
-          "Preserve evidence-backed outputs.",
-          "Keep demo routes read-only.",
-          "Do not let evaluation UI replace intake or review tooling.",
+          "保留基于证据链的输出。",
+          "演示路由应保持只读。",
+          "不要让评估界面替代录入或审阅工具。",
         ],
         command: COMMAND_SHORTCUTS[2],
       },
@@ -979,7 +1045,7 @@ function attachDocumentHandlers() {
       const formData = new FormData(importForm);
       const file = formData.get("file");
       if (!(file instanceof File) || file.size === 0) {
-        notify("error", "Choose a PDF before importing");
+        notify("error", "请先选择一个 PDF 再导入");
         return;
       }
       state.importing = true;
@@ -988,7 +1054,7 @@ function attachDocumentHandlers() {
         const document = await importDocument(formData);
         state.payload = await loadWorkbench();
         state.selectedDocumentId = document.doc_id;
-        notify("success", `Imported ${document.file_name}`);
+        notify("success", `已导入 ${document.file_name}`);
       } catch (error) {
         notify("error", error instanceof Error ? error.message : String(error));
       } finally {
@@ -1026,7 +1092,7 @@ function attachDocumentHandlers() {
       try {
         await parseDocument(documentItem.doc_id);
         state.payload = await loadWorkbench();
-        notify("success", `Parsed ${documentItem.file_name}`);
+        notify("success", `已解析 ${documentItem.file_name}`);
       } catch (error) {
         notify("error", error instanceof Error ? error.message : String(error));
       } finally {
@@ -1043,7 +1109,7 @@ function attachDocumentHandlers() {
       try {
         await chunkDocument(documentItem.doc_id);
         state.payload = await loadWorkbench();
-        notify("success", `Chunked ${documentItem.file_name}`);
+        notify("success", `已生成 Chunk：${documentItem.file_name}`);
       } catch (error) {
         notify("error", error instanceof Error ? error.message : String(error));
       } finally {
@@ -1067,7 +1133,7 @@ function attachDocumentHandlers() {
         await refreshReviewWorkspace();
         await refreshApplyWorkspace();
         state.activeView = "review";
-        notify("success", `Prepared review bundle for ${documentItem.file_name}`);
+        notify("success", `已为 ${documentItem.file_name} 准备审阅包`);
       } catch (error) {
         notify("error", error instanceof Error ? error.message : String(error));
       } finally {
@@ -1126,7 +1192,7 @@ async function attachReviewHandlers() {
         await bootstrapReviewPack(state.selectedPackFile);
         await refreshReviewWorkspace(state.selectedPackFile);
         await refreshApplyWorkspace();
-        notify("success", `Bootstrapped ${state.selectedPackFile}`);
+        notify("success", `已补全草稿：${state.selectedPackFile}`);
         renderApp();
       } catch (error) {
         notify("error", error instanceof Error ? error.message : String(error));
@@ -1150,7 +1216,7 @@ async function attachReviewHandlers() {
       candidate.curation.structured_payload = JSON.parse(formData.get("structured_payload") || "{}");
       candidate.curation.applicability = JSON.parse(formData.get("applicability") || "{}");
     } catch (error) {
-      notify("error", `JSON parse failed: ${error instanceof Error ? error.message : String(error)}`);
+      notify("error", `JSON 解析失败：${error instanceof Error ? error.message : String(error)}`);
       return;
     }
     state.saving = true;
@@ -1160,7 +1226,7 @@ async function attachReviewHandlers() {
       state.reviewWorkspace.packDetails[state.selectedPackFile] = saved;
       await refreshReviewWorkspace(state.selectedPackFile);
       await refreshApplyWorkspace();
-      notify("success", `Saved ${candidate.canonical_key_candidate}`);
+      notify("success", `已保存 ${candidate.canonical_key_candidate}`);
     } catch (error) {
       notify("error", error instanceof Error ? error.message : String(error));
     } finally {
@@ -1185,7 +1251,7 @@ async function attachApplyHandlers() {
     refreshButton.addEventListener("click", async () => {
       try {
         await refreshApplyWorkspace();
-        notify("success", "Refreshed readiness status");
+        notify("success", "已刷新准备度状态");
         renderApp();
       } catch (error) {
         notify("error", error instanceof Error ? error.message : String(error));
@@ -1201,7 +1267,7 @@ async function attachApplyHandlers() {
         const result = await runApplyReady();
         await refreshApplyWorkspace();
         await refreshReviewWorkspace(state.selectedPackFile);
-        notify("success", `Apply complete: ${result.summary.applied} applied, ${result.summary.failed} failed`);
+        notify("success", `应用完成：${result.summary.applied} 个成功，${result.summary.failed} 个失败`);
       } catch (error) {
         notify("error", error instanceof Error ? error.message : String(error));
       } finally {
@@ -1268,11 +1334,11 @@ async function main() {
     renderApp();
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    setText("app-subtitle", `Load failed: ${message}`);
+    setText("app-subtitle", `加载失败：${message}`);
     document.getElementById("view-body").innerHTML = `
       <article class="surface-card empty-card">
-        <p class="surface-kicker">Load Error</p>
-        <h4>Workbench Data Not Available</h4>
+        <p class="surface-kicker">加载失败</p>
+        <h4>工作台数据暂不可用</h4>
         <p class="surface-copy">${escapeHtml(message)}</p>
       </article>
     `;
