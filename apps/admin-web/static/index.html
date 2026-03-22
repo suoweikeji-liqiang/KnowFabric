@@ -37,6 +37,22 @@
           </div>
         </header>
 
+        <section class="context-strip" aria-label="当前操作上下文">
+          <div class="context-card">
+            <p class="inspector-kicker">下一步</p>
+            <h3 id="inspector-title">正在加载</h3>
+            <p id="inspector-summary" class="inspector-summary">正在准备操作上下文…</p>
+          </div>
+          <div class="context-card">
+            <p class="inspector-kicker">约束条件</p>
+            <ul id="inspector-list" class="inspector-list"></ul>
+          </div>
+          <div class="context-card">
+            <p class="inspector-kicker">命令路径</p>
+            <div id="inspector-command" class="command-card"></div>
+          </div>
+        </section>
+
         <section class="view-frame">
           <header class="view-header">
             <div>
@@ -48,22 +64,6 @@
           <div id="view-body" class="view-body"></div>
         </section>
       </section>
-
-      <aside class="workbench-inspector">
-        <div class="inspector-panel">
-          <p class="inspector-kicker">下一步</p>
-          <h3 id="inspector-title">正在加载</h3>
-          <p id="inspector-summary" class="inspector-summary">正在准备操作上下文…</p>
-        </div>
-        <div class="inspector-panel">
-          <p class="inspector-kicker">约束条件</p>
-          <ul id="inspector-list" class="inspector-list"></ul>
-        </div>
-        <div class="inspector-panel">
-          <p class="inspector-kicker">命令路径</p>
-          <div id="inspector-command" class="command-card"></div>
-        </div>
-      </aside>
     </main>
 
     <script src="/ui/app.js" defer></script>
