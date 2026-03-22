@@ -169,7 +169,21 @@ function escapeHtml(value) {
 }
 
 function setText(id, value) {
-  document.getElementById(id).textContent = value;
+  const node = document.getElementById(id);
+  if (!node) {
+    return;
+  }
+  node.textContent = value;
+}
+
+function setHintText(id, text, label = "说明") {
+  const node = document.getElementById(id);
+  if (!node) {
+    return;
+  }
+  node.textContent = label;
+  node.title = text || "";
+  node.dataset.fullText = text || "";
 }
 
 function formatDateTime(value) {
@@ -203,6 +217,17 @@ function knowledgeInline(values) {
 
 function priorityRationale(item) {
   return PRIORITY_RATIONALES[item.equipment_class_id] || item.rationale || "请补充该设备类的优先处理说明。";
+}
+
+function compactLabel(text, limit = 14) {
+  const normalized = String(text || "")
+    .replace(/[。，“”！；：]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (normalized.length <= limit) {
+    return normalized;
+  }
+  return `${normalized.slice(0, limit)}…`;
 }
 
 function statusLabel(value) {
@@ -286,9 +311,8 @@ function renderNavigation(navigation) {
   node.innerHTML = navigation
     .map(
       (item) => `
-        <button class="nav-item ${item.id === state.activeView ? "is-active" : ""}" data-view="${escapeHtml(item.id)}">
+        <button class="nav-item ${item.id === state.activeView ? "is-active" : ""}" data-view="${escapeHtml(item.id)}" title="${escapeHtml(item.description)}">
           <span class="nav-label">${escapeHtml(item.label)}</span>
-          <span class="nav-description">${escapeHtml(item.description)}</span>
         </button>
       `,
     )
@@ -410,7 +434,7 @@ function documentListView(view) {
                 </div>
                 ${codeBlock(documentPrepareCommand(selected))}
               `
-              : `<p class="surface-copy">样例文档仅供参考。上传真实 PDF 后，才能生成可执行的文档对象。</p>`
+              : `<p class="meta-note">当前仅有样例文档。</p>`
           }
         </div>
       </article>
@@ -419,7 +443,7 @@ function documentListView(view) {
       <article class="surface-card empty-card">
         <p class="surface-kicker">文档</p>
         <h4>当前筛选条件下没有可执行文档</h4>
-        <p class="surface-copy">请连接真实数据库语料或调整筛选条件。下方仍保留样例文档供参考。</p>
+        <p class="meta-note">请调整筛选条件或导入 PDF。</p>
       </article>
     `;
   const samples = (view.fixture_samples || [])
@@ -435,7 +459,7 @@ function documentListView(view) {
     .join("");
   return `
     <section class="split-grid review-grid">
-      <article class="surface-card list-card">
+      <article id="documents-corpus" class="surface-card list-card">
         <p class="surface-kicker">文档语料</p>
         <h4>实际文档</h4>
         <form id="document-import-form" class="editor-form compact-form">
@@ -457,7 +481,7 @@ function documentListView(view) {
             </button>
           </div>
         </form>
-        <p class="meta-note">${view.db_available ? "已连接数据库语料。" : "数据库不可用，仅展示样例文档。"}</p>
+        <p class="meta-note">${view.db_available ? "数据库已连接" : "当前仅展示样例文档"}</p>
         ${filterBar({
           searchId: "documents-query",
           searchValue: state.filters.documents.query,
@@ -475,7 +499,7 @@ function documentListView(view) {
           <div class="list-column compact-list">${samples || "<span class=\"meta-note\">暂无样例文档。</span>"}</div>
         </div>
       </article>
-      ${detail}
+      <div id="documents-detail">${detail}</div>
     </section>
   `;
 }
@@ -484,11 +508,10 @@ function inboxView(view) {
   const cards = view.cards
     .map(
       (item) => `
-        <article class="task-row">
+        <article class="task-row" title="${escapeHtml(priorityRationale(item))}">
           <div class="task-row-main">
             <p class="task-domain">${escapeHtml(domainLabel(item.domain_id))}</p>
             <h4>${escapeHtml(item.equipment_class_id)}</h4>
-            <p class="surface-copy">${escapeHtml(priorityRationale(item))}</p>
           </div>
           <div class="task-row-side">
             <span class="task-label">下一批知识对象</span>
@@ -500,18 +523,12 @@ function inboxView(view) {
       `,
     )
     .join("");
-  const rules = view.rules.map((rule) => `<li>${escapeHtml(rule)}</li>`).join("");
   return `
-    <section class="split-grid">
-      <article class="surface-card">
+    <section class="stack-grid">
+      <article id="inbox-queue" class="surface-card">
         <p class="surface-kicker">优先队列</p>
         <h4>今日最高杠杆任务</h4>
         <div class="task-list">${cards}</div>
-      </article>
-      <article class="surface-card note-card">
-        <p class="surface-kicker">操作规则</p>
-        <h4>当前优化原则</h4>
-        <ul class="rule-list">${rules}</ul>
       </article>
     </section>
   `;
@@ -531,28 +548,11 @@ function reviewWorkspaceView(view) {
   const workspace = state.reviewWorkspace || view.workspace;
   if (!workspace || !workspace.available || !workspace.packs.length) {
     return `
-      <section class="split-grid review-grid">
-        <article class="surface-card empty-card">
-          <p class="surface-kicker">审阅包</p>
-          <h4>未找到审阅包</h4>
-          <p class="surface-copy">请先设置 <code>WORKBENCH_REVIEW_DIR</code>，或先生成审阅包，再回到这里做本地审阅与保存。</p>
-          ${codeBlock(COMMAND_SHORTCUTS[0].command)}
-        </article>
-        <article class="surface-card">
-          <p class="surface-kicker">工作流</p>
-          <h4>审阅路径</h4>
-          <ol class="timeline-list">${view.workflow_steps
-            .map(
-              (step, index) => `
-                <li class="timeline-item">
-                  <span class="timeline-index">${index + 1}</span>
-                  <p>${escapeHtml(step)}</p>
-                </li>
-              `,
-            )
-            .join("")}</ol>
-        </article>
-      </section>
+      <article class="surface-card empty-card">
+        <p class="surface-kicker">审阅包</p>
+        <h4>未找到审阅包</h4>
+        ${codeBlock(COMMAND_SHORTCUTS[0].command)}
+      </article>
     `;
   }
   const packs = filteredPacks(workspace);
@@ -646,12 +646,12 @@ function reviewWorkspaceView(view) {
       <article class="surface-card empty-card">
         <p class="surface-kicker">候选项详情</p>
         <h4>先选择一个候选项</h4>
-        <p class="surface-copy">请先从候选项列表中选择一个条目，再开始编辑审阅字段。</p>
+        <p class="meta-note">从左侧列表选择后开始编辑。</p>
       </article>
     `;
   return `
     <section class="review-shell">
-      <article class="surface-card list-card">
+      <article id="review-packs" class="surface-card list-card">
         <p class="surface-kicker">审阅包</p>
         <h4>审阅包目录</h4>
         <div class="meta-note">${escapeHtml(workspace.resolved_dir)}</div>
@@ -673,20 +673,19 @@ function reviewWorkspaceView(view) {
         })}
         <div class="list-column">${packRows}</div>
       </article>
-      <article class="surface-card list-card">
+      <article id="review-candidates" class="surface-card list-card">
         <p class="surface-kicker">候选项</p>
         <h4>${escapeHtml(selectedPack?.doc_name || "尚未选择审阅包")}</h4>
         <div class="meta-note">${escapeHtml(selectedPack ? `${selectedPack.equipment_class_id} · ${statusLabel(selectedPack.status)}` : "请先调整筛选条件并选择一个审阅包")}</div>
         <div class="list-column">${candidateRows}</div>
       </article>
-      <div class="stack-grid">${detail}</div>
+      <div id="review-detail" class="stack-grid">${detail}</div>
     </section>
   `;
 }
 
 function applyView(view) {
   const workspace = state.applyWorkspace || view.workspace;
-  const rules = view.rules.map((rule) => `<li>${escapeHtml(rule)}</li>`).join("");
   const watch = view.coverage_watch
     .map(
       (item) => `
@@ -743,54 +742,49 @@ function applyView(view) {
       <article class="surface-card">
         <p class="surface-kicker">最近一次应用</p>
         <h4>尚未执行应用</h4>
-        <p class="surface-copy">至少有一个审阅包达到就绪状态后，再执行 apply-ready，这里才会出现统计与摘要产物。</p>
+        <p class="meta-note">暂无应用记录</p>
       </article>
     `;
   return `
-    <section class="split-grid">
-      <article class="surface-card">
-        <p class="surface-kicker">应用规则</p>
-        <h4>应用前必须成立</h4>
-        <ul class="rule-list">${rules}</ul>
-      </article>
-      <div class="stack-grid">
+    <section class="stack-grid">
+      <div class="split-grid">
         ${watch}
-        <article class="surface-card table-card">
-          <div class="toolbar-row">
-            <div>
-              <p class="surface-kicker">准备度</p>
-              <h4>审阅包状态</h4>
-            </div>
-            <div class="toolbar-actions">
-              <select id="apply-workspace" class="filter-select">
-                ${workspaceOptions(workspace?.workspaces)
-                  .map((item) => `<option value="${escapeHtml(item.value)}" ${item.value === (state.activeWorkspaceId || "") ? "selected" : ""}>${escapeHtml(item.label)}</option>`)
-                  .join("")}
-              </select>
-              <button id="refresh-apply-button" class="secondary-button">刷新准备度</button>
-              <button id="run-apply-button" class="primary-button" ${state.applying || !workspace?.can_apply_bundle ? "disabled" : ""}>
-                ${state.applying ? "应用中…" : "执行 Apply-Ready"}
-              </button>
-            </div>
-          </div>
-          <div class="meta-note">${escapeHtml(workspace?.resolved_dir || "尚未配置审阅包")}</div>
-          <div class="table-wrap">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>审阅包</th>
-                  <th>设备类</th>
-                  <th>状态</th>
-                  <th>已接受</th>
-                  <th>待处理</th>
-                </tr>
-              </thead>
-              <tbody>${readinessRows}</tbody>
-            </table>
-          </div>
-        </article>
-        ${latestApplyCard}
       </div>
+      <article id="apply-readiness" class="surface-card table-card">
+        <div class="toolbar-row">
+          <div>
+            <p class="surface-kicker">准备度</p>
+            <h4>审阅包状态</h4>
+          </div>
+          <div class="toolbar-actions">
+            <select id="apply-workspace" class="filter-select">
+              ${workspaceOptions(workspace?.workspaces)
+                .map((item) => `<option value="${escapeHtml(item.value)}" ${item.value === (state.activeWorkspaceId || "") ? "selected" : ""}>${escapeHtml(item.label)}</option>`)
+                .join("")}
+            </select>
+            <button id="refresh-apply-button" class="secondary-button">刷新准备度</button>
+            <button id="run-apply-button" class="primary-button" ${state.applying || !workspace?.can_apply_bundle ? "disabled" : ""}>
+              ${state.applying ? "应用中…" : "执行 Apply-Ready"}
+            </button>
+          </div>
+        </div>
+        <div class="meta-note">${escapeHtml(workspace?.resolved_dir || "尚未配置审阅包")}</div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>审阅包</th>
+                <th>设备类</th>
+                <th>状态</th>
+                <th>已接受</th>
+                <th>待处理</th>
+              </tr>
+            </thead>
+            <tbody>${readinessRows}</tbody>
+          </table>
+        </div>
+      </article>
+      <div id="apply-latest">${latestApplyCard}</div>
     </section>
   `;
 }
@@ -815,7 +809,6 @@ function coverageDomainCard(domain) {
     <article class="surface-card table-card">
       <p class="surface-kicker">${escapeHtml(domainLabel(domain.domain_id))}</p>
       <h4>${escapeHtml(domain.domain_name)}</h4>
-      <p class="surface-copy">支持的知识对象：${escapeHtml(knowledgeInline(domain.supported_knowledge_objects))}</p>
       <div class="table-wrap">
         <table class="data-table">
           <thead>
@@ -849,6 +842,7 @@ function coverageView(view) {
     .join("");
   return `
     <section class="stack-grid">
+      <div id="coverage-domain-filter">
       ${filterBar({
         searchId: null,
         searchValue: "",
@@ -868,7 +862,8 @@ function coverageView(view) {
           { value: "uncovered", label: "未覆盖" },
         ],
       })}
-      ${cards}
+      </div>
+      <div id="coverage-domain-list">${cards}</div>
     </section>
   `;
 }
@@ -879,7 +874,7 @@ function demoView(view) {
       <article class="surface-card empty-card">
         <p class="surface-kicker">演示包</p>
         <h4>未找到演示包</h4>
-        <p class="surface-copy">如果希望这里展示演示与交付产物，请先执行评估流程。</p>
+        <p class="meta-note">暂无可展示产物</p>
       </article>
     `;
   }
@@ -892,19 +887,46 @@ function demoView(view) {
     .join("");
   return `
     <section class="split-grid">
-      <article class="surface-card">
+      <article id="demo-evaluation" class="surface-card">
         <p class="surface-kicker">评估</p>
         <h4>${escapeHtml(scenario.title || "当前演示包")}</h4>
-        <p class="surface-copy">${escapeHtml(scenario.subtitle || "基于证据链的演示概览。")}</p>
         <div class="artifact-row">${links}</div>
       </article>
-      <article class="surface-card">
+      <article id="demo-status" class="surface-card">
         <p class="surface-kicker">状态</p>
         <h4>${escapeHtml(statusLabel(view.overall_status))}</h4>
         <p class="surface-copy">生成时间 ${escapeHtml(formatDateTime(view.generated_at || "-"))}</p>
       </article>
     </section>
   `;
+}
+
+function renderViewNav(items) {
+  const node = document.getElementById("view-nav");
+  if (!items || items.length <= 1) {
+    node.innerHTML = "";
+    return;
+  }
+  node.innerHTML = items
+    .map(
+      (item, index) => `
+        <button class="view-nav-item ${index === 0 ? "is-active" : ""}" type="button" data-section-target="${escapeHtml(item.target)}">
+          ${escapeHtml(item.label)}
+        </button>
+      `,
+    )
+    .join("");
+  node.querySelectorAll("[data-section-target]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = document.getElementById(button.dataset.sectionTarget);
+      if (!target) {
+        return;
+      }
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      node.querySelectorAll(".view-nav-item").forEach((item) => item.classList.remove("is-active"));
+      button.classList.add("is-active");
+    });
+  });
 }
 
 function renderView() {
@@ -914,6 +936,9 @@ function renderView() {
       kicker: "今日优先级",
       title: "值班收件箱",
       description: "从最高杠杆的覆盖缺口开始，让下一步动作始终清楚可见。",
+      menu: [
+        { label: "优先队列", target: "inbox-queue" },
+      ],
       body: inboxView(views.inbox),
       inspector: {
         title: "先补能闭环的缺口",
@@ -926,6 +951,10 @@ function renderView() {
       kicker: "文档录入",
       title: "文档录入工作面",
       description: "选中文档、查看当前语义状态，并直接准备下一步审阅命令。",
+      menu: [
+        { label: "实际文档", target: "documents-corpus" },
+        { label: "当前文档", target: "documents-detail" },
+      ],
       body: documentListView(views.documents),
       inspector: {
         title: "文档必须通向动作",
@@ -942,6 +971,11 @@ function renderView() {
       kicker: "候选审阅",
       title: "候选项审阅工作面",
       description: "打开本地审阅包，编辑审阅字段，按需补全草稿并本地保存。",
+      menu: [
+        { label: "审阅包", target: "review-packs" },
+        { label: "候选项", target: "review-candidates" },
+        { label: "证据", target: "review-detail" },
+      ],
       body: reviewWorkspaceView(views.review),
       inspector: {
         title: "先在本地完成审阅",
@@ -958,6 +992,11 @@ function renderView() {
       kicker: "应用执行",
       title: "准备度与应用控制",
       description: "让已就绪审阅包清晰可见、阻塞原因明确、应用动作保持克制。",
+      menu: [
+        { label: "应用规则", target: "apply-rules" },
+        { label: "准备度", target: "apply-readiness" },
+        { label: "最近应用", target: "apply-latest" },
+      ],
       body: applyView(views.apply),
       inspector: {
         title: "只应用真正就绪的内容",
@@ -970,6 +1009,10 @@ function renderView() {
       kicker: "覆盖盘点",
       title: "覆盖盘点",
       description: "跟踪各领域设备类的已覆盖、部分覆盖与薄弱空白。",
+      menu: [
+        { label: "领域覆盖", target: "coverage-domain-filter" },
+        { label: "覆盖清单", target: "coverage-domain-list" },
+      ],
       body: coverageView(views.coverage),
       inspector: {
         title: "薄弱覆盖必须一眼可见",
@@ -986,6 +1029,10 @@ function renderView() {
       kicker: "演示交付",
       title: "评估与交付",
       description: "演示产物仍然重要，但它应该服务内部工作流，而不是替代它。",
+      menu: [
+        { label: "评估概览", target: "demo-evaluation" },
+        { label: "交付状态", target: "demo-status" },
+      ],
       body: demoView(views.demo),
       inspector: {
         title: "演示只是一个工作面",
@@ -1003,15 +1050,18 @@ function renderView() {
 }
 
 function renderInspector(inspector) {
+  if (!document.getElementById("inspector-title")) {
+    return;
+  }
   setText("inspector-title", inspector.title);
-  setText("inspector-summary", inspector.summary);
+  setHintText("inspector-summary", inspector.summary, "悬停查看说明");
   document.getElementById("inspector-list").innerHTML = inspector.list
-    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .map((item) => `<li title="${escapeHtml(item)}">${escapeHtml(compactLabel(item))}</li>`)
     .join("");
   document.getElementById("inspector-command").innerHTML = `
-    <p class="command-label">${escapeHtml(inspector.command.label)}</p>
+    <p class="command-label" title="${escapeHtml(inspector.command.purpose)}">${escapeHtml(inspector.command.label)}</p>
     <code>${escapeHtml(inspector.command.command)}</code>
-    <p class="command-copy">${escapeHtml(inspector.command.purpose)}</p>
+    <p class="command-copy">悬停上方标题查看命令说明</p>
   `;
 }
 
@@ -1315,13 +1365,11 @@ function renderApp() {
   renderSummaryStrip(state.payload.summary);
   renderNotification();
   setText("app-title", state.payload.title);
-  setText("app-subtitle", state.payload.subtitle);
   const current = renderView();
+  renderViewNav(current.menu || []);
   setText("view-kicker", current.kicker);
   setText("view-title", current.title);
-  setText("view-description", current.description);
   document.getElementById("view-body").innerHTML = current.body;
-  renderInspector(current.inspector);
   attachViewHandlers();
 }
 
@@ -1334,7 +1382,6 @@ async function main() {
     renderApp();
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    setText("app-subtitle", `加载失败：${message}`);
     document.getElementById("view-body").innerHTML = `
       <article class="surface-card empty-card">
         <p class="surface-kicker">加载失败</p>

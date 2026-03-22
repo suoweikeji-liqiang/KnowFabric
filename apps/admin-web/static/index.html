@@ -27,31 +27,13 @@
       <section class="workbench-main">
         <header class="topbar">
           <div class="topbar-intro">
-            <p class="topbar-kicker">内部操作台</p>
+            <p class="topbar-kicker">工作台</p>
             <h2 id="app-title">KnowFabric 知识工程工作台</h2>
-            <p id="app-subtitle" class="topbar-copy">正在加载工作区…</p>
           </div>
           <div class="topbar-side">
-            <p class="topbar-meta-label">当前概览</p>
             <div id="summary-strip" class="summary-strip"></div>
           </div>
         </header>
-
-        <section class="context-strip" aria-label="当前操作上下文">
-          <div class="context-card">
-            <p class="inspector-kicker">下一步</p>
-            <h3 id="inspector-title">正在加载</h3>
-            <p id="inspector-summary" class="inspector-summary">正在准备操作上下文…</p>
-          </div>
-          <div class="context-card">
-            <p class="inspector-kicker">约束条件</p>
-            <ul id="inspector-list" class="inspector-list"></ul>
-          </div>
-          <div class="context-card">
-            <p class="inspector-kicker">命令路径</p>
-            <div id="inspector-command" class="command-card"></div>
-          </div>
-        </section>
 
         <section class="view-frame">
           <header class="view-header">
@@ -59,8 +41,8 @@
               <p id="view-kicker" class="view-kicker">当前工作面</p>
               <h3 id="view-title">正在加载</h3>
             </div>
-            <p id="view-description" class="view-description">正在准备工作台数据…</p>
           </header>
+          <div id="view-nav" class="view-nav" aria-label="当前页面导航"></div>
           <div id="view-body" class="view-body"></div>
         </section>
       </section>
