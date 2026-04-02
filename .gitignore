@@ -9,8 +9,11 @@ build/
 htmlcov/
 venv/
 .venv/
+node_modules/
+.playwright-cli/
 storage/
 tmp/
 output/demo/
+output/playwright/
 *.log
 .DS_Store
