@@ -1,31 +1,56 @@
 # Admin Web
 
-Read-only Chinese evaluation shell for the current KnowFabric demo bundle.
+React + TypeScript + Vite admin console for the KnowFabric knowledge engineering workflow.
 
-This is intentionally a thin UI:
+This rewrite now uses:
 
-- reads `output/demo/` bundle artifacts
-- shows evaluation status, domain coverage, and query highlights
-- stays read-only and evidence-oriented
+- React
+- TypeScript
+- Vite
+- backend-first data loading by default
 
-It is not an admin platform, review workflow system, or UI-first product shell.
+Current scope is focused on the real operator flow:
 
-## Running
+- 文档录入
+- 审阅中心
+- 发布记录
+- 工作区内的文档 → 审阅 → 发布主链
 
-From the repository root:
+## Frontend Development
+
+From `apps/admin-web/`:
 
 ```bash
-python3 scripts/run_chinese_demo_shell.py --output-dir output/demo
+npm install
+npm run dev
+```
+
+Vite dev server:
+
+- `http://127.0.0.1:5173/`
+
+The frontend defaults to real backend APIs. Set `VITE_ADMIN_DATA_SOURCE=mock`
+only when you explicitly want the mock console data source.
+
+## Static Build
+
+Build output is emitted into `apps/admin-web/static/`, which is what the Python
+entrypoint serves.
+
+```bash
+npm install
+npm run build
+```
+
+## Python Preview
+
+After building:
+
+```bash
+cd apps/admin-web
+python main.py
 ```
 
 Then open:
 
 - `http://127.0.0.1:4173/`
-
-Manual fallback:
-
-```bash
-python3 scripts/run_live_demo_evaluation.py --output-dir output/demo
-cd apps/admin-web
-python main.py
-```

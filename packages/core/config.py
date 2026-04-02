@@ -1,5 +1,11 @@
 """Core configuration management."""
+from pathlib import Path
+
 from pydantic_settings import BaseSettings
+
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+ENV_FILE = ROOT_DIR / ".env"
 
 
 class Settings(BaseSettings):
@@ -13,7 +19,7 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
 
     class Config:
-        env_file = ".env"
+        env_file = str(ENV_FILE)
 
 
 settings = Settings()
