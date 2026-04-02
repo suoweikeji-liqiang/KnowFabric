@@ -71,6 +71,12 @@ export interface DocumentRecord {
   pageNotes: string[];
   chunkHighlights: string[];
   linkedAssetIds: string[];
+  prepareTargets?: Array<{
+    domainId: DomainId;
+    equipmentClassId: string;
+    equipmentClassLabel: string;
+    anchorCount: number;
+  }>;
 }
 
 export interface EquipmentCoverage {
@@ -126,6 +132,12 @@ export interface ReleaseItem {
   result: "success" | "failed";
   note: string;
   packId?: string;
+  knowledgeObjectId?: string | null;
+  canonicalKey?: string | null;
+  docId?: string | null;
+  docName?: string | null;
+  equipmentClassId?: string | null;
+  equipmentClassLabel?: string | null;
 }
 
 export interface PublishRecord {

@@ -1,4 +1,5 @@
-import { useDeferredValue, useMemo } from "react";
+import { useDeferredValue, useEffect, useMemo } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { DataTable } from "../components/DataTable";
 import { MasterDetailPage } from "../components/MasterDetailPage";
@@ -11,6 +12,7 @@ import { useNormalizedSelection } from "../hooks/useNormalizedSelection";
 import { usePersistentPageState } from "../hooks/usePersistentPageState";
 import { getAdminDataSource } from "../services/adminDataSource";
 import { KnowledgeAsset } from "../types";
+import { downloadJsonFile } from "../utils/download";
 import { formatCount, joinOrDash } from "../utils/format";
 
 function publishTone(status: KnowledgeAsset["publishStatus"]) {
@@ -28,6 +30,8 @@ function reviewTone(status: KnowledgeAsset["reviewStatus"]) {
 }
 
 export function KnowledgeAssetsPage() {
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const dataSource = useMemo(() => getAdminDataSource(), []);
   const { data, loading, error, refresh } = useAsyncResource(
     () => dataSource.getKnowledgeAssetsSnapshot(),
@@ -75,6 +79,20 @@ export function KnowledgeAssetsPage() {
 
   const selected = filtered.find((asset) => asset.id === state.selectedId) ?? null;
   const relatedDocuments = data?.relatedDocumentsForAsset(selected) ?? [];
+  const primaryRelatedDocument = relatedDocuments[0] ?? null;
+
+  useEffect(() => {
+    const assetId = searchParams.get("asset");
+    if (!assetId) {
+      return;
+    }
+    if (allAssets.some((item) => item.id === assetId) && state.selectedId !== assetId) {
+      patchState({ selectedId: assetId });
+    }
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("asset");
+    setSearchParams(nextParams, { replace: true });
+  }, [allAssets, patchState, searchParams, setSearchParams, state.selectedId]);
 
   const leftPane = (
     <Panel title="成果列表" meta={`当前结果 ${formatCount(filtered.length)} 条`}>
@@ -137,10 +155,22 @@ export function KnowledgeAssetsPage() {
       meta={`${selected.title} · ${selected.canonicalKey}`}
       actions={
         <>
-          <button className="ghost-button" type="button">
+          <button
+            className="ghost-button"
+            onClick={() => {
+              if (primaryRelatedDocument) {
+                navigate(`/documents?doc=${encodeURIComponent(primaryRelatedDocument.id)}`);
+              }
+            }}
+            type="button"
+          >
             查看来源文档
           </button>
-          <button className="ghost-button" type="button">
+          <button
+            className="ghost-button"
+            onClick={() => navigate(`/domain-assets?coverage=${encodeURIComponent(`${selected.domainId}__${selected.equipmentClass}`)}`)}
+            type="button"
+          >
             查看所属设备类
           </button>
         </>
@@ -250,7 +280,34 @@ export function KnowledgeAssetsPage() {
           <button className="secondary-button" onClick={() => void refresh()} type="button">
             刷新
           </button>
-          <button className="primary-button" type="button">
+          <button
+            className="primary-button"
+            onClick={() => {
+              if (!selected) {
+                return;
+              }
+              let payload: unknown;
+              try {
+                payload = JSON.parse(selected.payload || "{}");
+              } catch {
+                payload = selected.payload;
+              }
+              downloadJsonFile(`${selected.canonicalKey || selected.id}.json`, {
+                id: selected.id,
+                title: selected.title,
+                canonicalKey: selected.canonicalKey,
+                domainId: selected.domainId,
+                equipmentClass: selected.equipmentClass,
+                type: selected.type,
+                summary: selected.summary,
+                trustLevel: selected.trustLevel,
+                applicability: selected.applicability,
+                payload,
+                evidence: selected.evidence,
+              });
+            }}
+            type="button"
+          >
             导出结果
           </button>
         </>

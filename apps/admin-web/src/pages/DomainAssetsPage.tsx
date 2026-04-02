@@ -1,4 +1,5 @@
-import { useDeferredValue, useMemo } from "react";
+import { useDeferredValue, useEffect, useMemo } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { useAsyncResource } from "../hooks/useAsyncResource";
 import { useNormalizedSelection } from "../hooks/useNormalizedSelection";
@@ -20,6 +21,8 @@ function tone(status: EquipmentCoverage["status"]) {
 }
 
 export function DomainAssetsPage() {
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const dataSource = useMemo(() => getAdminDataSource(), []);
   const { data, loading, error, refresh } = useAsyncResource(
     () => dataSource.getDomainAssetsSnapshot(),
@@ -58,6 +61,19 @@ export function DomainAssetsPage() {
   const selected = filtered.find((item) => item.id === state.selectedId) ?? null;
   const relatedDocs = data?.documentsForCoverage(selected) ?? [];
   const relatedAssets = data?.assetsForCoverage(selected) ?? [];
+
+  useEffect(() => {
+    const coverageId = searchParams.get("coverage");
+    if (!coverageId) {
+      return;
+    }
+    if (allCoverage.some((item) => item.id === coverageId) && state.selectedId !== coverageId) {
+      patchState({ selectedId: coverageId });
+    }
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("coverage");
+    setSearchParams(nextParams, { replace: true });
+  }, [allCoverage, patchState, searchParams, setSearchParams, state.selectedId]);
 
   const leftPane = (
     <Panel title="领域树" meta={`设备类 ${formatCount(filtered.length)} 个`}>
@@ -150,6 +166,13 @@ export function DomainAssetsPage() {
                     <article key={asset.id} className="link-card">
                       <span>{knowledgeTypeLabels[asset.type]}</span>
                       <strong>{asset.title}</strong>
+                      <button
+                        className="ghost-button"
+                        onClick={() => navigate(`/knowledge-assets?asset=${encodeURIComponent(asset.id)}`)}
+                        type="button"
+                      >
+                        查看成果
+                      </button>
                     </article>
                   ))
                 ) : (
@@ -168,6 +191,13 @@ export function DomainAssetsPage() {
                     <article key={doc.id} className="link-card">
                       <span>{doc.id}</span>
                       <strong>{doc.fileName}</strong>
+                      <button
+                        className="ghost-button"
+                        onClick={() => navigate(`/documents?doc=${encodeURIComponent(doc.id)}`)}
+                        type="button"
+                      >
+                        查看文档
+                      </button>
                     </article>
                   ))
                 ) : (

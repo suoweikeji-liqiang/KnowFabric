@@ -1,5 +1,5 @@
-import { useDeferredValue, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { DataTable } from "../components/DataTable";
 import { MasterDetailPage } from "../components/MasterDetailPage";
@@ -24,6 +24,7 @@ function statusTone(status: DocumentRecord["status"]) {
 
 export function DocumentsPage() {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const dataSource = useMemo(() => getAdminDataSource(), []);
   const { data, loading, error, refresh } = useAsyncResource(
     () => dataSource.getDocumentsSnapshot(),
@@ -68,6 +69,20 @@ export function DocumentsPage() {
 
   const selected = filtered.find((record) => record.id === state.selectedId) ?? null;
   const linkedAssets = data?.linkedAssetsForDocument(selected) ?? [];
+  const preferredPrepareTarget = selected?.prepareTargets?.[0] ?? null;
+
+  useEffect(() => {
+    const docId = searchParams.get("doc");
+    if (!docId) {
+      return;
+    }
+    if (allDocuments.some((item) => item.id === docId) && state.selectedId !== docId) {
+      patchState({ selectedId: docId });
+    }
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("doc");
+    setSearchParams(nextParams, { replace: true });
+  }, [allDocuments, patchState, searchParams, setSearchParams, state.selectedId]);
 
   const leftPane = (
     <Panel title="文档列表" meta={`当前文档 ${formatCount(filtered.length)} 份`}>
@@ -158,7 +173,7 @@ export function DocumentsPage() {
                 const result = await prepareReviewBundle({
                   domain_id: selected.domainId,
                   doc_id: selected.id,
-                  equipment_class_id: selected.equipmentClasses[0] || null,
+                  equipment_class_id: preferredPrepareTarget?.equipmentClassId ?? null,
                 });
                 setActionState("已生成审阅包");
                 const packFile = result.review_workspace?.packs?.[0]?.pack_file;
@@ -208,6 +223,16 @@ export function DocumentsPage() {
                 <div>
                   <span>切块数量</span>
                   <strong>{selected.chunkCount}</strong>
+                </div>
+                <div className="detail-grid-span">
+                  <span>候选目标</span>
+                  <strong>
+                    {selected.prepareTargets?.length
+                      ? selected.prepareTargets
+                          .map((item) => `${item.equipmentClassLabel} (${item.anchorCount})`)
+                          .join("，")
+                      : "未解析出明确设备类目标"}
+                  </strong>
                 </div>
                 <div className="detail-grid-span">
                   <span>处理链</span>

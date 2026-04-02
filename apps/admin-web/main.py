@@ -25,9 +25,10 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 from packages.db.models import ContentChunk, Document, DocumentPage
-from packages.db.models_v2 import KnowledgeObjectEvidenceV2, KnowledgeObjectV2, OntologyClassV2
+from packages.db.models_v2 import ChunkOntologyAnchorV2, KnowledgeObjectEvidenceV2, KnowledgeObjectV2, OntologyClassV2
 from packages.db.session import SessionLocal
 from packages.domain_kit_v2.loader import load_domain_package_v2
+from packages.domain_kit_v2.manual_fixture import load_manual_fixture
 from packages.chunking.service import ChunkingService
 from packages.core.config import settings
 from packages.ingest.service import IngestService
@@ -36,6 +37,7 @@ from packages.storage.manager import StorageManager
 from scripts.apply_review_packs_batch import discover_review_pack_paths, inspect_review_pack
 from scripts.apply_ready_review_bundle import apply_ready_review_bundle
 from scripts.bootstrap_review_pack_curation import bootstrap_review_pack_file
+from scripts.build_manual_fixture_from_review_candidates import build_manual_fixture_from_review_candidate_file
 from scripts.check_review_pack_readiness import assess_review_pack_readiness
 from scripts.prepare_review_pipeline_bundle import prepare_review_pipeline_bundle
 
@@ -190,6 +192,16 @@ def _load_optional_json(path: str | Path | None, *, base_dir: Path = ROOT_DIR) -
     if not resolved or not resolved.exists():
         return None
     return _load_json(resolved)
+
+
+def _load_optional_fixture(path: str | Path | None, *, base_dir: Path = ROOT_DIR) -> dict[str, Any] | None:
+    resolved = _resolve_artifact_path(path, base_dir=base_dir)
+    if not resolved or not resolved.exists():
+        return None
+    try:
+        return load_manual_fixture(resolved)
+    except Exception:
+        return None
 
 
 def _artifact_url(path: str | Path | None) -> str | None:
@@ -843,6 +855,84 @@ def _console_pack_type_label(detail: dict[str, Any] | None, *, accepted_only: bo
     return " / ".join(_console_knowledge_type_label(item) for item in types)
 
 
+def _fixture_from_review_pack(path: Path | None) -> dict[str, Any] | None:
+    if path is None or not path.exists():
+        return None
+    try:
+        return build_manual_fixture_from_review_candidate_file(path)
+    except Exception:
+        return None
+
+
+def _release_item_note(
+    *,
+    canonical_key: str | None,
+    trust_level: str | None,
+    extra: str | None = None,
+) -> str:
+    parts = []
+    if canonical_key:
+        parts.append(str(canonical_key))
+    if trust_level:
+        parts.append(f"可信 {trust_level}")
+    if extra:
+        parts.append(extra)
+    return " · ".join(parts)
+
+
+def _release_item_from_manual_entry(
+    entry: dict[str, Any],
+    *,
+    pack_file: str,
+    fixture: dict[str, Any],
+    equipment_class_label: str,
+    result: str,
+    extra_note: str | None = None,
+) -> dict[str, Any]:
+    doc = entry.get("doc", {})
+    return {
+        "name": entry.get("title") or entry.get("canonical_key") or entry.get("knowledge_object_id"),
+        "type": _console_knowledge_type_label(entry.get("knowledge_object_type")),
+        "result": result,
+        "note": _release_item_note(
+            canonical_key=entry.get("canonical_key"),
+            trust_level=entry.get("trust_level"),
+            extra=extra_note,
+        ),
+        "packId": pack_file,
+        "knowledgeObjectId": entry.get("knowledge_object_id"),
+        "canonicalKey": entry.get("canonical_key"),
+        "docId": doc.get("doc_id"),
+        "docName": doc.get("file_name"),
+        "equipmentClassId": fixture.get("equipment_class_id"),
+        "equipmentClassLabel": equipment_class_label,
+    }
+
+
+def _release_fallback_item(
+    *,
+    pack_file: str,
+    pack_name: str,
+    result: str,
+    extra_note: str | None,
+    pack_meta: dict[str, Any],
+    equipment_class_label: str,
+) -> dict[str, Any]:
+    return {
+        "name": pack_name,
+        "type": "审阅包",
+        "result": result,
+        "note": extra_note or "",
+        "packId": pack_file,
+        "knowledgeObjectId": None,
+        "canonicalKey": None,
+        "docId": pack_meta.get("doc_id"),
+        "docName": pack_meta.get("doc_name"),
+        "equipmentClassId": pack_meta.get("equipment_class_id"),
+        "equipmentClassLabel": equipment_class_label,
+    }
+
+
 def _review_pack_updated_at(path: Path, detail: dict[str, Any] | None = None) -> str:
     if isinstance(detail, dict):
         bootstrap_metadata = detail.get("bootstrap_metadata")
@@ -1093,22 +1183,89 @@ def _console_linked_asset_ids_by_doc(assets: list[dict[str, Any]]) -> dict[str, 
     return linked
 
 
+def _console_prepare_targets_by_doc(
+    db,
+    *,
+    doc_ids: list[str],
+    language: str = "zh",
+) -> dict[str, list[dict[str, Any]]]:
+    if not doc_ids:
+        return {}
+    rows = (
+        db.query(
+            ContentChunk.doc_id,
+            ChunkOntologyAnchorV2.domain_id,
+            ChunkOntologyAnchorV2.ontology_class_id,
+            func.count(func.distinct(ChunkOntologyAnchorV2.chunk_id)).label("anchor_count"),
+        )
+        .join(ContentChunk, ContentChunk.chunk_id == ChunkOntologyAnchorV2.chunk_id)
+        .filter(ContentChunk.doc_id.in_(doc_ids))
+        .group_by(
+            ContentChunk.doc_id,
+            ChunkOntologyAnchorV2.domain_id,
+            ChunkOntologyAnchorV2.ontology_class_id,
+        )
+        .order_by(ContentChunk.doc_id, func.count(func.distinct(ChunkOntologyAnchorV2.chunk_id)).desc())
+        .all()
+    )
+    label_map = _console_ontology_label_map(
+        db,
+        domain_ids=sorted({str(row.domain_id) for row in rows if row.domain_id}),
+        language=language,
+    )
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        grouped[str(row.doc_id)].append(
+            {
+                "domainId": row.domain_id,
+                "equipmentClassId": row.ontology_class_id,
+                "equipmentClassLabel": label_map.get(
+                    (str(row.domain_id), str(row.ontology_class_id)),
+                    str(row.ontology_class_id),
+                ),
+                "anchorCount": int(row.anchor_count or 0),
+            }
+        )
+    return grouped
+
+
 def load_console_documents(language: str = "zh") -> dict[str, Any]:
     assets_payload = load_console_knowledge_assets(language=language)
     asset_index = {str(item["id"]): item for item in assets_payload["assets"]}
     linked_ids_by_doc = _console_linked_asset_ids_by_doc(assets_payload["assets"])
+    db_documents = _load_documents_from_db()
+    db = SessionLocal()
+    try:
+        prepare_targets_by_doc = _console_prepare_targets_by_doc(
+            db,
+            doc_ids=[str(item["doc_id"]) for item in db_documents],
+            language=language,
+        )
+    finally:
+        db.close()
     documents = []
     linked_assets_by_document: dict[str, list[dict[str, Any]]] = {}
-    for item in _load_documents_from_db():
+    for item in db_documents:
         doc_id = str(item["doc_id"])
         linked_ids = linked_ids_by_doc.get(doc_id, [])
         asset_matches = [asset_index[asset_id] for asset_id in linked_ids if asset_id in asset_index]
         linked_assets_by_document[doc_id] = asset_matches
-        equipment_classes = sorted({asset["equipmentClass"] for asset in asset_matches})
+        prepare_targets = list(prepare_targets_by_doc.get(doc_id, []))
+        if not prepare_targets:
+            prepare_targets = [
+                {
+                    "domainId": str(asset["domainId"]),
+                    "equipmentClassId": str(asset["equipmentClass"]),
+                    "equipmentClassLabel": str(asset.get("equipmentClassLabel") or asset["equipmentClass"]),
+                    "anchorCount": len(asset.get("evidence", [])),
+                }
+                for asset in asset_matches
+            ]
+        equipment_classes = sorted({target["equipmentClassId"] for target in prepare_targets})
         equipment_class_labels = sorted(
             {
-                str(asset.get("equipmentClassLabel") or asset["equipmentClass"])
-                for asset in asset_matches
+                str(target["equipmentClassLabel"])
+                for target in prepare_targets
             }
         )
         documents.append(
@@ -1128,6 +1285,7 @@ def load_console_documents(language: str = "zh") -> dict[str, Any]:
                 "pageNotes": [],
                 "chunkHighlights": [],
                 "linkedAssetIds": linked_ids,
+                "prepareTargets": prepare_targets,
             }
         )
     return {
@@ -1369,6 +1527,8 @@ def load_console_publish_records() -> dict[str, Any]:
 
     pack_details: dict[str, dict[str, Any]] = {}
     pack_models: dict[str, dict[str, Any]] = {}
+    pack_labels: dict[str, str] = {}
+    pack_paths: dict[str, Path] = {}
     for pack_file, pack_meta in pack_lookup.items():
         pack_path = root / pack_file if root else None
         detail = _review_pack_detail(pack_path) if pack_path and pack_path.exists() else None
@@ -1377,6 +1537,9 @@ def load_console_publish_records() -> dict[str, Any]:
             (str(pack_meta.get("domain_id")), str(pack_meta.get("equipment_class_id"))),
             str(pack_meta.get("equipment_class_id") or ""),
         )
+        pack_labels[pack_file] = equipment_class_label
+        if pack_path and pack_path.exists():
+            pack_paths[pack_file] = pack_path
         pack_models[pack_file] = _console_pack_model(
             pack_file=pack_file,
             domain_id=pack_meta.get("domain_id"),
@@ -1416,27 +1579,37 @@ def load_console_publish_records() -> dict[str, Any]:
         items = []
         for item in apply_results:
             pack_file = str(item.get("pack_file") or "")
-            pack_detail = pack_details.get(pack_file)
             pack_meta = pack_lookup.get(pack_file, {})
-            knowledge_object_count = int(item.get("knowledge_object_count") or 0)
-            accepted_count = int(item.get("accepted_count") or 0)
-            rejected_count = int(item.get("rejected_count") or 0)
-            pending_count = int(item.get("pending_count") or 0)
-            note_parts = [
-                f"知识对象 {knowledge_object_count} 条",
-                f"接受 {accepted_count} / 拒绝 {rejected_count} / 待处理 {pending_count}",
-            ]
-            if item.get("error"):
-                note_parts.append(f"错误：{item['error']}")
-            items.append(
-                {
-                    "name": pack_meta.get("doc_name") or pack_file,
-                    "type": _console_pack_type_label(pack_detail, accepted_only=True),
-                    "result": "success" if item.get("status") == "applied" else "failed",
-                    "note": "；".join(part for part in note_parts if part),
-                    "packId": pack_file,
-                }
-            )
+            fixture = _load_optional_fixture(item.get("fixture_path")) or _fixture_from_review_pack(pack_paths.get(pack_file))
+            result_label = "success" if item.get("status") == "applied" else "failed"
+            extra_note = None
+            if item.get("status") == "applied":
+                extra_note = "已写入知识库"
+            elif item.get("error"):
+                extra_note = f"发布失败：{item['error']}"
+            if fixture and fixture.get("manual_entries"):
+                items.extend(
+                    _release_item_from_manual_entry(
+                        entry,
+                        pack_file=pack_file,
+                        fixture=fixture,
+                        equipment_class_label=pack_labels.get(pack_file, pack_meta.get("equipment_class_id") or ""),
+                        result=result_label,
+                        extra_note=extra_note,
+                    )
+                    for entry in fixture.get("manual_entries", [])
+                )
+            else:
+                items.append(
+                    _release_fallback_item(
+                        pack_file=pack_file,
+                        pack_name=pack_meta.get("doc_name") or pack_file,
+                        result=result_label,
+                        extra_note=extra_note or "未解析出知识对象明细",
+                        pack_meta=pack_meta,
+                        equipment_class_label=pack_labels.get(pack_file, pack_meta.get("equipment_class_id") or ""),
+                    )
+                )
         success_count = int(latest_apply.get("summary", {}).get("applied") or 0)
         failure_count = int(latest_apply.get("summary", {}).get("failed") or 0)
         records.append(
@@ -1484,23 +1657,46 @@ def load_console_publish_records() -> dict[str, Any]:
             blocker = _console_release_note_blocker(item.get("blocker"))
             if blocker:
                 errors.append(f"{pack_file}: {blocker}")
-            items.append(
-                {
-                    "name": item.get("doc_name") or pack_file,
-                    "type": _console_pack_type_label(pack_details.get(pack_file)),
-                    "result": "success" if item.get("status") == "ready" else "failed",
-                    "note": "；".join(
-                        part
-                        for part in [
-                            f"接受 {int(item.get('accepted_count') or 0)} / 拒绝 {int(item.get('rejected_count') or 0)} / 待处理 {int(item.get('pending_count') or 0)}",
-                            f"状态 {item.get('status')}",
-                            blocker,
-                        ]
-                        if part
-                    ),
-                    "packId": pack_file,
-                }
-            )
+            fixture = _fixture_from_review_pack(pack_paths.get(pack_file))
+            result_label = "success" if item.get("status") == "ready" else "failed"
+            extra_note = "；".join(
+                part
+                for part in [
+                    f"状态 {item.get('status')}",
+                    blocker,
+                ]
+                if part
+            ) or None
+            if fixture and fixture.get("manual_entries"):
+                items.extend(
+                    _release_item_from_manual_entry(
+                        entry,
+                        pack_file=pack_file,
+                        fixture=fixture,
+                        equipment_class_label=pack_labels.get(pack_file, item.get("equipment_class_id") or ""),
+                        result=result_label,
+                        extra_note=extra_note,
+                    )
+                    for entry in fixture.get("manual_entries", [])
+                )
+            else:
+                items.append(
+                    _release_fallback_item(
+                        pack_file=pack_file,
+                        pack_name=item.get("doc_name") or pack_file,
+                        result=result_label,
+                        extra_note="；".join(
+                            part
+                            for part in [
+                                f"接受 {int(item.get('accepted_count') or 0)} / 拒绝 {int(item.get('rejected_count') or 0)} / 待处理 {int(item.get('pending_count') or 0)}",
+                                extra_note,
+                            ]
+                            if part
+                        ),
+                        pack_meta=pack_lookup.get(pack_file, {}),
+                        equipment_class_label=pack_labels.get(pack_file, item.get("equipment_class_id") or ""),
+                    )
+                )
         _, workspace_dir = _resolve_workspace_dir(workspace_id)
         prepare_manifest_path = workspace_dir / "prepare_manifest.json"
         prepare_payload = _load_optional_json(prepare_manifest_path)

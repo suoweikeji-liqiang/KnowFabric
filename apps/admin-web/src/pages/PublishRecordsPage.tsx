@@ -1,4 +1,5 @@
-import { useDeferredValue, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { useAsyncResource } from "../hooks/useAsyncResource";
 import { useNormalizedSelection } from "../hooks/useNormalizedSelection";
@@ -21,6 +22,8 @@ function releaseTone(status: PublishRecord["status"]) {
 }
 
 export function PublishRecordsPage() {
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const dataSource = useMemo(() => getAdminDataSource(), []);
   const { data, loading, error, refresh } = useAsyncResource(
     () => dataSource.getPublishRecordsSnapshot(),
@@ -57,6 +60,19 @@ export function PublishRecordsPage() {
   const selected = filtered.find((record) => record.id === state.selectedId) ?? null;
   const linkedPacks = data?.linkedPacksForRecord(selected) ?? [];
   const activeWorkspaceId = selected?.workspaceId ?? data?.workspaceId;
+
+  useEffect(() => {
+    const recordId = searchParams.get("record");
+    if (!recordId) {
+      return;
+    }
+    if (allRecords.some((item) => item.id === recordId) && state.selectedId !== recordId) {
+      patchState({ selectedId: recordId });
+    }
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("record");
+    setSearchParams(nextParams, { replace: true });
+  }, [allRecords, patchState, searchParams, setSearchParams, state.selectedId]);
 
   const leftPane = (
     <Panel title="发布批次" meta={`当前批次 ${formatCount(filtered.length)} 个`}>
@@ -189,6 +205,41 @@ export function PublishRecordsPage() {
                     <span>{item.type}</span>
                     <strong>{item.name}</strong>
                     <p className="panel-meta">{item.note}</p>
+                    {item.docName ? <p className="panel-meta">文档：{item.docName}</p> : null}
+                    {item.equipmentClassLabel ? <p className="panel-meta">设备类：{item.equipmentClassLabel}</p> : null}
+                    <div className="detail-badges">
+                      {item.knowledgeObjectId ? (
+                        <button
+                          className="ghost-button"
+                          onClick={() => navigate(`/knowledge-assets?asset=${encodeURIComponent(item.knowledgeObjectId!)}`)}
+                          type="button"
+                        >
+                          查看成果
+                        </button>
+                      ) : null}
+                      {item.docId ? (
+                        <button
+                          className="ghost-button"
+                          onClick={() => navigate(`/documents?doc=${encodeURIComponent(item.docId!)}`)}
+                          type="button"
+                        >
+                          查看文档
+                        </button>
+                      ) : null}
+                      {item.equipmentClassId ? (
+                        <button
+                          className="ghost-button"
+                          onClick={() =>
+                            navigate(
+                              `/domain-assets?coverage=${encodeURIComponent(`${selected.domainId}__${item.equipmentClassId}`)}`,
+                            )
+                          }
+                          type="button"
+                        >
+                          查看设备类
+                        </button>
+                      ) : null}
+                    </div>
                   </article>
                 ))}
               </div>
@@ -223,6 +274,26 @@ export function PublishRecordsPage() {
                     <article key={pack.id} className="link-card">
                       <span>{pack.id}</span>
                       <strong>{pack.name}</strong>
+                      <div className="detail-badges">
+                        <button
+                          className="ghost-button"
+                          onClick={() => navigate(`/review-center?pack=${encodeURIComponent(pack.id)}`)}
+                          type="button"
+                        >
+                          查看审阅包
+                        </button>
+                        <button
+                          className="ghost-button"
+                          onClick={() =>
+                            navigate(
+                              `/domain-assets?coverage=${encodeURIComponent(`${pack.domainId}__${pack.equipmentClass}`)}`,
+                            )
+                          }
+                          type="button"
+                        >
+                          查看设备类
+                        </button>
+                      </div>
                     </article>
                   ))
                 ) : (
