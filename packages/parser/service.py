@@ -94,7 +94,7 @@ class ParserService:
 
         for page_no, page in enumerate(reader.pages, start=1):
             # Extract text
-            raw_text = page.extract_text()
+            raw_text = self._strip_unsupported_chars(page.extract_text())
             cleaned_text = self._clean_text(raw_text)
 
             # Generate page_id
@@ -121,7 +121,16 @@ class ParserService:
         """Basic text cleaning."""
         if not text:
             return ""
+        text = ParserService._strip_unsupported_chars(text)
         # Remove excessive whitespace
         lines = [line.strip() for line in text.split('\n')]
         lines = [line for line in lines if line]
         return '\n'.join(lines)
+
+    @staticmethod
+    def _strip_unsupported_chars(text: str | None) -> str:
+        """Remove characters PostgreSQL text fields cannot store."""
+
+        if not text:
+            return ""
+        return text.replace("\x00", "")
