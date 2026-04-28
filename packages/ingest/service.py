@@ -2,7 +2,7 @@
 import os
 import uuid
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Optional
 from sqlalchemy.orm import Session
 
@@ -94,7 +94,7 @@ class IngestService:
             job_id=job_id,
             job_type='ingest_batch',
             status='running',
-            started_at=datetime.utcnow()
+            started_at=datetime.now(timezone.utc)
         )
         db.add(job)
         db.commit()
@@ -113,7 +113,7 @@ class IngestService:
                 job_id=job_id,
                 stage_name='ingest',
                 status='running',
-                started_at=datetime.utcnow()
+                started_at=datetime.now(timezone.utc)
             )
             db.add(stage)
             db.commit()
@@ -131,7 +131,7 @@ class IngestService:
                     skipped.append(file_path)
                     stage.status = 'skipped'
 
-                stage.completed_at = datetime.utcnow()
+                stage.completed_at = datetime.now(timezone.utc)
                 elapsed = (stage.completed_at - stage.started_at).total_seconds() * 1000
                 stage.elapsed_ms = int(elapsed)
 
@@ -139,13 +139,13 @@ class IngestService:
                 failed.append(file_path)
                 stage.status = 'failed'
                 stage.error_message = str(e)
-                stage.completed_at = datetime.utcnow()
+                stage.completed_at = datetime.now(timezone.utc)
 
             db.commit()
 
         # Update job
         job.status = 'success' if not failed else 'failed'
-        job.completed_at = datetime.utcnow()
+        job.completed_at = datetime.now(timezone.utc)
         db.commit()
 
         return {

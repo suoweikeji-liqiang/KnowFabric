@@ -1,6 +1,6 @@
 """Page generation service."""
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 from sqlalchemy.orm import Session
 from pypdf import PdfReader
@@ -29,7 +29,7 @@ class ParserService:
             job_type='parse_document',
             target_doc_id=doc_id,
             status='running',
-            started_at=datetime.utcnow()
+            started_at=datetime.now(timezone.utc)
         )
         db.add(job)
         db.commit()
@@ -42,7 +42,7 @@ class ParserService:
             stage_name='parse',
             doc_id=doc_id,
             status='running',
-            started_at=datetime.utcnow()
+            started_at=datetime.now(timezone.utc)
         )
         db.add(stage)
         db.commit()
@@ -59,13 +59,13 @@ class ParserService:
 
             # Update stage
             stage.status = 'success'
-            stage.completed_at = datetime.utcnow()
+            stage.completed_at = datetime.now(timezone.utc)
             elapsed = (stage.completed_at - stage.started_at).total_seconds() * 1000
             stage.elapsed_ms = int(elapsed)
 
             # Update job
             job.status = 'success'
-            job.completed_at = datetime.utcnow()
+            job.completed_at = datetime.now(timezone.utc)
 
             db.commit()
 
@@ -80,10 +80,10 @@ class ParserService:
             doc.parse_status = 'failed'
             stage.status = 'failed'
             stage.error_message = str(e)
-            stage.completed_at = datetime.utcnow()
+            stage.completed_at = datetime.now(timezone.utc)
             job.status = 'failed'
             job.error_message = str(e)
-            job.completed_at = datetime.utcnow()
+            job.completed_at = datetime.now(timezone.utc)
             db.commit()
             raise
 

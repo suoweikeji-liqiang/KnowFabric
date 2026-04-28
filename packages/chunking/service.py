@@ -1,6 +1,6 @@
 """Chunk generation service."""
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List
 from sqlalchemy.orm import Session
 
@@ -30,7 +30,7 @@ class ChunkingService:
             job_type='chunk_document',
             target_doc_id=doc_id,
             status='running',
-            started_at=datetime.utcnow()
+            started_at=datetime.now(timezone.utc)
         )
         db.add(job)
         db.commit()
@@ -45,7 +45,7 @@ class ChunkingService:
                 stage_name='chunk',
                 doc_id=doc_id,
                 status='running',
-                started_at=datetime.utcnow()
+                started_at=datetime.now(timezone.utc)
             )
             db.add(stage)
             db.commit()
@@ -55,20 +55,20 @@ class ChunkingService:
                 total_chunks += chunks_created
 
                 stage.status = 'success'
-                stage.completed_at = datetime.utcnow()
+                stage.completed_at = datetime.now(timezone.utc)
                 elapsed = (stage.completed_at - stage.started_at).total_seconds() * 1000
                 stage.elapsed_ms = int(elapsed)
 
             except Exception as e:
                 stage.status = 'failed'
                 stage.error_message = str(e)
-                stage.completed_at = datetime.utcnow()
+                stage.completed_at = datetime.now(timezone.utc)
 
             db.commit()
 
         # Update job
         job.status = 'success'
-        job.completed_at = datetime.utcnow()
+        job.completed_at = datetime.now(timezone.utc)
         db.commit()
 
         return {
