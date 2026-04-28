@@ -15,6 +15,7 @@ from packages.core.config import settings
 from packages.db.models import ContentChunk, Document, DocumentPage
 
 LLM_HARD_TYPES = (
+    "parameter_spec",
     "maintenance_procedure",
     "application_guidance",
     "diagnostic_step",
@@ -270,6 +271,8 @@ def _build_prompt(
             "context_window_text": context_window.combined_text,
             "rules": [
                 "Use only supported knowledge types.",
+                "For parameter_spec, structured_payload_candidate should include parameter_name and any verbatim value, unit, range_min, range_max, default_value, or description found in the evidence.",
+                "For parameter_spec, do not infer units, ranges, defaults, limits, or descriptions that are not visible in the source text.",
                 "canonical_key_candidate must be lowercase and machine-friendly with underscores or colon namespaces only.",
                 "Do not use spaces, punctuation-heavy titles, or prose as canonical_key_candidate.",
                 "structured_payload_candidate must be a JSON object.",
@@ -295,6 +298,10 @@ def _context_allowed_types(
     normalized_text = _normalize_chunk_text(chunk)
     filtered = []
     for knowledge_type in allowed_types:
+        if knowledge_type == "parameter_spec":
+            if _is_llm_parameter_context(normalized_text, chunk.chunk_type, page.page_type):
+                filtered.append(knowledge_type)
+            continue
         if knowledge_type == "application_guidance":
             if _is_llm_application_context(normalized_text, chunk.chunk_type, page.page_type):
                 filtered.append(knowledge_type)
@@ -322,6 +329,31 @@ def _normalize_chunk_text(chunk: ContentChunk) -> str:
 
 def _combined_type_text(chunk_type: str, page_type: str | None) -> str:
     return " ".join(filter(None, [chunk_type.lower(), (page_type or "").lower()]))
+
+
+def _is_llm_parameter_context(normalized_text: str, chunk_type: str, page_type: str | None) -> bool:
+    combined_type = _combined_type_text(chunk_type, page_type)
+    if any(token in combined_type for token in ("fault", "alarm", "maintenance", "commission", "wiring")):
+        return False
+    if any(token in combined_type for token in ("parameter", "spec", "setting")):
+        return True
+    parameter_markers = (
+        "parameter",
+        "setting",
+        "setpoint",
+        "default",
+        "range",
+        "limit",
+        "threshold",
+        "参数",
+        "设定",
+        "默认",
+        "范围",
+        "限值",
+        "阈值",
+    )
+    has_value = bool(re.search(r"\d+(?:\.\d+)?\s*(?:kw|rt|hz|v|a|m3/h|l/s|c|°c|%)", normalized_text))
+    return has_value and any(marker in normalized_text for marker in parameter_markers)
 
 
 def _is_llm_application_context(normalized_text: str, chunk_type: str, page_type: str | None) -> bool:
@@ -473,6 +505,7 @@ def normalize_llm_canonical_key(
 
 def _knowledge_type_prefix(knowledge_object_type: str) -> str:
     mapping = {
+        "parameter_spec": "parameter",
         "maintenance_procedure": "maintenance",
         "application_guidance": "application",
         "diagnostic_step": "diagnostic",

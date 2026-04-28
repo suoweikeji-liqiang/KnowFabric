@@ -85,15 +85,15 @@ def _sample_spec_chunk() -> tuple[ContentChunk, DocumentPage, Document]:
             page_id="page_ahu_spec_1",
             page_no=24,
             chunk_index=0,
-            cleaned_text="primary chilled water pump design speed by stage",
-            text_excerpt="primary chilled water pump design speed by stage",
+            cleaned_text="parameter chilled water leaving temperature setpoint default 7 C range 5 C to 12 C",
+            text_excerpt="parameter chilled water leaving temperature setpoint default 7 C range 5 C to 12 C",
             chunk_type="spec_block",
         ),
         DocumentPage(
             page_id="page_ahu_spec_1",
             doc_id="doc_ahu_spec_1",
             page_no=24,
-            cleaned_text="primary chilled water pump design speed by stage",
+            cleaned_text="parameter chilled water leaving temperature setpoint default 7 C range 5 C to 12 C",
             page_type="technical_manual",
         ),
         Document(
@@ -241,6 +241,63 @@ def test_compile_llm_candidates_rejects_application_guidance_on_spec_context(mon
     )
 
     assert payload == []
+
+
+def test_compile_llm_candidates_allows_parameter_spec_on_spec_context(monkeypatch) -> None:
+    chunk, page, document = _sample_spec_chunk()
+
+    def fake_request(messages, _backend):
+        prompt_payload = messages[1]["content"]
+        assert "parameter_spec" in prompt_payload
+        return {
+            "candidates": [
+                {
+                    "knowledge_object_type": "parameter_spec",
+                    "canonical_key_candidate": "Chilled Water Leaving Temperature Setpoint",
+                    "structured_payload_candidate": {
+                        "parameter_name": "chilled water leaving temperature setpoint",
+                        "default_value": "7 C",
+                        "range_min": "5 C",
+                        "range_max": "12 C",
+                    },
+                    "confidence_score": 0.88,
+                    "rationale": "parameter default and range are visible in evidence",
+                }
+            ]
+        }
+
+    monkeypatch.setattr("packages.compiler.llm_compiler._request_json_completion", fake_request)
+
+    payload = compile_llm_candidates(
+        domain_id="hvac",
+        chunk=chunk,
+        page=page,
+        document=document,
+        equipment_match={
+            "equipment_class_id": "ahu",
+            "equipment_class_key": "hvac:ahu",
+            "label": "AHU",
+            "knowledge_anchors": ["parameter_spec"],
+        },
+        context_window=ChunkContextWindow(chunk_ids=["chunk_ahu_spec_1"], combined_text=chunk.cleaned_text),
+        backend=type(
+            "Backend",
+            (),
+            {
+                "name": "gemma-local",
+                "model": "gemma-local",
+                "api_base_url": "http://127.0.0.1:7999/v1",
+                "api_key": "4496",
+                "timeout_seconds": 30,
+            },
+        )(),
+        enabled_types=("parameter_spec",),
+    )
+
+    assert len(payload) == 1
+    assert payload[0]["knowledge_object_type"] == "parameter_spec"
+    assert payload[0]["canonical_key_candidate"] == "hvac:ahu:parameter:chilled_water_leaving_temperature_setpoint"
+    assert payload[0]["structured_payload_candidate"]["default_value"] == "7 C"
 
 
 def test_compile_llm_candidates_allows_application_guidance_on_guidance_context(monkeypatch) -> None:
