@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Sync ontology-first domain packages into additive rebuild metadata tables."""
+"""Sync ontology-first domain package aliases and mappings into metadata tables."""
 
 from __future__ import annotations
 
 import sys
 from pathlib import Path
 
-from sqlalchemy import delete, update
+from sqlalchemy import delete
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from packages.db.models_v2 import OntologyAliasV2, OntologyClassV2, OntologyMappingV2
+from packages.db.models_v2 import OntologyAliasV2, OntologyMappingV2
 from packages.db.session import SessionLocal
 from packages.domain_kit_v2.loader import discover_v2_package_roots, load_domain_package_v2
 from packages.domain_kit_v2.projection import (
@@ -20,32 +20,16 @@ from packages.domain_kit_v2.projection import (
 )
 
 
-def _upsert_classes(session, rows: list[dict]) -> None:
-    for row in rows:
-        session.merge(OntologyClassV2(**row))
-
-
 def sync_domain_package(package_root: Path) -> tuple[str, int, int, int]:
     """Sync one v2 package into ontology metadata tables."""
 
     bundle = load_domain_package_v2(package_root)
-    class_rows = build_ontology_class_rows(bundle)
+    class_count = len(build_ontology_class_rows(bundle))
     alias_rows = build_ontology_alias_rows(bundle)
     mapping_rows = build_ontology_mapping_rows(bundle)
-    active_keys = {row["ontology_class_key"] for row in class_rows}
 
     session = SessionLocal()
     try:
-        _upsert_classes(session, class_rows)
-        session.flush()
-        session.execute(
-            update(OntologyClassV2)
-            .where(OntologyClassV2.domain_id == bundle.package.domain_id)
-            .where(OntologyClassV2.ontology_class_key.not_in(active_keys))
-            .values(is_active=False)
-        )
-        session.flush()
-
         session.execute(delete(OntologyAliasV2).where(OntologyAliasV2.domain_id == bundle.package.domain_id))
         if alias_rows:
             session.execute(OntologyAliasV2.__table__.insert(), alias_rows)
@@ -55,7 +39,7 @@ def sync_domain_package(package_root: Path) -> tuple[str, int, int, int]:
             session.execute(OntologyMappingV2.__table__.insert(), mapping_rows)
 
         session.commit()
-        return bundle.package.domain_id, len(class_rows), len(alias_rows), len(mapping_rows)
+        return bundle.package.domain_id, class_count, len(alias_rows), len(mapping_rows)
     except Exception:
         session.rollback()
         raise
@@ -78,7 +62,7 @@ def main() -> int:
         domain_id, class_count, alias_count, mapping_count = sync_domain_package(package_root)
         print(
             f"Synced {domain_id} "
-            f"(classes={class_count}, aliases={alias_count}, mappings={mapping_count})"
+            f"(classes_external={class_count}, aliases={alias_count}, mappings={mapping_count})"
         )
     return 0
 

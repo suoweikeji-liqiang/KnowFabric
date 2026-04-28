@@ -25,13 +25,14 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 from packages.db.models import ContentChunk, Document, DocumentPage
-from packages.db.models_v2 import ChunkOntologyAnchorV2, KnowledgeObjectEvidenceV2, KnowledgeObjectV2, OntologyClassV2
+from packages.db.models_v2 import ChunkOntologyAnchorV2, KnowledgeObjectEvidenceV2, KnowledgeObjectV2
 from packages.db.session import SessionLocal
 from packages.domain_kit_v2.loader import load_domain_package_v2
 from packages.domain_kit_v2.manual_fixture import load_manual_fixture
 from packages.chunking.service import ChunkingService
 from packages.compiler.llm_compiler import default_enabled_llm_types
 from packages.core.config import settings
+from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
 from packages.ingest.service import IngestService
 from packages.parser.service import ParserService
 from packages.storage.manager import StorageManager
@@ -1011,24 +1012,24 @@ def _console_ontology_label_map(
     domain_ids: list[str],
     language: str = "zh",
 ) -> dict[tuple[str, str], str]:
-    ontology_rows = (
-        db.query(
-            OntologyClassV2.domain_id,
-            OntologyClassV2.ontology_class_id,
-            OntologyClassV2.primary_label,
-            OntologyClassV2.labels_json,
-        )
-        .filter(OntologyClassV2.domain_id.in_(domain_ids))
+    client = SwBaseModelOntologyClient()
+    rows = (
+        db.query(KnowledgeObjectV2.domain_id, KnowledgeObjectV2.ontology_class_id)
+        .filter(KnowledgeObjectV2.domain_id.in_(domain_ids))
+        .distinct()
         .all()
     )
-    return {
-        (str(row.domain_id), str(row.ontology_class_id)): _console_resolve_class_label(
-            row.labels_json,
-            str(row.primary_label),
+    labels: dict[tuple[str, str], str] = {}
+    for row in rows:
+        equipment_class = client.get_equipment_class(str(row.ontology_class_id))
+        if equipment_class is None:
+            continue
+        labels[(str(row.domain_id), str(row.ontology_class_id))] = _console_resolve_class_label(
+            equipment_class.get("labels"),
+            str(equipment_class.get("primary_label") or row.ontology_class_id),
             language,
         )
-        for row in ontology_rows
-    }
+    return labels
 
 
 def _console_documents_index() -> dict[str, dict[str, Any]]:

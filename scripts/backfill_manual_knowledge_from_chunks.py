@@ -13,14 +13,15 @@ from packages.db.models_v2 import (
     ChunkOntologyAnchorV2,
     KnowledgeObjectEvidenceV2,
     KnowledgeObjectV2,
-    OntologyClassV2,
 )
 from packages.db.session import SessionLocal
 from packages.domain_kit_v2.manual_fixture import (
+    DEFAULT_PACKAGE_VERSION,
     build_manual_semantic_rows,
     discover_manual_fixture_paths,
     load_manual_fixture,
 )
+from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
 
 
 def _merge_rows(session, model, rows: list[dict]) -> None:
@@ -28,18 +29,11 @@ def _merge_rows(session, model, rows: list[dict]) -> None:
         session.merge(model(**row))
 
 
-def _load_ontology_class(session, equipment_class_key: str) -> OntologyClassV2:
-    ontology_class = (
-        session.query(OntologyClassV2)
-        .filter(OntologyClassV2.ontology_class_key == equipment_class_key)
-        .one_or_none()
-    )
-    if ontology_class is None:
-        raise ValueError(
-            "Missing ontology class for fixture. Run scripts/sync_ontology_package_v2.py first: "
-            f"{equipment_class_key}"
-        )
-    return ontology_class
+def _load_equipment_class(client: SwBaseModelOntologyClient, equipment_class_key: str) -> dict:
+    equipment_class = client.get_equipment_class(equipment_class_key)
+    if equipment_class is None:
+        raise ValueError(f"Missing sw_base_model equipment class for fixture: {equipment_class_key}")
+    return equipment_class
 
 
 def _load_chunk_contexts(session, chunk_ids: list[str]) -> dict[str, dict[str, int | str]]:
@@ -66,12 +60,13 @@ def backfill_manual_fixture_from_chunks(path: str | Path) -> tuple[str, int]:
     fixture = load_manual_fixture(path)
     chunk_ids = [entry["chunk"]["chunk_id"] for entry in fixture["manual_entries"]]
     session = SessionLocal()
+    client = SwBaseModelOntologyClient()
     try:
-        ontology_class = _load_ontology_class(session, fixture["equipment_class_key"])
+        _load_equipment_class(client, fixture["equipment_class_key"])
         rows = build_manual_semantic_rows(
             fixture,
-            package_version=ontology_class.package_version,
-            ontology_version=ontology_class.ontology_version,
+            package_version=DEFAULT_PACKAGE_VERSION,
+            ontology_version=client.ontology_version(),
             chunk_contexts=_load_chunk_contexts(session, chunk_ids),
             match_method="manual_backfill",
         )

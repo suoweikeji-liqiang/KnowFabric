@@ -11,8 +11,9 @@ if grep -r "SELECT\|INSERT\|UPDATE\|DELETE" domain_packages/ 2>/dev/null; then
     ERRORS=$((ERRORS + 1))
 fi
 
-# KnowFabric may consume sw_base_model through contract files/API only; no Python imports.
-if grep -RInE "^[[:space:]]*(from|import)[[:space:]].*sw_base_model" packages/ apps/ scripts/ --include="*.py" 2>/dev/null; then
+# KnowFabric may consume sw_base_model through the contract client only; no direct Python imports.
+if grep -RInE "^[[:space:]]*(from|import)[[:space:]].*sw_base_model" packages/ apps/ scripts/ --include="*.py" 2>/dev/null \
+    | grep -v "packages.core.sw_base_model_ontology_client"; then
     echo "✗ Python code imports or references sw_base_model"
     ERRORS=$((ERRORS + 1))
 fi

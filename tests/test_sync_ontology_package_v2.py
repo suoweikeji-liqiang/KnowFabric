@@ -9,7 +9,7 @@ from sqlalchemy.pool import StaticPool
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from packages.db.models_v2 import OntologyAliasV2, OntologyClassV2, OntologyMappingV2
+from packages.db.models_v2 import OntologyAliasV2, OntologyMappingV2
 from packages.db.session import Base
 from scripts.sync_ontology_package_v2 import sync_domain_package
 
@@ -26,7 +26,6 @@ def _build_session_factory():
     Base.metadata.create_all(
         engine,
         tables=[
-            OntologyClassV2.__table__,
             OntologyAliasV2.__table__,
             OntologyMappingV2.__table__,
         ],
@@ -36,8 +35,8 @@ def _build_session_factory():
     return sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
-def test_sync_domain_package_persists_classes_aliases_and_mappings(monkeypatch) -> None:
-    """Sync should flush class rows before inserting aliases and mappings."""
+def test_sync_domain_package_persists_aliases_and_mappings(monkeypatch) -> None:
+    """Sync should persist local aliases and OEM mappings."""
 
     session_factory = _build_session_factory()
     monkeypatch.setattr("scripts.sync_ontology_package_v2.SessionLocal", session_factory)
@@ -50,7 +49,6 @@ def test_sync_domain_package_persists_classes_aliases_and_mappings(monkeypatch) 
         assert class_count > 0
         assert alias_count > 0
         assert mapping_count == 0
-        assert db.query(OntologyClassV2).filter_by(domain_id="hvac").count() == class_count
         assert db.query(OntologyAliasV2).filter_by(domain_id="hvac").count() == alias_count
         assert db.query(OntologyMappingV2).filter_by(domain_id="hvac").count() == mapping_count
     finally:

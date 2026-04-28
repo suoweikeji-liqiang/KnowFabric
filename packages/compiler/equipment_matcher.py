@@ -12,8 +12,10 @@ from typing import Any
 import yaml
 from sqlalchemy.orm import Session
 
+from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
 from packages.db.models import ContentChunk, Document
-from packages.db.models_v2 import OntologyAliasV2, OntologyClassV2
+from packages.db.models_v2 import OntologyAliasV2
+from packages.domain_kit_v2.loader import load_domain_package_v2
 
 
 @dataclass(frozen=True)
@@ -69,9 +71,9 @@ def build_search_text(chunk: ContentChunk, document: Document) -> str:
     return normalize_text(" ".join(filter(None, [chunk.cleaned_text, chunk.text_excerpt, document.file_name])))
 
 
-def _iter_label_terms(ontology_class: OntologyClassV2) -> list[AliasTerm]:
-    labels = list((ontology_class.labels_json or {}).values())
-    labels.append(ontology_class.primary_label)
+def _iter_label_terms(equipment_class: dict[str, Any]) -> list[AliasTerm]:
+    labels = list((equipment_class.get("labels") or {}).values())
+    labels.append(equipment_class["primary_label"])
     unique = []
     seen = set()
     for label in labels:
@@ -89,47 +91,76 @@ def _iter_label_terms(ontology_class: OntologyClassV2) -> list[AliasTerm]:
     return unique
 
 
-def build_equipment_profiles(db: Session, domain_id: str) -> list[EquipmentClassProfile]:
+class EquipmentMatcher:
+    """Build equipment matching profiles from sw_base_model classes and local aliases."""
+
+    def __init__(self, ontology_client: SwBaseModelOntologyClient | None = None) -> None:
+        self.ontology_client = ontology_client or SwBaseModelOntologyClient()
+
+    def build_equipment_profiles(self, db: Session, domain_id: str) -> list[EquipmentClassProfile]:
+        """Load equipment classes and alias terms for one domain."""
+
+        aliases = (
+            db.query(OntologyAliasV2)
+            .filter(OntologyAliasV2.domain_id == domain_id)
+            .order_by(OntologyAliasV2.ontology_class_id, OntologyAliasV2.is_preferred.desc())
+            .all()
+        )
+        alias_map: dict[str, list[AliasTerm]] = defaultdict(list)
+        for alias in aliases:
+            alias_map[alias.ontology_class_key].append(
+                AliasTerm(
+                    normalized=alias.normalized_alias,
+                    display=alias.alias_text,
+                    is_preferred=alias.is_preferred,
+                    source="alias",
+                )
+            )
+
+        profiles = []
+        for class_row in _load_domain_equipment_rows(domain_id):
+            equipment_class = self.ontology_client.get_equipment_class(class_row["ontology_class_id"])
+            if equipment_class is None:
+                continue
+            class_key = class_row["ontology_class_key"]
+            terms = alias_map[class_key] + _iter_label_terms(equipment_class)
+            profiles.append(
+                EquipmentClassProfile(
+                    ontology_class_key=class_key,
+                    ontology_class_id=class_row["ontology_class_id"],
+                    primary_label=equipment_class["primary_label"],
+                    knowledge_anchors=tuple(class_row["knowledge_anchors"]),
+                    terms=tuple(terms),
+                )
+            )
+        return profiles
+
+
+def _load_domain_equipment_rows(domain_id: str) -> list[dict[str, Any]]:
+    root = Path(__file__).resolve().parents[2] / "domain_packages" / domain_id / "v2"
+    bundle = load_domain_package_v2(root)
+    rows = []
+    for item in bundle.ontology_classes.classes:
+        if item.kind != "equipment":
+            continue
+        rows.append(
+            {
+                "ontology_class_key": f"{domain_id}:{item.id}",
+                "ontology_class_id": item.id,
+                "knowledge_anchors": item.knowledge_anchors,
+            }
+        )
+    return rows
+
+
+def build_equipment_profiles(
+    db: Session,
+    domain_id: str,
+    ontology_client: SwBaseModelOntologyClient | None = None,
+) -> list[EquipmentClassProfile]:
     """Load equipment classes and alias terms for one domain."""
 
-    classes = (
-        db.query(OntologyClassV2)
-        .filter(OntologyClassV2.domain_id == domain_id)
-        .filter(OntologyClassV2.class_kind == "equipment")
-        .filter(OntologyClassV2.is_active.is_(True))
-        .order_by(OntologyClassV2.ontology_class_id)
-        .all()
-    )
-    aliases = (
-        db.query(OntologyAliasV2)
-        .filter(OntologyAliasV2.domain_id == domain_id)
-        .order_by(OntologyAliasV2.ontology_class_id, OntologyAliasV2.is_preferred.desc())
-        .all()
-    )
-    alias_map: dict[str, list[AliasTerm]] = defaultdict(list)
-    for alias in aliases:
-        alias_map[alias.ontology_class_key].append(
-            AliasTerm(
-                normalized=alias.normalized_alias,
-                display=alias.alias_text,
-                is_preferred=alias.is_preferred,
-                source="alias",
-            )
-        )
-
-    profiles = []
-    for ontology_class in classes:
-        terms = alias_map[ontology_class.ontology_class_key] + _iter_label_terms(ontology_class)
-        profiles.append(
-            EquipmentClassProfile(
-                ontology_class_key=ontology_class.ontology_class_key,
-                ontology_class_id=ontology_class.ontology_class_id,
-                primary_label=ontology_class.primary_label,
-                knowledge_anchors=tuple(ontology_class.knowledge_anchors_json or ()),
-                terms=tuple(terms),
-            )
-        )
-    return profiles
+    return EquipmentMatcher(ontology_client).build_equipment_profiles(db, domain_id)
 
 
 def _score_alias_match(text: str, term: AliasTerm) -> float | None:

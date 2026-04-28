@@ -1,0 +1,144 @@
+ontology_version: "0.2.0"
+namespace:
+  brick: "https://brickschema.org/schema/Brick#"
+  ext: "https://sw-platform.example.com/ontology/ext#"
+
+equipment_classes:
+  - class: Chiller
+    parent: null
+    namespace: brick
+    labels: {en: Chiller, zh: 冷水机组}
+    typical_points: [Chilled_Water_Supply_Temperature_Sensor]
+    typical_relations: [{relation: hasPart, target_class: Pump}]
+  - class: Centrifugal_Chiller
+    parent: Chiller
+    namespace: brick
+    labels: {en: Centrifugal Chiller, zh: 离心式冷水机组}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Screw_Chiller
+    parent: Chiller
+    namespace: ext
+    labels: {en: Screw Chiller, zh: 螺杆式冷水机组}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Modular_Chiller
+    parent: Chiller
+    namespace: ext
+    labels: {en: Modular Chiller, zh: 模块式冷水机组}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Air_Cooled_Modular_Heat_Pump
+    parent: Chiller
+    namespace: ext
+    labels: {en: Air-Cooled Modular Heat Pump Unit, zh: 风冷冷热水模块机组}
+    typical_points: []
+    typical_relations: []
+  - class: Pump
+    parent: null
+    namespace: brick
+    labels: {en: Pump, zh: 泵}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Chilled_Water_Pump
+    parent: Pump
+    namespace: ext
+    labels: {en: Chilled Water Pump, zh: 冷冻水泵}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Condenser_Water_Pump
+    parent: Pump
+    namespace: ext
+    labels: {en: Condenser Water Pump, zh: 冷却水泵}
+    typical_points: []
+    typical_relations: []
+  - class: Cooling_Tower
+    parent: null
+    namespace: brick
+    labels: {en: Cooling Tower, zh: 冷却塔}
+    typical_points: []
+    typical_relations: []
+  - class: AHU
+    parent: null
+    namespace: brick
+    labels: {en: Air Handling Unit, zh: 空气处理机组}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Vrf_System
+    parent: null
+    namespace: ext
+    labels: {en: VRF System, zh: 多联机系统}
+    typical_points: []
+    typical_relations: []
+  - class: Valve
+    parent: null
+    namespace: brick
+    labels: {en: Valve, zh: 阀门}
+    typical_points: []
+    typical_relations: []
+  - class: Sensor
+    parent: null
+    namespace: brick
+    labels: {en: Sensor, zh: 传感器}
+    typical_points: []
+    typical_relations: []
+  - class: Controller
+    parent: null
+    namespace: brick
+    labels: {en: Controller, zh: 控制器}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Drive
+    parent: null
+    namespace: ext
+    labels: {en: Drive, zh: 驱动器}
+    typical_points: []
+    typical_relations: []
+  - class: Variable_Frequency_Drive
+    parent: ext:Drive
+    namespace: brick
+    labels: {en: Variable Frequency Drive, zh: 变频驱动器}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Frequency_Converter
+    parent: ext:Drive
+    namespace: ext
+    labels: {en: Frequency Converter, zh: 变频器}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Motor_Controller
+    parent: ext:Drive
+    namespace: ext
+    labels: {en: Motor Controller, zh: 电机控制器}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Soft_Starter
+    parent: ext:Drive
+    namespace: ext
+    labels: {en: Soft Starter, zh: 软启动器}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Braking_Resistor
+    parent: null
+    namespace: ext
+    labels: {en: Braking Resistor, zh: 制动电阻}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Keypad
+    parent: null
+    namespace: ext
+    labels: {en: Keypad, zh: 操作面板}
+    typical_points: []
+    typical_relations: []
+
+point_classes:
+  - class: Chilled_Water_Supply_Temperature_Sensor
+    parent: null
+    namespace: brick
+    tags: {medium: chilled_water, direction: supply, measurement: temperature, point_type: sensor}
+
+relation_types:
+  - type: hasPart
+    namespace: brick
+    inverse: isPartOf
+    description: Part-whole equipment relation.

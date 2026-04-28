@@ -14,7 +14,6 @@ from packages.db.models import ContentChunk, Document, DocumentPage
 from packages.db.models_v2 import (
     KnowledgeObjectEvidenceV2,
     KnowledgeObjectV2,
-    OntologyClassV2,
 )
 from packages.db.session import Base
 from packages.retrieval.semantic_service import SemanticRetrievalService
@@ -39,7 +38,6 @@ def _build_session_factory():
             Document.__table__,
             DocumentPage.__table__,
             ContentChunk.__table__,
-            OntologyClassV2.__table__,
             KnowledgeObjectV2.__table__,
             KnowledgeObjectEvidenceV2.__table__,
         ],
@@ -94,24 +92,6 @@ def _seed_localized_fault(session_factory) -> None:
                     "text_excerpt": "A7C1 现场总线通讯",
                     "chunk_type": "fault_code_block",
                     "evidence_anchor": "{\"line\": 1}",
-                }
-            ],
-        )
-        db.execute(
-            OntologyClassV2.__table__.insert(),
-            [
-                {
-                    "ontology_class_key": "drive:variable_frequency_drive",
-                    "domain_id": "drive",
-                    "ontology_class_id": "variable_frequency_drive",
-                    "package_version": "2.0.0-alpha",
-                    "ontology_version": "2.0.0-alpha",
-                    "parent_class_key": None,
-                    "class_kind": "equipment",
-                    "primary_label": "Variable Frequency Drive",
-                    "labels_json": {"en": "Variable Frequency Drive", "zh": "变频驱动器"},
-                    "knowledge_anchors_json": ["fault_code"],
-                    "is_active": True,
                 }
             ],
         )

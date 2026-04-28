@@ -16,7 +16,6 @@ from packages.db.models_v2 import (
     KnowledgeObjectEvidenceV2,
     KnowledgeObjectV2,
     OntologyAliasV2,
-    OntologyClassV2,
     OntologyMappingV2,
 )
 from packages.db.session import Base
@@ -24,7 +23,6 @@ from packages.domain_kit_v2.loader import load_domain_package_v2
 from packages.domain_kit_v2.manual_fixture import build_manual_fixture_rows, load_manual_fixture
 from packages.domain_kit_v2.projection import (
     build_ontology_alias_rows,
-    build_ontology_class_rows,
     build_ontology_mapping_rows,
 )
 from scripts.backfill_manual_knowledge_from_chunks import backfill_manual_fixture_from_chunks
@@ -55,7 +53,6 @@ def _build_session_factory():
             Document.__table__,
             DocumentPage.__table__,
             ContentChunk.__table__,
-            OntologyClassV2.__table__,
             OntologyAliasV2.__table__,
             OntologyMappingV2.__table__,
             ChunkOntologyAnchorV2.__table__,
@@ -71,7 +68,6 @@ def _seed_ontology(session_factory) -> None:
     try:
         for root in (HVAC_V2_ROOT, DRIVE_V2_ROOT):
             bundle = load_domain_package_v2(root)
-            db.execute(OntologyClassV2.__table__.insert(), build_ontology_class_rows(bundle))
             db.execute(OntologyAliasV2.__table__.insert(), build_ontology_alias_rows(bundle))
             mapping_rows = build_ontology_mapping_rows(bundle)
             if mapping_rows:
@@ -139,11 +135,6 @@ def test_backfill_manual_fixture_from_chunks_for_drive(monkeypatch) -> None:
     equipment_class_key, knowledge_count = backfill_manual_fixture_from_chunks(DRIVE_FIXTURE)
     db = session_factory()
     try:
-        ontology_class = (
-            db.query(OntologyClassV2)
-            .filter(OntologyClassV2.ontology_class_key == "drive:variable_frequency_drive")
-            .one()
-        )
         knowledge_object = (
             db.query(KnowledgeObjectV2)
             .filter(KnowledgeObjectV2.knowledge_object_id == "ko_abb_a7c1")
@@ -151,8 +142,8 @@ def test_backfill_manual_fixture_from_chunks_for_drive(monkeypatch) -> None:
         )
         assert equipment_class_key == "drive:variable_frequency_drive"
         assert knowledge_count == 4
-        assert knowledge_object.package_version == ontology_class.package_version
-        assert knowledge_object.ontology_version == ontology_class.ontology_version
+        assert knowledge_object.package_version == "2.0.0-alpha"
+        assert knowledge_object.ontology_version == "0.2.0"
     finally:
         db.close()
 

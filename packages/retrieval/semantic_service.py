@@ -8,12 +8,12 @@ from typing import Any
 from sqlalchemy.orm import Session
 
 from packages.compiler.contracts import extract_compile_metadata, public_health_flags
+from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
 from packages.db.models import Document
 from packages.db.models_v2 import (
     KnowledgeObjectEvidenceV2,
     KnowledgeObjectV2,
     OntologyAliasV2,
-    OntologyClassV2,
     OntologyMappingV2,
 )
 
@@ -27,6 +27,9 @@ OPERATIONAL_GUIDANCE_TYPES = ("commissioning_step", "wiring_guidance", "applicat
 
 class SemanticRetrievalService:
     """Read-only access to rebuild-track ontology metadata."""
+
+    def __init__(self, ontology_client: SwBaseModelOntologyClient | None = None) -> None:
+        self.ontology_client = ontology_client or SwBaseModelOntologyClient()
 
     def _language_candidates(self, language: str | None) -> list[str]:
         if not language:
@@ -79,25 +82,14 @@ class SemanticRetrievalService:
         db: Session,
         domain_id: str,
         equipment_class_id: str,
-    ) -> OntologyClassV2 | None:
-        return (
-            db.query(OntologyClassV2)
-            .filter(OntologyClassV2.domain_id == domain_id)
-            .filter(OntologyClassV2.ontology_class_id == equipment_class_id)
-            .filter(OntologyClassV2.class_kind == "equipment")
-            .filter(OntologyClassV2.is_active.is_(True))
-            .one_or_none()
-        )
+    ) -> dict[str, Any] | None:
+        equipment_class = self.ontology_client.get_equipment_class(equipment_class_id)
+        if equipment_class is not None:
+            equipment_class["domain_id"] = domain_id
+        return equipment_class
 
-    def _get_parent_class_id(self, db: Session, ontology_class: OntologyClassV2) -> str | None:
-        if not ontology_class.parent_class_key:
-            return None
-        parent = (
-            db.query(OntologyClassV2)
-            .filter(OntologyClassV2.ontology_class_key == ontology_class.parent_class_key)
-            .one_or_none()
-        )
-        return parent.ontology_class_id if parent else None
+    def _get_parent_class_id(self, db: Session, ontology_class: dict[str, Any]) -> str | None:
+        return ontology_class.get("parent_class_id")
 
     def _matches_fault_filters(
         self,
@@ -304,12 +296,13 @@ class SemanticRetrievalService:
     def _build_semantic_collection(
         self,
         db: Session,
-        ontology_class: OntologyClassV2,
+        ontology_class: dict[str, Any],
         knowledge_objects: list[KnowledgeObjectV2],
         language: str = "en",
     ) -> dict[str, Any]:
         evidence_map = self._load_evidence_map(db, [item.knowledge_object_id for item in knowledge_objects])
-        label = ontology_class.labels_json.get(language) or ontology_class.primary_label
+        labels = ontology_class.get("labels") or {}
+        label = labels.get(language) or ontology_class["primary_label"]
         items: list[dict[str, Any]] = []
         for item in knowledge_objects:
             evidence = evidence_map.get(item.knowledge_object_id)
@@ -324,9 +317,9 @@ class SemanticRetrievalService:
                     "knowledge_object_type": item.knowledge_object_type,
                     "canonical_key": item.canonical_key,
                     "equipment_class": {
-                        "equipment_class_id": ontology_class.ontology_class_id,
+                        "equipment_class_id": ontology_class["ontology_class_id"],
                         "label": label,
-                        "domain_id": ontology_class.domain_id,
+                        "domain_id": item.domain_id,
                     },
                     "title": title,
                     "summary": summary,
@@ -344,9 +337,9 @@ class SemanticRetrievalService:
             )
         return {
             "equipment_class": {
-                "equipment_class_id": ontology_class.ontology_class_id,
+                "equipment_class_id": ontology_class["ontology_class_id"],
                 "label": label,
-                "domain_id": ontology_class.domain_id,
+                "domain_id": ontology_class["domain_id"],
             },
             "items": items,
         }
@@ -383,16 +376,17 @@ class SemanticRetrievalService:
         for item in aliases:
             alias_groups[item.language_code].append(item.alias_text)
 
-        label = ontology_class.labels_json.get(language) or ontology_class.primary_label
+        labels = ontology_class.get("labels") or {}
+        label = labels.get(language) or ontology_class["primary_label"]
         return {
             "equipment_class": {
-                "equipment_class_id": ontology_class.ontology_class_id,
+                "equipment_class_id": ontology_class["ontology_class_id"],
                 "label": label,
-                "domain_id": ontology_class.domain_id,
+                "domain_id": domain_id,
             },
-            "class_kind": ontology_class.class_kind,
+            "class_kind": "equipment",
             "parent_class_id": self._get_parent_class_id(db, ontology_class),
-            "labels": ontology_class.labels_json,
+            "labels": labels,
             "aliases": dict(alias_groups),
             "external_mappings": [
                 {
@@ -403,7 +397,8 @@ class SemanticRetrievalService:
                 }
                 for item in mappings
             ],
-            "supported_knowledge_anchors": ontology_class.knowledge_anchors_json,
+            "typical_points": self.ontology_client.get_typical_points(equipment_class_id),
+            "typical_relations": self.ontology_client.get_typical_relations(equipment_class_id),
         }
 
     def get_fault_knowledge(

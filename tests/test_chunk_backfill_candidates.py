@@ -10,7 +10,7 @@ from sqlalchemy.pool import StaticPool
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from packages.db.models import ContentChunk, Document, DocumentPage
-from packages.db.models_v2 import OntologyAliasV2, OntologyClassV2, OntologyMappingV2
+from packages.db.models_v2 import OntologyAliasV2, OntologyMappingV2
 from packages.db.session import Base
 from packages.domain_kit_v2.loader import load_domain_package_v2
 from packages.domain_kit_v2.manual_fixture import build_manual_fixture_rows, load_manual_fixture
@@ -45,7 +45,6 @@ def _build_session_factory():
             Document.__table__,
             DocumentPage.__table__,
             ContentChunk.__table__,
-            OntologyClassV2.__table__,
             OntologyAliasV2.__table__,
             OntologyMappingV2.__table__,
         ],
@@ -58,7 +57,6 @@ def _seed_ontology(session_factory) -> None:
     try:
         for root in (HVAC_V2_ROOT, DRIVE_V2_ROOT):
             bundle = load_domain_package_v2(root)
-            db.execute(OntologyClassV2.__table__.insert(), build_ontology_class_rows(bundle))
             db.execute(OntologyAliasV2.__table__.insert(), build_ontology_alias_rows(bundle))
             mapping_rows = build_ontology_mapping_rows(bundle)
             if mapping_rows:

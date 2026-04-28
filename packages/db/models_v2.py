@@ -23,43 +23,13 @@ from sqlalchemy.sql import func
 from packages.db.session import Base
 
 
-class OntologyClassV2(Base):
-    """Canonical ontology class metadata persisted from v2 domain packages."""
-
-    __tablename__ = "ontology_class"
-
-    ontology_class_key = Column(String(196), primary_key=True)
-    domain_id = Column(String(64), nullable=False, index=True)
-    ontology_class_id = Column(String(128), nullable=False)
-    package_version = Column(String(32), nullable=False)
-    ontology_version = Column(String(32), nullable=False)
-    parent_class_key = Column(String(196), ForeignKey("ontology_class.ontology_class_key"))
-    class_kind = Column(String(32), nullable=False)
-    primary_label = Column(String(255), nullable=False)
-    labels_json = Column(JSON, nullable=False)
-    knowledge_anchors_json = Column(JSON, nullable=False)
-    is_active = Column(Boolean, default=True, nullable=False)
-    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
-    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
-
-    __table_args__ = (
-        UniqueConstraint("domain_id", "ontology_class_id", name="uq_ontology_class_domain_local_id"),
-        Index("idx_ontology_class_domain_parent", "domain_id", "parent_class_key"),
-    )
-
-
 class OntologyAliasV2(Base):
     """Lookup terms that resolve user or document language to ontology classes."""
 
     __tablename__ = "ontology_alias"
 
     alias_id = Column(String(64), primary_key=True)
-    ontology_class_key = Column(
-        String(196),
-        ForeignKey("ontology_class.ontology_class_key"),
-        nullable=False,
-        index=True,
-    )
+    ontology_class_key = Column(String(196), nullable=False, index=True)
     domain_id = Column(String(64), nullable=False, index=True)
     ontology_class_id = Column(String(128), nullable=False)
     language_code = Column(String(16), nullable=False)
@@ -91,12 +61,7 @@ class OntologyMappingV2(Base):
     __tablename__ = "ontology_mapping"
 
     mapping_id = Column(String(64), primary_key=True)
-    ontology_class_key = Column(
-        String(196),
-        ForeignKey("ontology_class.ontology_class_key"),
-        nullable=False,
-        index=True,
-    )
+    ontology_class_key = Column(String(196), nullable=False, index=True)
     domain_id = Column(String(64), nullable=False, index=True)
     ontology_class_id = Column(String(128), nullable=False)
     mapping_system = Column(String(64), nullable=False)
@@ -125,12 +90,7 @@ class ChunkOntologyAnchorV2(Base):
 
     chunk_anchor_id = Column(String(64), primary_key=True)
     chunk_id = Column(String(64), ForeignKey("content_chunk.chunk_id"), nullable=False, index=True)
-    ontology_class_key = Column(
-        String(196),
-        ForeignKey("ontology_class.ontology_class_key"),
-        nullable=False,
-        index=True,
-    )
+    ontology_class_key = Column(String(196), nullable=False, index=True)
     domain_id = Column(String(64), nullable=False, index=True)
     ontology_class_id = Column(String(128), nullable=False)
     match_method = Column(String(32), nullable=False, default="rule")
@@ -153,12 +113,7 @@ class KnowledgeObjectV2(Base):
 
     knowledge_object_id = Column(String(64), primary_key=True)
     domain_id = Column(String(64), nullable=False, index=True)
-    ontology_class_key = Column(
-        String(196),
-        ForeignKey("ontology_class.ontology_class_key"),
-        nullable=False,
-        index=True,
-    )
+    ontology_class_key = Column(String(196), nullable=False, index=True)
     ontology_class_id = Column(String(128), nullable=False)
     knowledge_object_type = Column(String(64), nullable=False, index=True)
     canonical_key = Column(String(255), nullable=False)
