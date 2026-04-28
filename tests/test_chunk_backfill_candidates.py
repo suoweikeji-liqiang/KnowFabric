@@ -60,7 +60,9 @@ def _seed_ontology(session_factory) -> None:
             bundle = load_domain_package_v2(root)
             db.execute(OntologyClassV2.__table__.insert(), build_ontology_class_rows(bundle))
             db.execute(OntologyAliasV2.__table__.insert(), build_ontology_alias_rows(bundle))
-            db.execute(OntologyMappingV2.__table__.insert(), build_ontology_mapping_rows(bundle))
+            mapping_rows = build_ontology_mapping_rows(bundle)
+            if mapping_rows:
+                db.execute(OntologyMappingV2.__table__.insert(), mapping_rows)
         db.commit()
     finally:
         db.close()
@@ -265,6 +267,8 @@ def test_generate_chunk_backfill_candidates_can_alias_match_equipment_class(monk
     assert candidate["canonical_key_candidate"] == "A7C1"
     assert candidate["match_metadata"]["equipment_selection_method"] == "alias_match"
     assert "hvac drive" in candidate["equipment_class_candidate"]["matched_aliases"]
+    assert candidate["compile_metadata"]["method"] == "rule_compiler"
+    assert {finding["code"] for finding in candidate["health_findings"]} == {"anchor_uncertainty"}
 
 
 def test_generate_chunk_backfill_candidates_for_hvac_maintenance_guidance(monkeypatch) -> None:
@@ -425,6 +429,8 @@ def test_generate_chunk_backfill_candidates_includes_multi_doc_summaries(monkeyp
             "candidate_hit_rate": 1.0,
         },
     ]
+    assert payload["metadata"]["compiler_methods"] == ["rule_compiler"]
+    assert isinstance(payload["metadata"]["health_finding_counts"], dict)
 
 
 if __name__ == "__main__":

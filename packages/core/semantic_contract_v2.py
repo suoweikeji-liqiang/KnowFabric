@@ -62,6 +62,9 @@ class SemanticKnowledgeObject(SemanticBaseModel):
     trust_level: TrustLevel
     review_status: str
     display_language: str | None = None
+    compilation_method: str | None = None
+    compiler_version: str | None = None
+    health_flags: list[str] = Field(default_factory=list)
     evidence: list[EvidenceCitation] = Field(min_length=1)
 
 

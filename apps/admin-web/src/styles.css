@@ -639,6 +639,20 @@ button {
   background: transparent;
 }
 
+.note-card.is-inline {
+  padding: 8px 0;
+}
+
+.compiler-section-title {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .evidence-meta {
   display: flex;
   flex-wrap: wrap;

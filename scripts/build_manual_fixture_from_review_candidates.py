@@ -152,6 +152,15 @@ def _build_manual_entry(
         "confidence_score": entry["confidence_score"],
         "trust_level": curation["trust_level"],
         "review_status": curation.get("review_status", "approved"),
+        "compiler_metadata": entry.get("compile_metadata", {}),
+        "health_signals": {
+            "flags": [
+                finding.get("code")
+                for finding in entry.get("health_findings", [])
+                if isinstance(finding, dict) and finding.get("code")
+            ],
+            "findings": entry.get("health_findings", []),
+        },
         "doc": {
             "doc_id": document.doc_id,
             "file_name": document.file_name,

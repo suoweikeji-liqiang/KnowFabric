@@ -30,6 +30,7 @@ from packages.db.session import SessionLocal
 from packages.domain_kit_v2.loader import load_domain_package_v2
 from packages.domain_kit_v2.manual_fixture import load_manual_fixture
 from packages.chunking.service import ChunkingService
+from packages.compiler.llm_compiler import default_enabled_llm_types
 from packages.core.config import settings
 from packages.ingest.service import IngestService
 from packages.parser.service import ParserService
@@ -117,6 +118,11 @@ COMMAND_SHORTCUTS = [
         "label": "准备审阅包",
         "command": "python3 scripts/prepare_review_pipeline_bundle.py <domain> review_bundle --doc-id <doc_id> --equipment-class-id <equipment_class_id>",
         "purpose": "从已有 Chunk 直接准备可审阅包。",
+    },
+    {
+        "label": "准备审阅包（LLM 编译）",
+        "command": "python3 scripts/prepare_review_pipeline_bundle.py <domain> review_bundle --doc-id <doc_id> --equipment-class-id <equipment_class_id> --llm-backend-config llm_backends.json --llm-backend-name deepseek-remote --llm-type maintenance_procedure --llm-type application_guidance",
+        "purpose": "使用 OpenAI 兼容编译后端增强维护流程和应用指导候选。",
     },
     {
         "label": "应用就绪审阅包",
@@ -1475,6 +1481,8 @@ def load_console_review_center(language: str = "zh") -> dict[str, Any]:
                     "excerpt": entry.get("text_excerpt") or "",
                     "evidenceText": entry.get("evidence_text") or "",
                 },
+                "compileMetadata": entry.get("compile_metadata") or {},
+                "healthFindings": entry.get("health_findings") or [],
                 "sourceDocument": detail.get("doc_name"),
             }
             candidates.append(candidate)
@@ -2119,6 +2127,10 @@ def run_prepare_bundle(
     doc_id: str | None,
     equipment_class_id: str | None,
     workspace_id: str | None = None,
+    llm_backend_config_path: str | None = None,
+    llm_backend_name: str | None = None,
+    enable_llm: bool = True,
+    llm_types: tuple[str, ...] | list[str] | None = None,
     review_root: Path = WORKBENCH_REVIEW_ROOT,
 ) -> dict[str, Any]:
     root = _workspace_root(Path(review_root))
@@ -2130,10 +2142,15 @@ def run_prepare_bundle(
         doc_id=doc_id,
         equipment_class_id=equipment_class_id,
         default_trust_level="L3",
+        llm_backend_config_path=llm_backend_config_path,
+        llm_backend_name=llm_backend_name,
+        enable_llm=enable_llm,
+        llm_enabled_types=llm_types,
     )
     return {
         "workspace_id": resolved_workspace_id,
         "prepare_manifest": manifest,
+        "compiler": manifest.get("compiler", {}),
         "review_workspace": load_review_workspace(resolved_workspace_id, review_root=review_root),
         "apply_workspace": load_apply_workspace(resolved_workspace_id, review_root=review_root),
     }
@@ -2166,6 +2183,11 @@ def load_workbench_payload() -> dict[str, Any]:
             "review": {
                 "workflow_steps": REVIEW_STEPS,
                 "command_shortcuts": COMMAND_SHORTCUTS,
+                "compiler_defaults": {
+                    "default_enabled_types": list(default_enabled_llm_types()),
+                    "backend_config_path": settings.llm_backend_config_path,
+                    "backend_name": settings.llm_backend_name,
+                },
                 "supported_types": sorted(
                     {
                         knowledge_type
@@ -2347,11 +2369,17 @@ async def post_apply_ready(payload: dict[str, Any] = Body(default_factory=dict))
 @app.post("/api/workbench/review-bundle/prepare")
 async def post_prepare_review_bundle(payload: dict[str, Any] = Body(...)) -> dict[str, Any]:
     try:
+        llm_types = payload.get("llm_types")
+        normalized_llm_types = tuple(str(item) for item in llm_types) if isinstance(llm_types, list) else None
         result = run_prepare_bundle(
             str(payload.get("domain_id") or ""),
             doc_id=payload.get("doc_id"),
             equipment_class_id=payload.get("equipment_class_id"),
             workspace_id=payload.get("workspace_id"),
+            llm_backend_config_path=payload.get("llm_backend_config_path"),
+            llm_backend_name=payload.get("llm_backend_name"),
+            enable_llm=bool(payload.get("enable_llm", True)),
+            llm_types=normalized_llm_types,
         )
     except FileNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc

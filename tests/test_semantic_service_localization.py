@@ -131,6 +131,13 @@ def _seed_localized_fault(session_factory) -> None:
                         "fault_code": "A7C1",
                         "fault_name": "Fieldbus Communication",
                         "recommended_actions": ["Check fieldbus status"],
+                        "_compiler_metadata": {
+                            "method": "llm_compiler",
+                            "version": "2026-04-10",
+                        },
+                        "_health_signals": {
+                            "flags": ["weak_evidence"],
+                        },
                         "_localized_display": {
                             "zh": {
                                 "title": "ABB A7C1 现场总线通讯警告",
@@ -197,6 +204,9 @@ def test_semantic_service_returns_localized_display_and_preserves_evidence() -> 
     assert item["structured_payload"]["fault_name"] == "现场总线通讯"
     assert item["structured_payload"]["recommended_actions"] == ["检查现场总线状态"]
     assert item["display_language"] == "zh"
+    assert item["compilation_method"] == "llm_compiler"
+    assert item["compiler_version"] == "2026-04-10"
+    assert item["health_flags"] == ["weak_evidence"]
     assert item["evidence"][0]["evidence_text"] == "A7C1 现场总线适配器A通讯信号丢失。"
 
 
@@ -220,3 +230,4 @@ def test_semantic_service_falls_back_to_english_when_language_is_missing() -> No
     item = payload["items"][0]
     assert item["title"] == "ABB A7C1 Fieldbus Communication Warning"
     assert item["display_language"] == "en"
+    assert item["compilation_method"] == "llm_compiler"

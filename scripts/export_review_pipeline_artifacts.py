@@ -12,6 +12,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from packages.compiler.llm_compiler import OpenAICompatibleBackend
 from scripts.build_review_packs_from_candidates import write_review_packs_from_candidate_file
 from scripts.generate_chunk_backfill_candidates import generate_chunk_backfill_candidates
 from scripts.summarize_review_pipeline_stats import summarize_review_pipeline_stats
@@ -26,6 +27,9 @@ def export_review_pipeline_artifacts(
     equipment_class_id: str | None = None,
     limit: int = 100,
     default_trust_level: str = "L3",
+    llm_backend: OpenAICompatibleBackend | None = None,
+    enable_llm: bool = True,
+    llm_enabled_types: tuple[str, ...] | list[str] | None = None,
 ) -> dict[str, Any]:
     """Generate candidate, review-pack, and stats artifacts into one directory."""
 
@@ -42,6 +46,9 @@ def export_review_pipeline_artifacts(
         chunk_id=chunk_id,
         equipment_class_id=equipment_class_id,
         limit=limit,
+        llm_backend=llm_backend,
+        enable_llm=enable_llm,
+        llm_enabled_types=llm_enabled_types,
     )
     candidate_path.write_text(json.dumps(candidates, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 

@@ -7,6 +7,7 @@ from typing import Any
 
 from sqlalchemy.orm import Session
 
+from packages.compiler.contracts import extract_compile_metadata, public_health_flags
 from packages.db.models import Document
 from packages.db.models_v2 import (
     KnowledgeObjectEvidenceV2,
@@ -315,6 +316,8 @@ class SemanticRetrievalService:
             if not evidence:
                 continue
             title, summary, structured_payload, display_language = self._resolve_display_content(item, language)
+            compiler_metadata = extract_compile_metadata(item.structured_payload_json)
+            health_flags = public_health_flags(item.structured_payload_json)
             items.append(
                 {
                     "knowledge_object_id": item.knowledge_object_id,
@@ -333,6 +336,9 @@ class SemanticRetrievalService:
                     "trust_level": item.trust_level,
                     "review_status": item.review_status,
                     "display_language": display_language,
+                    "compilation_method": compiler_metadata.get("method"),
+                    "compiler_version": compiler_metadata.get("version"),
+                    "health_flags": health_flags,
                     "evidence": evidence,
                 }
             )

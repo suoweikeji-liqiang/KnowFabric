@@ -61,7 +61,9 @@ def _seed_semantic_data(session_factory) -> None:
     try:
         db.execute(OntologyClassV2.__table__.insert(), build_ontology_class_rows(bundle))
         db.execute(OntologyAliasV2.__table__.insert(), build_ontology_alias_rows(bundle))
-        db.execute(OntologyMappingV2.__table__.insert(), build_ontology_mapping_rows(bundle))
+        mapping_rows = build_ontology_mapping_rows(bundle)
+        if mapping_rows:
+            db.execute(OntologyMappingV2.__table__.insert(), mapping_rows)
         db.execute(
             Document.__table__.insert(),
             [

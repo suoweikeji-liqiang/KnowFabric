@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 from typing import Any, Mapping
 
+from packages.compiler.contracts import attach_internal_metadata
+
 DEFAULT_PACKAGE_VERSION = "2.0.0-alpha"
 DEFAULT_ONTOLOGY_VERSION = "2.0.0-alpha"
 
@@ -122,7 +124,11 @@ def _build_knowledge_row(
     package_version: str,
     ontology_version: str,
 ) -> dict[str, Any]:
-    structured_payload = dict(entry["structured_payload"])
+    structured_payload = attach_internal_metadata(
+        dict(entry["structured_payload"]),
+        compile_metadata=entry.get("compiler_metadata"),
+        health_signals=entry.get("health_signals"),
+    )
     localized_display = entry.get("localized_display")
     if localized_display:
         structured_payload["_localized_display"] = localized_display

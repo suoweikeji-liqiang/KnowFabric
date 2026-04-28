@@ -72,7 +72,9 @@ def _seed_ontology(session_factory) -> None:
             bundle = load_domain_package_v2(root)
             db.execute(OntologyClassV2.__table__.insert(), build_ontology_class_rows(bundle))
             db.execute(OntologyAliasV2.__table__.insert(), build_ontology_alias_rows(bundle))
-            db.execute(OntologyMappingV2.__table__.insert(), build_ontology_mapping_rows(bundle))
+            mapping_rows = build_ontology_mapping_rows(bundle)
+            if mapping_rows:
+                db.execute(OntologyMappingV2.__table__.insert(), mapping_rows)
         db.commit()
     finally:
         db.close()
@@ -180,6 +182,8 @@ def test_build_manual_fixture_from_review_candidates_for_hvac(monkeypatch) -> No
     assert entry["canonical_key"] == "E22"
     assert entry["doc"]["doc_id"] == "doc_aux_module_faults"
     assert entry["source_manual"]["path"] == "/Users/asteroida/a00238/11、奥克斯/【奥克斯】中央空调故障代码(模块机、多联机).pdf"
+    assert entry["compiler_metadata"]["method"] == "rule_compiler"
+    assert isinstance(entry["health_signals"]["flags"], list)
 
 
 def test_build_manual_fixture_from_review_candidates_requires_curation(monkeypatch) -> None:

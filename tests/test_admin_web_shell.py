@@ -129,7 +129,7 @@ def test_load_demo_bundle_reads_manifest_notes_and_domain_queries(tmp_path: Path
     assert payload["bundle_language"] == "zh"
     assert payload["cover_note_text"] == "# note\n"
     assert payload["brief_text"] == "# brief\n"
-    assert domains["hvac"]["label"] == "HVAC"
+    assert domains["hvac"]["label"] == "暖通空调"
     assert domains["hvac"]["queries"][0]["title"] == "AHU 分区组运行模式指导"
     assert payload["scenario"]["title"] == "冷站控制知识演示"
     assert payload["scenario"]["primary_cards"][0]["equipment_class_id"] == "chiller"
@@ -149,7 +149,7 @@ def test_load_workbench_payload_reads_fixture_catalog_and_coverage_inventory() -
     )
     samples = {item["doc_id"]: item for item in payload["views"]["documents"]["fixture_samples"]}
 
-    assert payload["title"] == "KnowFabric Internal Workbench"
+    assert payload["title"] == "KnowFabric 知识工程工作台"
     assert payload["summary"]["fixture_count"] >= 1
     assert "fault_code" in soft_starter["covered_knowledge_objects"]
     assert "commissioning_step" in soft_starter["missing_knowledge_objects"]
@@ -492,3 +492,154 @@ def test_run_prepare_bundle_refreshes_review_and_apply_workspace(monkeypatch, tm
     assert result["workspace_id"] == "demo_workspace"
     assert result["review_workspace"]["pack_count"] == 1
     assert result["apply_workspace"]["available"] is True
+
+
+def test_run_prepare_bundle_forwards_llm_compiler_options(monkeypatch, tmp_path: Path) -> None:
+    module = _load_admin_web_module()
+    review_dir = tmp_path / "review_bundle"
+    review_dir.mkdir(parents=True, exist_ok=True)
+    captured = {}
+
+    def fake_prepare(domain_id, output_dir, **kwargs):
+        captured["domain_id"] = domain_id
+        captured["output_dir"] = str(output_dir)
+        captured["kwargs"] = kwargs
+        boot_dir = Path(output_dir) / "bootstrapped_review_packs"
+        boot_dir.mkdir(parents=True, exist_ok=True)
+        readiness_path = Path(output_dir) / "review_pack_readiness_report.json"
+        readiness_path.write_text(
+            json.dumps(
+                {
+                    "pack_dir": str(boot_dir),
+                    "summary": {"ready": 0, "blocked_pending": 0, "blocked_no_accepted": 0, "blocked_invalid": 0},
+                    "results": [],
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        manifest = {
+            "paths": {
+                "bootstrapped_review_pack_dir": str(boot_dir),
+                "readiness_report": str(readiness_path),
+            },
+            "compiler": {
+                "enable_llm": True,
+                "backend_name": "deepseek-remote",
+                "backend_model": "deepseek-chat",
+                "enabled_types": ["maintenance_procedure", "application_guidance"],
+            },
+        }
+        (Path(output_dir) / "prepare_manifest.json").write_text(
+            json.dumps(manifest) + "\n",
+            encoding="utf-8",
+        )
+        return manifest
+
+    monkeypatch.setattr(module, "prepare_review_pipeline_bundle", fake_prepare)
+
+    result = module.run_prepare_bundle(
+        "hvac",
+        doc_id="doc_demo",
+        equipment_class_id="ahu",
+        workspace_id="demo_workspace",
+        llm_backend_config_path="llm_backends.json",
+        llm_backend_name="deepseek-remote",
+        enable_llm=True,
+        llm_types=("maintenance_procedure", "application_guidance"),
+        review_root=review_dir,
+    )
+
+    assert captured["kwargs"]["llm_backend_config_path"] == "llm_backends.json"
+    assert captured["kwargs"]["llm_backend_name"] == "deepseek-remote"
+    assert captured["kwargs"]["enable_llm"] is True
+    assert captured["kwargs"]["llm_enabled_types"] == ("maintenance_procedure", "application_guidance")
+    assert result["compiler"]["backend_name"] == "deepseek-remote"
+
+
+def test_load_console_review_center_exposes_compile_and_health_metadata(monkeypatch, tmp_path: Path) -> None:
+    module = _load_admin_web_module()
+    review_dir = tmp_path / "review_bundle"
+    review_dir.mkdir(parents=True, exist_ok=True)
+    pack_path = review_dir / "demo_pack.json"
+    pack_path.write_text(
+        json.dumps(
+            {
+                "review_mode": "chunk_backfill_review_pack",
+                "domain_id": "hvac",
+                "doc_id": "doc_demo",
+                "doc_name": "Demo Manual.pdf",
+                "equipment_class": {
+                    "equipment_class_id": "ahu",
+                    "equipment_class_key": "hvac:ahu",
+                    "label": "AHU",
+                },
+                "candidate_entries": [
+                    {
+                        "candidate_id": "cand_demo_1",
+                        "knowledge_object_type": "maintenance_procedure",
+                        "canonical_key_candidate": "hvac:ahu:maintenance:inspect_airflow",
+                        "page_no": 12,
+                        "chunk_id": "chunk_demo_1",
+                        "text_excerpt": "inspect airflow and calibrate the ahu",
+                        "evidence_text": "inspect airflow and calibrate the ahu",
+                        "review_decision": "pending",
+                        "curation": {
+                            "title": "Inspect airflow",
+                            "summary": "Inspect airflow and calibrate the AHU.",
+                            "structured_payload": {"task_type": "inspection"},
+                            "applicability": {},
+                            "trust_level": "L3",
+                        },
+                        "compile_metadata": {
+                            "method": "llm_compiler",
+                            "model": "deepseek-chat",
+                            "backend_name": "deepseek-remote",
+                            "version": "2026-04-10",
+                            "rationale": "maintenance instruction detected",
+                        },
+                        "health_findings": [
+                            {
+                                "code": "weak_evidence",
+                                "severity": "medium",
+                                "message": "Candidate relies on a short evidence span.",
+                            }
+                        ],
+                    }
+                ],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    monkeypatch.setattr(
+        module,
+        "load_review_workspace",
+        lambda workspace_id=None, review_root=module.WORKBENCH_REVIEW_ROOT: {
+            "available": True,
+            "workspace_id": "demo_workspace",
+            "resolved_dir": str(review_dir),
+            "packs": [
+                {
+                    "pack_file": "demo_pack.json",
+                    "domain_id": "hvac",
+                    "equipment_class_id": "ahu",
+                    "status": "blocked",
+                    "accepted_count": 0,
+                    "pending_count": 1,
+                    "rejected_count": 0,
+                    "doc_name": "Demo Manual.pdf",
+                }
+            ],
+        },
+    )
+    monkeypatch.setattr(module, "load_console_knowledge_assets", lambda language="zh": {"assets": []})
+    monkeypatch.setattr(module, "_console_ontology_label_map", lambda db, domain_ids, language="zh": {})
+
+    payload = module.load_console_review_center()
+    candidate = payload["candidates"][0]
+
+    assert candidate["compileMetadata"]["method"] == "llm_compiler"
+    assert candidate["compileMetadata"]["model"] == "deepseek-chat"
+    assert candidate["healthFindings"][0]["code"] == "weak_evidence"

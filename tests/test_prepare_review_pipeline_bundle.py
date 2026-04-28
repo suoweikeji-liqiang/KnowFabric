@@ -56,7 +56,9 @@ def _seed_ontology(session_factory) -> None:
             bundle = load_domain_package_v2(root)
             db.execute(OntologyClassV2.__table__.insert(), build_ontology_class_rows(bundle))
             db.execute(OntologyAliasV2.__table__.insert(), build_ontology_alias_rows(bundle))
-            db.execute(OntologyMappingV2.__table__.insert(), build_ontology_mapping_rows(bundle))
+            mapping_rows = build_ontology_mapping_rows(bundle)
+            if mapping_rows:
+                db.execute(OntologyMappingV2.__table__.insert(), mapping_rows)
         db.commit()
     finally:
         db.close()
@@ -99,6 +101,7 @@ def test_prepare_review_pipeline_bundle_writes_full_prepared_bundle(monkeypatch)
         assert Path(manifest["paths"]["bootstrap_report"]).exists()
         assert Path(manifest["paths"]["readiness_report"]).exists()
         assert Path(manifest["paths"]["bootstrapped_stats"]).exists()
+        assert Path(manifest["paths"]["health_report"]).exists()
         assert Path(manifest["paths"]["summary_text"]).exists()
         assert manifest["counts"] == {
             "candidate_entries": 5,
@@ -106,6 +109,7 @@ def test_prepare_review_pipeline_bundle_writes_full_prepared_bundle(monkeypatch)
             "bootstrapped_packs": 2,
             "ready_packs": 0,
         }
+        assert manifest["health"]["total_findings"] >= 1
 
         summary_text = Path(manifest["paths"]["summary_text"]).read_text(encoding="utf-8")
         assert "Review Pipeline Summary" in summary_text

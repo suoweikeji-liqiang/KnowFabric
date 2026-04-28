@@ -57,6 +57,7 @@ def build_review_packs_from_scaffold(scaffold: dict[str, Any]) -> list[dict[str,
                 "equipment_class_id": first["equipment_class_candidate"]["equipment_class_id"],
                 "equipment_class_key": first["equipment_class_candidate"]["equipment_class_key"],
                 "label": first["equipment_class_candidate"]["label"],
+                "supported_knowledge_anchors": first["equipment_class_candidate"].get("supported_knowledge_anchors", []),
             },
             "filters_applied": scaffold.get("filters_applied", {}),
             "review_metadata": {

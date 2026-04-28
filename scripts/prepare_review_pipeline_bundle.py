@@ -12,11 +12,21 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from packages.compiler.llm_compiler import OpenAICompatibleBackend, resolve_backend
 from scripts.bootstrap_review_packs_batch import bootstrap_review_pack_directory
 from scripts.check_review_pack_readiness import check_review_pack_directory
 from scripts.export_review_pipeline_artifacts import export_review_pipeline_artifacts
 from scripts.print_review_pipeline_summary import build_review_pipeline_summary_text
 from scripts.summarize_review_pipeline_stats import summarize_review_pipeline_stats
+from packages.health.checks import build_bundle_health_report
+
+
+def _load_review_packs(pack_dir: Path) -> list[dict[str, Any]]:
+    return [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted(pack_dir.glob("*.json"))
+        if path.name != "review_pack_manifest.json"
+    ]
 
 
 def prepare_review_pipeline_bundle(
@@ -28,11 +38,23 @@ def prepare_review_pipeline_bundle(
     equipment_class_id: str | None = None,
     limit: int = 100,
     default_trust_level: str = "L3",
+    llm_backend: OpenAICompatibleBackend | None = None,
+    llm_backend_config_path: str | Path | None = None,
+    llm_backend_name: str | None = None,
+    enable_llm: bool = True,
+    llm_enabled_types: tuple[str, ...] | list[str] | None = None,
 ) -> dict[str, Any]:
     """Export, bootstrap, validate, and summarize one review bundle."""
 
     destination = Path(output_dir)
     destination.mkdir(parents=True, exist_ok=True)
+
+    active_backend = llm_backend
+    if enable_llm and active_backend is None:
+        active_backend = resolve_backend(
+            config_path=llm_backend_config_path,
+            backend_name=llm_backend_name,
+        )
 
     export_manifest = export_review_pipeline_artifacts(
         domain_id,
@@ -42,6 +64,9 @@ def prepare_review_pipeline_bundle(
         equipment_class_id=equipment_class_id,
         limit=limit,
         default_trust_level=default_trust_level,
+        llm_backend=active_backend,
+        enable_llm=enable_llm,
+        llm_enabled_types=llm_enabled_types,
     )
 
     review_pack_dir = Path(export_manifest["paths"]["review_pack_dir"])
@@ -56,9 +81,13 @@ def prepare_review_pipeline_bundle(
         pack_dir=bootstrapped_dir,
         readiness_report_path=readiness_report["report_path"],
     )
+    review_pack_manifest = json.loads(Path(export_manifest["paths"]["review_pack_manifest"]).read_text(encoding="utf-8"))
+    health_report = build_bundle_health_report(review_pack_manifest, _load_review_packs(bootstrapped_dir))
 
     bootstrapped_stats_path = destination / "bootstrapped_review_pipeline_stats.json"
     bootstrapped_stats_path.write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    health_report_path = destination / "review_bundle_health_report.json"
+    health_report_path.write_text(json.dumps(health_report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     summary_text = build_review_pipeline_summary_text(stats)
     summary_path = destination / "review_pipeline_summary.txt"
     summary_path.write_text(summary_text + "\n", encoding="utf-8")
@@ -83,6 +112,7 @@ def prepare_review_pipeline_bundle(
             "bootstrap_report": bootstrap_report["report_path"],
             "readiness_report": readiness_report["report_path"],
             "bootstrapped_stats": str(bootstrapped_stats_path),
+            "health_report": str(health_report_path),
             "summary_text": str(summary_path),
         },
         "counts": {
@@ -91,6 +121,13 @@ def prepare_review_pipeline_bundle(
             "bootstrapped_packs": bootstrap_report["summary"]["bootstrapped"],
             "ready_packs": readiness_report["summary"]["ready"],
         },
+        "compiler": {
+            "enable_llm": enable_llm and active_backend is not None,
+            "backend_name": active_backend.name if active_backend else None,
+            "backend_model": active_backend.model if active_backend else None,
+            "enabled_types": list(llm_enabled_types or []),
+        },
+        "health": health_report["summary"],
     }
     manifest_path = destination / "prepare_manifest.json"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -115,6 +152,19 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         default="L3",
         help="Default trust level to prefill in generated review packs",
     )
+    parser.add_argument("--llm-backend-config", help="Optional JSON backend config file for OpenAI-compatible compilers")
+    parser.add_argument("--llm-backend-name", help="Optional backend name inside the backend config file")
+    parser.add_argument(
+        "--disable-llm",
+        action="store_true",
+        help="Disable LLM-assisted compilation and use the rule baseline only",
+    )
+    parser.add_argument(
+        "--llm-type",
+        action="append",
+        dest="llm_types",
+        help="Restrict LLM compilation to specific knowledge types (repeatable)",
+    )
     return parser
 
 
@@ -128,6 +178,10 @@ def main(argv: list[str] | None = None) -> int:
         equipment_class_id=args.equipment_class_id,
         limit=args.limit,
         default_trust_level=args.default_trust_level,
+        llm_backend_config_path=args.llm_backend_config,
+        llm_backend_name=args.llm_backend_name,
+        enable_llm=not args.disable_llm,
+        llm_enabled_types=tuple(args.llm_types) if args.llm_types else None,
     )
     print(
         f"Prepared review bundle with {manifest['counts']['candidate_entries']} candidates, "

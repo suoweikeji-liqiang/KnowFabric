@@ -24,6 +24,19 @@ export interface ReviewPackCandidateEntry {
   evidence_text?: string;
   review_decision?: ReviewDecision;
   curation?: ReviewPackCurationPayload;
+  compile_metadata?: {
+    method?: string;
+    version?: string;
+    model?: string;
+    backend_name?: string;
+    rationale?: string;
+    source_span_ids?: string[];
+  };
+  health_findings?: Array<{
+    code?: string;
+    severity?: string;
+    message?: string;
+  }>;
 }
 
 export interface ReviewPackDetail {

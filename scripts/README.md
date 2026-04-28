@@ -19,6 +19,7 @@ For the current operator-facing productization path, start with
 - `run_chinese_demo_shell.py` - One-shot Chinese demo shell launcher: refresh the bundle, then serve the read-only admin web shell
 - `bootstrap_v1_demo.py` - One-shot bootstrap for the external-evaluable v1 demo: migrate, sync, seed, run semantic queries, run MCP smoke, and build the brief
 - `build_v1_demo_brief.py` - Build a Markdown v1 demo brief from generated semantic, MCP, and API reports
+- `build_llm_compile_compare_summary.py` - Render a concise Markdown summary from an LLM compile backend comparison report
 - `run_semantic_demo_queries.py` - Run a fixed semantic demo query set and validate expected canonical knowledge objects
 - `run_api_demo_smoke.py` - Run the fixed semantic demo queries against a live API service over HTTP
 - `run_mcp_demo_smoke.py` - Run the fixed semantic demo queries against the MCP tool surface
@@ -40,6 +41,7 @@ For the current operator-facing productization path, start with
 - `export_review_pipeline_artifacts.py` - Export candidates, review packs, stats, and an artifact manifest for one scoped review bundle
 - `print_review_pipeline_summary.py` - Render review pipeline stats as a terminal-friendly summary
 - `prepare_review_pipeline_bundle.py` - One-shot prepare a full review bundle: export, bootstrap, readiness-check, stats, and summary text
+- `compare_llm_compile_backends.py` - Compare the rule baseline and multiple OpenAI-compatible LLM compiler backends on one candidate scope
 - `prepare_pdf_review_bundle.py` - Bootstrap selected PDF page groups and immediately prepare a ready-to-review bundle
 - `apply_ready_review_bundle.py` - Apply only ready packs from a prepared bundle and refresh apply report, stats, and summary text
 - `backfill_manual_knowledge_from_chunks.py` - Backfill chunk anchors and semantic knowledge objects from existing chunk rows plus manual fixtures
@@ -118,6 +120,21 @@ python3 scripts/generate_chunk_backfill_candidates.py hvac --doc-id <doc_id> --e
 
 # Recommended shortcut: prepare a full review bundle in one command
 python3 scripts/prepare_review_pipeline_bundle.py hvac review_bundle --doc-id <doc_id> --equipment-class-id <equipment_class_id>
+
+# Use an OpenAI-compatible compiler backend for maintenance/application candidates
+python3 scripts/prepare_review_pipeline_bundle.py hvac review_bundle \
+  --doc-id <doc_id> \
+  --equipment-class-id <equipment_class_id> \
+  --llm-backend-config llm_backends.json \
+  --llm-backend-name deepseek-remote \
+  --llm-type maintenance_procedure \
+  --llm-type application_guidance
+
+# Compare DeepSeek/MLX-style OpenAI-compatible compiler backends against the rule baseline
+python3 scripts/compare_llm_compile_backends.py hvac output/llm-compare --backend-config llm_backends.json --doc-id <doc_id> --equipment-class-id <equipment_class_id>
+
+# Render a human-readable Markdown summary from the compare report
+python3 scripts/build_llm_compile_compare_summary.py output/llm-compare/llm_compile_backend_compare_report.json --output output/llm-compare/SUMMARY.md
 
 # Or go straight from one external PDF into a ready-to-review bundle
 python3 scripts/prepare_pdf_review_bundle.py "/path/to/file.pdf" hvac review_bundle --equipment-class-id ahu --page-group "67-72:application_guide" --page-group "93-96:maintenance_guide"

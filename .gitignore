@@ -15,5 +15,10 @@ storage/
 tmp/
 output/demo/
 output/playwright/
+output/llm-compare*/
+llm_backends*.json
+scripts/llm_backends.json
+!scripts/llm_backends.example.json
+.claude/worktrees/
 *.log
 .DS_Store

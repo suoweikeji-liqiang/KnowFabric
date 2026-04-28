@@ -335,6 +335,60 @@ export function ReviewCenterPage() {
             ),
           },
           {
+            id: "compile",
+            label: "编译信息",
+            content: (
+              <div className="stack-section">
+                <article className="note-card">
+                  <div className="detail-grid">
+                    <div>
+                      <span>编译方式</span>
+                      <strong>{selectedCandidate.compileMetadata?.method || "-"}</strong>
+                    </div>
+                    <div>
+                      <span>模型</span>
+                      <strong>{selectedCandidate.compileMetadata?.model || "-"}</strong>
+                    </div>
+                    <div>
+                      <span>后端</span>
+                      <strong>{selectedCandidate.compileMetadata?.backend_name || "-"}</strong>
+                    </div>
+                    <div>
+                      <span>版本</span>
+                      <strong>{selectedCandidate.compileMetadata?.version || "-"}</strong>
+                    </div>
+                    <div className="detail-grid-span">
+                      <span>编译理由</span>
+                      <strong>{selectedCandidate.compileMetadata?.rationale || "未提供"}</strong>
+                    </div>
+                    <div className="detail-grid-span">
+                      <span>证据窗口</span>
+                      <strong>{selectedCandidate.compileMetadata?.source_span_ids?.join(", ") || "-"}</strong>
+                    </div>
+                  </div>
+                </article>
+                <article className="note-card">
+                  <span className="compiler-section-title">健康检查</span>
+                  {selectedCandidate.healthFindings?.length ? (
+                    <div className="stack-section">
+                      {selectedCandidate.healthFindings.map((finding) => (
+                        <article key={`${finding.code}-${finding.message}`} className="note-card is-inline">
+                          <strong>{finding.code}</strong>
+                          <p className="panel-meta">
+                            {finding.severity ? `${finding.severity} · ` : ""}
+                            {finding.message || "无详细说明"}
+                          </p>
+                        </article>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="panel-meta">当前候选没有额外健康告警。</p>
+                  )}
+                </article>
+              </div>
+            ),
+          },
+          {
             id: "source",
             label: "来源关联",
             content: (

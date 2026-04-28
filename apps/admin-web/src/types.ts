@@ -34,6 +34,21 @@ export interface EvidenceCitation {
   evidenceText: string;
 }
 
+export interface CompileMetadata {
+  method?: string;
+  version?: string;
+  model?: string;
+  backend_name?: string;
+  rationale?: string;
+  source_span_ids?: string[];
+}
+
+export interface HealthFinding {
+  code: string;
+  severity?: string;
+  message?: string;
+}
+
 export interface KnowledgeAsset {
   id: string;
   title: string;
@@ -108,6 +123,8 @@ export interface ReviewCandidate {
   trustLevel: string;
   payload: string;
   evidence: EvidenceCitation;
+  compileMetadata?: CompileMetadata;
+  healthFindings?: HealthFinding[];
   sourceDocument: string;
 }
 
