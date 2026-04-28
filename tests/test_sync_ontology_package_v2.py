@@ -49,7 +49,7 @@ def test_sync_domain_package_persists_classes_aliases_and_mappings(monkeypatch) 
         assert domain_id == "hvac"
         assert class_count > 0
         assert alias_count > 0
-        assert mapping_count > 0
+        assert mapping_count == 0
         assert db.query(OntologyClassV2).filter_by(domain_id="hvac").count() == class_count
         assert db.query(OntologyAliasV2).filter_by(domain_id="hvac").count() == alias_count
         assert db.query(OntologyMappingV2).filter_by(domain_id="hvac").count() == mapping_count

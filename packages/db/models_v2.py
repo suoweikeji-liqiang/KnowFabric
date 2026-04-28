@@ -82,7 +82,11 @@ class OntologyAliasV2(Base):
 
 
 class OntologyMappingV2(Base):
-    """External interoperability mappings for canonical ontology classes."""
+    """OEM naming mappings for canonical ontology classes.
+
+    Structural Brick/223P/Open223 mappings moved to sw_base_model under the
+    v0.1 integration contract.
+    """
 
     __tablename__ = "ontology_mapping"
 
@@ -168,6 +172,14 @@ class KnowledgeObjectV2(Base):
     primary_chunk_id = Column(String(64), ForeignKey("content_chunk.chunk_id"), nullable=False, index=True)
     package_version = Column(String(32), nullable=False)
     ontology_version = Column(String(32), nullable=False)
+    curated_against_ontology_version = Column(
+        String(64),
+        nullable=True,
+        doc=(
+            "The sw_base_model ontology_version this KO was curated against "
+            "(semver, e.g., 1.3.0+brick1.3). Null for KOs predating the contract."
+        ),
+    )
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
 
@@ -222,4 +234,25 @@ class KnowledgeObjectEvidenceV2(Base):
             "doc_id",
             "page_no",
         ),
+    )
+
+
+class KOFeedbackEventV2(Base):
+    """Immutable feedback event from sw_base_model."""
+
+    __tablename__ = "ko_feedback_event"
+
+    event_id = Column(String(64), primary_key=True)
+    event_key = Column(String(255), nullable=False, unique=True)
+    event_type = Column(String(64), nullable=False, index=True)
+    project_id = Column(String(64), nullable=False, index=True)
+    finding_id = Column(String(64), index=True)
+    reviewer_id = Column(String(64))
+    knowledge_object_id = Column(String(64), index=True)
+    payload_json = Column(JSON, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+
+    __table_args__ = (
+        UniqueConstraint("event_key", name="uq_ko_feedback_event_key"),
+        Index("idx_ko_feedback_identity", "project_id", "finding_id", "knowledge_object_id", "event_type"),
     )

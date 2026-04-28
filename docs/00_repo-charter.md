@@ -1,35 +1,45 @@
 # Repository Charter
 
 **Status:** Governance Document - Binding Contract
-**Last Updated:** 2026-03-13
+**Last Updated:** 2026-04-28
 
-> Rebuild note: the approved ontology-first reboot is defined in [ADR-0003](adr/0003-promote-knowfabric-to-domain-knowledge-authority.md), [09_ontology-authority-architecture.md](09_ontology-authority-architecture.md), and [10_rebuild-plan.md](10_rebuild-plan.md). This charter remains the baseline contract for the current foundation until the rebuild replaces it.
+> Contract note: the active cross-repository boundary with sw_base_model is
+> defined in [24_knowfabric-sw-base-model-contract.md](24_knowfabric-sw-base-model-contract.md).
+> If this charter conflicts with that contract, the integration contract wins.
 
 ## What KnowFabric Is
 
-KnowFabric is an embeddable knowledge engineering engine for industrial domains. It transforms raw technical documentation into structured, traceable knowledge assets through a mandatory six-layer data pipeline, and delivers them via integration APIs to three classes of consumers.
+KnowFabric is the domain knowledge compilation and authority engine for
+sw_base_model. It transforms raw industrial technical documentation into
+structured, traceable knowledge objects through a mandatory six-layer data
+pipeline, and delivers them to sw_base_model through REST, MCP, and review
+feedback surfaces.
 
 **Core Identity:**
-- Embeddable knowledge engineering engine (not a standalone application)
-- Domain-agnostic foundation with pluggable domain packages
+- Domain knowledge content engine for sw_base_model
+- Evidence-grounded KO compilation from OEM manuals, service guides, and parameter tables
 - Six-layer data architecture with mandatory traceability
-- Integration-first: REST API, MCP Server, and SDK as primary interfaces
+- Integration-first: REST API, MCP Server, and feedback endpoints as primary interfaces
+- Content authority for KOs, evidence chains, trust scoring, and health checks
 
-**Three Consumer Classes:**
-1. **AI Agents** — Consume knowledge via MCP tools and context-optimized APIs (first-class consumer)
-2. **Developers** — Integrate knowledge via REST API and Python SDK into their applications
-3. **Upstream Applications** — Embed KnowFabric as a knowledge backend (chatbots, dashboards, copilots)
+## Relationship to sw_base_model
+
+sw_base_model owns the structural ontology: equipment classes, point classes,
+relation types, location classes, and `ontology_version` publication.
+KnowFabric references those IDs read-only and stamps compiled KOs with
+`curated_against_ontology_version`.
+
+KnowFabric owns the content layer: KO instances, evidence chains, OEM naming
+variants, feedback ingestion, trust signals, and compile/check/publish health
+outputs. The binding integration contract is
+[24_knowfabric-sw-base-model-contract.md](24_knowfabric-sw-base-model-contract.md).
 
 ## What KnowFabric Is NOT
 
-- ❌ NOT a chatbot or conversational AI shell
-- ❌ NOT a document management or file storage system
-- ❌ NOT an automatic knowledge graph inference engine
 - ❌ NOT a device control or real-time automation system
-- ❌ NOT a multi-tenant SaaS platform
-- ❌ NOT a general-purpose RAG demo
-- ❌ NOT an end-user application (it is an engine that powers applications)
-- ❌ NOT a chat frontend or UI-first product
+- ❌ NOT the owner of project-instance or site runtime models
+- ❌ NOT the owner of structural ontology definitions now governed by sw_base_model
+- ❌ NOT a UI-first product shell
 
 ## Mandatory Data Pipeline
 
@@ -50,8 +60,8 @@ Every knowledge output MUST trace through this pipeline. No shortcuts permitted.
 4. Basic retrieval (full-text + vector)
 5. Minimal job tracking and logging
 6. Two domain packages: hvac, drive
-7. Integration API baseline (document upload, processing status, traceability chain, chunk search)
-8. MCP Server baseline (search_knowledge, trace_evidence, list_domains)
+7. Integration API baseline for sw_base_model consumption
+8. MCP Server baseline for sw_base_model tool catalog registration
 9. Docker deployment baseline (docker-compose)
 
 ### Phase 1 Explicitly Does NOT Do
@@ -61,7 +71,7 @@ Every knowledge output MUST trace through this pipeline. No shortcuts permitted.
 3. ❌ Graph reasoning capabilities
 4. ❌ Fine-tuning factory
 5. ❌ Rich admin web interface
-6. ❌ Multi-tenant features
+6. ❌ Project-instance or tenant runtime modeling
 7. ❌ Real-time device control
 8. ❌ AI-optimized knowledge delivery (context assembly, token budgets — Phase 2)
 9. ❌ Python SDK or AI prompt templates (Phase 3)
@@ -99,10 +109,10 @@ Phase 1 is complete ONLY when ALL criteria are met:
 
 1. **Import Capability** - Can import 100+ documents with deduplication working
 2. **Data Chain Stability** - document/page/chunk records generated without data loss
-3. **Retrieval Working** - Full-text and vector search return results with <2s latency
+3. **sw_base_model Consumption Working** - v2 semantic routes return KO and equipment-class data for sw_base_model
 4. **Traceability Present** - Every search result includes: doc_id, page_no, chunk_id, evidence_text
-5. **Incremental Import** - Can add new documents without reprocessing existing ones
-6. **Partial Rerun** - Can reprocess specific doc_id without affecting others
+5. **Ontology Version Stamping** - KOs can record the sw_base_model ontology version they were curated against
+6. **Feedback Ingestion** - sw_base_model can submit confirmation, rejection, coverage-gap, and conflict events idempotently
 7. **Failure Recovery** - Failed jobs logged with stage information; can resume
 
 ### Quality Criteria
@@ -110,6 +120,7 @@ Phase 1 is complete ONLY when ALL criteria are met:
 8. **All Quality Gates Pass** - check-docs, check-boundaries, check-forbidden-deps all return exit code 0
 9. **Domain Packages Valid** - hvac and drive packages have complete manifest/schema/profile
 10. **Documentation Complete** - All packages have README; all core docs exist
+11. **Contract Mirror Enforced** - KnowFabric and sw_base_model contract §1-10 SHA checks pass
 
 ### Non-Criteria (Explicitly NOT Required for Phase 1)
 

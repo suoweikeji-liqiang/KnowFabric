@@ -8,6 +8,13 @@ from packages.core.config import settings
 from packages.core.logging import setup_logging
 from packages.core.semantic_contract_v2 import EquipmentClassExplainEnvelope, SemanticApiEnvelope
 from packages.db.session import get_db
+from packages.retrieval.feedback_service import (
+    ConflictEvidence,
+    CoverageGapSignal,
+    KOConfirmation,
+    KORejection,
+    persist_feedback_event,
+)
 from packages.retrieval.service import RetrievalService
 from packages.retrieval.semantic_service import SemanticRetrievalService
 
@@ -40,6 +47,39 @@ async def root():
         "version": "0.1.0",
         "docs": "/docs"
     }
+
+
+def _feedback_response(db: Session, event_type: str, payload):
+    # Contract v0.1 persists feedback only. Trust score adjustment is deferred.
+    return {"success": True, "data": persist_feedback_event(db, event_type, payload)}
+
+
+@app.post("/api/v2/feedback/ko-confirmation", response_model=dict)
+async def create_ko_confirmation(payload: KOConfirmation, db: Session = Depends(get_db)):
+    """Persist a KO confirmation signal from sw_base_model."""
+
+    return _feedback_response(db, "ko_confirmation", payload)
+
+
+@app.post("/api/v2/feedback/ko-rejection", response_model=dict)
+async def create_ko_rejection(payload: KORejection, db: Session = Depends(get_db)):
+    """Persist a KO rejection signal from sw_base_model."""
+
+    return _feedback_response(db, "ko_rejection", payload)
+
+
+@app.post("/api/v2/feedback/coverage-gap", response_model=dict)
+async def create_coverage_gap(payload: CoverageGapSignal, db: Session = Depends(get_db)):
+    """Persist a coverage gap signal from sw_base_model."""
+
+    return _feedback_response(db, "coverage_gap", payload)
+
+
+@app.post("/api/v2/feedback/conflict-evidence", response_model=dict)
+async def create_conflict_evidence(payload: ConflictEvidence, db: Session = Depends(get_db)):
+    """Persist field evidence that conflicts with a KO."""
+
+    return _feedback_response(db, "conflict_evidence", payload)
 
 
 @app.get("/api/v1/chunks/search", response_model=dict)

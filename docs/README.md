@@ -57,6 +57,8 @@ This directory contains the governance and standards documentation for KnowFabri
 23. **[21_authority-source-validation-round6.md](21_authority-source-validation-round6.md)** - Validation note for HVAC-side authority application guidance from ASHRAE guide material
 24. **[22_external-evaluation-guide.md](22_external-evaluation-guide.md)** - Operator-facing quickstart for bootstrap, smoke, and handoff artifacts
 25. **[23_vnext-compile-check-publish-direction.md](23_vnext-compile-check-publish-direction.md)** - Direction note proposing the next capability loop: compile -> check -> publish
+26. **[24_knowfabric-sw-base-model-contract.md](24_knowfabric-sw-base-model-contract.md)** - **BINDING CONTRACT** with sw_base_model: ownership boundary, ID conventions, data flow, MCP registration, ontology_version sync, feedback channels. Mirrored verbatim in `sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md`.
+27. **[25_knowfabric-side-contract-implementation-plan.md](25_knowfabric-side-contract-implementation-plan.md)** - Codex-executable plan for KnowFabric side of the contract migration (8 tasks; OntologyClassV2 export, drop, feedback API, CI checks, charter rewrite).
 
 ---
 
@@ -72,6 +74,7 @@ These documents define hard boundaries and are enforced by CI:
 - **06_quality-gates.md** - Enforced by `scripts/check-all`
 - **07_phase1-implementation-contract.md** - Enforced by acceptance testing
 - **08_ai-consumer-contract.md** - Defines AI consumer interface standards
+- **24_knowfabric-sw-base-model-contract.md** - Cross-repo integration contract; enforced by `scripts/check-contract-mirror` (paired SHA with `sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md`)
 
 ### Implementation Contracts
 

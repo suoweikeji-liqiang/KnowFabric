@@ -1,5 +1,11 @@
 # External Evaluation Guide
 
+> **Status note (2026-04-27):** With the v0.1 integration contract in place,
+> KnowFabric's primary consumer is sw_base_model. The external evaluation
+> flow described below remains functional and is preserved as an optional
+> standalone demo, but it is not the main delivery path. New work should
+> target sw_base_model consumption first.
+
 **Status:** Operator Guide - Productization
 **Last Updated:** 2026-03-19
 
