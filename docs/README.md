@@ -57,9 +57,9 @@ This directory contains the governance and standards documentation for KnowFabri
 23. **[21_authority-source-validation-round6.md](21_authority-source-validation-round6.md)** - Validation note for HVAC-side authority application guidance from ASHRAE guide material
 24. **[22_external-evaluation-guide.md](22_external-evaluation-guide.md)** - Operator-facing quickstart for bootstrap, smoke, and handoff artifacts
 25. **[23_vnext-compile-check-publish-direction.md](23_vnext-compile-check-publish-direction.md)** - Direction note proposing the next capability loop: compile -> check -> publish
-26. **[24_ai-assisted-compilation-pilot-milestone.md](24_ai-assisted-compilation-pilot-milestone.md)** - Milestone definition for making AI-assisted compilation operationally usable
-27. **[24_knowfabric-sw-base-model-contract.md](24_knowfabric-sw-base-model-contract.md)** - **BINDING CONTRACT** with sw_base_model: ownership boundary, ID conventions, data flow, MCP registration, ontology_version sync, feedback channels. Mirrored verbatim in `sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md`.
-28. **[25_knowfabric-side-contract-implementation-plan.md](25_knowfabric-side-contract-implementation-plan.md)** - Codex-executable plan for KnowFabric side of the contract migration (8 tasks; OntologyClassV2 export, drop, feedback API, CI checks, charter rewrite).
+26. **[24_knowfabric-sw-base-model-contract.md](24_knowfabric-sw-base-model-contract.md)** - **BINDING CONTRACT** with sw_base_model: ownership boundary, ID conventions, data flow, MCP registration, ontology_version sync, feedback channels. Mirrored verbatim in `sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md`.
+27. **[25_knowfabric-side-contract-implementation-plan.md](25_knowfabric-side-contract-implementation-plan.md)** - Codex-executable plan for KnowFabric side of the contract migration (8 tasks; OntologyClassV2 export, drop, feedback API, CI checks, charter rewrite).
+28. **[26_ai-assisted-compilation-pilot-milestone.md](26_ai-assisted-compilation-pilot-milestone.md)** - AI-assisted compilation pilot milestone — defines the operationally-usable bar for Compile/Check/Review/Publish loop
 
 ---
 
@@ -105,9 +105,9 @@ These documents govern the ontology-first rebuild track:
 - **21_authority-source-validation-round6.md** - Findings from adding HVAC-side authority application guidance to the semi-automated flow
 - **22_external-evaluation-guide.md** - Productization-facing operator flow for external evaluation and handoff
 - **23_vnext-compile-check-publish-direction.md** - Direction note on elevating compilation and knowledge-health checks as first-class capabilities
-- **24_ai-assisted-compilation-pilot-milestone.md** - Pilot milestone for making constrained AI-assisted compilation operationally usable
 - **24_knowfabric-sw-base-model-contract.md** - Binding sw_base_model integration contract and ownership boundary
 - **25_knowfabric-side-contract-implementation-plan.md** - KnowFabric-side execution plan for the contract migration
+- **26_ai-assisted-compilation-pilot-milestone.md** - AI-assisted compilation pilot milestone — defines the operationally-usable bar for Compile/Check/Review/Publish loop
 
 ### Standards Documents
 
