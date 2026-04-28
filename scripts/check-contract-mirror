@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+# Check KnowFabric/sw_base_model integration contract mirror discipline.
+set -euo pipefail
+
+contract_path="docs/24_knowfabric-sw-base-model-contract.md"
+baseline_path="scripts/contract_sha_baseline.txt"
+
+sha_for() {
+    local path="$1"
+    python3 - "$path" <<'PY'
+import hashlib
+import re
+import sys
+
+text = open(sys.argv[1], encoding="utf-8").read()
+match = re.search(r"## 1\..*?(?=## CHANGELOG)", text, re.DOTALL)
+if not match:
+    raise SystemExit(f"missing contract sections 1-10 in {sys.argv[1]}")
+print(hashlib.sha256(match.group(0).strip().encode("utf-8")).hexdigest())
+PY
+}
+
+current_sha="$(sha_for "$contract_path")"
+baseline_sha="$(cat "$baseline_path")"
+
+if [ "$current_sha" != "$baseline_sha" ]; then
+    echo "ERROR: Contract section SHA changed."
+    echo "  Expected: $baseline_sha"
+    echo "  Got:      $current_sha"
+    echo "  If intentional, update $baseline_path and coordinate a paired sw_base_model PR."
+    exit 1
+fi
+
+# CI may have only this repository checked out. In that case the baseline check
+# above is authoritative. When sw_base_model is co-located, also compare mirrors.
+sw_base_candidates=(
+    "../sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md"
+    "../../../../sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md"
+)
+
+for sw_base_path in "${sw_base_candidates[@]}"; do
+    if [ -f "$sw_base_path" ]; then
+        cross_sha="$(sha_for "$sw_base_path")"
+        if [ "$current_sha" != "$cross_sha" ]; then
+            echo "ERROR: Contract differs between KnowFabric and sw_base_model."
+            echo "  KnowFabric:    $current_sha"
+            echo "  sw_base_model: $cross_sha"
+            exit 1
+        fi
+        echo "OK: contract SHA matches baseline and sw_base_model mirror."
+        exit 0
+    fi
+done
+
+echo "OK: contract SHA matches baseline. sw_base_model mirror not found; skipped cross-repo check."

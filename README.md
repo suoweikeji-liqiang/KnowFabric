@@ -1,7 +1,17 @@
 # KnowFabric
 
-KnowFabric is rebuilding into an ontology-first domain knowledge authority and
-publishing engine for industrial equipment knowledge.
+KnowFabric is the domain knowledge compilation and authority engine for the
+intelligent O&M platform at `sw_base_model`. It ingests raw industrial documents
+(OEM manuals, service guides, parameter tables) and compiles them into
+evidence-grounded knowledge objects (fault codes, parameter specs, diagnostic
+chains, etc.) that sw_base_model consumes via REST and MCP.
+
+KnowFabric does not own structural ontology (equipment classes, point classes,
+relation types). Those live in sw_base_model. KnowFabric owns the content
+layer: the knowledge objects, evidence chains, trust scoring, and health checks.
+
+For the integration contract between the two repos, see
+[docs/24_knowfabric-sw-base-model-contract.md](docs/24_knowfabric-sw-base-model-contract.md).
 
 Current repository reality:
 
@@ -9,7 +19,7 @@ Current repository reality:
 - HVAC and drive demo query sets are runnable
 - `scripts/bootstrap_v1_demo.py` can migrate, sync, seed, run semantic checks,
   run MCP smoke, and build a handoff brief
-- API and MCP smoke paths are available for external evaluation
+- API and MCP smoke paths remain available as optional standalone demos
 
 Rebuild entry points:
 
@@ -17,19 +27,21 @@ Rebuild entry points:
 - [Ontology Authority Architecture](docs/09_ontology-authority-architecture.md)
 - [Rebuild Plan](docs/10_rebuild-plan.md)
 - [Semantic API and MCP Contract](docs/14_semantic-api-mcp-contract.md)
-- [External Evaluation Guide](docs/22_external-evaluation-guide.md)
+- [KnowFabric x sw_base_model Contract](docs/24_knowfabric-sw-base-model-contract.md)
+- [External Evaluation Guide](docs/22_external-evaluation-guide.md) (historical standalone demo path)
 
 ## Product Boundary
 
 KnowFabric owns:
 
-- canonical industrial ontology packages
 - evidence-grounded knowledge objects
 - semantic delivery through REST and MCP
 - curated domain knowledge packs
+- feedback and health signals for sw_base_model consumption
 
 KnowFabric does not own:
 
+- structural ontology definitions owned by sw_base_model
 - project-instance or site runtime models
 - control logic or live telemetry behavior
 - UI-first product shells
@@ -37,7 +49,11 @@ KnowFabric does not own:
 The six-layer evidence discipline remains mandatory. Chunks stay the truth
 source, and every semantic response must remain evidence-backed.
 
-## Fastest Evaluation Path
+## Optional Standalone Evaluation Path
+
+The primary delivery path is sw_base_model consumption through the v0.1
+integration contract. The standalone evaluation flow below remains available for
+operator demos and regression checks.
 
 From the repository root:
 

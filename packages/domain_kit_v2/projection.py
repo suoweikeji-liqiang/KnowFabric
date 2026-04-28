@@ -13,6 +13,7 @@ from .models import DomainPackageV2
 
 ALIASES_FILE = Path("ontology/aliases.yaml")
 MAPPINGS_FILE = Path("ontology/mappings.yaml")
+STRUCTURAL_MAPPING_SYSTEMS = {"brick", "223p", "open223"}
 
 
 def make_ontology_class_key(domain_id: str, ontology_class_id: str) -> str:
@@ -131,7 +132,7 @@ def build_ontology_alias_rows(bundle: DomainPackageV2) -> list[dict[str, Any]]:
 
 
 def build_ontology_mapping_rows(bundle: DomainPackageV2) -> list[dict[str, Any]]:
-    """Project external mappings from classes.yaml and mappings.yaml."""
+    """Project OEM naming mappings from classes.yaml and mappings.yaml."""
 
     rows: list[dict[str, Any]] = []
     seen: set[tuple[str, str, str]] = set()
@@ -139,6 +140,8 @@ def build_ontology_mapping_rows(bundle: DomainPackageV2) -> list[dict[str, Any]]
 
     for item in bundle.ontology_classes.classes:
         for mapping_system, external_id in item.external_mappings.items():
+            if mapping_system in STRUCTURAL_MAPPING_SYSTEMS:
+                continue
             key = (item.id, mapping_system, external_id)
             if key in seen:
                 continue
@@ -158,6 +161,8 @@ def build_ontology_mapping_rows(bundle: DomainPackageV2) -> list[dict[str, Any]]
 
     mapping_data = _load_yaml_file(bundle.root_path / MAPPINGS_FILE)
     for mapping_system, definitions in mapping_data.get("mappings", {}).items():
+        if mapping_system in STRUCTURAL_MAPPING_SYSTEMS:
+            continue
         for index, item in enumerate(definitions):
             canonical_id = item["canonical_id"]
             external_id = item["external_id"]
