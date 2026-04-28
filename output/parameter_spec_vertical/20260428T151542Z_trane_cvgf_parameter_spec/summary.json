@@ -1,0 +1,19 @@
+{
+  "run_id": "20260428T151542Z_trane_cvgf_parameter_spec",
+  "output_dir": "output/parameter_spec_vertical/20260428T151542Z_trane_cvgf_parameter_spec",
+  "report_path": "output/parameter_spec_vertical/20260428T151542Z_trane_cvgf_parameter_spec/REPORT.md",
+  "chunks": 84,
+  "llm_calls": 8,
+  "raw_llm_candidates": 12,
+  "verified_llm_candidates": 9,
+  "rejected_llm_candidates": 3,
+  "rule_candidates": 0,
+  "shared_parameter_names": 0,
+  "llm_only": 9,
+  "rule_only": 0,
+  "prompt_tokens": 15082,
+  "completion_tokens": 5687,
+  "estimated_cost_rmb": 0.027038,
+  "status": "within",
+  "errors": []
+}
