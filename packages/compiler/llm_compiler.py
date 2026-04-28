@@ -39,6 +39,7 @@ class OpenAICompatibleBackend:
     model: str
     api_key: str | None = None
     timeout_seconds: int = 30
+    request_options: dict[str, Any] | None = None
 
 
 def default_backend() -> OpenAICompatibleBackend | None:
@@ -67,12 +68,16 @@ def backend_from_dict(payload: dict[str, Any]) -> OpenAICompatibleBackend:
     if not api_key and api_key_env:
         api_key = os.getenv(str(api_key_env))
     timeout_seconds = int(payload.get("timeout_seconds") or settings.llm_compile_timeout_seconds)
+    request_options = payload.get("request_options")
+    if request_options is not None and not isinstance(request_options, dict):
+        raise ValueError("backend request_options must be an object")
     return OpenAICompatibleBackend(
         name=str(payload.get("name") or model),
         api_base_url=api_base_url,
         model=model,
         api_key=str(api_key) if api_key else None,
         timeout_seconds=timeout_seconds,
+        request_options=dict(request_options or {}),
     )
 
 
@@ -382,12 +387,7 @@ def _request_json_completion(
     messages: list[dict[str, str]],
     backend: OpenAICompatibleBackend,
 ) -> dict[str, Any]:
-    payload = {
-        "model": backend.model,
-        "temperature": 0.0,
-        "messages": messages,
-        "response_format": {"type": "json_object"},
-    }
+    payload = _chat_completion_payload(messages, backend)
     base_url = backend.api_base_url.rstrip("/")
     headers = {
         "Content-Type": "application/json",
@@ -416,6 +416,23 @@ def _request_json_completion(
     if not isinstance(content, str) or not content.strip():
         raise RuntimeError("LLM compile returned empty content")
     return json.loads(content)
+
+
+def _chat_completion_payload(
+    messages: list[dict[str, str]],
+    backend: OpenAICompatibleBackend,
+) -> dict[str, Any]:
+    payload = {
+        "model": backend.model,
+        "temperature": 0.0,
+        "messages": messages,
+        "response_format": {"type": "json_object"},
+    }
+    for key, value in (backend.request_options or {}).items():
+        if key in {"model", "messages"}:
+            continue
+        payload[key] = value
+    return payload
 
 
 def normalize_llm_canonical_key(

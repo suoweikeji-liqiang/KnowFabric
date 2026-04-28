@@ -8,7 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from packages.compiler.llm_compiler import backend_from_dict
+from packages.compiler.llm_compiler import _chat_completion_payload, backend_from_dict
 from scripts.compare_llm_compile_backends import compare_llm_compile_backends, load_backend_configs
 
 
@@ -49,6 +49,34 @@ def test_load_backend_configs_accepts_wrapped_json_list() -> None:
 
     assert len(backends) == 1
     assert backends[0].name == "mlx-local"
+
+
+def test_backend_request_options_are_applied_to_chat_payload() -> None:
+    backend = backend_from_dict(
+        {
+            "name": "deepseek-flash",
+            "api_base_url": "https://api.deepseek.com",
+            "model": "deepseek-v4-flash",
+            "request_options": {
+                "thinking": {"type": "disabled"},
+                "max_tokens": 1200,
+                "top_p": 1.0,
+                "model": "ignored",
+                "messages": [{"role": "user", "content": "ignored"}],
+            },
+        }
+    )
+    messages = [{"role": "user", "content": "extract json"}]
+
+    payload = _chat_completion_payload(messages, backend)
+
+    assert payload["model"] == "deepseek-v4-flash"
+    assert payload["messages"] == messages
+    assert payload["thinking"] == {"type": "disabled"}
+    assert payload["max_tokens"] == 1200
+    assert payload["top_p"] == 1.0
+    assert payload["temperature"] == 0.0
+    assert payload["response_format"] == {"type": "json_object"}
 
 
 def test_compare_llm_compile_backends_writes_rule_and_backend_reports() -> None:
