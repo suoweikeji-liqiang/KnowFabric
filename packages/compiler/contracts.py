@@ -5,7 +5,40 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
+from pydantic import BaseModel, Field
+
 DEFAULT_COMPILER_VERSION = "2026-04-10"
+
+
+class ParameterSpecCandidate(BaseModel):
+    """Strict structured output shape for document-level parameter_spec extraction."""
+
+    parameter_name: str = Field(description="Configurable parameter name as written in source")
+    canonical_key_hint: str | None = Field(default=None, description="Suggested canonical key")
+    value: str | None = None
+    unit: str | None = None
+    range_min: str | None = None
+    range_max: str | None = None
+    default_value: str | None = None
+    description: str | None = None
+    evidence_quote: str = Field(
+        description="Verbatim text from manual that contains this parameter, MUST be exact substring of source"
+    )
+    page_hint: int | None = Field(default=None, description="Page number where parameter appears, if visible from chunk anchors")
+    confidence: float = Field(ge=0.0, le=1.0)
+
+
+class DocumentExtractionResponse(BaseModel):
+    """Strict document-level extraction response."""
+
+    candidates: list[ParameterSpecCandidate] = Field(default_factory=list)
+    skipped_reason: str | None = Field(
+        default=None,
+        description="If no parameters extractable, populate this and leave candidates empty",
+    )
+
+
+ExtractionResponse = DocumentExtractionResponse
 
 
 def build_compile_metadata(

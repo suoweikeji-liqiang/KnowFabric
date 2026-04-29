@@ -7,10 +7,10 @@ import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 from urllib import error, request
 
-from packages.compiler.contracts import DEFAULT_COMPILER_VERSION, build_compile_metadata
+from packages.compiler.contracts import DEFAULT_COMPILER_VERSION, DocumentExtractionResponse, build_compile_metadata
 from packages.core.config import settings
 from packages.db.models import ContentChunk, Document, DocumentPage
 
@@ -234,6 +234,32 @@ def compile_llm_candidates(
     return normalized
 
 
+def compile_document_parameter_specs(
+    *,
+    domain_id: str,
+    document_name: str,
+    equipment_class_id: str,
+    full_manual_text: str,
+    backend: OpenAICompatibleBackend,
+    request_recorder: Callable[[dict[str, Any]], None] | None = None,
+) -> DocumentExtractionResponse:
+    """Extract parameter_spec candidates from one assembled manual in a single LLM call."""
+
+    messages = _build_document_parameter_spec_prompt(
+        domain_id=domain_id,
+        document_name=document_name,
+        equipment_class_id=equipment_class_id,
+        full_manual_text=full_manual_text,
+    )
+    payload = _request_json_completion(
+        messages,
+        backend,
+        response_format=_document_extraction_response_format(),
+        recorder=request_recorder,
+    )
+    return DocumentExtractionResponse.model_validate(payload)
+
+
 def _build_prompt(
     *,
     domain_id: str,
@@ -287,6 +313,51 @@ def _build_prompt(
     ]
 
 
+def _build_document_parameter_spec_prompt(
+    *,
+    domain_id: str,
+    document_name: str,
+    equipment_class_id: str,
+    full_manual_text: str,
+) -> list[dict[str, str]]:
+    system_prompt = (
+        "You are a senior HVAC engineer reading a chiller equipment manual. Extract ALL CONFIGURABLE OPERATIONAL "
+        "PARAMETERS from this manual into a structured list. A parameter_spec is a CONFIGURABLE setpoint, limit, "
+        "mode selection, or adjustable value that an operator or commissioning engineer would set. Examples include "
+        "chilled water setpoints, current limit setpoints, mode selections, default values with adjustable ranges. "
+        "NOT parameter_specs: marketing claims describing product features, such as sensors collect data 3 times "
+        "per second; internal control algorithm constants, such as comparison runs every 5 seconds; UI interaction "
+        "descriptions, such as use up/down arrows to adjust; fault codes; performance specs at design conditions. "
+        "For EACH parameter, provide parameter_name as written in source, values/ranges/defaults only when stated, "
+        "evidence_quote as a SHORT VERBATIM CONTIGUOUS substring of the manual, page_hint from [[chunk_id=... page=N]] "
+        "markers, and confidence. Prefer the exact parameter label or a 5-40 word phrase copied directly from one "
+        "chunk. Do NOT synthesize table cells into a new sentence or parenthetical expression. If the exact words do "
+        "not appear contiguously in the manual, do not use them as evidence_quote. If you cannot quote verbatim, do "
+        "not include the parameter. If a parameter is mentioned in "
+        "MULTIPLE places, return it ONCE with evidence_quote from the most authoritative location. If no configurable "
+        "parameters are present, return candidates=[] with skipped_reason. Do not invent parameters. Positive "
+        "examples: Active Chilled Water Setpoint 44.0°F; Active Current Limit Setpoint 100% RLA; Chilled Water Reset "
+        "mode Return / Constant Return / Outdoor / None. Negative examples: 智能传感器每秒采集三次数据; 比较间隔每五秒; "
+        "Time Setpoint adjustment uses up/down arrows. Use EXACTLY these JSON field names: candidates, skipped_reason, "
+        "parameter_name, canonical_key_hint, value, unit, range_min, range_max, default_value, description, "
+        "evidence_quote, page_hint, confidence. Do not use values/defaults. confidence MUST be a numeric float from "
+        "0.0 to 1.0, not words like high. page_hint MUST be an integer page number or null."
+    )
+    user_prompt = (
+        f"Domain: {domain_id}\n"
+        f"Equipment class: {equipment_class_id}\n"
+        f"Manual filename: {document_name}\n\n"
+        "Manual content (chunk anchors marked):\n"
+        f"{full_manual_text}\n\n"
+        "Return strictly this JSON shape and no prose:\n"
+        '{"candidates":[{"parameter_name":"...","canonical_key_hint":null,"value":null,"unit":null,'
+        '"range_min":null,"range_max":null,"default_value":null,"description":null,'
+        '"evidence_quote":"exact parameter label or contiguous source phrase","page_hint":1,"confidence":0.9}],'
+        '"skipped_reason":null}'
+    )
+    return [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}]
+
+
 def _context_allowed_types(
     allowed_types: list[str],
     *,
@@ -299,7 +370,7 @@ def _context_allowed_types(
     filtered = []
     for knowledge_type in allowed_types:
         if knowledge_type == "parameter_spec":
-            if _is_llm_parameter_context(normalized_text, chunk.chunk_type, page.page_type):
+            if not _is_negative_metadata_context(chunk.chunk_type, page.page_type):
                 filtered.append(knowledge_type)
             continue
         if knowledge_type == "application_guidance":
@@ -331,29 +402,9 @@ def _combined_type_text(chunk_type: str, page_type: str | None) -> str:
     return " ".join(filter(None, [chunk_type.lower(), (page_type or "").lower()]))
 
 
-def _is_llm_parameter_context(normalized_text: str, chunk_type: str, page_type: str | None) -> bool:
+def _is_negative_metadata_context(chunk_type: str, page_type: str | None) -> bool:
     combined_type = _combined_type_text(chunk_type, page_type)
-    if any(token in combined_type for token in ("fault", "alarm", "maintenance", "commission", "wiring")):
-        return False
-    if any(token in combined_type for token in ("parameter", "spec", "setting")):
-        return True
-    parameter_markers = (
-        "parameter",
-        "setting",
-        "setpoint",
-        "default",
-        "range",
-        "limit",
-        "threshold",
-        "参数",
-        "设定",
-        "默认",
-        "范围",
-        "限值",
-        "阈值",
-    )
-    has_value = bool(re.search(r"\d+(?:\.\d+)?\s*(?:kw|rt|hz|v|a|m3/h|l/s|c|°c|%)", normalized_text))
-    return has_value and any(marker in normalized_text for marker in parameter_markers)
+    return any(token in combined_type for token in ("fault", "alarm", "maintenance", "commission", "wiring"))
 
 
 def _is_llm_application_context(normalized_text: str, chunk_type: str, page_type: str | None) -> bool:
@@ -418,8 +469,11 @@ def _is_llm_symptom_context(normalized_text: str, chunk_type: str, page_type: st
 def _request_json_completion(
     messages: list[dict[str, str]],
     backend: OpenAICompatibleBackend,
+    *,
+    response_format: dict[str, Any] | None = None,
+    recorder: Callable[[dict[str, Any]], None] | None = None,
 ) -> dict[str, Any]:
-    payload = _chat_completion_payload(messages, backend)
+    payload = _chat_completion_payload(messages, backend, response_format=response_format)
     base_url = backend.api_base_url.rstrip("/")
     headers = {
         "Content-Type": "application/json",
@@ -437,6 +491,8 @@ def _request_json_completion(
             body = json.loads(response.read().decode("utf-8"))
     except error.URLError as exc:
         raise RuntimeError(f"LLM compile request failed: {exc}") from exc
+    if recorder is not None:
+        recorder({"request": payload, "response": body})
 
     content = (
         body.get("choices", [{}])[0]
@@ -453,18 +509,26 @@ def _request_json_completion(
 def _chat_completion_payload(
     messages: list[dict[str, str]],
     backend: OpenAICompatibleBackend,
+    *,
+    response_format: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     payload = {
         "model": backend.model,
         "temperature": 0.0,
         "messages": messages,
-        "response_format": {"type": "json_object"},
+        "response_format": response_format or {"type": "json_object"},
     }
     for key, value in (backend.request_options or {}).items():
         if key in {"model", "messages"}:
             continue
+        if key == "response_format" and response_format is not None:
+            continue
         payload[key] = value
     return payload
+
+
+def _document_extraction_response_format() -> dict[str, Any]:
+    return {"type": "json_object"}
 
 
 def normalize_llm_canonical_key(
