@@ -1,0 +1,144 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-04-29T13:46:37.586Z",
+  "phase": "parameter_spec_vertical_measurement",
+  "phase_name": "parameter_spec LLM compilation vertical measurement",
+  "phase_dir": ".",
+  "plan": null,
+  "task": "handoff",
+  "total_tasks": 1,
+  "status": "paused",
+  "branch": "master",
+  "branch_status": "ahead of origin/master by 7 commits",
+  "completed_tasks": [
+    {
+      "id": 1,
+      "name": "Resolve docs/24 numbering collision",
+      "status": "done",
+      "commit": "691b186"
+    },
+    {
+      "id": 2,
+      "name": "Task 8 cutover from OntologyClassV2 to sw_base_model ontology client",
+      "status": "done",
+      "commit": "2b49729"
+    },
+    {
+      "id": 3,
+      "name": "Support backend request options",
+      "status": "done",
+      "commit": "1aa3883"
+    },
+    {
+      "id": 4,
+      "name": "Enable parameter_spec LLM candidates",
+      "status": "done",
+      "commit": "a7dbced"
+    },
+    {
+      "id": 5,
+      "name": "Fix real PDF parser NUL ingestion issue",
+      "status": "done",
+      "commit": "2c8c576"
+    },
+    {
+      "id": 6,
+      "name": "Fix timezone-aware processing timestamps",
+      "status": "done",
+      "commit": "e49da66"
+    },
+    {
+      "id": 7,
+      "name": "Run parameter_spec vertical on Trane CVGF manual",
+      "status": "done",
+      "commit": "863f85f"
+    }
+  ],
+  "remaining_tasks": [
+    {
+      "id": 1,
+      "name": "Human review of REPORT.md and verified candidates",
+      "status": "not_started"
+    },
+    {
+      "id": 2,
+      "name": "Decide whether to tune parameter_spec prompt/context, switch model, expand to fault_code, or start OCR",
+      "status": "not_started"
+    },
+    {
+      "id": 3,
+      "name": "Push master when operator is ready",
+      "status": "not_started"
+    }
+  ],
+  "blockers": [],
+  "human_actions_pending": [
+    {
+      "action": "Review output/parameter_spec_vertical/20260428T151542Z_trane_cvgf_parameter_spec/REPORT.md",
+      "context": "Accuracy needs human-in-the-loop validation; no ground truth YAML was provided.",
+      "blocking": true
+    },
+    {
+      "action": "Decide the next KO direction",
+      "context": "Verbatim verification is good at 75.0%, cost is negligible, but LLM-only count is only 9.",
+      "blocking": true
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Use deepseek-v4-flash as the single backend",
+      "rationale": "User confirmed the model and cost profile were acceptable for the run.",
+      "phase": "parameter_spec_vertical_measurement"
+    },
+    {
+      "decision": "Use centrifugal_chiller as equipment_class_id",
+      "rationale": "Automatic matcher confidence was only 0.554, so operator confirmation was required and received.",
+      "phase": "parameter_spec_vertical_measurement"
+    },
+    {
+      "decision": "Keep scripts/llm_backends.json ignored and uncommitted",
+      "rationale": "The file contains the user's LLM API key.",
+      "phase": "parameter_spec_vertical_measurement"
+    }
+  ],
+  "run_summary": {
+    "run_id": "20260428T151542Z_trane_cvgf_parameter_spec",
+    "report_path": "output/parameter_spec_vertical/20260428T151542Z_trane_cvgf_parameter_spec/REPORT.md",
+    "doc_id": "doc_883beab5e0004a2c",
+    "pdf_path": "/Volumes/TSD302/pan/a00238/05、特灵中央空调/特灵/【特灵】CVGF 400-1000离心机操作维护手册（64页）-制冷百家网.pdf",
+    "pages": 64,
+    "chunks": 84,
+    "equipment_class_id": "centrifugal_chiller",
+    "llm_backend": "deepseek-parameter-spec / deepseek-v4-flash",
+    "llm_calls": 8,
+    "prompt_tokens": 15082,
+    "completion_tokens": 5687,
+    "estimated_cost_rmb": 0.027038,
+    "raw_llm_candidates": 12,
+    "verified_llm_candidates": 9,
+    "rejected_llm_candidates": 3,
+    "rule_candidates": 0,
+    "llm_only": 9,
+    "rule_only": 0,
+    "verbatim_verification_rate": "75.0%"
+  },
+  "verification": {
+    "pytest": "venv/bin/python -m pytest tests/ -x: 153 passed",
+    "check_all": "bash scripts/check-all: all 4 gates passed",
+    "secret_scan": "No obvious API key/Bearer token patterns found in output run directory before commit"
+  },
+  "uncommitted_files": [
+    ".continue-here.md",
+    ".planning/HANDOFF.json"
+  ],
+  "ignored_local_files_to_preserve": [
+    ".env",
+    "scripts/llm_backends.json",
+    "venv/",
+    "storage/",
+    "tmp/",
+    "cache directories"
+  ],
+  "next_action": "Open REPORT.md, review the verified LLM candidates, then ask the operator whether to tune parameter_spec prompt/context or move to another KO type.",
+  "context_notes": "This was a measurement run. The report is committed. Do not modify contract docs or sw_base_model unless a new task explicitly requires it. Do not print or commit scripts/llm_backends.json."
+}
