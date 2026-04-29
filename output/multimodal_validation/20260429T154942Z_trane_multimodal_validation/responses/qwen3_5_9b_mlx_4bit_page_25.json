@@ -1,0 +1,39 @@
+{
+  "request_page": 25,
+  "model": "Qwen3.5-9B-MLX-4bit",
+  "response": {
+    "id": "chatcmpl-a51201b0",
+    "object": "chat.completion",
+    "created": 1777505465,
+    "model": "Qwen3.5-9B-MLX-4bit",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The user wants a list of configurable operational parameters from the provided image.\nI need to scan the image for text that looks like settings or parameters.\nThe image is a page from a Trane manual, specifically about the \"机组控制面板(UCP)\" (Unit Control Panel).\n\n**Analysis of the first table (Active Chilled Water Setpoint Arbitration):**\n- \"Active Chilled Water Setpoint Arbitration\" is the title of the section.\n- \"Front Panel\" is a source.\n- \"BAS\" is a source.\n- \"External\" is a source.\n- \"Chilled Water Reset\" is a parameter with options: \"Return/Constant Return/Outdoor/None\".\n- \"Active Chilled Water Setpoint\" is the result.\n- \"Auto\" and \"Stop\" are buttons, not parameters themselves (unless the label is the parameter name, but here they seem to be mode selectors). Wait, the prompt says \"Do not include UI buttons unless the button label is itself the parameter name.\" \"Auto\" and \"Stop\" are likely modes, but let's look closer. The text below says \"动态冷冻水温度设定",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "finish_reason": "length"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2379,
+      "completion_tokens": 240,
+      "total_tokens": 2619,
+      "input_tokens": 2379,
+      "output_tokens": 240,
+      "cached_tokens": null,
+      "model_load_duration": null,
+      "time_to_first_token": null,
+      "total_time": null,
+      "prompt_eval_duration": null,
+      "generation_duration": null,
+      "prompt_tokens_per_second": null,
+      "generation_tokens_per_second": null
+    }
+  },
+  "text": "The user wants a list of configurable operational parameters from the provided image.\nI need to scan the image for text that looks like settings or parameters.\nThe image is a page from a Trane manual, specifically about the \"机组控制面板(UCP)\" (Unit Control Panel).\n\n**Analysis of the first table (Active Chilled Water Setpoint Arbitration):**\n- \"Active Chilled Water Setpoint Arbitration\" is the title of the section.\n- \"Front Panel\" is a source.\n- \"BAS\" is a source.\n- \"External\" is a source.\n- \"Chilled Water Reset\" is a parameter with options: \"Return/Constant Return/Outdoor/None\".\n- \"Active Chilled Water Setpoint\" is the result.\n- \"Auto\" and \"Stop\" are buttons, not parameters themselves (unless the label is the parameter name, but here they seem to be mode selectors). Wait, the prompt says \"Do not include UI buttons unless the button label is itself the parameter name.\" \"Auto\" and \"Stop\" are likely modes, but let's look closer. The text below says \"动态冷冻水温度设定",
+  "parsed_lines": []
+}

@@ -1,0 +1,45 @@
+{
+  "request_page": 45,
+  "model": "gemma-4-e4b-it-4bit",
+  "response": {
+    "id": "chatcmpl-29bddec9",
+    "object": "chat.completion",
+    "created": 1777505307,
+    "model": "gemma-4-e4b-it-4bit",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Chilled Water Setpoint | Chilled Water Setpoint(ECWS)\nSupply Air Temperature | Supply Air Temperature\nSupply Airflow | Supply Airflow\nFan Speed | Fan Speed\nPump Speed | Pump Speed",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 382,
+      "completion_tokens": 43,
+      "total_tokens": 425,
+      "input_tokens": 382,
+      "output_tokens": 43,
+      "cached_tokens": null,
+      "model_load_duration": null,
+      "time_to_first_token": null,
+      "total_time": null,
+      "prompt_eval_duration": null,
+      "generation_duration": null,
+      "prompt_tokens_per_second": null,
+      "generation_tokens_per_second": null
+    }
+  },
+  "text": "Chilled Water Setpoint | Chilled Water Setpoint(ECWS)\nSupply Air Temperature | Supply Air Temperature\nSupply Airflow | Supply Airflow\nFan Speed | Fan Speed\nPump Speed | Pump Speed",
+  "parsed_lines": [
+    "Chilled Water Setpoint | Chilled Water Setpoint(ECWS)",
+    "Supply Air Temperature | Supply Air Temperature",
+    "Supply Airflow | Supply Airflow",
+    "Fan Speed | Fan Speed",
+    "Pump Speed | Pump Speed"
+  ]
+}

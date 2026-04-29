@@ -1,0 +1,39 @@
+{
+  "request_page": 25,
+  "model": "GLM-OCR-bf16",
+  "response": {
+    "id": "chatcmpl-f6277ac7",
+    "object": "chat.completion",
+    "created": 1777505223,
+    "model": "GLM-OCR-bf16",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "动态冷冻水温度设定(Active Chilled Water Setpoint Arbitration)是经常使用的设定。它可以将华氏或摄氏温度的精度设置到0.1度。按动态冷冻水设定左边的双箭头就可以进入动态冷冻水设定的子屏幕了。\n\n动态冷冻水设定是Front Panel(控制面板)、BAS和External(外部设定)综合后的结果。\n\n在冷冻水重置状态(Active Chilled Water Setpoint)区域的右栏中会显示以下信息之一：Return(回水)，Constant Return(恒定回水)，Outdoor(室外)，None(无)。\n\n左栏中的Front Panel(前端面板)，BAS，External(外部设定)和Active chilled water limit(动态冷冻水设定)，无论是否安装或者启用这些选项，它们都会显示。如果没有安装这一选项，在第二列中就会显示----，若已安装的话就会显示当前的设定。\n\n按“Back按钮”可返回冷水机组屏幕。\n\n动态电流限制设定(active curreat Limit setpoint)是经常使用的电流限制设定。它以RLA百分比的形式表示。按动态电流限制设定左面的双箭头(the double arrow)可进入动态电流限制设定",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "finish_reason": "length"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3092,
+      "completion_tokens": 240,
+      "total_tokens": 3332,
+      "input_tokens": 3092,
+      "output_tokens": 240,
+      "cached_tokens": null,
+      "model_load_duration": null,
+      "time_to_first_token": null,
+      "total_time": null,
+      "prompt_eval_duration": null,
+      "generation_duration": null,
+      "prompt_tokens_per_second": null,
+      "generation_tokens_per_second": null
+    }
+  },
+  "text": "动态冷冻水温度设定(Active Chilled Water Setpoint Arbitration)是经常使用的设定。它可以将华氏或摄氏温度的精度设置到0.1度。按动态冷冻水设定左边的双箭头就可以进入动态冷冻水设定的子屏幕了。\n\n动态冷冻水设定是Front Panel(控制面板)、BAS和External(外部设定)综合后的结果。\n\n在冷冻水重置状态(Active Chilled Water Setpoint)区域的右栏中会显示以下信息之一：Return(回水)，Constant Return(恒定回水)，Outdoor(室外)，None(无)。\n\n左栏中的Front Panel(前端面板)，BAS，External(外部设定)和Active chilled water limit(动态冷冻水设定)，无论是否安装或者启用这些选项，它们都会显示。如果没有安装这一选项，在第二列中就会显示----，若已安装的话就会显示当前的设定。\n\n按“Back按钮”可返回冷水机组屏幕。\n\n动态电流限制设定(active curreat Limit setpoint)是经常使用的电流限制设定。它以RLA百分比的形式表示。按动态电流限制设定左面的双箭头(the double arrow)可进入动态电流限制设定",
+  "parsed_lines": []
+}
