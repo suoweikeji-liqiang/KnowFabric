@@ -17,7 +17,7 @@ def test_fault_query_defaults() -> None:
     """Fault query contract should apply stable defaults."""
 
     query = FaultKnowledgeQuery(domain_id="hvac", equipment_class_id="centrifugal_chiller")
-    assert query.limit == 20
+    assert query.limit == 100
     assert query.min_trust_level == "L4"
     assert query.include_related_symptoms is True
     assert query.language == "en"
@@ -76,7 +76,10 @@ def test_semantic_envelope_shape() -> None:
                 "query_type": "fault_knowledge",
                 "filters_applied": {"domain_id": "hvac", "equipment_class_id": "centrifugal_chiller"},
                 "total": 1,
-                "limit": 20,
+                "total_count": 1,
+                "returned_count": 1,
+                "has_more": False,
+                "limit": 100,
                 "requested_language": "en",
                 "display_fallback_used": False,
             },
@@ -85,6 +88,8 @@ def test_semantic_envelope_shape() -> None:
     assert payload.data.items[0].equipment_class.equipment_class_id == "centrifugal_chiller"
     assert payload.data.items[0].evidence[0].chunk_id == "chunk_001"
     assert payload.data.items[0].display_language == "en"
+    assert payload.metadata.total_count == 1
+    assert payload.metadata.has_more is False
 
 
 if __name__ == "__main__":

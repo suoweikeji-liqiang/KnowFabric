@@ -240,6 +240,9 @@ def test_parameter_profiles_route_returns_parameter_and_performance_items() -> N
         assert response.status_code == 200
         assert payload["metadata"]["query_type"] == "parameter_profile"
         assert len(payload["data"]["items"]) == 2
+        assert payload["metadata"]["total_count"] == 2
+        assert payload["metadata"]["returned_count"] == 2
+        assert payload["metadata"]["has_more"] is False
         assert {item["knowledge_object_type"] for item in payload["data"]["items"]} == {
             "parameter_spec",
             "performance_spec",

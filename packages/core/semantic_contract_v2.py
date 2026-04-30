@@ -75,6 +75,9 @@ class SemanticQueryMetadata(SemanticBaseModel):
     query_type: str
     filters_applied: dict[str, Any]
     total: int
+    total_count: int
+    returned_count: int
+    has_more: bool
     limit: int
     compatibility_surfaces: list[str] = Field(
         default_factory=lambda: ["/api/v1/chunks/search", "trace_evidence", "search_knowledge"]
@@ -138,7 +141,7 @@ class FaultKnowledgeQuery(SemanticBaseModel):
     include_related_symptoms: bool = True
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
-    limit: int = Field(default=20, ge=1, le=100)
+    limit: int = Field(default=100, ge=1, le=100)
     language: str = "en"
 
 
@@ -153,7 +156,7 @@ class ParameterProfileQuery(SemanticBaseModel):
     model_family: str | None = None
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
-    limit: int = Field(default=20, ge=1, le=100)
+    limit: int = Field(default=100, ge=1, le=100)
     language: str = "en"
 
 
@@ -168,7 +171,7 @@ class MaintenanceGuidanceQuery(SemanticBaseModel):
     include_diagnostic_steps: bool = True
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
-    limit: int = Field(default=20, ge=1, le=100)
+    limit: int = Field(default=100, ge=1, le=100)
     language: str = "en"
 
 
@@ -182,7 +185,7 @@ class ApplicationGuidanceQuery(SemanticBaseModel):
     model_family: str | None = None
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
-    limit: int = Field(default=20, ge=1, le=100)
+    limit: int = Field(default=100, ge=1, le=100)
     language: str = "en"
 
 
@@ -196,7 +199,7 @@ class OperationalGuidanceQuery(SemanticBaseModel):
     model_family: str | None = None
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     min_trust_level: TrustLevel = "L4"
-    limit: int = Field(default=20, ge=1, le=100)
+    limit: int = Field(default=100, ge=1, le=100)
     language: str = "en"
 
 
@@ -256,7 +259,7 @@ MCP_TOOL_GET_FAULT_KNOWLEDGE: dict[str, Any] = {
                 "type": "integer",
                 "minimum": 1,
                 "maximum": 100,
-                "default": 20,
+                "default": 100,
             },
             "language": {
                 "type": "string",
@@ -317,7 +320,7 @@ MCP_TOOL_GET_PARAMETER_PROFILE: dict[str, Any] = {
                 "type": "integer",
                 "minimum": 1,
                 "maximum": 100,
-                "default": 20,
+                "default": 100,
             },
             "language": {
                 "type": "string",
@@ -378,7 +381,7 @@ MCP_TOOL_GET_MAINTENANCE_GUIDANCE: dict[str, Any] = {
                 "type": "integer",
                 "minimum": 1,
                 "maximum": 100,
-                "default": 20,
+                "default": 100,
             },
             "language": {
                 "type": "string",
@@ -435,7 +438,7 @@ MCP_TOOL_GET_APPLICATION_GUIDANCE: dict[str, Any] = {
                 "type": "integer",
                 "minimum": 1,
                 "maximum": 100,
-                "default": 20,
+                "default": 100,
             },
             "language": {
                 "type": "string",
@@ -493,7 +496,7 @@ MCP_TOOL_GET_OPERATIONAL_GUIDANCE: dict[str, Any] = {
                 "type": "integer",
                 "minimum": 1,
                 "maximum": 100,
-                "default": 20,
+                "default": 100,
             },
             "language": {
                 "type": "string",
