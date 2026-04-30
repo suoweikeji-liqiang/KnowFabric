@@ -1,0 +1,39 @@
+{
+  "request_page": 5,
+  "model": "gemma-4-e4b-it-4bit",
+  "response": {
+    "id": "chatcmpl-07cfba24",
+    "object": "chat.completion",
+    "created": 1777511318,
+    "model": "gemma-4-e4b-it-4bit",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "NONE",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 202,
+      "completion_tokens": 1,
+      "total_tokens": 203,
+      "input_tokens": 202,
+      "output_tokens": 1,
+      "cached_tokens": null,
+      "model_load_duration": null,
+      "time_to_first_token": null,
+      "total_time": null,
+      "prompt_eval_duration": null,
+      "generation_duration": null,
+      "prompt_tokens_per_second": null,
+      "generation_tokens_per_second": null
+    }
+  },
+  "text": "NONE",
+  "parsed_lines": []
+}
