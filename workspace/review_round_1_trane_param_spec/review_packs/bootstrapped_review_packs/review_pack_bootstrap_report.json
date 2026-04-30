@@ -1,0 +1,26 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-04-30T13:50:15.952380+00:00",
+  "pack_dir": "review_packs",
+  "output_dir": "review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 25,
+  "target_decisions": [
+    "accepted",
+    "pending"
+  ],
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_883beab5e0004a2c__centrifugal_chiller.json",
+      "source_path": "review_packs/hvac__doc_883beab5e0004a2c__centrifugal_chiller.json",
+      "status": "bootstrapped",
+      "entries_updated": 25,
+      "output_path": "review_packs/bootstrapped_review_packs/hvac__doc_883beab5e0004a2c__centrifugal_chiller.json"
+    }
+  ]
+}

@@ -149,6 +149,7 @@ def _build_knowledge_row(
         "primary_chunk_id": entry["chunk"]["chunk_id"],
         "package_version": package_version,
         "ontology_version": ontology_version,
+        "curated_against_ontology_version": entry.get("curated_against_ontology_version"),
     }
 
 

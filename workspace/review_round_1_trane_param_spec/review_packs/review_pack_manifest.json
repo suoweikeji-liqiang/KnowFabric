@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-04-30T13:50:11.075592+00:00",
+  "source_generation_mode": "llm_doc_level_v4_with_judge",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": null,
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_883beab5e0004a2c__centrifugal_chiller.json",
+      "doc_id": "doc_883beab5e0004a2c",
+      "doc_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_class_key": "hvac:centrifugal_chiller",
+      "candidate_count": 25
+    }
+  ]
+}

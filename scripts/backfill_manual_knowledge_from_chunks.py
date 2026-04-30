@@ -29,6 +29,34 @@ def _merge_rows(session, model, rows: list[dict]) -> None:
         session.merge(model(**row))
 
 
+def _dedupe_new_anchor_rows(session, rows: list[dict]) -> list[dict]:
+    """Keep one anchor per chunk/class pair and skip anchors already in storage."""
+
+    unique_rows: dict[tuple[str, str], dict] = {}
+    for row in rows:
+        key = (row["chunk_id"], row["ontology_class_key"])
+        unique_rows.setdefault(key, row)
+
+    existing_keys = set()
+    for chunk_id, ontology_class_key in unique_rows:
+        existing = (
+            session.query(ChunkOntologyAnchorV2.chunk_anchor_id)
+            .filter(
+                ChunkOntologyAnchorV2.chunk_id == chunk_id,
+                ChunkOntologyAnchorV2.ontology_class_key == ontology_class_key,
+            )
+            .one_or_none()
+        )
+        if existing is not None:
+            existing_keys.add((chunk_id, ontology_class_key))
+
+    return [
+        row
+        for key, row in unique_rows.items()
+        if key not in existing_keys
+    ]
+
+
 def _load_equipment_class(client: SwBaseModelOntologyClient, equipment_class_key: str) -> dict:
     equipment_class = client.get_equipment_class(equipment_class_key)
     if equipment_class is None:
@@ -70,6 +98,7 @@ def backfill_manual_fixture_from_chunks(path: str | Path) -> tuple[str, int]:
             chunk_contexts=_load_chunk_contexts(session, chunk_ids),
             match_method="manual_backfill",
         )
+        rows["anchors"] = _dedupe_new_anchor_rows(session, rows["anchors"])
         _merge_rows(session, ChunkOntologyAnchorV2, rows["anchors"])
         session.flush()
         _merge_rows(session, KnowledgeObjectV2, rows["knowledge_objects"])

@@ -1,0 +1,259 @@
+{
+  "summary": {
+    "accepted": 23,
+    "rejected": 2,
+    "borderline": 0
+  },
+  "records": [
+    {
+      "index": 1,
+      "candidate_id": "cand_30bfed1339a3f37b",
+      "parameter_name": "Date",
+      "zh_title": "当前日期",
+      "suggested_decision": "rejected",
+      "reason_zh": "这是界面时间/日期显示或时钟设置，不是离心式冷水机组的运行、保护或控制参数。",
+      "page_no": 27,
+      "evidence_quote": "Date"
+    },
+    {
+      "index": 2,
+      "candidate_id": "cand_68d3f836b4ca13c0",
+      "parameter_name": "Differential to Start",
+      "zh_title": "启动温差",
+      "suggested_decision": "accepted",
+      "reason_zh": "控制冷水机组启动条件的温差设定，属于可配置运行控制参数。",
+      "page_no": 29,
+      "evidence_quote": "Differential to Start"
+    },
+    {
+      "index": 3,
+      "candidate_id": "cand_7e50207e43355c43",
+      "parameter_name": "Differential to Stop",
+      "zh_title": "停机温差",
+      "suggested_decision": "accepted",
+      "reason_zh": "控制冷水机组停机条件的温差设定，属于可配置运行控制参数。",
+      "page_no": 29,
+      "evidence_quote": "Differential to Stop"
+    },
+    {
+      "index": 4,
+      "candidate_id": "cand_b30317bad703ec98",
+      "parameter_name": "External Base Loading Setpoint",
+      "zh_title": "外部基本负荷设定",
+      "suggested_decision": "accepted",
+      "reason_zh": "基本负荷控制相关设定，影响机组负荷控制方式，属于运行参数。",
+      "page_no": 29,
+      "evidence_quote": "External Base Loading Setpoint"
+    },
+    {
+      "index": 5,
+      "candidate_id": "cand_341a810876df29d2",
+      "parameter_name": "External Chilled Water Setpoint",
+      "zh_title": "外部冷冻水设定值",
+      "suggested_decision": "accepted",
+      "reason_zh": "外部来源的冷冻水设定值，属于核心控制设定参数。",
+      "page_no": 29,
+      "evidence_quote": "External Chilled Water Setpoint"
+    },
+    {
+      "index": 6,
+      "candidate_id": "cand_9e493f44221239ef",
+      "parameter_name": "External Current Limit Setpoint",
+      "zh_title": "外部电流限制设定值",
+      "suggested_decision": "accepted",
+      "reason_zh": "外部来源的电流限制设定值，用于需求限制/电流保护控制，属于运行参数。",
+      "page_no": 29,
+      "evidence_quote": "External Current Limit Setpoint"
+    },
+    {
+      "index": 7,
+      "candidate_id": "cand_fe8d59f843c1d361",
+      "parameter_name": "Front Panel Base Load Setpoint",
+      "zh_title": "前面板基本负荷设定值",
+      "suggested_decision": "accepted",
+      "reason_zh": "通过前面板配置的基本负荷设定，影响容量/负荷控制，属于运行参数。",
+      "page_no": 29,
+      "evidence_quote": "Front Panel Base Load Setpoint"
+    },
+    {
+      "index": 8,
+      "candidate_id": "cand_9fbf6c61f4f225c5",
+      "parameter_name": "Front Panel Chilled Water Setpoint",
+      "zh_title": "前面板冷冻水设定值",
+      "suggested_decision": "accepted",
+      "reason_zh": "通过前面板配置的冷冻水设定值，是冷水机组核心控制参数。",
+      "page_no": 29,
+      "evidence_quote": "Front Panel Chilled Water Setpoint"
+    },
+    {
+      "index": 9,
+      "candidate_id": "cand_a6a27a8c7dea73f0",
+      "parameter_name": "Front Panel Current Limit Setpoint",
+      "zh_title": "前面板电流限制设定值",
+      "suggested_decision": "accepted",
+      "reason_zh": "通过前面板配置的电流限制设定，影响电流限制控制，属于运行参数。",
+      "page_no": 29,
+      "evidence_quote": "Front Panel Current Limit Setpoint"
+    },
+    {
+      "index": 10,
+      "candidate_id": "cand_7244bdd357718b62",
+      "parameter_name": "Outdoor Maximum Reset",
+      "zh_title": "室外最大重置",
+      "suggested_decision": "accepted",
+      "reason_zh": "冷冻水重置策略中的最大重置量，属于控制策略参数。",
+      "page_no": 29,
+      "evidence_quote": "Outdoor Maximum Reset"
+    },
+    {
+      "index": 11,
+      "candidate_id": "cand_23bcf5ca50ab38c2",
+      "parameter_name": "Outdoor Reset Ratio",
+      "zh_title": "室外重置率",
+      "suggested_decision": "accepted",
+      "reason_zh": "冷冻水重置策略中的室外温度重置比例，属于控制策略参数。",
+      "page_no": 29,
+      "evidence_quote": "Outdoor Reset Ratio"
+    },
+    {
+      "index": 12,
+      "candidate_id": "cand_ba811bf939ec274d",
+      "parameter_name": "Return Maximum Reset",
+      "zh_title": "回水最大重置",
+      "suggested_decision": "accepted",
+      "reason_zh": "回水重置策略中的最大重置量，属于控制策略参数。",
+      "page_no": 29,
+      "evidence_quote": "Return Maximum Reset"
+    },
+    {
+      "index": 13,
+      "candidate_id": "cand_1629db375cefe089",
+      "parameter_name": "Return Reset Ratio",
+      "zh_title": "回水重置率",
+      "suggested_decision": "accepted",
+      "reason_zh": "回水重置策略中的比例设定，属于控制策略参数。",
+      "page_no": 29,
+      "evidence_quote": "Return Reset Ratio"
+    },
+    {
+      "index": 14,
+      "candidate_id": "cand_fd1f4e2c03568016",
+      "parameter_name": "Setpoint Source",
+      "zh_title": "设定值来源",
+      "suggested_decision": "accepted",
+      "reason_zh": "决定设定值来自前面板、BAS 或其他来源，属于控制配置参数。",
+      "page_no": 29,
+      "evidence_quote": "Setpoint Source"
+    },
+    {
+      "index": 15,
+      "candidate_id": "cand_d86a27272a0dcce1",
+      "parameter_name": "Time Format",
+      "zh_title": "时间格式",
+      "suggested_decision": "rejected",
+      "reason_zh": "这是显示/时钟格式设置，不是设备运行、保护或控制参数。",
+      "page_no": 30,
+      "evidence_quote": "Time Format"
+    },
+    {
+      "index": 16,
+      "candidate_id": "cand_5132b597706f4f1e",
+      "parameter_name": "最大压差设定值",
+      "zh_title": "最大压差设定值",
+      "suggested_decision": "accepted",
+      "reason_zh": "有默认值和可调范围，压力差设定影响机组保护/控制逻辑，属于参数。",
+      "page_no": 43,
+      "evidence_quote": "最大压差  标准设为30 psi"
+    },
+    {
+      "index": 17,
+      "candidate_id": "cand_16f611a491ce0b3a",
+      "parameter_name": "最小压差设定值",
+      "zh_title": "最小压差设定值",
+      "suggested_decision": "accepted",
+      "reason_zh": "有默认值和可调范围，压力差设定影响机组保护/控制逻辑，属于参数。",
+      "page_no": 43,
+      "evidence_quote": "最小压差  标准设定为 0 psi"
+    },
+    {
+      "index": 18,
+      "candidate_id": "cand_5f8db2b23acaa860",
+      "parameter_name": "容量控制软载时间",
+      "zh_title": "容量控制软载时间",
+      "suggested_decision": "accepted",
+      "reason_zh": "有 0-120 分钟范围和默认值，控制软载过滤时间常数，属于可配置控制参数。",
+      "page_no": 51,
+      "evidence_quote": "容量控制软载时间(0-120分钟，默认值为10分钟)"
+    },
+    {
+      "index": 19,
+      "candidate_id": "cand_20a759005f0e53c0",
+      "parameter_name": "最大容量限制",
+      "zh_title": "最大容量限制",
+      "suggested_decision": "accepted",
+      "reason_zh": "通过维修工具修改，限制机组最大容量并影响 BAS 联动，属于运行控制参数。",
+      "page_no": 51,
+      "evidence_quote": "最小（默认为0％）和最大容量（默认为100%）的设置可以通过维修工具软件来修改"
+    },
+    {
+      "index": 20,
+      "candidate_id": "cand_20a759005f0e53c0",
+      "parameter_name": "最小容量限制",
+      "zh_title": "最小容量限制",
+      "suggested_decision": "accepted",
+      "reason_zh": "通过维修工具修改，限制压缩机卸载能力，属于运行控制参数。",
+      "page_no": 51,
+      "evidence_quote": "最小（默认为0％）和最大容量（默认为100%）的设置可以通过维修工具软件来修改"
+    },
+    {
+      "index": 21,
+      "candidate_id": "cand_e2c2beaeb21208af",
+      "parameter_name": "最小电流限制设定",
+      "zh_title": "最小电流限制设定",
+      "suggested_decision": "accepted",
+      "reason_zh": "有 20-100% RLA 范围和 40% RLA 默认值，属于电流限制保护/需求控制参数。",
+      "page_no": 51,
+      "evidence_quote": "最小电流限制设定的默认设置为 40% RLA (可设为 20-100 %)"
+    },
+    {
+      "index": 22,
+      "candidate_id": "cand_6db23ecf26219bfb",
+      "parameter_name": "滤波器时间",
+      "zh_title": "滤波器时间",
+      "suggested_decision": "accepted",
+      "reason_zh": "有 0-120 分钟范围和 10 分钟默认值，用于电流限制设定调整后的稳定控制，属于控制参数。",
+      "page_no": 51,
+      "evidence_quote": "滤波器时间默认为 10分钟 (可设为 0-120分钟 )"
+    },
+    {
+      "index": 23,
+      "candidate_id": "cand_f3ed7a56a454750b",
+      "parameter_name": "电流限制控制软载时间",
+      "zh_title": "电流限制控制软载时间",
+      "suggested_decision": "accepted",
+      "reason_zh": "有 0-120 分钟范围和默认值，控制电流限制设定过滤时间常数，属于控制参数。",
+      "page_no": 51,
+      "evidence_quote": "电流限制控制软载时间(0-120分钟，默认值为10分钟)"
+    },
+    {
+      "index": 24,
+      "candidate_id": "cand_d0ec82e3c9c84be0",
+      "parameter_name": "电流限制软载起动百分数",
+      "zh_title": "电流限制软载起动百分数",
+      "suggested_decision": "accepted",
+      "reason_zh": "有 20-100% 范围和 40% 默认值，决定电流限制软载起点，属于控制参数。",
+      "page_no": 51,
+      "evidence_quote": "电流限制软载起动百分数(20-100%，默认值为40%)"
+    },
+    {
+      "index": 25,
+      "candidate_id": "cand_8ed25c80f3e446e5",
+      "parameter_name": "重启抑制时间设定",
+      "zh_title": "重启抑制时间设定",
+      "suggested_decision": "accepted",
+      "reason_zh": "默认 20 分钟且可由 TechView 修改，影响机组重启抑制逻辑，属于保护/运行参数。",
+      "page_no": 53,
+      "evidence_quote": "默认设定是 20分钟"
+    }
+  ]
+}

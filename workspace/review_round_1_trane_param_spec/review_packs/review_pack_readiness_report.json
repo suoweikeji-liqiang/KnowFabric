@@ -1,0 +1,36 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-04-30T14:00:57.197446+00:00",
+  "pack_dir": "review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 1,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_883beab5e0004a2c__centrifugal_chiller.json",
+      "pack_path": "review_packs/hvac__doc_883beab5e0004a2c__centrifugal_chiller.json",
+      "doc_id": "doc_883beab5e0004a2c",
+      "doc_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_class_key": "hvac:centrifugal_chiller",
+      "candidate_count": 25,
+      "accepted_count": 23,
+      "rejected_count": 2,
+      "pending_count": 0,
+      "status": "ready",
+      "blocker": null,
+      "ready_manual_entries": 23,
+      "fixture_equipment_class_key": "hvac:centrifugal_chiller"
+    }
+  ]
+}
