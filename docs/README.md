@@ -60,6 +60,10 @@ This directory contains the governance and standards documentation for KnowFabri
 26. **[24_knowfabric-sw-base-model-contract.md](24_knowfabric-sw-base-model-contract.md)** - **BINDING CONTRACT** with sw_base_model: ownership boundary, ID conventions, data flow, MCP registration, ontology_version sync, feedback channels. Mirrored verbatim in `sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md`.
 27. **[25_knowfabric-side-contract-implementation-plan.md](25_knowfabric-side-contract-implementation-plan.md)** - Codex-executable plan for KnowFabric side of the contract migration (8 tasks; OntologyClassV2 export, drop, feedback API, CI checks, charter rewrite).
 28. **[26_ai-assisted-compilation-pilot-milestone.md](26_ai-assisted-compilation-pilot-milestone.md)** - AI-assisted compilation pilot milestone — defines the operationally-usable bar for Compile/Check/Review/Publish loop
+29. **[27_authority-schema-upgrade-design.md](27_authority-schema-upgrade-design.md)** - DRAFT design for authority-layer schema upgrade (Document/KO/Evidence) and clause-based parser path for industry standards. Required before fault_code vertical can handle ASHRAE-class authority documents.
+30. **[28_contract-v0.2-proposal.md](28_contract-v0.2-proposal.md)** - DRAFT contract v0.2 proposal — adds authority hierarchy (§11) + authority-aware response fields (§4.2). Requires paired PR in `sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md`.
+31. **[29_admin-web-ui-design-brief.md](29_admin-web-ui-design-brief.md)** - Self-contained design context package for Claude-driven UI redesign of admin-web (authority-aware). Includes data model, page list, UX principles, real sample data.
+32. **[29_admin-web-ui-design-prompt.md](29_admin-web-ui-design-prompt.md)** - Companion prompt for the design brief; paste into Claude with the brief uploaded as attachment to start a 3-stage design session.
 
 ---
 
@@ -76,6 +80,7 @@ These documents define hard boundaries and are enforced by CI:
 - **07_phase1-implementation-contract.md** - Enforced by acceptance testing
 - **08_ai-consumer-contract.md** - Defines AI consumer interface standards
 - **24_knowfabric-sw-base-model-contract.md** - Cross-repo integration contract; enforced by `scripts/check-contract-mirror` (paired SHA with `sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md`)
+- **28_contract-v0.2-proposal.md** - DRAFT proposal to upgrade the contract to v0.2 (authority hierarchy + conflict resolution). Not yet binding; see proposal §5 acceptance gate.
 
 ### Implementation Contracts
 
