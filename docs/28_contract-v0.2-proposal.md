@@ -1,10 +1,11 @@
 # Contract v0.2 Proposal — Authority Hierarchy & Conflict Resolution
 
-> **Status**: PROPOSAL — paired PR required between KnowFabric and sw_base_model before merging
+> **Status**: ✅ APPLIED 2026-05-01 — operator approved on `agree`, paired changes merged into both [docs/24](24_knowfabric-sw-base-model-contract.md) and `sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md`. This file remains as the historical proposal record.
+> **Original Status**: PROPOSAL — paired PR required between KnowFabric and sw_base_model before merging
 > **Date**: 2026-05-01
 > **Companion design**: [docs/27_authority-schema-upgrade-design.md](27_authority-schema-upgrade-design.md)
-> **Current contract**: [docs/24_knowfabric-sw-base-model-contract.md](24_knowfabric-sw-base-model-contract.md) v0.1
-> **Target SHA baseline**: TBD (computed after both repos accept the diff)
+> **Current contract**: [docs/24_knowfabric-sw-base-model-contract.md](24_knowfabric-sw-base-model-contract.md) **v0.2** (was v0.1 at proposal time)
+> **Target SHA baseline**: ✅ ACHIEVED — `7aa6193d0a44b596d1f3e97a3aff0af495c3cd35aa5ff9693d61de00482efdd1` (replaces v0.1 baseline `46db2983...`)
 
 ---
 
