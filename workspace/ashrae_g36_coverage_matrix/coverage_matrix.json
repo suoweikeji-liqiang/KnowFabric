@@ -1,0 +1,1023 @@
+{
+  "generated_at": "2026-05-06T15:49:29.564612+00:00",
+  "doc_id": "doc_4bbd3703c4f84be4",
+  "manual": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+  "standard_id": "ASHRAE Guideline 36-2021",
+  "rollup": {
+    "top_level_sections_total": 22,
+    "covered_or_partial_sections": 16,
+    "not_run_sections": 6,
+    "accepted_candidates_total": 141,
+    "type_totals": {
+      "application_guidance": 1,
+      "operational_sequence": 72,
+      "commissioning_procedure": 5,
+      "fault_diagnostic_rule": 53,
+      "parameter_spec": 3,
+      "commissioning_step": 7
+    },
+    "trust_totals": {
+      "L3": 71,
+      "L4": 70
+    },
+    "status_counts": {
+      "partial": 1,
+      "not_run": 6,
+      "covered": 15
+    }
+  },
+  "runs": [
+    {
+      "run_id": "20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36",
+      "sections": [
+        "5.1.14",
+        "5.20",
+        "5.21"
+      ],
+      "raw_candidates": 29,
+      "anchor_passed": 24,
+      "judge_accepted": 22,
+      "judge_rejected": 2,
+      "final_by_type": {
+        "application_guidance": 1,
+        "operational_sequence": 15,
+        "commissioning_procedure": 1,
+        "fault_diagnostic_rule": 4,
+        "parameter_spec": 1
+      },
+      "l4_final": 3,
+      "l3_final": 19,
+      "gates": {
+        "G1": "PASS",
+        "G2": "PASS",
+        "G3": "PASS",
+        "G4": "PASS"
+      },
+      "report_path": "output/ashrae_guideline36_vertical/20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md"
+    },
+    {
+      "run_id": "20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36",
+      "sections": [
+        "5.4",
+        "5.5",
+        "5.6",
+        "5.15",
+        "5.16"
+      ],
+      "raw_candidates": 46,
+      "anchor_passed": 46,
+      "judge_accepted": 42,
+      "judge_rejected": 2,
+      "final_by_type": {
+        "commissioning_procedure": 4,
+        "operational_sequence": 23,
+        "parameter_spec": 2,
+        "fault_diagnostic_rule": 13
+      },
+      "l4_final": 12,
+      "l3_final": 30,
+      "gates": {
+        "G1": "PASS",
+        "G2": "PASS",
+        "G3": "PASS",
+        "G4": "PASS"
+      },
+      "report_path": "output/ashrae_guideline36_vertical/20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md"
+    },
+    {
+      "run_id": "20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36",
+      "sections": [
+        "5.7",
+        "5.8",
+        "5.9",
+        "5.10",
+        "5.11",
+        "5.12",
+        "5.13",
+        "5.14"
+      ],
+      "raw_candidates": 81,
+      "anchor_passed": 81,
+      "judge_accepted": 77,
+      "judge_rejected": 4,
+      "final_by_type": {
+        "fault_diagnostic_rule": 36,
+        "operational_sequence": 34,
+        "commissioning_step": 7
+      },
+      "l4_final": 55,
+      "l3_final": 22,
+      "gates": {
+        "G1": "PASS",
+        "G2": "PASS",
+        "G3": "PASS",
+        "G4": "PASS"
+      },
+      "report_path": "output/ashrae_guideline36_vertical/20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md"
+    }
+  ],
+  "api_smoke_reports": [
+    {
+      "path": "workspace/review_round_ashrae_g36/review_packs/api_smoke_report.json",
+      "summary": {
+        "targets": 5,
+        "passed": 5,
+        "failed": 0
+      },
+      "results": [
+        {
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "application_guidance",
+          "expected_accepted_count": 1,
+          "visible_matching_count": 1,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "expected_accepted_count": 4,
+          "visible_matching_count": 4,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "operational_sequence",
+          "expected_accepted_count": 9,
+          "visible_matching_count": 9,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "parameter_spec",
+          "expected_accepted_count": 1,
+          "visible_matching_count": 1,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "hot_water_plant",
+          "knowledge_object_type": "operational_sequence",
+          "expected_accepted_count": 6,
+          "visible_matching_count": 6,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "path": "workspace/review_round_ashrae_g36_ahu_vav_model_review/review_packs/api_smoke_report.json",
+      "summary": {
+        "targets": 4,
+        "passed": 4,
+        "failed": 0
+      },
+      "results": [
+        {
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "commissioning_step",
+          "expected_accepted_count": 4,
+          "visible_matching_count": 4,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "expected_accepted_count": 13,
+          "visible_matching_count": 13,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "expected_accepted_count": 23,
+          "visible_matching_count": 23,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "parameter_spec",
+          "expected_accepted_count": 2,
+          "visible_matching_count": 2,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "path": "workspace/review_round_ashrae_g36_vav_terminal_model_review/review_packs/api_smoke_report.json",
+      "summary": {
+        "targets": 3,
+        "passed": 3,
+        "failed": 0
+      },
+      "results": [
+        {
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "commissioning_step",
+          "expected_accepted_count": 7,
+          "visible_matching_count": 11,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "expected_accepted_count": 36,
+          "visible_matching_count": 49,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "expected_accepted_count": 34,
+          "visible_matching_count": 57,
+          "status": "pass"
+        }
+      ]
+    }
+  ],
+  "matrix": [
+    {
+      "section": "5.1",
+      "title": "5.1 General",
+      "start_page": 42,
+      "end_page": 58,
+      "coverage_status": "partial",
+      "requested_sections_run": [
+        "5.1.14"
+      ],
+      "accepted_candidates": 5,
+      "type_breakdown": {
+        "application_guidance": 1,
+        "operational_sequence": 1,
+        "commissioning_procedure": 1,
+        "fault_diagnostic_rule": 1,
+        "parameter_spec": 1
+      },
+      "trust_breakdown": {
+        "L3": 5
+      },
+      "run_ids": [
+        "20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "T&R Logic Application for VAV Static Pressure Control",
+          "type": "application_guidance",
+          "citation": "ASHRAE Guideline 36-2021 §5.1.14.4",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Trim & Respond Set-Point Reset Logic",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.1.14",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Request-Hours Accumulator Reset",
+          "type": "commissioning_procedure",
+          "citation": "ASHRAE Guideline 36-2021 §5.1.14.2",
+          "trust_level": "L3"
+        }
+      ]
+    },
+    {
+      "section": "5.2",
+      "title": "5.2 Generic Ventilation Zones",
+      "start_page": 59,
+      "end_page": 66,
+      "coverage_status": "not_run",
+      "requested_sections_run": [],
+      "accepted_candidates": 0,
+      "type_breakdown": {},
+      "trust_breakdown": {},
+      "run_ids": [],
+      "sample_candidates": []
+    },
+    {
+      "section": "5.3",
+      "title": "5.3 Generic Thermal Zones",
+      "start_page": 67,
+      "end_page": 70,
+      "coverage_status": "not_run",
+      "requested_sections_run": [],
+      "accepted_candidates": 0,
+      "type_breakdown": {},
+      "trust_breakdown": {},
+      "run_ids": [],
+      "sample_candidates": []
+    },
+    {
+      "section": "5.4",
+      "title": "5.4 Zone Groups",
+      "start_page": 71,
+      "end_page": 71,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.4"
+      ],
+      "accepted_candidates": 3,
+      "type_breakdown": {
+        "commissioning_procedure": 1,
+        "operational_sequence": 2
+      },
+      "trust_breakdown": {
+        "L3": 3
+      },
+      "run_ids": [
+        "20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Zone Group Testing/Commissioning Override Switches",
+          "type": "commissioning_procedure",
+          "citation": "ASHRAE Guideline 36-2021 §5.4.5",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Zone Group Definition and Mode Synchronization",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.4.1",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Zone Group Occupied Mode Conditions",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.4.6.1",
+          "trust_level": "L3"
+        }
+      ]
+    },
+    {
+      "section": "5.5",
+      "title": "5.5 VAV Terminal Unit—Cooling Only",
+      "start_page": 72,
+      "end_page": 74,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.5"
+      ],
+      "accepted_candidates": 6,
+      "type_breakdown": {
+        "parameter_spec": 1,
+        "commissioning_procedure": 1,
+        "fault_diagnostic_rule": 3,
+        "operational_sequence": 1
+      },
+      "trust_breakdown": {
+        "L3": 3,
+        "L4": 3
+      },
+      "run_ids": [
+        "20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Active Airflow Setpoint Endpoints by Zone Group Mode",
+          "type": "parameter_spec",
+          "citation": "ASHRAE Guideline 36-2021 §5.5.4",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Testing/Commissioning Overrides for Cooling-Only VAV",
+          "type": "commissioning_procedure",
+          "citation": "ASHRAE Guideline 36-2021 §5.5.7",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Low Airflow Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.5.6.1",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.6",
+      "title": "5.6 VAV Terminal Unit with Reheat",
+      "start_page": 75,
+      "end_page": 78,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.6"
+      ],
+      "accepted_candidates": 11,
+      "type_breakdown": {
+        "fault_diagnostic_rule": 5,
+        "operational_sequence": 4,
+        "parameter_spec": 1,
+        "commissioning_procedure": 1
+      },
+      "trust_breakdown": {
+        "L4": 7,
+        "L3": 4
+      },
+      "run_ids": [
+        "20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Low Airflow Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.6.6.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Airflow Sensor Calibration Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.6.6.3",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Leaking Damper Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.6.6.4",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.7",
+      "title": "5.7 Parallel Fan-Powered Terminal Unit − Constant-Volume Fan",
+      "start_page": 79,
+      "end_page": 82,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.7"
+      ],
+      "accepted_candidates": 9,
+      "type_breakdown": {
+        "fault_diagnostic_rule": 6,
+        "operational_sequence": 2,
+        "commissioning_step": 1
+      },
+      "trust_breakdown": {
+        "L4": 6,
+        "L3": 3
+      },
+      "run_ids": [
+        "20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Low Primary Airflow Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.7.6.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Airflow Sensor Calibration Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.7.6.4",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Leaking Damper Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.7.6.5",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.8",
+      "title": "5.8 Parallel Fan-Powered Terminal Unit −Variable-Volume Fan",
+      "start_page": 83,
+      "end_page": 87,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.8"
+      ],
+      "accepted_candidates": 14,
+      "type_breakdown": {
+        "fault_diagnostic_rule": 6,
+        "operational_sequence": 7,
+        "commissioning_step": 1
+      },
+      "trust_breakdown": {
+        "L4": 8,
+        "L3": 6
+      },
+      "run_ids": [
+        "20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Low Primary Airflow Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.8.6.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Airflow Sensor Calibration Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.8.6.4",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Static Pressure Reset Requests",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.8.8.2",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.9",
+      "title": "5.9 Series Fan-Powered Terminal Unit − Constant-Volume Fan",
+      "start_page": 88,
+      "end_page": 90,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.9"
+      ],
+      "accepted_candidates": 10,
+      "type_breakdown": {
+        "fault_diagnostic_rule": 6,
+        "operational_sequence": 3,
+        "commissioning_step": 1
+      },
+      "trust_breakdown": {
+        "L4": 8,
+        "L3": 2
+      },
+      "run_ids": [
+        "20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Low Primary Airflow Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.9.6.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Airflow Sensor Calibration Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.9.6.4",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Leaking Damper Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.9.6.5",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.10",
+      "title": "5.10 Series Fan-Powered Terminal Unit − Variable-Volume Fan",
+      "start_page": 91,
+      "end_page": 94,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.10"
+      ],
+      "accepted_candidates": 10,
+      "type_breakdown": {
+        "fault_diagnostic_rule": 6,
+        "operational_sequence": 3,
+        "commissioning_step": 1
+      },
+      "trust_breakdown": {
+        "L4": 9,
+        "L3": 1
+      },
+      "run_ids": [
+        "20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Low Primary Airflow Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.10.6.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Airflow Sensor Calibration Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.10.6.4",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Leaking Damper Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.10.6.5",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.11",
+      "title": "5.11 Dual-Duct VAV Terminal Unit − Snap-Acting Control",
+      "start_page": 95,
+      "end_page": 99,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.11"
+      ],
+      "accepted_candidates": 6,
+      "type_breakdown": {
+        "fault_diagnostic_rule": 3,
+        "operational_sequence": 3
+      },
+      "trust_breakdown": {
+        "L4": 5,
+        "L3": 1
+      },
+      "run_ids": [
+        "20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Low Airflow Alarms",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.11.6.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Cooling SAT Reset Requests",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.11.8.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Cold-Duct Static Pressure Reset Requests",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.11.8.2",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.12",
+      "title": "5.12 Dual-Duct VAV Terminal Unit − Mixing Control with Inlet Airflow Sensors",
+      "start_page": 100,
+      "end_page": 103,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.12"
+      ],
+      "accepted_candidates": 10,
+      "type_breakdown": {
+        "fault_diagnostic_rule": 3,
+        "operational_sequence": 6,
+        "commissioning_step": 1
+      },
+      "trust_breakdown": {
+        "L4": 8,
+        "L3": 2
+      },
+      "run_ids": [
+        "20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Dual-Duct VAV Terminal Unit Low Airflow Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.12.6.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Dual-Duct VAV Terminal Unit System Requests - Cooling SAT Reset",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.12.8.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Dual-Duct VAV Terminal Unit System Requests - Cold-Duct Static Pressure Reset",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.12.8.2",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.13",
+      "title": "5.13 Dual-Duct VAV Terminal Unit − Mixing Control with Discharge Airflow Sensor",
+      "start_page": 104,
+      "end_page": 106,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.13"
+      ],
+      "accepted_candidates": 7,
+      "type_breakdown": {
+        "fault_diagnostic_rule": 3,
+        "operational_sequence": 3,
+        "commissioning_step": 1
+      },
+      "trust_breakdown": {
+        "L4": 4,
+        "L3": 3
+      },
+      "run_ids": [
+        "20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Low Airflow Alarms",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.13.6.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Backflow Prevention Overrides",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.13.5.2",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Airflow Sensor Calibration Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.13.6.2",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.14",
+      "title": "5.14 Dual-Duct VAV Terminal Unit − Cold-Duct Minimum Control",
+      "start_page": 107,
+      "end_page": 110,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.14"
+      ],
+      "accepted_candidates": 11,
+      "type_breakdown": {
+        "fault_diagnostic_rule": 3,
+        "operational_sequence": 7,
+        "commissioning_step": 1
+      },
+      "trust_breakdown": {
+        "L4": 7,
+        "L3": 4
+      },
+      "run_ids": [
+        "20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Dual-Duct VAV Low Airflow Alarm",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.14.6.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Dual-Duct VAV Cooling SAT Reset Requests",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.14.8.1",
+          "trust_level": "L4"
+        },
+        {
+          "title": "Dual-Duct VAV Cold-Duct Static Pressure Reset Requests",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.14.8.2",
+          "trust_level": "L4"
+        }
+      ]
+    },
+    {
+      "section": "5.15",
+      "title": "5.15 Air-Handling Unit System Modes",
+      "start_page": 111,
+      "end_page": 111,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.15"
+      ],
+      "accepted_candidates": 1,
+      "type_breakdown": {
+        "operational_sequence": 1
+      },
+      "trust_breakdown": {
+        "L3": 1
+      },
+      "run_ids": [
+        "20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "AHU System Mode Hierarchy",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.15.1",
+          "trust_level": "L3"
+        }
+      ]
+    },
+    {
+      "section": "5.16",
+      "title": "5.16 Multiple-Zone VAV Air-Handling Unit",
+      "start_page": 111,
+      "end_page": 145,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.16"
+      ],
+      "accepted_candidates": 21,
+      "type_breakdown": {
+        "operational_sequence": 15,
+        "fault_diagnostic_rule": 5,
+        "commissioning_procedure": 1
+      },
+      "trust_breakdown": {
+        "L3": 19,
+        "L4": 2
+      },
+      "run_ids": [
+        "20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Supply Fan Start/Stop",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.16.1.1",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Static Pressure Setpoint Reset using Trim & Respond",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.16.1.2",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Supply Air Temperature Control Loop Enable/Disable",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.16.2.1",
+          "trust_level": "L3"
+        }
+      ]
+    },
+    {
+      "section": "5.17",
+      "title": "5.17 Dual-Fan Dual-Duct Heating VAV Air-Handling Unit",
+      "start_page": 146,
+      "end_page": 151,
+      "coverage_status": "not_run",
+      "requested_sections_run": [],
+      "accepted_candidates": 0,
+      "type_breakdown": {},
+      "trust_breakdown": {},
+      "run_ids": [],
+      "sample_candidates": []
+    },
+    {
+      "section": "5.18",
+      "title": "5.18 Single-Zone VAV Air-Handling Unit",
+      "start_page": 152,
+      "end_page": 170,
+      "coverage_status": "not_run",
+      "requested_sections_run": [],
+      "accepted_candidates": 0,
+      "type_breakdown": {},
+      "trust_breakdown": {},
+      "run_ids": [],
+      "sample_candidates": []
+    },
+    {
+      "section": "5.19",
+      "title": "5.19 General Constant Speed Exhaust Fan",
+      "start_page": 171,
+      "end_page": 171,
+      "coverage_status": "not_run",
+      "requested_sections_run": [],
+      "accepted_candidates": 0,
+      "type_breakdown": {},
+      "trust_breakdown": {},
+      "run_ids": [],
+      "sample_candidates": []
+    },
+    {
+      "section": "5.20",
+      "title": "5.20 Chilled Water Plant",
+      "start_page": 172,
+      "end_page": 234,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.20"
+      ],
+      "accepted_candidates": 11,
+      "type_breakdown": {
+        "operational_sequence": 8,
+        "fault_diagnostic_rule": 3
+      },
+      "trust_breakdown": {
+        "L3": 9,
+        "L4": 2
+      },
+      "run_ids": [
+        "20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Plant Enable Logic",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.20.2.2",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Plant Disable Logic",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.20.2.3",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Waterside Economizer Enable Logic",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.20.3.1",
+          "trust_level": "L3"
+        }
+      ]
+    },
+    {
+      "section": "5.21",
+      "title": "5.21 Hot Water Plant",
+      "start_page": 235,
+      "end_page": 261,
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.21"
+      ],
+      "accepted_candidates": 6,
+      "type_breakdown": {
+        "operational_sequence": 6
+      },
+      "trust_breakdown": {
+        "L3": 5,
+        "L4": 1
+      },
+      "run_ids": [
+        "20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Plant Enable/Disable",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.21.2.2",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Plant Disable Logic",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.21.2.3",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Primary Only Condensing Boiler Staging Down",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.21.3.9.g",
+          "trust_level": "L3"
+        }
+      ]
+    },
+    {
+      "section": "5.22",
+      "title": "5.22 Fan Coil Unit",
+      "start_page": 262,
+      "end_page": 292,
+      "coverage_status": "not_run",
+      "requested_sections_run": [],
+      "accepted_candidates": 0,
+      "type_breakdown": {},
+      "trust_breakdown": {},
+      "run_ids": [],
+      "sample_candidates": []
+    }
+  ],
+  "next_recommended_batches": [
+    {
+      "priority": 1,
+      "sections": [
+        "5.2",
+        "5.3"
+      ],
+      "why": "Generic ventilation and thermal zone logic. These clauses define zone minimum airflow, temperature setpoint hierarchy, demand-limit adjustments, local overrides, control loops, and zone alarms. They are reused by many terminal/AHU sections."
+    },
+    {
+      "priority": 2,
+      "sections": [
+        "5.17",
+        "5.18",
+        "5.19"
+      ],
+      "why": "Remaining air-side equipment sections: dual-fan dual-duct AHU, single-zone VAV AHU, and constant-speed exhaust fan. High operational value and likely API-demo friendly."
+    },
+    {
+      "priority": 3,
+      "sections": [
+        "5.22"
+      ],
+      "why": "Fan coil unit section. Useful independent terminal-equipment class; should probably not be forced into AHU long-term."
+    },
+    {
+      "priority": 4,
+      "sections": [
+        "5.1 except 5.1.14"
+      ],
+      "why": "General control philosophy, alarm handling, VFD speed points, equipment staging/rotation, economizer limits, alarm suppression. Important cross-cutting knowledge, but needs careful type mapping to avoid overly generic KOs."
+    }
+  ],
+  "notes": [
+    "Section 5.1 is marked partial because only 5.1.14 Trim & Respond has been extracted so far.",
+    "The first G36 plant run produced one commissioning_procedure item while the later import path uses commissioning_step; API smoke shows 21 visible KOs from that run rather than the 22 model-accepted extraction total.",
+    "Sections 5.7-5.14 are currently mapped to hvac:ahu as a pragmatic import target; ONTOLOGY_GAPS.md records the future terminal-unit ontology need."
+  ]
+}
