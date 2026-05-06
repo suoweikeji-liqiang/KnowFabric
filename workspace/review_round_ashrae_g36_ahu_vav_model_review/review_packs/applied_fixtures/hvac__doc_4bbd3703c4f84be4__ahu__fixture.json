@@ -4,10 +4,77 @@
   "equipment_class_key": "hvac:ahu",
   "fixture_metadata": {
     "source_generation_mode": null,
-    "generated_at": "2026-05-06T13:07:17.137232+00:00",
-    "accepted_candidate_count": 38
+    "generated_at": "2026-05-06T13:11:44.283846+00:00",
+    "accepted_candidate_count": 42
   },
   "manual_entries": [
+    {
+      "knowledge_object_type": "commissioning_step",
+      "knowledge_object_id": "ko_990e9e9a9659882d",
+      "canonical_key": "ashrae:g36:commissioning_step:5_4_5:zone_group_testing_commissioning_override_switches",
+      "title": "Zone Group Testing/Commissioning Override Switches",
+      "summary": "For each Zone Group, provide a set of testing/commissioning software switches that override all zones in the group. When a Zone Group override switch is changed, the corresponding override switch for every zone in the group changes to the same value. Subsequently, zone-level switches may be changed independently; zone-group switch changes only affect zone-level switches when the group switch is changed.",
+      "structured_payload": {
+        "knowledge_type": "commissioning_step",
+        "title": "Zone Group Testing/Commissioning Override Switches",
+        "section_id": "5.4.5",
+        "section_title": "5.4 Zone Groups",
+        "equipment_scope": "Zone Group and terminal units",
+        "summary": "For each Zone Group, provide a set of testing/commissioning software switches that override all zones in the group. When a Zone Group override switch is changed, the corresponding override switch for every zone in the group changes to the same value. Subsequently, zone-level switches may be changed independently; zone-group switch changes only affect zone-level switches when the group switch is changed.",
+        "trigger_condition": "Commissioning agent changes a Zone Group override switch.",
+        "required_behavior": "All zone-level override switches in that group shall change to the same value. Zone-level switches may then be changed independently without affecting the group switch.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": "Verify that changing a Zone Group override switch updates all zone-level switches accordingly, and that subsequent zone-level changes do not revert the group switch.",
+        "evidence_quote": "When the value of a Zone Group’s override switch is changed, the corresponding override switch for every zone in the Zone Group shall change to the same value. Subsequently, the zone-level override switch may be changed to a different value.",
+        "page_hint": 71
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_dd040c7250ed479a",
+        "page_no": 71,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_5b8cdbbe53f04156",
+        "chunk_index": 2,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Provide a separate software switch for each of the zone -level override switches\nlisted under “Testing and Commissioning Overrides” in terminal  unit sequences. When the value of a\nZone Group ’s override switch is changed, the corresponding override switch for every zone in the Zone\nGroup  shall change to the same value. Subsequently, the zone -level override switch may be changed to a\ndifferent valu e. The value of the zone -level switch has no effect on the value of the zone -group  switch,\nand the value of the zone -group  switch only affects the zone -level switches when the zone -group  switch is\nchanged.\nThe testing  and commissioning overrides  will be sp ecified for each type of terminal unit and system in subsequent\nsequences.",
+        "text_excerpt": "Provide a separate software switch for each of the zone -level override switches\nlisted under “Testing and Commissioning Overrides” in terminal  unit sequences. When the value of a\nZone Group ’s overr"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_d421ea772653fc1a",
+        "evidence_role": "primary",
+        "evidence_text": "When the value of a Zone Group’s override switch is changed, the corresponding override switch for every zone in the Zone Group shall change to the same value. Subsequently, the zone-level override switch may be changed to a different value."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 71
+      },
+      "additional_evidence": []
+    },
     {
       "knowledge_object_type": "operational_sequence",
       "knowledge_object_id": "ko_8dac8ae84dcb0856",
@@ -213,6 +280,76 @@
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 73
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "commissioning_step",
+      "knowledge_object_id": "ko_e1a0af734afc286e",
+      "canonical_key": "ashrae:g36:commissioning_step:5_5_7:testing_commissioning_overrides_for_cooling_only_vav",
+      "title": "Testing/Commissioning Overrides for Cooling-Only VAV",
+      "summary": "Provide software switches interlocked to system-level point to force zone airflow setpoint to zero, Vcool-max, or Vmin; force damper full closed/open; and reset request-hours accumulator. All hardware points can be overridden through BAS at zone-group level.",
+      "structured_payload": {
+        "knowledge_type": "commissioning_step",
+        "title": "Testing/Commissioning Overrides for Cooling-Only VAV",
+        "section_id": "5.5.7",
+        "section_title": "5.5 VAV Terminal Unit—Cooling Only",
+        "equipment_scope": "Cooling-only VAV terminal unit",
+        "summary": "Provide software switches interlocked to system-level point to force zone airflow setpoint to zero, Vcool-max, or Vmin; force damper full closed/open; and reset request-hours accumulator. All hardware points can be overridden through BAS at zone-group level.",
+        "trigger_condition": null,
+        "required_behavior": "Provide software switches for forcing setpoints and damper positions, and resetting accumulators. Overrides interlocked at zone-group level.",
+        "configurable_values": [
+          "Vcool-max",
+          "Vmin"
+        ],
+        "fault_condition": null,
+        "commissioning_check": "CxA can check for leaking dampers by forcing all VAV boxes closed and recording AHU airflow.",
+        "evidence_quote": "Provide software switches that interlock to a system-level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force damper full closed/open, and e. reset request-hours accumulator point to zero.",
+        "page_hint": 74
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_d7a62c0cca8d4b78",
+        "page_no": 74,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_9075e45d932e41f7",
+        "chunk_index": 2,
+        "chunk_type": "paragraph",
+        "cleaned_text": "If the damper position is 0%, and airflow sensor reading is above the larger of\n10% of the cooling maximum airflow setpoint  or 50 cfm for 10 minute s while the fan serving the\nzone is proven on, generate a Level 4 alarm.\nThe constant  value thresholds for the airflow sensor calibration and leaking damper alarms are a function of the\ntransducer and A/D converter used to measure airflow.  The value used should be determined as the minimum\naccuracy of the transducer and A/D converter combination.\n5.5.7.  Testing/Commissioning Overrides . Provide software switches that interlock to a system -level point to\na. force  zone airflow setpoint  to zero ,\nb. force  zone airflow setpoint  to Vcool -max,\nc. force  zone airflow setpoint  to Vmin ,\nd. force  damper full closed/open , and\ne. reset  request -hours accumulator point to zero (provide one point for each reset type listed in the\nnext section ).\nPer Section 5.1.11 , all hardware points can be overridden through the BAS.",
+        "text_excerpt": "If the damper position is 0%, and airflow sensor reading is above the larger of\n10% of the cooling maximum airflow setpoint  or 50 cfm for 10 minute s while the fan serving the\nzone is proven on, gene"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_28ce2cbef494b7a4",
+        "evidence_role": "primary",
+        "evidence_text": "Provide software switches that interlock to a system-level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force damper full closed/open, and e. reset request-hours accumulator point to zero."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 74
       },
       "additional_evidence": []
     },
@@ -2837,6 +2974,80 @@
       ]
     },
     {
+      "knowledge_object_type": "commissioning_step",
+      "knowledge_object_id": "ko_fb8741a05e9b59b3",
+      "canonical_key": "ashrae:g36:commissioning_step:5_6_7:testing_commissioning_overrides_for_vav_zone",
+      "title": "Testing/Commissioning Overrides for VAV Zone",
+      "summary": "Provide software switches to force zone airflow setpoint to zero, Vcool-max, Vmin, Vheat-max; force damper full closed/open; force heating OFF/closed; reset request-hours accumulator. Interlocked at zone-group level per Section 5.4.5.",
+      "structured_payload": {
+        "knowledge_type": "commissioning_step",
+        "title": "Testing/Commissioning Overrides for VAV Zone",
+        "section_id": "5.6.7",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit",
+        "summary": "Provide software switches to force zone airflow setpoint to zero, Vcool-max, Vmin, Vheat-max; force damper full closed/open; force heating OFF/closed; reset request-hours accumulator. Interlocked at zone-group level per Section 5.4.5.",
+        "trigger_condition": "Commissioning or testing",
+        "required_behavior": "Provide overrides as listed, interlocked at zone-group level.",
+        "configurable_values": [
+          "zero",
+          "Vcool-max",
+          "Vmin",
+          "Vheat-max",
+          "damper closed/open",
+          "heating OFF/closed"
+        ],
+        "fault_condition": null,
+        "commissioning_check": "Check for leaking dampers by forcing all VAV boxes closed and recording AHU airflow.",
+        "evidence_quote": "Provide software switches that interlock to a system level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force zone airflow setpoint to Vheat-max, e. force damper full closed/open, f. force heating to OFF/closed, and g. reset request-hours accumulator point to zero",
+        "page_hint": 78
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_d3a8694858914deb",
+        "page_no": 78,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_84053c481e324784",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "76 ASHRAE Guideline 36 -2021  5.6.6.5.  Leaking Valve.  If the valve position is 0% for 15 minutes, DAT  is above AHU SAT by 3°C (5°F),\nand the fan serving the zone is proven ON, genera te a Level 4 alarm.\n5.6.7.  Testing/Commissioning Overrides . Provide software switches that interlock to a system level point to\na. force  zone airflow setpoint  to zero ,\nb. force  zone airflow setpoint  to Vcool -max,\nc. force  zone airflow setpoint  to Vmin ,\nd. force  zone airflow setpoint  to Vheat -max,\ne. force  damper full closed/open ,\nf. force  heating to OFF/closed , and\ng. reset  request -hours accumulator point to zero (provide one point for each reset type listed in the\nnext section ).\nPer Section 5.1.11 , all hardware points can be overridden through the BAS.",
+        "text_excerpt": "76 ASHRAE Guideline 36 -2021  5.6.6.5.  Leaking Valve.  If the valve position is 0% for 15 minutes, DAT  is above AHU SAT by 3°C (5°F),\nand the fan serving the zone is proven ON, genera te a Level 4 a"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_cc8056991ef02965",
+        "evidence_role": "primary",
+        "evidence_text": "Provide software switches that interlock to a system level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force zone airflow setpoint to Vheat-max, e. force damper full closed/open, f. force heating to OFF/closed, and g. reset request-hours accumulator point to zero"
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 78
+      },
+      "additional_evidence": []
+    },
+    {
       "knowledge_object_type": "fault_diagnostic_rule",
       "knowledge_object_id": "ko_7374603b46d475d5",
       "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_6_6_5:leaking_valve_alarm",
@@ -4462,6 +4673,73 @@
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 140
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "commissioning_step",
+      "knowledge_object_id": "ko_782a1c84e121d9a2",
+      "canonical_key": "ashrae:g36:commissioning_step:5_16_15:testing_commissioning_overrides",
+      "title": "Testing/Commissioning Overrides",
+      "summary": "Provide software switches to force HW valve full open/closed, CHW valve full open/closed, interlocked to plant level.",
+      "structured_payload": {
+        "knowledge_type": "commissioning_step",
+        "title": "Testing/Commissioning Overrides",
+        "section_id": "5.16.15",
+        "section_title": "Testing/Commissioning Overrides",
+        "equipment_scope": "Multiple-zone VAV air-handling unit",
+        "summary": "Provide software switches to force HW valve full open/closed, CHW valve full open/closed, interlocked to plant level.",
+        "trigger_condition": "During commissioning/testing.",
+        "required_behavior": "Provide software switches that interlock to CHW and HW plant level to force valves open/closed.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": "CxA can check for leaking dampers by forcing all VAV boxes closed and recording airflow at AHU.",
+        "evidence_quote": "Provide software switches that interlock to a CHW and hot-water plant level to a. force HW valve full open if there is a hot-water coil, b. force HW valve full closed if there is a hot-water coil, c. force CHW valve full open, and d. force CHW valve full closed.",
+        "page_hint": 145
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_ee7d72ca151b4891",
+        "page_no": 145,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_18450018710d4df1",
+        "chunk_index": 1,
+        "chunk_type": "paragraph",
+        "cleaned_text": "When a fault condition is reported to the operator, it shall be a Level 3 alarm and shall include the\ndescription of the fault and the list of possible diagnoses from the table in Section 5.16.14.8 .\n5.16.15.  Testing/Commissioning Overrides. Provide software switches that interlock to a CHW and hot -water plant\nlevel to\na. force HW valve full open if there is a hot -water coil,\nb. force HW valve full closed if there is a hot -water coil,\nc. force CHW valve full open, and\nd. force CHW valve full closed.\nPer Section 5.1.11 , all hardware points can be overridden through the BAS.",
+        "text_excerpt": "When a fault condition is reported to the operator, it shall be a Level 3 alarm and shall include the\ndescription of the fault and the list of possible diagnoses from the table in Section 5.16.14.8 .\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_0c765f5d52bb03d5",
+        "evidence_role": "primary",
+        "evidence_text": "Provide software switches that interlock to a CHW and hot-water plant level to a. force HW valve full open if there is a hot-water coil, b. force HW valve full closed if there is a hot-water coil, c. force CHW valve full open, and d. force CHW valve full closed."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 145
       },
       "additional_evidence": []
     }

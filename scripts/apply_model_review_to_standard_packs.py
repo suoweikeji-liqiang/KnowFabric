@@ -18,6 +18,7 @@ from scripts.apply_review_packs_batch import discover_review_pack_paths
 MODEL_REVIEW_REPORT_FILE = "model_review_report.json"
 SUPPORTED_REVIEW_TYPES = {
     "application_guidance",
+    "commissioning_step",
     "fault_code",
     "fault_diagnostic_rule",
     "maintenance_procedure",

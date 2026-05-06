@@ -9,10 +9,10 @@
       "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
       "authority_level": "industry_standard",
       "standard_id": "ASHRAE Guideline 36-2021",
-      "knowledge_object_type": "commissioning_procedure",
-      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_4_5:zone_group_testing_commissioning_override_switches",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:5_4_5:zone_group_testing_commissioning_override_switches",
       "structured_payload_candidate": {
-        "knowledge_type": "commissioning_procedure",
+        "knowledge_type": "commissioning_step",
         "title": "Zone Group Testing/Commissioning Override Switches",
         "section_id": "5.4.5",
         "section_title": "5.4 Zone Groups",
@@ -55,6 +55,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -113,6 +114,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -175,6 +177,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -237,6 +240,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -249,10 +253,10 @@
       "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
       "authority_level": "industry_standard",
       "standard_id": "ASHRAE Guideline 36-2021",
-      "knowledge_object_type": "commissioning_procedure",
-      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_5_7:testing_commissioning_overrides_for_cooling_only_vav",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:5_5_7:testing_commissioning_overrides_for_cooling_only_vav",
       "structured_payload_candidate": {
-        "knowledge_type": "commissioning_procedure",
+        "knowledge_type": "commissioning_step",
         "title": "Testing/Commissioning Overrides for Cooling-Only VAV",
         "section_id": "5.5.7",
         "section_title": "5.5 VAV Terminal Unit—Cooling Only",
@@ -298,6 +302,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -379,6 +384,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -451,6 +457,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -521,6 +528,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -601,6 +609,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -673,6 +682,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -743,6 +753,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -805,6 +816,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -887,6 +899,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -972,6 +985,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1035,6 +1049,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1099,6 +1114,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1162,6 +1178,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1232,6 +1249,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1244,10 +1262,10 @@
       "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
       "authority_level": "industry_standard",
       "standard_id": "ASHRAE Guideline 36-2021",
-      "knowledge_object_type": "commissioning_procedure",
-      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_6_7:testing_commissioning_overrides_for_vav_zone",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:5_6_7:testing_commissioning_overrides_for_vav_zone",
       "structured_payload_candidate": {
-        "knowledge_type": "commissioning_procedure",
+        "knowledge_type": "commissioning_step",
         "title": "Testing/Commissioning Overrides for VAV Zone",
         "section_id": "5.6.7",
         "section_title": "5.6 VAV Terminal Unit with Reheat",
@@ -1297,6 +1315,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1360,6 +1379,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1418,6 +1438,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1476,6 +1497,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1545,6 +1567,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1603,6 +1626,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1665,6 +1689,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1729,6 +1754,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1793,6 +1819,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1855,6 +1882,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1913,6 +1941,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1976,6 +2005,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2039,6 +2069,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2100,6 +2131,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2162,6 +2194,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2225,6 +2258,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2287,6 +2321,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2348,6 +2383,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2406,6 +2442,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2468,6 +2505,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2529,6 +2567,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2590,6 +2629,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2652,6 +2692,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2664,10 +2705,10 @@
       "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
       "authority_level": "industry_standard",
       "standard_id": "ASHRAE Guideline 36-2021",
-      "knowledge_object_type": "commissioning_procedure",
-      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_16_15:testing_commissioning_overrides",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:5_16_15:testing_commissioning_overrides",
       "structured_payload_candidate": {
-        "knowledge_type": "commissioning_procedure",
+        "knowledge_type": "commissioning_step",
         "title": "Testing/Commissioning Overrides",
         "section_id": "5.16.15",
         "section_title": "Testing/Commissioning Overrides",
@@ -2710,6 +2751,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]

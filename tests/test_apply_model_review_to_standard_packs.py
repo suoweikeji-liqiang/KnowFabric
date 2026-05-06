@@ -19,7 +19,7 @@ def _write_pack(pack_dir: Path) -> Path:
         "equipment_class": {"equipment_class_id": "ahu", "equipment_class_key": "hvac:ahu", "label": "AHU"},
         "candidate_entries": [
             _entry("operational_sequence", "seq_key"),
-            _entry("commissioning_procedure", "commissioning_key"),
+            _entry("commissioning_step", "commissioning_key"),
         ],
     }
     path = pack_dir / "hvac__doc_g36__ahu.json"
@@ -47,7 +47,7 @@ def _entry(ko_type: str, key: str) -> dict:
     }
 
 
-def test_apply_model_review_accepts_supported_and_rejects_unsupported_types() -> None:
+def test_apply_model_review_accepts_supported_commissioning_step() -> None:
     """Model review drafts should be ready only for currently supported KO types."""
 
     with tempfile.TemporaryDirectory() as tmp_dir:
@@ -57,11 +57,11 @@ def test_apply_model_review_accepts_supported_and_rejects_unsupported_types() ->
         report = apply_model_review_to_pack_dir(pack_dir)
         pack = json.loads(pack_path.read_text(encoding="utf-8"))
 
-    assert report["summary"] == {"accepted": 1, "rejected": 1}
+    assert report["summary"] == {"accepted": 2}
     assert pack["candidate_entries"][0]["review_decision"] == "accepted"
     assert pack["candidate_entries"][0]["curation"]["review_source"] == "llm_judge"
-    assert pack["candidate_entries"][1]["review_decision"] == "rejected"
-    assert "unsupported_ko_type" in pack["candidate_entries"][1]["review_notes"]
+    assert pack["candidate_entries"][1]["review_decision"] == "accepted"
+    assert pack["candidate_entries"][1]["knowledge_object_type"] == "commissioning_step"
 
 
 def test_apply_model_review_rejected_source_matches_candidate_id_not_key() -> None:

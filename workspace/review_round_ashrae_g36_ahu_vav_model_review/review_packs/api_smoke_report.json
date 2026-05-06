@@ -1,15 +1,27 @@
 {
   "report_mode": "standard_review_backfill_api_smoke",
-  "generated_at": "2026-05-06T13:07:17.235408+00:00",
+  "generated_at": "2026-05-06T13:11:44.396002+00:00",
   "pack_dir": "workspace/review_round_ashrae_g36_ahu_vav_model_review/review_packs",
   "min_trust_level": "L3",
   "limit": 100,
   "summary": {
-    "targets": 3,
-    "passed": 3,
+    "targets": 4,
+    "passed": 4,
     "failed": 0
   },
   "results": [
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "commissioning_step",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 4,
+      "service_total_count": 4,
+      "service_returned_count": 4,
+      "service_has_more": false,
+      "visible_matching_count": 4,
+      "status": "pass"
+    },
     {
       "domain_id": "hvac",
       "equipment_class_id": "ahu",

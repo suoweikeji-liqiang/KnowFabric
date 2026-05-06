@@ -15,10 +15,10 @@ Readiness: 1 ready, 0 blocked-pending, 0 blocked-no-accepted, 0 blocked-invalid
 Apply: 1 applied, 0 skipped-pending, 0 skipped-no-accepted, 0 failed
 
 Documents
-- doc_4bbd3703c4f84be4: 0/0 matched chunks, 42 candidates, review a/r/p=38/4/0, packs 1/1 ready, readiness 1/0/0/0
+- doc_4bbd3703c4f84be4: 0/0 matched chunks, 42 candidates, review a/r/p=42/0/0, packs 1/1 ready, readiness 1/0/0/0
 ```
 
 ## API Smoke
 
-- Passed: 3/3
+- Passed: 4/4
 - Failed: 0

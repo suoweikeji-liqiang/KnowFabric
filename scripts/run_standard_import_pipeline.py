@@ -103,9 +103,23 @@ def materialize_candidate_file_from_run(
 
 def _normalize_standard_candidate(entry: dict[str, Any], *, standard: str) -> dict[str, Any]:
     normalized = dict(entry)
+    _normalize_knowledge_type(normalized)
     if "equipment_class_candidate" not in normalized:
         normalized["equipment_class_candidate"] = _infer_equipment_class_candidate(normalized, standard=standard)
     return normalized
+
+
+def _normalize_knowledge_type(entry: dict[str, Any]) -> None:
+    if entry.get("knowledge_object_type") != "commissioning_procedure":
+        return
+    entry["knowledge_object_type"] = "commissioning_step"
+    entry["canonical_key_candidate"] = str(entry.get("canonical_key_candidate", "")).replace(
+        ":commissioning_procedure:",
+        ":commissioning_step:",
+    )
+    payload = entry.get("structured_payload_candidate")
+    if isinstance(payload, dict):
+        payload["knowledge_type"] = "commissioning_step"
 
 
 def _infer_equipment_class_candidate(entry: dict[str, Any], *, standard: str) -> dict[str, Any]:
@@ -134,6 +148,7 @@ def _equipment_ref(equipment_class_id: str, label: str) -> dict[str, Any]:
         "supported_knowledge_anchors": [
             "application_guidance",
             "operational_sequence",
+            "commissioning_step",
             "fault_diagnostic_rule",
             "parameter_spec",
         ],

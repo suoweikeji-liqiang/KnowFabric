@@ -33,8 +33,8 @@
 
 ```json
 {
-  "targets": 3,
-  "passed": 3,
+  "targets": 4,
+  "passed": 4,
   "failed": 0
 }
 ```

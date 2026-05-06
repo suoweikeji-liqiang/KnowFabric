@@ -1,6 +1,6 @@
 {
   "review_mode": "chunk_backfill_review_pack",
-  "generated_at": "2026-05-06T13:05:56.770277+00:00",
+  "generated_at": "2026-05-06T13:11:43.576614+00:00",
   "source_generation_mode": "ashrae-g36_standard_import_pipeline",
   "source_review_mode": "chunk_backfill_review_scaffold",
   "domain_id": "hvac",
@@ -13,6 +13,7 @@
     "supported_knowledge_anchors": [
       "application_guidance",
       "operational_sequence",
+      "commissioning_step",
       "fault_diagnostic_rule",
       "parameter_spec"
     ]
@@ -35,10 +36,10 @@
       "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
       "authority_level": "industry_standard",
       "standard_id": "ASHRAE Guideline 36-2021",
-      "knowledge_object_type": "commissioning_procedure",
-      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_4_5:zone_group_testing_commissioning_override_switches",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:5_4_5:zone_group_testing_commissioning_override_switches",
       "structured_payload_candidate": {
-        "knowledge_type": "commissioning_procedure",
+        "knowledge_type": "commissioning_step",
         "title": "Zone Group Testing/Commissioning Override Switches",
         "section_id": "5.4.5",
         "section_title": "5.4 Zone Groups",
@@ -81,18 +82,19 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
       },
-      "review_decision": "rejected",
-      "review_notes": "model_review_rejected:unsupported_ko_type: Unsupported knowledge_object_type for current semantic backfill/API contract.",
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Extracted commissioning procedure for zone group override switches is a valid operational rule from Guideline 36.",
       "curation": {
-        "title": "",
-        "summary": "",
-        "canonical_key": "ashrae:g36:commissioning_procedure:5_4_5:zone_group_testing_commissioning_override_switches",
+        "title": "Zone Group Testing/Commissioning Override Switches",
+        "summary": "For each Zone Group, provide a set of testing/commissioning software switches that override all zones in the group. When a Zone Group override switch is changed, the corresponding override switch for every zone in the group changes to the same value. Subsequently, zone-level switches may be changed independently; zone-group switch changes only affect zone-level switches when the group switch is changed.",
+        "canonical_key": "ashrae:g36:commissioning_step:5_4_5:zone_group_testing_commissioning_override_switches",
         "structured_payload": {
-          "knowledge_type": "commissioning_procedure",
+          "knowledge_type": "commissioning_step",
           "title": "Zone Group Testing/Commissioning Override Switches",
           "section_id": "5.4.5",
           "section_title": "5.4 Zone Groups",
@@ -106,11 +108,21 @@
           "evidence_quote": "When the value of a Zone Group’s override switch is changed, the corresponding override switch for every zone in the Zone Group shall change to the same value. Subsequently, the zone-level override switch may be changed to a different value.",
           "page_hint": 71
         },
-        "applicability": {},
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
         "trust_level": "L3",
         "review_status": "approved",
         "evidence_text": "When the value of a Zone Group’s override switch is changed, the corresponding override switch for every zone in the Zone Group shall change to the same value. Subsequently, the zone-level override switch may be changed to a different value.",
-        "evidence_role": "primary"
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_5b8cdbbe53f04156"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Extracted commissioning procedure for zone group override switches is a valid operational rule from Guideline 36."
       },
       "curation_checklist": [
         "Confirm or reject this candidate.",
@@ -172,6 +184,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -277,6 +290,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -385,6 +399,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -444,10 +459,10 @@
       "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
       "authority_level": "industry_standard",
       "standard_id": "ASHRAE Guideline 36-2021",
-      "knowledge_object_type": "commissioning_procedure",
-      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_5_7:testing_commissioning_overrides_for_cooling_only_vav",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:5_5_7:testing_commissioning_overrides_for_cooling_only_vav",
       "structured_payload_candidate": {
-        "knowledge_type": "commissioning_procedure",
+        "knowledge_type": "commissioning_step",
         "title": "Testing/Commissioning Overrides for Cooling-Only VAV",
         "section_id": "5.5.7",
         "section_title": "5.5 VAV Terminal Unit—Cooling Only",
@@ -493,18 +508,19 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
       },
-      "review_decision": "rejected",
-      "review_notes": "model_review_rejected:unsupported_ko_type: Unsupported knowledge_object_type for current semantic backfill/API contract.",
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Captures a specific commissioning override sequence for VAVs as per Guideline 36, section 5.5.7.",
       "curation": {
-        "title": "",
-        "summary": "",
-        "canonical_key": "ashrae:g36:commissioning_procedure:5_5_7:testing_commissioning_overrides_for_cooling_only_vav",
+        "title": "Testing/Commissioning Overrides for Cooling-Only VAV",
+        "summary": "Provide software switches interlocked to system-level point to force zone airflow setpoint to zero, Vcool-max, or Vmin; force damper full closed/open; and reset request-hours accumulator. All hardware points can be overridden through BAS at zone-group level.",
+        "canonical_key": "ashrae:g36:commissioning_step:5_5_7:testing_commissioning_overrides_for_cooling_only_vav",
         "structured_payload": {
-          "knowledge_type": "commissioning_procedure",
+          "knowledge_type": "commissioning_step",
           "title": "Testing/Commissioning Overrides for Cooling-Only VAV",
           "section_id": "5.5.7",
           "section_title": "5.5 VAV Terminal Unit—Cooling Only",
@@ -521,11 +537,21 @@
           "evidence_quote": "Provide software switches that interlock to a system-level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force damper full closed/open, and e. reset request-hours accumulator point to zero.",
           "page_hint": 74
         },
-        "applicability": {},
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
         "trust_level": "L3",
         "review_status": "approved",
         "evidence_text": "Provide software switches that interlock to a system-level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force damper full closed/open, and e. reset request-hours accumulator point to zero.",
-        "evidence_role": "primary"
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_9075e45d932e41f7"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Captures a specific commissioning override sequence for VAVs as per Guideline 36, section 5.5.7."
       },
       "curation_checklist": [
         "Confirm or reject this candidate.",
@@ -610,6 +636,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -739,6 +766,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -861,6 +889,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -992,6 +1021,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1120,6 +1150,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1242,6 +1273,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1355,6 +1387,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1484,6 +1517,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1627,6 +1661,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1750,6 +1785,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1862,6 +1898,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -1974,6 +2011,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2091,6 +2129,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2154,10 +2193,10 @@
       "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
       "authority_level": "industry_standard",
       "standard_id": "ASHRAE Guideline 36-2021",
-      "knowledge_object_type": "commissioning_procedure",
-      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_6_7:testing_commissioning_overrides_for_vav_zone",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:5_6_7:testing_commissioning_overrides_for_vav_zone",
       "structured_payload_candidate": {
-        "knowledge_type": "commissioning_procedure",
+        "knowledge_type": "commissioning_step",
         "title": "Testing/Commissioning Overrides for VAV Zone",
         "section_id": "5.6.7",
         "section_title": "5.6 VAV Terminal Unit with Reheat",
@@ -2207,18 +2246,19 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
       },
-      "review_decision": "rejected",
-      "review_notes": "model_review_rejected:unsupported_ko_type: Unsupported knowledge_object_type for current semantic backfill/API contract.",
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Extracts a commissioning procedure with specific override switches and interlocks from Guideline 36, operational and supported by evidence.",
       "curation": {
-        "title": "",
-        "summary": "",
-        "canonical_key": "ashrae:g36:commissioning_procedure:5_6_7:testing_commissioning_overrides_for_vav_zone",
+        "title": "Testing/Commissioning Overrides for VAV Zone",
+        "summary": "Provide software switches to force zone airflow setpoint to zero, Vcool-max, Vmin, Vheat-max; force damper full closed/open; force heating OFF/closed; reset request-hours accumulator. Interlocked at zone-group level per Section 5.4.5.",
+        "canonical_key": "ashrae:g36:commissioning_step:5_6_7:testing_commissioning_overrides_for_vav_zone",
         "structured_payload": {
-          "knowledge_type": "commissioning_procedure",
+          "knowledge_type": "commissioning_step",
           "title": "Testing/Commissioning Overrides for VAV Zone",
           "section_id": "5.6.7",
           "section_title": "5.6 VAV Terminal Unit with Reheat",
@@ -2239,11 +2279,21 @@
           "evidence_quote": "Provide software switches that interlock to a system level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force zone airflow setpoint to Vheat-max, e. force damper full closed/open, f. force heating to OFF/closed, and g. reset request-hours accumulator point to zero",
           "page_hint": 78
         },
-        "applicability": {},
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
         "trust_level": "L3",
         "review_status": "approved",
         "evidence_text": "Provide software switches that interlock to a system level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force zone airflow setpoint to Vheat-max, e. force damper full closed/open, f. force heating to OFF/closed, and g. reset request-hours accumulator point to zero",
-        "evidence_role": "primary"
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_84053c481e324784"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Extracts a commissioning procedure with specific override switches and interlocks from Guideline 36, operational and supported by evidence."
       },
       "curation_checklist": [
         "Confirm or reject this candidate.",
@@ -2310,6 +2360,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2415,6 +2466,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2516,6 +2568,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2628,6 +2681,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2740,6 +2794,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2845,6 +2900,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -2955,6 +3011,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -3068,6 +3125,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -3179,6 +3237,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -3283,6 +3342,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -3389,6 +3449,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -3499,6 +3560,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -3607,6 +3669,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -3714,6 +3777,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -3824,6 +3888,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -3934,6 +3999,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -4042,6 +4108,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -4146,6 +4213,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -4251,6 +4319,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -4358,6 +4427,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -4464,6 +4534,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -4572,6 +4643,7 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
@@ -4631,10 +4703,10 @@
       "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
       "authority_level": "industry_standard",
       "standard_id": "ASHRAE Guideline 36-2021",
-      "knowledge_object_type": "commissioning_procedure",
-      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_16_15:testing_commissioning_overrides",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:5_16_15:testing_commissioning_overrides",
       "structured_payload_candidate": {
-        "knowledge_type": "commissioning_procedure",
+        "knowledge_type": "commissioning_step",
         "title": "Testing/Commissioning Overrides",
         "section_id": "5.16.15",
         "section_title": "Testing/Commissioning Overrides",
@@ -4677,18 +4749,19 @@
         "supported_knowledge_anchors": [
           "application_guidance",
           "operational_sequence",
+          "commissioning_step",
           "fault_diagnostic_rule",
           "parameter_spec"
         ]
       },
-      "review_decision": "rejected",
-      "review_notes": "model_review_rejected:unsupported_ko_type: Unsupported knowledge_object_type for current semantic backfill/API contract.",
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Captures a commissioning override procedure as part of testing/commissioning checks from Guideline 36.",
       "curation": {
-        "title": "",
-        "summary": "",
-        "canonical_key": "ashrae:g36:commissioning_procedure:5_16_15:testing_commissioning_overrides",
+        "title": "Testing/Commissioning Overrides",
+        "summary": "Provide software switches to force HW valve full open/closed, CHW valve full open/closed, interlocked to plant level.",
+        "canonical_key": "ashrae:g36:commissioning_step:5_16_15:testing_commissioning_overrides",
         "structured_payload": {
-          "knowledge_type": "commissioning_procedure",
+          "knowledge_type": "commissioning_step",
           "title": "Testing/Commissioning Overrides",
           "section_id": "5.16.15",
           "section_title": "Testing/Commissioning Overrides",
@@ -4702,11 +4775,21 @@
           "evidence_quote": "Provide software switches that interlock to a CHW and hot-water plant level to a. force HW valve full open if there is a hot-water coil, b. force HW valve full closed if there is a hot-water coil, c. force CHW valve full open, and d. force CHW valve full closed.",
           "page_hint": 145
         },
-        "applicability": {},
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
         "trust_level": "L3",
         "review_status": "approved",
         "evidence_text": "Provide software switches that interlock to a CHW and hot-water plant level to a. force HW valve full open if there is a hot-water coil, b. force HW valve full closed if there is a hot-water coil, c. force CHW valve full open, and d. force CHW valve full closed.",
-        "evidence_role": "primary"
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_18450018710d4df1"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Captures a commissioning override procedure as part of testing/commissioning checks from Guideline 36."
       },
       "curation_checklist": [
         "Confirm or reject this candidate.",
@@ -4717,7 +4800,7 @@
     }
   ],
   "model_review_metadata": {
-    "generated_at": "2026-05-06T13:05:56.988464+00:00",
+    "generated_at": "2026-05-06T13:11:43.803396+00:00",
     "review_source": "llm_judge",
     "notes": [
       "Model-reviewed draft only; operator may still edit or override decisions.",

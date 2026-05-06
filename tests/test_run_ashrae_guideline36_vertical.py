@@ -46,6 +46,7 @@ def test_extract_prompt_scopes_to_official_guideline36_section() -> None:
     assert "official ASHRAE Guideline 36 knowledge" in system_prompt
     assert "operational_sequence" in system_prompt
     assert "fault_diagnostic_rule" in system_prompt
+    assert "commissioning_step" in system_prompt
     assert "evidence_quote MUST be a SHORT verbatim contiguous substring" in system_prompt
     assert "Do not use ellipses" in system_prompt
     assert "standard_id: ASHRAE Guideline 36-2021" in user_prompt
@@ -84,6 +85,25 @@ def test_extraction_response_accepts_null_configurable_values() -> None:
     )
 
     assert response.candidates[0].configurable_values == []
+
+
+def test_extraction_response_uses_contract_commissioning_step_type() -> None:
+    response = Guideline36ExtractionResponse.model_validate(
+        {
+            "candidates": [
+                {
+                    "knowledge_type": "commissioning_step",
+                    "title": "Testing Overrides",
+                    "section_id": "5.16.15",
+                    "summary": "Provide testing override points.",
+                    "evidence_quote": "Provide software switches for testing and commissioning.",
+                    "confidence": 0.9,
+                }
+            ]
+        }
+    )
+
+    assert response.candidates[0].knowledge_type == "commissioning_step"
 
 
 def test_json_completion_retry_handles_empty_content_once(monkeypatch) -> None:

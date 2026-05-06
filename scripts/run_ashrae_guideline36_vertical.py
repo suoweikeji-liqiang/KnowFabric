@@ -35,7 +35,7 @@ ALLOWED_TYPES = (
     "operational_sequence",
     "parameter_spec",
     "fault_diagnostic_rule",
-    "commissioning_procedure",
+    "commissioning_step",
     "application_guidance",
 )
 
@@ -45,7 +45,7 @@ class Guideline36Candidate(BaseModel):
         "operational_sequence",
         "parameter_spec",
         "fault_diagnostic_rule",
-        "commissioning_procedure",
+        "commissioning_step",
         "application_guidance",
     ]
     title: str
@@ -232,7 +232,7 @@ def build_extract_messages(unit: SectionUnit) -> list[dict[str, str]]:
         "Extract concise, high-value structured knowledge from the provided section only. Treat this as an "
         "industry standard/guideline source, not an OEM manual. Preserve section citations and exact evidence. "
         "Allowed knowledge_type values: operational_sequence, parameter_spec, fault_diagnostic_rule, "
-        "commissioning_procedure, application_guidance. Prefer actionable control logic: enable/disable logic, "
+        "commissioning_step, application_guidance. Prefer actionable control logic: enable/disable logic, "
         "staging rules, trim-and-respond reset rules, alarm/fault equations, setpoints/timers/ranges, and "
         "commissioning or TAB checks. Do not extract foreword/legal text, generic definitions, repeated table of "
         "contents lines, bibliography, marketing language, or ungrounded paraphrases. For long sections, return "

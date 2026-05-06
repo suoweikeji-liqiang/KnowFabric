@@ -1,6 +1,6 @@
 {
   "pipeline_mode": "standard_review_backfill",
-  "generated_at": "2026-05-06T13:07:17.238142+00:00",
+  "generated_at": "2026-05-06T13:11:44.398413+00:00",
   "review_pack_dir": "workspace/review_round_ashrae_g36_ahu_vav_model_review/review_packs",
   "candidate_file": "workspace/review_round_ashrae_g36_ahu_vav_model_review/candidates_input.json",
   "readiness_report_path": "workspace/review_round_ashrae_g36_ahu_vav_model_review/review_packs/review_pack_readiness_report.json",
@@ -19,8 +19,8 @@
     "failed": 0
   },
   "api_smoke_summary": {
-    "targets": 3,
-    "passed": 3,
+    "targets": 4,
+    "passed": 4,
     "failed": 0
   },
   "stats": {
@@ -60,8 +60,8 @@
         "candidate_entries": 42,
         "candidate_hit_rate": 0.0,
         "review_decisions": {
-          "accepted": 38,
-          "rejected": 4,
+          "accepted": 42,
+          "rejected": 0,
           "pending": 0
         },
         "packs_total": 1,
@@ -88,8 +88,8 @@
         "equipment_class_id": "ahu",
         "equipment_class_key": "hvac:ahu",
         "candidate_count": 42,
-        "accepted_count": 38,
-        "rejected_count": 4,
+        "accepted_count": 42,
+        "rejected_count": 0,
         "pending_count": 0,
         "ready_to_apply": true,
         "readiness_status": "ready",
