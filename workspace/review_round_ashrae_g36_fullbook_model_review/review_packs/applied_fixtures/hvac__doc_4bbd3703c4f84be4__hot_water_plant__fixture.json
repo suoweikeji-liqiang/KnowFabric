@@ -1,0 +1,1192 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "hot_water_plant",
+  "equipment_class_key": "hvac:hot_water_plant",
+  "fixture_metadata": {
+    "source_generation_mode": null,
+    "generated_at": "2026-05-06T23:34:04.961398+00:00",
+    "accepted_candidate_count": 15
+  },
+  "manual_entries": [
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_7d1d86608cf4abb7",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_2_2:boiler_plant_enable_logic",
+      "title": "Boiler Plant Enable Logic",
+      "summary": "Enable the boiler plant in the lowest stage when disabled for at least 15 minutes, number of Heating Hot-Water Plant Requests exceeds I, OAT is below HW-LOT, and the enable schedule is active.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Boiler Plant Enable Logic",
+        "section_id": "5.21.2.2",
+        "section_title": "Plant Enable/Disable",
+        "equipment_scope": "Hot Water Plant",
+        "summary": "Enable the boiler plant in the lowest stage when disabled for at least 15 minutes, number of Heating Hot-Water Plant Requests exceeds I, OAT is below HW-LOT, and the enable schedule is active.",
+        "trigger_condition": "Plant has been disabled for at least 15 minutes, Number of Heating Hot-Water Plant Requests > I (default 0, adjustable), OAT < HW-LOT, and boiler plant enable schedule is active.",
+        "required_behavior": "Enable the plant in the lowest stage.",
+        "configurable_values": [
+          "I (ignores, default 0)",
+          "HW-LOT (outdoor air lockout temperature)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT<HW-LOT, and c. The Boiler plant enable schedule is active.",
+        "page_hint": 235
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_7f4da8cf69b2497e",
+        "page_no": 235,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ae38b0b316ea4196",
+        "chunk_index": 1,
+        "chunk_type": "paragraph",
+        "cleaned_text": "When a Fault Condition is reported to the operator, it shall be a Level 3 alarm and shall include the\ndescription of the fault and the  list of possible diagnoses from the table in Section 5.20.18.6 .\nHot Water Plant\nRetain the applicable variables from Section s 3.1.8  and 3.2.4 . Delete variables that are not applicable.\n5.21.1.  See Section  3.1.8  for HWSTmax, HW -LOT, HW -MinFlowX, HW -DesFlowX, QbX, B -FiringMinX,\nPHWFdesign, and SHWFdesign. See Section  3.2.4  for HW -DPmax, LocalHW -DPmax, and B -\nMinPriPumpSpdStage.\n5.21.2.  Plant Enable/Disable\n5.21.2.1.  The Boiler plant shall include an enabling schedule that allows operators to lock out the plant\nduring off -hours, e.g. to allow off -hour operation of HVAC systems  except the Boiler plant. The\ndefault schedule shall be 24/7 (adjustable).\n5.21.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:\na.",
+        "text_excerpt": "When a Fault Condition is reported to the operator, it shall be a Level 3 alarm and shall include the\ndescription of the fault and the  list of possible diagnoses from the table in Section 5.20.18.6 ."
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_a29af69f5033b9f4",
+        "evidence_role": "primary",
+        "evidence_text": "5.21.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:"
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 235
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_4787dcde08ab167f",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_2_3:boiler_plant_disable_logic",
+      "title": "Boiler Plant Disable Logic",
+      "summary": "Disable the boiler plant when enabled for at least 15 minutes and either number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, OAT > HW-LOT + 1°F, or the enable schedule is inactive.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Boiler Plant Disable Logic",
+        "section_id": "5.21.2.3",
+        "section_title": "Plant Enable/Disable",
+        "equipment_scope": "Hot Water Plant",
+        "summary": "Disable the boiler plant when enabled for at least 15 minutes and either number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, OAT > HW-LOT + 1°F, or the enable schedule is inactive.",
+        "trigger_condition": "Plant has been enabled for at least 15 minutes and (Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes OR OAT > HW-LOT + 1°F OR boiler plant enable schedule is inactive).",
+        "required_behavior": "Disable the plant.",
+        "configurable_values": [
+          "I (ignores, default 0)",
+          "HW-LOT (outdoor air lockout temperature)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive.",
+        "page_hint": 235
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_7f4da8cf69b2497e",
+        "page_no": 235,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ed993d898ac747e2",
+        "chunk_index": 2,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Number of Heating Hot -Water Plant Requests > I (I = Ignores shall default to 0, ad justable),\nand\nb. OAT<HW -LOT, and\nc. The Boiler plant enable schedule is active.\n5.21.2.3.  Disable the plant when it has been enabled for at least 15 minutes and:\na. Number of Heating Hot -Water Plant Requests ≤ I for 3 minutes, or\nb. OAT>HW -LOT + 1°F, or\nc. The Boiler plant enable schedule is inactive.\nHeating Hot -Water Plant Requests are generated by coil control valves. If the plant serves critical valves whose\npositions are not known to the plant controller, e.g. pneumatic controls, the Heating Hot -Water Plant Request\nvariable can be set to 1 manually by the operator such that the plant is enabled strictly based on OAT lockout and\nschedule per subsequent logic.\nImportance multipliers (IM) shall be added to Heating Hot -Water Plant Requests in a future addendum to Guideline\n36 to ensure that critical coils can independently cause the plant to start.",
+        "text_excerpt": "Number of Heating Hot -Water Plant Requests > I (I = Ignores shall default to 0, ad justable),\nand\nb. OAT<HW -LOT, and\nc. The Boiler plant enable schedule is active.\n5.21.2.3.  Disable the plant when "
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_aaeb0f5bfa069ccf",
+        "evidence_role": "primary",
+        "evidence_text": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 235
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_2fbc4b1c95a00b17",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_minimum_stage_runtime",
+      "title": "Boiler Minimum Stage Runtime",
+      "summary": "Each boiler stage shall have a minimum runtime of 10 minutes.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Boiler Minimum Stage Runtime",
+        "section_id": "5.21.3.9",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Hot Water Plant",
+        "summary": "Each boiler stage shall have a minimum runtime of 10 minutes.",
+        "trigger_condition": "A stage change has just completed.",
+        "required_behavior": "Prevent any further stage changes for 10 minutes.",
+        "configurable_values": [
+          "10 minutes (adjustable)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Each stage shall have a minimum runtime of 10 minutes.",
+        "page_hint": 237
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_503453318cd44e4a",
+        "page_no": 237,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_c9b3b7aac1e44eac",
+        "chunk_index": 3,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Staging events require that a boiler stage be available. A stage shall be deemed unavailable  if the\nstage cannot be achieved because a boiler required to operate in the stage is faulted per Section\n5.1.15.5.b.1.iii  or a hot water pump dedicated to that boil er is faulted per Section 5.1.15.5.b.1.i ;\notherwise the stage shall be deemed available.\n5.21.3.9.  Staging shall be executed per the conditions below subject t o the following requirements:\na. Each stage shall have a minimum runtime of 10 minutes.\nb. Timers shall reset to zero at the completion of every stage change..",
+        "text_excerpt": "Staging events require that a boiler stage be available. A stage shall be deemed unavailable  if the\nstage cannot be achieved because a boiler required to operate in the stage is faulted per Section\n5"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_56a9cd8184d989fb",
+        "evidence_role": "primary",
+        "evidence_text": "Each stage shall have a minimum runtime of 10 minutes."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 237
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_0037e3539cb25e49",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_down_efficiency_condition_condensing",
+      "title": "Boiler Stage Down – Efficiency Condition (Condensing)",
+      "summary": "Stage down if Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes OR the minimum flow bypass valve is >0% open for 5 minutes, the failsafe stage up condition is not true, and Qrequired is less than 80% of the design capacity of the next lower stage for 5 minutes.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Boiler Stage Down – Efficiency Condition (Condensing)",
+        "section_id": "5.21.3.9",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Condensing boiler plant (primary only)",
+        "summary": "Stage down if Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes OR the minimum flow bypass valve is >0% open for 5 minutes, the failsafe stage up condition is not true, and Qrequired is less than 80% of the design capacity of the next lower stage for 5 minutes.",
+        "trigger_condition": "(Qrequired < 110% of B-STAGE MIN of current stage for 5 min OR minimum flow bypass valve >0% open for 5 min) AND failsafe stage up condition not true AND Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "required_behavior": "Initiate a stage-down event.",
+        "configurable_values": [
+          "B-STAGE MIN",
+          "Design capacity of boilers in next lower stage"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail safe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "page_hint": 238
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_eaacb142223f4827",
+        "page_no": 238,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_4ed1793374a0457e",
+        "chunk_index": 2,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Failsafe Condition: HW supply temperature is 1 0°F < setpoint for 15 minutes.\ng. Stage down if all of the following are true:\n1. Either:\ni. Qrequired  falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or\nii.  The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes.\n2. The fail safe stage up condition is not true.\n3. Qrequired  is less than 80% of the design capacity, QbX, of the boilers in the next available\nlower stage for 5 minutes.\nCondensing boilers are generally more efficient at low load since the ratio of heat transfer surface area to thermal\nmass flowrate is maximized, increasing flue gas condensation. Staging on boilers at low load therefore maximizes.",
+        "text_excerpt": "Failsafe Condition: HW supply temperature is 1 0°F < setpoint for 15 minutes.\ng. Stage down if all of the following are true:\n1. Either:\ni. Qrequired  falls below 110% of B-STAGE MIN of the current st"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_6bb34baf9436e37a",
+        "evidence_role": "primary",
+        "evidence_text": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail safe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 238
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_aa76266f1d189904",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_up_efficiency_condition_condensing",
+      "title": "Boiler Stage Up – Efficiency Condition (Condensing)",
+      "summary": "Stage up when Qrequired exceeds 200% (primary only) or 150% (variable primary) of B-STAGE MIN of the next available stage for 10 minutes and hot water flowrate exceeds the minimum flow setpoint of the next stage.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Boiler Stage Up – Efficiency Condition (Condensing)",
+        "section_id": "5.21.3.9",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Condensing boiler plant (primary only or variable primary/variable secondary)",
+        "summary": "Stage up when Qrequired exceeds 200% (primary only) or 150% (variable primary) of B-STAGE MIN of the next available stage for 10 minutes and hot water flowrate exceeds the minimum flow setpoint of the next stage.",
+        "trigger_condition": "Qrequired > threshold * B-STAGE MIN of next available stage for 10 minutes AND hot water flowrate > minimum flow setpoint of next stage.",
+        "required_behavior": "Initiate a stage-up event.",
+        "configurable_values": [
+          "Threshold (200% for primary only, 150% for variable primary)",
+          "B-STAGE MIN (minimum output of stage)",
+          "Minimum flow setpoint of next stage"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Efficiency Condition: Both of the following are true: i. Qrequired exceeds 200% of B-STAGE MIN of the next available stage for 10 minutes ii. Hot water flowrate exceeds the minimum flow setpoint of the next available stage (see Section 5.21.8).",
+        "page_hint": 238
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_eaacb142223f4827",
+        "page_no": 238,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_479bdb1de1e84478",
+        "chunk_index": 1,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Delete otherwise.\ne. Where a primary HW supply temperature sensor is not provided, pr imary HW supply\ntemperature used in staging logic shall be the weighted average supply temperature of all\nboilers with open HW isolation valves. Temperatures shall be weighted by design boiler\nflowrates.\nThe above section  assumes that flows through the boi lers are balanced proportional to design.\nRetain the following two section s for primary only condensing boiler plants. Delete otherwise.\nf. Stage up if any of the following is true:\n1. Availability Condition: The equipment necessary to operate the current stage are\nunavailable. The availability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition: Both of the following are true:\ni. Qrequired  exceeds 200% of B-STAGE MIN of the next available stage for 10 minutes\nii. Hot water flowrate exceeds the minimum flow setpoint of the next available stage (see\nSection 5.21.8 ).\n3.",
+        "text_excerpt": "Delete otherwise.\ne. Where a primary HW supply temperature sensor is not provided, pr imary HW supply\ntemperature used in staging logic shall be the weighted average supply temperature of all\nboilers "
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_ed79f88a424319d0",
+        "evidence_role": "primary",
+        "evidence_text": "Efficiency Condition: Both of the following are true: i. Qrequired exceeds 200% of B-STAGE MIN of the next available stage for 10 minutes ii. Hot water flowrate exceeds the minimum flow setpoint of the next available stage (see Section 5.21.8)."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 238
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_4b785a503685adde",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_up_failsafe_condition",
+      "title": "Boiler Stage Up – Failsafe Condition",
+      "summary": "Stage up if HW supply temperature is 10°F below setpoint for 15 minutes.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Boiler Stage Up – Failsafe Condition",
+        "section_id": "5.21.3.9",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Hot Water Plant",
+        "summary": "Stage up if HW supply temperature is 10°F below setpoint for 15 minutes.",
+        "trigger_condition": "HW supply temperature is 10°F < setpoint for 15 minutes.",
+        "required_behavior": "Initiate a stage-up event.",
+        "configurable_values": [
+          "HW supply temperature setpoint"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Failsafe Condition: HW supply temperature is 10°F < setpoint for 15 minutes.",
+        "page_hint": 238
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L4",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_eaacb142223f4827",
+        "page_no": 238,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_4ed1793374a0457e",
+        "chunk_index": 2,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Failsafe Condition: HW supply temperature is 1 0°F < setpoint for 15 minutes.\ng. Stage down if all of the following are true:\n1. Either:\ni. Qrequired  falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or\nii.  The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes.\n2. The fail safe stage up condition is not true.\n3. Qrequired  is less than 80% of the design capacity, QbX, of the boilers in the next available\nlower stage for 5 minutes.\nCondensing boilers are generally more efficient at low load since the ratio of heat transfer surface area to thermal\nmass flowrate is maximized, increasing flue gas condensation. Staging on boilers at low load therefore maximizes.",
+        "text_excerpt": "Failsafe Condition: HW supply temperature is 1 0°F < setpoint for 15 minutes.\ng. Stage down if all of the following are true:\n1. Either:\ni. Qrequired  falls below 110% of B-STAGE MIN of the current st"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_a8c86ae780a6e652",
+        "evidence_role": "primary",
+        "evidence_text": "Failsafe Condition: HW supply temperature is 10°F < setpoint for 15 minutes."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 238
+      },
+      "additional_evidence": [
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_f9f01388518645f4",
+            "page_no": 239,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_21920789883c4108",
+            "chunk_index": 2,
+            "chunk_type": "paragraph",
+            "cleaned_text": "Primary hot water flowrate exceeds the minimum flow setpoint of the next available\nstage (see Section 5.21.8 ).\n3. Failsafe Condition: HW sup ply temperature is 10°F < setpoint for 15 minutes.\ni. Stage down if all of the following are true:\n1. Either:\ni. Qrequired  falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or\nii. For 5 minutes, Primary HW pumps are at B -MinPriPumpSpdStage and primary HWRT\nexceeds secondary HWRT by 3°F.\n2. The failsafe stage up condition is not true.\n3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available\nlower stage for 5 minutes.\nStaging conditions are identical for variable primary/v ariable secondary condensing boiler plants to those used for\nprimary only condensing boiler plants, except that slightly different logic must be used for the minimum flow based\nstage down conditional since there is no minimum flow bypass valve.",
+            "text_excerpt": "Primary hot water flowrate exceeds the minimum flow setpoint of the next available\nstage (see Section 5.21.8 ).\n3. Failsafe Condition: HW sup ply temperature is 10°F < setpoint for 15 minutes.\ni. Stag"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_25e6bdabab17703a",
+            "evidence_role": "supporting",
+            "evidence_text": "Primary hot water flowrate exceeds the minimum flow setpoint of the next available\nstage (see Section 5.21.8 ).\n3. Failsafe Condition: HW sup ply temperature is 10°F < setpoint for 15 minutes.\ni. Stag"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 239
+          }
+        },
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_c35882bd91864241",
+            "page_no": 240,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_e710008bfe3b44b9",
+            "chunk_index": 0,
+            "chunk_type": "paragraph",
+            "cleaned_text": "238 ASHRAE Guideline 36 -2021  1. Availability Condition: The equipment necessary to operate the current stage is\nunavailable. The availability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition: Qrequired  exceeds 90% of the design capacity, QbX, of the boilers in\nthe current stage for 10 minutes; or\n3. Failsafe Condition: HW supply temperature is 10°F < setpoint for 15 minutes.\nk. Stage down if both of the following are true:\n1. Qrequired  is less than 80% o f the design capacity of the next lower available stage for 10\nminutes; and\n2. The failsafe stage up condition is not true.\nNon-condensing boilers do not benefit significantly from operating at low turndowns since the primary benefit of\ndoing so is to maximiz e condensing, which is not permissible with non -condensing boiler heat exchangers. Logic is\ntherefore simplified by running boilers to near full output prior to staging.\nRetain the following four section s for hybrid boiler plants.",
+            "text_excerpt": "238 ASHRAE Guideline 36 -2021  1. Availability Condition: The equipment necessary to operate the current stage is\nunavailable. The availability condition is not subject to the minimum stage runtime\nre"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_487861866e9c1c4c",
+            "evidence_role": "supporting",
+            "evidence_text": "238 ASHRAE Guideline 36 -2021  1. Availability Condition: The equipment necessary to operate the current stage is\nunavailable. The availability condition is not subject to the minimum stage runtime\nre"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 240
+          }
+        },
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_c35882bd91864241",
+            "page_no": 240,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_771c1dcbb6b249ac",
+            "chunk_index": 1,
+            "chunk_type": "paragraph",
+            "cleaned_text": "Delete otherwise.\nThe following logic is written with the intent that the designer first enables all condensing boiler stages before any\nnon-condensing boiler stages. The logic will still work if this rule is not followed, but some of the efficiency afforded\nby the condensing boilers may be lost in the process.\nl. If all boilers enabled in the next higher stage are condensing, stage up if any of the following is\ntrue:\n1. Availability Condition: The equipment necessary to operate the current stage is\nunavailable. The ava ilability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition: Both of the following are true:\ni. Qrequired  exceeds 150% of B-STAGE MIN of the next available stage for 10 minutes\nii. Primary hot water flowrate exceeds the min imum flow setpoint of the next available\nstage (see Section 5.21.8 ).\n3. Failsafe Condition:  HW supply temperature is 10°F < setpoint for 15 minutes.\nm.",
+            "text_excerpt": "Delete otherwise.\nThe following logic is written with the intent that the designer first enables all condensing boiler stages before any\nnon-condensing boiler stages. The logic will still work if this"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_5a3eedf5ad420207",
+            "evidence_role": "supporting",
+            "evidence_text": "Delete otherwise.\nThe following logic is written with the intent that the designer first enables all condensing boiler stages before any\nnon-condensing boiler stages. The logic will still work if this"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 240
+          }
+        },
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_fdf05e3b444246ff",
+            "page_no": 241,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_beaafaf19b244208",
+            "chunk_index": 0,
+            "chunk_type": "paragraph",
+            "cleaned_text": "ASHRAE Guideline 36 -2021  239 1. Availability Condition: The equipment necessary to operate the current stage is unavailable.\nThe availability condition is not subject to the minimum stage runtime requirement. Or\n2. Efficiency Condit ion: Qrequired  exceeds 90% of the design capacity, QbX, of the boilers in\nthe current stage for 10 minutes; or\n3. Failsafe Condition: HW supply temperature is 10°F < setpoint for 15 minutes.\no. If any boiler enabled in the current stage is non -condensing, stage down if all of the following\nare true:\n1. Qrequired  is less than 80% of the design capacity of the next available lower stage for 10\nminutes.\n2. The failsafe stage up condition is not true.\nReta in the following two section s for plants with only condensing or only non -condensing boilers.  Delete the\nfollowing two section s for hybrid plants.\n5.21.3.10.",
+            "text_excerpt": "ASHRAE Guideline 36 -2021  239 1. Availability Condition: The equipment necessary to operate the current stage is unavailable.\nThe availability condition is not subject to the minimum stage runtime re"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_69436a768c35366c",
+            "evidence_role": "supporting",
+            "evidence_text": "ASHRAE Guideline 36 -2021  239 1. Availability Condition: The equipment necessary to operate the current stage is unavailable.\nThe availability condition is not subject to the minimum stage runtime re"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 241
+          }
+        }
+      ]
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_e7fdd9316692857f",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_down_efficiency_condition_non_condensing",
+      "title": "Boiler Stage Down – Efficiency Condition (Non-Condensing)",
+      "summary": "Stage down if Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes and the failsafe stage up condition is not true.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Boiler Stage Down – Efficiency Condition (Non-Condensing)",
+        "section_id": "5.21.3.9",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Non-condensing boiler plant",
+        "summary": "Stage down if Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes and the failsafe stage up condition is not true.",
+        "trigger_condition": "Qrequired < 80% of design capacity of next lower available stage for 10 minutes AND failsafe stage up condition not true.",
+        "required_behavior": "Initiate a stage-down event.",
+        "configurable_values": [
+          "Design capacity of boilers in next lower stage"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Stage down if both of the following are true: 1. Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes; and 2. The failsafe stage up condition is not true.",
+        "page_hint": 240
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_c35882bd91864241",
+        "page_no": 240,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_e710008bfe3b44b9",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "238 ASHRAE Guideline 36 -2021  1. Availability Condition: The equipment necessary to operate the current stage is\nunavailable. The availability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition: Qrequired  exceeds 90% of the design capacity, QbX, of the boilers in\nthe current stage for 10 minutes; or\n3. Failsafe Condition: HW supply temperature is 10°F < setpoint for 15 minutes.\nk. Stage down if both of the following are true:\n1. Qrequired  is less than 80% o f the design capacity of the next lower available stage for 10\nminutes; and\n2. The failsafe stage up condition is not true.\nNon-condensing boilers do not benefit significantly from operating at low turndowns since the primary benefit of\ndoing so is to maximiz e condensing, which is not permissible with non -condensing boiler heat exchangers. Logic is\ntherefore simplified by running boilers to near full output prior to staging.\nRetain the following four section s for hybrid boiler plants.",
+        "text_excerpt": "238 ASHRAE Guideline 36 -2021  1. Availability Condition: The equipment necessary to operate the current stage is\nunavailable. The availability condition is not subject to the minimum stage runtime\nre"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_f4982bac2a8a6bab",
+        "evidence_role": "primary",
+        "evidence_text": "Stage down if both of the following are true: 1. Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes; and 2. The failsafe stage up condition is not true."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 240
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_479e3f64bd68fe16",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_up_efficiency_condition_non_condensing",
+      "title": "Boiler Stage Up – Efficiency Condition (Non-Condensing)",
+      "summary": "Stage up when Qrequired exceeds 90% of the design capacity of the boilers in the current stage for 10 minutes.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Boiler Stage Up – Efficiency Condition (Non-Condensing)",
+        "section_id": "5.21.3.9",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Non-condensing boiler plant",
+        "summary": "Stage up when Qrequired exceeds 90% of the design capacity of the boilers in the current stage for 10 minutes.",
+        "trigger_condition": "Qrequired > 90% of design capacity of boilers in current stage for 10 minutes.",
+        "required_behavior": "Initiate a stage-up event.",
+        "configurable_values": [
+          "Design capacity of boilers in current stage"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Efficiency Condition: Qrequired exceeds 90% of the design capacity, QbX, of the boilers in the current stage for 10 minutes; or",
+        "page_hint": 240
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L4",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_c35882bd91864241",
+        "page_no": 240,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_e710008bfe3b44b9",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "238 ASHRAE Guideline 36 -2021  1. Availability Condition: The equipment necessary to operate the current stage is\nunavailable. The availability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition: Qrequired  exceeds 90% of the design capacity, QbX, of the boilers in\nthe current stage for 10 minutes; or\n3. Failsafe Condition: HW supply temperature is 10°F < setpoint for 15 minutes.\nk. Stage down if both of the following are true:\n1. Qrequired  is less than 80% o f the design capacity of the next lower available stage for 10\nminutes; and\n2. The failsafe stage up condition is not true.\nNon-condensing boilers do not benefit significantly from operating at low turndowns since the primary benefit of\ndoing so is to maximiz e condensing, which is not permissible with non -condensing boiler heat exchangers. Logic is\ntherefore simplified by running boilers to near full output prior to staging.\nRetain the following four section s for hybrid boiler plants.",
+        "text_excerpt": "238 ASHRAE Guideline 36 -2021  1. Availability Condition: The equipment necessary to operate the current stage is\nunavailable. The availability condition is not subject to the minimum stage runtime\nre"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_5b9bbc15cdc14e72",
+        "evidence_role": "primary",
+        "evidence_text": "Efficiency Condition: Qrequired exceeds 90% of the design capacity, QbX, of the boilers in the current stage for 10 minutes; or"
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 240
+      },
+      "additional_evidence": [
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_fdf05e3b444246ff",
+            "page_no": 241,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_beaafaf19b244208",
+            "chunk_index": 0,
+            "chunk_type": "paragraph",
+            "cleaned_text": "ASHRAE Guideline 36 -2021  239 1. Availability Condition: The equipment necessary to operate the current stage is unavailable.\nThe availability condition is not subject to the minimum stage runtime requirement. Or\n2. Efficiency Condit ion: Qrequired  exceeds 90% of the design capacity, QbX, of the boilers in\nthe current stage for 10 minutes; or\n3. Failsafe Condition: HW supply temperature is 10°F < setpoint for 15 minutes.\no. If any boiler enabled in the current stage is non -condensing, stage down if all of the following\nare true:\n1. Qrequired  is less than 80% of the design capacity of the next available lower stage for 10\nminutes.\n2. The failsafe stage up condition is not true.\nReta in the following two section s for plants with only condensing or only non -condensing boilers.  Delete the\nfollowing two section s for hybrid plants.\n5.21.3.10.",
+            "text_excerpt": "ASHRAE Guideline 36 -2021  239 1. Availability Condition: The equipment necessary to operate the current stage is unavailable.\nThe availability condition is not subject to the minimum stage runtime re"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_a2a4b25b43aa5e42",
+            "evidence_role": "supporting",
+            "evidence_text": "ASHRAE Guideline 36 -2021  239 1. Availability Condition: The equipment necessary to operate the current stage is unavailable.\nThe availability condition is not subject to the minimum stage runtime re"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 241
+          }
+        }
+      ]
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_819cfbc7fec7940d",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_4_1:hot_water_supply_temperature_reset",
+      "title": "Hot Water Supply Temperature Reset",
+      "summary": "Reset plant hot water supply temperature setpoint using Trim & Respond logic with specified parameters.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Hot Water Supply Temperature Reset",
+        "section_id": "5.21.4.1",
+        "section_title": "Hot Water Supply Temperature Reset",
+        "equipment_scope": "Hot Water Plant",
+        "summary": "Reset plant hot water supply temperature setpoint using Trim & Respond logic with specified parameters.",
+        "trigger_condition": "Plant is enabled.",
+        "required_behavior": "Apply Trim & Respond logic to reset HWST setpoint between SPmin and SPmax.",
+        "configurable_values": [
+          "SPmin (90°F for condensing/hybrid, 155°F for non-condensing)",
+          "SPmax (HWSTmax)",
+          "Td (10 min)",
+          "T (5 min)",
+          "I (2)",
+          "SPtrim (-2°F)",
+          "SPres (+3°F)",
+          "SPres-max (+7°F)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Plant hot water supply temperature setpoint shall be reset using Trim & Respond logic with the following parameters: Variable Value Device Any HW Pump Distribution Loop SP0 SPmax SPmin 90ºF for condensing and hybrid boiler plants; 155° F for non-condensing plants SPmax HWSTmax Td 10 minutes T 5 minutes I 2 R Hot-Water Reset Requests SPtrim -2ºF SPres +3ºF SPres-max +7ºF",
+        "page_hint": 244
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_747424d5f38e45bb",
+        "page_no": 244,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_5d6f323ac4fa489a",
+        "chunk_index": 2,
+        "chunk_type": "paragraph",
+        "cleaned_text": "After 3 minutes, turn off the last lag primary pump and simultaneously close the boiler’s\nisolation valve.\n5.21.4.  Hot Water Supply Temperature Reset\n5.21.4.1.  Plant hot water supply temperature setpoint shall be reset using Trim & Respond logic with the\nfollowing parameters:\nVariable  Value\nDevice  Any HW Pump Distribution Loop.",
+        "text_excerpt": "After 3 minutes, turn off the last lag primary pump and simultaneously close the boiler’s\nisolation valve.\n5.21.4.  Hot Water Supply Temperature Reset\n5.21.4.1.  Plant hot water supply temperature set"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_e82857478f4eee02",
+        "evidence_role": "primary",
+        "evidence_text": "5.21.4.1.  Plant hot water supply temperature setpoint shall be reset using Trim & Respond logic with the"
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 244
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_9d47b7e5c744973b",
+      "canonical_key": "ashrae:g36:operational_sequence:5_21_5_1:non_condensing_boiler_condensation_control_primary_only",
+      "title": "Non-Condensing Boiler Condensation Control – Primary Only",
+      "summary": "A reverse acting P-only loop resets minimum flow bypass valve position from 0% at 140°F boiler entering temperature to 100% at 135°F.",
+      "structured_payload": {
+        "knowledge_type": "operational_sequence",
+        "title": "Non-Condensing Boiler Condensation Control – Primary Only",
+        "section_id": "5.21.5.1",
+        "section_title": "Non-Condensing Boiler Condensation Control",
+        "equipment_scope": "Primary-only hot water plant with non-condensing boilers",
+        "summary": "A reverse acting P-only loop resets minimum flow bypass valve position from 0% at 140°F boiler entering temperature to 100% at 135°F.",
+        "trigger_condition": "Any non-condensing boiler is enabled.",
+        "required_behavior": "Enable the condensation control loop. Reset MinCondVlvPos linearly between 0% and 100% as boiler entering temperature drops from 140°F to 135°F.",
+        "configurable_values": [
+          "140°F (start of modulation)",
+          "135°F (full bypass)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "A reverse acting condensation control P-only loop shall reset a required minimum flow bypass valve position variable, MinCondVlvPos, from 0% at 140°F boiler entering temperature to 100% at 135°F boiler entering temperature.",
+        "page_hint": 246
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_b342663ba4174747",
+        "page_no": 246,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_5d2b3c79cb8f4176",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "244 ASHRAE Guideline 36 -2021  5.21.5.1.  A reverse act ing condensation control P -only loop shall reset a required minimum flow bypass\nvalve position variable, MinCondVlvPos, from 0% at 140°F boiler entering temperature to 100% at\n135°F boiler entering temperature.\n5.21.5.2.  Minimum bypass valve condensation control loo p shall be enabled whenever any non -condensing\nboiler is enabled. Loop shall be disabled otherwise.\nRetain the following two section s for Primary -secondary plants with constant speed primary pumps and\nvariable speed secondary pumps. Delete otherwise.\n5.21.5.3.  A rev erse acting condensation control P -only loop shall reset an allowable maximum secondary\npump speed variable, MaxSecCondSpd, from 100% at 140°F boiler entering temperature to\nminimum pump speed at 135°F boiler entering temperature.\n5.21.5.4.  Secondary pump speed cond ensation control loop shall be enabled whenever any secondary pump\nis enabled and any non -condensing boiler is enabled.",
+        "text_excerpt": "244 ASHRAE Guideline 36 -2021  5.21.5.1.  A reverse act ing condensation control P -only loop shall reset a required minimum flow bypass\nvalve position variable, MinCondVlvPos, from 0% at 140°F boiler"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_bed9d596a25cc97b",
+        "evidence_role": "primary",
+        "evidence_text": "A reverse acting condensation control P-only loop shall reset a required minimum flow bypass valve position variable, MinCondVlvPos, from 0% at 140°F boiler entering temperature to 100% at 135°F boiler entering temperature."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 246
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "knowledge_object_id": "ko_63b353a6c646cd9b",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_10_4:hw_plant_low_boiler_leaving_temperature_alarm",
+      "title": "HW Plant – Low Boiler Leaving Temperature Alarm",
+      "summary": "If boiler leaving water temperature is more than 15°F below setpoint for more than 15 minutes when boiler has been enabled for longer than 15 minutes, generate Level 3 alarm.",
+      "structured_payload": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "HW Plant – Low Boiler Leaving Temperature Alarm",
+        "section_id": "5.21.10.4",
+        "section_title": "Hot Water Plant",
+        "equipment_scope": "Hot Water Plant",
+        "summary": "If boiler leaving water temperature is more than 15°F below setpoint for more than 15 minutes when boiler has been enabled for longer than 15 minutes, generate Level 3 alarm.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": "Boiler leaving water temperature > 15°F below setpoint for > 15 minutes after boiler enabled for > 15 minutes.",
+        "commissioning_check": null,
+        "evidence_quote": "Low boiler leaving hot water temperature (more than 15°F below setpoint) for more than 15 minutes when boiler has been enabled for longer than 15 minutes: Level 3",
+        "page_hint": 254
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_4d777036754a4d44",
+        "page_no": 254,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_0b6a50c178a047e9",
+        "chunk_index": 1,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Maintenance interval alarm when b oiler has operated for more than 2000 hours as indicated by the\nStaging Runtime:  Level 4. Reset the Staging Runtime interval counter when alarm is\nacknowledged.\n5.21.10.3.  Boiler alarm:  Level 2\n5.21.10.4.  Low boiler leaving hot water temperature (more than 15°F below setpoint ) for more than 15\nminutes when boiler has been enabled for longer than 15 minutes:  Level 3\n5.21.10.5.  Pump alarm is indicated by the status input being different from the output command for 15\nseconds.\na. Commanded on, status off:  Level 2. Do not evaluate alarm until  the equipment has been\ncommanded on for 15 seconds.\nb. Commanded off, status on:  Level 4. Do not evaluate alarm until the equipment has been\ncommanded off for 60 seconds.\nRetain the following two alarms for plants with two -position valves with end switch status monitoring. Delete\notherwise.\n5.21.10.6.",
+        "text_excerpt": "Maintenance interval alarm when b oiler has operated for more than 2000 hours as indicated by the\nStaging Runtime:  Level 4. Reset the Staging Runtime interval counter when alarm is\nacknowledged.\n5.21"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_d68699d6003d814c",
+        "evidence_role": "primary",
+        "evidence_text": "Low boiler leaving hot water temperature (more than 15°F below setpoint) for more than 15 minutes when boiler has been enabled for longer than 15 minutes: Level 3"
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 254
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "knowledge_object_id": "ko_831fb801fefb2ea2",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_10_5:hw_plant_pump_alarm",
+      "title": "HW Plant – Pump Alarm",
+      "summary": "Pump alarm if status differs from command for 15 seconds: commanded on but status off is Level 2 (delay 15 sec); commanded off but status on is Level 4 (delay 60 sec).",
+      "structured_payload": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "HW Plant – Pump Alarm",
+        "section_id": "5.21.10.5",
+        "section_title": "Hot Water Plant",
+        "equipment_scope": "Hot Water Plant",
+        "summary": "Pump alarm if status differs from command for 15 seconds: commanded on but status off is Level 2 (delay 15 sec); commanded off but status on is Level 4 (delay 60 sec).",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": "Status differs from command for 15 seconds.",
+        "commissioning_check": null,
+        "evidence_quote": "Pump alarm is indicated by the status input being different from the output command for 15 seconds. a. Commanded on, status off: Level 2. Do not evaluate alarm until the equipment has been commanded on for 15 seconds. b. Commanded off, status on: Level 4. Do not evaluate alarm until the equipment has been commanded off for 60 seconds.",
+        "page_hint": 254
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_4d777036754a4d44",
+        "page_no": 254,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_0b6a50c178a047e9",
+        "chunk_index": 1,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Maintenance interval alarm when b oiler has operated for more than 2000 hours as indicated by the\nStaging Runtime:  Level 4. Reset the Staging Runtime interval counter when alarm is\nacknowledged.\n5.21.10.3.  Boiler alarm:  Level 2\n5.21.10.4.  Low boiler leaving hot water temperature (more than 15°F below setpoint ) for more than 15\nminutes when boiler has been enabled for longer than 15 minutes:  Level 3\n5.21.10.5.  Pump alarm is indicated by the status input being different from the output command for 15\nseconds.\na. Commanded on, status off:  Level 2. Do not evaluate alarm until  the equipment has been\ncommanded on for 15 seconds.\nb. Commanded off, status on:  Level 4. Do not evaluate alarm until the equipment has been\ncommanded off for 60 seconds.\nRetain the following two alarms for plants with two -position valves with end switch status monitoring. Delete\notherwise.\n5.21.10.6.",
+        "text_excerpt": "Maintenance interval alarm when b oiler has operated for more than 2000 hours as indicated by the\nStaging Runtime:  Level 4. Reset the Staging Runtime interval counter when alarm is\nacknowledged.\n5.21"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_78d79b4d491c1a56",
+        "evidence_role": "primary",
+        "evidence_text": "Pump alarm is indicated by the status input being different from the output command for 15 seconds. a. Commanded on, status off: Level 2. Do not evaluate alarm until the equipment has been commanded on for 15 seconds. b. Commanded off, status on: Level 4. Do not evaluate alarm until the equipment has been commanded off for 60 seconds."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 254
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "knowledge_object_id": "ko_ed35426f152de326",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:hw_plant_fc_6_hot_water_supply_temperature_too_low",
+      "title": "HW Plant – FC#6: Hot Water Supply Temperature Too Low",
+      "summary": "Fault condition: HWST AVG + ƐHWT < HWSTSP. Possible causes: mechanical problem with boilers, primary flow higher than design, boiler sensor out of calibration.",
+      "structured_payload": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "HW Plant – FC#6: Hot Water Supply Temperature Too Low",
+        "section_id": "5.21.11.6",
+        "section_title": "Hot Water Plant",
+        "equipment_scope": "Hot Water Plant",
+        "summary": "Fault condition: HWST AVG + ƐHWT < HWSTSP. Possible causes: mechanical problem with boilers, primary flow higher than design, boiler sensor out of calibration.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": "HWST AVG + ƐHWT < HWSTSP",
+        "commissioning_check": null,
+        "evidence_quote": "FC#6 Equation HWST AVG + ƐHWT < HWSTSP Applies to OS #2, #3 Description Hot water supply temperature is too low. Possible Diagnosis Mechanical problem with boilers Primary flow is higher than the design flow of the operating boilers Deviation between the internal boiler hot water supply temperature sensor and the plant hot water supply temperature is too high (i.e. boiler sensor is out of calibration).",
+        "page_hint": 260
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_d0908e29dcae4b58",
+        "page_no": 260,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_ff2f76edac7e437b",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "258 ASHRAE Guideline 36 -2021  FC#6  Equation  HWST AVG + Ɛ HWT < HWSTSP\nApplies\nto OS\n#2, #3  Description  Hot water supply temperature is too low.\nPossible\nDiagnosis  Mechanical problem with boilers\nPrimary flow is higher than the design flow of the operating\nboilers\nDeviation between the internal boiler hot water supply\ntemperature sensor and the plant hot water supply\ntemperature is too high (i.e. boiler sensor is out of\ncalibration).\nRetain the following fault condition for plants where system gauge pressure is monitored. Delete\notherwise.\nFC#7  Equation  PGAUGE, AVG  < 0.9 * ETPreChargePress\nApplies\nto OS\n#1 – #3 Description  Hot water system gauge pressure is too low\nPossible\nDiagnosis  Possible hot water system leak\nRetain the following fault condition for plants with a condensing boiler.",
+        "text_excerpt": "258 ASHRAE Guideline 36 -2021  FC#6  Equation  HWST AVG + Ɛ HWT < HWSTSP\nApplies\nto OS\n#2, #3  Description  Hot water supply temperature is too low.\nPossible\nDiagnosis  Mechanical problem with boilers"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_d5d332b5fbdb6b2e",
+        "evidence_role": "primary",
+        "evidence_text": "FC#6 Equation HWST AVG + ƐHWT < HWSTSP Applies to OS #2, #3 Description Hot water supply temperature is too low. Possible Diagnosis Mechanical problem with boilers Primary flow is higher than the design flow of the operating boilers Deviation between the internal boiler hot water supply temperature sensor and the plant hot water supply temperature is too high (i.e. boiler sensor is out of calibration)."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 260
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "knowledge_object_id": "ko_aa719e9412cf1ccf",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:hw_plant_fc_8_return_temperature_too_high_for_condensing",
+      "title": "HW Plant – FC#8: Return Temperature Too High for Condensing",
+      "summary": "Fault condition: HWRT AVG - ƐHWT > CondTemp. Possible causes: HWST setpoint too high, load too low, high bypass flow raising entering water temperature, coils not designed for condensing.",
+      "structured_payload": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "HW Plant – FC#8: Return Temperature Too High for Condensing",
+        "section_id": "5.21.11.6",
+        "section_title": "Hot Water Plant",
+        "equipment_scope": "Hot water plant with condensing boilers",
+        "summary": "Fault condition: HWRT AVG - ƐHWT > CondTemp. Possible causes: HWST setpoint too high, load too low, high bypass flow raising entering water temperature, coils not designed for condensing.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": "HWRT AVG - ƐHWT > CondTemp",
+        "commissioning_check": null,
+        "evidence_quote": "FC#8 Equation HWRT AVG - ƐHWT > CondTemp Applies to OS #2, #3 Description Hot water return temperature is too high for condensing to occur. Possible Diagnosis Hot water supply temperature setpoint is too high. Hot water load is too low. High bypass flow is raising the entering water temperature. Hot water coils are not designed for condensing at current loads.",
+        "page_hint": 260
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_d0908e29dcae4b58",
+        "page_no": 260,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_09fb328603ed4810",
+        "chunk_index": 1,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Delete otherwise.\nFC#8  Equation  HWRT AVG - ƐHWT > CondTemp\nApplies\nto OS\n#2, #3  Description  Hot water return temperature is too high for condensing to\noccur.\nPossible\nDiagnosis  Hot water supply temperature setpoint is too high.\nHot water load is too low. High bypass flow is raising the\nentering water temperature.\nHot water coils are not designed for condensing at current\nloads.\nRetain the following fault condition for plants with a non -condensing boiler. Delete otherwise.\nFC#9  Equation  HWRT AVG +  ƐHWT < CondTemp\nApplies\nto OS\n#2, #3  Description  Hot water return temperature is too low. Condensing is likely\nto occur.\nPossible\nDiagnosis  Hot water supply temperature setpoint is too low.\nRetain the following fault condition if any boiler has a network interface and the plant has a\ncommon hot water supply temperature sensor at the discharge of the boiler(s).",
+        "text_excerpt": "Delete otherwise.\nFC#8  Equation  HWRT AVG - ƐHWT > CondTemp\nApplies\nto OS\n#2, #3  Description  Hot water return temperature is too high for condensing to\noccur.\nPossible\nDiagnosis  Hot water supply t"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_f3661ffd1441a28c",
+        "evidence_role": "primary",
+        "evidence_text": "FC#8 Equation HWRT AVG - ƐHWT > CondTemp Applies to OS #2, #3 Description Hot water return temperature is too high for condensing to occur. Possible Diagnosis Hot water supply temperature setpoint is too high. Hot water load is too low. High bypass flow is raising the entering water temperature. Hot water coils are not designed for condensing at current loads."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 260
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "knowledge_object_id": "ko_38f5562445088806",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:hw_plant_fc_9_return_temperature_too_low_condensing_risk",
+      "title": "HW Plant – FC#9: Return Temperature Too Low (Condensing Risk)",
+      "summary": "Fault condition: HWRT AVG + ƐHWT < CondTemp. Possible cause: HWST setpoint too low, risking condensation in non-condensing boilers.",
+      "structured_payload": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "HW Plant – FC#9: Return Temperature Too Low (Condensing Risk)",
+        "section_id": "5.21.11.6",
+        "section_title": "Hot Water Plant",
+        "equipment_scope": "Hot water plant with non-condensing boilers",
+        "summary": "Fault condition: HWRT AVG + ƐHWT < CondTemp. Possible cause: HWST setpoint too low, risking condensation in non-condensing boilers.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": "HWRT AVG + ƐHWT < CondTemp",
+        "commissioning_check": null,
+        "evidence_quote": "FC#9 Equation HWRT AVG + ƐHWT < CondTemp Applies to OS #2, #3 Description Hot water return temperature is too low. Condensing is likely to occur. Possible Diagnosis Hot water supply temperature setpoint is too low.",
+        "page_hint": 260
+      },
+      "applicability": {
+        "brand": "ASHRAE",
+        "model_family": "Guideline 36",
+        "standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": null,
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_d0908e29dcae4b58",
+        "page_no": 260,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_09fb328603ed4810",
+        "chunk_index": 1,
+        "chunk_type": "paragraph",
+        "cleaned_text": "Delete otherwise.\nFC#8  Equation  HWRT AVG - ƐHWT > CondTemp\nApplies\nto OS\n#2, #3  Description  Hot water return temperature is too high for condensing to\noccur.\nPossible\nDiagnosis  Hot water supply temperature setpoint is too high.\nHot water load is too low. High bypass flow is raising the\nentering water temperature.\nHot water coils are not designed for condensing at current\nloads.\nRetain the following fault condition for plants with a non -condensing boiler. Delete otherwise.\nFC#9  Equation  HWRT AVG +  ƐHWT < CondTemp\nApplies\nto OS\n#2, #3  Description  Hot water return temperature is too low. Condensing is likely\nto occur.\nPossible\nDiagnosis  Hot water supply temperature setpoint is too low.\nRetain the following fault condition if any boiler has a network interface and the plant has a\ncommon hot water supply temperature sensor at the discharge of the boiler(s).",
+        "text_excerpt": "Delete otherwise.\nFC#8  Equation  HWRT AVG - ƐHWT > CondTemp\nApplies\nto OS\n#2, #3  Description  Hot water return temperature is too high for condensing to\noccur.\nPossible\nDiagnosis  Hot water supply t"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_689a6f4fbc8dd083",
+        "evidence_role": "primary",
+        "evidence_text": "FC#9 Equation HWRT AVG + ƐHWT < CondTemp Applies to OS #2, #3 Description Hot water return temperature is too low. Condensing is likely to occur. Possible Diagnosis Hot water supply temperature setpoint is too low."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 260
+      },
+      "additional_evidence": []
+    }
+  ]
+}

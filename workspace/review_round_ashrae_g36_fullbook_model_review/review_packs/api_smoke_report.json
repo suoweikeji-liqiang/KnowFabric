@@ -1,0 +1,122 @@
+{
+  "report_mode": "standard_review_backfill_api_smoke",
+  "generated_at": "2026-05-06T23:34:05.015479+00:00",
+  "pack_dir": "workspace/review_round_ashrae_g36_fullbook_model_review/review_packs",
+  "min_trust_level": "L3",
+  "limit": 100,
+  "summary": {
+    "targets": 9,
+    "passed": 9,
+    "failed": 0
+  },
+  "results": [
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "application_guidance",
+      "service_family": "application_guidance",
+      "expected_accepted_count": 3,
+      "service_total_count": 4,
+      "service_returned_count": 4,
+      "service_has_more": false,
+      "visible_matching_count": 4,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "service_family": "fault_knowledge",
+      "expected_accepted_count": 14,
+      "service_total_count": 71,
+      "service_returned_count": 71,
+      "service_has_more": false,
+      "visible_matching_count": 71,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 24,
+      "service_total_count": 106,
+      "service_returned_count": 100,
+      "service_has_more": true,
+      "visible_matching_count": 100,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "chiller",
+      "knowledge_object_type": "application_guidance",
+      "service_family": "application_guidance",
+      "expected_accepted_count": 4,
+      "service_total_count": 5,
+      "service_returned_count": 5,
+      "service_has_more": false,
+      "visible_matching_count": 5,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "chiller",
+      "knowledge_object_type": "commissioning_step",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 3,
+      "service_total_count": 3,
+      "service_returned_count": 3,
+      "service_has_more": false,
+      "visible_matching_count": 3,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "chiller",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "service_family": "fault_knowledge",
+      "expected_accepted_count": 3,
+      "service_total_count": 7,
+      "service_returned_count": 7,
+      "service_has_more": false,
+      "visible_matching_count": 7,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "chiller",
+      "knowledge_object_type": "operational_sequence",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 9,
+      "service_total_count": 16,
+      "service_returned_count": 16,
+      "service_has_more": false,
+      "visible_matching_count": 16,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "hot_water_plant",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "service_family": "fault_knowledge",
+      "expected_accepted_count": 5,
+      "service_total_count": 5,
+      "service_returned_count": 5,
+      "service_has_more": false,
+      "visible_matching_count": 5,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "hot_water_plant",
+      "knowledge_object_type": "operational_sequence",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 10,
+      "service_total_count": 16,
+      "service_returned_count": 16,
+      "service_has_more": false,
+      "visible_matching_count": 16,
+      "status": "pass"
+    }
+  ]
+}

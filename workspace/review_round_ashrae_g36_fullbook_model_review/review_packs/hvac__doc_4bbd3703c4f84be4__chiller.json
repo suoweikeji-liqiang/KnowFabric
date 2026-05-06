@@ -1,0 +1,2048 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-06T23:33:54.598898+00:00",
+  "source_generation_mode": "ashrae-g36_standard_import_pipeline",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_4bbd3703c4f84be4",
+  "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chiller",
+    "equipment_class_key": "hvac:chiller",
+    "label": "Chiller",
+    "supported_knowledge_anchors": [
+      "application_guidance",
+      "operational_sequence",
+      "commissioning_step",
+      "fault_diagnostic_rule",
+      "parameter_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 19,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_2a843f1855cfb32b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "ashrae:g36:application_guidance:3_1_1_1:default_zone_temperature_setpoints",
+      "structured_payload_candidate": {
+        "knowledge_type": "application_guidance",
+        "title": "Default Zone Temperature Setpoints",
+        "section_id": "3.1.1.1",
+        "section_title": "General Zone Information",
+        "equipment_scope": "All zones",
+        "summary": "Default occupied heating/cooling setpoints: VAV zones 21°C/24°C; mechanical/electrical rooms 18°C/29°C; networking/computer 18°C/24°C. Unoccupied setpoints are also provided.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Default setpoints shall be based on zone type as shown in Table 3.1.1.1. Table 3.1.1.1 Default Setpoints Zone Type Occupied Unoccupied Heating Cooling Heating Cooling VAV 21°C (70°F) 24°C (75°F) 16°C (60°F) 32°C (90°F) Mechanical/electrical rooms 18°C (65°F) 29°C (85°F) 18°C (65°F) 29°C (85°F) Networking/computer 18°C (65°F) 24°C (75°F) 18°C (65°F) 24°C (75°F)",
+        "page_hint": 6
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Default setpoints shall be based on zone type as shown in Table 3.1.1.1. Table 3.1.1.1 Default Setpoints Zone Type Occupied Unoccupied Heating Cooling Heating Cooling VAV 21°C (70°F) 24°C (75°F) 16°C (60°F) 32°C (90°F) Mechanical/electrical rooms 18°C (65°F) 29°C (85°F) 18°C (65°F) 29°C (85°F) Networking/computer 18°C (65°F) 24°C (75°F) 18°C (65°F) 24°C (75°F)",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §3.1.1.1",
+      "source_chunk_ids": [
+        "chunk_3ebeee7aac514ecf"
+      ],
+      "chunk_id": "chunk_3ebeee7aac514ecf",
+      "page_no": 6,
+      "source_page_nos": [
+        6
+      ],
+      "evidence_text": "Default setpoints shall be based on zone type as shown in Table 3.1.1.1. Table 3.1.1.1 Default Setpoints Zone Type Occupied Unoccupied Heating Cooling Heating Cooling VAV 21°C (70°F) 24°C (75°F) 16°C (60°F) 32°C (90°F) Mechanical/electrical rooms 18°C (65°F) 29°C (85°F) 18°C (65°F) 29°C (85°F) Networking/computer 18°C (65°F) 24°C (75°F) 18°C (65°F) 24°C (75°F)",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Default zone temperature setpoints from table provided.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Default zone temperature setpoints from table provided.",
+      "curation": {
+        "title": "Default Zone Temperature Setpoints",
+        "summary": "Default occupied heating/cooling setpoints: VAV zones 21°C/24°C; mechanical/electrical rooms 18°C/29°C; networking/computer 18°C/24°C. Unoccupied setpoints are also provided.",
+        "canonical_key": "ashrae:g36:application_guidance:3_1_1_1:default_zone_temperature_setpoints",
+        "structured_payload": {
+          "knowledge_type": "application_guidance",
+          "title": "Default Zone Temperature Setpoints",
+          "section_id": "3.1.1.1",
+          "section_title": "General Zone Information",
+          "equipment_scope": "All zones",
+          "summary": "Default occupied heating/cooling setpoints: VAV zones 21°C/24°C; mechanical/electrical rooms 18°C/29°C; networking/computer 18°C/24°C. Unoccupied setpoints are also provided.",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Default setpoints shall be based on zone type as shown in Table 3.1.1.1. Table 3.1.1.1 Default Setpoints Zone Type Occupied Unoccupied Heating Cooling Heating Cooling VAV 21°C (70°F) 24°C (75°F) 16°C (60°F) 32°C (90°F) Mechanical/electrical rooms 18°C (65°F) 29°C (85°F) 18°C (65°F) 29°C (85°F) Networking/computer 18°C (65°F) 24°C (75°F) 18°C (65°F) 24°C (75°F)",
+          "page_hint": 6
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Default setpoints shall be based on zone type as shown in Table 3.1.1.1. Table 3.1.1.1 Default Setpoints Zone Type Occupied Unoccupied Heating Cooling Heating Cooling VAV 21°C (70°F) 24°C (75°F) 16°C (60°F) 32°C (90°F) Mechanical/electrical rooms 18°C (65°F) 29°C (85°F) 18°C (65°F) 29°C (85°F) Networking/computer 18°C (65°F) 24°C (75°F) 18°C (65°F) 24°C (75°F)",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_3ebeee7aac514ecf"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Default zone temperature setpoints from table provided."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1e8a4739a4be009e",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:3_2_1_2:tab_minimum_fan_speed_determination",
+      "structured_payload_candidate": {
+        "knowledge_type": "commissioning_step",
+        "title": "TAB – Minimum Fan Speed Determination",
+        "section_id": "3.2.1.2",
+        "section_title": "Multiple-Zone Air-Handler Information",
+        "equipment_scope": "Multiple-zone VAV AHU",
+        "summary": "Determine minimum speed setpoints for VFD-driven equipment (supply, return, relief fans) by starting at 6 Hz (10%) and increasing until visibly rotating. That speed becomes the minimum speed setpoint.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": "Verify that minimum speed setpoints are determined per TAB specifications: start fan at 6 Hz (10%), observe rotation, increase if not rotating, record speed as minimum setpoint.",
+        "evidence_quote": "Minimum speed setpoints for all VFD-driven equipment shall be determined in accordance with the testing, adjusting, and balancing (TAB) specifications for the following, as applicable: 1. Supply fan 2. Return fan 3. Relief fan. There needs to be corresponding instructions in the TAB specifications. For example: 1. Start the fan or pump. 2. Manually set speed to 6 Hz (10%), unless otherwise indicated in control sequences. For equipment with gear boxes, use whatever minimum speed is recommended by the tower manufacturer. 3. Observe the fan/pump in the field to ensure it is visibly rotating. If it is not, gradually increase speed until it is. 4. The speed at this point shall be the minimum speed setpoint for this piece of equipment.",
+        "page_hint": 20
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Minimum speed setpoints for all VFD-driven equipment shall be determined in accordance with the testing, adjusting, and balancing (TAB) specifications for the following, as applicable: 1. Supply fan 2. Return fan 3. Relief fan. There needs to be corresponding instructions in the TAB specifications. For example: 1. Start the fan or pump. 2. Manually set speed to 6 Hz (10%), unless otherwise indicated in control sequences. For equipment with gear boxes, use whatever minimum speed is recommended by the tower manufacturer. 3. Observe the fan/pump in the field to ensure it is visibly rotating. If it is not, gradually increase speed until it is. 4. The speed at this point shall be the minimum speed setpoint for this piece of equipment.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §3.2.1.2",
+      "source_chunk_ids": [
+        "chunk_84087804a06542f4"
+      ],
+      "chunk_id": "chunk_84087804a06542f4",
+      "page_no": 20,
+      "source_page_nos": [
+        20
+      ],
+      "evidence_text": "Minimum speed setpoints for all VFD-driven equipment shall be determined in accordance with the testing, adjusting, and balancing (TAB) specifications for the following, as applicable: 1. Supply fan 2. Return fan 3. Relief fan. There needs to be corresponding instructions in the TAB specifications. For example: 1. Start the fan or pump. 2. Manually set speed to 6 Hz (10%), unless otherwise indicated in control sequences. For equipment with gear boxes, use whatever minimum speed is recommended by the tower manufacturer. 3. Observe the fan/pump in the field to ensure it is visibly rotating. If it is not, gradually increase speed until it is. 4. The speed at this point shall be the minimum speed setpoint for this piece of equipment.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "TAB procedure for minimum fan speed determination clearly detailed.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: TAB procedure for minimum fan speed determination clearly detailed.",
+      "curation": {
+        "title": "TAB – Minimum Fan Speed Determination",
+        "summary": "Determine minimum speed setpoints for VFD-driven equipment (supply, return, relief fans) by starting at 6 Hz (10%) and increasing until visibly rotating. That speed becomes the minimum speed setpoint.",
+        "canonical_key": "ashrae:g36:commissioning_step:3_2_1_2:tab_minimum_fan_speed_determination",
+        "structured_payload": {
+          "knowledge_type": "commissioning_step",
+          "title": "TAB – Minimum Fan Speed Determination",
+          "section_id": "3.2.1.2",
+          "section_title": "Multiple-Zone Air-Handler Information",
+          "equipment_scope": "Multiple-zone VAV AHU",
+          "summary": "Determine minimum speed setpoints for VFD-driven equipment (supply, return, relief fans) by starting at 6 Hz (10%) and increasing until visibly rotating. That speed becomes the minimum speed setpoint.",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": null,
+          "commissioning_check": "Verify that minimum speed setpoints are determined per TAB specifications: start fan at 6 Hz (10%), observe rotation, increase if not rotating, record speed as minimum setpoint.",
+          "evidence_quote": "Minimum speed setpoints for all VFD-driven equipment shall be determined in accordance with the testing, adjusting, and balancing (TAB) specifications for the following, as applicable: 1. Supply fan 2. Return fan 3. Relief fan. There needs to be corresponding instructions in the TAB specifications. For example: 1. Start the fan or pump. 2. Manually set speed to 6 Hz (10%), unless otherwise indicated in control sequences. For equipment with gear boxes, use whatever minimum speed is recommended by the tower manufacturer. 3. Observe the fan/pump in the field to ensure it is visibly rotating. If it is not, gradually increase speed until it is. 4. The speed at this point shall be the minimum speed setpoint for this piece of equipment.",
+          "page_hint": 20
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Minimum speed setpoints for all VFD-driven equipment shall be determined in accordance with the testing, adjusting, and balancing (TAB) specifications for the following, as applicable: 1. Supply fan 2. Return fan 3. Relief fan. There needs to be corresponding instructions in the TAB specifications. For example: 1. Start the fan or pump. 2. Manually set speed to 6 Hz (10%), unless otherwise indicated in control sequences. For equipment with gear boxes, use whatever minimum speed is recommended by the tower manufacturer. 3. Observe the fan/pump in the field to ensure it is visibly rotating. If it is not, gradually increase speed until it is. 4. The speed at this point shall be the minimum speed setpoint for this piece of equipment.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_84087804a06542f4"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "TAB procedure for minimum fan speed determination clearly detailed."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_ad1a0de4adbbdf9f",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:3_2_1_3:tab_minimum_outdoor_air_dp_setpoint_standard_62_1",
+      "structured_payload_candidate": {
+        "knowledge_type": "commissioning_step",
+        "title": "TAB – Minimum Outdoor Air DP Setpoint (Standard 62.1)",
+        "section_id": "3.2.1.3",
+        "section_title": "Multiple-Zone Air-Handler Information",
+        "equipment_scope": "Multiple-zone VAV AHU with separate minimum OA damper and DP control",
+        "summary": "Establish DesMinDP by opening minimum OA damper fully, closing economizer damper, measuring OA flow, adjusting damper linkage if needed, and recording DP across OA damper at design minimum flow.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": "Verify DesMinDP is established per TAB: open minimum OA damper, close economizer damper, measure OA flow, adjust linkage if needed to achieve design minimum, record DP as DesMinDP.",
+        "evidence_quote": "Instructions for establishing MinDP are given in the TAB specification. For example: 1. Open the minimum outdoor air damper and return air damper fully; close the economizer outdoor air damper. 2. Measure outdoor airflow. 3. If outdoor airflow rate is above design minimum (DesVot for ASHRAE Standard 62.1 or DesMinOA for California Title 24), adjust damper linkage on minimum outdoor air damper so that intake is at design minimum with damper fully stroked. 4. If outdoor airflow rate is below design minimum, temporarily adjust return air damper position via the BAS until design outdoor airflow is achieved. This position shall be used for testing only and shall not limit the return air damper position during normal operation. 5. Note DP across the outdoor air damper. This value becomes the design minimum outdoor air DP setpoint DesMinDP in the BAS. Convey this setpoint to BAS installer and note on air balance report.",
+        "page_hint": 21
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Instructions for establishing MinDP are given in the TAB specification. For example: 1. Open the minimum outdoor air damper and return air damper fully; close the economizer outdoor air damper. 2. Measure outdoor airflow. 3. If outdoor airflow rate is above design minimum (DesVot for ASHRAE Standard 62.1 or DesMinOA for California Title 24), adjust damper linkage on minimum outdoor air damper so that intake is at design minimum with damper fully stroked. 4. If outdoor airflow rate is below design minimum, temporarily adjust return air damper position via the BAS until design outdoor airflow is achieved. This position shall be used for testing only and shall not limit the return air damper position during normal operation. 5. Note DP across the outdoor air damper. This value becomes the design minimum outdoor air DP setpoint DesMinDP in the BAS. Convey this setpoint to BAS installer and note on air balance report.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §3.2.1.3",
+      "source_chunk_ids": [
+        "chunk_e4b7ad3efb274592"
+      ],
+      "chunk_id": "chunk_e4b7ad3efb274592",
+      "page_no": 21,
+      "source_page_nos": [
+        21
+      ],
+      "evidence_text": "Instructions for establishing MinDP are given in the TAB specification. For example: 1. Open the minimum outdoor air damper and return air damper fully; close the economizer outdoor air damper. 2. Measure outdoor airflow. 3. If outdoor airflow rate is above design minimum (DesVot for ASHRAE Standard 62.1 or DesMinOA for California Title 24), adjust damper linkage on minimum outdoor air damper so that intake is at design minimum with damper fully stroked. 4. If outdoor airflow rate is below design minimum, temporarily adjust return air damper position via the BAS until design outdoor airflow is achieved. This position shall be used for testing only and shall not limit the return air damper position during normal operation. 5. Note DP across the outdoor air damper. This value becomes the design minimum outdoor air DP setpoint DesMinDP in the BAS. Convey this setpoint to BAS installer and note on air balance report.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "TAB procedure for minimum outdoor air DP setpoint fully described.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: TAB procedure for minimum outdoor air DP setpoint fully described.",
+      "curation": {
+        "title": "TAB – Minimum Outdoor Air DP Setpoint (Standard 62.1)",
+        "summary": "Establish DesMinDP by opening minimum OA damper fully, closing economizer damper, measuring OA flow, adjusting damper linkage if needed, and recording DP across OA damper at design minimum flow.",
+        "canonical_key": "ashrae:g36:commissioning_step:3_2_1_3:tab_minimum_outdoor_air_dp_setpoint_standard_62_1",
+        "structured_payload": {
+          "knowledge_type": "commissioning_step",
+          "title": "TAB – Minimum Outdoor Air DP Setpoint (Standard 62.1)",
+          "section_id": "3.2.1.3",
+          "section_title": "Multiple-Zone Air-Handler Information",
+          "equipment_scope": "Multiple-zone VAV AHU with separate minimum OA damper and DP control",
+          "summary": "Establish DesMinDP by opening minimum OA damper fully, closing economizer damper, measuring OA flow, adjusting damper linkage if needed, and recording DP across OA damper at design minimum flow.",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": null,
+          "commissioning_check": "Verify DesMinDP is established per TAB: open minimum OA damper, close economizer damper, measure OA flow, adjust linkage if needed to achieve design minimum, record DP as DesMinDP.",
+          "evidence_quote": "Instructions for establishing MinDP are given in the TAB specification. For example: 1. Open the minimum outdoor air damper and return air damper fully; close the economizer outdoor air damper. 2. Measure outdoor airflow. 3. If outdoor airflow rate is above design minimum (DesVot for ASHRAE Standard 62.1 or DesMinOA for California Title 24), adjust damper linkage on minimum outdoor air damper so that intake is at design minimum with damper fully stroked. 4. If outdoor airflow rate is below design minimum, temporarily adjust return air damper position via the BAS until design outdoor airflow is achieved. This position shall be used for testing only and shall not limit the return air damper position during normal operation. 5. Note DP across the outdoor air damper. This value becomes the design minimum outdoor air DP setpoint DesMinDP in the BAS. Convey this setpoint to BAS installer and note on air balance report.",
+          "page_hint": 21
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Instructions for establishing MinDP are given in the TAB specification. For example: 1. Open the minimum outdoor air damper and return air damper fully; close the economizer outdoor air damper. 2. Measure outdoor airflow. 3. If outdoor airflow rate is above design minimum (DesVot for ASHRAE Standard 62.1 or DesMinOA for California Title 24), adjust damper linkage on minimum outdoor air damper so that intake is at design minimum with damper fully stroked. 4. If outdoor airflow rate is below design minimum, temporarily adjust return air damper position via the BAS until design outdoor airflow is achieved. This position shall be used for testing only and shall not limit the return air damper position during normal operation. 5. Note DP across the outdoor air damper. This value becomes the design minimum outdoor air DP setpoint DesMinDP in the BAS. Convey this setpoint to BAS installer and note on air balance report.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_e4b7ad3efb274592"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "TAB procedure for minimum outdoor air DP setpoint fully described."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_619f6aea81543d75",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "commissioning_step",
+      "canonical_key_candidate": "ashrae:g36:commissioning_step:3_2_3_4:tab_minimum_head_pressure_control_valve_position_constant_speed_cw_pumps",
+      "structured_payload_candidate": {
+        "knowledge_type": "commissioning_step",
+        "title": "TAB – Minimum Head Pressure Control Valve Position (Constant Speed CW Pumps)",
+        "section_id": "3.2.3.4",
+        "section_title": "Chilled Water Plant",
+        "equipment_scope": "Water-cooled chiller plant with constant speed CW pumps",
+        "summary": "Establish MinCWVlvPos by configuring plant for lowest chiller stage, throttling head pressure control valve until flow through chiller condenser drops to 110% of minimum flow switch setpoint. Record valve position.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": "Verify MinCWVlvPos is established per TAB: configure lowest stage, throttle valve until flow is 110% of minimum, record position.",
+        "evidence_quote": "For constant speed pumps, instructions for establishing MinCWVlvPos should be provided in the Test and Balance Specification. For example: 1. Configure the plant for the lowest stage of chiller operation. Open the head pressure control valve of the test chiller and enable a CW pump and the corresponding number of cooling towers for that stage. 2. Throttle the head pressure control valve of the test chiller in 2% increments until the flow rate through the chiller’s condenser decreases to 110% of the minimum condenser water flow switch setpoint as determined by condenser differential pressure. 3. Note the valve position setpoint and report to controls contractor.",
+        "page_hint": 23
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "For constant speed pumps, instructions for establishing MinCWVlvPos should be provided in the Test and Balance Specification. For example: 1. Configure the plant for the lowest stage of chiller operation. Open the head pressure control valve of the test chiller and enable a CW pump and the corresponding number of cooling towers for that stage. 2. Throttle the head pressure control valve of the test chiller in 2% increments until the flow rate through the chiller’s condenser decreases to 110% of the minimum condenser water flow switch setpoint as determined by condenser differential pressure. 3. Note the valve position setpoint and report to controls contractor.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §3.2.3.4",
+      "source_chunk_ids": [
+        "chunk_4ac60607a1ef4db1"
+      ],
+      "chunk_id": "chunk_4ac60607a1ef4db1",
+      "page_no": 23,
+      "source_page_nos": [
+        23
+      ],
+      "evidence_text": "For constant speed pumps, instructions for establishing MinCWVlvPos should be provided in the Test and Balance Specification. For example: 1. Configure the plant for the lowest stage of chiller operation. Open the head pressure control valve of the test chiller and enable a CW pump and the corresponding number of cooling towers for that stage. 2. Throttle the head pressure control valve of the test chiller in 2% increments until the flow rate through the chiller’s condenser decreases to 110% of the minimum condenser water flow switch setpoint as determined by condenser differential pressure. 3. Note the valve position setpoint and report to controls contractor.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "TAB procedure for minimum head pressure control valve position matched.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: TAB procedure for minimum head pressure control valve position matched.",
+      "curation": {
+        "title": "TAB – Minimum Head Pressure Control Valve Position (Constant Speed CW Pumps)",
+        "summary": "Establish MinCWVlvPos by configuring plant for lowest chiller stage, throttling head pressure control valve until flow through chiller condenser drops to 110% of minimum flow switch setpoint. Record valve position.",
+        "canonical_key": "ashrae:g36:commissioning_step:3_2_3_4:tab_minimum_head_pressure_control_valve_position_constant_speed_cw_pumps",
+        "structured_payload": {
+          "knowledge_type": "commissioning_step",
+          "title": "TAB – Minimum Head Pressure Control Valve Position (Constant Speed CW Pumps)",
+          "section_id": "3.2.3.4",
+          "section_title": "Chilled Water Plant",
+          "equipment_scope": "Water-cooled chiller plant with constant speed CW pumps",
+          "summary": "Establish MinCWVlvPos by configuring plant for lowest chiller stage, throttling head pressure control valve until flow through chiller condenser drops to 110% of minimum flow switch setpoint. Record valve position.",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": null,
+          "commissioning_check": "Verify MinCWVlvPos is established per TAB: configure lowest stage, throttle valve until flow is 110% of minimum, record position.",
+          "evidence_quote": "For constant speed pumps, instructions for establishing MinCWVlvPos should be provided in the Test and Balance Specification. For example: 1. Configure the plant for the lowest stage of chiller operation. Open the head pressure control valve of the test chiller and enable a CW pump and the corresponding number of cooling towers for that stage. 2. Throttle the head pressure control valve of the test chiller in 2% increments until the flow rate through the chiller’s condenser decreases to 110% of the minimum condenser water flow switch setpoint as determined by condenser differential pressure. 3. Note the valve position setpoint and report to controls contractor.",
+          "page_hint": 23
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "For constant speed pumps, instructions for establishing MinCWVlvPos should be provided in the Test and Balance Specification. For example: 1. Configure the plant for the lowest stage of chiller operation. Open the head pressure control valve of the test chiller and enable a CW pump and the corresponding number of cooling towers for that stage. 2. Throttle the head pressure control valve of the test chiller in 2% increments until the flow rate through the chiller’s condenser decreases to 110% of the minimum condenser water flow switch setpoint as determined by condenser differential pressure. 3. Note the valve position setpoint and report to controls contractor.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_4ac60607a1ef4db1"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "TAB procedure for minimum head pressure control valve position matched."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6ff1f1f647f5e67f",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "ashrae:g36:application_guidance:5_1_15_3:equipment_staging_and_rotation_lead_lag",
+      "structured_payload_candidate": {
+        "knowledge_type": "application_guidance",
+        "title": "Equipment Staging and Rotation – Lead/Lag",
+        "section_id": "5.1.15.3",
+        "section_title": "Equipment Staging and Rotation",
+        "equipment_scope": "Parallel staged equipment (pumps, cooling towers, etc.)",
+        "summary": "Lead/lag equipment shall be alternated when more than one is off or more than one is on so that equipment with most Staging Runtime is last stage and least is lead. Equipment are not hot-swapped during operation.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Lead/lag equipment: Unless otherwise noted, identical parallel staged equipment (such as CHW pumps and cooling towers) shall be lead/lag alternated when more than one is off or more than one is on so that the equipment with the most operating hours as determined by Staging Runtime is made the last stage equipment and the one with the least number of hours is made the lead stage equipment. This strategy effectively makes it such that equipment are not “hot swapped”, e.g., a pump would not be started and another stopped during operation just for runtime equalization.",
+        "page_hint": 50
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Lead/lag equipment: Unless otherwise noted, identical parallel staged equipment (such as CHW pumps and cooling towers) shall be lead/lag alternated when more than one is off or more than one is on so that the equipment with the most operating hours as determined by Staging Runtime is made the last stage equipment and the one with the least number of hours is made the lead stage equipment. This strategy effectively makes it such that equipment are not “hot swapped”, e.g., a pump would not be started and another stopped during operation just for runtime equalization.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.15.3",
+      "source_chunk_ids": [
+        "chunk_43e98cf412eb436a"
+      ],
+      "chunk_id": "chunk_43e98cf412eb436a",
+      "page_no": 50,
+      "source_page_nos": [
+        50
+      ],
+      "evidence_text": "Lead/lag equipment: Unless otherwise noted, identical parallel staged equipment (such as CHW pumps and cooling towers) shall be lead/lag alternated when more than one is off or more than one is on so that the equipment with the most operating hours as determined by Staging Runtime is made the last stage equipment and the one with the least number of hours is made the lead stage equipment. This strategy effectively makes it such that equipment are not “hot swapped”, e.g., a pump would not be started and another stopped during operation just for runtime equalization.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Lead/lag staging rotation logic fully supported by evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Lead/lag staging rotation logic fully supported by evidence.",
+      "curation": {
+        "title": "Equipment Staging and Rotation – Lead/Lag",
+        "summary": "Lead/lag equipment shall be alternated when more than one is off or more than one is on so that equipment with most Staging Runtime is last stage and least is lead. Equipment are not hot-swapped during operation.",
+        "canonical_key": "ashrae:g36:application_guidance:5_1_15_3:equipment_staging_and_rotation_lead_lag",
+        "structured_payload": {
+          "knowledge_type": "application_guidance",
+          "title": "Equipment Staging and Rotation – Lead/Lag",
+          "section_id": "5.1.15.3",
+          "section_title": "Equipment Staging and Rotation",
+          "equipment_scope": "Parallel staged equipment (pumps, cooling towers, etc.)",
+          "summary": "Lead/lag equipment shall be alternated when more than one is off or more than one is on so that equipment with most Staging Runtime is last stage and least is lead. Equipment are not hot-swapped during operation.",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Lead/lag equipment: Unless otherwise noted, identical parallel staged equipment (such as CHW pumps and cooling towers) shall be lead/lag alternated when more than one is off or more than one is on so that the equipment with the most operating hours as determined by Staging Runtime is made the last stage equipment and the one with the least number of hours is made the lead stage equipment. This strategy effectively makes it such that equipment are not “hot swapped”, e.g., a pump would not be started and another stopped during operation just for runtime equalization.",
+          "page_hint": 50
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Lead/lag equipment: Unless otherwise noted, identical parallel staged equipment (such as CHW pumps and cooling towers) shall be lead/lag alternated when more than one is off or more than one is on so that the equipment with the most operating hours as determined by Staging Runtime is made the last stage equipment and the one with the least number of hours is made the lead stage equipment. This strategy effectively makes it such that equipment are not “hot swapped”, e.g., a pump would not be started and another stopped during operation just for runtime equalization.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_43e98cf412eb436a"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Lead/lag staging rotation logic fully supported by evidence."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_aeaf6216fa5815b5",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "ashrae:g36:application_guidance:5_1_17_2:economizer_high_limit_selection_ashrae_90_1",
+      "structured_payload_candidate": {
+        "knowledge_type": "application_guidance",
+        "title": "Economizer High Limit Selection (ASHRAE 90.1)",
+        "section_id": "5.1.17.2",
+        "section_title": "Air Economizer High Limits",
+        "equipment_scope": "Air handlers with economizer",
+        "summary": "ASHRAE 90.1-2019 economizer high limits: Fixed dry bulb (varies by climate zone), Differential dry bulb, Fixed enthalpy + fixed dry bulb, Differential enthalpy + fixed dry bulb. Specific temperature/enthalpy thresholds are provided.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "ASHRAE 90.1-2019 Device Type Allowed only in these ASHRAE Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1b, 2b, 3b, 3c, 4b, 4c, 5b, 5c, 6b, 7, 8 TOA > 24°C (75°F) 5a, 6a TOA > 21°C (70°F) 1a, 2a, 3a, 4a TOA > 18°C (65°F) Differential dry bulb 1b, 2b, 3b, 3c, 4b, 4c,5a, 5b, 5c, 6a, 6b, 7, 8 TOA > TRA Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F) Differential enthalpy + fixed dry bulb All hOA > hRA TOA > 24°C (75°F)",
+        "page_hint": 55
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "ASHRAE 90.1-2019 Device Type Allowed only in these ASHRAE Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1b, 2b, 3b, 3c, 4b, 4c, 5b, 5c, 6b, 7, 8 TOA > 24°C (75°F) 5a, 6a TOA > 21°C (70°F) 1a, 2a, 3a, 4a TOA > 18°C (65°F) Differential dry bulb 1b, 2b, 3b, 3c, 4b, 4c,5a, 5b, 5c, 6a, 6b, 7, 8 TOA > TRA Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F) Differential enthalpy + fixed dry bulb All hOA > hRA TOA > 24°C (75°F)",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.17.2",
+      "source_chunk_ids": [
+        "chunk_c625b2beca3b4005"
+      ],
+      "chunk_id": "chunk_c625b2beca3b4005",
+      "page_no": 55,
+      "source_page_nos": [
+        55
+      ],
+      "evidence_text": "ASHRAE 90.1-2019 Device Type Allowed only in these ASHRAE Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1b, 2b, 3b, 3c, 4b, 4c, 5b, 5c, 6b, 7, 8 TOA > 24°C (75°F) 5a, 6a TOA > 21°C (70°F) 1a, 2a, 3a, 4a TOA > 18°C (65°F) Differential dry bulb 1b, 2b, 3b, 3c, 4b, 4c,5a, 5b, 5c, 6a, 6b, 7, 8 TOA > TRA Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F) Differential enthalpy + fixed dry bulb All hOA > hRA TOA > 24°C (75°F)",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Economizer high limit selection from ASHRAE 90.1 with specific values.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Economizer high limit selection from ASHRAE 90.1 with specific values.",
+      "curation": {
+        "title": "Economizer High Limit Selection (ASHRAE 90.1)",
+        "summary": "ASHRAE 90.1-2019 economizer high limits: Fixed dry bulb (varies by climate zone), Differential dry bulb, Fixed enthalpy + fixed dry bulb, Differential enthalpy + fixed dry bulb. Specific temperature/enthalpy thresholds are provided.",
+        "canonical_key": "ashrae:g36:application_guidance:5_1_17_2:economizer_high_limit_selection_ashrae_90_1",
+        "structured_payload": {
+          "knowledge_type": "application_guidance",
+          "title": "Economizer High Limit Selection (ASHRAE 90.1)",
+          "section_id": "5.1.17.2",
+          "section_title": "Air Economizer High Limits",
+          "equipment_scope": "Air handlers with economizer",
+          "summary": "ASHRAE 90.1-2019 economizer high limits: Fixed dry bulb (varies by climate zone), Differential dry bulb, Fixed enthalpy + fixed dry bulb, Differential enthalpy + fixed dry bulb. Specific temperature/enthalpy thresholds are provided.",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "ASHRAE 90.1-2019 Device Type Allowed only in these ASHRAE Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1b, 2b, 3b, 3c, 4b, 4c, 5b, 5c, 6b, 7, 8 TOA > 24°C (75°F) 5a, 6a TOA > 21°C (70°F) 1a, 2a, 3a, 4a TOA > 18°C (65°F) Differential dry bulb 1b, 2b, 3b, 3c, 4b, 4c,5a, 5b, 5c, 6a, 6b, 7, 8 TOA > TRA Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F) Differential enthalpy + fixed dry bulb All hOA > hRA TOA > 24°C (75°F)",
+          "page_hint": 55
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "ASHRAE 90.1-2019 Device Type Allowed only in these ASHRAE Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1b, 2b, 3b, 3c, 4b, 4c, 5b, 5c, 6b, 7, 8 TOA > 24°C (75°F) 5a, 6a TOA > 21°C (70°F) 1a, 2a, 3a, 4a TOA > 18°C (65°F) Differential dry bulb 1b, 2b, 3b, 3c, 4b, 4c,5a, 5b, 5c, 6a, 6b, 7, 8 TOA > TRA Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F) Differential enthalpy + fixed dry bulb All hOA > hRA TOA > 24°C (75°F)",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_c625b2beca3b4005"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Economizer high limit selection from ASHRAE 90.1 with specific values."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_373ae7fd13ab1d66",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "ashrae:g36:application_guidance:5_1_17_3:economizer_high_limit_selection_title_24",
+      "structured_payload_candidate": {
+        "knowledge_type": "application_guidance",
+        "title": "Economizer High Limit Selection (Title 24)",
+        "section_id": "5.1.17.3",
+        "section_title": "Air Economizer High Limits",
+        "equipment_scope": "Air handlers with economizer",
+        "summary": "Title 24-2019 economizer high limits: Fixed dry bulb (varies by California climate zone), Differential dry bulb (varies by zone), Fixed enthalpy + fixed dry bulb.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Title 24-2019 Device Type California Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1, 3, 5, 11 to 16 TOA > 24°C (75°F) 2, 4, 10 TOA > 23°C (73°F) 6, 8, 9 TOA > 22°C (71°F) 7 TOA > 21°C (69°F) Differential dry bulb 1, 3, 5, 11 to 16 TOA > TRA 2, 4, 10 TOA > TRA – 1°C (2°F) 6, 8, 9 TOA > TRA –2°C (4°F) 7 TOA > TRA – 3°C (6°F) Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F)",
+        "page_hint": 55
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Title 24-2019 Device Type California Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1, 3, 5, 11 to 16 TOA > 24°C (75°F) 2, 4, 10 TOA > 23°C (73°F) 6, 8, 9 TOA > 22°C (71°F) 7 TOA > 21°C (69°F) Differential dry bulb 1, 3, 5, 11 to 16 TOA > TRA 2, 4, 10 TOA > TRA – 1°C (2°F) 6, 8, 9 TOA > TRA –2°C (4°F) 7 TOA > TRA – 3°C (6°F) Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F)",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.17.3",
+      "source_chunk_ids": [
+        "chunk_5076006db6b349b6"
+      ],
+      "chunk_id": "chunk_5076006db6b349b6",
+      "page_no": 55,
+      "source_page_nos": [
+        55
+      ],
+      "evidence_text": "Title 24-2019 Device Type California Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1, 3, 5, 11 to 16 TOA > 24°C (75°F) 2, 4, 10 TOA > 23°C (73°F) 6, 8, 9 TOA > 22°C (71°F) 7 TOA > 21°C (69°F) Differential dry bulb 1, 3, 5, 11 to 16 TOA > TRA 2, 4, 10 TOA > TRA – 1°C (2°F) 6, 8, 9 TOA > TRA –2°C (4°F) 7 TOA > TRA – 3°C (6°F) Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F)",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Economizer high limit selection from Title 24 with specific values.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Economizer high limit selection from Title 24 with specific values.",
+      "curation": {
+        "title": "Economizer High Limit Selection (Title 24)",
+        "summary": "Title 24-2019 economizer high limits: Fixed dry bulb (varies by California climate zone), Differential dry bulb (varies by zone), Fixed enthalpy + fixed dry bulb.",
+        "canonical_key": "ashrae:g36:application_guidance:5_1_17_3:economizer_high_limit_selection_title_24",
+        "structured_payload": {
+          "knowledge_type": "application_guidance",
+          "title": "Economizer High Limit Selection (Title 24)",
+          "section_id": "5.1.17.3",
+          "section_title": "Air Economizer High Limits",
+          "equipment_scope": "Air handlers with economizer",
+          "summary": "Title 24-2019 economizer high limits: Fixed dry bulb (varies by California climate zone), Differential dry bulb (varies by zone), Fixed enthalpy + fixed dry bulb.",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Title 24-2019 Device Type California Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1, 3, 5, 11 to 16 TOA > 24°C (75°F) 2, 4, 10 TOA > 23°C (73°F) 6, 8, 9 TOA > 22°C (71°F) 7 TOA > 21°C (69°F) Differential dry bulb 1, 3, 5, 11 to 16 TOA > TRA 2, 4, 10 TOA > TRA – 1°C (2°F) 6, 8, 9 TOA > TRA –2°C (4°F) 7 TOA > TRA – 3°C (6°F) Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F)",
+          "page_hint": 55
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Title 24-2019 Device Type California Climate Zones Required High Limit (Economizer OFF when) Fixed dry bulb 1, 3, 5, 11 to 16 TOA > 24°C (75°F) 2, 4, 10 TOA > 23°C (73°F) 6, 8, 9 TOA > 22°C (71°F) 7 TOA > 21°C (69°F) Differential dry bulb 1, 3, 5, 11 to 16 TOA > TRA 2, 4, 10 TOA > TRA – 1°C (2°F) 6, 8, 9 TOA > TRA –2°C (4°F) 7 TOA > TRA – 3°C (6°F) Fixed enthalpy + fixed dry bulb All hOA > 66 kJ/kg (28 Btu/lb) or TOA > 24°C (75°F)",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_5076006db6b349b6"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Economizer high limit selection from Title 24 with specific values."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d726dbced0b4e5eb",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_2_2:chiller_plant_enable_logic",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Chiller Plant Enable Logic",
+        "section_id": "5.20.2.2",
+        "section_title": "Plant Enable/Disable",
+        "equipment_scope": "Chilled Water Plant",
+        "summary": "Enable the chiller plant in the lowest stage when disabled for at least 15 minutes, number of Chiller Plant Requests exceeds I, OAT exceeds CH-LOT, and the enable schedule is active.",
+        "trigger_condition": "Plant has been disabled for at least 15 minutes, Number of Chiller Plant Requests > I (default 0, adjustable), OAT > CH-LOT, and chiller plant enable schedule is active.",
+        "required_behavior": "Enable the plant in the lowest stage.",
+        "configurable_values": [
+          "I (ignores, default 0)",
+          "CH-LOT (outdoor air lockout temperature)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH-LOT, and c. The chiller plant enable schedule is active.",
+        "page_hint": 172
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "5.20.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.2.2",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_2543aaa4b3c34732"
+      ],
+      "chunk_id": "chunk_2543aaa4b3c34732",
+      "page_no": 172,
+      "source_page_nos": [
+        172
+      ],
+      "evidence_text": "5.20.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Chiller plant enable logic with clear conditions from section 5.20.2.2.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Chiller plant enable logic with clear conditions from section 5.20.2.2.",
+      "curation": {
+        "title": "Chiller Plant Enable Logic",
+        "summary": "Enable the chiller plant in the lowest stage when disabled for at least 15 minutes, number of Chiller Plant Requests exceeds I, OAT exceeds CH-LOT, and the enable schedule is active.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_2_2:chiller_plant_enable_logic",
+        "structured_payload": {
+          "knowledge_type": "operational_sequence",
+          "title": "Chiller Plant Enable Logic",
+          "section_id": "5.20.2.2",
+          "section_title": "Plant Enable/Disable",
+          "equipment_scope": "Chilled Water Plant",
+          "summary": "Enable the chiller plant in the lowest stage when disabled for at least 15 minutes, number of Chiller Plant Requests exceeds I, OAT exceeds CH-LOT, and the enable schedule is active.",
+          "trigger_condition": "Plant has been disabled for at least 15 minutes, Number of Chiller Plant Requests > I (default 0, adjustable), OAT > CH-LOT, and chiller plant enable schedule is active.",
+          "required_behavior": "Enable the plant in the lowest stage.",
+          "configurable_values": [
+            "I (ignores, default 0)",
+            "CH-LOT (outdoor air lockout temperature)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH-LOT, and c. The chiller plant enable schedule is active.",
+          "page_hint": 172
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5.20.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_2543aaa4b3c34732"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Chiller plant enable logic with clear conditions from section 5.20.2.2."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a3d5fd9fdd7e72ab",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_2_3:chiller_plant_disable_logic",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Chiller Plant Disable Logic",
+        "section_id": "5.20.2.3",
+        "section_title": "Plant Enable/Disable",
+        "equipment_scope": "Chilled Water Plant",
+        "summary": "Disable the chiller plant when enabled for at least 15 minutes and either number of Chiller Plant Requests ≤ I for 3 minutes, OAT < CH-LOT – 1°F, or the enable schedule is inactive.",
+        "trigger_condition": "Plant has been enabled for at least 15 minutes and (Number of Chiller Plant Requests ≤ I for 3 minutes OR OAT < CH-LOT – 1°F OR chiller plant enable schedule is inactive).",
+        "required_behavior": "Disable the plant.",
+        "configurable_values": [
+          "I (ignores, default 0)",
+          "CH-LOT (outdoor air lockout temperature)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Chiller Plant Requests ≤ I for 3 minutes, or b. OAT<CH-LOT – 1°F, or c. The chiller plant enable schedule is inactive.",
+        "page_hint": 172
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Chiller Plant Requests ≤ I for 3 minutes, or b. OAT<CH-LOT – 1°F, or c. The chiller plant enable schedule is inactive.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.2.3",
+      "source_chunk_ids": [
+        "chunk_5bb9fe9f566243cb"
+      ],
+      "chunk_id": "chunk_5bb9fe9f566243cb",
+      "page_no": 172,
+      "source_page_nos": [
+        172
+      ],
+      "evidence_text": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Chiller Plant Requests ≤ I for 3 minutes, or b. OAT<CH-LOT – 1°F, or c. The chiller plant enable schedule is inactive.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Chiller plant disable logic matching evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Chiller plant disable logic matching evidence.",
+      "curation": {
+        "title": "Chiller Plant Disable Logic",
+        "summary": "Disable the chiller plant when enabled for at least 15 minutes and either number of Chiller Plant Requests ≤ I for 3 minutes, OAT < CH-LOT – 1°F, or the enable schedule is inactive.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_2_3:chiller_plant_disable_logic",
+        "structured_payload": {
+          "knowledge_type": "operational_sequence",
+          "title": "Chiller Plant Disable Logic",
+          "section_id": "5.20.2.3",
+          "section_title": "Plant Enable/Disable",
+          "equipment_scope": "Chilled Water Plant",
+          "summary": "Disable the chiller plant when enabled for at least 15 minutes and either number of Chiller Plant Requests ≤ I for 3 minutes, OAT < CH-LOT – 1°F, or the enable schedule is inactive.",
+          "trigger_condition": "Plant has been enabled for at least 15 minutes and (Number of Chiller Plant Requests ≤ I for 3 minutes OR OAT < CH-LOT – 1°F OR chiller plant enable schedule is inactive).",
+          "required_behavior": "Disable the plant.",
+          "configurable_values": [
+            "I (ignores, default 0)",
+            "CH-LOT (outdoor air lockout temperature)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Chiller Plant Requests ≤ I for 3 minutes, or b. OAT<CH-LOT – 1°F, or c. The chiller plant enable schedule is inactive.",
+          "page_hint": 172
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Chiller Plant Requests ≤ I for 3 minutes, or b. OAT<CH-LOT – 1°F, or c. The chiller plant enable schedule is inactive.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_5bb9fe9f566243cb"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Chiller plant disable logic matching evidence."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c2130dd0fae82e4b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_3_1:waterside_economizer_enable_logic",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Waterside Economizer Enable Logic",
+        "section_id": "5.20.3.1",
+        "section_title": "Waterside Economizer Control",
+        "equipment_scope": "Chilled Water Plant with waterside economizer",
+        "summary": "Enable waterside economizer if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F.",
+        "trigger_condition": "WSE has been disabled for at least 20 minutes and CHWRT upstream of HX > PHXLWT + 2°F.",
+        "required_behavior": "Enable the waterside economizer.",
+        "configurable_values": [
+          "PHXLWT (calculated from wetbulb, design approaches, and part load ratio)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Enable waterside economizer (WSE) if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F.",
+        "page_hint": 175
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Enable waterside economizer (WSE) if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.3.1",
+      "source_chunk_ids": [
+        "chunk_44862f0d856f4bd0"
+      ],
+      "chunk_id": "chunk_44862f0d856f4bd0",
+      "page_no": 175,
+      "source_page_nos": [
+        175
+      ],
+      "evidence_text": "Enable waterside economizer (WSE) if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Waterside economizer enable logic matches evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Waterside economizer enable logic matches evidence.",
+      "curation": {
+        "title": "Waterside Economizer Enable Logic",
+        "summary": "Enable waterside economizer if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_3_1:waterside_economizer_enable_logic",
+        "structured_payload": {
+          "knowledge_type": "operational_sequence",
+          "title": "Waterside Economizer Enable Logic",
+          "section_id": "5.20.3.1",
+          "section_title": "Waterside Economizer Control",
+          "equipment_scope": "Chilled Water Plant with waterside economizer",
+          "summary": "Enable waterside economizer if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F.",
+          "trigger_condition": "WSE has been disabled for at least 20 minutes and CHWRT upstream of HX > PHXLWT + 2°F.",
+          "required_behavior": "Enable the waterside economizer.",
+          "configurable_values": [
+            "PHXLWT (calculated from wetbulb, design approaches, and part load ratio)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Enable waterside economizer (WSE) if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F.",
+          "page_hint": 175
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Enable waterside economizer (WSE) if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_44862f0d856f4bd0"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Waterside economizer enable logic matches evidence."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fc856ebf01187fb7",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_3_2:waterside_economizer_disable_logic",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Waterside Economizer Disable Logic",
+        "section_id": "5.20.3.2",
+        "section_title": "Waterside Economizer Control",
+        "equipment_scope": "Chilled Water Plant with waterside economizer",
+        "summary": "Disable waterside economizer when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1°F for 2 minutes.",
+        "trigger_condition": "WSE has run for at least 20 minutes and CHW temp downstream of HX > CHWRT upstream of HX – 1°F for 2 minutes.",
+        "required_behavior": "Disable the waterside economizer.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Disable WSE when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1ºF for 2 minutes (i.e., if the HX is not reducing the CHW temp by at least 1°F).",
+        "page_hint": 176
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Disable WSE when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1ºF for 2 minutes (i.e., if the HX is not reducing the CHW temp by at least 1°F).",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.3.2",
+      "source_chunk_ids": [
+        "chunk_6383ecd60896400d"
+      ],
+      "chunk_id": "chunk_6383ecd60896400d",
+      "page_no": 176,
+      "source_page_nos": [
+        176
+      ],
+      "evidence_text": "Disable WSE when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1ºF for 2 minutes (i.e., if the HX is not reducing the CHW temp by at least 1°F).",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Waterside economizer disable logic exactly from evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Waterside economizer disable logic exactly from evidence.",
+      "curation": {
+        "title": "Waterside Economizer Disable Logic",
+        "summary": "Disable waterside economizer when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1°F for 2 minutes.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_3_2:waterside_economizer_disable_logic",
+        "structured_payload": {
+          "knowledge_type": "operational_sequence",
+          "title": "Waterside Economizer Disable Logic",
+          "section_id": "5.20.3.2",
+          "section_title": "Waterside Economizer Control",
+          "equipment_scope": "Chilled Water Plant with waterside economizer",
+          "summary": "Disable waterside economizer when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1°F for 2 minutes.",
+          "trigger_condition": "WSE has run for at least 20 minutes and CHW temp downstream of HX > CHWRT upstream of HX – 1°F for 2 minutes.",
+          "required_behavior": "Disable the waterside economizer.",
+          "configurable_values": [],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Disable WSE when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1ºF for 2 minutes (i.e., if the HX is not reducing the CHW temp by at least 1°F).",
+          "page_hint": 176
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Disable WSE when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1ºF for 2 minutes (i.e., if the HX is not reducing the CHW temp by at least 1°F).",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_6383ecd60896400d"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Waterside economizer disable logic exactly from evidence."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_73c67ab64b55e036",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_4_15:chiller_minimum_stage_runtime",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Chiller Minimum Stage Runtime",
+        "section_id": "5.20.4.15",
+        "section_title": "Chiller Staging",
+        "equipment_scope": "Chilled Water Plant",
+        "summary": "Each chiller stage shall have a minimum runtime of 15 minutes before another stage change can occur.",
+        "trigger_condition": "A stage change has just completed.",
+        "required_behavior": "Prevent any further stage changes for 15 minutes.",
+        "configurable_values": [
+          "15 minutes (adjustable)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Each stage shall have a minimum runtime of 15 minutes.",
+        "page_hint": 181
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Each stage shall have a minimum runtime of 15 minutes.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.4.15",
+      "source_chunk_ids": [
+        "chunk_e114f0fa970b42cb"
+      ],
+      "chunk_id": "chunk_e114f0fa970b42cb",
+      "page_no": 181,
+      "source_page_nos": [
+        181
+      ],
+      "evidence_text": "Each stage shall have a minimum runtime of 15 minutes.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Minimum stage runtime of 15 minutes directly from evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Minimum stage runtime of 15 minutes directly from evidence.",
+      "curation": {
+        "title": "Chiller Minimum Stage Runtime",
+        "summary": "Each chiller stage shall have a minimum runtime of 15 minutes before another stage change can occur.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_minimum_stage_runtime",
+        "structured_payload": {
+          "knowledge_type": "operational_sequence",
+          "title": "Chiller Minimum Stage Runtime",
+          "section_id": "5.20.4.15",
+          "section_title": "Chiller Staging",
+          "equipment_scope": "Chilled Water Plant",
+          "summary": "Each chiller stage shall have a minimum runtime of 15 minutes before another stage change can occur.",
+          "trigger_condition": "A stage change has just completed.",
+          "required_behavior": "Prevent any further stage changes for 15 minutes.",
+          "configurable_values": [
+            "15 minutes (adjustable)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Each stage shall have a minimum runtime of 15 minutes.",
+          "page_hint": 181
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Each stage shall have a minimum runtime of 15 minutes.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_e114f0fa970b42cb"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Minimum stage runtime of 15 minutes directly from evidence."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5f36548050f97c0e",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_down_efficiency_condition",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Chiller Stage Down – Efficiency Condition",
+        "section_id": "5.20.4.15",
+        "section_title": "Chiller Staging",
+        "equipment_scope": "Chilled Water Plant",
+        "summary": "Stage down when next available lower stage OPLR is below SPLR DN for 15 minutes and not increasing at a rate greater than 2.5% per minute, and the failsafe stage up condition is not true.",
+        "trigger_condition": "Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and the failsafe stage up condition is not true.",
+        "required_behavior": "Initiate a stage-down event.",
+        "configurable_values": [
+          "SPLR DN (stage down part load ratio, varies by chiller type and lift)",
+          "OPLR increasing rate threshold (2.5% per minute)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage up condition is not true.",
+        "page_hint": 182
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage up condition is not true.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.4.15",
+      "source_chunk_ids": [
+        "chunk_5725abaf58f2407e",
+        "chunk_0c68e9f609dd4ab2",
+        "chunk_f91d1661831747b2"
+      ],
+      "chunk_id": "chunk_5725abaf58f2407e",
+      "page_no": 182,
+      "source_page_nos": [
+        182,
+        183,
+        184
+      ],
+      "evidence_text": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage up condition is not true.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 3 chunks",
+      "judge_reason": "Chiller stage down efficiency condition supported by evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Chiller stage down efficiency condition supported by evidence.",
+      "curation": {
+        "title": "Chiller Stage Down – Efficiency Condition",
+        "summary": "Stage down when next available lower stage OPLR is below SPLR DN for 15 minutes and not increasing at a rate greater than 2.5% per minute, and the failsafe stage up condition is not true.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_down_efficiency_condition",
+        "structured_payload": {
+          "knowledge_type": "operational_sequence",
+          "title": "Chiller Stage Down – Efficiency Condition",
+          "section_id": "5.20.4.15",
+          "section_title": "Chiller Staging",
+          "equipment_scope": "Chilled Water Plant",
+          "summary": "Stage down when next available lower stage OPLR is below SPLR DN for 15 minutes and not increasing at a rate greater than 2.5% per minute, and the failsafe stage up condition is not true.",
+          "trigger_condition": "Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and the failsafe stage up condition is not true.",
+          "required_behavior": "Initiate a stage-down event.",
+          "configurable_values": [
+            "SPLR DN (stage down part load ratio, varies by chiller type and lift)",
+            "OPLR increasing rate threshold (2.5% per minute)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage up condition is not true.",
+          "page_hint": 182
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L4",
+        "review_status": "approved",
+        "evidence_text": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage up condition is not true.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_5725abaf58f2407e",
+          "chunk_0c68e9f609dd4ab2",
+          "chunk_f91d1661831747b2"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Chiller stage down efficiency condition supported by evidence."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_03c80334ee1c7cab",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_up_efficiency_condition",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Chiller Stage Up – Efficiency Condition",
+        "section_id": "5.20.4.15",
+        "section_title": "Chiller Staging",
+        "equipment_scope": "Chilled Water Plant",
+        "summary": "Stage up when current stage OPLR exceeds SPLR UP for 15 minutes and OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes.",
+        "trigger_condition": "Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes.",
+        "required_behavior": "Initiate a stage-up event.",
+        "configurable_values": [
+          "SPLR UP (stage up part load ratio, varies by chiller type and lift)",
+          "OPLR decreasing rate threshold (2.5% per minute)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or",
+        "page_hint": 182
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.4.15",
+      "source_chunk_ids": [
+        "chunk_5725abaf58f2407e",
+        "chunk_1dcc50f55c6c4057",
+        "chunk_3c5231641019449d",
+        "chunk_46417cdd23154fd0"
+      ],
+      "chunk_id": "chunk_5725abaf58f2407e",
+      "page_no": 182,
+      "source_page_nos": [
+        182,
+        183,
+        184,
+        185
+      ],
+      "evidence_text": "Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 4 chunks",
+      "judge_reason": "Chiller stage up efficiency condition from section 5.20.4.15.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Chiller stage up efficiency condition from section 5.20.4.15.",
+      "curation": {
+        "title": "Chiller Stage Up – Efficiency Condition",
+        "summary": "Stage up when current stage OPLR exceeds SPLR UP for 15 minutes and OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_up_efficiency_condition",
+        "structured_payload": {
+          "knowledge_type": "operational_sequence",
+          "title": "Chiller Stage Up – Efficiency Condition",
+          "section_id": "5.20.4.15",
+          "section_title": "Chiller Staging",
+          "equipment_scope": "Chilled Water Plant",
+          "summary": "Stage up when current stage OPLR exceeds SPLR UP for 15 minutes and OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes.",
+          "trigger_condition": "Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes.",
+          "required_behavior": "Initiate a stage-up event.",
+          "configurable_values": [
+            "SPLR UP (stage up part load ratio, varies by chiller type and lift)",
+            "OPLR decreasing rate threshold (2.5% per minute)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or",
+          "page_hint": 182
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L4",
+        "review_status": "approved",
+        "evidence_text": "Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_5725abaf58f2407e",
+          "chunk_1dcc50f55c6c4057",
+          "chunk_3c5231641019449d",
+          "chunk_46417cdd23154fd0"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Chiller stage up efficiency condition from section 5.20.4.15."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5bfa7b5d89c4a2bf",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_up_availability_condition",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Chiller Stage Up – Availability Condition",
+        "section_id": "5.20.4.15",
+        "section_title": "Chiller Staging",
+        "equipment_scope": "Chilled Water Plant",
+        "summary": "Stage up if the equipment necessary to operate the current stage is unavailable. This condition is not subject to the minimum stage runtime requirement.",
+        "trigger_condition": "The equipment necessary to operate the current stage are unavailable.",
+        "required_behavior": "Initiate a stage-up event immediately (no minimum runtime delay).",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Availability Condition: The equipment necessary to operate the current stage are unavailable. The availability condition is not subject to the minimum stage runtime requirement.",
+        "page_hint": 182
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Availability Condition: The equipment necessary to operate the current stage are unavailable. The availability condition is not subject to the minimum stage runtime requirement.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.4.15",
+      "source_chunk_ids": [
+        "chunk_1dcc50f55c6c4057",
+        "chunk_3c5231641019449d",
+        "chunk_46417cdd23154fd0",
+        "chunk_479bdb1de1e84478"
+      ],
+      "chunk_id": "chunk_1dcc50f55c6c4057",
+      "page_no": 183,
+      "source_page_nos": [
+        183,
+        184,
+        185,
+        238
+      ],
+      "evidence_text": "Availability Condition: The equipment necessary to operate the current stage are unavailable. The availability condition is not subject to the minimum stage runtime requirement.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 4 chunks",
+      "judge_reason": "Chiller stage up availability condition clearly stated.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Chiller stage up availability condition clearly stated.",
+      "curation": {
+        "title": "Chiller Stage Up – Availability Condition",
+        "summary": "Stage up if the equipment necessary to operate the current stage is unavailable. This condition is not subject to the minimum stage runtime requirement.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_up_availability_condition",
+        "structured_payload": {
+          "knowledge_type": "operational_sequence",
+          "title": "Chiller Stage Up – Availability Condition",
+          "section_id": "5.20.4.15",
+          "section_title": "Chiller Staging",
+          "equipment_scope": "Chilled Water Plant",
+          "summary": "Stage up if the equipment necessary to operate the current stage is unavailable. This condition is not subject to the minimum stage runtime requirement.",
+          "trigger_condition": "The equipment necessary to operate the current stage are unavailable.",
+          "required_behavior": "Initiate a stage-up event immediately (no minimum runtime delay).",
+          "configurable_values": [],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Availability Condition: The equipment necessary to operate the current stage are unavailable. The availability condition is not subject to the minimum stage runtime requirement.",
+          "page_hint": 182
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L4",
+        "review_status": "approved",
+        "evidence_text": "Availability Condition: The equipment necessary to operate the current stage are unavailable. The availability condition is not subject to the minimum stage runtime requirement.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_1dcc50f55c6c4057",
+          "chunk_3c5231641019449d",
+          "chunk_46417cdd23154fd0",
+          "chunk_479bdb1de1e84478"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Chiller stage up availability condition clearly stated."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5d5beafaec0a9141",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_5_2:chilled_water_supply_temperature_reset_differential_pressure_controlled_loops",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Chilled Water Supply Temperature Reset – Differential Pressure Controlled Loops",
+        "section_id": "5.20.5.2",
+        "section_title": "Chilled Water Plant Reset",
+        "equipment_scope": "Chilled Water Plant (DP controlled pumps)",
+        "summary": "Reset CHWST setpoint and pump DP setpoint based on a Trim & Respond loop. From 0-50% loop output, reset DP setpoint from CHW-DPmin to CHW-DPmax. From 50-100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin.",
+        "trigger_condition": "Plant is enabled.",
+        "required_behavior": "Map CHW Plant Reset loop output to DP setpoint (0-50%) and CHWST setpoint (50-100%) as described.",
+        "configurable_values": [
+          "CHW-DPmin",
+          "CHW-DPmax",
+          "CHWSTmin",
+          "CHWSTmax",
+          "Trim & Respond parameters (SP0, SPmin, SPmax, Td, T, I, SPtrim, SPres, SPres-max)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "a. From 0% loop output to 50% loop output, reset DP setpoint from CHW-DPmin to CHWP-DPmax. b. From 50% loop output to 100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin.",
+        "page_hint": 199
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "a. From 0% loop output to 50% loop output, reset DP setpoint from CHW-DPmin to CHWP-DPmax. b. From 50% loop output to 100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.5.2",
+      "source_chunk_ids": [
+        "chunk_acf8959893124b6a"
+      ],
+      "chunk_id": "chunk_acf8959893124b6a",
+      "page_no": 200,
+      "source_page_nos": [
+        200
+      ],
+      "evidence_text": "a. From 0% loop output to 50% loop output, reset DP setpoint from CHW-DPmin to CHWP-DPmax. b. From 50% loop output to 100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "CHW supply temperature reset sequence with DP and temperature ranges provided.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: CHW supply temperature reset sequence with DP and temperature ranges provided.",
+      "curation": {
+        "title": "Chilled Water Supply Temperature Reset – Differential Pressure Controlled Loops",
+        "summary": "Reset CHWST setpoint and pump DP setpoint based on a Trim & Respond loop. From 0-50% loop output, reset DP setpoint from CHW-DPmin to CHW-DPmax. From 50-100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_5_2:chilled_water_supply_temperature_reset_differential_pressure_controlled_loops",
+        "structured_payload": {
+          "knowledge_type": "operational_sequence",
+          "title": "Chilled Water Supply Temperature Reset – Differential Pressure Controlled Loops",
+          "section_id": "5.20.5.2",
+          "section_title": "Chilled Water Plant Reset",
+          "equipment_scope": "Chilled Water Plant (DP controlled pumps)",
+          "summary": "Reset CHWST setpoint and pump DP setpoint based on a Trim & Respond loop. From 0-50% loop output, reset DP setpoint from CHW-DPmin to CHW-DPmax. From 50-100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin.",
+          "trigger_condition": "Plant is enabled.",
+          "required_behavior": "Map CHW Plant Reset loop output to DP setpoint (0-50%) and CHWST setpoint (50-100%) as described.",
+          "configurable_values": [
+            "CHW-DPmin",
+            "CHW-DPmax",
+            "CHWSTmin",
+            "CHWSTmax",
+            "Trim & Respond parameters (SP0, SPmin, SPmax, Td, T, I, SPtrim, SPres, SPres-max)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "a. From 0% loop output to 50% loop output, reset DP setpoint from CHW-DPmin to CHWP-DPmax. b. From 50% loop output to 100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin.",
+          "page_hint": 199
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "a. From 0% loop output to 50% loop output, reset DP setpoint from CHW-DPmin to CHWP-DPmax. b. From 50% loop output to 100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_acf8959893124b6a"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "CHW supply temperature reset sequence with DP and temperature ranges provided."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f7e018250392afe4",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_20_17_6:chw_plant_pump_or_tower_fan_alarm",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "CHW Plant – Pump or Tower Fan Alarm",
+        "section_id": "5.20.17.6",
+        "section_title": "Chilled Water Plant",
+        "equipment_scope": "Chilled Water Plant",
+        "summary": "Pump or tower fan alarm if status differs from command for 15 seconds: commanded on but status off is Level 2 (delay 15 sec); commanded off but status on is Level 4 (delay 60 sec).",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": "Status differs from command for 15 seconds.",
+        "commissioning_check": null,
+        "evidence_quote": "Pump or tower fan alarm is indicated by the status input being different from the output command for 15 seconds. a. Commanded on, status off: Level 2. Do not evaluate alarm until the equipment has been commanded on for 15 seconds. b. Commanded off, status on: Level 4. Do not evaluate the alarm until the equipment has been commanded off for 60 seconds.",
+        "page_hint": 222
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Pump or tower fan alarm is indicated by the status input being different from the output command for 15 seconds. a. Commanded on, status off: Level 2. Do not evaluate alarm until the equipment has been commanded on for 15 seconds. b. Commanded off, status on: Level 4. Do not evaluate the alarm until the equipment has been commanded off for 60 seconds.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.17.6",
+      "source_chunk_ids": [
+        "chunk_bd8eb336d472428b"
+      ],
+      "chunk_id": "chunk_bd8eb336d472428b",
+      "page_no": 222,
+      "source_page_nos": [
+        222
+      ],
+      "evidence_text": "Pump or tower fan alarm is indicated by the status input being different from the output command for 15 seconds. a. Commanded on, status off: Level 2. Do not evaluate alarm until the equipment has been commanded on for 15 seconds. b. Commanded off, status on: Level 4. Do not evaluate the alarm until the equipment has been commanded off for 60 seconds.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Pump or tower fan alarm with status evaluation delays supported.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: Pump or tower fan alarm with status evaluation delays supported.",
+      "curation": {
+        "title": "CHW Plant – Pump or Tower Fan Alarm",
+        "summary": "Pump or tower fan alarm if status differs from command for 15 seconds: commanded on but status off is Level 2 (delay 15 sec); commanded off but status on is Level 4 (delay 60 sec).",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_17_6:chw_plant_pump_or_tower_fan_alarm",
+        "structured_payload": {
+          "knowledge_type": "fault_diagnostic_rule",
+          "title": "CHW Plant – Pump or Tower Fan Alarm",
+          "section_id": "5.20.17.6",
+          "section_title": "Chilled Water Plant",
+          "equipment_scope": "Chilled Water Plant",
+          "summary": "Pump or tower fan alarm if status differs from command for 15 seconds: commanded on but status off is Level 2 (delay 15 sec); commanded off but status on is Level 4 (delay 60 sec).",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": "Status differs from command for 15 seconds.",
+          "commissioning_check": null,
+          "evidence_quote": "Pump or tower fan alarm is indicated by the status input being different from the output command for 15 seconds. a. Commanded on, status off: Level 2. Do not evaluate alarm until the equipment has been commanded on for 15 seconds. b. Commanded off, status on: Level 4. Do not evaluate the alarm until the equipment has been commanded off for 60 seconds.",
+          "page_hint": 222
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Pump or tower fan alarm is indicated by the status input being different from the output command for 15 seconds. a. Commanded on, status off: Level 2. Do not evaluate alarm until the equipment has been commanded on for 15 seconds. b. Commanded off, status on: Level 4. Do not evaluate the alarm until the equipment has been commanded off for 60 seconds.",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_bd8eb336d472428b"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "Pump or tower fan alarm with status evaluation delays supported."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_eaa242a820921276",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:chw_plant_fc_6_chilled_water_supply_temperature_too_high",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "CHW Plant – FC#6: Chilled Water Supply Temperature Too High",
+        "section_id": "5.20.18.6",
+        "section_title": "Chilled Water Plant",
+        "equipment_scope": "Chilled Water Plant",
+        "summary": "Fault condition: CHWST AVG - ƐCHWT ≥ CHWSTSP. Possible causes: mechanical problem with chillers, primary flow higher than design evaporator flow.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": "CHWST AVG - ƐCHWT ≥ CHWSTSP",
+        "commissioning_check": null,
+        "evidence_quote": "FC#6 Equation CHWST AVG - ƐCHWT ≥ CHWSTSP Applies to OS #2 – #5 Description Chilled water supply temperature is too high Possible Diagnosis Mechanical problem with chillers Primary flow is higher than the design evaporator flow of the operating chillers",
+        "page_hint": 230
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "FC#6 Equation CHWST AVG - ƐCHWT ≥ CHWSTSP Applies to OS #2 – #5 Description Chilled water supply temperature is too high Possible Diagnosis Mechanical problem with chillers Primary flow is higher than the design evaporator flow of the operating chillers",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.18.6",
+      "source_chunk_ids": [
+        "chunk_dff5936d76c943ed"
+      ],
+      "chunk_id": "chunk_dff5936d76c943ed",
+      "page_no": 230,
+      "source_page_nos": [
+        230
+      ],
+      "evidence_text": "FC#6 Equation CHWST AVG - ƐCHWT ≥ CHWSTSP Applies to OS #2 – #5 Description Chilled water supply temperature is too high Possible Diagnosis Mechanical problem with chillers Primary flow is higher than the design evaporator flow of the operating chillers",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "CHW plant FC#6 with clear equation and diagnosis.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: CHW plant FC#6 with clear equation and diagnosis.",
+      "curation": {
+        "title": "CHW Plant – FC#6: Chilled Water Supply Temperature Too High",
+        "summary": "Fault condition: CHWST AVG - ƐCHWT ≥ CHWSTSP. Possible causes: mechanical problem with chillers, primary flow higher than design evaporator flow.",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:chw_plant_fc_6_chilled_water_supply_temperature_too_high",
+        "structured_payload": {
+          "knowledge_type": "fault_diagnostic_rule",
+          "title": "CHW Plant – FC#6: Chilled Water Supply Temperature Too High",
+          "section_id": "5.20.18.6",
+          "section_title": "Chilled Water Plant",
+          "equipment_scope": "Chilled Water Plant",
+          "summary": "Fault condition: CHWST AVG - ƐCHWT ≥ CHWSTSP. Possible causes: mechanical problem with chillers, primary flow higher than design evaporator flow.",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": "CHWST AVG - ƐCHWT ≥ CHWSTSP",
+          "commissioning_check": null,
+          "evidence_quote": "FC#6 Equation CHWST AVG - ƐCHWT ≥ CHWSTSP Applies to OS #2 – #5 Description Chilled water supply temperature is too high Possible Diagnosis Mechanical problem with chillers Primary flow is higher than the design evaporator flow of the operating chillers",
+          "page_hint": 230
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "FC#6 Equation CHWST AVG - ƐCHWT ≥ CHWSTSP Applies to OS #2 – #5 Description Chilled water supply temperature is too high Possible Diagnosis Mechanical problem with chillers Primary flow is higher than the design evaporator flow of the operating chillers",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_dff5936d76c943ed"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "CHW plant FC#6 with clear equation and diagnosis."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_031d9e5b6f8da22a",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:chw_plant_fc_8_condenser_approach_too_high",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "CHW Plant – FC#8: Condenser Approach Too High",
+        "section_id": "5.20.18.6",
+        "section_title": "Chilled Water Plant",
+        "equipment_scope": "Water-cooled chiller plant",
+        "summary": "Fault condition: Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG. Possible causes: condenser fouling, blocked tubes, low CW temperature or flow.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [],
+        "fault_condition": "Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG",
+        "commissioning_check": null,
+        "evidence_quote": "FC#8 Equation Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG Applies to OS #2, #3, #5 Description Condenser approach is too high Possible Diagnosis Possible condenser fouling or blocked condenser tubes Low condenser water temperature Low condenser water flow",
+        "page_hint": 230
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "FC#8 Equation Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG Applies to OS #2, #3, #5 Description Condenser approach is too high Possible Diagnosis Possible condenser fouling or blocked condenser tubes Low condenser water temperature Low condenser water flow",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.18.6",
+      "source_chunk_ids": [
+        "chunk_dc7f4154b85d4460"
+      ],
+      "chunk_id": "chunk_dc7f4154b85d4460",
+      "page_no": 230,
+      "source_page_nos": [
+        230
+      ],
+      "evidence_text": "FC#8 Equation Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG Applies to OS #2, #3, #5 Description Condenser approach is too high Possible Diagnosis Possible condenser fouling or blocked condenser tubes Low condenser water temperature Low condenser water flow",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "FC#8 condenser approach fault exactly from evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "commissioning_step",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "review_decision": "accepted",
+      "review_notes": "model_review_accepted: FC#8 condenser approach fault exactly from evidence.",
+      "curation": {
+        "title": "CHW Plant – FC#8: Condenser Approach Too High",
+        "summary": "Fault condition: Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG. Possible causes: condenser fouling, blocked tubes, low CW temperature or flow.",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:chw_plant_fc_8_condenser_approach_too_high",
+        "structured_payload": {
+          "knowledge_type": "fault_diagnostic_rule",
+          "title": "CHW Plant – FC#8: Condenser Approach Too High",
+          "section_id": "5.20.18.6",
+          "section_title": "Chilled Water Plant",
+          "equipment_scope": "Water-cooled chiller plant",
+          "summary": "Fault condition: Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG. Possible causes: condenser fouling, blocked tubes, low CW temperature or flow.",
+          "trigger_condition": null,
+          "required_behavior": null,
+          "configurable_values": [],
+          "fault_condition": "Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG",
+          "commissioning_check": null,
+          "evidence_quote": "FC#8 Equation Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG Applies to OS #2, #3, #5 Description Condenser approach is too high Possible Diagnosis Possible condenser fouling or blocked condenser tubes Low condenser water temperature Low condenser water flow",
+          "page_hint": 230
+        },
+        "applicability": {
+          "brand": "ASHRAE",
+          "model_family": "Guideline 36",
+          "standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "FC#8 Equation Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG Applies to OS #2, #3, #5 Description Condenser approach is too high Possible Diagnosis Possible condenser fouling or blocked condenser tubes Low condenser water temperature Low condenser water flow",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_dc7f4154b85d4460"
+        ],
+        "review_source": "llm_judge",
+        "judge_verdict": "accepted",
+        "judge_reason": "FC#8 condenser approach fault exactly from evidence."
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "model_review_metadata": {
+    "generated_at": "2026-05-06T23:34:04.357952+00:00",
+    "review_source": "llm_judge",
+    "notes": [
+      "Model-reviewed draft only; operator may still edit or override decisions.",
+      "Unsupported KO types are rejected because they cannot pass current semantic API/backfill contracts."
+    ]
+  }
+}

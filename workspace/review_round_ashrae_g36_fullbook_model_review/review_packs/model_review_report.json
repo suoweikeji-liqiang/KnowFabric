@@ -1,0 +1,32 @@
+{
+  "review_mode": "model_review_standard_packs",
+  "generated_at": "2026-05-06T23:34:04.359878+00:00",
+  "pack_dir": "workspace/review_round_ashrae_g36_fullbook_model_review/review_packs",
+  "rejected_source": "output/ashrae_guideline36_fullbook/20260506T181848Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook/candidates_llm_judge_rejected.jsonl",
+  "summary": {
+    "accepted": 75
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_4bbd3703c4f84be4__ahu.json",
+      "candidate_count": 41,
+      "decisions": {
+        "accepted": 41
+      }
+    },
+    {
+      "pack_file": "hvac__doc_4bbd3703c4f84be4__chiller.json",
+      "candidate_count": 19,
+      "decisions": {
+        "accepted": 19
+      }
+    },
+    {
+      "pack_file": "hvac__doc_4bbd3703c4f84be4__hot_water_plant.json",
+      "candidate_count": 15,
+      "decisions": {
+        "accepted": 15
+      }
+    }
+  ]
+}

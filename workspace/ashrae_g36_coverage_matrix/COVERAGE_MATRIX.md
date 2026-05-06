@@ -1,6 +1,6 @@
 # ASHRAE Guideline 36 Coverage Matrix
 
-Generated: 2026-05-06T16:21:16.174782+00:00
+Generated: 2026-05-06T23:34:34+00:00
 Manual: `ashrae_guideline_36_2021_high_performance_sequences.pdf`
 Doc ID: `doc_4bbd3703c4f84be4`
 
@@ -9,20 +9,21 @@ Doc ID: `doc_4bbd3703c4f84be4`
 - Top-level §5 sections: 22
 - Covered or partial sections: 22
 - Not-run sections: 0
-- Accepted extraction candidates across passing runs: 160
-- Type totals: application_guidance: 1, commissioning_procedure: 5, commissioning_step: 7, fault_diagnostic_rule: 58, operational_sequence: 86, parameter_spec: 3
-- Trust totals: L3: 90, L4: 70
+- Accepted extraction candidates across passing runs: 235
+- Type totals: application_guidance: 8, commissioning_procedure: 5, commissioning_step: 10, fault_diagnostic_rule: 80, operational_sequence: 129, parameter_spec: 3
+- Trust totals: L3: 147, L4: 88
+- Full-book run added: 75 accepted candidates, 100% anchor match, 76.5% judge acceptance, L4=18
 
 ## Coverage Matrix
 
 | Section | Pages | Status | Accepted | Type breakdown | Notes |
 |---|---:|---|---:|---|---|
-| §5.1 General | 42-58 | partial | 5 | application_guidance: 1, commissioning_procedure: 1, fault_diagnostic_rule: 1, operational_sequence: 1, parameter_spec: 1 | requested: 5.1.14 |
+| §5.1 General | 42-58 | partial | 8 | application_guidance: 4, commissioning_procedure: 1, fault_diagnostic_rule: 1, operational_sequence: 1, parameter_spec: 1 | requested: 5.1.14; full-book added cross-cutting guidance |
 | §5.2 Generic Ventilation Zones | 59-66 | covered | 3 | fault_diagnostic_rule: 1, operational_sequence: 2 | requested: 5.2 |
 | §5.3 Generic Thermal Zones | 67-70 | covered | 3 | fault_diagnostic_rule: 1, operational_sequence: 2 | requested: 5.3 |
 | §5.4 Zone Groups | 71-71 | covered | 3 | commissioning_procedure: 1, operational_sequence: 2 | requested: 5.4 |
 | §5.5 VAV Terminal Unit—Cooling Only | 72-74 | covered | 6 | commissioning_procedure: 1, fault_diagnostic_rule: 3, operational_sequence: 1, parameter_spec: 1 | requested: 5.5 |
-| §5.6 VAV Terminal Unit with Reheat | 75-78 | covered | 11 | commissioning_procedure: 1, fault_diagnostic_rule: 5, operational_sequence: 4, parameter_spec: 1 | requested: 5.6 |
+| §5.6 VAV Terminal Unit with Reheat | 75-78 | covered | 23 | commissioning_procedure: 1, fault_diagnostic_rule: 10, operational_sequence: 11, parameter_spec: 1 | requested: 5.6; full-book added VAV reheat sequences/faults |
 | §5.7 Parallel Fan-Powered Terminal Unit − Constant-Volume Fan | 79-82 | covered | 9 | commissioning_step: 1, fault_diagnostic_rule: 6, operational_sequence: 2 | requested: 5.7 |
 | §5.8 Parallel Fan-Powered Terminal Unit −Variable-Volume Fan | 83-87 | covered | 14 | commissioning_step: 1, fault_diagnostic_rule: 6, operational_sequence: 7 | requested: 5.8 |
 | §5.9 Series Fan-Powered Terminal Unit − Constant-Volume Fan | 88-90 | covered | 10 | commissioning_step: 1, fault_diagnostic_rule: 6, operational_sequence: 3 | requested: 5.9 |
@@ -32,13 +33,13 @@ Doc ID: `doc_4bbd3703c4f84be4`
 | §5.13 Dual-Duct VAV Terminal Unit − Mixing Control with Discharge Airflow Sensor | 104-106 | covered | 7 | commissioning_step: 1, fault_diagnostic_rule: 3, operational_sequence: 3 | requested: 5.13 |
 | §5.14 Dual-Duct VAV Terminal Unit − Cold-Duct Minimum Control | 107-110 | covered | 11 | commissioning_step: 1, fault_diagnostic_rule: 3, operational_sequence: 7 | requested: 5.14 |
 | §5.15 Air-Handling Unit System Modes | 111-111 | covered | 1 | operational_sequence: 1 | requested: 5.15 |
-| §5.16 Multiple-Zone VAV Air-Handling Unit | 111-145 | covered | 21 | commissioning_procedure: 1, fault_diagnostic_rule: 5, operational_sequence: 15 | requested: 5.16 |
+| §5.16 Multiple-Zone VAV Air-Handling Unit | 111-145 | covered | 38 | application_guidance: 2, commissioning_procedure: 1, fault_diagnostic_rule: 10, operational_sequence: 25 | requested: 5.16; full-book added AHU application guidance and reset/request logic |
 | §5.17 Dual-Fan Dual-Duct Heating VAV Air-Handling Unit | 146-151 | covered | 3 | fault_diagnostic_rule: 1, operational_sequence: 2 | requested: 5.17 |
-| §5.18 Single-Zone VAV Air-Handling Unit | 152-170 | covered | 5 | fault_diagnostic_rule: 1, operational_sequence: 4 | requested: 5.18 |
+| §5.18 Single-Zone VAV Air-Handling Unit | 152-170 | covered | 12 | application_guidance: 1, fault_diagnostic_rule: 1, operational_sequence: 10 | requested: 5.18; full-book added SZVAV operating sequences |
 | §5.19 General Constant Speed Exhaust Fan | 171-171 | covered | 1 | operational_sequence: 1 | requested: 5.19 |
-| §5.20 Chilled Water Plant | 172-234 | covered | 11 | fault_diagnostic_rule: 3, operational_sequence: 8 | requested: 5.20 |
-| §5.21 Hot Water Plant | 235-261 | covered | 6 | operational_sequence: 6 | requested: 5.21 |
-| §5.22 Fan Coil Unit | 262-292 | covered | 4 | fault_diagnostic_rule: 1, operational_sequence: 3 | requested: 5.22 |
+| §5.20 Chilled Water Plant | 172-234 | covered | 23 | fault_diagnostic_rule: 6, operational_sequence: 17 | requested: 5.20; full-book added plant reset/staging/fault coverage |
+| §5.21 Hot Water Plant | 235-261 | covered | 21 | fault_diagnostic_rule: 5, operational_sequence: 16 | requested: 5.21; full-book added hot-water plant fault coverage |
+| §5.22 Fan Coil Unit | 262-292 | covered | 9 | fault_diagnostic_rule: 5, operational_sequence: 4 | requested: 5.22; full-book added FCU fault coverage |
 
 ## Run Inventory
 
@@ -48,6 +49,7 @@ Doc ID: `doc_4bbd3703c4f84be4`
 | `20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | section | 5.4, 5.5, 5.6, 5.15, 5.16 | 46 | 42 | 2 | 12/30 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
 | `20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | section | 5.7, 5.8, 5.9, 5.10, 5.11, 5.12, 5.13, 5.14 | 81 | 77 | 4 | 55/22 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
 | `20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | bundle | 5.2, 5.3, 5.17, 5.18, 5.19, 5.22 | 21 | 19 | 2 | 0/19 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
+| `20260506T181848Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook` | full-book | all sections | 130 | 75 | 55 | 18/57 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_fullbook/20260506T181848Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook/REPORT.md` |
 
 ## API Smoke Coverage
 
@@ -69,17 +71,29 @@ Doc ID: `doc_4bbd3703c4f84be4`
 - `workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs/api_smoke_report.json`: 2/2 passed
   - `ahu` / `fault_diagnostic_rule`: expected 5, visible 57, pass
   - `ahu` / `operational_sequence`: expected 14, visible 82, pass
+- `workspace/review_round_ashrae_g36_fullbook_model_review/review_packs/api_smoke_report.json`: 9/9 passed
+  - `ahu` / `application_guidance`: expected 3, visible 4, pass
+  - `ahu` / `fault_diagnostic_rule`: expected 14, visible 71, pass
+  - `ahu` / `operational_sequence`: expected 24, visible 100, pass
+  - `chiller` / `application_guidance`: expected 4, visible 5, pass
+  - `chiller` / `commissioning_step`: expected 3, visible 3, pass
+  - `chiller` / `fault_diagnostic_rule`: expected 3, visible 7, pass
+  - `chiller` / `operational_sequence`: expected 9, visible 16, pass
+  - `hot_water_plant` / `fault_diagnostic_rule`: expected 5, visible 5, pass
+  - `hot_water_plant` / `operational_sequence`: expected 10, visible 16, pass
 
 ## Next Recommended Batches
 
-1. `5.1 except 5.1.14` - Only remaining partial area. Extract cautiously because it contains cross-cutting definitions, alarm philosophy, VFD speed point rules, staging/rotation, economizer limits, and suppression logic.
+1. `5.1 focused review` - Full-book extraction added useful cross-cutting guidance, but §5.1 is still partial because it has not had a dedicated review pass across all subsections.
 2. `ontology split: terminal_unit, fan_coil_unit, exhaust_fan` - Current imports use hvac:ahu as the air-side bucket. Production ontology should split terminal units, FCUs, and exhaust fans.
+3. `dedupe imported standard KOs` - Full-book extraction intentionally overlaps prior section/bundle runs. Before treating counts as production coverage, consolidate duplicate canonical rules across runs.
 
 ## Modeling Notes
 
 - Only G3 PASS extraction runs are counted. Failed debugging runs are intentionally excluded.
-- Section 5.1 is partial because only 5.1.14 Trim & Respond has been extracted.
+- Section 5.1 is partial because only selected high-value cross-cutting items have been extracted/reviewed.
 - Sections 5.7-5.14 and 5.22 are currently mapped to hvac:ahu until dedicated terminal/fan-coil ontology classes are added.
+- Full-book counts are additive with earlier section/bundle runs and may include duplicate knowledge at different canonical granularity.
 
 ## Sample Finds by Covered Section
 
