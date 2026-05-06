@@ -1,0 +1,147 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-06T11:05:14.753588+00:00",
+  "source_review_pack": "../review_pack.json",
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_4bbd3703c4f84be4__chiller.json",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "candidate_count": 13
+    }
+  ],
+  "deferred_entries": [
+    {
+      "review_index": 2,
+      "reason": "multi_chunk_evidence_not_supported_by_current_manual_fixture_builder"
+    },
+    {
+      "review_index": 3,
+      "reason": "human_rejected_wrong_ko_type"
+    },
+    {
+      "review_index": 6,
+      "reason": "multi_chunk_evidence_not_supported_by_current_manual_fixture_builder"
+    },
+    {
+      "review_index": 17,
+      "reason": "no_boiler_or_hot_water_plant_class_in_current_sw_base_model_ontology"
+    },
+    {
+      "review_index": 18,
+      "reason": "no_boiler_or_hot_water_plant_class_in_current_sw_base_model_ontology"
+    },
+    {
+      "review_index": 19,
+      "reason": "no_boiler_or_hot_water_plant_class_in_current_sw_base_model_ontology"
+    },
+    {
+      "review_index": 20,
+      "reason": "no_boiler_or_hot_water_plant_class_in_current_sw_base_model_ontology"
+    },
+    {
+      "review_index": 21,
+      "reason": "no_boiler_or_hot_water_plant_class_in_current_sw_base_model_ontology"
+    },
+    {
+      "review_index": 22,
+      "reason": "no_boiler_or_hot_water_plant_class_in_current_sw_base_model_ontology"
+    }
+  ],
+  "ready_entries": [
+    {
+      "review_index": 1,
+      "candidate_id": "cand_8a834124de3be1c8",
+      "title": "T&R Logic Application for VAV Static Pressure Control",
+      "chunk_id": "chunk_b813cfa327404d84",
+      "page_no": 48
+    },
+    {
+      "review_index": 4,
+      "candidate_id": "cand_93d5cfa5ef144400",
+      "title": "Rogue Zone Detection via Cumulative% Request-Hours",
+      "chunk_id": "chunk_1d95911a2cdd4cf3",
+      "page_no": 47
+    },
+    {
+      "review_index": 5,
+      "candidate_id": "cand_c184b632398901df",
+      "title": "T&R Variables and Defaults",
+      "chunk_id": "chunk_507583e7952144cd",
+      "page_no": 47
+    },
+    {
+      "review_index": 7,
+      "candidate_id": "cand_ea7bfef5946364fd",
+      "title": "Chilled Water Plant Disable Logic",
+      "chunk_id": "chunk_5bb9fe9f566243cb",
+      "page_no": 172
+    },
+    {
+      "review_index": 8,
+      "candidate_id": "cand_c2130dd0fae82e4b",
+      "title": "Waterside Economizer Enable Logic",
+      "chunk_id": "chunk_44862f0d856f4bd0",
+      "page_no": 175
+    },
+    {
+      "review_index": 9,
+      "candidate_id": "cand_0d58b0d130b57e81",
+      "title": "Waterside Economizer Disable Logic",
+      "chunk_id": "chunk_6383ecd60896400d",
+      "page_no": 176
+    },
+    {
+      "review_index": 10,
+      "candidate_id": "cand_dfca55a0ac257012",
+      "title": "Chiller Staging – Stage Down Condition",
+      "chunk_id": "chunk_5725abaf58f2407e",
+      "page_no": 182
+    },
+    {
+      "review_index": 11,
+      "candidate_id": "cand_0b465af61d70d132",
+      "title": "Chiller Staging – Stage Up Efficiency Condition",
+      "chunk_id": "chunk_5725abaf58f2407e",
+      "page_no": 182
+    },
+    {
+      "review_index": 12,
+      "candidate_id": "cand_4dde323b6bc0d32d",
+      "title": "Chilled Water Supply Temperature Reset (DP Controlled Loops)",
+      "chunk_id": "chunk_acf8959893124b6a",
+      "page_no": 200
+    },
+    {
+      "review_index": 13,
+      "candidate_id": "cand_c10fabd1c1674795",
+      "title": "Primary CHW Pump Speed Control (Variable Primary-Variable Secondary with Decoupler Flow Meter)",
+      "chunk_id": "chunk_4a9998601d77491d",
+      "page_no": 204
+    },
+    {
+      "review_index": 14,
+      "candidate_id": "cand_8027ddbad3904758",
+      "title": "AFDD – Chilled Water Supply Temperature Too High",
+      "chunk_id": "chunk_dff5936d76c943ed",
+      "page_no": 230
+    },
+    {
+      "review_index": 15,
+      "candidate_id": "cand_6c5836daad6f8ca9",
+      "title": "AFDD – Condenser Approach Too High",
+      "chunk_id": "chunk_dc7f4154b85d4460",
+      "page_no": 230
+    },
+    {
+      "review_index": 16,
+      "candidate_id": "cand_d56b9b38ec961f2c",
+      "title": "AFDD – Evaporator Approach Too High",
+      "chunk_id": "chunk_dc7f4154b85d4460",
+      "page_no": 230
+    }
+  ]
+}

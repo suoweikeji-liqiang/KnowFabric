@@ -233,7 +233,7 @@ def test_parameter_profiles_route_returns_parameter_and_performance_items() -> N
         _seed_parameter_profile(session_factory)
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/centrifugal_chiller/parameter-profiles"
-            "?brand=Carrier"
+            "?brand=Carrier&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -260,7 +260,7 @@ def test_parameter_profiles_route_filters_by_category_and_name() -> None:
         _seed_parameter_profile(session_factory)
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/centrifugal_chiller/parameter-profiles"
-            "?parameter_category=temperature&parameter_name=chw_leaving_temp_setpoint&brand=Carrier"
+            "?parameter_category=temperature&parameter_name=chw_leaving_temp_setpoint&brand=Carrier&min_trust_level=L2"
         )
         payload = response.json()
 

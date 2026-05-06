@@ -232,7 +232,7 @@ def test_maintenance_guidance_route_returns_maintenance_and_diagnostic_items() -
         _seed_maintenance_guidance(session_factory)
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/centrifugal_chiller/maintenance-guidance"
-            "?brand=Carrier"
+            "?brand=Carrier&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -256,7 +256,7 @@ def test_maintenance_guidance_route_can_exclude_diagnostic_steps() -> None:
         _seed_maintenance_guidance(session_factory)
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/centrifugal_chiller/maintenance-guidance"
-            "?task_type=cleaning&brand=Carrier&include_diagnostic_steps=false"
+            "?task_type=cleaning&brand=Carrier&include_diagnostic_steps=false&min_trust_level=L2"
         )
         payload = response.json()
 

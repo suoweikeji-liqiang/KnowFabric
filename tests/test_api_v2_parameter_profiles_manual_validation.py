@@ -99,7 +99,7 @@ def test_manual_validation_parameter_route_for_siemens_temperature_thresholds() 
         _seed_manual_parameter_entries(session_factory, VFD_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/parameter-profiles"
-            "?parameter_category=temperature_protection&brand=Siemens"
+            "?parameter_category=temperature_protection&brand=Siemens&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -122,7 +122,7 @@ def test_manual_validation_parameter_route_for_schneider_soft_starter() -> None:
         _seed_manual_parameter_entries(session_factory, SOFT_STARTER_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/soft_starter/parameter-profiles"
-            "?parameter_category=startup_control&brand=Schneider"
+            "?parameter_category=startup_control&brand=Schneider&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -142,7 +142,7 @@ def test_manual_validation_parameter_route_for_danfoss_frequency_converter() -> 
         _seed_manual_parameter_entries(session_factory, FREQUENCY_CONVERTER_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/frequency_converter/parameter-profiles"
-            "?parameter_category=speed_reference&brand=Danfoss"
+            "?parameter_category=speed_reference&brand=Danfoss&min_trust_level=L2"
         )
         payload = response.json()
 

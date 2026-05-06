@@ -1,0 +1,27 @@
+{
+  "apply_mode": "chunk_backfill_review_pack_batch",
+  "generated_at": "2026-05-06T11:05:30.169519+00:00",
+  "pack_dir": "workspace/review_round_ashrae_g36/review_packs",
+  "fixtures_output_dir": "workspace/review_round_ashrae_g36/review_packs/applied_fixtures",
+  "total_pack_files": 1,
+  "summary": {
+    "applied": 1,
+    "skipped_pending": 0,
+    "skipped_no_accepted": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_4bbd3703c4f84be4__chiller.json",
+      "pack_path": "workspace/review_round_ashrae_g36/review_packs/hvac__doc_4bbd3703c4f84be4__chiller.json",
+      "candidate_count": 13,
+      "accepted_count": 13,
+      "rejected_count": 0,
+      "pending_count": 0,
+      "status": "applied",
+      "equipment_class_key": "hvac:chiller",
+      "knowledge_object_count": 13,
+      "fixture_path": "workspace/review_round_ashrae_g36/review_packs/applied_fixtures/hvac__doc_4bbd3703c4f84be4__chiller__fixture.json"
+    }
+  ]
+}

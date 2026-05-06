@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-05-06T11:08:55.289330+00:00",
+  "api_base": "http://127.0.0.1:8000/api/v2/domains/hvac/equipment-classes/chiller",
+  "status": "passed",
+  "results": {
+    "application-guidance": {
+      "returned": 1,
+      "types": [
+        "application_guidance"
+      ]
+    },
+    "parameter-profiles": {
+      "returned": 3,
+      "types": [
+        "parameter_spec",
+        "performance_spec"
+      ],
+      "note": "Includes 1 new ASHRAE G36 parameter_spec plus existing performance specs."
+    },
+    "fault-knowledge": {
+      "returned": 4,
+      "types": [
+        "fault_diagnostic_rule"
+      ]
+    },
+    "operational-guidance": {
+      "returned": 8,
+      "types": [
+        "application_guidance",
+        "operational_sequence"
+      ]
+    },
+    "operational-guidance?guidance_type=operational_sequence": {
+      "returned": 7,
+      "types": [
+        "operational_sequence"
+      ]
+    }
+  },
+  "notes": [
+    "13 reviewed ASHRAE G36 entries were backfilled under hvac:chiller.",
+    "9 entries were deferred: wrong KO type, multi-chunk evidence unsupported by current fixture builder, or no boiler/hot-water-plant class in current sw_base_model ontology.",
+    "A pre-existing trust filter semantic issue was observed: min_trust_level=L3 excludes L4 because current ranking logic treats the value as an upper bound. Smoke used default trust filter to verify type exposure."
+  ]
+}

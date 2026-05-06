@@ -204,6 +204,27 @@ def _seed_operational_guidance(session_factory: sessionmaker) -> None:
                     "package_version": "2.0.0-alpha",
                     "ontology_version": "2.0.0-alpha",
                 },
+                {
+                    "knowledge_object_id": "ko_ops_sequence",
+                    "domain_id": "drive",
+                    "ontology_class_key": "drive:variable_frequency_drive",
+                    "ontology_class_id": "variable_frequency_drive",
+                    "knowledge_object_type": "operational_sequence",
+                    "canonical_key": "drive_trim_respond_sequence",
+                    "title": "Drive Trim and Respond Sequence",
+                    "summary": "Reset drive output using a trim-and-respond sequence.",
+                    "structured_payload_json": {
+                        "sequence": "trim_and_respond",
+                        "required_behavior": "Trim when requests are low and respond when requests exceed threshold.",
+                    },
+                    "applicability_json": {"brand": "ABB", "model_family": "ACH531"},
+                    "confidence_score": 0.88,
+                    "trust_level": "L4",
+                    "review_status": "approved",
+                    "primary_chunk_id": "chunk_drive_ops_001",
+                    "package_version": "2.0.0-alpha",
+                    "ontology_version": "2.0.0-alpha",
+                },
             ],
         )
         db.execute(
@@ -242,6 +263,17 @@ def _seed_operational_guidance(session_factory: sessionmaker) -> None:
                     "evidence_role": "primary",
                     "confidence_score": 0.87,
                 },
+                {
+                    "knowledge_evidence_id": "koev_ops_sequence",
+                    "knowledge_object_id": "ko_ops_sequence",
+                    "chunk_id": "chunk_drive_ops_001",
+                    "doc_id": "doc_drive_ops_001",
+                    "page_id": "page_drive_ops_001",
+                    "page_no": 12,
+                    "evidence_text": "Trim when requests are low and respond when requests exceed threshold.",
+                    "evidence_role": "primary",
+                    "confidence_score": 0.88,
+                },
             ],
         )
         db.commit()
@@ -265,12 +297,14 @@ def test_operational_guidance_route_returns_drive_guide_types() -> None:
         _seed_operational_guidance(session_factory)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/operational-guidance"
+            "?min_trust_level=L2"
         )
         payload = response.json()
 
         assert response.status_code == 200
         assert {item["knowledge_object_type"] for item in payload["data"]["items"]} == {
             "commissioning_step",
+            "operational_sequence",
             "wiring_guidance",
             "application_guidance",
         }
@@ -285,13 +319,50 @@ def test_operational_guidance_route_can_filter_by_type() -> None:
         _seed_operational_guidance(session_factory)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/operational-guidance"
-            "?guidance_type=wiring_guidance&brand=ABB"
+            "?guidance_type=wiring_guidance&brand=ABB&min_trust_level=L2"
         )
         payload = response.json()
 
         assert response.status_code == 200
         assert len(payload["data"]["items"]) == 1
         assert payload["data"]["items"][0]["knowledge_object_type"] == "wiring_guidance"
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_operational_guidance_route_can_filter_operational_sequence() -> None:
+    client, session_factory = _build_client()
+    try:
+        _seed_ontology(session_factory)
+        _seed_operational_guidance(session_factory)
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/operational-guidance"
+            "?guidance_type=operational_sequence&brand=ABB&min_trust_level=L3"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert len(payload["data"]["items"]) == 1
+        assert payload["data"]["items"][0]["knowledge_object_type"] == "operational_sequence"
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_operational_guidance_min_trust_level_includes_higher_trust_items() -> None:
+    client, session_factory = _build_client()
+    try:
+        _seed_ontology(session_factory)
+        _seed_operational_guidance(session_factory)
+        response = client.get(
+            "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/operational-guidance"
+            "?brand=ABB&min_trust_level=L3"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert [item["knowledge_object_type"] for item in payload["data"]["items"]] == [
+            "operational_sequence"
+        ]
     finally:
         app.dependency_overrides.clear()
 
@@ -303,7 +374,7 @@ def test_operational_guidance_route_for_frequency_converter_commissioning() -> N
         _seed_manual_operational_entries(session_factory, FREQUENCY_CONVERTER_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/frequency_converter/operational-guidance"
-            "?guidance_type=commissioning_step&brand=Danfoss"
+            "?guidance_type=commissioning_step&brand=Danfoss&min_trust_level=L1"
         )
         payload = response.json()
 
@@ -318,5 +389,7 @@ def test_operational_guidance_route_for_frequency_converter_commissioning() -> N
 if __name__ == "__main__":
     test_operational_guidance_route_returns_drive_guide_types()
     test_operational_guidance_route_can_filter_by_type()
+    test_operational_guidance_route_can_filter_operational_sequence()
+    test_operational_guidance_min_trust_level_includes_higher_trust_items()
     test_operational_guidance_route_for_frequency_converter_commissioning()
     print("Operational guidance API checks passed")

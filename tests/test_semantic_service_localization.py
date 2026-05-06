@@ -171,6 +171,7 @@ def test_semantic_service_returns_localized_display_and_preserves_evidence() -> 
             domain_id="drive",
             equipment_class_id="variable_frequency_drive",
             fault_code="A7C1",
+            min_trust_level="L2",
             language="zh",
         )
     finally:
@@ -201,6 +202,7 @@ def test_semantic_service_falls_back_to_english_when_language_is_missing() -> No
             domain_id="drive",
             equipment_class_id="variable_frequency_drive",
             fault_code="A7C1",
+            min_trust_level="L2",
             language="ja",
         )
     finally:

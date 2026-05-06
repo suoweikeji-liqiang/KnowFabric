@@ -149,7 +149,7 @@ def test_apply_ready_review_bundle_supports_performance_spec_candidates() -> Non
 
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/screw_chiller/parameter-profiles"
-            "?brand=TICA"
+            "?brand=TICA&min_trust_level=L2"
         )
         payload = response.json()
 

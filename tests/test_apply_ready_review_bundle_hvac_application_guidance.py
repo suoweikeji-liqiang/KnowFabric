@@ -144,7 +144,7 @@ def test_apply_ready_review_bundle_supports_hvac_application_guidance_candidates
 
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/ahu/application-guidance"
-            "?brand=ASHRAE"
+            "?brand=ASHRAE&min_trust_level=L2"
         )
         payload = response.json()
 

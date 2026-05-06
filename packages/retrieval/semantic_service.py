@@ -18,11 +18,16 @@ from packages.db.models_v2 import (
 )
 
 TRUST_RANK = {"L1": 0, "L2": 1, "L3": 2, "L4": 3}
-FAULT_KNOWLEDGE_TYPES = ("fault_code", "symptom", "diagnostic_step")
+FAULT_KNOWLEDGE_TYPES = ("fault_code", "fault_diagnostic_rule", "symptom", "diagnostic_step")
 PARAMETER_PROFILE_TYPES = ("parameter_spec", "performance_spec")
 MAINTENANCE_GUIDANCE_TYPES = ("maintenance_procedure", "diagnostic_step")
 APPLICATION_GUIDANCE_TYPES = ("application_guidance",)
-OPERATIONAL_GUIDANCE_TYPES = ("commissioning_step", "wiring_guidance", "application_guidance")
+OPERATIONAL_GUIDANCE_TYPES = (
+    "commissioning_step",
+    "operational_sequence",
+    "wiring_guidance",
+    "application_guidance",
+)
 
 
 class SemanticRetrievalService:
@@ -91,6 +96,9 @@ class SemanticRetrievalService:
     def _get_parent_class_id(self, db: Session, ontology_class: dict[str, Any]) -> str | None:
         return ontology_class.get("parent_class_id")
 
+    def _meets_min_trust_level(self, knowledge_object: KnowledgeObjectV2, min_trust_level: str) -> bool:
+        return TRUST_RANK.get(knowledge_object.trust_level, -1) >= TRUST_RANK[min_trust_level]
+
     def _matches_fault_filters(
         self,
         knowledge_object: KnowledgeObjectV2,
@@ -100,7 +108,7 @@ class SemanticRetrievalService:
         min_confidence: float | None,
         min_trust_level: str,
     ) -> bool:
-        if TRUST_RANK[knowledge_object.trust_level] > TRUST_RANK[min_trust_level]:
+        if not self._meets_min_trust_level(knowledge_object, min_trust_level):
             return False
         if min_confidence is not None:
             score = knowledge_object.confidence_score or 0.0
@@ -122,7 +130,7 @@ class SemanticRetrievalService:
         min_confidence: float | None,
         min_trust_level: str,
     ) -> bool:
-        if TRUST_RANK[knowledge_object.trust_level] > TRUST_RANK[min_trust_level]:
+        if not self._meets_min_trust_level(knowledge_object, min_trust_level):
             return False
         if min_confidence is not None:
             score = knowledge_object.confidence_score or 0.0

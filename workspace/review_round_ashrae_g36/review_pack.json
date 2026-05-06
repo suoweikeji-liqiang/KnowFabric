@@ -37,8 +37,8 @@
     {
       "review_index": 1,
       "candidate_id": "cand_8a834124de3be1c8",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。内容属于 T&R 示例应用知识；证据已从跳转句重锚到 §5.1.14.4 示例变量表和操作描述所在 chunk。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -73,20 +73,20 @@
         "commissioning_check": null,
         "trust_level": "L3",
         "source_page_nos": [
-          46
+          48
         ],
         "source_chunk_ids": [
-          "chunk_e8a29606891f4f88"
+          "chunk_b813cfa327404d84"
         ],
-        "evidence_quote": "See Section 5.1.14.4  for an example of T&R implementation.",
+        "evidence_quote": "If R≤I, c hange Setpoint by SPtrim If R > I, change setpoint by (R – I)*SPres but no large r than SPres -max The following is an example of a sequence that uses T&R to control the static pressure setpoint of a VAV AHU serving multiple downstream zones. This sequence defines the T&R variables as shown in Informative Table 5.1.14.4. Informative Tab le 5.1.14.4 Example Sequence T&R Variables Variable Definition Device Supply fan SP0 120 Pa (0.5 in. of water) SPmin 37 Pa (0.15 in. of water) SPmax 370 Pa (1.50 in. of water) Td 5 T 2 I 2 SPtrim –10 Pa (–0.04 in. of water) SPres 15 Pa (0.06 in. of water) SPres -max 37 Pa (0.15 in. of water) Description of General Operation Starting 5 minutes after the fan status indicates the supply fan is ON, the sequence will slowly reduce the AHUs static pressure setpoint by 10 Pa (0.04 in. of water) every 2 minutes if R≤I .",
         "judge_reason": "Directly captures a control sequence example with configurable parameters from Section 5.1.14.4 of Guideline 36."
       }
     },
     {
       "review_index": 2,
       "candidate_id": "cand_ee95bd68f08f2f7c",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。内容属于通用 T&R 运行序列；证据已从章节标题重锚到 §5.1.14.4 的 reset logic 正文。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -121,20 +121,21 @@
         "commissioning_check": null,
         "trust_level": "L3",
         "source_page_nos": [
-          46
+          47
         ],
         "source_chunk_ids": [
-          "chunk_7b69e124edc0428f"
+          "chunk_507583e7952144cd",
+          "chunk_86d81f9c0c4d4f49"
         ],
-        "evidence_quote": "5.1.14.  Trim & Respond Set -Point Reset Logic",
+        "evidence_quote": "5.1.14.4. Trim & Respond logic shall reset the setpoint within the range SPmin to SPmax. When the associated device is OFF, the setpoint shall be SP0. The reset logic shall be active while the associated device is proven ON, starting Td after initial device start command. When active, every time step T, if R≤I, trim the setpoint by SPtrim. If there are more than I requests , respond by chan ging the setpoint by SPres *(R – I), (i.e., the number of requests minus the number of ignored requests) but no more than SPres -max.",
         "judge_reason": "The item describes a real control sequence (Trim & Respond logic) from section 5.1.14, which is operational knowledge per Guideline 36."
       }
     },
     {
       "review_index": 3,
       "candidate_id": "cand_6c886a450b11837a",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "rejected",
+      "review_notes": "拒绝。内容来自标准且有证据，但 KO 类型不应是 commissioning_procedure；它描述的是运行计数器/请求小时复位逻辑，更适合 operational_sequence 或维护/运行规则，不能按调试规程入库。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -173,8 +174,8 @@
     {
       "review_index": 4,
       "candidate_id": "cand_93d5cfa5ef144400",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。该条是明确的 Level 4 告警条件，阈值、运行小时条件和告警行为都由证据直接支撑，KO 类型 fault_diagnostic_rule 正确。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -215,8 +216,8 @@
     {
       "review_index": 5,
       "candidate_id": "cand_c184b632398901df",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。T&R 变量、范围角色和调试要求属于可配置参数规格；建议后续标题从 “Defaults” 改为 “Variables and Tuning Parameters”，因为证据主要是变量定义和调试要求。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -264,8 +265,8 @@
     {
       "review_index": 6,
       "candidate_id": "cand_862d844a3b1d3c49",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。冷水机房启用逻辑准确，条件包括停用时间、请求数、OAT lockout 和 schedule；证据已重锚到跨相邻 chunk 的完整启用条件。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -273,7 +274,7 @@
         "Should this be exposed to sw_base_model control/operation semantics?"
       ],
       "curation": {
-        "title": "Plant Enable Logic",
+        "title": "Chilled Water Plant Enable Logic",
         "summary": "Enable plant when disabled for ≥15 min, number of Chiller Plant Requests > I (default 0), OAT > CH-LOT, and schedule active.",
         "canonical_key": "ashrae:g36:operational_sequence:5_20_2_2:plant_enable_logic",
         "knowledge_object_type": "operational_sequence",
@@ -296,17 +297,18 @@
           172
         ],
         "source_chunk_ids": [
-          "chunk_2543aaa4b3c34732"
+          "chunk_2543aaa4b3c34732",
+          "chunk_5bb9fe9f566243cb"
         ],
-        "evidence_quote": "5.20.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:",
+        "evidence_quote": "5.20.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH -LOT, and c. The chiller plant enable schedule is active.",
         "judge_reason": "Captures real plant enable control sequence with specific conditions from Guideline 36 section 5.20.2.2."
       }
     },
     {
       "review_index": 7,
       "candidate_id": "cand_ea7bfef5946364fd",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。冷水机房停用逻辑准确，三类停用条件和 3 min 条件均由证据直接支撑。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -314,7 +316,7 @@
         "Should this be exposed to sw_base_model control/operation semantics?"
       ],
       "curation": {
-        "title": "Plant Disable Logic",
+        "title": "Chilled Water Plant Disable Logic",
         "summary": "Disable plant when enabled for ≥15 min and either requests ≤ I for 3 min, OAT < CH-LOT – 1°F, or schedule inactive.",
         "canonical_key": "ashrae:g36:operational_sequence:5_20_2_3:plant_disable_logic",
         "knowledge_object_type": "operational_sequence",
@@ -346,8 +348,8 @@
     {
       "review_index": 8,
       "candidate_id": "cand_c2130dd0fae82e4b",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。水侧节能器启用逻辑准确，20 min 条件、PHXLWT 关系和温差阈值均清楚，KO 类型正确。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -389,8 +391,8 @@
     {
       "review_index": 9,
       "candidate_id": "cand_0d58b0d130b57e81",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。水侧节能器停用逻辑准确，运行时间、温差和持续 2 min 条件均由证据支撑。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -427,8 +429,8 @@
     {
       "review_index": 10,
       "candidate_id": "cand_dfca55a0ac257012",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。冷机 stage down 条件准确，包含 OPLR 阈值、15 min 持续时间、2.5%/min 斜率约束和 failsafe 排除条件。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -471,8 +473,8 @@
     {
       "review_index": 11,
       "candidate_id": "cand_0b465af61d70d132",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。该条是 stage up 的 efficiency condition，不是完整 stage-up 全部逻辑；标题已体现这一点，可作为 operational_sequence 入库。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -517,8 +519,8 @@
     {
       "review_index": 12,
       "candidate_id": "cand_4dde323b6bc0d32d",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。内容正确并有运维价值；证据已从 §5.20.5.2 标题重锚到下一页正文和 T&R 参数表。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -554,20 +556,20 @@
         "commissioning_check": null,
         "trust_level": "L3",
         "source_page_nos": [
-          199
+          200
         ],
         "source_chunk_ids": [
-          "chunk_9e628423d7824dd7"
+          "chunk_acf8959893124b6a"
         ],
-        "evidence_quote": "5.20.5.2. Differential Pressure Controlled Loops: Chilled water supply t emperature setpoint CHWSTsp and",
+        "evidence_quote": "From 0% loop output to 50% loop output, reset DP setpoint from CHW -DPmin to CHWP - DPmax. b. From 50% loop output to 100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin. c. CHW Plant Reset variable shall be reset using Trim & Respond logic with the following parameters: Variable Value Device Any CHW Pump Distribution Loop SP0 100% SPmin 0% SPmax 100% Td 15 minutes T 5 minutes I 2 R Cooling CHWST Reset Requests SPtrim -2% SPres +3% SPres-max +7%",
         "judge_reason": "Captures a real operational control sequence for chilled water supply temperature reset with DP control from Section 5.20.5.2."
       }
     },
     {
       "review_index": 13,
       "candidate_id": "cand_c10fabd1c1674795",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。一次冷冻水泵转速控制逻辑清楚，PID 目标 5% PCHWFdesign 和可配置值均合理，KO 类型正确。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -607,8 +609,8 @@
     {
       "review_index": 14,
       "candidate_id": "cand_8027ddbad3904758",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。AFDD FC#6 条件、适用 OS 和故障描述明确，属于 fault_diagnostic_rule。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -647,8 +649,8 @@
     {
       "review_index": 15,
       "candidate_id": "cand_6c5836daad6f8ca9",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。AFDD FC#8 条件、适用 OS 和诊断方向明确，属于 fault_diagnostic_rule。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -687,8 +689,8 @@
     {
       "review_index": 16,
       "candidate_id": "cand_d56b9b38ec961f2c",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。AFDD FC#9 条件、适用 OS 和诊断方向明确，属于 fault_diagnostic_rule。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -727,8 +729,8 @@
     {
       "review_index": 17,
       "candidate_id": "cand_98ddf5c52ad86bee",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。热水机房启用逻辑准确；标题已收窄为 Hot Water Plant Enable Logic，证据已重锚到跨相邻 chunk 的完整启用条件。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -736,7 +738,7 @@
         "Should this be exposed to sw_base_model control/operation semantics?"
       ],
       "curation": {
-        "title": "Plant Enable/Disable",
+        "title": "Hot Water Plant Enable Logic",
         "summary": "Enable plant when disabled for ≥15 min, number of Heating Hot-Water Plant Requests > I (default 0), OAT < HW-LOT, and schedule active.",
         "canonical_key": "ashrae:g36:operational_sequence:5_21_2_2:plant_enable_disable",
         "knowledge_object_type": "operational_sequence",
@@ -759,17 +761,18 @@
           235
         ],
         "source_chunk_ids": [
-          "chunk_ae38b0b316ea4196"
+          "chunk_ae38b0b316ea4196",
+          "chunk_ed993d898ac747e2"
         ],
-        "evidence_quote": "5.21.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:",
+        "evidence_quote": "5.21.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Heating Hot -Water Plant Requests > I (I = Ignores shall default to 0, ad justable), and b. OAT<HW -LOT, and c. The Boiler plant enable schedule is active.",
         "judge_reason": "Operational sequence for enabling heating hot-water plant with configurable parameters, grounded in Guideline 36 section 5.21.2.2."
       }
     },
     {
       "review_index": 18,
       "candidate_id": "cand_7b75a9b92c9064a5",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。热水机房停用逻辑准确，条件包括请求数、OAT lockout 和 schedule inactive，KO 类型正确。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -777,7 +780,7 @@
         "Should this be exposed to sw_base_model control/operation semantics?"
       ],
       "curation": {
-        "title": "Plant Disable Logic",
+        "title": "Hot Water Plant Disable Logic",
         "summary": "Disable plant when enabled for ≥15 min and either number of requests ≤ I for 3 min, OAT > HW-LOT+1°F, or schedule inactive.",
         "canonical_key": "ashrae:g36:operational_sequence:5_21_2_3:plant_disable_logic",
         "knowledge_object_type": "operational_sequence",
@@ -809,8 +812,8 @@
     {
       "review_index": 19,
       "candidate_id": "cand_50f7ff661b94bd3b",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。一次系统冷凝锅炉 stage down 条件完整，包含 B-STAGE MIN、旁通阀、failsafe 和下一 stage 容量条件。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -850,8 +853,8 @@
     {
       "review_index": 20,
       "candidate_id": "cand_1b2a355921a86055",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。变一次/变二次冷凝锅炉 stage down 条件完整，L4 合理；泵速、HWRT 温差、failsafe 和容量条件均明确。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -894,8 +897,8 @@
     {
       "review_index": 21,
       "candidate_id": "cand_4071679da818cb2e",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。非冷凝锅炉 stage down 条件明确，10 min 持续时间和 80% 设计容量条件由证据支撑。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",
@@ -934,8 +937,8 @@
     {
       "review_index": 22,
       "candidate_id": "cand_89570aed35da929f",
-      "review_decision": "pending",
-      "review_notes": "",
+      "review_decision": "accepted",
+      "review_notes": "接受。混合锅炉在当前 stage 全为冷凝锅炉时的 stage down 条件清楚，引用 §5.21.3.9.i 的逻辑关系合理。",
       "operator_questions": [
         "Is this operationally useful enough to keep?",
         "Is the knowledge_type correct?",

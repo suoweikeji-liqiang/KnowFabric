@@ -6,7 +6,7 @@ This workspace contains a human review pack for the first official-standard extr
 
 Files:
 - `review_pack.json` - editable structured review pack with pending decisions
-- `review_decision_draft_zh.md` - human-readable review draft
+- `review_decision_draft_zh.md` - 中文人工评审草稿
 - `candidates_input.json` - source verified candidates copied from the run artifact
 - `run_summary.json` - source run summary
 

@@ -201,6 +201,7 @@ def test_tools_call_parameter_profile_uses_semantic_service() -> None:
                     "domain_id": "hvac",
                     "equipment_class_id": "centrifugal_chiller",
                     "brand": "Carrier",
+                    "min_trust_level": "L2",
                 },
             },
         }

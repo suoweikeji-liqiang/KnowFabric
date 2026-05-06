@@ -100,7 +100,7 @@ def test_drive_manual_validation_route_for_abb_fault() -> None:
         _seed_drive_manual_fault_entries(session_factory, FAULT_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
-            "?fault_code=A7C1&brand=ABB"
+            "?fault_code=A7C1&brand=ABB&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -122,7 +122,7 @@ def test_drive_manual_validation_route_for_siemens_fault() -> None:
         _seed_drive_manual_fault_entries(session_factory, FAULT_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
-            "?fault_code=F07011&brand=Siemens"
+            "?fault_code=F07011&brand=Siemens&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -143,7 +143,7 @@ def test_drive_manual_validation_route_can_include_related_symptom() -> None:
         _seed_drive_manual_fault_entries(session_factory, FAULT_FIXTURE, SYMPTOM_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
-            "?fault_code=F07011&brand=Siemens&include_related_symptoms=true"
+            "?fault_code=F07011&brand=Siemens&include_related_symptoms=true&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -165,7 +165,7 @@ def test_drive_manual_validation_route_can_exclude_related_symptom() -> None:
         _seed_drive_manual_fault_entries(session_factory, FAULT_FIXTURE, SYMPTOM_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/fault-knowledge"
-            "?fault_code=F07011&brand=Siemens&include_related_symptoms=false"
+            "?fault_code=F07011&brand=Siemens&include_related_symptoms=false&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -184,7 +184,7 @@ def test_soft_starter_manual_validation_route_for_schneider_fault() -> None:
         _seed_drive_manual_fault_entries(session_factory, SOFT_STARTER_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/soft_starter/fault-knowledge"
-            "?fault_code=OCF&brand=Schneider"
+            "?fault_code=OCF&brand=Schneider&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -205,7 +205,7 @@ def test_frequency_converter_manual_validation_route_for_danfoss_fault() -> None
         _seed_drive_manual_fault_entries(session_factory, FREQUENCY_CONVERTER_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/frequency_converter/fault-knowledge"
-            "?fault_code=16&brand=Danfoss"
+            "?fault_code=16&brand=Danfoss&min_trust_level=L2"
         )
         payload = response.json()
 

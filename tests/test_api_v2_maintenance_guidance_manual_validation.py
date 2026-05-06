@@ -100,7 +100,7 @@ def test_manual_validation_maintenance_route_for_guoxiang_cleaning() -> None:
         _seed_manual_maintenance_entries(session_factory, HVAC_MANUAL_FIXTURE)
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/air_cooled_modular_heat_pump/maintenance-guidance"
-            "?task_type=cleaning&brand=Guoxiang"
+            "?task_type=cleaning&brand=Guoxiang&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -123,7 +123,7 @@ def test_manual_validation_maintenance_route_for_siemens_drive() -> None:
         _seed_manual_maintenance_entries(session_factory, DRIVE_MANUAL_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/maintenance-guidance"
-            "?brand=Siemens&model_family=G120XA"
+            "?brand=Siemens&model_family=G120XA&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -146,7 +146,7 @@ def test_manual_validation_maintenance_route_for_schneider_soft_starter() -> Non
         _seed_manual_maintenance_entries(session_factory, DRIVE_SOFT_STARTER_FIXTURE)
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/soft_starter/maintenance-guidance"
-            "?task_type=inspection&brand=Schneider"
+            "?task_type=inspection&brand=Schneider&min_trust_level=L2"
         )
         payload = response.json()
 

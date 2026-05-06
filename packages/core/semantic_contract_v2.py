@@ -11,8 +11,10 @@ TrustLevel = Literal["L1", "L2", "L3", "L4"]
 QueryStrategy = Literal["greedy", "diverse", "deep"]
 KnowledgeObjectType = Literal[
     "fault_code",
+    "fault_diagnostic_rule",
     "parameter_spec",
     "commissioning_step",
+    "operational_sequence",
     "wiring_guidance",
     "maintenance_procedure",
     "application_guidance",
@@ -194,7 +196,12 @@ class OperationalGuidanceQuery(SemanticBaseModel):
 
     domain_id: str
     equipment_class_id: str
-    guidance_type: Literal["commissioning_step", "wiring_guidance", "application_guidance"] | None = None
+    guidance_type: Literal[
+        "commissioning_step",
+        "operational_sequence",
+        "wiring_guidance",
+        "application_guidance",
+    ] | None = None
     brand: str | None = None
     model_family: str | None = None
     min_confidence: float | None = Field(default=None, ge=0.0, le=1.0)
@@ -471,7 +478,7 @@ MCP_TOOL_GET_OPERATIONAL_GUIDANCE: dict[str, Any] = {
             },
             "guidance_type": {
                 "type": "string",
-                "enum": ["commissioning_step", "wiring_guidance", "application_guidance"],
+                "enum": ["commissioning_step", "operational_sequence", "wiring_guidance", "application_guidance"],
                 "description": "Optional operational guidance type filter.",
             },
             "brand": {

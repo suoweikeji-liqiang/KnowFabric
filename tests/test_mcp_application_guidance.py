@@ -201,6 +201,7 @@ def test_tools_call_application_guidance_uses_semantic_service(monkeypatch) -> N
                 "equipment_class_id": "variable_frequency_drive",
                 "application_type": "pump_fan",
                 "brand": "Danfoss",
+                "min_trust_level": "L2",
             },
         }
     )

@@ -178,6 +178,27 @@ def _seed_fault_knowledge_rows(session_factory: sessionmaker) -> None:
                     "primary_chunk_id": "chunk_001",
                     "package_version": "2.0.0-alpha",
                     "ontology_version": "2.0.0-alpha",
+                },
+                {
+                    "knowledge_object_id": "ko_fault_rule_001",
+                    "domain_id": "hvac",
+                    "ontology_class_key": "hvac:centrifugal_chiller",
+                    "ontology_class_id": "centrifugal_chiller",
+                    "knowledge_object_type": "fault_diagnostic_rule",
+                    "canonical_key": "rule_chwst_too_high",
+                    "title": "CHWST Too High Rule",
+                    "summary": "Report when chilled water supply temperature is too high.",
+                    "structured_payload_json": {
+                        "fault_condition": "chilled_water_supply_temperature_too_high",
+                        "rule": "CHWST_AVG - EPS_CHWT >= CHWSTSP",
+                    },
+                    "applicability_json": {"brand": "Carrier", "model_family": "19XR"},
+                    "confidence_score": 0.9,
+                    "trust_level": "L4",
+                    "review_status": "approved",
+                    "primary_chunk_id": "chunk_001",
+                    "package_version": "2.0.0-alpha",
+                    "ontology_version": "2.0.0-alpha",
                 }
             ],
         )
@@ -194,6 +215,17 @@ def _seed_fault_knowledge_rows(session_factory: sessionmaker) -> None:
                     "evidence_text": "E01: Overcurrent during acceleration",
                     "evidence_role": "primary",
                     "confidence_score": 0.91,
+                },
+                {
+                    "knowledge_evidence_id": "koev_fault_rule_001",
+                    "knowledge_object_id": "ko_fault_rule_001",
+                    "chunk_id": "chunk_001",
+                    "doc_id": "doc_001",
+                    "page_id": "page_001",
+                    "page_no": 12,
+                    "evidence_text": "CHWST_AVG - EPS_CHWT >= CHWSTSP",
+                    "evidence_role": "primary",
+                    "confidence_score": 0.9,
                 }
             ],
         )
@@ -216,7 +248,7 @@ def test_fault_knowledge_route_returns_evidence_grounded_items() -> None:
         _seed_fault_knowledge(session_factory)
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/centrifugal_chiller/fault-knowledge"
-            "?fault_code=E01&brand=Carrier"
+            "?fault_code=E01&brand=Carrier&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -239,7 +271,7 @@ def test_fault_knowledge_route_filters_out_mismatched_brand() -> None:
         _seed_fault_knowledge(session_factory)
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/centrifugal_chiller/fault-knowledge"
-            "?fault_code=E01&brand=Trane"
+            "?fault_code=E01&brand=Trane&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -249,7 +281,50 @@ def test_fault_knowledge_route_filters_out_mismatched_brand() -> None:
         app.dependency_overrides.clear()
 
 
+def test_fault_knowledge_route_includes_fault_diagnostic_rules() -> None:
+    """Fault route should expose standard diagnostic rules, not just fault codes."""
+
+    client, session_factory = _build_client()
+    try:
+        _seed_fault_knowledge(session_factory)
+        response = client.get(
+            "/api/v2/domains/hvac/equipment-classes/centrifugal_chiller/fault-knowledge"
+            "?brand=Carrier&min_trust_level=L2"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert {item["knowledge_object_type"] for item in payload["data"]["items"]} == {
+            "fault_code",
+            "fault_diagnostic_rule",
+        }
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_fault_knowledge_min_trust_level_includes_higher_trust_items() -> None:
+    """min_trust_level=L3 should keep L4 items and filter out L2 items."""
+
+    client, session_factory = _build_client()
+    try:
+        _seed_fault_knowledge(session_factory)
+        response = client.get(
+            "/api/v2/domains/hvac/equipment-classes/centrifugal_chiller/fault-knowledge"
+            "?brand=Carrier&min_trust_level=L3"
+        )
+        payload = response.json()
+
+        assert response.status_code == 200
+        assert [item["knowledge_object_type"] for item in payload["data"]["items"]] == [
+            "fault_diagnostic_rule"
+        ]
+    finally:
+        app.dependency_overrides.clear()
+
+
 if __name__ == "__main__":
     test_fault_knowledge_route_returns_evidence_grounded_items()
     test_fault_knowledge_route_filters_out_mismatched_brand()
+    test_fault_knowledge_route_includes_fault_diagnostic_rules()
+    test_fault_knowledge_min_trust_level_includes_higher_trust_items()
     print("API v2 fault knowledge route checks passed")

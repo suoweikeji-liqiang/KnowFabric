@@ -151,7 +151,7 @@ def test_apply_ready_review_bundle_supports_maintenance_guidance_candidates() ->
 
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/air_cooled_modular_heat_pump/maintenance-guidance"
-            "?task_type=cleaning&brand=Guoxiang"
+            "?task_type=cleaning&brand=Guoxiang&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -221,7 +221,7 @@ def test_apply_ready_review_bundle_supports_drive_maintenance_guidance_candidate
 
         response = client.get(
             "/api/v2/domains/drive/equipment-classes/variable_frequency_drive/maintenance-guidance"
-            "?brand=Siemens&model_family=G120XA"
+            "?brand=Siemens&model_family=G120XA&min_trust_level=L2"
         )
         payload = response.json()
 

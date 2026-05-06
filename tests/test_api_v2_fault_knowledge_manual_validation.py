@@ -96,7 +96,7 @@ def test_manual_validation_fault_route_for_aux_module_faults() -> None:
         _seed_manual_fault_entries(session_factory)
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/air_cooled_modular_heat_pump/fault-knowledge"
-            "?fault_code=E22&brand=AUX"
+            "?fault_code=E22&brand=AUX&min_trust_level=L2"
         )
         payload = response.json()
 
@@ -118,7 +118,7 @@ def test_manual_validation_fault_route_for_guoxiang_module_faults() -> None:
         _seed_manual_fault_entries(session_factory)
         response = client.get(
             "/api/v2/domains/hvac/equipment-classes/air_cooled_modular_heat_pump/fault-knowledge"
-            "?fault_code=49&brand=Guoxiang"
+            "?fault_code=49&brand=Guoxiang&min_trust_level=L2"
         )
         payload = response.json()
 
