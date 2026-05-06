@@ -15,6 +15,30 @@ aliases:
       zh:
         - 离心式冷水机组
 
+  - canonical_id: boiler
+    terms:
+      en:
+        - boiler
+        - condensing boiler
+        - non-condensing boiler
+      zh:
+        - 锅炉
+        - 冷凝锅炉
+        - 非冷凝锅炉
+
+  - canonical_id: hot_water_plant
+    terms:
+      en:
+        - hot water plant
+        - heating hot-water plant
+        - boiler plant
+        - heating plant
+      zh:
+        - 热水机房
+        - 热水系统
+        - 锅炉机房
+        - 供热机房
+
   - canonical_id: chilled_water_pump
     terms:
       en:

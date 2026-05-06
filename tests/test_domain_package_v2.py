@@ -28,6 +28,8 @@ def test_hvac_v2_package_loads() -> None:
     assert bundle.package.domain_id == "hvac"
     assert bundle.package.package_version == "2.0.0-alpha"
     assert "centrifugal_chiller" in class_ids
+    assert "hot_water_plant" in class_ids
+    assert "boiler" in class_ids
     assert "air_cooled_modular_heat_pump" in class_ids
     assert "project_a_chiller_01" not in class_ids
 
@@ -107,10 +109,7 @@ def test_hvac_v2_coverage_inventory_stays_in_sync() -> None:
         covered.update(item["covered_knowledge_objects"])
 
     assert set(inventory["current_fixture_coverage"]["package_supported_but_without_fixture_coverage"]) == supported - covered
-    assert set(inventory["current_fixture_coverage"]["package_supported_but_without_fixture_coverage"]) == {
-        "parameter_spec",
-        "symptom",
-    }
+    assert set(inventory["current_fixture_coverage"]["package_supported_but_without_fixture_coverage"]) == {"symptom"}
     assert set(inventory["current_fixture_coverage"]["currently_uncovered_equipment_classes"]).issubset(equipment_ids)
     for item in inventory["internal_priority_queue"]:
         assert item["equipment_class_id"] in equipment_ids

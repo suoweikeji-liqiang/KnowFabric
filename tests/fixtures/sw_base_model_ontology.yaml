@@ -10,6 +10,18 @@ equipment_classes:
     labels: {en: Chiller, zh: 冷水机组}
     typical_points: [Chilled_Water_Supply_Temperature_Sensor]
     typical_relations: [{relation: hasPart, target_class: Pump}]
+  - class: ext:Boiler
+    parent: null
+    namespace: ext
+    labels: {en: Boiler, zh: 锅炉}
+    typical_points: []
+    typical_relations: []
+  - class: ext:Hot_Water_Plant
+    parent: null
+    namespace: ext
+    labels: {en: Hot Water Plant, zh: 热水机房}
+    typical_points: []
+    typical_relations: []
   - class: Centrifugal_Chiller
     parent: Chiller
     namespace: brick

@@ -12,8 +12,47 @@ classes:
     knowledge_anchors:
       - fault_code
       - parameter_spec
+      - application_guidance
       - maintenance_procedure
       - performance_spec
+      - operational_sequence
+      - fault_diagnostic_rule
+
+  - id: boiler
+    label:
+      en: Boiler
+      zh: 锅炉
+    kind: equipment
+    aliases:
+      - boiler
+      - condensing boiler
+      - non-condensing boiler
+    knowledge_anchors:
+      - fault_code
+      - parameter_spec
+      - application_guidance
+      - maintenance_procedure
+      - performance_spec
+      - operational_sequence
+      - fault_diagnostic_rule
+
+  - id: hot_water_plant
+    label:
+      en: Hot Water Plant
+      zh: 热水机房
+    kind: equipment
+    aliases:
+      - hot water plant
+      - heating hot-water plant
+      - boiler plant
+      - heating plant
+    knowledge_anchors:
+      - parameter_spec
+      - application_guidance
+      - maintenance_procedure
+      - performance_spec
+      - operational_sequence
+      - fault_diagnostic_rule
 
   - id: centrifugal_chiller
     label:
@@ -296,3 +335,21 @@ classes:
     aliases:
       - diagnostic step
       - troubleshooting step
+
+  - id: operational_sequence
+    label:
+      en: Operational Sequence
+      zh: 运行控制序列
+    kind: concept
+    aliases:
+      - operational sequence
+      - control sequence
+
+  - id: fault_diagnostic_rule
+    label:
+      en: Fault Diagnostic Rule
+      zh: 故障诊断规则
+    kind: concept
+    aliases:
+      - fault diagnostic rule
+      - afdd rule

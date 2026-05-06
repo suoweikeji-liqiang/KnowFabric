@@ -33,6 +33,7 @@ def test_hvac_projection_contains_scoped_class_rows() -> None:
 
     assert by_id["centrifugal_chiller"]["ontology_class_key"] == "hvac:centrifugal_chiller"
     assert by_id["centrifugal_chiller"]["parent_class_key"] == "hvac:chiller"
+    assert by_id["hot_water_plant"]["ontology_class_key"] == "hvac:hot_water_plant"
 
 
 def test_drive_projection_emits_aliases_without_structural_mappings() -> None:

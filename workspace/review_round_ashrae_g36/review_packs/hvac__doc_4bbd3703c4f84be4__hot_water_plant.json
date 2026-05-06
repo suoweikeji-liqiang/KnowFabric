@@ -1,0 +1,737 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-06T12:03:20.331228+00:00",
+  "source_generation_mode": "ashrae_guideline36_standard_review_pack",
+  "source_review_mode": "ashrae_guideline36_standard_review_pack",
+  "domain_id": "hvac",
+  "doc_id": "doc_4bbd3703c4f84be4",
+  "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+  "equipment_class": {
+    "equipment_class_id": "hot_water_plant",
+    "equipment_class_key": "hvac:hot_water_plant",
+    "label": "Hot Water Plant",
+    "supported_knowledge_anchors": [
+      "application_guidance",
+      "operational_sequence",
+      "fault_diagnostic_rule",
+      "parameter_spec"
+    ]
+  },
+  "filters_applied": {
+    "source": "ASHRAE G36 human-reviewed accepted hot-water/boiler entries"
+  },
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 6,
+    "source_candidate_count": 22,
+    "workflow": [
+      "Derived from ASHRAE G36 human-reviewed workspace after hot_water_plant ontology class was added."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_98ddf5c52ad86bee",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_21_2_2:plant_enable_disable",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Plant Enable/Disable",
+        "section_id": "5.21.2.2",
+        "section_title": "Plant Enable/Disable",
+        "equipment_scope": "Boiler plant",
+        "summary": "Enable plant when disabled for ≥15 min, number of Heating Hot-Water Plant Requests > I (default 0), OAT < HW-LOT, and schedule active.",
+        "trigger_condition": "Plant disabled for ≥15 min AND Number of Heating Hot-Water Plant Requests > I (adjustable, default 0) AND OAT < HW-LOT AND Boiler plant enable schedule active.",
+        "required_behavior": "Enable plant in lowest stage.",
+        "configurable_values": [
+          "I (ignore count, default 0)",
+          "HW-LOT (lockout temperature)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT<HW-LOT, and c. The Boiler plant enable schedule is active.",
+        "page_hint": 235
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "5.21.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.2.2",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_ae38b0b316ea4196",
+        "chunk_ed993d898ac747e2"
+      ],
+      "chunk_id": "chunk_ae38b0b316ea4196",
+      "page_no": 235,
+      "source_page_nos": [
+        235
+      ],
+      "evidence_text": "5.21.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Heating Hot -Water Plant Requests > I (I = Ignores shall default to 0, ad justable), and b. OAT<HW -LOT, and c. The Boiler plant enable schedule is active.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Operational sequence for enabling heating hot-water plant with configurable parameters, grounded in Guideline 36 section 5.21.2.2.",
+      "judge_verdict": "accepted",
+      "page_id": "page_7f4da8cf69b2497e",
+      "review_decision": "accepted",
+      "review_notes": "接受。热水机房启用逻辑准确；标题已收窄为 Hot Water Plant Enable Logic，证据已重锚到跨相邻 chunk 的完整启用条件。",
+      "curation": {
+        "title": "Hot Water Plant Enable Logic",
+        "summary": "Enable plant when disabled for ≥15 min, number of Heating Hot-Water Plant Requests > I (default 0), OAT < HW-LOT, and schedule active.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_2_2:plant_enable_disable",
+        "structured_payload": {
+          "knowledge_object_type": "operational_sequence",
+          "title": "Hot Water Plant Enable Logic",
+          "section_id": "5.21.2.2",
+          "section_title": "Plant Enable/Disable",
+          "equipment_scope": "Boiler plant",
+          "summary": "Enable plant when disabled for ≥15 min, number of Heating Hot-Water Plant Requests > I (default 0), OAT < HW-LOT, and schedule active.",
+          "trigger_condition": "Plant disabled for ≥15 min AND Number of Heating Hot-Water Plant Requests > I (adjustable, default 0) AND OAT < HW-LOT AND Boiler plant enable schedule active.",
+          "required_behavior": "Enable plant in lowest stage.",
+          "configurable_values": [
+            "I (ignore count, default 0)",
+            "HW-LOT (lockout temperature)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "5.21.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Heating Hot -Water Plant Requests > I (I = Ignores shall default to 0, ad justable), and b. OAT<HW -LOT, and c. The Boiler plant enable schedule is active.",
+          "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.2.2",
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "authority_level": "industry_standard",
+          "knowledge_type": "operational_sequence",
+          "source_standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "applicability": {
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "sections": [
+            "5.21.2.2"
+          ],
+          "source": "ASHRAE Guideline 36 reviewed Hot Water Plant subset"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_ae38b0b316ea4196",
+          "chunk_ed993d898ac747e2"
+        ],
+        "evidence_quote": "5.21.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Heating Hot -Water Plant Requests > I (I = Ignores shall default to 0, ad justable), and b. OAT<HW -LOT, and c. The Boiler plant enable schedule is active.",
+        "judge_reason": "Operational sequence for enabling heating hot-water plant with configurable parameters, grounded in Guideline 36 section 5.21.2.2."
+      },
+      "curation_checklist": [
+        "Human-reviewed from ASHRAE G36 standard extraction.",
+        "Mapped to hot_water_plant after boiler/hot-water ontology class was added."
+      ],
+      "equipment_class_candidate": {
+        "equipment_class_id": "hot_water_plant",
+        "equipment_class_key": "hvac:hot_water_plant",
+        "label": "Hot Water Plant",
+        "confidence": 1.0,
+        "matched_aliases": [
+          "ASHRAE Guideline 36 hot water plant section",
+          "boiler plant"
+        ],
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "curated_against_ontology_version": "0.2.0"
+    },
+    {
+      "candidate_id": "cand_7b75a9b92c9064a5",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_21_2_3:plant_disable_logic",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Plant Disable Logic",
+        "section_id": "5.21.2.3",
+        "section_title": "Plant Enable/Disable",
+        "equipment_scope": "Boiler plant",
+        "summary": "Disable plant when enabled for ≥15 min and either number of requests ≤ I for 3 min, OAT > HW-LOT+1°F, or schedule inactive.",
+        "trigger_condition": "Plant enabled for ≥15 min AND (Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes OR OAT > HW-LOT + 1°F OR Boiler plant enable schedule inactive).",
+        "required_behavior": "Disable the plant.",
+        "configurable_values": [
+          "I (ignore count)",
+          "HW-LOT"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive.",
+        "page_hint": 235
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.2.3",
+      "source_chunk_ids": [
+        "chunk_ed993d898ac747e2"
+      ],
+      "chunk_id": "chunk_ed993d898ac747e2",
+      "page_no": 235,
+      "source_page_nos": [
+        235
+      ],
+      "evidence_text": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Extracted item captures a specific control sequence for plant disable logic with configurable parameters, grounded in ASHRAE Guideline 36 operational knowledge.",
+      "judge_verdict": "accepted",
+      "page_id": "page_7f4da8cf69b2497e",
+      "review_decision": "accepted",
+      "review_notes": "接受。热水机房停用逻辑准确，条件包括请求数、OAT lockout 和 schedule inactive，KO 类型正确。",
+      "curation": {
+        "title": "Hot Water Plant Disable Logic",
+        "summary": "Disable plant when enabled for ≥15 min and either number of requests ≤ I for 3 min, OAT > HW-LOT+1°F, or schedule inactive.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_2_3:plant_disable_logic",
+        "structured_payload": {
+          "knowledge_object_type": "operational_sequence",
+          "title": "Hot Water Plant Disable Logic",
+          "section_id": "5.21.2.3",
+          "section_title": "Plant Enable/Disable",
+          "equipment_scope": "Boiler plant",
+          "summary": "Disable plant when enabled for ≥15 min and either number of requests ≤ I for 3 min, OAT > HW-LOT+1°F, or schedule inactive.",
+          "trigger_condition": "Plant enabled for ≥15 min AND (Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes OR OAT > HW-LOT + 1°F OR Boiler plant enable schedule inactive).",
+          "required_behavior": "Disable the plant.",
+          "configurable_values": [
+            "I (ignore count)",
+            "HW-LOT"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive.",
+          "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.2.3",
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "authority_level": "industry_standard",
+          "knowledge_type": "operational_sequence",
+          "source_standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "applicability": {
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "sections": [
+            "5.21.2.3"
+          ],
+          "source": "ASHRAE Guideline 36 reviewed Hot Water Plant subset"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_ed993d898ac747e2"
+        ],
+        "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive.",
+        "judge_reason": "Extracted item captures a specific control sequence for plant disable logic with configurable parameters, grounded in ASHRAE Guideline 36 operational knowledge."
+      },
+      "curation_checklist": [
+        "Human-reviewed from ASHRAE G36 standard extraction.",
+        "Mapped to hot_water_plant after boiler/hot-water ontology class was added."
+      ],
+      "equipment_class_candidate": {
+        "equipment_class_id": "hot_water_plant",
+        "equipment_class_key": "hvac:hot_water_plant",
+        "label": "Hot Water Plant",
+        "confidence": 1.0,
+        "matched_aliases": [
+          "ASHRAE Guideline 36 hot water plant section",
+          "boiler plant"
+        ],
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "curated_against_ontology_version": "0.2.0"
+    },
+    {
+      "candidate_id": "cand_50f7ff661b94bd3b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_21_3_9_g:primary_only_condensing_boiler_staging_down",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Primary Only Condensing Boiler Staging Down",
+        "section_id": "5.21.3.9.g",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Primary only condensing boiler plants",
+        "summary": "Stage down if Qrequired < 110% of B-STAGE MIN of current stage for 5 min or bypass valve >0% for 5 min, failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "trigger_condition": "All of: 1) (Qrequired < 110% of B-STAGE MIN of current stage for 5 minutes OR minimum flow bypass valve >0% open for 5 minutes); 2) failsafe stage up condition not true; 3) Qrequired < 80% of design capacity of boilers in next lower stage for 5 minutes.",
+        "required_behavior": "Stage down to next available lower stage.",
+        "configurable_values": [
+          "B-STAGE MIN",
+          "QbX (design capacity)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail safe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "page_hint": 238
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail safe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.g",
+      "source_chunk_ids": [
+        "chunk_4ed1793374a0457e"
+      ],
+      "chunk_id": "chunk_4ed1793374a0457e",
+      "page_no": 238,
+      "source_page_nos": [
+        238
+      ],
+      "evidence_text": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail safe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Extraction captures a real control sequence with specific parameters and timers from G36 section 5.21.3.9.g.",
+      "judge_verdict": "accepted",
+      "page_id": "page_eaacb142223f4827",
+      "review_decision": "accepted",
+      "review_notes": "接受。一次系统冷凝锅炉 stage down 条件完整，包含 B-STAGE MIN、旁通阀、failsafe 和下一 stage 容量条件。",
+      "curation": {
+        "title": "Primary Only Condensing Boiler Staging Down",
+        "summary": "Stage down if Qrequired < 110% of B-STAGE MIN of current stage for 5 min or bypass valve >0% for 5 min, failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_g:primary_only_condensing_boiler_staging_down",
+        "structured_payload": {
+          "knowledge_object_type": "operational_sequence",
+          "title": "Primary Only Condensing Boiler Staging Down",
+          "section_id": "5.21.3.9.g",
+          "section_title": "Boiler Staging",
+          "equipment_scope": "Primary only condensing boiler plants",
+          "summary": "Stage down if Qrequired < 110% of B-STAGE MIN of current stage for 5 min or bypass valve >0% for 5 min, failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+          "trigger_condition": "All of: 1) (Qrequired < 110% of B-STAGE MIN of current stage for 5 minutes OR minimum flow bypass valve >0% open for 5 minutes); 2) failsafe stage up condition not true; 3) Qrequired < 80% of design capacity of boilers in next lower stage for 5 minutes.",
+          "required_behavior": "Stage down to next available lower stage.",
+          "configurable_values": [
+            "B-STAGE MIN",
+            "QbX (design capacity)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail safe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+          "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.g",
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "authority_level": "industry_standard",
+          "knowledge_type": "operational_sequence",
+          "source_standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "applicability": {
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "sections": [
+            "5.21.3.9.g"
+          ],
+          "source": "ASHRAE Guideline 36 reviewed Hot Water Plant subset"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_4ed1793374a0457e"
+        ],
+        "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail safe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "judge_reason": "Extraction captures a real control sequence with specific parameters and timers from G36 section 5.21.3.9.g."
+      },
+      "curation_checklist": [
+        "Human-reviewed from ASHRAE G36 standard extraction.",
+        "Mapped to hot_water_plant after boiler/hot-water ontology class was added."
+      ],
+      "equipment_class_candidate": {
+        "equipment_class_id": "hot_water_plant",
+        "equipment_class_key": "hvac:hot_water_plant",
+        "label": "Hot Water Plant",
+        "confidence": 1.0,
+        "matched_aliases": [
+          "ASHRAE Guideline 36 hot water plant section",
+          "boiler plant"
+        ],
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "curated_against_ontology_version": "0.2.0"
+    },
+    {
+      "candidate_id": "cand_1b2a355921a86055",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_21_3_9_i:variable_primary_variable_secondary_condensing_boiler_staging_down",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Variable Primary/Variable Secondary Condensing Boiler Staging Down",
+        "section_id": "5.21.3.9.i",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Variable primary/variable secondary condensing boiler plants",
+        "summary": "Stage down if Qrequired < 110% of B-STAGE MIN of current stage for 5 min or (primary pumps at min speed and primary HWRT > secondary HWRT by 3°F for 5 min), failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "trigger_condition": "All of: 1) (Qrequired < 110% of B-STAGE MIN of current stage for 5 minutes OR Primary HW pumps at B-MinPriPumpSpdStage and primary HWRT > secondary HWRT by 3°F for 5 minutes); 2) failsafe stage up condition not true; 3) Qrequired < 80% of design capacity of boilers in next lower stage for 5 minutes.",
+        "required_behavior": "Stage down to next available lower stage.",
+        "configurable_values": [
+          "B-STAGE MIN",
+          "B-MinPriPumpSpdStage",
+          "QbX"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "page_hint": 239
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.i",
+      "source_chunk_ids": [
+        "chunk_21920789883c4108",
+        "chunk_b85c181782944584"
+      ],
+      "chunk_id": "chunk_21920789883c4108",
+      "page_no": 239,
+      "source_page_nos": [
+        239,
+        240
+      ],
+      "evidence_text": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 2 chunks",
+      "judge_reason": "Captures a real staging down control sequence with specific parameters and timing from the guideline.",
+      "judge_verdict": "accepted",
+      "page_id": "page_f9f01388518645f4",
+      "review_decision": "accepted",
+      "review_notes": "接受。变一次/变二次冷凝锅炉 stage down 条件完整，L4 合理；泵速、HWRT 温差、failsafe 和容量条件均明确。",
+      "curation": {
+        "title": "Variable Primary/Variable Secondary Condensing Boiler Staging Down",
+        "summary": "Stage down if Qrequired < 110% of B-STAGE MIN of current stage for 5 min or (primary pumps at min speed and primary HWRT > secondary HWRT by 3°F for 5 min), failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_i:variable_primary_variable_secondary_condensing_boiler_staging_down",
+        "structured_payload": {
+          "knowledge_object_type": "operational_sequence",
+          "title": "Variable Primary/Variable Secondary Condensing Boiler Staging Down",
+          "section_id": "5.21.3.9.i",
+          "section_title": "Boiler Staging",
+          "equipment_scope": "Variable primary/variable secondary condensing boiler plants",
+          "summary": "Stage down if Qrequired < 110% of B-STAGE MIN of current stage for 5 min or (primary pumps at min speed and primary HWRT > secondary HWRT by 3°F for 5 min), failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+          "trigger_condition": "All of: 1) (Qrequired < 110% of B-STAGE MIN of current stage for 5 minutes OR Primary HW pumps at B-MinPriPumpSpdStage and primary HWRT > secondary HWRT by 3°F for 5 minutes); 2) failsafe stage up condition not true; 3) Qrequired < 80% of design capacity of boilers in next lower stage for 5 minutes.",
+          "required_behavior": "Stage down to next available lower stage.",
+          "configurable_values": [
+            "B-STAGE MIN",
+            "B-MinPriPumpSpdStage",
+            "QbX"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+          "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.i",
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "authority_level": "industry_standard",
+          "knowledge_type": "operational_sequence",
+          "source_standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "applicability": {
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "sections": [
+            "5.21.3.9.i"
+          ],
+          "source": "ASHRAE Guideline 36 reviewed Hot Water Plant subset"
+        },
+        "trust_level": "L4",
+        "review_status": "approved",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_21920789883c4108",
+          "chunk_b85c181782944584"
+        ],
+        "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "judge_reason": "Captures a real staging down control sequence with specific parameters and timing from the guideline."
+      },
+      "curation_checklist": [
+        "Human-reviewed from ASHRAE G36 standard extraction.",
+        "Mapped to hot_water_plant after boiler/hot-water ontology class was added."
+      ],
+      "equipment_class_candidate": {
+        "equipment_class_id": "hot_water_plant",
+        "equipment_class_key": "hvac:hot_water_plant",
+        "label": "Hot Water Plant",
+        "confidence": 1.0,
+        "matched_aliases": [
+          "ASHRAE Guideline 36 hot water plant section",
+          "boiler plant"
+        ],
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "curated_against_ontology_version": "0.2.0"
+    },
+    {
+      "candidate_id": "cand_4071679da818cb2e",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_21_3_9_k:non_condensing_boiler_staging_down",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Non-Condensing Boiler Staging Down",
+        "section_id": "5.21.3.9.k",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Non-condensing boiler plants",
+        "summary": "Stage down if Qrequired < 80% of design capacity of next lower stage for 10 min and failsafe not true.",
+        "trigger_condition": "Both: 1) Qrequired < 80% of design capacity of next lower available stage for 10 minutes; 2) failsafe stage up condition not true.",
+        "required_behavior": "Stage down to next available lower stage.",
+        "configurable_values": [
+          "QbX"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Stage down if both of the following are true: 1. Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes; and 2. The failsafe stage up condition is not true.",
+        "page_hint": 240
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Stage down if both of the following are true: 1. Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes; and 2. The failsafe stage up condition is not true.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.k",
+      "source_chunk_ids": [
+        "chunk_e710008bfe3b44b9"
+      ],
+      "chunk_id": "chunk_e710008bfe3b44b9",
+      "page_no": 240,
+      "source_page_nos": [
+        240
+      ],
+      "evidence_text": "Stage down if both of the following are true: 1. Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes; and 2. The failsafe stage up condition is not true.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real staging down control sequence from ASHRAE Guideline 36, section 5.21.3.9.k.",
+      "judge_verdict": "accepted",
+      "page_id": "page_c35882bd91864241",
+      "review_decision": "accepted",
+      "review_notes": "接受。非冷凝锅炉 stage down 条件明确，10 min 持续时间和 80% 设计容量条件由证据支撑。",
+      "curation": {
+        "title": "Non-Condensing Boiler Staging Down",
+        "summary": "Stage down if Qrequired < 80% of design capacity of next lower stage for 10 min and failsafe not true.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_k:non_condensing_boiler_staging_down",
+        "structured_payload": {
+          "knowledge_object_type": "operational_sequence",
+          "title": "Non-Condensing Boiler Staging Down",
+          "section_id": "5.21.3.9.k",
+          "section_title": "Boiler Staging",
+          "equipment_scope": "Non-condensing boiler plants",
+          "summary": "Stage down if Qrequired < 80% of design capacity of next lower stage for 10 min and failsafe not true.",
+          "trigger_condition": "Both: 1) Qrequired < 80% of design capacity of next lower available stage for 10 minutes; 2) failsafe stage up condition not true.",
+          "required_behavior": "Stage down to next available lower stage.",
+          "configurable_values": [
+            "QbX"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "Stage down if both of the following are true: 1. Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes; and 2. The failsafe stage up condition is not true.",
+          "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.k",
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "authority_level": "industry_standard",
+          "knowledge_type": "operational_sequence",
+          "source_standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "applicability": {
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "sections": [
+            "5.21.3.9.k"
+          ],
+          "source": "ASHRAE Guideline 36 reviewed Hot Water Plant subset"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_e710008bfe3b44b9"
+        ],
+        "evidence_quote": "Stage down if both of the following are true: 1. Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes; and 2. The failsafe stage up condition is not true.",
+        "judge_reason": "Captures a real staging down control sequence from ASHRAE Guideline 36, section 5.21.3.9.k."
+      },
+      "curation_checklist": [
+        "Human-reviewed from ASHRAE G36 standard extraction.",
+        "Mapped to hot_water_plant after boiler/hot-water ontology class was added."
+      ],
+      "equipment_class_candidate": {
+        "equipment_class_id": "hot_water_plant",
+        "equipment_class_key": "hvac:hot_water_plant",
+        "label": "Hot Water Plant",
+        "confidence": 1.0,
+        "matched_aliases": [
+          "ASHRAE Guideline 36 hot water plant section",
+          "boiler plant"
+        ],
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "curated_against_ontology_version": "0.2.0"
+    },
+    {
+      "candidate_id": "cand_89570aed35da929f",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_21_3_9_m:hybrid_boiler_staging_down_condensing_current_stage",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Hybrid Boiler Staging Down (Condensing Current Stage)",
+        "section_id": "5.21.3.9.m",
+        "section_title": "Boiler Staging",
+        "equipment_scope": "Hybrid boiler plants (condensing current stage)",
+        "summary": "If all boilers in current stage are condensing, stage down using same conditions as variable primary/variable secondary condensing: Qrequired < 110% of B-STAGE MIN for 5 min or (primary pumps at min speed and primary HWRT > secondary HWRT by 3°F for 5 min), failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "trigger_condition": "Same as 5.21.3.9.i.",
+        "required_behavior": "Stage down to next available lower stage.",
+        "configurable_values": [
+          "B-STAGE MIN",
+          "B-MinPriPumpSpdStage",
+          "QbX"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "If all boilers enabled in the current stage are condensing, stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "page_hint": 240
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If all boilers enabled in the current stage are condensing, stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.m",
+      "source_chunk_ids": [
+        "chunk_b85c181782944584"
+      ],
+      "chunk_id": "chunk_b85c181782944584",
+      "page_no": 240,
+      "source_page_nos": [
+        240
+      ],
+      "evidence_text": "If all boilers enabled in the current stage are condensing, stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Extraction captures a real control sequence with configurable parameters and timing conditions from Section 5.21.3.9.m, providing actionable operational knowledge.",
+      "judge_verdict": "accepted",
+      "page_id": "page_c35882bd91864241",
+      "review_decision": "accepted",
+      "review_notes": "接受。混合锅炉在当前 stage 全为冷凝锅炉时的 stage down 条件清楚，引用 §5.21.3.9.i 的逻辑关系合理。",
+      "curation": {
+        "title": "Hybrid Boiler Staging Down (Condensing Current Stage)",
+        "summary": "If all boilers in current stage are condensing, stage down using same conditions as variable primary/variable secondary condensing: Qrequired < 110% of B-STAGE MIN for 5 min or (primary pumps at min speed and primary HWRT > secondary HWRT by 3°F for 5 min), failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_m:hybrid_boiler_staging_down_condensing_current_stage",
+        "structured_payload": {
+          "knowledge_object_type": "operational_sequence",
+          "title": "Hybrid Boiler Staging Down (Condensing Current Stage)",
+          "section_id": "5.21.3.9.m",
+          "section_title": "Boiler Staging",
+          "equipment_scope": "Hybrid boiler plants (condensing current stage)",
+          "summary": "If all boilers in current stage are condensing, stage down using same conditions as variable primary/variable secondary condensing: Qrequired < 110% of B-STAGE MIN for 5 min or (primary pumps at min speed and primary HWRT > secondary HWRT by 3°F for 5 min), failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+          "trigger_condition": "Same as 5.21.3.9.i.",
+          "required_behavior": "Stage down to next available lower stage.",
+          "configurable_values": [
+            "B-STAGE MIN",
+            "B-MinPriPumpSpdStage",
+            "QbX"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "If all boilers enabled in the current stage are condensing, stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+          "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.m",
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "authority_level": "industry_standard",
+          "knowledge_type": "operational_sequence",
+          "source_standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "applicability": {
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "sections": [
+            "5.21.3.9.m"
+          ],
+          "source": "ASHRAE Guideline 36 reviewed Hot Water Plant subset"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_b85c181782944584"
+        ],
+        "evidence_quote": "If all boilers enabled in the current stage are condensing, stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "judge_reason": "Extraction captures a real control sequence with configurable parameters and timing conditions from Section 5.21.3.9.m, providing actionable operational knowledge."
+      },
+      "curation_checklist": [
+        "Human-reviewed from ASHRAE G36 standard extraction.",
+        "Mapped to hot_water_plant after boiler/hot-water ontology class was added."
+      ],
+      "equipment_class_candidate": {
+        "equipment_class_id": "hot_water_plant",
+        "equipment_class_key": "hvac:hot_water_plant",
+        "label": "Hot Water Plant",
+        "confidence": 1.0,
+        "matched_aliases": [
+          "ASHRAE Guideline 36 hot water plant section",
+          "boiler plant"
+        ],
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "curated_against_ontology_version": "0.2.0"
+    }
+  ]
+}

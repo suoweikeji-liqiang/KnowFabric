@@ -11,6 +11,8 @@ supported_knowledge_objects:
   - application_guidance
   - maintenance_procedure
   - performance_spec
+  - operational_sequence
+  - fault_diagnostic_rule
   - symptom
   - diagnostic_step
 maintainers:

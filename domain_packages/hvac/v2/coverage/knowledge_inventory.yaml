@@ -8,14 +8,16 @@ coverage_inventory:
       - application_guidance
       - maintenance_procedure
       - performance_spec
+      - operational_sequence
+      - fault_diagnostic_rule
       - symptom
       - diagnostic_step
     package_supported_but_without_fixture_coverage:
-      - parameter_spec
       - symptom
     currently_uncovered_equipment_classes:
       - centrifugal_chiller
       - modular_chiller
+      - boiler
       - pump
       - vrf_system
       - valve
@@ -49,12 +51,24 @@ coverage_inventory:
           - performance_spec
         notes: Screw chiller currently has performance-only coverage from manual-derived specs.
       - equipment_class_id: chiller
-        coverage_status: demo_authority_baseline
+        coverage_status: standard_authority_plus_demo_baseline
         fixture_paths:
           - tests/fixtures/manual_validation/hvac_demo_chiller_authority.json
+          - workspace/review_round_ashrae_g36/review_packs/applied_fixtures/hvac__doc_4bbd3703c4f84be4__chiller__fixture.json
         covered_knowledge_objects:
+          - application_guidance
+          - parameter_spec
           - performance_spec
-        notes: Parent chiller class has authority-style plant design metrics but no direct fault or maintenance coverage.
+          - operational_sequence
+          - fault_diagnostic_rule
+        notes: Parent chiller class has authority-style plant design metrics plus reviewed ASHRAE G36 chilled-water plant sequences.
+      - equipment_class_id: hot_water_plant
+        coverage_status: standard_authority_baseline
+        fixture_paths:
+          - workspace/review_round_ashrae_g36/review_packs/applied_fixtures/hvac__doc_4bbd3703c4f84be4__hot_water_plant__fixture.json
+        covered_knowledge_objects:
+          - operational_sequence
+        notes: Hot-water plant has reviewed ASHRAE G36 heating hot-water enable/disable and boiler staging sequences.
       - equipment_class_id: chilled_water_pump
         coverage_status: demo_authority_baseline
         fixture_paths:

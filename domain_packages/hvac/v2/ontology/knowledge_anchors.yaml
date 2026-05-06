@@ -40,3 +40,15 @@ knowledge_anchors:
       en: Diagnostic Step
       zh: 诊断步骤
     description: Evidence-backed troubleshooting actions attached to an equipment class.
+
+  - id: operational_sequence
+    label:
+      en: Operational Sequence
+      zh: 运行控制序列
+    description: Evidence-backed sequence of operation logic from standards or manuals.
+
+  - id: fault_diagnostic_rule
+    label:
+      en: Fault Diagnostic Rule
+      zh: 故障诊断规则
+    description: Evidence-backed diagnostic or AFDD rule with explicit fault conditions.

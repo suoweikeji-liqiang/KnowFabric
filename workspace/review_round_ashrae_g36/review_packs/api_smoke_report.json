@@ -1,46 +1,57 @@
 {
-  "generated_at": "2026-05-06T11:47:43.629919+00:00",
-  "api_base": "http://127.0.0.1:8000/api/v2/domains/hvac/equipment-classes/chiller",
+  "generated_at": "2026-05-06T12:03:52.488093+00:00",
+  "api_base": "http://127.0.0.1:8000/api/v2/domains/hvac/equipment-classes",
   "status": "passed",
   "results": {
-    "application-guidance": {
+    "chiller/application-guidance": {
       "returned": 1,
       "types": [
         "application_guidance"
       ]
     },
-    "parameter-profiles": {
+    "chiller/parameter-profiles": {
       "returned": 3,
       "types": [
         "parameter_spec",
         "performance_spec"
-      ],
-      "note": "Includes 1 new ASHRAE G36 parameter_spec plus existing performance specs."
+      ]
     },
-    "fault-knowledge": {
+    "chiller/fault-knowledge": {
       "returned": 4,
       "types": [
         "fault_diagnostic_rule"
       ]
     },
-    "operational-guidance": {
+    "chiller/operational-guidance": {
       "returned": 10,
       "types": [
         "application_guidance",
         "operational_sequence"
       ]
     },
-    "operational-guidance?guidance_type=operational_sequence": {
+    "chiller/operational-guidance?guidance_type=operational_sequence": {
       "returned": 9,
+      "types": [
+        "operational_sequence"
+      ]
+    },
+    "hot_water_plant/operational-guidance": {
+      "returned": 6,
+      "types": [
+        "operational_sequence"
+      ]
+    },
+    "hot_water_plant/operational-guidance?guidance_type=operational_sequence": {
+      "returned": 6,
       "types": [
         "operational_sequence"
       ]
     }
   },
   "notes": [
-    "15 reviewed ASHRAE G36 entries were backfilled under hvac:chiller.",
-    "7 entries remain deferred: 1 wrong KO type and 6 boiler/hot-water entries blocked by missing ontology classes.",
-    "Multi-chunk evidence is now supported by the manual fixture builder and backfill path.",
-    "min_trust_level now behaves as a lower bound; smoke used min_trust_level=L3 to verify L3/L4 exposure."
+    "21 reviewed ASHRAE G36 accepted entries are now backfilled: 15 under hvac:chiller and 6 under hvac:hot_water_plant.",
+    "1 entry remains rejected because the KO type was wrong.",
+    "Multi-chunk evidence is supported by the manual fixture builder and backfill path.",
+    "hot_water_plant and boiler ontology classes were added for the G36 heating hot-water sequence subset."
   ]
 }
