@@ -1,0 +1,42 @@
+{
+  "request_page": 25,
+  "model": "gemma-4-e4b-it-4bit",
+  "response": {
+    "id": "chatcmpl-48c4d796",
+    "object": "chat.completion",
+    "created": 1778047677,
+    "model": "gemma-4-e4b-it-4bit",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Active Chilled Water Setpoint | Active Chilled Water Setpoint 44.0F\nActive Current Limit Setpoint | Active Current Limit Setpoint 100%",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 566,
+      "completion_tokens": 36,
+      "total_tokens": 602,
+      "input_tokens": 566,
+      "output_tokens": 36,
+      "cached_tokens": null,
+      "model_load_duration": null,
+      "time_to_first_token": null,
+      "total_time": null,
+      "prompt_eval_duration": null,
+      "generation_duration": null,
+      "prompt_tokens_per_second": null,
+      "generation_tokens_per_second": null
+    }
+  },
+  "text": "Active Chilled Water Setpoint | Active Chilled Water Setpoint 44.0F\nActive Current Limit Setpoint | Active Current Limit Setpoint 100%",
+  "parsed_lines": [
+    "Active Chilled Water Setpoint | Active Chilled Water Setpoint 44.0F",
+    "Active Current Limit Setpoint | Active Current Limit Setpoint 100%"
+  ]
+}

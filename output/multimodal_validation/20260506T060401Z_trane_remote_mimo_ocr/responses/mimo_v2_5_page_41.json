@@ -1,0 +1,35 @@
+{
+  "request_page": 41,
+  "model": "mimo-v2.5",
+  "response": {
+    "id": "6d6e6a36ae5349a29bbfd3035b6e0b4f",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "TRANE\n\n控制系统组件\n\nOPST 运行状态选项\n继电器输出模块1A8和1A9提供如下的继电器输出:\n1A8选项四位继电器输出状态 | OPST | 继电器#1 | MAR警告继电器 (自锁) | J2-1 NO, J2-2 NC, J2-3 COMMON\n1A8选项四位继电器输出状态 | OPST | 继电器#2 | 限制警告继电器 | J2-4 NO, J2-5 NC, J2-6 COMMON\n1A8选项四位继电器输出状态 | OPST | 继电器#3 | MMR警告继电器 (自锁) | J2-7 NO, J2-8 NC, J2-9 COMMON\n1A8选项四位继电器输出状态 | OPST | 继电器#4 | 压缩机运行继电器 | J2-10 NO, J2-11 NC, J2-12 COMMON\n\nEXOP扩展运行选项\n在指定这一控制包时提供以下模块(1A17, 1A18)。\n1A17选项模拟输入/输出模块 | EXOP | 信号#1 | 外部基本负荷设定输入 | J2-2 输入#1, J2-3 接地\n1A17选项模拟输入/输出模块 | EXOP | 信号#2 | 制冷剂监视器输入 | J2-5 输入#2, J2-6 接地\n1A18选项双LV开关量输入模块 | EXOP | 信号#1 | 外部基本负荷启用或禁用输入 | J2-1 开关量输入信号#1, J2-2 接地\n1A18选项双LV开关量输入模块 | EXOP | 信号#2 | 外部热水控制启用或禁用输入 | J2-3 开关量输入信号#2, J2-4 接地\n\n制冷剂监视器输入1A17\n模拟量输入 4-20mA信号给1A17 J2-4至J2-6 (接地)。该信号对应表示0-100 ppm。\n\nTRMM TRM4 TRM5 (Tracer Comm 4, Comm5界面)\n1A14选项通信界面模块 | TRM4/TRM5 | Tracer通信 | J2-1 COMM+, J2-2 COMM-, J2-3 COMM+, J2-4 COMM-,\n\nCDRP (冷凝器制冷剂压力输出)\n1A15选项双模拟输入/输出模块 | CDRP | 信号#2 | 冷凝器制冷剂压力输出 | J2-4 输出 #2, J2-6 接地\n1A15选项双模拟输入/输出模块 | CDRP | 信号#1 | 压缩机输出RLA百分比 | J2-1 输出 #1, J2-3 接地\n\n40\n制冷百家网: www.zhilengbj.cn",
+          "role": "assistant",
+          "tool_calls": null,
+          "reasoning_content": "I need to transcribe the text from the provided image of an HVAC manual page.\n\n**Header:**\n- TRANE logo\n- 控制系统组件 (Control System Components)\n\n**Section 1: OPST 运行状态选项 (OPST Operating Status Options)**\n- 继电器输出模块1A8和1A9提供如下的继电器输出: (Relay output modules 1A8 and 1A9 provide the following relay outputs:)\n- Table:\n- Row 1: 1A8选项四位继电器输出状态 | OPST | 继电器#1 | MAR警告继电器 (自锁) | J2-1 NO, J2-2 NC, J2-3 COMMON\n- Row 2: 1A8选项四位继电器输出状态 | OPST | 继电器#2 | 限制警告继电器 | J2-4 NO, J2-5 NC, J2-6 COMMON\n- Row 3: 1A8选项四位继电器输出状态 | OPST | 继电器#3 | MMR警告继电器 (自锁) | J2-7 NO, J2-8 NC, J2-9 COMMON\n- Row 4: 1A8选项四位继电器输出状态 | OPST | 继电器#4 | 压缩机运行继电器 | J2-10 NO, J2-11 NC, J2-12 COMMON\n\n**Section 2: EXOP扩展运行选项 (EXOP Extended Operating Options)**\n- 在指定这一控制包时提供以下模块(1A17, 1A18)。 (The following modules are provided when this control package is specified (1A17, 1A18).)\n- Table:\n- Row 1: 1A17选项模拟输入/输出模块 | EXOP | 信号#1 | 外部基本负荷设定输入 | J2-2 输入#1, J2-3 接地\n- Row 2: 1A17选项模拟输入/输出模块 | EXOP | 信号#2 | 制冷剂监视器输入 | J2-5 输入#2, J2-6 接地\n- Row 3: 1A18选项双LV开关量输入模块 | EXOP | 信号#1 | 外部基本负荷启用或禁用输入 | J2-1 开关量输入信号#1, J2-2 接地\n- Row 4: 1A18选项双LV开关量输入模块 | EXOP | 信号#2 | 外部热水控制启用或禁用输入 | J2-3 开关量输入信号#2, J2-4 接地\n\n**Section 3: 制冷剂监视器输入1A17 (Refrigerant Monitor Input 1A17)**\n- 模拟量输入 4-20mA信号给1A17 J2-4至J2-6 (接地)。该信号对应表示0-100 ppm。 (Analog input 4-20mA signal to 1A17 J2-4 to J2-6 (ground). This signal corresponds to 0-100 ppm.)\n\n**Section 4: TRMM TRM4 TRM5 (Tracer Comm 4, Comm5界面)**\n- Table:\n- Row 1: 1A14选项通信界面模块 | TRM4/TRM5 | Tracer通信 | J2-1 COMM+, J2-2 COMM-, J2-3 COMM+, J2-4 COMM-,\n\n**Section 5: CDRP (冷凝器制冷剂压力输出) (CDRP (Condenser Refrigerant Pressure Output))**\n- Table:\n- Row 1: 1A15选项双模拟输入/输出模块 | CDRP | 信号#2 | 冷凝器制冷剂压力输出 | J2-4 输出 #2, J2-6 接地\n- Row 2: 1A15选项双模拟输入/输出模块 | CDRP | 信号#1 | 压缩机输出RLA百分比 | J2-1 输出 #1, J2-3 接地\n\n**Footer:**\n- 40\n- 制冷百家网: www.zhilengbj.cn\n\nI will now format this into plain text as requested."
+        }
+      }
+    ],
+    "created": 1778047487,
+    "model": "mimo-v2.5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1620,
+      "prompt_tokens": 2392,
+      "total_tokens": 4012,
+      "completion_tokens_details": {
+        "reasoning_tokens": 953
+      },
+      "prompt_tokens_details": {
+        "image_tokens": 2296
+      }
+    }
+  },
+  "text": "TRANE\n\n控制系统组件\n\nOPST 运行状态选项\n继电器输出模块1A8和1A9提供如下的继电器输出:\n1A8选项四位继电器输出状态 | OPST | 继电器#1 | MAR警告继电器 (自锁) | J2-1 NO, J2-2 NC, J2-3 COMMON\n1A8选项四位继电器输出状态 | OPST | 继电器#2 | 限制警告继电器 | J2-4 NO, J2-5 NC, J2-6 COMMON\n1A8选项四位继电器输出状态 | OPST | 继电器#3 | MMR警告继电器 (自锁) | J2-7 NO, J2-8 NC, J2-9 COMMON\n1A8选项四位继电器输出状态 | OPST | 继电器#4 | 压缩机运行继电器 | J2-10 NO, J2-11 NC, J2-12 COMMON\n\nEXOP扩展运行选项\n在指定这一控制包时提供以下模块(1A17, 1A18)。\n1A17选项模拟输入/输出模块 | EXOP | 信号#1 | 外部基本负荷设定输入 | J2-2 输入#1, J2-3 接地\n1A17选项模拟输入/输出模块 | EXOP | 信号#2 | 制冷剂监视器输入 | J2-5 输入#2, J2-6 接地\n1A18选项双LV开关量输入模块 | EXOP | 信号#1 | 外部基本负荷启用或禁用输入 | J2-1 开关量输入信号#1, J2-2 接地\n1A18选项双LV开关量输入模块 | EXOP | 信号#2 | 外部热水控制启用或禁用输入 | J2-3 开关量输入信号#2, J2-4 接地\n\n制冷剂监视器输入1A17\n模拟量输入 4-20mA信号给1A17 J2-4至J2-6 (接地)。该信号对应表示0-100 ppm。\n\nTRMM TRM4 TRM5 (Tracer Comm 4, Comm5界面)\n1A14选项通信界面模块 | TRM4/TRM5 | Tracer通信 | J2-1 COMM+, J2-2 COMM-, J2-3 COMM+, J2-4 COMM-,\n\nCDRP (冷凝器制冷剂压力输出)\n1A15选项双模拟输入/输出模块 | CDRP | 信号#2 | 冷凝器制冷剂压力输出 | J2-4 输出 #2, J2-6 接地\n1A15选项双模拟输入/输出模块 | CDRP | 信号#1 | 压缩机输出RLA百分比 | J2-1 输出 #1, J2-3 接地\n\n40\n制冷百家网: www.zhilengbj.cn",
+  "matched_expectations": []
+}

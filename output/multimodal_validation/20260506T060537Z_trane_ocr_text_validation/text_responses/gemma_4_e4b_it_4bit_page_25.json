@@ -1,0 +1,43 @@
+{
+  "request_page": 25,
+  "model": "gemma-4-e4b-it-4bit",
+  "response": {
+    "id": "chatcmpl-203b6788",
+    "object": "chat.completion",
+    "created": 1778047634,
+    "model": "gemma-4-e4b-it-4bit",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Active Chilled Water Setpoint Arbitration |动态冷冻水温度设定(Active Chilled Water Setpoint Arbitration)\nActive Chilled Water Setpoint |冷冻水重置状态(Active Chilled Water Setpoint)\ndynamic current limit setpoint |动态电流限制设定(active current limit setpoint)",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 411,
+      "completion_tokens": 63,
+      "total_tokens": 474,
+      "input_tokens": 411,
+      "output_tokens": 63,
+      "cached_tokens": null,
+      "model_load_duration": null,
+      "time_to_first_token": null,
+      "total_time": null,
+      "prompt_eval_duration": null,
+      "generation_duration": null,
+      "prompt_tokens_per_second": null,
+      "generation_tokens_per_second": null
+    }
+  },
+  "text": "Active Chilled Water Setpoint Arbitration |动态冷冻水温度设定(Active Chilled Water Setpoint Arbitration)\nActive Chilled Water Setpoint |冷冻水重置状态(Active Chilled Water Setpoint)\ndynamic current limit setpoint |动态电流限制设定(active current limit setpoint)",
+  "parsed_lines": [
+    "Active Chilled Water Setpoint Arbitration |动态冷冻水温度设定(Active Chilled Water Setpoint Arbitration)",
+    "Active Chilled Water Setpoint |冷冻水重置状态(Active Chilled Water Setpoint)",
+    "dynamic current limit setpoint |动态电流限制设定(active current limit setpoint)"
+  ]
+}

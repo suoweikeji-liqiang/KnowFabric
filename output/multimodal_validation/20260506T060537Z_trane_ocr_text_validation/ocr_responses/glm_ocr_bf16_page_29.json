@@ -1,0 +1,38 @@
+{
+  "request_page": 29,
+  "model": "GLM-OCR-bf16",
+  "response": {
+    "id": "chatcmpl-c5fcfc3d",
+    "object": "chat.completion",
+    "created": 1778047574,
+    "model": "GLM-OCR-bf16",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "机组控制面板(UCP)\n\nChiller(冷水机组)\nDescription 说明 Units(机组) notes 备注\n1. Front Panel Control Type (Chilled Water, Hot Water), Chilled Water default (冷冻水，热水)，冷冻水为默认类型\n2. Front Panel Chilled Water Setpoint Temperature 温度 1\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint Percent 百分比 2\n前端面板电流限制设定\n4. Front Panel Base Load Command On or Auto 开或者自动\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint Percent 百分比\n前端面板基本负荷设定\n6. Differential to Start 起动温差 Temperature 温度\n前端面板基本负荷要求\n7. Differential to Stop停机温差 Temperature 温度\n8. Setpoint Source (none,use front panel,override BAS), none default (无，使用前端面板，BAS超控)，无为默认值\n设定值来源\n\nFeature Settings(功能设定)\nDescription 说明 Units(机组)\n1. Chilled Water Reset (Constant, Outdoor, Return, Disable), Disable (常量，室外，回水，禁用)，禁用\n冷冻水重置\n2. Return Reset Ratio 返回重置率 Percent 百分数\n3. Return Start Reset 返回起动重置 Temperature 温度\n4. Return Maximum Reset 返回最大重置 Temperature 温度\n5. Outdoor Reset Ratio 室外重置率 Percent 百分数\n6. Outdoor Start Reset 室外起动重置 Temperature 温度\n7. Outdoor Maximum Reset 返回最大重置 Temperature 温度\n8. Setpoint Source (none,use front panel,override BAS), none default (无，使用前端面板，BAS超控)，无为默认值\n设定值来源\n\n制冷百家网：www.zhi1engbj.cn\n\n备注：\n1. 温度调整精度为0.1华氏度或摄氏度。主处理器给出最大和最小允许值。\n2. 调到最接近的百分比整数。主处理器给出最大和最小允许值。",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3080,
+      "completion_tokens": 461,
+      "total_tokens": 3541,
+      "input_tokens": 3080,
+      "output_tokens": 461,
+      "cached_tokens": null,
+      "model_load_duration": null,
+      "time_to_first_token": null,
+      "total_time": null,
+      "prompt_eval_duration": null,
+      "generation_duration": null,
+      "prompt_tokens_per_second": null,
+      "generation_tokens_per_second": null
+    }
+  },
+  "text": "机组控制面板(UCP)\n\nChiller(冷水机组)\nDescription 说明 Units(机组) notes 备注\n1. Front Panel Control Type (Chilled Water, Hot Water), Chilled Water default (冷冻水，热水)，冷冻水为默认类型\n2. Front Panel Chilled Water Setpoint Temperature 温度 1\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint Percent 百分比 2\n前端面板电流限制设定\n4. Front Panel Base Load Command On or Auto 开或者自动\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint Percent 百分比\n前端面板基本负荷设定\n6. Differential to Start 起动温差 Temperature 温度\n前端面板基本负荷要求\n7. Differential to Stop停机温差 Temperature 温度\n8. Setpoint Source (none,use front panel,override BAS), none default (无，使用前端面板，BAS超控)，无为默认值\n设定值来源\n\nFeature Settings(功能设定)\nDescription 说明 Units(机组)\n1. Chilled Water Reset (Constant, Outdoor, Return, Disable), Disable (常量，室外，回水，禁用)，禁用\n冷冻水重置\n2. Return Reset Ratio 返回重置率 Percent 百分数\n3. Return Start Reset 返回起动重置 Temperature 温度\n4. Return Maximum Reset 返回最大重置 Temperature 温度\n5. Outdoor Reset Ratio 室外重置率 Percent 百分数\n6. Outdoor Start Reset 室外起动重置 Temperature 温度\n7. Outdoor Maximum Reset 返回最大重置 Temperature 温度\n8. Setpoint Source (none,use front panel,override BAS), none default (无，使用前端面板，BAS超控)，无为默认值\n设定值来源\n\n制冷百家网：www.zhi1engbj.cn\n\n备注：\n1. 温度调整精度为0.1华氏度或摄氏度。主处理器给出最大和最小允许值。\n2. 调到最接近的百分比整数。主处理器给出最大和最小允许值。"
+}

@@ -20,9 +20,12 @@ from urllib import error, request
 
 
 ROOT = Path(__file__).resolve().parent.parent
-MAIN_REPO_ROOT = Path("/Users/asteroida/work/KnowFabric")
-MAIN_RUN = ROOT / "output" / "parameter_spec_vertical" / "20260429T145634Z_trane_cvgf_400_1000_chiller_manual_parameter_spec_v4_pro_judge"
-DEFAULT_PDF = MAIN_REPO_ROOT / "storage" / "documents" / "doc_883beab5e0004a2c" / "trane_cvgf_400_1000_chiller_manual.pdf"
+TRANE_PDF_RELATIVE = Path("storage/documents/doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf")
+REFERENCE_CANDIDATES_RELATIVE = Path(
+    "output/parameter_spec_vertical/"
+    "20260429T145634Z_trane_cvgf_400_1000_chiller_manual_parameter_spec_v4_pro_judge/"
+    "candidates_llm_verified.jsonl"
+)
 RENDER_SCRIPT = ROOT / "scripts" / "render_pdf_page.swift"
 DEFAULT_MODELS = [
     "GLM-OCR-bf16",
@@ -32,10 +35,18 @@ DEFAULT_MODELS = [
     "Qwen3.5-9B-MLX-4bit",
 ]
 DEFAULT_PAGE_EXPECTATIONS = {
-    5: [],
     25: [
         "Active Chilled Water Setpoint",
         "Active Current Limit Setpoint",
+        "Chilled Water Reset",
+    ],
+    29: [
+        "Front Panel Chilled Water Setpoint",
+        "Front Panel Current Limit Setpoint",
+        "Front Panel Base Load Setpoint",
+        "Differential to Start",
+        "Differential to Stop",
+        "Setpoint Source",
         "Chilled Water Reset",
     ],
     41: [
@@ -47,6 +58,32 @@ DEFAULT_PAGE_EXPECTATIONS = {
         "External Base Loading Setpoint",
     ],
 }
+
+
+def candidate_repo_roots() -> list[Path]:
+    roots = [ROOT]
+    sibling = ROOT.parent / "KnowFabric"
+    if sibling not in roots:
+        roots.append(sibling)
+    return roots
+
+
+def resolve_default_pdf() -> Path:
+    for base in candidate_repo_roots():
+        candidate = base / TRANE_PDF_RELATIVE
+        if candidate.exists():
+            return candidate
+    return ROOT / TRANE_PDF_RELATIVE
+
+
+def resolve_reference_candidates_path(cli_value: Path | None = None) -> Path | None:
+    if cli_value is not None:
+        return cli_value
+    for base in candidate_repo_roots():
+        candidate = base / REFERENCE_CANDIDATES_RELATIVE
+        if candidate.exists():
+            return candidate
+    return None
 
 
 @dataclass
@@ -186,9 +223,8 @@ def expectation_matches_in_text(text: str, expectations: list[str]) -> list[str]
     return matched
 
 
-def load_reference_candidates() -> dict[int, list[str]]:
-    path = MAIN_RUN / "candidates_llm_verified.jsonl"
-    if not path.exists():
+def load_reference_candidates(path: Path | None) -> dict[int, list[str]]:
+    if path is None or not path.exists():
         return {}
     page_map: dict[int, list[str]] = defaultdict(list)
     for line in path.read_text(encoding="utf-8").splitlines():
@@ -376,12 +412,13 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--api-base", default="http://127.0.0.1:7999/v1")
     parser.add_argument("--api-key", default=os.getenv("OMLX_API_KEY"))
-    parser.add_argument("--pdf", type=Path, default=DEFAULT_PDF)
+    parser.add_argument("--pdf", type=Path, default=resolve_default_pdf())
     parser.add_argument("--output-dir", type=Path, default=ROOT / "output" / "multimodal_validation")
-    parser.add_argument("--pages", default="5,25,41,45")
+    parser.add_argument("--pages", default="25,29,41,45")
     parser.add_argument("--models", default=",".join(DEFAULT_MODELS))
     parser.add_argument("--sleep-seconds", type=float, default=2.0)
     parser.add_argument("--run-dir", type=Path)
+    parser.add_argument("--reference-candidates", type=Path)
     return parser.parse_args(argv)
 
 
@@ -389,6 +426,9 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     if not args.api_key:
         print("OMLX API key required via --api-key or OMLX_API_KEY", file=sys.stderr)
+        return 2
+    if not args.pdf.exists():
+        print(f"pdf not found: {args.pdf}", file=sys.stderr)
         return 2
     pages = [int(part) for part in args.pages.split(",") if part.strip()]
     requested_models = [part.strip() for part in args.models.split(",") if part.strip()]
@@ -465,7 +505,9 @@ def main(argv: list[str] | None = None) -> int:
             write_summary(summary_path, run_id, args.pdf, pages, requested_models, available_models, results, report_path)
             time.sleep(args.sleep_seconds)
 
-    reference_candidates = load_reference_candidates()
+    reference_candidates = load_reference_candidates(
+        resolve_reference_candidates_path(args.reference_candidates)
+    )
     report = build_report(run_id, args.pdf, available_models, requested_models, pages, results, reference_candidates)
     report_path.write_text(report, encoding="utf-8")
     write_summary(summary_path, run_id, args.pdf, pages, requested_models, available_models, results, report_path)

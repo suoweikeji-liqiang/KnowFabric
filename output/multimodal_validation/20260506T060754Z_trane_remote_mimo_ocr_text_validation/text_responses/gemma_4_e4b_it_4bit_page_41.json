@@ -1,0 +1,51 @@
+{
+  "request_page": 41,
+  "model": "gemma-4-e4b-it-4bit",
+  "response": {
+    "id": "chatcmpl-2aea4439",
+    "object": "chat.completion",
+    "created": 1778047696,
+    "model": "gemma-4-e4b-it-4bit",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Relay Output Status | 1A8选项四位继电器输出状态\nRelay Output Status | 1A8选项四位继电器输出状态\nRelay Output Status | 1A8选项四位继电器输出状态\nRelay Output Status | 1A8选项四位继电器输出状态\nAnalog Input/Output Module | 1A17选项模拟输入/输出模块\nAnalog Input/Output Module | 1A17选项模拟输入/输出模块\nDigital Switch Input Module | 1A18选项双LV开关量输入模块\nDigital Switch Input Module | 1A18选项双LV开关量输入模块\nAnalog Input | 制冷剂监视器输入1A17\nAnalog Output | CDRP | 冷凝器制冷剂压力输出\nAnalog Output | CDRP | 压缩机输出RLA百分比",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 772,
+      "completion_tokens": 184,
+      "total_tokens": 956,
+      "input_tokens": 772,
+      "output_tokens": 184,
+      "cached_tokens": null,
+      "model_load_duration": null,
+      "time_to_first_token": null,
+      "total_time": null,
+      "prompt_eval_duration": null,
+      "generation_duration": null,
+      "prompt_tokens_per_second": null,
+      "generation_tokens_per_second": null
+    }
+  },
+  "text": "Relay Output Status | 1A8选项四位继电器输出状态\nRelay Output Status | 1A8选项四位继电器输出状态\nRelay Output Status | 1A8选项四位继电器输出状态\nRelay Output Status | 1A8选项四位继电器输出状态\nAnalog Input/Output Module | 1A17选项模拟输入/输出模块\nAnalog Input/Output Module | 1A17选项模拟输入/输出模块\nDigital Switch Input Module | 1A18选项双LV开关量输入模块\nDigital Switch Input Module | 1A18选项双LV开关量输入模块\nAnalog Input | 制冷剂监视器输入1A17\nAnalog Output | CDRP | 冷凝器制冷剂压力输出\nAnalog Output | CDRP | 压缩机输出RLA百分比",
+  "parsed_lines": [
+    "Relay Output Status | 1A8选项四位继电器输出状态",
+    "Relay Output Status | 1A8选项四位继电器输出状态",
+    "Relay Output Status | 1A8选项四位继电器输出状态",
+    "Relay Output Status | 1A8选项四位继电器输出状态",
+    "Analog Input/Output Module | 1A17选项模拟输入/输出模块",
+    "Analog Input/Output Module | 1A17选项模拟输入/输出模块",
+    "Digital Switch Input Module | 1A18选项双LV开关量输入模块",
+    "Digital Switch Input Module | 1A18选项双LV开关量输入模块",
+    "Analog Input | 制冷剂监视器输入1A17",
+    "Analog Output | CDRP | 冷凝器制冷剂压力输出",
+    "Analog Output | CDRP | 压缩机输出RLA百分比"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "request_page": 29,
+  "model": "gemma-4-e4b-it-4bit",
+  "response": {
+    "id": "chatcmpl-63b1c9cb",
+    "object": "chat.completion",
+    "created": 1778047686,
+    "model": "gemma-4-e4b-it-4bit",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Front Panel Chilled Water Setpoint | Front Panel Chilled Water Setpoint\nFront Panel Current Limit Setpoint | Front Panel Current Limit Setpoint\nFront Panel Base Load Command | Front Panel Base Load Command\nFront Panel Base Load Setpoint | Front Panel Base Load Setpoint\nDifferential to Start | Differential to Start\nDifferential to Stop | Differential to Stop\nSetpoint Source | Setpoint Source\nChilled Water Reset | Chilled Water Reset\nReturn Reset Ratio | Return Reset Ratio\nReturn Start Reset | Return Start Reset\nReturn Maximum Reset | Return Maximum Reset\nOutdoor Reset Ratio | Outdoor Reset Ratio\nOutdoor Start Reset | Outdoor Start Reset\nOutdoor Maximum Reset | Outdoor Maximum Reset\nExternal Chilled Water Setpoint | External Chilled Water Setpoint\nExternal Current Limit Setpoint | External Current Limit Setpoint\nExternal Base Loading Setpoint | External Base Loading Setpoint",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 654,
+      "completion_tokens": 174,
+      "total_tokens": 828,
+      "input_tokens": 654,
+      "output_tokens": 174,
+      "cached_tokens": null,
+      "model_load_duration": null,
+      "time_to_first_token": null,
+      "total_time": null,
+      "prompt_eval_duration": null,
+      "generation_duration": null,
+      "prompt_tokens_per_second": null,
+      "generation_tokens_per_second": null
+    }
+  },
+  "text": "Front Panel Chilled Water Setpoint | Front Panel Chilled Water Setpoint\nFront Panel Current Limit Setpoint | Front Panel Current Limit Setpoint\nFront Panel Base Load Command | Front Panel Base Load Command\nFront Panel Base Load Setpoint | Front Panel Base Load Setpoint\nDifferential to Start | Differential to Start\nDifferential to Stop | Differential to Stop\nSetpoint Source | Setpoint Source\nChilled Water Reset | Chilled Water Reset\nReturn Reset Ratio | Return Reset Ratio\nReturn Start Reset | Return Start Reset\nReturn Maximum Reset | Return Maximum Reset\nOutdoor Reset Ratio | Outdoor Reset Ratio\nOutdoor Start Reset | Outdoor Start Reset\nOutdoor Maximum Reset | Outdoor Maximum Reset\nExternal Chilled Water Setpoint | External Chilled Water Setpoint\nExternal Current Limit Setpoint | External Current Limit Setpoint\nExternal Base Loading Setpoint | External Base Loading Setpoint",
+  "parsed_lines": [
+    "Front Panel Chilled Water Setpoint | Front Panel Chilled Water Setpoint",
+    "Front Panel Current Limit Setpoint | Front Panel Current Limit Setpoint",
+    "Front Panel Base Load Command | Front Panel Base Load Command",
+    "Front Panel Base Load Setpoint | Front Panel Base Load Setpoint",
+    "Differential to Start | Differential to Start",
+    "Differential to Stop | Differential to Stop",
+    "Setpoint Source | Setpoint Source",
+    "Chilled Water Reset | Chilled Water Reset",
+    "Return Reset Ratio | Return Reset Ratio",
+    "Return Start Reset | Return Start Reset",
+    "Return Maximum Reset | Return Maximum Reset",
+    "Outdoor Reset Ratio | Outdoor Reset Ratio",
+    "Outdoor Start Reset | Outdoor Start Reset",
+    "Outdoor Maximum Reset | Outdoor Maximum Reset",
+    "External Chilled Water Setpoint | External Chilled Water Setpoint",
+    "External Current Limit Setpoint | External Current Limit Setpoint",
+    "External Base Loading Setpoint | External Base Loading Setpoint"
+  ]
+}

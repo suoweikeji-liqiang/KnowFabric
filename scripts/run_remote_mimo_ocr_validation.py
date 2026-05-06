@@ -22,9 +22,13 @@ from urllib import request
 ROOT = Path(__file__).resolve().parent.parent
 RENDER_SCRIPT = ROOT / "scripts" / "render_pdf_page.swift"
 DEFAULT_MODELS = ["mimo-v2.5", "mimo-v2-omni"]
-DEFAULT_PAGES = [5, 29, 45]
+DEFAULT_PAGES = [25, 29, 41, 45]
 DEFAULT_EXPECTATIONS = {
-    5: [],
+    25: [
+        "Active Chilled Water Setpoint",
+        "Active Current Limit Setpoint",
+        "Chilled Water Reset",
+    ],
     29: [
         "Front Panel Chilled Water Setpoint",
         "Front Panel Current Limit Setpoint",
@@ -33,6 +37,9 @@ DEFAULT_EXPECTATIONS = {
         "Differential to Stop",
         "Setpoint Source",
         "Chilled Water Reset",
+    ],
+    41: [
+        "External Base Loading Setpoint",
     ],
     45: [
         "External Chilled Water Setpoint",
@@ -253,7 +260,7 @@ def build_report(
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--api-base", default="https://api.xiaomimimo.com/v1")
+    parser.add_argument("--api-base", default="https://token-plan-sgp.xiaomimimo.com/v1")
     parser.add_argument("--api-key")
     parser.add_argument("--pdf", type=Path, required=True)
     parser.add_argument("--pages", default=",".join(str(page) for page in DEFAULT_PAGES))

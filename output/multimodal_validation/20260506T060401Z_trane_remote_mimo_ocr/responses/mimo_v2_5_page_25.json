@@ -1,0 +1,39 @@
+{
+  "request_page": 25,
+  "model": "mimo-v2.5",
+  "response": {
+    "id": "7f68835220234193bc02b2f5c3ed3ebe",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "TRANE\n\n机组控制面板(UCP)\n\nBack\nActive Chilled Water Setpoint Arbitration\nFront Panel 44.0F Active/Blank\nBAS 48.0F/----- Active/Blank\nExternal 42.0F/----- Active/Blank\nChilled Water Reset Return/Constant Return/Outdoor/None\nActive Chilled Water Setpoint 44.0F\nAuto Stop\n\n动态冷冻水温度设定(Active Chilled Water Setpoint Arbitration)是经常使用的设定。它可以将华氏或摄氏温度的精度设置到0.1度。按动态冷冻水设定左边的双箭头就可以进入动态冷冻水设定的子屏幕了。\n动态冷冻水设定是 Front Panel(控制面板)、BAS和External(外部设定)综合后的结果。\n\n在冷冻水重置状态(Active Chilled Water Setpoint)区域的右栏中会显示以下信息之一：Return(回水), Constant Return(恒定回水), Outdoor(室外), None(无)。\n左栏中的 Front Panel(前端面板), BAS, External(外部设定),和 Active Chilled Water Limit(动态冷冻水设定)。无论是否安装或者启用这些选项，它们都会显示。如果没有安装这一选项，在第二列中就会显示----，若已安装的话就会显示当前的设定。\n按“Back按钮”可返回冷水机组屏幕。\n\nBack\nActive Current Limit Setpoint Arbitration\nFront Panel 100% Active/Blank\nBAS 80%/----- Active/Blank\nExternal 70%/----- Active/Blank\nActive Current Limit Setpoint 100%\nAuto Stop\n\n动态电流限制设定(active curreat Limit setpoint)是经常使用的电流限制设定。它以RLA百分比的形式表示。按动态电流限制设定左面的双箭头(the double arrow)可进入动态电流限制设定子屏幕。\n动态电流限制设定是通过电流控制冷水机组的运转。它是Front Panel(前端面板)、BAS和External(外部设定)综合后的结果。\n\n24\n制冷百家网：www.zhilengbj.cn",
+          "role": "assistant",
+          "tool_calls": null,
+          "reasoning_content": "I need to transcribe the text from the provided image.\n\n**Top Section:**\n- Logo: TRANE\n- Title: 机组控制面板(UCP)\n\n**First Screenshot (Active Chilled Water Setpoint Arbitration):**\n- Back button\n- Header: Active Chilled Water Setpoint Arbitration\n- Row 1: Front Panel | 44.0F | Active/Blank\n- Row 2: BAS | 48.0F/----- | Active/Blank\n- Row 3: External | 42.0F/----- | Active/Blank\n- Row 4: Chilled Water Reset | Return/Constant Return/Outdoor/None\n- Row 5: Active Chilled Water Setpoint | 44.0F\n- Bottom buttons: Auto, Stop\n\n**Text below first screenshot:**\n- 动态冷冻水温度设定(Active Chilled Water Setpoint Arbitration)是经常使用的设定。它可以将华氏或摄氏温度的精度设置到0.1度。按动态冷冻水设定左边的双箭头就可以进入动态冷冻水设定的子屏幕了。\n- 动态冷冻水设定是 Front Panel(控制面板)、BAS和External(外部设定)综合后的结果。\n- 在冷冻水重置状态(Active Chilled Water Setpoint)区域的右栏中会显示以下信息之一：Return(回水), Constant Return(恒定回水), Outdoor(室外), None(无)。\n- 左栏中的 Front Panel(前端面板), BAS, External(外部设定),和 Active Chilled Water Limit(动态冷冻水设定)。无论是否安装或者启用这些选项，它们都会显示。如果没有安装这一选项，在第二列中就会显示----，若已安装的话就会显示当前的设定。\n- 按“Back按钮”可返回冷水机组屏幕。\n\n**Second Screenshot (Active Current Limit Setpoint Arbitration):**\n- Back button\n- Header: Active Current Limit Setpoint Arbitration\n- Row 1: Front Panel | 100% | Active/Blank\n- Row 2: BAS | 80%/----- | Active/Blank\n- Row 3: External | 70%/----- | Active/Blank\n- Row 4: Active Current Limit Setpoint | 100%\n- Bottom buttons: Auto, Stop\n\n**Text below second screenshot:**\n- 动态电流限制设定(active curreat Limit setpoint)是经常使用的电流限制设定。它以RLA百分比的形式表示。按动态电流限制设定左面的双箭头(the double arrow)可进入动态电流限制设定子屏幕。\n- 动态电流限制设定是通过电流控制冷水机组的运转。它是Front Panel(前端面板)、BAS和External(外部设定)综合后的结果。\n\n**Footer:**\n- 24\n- 制冷百家网：www.zhilengbj.cn\n\nI will now compile this into a plain text transcription."
+        }
+      }
+    ],
+    "created": 1778047454,
+    "model": "mimo-v2.5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1077,
+      "prompt_tokens": 2392,
+      "total_tokens": 3469,
+      "completion_tokens_details": {
+        "reasoning_tokens": 629
+      },
+      "prompt_tokens_details": {
+        "image_tokens": 2296
+      }
+    }
+  },
+  "text": "TRANE\n\n机组控制面板(UCP)\n\nBack\nActive Chilled Water Setpoint Arbitration\nFront Panel 44.0F Active/Blank\nBAS 48.0F/----- Active/Blank\nExternal 42.0F/----- Active/Blank\nChilled Water Reset Return/Constant Return/Outdoor/None\nActive Chilled Water Setpoint 44.0F\nAuto Stop\n\n动态冷冻水温度设定(Active Chilled Water Setpoint Arbitration)是经常使用的设定。它可以将华氏或摄氏温度的精度设置到0.1度。按动态冷冻水设定左边的双箭头就可以进入动态冷冻水设定的子屏幕了。\n动态冷冻水设定是 Front Panel(控制面板)、BAS和External(外部设定)综合后的结果。\n\n在冷冻水重置状态(Active Chilled Water Setpoint)区域的右栏中会显示以下信息之一：Return(回水), Constant Return(恒定回水), Outdoor(室外), None(无)。\n左栏中的 Front Panel(前端面板), BAS, External(外部设定),和 Active Chilled Water Limit(动态冷冻水设定)。无论是否安装或者启用这些选项，它们都会显示。如果没有安装这一选项，在第二列中就会显示----，若已安装的话就会显示当前的设定。\n按“Back按钮”可返回冷水机组屏幕。\n\nBack\nActive Current Limit Setpoint Arbitration\nFront Panel 100% Active/Blank\nBAS 80%/----- Active/Blank\nExternal 70%/----- Active/Blank\nActive Current Limit Setpoint 100%\nAuto Stop\n\n动态电流限制设定(active curreat Limit setpoint)是经常使用的电流限制设定。它以RLA百分比的形式表示。按动态电流限制设定左面的双箭头(the double arrow)可进入动态电流限制设定子屏幕。\n动态电流限制设定是通过电流控制冷水机组的运转。它是Front Panel(前端面板)、BAS和External(外部设定)综合后的结果。\n\n24\n制冷百家网：www.zhilengbj.cn",
+  "matched_expectations": [
+    "Active Chilled Water Setpoint",
+    "Active Current Limit Setpoint",
+    "Chilled Water Reset"
+  ]
+}

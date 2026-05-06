@@ -1,0 +1,112 @@
+{
+  "run_id": "20260506T060401Z_trane_remote_mimo_ocr",
+  "pdf": "/Users/asteroida/work/KnowFabric/storage/documents/doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+  "api_base": "https://token-plan-sgp.xiaomimimo.com/v1",
+  "models": [
+    "mimo-v2.5"
+  ],
+  "pages": [
+    25,
+    29,
+    41,
+    45
+  ],
+  "results": [
+    {
+      "model": "mimo-v2.5",
+      "page": 25,
+      "status": "ok",
+      "elapsed_seconds": 12.238954958040267,
+      "text": "TRANE\n\n机组控制面板(UCP)\n\nBack\nActive Chilled Water Setpoint Arbitration\nFront Panel 44.0F Active/Blank\nBAS 48.0F/----- Active/Blank\nExternal 42.0F/----- Active/Blank\nChilled Water Reset Return/Constant Return/Outdoor/None\nActive Chilled Water Setpoint 44.0F\nAuto Stop\n\n动态冷冻水温度设定(Active Chilled Water Setpoint Arbitration)是经常使用的设定。它可以将华氏或摄氏温度的精度设置到0.1度。按动态冷冻水设定左边的双箭头就可以进入动态冷冻水设定的子屏幕了。\n动态冷冻水设定是 Front Panel(控制面板)、BAS和External(外部设定)综合后的结果。\n\n在冷冻水重置状态(Active Chilled Water Setpoint)区域的右栏中会显示以下信息之一：Return(回水), Constant Return(恒定回水), Outdoor(室外), None(无)。\n左栏中的 Front Panel(前端面板), BAS, External(外部设定),和 Active Chilled Water Limit(动态冷冻水设定)。无论是否安装或者启用这些选项，它们都会显示。如果没有安装这一选项，在第二列中就会显示----，若已安装的话就会显示当前的设定。\n按“Back按钮”可返回冷水机组屏幕。\n\nBack\nActive Current Limit Setpoint Arbitration\nFront Panel 100% Active/Blank\nBAS 80%/----- Active/Blank\nExternal 70%/----- Active/Blank\nActive Current Limit Setpoint 100%\nAuto Stop\n\n动态电流限制设定(active curreat Limit setpoint)是经常使用的电流限制设定。它以RLA百分比的形式表示。按动态电流限制设定左面的双箭头(the double arrow)可进入动态电流限制设定子屏幕。\n动态电流限制设定是通过电流控制冷水机组的运转。它是Front Panel(前端面板)、BAS和External(外部设定)综合后的结果。\n\n24\n制冷百家网：www.zhilengbj.cn",
+      "usage": {
+        "completion_tokens": 1077,
+        "prompt_tokens": 2392,
+        "total_tokens": 3469,
+        "completion_tokens_details": {
+          "reasoning_tokens": 629
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 2296
+        }
+      },
+      "matched_expectations": [
+        "Active Chilled Water Setpoint",
+        "Active Current Limit Setpoint",
+        "Chilled Water Reset"
+      ],
+      "error_message": null
+    },
+    {
+      "model": "mimo-v2.5",
+      "page": 29,
+      "status": "ok",
+      "elapsed_seconds": 14.016858999966644,
+      "text": "TRANE\n\n机组控制面板(UCP)\n\nChiller(冷水机组)\nDescription 说明 | Units(机组) | notes 备注\n--- | --- | ---\n1. Front Panel Control Type 前端面板控制类型 | (Chilled Water, Hot Water), Chilled Water default (冷冻水, 热水), 冷冻水为默认类型 | \n2. Front Panel Chilled Water Setpoint 前端面板冷冻水设定 | Temperature 温度 | 1\n3. Front Panel Current Limit Setpoint 前端面板电流限制设定 | Percent 百分比 | 2\n4. Front Panel Base Load Command 前端面板基本负荷要求 | On or Auto 开或者自动 | \n5. Front Panel Base Load Setpoint 前端面板基本负荷设定 | Percent 百分比 | \n6. Differential to Start 起动温差 | Temperature 温度 | \n7. Differential to Stop 停机温差 | Temperature 温度 | \n8. Setpoint Source 设定值来源 | (none, use front panel, override BAS), none default (无, 使用前端面板, BAS超控), 无为默认值 | \n\nFeature Settings(功能设定)\nDescription 说明 | Units(机组)\n--- | ---\n1. Chilled Water Reset 冷冻水重置 | (Constant, Outdoor, Return, Disable), Disable (常量, 室外, 回水, 禁用), 禁用\n2. Return Reset Ratio 返回重置率 | Percent 百分数\n3. Return Start Reset 返回起动重置 | Temperature 温度\n4. Return Maximum Reset 返回最大重置 | Temperature 温度\n5. Outdoor Reset Ratio 室外重置率 | Percent 百分数\n6. Outdoor Start Reset 室外起动重置 | Temperature 温度\n7. Outdoor Maximum Reset 室外最大重置 | Temperature 温度\n8. External Chilled Water Setpoint 外部冷冻水设定 | (Enable, Disable), Disable (启用, 禁用), 禁用\n9. External Current Limit Setpoint 外部电流限制设定 | (Enable, Disable), Disable (启用, 禁用), 禁用\n10. External Base Loading Setpoint 外部基本负荷设定 | (Enable, Disable), Disable (启用, 禁用), 禁用\n\n备注:\n1. 温度调整精度为0.1华氏度或摄氏度。主处理器给出最大和最小允许值。\n2. 调到最接近的百分比整数。主处理器给出最大和最小允许值。\n\n28\n\n制冷百家网：www.zhilengbj.cn",
+      "usage": {
+        "completion_tokens": 1237,
+        "prompt_tokens": 2392,
+        "total_tokens": 3629,
+        "completion_tokens_details": {
+          "reasoning_tokens": 652
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 2368,
+          "image_tokens": 2296
+        }
+      },
+      "matched_expectations": [
+        "Front Panel Chilled Water Setpoint",
+        "Front Panel Current Limit Setpoint",
+        "Front Panel Base Load Setpoint",
+        "Differential to Start",
+        "Differential to Stop",
+        "Setpoint Source",
+        "Chilled Water Reset"
+      ],
+      "error_message": null
+    },
+    {
+      "model": "mimo-v2.5",
+      "page": 41,
+      "status": "ok",
+      "elapsed_seconds": 16.06302062503528,
+      "text": "TRANE\n\n控制系统组件\n\nOPST 运行状态选项\n继电器输出模块1A8和1A9提供如下的继电器输出:\n1A8选项四位继电器输出状态 | OPST | 继电器#1 | MAR警告继电器 (自锁) | J2-1 NO, J2-2 NC, J2-3 COMMON\n1A8选项四位继电器输出状态 | OPST | 继电器#2 | 限制警告继电器 | J2-4 NO, J2-5 NC, J2-6 COMMON\n1A8选项四位继电器输出状态 | OPST | 继电器#3 | MMR警告继电器 (自锁) | J2-7 NO, J2-8 NC, J2-9 COMMON\n1A8选项四位继电器输出状态 | OPST | 继电器#4 | 压缩机运行继电器 | J2-10 NO, J2-11 NC, J2-12 COMMON\n\nEXOP扩展运行选项\n在指定这一控制包时提供以下模块(1A17, 1A18)。\n1A17选项模拟输入/输出模块 | EXOP | 信号#1 | 外部基本负荷设定输入 | J2-2 输入#1, J2-3 接地\n1A17选项模拟输入/输出模块 | EXOP | 信号#2 | 制冷剂监视器输入 | J2-5 输入#2, J2-6 接地\n1A18选项双LV开关量输入模块 | EXOP | 信号#1 | 外部基本负荷启用或禁用输入 | J2-1 开关量输入信号#1, J2-2 接地\n1A18选项双LV开关量输入模块 | EXOP | 信号#2 | 外部热水控制启用或禁用输入 | J2-3 开关量输入信号#2, J2-4 接地\n\n制冷剂监视器输入1A17\n模拟量输入 4-20mA信号给1A17 J2-4至J2-6 (接地)。该信号对应表示0-100 ppm。\n\nTRMM TRM4 TRM5 (Tracer Comm 4, Comm5界面)\n1A14选项通信界面模块 | TRM4/TRM5 | Tracer通信 | J2-1 COMM+, J2-2 COMM-, J2-3 COMM+, J2-4 COMM-,\n\nCDRP (冷凝器制冷剂压力输出)\n1A15选项双模拟输入/输出模块 | CDRP | 信号#2 | 冷凝器制冷剂压力输出 | J2-4 输出 #2, J2-6 接地\n1A15选项双模拟输入/输出模块 | CDRP | 信号#1 | 压缩机输出RLA百分比 | J2-1 输出 #1, J2-3 接地\n\n40\n制冷百家网: www.zhilengbj.cn",
+      "usage": {
+        "completion_tokens": 1620,
+        "prompt_tokens": 2392,
+        "total_tokens": 4012,
+        "completion_tokens_details": {
+          "reasoning_tokens": 953
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 2296
+        }
+      },
+      "matched_expectations": [],
+      "error_message": null
+    },
+    {
+      "model": "mimo-v2.5",
+      "page": 45,
+      "status": "ok",
+      "elapsed_seconds": 37.08821137493942,
+      "text": "控制系统组件\n\n外部冷冻水设定External Chilled Water Setpoint(ECWS)\n外部冷冻水设定可对冷冻水的设定在远程进行修改。\n外部冷冻水设定建立在1A16 J2-2至J2-6(接地)的输入基础上。",
+      "usage": {
+        "completion_tokens": 4096,
+        "prompt_tokens": 2392,
+        "total_tokens": 6488,
+        "completion_tokens_details": {
+          "reasoning_tokens": 4037
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 2368,
+          "image_tokens": 2296
+        }
+      },
+      "matched_expectations": [
+        "External Chilled Water Setpoint"
+      ],
+      "error_message": null
+    }
+  ]
+}

@@ -16,7 +16,7 @@ from urllib import request
 import run_local_multimodal_validation as mm
 
 
-DEFAULT_PAGES = [5, 29, 45]
+DEFAULT_PAGES = [25, 29, 41, 45]
 DEFAULT_OCR_MODEL = "GLM-OCR-bf16"
 DEFAULT_TEXT_MODELS = [
     "gemma-4-e4b-it-4bit",
@@ -24,7 +24,11 @@ DEFAULT_TEXT_MODELS = [
     "Qwen3.5-9B-MLX-4bit",
 ]
 PAGE_EXPECTATIONS = {
-    5: [],
+    25: [
+        "Active Chilled Water Setpoint",
+        "Active Current Limit Setpoint",
+        "Chilled Water Reset",
+    ],
     29: [
         "Front Panel Chilled Water Setpoint",
         "Front Panel Current Limit Setpoint",
@@ -33,6 +37,9 @@ PAGE_EXPECTATIONS = {
         "Differential to Stop",
         "Setpoint Source",
         "Chilled Water Reset",
+    ],
+    41: [
+        "External Base Loading Setpoint",
     ],
     45: [
         "External Chilled Water Setpoint",
@@ -193,7 +200,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--api-base", default="http://127.0.0.1:7999/v1")
     parser.add_argument("--api-key", default=os.getenv("OMLX_API_KEY"))
-    parser.add_argument("--pdf", type=Path, default=mm.DEFAULT_PDF)
+    parser.add_argument("--pdf", type=Path, default=mm.resolve_default_pdf())
     parser.add_argument("--pages", default=",".join(str(page) for page in DEFAULT_PAGES))
     parser.add_argument("--text-models", default=",".join(DEFAULT_TEXT_MODELS))
     parser.add_argument("--output-dir", type=Path, default=mm.ROOT / "output" / "multimodal_validation")
