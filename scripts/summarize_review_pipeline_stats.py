@@ -70,6 +70,16 @@ def summarize_review_pipeline_stats(
     if candidate_payload:
         for summary in candidate_payload.get("metadata", {}).get("doc_summaries", []):
             documents[summary["doc_id"]] = _doc_record(summary)
+        if not documents:
+            for entry in candidate_payload.get("candidate_entries", []):
+                doc_id = entry.get("doc_id")
+                if not doc_id:
+                    continue
+                doc_record = documents.setdefault(
+                    doc_id,
+                    _doc_record({"doc_id": doc_id, "doc_name": entry.get("doc_name")}),
+                )
+                doc_record["candidate_entries"] += 1
 
     pack_root = Path(pack_dir) if pack_dir else None
     if readiness_report_path is None and pack_root and (pack_root / READINESS_REPORT_FILE).exists():
@@ -129,11 +139,14 @@ def summarize_review_pipeline_stats(
 
     overall_readiness_counts = readiness_report.get("summary", {}) if readiness_report else {}
     overall_apply_counts = apply_report.get("summary", {}) if apply_report else {}
+    candidate_metadata = candidate_payload.get("metadata", {}) if candidate_payload else {}
+    candidate_entries = candidate_payload.get("candidate_entries", []) if candidate_payload else []
+    candidate_count = candidate_metadata.get("total_candidates", len(candidate_entries))
     overall = {
-        "scanned_chunks": candidate_payload.get("metadata", {}).get("scanned_chunks", 0) if candidate_payload else 0,
-        "matched_chunks": candidate_payload.get("metadata", {}).get("matched_chunks", 0) if candidate_payload else 0,
-        "candidate_entries": candidate_payload.get("metadata", {}).get("total_candidates", 0) if candidate_payload else 0,
-        "candidate_hit_rate": candidate_payload.get("metadata", {}).get("candidate_hit_rate", 0.0) if candidate_payload else 0.0,
+        "scanned_chunks": candidate_metadata.get("scanned_chunks", 0),
+        "matched_chunks": candidate_metadata.get("matched_chunks", 0),
+        "candidate_entries": candidate_count,
+        "candidate_hit_rate": candidate_metadata.get("candidate_hit_rate", 0.0),
         "review_packs_total": len(pack_summaries),
         "review_packs_ready_to_apply": sum(1 for item in pack_summaries if item["ready_to_apply"]),
         "review_packs_pending": sum(1 for item in pack_summaries if item["pending_count"] > 0),

@@ -1,0 +1,116 @@
+{
+  "pipeline_mode": "standard_review_backfill",
+  "generated_at": "2026-05-06T12:14:53.982033+00:00",
+  "review_pack_dir": "workspace/review_round_ashrae_g36/review_packs",
+  "candidate_file": "workspace/review_round_ashrae_g36/candidates_input.json",
+  "readiness_report_path": "workspace/review_round_ashrae_g36/review_packs/review_pack_readiness_report.json",
+  "apply_report_path": "workspace/review_round_ashrae_g36/review_packs/review_pack_apply_report.json",
+  "api_smoke_report_path": "workspace/review_round_ashrae_g36/review_packs/api_smoke_report.json",
+  "readiness_summary": {
+    "ready": 2,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "apply_summary": {
+    "applied": 2,
+    "skipped_pending": 0,
+    "skipped_no_accepted": 0,
+    "failed": 0
+  },
+  "api_smoke_summary": {
+    "targets": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "stats": {
+    "stats_mode": "chunk_backfill_review_pipeline_stats",
+    "candidate_source": "workspace/review_round_ashrae_g36/candidates_input.json",
+    "pack_dir": "workspace/review_round_ashrae_g36/review_packs",
+    "readiness_report_path": "workspace/review_round_ashrae_g36/review_packs/review_pack_readiness_report.json",
+    "apply_report_path": "workspace/review_round_ashrae_g36/review_packs/review_pack_apply_report.json",
+    "overall": {
+      "scanned_chunks": 0,
+      "matched_chunks": 0,
+      "candidate_entries": 22,
+      "candidate_hit_rate": 0.0,
+      "review_packs_total": 2,
+      "review_packs_ready_to_apply": 2,
+      "review_packs_pending": 0,
+      "review_packs_rejected_only": 0,
+      "readiness_status_counts": {
+        "ready": 2,
+        "blocked_pending": 0,
+        "blocked_no_accepted": 0,
+        "blocked_invalid": 0
+      },
+      "apply_status_counts": {
+        "applied": 2,
+        "skipped_pending": 0,
+        "skipped_no_accepted": 0,
+        "failed": 0
+      }
+    },
+    "documents": [
+      {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "scanned_chunks": 0,
+        "matched_chunks": 0,
+        "candidate_entries": 22,
+        "candidate_hit_rate": 0.0,
+        "review_decisions": {
+          "accepted": 21,
+          "rejected": 0,
+          "pending": 0
+        },
+        "packs_total": 2,
+        "packs_ready_to_apply": 2,
+        "readiness_status_counts": {
+          "ready": 2,
+          "blocked_pending": 0,
+          "blocked_no_accepted": 0,
+          "blocked_invalid": 0
+        },
+        "apply_status_counts": {
+          "applied": 2,
+          "skipped_pending": 0,
+          "skipped_no_accepted": 0,
+          "failed": 0
+        }
+      }
+    ],
+    "review_packs": [
+      {
+        "pack_file": "hvac__doc_4bbd3703c4f84be4__chiller.json",
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "candidate_count": 15,
+        "accepted_count": 15,
+        "rejected_count": 0,
+        "pending_count": 0,
+        "ready_to_apply": true,
+        "readiness_status": "ready",
+        "readiness_blocker": null,
+        "apply_status": "applied"
+      },
+      {
+        "pack_file": "hvac__doc_4bbd3703c4f84be4__hot_water_plant.json",
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "equipment_class_id": "hot_water_plant",
+        "equipment_class_key": "hvac:hot_water_plant",
+        "candidate_count": 6,
+        "accepted_count": 6,
+        "rejected_count": 0,
+        "pending_count": 0,
+        "ready_to_apply": true,
+        "readiness_status": "ready",
+        "readiness_blocker": null,
+        "apply_status": "applied"
+      }
+    ]
+  }
+}

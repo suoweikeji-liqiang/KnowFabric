@@ -1,57 +1,74 @@
 {
-  "generated_at": "2026-05-06T12:03:52.488093+00:00",
-  "api_base": "http://127.0.0.1:8000/api/v2/domains/hvac/equipment-classes",
-  "status": "passed",
-  "results": {
-    "chiller/application-guidance": {
-      "returned": 1,
-      "types": [
-        "application_guidance"
-      ]
-    },
-    "chiller/parameter-profiles": {
-      "returned": 3,
-      "types": [
-        "parameter_spec",
-        "performance_spec"
-      ]
-    },
-    "chiller/fault-knowledge": {
-      "returned": 4,
-      "types": [
-        "fault_diagnostic_rule"
-      ]
-    },
-    "chiller/operational-guidance": {
-      "returned": 10,
-      "types": [
-        "application_guidance",
-        "operational_sequence"
-      ]
-    },
-    "chiller/operational-guidance?guidance_type=operational_sequence": {
-      "returned": 9,
-      "types": [
-        "operational_sequence"
-      ]
-    },
-    "hot_water_plant/operational-guidance": {
-      "returned": 6,
-      "types": [
-        "operational_sequence"
-      ]
-    },
-    "hot_water_plant/operational-guidance?guidance_type=operational_sequence": {
-      "returned": 6,
-      "types": [
-        "operational_sequence"
-      ]
-    }
+  "report_mode": "standard_review_backfill_api_smoke",
+  "generated_at": "2026-05-06T12:14:53.980337+00:00",
+  "pack_dir": "workspace/review_round_ashrae_g36/review_packs",
+  "min_trust_level": "L3",
+  "limit": 100,
+  "summary": {
+    "targets": 5,
+    "passed": 5,
+    "failed": 0
   },
-  "notes": [
-    "21 reviewed ASHRAE G36 accepted entries are now backfilled: 15 under hvac:chiller and 6 under hvac:hot_water_plant.",
-    "1 entry remains rejected because the KO type was wrong.",
-    "Multi-chunk evidence is supported by the manual fixture builder and backfill path.",
-    "hot_water_plant and boiler ontology classes were added for the G36 heating hot-water sequence subset."
+  "results": [
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "chiller",
+      "knowledge_object_type": "application_guidance",
+      "service_family": "application_guidance",
+      "expected_accepted_count": 1,
+      "service_total_count": 1,
+      "service_returned_count": 1,
+      "service_has_more": false,
+      "visible_matching_count": 1,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "chiller",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "service_family": "fault_knowledge",
+      "expected_accepted_count": 4,
+      "service_total_count": 4,
+      "service_returned_count": 4,
+      "service_has_more": false,
+      "visible_matching_count": 4,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "chiller",
+      "knowledge_object_type": "operational_sequence",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 9,
+      "service_total_count": 9,
+      "service_returned_count": 9,
+      "service_has_more": false,
+      "visible_matching_count": 9,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "chiller",
+      "knowledge_object_type": "parameter_spec",
+      "service_family": "parameter_profiles",
+      "expected_accepted_count": 1,
+      "service_total_count": 3,
+      "service_returned_count": 3,
+      "service_has_more": false,
+      "visible_matching_count": 1,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "hot_water_plant",
+      "knowledge_object_type": "operational_sequence",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 6,
+      "service_total_count": 6,
+      "service_returned_count": 6,
+      "service_has_more": false,
+      "visible_matching_count": 6,
+      "status": "pass"
+    }
   ]
 }
