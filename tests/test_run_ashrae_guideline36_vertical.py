@@ -8,10 +8,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from scripts.run_ashrae_guideline36_vertical import (
+    Guideline36ExtractionResponse,
     SectionUnit,
     anchor_candidates,
     build_extract_messages,
     canonical_key,
+    request_json_completion_with_retry,
     trim_to_section_start,
 )
 from packages.db.models import ContentChunk
@@ -60,6 +62,52 @@ def test_canonical_key_includes_section_and_type() -> None:
     )
 
     assert key == "ashrae:g36:operational_sequence:5_20_2_2:enable_chiller_plant"
+
+
+def test_extraction_response_accepts_null_configurable_values() -> None:
+    """Model JSON sometimes returns null for optional list fields; normalize it."""
+
+    response = Guideline36ExtractionResponse.model_validate(
+        {
+            "candidates": [
+                {
+                    "knowledge_type": "operational_sequence",
+                    "title": "AHU System Modes",
+                    "section_id": "5.15",
+                    "summary": "AHU modes follow the served Zone Group mode.",
+                    "configurable_values": None,
+                    "evidence_quote": "AHU system modes are the same as the mode of the Zone Group served by the system.",
+                    "confidence": 0.9,
+                }
+            ]
+        }
+    )
+
+    assert response.candidates[0].configurable_values == []
+
+
+def test_json_completion_retry_handles_empty_content_once(monkeypatch) -> None:
+    """Transient empty LLM content should not abort a long standards run."""
+
+    calls = {"count": 0}
+
+    def fake_request(*args, **kwargs):
+        calls["count"] += 1
+        if calls["count"] == 1:
+            raise RuntimeError("LLM compile returned empty content")
+        return {"candidates": []}
+
+    monkeypatch.setattr("scripts.run_ashrae_guideline36_vertical._request_json_completion", fake_request)
+
+    result = request_json_completion_with_retry(
+        [{"role": "user", "content": "x"}],
+        object(),
+        response_format={"type": "json_object"},
+        recorder=lambda payload: None,
+    )
+
+    assert result == {"candidates": []}
+    assert calls["count"] == 2
 
 
 def test_anchor_candidates_repairs_to_section_heading_line() -> None:

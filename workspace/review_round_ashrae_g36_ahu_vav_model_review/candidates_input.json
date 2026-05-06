@@ -1,0 +1,2739 @@
+{
+  "generation_mode": "ashrae-g36_standard_import_pipeline",
+  "domain_id": "hvac",
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_39d0a0e8dbdda49e",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "commissioning_procedure",
+      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_4_5:zone_group_testing_commissioning_override_switches",
+      "structured_payload_candidate": {
+        "knowledge_type": "commissioning_procedure",
+        "title": "Zone Group Testing/Commissioning Override Switches",
+        "section_id": "5.4.5",
+        "section_title": "5.4 Zone Groups",
+        "equipment_scope": "Zone Group and terminal units",
+        "summary": "For each Zone Group, provide a set of testing/commissioning software switches that override all zones in the group. When a Zone Group override switch is changed, the corresponding override switch for every zone in the group changes to the same value. Subsequently, zone-level switches may be changed independently; zone-group switch changes only affect zone-level switches when the group switch is changed.",
+        "trigger_condition": "Commissioning agent changes a Zone Group override switch.",
+        "required_behavior": "All zone-level override switches in that group shall change to the same value. Zone-level switches may then be changed independently without affecting the group switch.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": "Verify that changing a Zone Group override switch updates all zone-level switches accordingly, and that subsequent zone-level changes do not revert the group switch.",
+        "evidence_quote": "When the value of a Zone Group’s override switch is changed, the corresponding override switch for every zone in the Zone Group shall change to the same value. Subsequently, the zone-level override switch may be changed to a different value.",
+        "page_hint": 71
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "When the value of a Zone Group’s override switch is changed, the corresponding override switch for every zone in the Zone Group shall change to the same value. Subsequently, the zone-level override switch may be changed to a different value.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.4.5",
+      "source_chunk_ids": [
+        "chunk_5b8cdbbe53f04156"
+      ],
+      "chunk_id": "chunk_5b8cdbbe53f04156",
+      "page_no": 71,
+      "source_page_nos": [
+        71
+      ],
+      "evidence_text": "When the value of a Zone Group’s override switch is changed, the corresponding override switch for every zone in the Zone Group shall change to the same value. Subsequently, the zone-level override switch may be changed to a different value.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Extracted commissioning procedure for zone group override switches is a valid operational rule from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_31cac6d1620678b0",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_4_1:zone_group_definition_and_mode_synchronization",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Zone Group Definition and Mode Synchronization",
+        "section_id": "5.4.1",
+        "section_title": "5.4 Zone Groups",
+        "equipment_scope": "Air handler and terminal units",
+        "summary": "Each system is divided into Zone Groups (collections of zones served by a single air handler). All zones in a Zone Group must be in the same zone-group operating mode; if one zone enters a mode other than Unoccupied (due to override, sequence logic, or scheduled occupancy), all zones in that group enter that mode. Occupied-standby is a zonal subset of Occupied Mode and is not a zone-group mode.",
+        "trigger_condition": "Any zone in a Zone Group is placed in a zone-group operating mode other than Unoccupied Mode.",
+        "required_behavior": "All zones in that Zone Group shall enter that mode.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "All zones in each Zone Group shall be in the same zone-group operating mode as defined in Section 5.4.6. If one zone in a Zone Group is placed in any zone-group operating mode other than Unoccupied Mode (due to override, sequence logic, or scheduled occupancy), all zones in that Zone Group shall enter that mode.",
+        "page_hint": 71
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "All zones in each Zone Group shall be in the same zone-group operating mode as defined in Section 5.4.6. If one zone in a Zone Group is placed in any zone-group operating mode other than Unoccupied Mode (due to override, sequence logic, or scheduled occupancy), all zones in that Zone Group shall enter that mode.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.4.1",
+      "source_chunk_ids": [
+        "chunk_4c893f817bea4a60"
+      ],
+      "chunk_id": "chunk_4c893f817bea4a60",
+      "page_no": 71,
+      "source_page_nos": [
+        71
+      ],
+      "evidence_text": "All zones in each Zone Group shall be in the same zone-group operating mode as defined in Section 5.4.6. If one zone in a Zone Group is placed in any zone-group operating mode other than Unoccupied Mode (due to override, sequence logic, or scheduled occupancy), all zones in that Zone Group shall enter that mode.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence rule for zone group mode synchronization from Section 5.4.1.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_50ca8f1327e789bd",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_4_6_1:zone_group_occupied_mode_conditions",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Zone Group Occupied Mode Conditions",
+        "section_id": "5.4.6.1",
+        "section_title": "5.4.6 Zone-Group Operating Modes",
+        "equipment_scope": "Zone Group",
+        "summary": "A Zone Group is in Occupied Mode when either (a) the time is between the scheduled occupied start and stop times, or (b) the schedules have been overridden by the occupant override system.",
+        "trigger_condition": "Time between scheduled occupied start and stop, or occupant override active.",
+        "required_behavior": "Zone Group enters Occupied Mode.",
+        "configurable_values": [
+          "Scheduled occupied start time",
+          "Scheduled occupied stop time"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "A Zone Group is in the Occupied Mode when any of the following is true: a. The time of day is between the Zone Group’s scheduled occupied start and stop times. b. The schedules have been overridden by the occupant override system.",
+        "page_hint": 71
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "5.4.6.1.  Occupied Mode . A Zone Group  is in the Occupied Mode  when any of the following is true:",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.4.6.1",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_c9de91b2956c4377"
+      ],
+      "chunk_id": "chunk_c9de91b2956c4377",
+      "page_no": 71,
+      "source_page_nos": [
+        71
+      ],
+      "evidence_text": "5.4.6.1.  Occupied Mode . A Zone Group  is in the Occupied Mode  when any of the following is true:",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real operational sequence condition from 5.4.6.1",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_a57eac5c98f07d63",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "ashrae:g36:parameter_spec:5_5_4:active_airflow_setpoint_endpoints_by_zone_group_mode",
+      "structured_payload_candidate": {
+        "knowledge_type": "parameter_spec",
+        "title": "Active Airflow Setpoint Endpoints by Zone Group Mode",
+        "section_id": "5.5.4",
+        "section_title": "5.5 VAV Terminal Unit—Cooling Only",
+        "equipment_scope": "Cooling-only VAV terminal unit",
+        "summary": "Endpoints for active airflow setpoint vary by zone group mode: Occupied uses Vcool-max for cooling max, Vmin* for min, Vheat-max for heating max; Cooldown and Setup use Vcool-max for cooling max, 0 for min and heating max; Warmup uses 0 for cooling max and min, Vcool-max for heating max; Setback uses 0 for cooling max and min, Vcool-max for heating max; Unoccupied uses 0 for all.",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [
+          "Vcool-max",
+          "Vmin*",
+          "Vheat-max"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Table 5.5.4 Endpoints as a Function of Zone Group Mode",
+        "page_hint": 73
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Table 5.5.4 Endpoints as a Function of Zone Group Mode",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.5.4",
+      "source_chunk_ids": [
+        "chunk_c1995902265e49c5"
+      ],
+      "chunk_id": "chunk_c1995902265e49c5",
+      "page_no": 73,
+      "source_page_nos": [
+        73
+      ],
+      "evidence_text": "Table 5.5.4 Endpoints as a Function of Zone Group Mode",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a configurable control parameter table describing airflow setpoint endpoints based on zone group mode, which is operational knowledge from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_98412a2ce34116f2",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "commissioning_procedure",
+      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_5_7:testing_commissioning_overrides_for_cooling_only_vav",
+      "structured_payload_candidate": {
+        "knowledge_type": "commissioning_procedure",
+        "title": "Testing/Commissioning Overrides for Cooling-Only VAV",
+        "section_id": "5.5.7",
+        "section_title": "5.5 VAV Terminal Unit—Cooling Only",
+        "equipment_scope": "Cooling-only VAV terminal unit",
+        "summary": "Provide software switches interlocked to system-level point to force zone airflow setpoint to zero, Vcool-max, or Vmin; force damper full closed/open; and reset request-hours accumulator. All hardware points can be overridden through BAS at zone-group level.",
+        "trigger_condition": null,
+        "required_behavior": "Provide software switches for forcing setpoints and damper positions, and resetting accumulators. Overrides interlocked at zone-group level.",
+        "configurable_values": [
+          "Vcool-max",
+          "Vmin"
+        ],
+        "fault_condition": null,
+        "commissioning_check": "CxA can check for leaking dampers by forcing all VAV boxes closed and recording AHU airflow.",
+        "evidence_quote": "Provide software switches that interlock to a system-level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force damper full closed/open, and e. reset request-hours accumulator point to zero.",
+        "page_hint": 74
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Provide software switches that interlock to a system-level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force damper full closed/open, and e. reset request-hours accumulator point to zero.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.5.7",
+      "source_chunk_ids": [
+        "chunk_9075e45d932e41f7"
+      ],
+      "chunk_id": "chunk_9075e45d932e41f7",
+      "page_no": 74,
+      "source_page_nos": [
+        74
+      ],
+      "evidence_text": "Provide software switches that interlock to a system-level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force damper full closed/open, and e. reset request-hours accumulator point to zero.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a specific commissioning override sequence for VAVs as per Guideline 36, section 5.5.7.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_afe18537d77f1c8b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_5_6_1:low_airflow_alarm",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "Low Airflow Alarm",
+        "section_id": "5.5.6.1",
+        "section_title": "5.5 VAV Terminal Unit—Cooling Only",
+        "equipment_scope": "Cooling-only VAV terminal unit",
+        "summary": "If measured airflow < 70% of setpoint for 10 minutes while setpoint > 0, generate Level 4 alarm. If < 50% for 10 minutes while setpoint > 0, generate Level 3 alarm. Suppress alarms for zones with importance multiplier 0 for static pressure reset T&R.",
+        "trigger_condition": "Measured airflow < 70% or < 50% of setpoint for 10 minutes while setpoint > 0",
+        "required_behavior": "Generate Level 4 alarm for <70%, Level 3 for <50%. Suppress if zone importance multiplier = 0.",
+        "configurable_values": [
+          "70% threshold",
+          "50% threshold",
+          "10 minutes",
+          "importance multiplier"
+        ],
+        "fault_condition": "Low airflow",
+        "commissioning_check": null,
+        "evidence_quote": "If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm.",
+        "page_hint": 74
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.5.6.1",
+      "source_chunk_ids": [
+        "chunk_3b079fd8dfc044ba",
+        "chunk_98b42bcd63624cb8",
+        "chunk_bd639530e2ed42d6",
+        "chunk_9020ffd13f4c4f7e",
+        "chunk_22282ffa413446e0",
+        "chunk_28300bc956fb4532",
+        "chunk_406562ffab97467c",
+        "chunk_fb9fe54676fc4d7d",
+        "chunk_6a6578643aba4b8c",
+        "chunk_9924d352aac04b7f"
+      ],
+      "chunk_id": "chunk_3b079fd8dfc044ba",
+      "page_no": 74,
+      "source_page_nos": [
+        74,
+        77,
+        81,
+        86,
+        89,
+        93,
+        98,
+        102,
+        106,
+        109
+      ],
+      "evidence_text": "If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 10 chunks",
+      "judge_reason": "Specific fault diagnostic rule with operational thresholds and alarm levels.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_8f1e6595733134a4",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_5_6_2:airflow_sensor_calibration_alarm",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "Airflow Sensor Calibration Alarm",
+        "section_id": "5.5.6.2",
+        "section_title": "5.5 VAV Terminal Unit—Cooling Only",
+        "equipment_scope": "Cooling-only VAV terminal unit",
+        "summary": "If fan serving zone is OFF and airflow sensor reading > max(10% of Vcool-max, 50 cfm) for 30 minutes, generate Level 3 alarm.",
+        "trigger_condition": "Fan OFF and airflow reading > max(10% Vcool-max, 50 cfm) for 30 minutes",
+        "required_behavior": "Generate Level 3 alarm",
+        "configurable_values": [
+          "10% of Vcool-max",
+          "50 cfm",
+          "30 minutes"
+        ],
+        "fault_condition": "Airflow sensor calibration error",
+        "commissioning_check": null,
+        "evidence_quote": "If the fan serving the zone is OFF and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 30 minutes, generate a Level 3 alarm.",
+        "page_hint": 74
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the fan serving the zone is OFF and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 30 minutes, generate a Level 3 alarm.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.5.6.2",
+      "source_chunk_ids": [
+        "chunk_3b079fd8dfc044ba",
+        "chunk_915447e8847a4b43",
+        "chunk_bba3546fd12145da",
+        "chunk_b7fa7796dbef425c",
+        "chunk_cfb0b6b8a2614bc8",
+        "chunk_41badee17864467c"
+      ],
+      "chunk_id": "chunk_3b079fd8dfc044ba",
+      "page_no": 74,
+      "source_page_nos": [
+        74,
+        77,
+        82,
+        86,
+        90,
+        93
+      ],
+      "evidence_text": "If the fan serving the zone is OFF and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 30 minutes, generate a Level 3 alarm.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 6 chunks",
+      "judge_reason": "Valid fault diagnostic rule from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_1c64a4f18efa15cc",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_5_6_3:leaking_damper_alarm",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "Leaking Damper Alarm",
+        "section_id": "5.5.6.3",
+        "section_title": "5.5 VAV Terminal Unit—Cooling Only",
+        "equipment_scope": "Cooling-only VAV terminal unit",
+        "summary": "If damper position is 0% and airflow sensor reading > max(10% of Vcool-max, 50 cfm) for 10 minutes while fan is proven on, generate Level 4 alarm.",
+        "trigger_condition": "Damper 0% and airflow > max(10% Vcool-max, 50 cfm) for 10 minutes while fan proven on",
+        "required_behavior": "Generate Level 4 alarm",
+        "configurable_values": [
+          "10% of Vcool-max",
+          "50 cfm",
+          "10 minutes"
+        ],
+        "fault_condition": "Leaking damper",
+        "commissioning_check": null,
+        "evidence_quote": "If the damper position is 0%, and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 10 minutes while the fan serving the zone is proven on, generate a Level 4 alarm.",
+        "page_hint": 74
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the damper position is 0%, and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 10 minutes while the fan serving the zone is proven on, generate a Level 4 alarm.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.5.6.3",
+      "source_chunk_ids": [
+        "chunk_9075e45d932e41f7",
+        "chunk_4cac1fe075964623",
+        "chunk_60224ddff4204581",
+        "chunk_cfb0b6b8a2614bc8",
+        "chunk_cb2d032326474375"
+      ],
+      "chunk_id": "chunk_9075e45d932e41f7",
+      "page_no": 74,
+      "source_page_nos": [
+        74,
+        77,
+        82,
+        90,
+        94
+      ],
+      "evidence_text": "If the damper position is 0%, and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 10 minutes while the fan serving the zone is proven on, generate a Level 4 alarm.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 5 chunks",
+      "judge_reason": "This is a valid fault diagnostic rule from ASHRAE Guideline 36, specifying conditions for a leaking damper alarm.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_2e4005b939afb03c",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_6_6_1:low_airflow_alarm",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "Low Airflow Alarm",
+        "section_id": "5.6.6.1",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit",
+        "summary": "If measured airflow < 70% of setpoint for 10 minutes while setpoint > 0, generate Level 4 alarm. If < 50% for 10 minutes, generate Level 3 alarm. Suppress if zone has Importance-Multiplier of 0 for static pressure reset T&R loop.",
+        "trigger_condition": "Measured airflow < 70% or < 50% of setpoint for 10 minutes while setpoint > 0",
+        "required_behavior": "Generate Level 4 alarm for <70%, Level 3 for <50%. Suppress if Importance-Multiplier = 0.",
+        "configurable_values": [
+          "70% threshold",
+          "50% threshold",
+          "10 minutes"
+        ],
+        "fault_condition": "Low airflow",
+        "commissioning_check": null,
+        "evidence_quote": "If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm.",
+        "page_hint": 77
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.6.1",
+      "source_chunk_ids": [
+        "chunk_3b079fd8dfc044ba",
+        "chunk_98b42bcd63624cb8",
+        "chunk_bd639530e2ed42d6",
+        "chunk_9020ffd13f4c4f7e",
+        "chunk_22282ffa413446e0",
+        "chunk_28300bc956fb4532",
+        "chunk_406562ffab97467c",
+        "chunk_fb9fe54676fc4d7d",
+        "chunk_6a6578643aba4b8c",
+        "chunk_9924d352aac04b7f"
+      ],
+      "chunk_id": "chunk_3b079fd8dfc044ba",
+      "page_no": 74,
+      "source_page_nos": [
+        74,
+        77,
+        81,
+        86,
+        89,
+        93,
+        98,
+        102,
+        106,
+        109
+      ],
+      "evidence_text": "If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 10 chunks",
+      "judge_reason": "Valid fault diagnostic rule for low airflow alarm, grounded in ASHRAE Guideline 36 operational sequence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_51fc2dce32d24987",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_6_6_3:airflow_sensor_calibration_alarm",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "Airflow Sensor Calibration Alarm",
+        "section_id": "5.6.6.3",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit",
+        "summary": "If fan serving zone is OFF and airflow sensor reading > larger of 10% of cooling maximum airflow setpoint or 50 cfm for 30 minutes, generate Level 3 alarm.",
+        "trigger_condition": "Fan OFF and airflow reading > max(10% of Vcool-max, 50 cfm) for 30 minutes",
+        "required_behavior": "Generate Level 3 alarm.",
+        "configurable_values": [
+          "10% of Vcool-max",
+          "50 cfm",
+          "30 minutes"
+        ],
+        "fault_condition": "Airflow sensor calibration error",
+        "commissioning_check": null,
+        "evidence_quote": "If the fan serving the zone is OFF and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 30 minutes, generate a Level 3 alarm.",
+        "page_hint": 77
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the fan serving the zone is OFF and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 30 minutes, generate a Level 3 alarm.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.6.3",
+      "source_chunk_ids": [
+        "chunk_3b079fd8dfc044ba",
+        "chunk_915447e8847a4b43",
+        "chunk_bba3546fd12145da",
+        "chunk_b7fa7796dbef425c",
+        "chunk_cfb0b6b8a2614bc8",
+        "chunk_41badee17864467c"
+      ],
+      "chunk_id": "chunk_3b079fd8dfc044ba",
+      "page_no": 74,
+      "source_page_nos": [
+        74,
+        77,
+        82,
+        86,
+        90,
+        93
+      ],
+      "evidence_text": "If the fan serving the zone is OFF and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 30 minutes, generate a Level 3 alarm.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 6 chunks",
+      "judge_reason": "The item captures a specific fault diagnostic rule for airflow sensor calibration alarm from Guideline 36, with clear condition and alarm level.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_0ed78d92532e996b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_6_6_4:leaking_damper_alarm",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "Leaking Damper Alarm",
+        "section_id": "5.6.6.4",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit",
+        "summary": "If damper position = 0% and airflow sensor reading > larger of 10% of cooling maximum airflow setpoint or 50 cfm for 10 minutes while fan proven ON, generate Level 4 alarm.",
+        "trigger_condition": "Damper at 0% and airflow > max(10% Vcool-max, 50 cfm) for 10 minutes with fan ON",
+        "required_behavior": "Generate Level 4 alarm.",
+        "configurable_values": [
+          "10% of Vcool-max",
+          "50 cfm",
+          "10 minutes"
+        ],
+        "fault_condition": "Leaking damper",
+        "commissioning_check": null,
+        "evidence_quote": "If the damper position is 0%, and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 10 minutes while the fan serving the zone is proven ON, generate a Level 4 alarm.",
+        "page_hint": 77
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the damper position is 0%, and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 10 minutes while the fan serving the zone is proven ON, generate a Level 4 alarm.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.6.4",
+      "source_chunk_ids": [
+        "chunk_9075e45d932e41f7",
+        "chunk_4cac1fe075964623",
+        "chunk_60224ddff4204581",
+        "chunk_cfb0b6b8a2614bc8",
+        "chunk_cb2d032326474375"
+      ],
+      "chunk_id": "chunk_9075e45d932e41f7",
+      "page_no": 74,
+      "source_page_nos": [
+        74,
+        77,
+        82,
+        90,
+        94
+      ],
+      "evidence_text": "If the damper position is 0%, and airflow sensor reading is above the larger of 10% of the cooling maximum airflow setpoint or 50 cfm for 10 minutes while the fan serving the zone is proven ON, generate a Level 4 alarm.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 5 chunks",
+      "judge_reason": "Captures a fault diagnostic rule from Guideline 36 Section 5.6.6.4 for leaking VAV damper detection.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_6826a5fc4aee56d7",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_5_5:cooling_only_vav_zone_control_logic",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Cooling-Only VAV Zone Control Logic",
+        "section_id": "5.5.5",
+        "section_title": "5.5 VAV Terminal Unit—Cooling Only",
+        "equipment_scope": "Cooling-only VAV terminal unit",
+        "summary": "Active airflow setpoint is determined by zone state: cooling maps cooling loop output from minimum to cooling maximum; deadband sets to minimum; heating maps heating loop output from minimum to heating maximum. Damper modulates to maintain measured airflow at setpoint.",
+        "trigger_condition": "Zone state changes (cooling, deadband, heating)",
+        "required_behavior": "When cooling: map cooling-loop output to active airflow setpoint from minimum endpoint to cooling maximum endpoint. If supply air temperature > room temperature, setpoint ≤ minimum endpoint. When deadband: setpoint = minimum endpoint. When heating: map heating-loop output to active airflow setpoint from minimum endpoint to heating maximum endpoint. If supply air temperature < room temperature + 3°C (5°F), setpoint ≤ minimum endpoint. Modulate damper to maintain measured airflow at setpoint.",
+        "configurable_values": [
+          "Vmin*",
+          "Vcool-max",
+          "Vheat-max"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "When the Zone State is cooling, the cooling-loop output shall be mapped to the active airflow setpoint from the minimum endpoint to the cooling maximum endpoint.",
+        "page_hint": 74
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "When the Zone State is cooling, the cooling-loop output shall be mapped to the active airflow setpoint from the minimum endpoint to the cooling maximum endpoint.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.5.5",
+      "source_chunk_ids": [
+        "chunk_276f4de207684871"
+      ],
+      "chunk_id": "chunk_276f4de207684871",
+      "page_no": 74,
+      "source_page_nos": [
+        74
+      ],
+      "evidence_text": "When the Zone State is cooling, the cooling-loop output shall be mapped to the active airflow setpoint from the minimum endpoint to the cooling maximum endpoint.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence from Guideline 36, specifically the VAV zone control logic with airflow setpoint mapping based on zone state.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_f26404dc4fe1e539",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_6_8_1:system_requests_for_cooling_sat_reset",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "System Requests for Cooling SAT Reset",
+        "section_id": "5.6.8.1",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit",
+        "summary": "If zone temp exceeds cooling setpoint by 3°C (5°F) for 2 minutes, send 3 requests. Else if exceeds by 2°C (3°F) for 2 minutes, send 2 requests. Else if Cooling Loop > 95%, send 1 request until < 85%. Else send 0 requests.",
+        "trigger_condition": "Zone temperature relative to cooling setpoint and Cooling Loop output",
+        "required_behavior": "Send requests as per conditions.",
+        "configurable_values": [
+          "3°C (5°F)",
+          "2°C (3°F)",
+          "2 minutes",
+          "95%",
+          "85%"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "If the zone temperature exceeds the zone’s cooling setpoint by 3°C (5°F) for 2 minutes and after suppression period due to setpoint change per Section 5.1.20, send 3 requests.",
+        "page_hint": 78
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the zone temperature exceeds the zone’s cooling setpoint by 3°C (5°F) for 2 minutes and after suppression period due to setpoint change per Section 5.1.20, send 3 requests.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.8.1",
+      "source_chunk_ids": [
+        "chunk_c97734402fd34b76",
+        "chunk_c082cbe5c87c4e4b",
+        "chunk_87a28b7a44954318",
+        "chunk_cc61cb59e6bc451e",
+        "chunk_02edb6db9fa84718",
+        "chunk_99583e6695424f93",
+        "chunk_ffda72aaa60a47e7",
+        "chunk_2c289740083541fc",
+        "chunk_fd639c6d1f23457e",
+        "chunk_f428ae439a654801"
+      ],
+      "chunk_id": "chunk_c97734402fd34b76",
+      "page_no": 75,
+      "source_page_nos": [
+        75,
+        78,
+        83,
+        87,
+        90,
+        94,
+        99,
+        103,
+        107,
+        110
+      ],
+      "evidence_text": "If the zone temperature exceeds the zone’s cooling setpoint by 3°C (5°F) for 2 minutes and after suppression period due to setpoint change per Section 5.1.20, send 3 requests.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 10 chunks",
+      "judge_reason": "Captures a specific control sequence from Section 5.6.8.1 regarding cooling SAT reset requests based on zone temp deviation and cooling loop status.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_f6cbfed8727256c2",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_6_8_2:system_requests_for_static_pressure_reset",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "System Requests for Static Pressure Reset",
+        "section_id": "5.6.8.2",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit",
+        "summary": "If measured airflow < 50% of setpoint while setpoint > 0 and damper > 95% for 1 minute, send 3 requests. Else if < 70% and damper > 95% for 1 minute, send 2 requests. Else if damper > 95%, send 1 request until < 85%. Else send 0 requests.",
+        "trigger_condition": "Measured airflow relative to setpoint and damper position",
+        "required_behavior": "Send requests as per conditions.",
+        "configurable_values": [
+          "50%",
+          "70%",
+          "95%",
+          "85%",
+          "1 minute"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "If the measured airflow is less than 50% of setpoint while setpoint is greater than zero and the damper position is greater than 95% for 1 minute, send 3 requests.",
+        "page_hint": 78
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the measured airflow is less than 50% of setpoint while setpoint is greater than zero and the damper position is greater than 95% for 1 minute, send 3 requests.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.8.2",
+      "source_chunk_ids": [
+        "chunk_c97734402fd34b76",
+        "chunk_c082cbe5c87c4e4b",
+        "chunk_87a28b7a44954318",
+        "chunk_cc61cb59e6bc451e",
+        "chunk_58270cd968db4bd1",
+        "chunk_99583e6695424f93",
+        "chunk_2eb9bd0251ca4387",
+        "chunk_130f06abce714c16",
+        "chunk_8005af91a7c64f42",
+        "chunk_7dcf69d19d214540",
+        "chunk_fd639c6d1f23457e",
+        "chunk_556e579695a64893"
+      ],
+      "chunk_id": "chunk_c97734402fd34b76",
+      "page_no": 75,
+      "source_page_nos": [
+        75,
+        78,
+        83,
+        87,
+        91,
+        94,
+        99,
+        100,
+        103,
+        107,
+        110
+      ],
+      "evidence_text": "If the measured airflow is less than 50% of setpoint while setpoint is greater than zero and the damper position is greater than 95% for 1 minute, send 3 requests.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 12 chunks",
+      "judge_reason": "Captures a real control sequence for static pressure reset requests from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_5864e31846e1e373",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "ashrae:g36:parameter_spec:5_6_4:endpoints_as_function_of_zone_group_mode",
+      "structured_payload_candidate": {
+        "knowledge_type": "parameter_spec",
+        "title": "Endpoints as Function of Zone Group Mode",
+        "section_id": "5.6.4",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit",
+        "summary": "Table 5.6.4 defines cooling maximum, cooling minimum, minimum, heating minimum, and heating maximum endpoints for each Zone Group mode: Occupied, Cooldown, Setup, Warmup, Setback, Unoccupied.",
+        "trigger_condition": null,
+        "required_behavior": "Use endpoints from Table 5.6.4 based on Zone Group mode.",
+        "configurable_values": [
+          "Vcool-max",
+          "Vmin",
+          "Vheat-min",
+          "Vheat-max"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Table 5.6.4 Endpoints as a Function of Zone Group Mode",
+        "page_hint": 75
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Table 5.6.4 Endpoints as a Function of Zone Group Mode",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.4",
+      "source_chunk_ids": [
+        "chunk_5a45ab6704e74db5"
+      ],
+      "chunk_id": "chunk_5a45ab6704e74db5",
+      "page_no": 75,
+      "source_page_nos": [
+        75
+      ],
+      "evidence_text": "Table 5.6.4 Endpoints as a Function of Zone Group Mode",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Table 5.6.4 defines operational parameters for control sequences, specifying endpoints for various zone group modes.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_d063ba66fb2a2464",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_6_5:vav_reheat_zone_control_logic",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "VAV Reheat Zone Control Logic",
+        "section_id": "5.6.5",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit with reheat coil",
+        "summary": "When Zone State is cooling, map cooling-loop output to active airflow setpoint from cooling minimum to cooling maximum endpoint; heating coil disabled unless DAT below minimum setpoint. When deadband, active airflow setpoint = minimum endpoint; heating coil disabled unless DAT below minimum setpoint. When heating, from 0-50% heating-loop output resets DAT setpoint from AHU SAT to MaxΔT above space temp, airflow at heating minimum endpoint; from 51-100%, if DAT > room temp + 3°C (5°F), reset airflow from heating minimum to heating maximum endpoint. Heating coil modulated to maintain DAT setpoint.",
+        "trigger_condition": "Zone State changes (cooling, deadband, heating)",
+        "required_behavior": "Cooling: map loop output to airflow setpoint between cooling min and max endpoints. Deadband: set airflow to minimum endpoint. Heating: first 50% output resets DAT setpoint, airflow at heating min; above 50% if DAT > room+5°F, reset airflow to heating max. Modulate heating coil to maintain DAT setpoint.",
+        "configurable_values": [
+          "Vmin",
+          "Vcool-max",
+          "Vheat-min",
+          "Vheat-max",
+          "MaxΔT"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "When the Zone State is cooling, the cooling-loop output shall be mapped to the active airflow setpoint from the cooling minimum endpoint to the cooling maximum endpoint. Heating coil is disabled unless the DAT is below the minimum setpoint",
+        "page_hint": 76
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "When the Zone State is cooling, the cooling-loop output shall be mapped to the active airflow setpoint from the cooling minimum endpoint to the cooling maximum endpoint. Heating coil is disabled unless the DAT is below the minimum setpoint",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.5",
+      "source_chunk_ids": [
+        "chunk_e4a976e33aed44b9"
+      ],
+      "chunk_id": "chunk_e4a976e33aed44b9",
+      "page_no": 76,
+      "source_page_nos": [
+        76
+      ],
+      "evidence_text": "When the Zone State is cooling, the cooling-loop output shall be mapped to the active airflow setpoint from the cooling minimum endpoint to the cooling maximum endpoint. Heating coil is disabled unless the DAT is below the minimum setpoint",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Real control sequence from Section 5.6.5, describing VAV zone state logic with evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_278002926e847cca",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_6_5_3:heating_sequence_for_vav_reheat_zone",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Heating Sequence for VAV Reheat Zone",
+        "section_id": "5.6.5.3",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit with reheat",
+        "summary": "From 0% to 50% heating-loop output, reset discharge temperature setpoint from current AHU SAT to a maximum of MaxΔT above space temperature setpoint; active airflow setpoint = heating minimum endpoint. From 51% to 100%, if DAT > room temperature plus 3°C (5°F), reset active airflow setpoint from heating minimum to heating maximum endpoint. Heating coil modulated to maintain DAT setpoint.",
+        "trigger_condition": "Zone State is heating",
+        "required_behavior": "0-50%: reset DAT setpoint up to MaxΔT above space temp, airflow at heating min. 51-100%: if DAT > room+5°F, increase airflow from heating min to heating max. Modulate heating coil to maintain DAT setpoint.",
+        "configurable_values": [
+          "MaxΔT",
+          "heating minimum endpoint",
+          "heating maximum endpoint"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "From 0% to 50%, the heating-loop output shall reset the discharge temperature setpoint from the current AHU SAT setpoint to a maximum of MaxΔT above space temperature setpoint. The active airflow setpoint shall be the heating minimum endpoint.",
+        "page_hint": 77
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "5.6.5.3. When the Zone State  is heating , the Heating Loop  shall maintain space  temperature at the heating",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.5.3",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_e4a976e33aed44b9"
+      ],
+      "chunk_id": "chunk_e4a976e33aed44b9",
+      "page_no": 76,
+      "source_page_nos": [
+        76
+      ],
+      "evidence_text": "5.6.5.3. When the Zone State  is heating , the Heating Loop  shall maintain space  temperature at the heating",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Extraction captures a specific operational control sequence with configurable parameters (0-50% and 51-100% loop output thresholds, MaxΔT, heating minimum/maximum airflow setpoints, DAT condition) grounded in ASHRAE Guideline 36 section 5.6.5.3.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_292a39e0cbf34b45",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_6_6_2:low_discharge_air_temperature_alarm",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "Low-Discharge Air Temperature Alarm",
+        "section_id": "5.6.6.2",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit with reheat",
+        "summary": "If heating hot-water plant proven ON and DAT < setpoint by 8.3°C (15°F) for 10 minutes, generate Level 4 alarm. If < setpoint by 17°C (30°F) for 10 minutes, generate Level 3 alarm. Suppress if zone has Importance-Multiplier of 0 for hot-water reset T&R loop.",
+        "trigger_condition": "Heating plant ON and DAT below setpoint by 15°F or 30°F for 10 minutes",
+        "required_behavior": "Generate Level 4 alarm for 15°F deviation, Level 3 for 30°F deviation. Suppress if Importance-Multiplier = 0.",
+        "configurable_values": [
+          "8.3°C (15°F)",
+          "17°C (30°F)",
+          "10 minutes"
+        ],
+        "fault_condition": "Low discharge air temperature",
+        "commissioning_check": null,
+        "evidence_quote": "If heating hot-water plant is proven ON, and the DAT is 8.3°C (15°F) less than setpoint for 10 minutes, generate a Level 4 alarm.",
+        "page_hint": 77
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If heating hot-water plant is proven ON, and the DAT is 8.3°C (15°F) less than setpoint for 10 minutes, generate a Level 4 alarm.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.6.2",
+      "source_chunk_ids": [
+        "chunk_915447e8847a4b43",
+        "chunk_bba3546fd12145da",
+        "chunk_9020ffd13f4c4f7e",
+        "chunk_9f8fd2f9c3a54889",
+        "chunk_99d1e8c9046546a8"
+      ],
+      "chunk_id": "chunk_915447e8847a4b43",
+      "page_no": 77,
+      "source_page_nos": [
+        77,
+        82,
+        86,
+        89,
+        93
+      ],
+      "evidence_text": "If heating hot-water plant is proven ON, and the DAT is 8.3°C (15°F) less than setpoint for 10 minutes, generate a Level 4 alarm.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 5 chunks",
+      "judge_reason": "Captures a specific fault diagnostic rule with thresholds and suppression logic from the guideline.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_9a8d88fd31be9a82",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "commissioning_procedure",
+      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_6_7:testing_commissioning_overrides_for_vav_zone",
+      "structured_payload_candidate": {
+        "knowledge_type": "commissioning_procedure",
+        "title": "Testing/Commissioning Overrides for VAV Zone",
+        "section_id": "5.6.7",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit",
+        "summary": "Provide software switches to force zone airflow setpoint to zero, Vcool-max, Vmin, Vheat-max; force damper full closed/open; force heating OFF/closed; reset request-hours accumulator. Interlocked at zone-group level per Section 5.4.5.",
+        "trigger_condition": "Commissioning or testing",
+        "required_behavior": "Provide overrides as listed, interlocked at zone-group level.",
+        "configurable_values": [
+          "zero",
+          "Vcool-max",
+          "Vmin",
+          "Vheat-max",
+          "damper closed/open",
+          "heating OFF/closed"
+        ],
+        "fault_condition": null,
+        "commissioning_check": "Check for leaking dampers by forcing all VAV boxes closed and recording AHU airflow.",
+        "evidence_quote": "Provide software switches that interlock to a system level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force zone airflow setpoint to Vheat-max, e. force damper full closed/open, f. force heating to OFF/closed, and g. reset request-hours accumulator point to zero",
+        "page_hint": 78
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Provide software switches that interlock to a system level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force zone airflow setpoint to Vheat-max, e. force damper full closed/open, f. force heating to OFF/closed, and g. reset request-hours accumulator point to zero",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.7",
+      "source_chunk_ids": [
+        "chunk_84053c481e324784"
+      ],
+      "chunk_id": "chunk_84053c481e324784",
+      "page_no": 78,
+      "source_page_nos": [
+        78
+      ],
+      "evidence_text": "Provide software switches that interlock to a system level point to a. force zone airflow setpoint to zero, b. force zone airflow setpoint to Vcool-max, c. force zone airflow setpoint to Vmin, d. force zone airflow setpoint to Vheat-max, e. force damper full closed/open, f. force heating to OFF/closed, and g. reset request-hours accumulator point to zero",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Extracts a commissioning procedure with specific override switches and interlocks from Guideline 36, operational and supported by evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_80c904e2f0a2f6e2",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_6_6_5:leaking_valve_alarm",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "Leaking Valve Alarm",
+        "section_id": "5.6.6.5",
+        "section_title": "5.6 VAV Terminal Unit with Reheat",
+        "equipment_scope": "VAV terminal unit with reheat",
+        "summary": "If valve position = 0% for 15 minutes, DAT > AHU SAT by 3°C (5°F), and fan proven ON, generate Level 4 alarm.",
+        "trigger_condition": "Valve at 0% for 15 minutes, DAT > AHU SAT by 5°F, fan ON",
+        "required_behavior": "Generate Level 4 alarm.",
+        "configurable_values": [
+          "15 minutes",
+          "3°C (5°F)"
+        ],
+        "fault_condition": "Leaking valve",
+        "commissioning_check": null,
+        "evidence_quote": "If the valve position is 0% for 15 minutes, DAT is above AHU SAT by 3°C (5°F), and the fan serving the zone is proven ON, generate a Level 4 alarm.",
+        "page_hint": 78
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the valve position is 0% for 15 minutes, DAT is above AHU SAT by 3°C (5°F), and the fan serving the zone is proven ON, generate a Level 4 alarm.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.6.6.5",
+      "source_chunk_ids": [
+        "chunk_84053c481e324784",
+        "chunk_60224ddff4204581"
+      ],
+      "chunk_id": "chunk_84053c481e324784",
+      "page_no": 78,
+      "source_page_nos": [
+        78,
+        82
+      ],
+      "evidence_text": "If the valve position is 0% for 15 minutes, DAT is above AHU SAT by 3°C (5°F), and the fan serving the zone is proven ON, generate a Level 4 alarm.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 2 chunks",
+      "judge_reason": "Captures a specific fault diagnostic rule from Guideline 36 with alarm conditions and level, directly supported by evidence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_230792fe00abc89b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_15_1:ahu_system_mode_hierarchy",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "AHU System Mode Hierarchy",
+        "section_id": "5.15.1",
+        "section_title": "AHU System Modes",
+        "equipment_scope": "Air-Handling Unit (AHU)",
+        "summary": "AHU mode is determined by the highest priority mode among zones served: Occupied > Cooldown > Setup > Warmup > Setback > Unoccupied.",
+        "trigger_condition": "Zone Group modes differ.",
+        "required_behavior": "Set AHU mode to the highest priority mode from the list.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "When Zone Group served by an air-handling system are in different modes, the following hierarchy applies (highest one sets AHU mode): a. Occupied Mode b. Cooldown Mode c. Setup Mode d. Warmup Mode e. Setback Mode f. Unoccupied Mode",
+        "page_hint": 111
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "When Zone Group served by an air-handling system are in different modes, the following hierarchy applies (highest one sets AHU mode): a. Occupied Mode b. Cooldown Mode c. Setup Mode d. Warmup Mode e. Setback Mode f. Unoccupied Mode",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.15.1",
+      "source_chunk_ids": [
+        "chunk_88729a576b494740"
+      ],
+      "chunk_id": "chunk_88729a576b494740",
+      "page_no": 111,
+      "source_page_nos": [
+        111
+      ],
+      "evidence_text": "When Zone Group served by an air-handling system are in different modes, the following hierarchy applies (highest one sets AHU mode): a. Occupied Mode b. Cooldown Mode c. Setup Mode d. Warmup Mode e. Setback Mode f. Unoccupied Mode",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence from Guideline 36, section 5.15.1, specifying AHU mode hierarchy.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_8909a1af82808460",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_1_1:supply_fan_start_stop",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Supply Fan Start/Stop",
+        "section_id": "5.16.1.1",
+        "section_title": "Supply Fan Start/Stop",
+        "equipment_scope": "Multiple-zone VAV air-handling unit",
+        "summary": "Supply fan runs when system is in Cooldown, Setup, or Occupied Mode. If perimeter VAV-reheat boxes exist, fan also runs in Setback or Warmup Mode.",
+        "trigger_condition": "System mode is Cooldown, Setup, or Occupied Mode; or if perimeter VAV-reheat boxes exist, also Setback or Warmup Mode.",
+        "required_behavior": "Supply fan shall run when system is in the specified modes.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Supply fan shall run when system is in the Cooldown Mode, Setup Mode, or Occupied Mode.",
+        "page_hint": 111
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Supply fan shall run when system is in the Cooldown Mode, Setup Mode, or Occupied Mode.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.1.1",
+      "source_chunk_ids": [
+        "chunk_474ff93313c04e30"
+      ],
+      "chunk_id": "chunk_474ff93313c04e30",
+      "page_no": 111,
+      "source_page_nos": [
+        111
+      ],
+      "evidence_text": "Supply fan shall run when system is in the Cooldown Mode, Setup Mode, or Occupied Mode.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence for supply fan start/stop based on system modes, directly from the guideline.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_df7116c459b4800a",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_1_2:static_pressure_setpoint_reset_using_trim_respond",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Static Pressure Setpoint Reset using Trim & Respond",
+        "section_id": "5.16.1.2",
+        "section_title": "Static Pressure Set-Point Reset",
+        "equipment_scope": "Supply Fan",
+        "summary": "Static pressure setpoint is reset using Trim & Respond logic with parameters in Table 5.16.1.2.",
+        "trigger_condition": "Continuous operation.",
+        "required_behavior": "Apply T&R logic per Section 5.1.14 using specified parameters.",
+        "configurable_values": [
+          "SP0: 120 Pa (0.5 in. w.g.)",
+          "SPmin: 25 Pa (0.1 in. w.g.)",
+          "SPmax: Max_DSP",
+          "Td: 10 minutes",
+          "T: 2 minutes",
+          "I: 2",
+          "R: Zone static pressure reset requests",
+          "SPtrim: -12 Pa (-0.05 in. w.g.)",
+          "SPres: 15 Pa (+0.06 in. w.g.)",
+          "SPres-max: 32 Pa (+0.13 in. w.g.)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": "Parameters will most likely require adjustment during commissioning/tuning phase.",
+        "evidence_quote": "Static pressure setpoint. Setpoint shall be reset using T&R logic (see Section 5.1.14) using the parameters shown in Table 5.16.1.2.",
+        "page_hint": 111
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Static pressure setpoint. Setpoint shall be reset using T&R logic (see Section 5.1.14) using the parameters shown in Table 5.16.1.2.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.1.2",
+      "source_chunk_ids": [
+        "chunk_cff238851cfd4a79"
+      ],
+      "chunk_id": "chunk_cff238851cfd4a79",
+      "page_no": 111,
+      "source_page_nos": [
+        111
+      ],
+      "evidence_text": "Static pressure setpoint. Setpoint shall be reset using T&R logic (see Section 5.1.14) using the parameters shown in Table 5.16.1.2.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "The item describes a specific control sequence (static pressure setpoint reset using T&R logic) with reference to a parameter table, which is valid operational knowledge from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_ac1ab42f86856271",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_2_1:supply_air_temperature_control_loop_enable_disable",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Supply Air Temperature Control Loop Enable/Disable",
+        "section_id": "5.16.2.1",
+        "section_title": "Control loop enable/disable",
+        "equipment_scope": "Supply Air Temperature Control",
+        "summary": "SAT control loop enabled when supply fan proven ON; disabled and output set to deadband otherwise.",
+        "trigger_condition": "Supply fan status.",
+        "required_behavior": "Enable loop when fan ON; disable and set output to deadband (no heating, minimum economizer) when fan OFF.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Control loop is enabled when the supply air fan is proven ON, and disabled and output set to deadband (no heating, minimum economizer) otherwise.",
+        "page_hint": 112
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Control loop is enabled when the supply air fan is proven ON, and disabled and output set to deadband (no heating, minimum economizer) otherwise.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.2.1",
+      "source_chunk_ids": [
+        "chunk_ad700d5f0183480e"
+      ],
+      "chunk_id": "chunk_ad700d5f0183480e",
+      "page_no": 112,
+      "source_page_nos": [
+        112
+      ],
+      "evidence_text": "Control loop is enabled when the supply air fan is proven ON, and disabled and output set to deadband (no heating, minimum economizer) otherwise.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence: enable/disable SAT control loop based on supply fan status.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_012f2335242f50eb",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_2_2:supply_air_temperature_setpoint_for_cooldown_warmup_setback",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Supply Air Temperature Setpoint for Cooldown, Warmup, Setback",
+        "section_id": "5.16.2.2",
+        "section_title": "Supply Air Temperature Setpoint",
+        "equipment_scope": "Supply Air Temperature Control",
+        "summary": "Cooldown: setpoint = Min_ClgSAT. Warmup and Setback: setpoint = 35°C (95°F).",
+        "trigger_condition": "System mode.",
+        "required_behavior": "Set SAT setpoint to Min_ClgSAT during Cooldown; to 35°C (95°F) during Warmup and Setback.",
+        "configurable_values": [
+          "Min_ClgSAT",
+          "35°C (95°F)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "During Cooldown Mode, setpoint shall be Min_ClgSAT. During Warmup Mode and Setback Mode, setpoint shall be 35°C (95°F).",
+        "page_hint": 114
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "5.16.2.2. Supply Air Temperature Setpoint",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.2.2",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_ad700d5f0183480e"
+      ],
+      "chunk_id": "chunk_ad700d5f0183480e",
+      "page_no": 112,
+      "source_page_nos": [
+        112
+      ],
+      "evidence_text": "5.16.2.2. Supply Air Temperature Setpoint",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence for supply air temperature setpoints during cooldown, warmup, and setback modes from Guideline 36, section 5.16.2.2.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_c2ca7f7eab73977a",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_2_2:supply_air_temperature_setpoint_reset",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Supply Air Temperature Setpoint Reset",
+        "section_id": "5.16.2.2",
+        "section_title": "Supply Air Temperature Setpoint",
+        "equipment_scope": "Multiple-zone VAV air-handling unit",
+        "summary": "During Occupied and Setup Modes, SAT setpoint is reset from Min_ClgSAT when OAT is OAT_Max and above, proportionally up to T-max when OAT is OAT_Min and below. T-max is reset using T&R logic between Min_ClgSAT and Max_ClgSAT.",
+        "trigger_condition": "Occupied Mode or Setup Mode.",
+        "required_behavior": "Reset SAT setpoint from Min_ClgSAT at OAT_Max to T-max at OAT_Min. T-max is reset using T&R logic with parameters in Table 5.16.2.2.",
+        "configurable_values": [
+          "Min_ClgSAT",
+          "Max_ClgSAT",
+          "OAT_Min",
+          "OAT_Max",
+          "T&R parameters: SP0=SPmax, SPmin=Min_ClgSAT, SPmax=Max_ClgSAT, Td=10 min, T=2 min, I=2, SPtrim=+0.1°C, SPres=-0.2°C, SPres-max=-0.6°C"
+        ],
+        "fault_condition": null,
+        "commissioning_check": "Parameters will require adjustment during commissioning/tuning phase.",
+        "evidence_quote": "During Occupied Mode and Setup Mode, setpoint shall be reset from Min_ClgSAT when the outdoor air temperature is OAT_Max and above, proportionally up to T-max when the outdoor air temperature is OAT_Min and below.",
+        "page_hint": 113
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "During Occupied Mode and Setup Mode, setpoint shall be reset from Min_ClgSAT when the outdoor air temperature is OAT_Max and above, proportionally up to T-max when the outdoor air temperature is OAT_Min and below.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.2.2",
+      "source_chunk_ids": [
+        "chunk_aa3d616e417f4d2e"
+      ],
+      "chunk_id": "chunk_aa3d616e417f4d2e",
+      "page_no": 113,
+      "source_page_nos": [
+        113
+      ],
+      "evidence_text": "During Occupied Mode and Setup Mode, setpoint shall be reset from Min_ClgSAT when the outdoor air temperature is OAT_Max and above, proportionally up to T-max when the outdoor air temperature is OAT_Min and below.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence for SAT setpoint reset based on OAT with configurable parameters.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_4a7620acb28027c0",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_2_2:supply_air_temperature_setpoint_reset_occupied_setup",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Supply Air Temperature Setpoint Reset (Occupied/Setup)",
+        "section_id": "5.16.2.2",
+        "section_title": "Supply Air Temperature Setpoint",
+        "equipment_scope": "Supply Air Temperature Control",
+        "summary": "During Occupied and Setup modes, SAT setpoint is reset from Min_ClgSAT at OAT_Max to T-max at OAT_Min. T-max is reset via T&R between Min_ClgSAT and Max_ClgSAT.",
+        "trigger_condition": "Occupied or Setup mode.",
+        "required_behavior": "Reset SAT setpoint proportionally based on OAT; T-max reset via T&R per Table 5.16.2.2.",
+        "configurable_values": [
+          "Min_ClgSAT",
+          "Max_ClgSAT",
+          "OAT_Min",
+          "OAT_Max",
+          "T&R parameters: SP0=SPmax, SPmin=Min_ClgSAT, SPmax=Max_ClgSAT, Td=10 min, T=2 min, I=2, R=Zone cooling SAT requests, SPtrim=+0.1°C (+0.2°F), SPres=-0.2°C (-0.3°F), SPres-max=-0.6°C (-1.0°F)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": "Parameters will require adjustment during commissioning/tuning phase.",
+        "evidence_quote": "During Occupied Mode and Setup Mode, setpoint shall be reset from Min_ClgSAT when the outdoor air temperature is OAT_Max and above, proportionally up to T-max when the outdoor air temperature is OAT_Min and below.",
+        "page_hint": 113
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "During Occupied Mode and Setup Mode, setpoint shall be reset from Min_ClgSAT when the outdoor air temperature is OAT_Max and above, proportionally up to T-max when the outdoor air temperature is OAT_Min and below.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.2.2",
+      "source_chunk_ids": [
+        "chunk_aa3d616e417f4d2e"
+      ],
+      "chunk_id": "chunk_aa3d616e417f4d2e",
+      "page_no": 113,
+      "source_page_nos": [
+        113
+      ],
+      "evidence_text": "During Occupied Mode and Setup Mode, setpoint shall be reset from Min_ClgSAT when the outdoor air temperature is OAT_Max and above, proportionally up to T-max when the outdoor air temperature is OAT_Min and below.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence with parameters and reset logic from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_f9e054cc096a985f",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_4_1:minimum_outdoor_air_control_with_separate_damper_and_dp_ashrae_62_1",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Minimum Outdoor Air Control with Separate Damper and DP (ASHRAE 62.1)",
+        "section_id": "5.16.4.1",
+        "section_title": "DP Setpoint for ASHRAE Standard 62.1 Ventilation",
+        "equipment_scope": "Multiple-zone VAV AHU with separate minimum OA damper and DP measurement",
+        "summary": "Minimum OA DP setpoint MinDPsp is calculated as DesMinDP * (MinOAsp / DesVot)^2.",
+        "trigger_condition": "System in Occupied Mode, supply fan proven ON, MinDPsp > 0.",
+        "required_behavior": "Calculate MinDPsp = DesMinDP * (MinOAsp / DesVot)^2.",
+        "configurable_values": [
+          "DesMinDP",
+          "DesVot"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "The minimum outdoor air DP setpoint MinDPsp shall be calculated as MinDPsp = DesMinDP [MinOAsp / DesVot]^2",
+        "page_hint": 119
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the project is t o comply with ASHRAE Standard 62.1 ventilation requirements, keep Section 5.16.4.1  and",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.4.1",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_f060a7753ece406d"
+      ],
+      "chunk_id": "chunk_f060a7753ece406d",
+      "page_no": 119,
+      "source_page_nos": [
+        119
+      ],
+      "evidence_text": "If the project is t o comply with ASHRAE Standard 62.1 ventilation requirements, keep Section 5.16.4.1  and",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "The item captures a specific operational control parameter calculation (MinDPsp) from Guideline 36 Section 5.16.4.1, which is a grounded control sequence for minimum outdoor air control with separate damper and differential pressure, referencing ASHRAE 62.1 compliance.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_cace7d75d4ed4501",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_4_3:minimum_outdoor_air_damper_open_close",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Minimum Outdoor Air Damper Open/Close",
+        "section_id": "5.16.4.3",
+        "section_title": "Minimum outdoor air damper",
+        "equipment_scope": "Minimum Outdoor Air Damper (separate)",
+        "summary": "Open minimum OA damper when supply fan proven ON, system in Occupied Mode, and MinDPsp > 0; close otherwise.",
+        "trigger_condition": "Supply fan status, system mode, MinDPsp.",
+        "required_behavior": "Open damper when fan ON, Occupied Mode, MinDPsp > 0; close otherwise.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Open minimum outdoor air damper when the supply air fan is proven ON and the system is in Occupied Mode and MinDPsp is greater than zero. Damper shall be closed otherwise.",
+        "page_hint": 119
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Open minimum outdoor air damper when the supply air fan is proven ON and the system is in Occupied Mode and MinDPsp is greater than zero. Damper shall be closed otherwise.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.4.3",
+      "source_chunk_ids": [
+        "chunk_a2985cfdedf448c5"
+      ],
+      "chunk_id": "chunk_a2985cfdedf448c5",
+      "page_no": 119,
+      "source_page_nos": [
+        119
+      ],
+      "evidence_text": "Open minimum outdoor air damper when the supply air fan is proven ON and the system is in Occupied Mode and MinDPsp is greater than zero. Damper shall be closed otherwise.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Valid control sequence: damper operation based on fan status, occupancy, and setpoint.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_3320bbd2b57df81f",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_4_4:minimum_outdoor_air_control_enable_disable_separate_damper_dp_control_return_fan",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Minimum Outdoor Air Control Enable/Disable (Separate Damper, DP Control, Return Fan)",
+        "section_id": "5.16.4.4",
+        "section_title": "Outdoor Air and Return Air Dampers",
+        "equipment_scope": "Minimum Outdoor Air Control (separate damper, DP, return fan)",
+        "summary": "Enable min OA control when Occupied Mode and (economizer high limit exceeded OR return damper > MRA-P) for 10 min. Disable when not Occupied OR (economizer high limit not exceeded AND (min OA damper closed OR return damper < MRA-P-10%)) for 10 min.",
+        "trigger_condition": "Occupied Mode and conditions.",
+        "required_behavior": "Enable after 10 min of conditions; disable after 10 min of opposite conditions. When enabled, suspend normal sequencing: fully open return damper, wait 15s, close economizer damper, wait 3 min, then modulate MaxRA-P to maintain DP setpoint.",
+        "configurable_values": [
+          "MRA-P scaling: 95% at 100% fan speed to 20% at min speed",
+          "Thresholds adjustable during TAB"
+        ],
+        "fault_condition": null,
+        "commissioning_check": "Thresholds can be determined empirically during TAB work.",
+        "evidence_quote": "Minimum outdoor air control shall be enabled when the unit is in Occupied Mode and either of the following conditions are true for 10 minutes: i. The economizer high limit conditions in Section 5.1.17 are exceeded. ii. When the minimum outdoor air damper is open and the return air damper position is greater than MRA-P.",
+        "page_hint": 120
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Minimum outdoor air control shall be enabled when the unit is in Occupied Mode and either of the following conditions are true for 10 minutes: i. The economizer high limit conditions in Section 5.1.17 are exceeded. ii. When the minimum outdoor air damper is open and the return air damper position is greater than MRA-P.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.4.4",
+      "source_chunk_ids": [
+        "chunk_3a52a1494eb2480f",
+        "chunk_1824f9721735466e"
+      ],
+      "chunk_id": "chunk_3a52a1494eb2480f",
+      "page_no": 120,
+      "source_page_nos": [
+        120,
+        123
+      ],
+      "evidence_text": "Minimum outdoor air control shall be enabled when the unit is in Occupied Mode and either of the following conditions are true for 10 minutes: i. The economizer high limit conditions in Section 5.1.17 are exceeded. ii. When the minimum outdoor air damper is open and the return air damper position is greater than MRA-P.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 2 chunks",
+      "judge_reason": "Captures a specific operational sequence for enabling/disabling minimum outdoor air control with conditions and timers, directly from Guideline 36 control logic.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_3726a6c3943c2a7b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_4_4:minimum_outdoor_air_control_enable_disable_separate_damper_dp_return_fan",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Minimum Outdoor Air Control Enable/Disable (Separate Damper, DP, Return Fan)",
+        "section_id": "5.16.4.4",
+        "section_title": "Outdoor Air and Return Air Dampers",
+        "equipment_scope": "Multiple-zone VAV AHU with separate minimum OA damper, DP measurement, and return fan",
+        "summary": "Minimum OA control enabled when Occupied Mode and (economizer high limit exceeded OR return damper > MRA-P) for 10 min. When enabled, fully open return damper, close economizer damper after 15 sec, then modulate MaxRA-P to maintain MinDPsp. Disabled when not Occupied or (economizer high limit not exceeded AND (min OA damper closed OR return damper < MRA-P - 10%)) for 10 min.",
+        "trigger_condition": "Occupied Mode and (economizer high limit conditions exceeded OR min OA damper open and return damper > MRA-P) for 10 minutes.",
+        "required_behavior": "Enable: fully open return damper, wait 15 sec, close economizer damper, wait 3 min, then modulate MaxRA-P to maintain MinDPsp. Disable: fully open economizer damper, set MaxRA-P=100%, return to SAT loop control.",
+        "configurable_values": [
+          "MRA-P scales from 95% at 100% fan speed to 20% at min speed",
+          "Thresholds (20%, 10%) may be adjusted during TAB"
+        ],
+        "fault_condition": null,
+        "commissioning_check": "Thresholds could be determined empirically during TAB work.",
+        "evidence_quote": "Minimum outdoor air control shall be enabled when the unit is in Occupied Mode and either of the following conditions are true for 10 minutes: i. The economizer high limit conditions in Section 5.1.17 are exceeded. ii. When the minimum outdoor air damper is open and the return air damper position is greater than MRA-P.",
+        "page_hint": 120
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Minimum outdoor air control shall be enabled when the unit is in Occupied Mode and either of the following conditions are true for 10 minutes: i. The economizer high limit conditions in Section 5.1.17 are exceeded. ii. When the minimum outdoor air damper is open and the return air damper position is greater than MRA-P.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.4.4",
+      "source_chunk_ids": [
+        "chunk_3a52a1494eb2480f",
+        "chunk_1824f9721735466e"
+      ],
+      "chunk_id": "chunk_3a52a1494eb2480f",
+      "page_no": 120,
+      "source_page_nos": [
+        120,
+        123
+      ],
+      "evidence_text": "Minimum outdoor air control shall be enabled when the unit is in Occupied Mode and either of the following conditions are true for 10 minutes: i. The economizer high limit conditions in Section 5.1.17 are exceeded. ii. When the minimum outdoor air damper is open and the return air damper position is greater than MRA-P.",
+      "trust_level": "L4",
+      "verification_reason": "cross-source corroboration: 2 chunks",
+      "judge_reason": "Extraction describes a specific control sequence for enabling/disabling minimum OA control with conditions and actions, grounded in ASHRAE Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_bd19bbf20e009f1e",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_8_1:relief_damper_control_without_fan",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Relief Damper Control (without fan)",
+        "section_id": "5.16.8.1",
+        "section_title": "Relief dampers",
+        "equipment_scope": "Actuated Relief Dampers (no fan)",
+        "summary": "Enable relief dampers when supply fan proven ON; modulate with P-only loop to maintain 12 Pa building static pressure.",
+        "trigger_condition": "Supply fan status.",
+        "required_behavior": "Enable dampers when fan ON; modulate to maintain 12 Pa (0.05 in. w.g.) building static pressure; close when disabled.",
+        "configurable_values": [
+          "Setpoint: 12 Pa (0.05 in. w.g.)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Relief dampers shall be enabled when the associated supply fan is proven ON, and disabled otherwise. When enabled, use a P-only control loop to modulate relief dampers to maintain 12 Pa (0.05 in. of water) building static pressure.",
+        "page_hint": 128
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "5.16.8.1. Relief dampers  shall be enabled when the associated supply fan is proven ON, and disabled",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.8.1",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_5652701054a0419b"
+      ],
+      "chunk_id": "chunk_5652701054a0419b",
+      "page_no": 128,
+      "source_page_nos": [
+        128
+      ],
+      "evidence_text": "5.16.8.1. Relief dampers  shall be enabled when the associated supply fan is proven ON, and disabled",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "The item describes a specific control sequence for relief dampers, including enabling logic and a P-only control loop with a 12 Pa setpoint, which is operational knowledge from ASHRAE Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_90100965a1f1e15b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_10_5:return_fan_control_direct_building_pressure",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Return Fan Control - Direct Building Pressure",
+        "section_id": "5.16.10.5",
+        "section_title": "Return-fan control - direct building pressure",
+        "equipment_scope": "Return Fan (direct building pressure)",
+        "summary": "P-only loop maintains building pressure at 12 Pa. Output 0-50% modulates exhaust dampers 0-100%; 51-100% resets return fan discharge static pressure setpoint from RFDSPmin to RFDSPmax.",
+        "trigger_condition": "Supply and return fans ON and min OA damper open.",
+        "required_behavior": "Enable loop when fans ON and min OA damper open; modulate exhaust dampers and reset RF DP setpoint per mapping.",
+        "configurable_values": [
+          "Setpoint: 12 Pa (0.05 in. w.g.)",
+          "RFDSPmin",
+          "RFDSPmax"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "A single P-only control loop for each pressure zone shall modulate to maintain the building pressure at a setpoint of 12 Pa (0.05 in. of water) with an output ranging from 0% to 100%.",
+        "page_hint": 130
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "A single P-only control loop for each pressure zone shall modulate to maintain the building pressure at a setpoint of 12 Pa (0.05 in. of water) with an output ranging from 0% to 100%.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.10.5",
+      "source_chunk_ids": [
+        "chunk_3e5dda71f5844f1e"
+      ],
+      "chunk_id": "chunk_3e5dda71f5844f1e",
+      "page_no": 130,
+      "source_page_nos": [
+        130
+      ],
+      "evidence_text": "A single P-only control loop for each pressure zone shall modulate to maintain the building pressure at a setpoint of 12 Pa (0.05 in. of water) with an output ranging from 0% to 100%.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence with configurable parameters.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_1eb87d529c3ed4a2",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_12_1:freeze_protection_stage_1",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Freeze Protection Stage 1",
+        "section_id": "5.16.12.1",
+        "section_title": "Freeze Protection",
+        "equipment_scope": "AHU",
+        "summary": "If SAT < 4.4°C (40°F) for 5 min, send HHW plant requests, override OA damper to minimum, modulate heating coil to maintain SAT ≥ 6°C (42°F). Disable when SAT > 7°C (45°F) for 5 min.",
+        "trigger_condition": "SAT < 4.4°C (40°F) for 5 minutes.",
+        "required_behavior": "Send HHW requests, close economizer, modulate heating coil to maintain SAT ≥ 6°C (42°F).",
+        "configurable_values": [
+          "Threshold: 4.4°C (40°F)",
+          "Duration: 5 minutes",
+          "Target SAT: 6°C (42°F)",
+          "Reset: 7°C (45°F) for 5 min"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "If the supply air temperature drops below 4.4°C (40°F) for 5 minutes, send two (or more, as required to ensure that heating plant is active) heating hot-water plant requests, override the outdoor air damper to the minimum position, and modulate the heating coil to maintain a supply air temperature of at least 6°C (42°F).",
+        "page_hint": 133
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the supply air temperature drops below 4.4°C (40°F) for 5 minutes, send two (or more, as required to ensure that heating plant is active) heating hot-water plant requests, override the outdoor air damper to the minimum position, and modulate the heating coil to maintain a supply air temperature of at least 6°C (42°F).",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.12.1",
+      "source_chunk_ids": [
+        "chunk_62aa42cb2f364fbf"
+      ],
+      "chunk_id": "chunk_62aa42cb2f364fbf",
+      "page_no": 133,
+      "source_page_nos": [
+        133
+      ],
+      "evidence_text": "If the supply air temperature drops below 4.4°C (40°F) for 5 minutes, send two (or more, as required to ensure that heating plant is active) heating hot-water plant requests, override the outdoor air damper to the minimum position, and modulate the heating coil to maintain a supply air temperature of at least 6°C (42°F).",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence for freeze protection as specified in Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_977d887831ec38ce",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_12_2:freeze_protection_stage_2",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Freeze Protection Stage 2",
+        "section_id": "5.16.12.2",
+        "section_title": "Freeze Protection",
+        "equipment_scope": "AHU",
+        "summary": "If SAT < 3.3°C (38°F) for 5 min, fully close both economizer and min OA dampers for 1 hour, set Level 3 alarm. After 1 hour, resume Stage 1.",
+        "trigger_condition": "SAT < 3.3°C (38°F) for 5 minutes.",
+        "required_behavior": "Close all OA dampers for 1 hour, set alarm, then resume Stage 1.",
+        "configurable_values": [
+          "Threshold: 3.3°C (38°F)",
+          "Duration: 5 minutes",
+          "Lockout timer: 1 hour"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "If the supply air temperature drops below 3.3°C (38°F) for 5 minutes, fully close both the economizer damper and the minimum outdoor air damper for 1 hour and set a Level 3 alarm noting that minimum ventilation was interrupted.",
+        "page_hint": 133
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "If the supply air temperature drops below 3.3°C (38°F) for 5 minutes, fully close both the economizer damper and the minimum outdoor air damper for 1 hour and set a Level 3 alarm noting that minimum ventilation was interrupted.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.12.2",
+      "source_chunk_ids": [
+        "chunk_62aa42cb2f364fbf"
+      ],
+      "chunk_id": "chunk_62aa42cb2f364fbf",
+      "page_no": 133,
+      "source_page_nos": [
+        133
+      ],
+      "evidence_text": "If the supply air temperature drops below 3.3°C (38°F) for 5 minutes, fully close both the economizer damper and the minimum outdoor air damper for 1 hour and set a Level 3 alarm noting that minimum ventilation was interrupted.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "The item captures a real control sequence with specific parameters and alarm from Guideline 36 section 5.16.12.2.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_b9c50a125c6a3b74",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_16_12_3:freeze_protection_stage_3",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Freeze Protection Stage 3",
+        "section_id": "5.16.12.3",
+        "section_title": "Freeze Protection",
+        "equipment_scope": "AHU",
+        "summary": "If freeze-stat or SAT < 3.3°C (38°F) for 15 min or SAT < 1°C (34°F) for 5 min, shut down fans, close OA damper, open cooling coil valve 100%, energize CHW pump, send HHW requests, modulate heating coil to maintain 27°C (80°F), set Level 2 alarm. Requires manual reset.",
+        "trigger_condition": "Freeze-stat or SAT < 3.3°C (38°F) for 15 min or SAT < 1°C (34°F) for 5 min.",
+        "required_behavior": "Shutdown fans, close OA, open cooling valve, energize CHW pump, modulate heating to 27°C (80°F), set Level 2 alarm, manual reset.",
+        "configurable_values": [
+          "Thresholds: 3.3°C (38°F) for 15 min, 1°C (34°F) for 5 min",
+          "Target temperature: 27°C (80°F)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Upon signal from the freeze-stat (if installed), or if supply air temperature drops below 3.3°C (38°F) for 15 minutes or below 1°C (34°F) for 5 minutes, shut down supply and return/relief fan(s), close outdoor air damper, open the cooling-coil valve to 100%, and energize the CHW pump system.",
+        "page_hint": 133
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Upon signal from the freeze-stat (if installed), or if supply air temperature drops below 3.3°C (38°F) for 15 minutes or below 1°C (34°F) for 5 minutes, shut down supply and return/relief fan(s), close outdoor air damper, open the cooling-coil valve to 100%, and energize the CHW pump system.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.12.3",
+      "source_chunk_ids": [
+        "chunk_2375e82860354a37"
+      ],
+      "chunk_id": "chunk_2375e82860354a37",
+      "page_no": 133,
+      "source_page_nos": [
+        133
+      ],
+      "evidence_text": "Upon signal from the freeze-stat (if installed), or if supply air temperature drops below 3.3°C (38°F) for 15 minutes or below 1°C (34°F) for 5 minutes, shut down supply and return/relief fan(s), close outdoor air damper, open the cooling-coil valve to 100%, and energize the CHW pump system.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real control sequence from Guideline 36",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_63d54ddf788b7de4",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_16_14_2:afdd_operating_state_definition_return_fan",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "AFDD Operating State Definition (Return Fan)",
+        "section_id": "5.16.14.2",
+        "section_title": "AFDD Operating States",
+        "equipment_scope": "AHU with return fan",
+        "summary": "Operating State defined by heating valve, cooling valve, and return air damper positions per Table 5.16.14.2.",
+        "trigger_condition": "Continuous evaluation.",
+        "required_behavior": "Determine OS per table: #1 Heating (HC>0, CC=0, RA=MaxRA-P), #2 Free cooling (HC=0, CC=0, RA between 0 and MaxRA-P), #3 Mech+econ (HC=0, CC>0, RA=0), #4 Mech cooling min OA (HC=0, CC>0, RA=MaxRA-P), #5 Other.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "The OS of each Ahu shall be defined by the commanded positions of the heating coil control valve, cooling coil control valve and the return air damper in accordance with Table 5.16.14.2.",
+        "page_hint": 135
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "The OS of each Ahu shall be defined by the commanded positions of the heating coil control valve, cooling coil control valve and the return air damper in accordance with Table 5.16.14.2.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.14.2",
+      "source_chunk_ids": [
+        "chunk_b2d89816895f4a85"
+      ],
+      "chunk_id": "chunk_b2d89816895f4a85",
+      "page_no": 135,
+      "source_page_nos": [
+        135
+      ],
+      "evidence_text": "The OS of each Ahu shall be defined by the commanded positions of the heating coil control valve, cooling coil control valve and the return air damper in accordance with Table 5.16.14.2.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Defines an operating state based on valve and damper positions for AFDD, a fault diagnostic rule from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_dc99b53deb413a5f",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_condition_fc_6_oa_fraction_error",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "AFDD Fault Condition FC#6: OA Fraction Error",
+        "section_id": "5.16.14.8",
+        "section_title": "Fault Conditions",
+        "equipment_scope": "AHU",
+        "summary": "If |RAT avg - OAT avg| ≥ ΔTMIN and |%OA - %OAmin| > ƐF, then OA fraction is too low or too high. Applies to OS #1 and #4.",
+        "trigger_condition": "OS #1 or #4.",
+        "required_behavior": "Evaluate equation; if true, report fault with possible diagnoses.",
+        "configurable_values": [
+          "ΔTMIN: 6°C (10°F)",
+          "ƐF: 30%"
+        ],
+        "fault_condition": "| RAT AVG - OAT AVG | ≥ ΔTMIN and | %OA - %OA MIN | > ƐF",
+        "commissioning_check": null,
+        "evidence_quote": "FC#6 Equation: | RAT AVG - OAT AVG | ≥ ΔTMIN and | %OA - %OA MIN | > ƐF. Applies to OS #1, #4. Description: OA fraction is too low or too high; should equal %OA MIN.",
+        "page_hint": 141
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "nevertheless occur if so determined by the fault condition tests in Section 5.16.14.8 .",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.14.8",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_afc7a0b09d1145b3"
+      ],
+      "chunk_id": "chunk_afc7a0b09d1145b3",
+      "page_no": 137,
+      "source_page_nos": [
+        137
+      ],
+      "evidence_text": "nevertheless occur if so determined by the fault condition tests in Section 5.16.14.8 .",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a specific fault diagnostic rule with thresholds and conditions from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_a837221cc63c3c41",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_condition_fc_7_sat_too_low_in_full_heating",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "AFDD Fault Condition FC#7: SAT Too Low in Full Heating",
+        "section_id": "5.16.14.8",
+        "section_title": "Fault Conditions",
+        "equipment_scope": "AHU with heating coil",
+        "summary": "If SAT avg < SATSP - ƐSAT AND heating valve ≥ 99%, then SAT too low in full heating. Applies to OS #1.",
+        "trigger_condition": "OS #1.",
+        "required_behavior": "Evaluate equation; if true, report fault with possible diagnoses.",
+        "configurable_values": [
+          "ƐSAT: 1°C (2°F)"
+        ],
+        "fault_condition": "SAT AVG < SATSP - ƐSAT and HC ≥ 99%",
+        "commissioning_check": null,
+        "evidence_quote": "FC#7 Equation: SAT AVG < SATSP - ƐSAT and HC ≥ 99%. Applies to OS #1. Description: SAT too low in full heating.",
+        "page_hint": 141
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "nevertheless occur if so determined by the fault condition tests in Section 5.16.14.8 .",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.14.8",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_afc7a0b09d1145b3"
+      ],
+      "chunk_id": "chunk_afc7a0b09d1145b3",
+      "page_no": 137,
+      "source_page_nos": [
+        137
+      ],
+      "evidence_text": "nevertheless occur if so determined by the fault condition tests in Section 5.16.14.8 .",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Directly from AFDD fault condition section, captures operational rule.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_853bf3807d135ef1",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_condition_fc_1_duct_static_pressure_too_low",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "AFDD Fault Condition FC#1: Duct Static Pressure Too Low",
+        "section_id": "5.16.14.8",
+        "section_title": "Fault Conditions",
+        "equipment_scope": "AHU",
+        "summary": "DSP avg < DSPSP - ƐDSP AND VFD speed ≥ 99% - ƐVFDSPD. Possible causes: VFD problem, mechanical fan problem, fan undersized, SAT setpoint too high.",
+        "trigger_condition": "Applies to all OS #1-#5.",
+        "required_behavior": "Evaluate equation; if true, report fault with possible diagnoses.",
+        "configurable_values": [
+          "ƐDSP: 25 Pa (0.1 in. w.g.)",
+          "ƐVFDSPD: 5%"
+        ],
+        "fault_condition": "DSP AVG < DSPSP - ƐDSP and VFDSPD ≥ 99% - ƐVFDSPD",
+        "commissioning_check": null,
+        "evidence_quote": "FC#1 Equation: DSP AVG < DSPSP - ƐDSP and VFDSPD ≥ 99% - ƐVFDSPD. Applies to OS #1 – #5. Description: Duct static pressure is too low with fan at full speed.",
+        "page_hint": 140
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "FC#1 Equation: DSP AVG < DSPSP - ƐDSP and VFDSPD ≥ 99% - ƐVFDSPD. Applies to OS #1 – #5. Description: Duct static pressure is too low with fan at full speed.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.14.8",
+      "source_chunk_ids": [
+        "chunk_0f63fbf282954e21"
+      ],
+      "chunk_id": "chunk_0f63fbf282954e21",
+      "page_no": 140,
+      "source_page_nos": [
+        140
+      ],
+      "evidence_text": "FC#1 Equation: DSP AVG < DSPSP - ƐDSP and VFDSPD ≥ 99% - ƐVFDSPD. Applies to OS #1 – #5. Description: Duct static pressure is too low with fan at full speed.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a specific fault diagnostic rule from Guideline 36 operational sequence.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_525e02a05013825b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "canonical_key_candidate": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_conditions_for_vav_ahu",
+      "structured_payload_candidate": {
+        "knowledge_type": "fault_diagnostic_rule",
+        "title": "AFDD Fault Conditions for VAV AHU",
+        "section_id": "5.16.14.8",
+        "section_title": "VAV AHU Fault Conditions",
+        "equipment_scope": "Multiple-zone VAV air-handling unit with hydronic coils and economizer",
+        "summary": "Table 5.16.14.8 defines 15 fault conditions (FC#1 to FC#15) with equations, applicable operating states, descriptions, and possible diagnoses. Faults include low duct static pressure, MAT out of range, SAT too low in heating, OA fraction error, etc.",
+        "trigger_condition": "Continuous evaluation; fault condition equation is TRUE for AlarmDelay minutes.",
+        "required_behavior": "Evaluate applicable fault conditions per OS. Report Level 3 alarm with description and possible diagnoses if condition persists for AlarmDelay minutes.",
+        "configurable_values": [
+          "AlarmDelay: 30 minutes (default)",
+          "ModeDelay: 30 minutes",
+          "Various thresholds (ƐSAT, ƐRAT, etc.)"
+        ],
+        "fault_condition": "Multiple fault conditions as per Table 5.16.14.8",
+        "commissioning_check": "Test mode sets ModeDelay and AlarmDelay to 0 for TestModeDelay (120 min) to allow instant testing.",
+        "evidence_quote": "Table 5.16.14.8 shows potential fault conditions that can be evaluated by the AFDD routines. If the equation statement is TRUE, then the specified fault condition exists.",
+        "page_hint": 140
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Table 5.16.14.8 shows potential fault conditions that can be evaluated by the AFDD routines. If the equation statement is TRUE, then the specified fault condition exists.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.14.8",
+      "source_chunk_ids": [
+        "chunk_fc2a2ceb42be4d49"
+      ],
+      "chunk_id": "chunk_fc2a2ceb42be4d49",
+      "page_no": 140,
+      "source_page_nos": [
+        140
+      ],
+      "evidence_text": "Table 5.16.14.8 shows potential fault conditions that can be evaluated by the AFDD routines. If the equation statement is TRUE, then the specified fault condition exists.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a real fault diagnostic rule set with equations, states, and diagnoses from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    },
+    {
+      "candidate_id": "cand_a1e0f7b5b2936218",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "commissioning_procedure",
+      "canonical_key_candidate": "ashrae:g36:commissioning_procedure:5_16_15:testing_commissioning_overrides",
+      "structured_payload_candidate": {
+        "knowledge_type": "commissioning_procedure",
+        "title": "Testing/Commissioning Overrides",
+        "section_id": "5.16.15",
+        "section_title": "Testing/Commissioning Overrides",
+        "equipment_scope": "Multiple-zone VAV air-handling unit",
+        "summary": "Provide software switches to force HW valve full open/closed, CHW valve full open/closed, interlocked to plant level.",
+        "trigger_condition": "During commissioning/testing.",
+        "required_behavior": "Provide software switches that interlock to CHW and HW plant level to force valves open/closed.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": "CxA can check for leaking dampers by forcing all VAV boxes closed and recording airflow at AHU.",
+        "evidence_quote": "Provide software switches that interlock to a CHW and hot-water plant level to a. force HW valve full open if there is a hot-water coil, b. force HW valve full closed if there is a hot-water coil, c. force CHW valve full open, and d. force CHW valve full closed.",
+        "page_hint": 145
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "Provide software switches that interlock to a CHW and hot-water plant level to a. force HW valve full open if there is a hot-water coil, b. force HW valve full closed if there is a hot-water coil, c. force CHW valve full open, and d. force CHW valve full closed.",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.16.15",
+      "source_chunk_ids": [
+        "chunk_18450018710d4df1"
+      ],
+      "chunk_id": "chunk_18450018710d4df1",
+      "page_no": 145,
+      "source_page_nos": [
+        145
+      ],
+      "evidence_text": "Provide software switches that interlock to a CHW and hot-water plant level to a. force HW valve full open if there is a hot-water coil, b. force HW valve full closed if there is a hot-water coil, c. force CHW valve full open, and d. force CHW valve full closed.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures a commissioning override procedure as part of testing/commissioning checks from Guideline 36.",
+      "judge_verdict": "accepted",
+      "equipment_class_candidate": {
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "label": "Air Handling Unit",
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "source_run_dir": "output/ashrae_guideline36_vertical/20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36",
+    "source_report_path": "output/ashrae_guideline36_vertical/20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md",
+    "standard": "ashrae-g36",
+    "standard_id": "ASHRAE Guideline 36-2021",
+    "doc_id": "doc_4bbd3703c4f84be4",
+    "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+    "sections": [
+      "5.4",
+      "5.5",
+      "5.6",
+      "5.15",
+      "5.16"
+    ],
+    "total_candidates": 42,
+    "judge_accepted": 42,
+    "judge_rejected": 2,
+    "l4_final": 12,
+    "l3_final": 30
+  }
+}

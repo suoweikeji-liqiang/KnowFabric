@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from pypdf import PdfReader
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -61,6 +61,13 @@ class Guideline36Candidate(BaseModel):
     evidence_quote: str
     page_hint: int | None = None
     confidence: float = Field(ge=0.0, le=1.0)
+
+    @field_validator("configurable_values", mode="before")
+    @classmethod
+    def _coerce_configurable_values(cls, value):
+        if value is None:
+            return []
+        return value
 
 
 class Guideline36ExtractionResponse(BaseModel):
@@ -265,7 +272,7 @@ def extract_section(
         f"tokens~{estimate_tokens(unit.text)}",
         flush=True,
     )
-    response = _request_json_completion(
+    response = request_json_completion_with_retry(
         build_extract_messages(unit),
         backend,
         response_format={"type": "json_object"},
@@ -274,6 +281,31 @@ def extract_section(
     parsed = Guideline36ExtractionResponse.model_validate(response)
     print(f"section {unit.requested_section} returned {len(parsed.candidates)} candidates", flush=True)
     return parsed.candidates[:max_candidates]
+
+
+def request_json_completion_with_retry(
+    messages: list[dict[str, str]],
+    backend: OpenAICompatibleBackend,
+    *,
+    response_format: dict[str, Any],
+    recorder,
+    attempts: int = 3,
+) -> dict[str, Any]:
+    last_error: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return _request_json_completion(
+                messages,
+                backend,
+                response_format=response_format,
+                recorder=recorder,
+            )
+        except RuntimeError as exc:
+            last_error = exc
+            if "empty content" not in str(exc).lower() or attempt == attempts:
+                raise
+            print(f"LLM returned empty content; retrying {attempt + 1}/{attempts}", flush=True)
+    raise RuntimeError(f"LLM request failed after {attempts} attempts: {last_error}")
 
 
 def redact_raw_request(payload: dict[str, Any]) -> dict[str, Any]:
@@ -444,7 +476,7 @@ def judge_candidates(candidates: list[dict[str, Any]], backend: OpenAICompatible
     accepted, rejected, raw = [], [], []
     for index, candidate in enumerate(candidates, start=1):
         print(f"judging {index}/{len(candidates)} {candidate['canonical_key_candidate']}", flush=True)
-        result = _request_json_completion(
+        result = request_json_completion_with_retry(
             build_judge_messages(candidate),
             backend,
             response_format={"type": "json_object"},

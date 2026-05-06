@@ -1,0 +1,36 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-06T13:07:17.023147+00:00",
+  "pack_dir": "workspace/review_round_ashrae_g36_ahu_vav_model_review/review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 1,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_4bbd3703c4f84be4__ahu.json",
+      "pack_path": "workspace/review_round_ashrae_g36_ahu_vav_model_review/review_packs/hvac__doc_4bbd3703c4f84be4__ahu.json",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "equipment_class_id": "ahu",
+      "equipment_class_key": "hvac:ahu",
+      "candidate_count": 42,
+      "accepted_count": 38,
+      "rejected_count": 4,
+      "pending_count": 0,
+      "status": "ready",
+      "blocker": null,
+      "ready_manual_entries": 38,
+      "fixture_equipment_class_key": "hvac:ahu"
+    }
+  ]
+}

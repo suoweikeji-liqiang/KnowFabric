@@ -12,6 +12,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from scripts.apply_review_packs_batch import discover_review_pack_paths
 from scripts.build_review_packs_from_candidates import write_review_packs_from_candidate_file
 from scripts.run_standard_review_backfill import run_standard_review_backfill
 
@@ -112,9 +113,17 @@ def _infer_equipment_class_candidate(entry: dict[str, Any], *, standard: str) ->
         raise ValueError(f"Cannot infer equipment class for standard: {standard}")
     payload = entry.get("structured_payload_candidate", {})
     section_id = str(payload.get("section_id") or entry.get("source_section_id") or "")
+    if _section_starts_with(section_id, ("5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10", "5.11", "5.12", "5.13", "5.14", "5.15", "5.16", "5.17", "5.18")):
+        return _equipment_ref("ahu", "Air Handling Unit")
+    if section_id.startswith("5.20"):
+        return _equipment_ref("chiller", "Chiller")
     if section_id.startswith("5.21"):
         return _equipment_ref("hot_water_plant", "Hot Water Plant")
     return _equipment_ref("chiller", "Chiller")
+
+
+def _section_starts_with(section_id: str, prefixes: tuple[str, ...]) -> bool:
+    return any(section_id == prefix or section_id.startswith(f"{prefix}.") for prefix in prefixes)
 
 
 def _equipment_ref(equipment_class_id: str, label: str) -> dict[str, Any]:
@@ -222,22 +231,32 @@ def _build_pipeline_summary(
     pack_manifest: dict[str, Any] | None,
     backfill_summary: dict[str, Any] | None,
 ) -> dict[str, Any]:
+    metadata = candidate_payload.get("metadata", {}) if candidate_payload else {}
+    source_run_dir = str(run_dir) if run_dir else metadata.get("source_run_dir")
     return {
         "pipeline_mode": "official_standard_import_pipeline",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "standard": args.standard,
         "workspace_dir": str(Path(args.workspace_dir)),
-        "source_run_dir": str(run_dir) if run_dir else None,
+        "source_run_dir": source_run_dir,
         "candidate_path": candidate_payload.get("candidate_path") if candidate_payload else None,
         "review_pack_dir": str(review_pack_dir),
         "review_pack_manifest_path": pack_manifest.get("manifest_path") if pack_manifest else None,
         "candidate_count": _candidate_count(candidate_payload),
-        "review_pack_count": pack_manifest.get("total_packs") if pack_manifest else None,
+        "review_pack_count": _review_pack_count(pack_manifest, review_pack_dir),
         "readiness_summary": backfill_summary.get("readiness_summary") if backfill_summary else None,
         "apply_summary": backfill_summary.get("apply_summary") if backfill_summary else None,
         "api_smoke_summary": backfill_summary.get("api_smoke_summary") if backfill_summary else None,
         "next_action": _next_action(backfill_summary, pack_manifest),
     }
+
+
+def _review_pack_count(pack_manifest: dict[str, Any] | None, review_pack_dir: Path) -> int | None:
+    if pack_manifest:
+        return pack_manifest.get("total_packs")
+    if review_pack_dir.exists():
+        return len(discover_review_pack_paths(review_pack_dir))
+    return None
 
 
 def _candidate_count(candidate_payload: dict[str, Any] | None) -> int | None:
