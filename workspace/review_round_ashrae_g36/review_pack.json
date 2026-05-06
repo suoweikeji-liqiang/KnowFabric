@@ -1,0 +1,977 @@
+{
+  "review_mode": "ashrae_guideline36_standard_review_pack",
+  "generated_at": "2026-05-06T10:23:53.459941+00:00",
+  "source_run_id": "20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36",
+  "source_report": "output/ashrae_guideline36_vertical/20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md",
+  "source_candidates": "output/ashrae_guideline36_vertical/20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/candidates_llm_verified.jsonl",
+  "standard_id": "ASHRAE Guideline 36-2021",
+  "doc_id": "doc_4bbd3703c4f84be4",
+  "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+  "sections": [
+    "5.1.14",
+    "5.20",
+    "5.21"
+  ],
+  "candidate_count": 22,
+  "counts": {
+    "verified": 22,
+    "by_type": {
+      "application_guidance": 1,
+      "operational_sequence": 15,
+      "commissioning_procedure": 1,
+      "fault_diagnostic_rule": 4,
+      "parameter_spec": 1
+    },
+    "l4": 3,
+    "l3": 19,
+    "anchor_rejected": 5,
+    "judge_rejected": 2
+  },
+  "workflow": [
+    "Set review_decision to accepted or rejected for each candidate.",
+    "For accepted entries, edit curation fields only if the title/summary/type needs correction.",
+    "Keep standard_id, section_id, evidence_citation, source_page_nos, and source_chunk_ids traceability intact.",
+    "Rejected entries should include review_notes explaining category error, weak evidence, duplicate, or low operational value."
+  ],
+  "candidate_entries": [
+    {
+      "review_index": 1,
+      "candidate_id": "cand_8a834124de3be1c8",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "T&R Logic Application for VAV Static Pressure Control",
+        "summary": "Example sequence: Td=5 min, T=2 min, I=2, SPtrim=-10 Pa, SPres=15 Pa, SPres-max=37 Pa. Setpoint trims down when requests ≤ 2, responds up when requests > 2, capped at 37 Pa per step.",
+        "canonical_key": "ashrae:g36:application_guidance:5_1_14_4:t_r_logic_application_for_vav_static_pressure_control",
+        "knowledge_object_type": "application_guidance",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.1.14.4",
+        "section_title": "Trim & Respond logic example",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.14.4",
+        "equipment_scope": "VAV air handler with multiple downstream zones",
+        "trigger_condition": "Fan status ON, after 5 min delay.",
+        "required_behavior": "Every 2 min: if R≤2, decrease setpoint by 10 Pa; if R>2, increase setpoint by (R-2)*15 Pa but max 37 Pa.",
+        "configurable_values": [
+          "SP0 = 120 Pa",
+          "SPmin = 37 Pa",
+          "SPmax = 370 Pa",
+          "Td = 5 min",
+          "T = 2 min",
+          "I = 2",
+          "SPtrim = -10 Pa",
+          "SPres = 15 Pa",
+          "SPres-max = 37 Pa"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          46
+        ],
+        "source_chunk_ids": [
+          "chunk_e8a29606891f4f88"
+        ],
+        "evidence_quote": "See Section 5.1.14.4  for an example of T&R implementation.",
+        "judge_reason": "Directly captures a control sequence example with configurable parameters from Section 5.1.14.4 of Guideline 36."
+      }
+    },
+    {
+      "review_index": 2,
+      "candidate_id": "cand_ee95bd68f08f2f7c",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Trim & Respond Set-Point Reset Logic",
+        "summary": "T&R logic resets a setpoint at a fixed rate until a downstream zone is no longer satisfied and generates a request. When sufficient requests are present, the setpoint is increased. When requests subside, the setpoint resumes decreasing.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_1_14:trim_respond_set_point_reset_logic",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.1.14",
+        "section_title": "Trim & Respond Set-Point Reset Logic",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.14",
+        "equipment_scope": "Air handler or plant controlling pressure, temperature, or other variables",
+        "trigger_condition": "Associated device is proven ON, starting Td after initial device start command.",
+        "required_behavior": "Every time step T, if R ≤ I, trim setpoint by SPtrim. If R > I, respond by changing setpoint by (R – I)*SPres but no larger than SPres-max.",
+        "configurable_values": [
+          "SP0 (initial setpoint)",
+          "SPmin (minimum setpoint)",
+          "SPmax (maximum setpoint)",
+          "Td (delay timer)",
+          "T (time step)",
+          "I (number of ignored requests)",
+          "SPtrim (trim amount)",
+          "SPres (respond amount, opposite sign to SPtrim)",
+          "SPres-max (maximum response per time interval)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          46
+        ],
+        "source_chunk_ids": [
+          "chunk_7b69e124edc0428f"
+        ],
+        "evidence_quote": "5.1.14.  Trim & Respond Set -Point Reset Logic",
+        "judge_reason": "The item describes a real control sequence (Trim & Respond logic) from section 5.1.14, which is operational knowledge per Guideline 36."
+      }
+    },
+    {
+      "review_index": 3,
+      "candidate_id": "cand_6c886a450b11837a",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Request-Hours Accumulator Reset",
+        "summary": "Request-Hours Accumulator and System Run-Hours Total are reset to zero automatically when System Run-Hours Total exceeds 400 hours, or manually by a global operator command.",
+        "canonical_key": "ashrae:g36:commissioning_procedure:5_1_14_2:request_hours_accumulator_reset",
+        "knowledge_object_type": "commissioning_procedure",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.1.14.2",
+        "section_title": "T&R set-point reset logic and zone/system reset requests",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.14.2",
+        "equipment_scope": "Downstream zones or systems",
+        "trigger_condition": "System Run-Hours Total exceeds 400 hours, or manual command.",
+        "required_behavior": "Reset Request-Hours Accumulator and System Run-Hours Total to zero.",
+        "configurable_values": [
+          "Automatic reset threshold (400 hours)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          47
+        ],
+        "source_chunk_ids": [
+          "chunk_1d95911a2cdd4cf3"
+        ],
+        "evidence_quote": "The Request-Hours Accumulator and System Run-Hours Total are reset to zero as follows: i. Reset automatically for an individual zone/system when the System Run-Hours Total exceeds 400 hours. ii. Reset manually by a global operator command.",
+        "judge_reason": "Captures a specific, operational commissioning procedure regarding automatic and manual reset of request-hour accumulators based on system run-hours, which is a configurable control parameter from the guideline."
+      }
+    },
+    {
+      "review_index": 4,
+      "candidate_id": "cand_93d5cfa5ef144400",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Rogue Zone Detection via Cumulative% Request-Hours",
+        "summary": "A Level 4 alarm is generated if zone Importance-Multiplier > 0, Cumulative% Request-Hours > 70%, and total zone/system run hours > 40.",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_1_14_2:rogue_zone_detection_via_cumulative_request_hours",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.1.14.2",
+        "section_title": "T&R set-point reset logic and zone/system reset requests",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.14.2",
+        "equipment_scope": "Downstream zones or systems generating requests",
+        "trigger_condition": "Importance-Multiplier > 0, Cumulative% Request-Hours > 70%, and total run hours > 40.",
+        "required_behavior": "Generate a Level 4 alarm.",
+        "configurable_values": [
+          "Importance-Multiplier (default = 1)",
+          "Cumulative% Request-Hours threshold (70%)",
+          "Run hours threshold (40 hours)"
+        ],
+        "fault_condition": "Rogue zone driving reset logic",
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          47
+        ],
+        "source_chunk_ids": [
+          "chunk_1d95911a2cdd4cf3"
+        ],
+        "evidence_quote": "A Level 4 alarm is generated if the zone Importance-Multiplier is greater than zero, the zone/system Cumulative% Request Hours exceeds 70%, and the total number of zone/system run hours exceeds 40.",
+        "judge_reason": "The item captures a real fault diagnostic rule from ASHRAE Guideline 36, specifying clear operational conditions for generating a Level 4 alarm, which is grounded in the provided evidence."
+      }
+    },
+    {
+      "review_index": 5,
+      "candidate_id": "cand_c184b632398901df",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "T&R Variables and Defaults",
+        "summary": "Define variables: Device, SP0, SPmin, SPmax, Td, T, I, SPtrim, SPres, SPres-max. Initial values defined in system/plant sequences. Values for trim, respond, time step, etc. shall be tuned to provide stable control.",
+        "canonical_key": "ashrae:g36:parameter_spec:5_1_14_3:t_r_variables_and_defaults",
+        "knowledge_object_type": "parameter_spec",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.1.14.3",
+        "section_title": "Trim & Respond Variables",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.14.3",
+        "equipment_scope": "Upstream system or plant setpoint controlled by T&R loop",
+        "trigger_condition": null,
+        "required_behavior": null,
+        "configurable_values": [
+          "Device (associated device e.g., fan, pump)",
+          "SP0 (initial setpoint)",
+          "SPmin (minimum setpoint)",
+          "SPmax (maximum setpoint)",
+          "Td (delay timer)",
+          "T (time step)",
+          "I (number of ignored requests)",
+          "SPtrim (trim amount)",
+          "SPres (respond amount, must be opposite in sign to SPtrim)",
+          "SPres-max (maximum response per time interval, same sign as SPres)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          47
+        ],
+        "source_chunk_ids": [
+          "chunk_507583e7952144cd"
+        ],
+        "evidence_quote": "For each upstream system or plant setpoint being controlled by a T&R loop, define the following variables. Initial values are defined in system/plant sequences below. Values for trim, respond, time step, etc. shall be tuned to provide stable control. See Table 5.1.14.3.",
+        "judge_reason": "Captures configurable control parameters for T&R loops with tuning guidance, grounded in operational control sequences from Guideline 36."
+      }
+    },
+    {
+      "review_index": 6,
+      "candidate_id": "cand_862d844a3b1d3c49",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Plant Enable Logic",
+        "summary": "Enable plant when disabled for ≥15 min, number of Chiller Plant Requests > I (default 0), OAT > CH-LOT, and schedule active.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_2_2:plant_enable_logic",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.2.2",
+        "section_title": "Plant Enable/Disable",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.2.2",
+        "equipment_scope": "Chiller plant",
+        "trigger_condition": "Plant disabled for ≥15 min AND Number of Chiller Plant Requests > I (default 0) AND OAT > CH-LOT AND schedule active.",
+        "required_behavior": "Enable plant in lowest stage.",
+        "configurable_values": [
+          "I (default 0)",
+          "CH-LOT"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          172
+        ],
+        "source_chunk_ids": [
+          "chunk_2543aaa4b3c34732"
+        ],
+        "evidence_quote": "5.20.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:",
+        "judge_reason": "Captures real plant enable control sequence with specific conditions from Guideline 36 section 5.20.2.2."
+      }
+    },
+    {
+      "review_index": 7,
+      "candidate_id": "cand_ea7bfef5946364fd",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Plant Disable Logic",
+        "summary": "Disable plant when enabled for ≥15 min and either requests ≤ I for 3 min, OAT < CH-LOT – 1°F, or schedule inactive.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_2_3:plant_disable_logic",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.2.3",
+        "section_title": "Plant Enable/Disable",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.2.3",
+        "equipment_scope": "Chiller plant",
+        "trigger_condition": "Plant enabled for ≥15 min AND (Number of Chiller Plant Requests ≤ I for 3 min OR OAT < CH-LOT – 1°F OR schedule inactive).",
+        "required_behavior": "Disable plant.",
+        "configurable_values": [
+          "I (default 0)",
+          "CH-LOT"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          172
+        ],
+        "source_chunk_ids": [
+          "chunk_5bb9fe9f566243cb"
+        ],
+        "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Chiller Plant Requests ≤ I for 3 minutes, or b. OAT<CH-LOT – 1°F, or c. The chiller plant enable schedule is inactive.",
+        "judge_reason": "Captures a real control sequence for plant disable logic from section 5.20.2.3."
+      }
+    },
+    {
+      "review_index": 8,
+      "candidate_id": "cand_c2130dd0fae82e4b",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Waterside Economizer Enable Logic",
+        "summary": "Enable WSE if disabled for ≥20 min and CHWRT upstream of HX > PHXLWT + 2°F. PHXLWT calculated from wetbulb, design approaches, and part load ratio.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_3_1:waterside_economizer_enable_logic",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.3.1",
+        "section_title": "Waterside Economizer Control",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.3.1",
+        "equipment_scope": "Waterside economizer",
+        "trigger_condition": "WSE disabled for ≥20 min AND CHWRT upstream of HX > PHXLWT + 2°F.",
+        "required_behavior": "Enable waterside economizer.",
+        "configurable_values": [
+          "DA HX",
+          "DA CT",
+          "DT WB",
+          "m (tunable)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          175
+        ],
+        "source_chunk_ids": [
+          "chunk_44862f0d856f4bd0"
+        ],
+        "evidence_quote": "Enable waterside economizer (WSE) if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F.",
+        "judge_reason": "Captures a specific waterside economizer enable control sequence with configurable parameters (timing, temperature differential) from ASHRAE Guideline 36."
+      }
+    },
+    {
+      "review_index": 9,
+      "candidate_id": "cand_0d58b0d130b57e81",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Waterside Economizer Disable Logic",
+        "summary": "Disable WSE when it has run for ≥20 min and CHW temp downstream of HX > CHWRT upstream of HX less 1°F for 2 min.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_3_2:waterside_economizer_disable_logic",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.3.2",
+        "section_title": "Waterside Economizer Control",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.3.2",
+        "equipment_scope": "Waterside economizer",
+        "trigger_condition": "WSE enabled for ≥20 min AND CHW temp downstream of HX > CHWRT upstream of HX – 1°F for 2 min.",
+        "required_behavior": "Disable waterside economizer.",
+        "configurable_values": [],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          176
+        ],
+        "source_chunk_ids": [
+          "chunk_6383ecd60896400d"
+        ],
+        "evidence_quote": "Disable WSE when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1ºF for 2 minutes",
+        "judge_reason": "Captures a real control sequence for disabling waterside economizer based on runtime and temperature conditions."
+      }
+    },
+    {
+      "review_index": 10,
+      "candidate_id": "cand_dfca55a0ac257012",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Chiller Staging – Stage Down Condition",
+        "summary": "Stage down if next lower stage OPLR < SPLR_DN for 15 min and not increasing >2.5%/min, and failsafe stage up condition not true.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_staging_stage_down_condition",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.4.15",
+        "section_title": "Chiller Staging",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.4.15",
+        "equipment_scope": "Chillers",
+        "trigger_condition": "Next available lower stage OPLR < SPLR_DN for 15 minutes AND next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes AND failsafe stage up condition is not true.",
+        "required_behavior": "Initiate stage down.",
+        "configurable_values": [
+          "SPLR_DN (calculated per chiller type and lift)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L4",
+        "source_page_nos": [
+          182,
+          183,
+          184
+        ],
+        "source_chunk_ids": [
+          "chunk_5725abaf58f2407e",
+          "chunk_0c68e9f609dd4ab2",
+          "chunk_f91d1661831747b2"
+        ],
+        "evidence_quote": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage up condition is not true.",
+        "judge_reason": "This is a real control sequence from the chiller staging section of Guideline 36, capturing a specific stage down condition with configurable parameters and timing."
+      }
+    },
+    {
+      "review_index": 11,
+      "candidate_id": "cand_0b465af61d70d132",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Chiller Staging – Stage Up Efficiency Condition",
+        "summary": "Stage up if current stage OPLR > SPLR_UP for 15 min and OPLR not decreasing >2.5%/min averaged over 5 min.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_staging_stage_up_efficiency_condition",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.4.15",
+        "section_title": "Chiller Staging",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.4.15",
+        "equipment_scope": "Chillers",
+        "trigger_condition": "Current stage OPLR > SPLR_UP for 15 minutes AND current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes.",
+        "required_behavior": "Initiate stage up.",
+        "configurable_values": [
+          "SPLR_UP (calculated per chiller type and lift)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L4",
+        "source_page_nos": [
+          182,
+          183,
+          184,
+          185
+        ],
+        "source_chunk_ids": [
+          "chunk_5725abaf58f2407e",
+          "chunk_1dcc50f55c6c4057",
+          "chunk_3c5231641019449d",
+          "chunk_46417cdd23154fd0"
+        ],
+        "evidence_quote": "Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes",
+        "judge_reason": "Captures a specific chiller staging control rule from the guideline."
+      }
+    },
+    {
+      "review_index": 12,
+      "candidate_id": "cand_4dde323b6bc0d32d",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Chilled Water Supply Temperature Reset (DP Controlled Loops)",
+        "summary": "Reset DP setpoint from CHW-DPmin to CHW-DPmax from 0-50% loop output, then reset CHWST setpoint from CHWSTmax to CHWSTmin from 50-100% loop output. Trim & Respond with parameters.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_5_2:chilled_water_supply_temperature_reset_dp_controlled_loops",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.5.2",
+        "section_title": "Chilled Water Plant Reset",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.5.2",
+        "equipment_scope": "Chilled water plant",
+        "trigger_condition": "Plant enabled.",
+        "required_behavior": "Reset CHW Plant Reset variable using Trim & Respond logic with given parameters.",
+        "configurable_values": [
+          "CHW-DPmin",
+          "CHW-DPmax",
+          "CHWSTmin",
+          "CHWSTmax",
+          "Td=15 min",
+          "T=5 min",
+          "I=2",
+          "SPtrim=-2%",
+          "SPres=+3%",
+          "SPres-max=+7%"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          199
+        ],
+        "source_chunk_ids": [
+          "chunk_9e628423d7824dd7"
+        ],
+        "evidence_quote": "5.20.5.2. Differential Pressure Controlled Loops: Chilled water supply t emperature setpoint CHWSTsp and",
+        "judge_reason": "Captures a real operational control sequence for chilled water supply temperature reset with DP control from Section 5.20.5.2."
+      }
+    },
+    {
+      "review_index": 13,
+      "candidate_id": "cand_c10fabd1c1674795",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Primary CHW Pump Speed Control (Variable Primary-Variable Secondary with Decoupler Flow Meter)",
+        "summary": "Reset primary pump speed by reverse acting PID maintaining decoupler flow at 5% of PCHWFdesign. Map loop output from CH-MinPriPumpSpdStage to 100% speed.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_6_17:primary_chw_pump_speed_control_variable_primary_variable_secondary_with_decoupler_flow_meter",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.6.17",
+        "section_title": "Primary Chilled Water Pumps",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.6.17",
+        "equipment_scope": "Primary CHW pumps",
+        "trigger_condition": "Plant enabled and primary pumps proven on.",
+        "required_behavior": "Maintain decoupler flow at 5% of PCHWFdesign via PID loop.",
+        "configurable_values": [
+          "CH-MinPriPumpSpdStage",
+          "PCHWFdesign"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          204
+        ],
+        "source_chunk_ids": [
+          "chunk_4a9998601d77491d"
+        ],
+        "evidence_quote": "Primary pump speed shall be reset by a reverse acting PID loop maintaining flow through the decoupler flow meter at 5% of PCHWFdesign",
+        "judge_reason": "Extracted control sequence for primary pump speed reset using reverse acting PID to maintain decoupler flow, directly from section 5.20.6.17."
+      }
+    },
+    {
+      "review_index": 14,
+      "candidate_id": "cand_8027ddbad3904758",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "AFDD – Chilled Water Supply Temperature Too High",
+        "summary": "Fault condition FC#6: CHWST_AVG - ƐCHWT ≥ CHWSTSP. Applies to OS #2-#5.",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_chilled_water_supply_temperature_too_high",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.18.6",
+        "section_title": "Automatic Fault Detection and Diagnostics",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.18.6",
+        "equipment_scope": "Chillers",
+        "trigger_condition": "CHWST_AVG - ƐCHWT ≥ CHWSTSP",
+        "required_behavior": "Report alarm with possible diagnosis: mechanical problem with chillers or primary flow too high.",
+        "configurable_values": [
+          "ƐCHWT (default 2°F)"
+        ],
+        "fault_condition": "Chilled water supply temperature too high",
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          230
+        ],
+        "source_chunk_ids": [
+          "chunk_dff5936d76c943ed"
+        ],
+        "evidence_quote": "FC#6 Equation CHWST AVG - ƐCHWT ≥ CHWSTSP Applies to OS #2 – #5 Description Chilled water supply temperature is too high",
+        "judge_reason": "Valid fault diagnostic rule with equation and applicable operating states"
+      }
+    },
+    {
+      "review_index": 15,
+      "candidate_id": "cand_6c5836daad6f8ca9",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "AFDD – Condenser Approach Too High",
+        "summary": "Fault condition FC#8: Approach_COND ≥ RefrigCondTemp_CH-x,AVG - CWRT_CH-x,AVG. Applies to OS #2, #3, #5.",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_condenser_approach_too_high",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.18.6",
+        "section_title": "Automatic Fault Detection and Diagnostics",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.18.6",
+        "equipment_scope": "Chillers (water-cooled)",
+        "trigger_condition": "Approach_COND ≥ RefrigCondTemp_CH-x,AVG - CWRT_CH-x,AVG",
+        "required_behavior": "Report alarm with possible diagnosis: condenser fouling, low CW temperature or flow.",
+        "configurable_values": [
+          "Approach_COND (default 4°F)"
+        ],
+        "fault_condition": "Condenser approach too high",
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          230
+        ],
+        "source_chunk_ids": [
+          "chunk_dc7f4154b85d4460"
+        ],
+        "evidence_quote": "FC#8 Equation Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG Applies to OS #2, #3, #5 Description Condenser approach is too high",
+        "judge_reason": "It is a specific fault diagnostic rule from Guideline 36 with an equation and applicability."
+      }
+    },
+    {
+      "review_index": 16,
+      "candidate_id": "cand_d56b9b38ec961f2c",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "AFDD – Evaporator Approach Too High",
+        "summary": "Fault condition FC#9: Approach_EVAP ≥ CHWST_CH-x,AVG - RefrigEvapTemp_CH-x,AVG. Applies to OS #2, #3, #5.",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_evaporator_approach_too_high",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.20.18.6",
+        "section_title": "Automatic Fault Detection and Diagnostics",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.18.6",
+        "equipment_scope": "Chillers",
+        "trigger_condition": "Approach_EVAP ≥ CHWST_CH-x,AVG - RefrigEvapTemp_CH-x,AVG",
+        "required_behavior": "Report alarm with possible diagnosis: evaporator fouling, low refrigerant charge, or contaminated charge.",
+        "configurable_values": [
+          "Approach_EVAP (default 3°F)"
+        ],
+        "fault_condition": "Evaporator approach too high",
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          230
+        ],
+        "source_chunk_ids": [
+          "chunk_dc7f4154b85d4460"
+        ],
+        "evidence_quote": "FC#9 Equation Approach EVAP ≥ CHWST CH-x, AVG - RefrigEvapTemp CH-x, AVG Applies to OS #2, #3, #5 Description Evaporator approach is too high",
+        "judge_reason": "The extraction captures a specific fault diagnostic rule (FC#9) with a condition equation and applicability, which is operational knowledge from the guideline."
+      }
+    },
+    {
+      "review_index": 17,
+      "candidate_id": "cand_98ddf5c52ad86bee",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Plant Enable/Disable",
+        "summary": "Enable plant when disabled for ≥15 min, number of Heating Hot-Water Plant Requests > I (default 0), OAT < HW-LOT, and schedule active.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_2_2:plant_enable_disable",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.21.2.2",
+        "section_title": "Plant Enable/Disable",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.2.2",
+        "equipment_scope": "Boiler plant",
+        "trigger_condition": "Plant disabled for ≥15 min AND Number of Heating Hot-Water Plant Requests > I (adjustable, default 0) AND OAT < HW-LOT AND Boiler plant enable schedule active.",
+        "required_behavior": "Enable plant in lowest stage.",
+        "configurable_values": [
+          "I (ignore count, default 0)",
+          "HW-LOT (lockout temperature)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          235
+        ],
+        "source_chunk_ids": [
+          "chunk_ae38b0b316ea4196"
+        ],
+        "evidence_quote": "5.21.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:",
+        "judge_reason": "Operational sequence for enabling heating hot-water plant with configurable parameters, grounded in Guideline 36 section 5.21.2.2."
+      }
+    },
+    {
+      "review_index": 18,
+      "candidate_id": "cand_7b75a9b92c9064a5",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Plant Disable Logic",
+        "summary": "Disable plant when enabled for ≥15 min and either number of requests ≤ I for 3 min, OAT > HW-LOT+1°F, or schedule inactive.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_2_3:plant_disable_logic",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.21.2.3",
+        "section_title": "Plant Enable/Disable",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.2.3",
+        "equipment_scope": "Boiler plant",
+        "trigger_condition": "Plant enabled for ≥15 min AND (Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes OR OAT > HW-LOT + 1°F OR Boiler plant enable schedule inactive).",
+        "required_behavior": "Disable the plant.",
+        "configurable_values": [
+          "I (ignore count)",
+          "HW-LOT"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          235
+        ],
+        "source_chunk_ids": [
+          "chunk_ed993d898ac747e2"
+        ],
+        "evidence_quote": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive.",
+        "judge_reason": "Extracted item captures a specific control sequence for plant disable logic with configurable parameters, grounded in ASHRAE Guideline 36 operational knowledge."
+      }
+    },
+    {
+      "review_index": 19,
+      "candidate_id": "cand_50f7ff661b94bd3b",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Primary Only Condensing Boiler Staging Down",
+        "summary": "Stage down if Qrequired < 110% of B-STAGE MIN of current stage for 5 min or bypass valve >0% for 5 min, failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_g:primary_only_condensing_boiler_staging_down",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.21.3.9.g",
+        "section_title": "Boiler Staging",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.g",
+        "equipment_scope": "Primary only condensing boiler plants",
+        "trigger_condition": "All of: 1) (Qrequired < 110% of B-STAGE MIN of current stage for 5 minutes OR minimum flow bypass valve >0% open for 5 minutes); 2) failsafe stage up condition not true; 3) Qrequired < 80% of design capacity of boilers in next lower stage for 5 minutes.",
+        "required_behavior": "Stage down to next available lower stage.",
+        "configurable_values": [
+          "B-STAGE MIN",
+          "QbX (design capacity)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          238
+        ],
+        "source_chunk_ids": [
+          "chunk_4ed1793374a0457e"
+        ],
+        "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail safe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "judge_reason": "Extraction captures a real control sequence with specific parameters and timers from G36 section 5.21.3.9.g."
+      }
+    },
+    {
+      "review_index": 20,
+      "candidate_id": "cand_1b2a355921a86055",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Variable Primary/Variable Secondary Condensing Boiler Staging Down",
+        "summary": "Stage down if Qrequired < 110% of B-STAGE MIN of current stage for 5 min or (primary pumps at min speed and primary HWRT > secondary HWRT by 3°F for 5 min), failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_i:variable_primary_variable_secondary_condensing_boiler_staging_down",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.21.3.9.i",
+        "section_title": "Boiler Staging",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.i",
+        "equipment_scope": "Variable primary/variable secondary condensing boiler plants",
+        "trigger_condition": "All of: 1) (Qrequired < 110% of B-STAGE MIN of current stage for 5 minutes OR Primary HW pumps at B-MinPriPumpSpdStage and primary HWRT > secondary HWRT by 3°F for 5 minutes); 2) failsafe stage up condition not true; 3) Qrequired < 80% of design capacity of boilers in next lower stage for 5 minutes.",
+        "required_behavior": "Stage down to next available lower stage.",
+        "configurable_values": [
+          "B-STAGE MIN",
+          "B-MinPriPumpSpdStage",
+          "QbX"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L4",
+        "source_page_nos": [
+          239,
+          240
+        ],
+        "source_chunk_ids": [
+          "chunk_21920789883c4108",
+          "chunk_b85c181782944584"
+        ],
+        "evidence_quote": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "judge_reason": "Captures a real staging down control sequence with specific parameters and timing from the guideline."
+      }
+    },
+    {
+      "review_index": 21,
+      "candidate_id": "cand_4071679da818cb2e",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Non-Condensing Boiler Staging Down",
+        "summary": "Stage down if Qrequired < 80% of design capacity of next lower stage for 10 min and failsafe not true.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_k:non_condensing_boiler_staging_down",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.21.3.9.k",
+        "section_title": "Boiler Staging",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.k",
+        "equipment_scope": "Non-condensing boiler plants",
+        "trigger_condition": "Both: 1) Qrequired < 80% of design capacity of next lower available stage for 10 minutes; 2) failsafe stage up condition not true.",
+        "required_behavior": "Stage down to next available lower stage.",
+        "configurable_values": [
+          "QbX"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          240
+        ],
+        "source_chunk_ids": [
+          "chunk_e710008bfe3b44b9"
+        ],
+        "evidence_quote": "Stage down if both of the following are true: 1. Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes; and 2. The failsafe stage up condition is not true.",
+        "judge_reason": "Captures a real staging down control sequence from ASHRAE Guideline 36, section 5.21.3.9.k."
+      }
+    },
+    {
+      "review_index": 22,
+      "candidate_id": "cand_89570aed35da929f",
+      "review_decision": "pending",
+      "review_notes": "",
+      "operator_questions": [
+        "Is this operationally useful enough to keep?",
+        "Is the knowledge_type correct?",
+        "Is section_id/evidence_citation accurate?",
+        "Should this be exposed to sw_base_model control/operation semantics?"
+      ],
+      "curation": {
+        "title": "Hybrid Boiler Staging Down (Condensing Current Stage)",
+        "summary": "If all boilers in current stage are condensing, stage down using same conditions as variable primary/variable secondary condensing: Qrequired < 110% of B-STAGE MIN for 5 min or (primary pumps at min speed and primary HWRT > secondary HWRT by 3°F for 5 min), failsafe not true, and Qrequired < 80% of design capacity of next lower stage for 5 min.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_m:hybrid_boiler_staging_down_condensing_current_stage",
+        "knowledge_object_type": "operational_sequence",
+        "authority_level": "industry_standard",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "section_id": "5.21.3.9.m",
+        "section_title": "Boiler Staging",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.21.3.9.m",
+        "equipment_scope": "Hybrid boiler plants (condensing current stage)",
+        "trigger_condition": "Same as 5.21.3.9.i.",
+        "required_behavior": "Stage down to next available lower stage.",
+        "configurable_values": [
+          "B-STAGE MIN",
+          "B-MinPriPumpSpdStage",
+          "QbX"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "trust_level": "L3",
+        "source_page_nos": [
+          240
+        ],
+        "source_chunk_ids": [
+          "chunk_b85c181782944584"
+        ],
+        "evidence_quote": "If all boilers enabled in the current stage are condensing, stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are at B-MinPriPumpSpdStage and primary HWRT exceeds secondary HWRT by 3°F. 2. The failsafe stage up condition is not true. 3. Qrequired is less than 80% of the design capacity, QbX, of the boilers in the next available lower stage for 5 minutes.",
+        "judge_reason": "Extraction captures a real control sequence with configurable parameters and timing conditions from Section 5.21.3.9.m, providing actionable operational knowledge."
+      }
+    }
+  ]
+}
