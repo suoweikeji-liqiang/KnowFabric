@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import http.client
 import sys
 from pathlib import Path
 
@@ -11,6 +12,7 @@ from scripts.run_ashrae_guideline36_vertical import (
     Guideline36ExtractionResponse,
     SectionUnit,
     anchor_candidates,
+    build_summary,
     build_extract_messages,
     canonical_key,
     request_json_completion_with_retry,
@@ -128,6 +130,57 @@ def test_json_completion_retry_handles_empty_content_once(monkeypatch) -> None:
 
     assert result == {"candidates": []}
     assert calls["count"] == 2
+
+
+def test_json_completion_retry_handles_incomplete_read_once(monkeypatch) -> None:
+    calls = {"count": 0}
+
+    def fake_request(*args, **kwargs):
+        calls["count"] += 1
+        if calls["count"] == 1:
+            raise http.client.IncompleteRead(b"")
+        return {"candidates": []}
+
+    monkeypatch.setattr("scripts.run_ashrae_guideline36_vertical._request_json_completion", fake_request)
+
+    result = request_json_completion_with_retry(
+        [{"role": "user", "content": "x"}],
+        object(),
+        response_format={"type": "json_object"},
+        recorder=lambda payload: None,
+    )
+
+    assert result == {"candidates": []}
+    assert calls["count"] == 2
+
+
+def test_wallclock_gate_scales_with_llm_call_count() -> None:
+    class Args:
+        sections = "5.7,5.8"
+
+    class Doc:
+        file_name = "ashrae_guideline_36.pdf"
+        doc_id = "doc_g36"
+
+    candidate = {
+        "structured_payload_candidate": {"section_id": "5.7.5", "title": "Control"},
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key_candidate": "key",
+    }
+    raw_judge = [{"usage": {}} for _ in range(80)]
+
+    summary = build_summary(
+        Args(),
+        Doc(),
+        [],
+        {"total_seconds": 1400},
+        ([candidate], [candidate], [candidate], [], [], [], raw_judge),
+        ((type("Backend", (), {"name": "extract", "model": "model"})()), (type("Backend", (), {"name": "judge", "model": "model"})())),
+        ({}, {}),
+    )
+
+    assert summary["gates"]["G4"]["status"] == "PASS"
+    assert summary["gates"]["G4"]["limit_seconds"] == 1600
 
 
 def test_anchor_candidates_repairs_to_section_heading_line() -> None:

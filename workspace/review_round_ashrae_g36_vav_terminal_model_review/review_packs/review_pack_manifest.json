@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-06T15:25:11.219436+00:00",
+  "source_generation_mode": "ashrae-g36_standard_import_pipeline",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_4bbd3703c4f84be4__ahu.json",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "equipment_class_id": "ahu",
+      "equipment_class_key": "hvac:ahu",
+      "candidate_count": 77
+    }
+  ]
+}

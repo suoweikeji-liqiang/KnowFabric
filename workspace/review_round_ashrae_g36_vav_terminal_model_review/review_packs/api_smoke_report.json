@@ -1,0 +1,50 @@
+{
+  "report_mode": "standard_review_backfill_api_smoke",
+  "generated_at": "2026-05-06T15:25:12.922528+00:00",
+  "pack_dir": "workspace/review_round_ashrae_g36_vav_terminal_model_review/review_packs",
+  "min_trust_level": "L3",
+  "limit": 100,
+  "summary": {
+    "targets": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "results": [
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "commissioning_step",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 7,
+      "service_total_count": 11,
+      "service_returned_count": 11,
+      "service_has_more": false,
+      "visible_matching_count": 11,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "service_family": "fault_knowledge",
+      "expected_accepted_count": 36,
+      "service_total_count": 49,
+      "service_returned_count": 49,
+      "service_has_more": false,
+      "visible_matching_count": 49,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 34,
+      "service_total_count": 57,
+      "service_returned_count": 57,
+      "service_has_more": false,
+      "visible_matching_count": 57,
+      "status": "pass"
+    }
+  ]
+}
