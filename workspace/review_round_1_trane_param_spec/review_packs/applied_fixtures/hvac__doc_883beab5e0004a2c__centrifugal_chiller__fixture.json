@@ -1,0 +1,1484 @@
+{
+  "domain_id": "hvac",
+  "equipment_class_id": "centrifugal_chiller",
+  "equipment_class_key": "hvac:centrifugal_chiller",
+  "fixture_metadata": {
+    "source_generation_mode": null,
+    "generated_at": "2026-04-30T14:02:26.452482+00:00",
+    "accepted_candidate_count": 23
+  },
+  "manual_entries": [
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_bf08b3bf2eb630f0",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:differential_to_start",
+      "title": "启动温差",
+      "summary": "冷水机组启动温差设定，用于决定出水温度相对设定值达到何种温差时允许机组启动。",
+      "structured_payload": {
+        "parameter_name": "Differential to Start",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:differential_to_start",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "冷水机组启动温差设定，用于决定出水温度相对设定值达到何种温差时允许机组启动。",
+        "evidence_quote": "Differential to Start",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_5f4df8124e5dc108",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_a53ba717ccf1a160",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:differential_to_stop",
+      "title": "停机温差",
+      "summary": "冷水机组停机温差设定，用于决定出水温度达到停机温差条件时执行自动停机。",
+      "structured_payload": {
+        "parameter_name": "Differential to Stop",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:differential_to_stop",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "冷水机组停机温差设定，用于决定出水温度达到停机温差条件时执行自动停机。",
+        "evidence_quote": "Differential to Stop",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_ca92cb38e64f6df5",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_71041247af3c85b7",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:external_base_loading_setpoint",
+      "title": "外部基本负荷设定值",
+      "summary": "外部基本负荷设定值，用于基本负荷控制相关的容量或负荷设定。",
+      "structured_payload": {
+        "parameter_name": "External Base Loading Setpoint",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:external_base_loading_setpoint",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "外部基本负荷设定值，用于基本负荷控制相关的容量或负荷设定。",
+        "evidence_quote": "External Base Loading Setpoint",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_e88cf14334274faf",
+        "chunk_index": 1,
+        "chunk_type": "paragraph",
+        "cleaned_text": "External Base Loading Setpoint  外部基本负荷设定(Constant, Outdoor, Return, Disable), Disable\n(常量，室外，回水，禁用)，禁用\nPercent  百分数\nTemperature  温度\nTemperature  温度\nPercent  百分数\nTemperature  温度\nTemperature  温度\n(Enable, Disable), Disable (启用，禁用)，禁用\n(Enable, Disable), Disable (启用，禁用)，禁用\n(Enable, Disable), Disable (启用，禁用)，禁用\n备注：\n1. 温度调整精度为0.1华氏度或摄氏度。主处理器给出最大和最小允许值。\n2. 调到最接近的百分比整数。主处理器给出最大和最小允许值。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "text_excerpt": "External Base Loading Setpoint  外部基本负荷设定(Constant, Outdoor, Return, Disable), Disable\n(常量，室外，回水，禁用)，禁用\nPercent  百分数\nTemperature  温度\nTemperature  温度\nPercent  百分数\nTemperature  温度\nTemperature  温度\n(Enable"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_f41207f6b8e5b81b",
+        "evidence_role": "primary",
+        "evidence_text": "External Base Loading Setpoint  外部基本负荷设定(Constant, Outdoor, Return, Disable), Disable\n(常量，室外，回水，禁用)，禁用\nPercent  百分数\nTemperature  温度\nTemperature  温度\nPercent  百分数\nTemperature  温度\nTemperature  温度\n(Enable, Disable), Disable (启用，禁用)，禁用\n(Enable, Disable), Disable (启用，禁用)，禁用\n(Enable, Disable), Disable (启用，禁用)，禁用\n备注：\n1. 温度调整精度为0.1华氏度或摄氏度。主处理器给出最大和最小允许值。\n2. 调到最接近的百分比整数。主处理器给出最大和最小允许值。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_c8f98514ec68facf",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:external_chilled_water_setpoint",
+      "title": "外部冷冻水设定值",
+      "summary": "外部来源的冷冻水设定值，用于冷冻水温度控制。",
+      "structured_payload": {
+        "parameter_name": "External Chilled Water Setpoint",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:external_chilled_water_setpoint",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "外部来源的冷冻水设定值，用于冷冻水温度控制。",
+        "evidence_quote": "External Chilled Water Setpoint",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L4",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_7dec75b53833fe59",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_62cad77d234efd3c",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:external_current_limit_setpoint",
+      "title": "外部电流限制设定值",
+      "summary": "外部来源的电流限制设定值，用于限制机组运行电流或需求负荷。",
+      "structured_payload": {
+        "parameter_name": "External Current Limit Setpoint",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:external_current_limit_setpoint",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "外部来源的电流限制设定值，用于限制机组运行电流或需求负荷。",
+        "evidence_quote": "External Current Limit Setpoint",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L4",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_01cf8cdc4cf92c65",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_b5ef7d7a1019e695",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:front_panel_base_load_setpoint",
+      "title": "前面板基本负荷设定值",
+      "summary": "通过前面板配置的基本负荷设定值，用于机组基本负荷控制。",
+      "structured_payload": {
+        "parameter_name": "Front Panel Base Load Setpoint",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:front_panel_base_load_setpoint",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "通过前面板配置的基本负荷设定值，用于机组基本负荷控制。",
+        "evidence_quote": "Front Panel Base Load Setpoint",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_fb8592e7ac5d5d15",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_135e2a6c194159eb",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:front_panel_chilled_water_setpoint",
+      "title": "前面板冷冻水设定值",
+      "summary": "通过前面板配置的冷冻水设定值，用于冷冻水出水温度控制。",
+      "structured_payload": {
+        "parameter_name": "Front Panel Chilled Water Setpoint",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:front_panel_chilled_water_setpoint",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "通过前面板配置的冷冻水设定值，用于冷冻水出水温度控制。",
+        "evidence_quote": "Front Panel Chilled Water Setpoint",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_4377f83ddc51725f",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_7d9877e2be5deeea",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:front_panel_current_limit_setpoint",
+      "title": "前面板电流限制设定值",
+      "summary": "通过前面板配置的电流限制设定值，用于机组电流限制控制。",
+      "structured_payload": {
+        "parameter_name": "Front Panel Current Limit Setpoint",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:front_panel_current_limit_setpoint",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "通过前面板配置的电流限制设定值，用于机组电流限制控制。",
+        "evidence_quote": "Front Panel Current Limit Setpoint",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_dd8924233e74080a",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_e7a84824d9e459a4",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:outdoor_maximum_reset",
+      "title": "室外最大重置",
+      "summary": "室外温度重置策略的最大重置量，用于冷冻水设定值重置控制。",
+      "structured_payload": {
+        "parameter_name": "Outdoor Maximum Reset",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:outdoor_maximum_reset",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "室外温度重置策略的最大重置量，用于冷冻水设定值重置控制。",
+        "evidence_quote": "Outdoor Maximum Reset",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_2b874a16eef1f60c",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_b3db932d53e8efda",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:outdoor_reset_ratio",
+      "title": "室外重置率",
+      "summary": "室外温度重置策略的重置比例，用于根据室外条件调整设定值。",
+      "structured_payload": {
+        "parameter_name": "Outdoor Reset Ratio",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:outdoor_reset_ratio",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "室外温度重置策略的重置比例，用于根据室外条件调整设定值。",
+        "evidence_quote": "Outdoor Reset Ratio",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_a88701d6a4a2282f",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_6ba8a3814dac0bb6",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:return_maximum_reset",
+      "title": "回水最大重置",
+      "summary": "回水重置策略的最大重置量，用于冷冻水设定值重置控制。",
+      "structured_payload": {
+        "parameter_name": "Return Maximum Reset",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:return_maximum_reset",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "回水重置策略的最大重置量，用于冷冻水设定值重置控制。",
+        "evidence_quote": "Return Maximum Reset",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_2af801e3bfe10a9e",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_adf11b836b8a6e52",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:return_reset_ratio",
+      "title": "回水重置率",
+      "summary": "回水重置策略的重置比例，用于根据回水条件调整设定值。",
+      "structured_payload": {
+        "parameter_name": "Return Reset Ratio",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:return_reset_ratio",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "回水重置策略的重置比例，用于根据回水条件调整设定值。",
+        "evidence_quote": "Return Reset Ratio",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_217e35a33a8b0e65",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_f33379e303d96c88",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:setpoint_source",
+      "title": "设定值来源",
+      "summary": "设定值来源配置，用于指定设定值来自前面板、BAS 覆盖或其他来源。",
+      "structured_payload": {
+        "parameter_name": "Setpoint Source",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:setpoint_source",
+        "value": null,
+        "unit": null,
+        "range_min": null,
+        "range_max": null,
+        "default_value": null,
+        "description": "设定值来源配置，用于指定设定值来自前面板、BAS 覆盖或其他来源。",
+        "evidence_quote": "Setpoint Source",
+        "page_hint": 29
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_07e426e0eca14691",
+        "page_no": 29,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_20880054acdc4da1",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10.",
+        "text_excerpt": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_b848a6ff2bb3f825",
+        "evidence_role": "primary",
+        "evidence_text": "28机组控制面板(UCP)\nChiller (冷水机组)\nDescription 说明 Units (机  组) notes 备注\n1. Front Panel Control Type\n前端面板控制类型\n2. Front Panel Chilled Water Setpoint\n前端面板冷冻水设定\n3. Front Panel Current Limit Setpoint\n前端面板电流限制设定\n4. Front Panel Base Load Command\n前端面板基本负荷要求\n5. Front Panel Base Load Setpoint\n前端面板基本负荷设定\n6. Differential to Start  起动温差\n7. Differential to Stop停机温差\n8. Setpoint Source\n设定值来源(Chilled Water, Hot Water), Chilled Water default\n(冷冻水, 热水), 冷冻水为默认类型\nTemperature\n温度\nPercent\n百分比\nOn or Auto\n开或者自动\nPercent\n百分比\nTemperature 温度\nTemperature 温度\n(none,use front panel,override BAS), none default\n(无, 使用前端面板, BAS超控), 无为默认值1\n2\nDescription 说明 Units (机  组)Feature Settings( 功能设定 )\n1. Chilled Water Reset\n冷冻水重置\n2. Return Reset Ratio  返回重置率\n3. Return Start Reset  返回起动重置\n4. Return Maximum Reset 返回最大重置\n5. Outdoor Reset Ratio 室外重置率\n6. Outdoor Start Reset 室外起动重置\n7. Outdoor Maximum Reset  室外最大重置\n8. External Chilled Water Setpoint   外部冷冻水设定\n9. External Current Limit Setpoint   外部电流限制设定\n10."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 29
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_55cdbac595c19218",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:maximum_pressure_differential_setpoint",
+      "title": "最大压差设定值",
+      "summary": "最大压差设定值，标准设为 30 psi，可在允许范围内调整。",
+      "structured_payload": {
+        "parameter_name": "最大压差设定值",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:maximum_pressure_differential_setpoint",
+        "value": null,
+        "unit": "psi",
+        "range_min": "1",
+        "range_max": "400",
+        "default_value": "30",
+        "description": "最大压差设定值，标准设为 30 psi，可在允许范围内调整。",
+        "evidence_quote": "最大压差  标准设为30 psi",
+        "page_hint": 43
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_e2d767afa5e644f3",
+        "page_no": 43,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_7579758b0149442a",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "42控制系统组件\nB) 制冷剂压差指示输出:\n它以一个 2至10 VDC的模拟输出\n取代前面的冷凝压力输出信号。该\n信号与调试该选项时预设的最小和\n最 大 压 力 设 定 值 相 对 应 。 如 有 需\n要，可用维修工具软件来改变这个\n关系式。  最小压差  标准设定为 0\npsi，它对应于 2 vdc。  最大压差  标准\n设为30 psi，对应10 vdc。\n最小压差设置的刻度为 1 psid\n(1kPa)可以在 0- 400 psid (0-2758\n最小压差设定值 最大压差设定值kPa)范围设置。最大压差设置的刻\n度为 1 psid (1kPa) 可以在 1- 400 psid\n( 7 - 2 7 5 8\nkPa)范围设置。如果在显示屏上选\n择 的 冷 凝 压 力 选 项 为 “ N o t\nInstalled （未安装）”。冷凝器制\n冷剂压力就根据冷凝器制冷剂温度\n传感器来确定。\n蒸发器制冷剂压力是根据蒸发\n器制冷剂饱和温度传感器来确定的\n图19. 压差设置\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "text_excerpt": "42控制系统组件\nB) 制冷剂压差指示输出:\n它以一个 2至10 VDC的模拟输出\n取代前面的冷凝压力输出信号。该\n信号与调试该选项时预设的最小和\n最 大 压 力 设 定 值 相 对 应 。 如 有 需\n要，可用维修工具软件来改变这个\n关系式。  最小压差  标准设定为 0\npsi，它对应于 2 vdc。  最大压差  标准\n设为30 psi，对应10 vdc。\n最小压差设置的刻度为 1 psid"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_f62465971773166a",
+        "evidence_role": "primary",
+        "evidence_text": "42控制系统组件\nB) 制冷剂压差指示输出:\n它以一个 2至10 VDC的模拟输出\n取代前面的冷凝压力输出信号。该\n信号与调试该选项时预设的最小和\n最 大 压 力 设 定 值 相 对 应 。 如 有 需\n要，可用维修工具软件来改变这个\n关系式。  最小压差  标准设定为 0\npsi，它对应于 2 vdc。  最大压差  标准\n设为30 psi，对应10 vdc。\n最小压差设置的刻度为 1 psid\n(1kPa)可以在 0- 400 psid (0-2758\n最小压差设定值 最大压差设定值kPa)范围设置。最大压差设置的刻\n度为 1 psid (1kPa) 可以在 1- 400 psid\n( 7 - 2 7 5 8\nkPa)范围设置。如果在显示屏上选\n择 的 冷 凝 压 力 选 项 为 “ N o t\nInstalled （未安装）”。冷凝器制\n冷剂压力就根据冷凝器制冷剂温度\n传感器来确定。\n蒸发器制冷剂压力是根据蒸发\n器制冷剂饱和温度传感器来确定的\n图19. 压差设置\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn"
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 43
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_6d78d7dc6c815f36",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:minimum_pressure_differential_setpoint",
+      "title": "最小压差设定值",
+      "summary": "最小压差设定值，标准设为 0 psi，可在允许范围内调整。",
+      "structured_payload": {
+        "parameter_name": "最小压差设定值",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:minimum_pressure_differential_setpoint",
+        "value": null,
+        "unit": "psi",
+        "range_min": "0",
+        "range_max": "400",
+        "default_value": "0",
+        "description": "最小压差设定值，标准设为 0 psi，可在允许范围内调整。",
+        "evidence_quote": "最小压差  标准设定为 0 psi",
+        "page_hint": 43
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_e2d767afa5e644f3",
+        "page_no": 43,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_7579758b0149442a",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "42控制系统组件\nB) 制冷剂压差指示输出:\n它以一个 2至10 VDC的模拟输出\n取代前面的冷凝压力输出信号。该\n信号与调试该选项时预设的最小和\n最 大 压 力 设 定 值 相 对 应 。 如 有 需\n要，可用维修工具软件来改变这个\n关系式。  最小压差  标准设定为 0\npsi，它对应于 2 vdc。  最大压差  标准\n设为30 psi，对应10 vdc。\n最小压差设置的刻度为 1 psid\n(1kPa)可以在 0- 400 psid (0-2758\n最小压差设定值 最大压差设定值kPa)范围设置。最大压差设置的刻\n度为 1 psid (1kPa) 可以在 1- 400 psid\n( 7 - 2 7 5 8\nkPa)范围设置。如果在显示屏上选\n择 的 冷 凝 压 力 选 项 为 “ N o t\nInstalled （未安装）”。冷凝器制\n冷剂压力就根据冷凝器制冷剂温度\n传感器来确定。\n蒸发器制冷剂压力是根据蒸发\n器制冷剂饱和温度传感器来确定的\n图19. 压差设置\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "text_excerpt": "42控制系统组件\nB) 制冷剂压差指示输出:\n它以一个 2至10 VDC的模拟输出\n取代前面的冷凝压力输出信号。该\n信号与调试该选项时预设的最小和\n最 大 压 力 设 定 值 相 对 应 。 如 有 需\n要，可用维修工具软件来改变这个\n关系式。  最小压差  标准设定为 0\npsi，它对应于 2 vdc。  最大压差  标准\n设为30 psi，对应10 vdc。\n最小压差设置的刻度为 1 psid"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_eda97cab1d7b5961",
+        "evidence_role": "primary",
+        "evidence_text": "42控制系统组件\nB) 制冷剂压差指示输出:\n它以一个 2至10 VDC的模拟输出\n取代前面的冷凝压力输出信号。该\n信号与调试该选项时预设的最小和\n最 大 压 力 设 定 值 相 对 应 。 如 有 需\n要，可用维修工具软件来改变这个\n关系式。  最小压差  标准设定为 0\npsi，它对应于 2 vdc。  最大压差  标准\n设为30 psi，对应10 vdc。\n最小压差设置的刻度为 1 psid\n(1kPa)可以在 0- 400 psid (0-2758\n最小压差设定值 最大压差设定值kPa)范围设置。最大压差设置的刻\n度为 1 psid (1kPa) 可以在 1- 400 psid\n( 7 - 2 7 5 8\nkPa)范围设置。如果在显示屏上选\n择 的 冷 凝 压 力 选 项 为 “ N o t\nInstalled （未安装）”。冷凝器制\n冷剂压力就根据冷凝器制冷剂温度\n传感器来确定。\n蒸发器制冷剂压力是根据蒸发\n器制冷剂饱和温度传感器来确定的\n图19. 压差设置\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn"
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 43
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_58e000854a43f967",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:capacity_control_soft_load_time",
+      "title": "容量控制软载时间",
+      "summary": "容量控制软载时间，控制过滤冷冻水设定的时间常数，范围 0-120 分钟，默认 10 分钟。",
+      "structured_payload": {
+        "parameter_name": "容量控制软载时间",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:capacity_control_soft_load_time",
+        "value": null,
+        "unit": "minute",
+        "range_min": "0",
+        "range_max": "120",
+        "default_value": "10",
+        "description": "容量控制软载时间，控制过滤冷冻水设定的时间常数，范围 0-120 分钟，默认 10 分钟。",
+        "evidence_quote": "容量控制软载时间(0-120分钟，默认值为10分钟)",
+        "page_hint": 51
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_f611c9424d0949d4",
+        "page_no": 51,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_df1156ca8b9d41ce",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "text_excerpt": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_b02512801d87077b",
+        "evidence_role": "primary",
+        "evidence_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 51
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_bd442a14f2715f9c",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:maximum_capacity_limit",
+      "title": "最大容量限制",
+      "summary": "最大容量限制可通过维修工具软件修改，默认 100%，用于限制机组最大容量。",
+      "structured_payload": {
+        "parameter_name": "最大容量限制",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:maximum_capacity_limit",
+        "value": null,
+        "unit": "percent",
+        "range_min": null,
+        "range_max": null,
+        "default_value": "100",
+        "description": "最大容量限制可通过维修工具软件修改，默认 100%，用于限制机组最大容量。",
+        "evidence_quote": "最小（默认为0％）和最大容量（默认为100%）的设置可以通过维修工具软件来修改",
+        "page_hint": 51
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_f611c9424d0949d4",
+        "page_no": 51,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_df1156ca8b9d41ce",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "text_excerpt": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_2d6acd931dddf957",
+        "evidence_role": "primary",
+        "evidence_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 51
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_4812fedaac0caad1",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:minimum_capacity_limit",
+      "title": "最小容量限制",
+      "summary": "最小容量限制可通过维修工具软件修改，默认 0%，用于限制压缩机卸载能力。",
+      "structured_payload": {
+        "parameter_name": "最小容量限制",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:minimum_capacity_limit",
+        "value": null,
+        "unit": "percent",
+        "range_min": null,
+        "range_max": null,
+        "default_value": "0",
+        "description": "最小容量限制可通过维修工具软件修改，默认 0%，用于限制压缩机卸载能力。",
+        "evidence_quote": "最小（默认为0％）和最大容量（默认为100%）的设置可以通过维修工具软件来修改",
+        "page_hint": 51
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_f611c9424d0949d4",
+        "page_no": 51,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_df1156ca8b9d41ce",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "text_excerpt": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_edf075adffd2dfa9",
+        "evidence_role": "primary",
+        "evidence_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 51
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_f35ac5b19889e2de",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:minimum_current_limit_setpoint",
+      "title": "最小电流限制设定",
+      "summary": "最小电流限制设定默认 40% RLA，可设为 20-100%，用于电流限制保护和需求控制。",
+      "structured_payload": {
+        "parameter_name": "最小电流限制设定",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:minimum_current_limit_setpoint",
+        "value": null,
+        "unit": "% RLA",
+        "range_min": "20",
+        "range_max": "100",
+        "default_value": "40",
+        "description": "最小电流限制设定默认 40% RLA，可设为 20-100%，用于电流限制保护和需求控制。",
+        "evidence_quote": "最小电流限制设定的默认设置为 40% RLA (可设为 20-100 %)",
+        "page_hint": 51
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_f611c9424d0949d4",
+        "page_no": 51,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_df1156ca8b9d41ce",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "text_excerpt": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_1b0f47b369819325",
+        "evidence_role": "primary",
+        "evidence_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 51
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_946317069b9c15af",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:filter_time",
+      "title": "滤波器时间",
+      "summary": "滤波器时间默认 10 分钟，可设为 0-120 分钟，用于电流限制设定调整后的稳定控制。",
+      "structured_payload": {
+        "parameter_name": "滤波器时间",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:filter_time",
+        "value": null,
+        "unit": "minute",
+        "range_min": "0",
+        "range_max": "120",
+        "default_value": "10",
+        "description": "滤波器时间默认 10 分钟，可设为 0-120 分钟，用于电流限制设定调整后的稳定控制。",
+        "evidence_quote": "滤波器时间默认为 10分钟 (可设为 0-120分钟 )",
+        "page_hint": 51
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_f611c9424d0949d4",
+        "page_no": 51,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_df1156ca8b9d41ce",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "text_excerpt": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_5f714afe35a03624",
+        "evidence_role": "primary",
+        "evidence_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 51
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_2c5ee7a06e6bcf09",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:current_limit_control_soft_load_time",
+      "title": "电流限制控制软载时间",
+      "summary": "电流限制控制软载时间控制过滤电流限制设定的时间常数，范围 0-120 分钟，默认 10 分钟。",
+      "structured_payload": {
+        "parameter_name": "电流限制控制软载时间",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:current_limit_control_soft_load_time",
+        "value": null,
+        "unit": "minute",
+        "range_min": "0",
+        "range_max": "120",
+        "default_value": "10",
+        "description": "电流限制控制软载时间控制过滤电流限制设定的时间常数，范围 0-120 分钟，默认 10 分钟。",
+        "evidence_quote": "电流限制控制软载时间(0-120分钟，默认值为10分钟)",
+        "page_hint": 51
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_f611c9424d0949d4",
+        "page_no": 51,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_df1156ca8b9d41ce",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "text_excerpt": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_6ed3d459d72018d2",
+        "evidence_role": "primary",
+        "evidence_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 51
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_edfc3b508522cfd0",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:current_limit_soft_load_start_percent",
+      "title": "电流限制软载起动百分数",
+      "summary": "电流限制软载起动百分数控制过滤电流限制设定的起动点，范围 20-100%，默认 40%。",
+      "structured_payload": {
+        "parameter_name": "电流限制软载起动百分数",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:current_limit_soft_load_start_percent",
+        "value": null,
+        "unit": "percent",
+        "range_min": "20",
+        "range_max": "100",
+        "default_value": "40",
+        "description": "电流限制软载起动百分数控制过滤电流限制设定的起动点，范围 20-100%，默认 40%。",
+        "evidence_quote": "电流限制软载起动百分数(20-100%，默认值为40%)",
+        "page_hint": 51
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_f611c9424d0949d4",
+        "page_no": 51,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_df1156ca8b9d41ce",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "text_excerpt": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_8b95e18c7c58a5f2",
+        "evidence_role": "primary",
+        "evidence_text": "50机组保护和自适应\n电流限制保护\n电流限制保护用以避免起动和\n运行过程中电机电流过载损坏压缩\n机电机。压缩机电机电流连续被监\n测并受一个限制功能的控制，以防\n止出现过电流诊断跳闸的情况。\n电流限制控制逻辑通过将压缩\n机的电流限制在 DynaView 电流限制\n设定值（这个值可以调节）左右，\n以防止诊断跳闸引起的电机停机。\n可以根据要求降低这个设定来\n提供机组电力需求限制。这个值还\n可设定成允许机组以较低的负载运\n行，避免诊断跳闸。电流限制功能\n采用 PID算法（类似于出水温度控\n制），允许冷水机组在电流限制设\n定值范围内运行。最小电流限制设\n定的默认设置为 40% RLA (可设为\n20- 100 %)。滤波器时间默认为 10分\n钟 (可设为 0-120分钟 )，这些值可以\n通过维修工具软件来修改。滤波器\n设定用于在电流限制设定在运行中\n被调节后实行稳定控制。\n缺相保护\n缺相保护可以避免由于缺相故\n障造成的机组电机损坏。如果三相\n电中任一相断电，控制器将关闭机\n组。机组关闭后将显示一则锁定的\n诊断信息说明故障原因。\n反转保护\n此功能保护压缩机避免由于反\n转造成的损坏。如果检测到错相旋\n转，将调用可以手动复位的故障诊\n断程序。默认设定为启用反相保护\n，使用 TechView 可以禁用它。\n启动/停机温差\no启 动 温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整，停机\no温 差 设 定 可 在 1到1 0 F\no(0.55到5.55 C)的范围内调整。这两\n个设置都在“动态冷冻水设定”菜单中进行。当冷水机组运行且 LWT\n（出水温度）达到停机温差设定值\n时，冷水机组会按照停机工序自动\n停机。（参见图 10）\n软载\n在冷水机组初始上载期间，软\n载可以稳定起动控制。在将大楼冷\n冻水回路的水温从初始值变到冷水\n或热水的设定值期间，软载控制起\n作用。如没有软载控制，冷水机组\n就会快速地被加载，然后满负荷运\n行将水温变为设定值。此时，尽管\n水回路的初始温度很高，但实际系\n统的负荷却有可能较低。这样，当\n达到设定值后，冷水机组就又必须\n迅 速 卸 载 ， 降 到 系 统 的 实 际 负 荷\n值。如果它的卸载不够迅速，出水\n温度就会降低到设定值以下，引起\n冷水机组停机。软载可以防止冷水\n机组在上载阶段满负荷运行。压缩\n机起动后，过滤设定的起始点会将\n蒸发器的出水温度和 RLA百分数初始\n化。\n有三种不同的软载设定：\n容 量 控 制 软 载 时 间 (0-120分\n钟，默认值为 10分钟 )：这个设置控\n制过滤冷冻水设定的时间常数。\n电 流 限 制 控 制 软 载 时 间 (0-\n120分钟，默认值为 10分钟 )：这个设\n置控制过滤电流限制设定的时间常\n数。\n电流限制软载起动百分数 (20-\n100%，默认值为 40%)：这个设置控\n制过滤电流限制设定的起动点。\n如果需要改变设置，可以通过\n维修工具软件进行这三种设置。\n最小和最大容量限制\n可设置一个最小容量来限制压\n缩机的卸载，以此来强迫冷水机组\n达到停机温差。处于这种限制模式\n时，屏幕会显示最小容量限制。在\n冷水机组全部卸载时屏幕也会显示这个指示。\n同样，可设置一个最大容量限\n制，在普通冷冻水温度控制时，接\n通 最 大 容 量 继 电 器 ， 发 送 信 号 给\nBAS系 统 让 它 起 动 另 一 台 冷 水 机\n组。\n最小（默认为 0％）和最大容量\n（默认为 100%）的设置可以通过维\n修工具软件来修改。\n蒸发器限制\n蒸发器制冷剂的温度一直被监\n测，这样可以防止制冷剂温度过低\n而跳闸。它可以通过降低冷水机组\n运行负荷以取代达到蒸发器制冷剂\n低温停机设定（ LRTC）时出现的跳\n闸。\n在冷凝器温度低于蒸发器温度\n（转换起动）的情况下上载时，蒸\n发器制冷剂的温度会低于制冷剂低\n温停机设定（ LRTC）的设定值，此\n时蒸发器限制就开始起作用，防止\n机组停机。另一个例子就是冷水机\n组由于充注量少而造成蒸发器制冷\n剂温度过低时，这一限制可以使机\n组通过降低负荷来保持机组持续运\n行。\n蒸发器限制利用蒸发器制冷剂\n温度传感器并采用 PID算法（类似于\n出水温度控制），控制冷水机组运\n行在 LRTC + 2  F 的工况下。\n当机组进入蒸发器限制的控制\n时，“蒸发器温度限制”会显示在\n次级运行模式中。\n出水温度停机保护\n出水温度停机保护是一种保护\n冷水机组不受蒸发器中水结冰而遭\n破坏的安全控制方法。停机保护设\n0定值出厂时设定为 36 F，可以通过\n维修工具软件来修改。\n“出水温度停机保护设定”可\n单独调整，可以不受冷冻水设定值\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 51
+      }
+    },
+    {
+      "knowledge_object_type": "parameter_spec",
+      "knowledge_object_id": "ko_71a817e4a510a75e",
+      "canonical_key": "hvac:centrifugal_chiller:parameter:restart_inhibit_time_setting",
+      "title": "重启抑制时间设定",
+      "summary": "重启抑制时间默认 20 分钟，可通过 TechView 修改，用于限制两次启动间隔。",
+      "structured_payload": {
+        "parameter_name": "重启抑制时间设定",
+        "canonical_key_hint": "hvac:centrifugal_chiller:parameter:restart_inhibit_time_setting",
+        "value": null,
+        "unit": "minute",
+        "range_min": null,
+        "range_max": null,
+        "default_value": "20",
+        "description": "重启抑制时间默认 20 分钟，可通过 TechView 修改，用于限制两次启动间隔。",
+        "evidence_quote": "默认设定是 20分钟",
+        "page_hint": 52
+      },
+      "applicability": {
+        "domain_id": "hvac",
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "source_manual": "trane_cvgf_400_1000_chiller_manual.pdf"
+      },
+      "confidence_score": 0.9,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "llm_document_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_883beab5e0004a2c",
+        "file_name": "trane_cvgf_400_1000_chiller_manual.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_29a1a9aef1af4046",
+        "page_no": 53,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_c1576b3568ad41cf",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "52次启动的间隔时间。\n默认设定是 20分钟，可以使用\nTechView 更 改 设 置 。 如 果 使 用\nTechView 设置重启限制类型为“时\n间”，或者检测到电机绕组温度过\n高时，将启用基于时间的重启抑制\n功能。\n注意：当重启抑制功能发挥作\n用抑制重启时，将会显示剩余时间\n和重启抑制模式。由于重启抑制使\n用计时器来根据上次启动的时间来\n来判断下次的启动时间，因此，即\n使在 MP上按下“启动”按钮也无法\n启动机组。\n低油温起动抑制\n油温如果达到或者低于低油温\no o起动抑制设定 (143 F/61.7 C)。加热\n器会通电回热，提高油温。\n油温过低表明制冷剂在溶入油\n中。由于油温与溶入油中制冷剂的\n量有直接对应关系，因此油温可用\n于估算制冷剂溶入的量。根据要求\n确定油中允许溶入少量的制冷剂。\n要满足这个要求只需要维持油达到\n一个足够高的温度，使油中的制冷\n剂沸腾逸出。\n如果油温达到或者低于设定的\no低油温抑制设定值 (默认值为 95 F/35\noC)，压缩机就不能起动。这是一个\n抑制模式，会报告到操作界面。油\n加热器然后通电，加热油使其温度\n超过这个抑制温度的设定。当油温\n超过设定以上 5度时，压缩机就会起\n动。除了停机后润滑中的快速重启\n，其他时候的每次起动都会进行低\n油温起动抑制测试。\n如果增强型油温保护设置启用\n，低油温起动抑制值就要大于 100\no oF/37.8 C 或是蒸发器制冷剂的饱和\no o温度 + 30 F/16.7 C 。\n如果增强型油温保护设置没有启用，低油温起动抑制值可以通过\n维修工具软件设置低油温起动抑制\n设定来设置。\n油温控制\n油加热器用于将油温保持在设\no o定值 +/- 2.5 F (1.4 C)的范围内。我\n们建议在油泵开动时，油加热器停\n止工作。\n如果油温达到或者低于低油温\n停机设定值时，就会显示这个诊断\n信息并停止压缩机工作。在压缩机\n刚开始运行的 10分钟内这个诊断信\n息可以忽略。 10分钟后，如果油温\n连续 60秒低于这个温度，就会显示\n诊断信息。\n低油温停机保护\n如果油温连续 60秒低于或等于\n低油温抑制设定值，将启动故障诊\n断并关闭压缩机。\n在压缩机运行的前 10分钟内不\n启用诊断功能。\n高油温停机保护\n这是一则锁定的故障诊断，将\no导致立即停机。默认设定值：  180 F\no(82.2 C)。此功能用于避免油和轴承\n过热。\n如果油温达到或者高于高油温\n停机设定值，就会显示这个诊断信\n息停止压缩机工作。\n如果油温超过这个温度设定值 1\n20秒，也会显示这个诊断信息。\n手动油泵控制\n油泵控制可接受起动油泵的命\n令 。 手 动 油 泵 的 选 择 可 以 是 “ 自\n动 ” 或 “ 开 ” 。 当 油 泵 命 令 为\n“开”时， 15分钟后它会转入“自\n动”。此设定可以通过 DynaView 或\nTechView 调整。\n冷冻水重置 (CWR)\n在部分负荷时，当设定的冷冻水温度无法达到时，冷冻水重置就\n可以起作用。\n这种时候可以根据 CWR的特性\n重新将出水温度设定值调高。\n当CWR功 能 是 基 于 回 水 温 度\n时，CWR是标准配置。\n当CWR功 能 是 基 于 室 外 气 温\n时， CWR的配置可以选择增加一个\n安装在 UCP面板上的室外温度传感\n器模块或装在室外的传感器。\nCWR的类型在操作界面设置菜\n单中选择，选项重置比、起始重置\n设定和最大重置。\n高温差卸载（只用于 500冷吨\n系列机组）\n高温差卸载阀（ HLUV）将冷凝\n器中的气体通过电磁阀直接排放到\n经济器中。然后，被排的气体从经\n济器中流入到压缩机的第二级（通\n常与经济器联接的是压缩机的第二\n级）。 HLUV的目的是增加第二级压\n缩机的蒸气流量。通过常闭电磁阀\n旁通气体到压缩机。高温差卸载功\n能取决于温差（此处，温差被定义\n为冷凝器和蒸发器饱和制冷剂温度\n的差值）和机组负荷。进入高温差\n卸载模式后，高温差卸载阀打开，\n入口导向叶片关闭动作被禁止。\nHLUV阀不能调整流量，只能是\n开或者关。另外，在低于 35％ IGV位\n置时阀门的设计尺寸可以满足运行\n所需的流量，但当 IGV为 0％时不能\n满足流量要求。阀门的尺寸可以允\n许大幅度的但不是完全的卸载，并\n且 会 尽 可 能 保 持 小 流 量 ， 减 少\nHLUV操作的电耗。\n不是所有的 CVGF机组都需要旁\n通冷凝器蒸气。某些容量的机组中\n不存在高温差卸载阀和铜管。带有\n高温差卸载继电器的 LLID（ 1A9）总\n是存在。机组保护和自适应\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "text_excerpt": "52次启动的间隔时间。\n默认设定是 20分钟，可以使用\nTechView 更 改 设 置 。 如 果 使 用\nTechView 设置重启限制类型为“时\n间”，或者检测到电机绕组温度过\n高时，将启用基于时间的重启抑制\n功能。\n注意：当重启抑制功能发挥作\n用抑制重启时，将会显示剩余时间\n和重启抑制模式。由于重启抑制使\n用计时器来根据上次启动的时间来\n来判断下次的启动时间，因此，即\n使在 MP上按下“启"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_d74c4f1e906299f9",
+        "evidence_role": "primary",
+        "evidence_text": "52次启动的间隔时间。\n默认设定是 20分钟，可以使用\nTechView 更 改 设 置 。 如 果 使 用\nTechView 设置重启限制类型为“时\n间”，或者检测到电机绕组温度过\n高时，将启用基于时间的重启抑制\n功能。\n注意：当重启抑制功能发挥作\n用抑制重启时，将会显示剩余时间\n和重启抑制模式。由于重启抑制使\n用计时器来根据上次启动的时间来\n来判断下次的启动时间，因此，即\n使在 MP上按下“启动”按钮也无法\n启动机组。\n低油温起动抑制\n油温如果达到或者低于低油温\no o起动抑制设定 (143 F/61.7 C)。加热\n器会通电回热，提高油温。\n油温过低表明制冷剂在溶入油\n中。由于油温与溶入油中制冷剂的\n量有直接对应关系，因此油温可用\n于估算制冷剂溶入的量。根据要求\n确定油中允许溶入少量的制冷剂。\n要满足这个要求只需要维持油达到\n一个足够高的温度，使油中的制冷\n剂沸腾逸出。\n如果油温达到或者低于设定的\no低油温抑制设定值 (默认值为 95 F/35\noC)，压缩机就不能起动。这是一个\n抑制模式，会报告到操作界面。油\n加热器然后通电，加热油使其温度\n超过这个抑制温度的设定。当油温\n超过设定以上 5度时，压缩机就会起\n动。除了停机后润滑中的快速重启\n，其他时候的每次起动都会进行低\n油温起动抑制测试。\n如果增强型油温保护设置启用\n，低油温起动抑制值就要大于 100\no oF/37.8 C 或是蒸发器制冷剂的饱和\no o温度 + 30 F/16.7 C 。\n如果增强型油温保护设置没有启用，低油温起动抑制值可以通过\n维修工具软件设置低油温起动抑制\n设定来设置。\n油温控制\n油加热器用于将油温保持在设\no o定值 +/- 2.5 F (1.4 C)的范围内。我\n们建议在油泵开动时，油加热器停\n止工作。\n如果油温达到或者低于低油温\n停机设定值时，就会显示这个诊断\n信息并停止压缩机工作。在压缩机\n刚开始运行的 10分钟内这个诊断信\n息可以忽略。 10分钟后，如果油温\n连续 60秒低于这个温度，就会显示\n诊断信息。\n低油温停机保护\n如果油温连续 60秒低于或等于\n低油温抑制设定值，将启动故障诊\n断并关闭压缩机。\n在压缩机运行的前 10分钟内不\n启用诊断功能。\n高油温停机保护\n这是一则锁定的故障诊断，将\no导致立即停机。默认设定值：  180 F\no(82.2 C)。此功能用于避免油和轴承\n过热。\n如果油温达到或者高于高油温\n停机设定值，就会显示这个诊断信\n息停止压缩机工作。\n如果油温超过这个温度设定值 1\n20秒，也会显示这个诊断信息。\n手动油泵控制\n油泵控制可接受起动油泵的命\n令 。 手 动 油 泵 的 选 择 可 以 是 “ 自\n动 ” 或 “ 开 ” 。 当 油 泵 命 令 为\n“开”时， 15分钟后它会转入“自\n动”。此设定可以通过 DynaView 或\nTechView 调整。\n冷冻水重置 (CWR)\n在部分负荷时，当设定的冷冻水温度无法达到时，冷冻水重置就\n可以起作用。\n这种时候可以根据 CWR的特性\n重新将出水温度设定值调高。\n当CWR功 能 是 基 于 回 水 温 度\n时，CWR是标准配置。\n当CWR功 能 是 基 于 室 外 气 温\n时， CWR的配置可以选择增加一个\n安装在 UCP面板上的室外温度传感\n器模块或装在室外的传感器。\nCWR的类型在操作界面设置菜\n单中选择，选项重置比、起始重置\n设定和最大重置。\n高温差卸载（只用于 500冷吨\n系列机组）\n高温差卸载阀（ HLUV）将冷凝\n器中的气体通过电磁阀直接排放到\n经济器中。然后，被排的气体从经\n济器中流入到压缩机的第二级（通\n常与经济器联接的是压缩机的第二\n级）。 HLUV的目的是增加第二级压\n缩机的蒸气流量。通过常闭电磁阀\n旁通气体到压缩机。高温差卸载功\n能取决于温差（此处，温差被定义\n为冷凝器和蒸发器饱和制冷剂温度\n的差值）和机组负荷。进入高温差\n卸载模式后，高温差卸载阀打开，\n入口导向叶片关闭动作被禁止。\nHLUV阀不能调整流量，只能是\n开或者关。另外，在低于 35％ IGV位\n置时阀门的设计尺寸可以满足运行\n所需的流量，但当 IGV为 0％时不能\n满足流量要求。阀门的尺寸可以允\n许大幅度的但不是完全的卸载，并\n且 会 尽 可 能 保 持 小 流 量 ， 减 少\nHLUV操作的电耗。\n不是所有的 CVGF机组都需要旁\n通冷凝器蒸气。某些容量的机组中\n不存在高温差卸载阀和铜管。带有\n高温差卸载继电器的 LLID（ 1A9）总\n是存在。机组保护和自适应\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn."
+      },
+      "source_manual": {
+        "path": "doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+        "page_no": 53
+      }
+    }
+  ]
+}

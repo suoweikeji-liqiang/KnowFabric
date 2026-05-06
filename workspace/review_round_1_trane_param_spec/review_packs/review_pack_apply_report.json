@@ -1,0 +1,27 @@
+{
+  "apply_mode": "chunk_backfill_review_pack_batch",
+  "generated_at": "2026-04-30T14:02:26.479419+00:00",
+  "pack_dir": "review_packs",
+  "fixtures_output_dir": "review_packs/applied_fixtures",
+  "total_pack_files": 1,
+  "summary": {
+    "applied": 1,
+    "skipped_pending": 0,
+    "skipped_no_accepted": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_883beab5e0004a2c__centrifugal_chiller.json",
+      "pack_path": "review_packs/hvac__doc_883beab5e0004a2c__centrifugal_chiller.json",
+      "candidate_count": 25,
+      "accepted_count": 23,
+      "rejected_count": 2,
+      "pending_count": 0,
+      "status": "applied",
+      "equipment_class_key": "hvac:centrifugal_chiller",
+      "knowledge_object_count": 23,
+      "fixture_path": "review_packs/applied_fixtures/hvac__doc_883beab5e0004a2c__centrifugal_chiller__fixture.json"
+    }
+  ]
+}

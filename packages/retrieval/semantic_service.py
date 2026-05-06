@@ -298,6 +298,7 @@ class SemanticRetrievalService:
         db: Session,
         ontology_class: dict[str, Any],
         knowledge_objects: list[KnowledgeObjectV2],
+        total_count: int,
         language: str = "en",
     ) -> dict[str, Any]:
         evidence_map = self._load_evidence_map(db, [item.knowledge_object_id for item in knowledge_objects])
@@ -342,6 +343,9 @@ class SemanticRetrievalService:
                 "domain_id": ontology_class["domain_id"],
             },
             "items": items,
+            "total_count": total_count,
+            "returned_count": len(items),
+            "has_more": total_count > len(items),
         }
 
     def explain_equipment_class(
@@ -412,7 +416,7 @@ class SemanticRetrievalService:
         include_related_symptoms: bool = True,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
-        limit: int = 20,
+        limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded fault knowledge attached to an equipment class."""
@@ -441,8 +445,9 @@ class SemanticRetrievalService:
                 min_trust_level,
             )
         ]
+        total_count = len(filtered)
         ranked = self._sort_fault_knowledge(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
+        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
 
     def get_parameter_profiles(
         self,
@@ -455,7 +460,7 @@ class SemanticRetrievalService:
         model_family: str | None = None,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
-        limit: int = 20,
+        limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded parameter and performance knowledge."""
@@ -483,8 +488,9 @@ class SemanticRetrievalService:
                 min_trust_level,
             )
         ]
+        total_count = len(filtered)
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
+        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
 
     def get_maintenance_guidance(
         self,
@@ -497,7 +503,7 @@ class SemanticRetrievalService:
         include_diagnostic_steps: bool = True,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
-        limit: int = 20,
+        limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded maintenance guidance attached to an equipment class."""
@@ -525,8 +531,9 @@ class SemanticRetrievalService:
                 min_trust_level,
             )
         ]
+        total_count = len(filtered)
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
+        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
 
     def get_application_guidance(
         self,
@@ -538,7 +545,7 @@ class SemanticRetrievalService:
         model_family: str | None = None,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
-        limit: int = 20,
+        limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded application guidance attached to an equipment class."""
@@ -565,8 +572,9 @@ class SemanticRetrievalService:
                 min_trust_level,
             )
         ]
+        total_count = len(filtered)
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
+        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
 
     def get_operational_guidance(
         self,
@@ -578,7 +586,7 @@ class SemanticRetrievalService:
         model_family: str | None = None,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
-        limit: int = 20,
+        limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
         """Return evidence-grounded commissioning, wiring, and application guidance."""
@@ -605,5 +613,6 @@ class SemanticRetrievalService:
                 min_trust_level,
             )
         ]
+        total_count = len(filtered)
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, language=language)
+        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
