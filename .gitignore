@@ -1,4 +1,5 @@
 .env
+.env.mimo.local
 *.pyc
 __pycache__/
 *.egg-info/
