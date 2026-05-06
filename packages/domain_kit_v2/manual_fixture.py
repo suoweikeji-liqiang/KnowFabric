@@ -30,6 +30,12 @@ def _build_chunk_context(doc_id: str, page_id: str, page_no: int) -> dict[str, A
     return {"doc_id": doc_id, "page_id": page_id, "page_no": page_no}
 
 
+def _entry_evidence_refs(entry: dict[str, Any]) -> list[dict[str, Any]]:
+    refs = [entry]
+    refs.extend(item for item in entry.get("additional_evidence", []) if isinstance(item, dict))
+    return refs
+
+
 def _build_fixture_base_rows(
     fixture: dict[str, Any],
 ) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]], dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
@@ -39,44 +45,45 @@ def _build_fixture_base_rows(
     chunk_contexts: dict[str, dict[str, Any]] = {}
 
     for entry in fixture["manual_entries"]:
-        doc_id = entry["doc"]["doc_id"]
-        page_id = entry["page"]["page_id"]
-        page_no = entry["page"]["page_no"]
-        chunk_id = entry["chunk"]["chunk_id"]
+        for evidence_ref in _entry_evidence_refs(entry):
+            doc_id = evidence_ref["doc"]["doc_id"]
+            page_id = evidence_ref["page"]["page_id"]
+            page_no = evidence_ref["page"]["page_no"]
+            chunk_id = evidence_ref["chunk"]["chunk_id"]
 
-        document_rows[doc_id] = {
-            "doc_id": doc_id,
-            "file_hash": f"hash_{doc_id}",
-            "storage_path": entry["source_manual"]["path"],
-            "file_name": entry["doc"]["file_name"],
-            "file_ext": "pdf",
-            "mime_type": "application/pdf",
-            "file_size": 1,
-            "source_domain": entry["doc"]["source_domain"],
-            "parse_status": "complete",
-            "is_active": True,
-        }
-        page_rows[page_id] = {
-            "page_id": page_id,
-            "doc_id": doc_id,
-            "page_no": page_no,
-            "raw_text": entry["evidence"]["evidence_text"],
-            "cleaned_text": entry["evidence"]["evidence_text"],
-            "page_type": entry["page"]["page_type"],
-        }
-        chunk_rows[chunk_id] = {
-            "chunk_id": chunk_id,
-            "doc_id": doc_id,
-            "page_id": page_id,
-            "page_no": page_no,
-            "chunk_index": entry["chunk"]["chunk_index"],
-            "raw_text": entry["chunk"]["cleaned_text"],
-            "cleaned_text": entry["chunk"]["cleaned_text"],
-            "text_excerpt": entry["chunk"]["text_excerpt"],
-            "chunk_type": entry["chunk"]["chunk_type"],
-            "evidence_anchor": json.dumps({"manual_page": entry["source_manual"]["page_no"]}, ensure_ascii=False),
-        }
-        chunk_contexts[chunk_id] = _build_chunk_context(doc_id, page_id, page_no)
+            document_rows[doc_id] = {
+                "doc_id": doc_id,
+                "file_hash": f"hash_{doc_id}",
+                "storage_path": evidence_ref["source_manual"]["path"],
+                "file_name": evidence_ref["doc"]["file_name"],
+                "file_ext": "pdf",
+                "mime_type": "application/pdf",
+                "file_size": 1,
+                "source_domain": evidence_ref["doc"]["source_domain"],
+                "parse_status": "complete",
+                "is_active": True,
+            }
+            page_rows[page_id] = {
+                "page_id": page_id,
+                "doc_id": doc_id,
+                "page_no": page_no,
+                "raw_text": evidence_ref["evidence"]["evidence_text"],
+                "cleaned_text": evidence_ref["evidence"]["evidence_text"],
+                "page_type": evidence_ref["page"]["page_type"],
+            }
+            chunk_rows[chunk_id] = {
+                "chunk_id": chunk_id,
+                "doc_id": doc_id,
+                "page_id": page_id,
+                "page_no": page_no,
+                "chunk_index": evidence_ref["chunk"]["chunk_index"],
+                "raw_text": evidence_ref["chunk"]["cleaned_text"],
+                "cleaned_text": evidence_ref["chunk"]["cleaned_text"],
+                "text_excerpt": evidence_ref["chunk"]["text_excerpt"],
+                "chunk_type": evidence_ref["chunk"]["chunk_type"],
+                "evidence_anchor": json.dumps({"manual_page": evidence_ref["source_manual"]["page_no"]}, ensure_ascii=False),
+            }
+            chunk_contexts[chunk_id] = _build_chunk_context(doc_id, page_id, page_no)
 
     return document_rows, page_rows, chunk_rows, chunk_contexts
 
@@ -100,10 +107,16 @@ def _build_anchor_row(
     entry: dict[str, Any],
     *,
     match_method: str,
+    evidence_ref: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    evidence_ref = evidence_ref or entry
+    chunk_id = evidence_ref["chunk"]["chunk_id"]
+    anchor_id = f'anchor_{entry["knowledge_object_id"]}'
+    if chunk_id != entry["chunk"]["chunk_id"]:
+        anchor_id = f'anchor_{entry["knowledge_object_id"]}_{chunk_id[-12:]}'
     return {
-        "chunk_anchor_id": f'anchor_{entry["knowledge_object_id"]}',
-        "chunk_id": entry["chunk"]["chunk_id"],
+        "chunk_anchor_id": anchor_id,
+        "chunk_id": chunk_id,
         "ontology_class_key": fixture["equipment_class_key"],
         "domain_id": fixture["domain_id"],
         "ontology_class_id": fixture["equipment_class_id"],
@@ -111,8 +124,8 @@ def _build_anchor_row(
         "confidence_score": entry["confidence_score"],
         "is_primary": True,
         "match_metadata_json": {
-            "source_manual": entry["source_manual"]["path"],
-            "source_manual_page_no": entry["source_manual"]["page_no"],
+            "source_manual": evidence_ref["source_manual"]["path"],
+            "source_manual_page_no": evidence_ref["source_manual"]["page_no"],
         },
     }
 
@@ -153,16 +166,16 @@ def _build_knowledge_row(
     }
 
 
-def _build_evidence_row(entry: dict[str, Any], chunk_context: Mapping[str, Any]) -> dict[str, Any]:
+def _build_evidence_row(entry: dict[str, Any], evidence_ref: dict[str, Any], chunk_context: Mapping[str, Any]) -> dict[str, Any]:
     return {
-        "knowledge_evidence_id": entry["evidence"]["knowledge_evidence_id"],
+        "knowledge_evidence_id": evidence_ref["evidence"]["knowledge_evidence_id"],
         "knowledge_object_id": entry["knowledge_object_id"],
-        "chunk_id": entry["chunk"]["chunk_id"],
+        "chunk_id": evidence_ref["chunk"]["chunk_id"],
         "doc_id": chunk_context["doc_id"],
         "page_id": chunk_context["page_id"],
         "page_no": chunk_context["page_no"],
-        "evidence_text": entry["evidence"]["evidence_text"],
-        "evidence_role": entry["evidence"]["evidence_role"],
+        "evidence_text": evidence_ref["evidence"]["evidence_text"],
+        "evidence_role": evidence_ref["evidence"]["evidence_role"],
         "confidence_score": entry["confidence_score"],
     }
 
@@ -182,12 +195,14 @@ def build_manual_semantic_rows(
     evidence_rows: list[dict[str, Any]] = []
 
     for entry in fixture["manual_entries"]:
-        chunk_id = entry["chunk"]["chunk_id"]
-        chunk_context = chunk_contexts.get(chunk_id)
-        if chunk_context is None:
-            raise ValueError(f"Missing chunk context for manual entry: {chunk_id}")
-        _validate_chunk_context(entry, chunk_context)
-        anchor_rows.append(_build_anchor_row(fixture, entry, match_method=match_method))
+        for evidence_ref in _entry_evidence_refs(entry):
+            chunk_id = evidence_ref["chunk"]["chunk_id"]
+            chunk_context = chunk_contexts.get(chunk_id)
+            if chunk_context is None:
+                raise ValueError(f"Missing chunk context for manual entry: {chunk_id}")
+            _validate_chunk_context(evidence_ref, chunk_context)
+            anchor_rows.append(_build_anchor_row(fixture, entry, match_method=match_method, evidence_ref=evidence_ref))
+            evidence_rows.append(_build_evidence_row(entry, evidence_ref, chunk_context))
         knowledge_rows.append(
             _build_knowledge_row(
                 fixture,
@@ -196,7 +211,6 @@ def build_manual_semantic_rows(
                 ontology_version=ontology_version,
             )
         )
-        evidence_rows.append(_build_evidence_row(entry, chunk_context))
 
     return {
         "anchors": anchor_rows,

@@ -183,6 +183,51 @@ def test_build_manual_fixture_from_review_candidates_for_hvac(monkeypatch) -> No
     assert isinstance(entry["health_signals"]["flags"], list)
 
 
+def test_review_candidate_fixture_preserves_multi_chunk_evidence(monkeypatch) -> None:
+    """Accepted candidates can carry supporting evidence from more than one chunk."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_fixture_chunks(session_factory, HVAC_FIXTURE)
+    monkeypatch.setattr("scripts.generate_chunk_backfill_candidates.SessionLocal", session_factory)
+
+    payload = _review_payload_for_hvac_faults(session_factory)
+    accepted = next(entry for entry in payload["candidate_entries"] if entry["review_decision"] == "accepted")
+    accepted["curation"]["source_chunk_ids"] = [
+        accepted["chunk_id"],
+        "chunk_aux_module_faults_e23",
+    ]
+
+    db = session_factory()
+    try:
+        fixture = build_manual_fixture_from_review_candidates(payload, db)
+    finally:
+        db.close()
+
+    entry = fixture["manual_entries"][0]
+    rows = build_manual_fixture_rows(fixture)
+    assert entry["chunk"]["chunk_id"] == accepted["chunk_id"]
+    assert entry["additional_evidence"][0]["chunk"]["chunk_id"] == "chunk_aux_module_faults_e23"
+    assert entry["additional_evidence"][0]["evidence"]["evidence_role"] == "supporting"
+    assert len(rows["evidence"]) == 2
+    assert {row["chunk_id"] for row in rows["anchors"]} == {
+        accepted["chunk_id"],
+        "chunk_aux_module_faults_e23",
+    }
+    monkeypatch.setattr("scripts.backfill_manual_knowledge_from_chunks.SessionLocal", session_factory)
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        fixture_path = Path(tmp_dir) / "multi_chunk_fixture.json"
+        fixture_path.write_text(json.dumps(fixture, ensure_ascii=False, indent=2), encoding="utf-8")
+        _, knowledge_count = backfill_manual_fixture_from_chunks(fixture_path)
+
+    db = session_factory()
+    try:
+        assert knowledge_count == 1
+        assert db.query(KnowledgeObjectEvidenceV2).count() == 2
+    finally:
+        db.close()
+
+
 def test_build_manual_fixture_from_review_candidates_requires_curation(monkeypatch) -> None:
     """Accepted candidates without required curation fields should fail fast."""
 

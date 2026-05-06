@@ -76,6 +76,9 @@ def _validate_candidate_chain(
     page: DocumentPage,
     document: Document,
 ) -> None:
+    required = ("doc_id", "page_id", "page_no", "chunk_id")
+    if any(entry.get(field) is None for field in required):
+        return
     expected = {
         "doc_id": document.doc_id,
         "page_id": page.page_id,
@@ -92,16 +95,33 @@ def _validate_candidate_chain(
         raise ValueError(f"Candidate chain mismatch for {entry['candidate_id']}: expected {expected}, got {actual}")
 
 
-def _load_chunk_chain(session: Session, entry: dict[str, Any]) -> tuple[ContentChunk, DocumentPage, Document]:
+def _source_chunk_ids(entry: dict[str, Any]) -> list[str]:
+    curation = entry.get("curation") if isinstance(entry.get("curation"), dict) else {}
+    for source in (entry, curation):
+        value = source.get("source_chunk_ids")
+        if isinstance(value, list) and value:
+            return list(dict.fromkeys(str(item) for item in value if str(item).strip()))
+    chunk_id = entry.get("chunk_id")
+    if chunk_id:
+        return [str(chunk_id)]
+    raise ValueError(f"Accepted candidate {entry['candidate_id']} has no source chunk")
+
+
+def _load_chunk_chain_by_id(session: Session, chunk_id: str) -> tuple[ContentChunk, DocumentPage, Document]:
     row = (
         session.query(ContentChunk, DocumentPage, Document)
         .join(DocumentPage, ContentChunk.page_id == DocumentPage.page_id)
         .join(Document, ContentChunk.doc_id == Document.doc_id)
-        .filter(ContentChunk.chunk_id == entry["chunk_id"])
+        .filter(ContentChunk.chunk_id == chunk_id)
         .one_or_none()
     )
     if row is None:
-        raise ValueError(f"Missing chunk chain for accepted candidate: {entry['chunk_id']}")
+        raise ValueError(f"Missing chunk chain for accepted candidate: {chunk_id}")
+    return row
+
+
+def _load_chunk_chain(session: Session, entry: dict[str, Any]) -> tuple[ContentChunk, DocumentPage, Document]:
+    row = _load_chunk_chain_by_id(session, _source_chunk_ids(entry)[0])
     chunk, page, document = row
     _validate_candidate_chain(entry, chunk, page, document)
     if document.source_domain != entry["domain_id"]:
@@ -128,19 +148,97 @@ def _curation_block(entry: dict[str, Any]) -> dict[str, Any]:
     return curation
 
 
-def _build_manual_entry(
+def _candidate_evidence_text(entry: dict[str, Any]) -> str:
+    curation = entry.get("curation") if isinstance(entry.get("curation"), dict) else {}
+    for source in (curation, entry):
+        for field in ("evidence_text", "evidence_quote"):
+            value = source.get(field)
+            if isinstance(value, str) and value.strip():
+                return value.strip()
+    return _require_non_empty_text(entry.get("evidence_text"), "evidence_text")
+
+
+def _chunk_evidence_text(entry: dict[str, Any], chunk: ContentChunk, *, primary: bool) -> str:
+    if primary:
+        return _candidate_evidence_text(entry)
+    return _require_non_empty_text(
+        chunk.text_excerpt or chunk.cleaned_text or _candidate_evidence_text(entry),
+        "supporting evidence text",
+    )
+
+
+def _chain_ref(
+    entry: dict[str, Any],
+    chunk: ContentChunk,
+    page: DocumentPage,
+    document: Document,
+    *,
+    evidence_id: str,
+    evidence_role: str,
+    evidence_text: str,
+) -> dict[str, Any]:
+    return {
+        "doc": {
+            "doc_id": document.doc_id,
+            "file_name": document.file_name,
+            "source_domain": document.source_domain,
+        },
+        "page": {
+            "page_id": page.page_id,
+            "page_no": page.page_no,
+            "page_type": page.page_type,
+        },
+        "chunk": {
+            "chunk_id": chunk.chunk_id,
+            "chunk_index": chunk.chunk_index,
+            "chunk_type": chunk.chunk_type,
+            "cleaned_text": chunk.cleaned_text,
+            "text_excerpt": chunk.text_excerpt,
+        },
+        "evidence": {
+            "knowledge_evidence_id": evidence_id,
+            "evidence_role": evidence_role,
+            "evidence_text": evidence_text,
+        },
+        "source_manual": {
+            "path": document.storage_path,
+            "page_no": page.page_no,
+        },
+    }
+
+
+def _supporting_evidence_refs(
     session: Session,
     entry: dict[str, Any],
+    document: Document,
+) -> list[dict[str, Any]]:
+    refs = []
+    for chunk_id in _source_chunk_ids(entry)[1:]:
+        chunk, page, supporting_document = _load_chunk_chain_by_id(session, chunk_id)
+        if supporting_document.doc_id != document.doc_id:
+            raise ValueError(f"Candidate {entry['candidate_id']} spans multiple documents")
+        refs.append(
+            _chain_ref(
+                entry,
+                chunk,
+                page,
+                supporting_document,
+                evidence_id=_stable_id("koev", f"{entry['candidate_id']}::evidence::{chunk_id}"),
+                evidence_role="supporting",
+                evidence_text=_chunk_evidence_text(entry, chunk, primary=False),
+            )
+        )
+    return refs
+
+
+def _base_manual_entry(
+    entry: dict[str, Any],
+    curation: dict[str, Any],
+    primary_ref: dict[str, Any],
+    *,
+    knowledge_object_id: str,
+    canonical_key: str,
 ) -> dict[str, Any]:
-    curation = _curation_block(entry)
-    chunk, page, document = _load_chunk_chain(session, entry)
-    knowledge_object_id = curation.get("knowledge_object_id") or _stable_id("ko", entry["candidate_id"])
-    knowledge_evidence_id = curation.get("knowledge_evidence_id") or _stable_id(
-        "koev",
-        f"{entry['candidate_id']}::evidence",
-    )
-    canonical_key = curation.get("canonical_key") or entry["canonical_key_candidate"]
-    evidence_text = curation.get("evidence_text") or entry["evidence_text"]
     return {
         "knowledge_object_type": entry["knowledge_object_type"],
         "knowledge_object_id": knowledge_object_id,
@@ -162,33 +260,40 @@ def _build_manual_entry(
             ],
             "findings": entry.get("health_findings", []),
         },
-        "doc": {
-            "doc_id": document.doc_id,
-            "file_name": document.file_name,
-            "source_domain": document.source_domain,
-        },
-        "page": {
-            "page_id": page.page_id,
-            "page_no": page.page_no,
-            "page_type": page.page_type,
-        },
-        "chunk": {
-            "chunk_id": chunk.chunk_id,
-            "chunk_index": chunk.chunk_index,
-            "chunk_type": chunk.chunk_type,
-            "cleaned_text": chunk.cleaned_text,
-            "text_excerpt": chunk.text_excerpt,
-        },
-        "evidence": {
-            "knowledge_evidence_id": knowledge_evidence_id,
-            "evidence_role": curation.get("evidence_role", "primary"),
-            "evidence_text": evidence_text,
-        },
-        "source_manual": {
-            "path": document.storage_path,
-            "page_no": page.page_no,
-        },
+        **primary_ref,
     }
+
+
+def _build_manual_entry(
+    session: Session,
+    entry: dict[str, Any],
+) -> dict[str, Any]:
+    curation = _curation_block(entry)
+    chunk, page, document = _load_chunk_chain(session, entry)
+    knowledge_object_id = curation.get("knowledge_object_id") or _stable_id("ko", entry["candidate_id"])
+    knowledge_evidence_id = curation.get("knowledge_evidence_id") or _stable_id(
+        "koev",
+        f"{entry['candidate_id']}::evidence::{chunk.chunk_id}",
+    )
+    canonical_key = curation.get("canonical_key") or entry["canonical_key_candidate"]
+    primary_ref = _chain_ref(
+        entry,
+        chunk,
+        page,
+        document,
+        evidence_id=knowledge_evidence_id,
+        evidence_role=curation.get("evidence_role", "primary"),
+        evidence_text=_chunk_evidence_text(entry, chunk, primary=True),
+    )
+    manual_entry = _base_manual_entry(
+        entry,
+        curation,
+        primary_ref,
+        knowledge_object_id=knowledge_object_id,
+        canonical_key=canonical_key,
+    )
+    manual_entry["additional_evidence"] = _supporting_evidence_refs(session, entry, document)
+    return manual_entry
 
 
 def build_manual_fixture_from_review_candidates(payload: dict[str, Any], session: Session) -> dict[str, Any]:

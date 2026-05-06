@@ -4,8 +4,8 @@
   "equipment_class_key": "hvac:chiller",
   "fixture_metadata": {
     "source_generation_mode": null,
-    "generated_at": "2026-05-06T11:05:30.113750+00:00",
-    "accepted_candidate_count": 13
+    "generated_at": "2026-05-06T11:47:13.944371+00:00",
+    "accepted_candidate_count": 15
   },
   "manual_entries": [
     {
@@ -79,14 +79,127 @@
         "text_excerpt": "46 ASHRAE Guideline 36 -2021  If R≤I, c hange Setpoint  by SPtrim\nIf R > I, change setpoint  by (R – I)*SPres but no large r than SPres -max\nThe following is an example of a sequence that uses T&R to "
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_9daf509a69a1dec2",
+        "knowledge_evidence_id": "koev_28e94460e5fe42ab",
         "evidence_role": "primary",
         "evidence_text": "If R≤I, c hange Setpoint by SPtrim If R > I, change setpoint by (R – I)*SPres but no large r than SPres -max The following is an example of a sequence that uses T&R to control the static pressure setpoint of a VAV AHU serving multiple downstream zones. This sequence defines the T&R variables as shown in Informative Table 5.1.14.4. Informative Tab le 5.1.14.4 Example Sequence T&R Variables Variable Definition Device Supply fan SP0 120 Pa (0.5 in. of water) SPmin 37 Pa (0.15 in. of water) SPmax 370 Pa (1.50 in. of water) Td 5 T 2 I 2 SPtrim –10 Pa (–0.04 in. of water) SPres 15 Pa (0.06 in. of water) SPres -max 37 Pa (0.15 in. of water) Description of General Operation Starting 5 minutes after the fan status indicates the supply fan is ON, the sequence will slowly reduce the AHUs static pressure setpoint by 10 Pa (0.04 in. of water) every 2 minutes if R≤I ."
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 48
-      }
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_a75ed52f97d5b70e",
+      "canonical_key": "ashrae:g36:operational_sequence:5_1_14:trim_respond_set_point_reset_logic",
+      "title": "Trim & Respond Set-Point Reset Logic",
+      "summary": "T&R logic resets a setpoint at a fixed rate until a downstream zone is no longer satisfied and generates a request. When sufficient requests are present, the setpoint is increased. When requests subside, the setpoint resumes decreasing.",
+      "structured_payload": {
+        "knowledge_object_type": "operational_sequence",
+        "title": "Trim & Respond Set-Point Reset Logic",
+        "section_id": "5.1.14",
+        "section_title": "Trim & Respond Set-Point Reset Logic",
+        "equipment_scope": "Air handler or plant controlling pressure, temperature, or other variables",
+        "summary": "T&R logic resets a setpoint at a fixed rate until a downstream zone is no longer satisfied and generates a request. When sufficient requests are present, the setpoint is increased. When requests subside, the setpoint resumes decreasing.",
+        "trigger_condition": "Associated device is proven ON, starting Td after initial device start command.",
+        "required_behavior": "Every time step T, if R ≤ I, trim setpoint by SPtrim. If R > I, respond by changing setpoint by (R – I)*SPres but no larger than SPres-max.",
+        "configurable_values": [
+          "SP0 (initial setpoint)",
+          "SPmin (minimum setpoint)",
+          "SPmax (maximum setpoint)",
+          "Td (delay timer)",
+          "T (time step)",
+          "I (number of ignored requests)",
+          "SPtrim (trim amount)",
+          "SPres (respond amount, opposite sign to SPtrim)",
+          "SPres-max (maximum response per time interval)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "5.1.14.4. Trim & Respond logic shall reset the setpoint within the range SPmin to SPmax. When the associated device is OFF, the setpoint shall be SP0. The reset logic shall be active while the associated device is proven ON, starting Td after initial device start command. When active, every time step T, if R≤I, trim the setpoint by SPtrim. If there are more than I requests , respond by chan ging the setpoint by SPres *(R – I), (i.e., the number of requests minus the number of ignored requests) but no more than SPres -max.",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.14",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "authority_level": "industry_standard",
+        "knowledge_type": "operational_sequence",
+        "source_standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "applicability": {
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "sections": [
+          "5.1.14"
+        ],
+        "source": "ASHRAE Guideline 36 reviewed Chiller subset"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_e8346d67fe274887",
+        "page_no": 47,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_507583e7952144cd",
+        "chunk_index": 1,
+        "chunk_type": "paragraph",
+        "cleaned_text": "For each upstream system or plant setpoint  being controlled by a T&R loop, define the following\nvariables. Initial values are  defined in system/plant sequences below. Values for trim, respond, time\nstep, etc. shall be tuned to provide stable control. See Table 5.1.14.3.\nTable 5.1.14.3 Trim & Respond Variables\nVariable  Definition\nDevice  Associated device (e.g., fan, pump)\nSP0 Initial setpoint\nSPmin  Minimum setpoint\nSPmax  Maximum setpoint\nTd Delay timer\nT Time step\nI Number of ignored requests\nR Number of requests  from zones/systems\nSPtrim  Trim amount\nSPres  Respond amount (must be opposite in sign\nto SPtrim)\nSPres -max Maximum response per time interval (must\nbe same sign as SPres)\nInformative Note:  The number of ignored requests (I) should be set\nto zero for critical zones or air handlers.\n5.1.14.4.  Trim & Respond logic shall reset the setpoint  within the range SPmin to SPmax. When the\nassociated device is OFF, the setpoint  shall be SP0.",
+        "text_excerpt": "For each upstream system or plant setpoint  being controlled by a T&R loop, define the following\nvariables. Initial values are  defined in system/plant sequences below. Values for trim, respond, time\n"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_2ec7936908e05d55",
+        "evidence_role": "primary",
+        "evidence_text": "5.1.14.4. Trim & Respond logic shall reset the setpoint within the range SPmin to SPmax. When the associated device is OFF, the setpoint shall be SP0. The reset logic shall be active while the associated device is proven ON, starting Td after initial device start command. When active, every time step T, if R≤I, trim the setpoint by SPtrim. If there are more than I requests , respond by chan ging the setpoint by SPres *(R – I), (i.e., the number of requests minus the number of ignored requests) but no more than SPres -max."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 47
+      },
+      "additional_evidence": [
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_e8346d67fe274887",
+            "page_no": 47,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_86d81f9c0c4d4f49",
+            "chunk_index": 2,
+            "chunk_type": "paragraph",
+            "cleaned_text": "The reset logic shall be active while the\nassociated device is proven ON, starting Td after initial device start command. When active, every\ntime step T, if R≤I, trim the setpoint  by SPtrim. If there are more than I requests , respond by\nchan ging the setpoint  by SPres *(R – I), (i.e., the number of requests  minus the number of ignored\nrequests)  but no more than SPres -max. In other words, every time step T ..",
+            "text_excerpt": "The reset logic shall be active while the\nassociated device is proven ON, starting Td after initial device start command. When active, every\ntime step T, if R≤I, trim the setpoint  by SPtrim. If there"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_834bed2a9aafba27",
+            "evidence_role": "supporting",
+            "evidence_text": "The reset logic shall be active while the\nassociated device is proven ON, starting Td after initial device start command. When active, every\ntime step T, if R≤I, trim the setpoint  by SPtrim. If there"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 47
+          }
+        }
+      ]
     },
     {
       "knowledge_object_type": "fault_diagnostic_rule",
@@ -153,14 +266,15 @@
         "text_excerpt": "ASHRAE Guideline 36 -2021  45 5. The Request -Hours Accumulator and System Run -Hours Total are reset to zero as follows:\ni. Reset automatically for an individual zone/system when the System Run -Hour"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_41ce1167181ddeac",
+        "knowledge_evidence_id": "koev_f2012b2b3d95ab5f",
         "evidence_role": "primary",
         "evidence_text": "A Level 4 alarm is generated if the zone Importance-Multiplier is greater than zero, the zone/system Cumulative% Request Hours exceeds 70%, and the total number of zone/system run hours exceeds 40."
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 47
-      }
+      },
+      "additional_evidence": []
     },
     {
       "knowledge_object_type": "parameter_spec",
@@ -234,14 +348,120 @@
         "text_excerpt": "For each upstream system or plant setpoint  being controlled by a T&R loop, define the following\nvariables. Initial values are  defined in system/plant sequences below. Values for trim, respond, time\n"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_2abf860afd791968",
+        "knowledge_evidence_id": "koev_8959a164dc90f14c",
         "evidence_role": "primary",
         "evidence_text": "For each upstream system or plant setpoint being controlled by a T&R loop, define the following variables. Initial values are defined in system/plant sequences below. Values for trim, respond, time step, etc. shall be tuned to provide stable control. See Table 5.1.14.3."
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 47
-      }
+      },
+      "additional_evidence": []
+    },
+    {
+      "knowledge_object_type": "operational_sequence",
+      "knowledge_object_id": "ko_05f5732fd2bb2b08",
+      "canonical_key": "ashrae:g36:operational_sequence:5_20_2_2:plant_enable_logic",
+      "title": "Chilled Water Plant Enable Logic",
+      "summary": "Enable plant when disabled for ≥15 min, number of Chiller Plant Requests > I (default 0), OAT > CH-LOT, and schedule active.",
+      "structured_payload": {
+        "knowledge_object_type": "operational_sequence",
+        "title": "Chilled Water Plant Enable Logic",
+        "section_id": "5.20.2.2",
+        "section_title": "Plant Enable/Disable",
+        "equipment_scope": "Chiller plant",
+        "summary": "Enable plant when disabled for ≥15 min, number of Chiller Plant Requests > I (default 0), OAT > CH-LOT, and schedule active.",
+        "trigger_condition": "Plant disabled for ≥15 min AND Number of Chiller Plant Requests > I (default 0) AND OAT > CH-LOT AND schedule active.",
+        "required_behavior": "Enable plant in lowest stage.",
+        "configurable_values": [
+          "I (default 0)",
+          "CH-LOT"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "5.20.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH -LOT, and c. The chiller plant enable schedule is active.",
+        "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.2.2",
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "authority_level": "industry_standard",
+        "knowledge_type": "operational_sequence",
+        "source_standard_id": "ASHRAE Guideline 36-2021"
+      },
+      "applicability": {
+        "standard_id": "ASHRAE Guideline 36-2021",
+        "sections": [
+          "5.20.2.2"
+        ],
+        "source": "ASHRAE Guideline 36 reviewed Chiller subset"
+      },
+      "confidence_score": 0.95,
+      "trust_level": "L3",
+      "review_status": "approved",
+      "curated_against_ontology_version": "0.2.0",
+      "compiler_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "health_signals": {
+        "flags": [],
+        "findings": []
+      },
+      "doc": {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "source_domain": "hvac"
+      },
+      "page": {
+        "page_id": "page_2093f59646374b8a",
+        "page_no": 172,
+        "page_type": "text"
+      },
+      "chunk": {
+        "chunk_id": "chunk_2543aaa4b3c34732",
+        "chunk_index": 0,
+        "chunk_type": "paragraph",
+        "cleaned_text": "170 ASHRAE Guideline 36 -2021\nChilled Water Plant\nRetain the applicable variables listed in Sections  3.1.7  and 3.2.3 . Delete variables that are not applicable.\n5.20.1.  See Section  3.1.7  for CHWSTminX, CWRTdesX, CWSTdesX, CH -LOT, CHW -MinFlowX, CHW -\nDesFlowX, LIFTminX, LIFTmaxX, QchX, PCHWFdesign, SCHWFdesign, MinUnloadCapX, DA HX,\nDT WB, DA CT, HXFdesign, and HX DP-Design. See Section  3.2.3  for CHW -DPmax, LocalCHW -DPmax, Cw -\nDesPumpSpd Stage, MinCWVlvPos, MinCWPspeed, HxPumpDesSpd, Ch -MaxPriPumpSpdStage, and\nCH-MinPriPumpSpdStage.\n5.20.2.  Plant Enable/Disable\n5.20.2.1.  The chiller plant shall include an enabling schedule that allows operators to lock out the plant\nduring off -hours, holidays, or any other scheduled event, e.g., to allow off -hour operation of HVAC\nsystems except the chiller plant. The default schedule shall be 24/7 (adjustable).\n5.20.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:\na.",
+        "text_excerpt": "170 ASHRAE Guideline 36 -2021\nChilled Water Plant\nRetain the applicable variables listed in Sections  3.1.7  and 3.2.3 . Delete variables that are not applicable.\n5.20.1.  See Section  3.1.7  for CHWS"
+      },
+      "evidence": {
+        "knowledge_evidence_id": "koev_990125e37a9ceee0",
+        "evidence_role": "primary",
+        "evidence_text": "5.20.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH -LOT, and c. The chiller plant enable schedule is active."
+      },
+      "source_manual": {
+        "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "page_no": 172
+      },
+      "additional_evidence": [
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_2093f59646374b8a",
+            "page_no": 172,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_5bb9fe9f566243cb",
+            "chunk_index": 1,
+            "chunk_type": "paragraph",
+            "cleaned_text": "Number of  Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and\nb. OAT>CH -LOT, and\nc. The chiller plant enable schedule is active.\n5.20.2.3.  Disable the plant when it has been enabled for at least 15 minutes and:\na. Number of Chiller Plant Requests ≤ I for 3 mi nutes, or\nb. OAT<CH -LOT – 1°F, or\nc. The chiller plant enable schedule is inactive.\nChiller Plant Requests are generated by coil control valves. If the plant serves critical valves whose positions are\nnot known to the plant controller, e.g., pneumatic controls,  the Chiller Plant Request variable can be set to 1\nmanually by the operator such that the plant is enabled strictly based on OAT lockout and schedule per subsequent\nlogic.\nAt a future date, Importance multipliers (IM) shall be added to Chiller Plant Reque sts in AHU and fan coils\nsequences to ensure that critical coils can independently cause the plant to start.",
+            "text_excerpt": "Number of  Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and\nb. OAT>CH -LOT, and\nc. The chiller plant enable schedule is active.\n5.20.2.3.  Disable the plant when it has bee"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_66b1df0244a841e6",
+            "evidence_role": "supporting",
+            "evidence_text": "Number of  Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and\nb. OAT>CH -LOT, and\nc. The chiller plant enable schedule is active.\n5.20.2.3.  Disable the plant when it has bee"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 172
+          }
+        }
+      ]
     },
     {
       "knowledge_object_type": "operational_sequence",
@@ -307,14 +527,15 @@
         "text_excerpt": "Number of  Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and\nb. OAT>CH -LOT, and\nc. The chiller plant enable schedule is active.\n5.20.2.3.  Disable the plant when it has bee"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_dc85399e4962e251",
+        "knowledge_evidence_id": "koev_19f0aba126495f38",
         "evidence_role": "primary",
         "evidence_text": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Chiller Plant Requests ≤ I for 3 minutes, or b. OAT<CH-LOT – 1°F, or c. The chiller plant enable schedule is inactive."
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 172
-      }
+      },
+      "additional_evidence": []
     },
     {
       "knowledge_object_type": "operational_sequence",
@@ -382,14 +603,15 @@
         "text_excerpt": "Disable the operating primary CHW pump(s) per Sections 5.20.6 .\nRetain Section 5.20.3  if the plant has a waterside economizer. Delete otherwise.\n5.20.3.  Waterside Economizer Control\n5.20.3.1.  Enabl"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_d704b257cf7efb13",
+        "knowledge_evidence_id": "koev_9f267674c402033f",
         "evidence_role": "primary",
         "evidence_text": "Enable waterside economizer (WSE) if it has been disabled for at least 20 minutes and CHWRT upstream of HX is greater than the predicted heat exchanger leaving water temperature (PHXLWT) plus 2°F."
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 175
-      }
+      },
+      "additional_evidence": []
     },
     {
       "knowledge_object_type": "operational_sequence",
@@ -452,14 +674,15 @@
         "text_excerpt": "174 ASHRAE Guideline 36 -2021  5.20.3.2.  Disable WSE when it has run for at least 20 minutes and CHW temp downstream o f HX is greater\nthan CHWRT upstream of HX less 1ºF for 2 minutes (i.e., if the H"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_5fe60a89a3fd1c81",
+        "knowledge_evidence_id": "koev_2a41386bc76eaa22",
         "evidence_role": "primary",
         "evidence_text": "Disable WSE when it has run for at least 20 minutes and CHW temp downstream of HX is greater than CHWRT upstream of HX less 1ºF for 2 minutes"
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 176
-      }
+      },
+      "additional_evidence": []
     },
     {
       "knowledge_object_type": "operational_sequence",
@@ -524,14 +747,72 @@
         "text_excerpt": "The availability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes a nd current stage\nOPLR is not decreasing a"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_90f9f67d29741ac2",
+        "knowledge_evidence_id": "koev_d1c771ab001f5896",
         "evidence_role": "primary",
         "evidence_text": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage up condition is not true."
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 182
-      }
+      },
+      "additional_evidence": [
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_1ee5c4521fbf42a1",
+            "page_no": 183,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_0c68e9f609dd4ab2",
+            "chunk_index": 2,
+            "chunk_type": "paragraph",
+            "cleaned_text": "In all other stages, stage down if both of the following are true:\n1. Next available lower stage OPLR  < SPLR DN for 15 minutes and next lower stage OPLR is\nnot increa sing at a rate greater than 2.5% per minute averaged over 5 minutes; and\n2. The failsafe stage up condition is not true.\nChiller staging for a Primary -only plant with a WSE mirrors staging for a standard Primary -only plant with the\nonly complications being de ciding (1) whether the plant can start with just the waterside economizer and (2) when\nchillers can be staged off leaving the WSE to meet the load alone. For (1), the logic conservatively estimates the\nCHWST that the WSE will be able to achieve assuming th e WSE HX is fully loaded at startup. If the WSE is\nprojected to be able to provide water at least 1°F colder than the CHWST setpoint, then the plant starts in WSE\nmode.",
+            "text_excerpt": "In all other stages, stage down if both of the following are true:\n1. Next available lower stage OPLR  < SPLR DN for 15 minutes and next lower stage OPLR is\nnot increa sing at a rate greater than 2.5%"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_889f1364d82a4e0c",
+            "evidence_role": "supporting",
+            "evidence_text": "In all other stages, stage down if both of the following are true:\n1. Next available lower stage OPLR  < SPLR DN for 15 minutes and next lower stage OPLR is\nnot increa sing at a rate greater than 2.5%"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 183
+          }
+        },
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_d46d68c7d1ca44c1",
+            "page_no": 184,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_f91d1661831747b2",
+            "chunk_index": 1,
+            "chunk_type": "paragraph",
+            "cleaned_text": "Secondary CHW supply temperature > primary CHW supply temperature + 2°F for 10\nminutes and the enabled primary pumps are at maximum speed; or\nii. Primary CHW supply temperature is 2°F > setpoint for 15 minutes.\no. Stage down if both of the following are true:\n1. Next available lower stage OPLR  < SPLR DN for 15 minutes and next lower stage OPLR is\nnot increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and\n2. The failsafe stage up condition is not true.\nPrimary -secondary staging needs to ensure that secondary flow does not exceed prima ry flow. When secondary flow\nexceeds primary flow, the secondary CHWST degrades (elevates), in turn causing lower secondary CHWRT. This in\nturn decreases the load on the chillers while causing the secondary flowrate to only increase further. Staging logic\navoids this positive feedback scenario by staging up when the presence of secondary recirculation has been\nconfirmed by secondary CHWST exceeding primary by 2°F.",
+            "text_excerpt": "Secondary CHW supply temperature > primary CHW supply temperature + 2°F for 10\nminutes and the enabled primary pumps are at maximum speed; or\nii. Primary CHW supply temperature is 2°F > setpoint for 1"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_b6793f3d685f793d",
+            "evidence_role": "supporting",
+            "evidence_text": "Secondary CHW supply temperature > primary CHW supply temperature + 2°F for 10\nminutes and the enabled primary pumps are at maximum speed; or\nii. Primary CHW supply temperature is 2°F > setpoint for 1"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 184
+          }
+        }
+      ]
     },
     {
       "knowledge_object_type": "operational_sequence",
@@ -596,14 +877,100 @@
         "text_excerpt": "The availability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes a nd current stage\nOPLR is not decreasing a"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_cfa7f874b623ff91",
+        "knowledge_evidence_id": "koev_b319e4bb7c5b794b",
         "evidence_role": "primary",
         "evidence_text": "Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes"
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 182
-      }
+      },
+      "additional_evidence": [
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_1ee5c4521fbf42a1",
+            "page_no": 183,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_1dcc50f55c6c4057",
+            "chunk_index": 1,
+            "chunk_type": "paragraph",
+            "cleaned_text": "CHW supply temperature is 2°F > setpoint for 20 minutes; or\n2. CHW supply temperature is 4°F > setpoint for 10 minutes.\nk. In all other stages, stage up if any of the following is true:\n1. Availability Condition: The equipment necessary to operate the current stage are\nunavailable. The availability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage\nOPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or\n3. Failsafe Condition:\nRetain the following condition for parallel chille r plants. Delete otherwise.\ni. CHW DP is 2 psi < setpoint for 15 minutes; or\nii. CHW supply temperature is 2°F > setpoint for 15 minutes.\nl. When only the Waterside Economizer is enabled in the next lower stage, stage down if all of\nthe following are true:\n1. WseTower -MaxSpeed is less than 100%; and\n2. WSE is enabled; and\n3. PHXLWT is 1°F < CHW supply temp setpoint.\nm.",
+            "text_excerpt": "CHW supply temperature is 2°F > setpoint for 20 minutes; or\n2. CHW supply temperature is 4°F > setpoint for 10 minutes.\nk. In all other stages, stage up if any of the following is true:\n1. Availabilit"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_d27120f1ec11f7b7",
+            "evidence_role": "supporting",
+            "evidence_text": "CHW supply temperature is 2°F > setpoint for 20 minutes; or\n2. CHW supply temperature is 4°F > setpoint for 10 minutes.\nk. In all other stages, stage up if any of the following is true:\n1. Availabilit"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 183
+          }
+        },
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_d46d68c7d1ca44c1",
+            "page_no": 184,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_3c5231641019449d",
+            "chunk_index": 0,
+            "chunk_type": "paragraph",
+            "cleaned_text": "182 ASHRAE Guideline 36 -2021  to false load the chillers to prevent cycling with the WSE on, is less than 100%. In other words, the logic checks that\nthe WSE is currently throttling its capacity at current plant conditions with a chiller on; if it is not, then clearly the\nWSE cannot meet the CHWST setpoint alone.\nRetain the following two section s for Primary -secondary chiller plants without waterside ec onomizers. Delete\notherwise.\nn. Stage up if any of the following is true:\n1. Availability Condition: The equipment necessary to operate the current stage are\nunavailable. The availability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition: Current stage OPLR > SPLR UP for 15 minutes and current stage\nOPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or\n3. Failsafe Condition:\ni.",
+            "text_excerpt": "182 ASHRAE Guideline 36 -2021  to false load the chillers to prevent cycling with the WSE on, is less than 100%. In other words, the logic checks that\nthe WSE is currently throttling its capacity at c"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_6e3c00e5161204df",
+            "evidence_role": "supporting",
+            "evidence_text": "182 ASHRAE Guideline 36 -2021  to false load the chillers to prevent cycling with the WSE on, is less than 100%. In other words, the logic checks that\nthe WSE is currently throttling its capacity at c"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 184
+          }
+        },
+        {
+          "doc": {
+            "doc_id": "doc_4bbd3703c4f84be4",
+            "file_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "source_domain": "hvac"
+          },
+          "page": {
+            "page_id": "page_1ac209c5e1e5458e",
+            "page_no": 185,
+            "page_type": "text"
+          },
+          "chunk": {
+            "chunk_id": "chunk_46417cdd23154fd0",
+            "chunk_index": 0,
+            "chunk_type": "paragraph",
+            "cleaned_text": "ASHRAE Guideline 36 -2021  183 1. Availability Condition: The equipment necessary to operate the current stage are\nunavailable. The availability condition is not subject to the minimum stage runtime\nrequirement. Or\n2. Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage\nOPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or\n3. Failsafe Condition:\ni. Secondary CHW supply temperature > primary CHW supply temperature + 2°F for 10\nminu tes and the enabled primary pumps are at maximum speed; or\nii. Primary CHW supply temperature is 2°F > setpoint for 15 minutes.\ns. When only the Waterside Economizer is enabled in the next lower stage, stage down if all of\nthe following are true:\n1. WseTower -MaxSpee d is less than 100%; and\n2. WSE is enabled; and\n3. PHXLWT is 1°F < CHW supply temp setpoint.\nt. In all other stages, stage down if both of the following are true:\n1.",
+            "text_excerpt": "ASHRAE Guideline 36 -2021  183 1. Availability Condition: The equipment necessary to operate the current stage are\nunavailable. The availability condition is not subject to the minimum stage runtime\nr"
+          },
+          "evidence": {
+            "knowledge_evidence_id": "koev_a7e1ee6de92e8097",
+            "evidence_role": "supporting",
+            "evidence_text": "ASHRAE Guideline 36 -2021  183 1. Availability Condition: The equipment necessary to operate the current stage are\nunavailable. The availability condition is not subject to the minimum stage runtime\nr"
+          },
+          "source_manual": {
+            "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
+            "page_no": 185
+          }
+        }
+      ]
     },
     {
       "knowledge_object_type": "operational_sequence",
@@ -677,14 +1044,15 @@
         "text_excerpt": "198 ASHRAE Guideline 36 -2021  a. From 0% loop output to 50% loop output, reset DP setpoint from CHW -DPmin to CHWP -\nDPmax.\nb. From 50% loop output to 100% loop output, reset CHWST setpoint from CHWS"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_b9cd726834755e3c",
+        "knowledge_evidence_id": "koev_1f96be390a3369d2",
         "evidence_role": "primary",
         "evidence_text": "From 0% loop output to 50% loop output, reset DP setpoint from CHW -DPmin to CHWP - DPmax. b. From 50% loop output to 100% loop output, reset CHWST setpoint from CHWSTmax to CHWSTmin. c. CHW Plant Reset variable shall be reset using Trim & Respond logic with the following parameters: Variable Value Device Any CHW Pump Distribution Loop SP0 100% SPmin 0% SPmax 100% Td 15 minutes T 5 minutes I 2 R Cooling CHWST Reset Requests SPtrim -2% SPres +3% SPres-max +7%"
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 200
-      }
+      },
+      "additional_evidence": []
     },
     {
       "knowledge_object_type": "operational_sequence",
@@ -750,14 +1118,15 @@
         "text_excerpt": "Primary pump speed shall be reset by a reverse acting PID loop  maintaining flow through the\ndecoupler, as measured by the primary flowrate less secondary flowrate, at 5% of PCHWFdesign.\nLoop output s"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_8f8e2c422a30d1f5",
+        "knowledge_evidence_id": "koev_b67cefc586e10208",
         "evidence_role": "primary",
         "evidence_text": "Primary pump speed shall be reset by a reverse acting PID loop maintaining flow through the decoupler flow meter at 5% of PCHWFdesign"
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 204
-      }
+      },
+      "additional_evidence": []
     },
     {
       "knowledge_object_type": "fault_diagnostic_rule",
@@ -822,14 +1191,15 @@
         "text_excerpt": "228 ASHRAE Guideline 36 -2021  Retain the following fault condition for primary -only plants with a minimum flow bypass valve. Delete\notherwise.\nFC#5  Equation  FLOW P, AVG < CHW -MinFlowSp – ƐFM\nand\n"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_42657eca42258f60",
+        "knowledge_evidence_id": "koev_ce8eda39821d8b1d",
         "evidence_role": "primary",
         "evidence_text": "FC#6 Equation CHWST AVG - ƐCHWT ≥ CHWSTSP Applies to OS #2 – #5 Description Chilled water supply temperature is too high"
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 230
-      }
+      },
+      "additional_evidence": []
     },
     {
       "knowledge_object_type": "fault_diagnostic_rule",
@@ -894,14 +1264,15 @@
         "text_excerpt": "Delete otherwise.\nFC#7  Equation  CHW -PGAUGE, AVG  < 0.9 * CHW -ETPreChargePress  Applies to\nOS\n#1 – #5 Description  Chilled water system gauge pressure is too low\nPossible Diagnosis  Possible chille"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_67b6fe62afb204a0",
+        "knowledge_evidence_id": "koev_c84d6ee15cbf9274",
         "evidence_role": "primary",
         "evidence_text": "FC#8 Equation Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG Applies to OS #2, #3, #5 Description Condenser approach is too high"
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 230
-      }
+      },
+      "additional_evidence": []
     },
     {
       "knowledge_object_type": "fault_diagnostic_rule",
@@ -966,14 +1337,15 @@
         "text_excerpt": "Delete otherwise.\nFC#7  Equation  CHW -PGAUGE, AVG  < 0.9 * CHW -ETPreChargePress  Applies to\nOS\n#1 – #5 Description  Chilled water system gauge pressure is too low\nPossible Diagnosis  Possible chille"
       },
       "evidence": {
-        "knowledge_evidence_id": "koev_12bace0b1725c7dd",
+        "knowledge_evidence_id": "koev_c74d5bae40248d30",
         "evidence_role": "primary",
         "evidence_text": "FC#9 Equation Approach EVAP ≥ CHWST CH-x, AVG - RefrigEvapTemp CH-x, AVG Applies to OS #2, #3, #5 Description Evaporator approach is too high"
       },
       "source_manual": {
         "path": "doc_4bbd3703c4f84be4/ashrae_guideline_36_2021_high_performance_sequences.pdf",
         "page_no": 230
-      }
+      },
+      "additional_evidence": []
     }
   ]
 }

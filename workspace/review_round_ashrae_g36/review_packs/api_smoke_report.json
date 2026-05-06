@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T11:08:55.289330+00:00",
+  "generated_at": "2026-05-06T11:47:43.629919+00:00",
   "api_base": "http://127.0.0.1:8000/api/v2/domains/hvac/equipment-classes/chiller",
   "status": "passed",
   "results": {
@@ -24,22 +24,23 @@
       ]
     },
     "operational-guidance": {
-      "returned": 8,
+      "returned": 10,
       "types": [
         "application_guidance",
         "operational_sequence"
       ]
     },
     "operational-guidance?guidance_type=operational_sequence": {
-      "returned": 7,
+      "returned": 9,
       "types": [
         "operational_sequence"
       ]
     }
   },
   "notes": [
-    "13 reviewed ASHRAE G36 entries were backfilled under hvac:chiller.",
-    "9 entries were deferred: wrong KO type, multi-chunk evidence unsupported by current fixture builder, or no boiler/hot-water-plant class in current sw_base_model ontology.",
-    "A pre-existing trust filter semantic issue was observed: min_trust_level=L3 excludes L4 because current ranking logic treats the value as an upper bound. Smoke used default trust filter to verify type exposure."
+    "15 reviewed ASHRAE G36 entries were backfilled under hvac:chiller.",
+    "7 entries remain deferred: 1 wrong KO type and 6 boiler/hot-water entries blocked by missing ontology classes.",
+    "Multi-chunk evidence is now supported by the manual fixture builder and backfill path.",
+    "min_trust_level now behaves as a lower bound; smoke used min_trust_level=L3 to verify L3/L4 exposure."
   ]
 }

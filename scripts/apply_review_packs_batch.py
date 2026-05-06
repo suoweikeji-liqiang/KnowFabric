@@ -34,17 +34,15 @@ def discover_review_pack_paths(pack_dir: str | Path) -> list[Path]:
     """Discover review pack JSON files in one directory."""
 
     root = Path(pack_dir)
-    ignored = {
-        PACK_MANIFEST_FILE,
-        APPLY_REPORT_FILE,
-        READINESS_REPORT_FILE,
-        BOOTSTRAP_REPORT_FILE,
-    }
-    return sorted(
-        path
-        for path in root.glob("*.json")
-        if path.is_file() and path.name not in ignored
-    )
+    return sorted(path for path in root.glob("*.json") if path.is_file() and _is_review_pack_path(path))
+
+
+def _is_review_pack_path(path: Path) -> bool:
+    try:
+        payload = _load_json(path)
+    except Exception:
+        return False
+    return payload.get("review_mode") == "chunk_backfill_review_pack"
 
 
 def inspect_review_pack(payload: dict[str, Any]) -> dict[str, Any]:

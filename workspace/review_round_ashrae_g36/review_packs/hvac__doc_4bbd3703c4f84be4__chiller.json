@@ -1,6 +1,6 @@
 {
   "review_mode": "chunk_backfill_review_pack",
-  "generated_at": "2026-05-06T11:05:14.752331+00:00",
+  "generated_at": "2026-05-06T11:46:24.363239+00:00",
   "source_generation_mode": "ashrae_guideline36_standard_vertical",
   "source_review_mode": "ashrae_guideline36_standard_review_pack",
   "domain_id": "hvac",
@@ -33,10 +33,11 @@
   },
   "review_metadata": {
     "default_trust_level": "L3",
-    "candidate_count": 13,
+    "candidate_count": 15,
     "source_candidate_count": 22,
     "workflow": [
-      "Derived from ASHRAE G36 human-reviewed workspace for safe current-ontology backfill."
+      "Derived from ASHRAE G36 human-reviewed workspace for safe current-ontology backfill.",
+      "Includes accepted multi-chunk evidence entries now supported by fixture builder."
     ]
   },
   "candidate_entries": [
@@ -165,6 +166,138 @@
         "Human-reviewed from ASHRAE G36 standard extraction.",
         "Evidence quote reanchored where needed before backfill."
       ]
+    },
+    {
+      "candidate_id": "cand_ee95bd68f08f2f7c",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_1_14:trim_respond_set_point_reset_logic",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Trim & Respond Set-Point Reset Logic",
+        "section_id": "5.1.14",
+        "section_title": "Trim & Respond Set-Point Reset Logic",
+        "equipment_scope": "Air handler or plant controlling pressure, temperature, or other variables",
+        "summary": "T&R logic resets a setpoint at a fixed rate until a downstream zone is no longer satisfied and generates a request. When sufficient requests are present, the setpoint is increased. When requests subside, the setpoint resumes decreasing.",
+        "trigger_condition": "Associated device is proven ON, starting Td after initial device start command.",
+        "required_behavior": "Every time step T, if R ≤ I, trim setpoint by SPtrim. If R > I, respond by changing setpoint by (R – I)*SPres but no larger than SPres-max.",
+        "configurable_values": [
+          "SP0 (initial setpoint)",
+          "SPmin (minimum setpoint)",
+          "SPmax (maximum setpoint)",
+          "Td (delay timer)",
+          "T (time step)",
+          "I (number of ignored requests)",
+          "SPtrim (trim amount)",
+          "SPres (respond amount, opposite sign to SPtrim)",
+          "SPres-max (maximum response per time interval)"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Trim & Respond logic shall reset the setpoint within the range SPmin to SPmax. When the associated device is OFF, the setpoint shall be SP0. The reset logic shall be active while the associated device is proven ON, starting Td after initial device start command. When active, every time step T, if R≤I, trim the setpoint by SPtrim. If there are more than I requests, respond by changing the setpoint by SPres*(R – I), but no more than SPres-max.",
+        "page_hint": 47
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "5.1.14.  Trim & Respond Set -Point Reset Logic",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.14",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_507583e7952144cd",
+        "chunk_86d81f9c0c4d4f49"
+      ],
+      "chunk_id": "chunk_507583e7952144cd",
+      "page_no": 47,
+      "source_page_nos": [
+        47
+      ],
+      "evidence_text": "5.1.14.4. Trim & Respond logic shall reset the setpoint within the range SPmin to SPmax. When the associated device is OFF, the setpoint shall be SP0. The reset logic shall be active while the associated device is proven ON, starting Td after initial device start command. When active, every time step T, if R≤I, trim the setpoint by SPtrim. If there are more than I requests , respond by chan ging the setpoint by SPres *(R – I), (i.e., the number of requests minus the number of ignored requests) but no more than SPres -max.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "The item describes a real control sequence (Trim & Respond logic) from section 5.1.14, which is operational knowledge per Guideline 36.",
+      "judge_verdict": "accepted",
+      "page_id": "page_e8346d67fe274887",
+      "review_decision": "accepted",
+      "review_notes": "接受。内容属于通用 T&R 运行序列；证据已从章节标题重锚到 §5.1.14.4 的 reset logic 正文。",
+      "curation": {
+        "title": "Trim & Respond Set-Point Reset Logic",
+        "summary": "T&R logic resets a setpoint at a fixed rate until a downstream zone is no longer satisfied and generates a request. When sufficient requests are present, the setpoint is increased. When requests subside, the setpoint resumes decreasing.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_1_14:trim_respond_set_point_reset_logic",
+        "structured_payload": {
+          "knowledge_object_type": "operational_sequence",
+          "title": "Trim & Respond Set-Point Reset Logic",
+          "section_id": "5.1.14",
+          "section_title": "Trim & Respond Set-Point Reset Logic",
+          "equipment_scope": "Air handler or plant controlling pressure, temperature, or other variables",
+          "summary": "T&R logic resets a setpoint at a fixed rate until a downstream zone is no longer satisfied and generates a request. When sufficient requests are present, the setpoint is increased. When requests subside, the setpoint resumes decreasing.",
+          "trigger_condition": "Associated device is proven ON, starting Td after initial device start command.",
+          "required_behavior": "Every time step T, if R ≤ I, trim setpoint by SPtrim. If R > I, respond by changing setpoint by (R – I)*SPres but no larger than SPres-max.",
+          "configurable_values": [
+            "SP0 (initial setpoint)",
+            "SPmin (minimum setpoint)",
+            "SPmax (maximum setpoint)",
+            "Td (delay timer)",
+            "T (time step)",
+            "I (number of ignored requests)",
+            "SPtrim (trim amount)",
+            "SPres (respond amount, opposite sign to SPtrim)",
+            "SPres-max (maximum response per time interval)"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "5.1.14.4. Trim & Respond logic shall reset the setpoint within the range SPmin to SPmax. When the associated device is OFF, the setpoint shall be SP0. The reset logic shall be active while the associated device is proven ON, starting Td after initial device start command. When active, every time step T, if R≤I, trim the setpoint by SPtrim. If there are more than I requests , respond by chan ging the setpoint by SPres *(R – I), (i.e., the number of requests minus the number of ignored requests) but no more than SPres -max.",
+          "evidence_citation": "ASHRAE Guideline 36-2021 §5.1.14",
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "authority_level": "industry_standard",
+          "knowledge_type": "operational_sequence",
+          "source_standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "applicability": {
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "sections": [
+            "5.1.14"
+          ],
+          "source": "ASHRAE Guideline 36 reviewed Chiller subset"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_507583e7952144cd",
+          "chunk_86d81f9c0c4d4f49"
+        ],
+        "evidence_quote": "5.1.14.4. Trim & Respond logic shall reset the setpoint within the range SPmin to SPmax. When the associated device is OFF, the setpoint shall be SP0. The reset logic shall be active while the associated device is proven ON, starting Td after initial device start command. When active, every time step T, if R≤I, trim the setpoint by SPtrim. If there are more than I requests , respond by chan ging the setpoint by SPres *(R – I), (i.e., the number of requests minus the number of ignored requests) but no more than SPres -max.",
+        "judge_reason": "The item describes a real control sequence (Trim & Respond logic) from section 5.1.14, which is operational knowledge per Guideline 36."
+      },
+      "curation_checklist": [
+        "Human-reviewed from ASHRAE G36 standard extraction.",
+        "Evidence quote reanchored where needed before backfill."
+      ],
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [
+          "ASHRAE Guideline 36 chilled water plant section"
+        ],
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "curated_against_ontology_version": "0.2.0"
     },
     {
       "candidate_id": "cand_93d5cfa5ef144400",
@@ -405,6 +538,124 @@
         "Human-reviewed from ASHRAE G36 standard extraction.",
         "Evidence quote reanchored where needed before backfill."
       ]
+    },
+    {
+      "candidate_id": "cand_862d844a3b1d3c49",
+      "domain_id": "hvac",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "authority_level": "industry_standard",
+      "standard_id": "ASHRAE Guideline 36-2021",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_2_2:plant_enable_logic",
+      "structured_payload_candidate": {
+        "knowledge_type": "operational_sequence",
+        "title": "Plant Enable Logic",
+        "section_id": "5.20.2.2",
+        "section_title": "Plant Enable/Disable",
+        "equipment_scope": "Chiller plant",
+        "summary": "Enable plant when disabled for ≥15 min, number of Chiller Plant Requests > I (default 0), OAT > CH-LOT, and schedule active.",
+        "trigger_condition": "Plant disabled for ≥15 min AND Number of Chiller Plant Requests > I (default 0) AND OAT > CH-LOT AND schedule active.",
+        "required_behavior": "Enable plant in lowest stage.",
+        "configurable_values": [
+          "I (default 0)",
+          "CH-LOT"
+        ],
+        "fault_condition": null,
+        "commissioning_check": null,
+        "evidence_quote": "Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH-LOT, and c. The chiller plant enable schedule is active.",
+        "page_hint": 172
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "compile_metadata": {
+        "method": "ashrae_guideline36_section_compiler",
+        "model": "deepseek-v4-flash",
+        "backend_name": "deepseek-parameter-spec"
+      },
+      "evidence_quote": "5.20.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:",
+      "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.2.2",
+      "anchor_repair_reason": "evidence_quote replaced with verbatim section heading line",
+      "source_chunk_ids": [
+        "chunk_2543aaa4b3c34732",
+        "chunk_5bb9fe9f566243cb"
+      ],
+      "chunk_id": "chunk_2543aaa4b3c34732",
+      "page_no": 172,
+      "source_page_nos": [
+        172
+      ],
+      "evidence_text": "5.20.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH -LOT, and c. The chiller plant enable schedule is active.",
+      "trust_level": "L3",
+      "verification_reason": "single chunk verbatim evidence_quote match",
+      "judge_reason": "Captures real plant enable control sequence with specific conditions from Guideline 36 section 5.20.2.2.",
+      "judge_verdict": "accepted",
+      "page_id": "page_2093f59646374b8a",
+      "review_decision": "accepted",
+      "review_notes": "接受。冷水机房启用逻辑准确，条件包括停用时间、请求数、OAT lockout 和 schedule；证据已重锚到跨相邻 chunk 的完整启用条件。",
+      "curation": {
+        "title": "Chilled Water Plant Enable Logic",
+        "summary": "Enable plant when disabled for ≥15 min, number of Chiller Plant Requests > I (default 0), OAT > CH-LOT, and schedule active.",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_2_2:plant_enable_logic",
+        "structured_payload": {
+          "knowledge_object_type": "operational_sequence",
+          "title": "Chilled Water Plant Enable Logic",
+          "section_id": "5.20.2.2",
+          "section_title": "Plant Enable/Disable",
+          "equipment_scope": "Chiller plant",
+          "summary": "Enable plant when disabled for ≥15 min, number of Chiller Plant Requests > I (default 0), OAT > CH-LOT, and schedule active.",
+          "trigger_condition": "Plant disabled for ≥15 min AND Number of Chiller Plant Requests > I (default 0) AND OAT > CH-LOT AND schedule active.",
+          "required_behavior": "Enable plant in lowest stage.",
+          "configurable_values": [
+            "I (default 0)",
+            "CH-LOT"
+          ],
+          "fault_condition": null,
+          "commissioning_check": null,
+          "evidence_quote": "5.20.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH -LOT, and c. The chiller plant enable schedule is active.",
+          "evidence_citation": "ASHRAE Guideline 36-2021 §5.20.2.2",
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "authority_level": "industry_standard",
+          "knowledge_type": "operational_sequence",
+          "source_standard_id": "ASHRAE Guideline 36-2021"
+        },
+        "applicability": {
+          "standard_id": "ASHRAE Guideline 36-2021",
+          "sections": [
+            "5.20.2.2"
+          ],
+          "source": "ASHRAE Guideline 36 reviewed Chiller subset"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_role": "primary",
+        "source_chunk_ids": [
+          "chunk_2543aaa4b3c34732",
+          "chunk_5bb9fe9f566243cb"
+        ],
+        "evidence_quote": "5.20.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH -LOT, and c. The chiller plant enable schedule is active.",
+        "judge_reason": "Captures real plant enable control sequence with specific conditions from Guideline 36 section 5.20.2.2."
+      },
+      "curation_checklist": [
+        "Human-reviewed from ASHRAE G36 standard extraction.",
+        "Evidence quote reanchored where needed before backfill."
+      ],
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [
+          "ASHRAE Guideline 36 chilled water plant section"
+        ],
+        "supported_knowledge_anchors": [
+          "application_guidance",
+          "operational_sequence",
+          "fault_diagnostic_rule",
+          "parameter_spec"
+        ]
+      },
+      "curated_against_ontology_version": "0.2.0"
     },
     {
       "candidate_id": "cand_ea7bfef5946364fd",

@@ -119,6 +119,10 @@ def test_check_review_pack_directory_reports_ready_and_pending(monkeypatch) -> N
             else:
                 entry["review_decision"] = "rejected"
         _save_pack(aux_pack, aux_payload)
+        (pack_dir / "api_smoke_report.json").write_text(
+            json.dumps({"report_mode": "api_smoke"}, indent=2),
+            encoding="utf-8",
+        )
 
         report = check_review_pack_directory(pack_dir)
 

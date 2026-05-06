@@ -57,6 +57,35 @@ def _dedupe_new_anchor_rows(session, rows: list[dict]) -> list[dict]:
     ]
 
 
+def _dedupe_new_evidence_rows(session, rows: list[dict]) -> list[dict]:
+    """Skip evidence rows already attached to the same KO/chunk/role."""
+
+    unique_rows: dict[tuple[str, str, str], dict] = {}
+    for row in rows:
+        key = (row["knowledge_object_id"], row["chunk_id"], row["evidence_role"])
+        unique_rows.setdefault(key, row)
+
+    existing_keys = set()
+    for knowledge_object_id, chunk_id, evidence_role in unique_rows:
+        existing = (
+            session.query(KnowledgeObjectEvidenceV2.knowledge_evidence_id)
+            .filter(
+                KnowledgeObjectEvidenceV2.knowledge_object_id == knowledge_object_id,
+                KnowledgeObjectEvidenceV2.chunk_id == chunk_id,
+                KnowledgeObjectEvidenceV2.evidence_role == evidence_role,
+            )
+            .one_or_none()
+        )
+        if existing is not None:
+            existing_keys.add((knowledge_object_id, chunk_id, evidence_role))
+
+    return [
+        row
+        for key, row in unique_rows.items()
+        if key not in existing_keys
+    ]
+
+
 def _load_equipment_class(client: SwBaseModelOntologyClient, equipment_class_key: str) -> dict:
     equipment_class = client.get_equipment_class(equipment_class_key)
     if equipment_class is None:
@@ -82,11 +111,23 @@ def _load_chunk_contexts(session, chunk_ids: list[str]) -> dict[str, dict[str, i
     return chunk_contexts
 
 
+def _fixture_chunk_ids(fixture: dict) -> list[str]:
+    chunk_ids = []
+    for entry in fixture["manual_entries"]:
+        chunk_ids.append(entry["chunk"]["chunk_id"])
+        chunk_ids.extend(
+            evidence["chunk"]["chunk_id"]
+            for evidence in entry.get("additional_evidence", [])
+            if isinstance(evidence, dict)
+        )
+    return list(dict.fromkeys(chunk_ids))
+
+
 def backfill_manual_fixture_from_chunks(path: str | Path) -> tuple[str, int]:
     """Backfill anchors, knowledge objects, and evidence from existing chunks."""
 
     fixture = load_manual_fixture(path)
-    chunk_ids = [entry["chunk"]["chunk_id"] for entry in fixture["manual_entries"]]
+    chunk_ids = _fixture_chunk_ids(fixture)
     session = SessionLocal()
     client = SwBaseModelOntologyClient()
     try:
@@ -99,6 +140,7 @@ def backfill_manual_fixture_from_chunks(path: str | Path) -> tuple[str, int]:
             match_method="manual_backfill",
         )
         rows["anchors"] = _dedupe_new_anchor_rows(session, rows["anchors"])
+        rows["evidence"] = _dedupe_new_evidence_rows(session, rows["evidence"])
         _merge_rows(session, ChunkOntologyAnchorV2, rows["anchors"])
         session.flush()
         _merge_rows(session, KnowledgeObjectV2, rows["knowledge_objects"])

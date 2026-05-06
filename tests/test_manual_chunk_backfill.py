@@ -99,6 +99,7 @@ def test_backfill_manual_fixture_from_chunks_for_hvac(monkeypatch) -> None:
     monkeypatch.setattr("scripts.backfill_manual_knowledge_from_chunks.SessionLocal", session_factory)
 
     equipment_class_key, knowledge_count = backfill_manual_fixture_from_chunks(HVAC_FIXTURE)
+    rerun_equipment_class_key, rerun_knowledge_count = backfill_manual_fixture_from_chunks(HVAC_FIXTURE)
     db = session_factory()
     try:
         evidence = (
@@ -112,9 +113,13 @@ def test_backfill_manual_fixture_from_chunks_for_hvac(monkeypatch) -> None:
             .one()
         )
         assert equipment_class_key == "hvac:air_cooled_modular_heat_pump"
+        assert rerun_equipment_class_key == equipment_class_key
         assert knowledge_count == 5
+        assert rerun_knowledge_count == 5
         assert db.query(Document).count() == 2
         assert db.query(ContentChunk).count() == 5
+        assert db.query(ChunkOntologyAnchorV2).count() == 5
+        assert db.query(KnowledgeObjectEvidenceV2).count() == 5
         assert anchor.match_method == "manual_backfill"
         assert anchor.match_metadata_json["source_manual_page_no"] == 3
         assert evidence.doc_id == "doc_aux_module_faults"
