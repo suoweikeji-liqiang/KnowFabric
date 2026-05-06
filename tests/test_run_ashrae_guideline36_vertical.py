@@ -1,0 +1,148 @@
+"""Tests for the ASHRAE Guideline 36 vertical runner helpers."""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from scripts.run_ashrae_guideline36_vertical import (
+    SectionUnit,
+    anchor_candidates,
+    build_extract_messages,
+    canonical_key,
+    trim_to_section_start,
+)
+from packages.db.models import ContentChunk
+
+
+def test_trim_to_section_start_drops_previous_section_tail() -> None:
+    text = "5.20.18.8. Previous tail\n\n5.21.1. See Section 3.1.8\n5.21.2. Plant Enable/Disable"
+
+    trimmed = trim_to_section_start(text, "5.21")
+
+    assert trimmed.startswith("5.21.1.")
+    assert "Previous tail" not in trimmed
+
+
+def test_extract_prompt_scopes_to_official_guideline36_section() -> None:
+    unit = SectionUnit(
+        requested_section="5.1.14",
+        section_id="5.1.14",
+        section_title="5.1.14. Trim & Respond Set-Point Reset Logic",
+        start_page=46,
+        end_page=49,
+        text="5.1.14. Trim & Respond logic resets a setpoint.",
+        chunk_ids=["chunk_1"],
+    )
+
+    messages = build_extract_messages(unit)
+    system_prompt = messages[0]["content"]
+    user_prompt = messages[1]["content"]
+
+    assert "official ASHRAE Guideline 36 knowledge" in system_prompt
+    assert "operational_sequence" in system_prompt
+    assert "fault_diagnostic_rule" in system_prompt
+    assert "evidence_quote MUST be a SHORT verbatim contiguous substring" in system_prompt
+    assert "Do not use ellipses" in system_prompt
+    assert "standard_id: ASHRAE Guideline 36-2021" in user_prompt
+    assert "requested_section: 5.1.14" in user_prompt
+
+
+def test_canonical_key_includes_section_and_type() -> None:
+    key = canonical_key(
+        {
+            "knowledge_type": "operational_sequence",
+            "section_id": "5.20.2.2",
+            "title": "Enable Chiller Plant",
+        }
+    )
+
+    assert key == "ashrae:g36:operational_sequence:5_20_2_2:enable_chiller_plant"
+
+
+def test_anchor_candidates_repairs_to_section_heading_line() -> None:
+    chunk = ContentChunk(
+        chunk_id="chunk_g36",
+        doc_id="doc_g36",
+        page_id="page_46",
+        page_no=46,
+        chunk_index=0,
+        cleaned_text="5.1.14.4. Trim & Respond logic shall reset the setpoint within the range SPmin to SPmax.",
+        text_excerpt="5.1.14.4. Trim & Respond logic",
+        chunk_type="paragraph",
+    )
+    candidate = {
+        "candidate_id": "cand_1",
+        "evidence_quote": "Trim & Respond logic resets the setpoint ...",
+        "structured_payload_candidate": {"section_id": "5.1.14.4", "title": "T&R reset"},
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key_candidate": "ashrae:g36:operational_sequence:5_1_14_4:t_r_reset",
+    }
+
+    anchored, rejected = anchor_candidates([candidate], [chunk])
+
+    assert rejected == []
+    assert anchored[0]["evidence_quote"].startswith("5.1.14.4.")
+    assert anchored[0]["anchor_repair_reason"] == "evidence_quote replaced with verbatim section heading line"
+
+
+def test_anchor_candidates_repairs_weak_section_only_quote() -> None:
+    chunk = ContentChunk(
+        chunk_id="chunk_g36",
+        doc_id="doc_g36",
+        page_id="page_199",
+        page_no=199,
+        chunk_index=0,
+        cleaned_text="5.20.5.2.\nCHWST setpoint shall be reset using Trim & Respond logic.",
+        text_excerpt="5.20.5.2.",
+        chunk_type="paragraph",
+    )
+    candidate = {
+        "candidate_id": "cand_1",
+        "evidence_quote": "5.20.5.2.",
+        "structured_payload_candidate": {"section_id": "5.20.5.2", "title": "CHWST reset"},
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_5_2:chwst_reset",
+    }
+
+    anchored, rejected = anchor_candidates([candidate], [chunk])
+
+    assert rejected == []
+    assert "CHWST setpoint shall be reset" in anchored[0]["evidence_quote"]
+
+
+def test_anchor_candidates_repairs_weak_quote_from_next_chunk_line() -> None:
+    first = ContentChunk(
+        chunk_id="chunk_heading",
+        doc_id="doc_g36",
+        page_id="page_199",
+        page_no=199,
+        chunk_index=0,
+        cleaned_text="5.20.5.2.",
+        text_excerpt="5.20.5.2.",
+        chunk_type="paragraph",
+    )
+    second = ContentChunk(
+        chunk_id="chunk_body",
+        doc_id="doc_g36",
+        page_id="page_199",
+        page_no=199,
+        chunk_index=1,
+        cleaned_text="Differential Pressure Controlled Loops: Chilled water supply temperature setpoint CHWSTsp",
+        text_excerpt="Differential Pressure Controlled Loops",
+        chunk_type="paragraph",
+    )
+    candidate = {
+        "candidate_id": "cand_1",
+        "evidence_quote": "5.20.5.2.",
+        "structured_payload_candidate": {"section_id": "5.20.5.2", "title": "CHWST reset"},
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key_candidate": "ashrae:g36:operational_sequence:5_20_5_2:chwst_reset",
+    }
+
+    anchored, rejected = anchor_candidates([candidate], [first, second])
+
+    assert rejected == []
+    assert "Differential Pressure Controlled Loops" in anchored[0]["evidence_quote"]
