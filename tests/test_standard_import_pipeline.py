@@ -63,6 +63,7 @@ def _args(tmp_dir: str, **overrides) -> argparse.Namespace:
         "budget_rmb": 30.0,
         "max_section_tokens": 250_000,
         "max_candidates_per_section": 24,
+        "extract_mode": "section",
     }
     values.update(overrides)
     return argparse.Namespace(**values)
@@ -105,6 +106,23 @@ def test_materialize_candidate_file_from_run_maps_ahu_sections_to_ahu() -> None:
         run_dir.mkdir()
         candidate = _candidate()
         candidate["structured_payload_candidate"]["section_id"] = "5.16.1.1"
+        candidate.pop("equipment_class_candidate")
+        _write_jsonl(run_dir / "candidates_llm_verified.jsonl", [candidate])
+        _write_json(run_dir / "summary.json", {"standard_id": "ASHRAE Guideline 36-2021"})
+
+        payload = materialize_candidate_file_from_run(run_dir, workspace_dir)
+
+        written = json.loads(Path(payload["candidate_path"]).read_text(encoding="utf-8"))
+    assert written["candidate_entries"][0]["equipment_class_candidate"]["equipment_class_id"] == "ahu"
+
+
+def test_materialize_candidate_file_from_run_maps_remaining_airside_sections_to_ahu() -> None:
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        run_dir = Path(tmp_dir) / "run"
+        workspace_dir = Path(tmp_dir) / "workspace"
+        run_dir.mkdir()
+        candidate = _candidate()
+        candidate["structured_payload_candidate"]["section_id"] = "5.22.6.1"
         candidate.pop("equipment_class_candidate")
         _write_jsonl(run_dir / "candidates_llm_verified.jsonl", [candidate])
         _write_json(run_dir / "summary.json", {"standard_id": "ASHRAE Guideline 36-2021"})

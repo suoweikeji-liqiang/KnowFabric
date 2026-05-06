@@ -1,29 +1,28 @@
 {
-  "generated_at": "2026-05-06T15:49:29.564612+00:00",
+  "generated_at": "2026-05-06T16:21:16.174782+00:00",
   "doc_id": "doc_4bbd3703c4f84be4",
   "manual": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
   "standard_id": "ASHRAE Guideline 36-2021",
   "rollup": {
     "top_level_sections_total": 22,
-    "covered_or_partial_sections": 16,
-    "not_run_sections": 6,
-    "accepted_candidates_total": 141,
+    "covered_or_partial_sections": 22,
+    "not_run_sections": 0,
+    "accepted_candidates_total": 160,
     "type_totals": {
       "application_guidance": 1,
-      "operational_sequence": 72,
+      "operational_sequence": 86,
       "commissioning_procedure": 5,
-      "fault_diagnostic_rule": 53,
+      "fault_diagnostic_rule": 58,
       "parameter_spec": 3,
       "commissioning_step": 7
     },
     "trust_totals": {
-      "L3": 71,
+      "L3": 90,
       "L4": 70
     },
     "status_counts": {
       "partial": 1,
-      "not_run": 6,
-      "covered": 15
+      "covered": 21
     }
   },
   "runs": [
@@ -53,6 +52,7 @@
         "G3": "PASS",
         "G4": "PASS"
       },
+      "extract_mode": "section",
       "report_path": "output/ashrae_guideline36_vertical/20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md"
     },
     {
@@ -82,6 +82,7 @@
         "G3": "PASS",
         "G4": "PASS"
       },
+      "extract_mode": "section",
       "report_path": "output/ashrae_guideline36_vertical/20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md"
     },
     {
@@ -113,7 +114,37 @@
         "G3": "PASS",
         "G4": "PASS"
       },
+      "extract_mode": "section",
       "report_path": "output/ashrae_guideline36_vertical/20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md"
+    },
+    {
+      "run_id": "20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36",
+      "sections": [
+        "5.2",
+        "5.3",
+        "5.17",
+        "5.18",
+        "5.19",
+        "5.22"
+      ],
+      "raw_candidates": 21,
+      "anchor_passed": 21,
+      "judge_accepted": 19,
+      "judge_rejected": 2,
+      "final_by_type": {
+        "operational_sequence": 14,
+        "fault_diagnostic_rule": 5
+      },
+      "l4_final": 0,
+      "l3_final": 19,
+      "gates": {
+        "G1": "PASS",
+        "G2": "PASS",
+        "G3": "PASS",
+        "G4": "PASS"
+      },
+      "extract_mode": "bundle",
+      "report_path": "output/ashrae_guideline36_vertical/20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md"
     }
   ],
   "api_smoke_reports": [
@@ -230,6 +261,30 @@
           "status": "pass"
         }
       ]
+    },
+    {
+      "path": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs/api_smoke_report.json",
+      "summary": {
+        "targets": 2,
+        "passed": 2,
+        "failed": 0
+      },
+      "results": [
+        {
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "expected_accepted_count": 5,
+          "visible_matching_count": 57,
+          "status": "pass"
+        },
+        {
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "expected_accepted_count": 14,
+          "visible_matching_count": 82,
+          "status": "pass"
+        }
+      ]
     }
   ],
   "matrix": [
@@ -282,26 +337,82 @@
       "title": "5.2 Generic Ventilation Zones",
       "start_page": 59,
       "end_page": 66,
-      "coverage_status": "not_run",
-      "requested_sections_run": [],
-      "accepted_candidates": 0,
-      "type_breakdown": {},
-      "trust_breakdown": {},
-      "run_ids": [],
-      "sample_candidates": []
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.2"
+      ],
+      "accepted_candidates": 3,
+      "type_breakdown": {
+        "operational_sequence": 2,
+        "fault_diagnostic_rule": 1
+      },
+      "trust_breakdown": {
+        "L3": 3
+      },
+      "run_ids": [
+        "20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Zone Minimum Outdoor Air and Minimum Airflow Setpoints (ASHRAE 62.1)",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.2.1.3",
+          "trust_level": "L3"
+        },
+        {
+          "title": "CO2 Sensor Calibration Alarm for TAV Zones",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.2.2.3",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Time-Averaged Ventilation (TAV) for Zones",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.2.2",
+          "trust_level": "L3"
+        }
+      ]
     },
     {
       "section": "5.3",
       "title": "5.3 Generic Thermal Zones",
       "start_page": 67,
       "end_page": 70,
-      "coverage_status": "not_run",
-      "requested_sections_run": [],
-      "accepted_candidates": 0,
-      "type_breakdown": {},
-      "trust_breakdown": {},
-      "run_ids": [],
-      "sample_candidates": []
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.3"
+      ],
+      "accepted_candidates": 3,
+      "type_breakdown": {
+        "operational_sequence": 2,
+        "fault_diagnostic_rule": 1
+      },
+      "trust_breakdown": {
+        "L3": 3
+      },
+      "run_ids": [
+        "20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Zone Temperature Setpoint Adjustments and Limits",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.3.2",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Zone Temperature Alarms",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.3.6.1",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Zone Control Loops and Zone State Determination",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.3.4",
+          "trust_level": "L3"
+        }
+      ]
     },
     {
       "section": "5.4",
@@ -851,39 +962,110 @@
       "title": "5.17 Dual-Fan Dual-Duct Heating VAV Air-Handling Unit",
       "start_page": 146,
       "end_page": 151,
-      "coverage_status": "not_run",
-      "requested_sections_run": [],
-      "accepted_candidates": 0,
-      "type_breakdown": {},
-      "trust_breakdown": {},
-      "run_ids": [],
-      "sample_candidates": []
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.17"
+      ],
+      "accepted_candidates": 3,
+      "type_breakdown": {
+        "operational_sequence": 2,
+        "fault_diagnostic_rule": 1
+      },
+      "trust_breakdown": {
+        "L3": 3
+      },
+      "run_ids": [
+        "20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Dual-Fan Dual-Duct Heating VAV AHU Static Pressure Setpoint Reset",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.17.1.2",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Dual-Fan Dual-Duct Heating VAV AHU Supply Air Temperature Setpoint Reset",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.17.2.2",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Dual-Fan Dual-Duct Heating VAV AHU AFDD Fault Conditions",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.17.4.5",
+          "trust_level": "L3"
+        }
+      ]
     },
     {
       "section": "5.18",
       "title": "5.18 Single-Zone VAV Air-Handling Unit",
       "start_page": 152,
       "end_page": 170,
-      "coverage_status": "not_run",
-      "requested_sections_run": [],
-      "accepted_candidates": 0,
-      "type_breakdown": {},
-      "trust_breakdown": {},
-      "run_ids": [],
-      "sample_candidates": []
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.18"
+      ],
+      "accepted_candidates": 5,
+      "type_breakdown": {
+        "operational_sequence": 4,
+        "fault_diagnostic_rule": 1
+      },
+      "trust_breakdown": {
+        "L3": 5
+      },
+      "run_ids": [
+        "20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "SZVAV AHU Supply Fan Speed and SAT Setpoint Reset",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.18.4",
+          "trust_level": "L3"
+        },
+        {
+          "title": "SZVAV AHU Supply Air Temperature Control Loop Mapping",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.18.5.2",
+          "trust_level": "L3"
+        },
+        {
+          "title": "SZVAV AHU Minimum Outdoor Air Control without AFMS",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.18.6.2",
+          "trust_level": "L3"
+        }
+      ]
     },
     {
       "section": "5.19",
       "title": "5.19 General Constant Speed Exhaust Fan",
       "start_page": 171,
       "end_page": 171,
-      "coverage_status": "not_run",
-      "requested_sections_run": [],
-      "accepted_candidates": 0,
-      "type_breakdown": {},
-      "trust_breakdown": {},
-      "run_ids": [],
-      "sample_candidates": []
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.19"
+      ],
+      "accepted_candidates": 1,
+      "type_breakdown": {
+        "operational_sequence": 1
+      },
+      "trust_breakdown": {
+        "L3": 1
+      },
+      "run_ids": [
+        "20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "General Constant Speed Exhaust Fan Control",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.19.1.1",
+          "trust_level": "L3"
+        }
+      ]
     },
     {
       "section": "5.20",
@@ -973,51 +1155,62 @@
       "title": "5.22 Fan Coil Unit",
       "start_page": 262,
       "end_page": 292,
-      "coverage_status": "not_run",
-      "requested_sections_run": [],
-      "accepted_candidates": 0,
-      "type_breakdown": {},
-      "trust_breakdown": {},
-      "run_ids": [],
-      "sample_candidates": []
+      "coverage_status": "covered",
+      "requested_sections_run": [
+        "5.22"
+      ],
+      "accepted_candidates": 4,
+      "type_breakdown": {
+        "operational_sequence": 3,
+        "fault_diagnostic_rule": 1
+      },
+      "trust_breakdown": {
+        "L3": 4
+      },
+      "run_ids": [
+        "20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36"
+      ],
+      "sample_candidates": [
+        {
+          "title": "Fan Coil Unit Supply Fan Speed and SAT Control",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.22.4",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Fan Coil Unit AFDD Fault Conditions",
+          "type": "fault_diagnostic_rule",
+          "citation": "ASHRAE Guideline 36-2021 §5.22.6.6",
+          "trust_level": "L3"
+        },
+        {
+          "title": "Fan Coil Unit Chilled-Water Reset Requests",
+          "type": "operational_sequence",
+          "citation": "ASHRAE Guideline 36-2021 §5.22.8.1",
+          "trust_level": "L3"
+        }
+      ]
     }
   ],
   "next_recommended_batches": [
     {
       "priority": 1,
       "sections": [
-        "5.2",
-        "5.3"
+        "5.1 except 5.1.14"
       ],
-      "why": "Generic ventilation and thermal zone logic. These clauses define zone minimum airflow, temperature setpoint hierarchy, demand-limit adjustments, local overrides, control loops, and zone alarms. They are reused by many terminal/AHU sections."
+      "why": "Only remaining partial area. Extract cautiously because it contains cross-cutting definitions, alarm philosophy, VFD speed point rules, staging/rotation, economizer limits, and suppression logic."
     },
     {
       "priority": 2,
       "sections": [
-        "5.17",
-        "5.18",
-        "5.19"
+        "ontology split: terminal_unit, fan_coil_unit, exhaust_fan"
       ],
-      "why": "Remaining air-side equipment sections: dual-fan dual-duct AHU, single-zone VAV AHU, and constant-speed exhaust fan. High operational value and likely API-demo friendly."
-    },
-    {
-      "priority": 3,
-      "sections": [
-        "5.22"
-      ],
-      "why": "Fan coil unit section. Useful independent terminal-equipment class; should probably not be forced into AHU long-term."
-    },
-    {
-      "priority": 4,
-      "sections": [
-        "5.1 except 5.1.14"
-      ],
-      "why": "General control philosophy, alarm handling, VFD speed points, equipment staging/rotation, economizer limits, alarm suppression. Important cross-cutting knowledge, but needs careful type mapping to avoid overly generic KOs."
+      "why": "Current imports use hvac:ahu as the air-side bucket. Production ontology should split terminal units, FCUs, and exhaust fans."
     }
   ],
   "notes": [
-    "Section 5.1 is marked partial because only 5.1.14 Trim & Respond has been extracted so far.",
-    "The first G36 plant run produced one commissioning_procedure item while the later import path uses commissioning_step; API smoke shows 21 visible KOs from that run rather than the 22 model-accepted extraction total.",
-    "Sections 5.7-5.14 are currently mapped to hvac:ahu as a pragmatic import target; ONTOLOGY_GAPS.md records the future terminal-unit ontology need."
+    "Only G3 PASS extraction runs are counted. Failed debugging runs are intentionally excluded.",
+    "Section 5.1 is partial because only 5.1.14 Trim & Respond has been extracted.",
+    "Sections 5.7-5.14 and 5.22 are currently mapped to hvac:ahu until dedicated terminal/fan-coil ontology classes are added."
   ]
 }

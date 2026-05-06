@@ -1,0 +1,38 @@
+{
+  "report_mode": "standard_review_backfill_api_smoke",
+  "generated_at": "2026-05-06T16:18:51.154856+00:00",
+  "pack_dir": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs",
+  "min_trust_level": "L3",
+  "limit": 100,
+  "summary": {
+    "targets": 2,
+    "passed": 2,
+    "failed": 0
+  },
+  "results": [
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "service_family": "fault_knowledge",
+      "expected_accepted_count": 5,
+      "service_total_count": 57,
+      "service_returned_count": 57,
+      "service_has_more": false,
+      "visible_matching_count": 57,
+      "status": "pass"
+    },
+    {
+      "domain_id": "hvac",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "service_family": "operational_guidance",
+      "expected_accepted_count": 14,
+      "service_total_count": 82,
+      "service_returned_count": 82,
+      "service_has_more": false,
+      "visible_matching_count": 82,
+      "status": "pass"
+    }
+  ]
+}

@@ -12,6 +12,8 @@ from scripts.run_ashrae_guideline36_vertical import (
     Guideline36ExtractionResponse,
     SectionUnit,
     anchor_candidates,
+    build_bundle_extract_messages,
+    build_bundle_text,
     build_summary,
     build_extract_messages,
     canonical_key,
@@ -53,6 +55,21 @@ def test_extract_prompt_scopes_to_official_guideline36_section() -> None:
     assert "Do not use ellipses" in system_prompt
     assert "standard_id: ASHRAE Guideline 36-2021" in user_prompt
     assert "requested_section: 5.1.14" in user_prompt
+
+
+def test_bundle_extract_prompt_uses_multi_section_context() -> None:
+    units = [
+        SectionUnit("5.2", "5.2", "5.2 Generic Ventilation Zones", 59, 66, "5.2.1 ventilation text", ["chunk_1"]),
+        SectionUnit("5.3", "5.3", "5.3 Generic Thermal Zones", 67, 70, "5.3.1 thermal text", ["chunk_2"]),
+    ]
+
+    messages = build_bundle_extract_messages(units)
+    bundle_text = build_bundle_text(units)
+
+    assert "full provided multi-section context" in messages[0]["content"]
+    assert "requested_sections: 5.2, 5.3" in messages[1]["content"]
+    assert "[[requested_section=5.2 page_range=59-66" in bundle_text
+    assert "[[requested_section=5.3 page_range=67-70" in bundle_text
 
 
 def test_canonical_key_includes_section_and_type() -> None:

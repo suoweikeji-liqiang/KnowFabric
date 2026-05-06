@@ -240,6 +240,9 @@ def build_extract_messages(unit: SectionUnit) -> list[dict[str, str]]:
         "the most operationally important items instead of one item per bullet. evidence_quote MUST be a SHORT "
         "verbatim contiguous substring copied from the section text, preferably the exact section heading line or "
         "one short requirement sentence. Do not use ellipses. Do not combine non-contiguous bullets into one quote. "
+        "Never include facts in summary, trigger_condition, or required_behavior unless they are supported by "
+        "evidence_quote. If a requirement has multiple alternatives (for example option a and option b), split "
+        "them into separate candidates, one candidate per alternative. "
         "Keep evidence_quote under 35 words when possible. If you cannot quote it exactly, skip that item. "
         "Return strict JSON with fields candidates and skipped_reason."
     )
@@ -259,6 +262,49 @@ def build_extract_messages(unit: SectionUnit) -> list[dict[str, str]]:
         '"skipped_reason":null}'
     )
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+
+
+def build_bundle_extract_messages(units: list[SectionUnit]) -> list[dict[str, str]]:
+    system = (
+        "You are a senior HVAC controls engineer extracting official ASHRAE Guideline 36 knowledge. "
+        "Use the full provided multi-section context to understand cross-references and repeated logic, then "
+        "extract concise, high-value structured knowledge from the requested sections. Treat this as an industry "
+        "standard/guideline source. Allowed knowledge_type values: operational_sequence, parameter_spec, "
+        "fault_diagnostic_rule, commissioning_step, application_guidance. Prefer actionable control logic: "
+        "enable/disable logic, staging rules, trim-and-respond reset rules, alarm/fault equations, "
+        "setpoints/timers/ranges, and commissioning or TAB checks. Do not extract front matter, table-of-contents "
+        "lines, bibliography, generic definitions without operational use, or ungrounded paraphrases. If the same "
+        "knowledge appears in multiple sections, return the clearest canonical item once per applicable section. "
+        "evidence_quote MUST be a SHORT verbatim contiguous substring copied from the section text. Do not use "
+        "ellipses or combine non-contiguous bullets. Never include facts in summary, trigger_condition, or "
+        "required_behavior unless they are supported by evidence_quote. If a requirement has multiple alternatives "
+        "(for example option a and option b), split them into separate candidates, one candidate per alternative. "
+        "Return strict JSON with fields candidates and skipped_reason."
+    )
+    user = (
+        f"standard_id: {STANDARD_ID}\n"
+        f"requested_sections: {', '.join(unit.requested_section for unit in units)}\n\n"
+        "Multi-section text:\n"
+        f"{build_bundle_text(units)}\n\n"
+        "Return JSON shape:\n"
+        '{"candidates":[{"knowledge_type":"operational_sequence","title":"...",'
+        '"section_id":"5.20.2.2","section_title":"Plant Enable/Disable","equipment_scope":"...",'
+        '"summary":"...","trigger_condition":"...","required_behavior":"...",'
+        '"configurable_values":["..."],"fault_condition":null,"commissioning_check":null,'
+        '"evidence_quote":"exact source quote","page_hint":172,"confidence":0.9}],'
+        '"skipped_reason":null}'
+    )
+    return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+
+
+def build_bundle_text(units: list[SectionUnit]) -> str:
+    parts = []
+    for unit in units:
+        parts.append(
+            f"[[requested_section={unit.requested_section} page_range={unit.start_page}-{unit.end_page} "
+            f"title={unit.section_title}]]\n{unit.text}"
+        )
+    return "\n\n".join(parts)
 
 
 def extract_section(
@@ -282,6 +328,51 @@ def extract_section(
     parsed = Guideline36ExtractionResponse.model_validate(response)
     print(f"section {unit.requested_section} returned {len(parsed.candidates)} candidates", flush=True)
     return parsed.candidates[:max_candidates]
+
+
+def extract_section_bundle(
+    units: list[SectionUnit],
+    backend: OpenAICompatibleBackend,
+    raw: list[dict[str, Any]],
+    *,
+    max_candidates_per_section: int,
+) -> list[Guideline36Candidate]:
+    sections = ",".join(unit.requested_section for unit in units)
+    bundle_text = build_bundle_text(units)
+    print(f"extracting bundle sections={sections} tokens~{estimate_tokens(bundle_text)}", flush=True)
+    response = request_json_completion_with_retry(
+        build_bundle_extract_messages(units),
+        backend,
+        response_format={"type": "json_object"},
+        recorder=lambda payload: raw.append({"sections": sections, "extract_mode": "bundle", **redact_raw_request(payload)}),
+    )
+    parsed = Guideline36ExtractionResponse.model_validate(response)
+    print(f"bundle sections={sections} returned {len(parsed.candidates)} candidates", flush=True)
+    return cap_candidates_per_requested_section(parsed.candidates, units, max_candidates_per_section)
+
+
+def cap_candidates_per_requested_section(
+    candidates: list[Guideline36Candidate],
+    units: list[SectionUnit],
+    max_candidates: int,
+) -> list[Guideline36Candidate]:
+    counts = Counter()
+    capped = []
+    requested = [unit.requested_section for unit in units]
+    for candidate in candidates:
+        bucket = requested_bucket(candidate.section_id, requested)
+        if counts[bucket] >= max_candidates:
+            continue
+        counts[bucket] += 1
+        capped.append(candidate)
+    return capped
+
+
+def requested_bucket(section_id: str, requested: list[str]) -> str:
+    for section in sorted(requested, key=len, reverse=True):
+        if section_id == section or section_id.startswith(f"{section}."):
+            return section
+    return "other"
 
 
 def request_json_completion_with_retry(
@@ -519,7 +610,7 @@ def usage_tokens(raw: list[dict[str, Any]]) -> dict[str, int]:
     usages = [item.get("response", {}).get("usage", {}) for item in raw]
     prompt = sum(int(item.get("prompt_tokens") or 0) for item in usages)
     completion = sum(int(item.get("completion_tokens") or 0) for item in usages)
-    return {"prompt_tokens": prompt, "completion_tokens": completion, "total_tokens": prompt + completion}
+    return {"prompt_tokens": prompt, "completion_tokens": completion, "total_tokens": prompt + completion, "request_count": len(raw)}
 
 
 def estimate_cost(raw: list[dict[str, Any]], pricing: dict[str, Any]) -> float:
@@ -558,6 +649,7 @@ def build_summary(args, doc, units, timings, artifacts, backends, pricing) -> di
         "manual": doc.file_name,
         "doc_id": doc.doc_id,
         "sections": [unit.requested_section for unit in units],
+        "extract_mode": getattr(args, "extract_mode", "section"),
         "section_units": [unit.__dict__ | {"text": f"{len(unit.text)} chars"} for unit in units],
         "extract_backend": extract_backend.name,
         "extract_model": extract_backend.model,
@@ -599,7 +691,7 @@ def build_report(summary: dict[str, Any], samples: dict[str, list[str]]) -> str:
 **Standard:** {summary["standard_id"]}
 **Document:** {summary["manual"]}
 **Sections:** {", ".join(summary["sections"])}
-**Architecture:** section-level official-standard extraction + judge + verbatim chunk anchoring
+**Architecture:** {summary["extract_mode"]} official-standard extraction + judge + verbatim chunk anchoring
 **Extract backend:** {summary["extract_backend"]} / {summary["extract_model"]}
 **Judge backend:** {summary["judge_backend"]} / {summary["judge_model"]}
 
@@ -617,7 +709,7 @@ def build_report(summary: dict[str, Any], samples: dict[str, list[str]]) -> str:
 
 | Metric | Value |
 |--------|-------|
-| Section extraction calls | {len(summary["sections"])} |
+| Extraction calls | {summary["extract_usage"].get("request_count", len(summary["sections"]))} |
 | Raw candidates | {summary["raw_candidates"]} |
 | Anchor passed | {summary["anchor_passed"]} |
 | Anchor rejected | {summary["anchor_rejected"]} |
@@ -674,11 +766,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     sections = [item.strip() for item in args.sections.split(",") if item.strip()]
     units = build_section_units(doc, pages, chunks, sections)
     raw_extract: list[dict[str, Any]] = []
-    extracted: list[Guideline36Candidate] = []
     for unit in units:
         if estimate_tokens(unit.text) > args.max_section_tokens:
             raise ValueError(f"Section {unit.requested_section} exceeds token cap")
-        extracted.extend(extract_section(unit, extract_backend, raw_extract, max_candidates=args.max_candidates_per_section))
+    extracted = extract_units(args, units, extract_backend, raw_extract)
     raw_entries = build_raw_entries(extracted, doc, extract_backend)
     print(f"anchoring {len(raw_entries)} raw candidates", flush=True)
     anchored, anchor_rejected = anchor_candidates(raw_entries, chunks)
@@ -690,6 +781,28 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     summary = build_summary(args, doc, units, timings, artifacts, (extract_backend, judge_backend), (extract_pricing, judge_pricing))
     write_outputs(args, summary, units, artifacts)
     return summary
+
+
+def extract_units(
+    args: argparse.Namespace,
+    units: list[SectionUnit],
+    backend: OpenAICompatibleBackend,
+    raw_extract: list[dict[str, Any]],
+) -> list[Guideline36Candidate]:
+    if args.extract_mode == "bundle":
+        bundle_text = build_bundle_text(units)
+        if estimate_tokens(bundle_text) > args.max_section_tokens:
+            raise ValueError("Section bundle exceeds token cap")
+        return extract_section_bundle(
+            units,
+            backend,
+            raw_extract,
+            max_candidates_per_section=args.max_candidates_per_section,
+        )
+    extracted: list[Guideline36Candidate] = []
+    for unit in units:
+        extracted.extend(extract_section(unit, backend, raw_extract, max_candidates=args.max_candidates_per_section))
+    return extracted
 
 
 def write_outputs(args, summary: dict[str, Any], units: list[SectionUnit], artifacts: tuple[Any, ...]) -> None:
@@ -734,6 +847,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--budget-rmb", type=float, default=30.0)
     parser.add_argument("--max-section-tokens", type=int, default=250_000)
     parser.add_argument("--max-candidates-per-section", type=int, default=24)
+    parser.add_argument("--extract-mode", choices=["section", "bundle"], default="section")
     return parser
 
 

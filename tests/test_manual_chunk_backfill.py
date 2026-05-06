@@ -25,7 +25,11 @@ from packages.domain_kit_v2.projection import (
     build_ontology_alias_rows,
     build_ontology_mapping_rows,
 )
-from scripts.backfill_manual_knowledge_from_chunks import backfill_manual_fixture_from_chunks
+from scripts.backfill_manual_knowledge_from_chunks import (
+    _dedupe_new_knowledge_rows,
+    _remap_evidence_knowledge_ids,
+    backfill_manual_fixture_from_chunks,
+)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 HVAC_V2_ROOT = REPO_ROOT / "domain_packages/hvac/v2"
@@ -149,6 +153,72 @@ def test_backfill_manual_fixture_from_chunks_for_drive(monkeypatch) -> None:
         assert knowledge_count == 4
         assert knowledge_object.package_version == "2.0.0-alpha"
         assert knowledge_object.ontology_version == "0.2.0"
+    finally:
+        db.close()
+
+
+def test_dedupe_new_knowledge_rows_maps_duplicate_canonical_to_existing_id() -> None:
+    session_factory = _build_session_factory()
+    db = session_factory()
+    try:
+        db.execute(Document.__table__.insert(), [{"doc_id": "doc_1", "file_hash": "h", "storage_path": "/tmp/a.pdf", "file_name": "a.pdf"}])
+        db.execute(DocumentPage.__table__.insert(), [{"page_id": "page_1", "doc_id": "doc_1", "page_no": 1, "cleaned_text": "text"}])
+        db.execute(
+            ContentChunk.__table__.insert(),
+            [
+                {
+                    "chunk_id": "chunk_1",
+                    "doc_id": "doc_1",
+                    "page_id": "page_1",
+                    "page_no": 1,
+                    "chunk_index": 0,
+                    "cleaned_text": "text",
+                    "chunk_type": "paragraph",
+                }
+            ],
+        )
+        db.execute(
+            KnowledgeObjectV2.__table__.insert(),
+            [
+                {
+                    "knowledge_object_id": "ko_existing",
+                    "domain_id": "hvac",
+                    "ontology_class_key": "hvac:ahu",
+                    "ontology_class_id": "ahu",
+                    "knowledge_object_type": "operational_sequence",
+                    "canonical_key": "ashrae:g36:sequence",
+                    "title": "Existing",
+                    "summary": "Existing",
+                    "structured_payload_json": {},
+                    "trust_level": "L3",
+                    "review_status": "approved",
+                    "primary_chunk_id": "chunk_1",
+                    "package_version": "2.0.0-alpha",
+                    "ontology_version": "0.2.0",
+                }
+            ],
+        )
+        db.commit()
+        rows = [
+            {
+                "knowledge_object_id": "ko_new",
+                "domain_id": "hvac",
+                "ontology_class_key": "hvac:ahu",
+                "ontology_class_id": "ahu",
+                "knowledge_object_type": "operational_sequence",
+                "canonical_key": "ashrae:g36:sequence",
+            }
+        ]
+
+        deduped, id_map = _dedupe_new_knowledge_rows(db, rows)
+        evidence = _remap_evidence_knowledge_ids(
+            [{"knowledge_object_id": "ko_new", "chunk_id": "chunk_1", "evidence_role": "primary"}],
+            id_map,
+        )
+
+        assert deduped == []
+        assert id_map == {"ko_new": "ko_existing"}
+        assert evidence[0]["knowledge_object_id"] == "ko_existing"
     finally:
         db.close()
 

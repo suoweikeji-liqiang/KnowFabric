@@ -1,0 +1,30 @@
+{
+  "pipeline_mode": "official_standard_import_pipeline",
+  "generated_at": "2026-05-06T16:18:51.156408+00:00",
+  "standard": "ashrae-g36",
+  "workspace_dir": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value",
+  "source_run_dir": "output/ashrae_guideline36_vertical/20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36",
+  "candidate_path": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/candidates_input.json",
+  "review_pack_dir": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs",
+  "review_pack_manifest_path": null,
+  "candidate_count": 19,
+  "review_pack_count": 1,
+  "readiness_summary": {
+    "ready": 1,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "apply_summary": {
+    "applied": 1,
+    "skipped_pending": 0,
+    "skipped_no_accepted": 0,
+    "failed": 0
+  },
+  "api_smoke_summary": {
+    "targets": 2,
+    "passed": 2,
+    "failed": 0
+  },
+  "next_action": "Pipeline passed through backfill and semantic smoke; ready for consumer validation."
+}

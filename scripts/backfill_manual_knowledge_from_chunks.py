@@ -86,6 +86,56 @@ def _dedupe_new_evidence_rows(session, rows: list[dict]) -> list[dict]:
     ]
 
 
+def _dedupe_new_knowledge_rows(session, rows: list[dict]) -> tuple[list[dict], dict[str, str]]:
+    """Skip existing canonical KOs and map new IDs to stored IDs for evidence."""
+
+    unique_rows: dict[tuple[str, str, str, str], dict] = {}
+    id_map: dict[str, str] = {}
+    for row in rows:
+        key = (
+            row["domain_id"],
+            row["ontology_class_id"],
+            row["knowledge_object_type"],
+            row["canonical_key"],
+        )
+        existing = unique_rows.get(key)
+        if existing is None:
+            unique_rows[key] = row
+        else:
+            id_map[row["knowledge_object_id"]] = existing["knowledge_object_id"]
+
+    existing_rows = (
+        session.query(
+            KnowledgeObjectV2.knowledge_object_id,
+            KnowledgeObjectV2.domain_id,
+            KnowledgeObjectV2.ontology_class_id,
+            KnowledgeObjectV2.knowledge_object_type,
+            KnowledgeObjectV2.canonical_key,
+        )
+        .filter(
+            KnowledgeObjectV2.canonical_key.in_(
+                [row["canonical_key"] for row in unique_rows.values()]
+            )
+        )
+        .all()
+    )
+    existing_by_key = {
+        (row.domain_id, row.ontology_class_id, row.knowledge_object_type, row.canonical_key): row.knowledge_object_id
+        for row in existing_rows
+    }
+    for key, row in unique_rows.items():
+        if key in existing_by_key:
+            id_map[row["knowledge_object_id"]] = existing_by_key[key]
+    return [row for key, row in unique_rows.items() if key not in existing_by_key], id_map
+
+
+def _remap_evidence_knowledge_ids(rows: list[dict], id_map: dict[str, str]) -> list[dict]:
+    return [
+        {**row, "knowledge_object_id": id_map.get(row["knowledge_object_id"], row["knowledge_object_id"])}
+        for row in rows
+    ]
+
+
 def _load_equipment_class(client: SwBaseModelOntologyClient, equipment_class_key: str) -> dict:
     equipment_class = client.get_equipment_class(equipment_class_key)
     if equipment_class is None:
@@ -139,15 +189,20 @@ def backfill_manual_fixture_from_chunks(path: str | Path) -> tuple[str, int]:
             chunk_contexts=_load_chunk_contexts(session, chunk_ids),
             match_method="manual_backfill",
         )
+        knowledge_count = len(rows["knowledge_objects"])
         rows["anchors"] = _dedupe_new_anchor_rows(session, rows["anchors"])
-        rows["evidence"] = _dedupe_new_evidence_rows(session, rows["evidence"])
+        rows["knowledge_objects"], id_map = _dedupe_new_knowledge_rows(session, rows["knowledge_objects"])
+        rows["evidence"] = _dedupe_new_evidence_rows(
+            session,
+            _remap_evidence_knowledge_ids(rows["evidence"], id_map),
+        )
         _merge_rows(session, ChunkOntologyAnchorV2, rows["anchors"])
         session.flush()
         _merge_rows(session, KnowledgeObjectV2, rows["knowledge_objects"])
         session.flush()
         _merge_rows(session, KnowledgeObjectEvidenceV2, rows["evidence"])
         session.commit()
-        return fixture["equipment_class_key"], len(rows["knowledge_objects"])
+        return fixture["equipment_class_key"], knowledge_count
     except Exception:
         session.rollback()
         raise

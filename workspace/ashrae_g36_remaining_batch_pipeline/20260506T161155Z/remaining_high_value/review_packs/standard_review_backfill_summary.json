@@ -1,0 +1,101 @@
+{
+  "pipeline_mode": "standard_review_backfill",
+  "generated_at": "2026-05-06T16:18:51.156206+00:00",
+  "review_pack_dir": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs",
+  "candidate_file": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/candidates_input.json",
+  "readiness_report_path": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs/review_pack_readiness_report.json",
+  "apply_report_path": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs/review_pack_apply_report.json",
+  "api_smoke_report_path": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs/api_smoke_report.json",
+  "readiness_summary": {
+    "ready": 1,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "apply_summary": {
+    "applied": 1,
+    "skipped_pending": 0,
+    "skipped_no_accepted": 0,
+    "failed": 0
+  },
+  "api_smoke_summary": {
+    "targets": 2,
+    "passed": 2,
+    "failed": 0
+  },
+  "stats": {
+    "stats_mode": "chunk_backfill_review_pipeline_stats",
+    "candidate_source": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/candidates_input.json",
+    "pack_dir": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs",
+    "readiness_report_path": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs/review_pack_readiness_report.json",
+    "apply_report_path": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs/review_pack_apply_report.json",
+    "overall": {
+      "scanned_chunks": 0,
+      "matched_chunks": 0,
+      "candidate_entries": 19,
+      "candidate_hit_rate": 0.0,
+      "review_packs_total": 1,
+      "review_packs_ready_to_apply": 1,
+      "review_packs_pending": 0,
+      "review_packs_rejected_only": 0,
+      "readiness_status_counts": {
+        "ready": 1,
+        "blocked_pending": 0,
+        "blocked_no_accepted": 0,
+        "blocked_invalid": 0
+      },
+      "apply_status_counts": {
+        "applied": 1,
+        "skipped_pending": 0,
+        "skipped_no_accepted": 0,
+        "failed": 0
+      }
+    },
+    "documents": [
+      {
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "scanned_chunks": 0,
+        "matched_chunks": 0,
+        "candidate_entries": 19,
+        "candidate_hit_rate": 0.0,
+        "review_decisions": {
+          "accepted": 19,
+          "rejected": 0,
+          "pending": 0
+        },
+        "packs_total": 1,
+        "packs_ready_to_apply": 1,
+        "readiness_status_counts": {
+          "ready": 1,
+          "blocked_pending": 0,
+          "blocked_no_accepted": 0,
+          "blocked_invalid": 0
+        },
+        "apply_status_counts": {
+          "applied": 1,
+          "skipped_pending": 0,
+          "skipped_no_accepted": 0,
+          "failed": 0
+        }
+      }
+    ],
+    "review_packs": [
+      {
+        "pack_file": "hvac__doc_4bbd3703c4f84be4__ahu.json",
+        "doc_id": "doc_4bbd3703c4f84be4",
+        "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+        "equipment_class_id": "ahu",
+        "equipment_class_key": "hvac:ahu",
+        "candidate_count": 19,
+        "accepted_count": 19,
+        "rejected_count": 0,
+        "pending_count": 0,
+        "ready_to_apply": true,
+        "readiness_status": "ready",
+        "readiness_blocker": null,
+        "apply_status": "applied"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "review_mode": "model_review_standard_packs",
+  "generated_at": "2026-05-06T16:18:50.762259+00:00",
+  "pack_dir": "workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs",
+  "rejected_source": "output/ashrae_guideline36_vertical/20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/candidates_llm_judge_rejected.jsonl",
+  "summary": {
+    "accepted": 19
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_4bbd3703c4f84be4__ahu.json",
+      "candidate_count": 19,
+      "decisions": {
+        "accepted": 19
+      }
+    }
+  ]
+}

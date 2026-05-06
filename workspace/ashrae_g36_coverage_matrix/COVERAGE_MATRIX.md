@@ -1,25 +1,25 @@
 # ASHRAE Guideline 36 Coverage Matrix
 
-Generated: 2026-05-06T15:49:29.564612+00:00
+Generated: 2026-05-06T16:21:16.174782+00:00
 Manual: `ashrae_guideline_36_2021_high_performance_sequences.pdf`
 Doc ID: `doc_4bbd3703c4f84be4`
 
 ## Executive Summary
 
 - Top-level §5 sections: 22
-- Covered or partial sections: 16
-- Not-run sections: 6
-- Accepted extraction candidates across runs: 141
-- Type totals: application_guidance: 1, commissioning_procedure: 5, commissioning_step: 7, fault_diagnostic_rule: 53, operational_sequence: 72, parameter_spec: 3
-- Trust totals: L3: 71, L4: 70
+- Covered or partial sections: 22
+- Not-run sections: 0
+- Accepted extraction candidates across passing runs: 160
+- Type totals: application_guidance: 1, commissioning_procedure: 5, commissioning_step: 7, fault_diagnostic_rule: 58, operational_sequence: 86, parameter_spec: 3
+- Trust totals: L3: 90, L4: 70
 
 ## Coverage Matrix
 
 | Section | Pages | Status | Accepted | Type breakdown | Notes |
 |---|---:|---|---:|---|---|
 | §5.1 General | 42-58 | partial | 5 | application_guidance: 1, commissioning_procedure: 1, fault_diagnostic_rule: 1, operational_sequence: 1, parameter_spec: 1 | requested: 5.1.14 |
-| §5.2 Generic Ventilation Zones | 59-66 | not_run | 0 | - | requested: - |
-| §5.3 Generic Thermal Zones | 67-70 | not_run | 0 | - | requested: - |
+| §5.2 Generic Ventilation Zones | 59-66 | covered | 3 | fault_diagnostic_rule: 1, operational_sequence: 2 | requested: 5.2 |
+| §5.3 Generic Thermal Zones | 67-70 | covered | 3 | fault_diagnostic_rule: 1, operational_sequence: 2 | requested: 5.3 |
 | §5.4 Zone Groups | 71-71 | covered | 3 | commissioning_procedure: 1, operational_sequence: 2 | requested: 5.4 |
 | §5.5 VAV Terminal Unit—Cooling Only | 72-74 | covered | 6 | commissioning_procedure: 1, fault_diagnostic_rule: 3, operational_sequence: 1, parameter_spec: 1 | requested: 5.5 |
 | §5.6 VAV Terminal Unit with Reheat | 75-78 | covered | 11 | commissioning_procedure: 1, fault_diagnostic_rule: 5, operational_sequence: 4, parameter_spec: 1 | requested: 5.6 |
@@ -33,20 +33,21 @@ Doc ID: `doc_4bbd3703c4f84be4`
 | §5.14 Dual-Duct VAV Terminal Unit − Cold-Duct Minimum Control | 107-110 | covered | 11 | commissioning_step: 1, fault_diagnostic_rule: 3, operational_sequence: 7 | requested: 5.14 |
 | §5.15 Air-Handling Unit System Modes | 111-111 | covered | 1 | operational_sequence: 1 | requested: 5.15 |
 | §5.16 Multiple-Zone VAV Air-Handling Unit | 111-145 | covered | 21 | commissioning_procedure: 1, fault_diagnostic_rule: 5, operational_sequence: 15 | requested: 5.16 |
-| §5.17 Dual-Fan Dual-Duct Heating VAV Air-Handling Unit | 146-151 | not_run | 0 | - | requested: - |
-| §5.18 Single-Zone VAV Air-Handling Unit | 152-170 | not_run | 0 | - | requested: - |
-| §5.19 General Constant Speed Exhaust Fan | 171-171 | not_run | 0 | - | requested: - |
+| §5.17 Dual-Fan Dual-Duct Heating VAV Air-Handling Unit | 146-151 | covered | 3 | fault_diagnostic_rule: 1, operational_sequence: 2 | requested: 5.17 |
+| §5.18 Single-Zone VAV Air-Handling Unit | 152-170 | covered | 5 | fault_diagnostic_rule: 1, operational_sequence: 4 | requested: 5.18 |
+| §5.19 General Constant Speed Exhaust Fan | 171-171 | covered | 1 | operational_sequence: 1 | requested: 5.19 |
 | §5.20 Chilled Water Plant | 172-234 | covered | 11 | fault_diagnostic_rule: 3, operational_sequence: 8 | requested: 5.20 |
 | §5.21 Hot Water Plant | 235-261 | covered | 6 | operational_sequence: 6 | requested: 5.21 |
-| §5.22 Fan Coil Unit | 262-292 | not_run | 0 | - | requested: - |
+| §5.22 Fan Coil Unit | 262-292 | covered | 4 | fault_diagnostic_rule: 1, operational_sequence: 3 | requested: 5.22 |
 
 ## Run Inventory
 
-| Run | Sections | Raw | Accepted | Rejected | L4/L3 | Gates | Report |
-|---|---|---:|---:|---:|---:|---|---|
-| `20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | 5.1.14, 5.20, 5.21 | 29 | 22 | 2 | 3/19 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
-| `20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | 5.4, 5.5, 5.6, 5.15, 5.16 | 46 | 42 | 2 | 12/30 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
-| `20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | 5.7, 5.8, 5.9, 5.10, 5.11, 5.12, 5.13, 5.14 | 81 | 77 | 4 | 55/22 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
+| Run | Mode | Sections | Raw | Accepted | Rejected | L4/L3 | Gates | Report |
+|---|---|---|---:|---:|---:|---:|---|---|
+| `20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | section | 5.1.14, 5.20, 5.21 | 29 | 22 | 2 | 3/19 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T101446Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
+| `20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | section | 5.4, 5.5, 5.6, 5.15, 5.16 | 46 | 42 | 2 | 12/30 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T130150Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
+| `20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | section | 5.7, 5.8, 5.9, 5.10, 5.11, 5.12, 5.13, 5.14 | 81 | 77 | 4 | 55/22 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T152317Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
+| `20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36` | bundle | 5.2, 5.3, 5.17, 5.18, 5.19, 5.22 | 21 | 19 | 2 | 0/19 | G1:PASS, G2:PASS, G3:PASS, G4:PASS | `output/ashrae_guideline36_vertical/20260506T161850Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36/REPORT.md` |
 
 ## API Smoke Coverage
 
@@ -65,19 +66,20 @@ Doc ID: `doc_4bbd3703c4f84be4`
   - `ahu` / `commissioning_step`: expected 7, visible 11, pass
   - `ahu` / `fault_diagnostic_rule`: expected 36, visible 49, pass
   - `ahu` / `operational_sequence`: expected 34, visible 57, pass
+- `workspace/ashrae_g36_remaining_batch_pipeline/20260506T161155Z/remaining_high_value/review_packs/api_smoke_report.json`: 2/2 passed
+  - `ahu` / `fault_diagnostic_rule`: expected 5, visible 57, pass
+  - `ahu` / `operational_sequence`: expected 14, visible 82, pass
 
 ## Next Recommended Batches
 
-1. `5.2, 5.3` - Generic ventilation and thermal zone logic. These clauses define zone minimum airflow, temperature setpoint hierarchy, demand-limit adjustments, local overrides, control loops, and zone alarms. They are reused by many terminal/AHU sections.
-2. `5.17, 5.18, 5.19` - Remaining air-side equipment sections: dual-fan dual-duct AHU, single-zone VAV AHU, and constant-speed exhaust fan. High operational value and likely API-demo friendly.
-3. `5.22` - Fan coil unit section. Useful independent terminal-equipment class; should probably not be forced into AHU long-term.
-4. `5.1 except 5.1.14` - General control philosophy, alarm handling, VFD speed points, equipment staging/rotation, economizer limits, alarm suppression. Important cross-cutting knowledge, but needs careful type mapping to avoid overly generic KOs.
+1. `5.1 except 5.1.14` - Only remaining partial area. Extract cautiously because it contains cross-cutting definitions, alarm philosophy, VFD speed point rules, staging/rotation, economizer limits, and suppression logic.
+2. `ontology split: terminal_unit, fan_coil_unit, exhaust_fan` - Current imports use hvac:ahu as the air-side bucket. Production ontology should split terminal units, FCUs, and exhaust fans.
 
 ## Modeling Notes
 
-- Section 5.1 is marked partial because only 5.1.14 Trim & Respond has been extracted so far.
-- The first G36 plant run produced one commissioning_procedure item while the later import path uses commissioning_step; API smoke shows 21 visible KOs from that run rather than the 22 model-accepted extraction total.
-- Sections 5.7-5.14 are currently mapped to hvac:ahu as a pragmatic import target; ONTOLOGY_GAPS.md records the future terminal-unit ontology need.
+- Only G3 PASS extraction runs are counted. Failed debugging runs are intentionally excluded.
+- Section 5.1 is partial because only 5.1.14 Trim & Respond has been extracted.
+- Sections 5.7-5.14 and 5.22 are currently mapped to hvac:ahu until dedicated terminal/fan-coil ontology classes are added.
 
 ## Sample Finds by Covered Section
 
@@ -85,6 +87,16 @@ Doc ID: `doc_4bbd3703c4f84be4`
 - `application_guidance` T&R Logic Application for VAV Static Pressure Control (L3, ASHRAE Guideline 36-2021 §5.1.14.4)
 - `operational_sequence` Trim & Respond Set-Point Reset Logic (L3, ASHRAE Guideline 36-2021 §5.1.14)
 - `commissioning_procedure` Request-Hours Accumulator Reset (L3, ASHRAE Guideline 36-2021 §5.1.14.2)
+
+### §5.2 Generic Ventilation Zones
+- `operational_sequence` Zone Minimum Outdoor Air and Minimum Airflow Setpoints (ASHRAE 62.1) (L3, ASHRAE Guideline 36-2021 §5.2.1.3)
+- `fault_diagnostic_rule` CO2 Sensor Calibration Alarm for TAV Zones (L3, ASHRAE Guideline 36-2021 §5.2.2.3)
+- `operational_sequence` Time-Averaged Ventilation (TAV) for Zones (L3, ASHRAE Guideline 36-2021 §5.2.2)
+
+### §5.3 Generic Thermal Zones
+- `operational_sequence` Zone Temperature Setpoint Adjustments and Limits (L3, ASHRAE Guideline 36-2021 §5.3.2)
+- `fault_diagnostic_rule` Zone Temperature Alarms (L3, ASHRAE Guideline 36-2021 §5.3.6.1)
+- `operational_sequence` Zone Control Loops and Zone State Determination (L3, ASHRAE Guideline 36-2021 §5.3.4)
 
 ### §5.4 Zone Groups
 - `commissioning_procedure` Zone Group Testing/Commissioning Override Switches (L3, ASHRAE Guideline 36-2021 §5.4.5)
@@ -149,6 +161,19 @@ Doc ID: `doc_4bbd3703c4f84be4`
 - `operational_sequence` Static Pressure Setpoint Reset using Trim & Respond (L3, ASHRAE Guideline 36-2021 §5.16.1.2)
 - `operational_sequence` Supply Air Temperature Control Loop Enable/Disable (L3, ASHRAE Guideline 36-2021 §5.16.2.1)
 
+### §5.17 Dual-Fan Dual-Duct Heating VAV Air-Handling Unit
+- `operational_sequence` Dual-Fan Dual-Duct Heating VAV AHU Static Pressure Setpoint Reset (L3, ASHRAE Guideline 36-2021 §5.17.1.2)
+- `operational_sequence` Dual-Fan Dual-Duct Heating VAV AHU Supply Air Temperature Setpoint Reset (L3, ASHRAE Guideline 36-2021 §5.17.2.2)
+- `fault_diagnostic_rule` Dual-Fan Dual-Duct Heating VAV AHU AFDD Fault Conditions (L3, ASHRAE Guideline 36-2021 §5.17.4.5)
+
+### §5.18 Single-Zone VAV Air-Handling Unit
+- `operational_sequence` SZVAV AHU Supply Fan Speed and SAT Setpoint Reset (L3, ASHRAE Guideline 36-2021 §5.18.4)
+- `operational_sequence` SZVAV AHU Supply Air Temperature Control Loop Mapping (L3, ASHRAE Guideline 36-2021 §5.18.5.2)
+- `operational_sequence` SZVAV AHU Minimum Outdoor Air Control without AFMS (L3, ASHRAE Guideline 36-2021 §5.18.6.2)
+
+### §5.19 General Constant Speed Exhaust Fan
+- `operational_sequence` General Constant Speed Exhaust Fan Control (L3, ASHRAE Guideline 36-2021 §5.19.1.1)
+
 ### §5.20 Chilled Water Plant
 - `operational_sequence` Plant Enable Logic (L3, ASHRAE Guideline 36-2021 §5.20.2.2)
 - `operational_sequence` Plant Disable Logic (L3, ASHRAE Guideline 36-2021 §5.20.2.3)
@@ -158,3 +183,8 @@ Doc ID: `doc_4bbd3703c4f84be4`
 - `operational_sequence` Plant Enable/Disable (L3, ASHRAE Guideline 36-2021 §5.21.2.2)
 - `operational_sequence` Plant Disable Logic (L3, ASHRAE Guideline 36-2021 §5.21.2.3)
 - `operational_sequence` Primary Only Condensing Boiler Staging Down (L3, ASHRAE Guideline 36-2021 §5.21.3.9.g)
+
+### §5.22 Fan Coil Unit
+- `operational_sequence` Fan Coil Unit Supply Fan Speed and SAT Control (L3, ASHRAE Guideline 36-2021 §5.22.4)
+- `fault_diagnostic_rule` Fan Coil Unit AFDD Fault Conditions (L3, ASHRAE Guideline 36-2021 §5.22.6.6)
+- `operational_sequence` Fan Coil Unit Chilled-Water Reset Requests (L3, ASHRAE Guideline 36-2021 §5.22.8.1)

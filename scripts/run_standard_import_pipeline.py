@@ -54,6 +54,7 @@ def _run_ashrae_g36_extract(args: argparse.Namespace) -> Path:
         "--budget-rmb": str(args.budget_rmb),
         "--max-section-tokens": str(args.max_section_tokens),
         "--max-candidates-per-section": str(args.max_candidates_per_section),
+        "--extract-mode": args.extract_mode,
     }
     argv = [item for pair in required.items() for item in pair]
     summary = run(build_parser().parse_args(argv))
@@ -127,7 +128,7 @@ def _infer_equipment_class_candidate(entry: dict[str, Any], *, standard: str) ->
         raise ValueError(f"Cannot infer equipment class for standard: {standard}")
     payload = entry.get("structured_payload_candidate", {})
     section_id = str(payload.get("section_id") or entry.get("source_section_id") or "")
-    if _section_starts_with(section_id, ("5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10", "5.11", "5.12", "5.13", "5.14", "5.15", "5.16", "5.17", "5.18")):
+    if _section_starts_with(section_id, ("5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10", "5.11", "5.12", "5.13", "5.14", "5.15", "5.16", "5.17", "5.18", "5.19", "5.22")):
         return _equipment_ref("ahu", "Air Handling Unit")
     if section_id.startswith("5.20"):
         return _equipment_ref("chiller", "Chiller")
@@ -353,6 +354,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--budget-rmb", type=float, default=30.0)
     parser.add_argument("--max-section-tokens", type=int, default=250_000)
     parser.add_argument("--max-candidates-per-section", type=int, default=24)
+    parser.add_argument("--extract-mode", choices=["section", "bundle"], default="section")
     return parser
 
 
