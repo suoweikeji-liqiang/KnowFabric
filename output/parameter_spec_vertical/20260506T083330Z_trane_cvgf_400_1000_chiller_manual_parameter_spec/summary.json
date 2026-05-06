@@ -1,0 +1,68 @@
+{
+  "run_id": "20260506T083330Z_trane_cvgf_400_1000_chiller_manual_parameter_spec",
+  "manual": "trane_cvgf_400_1000_chiller_manual.pdf",
+  "manual_chunks": 84,
+  "manual_tokens_estimated": 20568,
+  "equipment_class_key": "hvac:centrifugal_chiller",
+  "ontology_version": "0.2.0",
+  "extract_backend": "deepseek-parameter-spec",
+  "extract_model": "deepseek-v4-flash",
+  "judge_backend": "deepseek-v4-pro-judge",
+  "judge_model": "deepseek-v4-pro",
+  "extract_usage": {
+    "prompt_tokens": 31848,
+    "completion_tokens": 4541,
+    "total_tokens": 36389
+  },
+  "judge_usage": {
+    "prompt_tokens": 18641,
+    "completion_tokens": 13670,
+    "total_tokens": 32311
+  },
+  "total_cost_rmb": 0.17977300000000002,
+  "budget_status": "within",
+  "extraction_calls": 1,
+  "raw_candidates": 44,
+  "anchor_rejected": 3,
+  "anchor_passed": 41,
+  "l4_pre_judge": 6,
+  "l3_pre_judge": 35,
+  "judge_calls": 41,
+  "judge_accepted": 34,
+  "judge_rejected": 6,
+  "judge_acceptance_rate": 82.92682926829268,
+  "judge_rejection_rate": 17.07317073170732,
+  "judge_rejection_breakdown": {
+    "other": 5,
+    "ui_behavior": 1
+  },
+  "final_verified": 34,
+  "l4_final": 5,
+  "l3_final": 29,
+  "rule_candidates": 0,
+  "overlap": 0,
+  "llm_only": 34,
+  "rule_only": 0,
+  "gates": {
+    "G1": {
+      "status": "PASS",
+      "value": 93.18181818181817
+    },
+    "G2": {
+      "status": "PASS",
+      "value": 82.92682926829268
+    },
+    "G3": {
+      "status": "PASS",
+      "value": 5
+    },
+    "G4": {
+      "status": "PASS",
+      "value": 57.87525658402592
+    }
+  },
+  "output_dir": "output/parameter_spec_vertical/20260506T083330Z_trane_cvgf_400_1000_chiller_manual_parameter_spec",
+  "report_path": "output/parameter_spec_vertical/20260506T083330Z_trane_cvgf_400_1000_chiller_manual_parameter_spec/REPORT.md",
+  "run_label": "Run 3 - Document-Level",
+  "postprocess_notes": "Canonical keys ending in :parameter: were repaired with stable SHA1-based ASCII suffixes for non-ASCII parameter names."
+}

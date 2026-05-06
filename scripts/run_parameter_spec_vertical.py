@@ -126,18 +126,45 @@ def anchor_to_chunks(raw_candidates: list[dict[str, Any]], rows: list[tuple[Cont
     anchored, rejected = [], []
     for candidate in raw_candidates:
         quote = str(candidate.get("evidence_quote") or "")
-        normalized_quote = normalize_anchor_text(quote)
-        compact_quote = compact_anchor_text(quote)
-        matches = [
-            (chunk, page)
-            for chunk, page, text, compact_text in chunk_index
-            if normalized_quote and (normalized_quote in text or compact_quote in compact_text)
-        ]
+        matches = find_chunk_matches(quote, chunk_index)
+        candidate_for_anchor = candidate
+        if not matches:
+            candidate_for_anchor, matches = repair_anchor_with_parameter_label(candidate, chunk_index)
         if not matches:
             rejected.append({**candidate, "rejection_reason": "evidence_quote not verbatim in any chunk"})
             continue
-        anchored.append(build_anchored_candidate(candidate, matches))
+        anchored.append(build_anchored_candidate(candidate_for_anchor, matches))
     return anchored, rejected
+
+
+def find_chunk_matches(
+    text: str,
+    chunk_index: list[tuple[ContentChunk, DocumentPage, str, str]],
+) -> list[tuple[ContentChunk, DocumentPage]]:
+    normalized = normalize_anchor_text(text)
+    compact = compact_anchor_text(text)
+    return [
+        (chunk, page)
+        for chunk, page, chunk_text, compact_text in chunk_index
+        if normalized and (normalized in chunk_text or compact in compact_text)
+    ]
+
+
+def repair_anchor_with_parameter_label(
+    candidate: dict[str, Any],
+    chunk_index: list[tuple[ContentChunk, DocumentPage, str, str]],
+) -> tuple[dict[str, Any], list[tuple[ContentChunk, DocumentPage]]]:
+    payload = candidate.get("structured_payload_candidate") or {}
+    label = str(payload.get("parameter_name") or "").strip()
+    if len(compact_anchor_text(label)) < 8:
+        return candidate, []
+    matches = find_chunk_matches(label, chunk_index)
+    if not matches:
+        return candidate, []
+    repaired = copy.deepcopy(candidate)
+    repaired["evidence_quote"] = label
+    repaired["anchor_repair_reason"] = "evidence_quote replaced with verbatim parameter_name label"
+    return repaired, matches
 
 
 def build_anchored_candidate(candidate: dict[str, Any], matches: list[tuple[ContentChunk, DocumentPage]]) -> dict[str, Any]:
@@ -199,14 +226,30 @@ def judge_response_format() -> dict[str, Any]:
     return {"type": "json_object"}
 
 
-def judge_one(candidate: dict[str, Any], backend: OpenAICompatibleBackend, recorder) -> JudgeResponse:
+def build_judge_messages(candidate: dict[str, Any]) -> list[dict[str, str]]:
     payload = candidate.get("structured_payload_candidate", {})
-    messages = [
+    return [
         {"role": "system", "content": "You validate HVAC manual parameter extractions. Reply only with strict JSON."},
         {
             "role": "user",
             "content": (
                 "Confirm whether this is a genuine CONFIGURABLE OPERATIONAL PARAMETER (parameter_spec) or a category error.\n\n"
+                "ACCEPT as parameter_spec when the item is a configurable setpoint, limit, mode selection, "
+                "enable/disable selection, default setting, adjustable range, or an operator-visible active/arbitrated "
+                "setpoint shown on a control panel table. Mode selections count even without a numeric value when the "
+                "manual shows operator-selectable options, such as Chilled Water Reset Return / Constant Return / "
+                "Outdoor / None. External setpoints such as External Chilled Water Setpoint or External Current Limit "
+                "Setpoint are valid when the manual describes them as remote-adjustable setpoints, analog inputs that "
+                "map to a setpoint range, or enable/disable operator options.\n\n"
+                "REJECT when the item is a command/action, UI navigation description, product marketing claim, "
+                "internal algorithm timing, component/module name, relay output label, analog/digital input or output "
+                "label, signal name, terminal mapping, wiring point, control-panel display preference, localization "
+                "setting, date/time setting, keypad lockout setting, fault code, or design-condition performance spec. "
+                "Do not reject a real external setpoint merely because it is implemented through an analog input; "
+                "reject it only when the evidence is solely a module/terminal/signal label without setpoint semantics. "
+                "Examples to reject as category errors: Relay Output Status, 1A17 Analog Input/Output Module, Digital "
+                "Switch Input Module, Date Format, Display Units, Language, Keypad and Display Lockout, External Base "
+                "Loading Setpoint input signal label.\n\n"
                 f"parameter_name: {payload.get('parameter_name')}\n"
                 f"value: {payload.get('value')}\n"
                 f"unit: {payload.get('unit')}\n"
@@ -216,6 +259,10 @@ def judge_one(candidate: dict[str, Any], backend: OpenAICompatibleBackend, recor
             ),
         },
     ]
+
+
+def judge_one(candidate: dict[str, Any], backend: OpenAICompatibleBackend, recorder) -> JudgeResponse:
+    messages = build_judge_messages(candidate)
     result = _request_json_completion(messages, backend, response_format=judge_response_format(), recorder=recorder)
     return JudgeResponse.model_validate(result)
 

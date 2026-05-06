@@ -5,7 +5,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from packages.compiler.llm_compiler import ChunkContextWindow, compile_llm_candidates, normalize_llm_canonical_key
+from packages.compiler.llm_compiler import (
+    ChunkContextWindow,
+    _build_document_parameter_spec_prompt,
+    compile_llm_candidates,
+    normalize_llm_canonical_key,
+)
 from packages.db.models import ContentChunk, Document, DocumentPage
 
 
@@ -120,6 +125,19 @@ def test_normalize_llm_canonical_key_namespaces_plain_language_keys() -> None:
         fallback_text="inspect ductwork and calibrate the ahu to deliver the correct airflow rates",
     )
     assert key == "hvac:ahu:maintenance:inspect_and_calibrate_ahu_for_correct_airflow"
+
+
+def test_normalize_llm_canonical_key_uses_hash_for_non_ascii_names() -> None:
+    key = normalize_llm_canonical_key(
+        "启动限制最低油温默认设定",
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+        fallback_text="启动限制最低油温默认设定",
+    )
+
+    assert key.startswith("hvac:centrifugal_chiller:parameter:key_")
+    assert not key.endswith(":parameter:")
 
 
 def test_normalize_llm_canonical_key_preserves_existing_namespace() -> None:
@@ -348,3 +366,23 @@ def test_compile_llm_candidates_allows_application_guidance_on_guidance_context(
 
     assert len(payload) == 1
     assert payload[0]["canonical_key_candidate"] == "hvac:ahu:application:zone_group_operation"
+
+
+def test_document_parameter_spec_prompt_includes_round3_positive_and_negative_examples() -> None:
+    messages = _build_document_parameter_spec_prompt(
+        domain_id="hvac",
+        document_name="Trane CVGF Manual.pdf",
+        equipment_class_id="hvac:centrifugal_chiller",
+        full_manual_text="[[chunk_id=chunk_1 page=25]] Active Chilled Water Setpoint 44.0F",
+    )
+
+    system_prompt = messages[0]["content"]
+    assert "Active Chilled Water Setpoint 44.0F" in system_prompt
+    assert "Active Current Limit Setpoint 100%" in system_prompt
+    assert "Chilled Water Reset Return / Constant Return / Outdoor / None" in system_prompt
+    assert "1A17选项模拟输入/输出模块" in system_prompt
+    assert "继电器输出状态" in system_prompt
+    assert "Display Units" in system_prompt
+    assert "Language" in system_prompt
+    assert "active/arbitrated setpoints shown on control-panel tables" in system_prompt
+    assert "evidence_quote should usually be ONLY the exact row label" in system_prompt

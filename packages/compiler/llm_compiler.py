@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -323,25 +324,41 @@ def _build_document_parameter_spec_prompt(
     system_prompt = (
         "You are a senior HVAC engineer reading a chiller equipment manual. Extract ALL CONFIGURABLE OPERATIONAL "
         "PARAMETERS from this manual into a structured list. A parameter_spec is a CONFIGURABLE setpoint, limit, "
-        "mode selection, or adjustable value that an operator or commissioning engineer would set. Examples include "
-        "chilled water setpoints, current limit setpoints, mode selections, default values with adjustable ranges. "
+        "mode selection, enable/disable selection, or adjustable value that an operator or commissioning engineer "
+        "would set. Examples include chilled water setpoints, current limit setpoints, mode selections, default "
+        "values with adjustable ranges, and operator-visible active/arbitrated setpoints shown on control-panel "
+        "tables. If a table shows an effective current setting that operators can influence through front panel / BAS "
+        "/ external sources, that active setpoint is still a valid parameter_spec. "
         "NOT parameter_specs: marketing claims describing product features, such as sensors collect data 3 times "
         "per second; internal control algorithm constants, such as comparison runs every 5 seconds; UI interaction "
-        "descriptions, such as use up/down arrows to adjust; fault codes; performance specs at design conditions. "
+        "descriptions, such as use up/down arrows to adjust; module names; relay output labels; analog/digital input "
+        "or output labels; signal wiring names; component names; control-panel display preferences such as Date, "
+        "Time Format, Date Format, Language, Display Units, or Keypad and Display Lockout; fault codes; performance "
+        "specs at design conditions. "
+        "A page that mainly lists relay outputs, analog inputs, digital switch inputs, terminals, or module part "
+        "names is usually NOT parameter_spec unless it explicitly states an adjustable setpoint, limit, or operator "
+        "mode selection. "
         "For EACH parameter, provide parameter_name as written in source, values/ranges/defaults only when stated, "
         "evidence_quote as a SHORT VERBATIM CONTIGUOUS substring of the manual, page_hint from [[chunk_id=... page=N]] "
         "markers, and confidence. Prefer the exact parameter label or a 5-40 word phrase copied directly from one "
-        "chunk. Do NOT synthesize table cells into a new sentence or parenthetical expression. If the exact words do "
-        "not appear contiguously in the manual, do not use them as evidence_quote. If you cannot quote verbatim, do "
-        "not include the parameter. If a parameter is mentioned in "
+        "chunk. For table-style pages, evidence_quote should usually be ONLY the exact row label, such as External "
+        "Chilled Water Setpoint or Setpoint Source. Put option lists, defaults, and ranges into value / "
+        "default_value / description only when they are separately stated. Do NOT synthesize table cells into a new "
+        "sentence or parenthetical expression. Do NOT append invented option lists or defaults to evidence_quote. If "
+        "the exact words do not appear contiguously in the manual, do not use them as evidence_quote. If you cannot "
+        "quote verbatim, do not include the parameter. If a parameter is mentioned in "
         "MULTIPLE places, return it ONCE with evidence_quote from the most authoritative location. If no configurable "
         "parameters are present, return candidates=[] with skipped_reason. Do not invent parameters. Positive "
-        "examples: Active Chilled Water Setpoint 44.0°F; Active Current Limit Setpoint 100% RLA; Chilled Water Reset "
-        "mode Return / Constant Return / Outdoor / None. Negative examples: 智能传感器每秒采集三次数据; 比较间隔每五秒; "
-        "Time Setpoint adjustment uses up/down arrows. Use EXACTLY these JSON field names: candidates, skipped_reason, "
+        "examples from this manual family: Active Chilled Water Setpoint 44.0F; Active Current Limit Setpoint 100%; "
+        "Chilled Water Reset Return / Constant Return / Outdoor / None; External Chilled Water Setpoint "
+        "Enable / Disable. Negative examples from this manual family: 智能传感器每秒采集三次数据; 比较间隔每五秒; "
+        "Time Setpoint adjustment uses up/down arrows; Date Format; Display Units; Language; 继电器输出状态; "
+        "1A17选项模拟输入/输出模块; 外部基本负荷设定输入. "
+        "Use EXACTLY these JSON field names: candidates, skipped_reason, "
         "parameter_name, canonical_key_hint, value, unit, range_min, range_max, default_value, description, "
-        "evidence_quote, page_hint, confidence. Do not use values/defaults. confidence MUST be a numeric float from "
-        "0.0 to 1.0, not words like high. page_hint MUST be an integer page number or null."
+        "evidence_quote, page_hint, confidence. Do not emit extra field names such as values or defaults. "
+        "confidence MUST be a numeric float from 0.0 to 1.0, not words like high. page_hint MUST be an integer page "
+        "number or null."
     )
     user_prompt = (
         f"Domain: {domain_id}\n"
@@ -564,6 +581,8 @@ def normalize_llm_canonical_key(
     slug = _slugify_part(raw)
     if not slug:
         slug = _slugify_part(fallback_text)
+    if not slug:
+        slug = _hashed_slug(raw or fallback_text)
     return f"{_slugify_part(domain_id)}:{_slugify_part(equipment_class_id)}:{type_prefix}:{slug}"
 
 
@@ -581,3 +600,8 @@ def _knowledge_type_prefix(knowledge_object_type: str) -> str:
 def _slugify_part(value: str) -> str:
     collapsed = re.sub(r"[^a-zA-Z0-9]+", "_", value.strip().lower()).strip("_")
     return collapsed
+
+
+def _hashed_slug(value: str) -> str:
+    digest = hashlib.sha1(value.encode("utf-8")).hexdigest()[:10]
+    return f"key_{digest}"
