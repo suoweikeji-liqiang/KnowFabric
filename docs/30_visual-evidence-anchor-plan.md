@@ -299,3 +299,31 @@ evidence pipeline.
 
 The next production step is not "OCR all images". It is visual page triage plus
 evidence anchoring.
+
+## Current Executable Entry Point
+
+`scripts/run_mimo_visual_semantic_validation.py` is the current experimental
+entry point for page-level visual semantic validation. It is intentionally
+separate from the text extraction mainline.
+
+Example:
+
+```bash
+python scripts/run_mimo_visual_semantic_validation.py \
+  --pdf /path/to/manual.pdf \
+  --pages 25,29,45 \
+  --backend-name mimo-v2.5-pro
+```
+
+The script renders selected PDF pages, sends the page images to MiMo through the
+shared `.env.llm.local` backend config, and writes:
+
+- rendered page images
+- raw model responses
+- parsed page-level visual semantics
+- `REPORT.md` with page type, confidence, and summary
+
+This is not yet a production importer. Its purpose is to validate whether MiMo
+can reliably classify and summarize visual evidence such as wiring diagrams,
+controller screens, nameplates, and image-only parameter/fault tables before
+database migrations or API contract work begin.

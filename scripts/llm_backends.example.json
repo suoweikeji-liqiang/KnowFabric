@@ -9,6 +9,39 @@
       "timeout_seconds": 45
     },
     {
+      "name": "deepseek-v4-pro-judge",
+      "api_base_url": "https://api.deepseek.com",
+      "api_base_url_env": "DEEPSEEK_API_BASE_URL",
+      "model": "deepseek-v4-pro",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "timeout_seconds": 300,
+      "request_options": {
+        "temperature": 1.0,
+        "max_tokens": 1200,
+        "response_format": {
+          "type": "json_object"
+        }
+      }
+    },
+    {
+      "name": "deepseek-v4-pro",
+      "api_base_url": "https://api.deepseek.com",
+      "api_base_url_env": "DEEPSEEK_API_BASE_URL",
+      "model": "deepseek-v4-pro",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "timeout_seconds": 900,
+      "prompt_price_rmb_per_1k": 0.003,
+      "completion_price_rmb_per_1k": 0.006,
+      "request_options": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "max_tokens": 120000,
+        "response_format": {
+          "type": "json_object"
+        }
+      }
+    },
+    {
       "name": "mlx-local",
       "api_base_url": "http://127.0.0.1:8080/v1",
       "api_base_url_env": "MLX_API_BASE_URL",
@@ -27,6 +60,22 @@
         "temperature": 0.0,
         "top_p": 1.0,
         "max_completion_tokens": 60000,
+        "response_format": {
+          "type": "json_object"
+        }
+      }
+    },
+    {
+      "name": "mimo-v2-omni",
+      "api_base_url": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "api_base_url_env": "MIMO_API_BASE_URL",
+      "model": "mimo-v2-omni",
+      "api_key_env": "MIMO_API_KEY",
+      "timeout_seconds": 900,
+      "request_options": {
+        "temperature": 0.2,
+        "top_p": 0.95,
+        "max_completion_tokens": 4096,
         "response_format": {
           "type": "json_object"
         }

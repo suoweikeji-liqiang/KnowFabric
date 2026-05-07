@@ -7,9 +7,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from packages.db.models import ContentChunk, DocumentPage
+from packages.compiler.llm_compiler import OpenAICompatibleBackend
+from packages.db.models import ContentChunk, Document, DocumentPage
 from scripts.llm_backend_config import resolve_local_overrides
-from scripts.run_hvac_doclevel_extraction_batch import anchor_candidates, render_report, task_complete_for_backends
+from scripts.run_hvac_doclevel_extraction_batch import anchor_candidates, judge_entries, render_report, task_complete_for_backends
 
 
 def test_anchor_candidates_matches_verbatim_quote_to_chunk() -> None:
@@ -128,3 +129,60 @@ def test_task_complete_requires_all_requested_backends_ok() -> None:
 
     assert not task_complete_for_backends(task, ["deepseek-parameter-spec", "mimo-v2.5-pro"])
     assert task_complete_for_backends(task, ["deepseek-parameter-spec"])
+
+
+def test_task_complete_requires_judge_when_requested() -> None:
+    task = {
+        "status": "completed",
+        "backend_results": [
+            {"backend": "deepseek-parameter-spec", "status": "ok", "judge_enabled": False},
+        ],
+    }
+
+    assert task_complete_for_backends(task, ["deepseek-parameter-spec"])
+    assert not task_complete_for_backends(task, ["deepseek-parameter-spec"], "deepseek-v4-pro")
+
+
+def test_judge_entries_splits_accepted_and_rejected(monkeypatch) -> None:
+    def fake_request(messages, backend, response_format=None, recorder=None):
+        payload = {"response": {"usage": {"prompt_tokens": 10, "completion_tokens": 5}}}
+        if recorder:
+            recorder(payload)
+        return {
+            "verdicts": [
+                {"candidate_id": "cand_ok", "is_valid_hvac_knowledge": True, "reason": "Grounded fault code."},
+                {
+                    "candidate_id": "cand_bad",
+                    "is_valid_hvac_knowledge": False,
+                    "reason": "Only a terminal label.",
+                    "category_if_not": "terminal_label",
+                },
+            ]
+        }
+
+    monkeypatch.setattr("scripts.run_hvac_doclevel_extraction_batch._request_json_completion", fake_request)
+    backend = OpenAICompatibleBackend(name="judge", api_base_url="https://example.test/v1", model="judge-model", api_key="key")
+    doc = Document(doc_id="doc_1", file_name="manual.pdf", source_domain="hvac", file_hash="hash", storage_path="/tmp/manual.pdf")
+    equipment = {"equipment_class_id": "chiller"}
+    entries = [
+        _judge_entry("cand_ok", "fault_code", "E01"),
+        _judge_entry("cand_bad", "parameter_spec", "X1"),
+    ]
+
+    accepted, rejected, raw = judge_entries(entries, backend, doc, equipment)
+
+    assert [row["candidate_id"] for row in accepted] == ["cand_ok"]
+    assert [row["candidate_id"] for row in rejected] == ["cand_bad"]
+    assert rejected[0]["judge_category"] == "terminal_label"
+    assert raw["response"]["usage"]["prompt_tokens"] == 10
+
+
+def _judge_entry(candidate_id: str, ko_type: str, title: str) -> dict:
+    return {
+        "candidate_id": candidate_id,
+        "knowledge_object_type": ko_type,
+        "structured_payload_candidate": {"title": title, "summary": f"{title} summary"},
+        "evidence_text": f"{title} evidence",
+        "source_page_nos": [1],
+        "trust_level": "L3",
+    }

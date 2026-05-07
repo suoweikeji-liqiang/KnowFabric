@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import http.client
 import json
 import re
 import sys
@@ -52,7 +53,7 @@ class HvacDocCandidate(BaseModel):
     title: str
     canonical_key_hint: str | None = None
     summary: str
-    structured_payload: dict[str, Any] = Field(default_factory=dict)
+    structured_payload: dict[str, Any] | None = Field(default_factory=dict)
     evidence_quote: str
     page_hint: int | None = None
     confidence: float = Field(ge=0.0, le=1.0)
@@ -61,6 +62,17 @@ class HvacDocCandidate(BaseModel):
 class HvacDocExtractionResponse(BaseModel):
     candidates: list[HvacDocCandidate] = Field(default_factory=list)
     skipped_reason: str | None = None
+
+
+class HvacJudgeVerdict(BaseModel):
+    candidate_id: str
+    is_valid_hvac_knowledge: bool
+    reason: str
+    category_if_not: str | None = None
+
+
+class HvacJudgeResponse(BaseModel):
+    verdicts: list[HvacJudgeVerdict] = Field(default_factory=list)
 
 
 def make_run_id() -> str:
@@ -132,7 +144,8 @@ def build_extract_messages(item: SourceItem, doc: Document, equipment: dict[str,
         "for service actions; diagnostic_step or fault_diagnostic_rule for troubleshooting logic; application_guidance "
         "for installation/application constraints; operational_sequence for control behavior. "
         "Do not extract marketing claims, UI navigation instructions, pure product naming rules, isolated terminal labels, "
-        "or text that cannot stand as a useful knowledge object. Return strict JSON only."
+        "or text that cannot stand as a useful knowledge object. Return strict compact JSON only. Keep title, summary, "
+        "and evidence_quote short. Do not include Markdown, comments, or literal line breaks inside JSON string values."
     )
     user = (
         f"Publisher/brand guess: {item.brand}\n"
@@ -144,7 +157,8 @@ def build_extract_messages(item: SourceItem, doc: Document, equipment: dict[str,
         "Return JSON shape:\n"
         '{"candidates":[{"knowledge_type":"parameter_spec","title":"...","canonical_key_hint":null,'
         '"summary":"...","structured_payload":{"parameter_name":"..."},"evidence_quote":"exact source quote",'
-        '"page_hint":1,"confidence":0.9}],"skipped_reason":null}'
+        '"page_hint":1,"confidence":0.9}],"skipped_reason":null}\n'
+        "Return one-line minified JSON when possible."
     )
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
 
@@ -282,12 +296,91 @@ def cost_rmb(raw: dict[str, Any], pricing: dict[str, Any]) -> float:
     return round(tokens["prompt_tokens"] / 1000 * float(pricing.get("prompt_price_rmb_per_1k") or 0) + tokens["completion_tokens"] / 1000 * float(pricing.get("completion_price_rmb_per_1k") or 0), 6)
 
 
+def request_json_completion_with_retry(
+    messages: list[dict[str, str]],
+    backend: OpenAICompatibleBackend,
+    *,
+    response_format: dict[str, Any] | None = None,
+    recorder=None,
+    attempts: int = 3,
+) -> dict[str, Any]:
+    last_error: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return _request_json_completion(messages, backend, response_format=response_format, recorder=recorder)
+        except (RuntimeError, json.JSONDecodeError, http.client.RemoteDisconnected, TimeoutError) as exc:
+            last_error = exc
+            if attempt == attempts:
+                break
+            time.sleep(min(20, 3 * attempt))
+    raise RuntimeError(f"LLM JSON request failed after {attempts} attempts: {last_error}") from last_error
+
+
+def build_judge_messages(entries: list[dict[str, Any]], doc: Document, equipment: dict[str, Any]) -> list[dict[str, str]]:
+    items = [
+        {
+            "candidate_id": entry["candidate_id"],
+            "knowledge_type": entry["knowledge_object_type"],
+            "title": entry["structured_payload_candidate"].get("title"),
+            "summary": entry["structured_payload_candidate"].get("summary"),
+            "structured_payload": entry["structured_payload_candidate"],
+            "evidence": entry.get("evidence_quote") or entry.get("evidence_text"),
+            "source_pages": entry.get("source_page_nos"),
+            "trust_level": entry.get("trust_level"),
+        }
+        for entry in entries
+    ]
+    system = (
+        "You are a senior HVAC knowledge-base reviewer. Validate extracted knowledge objects from one equipment "
+        "manual. Accept only useful, grounded, reviewable operational knowledge supported by the evidence. Reject "
+        "marketing claims, UI-only navigation, isolated terminal labels, pure part names, duplicate/noisy items, "
+        "generic prose with no operational value, or items whose evidence does not support the structured payload. "
+        f"Supported knowledge_type values: {', '.join(SUPPORTED_TYPES)}. Reply with strict JSON only."
+    )
+    user = (
+        f"Manual filename: {doc.file_name}\n"
+        f"Equipment class: {equipment['equipment_class_id']}\n\n"
+        "Review every candidate below. Preserve candidate_id exactly.\n"
+        "Allowed category_if_not values: null, marketing, ui_behavior, terminal_label, part_name, duplicate, "
+        "unsupported_type, weak_evidence, other.\n\n"
+        f"{json.dumps({'candidates': items}, ensure_ascii=False)}\n\n"
+        'Return JSON shape: {"verdicts":[{"candidate_id":"...","is_valid_hvac_knowledge":true,'
+        '"reason":"short reason","category_if_not":null}]}'
+    )
+    return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+
+
+def judge_entries(entries: list[dict[str, Any]], backend: OpenAICompatibleBackend, doc: Document, equipment: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    if not entries:
+        return [], [], {}
+    raw: dict[str, Any] = {}
+    started = time.monotonic()
+    payload = request_json_completion_with_retry(
+        build_judge_messages(entries, doc, equipment),
+        backend,
+        response_format={"type": "json_object"},
+        recorder=lambda value: raw.update(value),
+    )
+    raw["elapsed_seconds"] = round(time.monotonic() - started, 3)
+    verdicts = {item.candidate_id: item for item in HvacJudgeResponse.model_validate(payload).verdicts}
+    accepted, rejected = [], []
+    for entry in entries:
+        verdict = verdicts.get(entry["candidate_id"])
+        if verdict and verdict.is_valid_hvac_knowledge:
+            accepted.append({**entry, "judge_verdict": "accepted", "judge_reason": verdict.reason})
+        else:
+            reason = verdict.reason if verdict else "Judge response omitted candidate_id."
+            category = verdict.category_if_not if verdict else "other"
+            rejected.append({**entry, "judge_verdict": "rejected_by_judge", "judge_reason": reason, "judge_category": category})
+    return accepted, rejected, raw
+
+
 def extract_one(backend: OpenAICompatibleBackend, item: SourceItem, rows: list[tuple[ContentChunk, DocumentPage, Document]], equipment: dict[str, Any], args: argparse.Namespace) -> tuple[list[HvacDocCandidate], dict[str, Any]]:
     raw: dict[str, Any] = {}
     text = assemble_doc_text(rows)
     messages = build_extract_messages(item, rows[0][2], equipment, text, args.knowledge_types, args.target_candidates)
     started = time.monotonic()
-    payload = _request_json_completion(messages, backend, recorder=lambda value: raw.update(value))
+    payload = request_json_completion_with_retry(messages, backend, recorder=lambda value: raw.update(value))
     raw["elapsed_seconds"] = round(time.monotonic() - started, 3)
     return HvacDocExtractionResponse.model_validate(payload).candidates, raw
 
@@ -323,47 +416,98 @@ def backend_result(args, backend_name: str, item: SourceItem, rows, equipment, o
         raw_dicts = [candidate.model_dump() for candidate in candidates]
         anchored, rejected = anchor_candidates(raw_dicts, rows)
         entries = [candidate_entry(row, rows[0][2], equipment, backend, ontology_version) for row in anchored]
-        write_backend_outputs(backend_dir, entries, raw_dicts, rejected, raw, args)
-        print(f"done backend={backend.name} task={item.row_index} raw={len(raw_dicts)} anchored={len(anchored)}", flush=True)
-        return summarize_backend(backend, pricing, raw, raw_dicts, anchored, rejected, entries, backend_dir)
+        accepted, judge_rejected, raw_judge, judge_cost = run_judge_if_requested(args, entries, rows[0][2], equipment)
+        final_entries = accepted if args.judge_backend else entries
+        write_backend_outputs(backend_dir, final_entries, raw_dicts, rejected, judge_rejected, raw, raw_judge, args)
+        print(
+            f"done backend={backend.name} task={item.row_index} raw={len(raw_dicts)} "
+            f"anchored={len(anchored)} final={len(final_entries)}",
+            flush=True,
+        )
+        return summarize_backend(
+            backend,
+            pricing,
+            raw,
+            raw_judge,
+            judge_cost,
+            bool(args.judge_backend),
+            raw_dicts,
+            anchored,
+            rejected,
+            judge_rejected,
+            final_entries,
+            backend_dir,
+        )
     except Exception as exc:
         write_json(backend_dir / "error.json", {"error": str(exc), "error_type": type(exc).__name__})
         print(f"failed backend={backend.name} task={item.row_index}: {type(exc).__name__}: {exc}", flush=True)
         return {"backend": backend.name, "model": backend.model, "status": "failed", "error": str(exc)}
 
 
-def write_backend_outputs(output_dir: Path, entries, raw_candidates, rejected, raw_response, args) -> None:
+def run_judge_if_requested(args, entries, doc, equipment) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any], float]:
+    if not args.judge_backend:
+        return entries, [], {}, 0.0
+    if not entries:
+        return [], [], {}, 0.0
+    judge_backend, judge_pricing = load_backend(args.judge_backend)
+    if args.backend_timeout_seconds:
+        judge_backend = replace(judge_backend, timeout_seconds=args.backend_timeout_seconds)
+    if not judge_backend.api_key:
+        raise ValueError(f"judge backend {judge_backend.name} has no api_key")
+    accepted, rejected, raw = judge_entries(entries, judge_backend, doc, equipment)
+    return accepted, rejected, raw, cost_rmb(raw, judge_pricing)
+
+
+def write_backend_outputs(output_dir: Path, entries, raw_candidates, anchor_rejected, judge_rejected, raw_response, raw_judge, args) -> None:
     stale_error = output_dir / "error.json"
     if stale_error.exists():
         stale_error.unlink()
     candidate_path = output_dir / "candidates.json"
     write_json(candidate_path, {"generation_mode": "llm_doclevel_batch", "domain_id": "hvac", "filters_applied": {}, "candidate_entries": entries})
     write_jsonl(output_dir / "candidates_raw.jsonl", raw_candidates)
-    write_jsonl(output_dir / "candidates_anchor_rejected.jsonl", rejected)
+    write_jsonl(output_dir / "candidates_anchor_rejected.jsonl", anchor_rejected)
+    write_jsonl(output_dir / "candidates_judge_rejected.jsonl", judge_rejected)
     write_json(output_dir / "raw_extract_response.json", raw_response)
+    if raw_judge:
+        write_json(output_dir / "raw_judge_response.json", raw_judge)
     pack_dir = output_dir / "review_packs"
     manifest = write_review_packs_from_candidate_file(candidate_path, pack_dir, default_trust_level=args.default_trust_level)
     bootstrap = bootstrap_review_pack_directory(pack_dir, default_trust_level=args.default_trust_level)
     readiness = check_review_pack_directory(Path(bootstrap["output_dir"]))
-    write_json(output_dir / "review_bundle_summary.json", {"review_pack_manifest": manifest, "bootstrap": bootstrap, "readiness": readiness})
+    write_json(
+        output_dir / "review_bundle_summary.json",
+        {"review_pack_manifest": manifest, "bootstrap": bootstrap, "readiness": readiness, "judge_enabled": bool(args.judge_backend)},
+    )
 
 
-def summarize_backend(backend, pricing, raw, raw_candidates, anchored, rejected, entries, output_dir: Path) -> dict[str, Any]:
+def summarize_backend(backend, pricing, raw, raw_judge, judge_cost, judge_enabled, raw_candidates, anchored, rejected, judge_rejected, entries, output_dir: Path) -> dict[str, Any]:
     by_type = Counter(entry["knowledge_object_type"] for entry in entries)
     anchor_rate = len(anchored) / len(raw_candidates) * 100 if raw_candidates else 100.0
+    judge_total = len(entries) + len(judge_rejected)
+    judge_rate = len(entries) / judge_total * 100 if judge_total else 100.0
+    extract_cost = cost_rmb(raw, pricing)
     return {
         "backend": backend.name,
         "model": backend.model,
         "status": "ok",
+        "judge_enabled": judge_enabled,
         "raw_candidates": len(raw_candidates),
         "anchor_passed": len(anchored),
         "anchor_rejected": len(rejected),
         "anchor_match_rate": round(anchor_rate, 1),
+        "judge_accepted": len(entries),
+        "judge_rejected": len(judge_rejected),
+        "judge_acceptance_rate": round(judge_rate, 1),
+        "judge_rejection_breakdown": dict(Counter(row.get("judge_category") or "other" for row in judge_rejected)),
         "review_candidates": len(entries),
         "by_type": dict(by_type),
         "usage": usage(raw),
-        "cost_rmb": cost_rmb(raw, pricing),
+        "judge_usage": usage(raw_judge),
+        "extract_cost_rmb": extract_cost,
+        "judge_cost_rmb": judge_cost,
+        "cost_rmb": round(extract_cost + judge_cost, 6),
         "elapsed_seconds": raw.get("elapsed_seconds"),
+        "judge_elapsed_seconds": raw_judge.get("elapsed_seconds"),
         "output_dir": str(output_dir),
     }
 
@@ -371,27 +515,39 @@ def summarize_backend(backend, pricing, raw, raw_candidates, anchored, rejected,
 def summarize_existing_backend(backend, pricing, output_dir: Path) -> dict[str, Any]:
     candidates_path = output_dir / "candidates.json"
     raw_path = output_dir / "raw_extract_response.json"
+    raw_judge_path = output_dir / "raw_judge_response.json"
     rejected_path = output_dir / "candidates_anchor_rejected.jsonl"
+    judge_rejected_path = output_dir / "candidates_judge_rejected.jsonl"
     candidate_payload = json.loads(candidates_path.read_text(encoding="utf-8"))
     entries = candidate_payload.get("candidate_entries", [])
     raw = json.loads(raw_path.read_text(encoding="utf-8")) if raw_path.exists() else {}
+    raw_judge = json.loads(raw_judge_path.read_text(encoding="utf-8")) if raw_judge_path.exists() else {}
     rejected_count = len(rejected_path.read_text(encoding="utf-8").splitlines()) if rejected_path.exists() else 0
+    judge_rejected_count = len(judge_rejected_path.read_text(encoding="utf-8").splitlines()) if judge_rejected_path.exists() else 0
     by_type = Counter(entry["knowledge_object_type"] for entry in entries)
-    raw_count = len(entries) + rejected_count
-    anchor_rate = len(entries) / raw_count * 100 if raw_count else 100.0
+    raw_count = len(entries) + rejected_count + judge_rejected_count
+    anchor_passed = len(entries) + judge_rejected_count
+    anchor_rate = anchor_passed / raw_count * 100 if raw_count else 100.0
+    judge_rate = len(entries) / anchor_passed * 100 if anchor_passed else 100.0
     return {
         "backend": backend.name,
         "model": backend.model,
         "status": "ok_existing",
+        "judge_enabled": raw_judge_path.exists(),
         "raw_candidates": raw_count,
-        "anchor_passed": len(entries),
+        "anchor_passed": anchor_passed,
         "anchor_rejected": rejected_count,
         "anchor_match_rate": round(anchor_rate, 1),
+        "judge_accepted": len(entries),
+        "judge_rejected": judge_rejected_count,
+        "judge_acceptance_rate": round(judge_rate, 1),
         "review_candidates": len(entries),
         "by_type": dict(by_type),
         "usage": usage(raw),
+        "judge_usage": usage(raw_judge),
         "cost_rmb": cost_rmb(raw, pricing),
         "elapsed_seconds": raw.get("elapsed_seconds"),
+        "judge_elapsed_seconds": raw_judge.get("elapsed_seconds"),
         "output_dir": str(output_dir),
     }
 
@@ -405,7 +561,7 @@ def render_report(summary: dict[str, Any]) -> str:
 
 def render_task(task: dict[str, Any]) -> list[str]:
     rows = ["## " + task["file_name"], "", f"- doc_id: `{task.get('doc_id')}`", f"- equipment: `{task.get('equipment_class_id')}`", ""]
-    rows.extend(["| Backend | Status | Raw | Anchored | Anchor rate | Types | Seconds | Cost |", "|---|---|---:|---:|---:|---|---:|---:|"])
+    rows.extend(["| Backend | Status | Raw | Anchored | Final | Anchor rate | Judge rate | Types | Seconds | Cost |", "|---|---|---:|---:|---:|---:|---:|---|---:|---:|"])
     for result in task["backend_results"]:
         rows.append("| " + " | ".join(backend_cells(result)) + " |")
     return rows + [""]
@@ -417,7 +573,9 @@ def backend_cells(result: dict[str, Any]) -> list[str]:
         str(result.get("status")),
         str(result.get("raw_candidates", "-")),
         str(result.get("anchor_passed", "-")),
+        str(result.get("review_candidates", "-")),
         str(result.get("anchor_match_rate", "-")),
+        str(result.get("judge_acceptance_rate", "-")),
         ", ".join(f"{k}:{v}" for k, v in (result.get("by_type") or {}).items()) or "-",
         str(result.get("elapsed_seconds", "-")),
         f"¥{float(result.get('cost_rmb') or 0):.4f}",
@@ -432,7 +590,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     completed_indexes = {
         int(task["row_index"])
         for task in tasks
-        if not args.force and task_complete_for_backends(task, args.backends)
+        if not args.force and task_complete_for_backends(task, args.backends, args.judge_backend)
     }
     summary = {"run_id": batch_dir.name, "output_dir": str(batch_dir), "tasks": tasks}
     write_batch_summary(batch_dir, summary)
@@ -453,12 +611,18 @@ def load_existing_task_summaries(batch_dir: Path) -> list[dict[str, Any]]:
     ]
 
 
-def task_complete_for_backends(task: dict[str, Any], backends: list[str]) -> bool:
+def task_complete_for_backends(task: dict[str, Any], backends: list[str], judge_backend: str = "") -> bool:
     if task.get("status") != "completed":
         return False
-    results = {str(item.get("backend")): str(item.get("status")) for item in task.get("backend_results", [])}
+    results = {str(item.get("backend")): item for item in task.get("backend_results", [])}
     complete_statuses = {"ok", "ok_existing", "skipped_missing_api_key"}
-    return all(results.get(backend) in complete_statuses for backend in backends)
+    for backend in backends:
+        result = results.get(backend)
+        if not result or str(result.get("status")) not in complete_statuses:
+            return False
+        if judge_backend and result.get("status") != "skipped_missing_api_key" and not result.get("judge_enabled"):
+            return False
+    return True
 
 
 def replace_task(tasks: list[dict[str, Any]], task: dict[str, Any]) -> list[dict[str, Any]]:
@@ -522,6 +686,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--limit", type=int, default=1)
     parser.add_argument("--execute", action="store_true", help="Import/parse/chunk before extraction if needed")
     parser.add_argument("--backends", default="deepseek-parameter-spec,mimo-v2.5-pro")
+    parser.add_argument("--judge-backend", default="", help="Optional second backend to model-review anchored candidates")
     parser.add_argument("--knowledge-types", default=",".join(SUPPORTED_TYPES))
     parser.add_argument("--target-candidates", type=int, default=80)
     parser.add_argument("--default-trust-level", default="L3")
@@ -535,6 +700,7 @@ def normalize_args(args: argparse.Namespace) -> argparse.Namespace:
     args.backends = [name.strip() for name in args.backends.split(",") if name.strip()]
     args.groups = {name.strip() for name in args.groups.split(",") if name.strip()}
     args.knowledge_types = [name.strip() for name in args.knowledge_types.split(",") if name.strip()]
+    args.judge_backend = args.judge_backend.strip()
     return args
 
 
