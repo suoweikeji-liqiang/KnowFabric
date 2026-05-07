@@ -18,6 +18,9 @@ from pathlib import Path
 from typing import Any
 from urllib import request
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from scripts.llm_backend_config import load_backend  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RENDER_SCRIPT = ROOT / "scripts" / "render_pdf_page.swift"
@@ -79,8 +82,20 @@ def resolve_api_key(cli_value: str | None) -> str | None:
     env_value = os.getenv("MIMO_API_KEY")
     if env_value:
         return env_value
-    local_env = read_local_env(ROOT / ".env.mimo.local")
+    local_env = read_local_env(ROOT / ".env.llm.local")
     return local_env.get("MIMO_API_KEY")
+
+
+def resolve_mimo_connection(args: argparse.Namespace) -> tuple[str, str | None]:
+    """Resolve MiMo API base/key from shared backend config, env, or CLI overrides."""
+
+    api_base = args.api_base
+    api_key = resolve_api_key(args.api_key)
+    if args.backend_name:
+        backend, _ = load_backend(args.backend_name)
+        api_base = api_base or backend.api_base_url
+        api_key = api_key or backend.api_key
+    return api_base or "https://token-plan-sgp.xiaomimimo.com/v1", api_key
 
 
 def slugify(text: str) -> str:
@@ -260,7 +275,8 @@ def build_report(
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--api-base", default="https://token-plan-sgp.xiaomimimo.com/v1")
+    parser.add_argument("--backend-name", default="mimo-v2.5-pro")
+    parser.add_argument("--api-base")
     parser.add_argument("--api-key")
     parser.add_argument("--pdf", type=Path, required=True)
     parser.add_argument("--pages", default=",".join(str(page) for page in DEFAULT_PAGES))
@@ -279,11 +295,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    api_key = resolve_api_key(args.api_key)
+    api_base, api_key = resolve_mimo_connection(args)
     if not api_key or api_key == "__FILL_ME__":
         print(
-            "Missing MIMO_API_KEY. Fill /Users/asteroida/work/KnowFabric-qwen-vl-validate/.env.mimo.local "
-            "or pass --api-key.",
+            "Missing MIMO_API_KEY. Fill /Users/asteroida/work/KnowFabric/.env.llm.local or pass --api-key.",
             file=sys.stderr,
         )
         return 2
@@ -294,7 +309,7 @@ def main(argv: list[str] | None = None) -> int:
 
     pages = [int(part) for part in args.pages.split(",") if part.strip()]
     models = [part.strip() for part in args.models.split(",") if part.strip()]
-    available_models = load_models(args.api_base, api_key)
+    available_models = load_models(api_base, api_key)
     missing = [model for model in models if model not in available_models]
     if missing:
         print(f"missing remote models: {missing}", file=sys.stderr)
@@ -318,7 +333,7 @@ def main(argv: list[str] | None = None) -> int:
             start = time.monotonic()
             try:
                 response_body, text = call_mimo_ocr(
-                    args.api_base,
+                    api_base,
                     api_key,
                     model,
                     image_as_data_url(image_path),
@@ -377,7 +392,7 @@ def main(argv: list[str] | None = None) -> int:
         args.pdf,
         models,
         pages,
-        args.api_base,
+        api_base,
         args.temperature,
         args.top_p,
         args.max_completion_tokens,
@@ -389,7 +404,7 @@ def main(argv: list[str] | None = None) -> int:
         {
             "run_id": run_id,
             "pdf": str(args.pdf),
-            "api_base": args.api_base,
+            "api_base": api_base,
             "models": models,
             "pages": pages,
             "results": [row.__dict__ for row in results],

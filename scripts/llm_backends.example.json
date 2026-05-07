@@ -3,6 +3,7 @@
     {
       "name": "deepseek-remote",
       "api_base_url": "https://your-openai-compatible-endpoint.example/v1",
+      "api_base_url_env": "DEEPSEEK_API_BASE_URL",
       "model": "deepseek-chat",
       "api_key_env": "DEEPSEEK_API_KEY",
       "timeout_seconds": 45
@@ -10,9 +11,26 @@
     {
       "name": "mlx-local",
       "api_base_url": "http://127.0.0.1:8080/v1",
+      "api_base_url_env": "MLX_API_BASE_URL",
       "model": "mlx-community-model",
       "api_key_env": "MLX_API_KEY",
       "timeout_seconds": 30
+    },
+    {
+      "name": "mimo-v2.5-pro",
+      "api_base_url": "https://token-plan-sgp.xiaomimimo.com/v1",
+      "api_base_url_env": "MIMO_API_BASE_URL",
+      "model": "mimo-v2.5-pro",
+      "api_key_env": "MIMO_API_KEY",
+      "timeout_seconds": 900,
+      "request_options": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "max_completion_tokens": 60000,
+        "response_format": {
+          "type": "json_object"
+        }
+      }
     }
   ]
 }

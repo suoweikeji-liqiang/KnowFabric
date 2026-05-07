@@ -22,7 +22,6 @@ from packages.compiler.equipment_matcher import build_equipment_profiles, match_
 from packages.compiler.llm_compiler import (
     OpenAICompatibleBackend,
     _request_json_completion,
-    backend_from_dict,
     compile_document_parameter_specs,
     normalize_llm_canonical_key,
 )
@@ -30,6 +29,7 @@ from packages.compiler.rule_compiler import detect_rule_knowledge_candidates, sh
 from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
 from packages.db.models import ContentChunk, Document, DocumentPage
 from packages.db.session import SessionLocal
+from scripts.llm_backend_config import load_backend
 
 
 class JudgeResponse(BaseModel):
@@ -41,15 +41,6 @@ class JudgeResponse(BaseModel):
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     content = "\n".join(json.dumps(row, ensure_ascii=False, default=str) for row in rows)
     path.write_text((content + "\n") if content else "", encoding="utf-8")
-
-
-def load_backend(name: str) -> tuple[OpenAICompatibleBackend, dict[str, Any]]:
-    path = Path(__file__).resolve().parent / "llm_backends.json"
-    data = json.loads(path.read_text(encoding="utf-8"))
-    for item in data.get("backends", []):
-        if item.get("name") == name:
-            return backend_from_dict(item), item
-    raise ValueError(f"Backend '{name}' not found in {path}")
 
 
 def load_rows(doc_id: str) -> list[tuple[ContentChunk, DocumentPage, Document]]:

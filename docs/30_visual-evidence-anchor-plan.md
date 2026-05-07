@@ -214,6 +214,23 @@ by a diagram, the response should identify the diagram/page/region explicitly.
 
 ## Production Strategy
 
+### Model Role Decision
+
+The text-first knowledge extraction mainline should stay on long-context text
+models such as DeepSeek V4/V4 Pro. In the 2026-05-07 five-document OEM
+comparison run, MiMo V2.5 Pro was useful but less stable for text-only
+document-level extraction: it produced good results on several short manuals,
+but timed out on a 111-page fault-code manual and was not consistently better
+than DeepSeek for text evidence anchoring.
+
+MiMo should therefore be treated primarily as a candidate visual-semantic
+model, not as the main OCR or text extraction engine. Its value is likely in
+whole-page or region-level multimodal understanding: wiring diagrams, system
+schematics, controller screen captures, nameplates, terminal maps, and mixed
+table/diagram pages. OCR remains a tool for text-like visual evidence, but
+diagram interpretation should be evaluated as visual semantic labeling with
+page/bounding-box anchors.
+
 ### Phase 1: Triage visual pages
 
 Input:

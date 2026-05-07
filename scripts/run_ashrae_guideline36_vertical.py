@@ -25,11 +25,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from packages.compiler.llm_compiler import (  # noqa: E402
     OpenAICompatibleBackend,
     _request_json_completion,
-    backend_from_dict,
 )
 from packages.compiler.rule_compiler import stable_candidate_id  # noqa: E402
 from packages.db.models import ContentChunk, Document, DocumentPage  # noqa: E402
 from packages.db.session import SessionLocal  # noqa: E402
+from scripts.llm_backend_config import load_backend  # noqa: E402
 
 STANDARD_ID = "ASHRAE Guideline 36-2021"
 ALLOWED_TYPES = (
@@ -91,15 +91,6 @@ class SectionUnit:
     end_page: int
     text: str
     chunk_ids: list[str]
-
-
-def load_backend(name: str) -> tuple[OpenAICompatibleBackend, dict[str, Any]]:
-    path = Path(__file__).resolve().parent / "llm_backends.json"
-    data = json.loads(path.read_text(encoding="utf-8"))
-    for item in data.get("backends", []):
-        if item.get("name") == name:
-            return backend_from_dict(item), item
-    raise ValueError(f"Backend '{name}' not found in {path}")
 
 
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
