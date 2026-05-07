@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-05-07T08:35:18.077441+00:00",
+  "roots": [
+    "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准",
+    "/Volumes/TSD302/pan/a00238"
+  ],
+  "total_files_in_inventory": 1347,
+  "pdf_files": 893,
+  "by_priority": {
+    "P0_official_reference": 22,
+    "P3_triage": 179,
+    "P0_run_first": 1,
+    "P4_reference_only": 236,
+    "P2_needs_ocr_or_visual_check": 161,
+    "P3_extract_later_performance_only": 441,
+    "P1_batch_extract": 303,
+    "P4_skip_initial": 4
+  },
+  "by_kind_top": {
+    "product_catalog_or_brochure": 441,
+    "training_or_textbook": 236,
+    "technical_manual": 192,
+    "standard_or_best_practice": 127,
+    "service_manual": 119,
+    "operation_installation_manual": 68,
+    "unknown_document": 48,
+    "controller_manual": 46,
+    "fault_code_reference": 39,
+    "standard_handbook": 30,
+    "standard_guideline_control_sequences": 1
+  },
+  "by_authority": {
+    "industry_standard_or_reference": 158,
+    "vendor_training_or_internal": 286,
+    "vendor_application_note": 441,
+    "oem_manual_or_vendor_doc": 462
+  },
+  "by_text_quality": {
+    "good_text": 464,
+    "unknown": 14,
+    "low_or_no_text": 274,
+    "partial_text": 141,
+    "not_pdf": 454
+  },
+  "by_mode": {
+    "doc_level_or_section_context": 136,
+    "section_context_or_chapter_batch": 19,
+    "ocr_or_multimodal_first": 274,
+    "convert_to_pdf_or_text_then_extract": 95,
+    "skip_initial_or_convert": 359,
+    "doc_level_single_call": 428,
+    "chapter_or_section_batch": 36
+  },
+  "by_brand_top": {
+    "Trane": 208,
+    "Mammoth": 205,
+    "McQuay/Daikin": 144,
+    "Carrier": 115,
+    "Midea": 89,
+    "York/JCI": 77,
+    "Daikin": 75,
+    "Mitsubishi Heavy Industries": 68,
+    "Gree": 57,
+    "Haier": 43,
+    "Hisense": 39,
+    "Hitachi": 29,
+    "Changhong": 28,
+    "ASHRAE": 22,
+    "手册与标准": 22,
+    "TICA": 18,
+    "Fujitsu": 18,
+    "DunAn": 17,
+    "Chigo": 14,
+    "Kingair": 9,
+    "Dunham-Bush": 8,
+    "AUX": 7,
+    "Sanyo": 6,
+    "其他品牌": 6,
+    "Toshiba": 5,
+    "EK/EuroKlimat": 4,
+    "Mitsubishi Electric": 4,
+    "Panasonic": 2,
+    "Bangpu": 2,
+    "TCL": 1
+  },
+  "p0_p1_count": 326,
+  "ocr_or_multimodal_count": 274
+}
