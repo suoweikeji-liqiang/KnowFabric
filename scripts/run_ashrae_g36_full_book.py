@@ -26,8 +26,10 @@ from scripts.run_ashrae_guideline36_vertical import (  # noqa: E402
     Guideline36Candidate,
     Guideline36ExtractionResponse,
     anchor_candidates,
+    build_bundle_text,
     build_raw_entries,
     build_samples,
+    build_section_units,
     dedup_candidates,
     estimate_cost,
     estimate_tokens,
@@ -72,11 +74,15 @@ def build_full_book_extract_messages(
     full_book_text: str,
     *,
     target_candidates: int = 100,
+    focus_sections: list[str] | None = None,
+    focus_text: str = "",
 ) -> list[dict[str, str]]:
+    focus_clause = build_focus_clause(focus_sections)
     system = (
         "You are a senior HVAC controls engineer extracting official ASHRAE Guideline 36 knowledge from the "
         "entire standard in one pass. Use the whole-book context to resolve cross-chapter references, repeated "
         "logic, and definitions. Treat chunks only as evidence anchors, not extraction boundaries. "
+        f"{focus_clause}"
         f"Allowed knowledge_type values: {', '.join(ALLOWED_TYPES)}. Prefer high-value operational knowledge: "
         "control sequences, enable/disable logic, reset logic, staging logic, setpoints, timers, alarm/fault "
         "diagnostic rules, commissioning/TAB checks, and application rules. Do not extract front matter, legal "
@@ -101,6 +107,8 @@ def build_full_book_extract_messages(
         f"standard_id: {STANDARD_ID}\n"
         f"manual_filename: {doc.file_name}\n"
         "architecture: single-call full-book extraction\n\n"
+        f"focus_sections: {', '.join(focus_sections or []) or 'all'}\n\n"
+        f"{focus_text_block(focus_text)}"
         "Manual content with chunk anchors:\n"
         f"{full_book_text}\n\n"
         "Return JSON shape:\n"
@@ -114,6 +122,28 @@ def build_full_book_extract_messages(
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
 
 
+def build_focus_clause(focus_sections: list[str] | None) -> str:
+    if not focus_sections:
+        return ""
+    sections = ", ".join(focus_sections)
+    return (
+        f"FOCUS SCOPE: Extract ONLY knowledge whose primary section_id equals one of these sections or starts with "
+        f"one of these section prefixes followed by a dot: {sections}. "
+        "Use the rest of the manual only as context for definitions, cross-references, and terminology. Do not return "
+        "candidates from outside the focus scope. Evidence quotes must come from the focus scope text, not from unrelated "
+        "sections used only as context. "
+    )
+
+
+def focus_text_block(focus_text: str) -> str:
+    if not focus_text:
+        return ""
+    return (
+        "FOCUS SECTION TEXT (extract candidates from this section text only; full manual below is context):\n"
+        f"{focus_text}\n\n"
+    )
+
+
 def extract_full_book(
     doc: Document,
     full_book_text: str,
@@ -121,13 +151,21 @@ def extract_full_book(
     raw_extract: list[dict[str, Any]],
     *,
     target_candidates: int,
+    focus_sections: list[str] | None = None,
+    focus_text: str = "",
 ) -> list[Guideline36Candidate]:
     print(f"extracting full book tokens~{estimate_tokens(full_book_text)}", flush=True)
     response = request_json_completion_with_retry(
-        build_full_book_extract_messages(doc, full_book_text, target_candidates=target_candidates),
+        build_full_book_extract_messages(
+            doc,
+            full_book_text,
+            target_candidates=target_candidates,
+            focus_sections=focus_sections,
+            focus_text=focus_text,
+        ),
         backend,
         response_format={"type": "json_object"},
-        recorder=lambda payload: raw_extract.append({"extract_mode": "full_book", **redact_raw_request(payload)}),
+        recorder=lambda payload: raw_extract.append({"extract_mode": "full_book", "focus_sections": focus_sections or [], **redact_raw_request(payload)}),
     )
     parsed = Guideline36ExtractionResponse.model_validate(response)
     print(f"full-book extraction returned {len(parsed.candidates)} candidates", flush=True)
@@ -364,6 +402,31 @@ def backend_with_overrides(
     return replace(backend, request_options=options, timeout_seconds=timeout_seconds or backend.timeout_seconds)
 
 
+def parse_focus_sections(value: str | None) -> list[str]:
+    return [item.strip() for item in (value or "").split(",") if item.strip()]
+
+
+def candidate_in_focus(candidate: Guideline36Candidate, focus_sections: list[str]) -> bool:
+    if not focus_sections:
+        return True
+    section_id = str(candidate.section_id or "")
+    return any(section_id == section or section_id.startswith(f"{section}.") for section in focus_sections)
+
+
+def filter_candidates_by_focus(candidates: list[Guideline36Candidate], focus_sections: list[str]) -> list[Guideline36Candidate]:
+    if not focus_sections:
+        return candidates
+    filtered = [candidate for candidate in candidates if candidate_in_focus(candidate, focus_sections)]
+    print(f"focus filtered candidates {len(candidates)} -> {len(filtered)} for {','.join(focus_sections)}", flush=True)
+    return filtered
+
+
+def build_focus_text(doc: Document, pages: list[DocumentPage], chunks: list[ContentChunk], focus_sections: list[str]) -> str:
+    if not focus_sections:
+        return ""
+    return build_bundle_text(build_section_units(doc, pages, chunks, focus_sections))
+
+
 def build_summary(args, doc, chunks, timings, artifacts, backends, pricing) -> dict[str, Any]:
     final, raw_entries, anchored, evidence_rejected, judge_input, anchor_rejected, judge_rejected, raw_extract, raw_judge = artifacts
     raw_count = len(raw_entries)
@@ -375,11 +438,12 @@ def build_summary(args, doc, chunks, timings, artifacts, backends, pricing) -> d
     judge_cost = estimate_cost(raw_judge, judge_pricing)
     gates = build_gates(anchor_rate, judge_rate, final, timings, args)
     return {
-        "run_id": make_run_id(doc.file_name).replace("_ashrae_g36", "_ashrae_g36_fullbook"),
+        "run_id": make_focused_run_id(doc.file_name, parse_focus_sections(getattr(args, "focus_sections", None))),
         "standard_id": STANDARD_ID,
         "manual": doc.file_name,
         "doc_id": doc.doc_id,
         "architecture": "single-call full-book extraction + single-call batch judge + verbatim chunk anchoring",
+        "focus_sections": parse_focus_sections(getattr(args, "focus_sections", None)),
         "manual_chunks": len(chunks),
         "manual_tokens_estimated": timings["manual_tokens_estimated"],
         "extract_backend": extract_backend.name,
@@ -410,10 +474,11 @@ def build_summary(args, doc, chunks, timings, artifacts, backends, pricing) -> d
 
 def build_gates(anchor_rate, judge_rate, final, timings, args) -> dict[str, dict[str, Any]]:
     l4_count = sum(1 for row in final if row.get("trust_level") == "L4")
+    focus_sections = parse_focus_sections(getattr(args, "focus_sections", None))
     return {
         "G1": {"status": "PASS" if anchor_rate >= 80 else "FAIL", "value": anchor_rate, "requirement": "anchor_match_rate >= 80%"},
         "G2": {"status": "PASS" if judge_rate >= 50 else "FAIL", "value": judge_rate, "requirement": "judge_acceptance_rate >= 50%"},
-        "G3": {"status": "PASS" if l4_count > 0 else "FAIL", "value": l4_count, "requirement": "L4 count > 0"},
+        "G3": build_g3_gate(final, l4_count, focus_sections),
         "G4": {
             "status": "PASS" if timings["extract_seconds"] <= args.max_extract_seconds else "FAIL",
             "value": timings["extract_seconds"],
@@ -421,6 +486,24 @@ def build_gates(anchor_rate, judge_rate, final, timings, args) -> dict[str, dict
             "requirement": "single full-book extraction completed within configured limit",
         },
     }
+
+
+def build_g3_gate(final: list[dict[str, Any]], l4_count: int, focus_sections: list[str]) -> dict[str, Any]:
+    if focus_sections:
+        return {
+            "status": "PASS" if len(final) > 0 else "FAIL",
+            "value": len(final),
+            "requirement": "focused section run produced at least one verified candidate",
+        }
+    return {"status": "PASS" if l4_count > 0 else "FAIL", "value": l4_count, "requirement": "L4 count > 0"}
+
+
+def make_focused_run_id(file_name: str, focus_sections: list[str]) -> str:
+    base = make_run_id(file_name).replace("_ashrae_g36", "_ashrae_g36_fullbook")
+    if not focus_sections:
+        return base
+    suffix = "_".join(re.sub(r"[^a-zA-Z0-9]+", "_", section).strip("_") for section in focus_sections)
+    return f"{base}_sections_{suffix}"
 
 
 def build_report(summary: dict[str, Any], samples: dict[str, list[str]]) -> str:
@@ -433,6 +516,7 @@ def build_report(summary: dict[str, Any], samples: dict[str, list[str]]) -> str:
 **Standard:** {summary["standard_id"]}
 **Document:** {summary["manual"]}
 **Architecture:** {summary["architecture"]}
+**Focus sections:** {", ".join(summary["focus_sections"]) or "all"}
 **Extract backend:** {summary["extract_backend"]} / {summary["extract_model"]}
 **Judge backend:** {summary["judge_backend"]} / {summary["judge_model"]}
 
@@ -481,7 +565,7 @@ def build_report(summary: dict[str, Any], samples: dict[str, list[str]]) -> str:
 
 - G1 anchor_match_rate >= 80%: {gates["G1"]["status"]} ({gates["G1"]["value"]:.1f}%)
 - G2 judge_acceptance_rate >= 50%: {gates["G2"]["status"]} ({gates["G2"]["value"]:.1f}%)
-- G3 L4 count > 0: {gates["G3"]["status"]} ({gates["G3"]["value"]})
+- G3 {gates["G3"]["requirement"]}: {gates["G3"]["status"]} ({gates["G3"]["value"]})
 - G4 extract wallclock <= configured limit: {gates["G4"]["status"]} ({gates["G4"]["value"]:.2f}s / {gates["G4"]["limit_seconds"]:.0f}s)
 
 ## Operator Review
@@ -544,13 +628,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise ValueError(f"Full-book text exceeds context cap: {token_estimate} > {args.context_token_cap}")
     raw_extract: list[dict[str, Any]] = []
     extract_start = time.monotonic()
+    focus_sections = parse_focus_sections(args.focus_sections)
+    focus_text = build_focus_text(doc, pages, chunks, focus_sections)
     extracted = extract_full_book(
         doc,
         full_book_text,
         extract_backend,
         raw_extract,
         target_candidates=args.target_candidates,
+        focus_sections=focus_sections,
+        focus_text=focus_text,
     )
+    extracted = filter_candidates_by_focus(extracted, focus_sections)
     if len(extracted) > args.max_raw_candidates:
         print(f"truncating raw candidates {len(extracted)} -> {args.max_raw_candidates}", flush=True)
         extracted = extracted[: args.max_raw_candidates]
@@ -588,6 +677,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-extract-seconds", type=float, default=600.0)
     parser.add_argument("--target-candidates", type=int, default=100)
     parser.add_argument("--max-raw-candidates", type=int, default=150)
+    parser.add_argument("--focus-sections", default="", help="Comma-separated sections to extract while using full-book context, e.g. 5.20,5.21")
     return parser
 
 

@@ -16,7 +16,12 @@ from scripts.run_ashrae_g36_full_book import (
     backend_with_overrides,
     build_batch_judge_messages,
     build_full_book_extract_messages,
+    build_g3_gate,
+    candidate_in_focus,
     filter_weak_evidence_candidates,
+    focus_text_block,
+    make_focused_run_id,
+    parse_focus_sections,
 )
 
 
@@ -49,6 +54,43 @@ def test_full_book_prompt_requires_whole_book_context_and_verbatim_quotes() -> N
     assert "evidence_quote MUST be a verbatim contiguous substring" in messages[0]["content"]
     assert "section heading alone" in messages[0]["content"]
     assert "architecture: single-call full-book extraction" in messages[1]["content"]
+
+
+def test_full_book_prompt_can_focus_on_sections_with_full_book_context() -> None:
+    class Doc:
+        file_name = "ashrae_guideline_36.pdf"
+
+    messages = build_full_book_extract_messages(Doc(), "5.20 text", focus_sections=["5.20"], focus_text="5.20 focused text")
+
+    assert "Extract ONLY knowledge whose primary section_id equals one of these sections" in messages[0]["content"]
+    assert "Use the rest of the manual only as context" in messages[0]["content"]
+    assert "focus_sections: 5.20" in messages[1]["content"]
+    assert "FOCUS SECTION TEXT" in messages[1]["content"]
+    assert "5.20 focused text" in messages[1]["content"]
+
+
+def test_focus_section_helpers_filter_subsections() -> None:
+    assert parse_focus_sections("5.20, 5.21") == ["5.20", "5.21"]
+    assert candidate_in_focus(candidate_model("5.20.2.2"), ["5.20"])
+    assert not candidate_in_focus(candidate_model("5.21.2.2"), ["5.20"])
+
+
+def test_make_focused_run_id_adds_section_suffix(monkeypatch) -> None:
+    monkeypatch.setattr("scripts.run_ashrae_g36_full_book.make_run_id", lambda file_name: "stamp_manual_ashrae_g36")
+
+    assert make_focused_run_id("manual.pdf", ["5.20"]) == "stamp_manual_ashrae_g36_fullbook_sections_5_20"
+
+
+def test_focus_text_block_is_omitted_when_empty() -> None:
+    assert focus_text_block("") == ""
+    assert "FOCUS SECTION TEXT" in focus_text_block("5.1 text")
+
+
+def test_focused_g3_gate_requires_verified_not_l4() -> None:
+    gate = build_g3_gate([{"trust_level": "L3"}], 0, ["5.1"])
+
+    assert gate["status"] == "PASS"
+    assert gate["requirement"] == "focused section run produced at least one verified candidate"
 
 
 def test_batch_judge_prompt_contains_all_candidate_ids() -> None:
@@ -149,3 +191,16 @@ def candidate(candidate_id: str) -> dict:
         "evidence_quote": "Trim & Respond logic shall reset the setpoint.",
         "source_page_nos": [46],
     }
+
+
+def candidate_model(section_id: str):
+    from scripts.run_ashrae_guideline36_vertical import Guideline36Candidate
+
+    return Guideline36Candidate(
+        knowledge_type="operational_sequence",
+        title="Rule",
+        section_id=section_id,
+        summary="Rule summary",
+        evidence_quote="The system shall enable when the command is true.",
+        confidence=0.9,
+    )
