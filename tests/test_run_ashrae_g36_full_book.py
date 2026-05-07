@@ -208,6 +208,29 @@ def test_filter_weak_evidence_rejects_introductory_fragment() -> None:
     assert rejected[0]["rejection_reason"] == "weak evidence_quote: introductory fragment without complete rule"
 
 
+def test_filter_weak_evidence_accepts_commissioning_override_switches() -> None:
+    row = candidate("cand_commissioning")
+    row["knowledge_object_type"] = "commissioning_step"
+    row["evidence_quote"] = "Provide software switches that interlock to a system-level point to force zone airflow setpoint to zero."
+
+    passed, rejected = filter_weak_evidence_candidates([row])
+
+    assert rejected == []
+    assert passed[0]["candidate_id"] == "cand_commissioning"
+
+
+def test_filter_weak_evidence_accepts_afdd_equation_table_row() -> None:
+    row = candidate("cand_equation")
+    row["knowledge_object_type"] = "fault_diagnostic_rule"
+    row["structured_payload_candidate"]["title"] = "AFDD - Condenser Approach Too High"
+    row["evidence_quote"] = "FC#8 Equation Approach COND >= RefrigCondTemp - CWRT Applies to OS #2 Description Condenser approach is too high"
+
+    passed, rejected = filter_weak_evidence_candidates([row])
+
+    assert rejected == []
+    assert passed[0]["candidate_id"] == "cand_equation"
+
+
 def test_filter_weak_evidence_rejects_fault_without_specific_fc() -> None:
     row = candidate("cand_fault")
     row["knowledge_object_type"] = "fault_diagnostic_rule"

@@ -1,0 +1,463 @@
+{
+  "audit_mode": "ashrae_g36_evidence_quality",
+  "generated_at": "2026-05-07T08:13:51.595751+00:00",
+  "standard_id": "ASHRAE Guideline 36-2021",
+  "row_count": 699,
+  "weak_row_count": 21,
+  "weak_rate": 3.0,
+  "by_reason": {
+    "weak evidence_quote: section heading without supporting rule": 15,
+    "weak evidence_quote: lacks rule/action signal": 6
+  },
+  "by_type": {
+    "operational_sequence": 10,
+    "fault_diagnostic_rule": 5,
+    "commissioning_step": 6
+  },
+  "by_equipment_class": {
+    "ahu": 21
+  },
+  "findings": [
+    {
+      "knowledge_object_id": "ko_a5dc1c84b8c9d065",
+      "canonical_key": "ashrae:g36:commissioning_step:5_10_7:testing_commissioning_overrides",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "commissioning_step",
+      "title": "Testing/Commissioning Overrides",
+      "section_id": "5.10.7",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: lacks rule/action signal"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 94,
+          "chunk_id": "chunk_cb2d032326474375",
+          "reason": "weak evidence_quote: lacks rule/action signal",
+          "evidence_text": "5.10.7.  Testing/Commissioning Overrides . Provide software switches that interlock to a system level point to"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_af289c7b81d7409a",
+      "canonical_key": "ashrae:g36:commissioning_step:5_12_7:dual_duct_vav_terminal_unit_testing_commissioning_overrides",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "commissioning_step",
+      "title": "Dual-Duct VAV Terminal Unit Testing/Commissioning Overrides",
+      "section_id": "5.12.7",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: lacks rule/action signal"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 102,
+          "chunk_id": "chunk_7f88e0e3caa94133",
+          "reason": "weak evidence_quote: lacks rule/action signal",
+          "evidence_text": "5.12.7.  Testing/Commissioning Overrides . Provide software switches that interlock to a system level point to"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_df38648dd0f95f18",
+      "canonical_key": "ashrae:g36:commissioning_step:5_13_7:testing_commissioning_overrides",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "commissioning_step",
+      "title": "Testing/Commissioning Overrides",
+      "section_id": "5.13.7",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: lacks rule/action signal"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 106,
+          "chunk_id": "chunk_a35312aeb4a74150",
+          "reason": "weak evidence_quote: lacks rule/action signal",
+          "evidence_text": "5.13.7.  Testing/Commissioning Overrides.  Provide software switches that interlock to a system level point to"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_acb878b3e43e8629",
+      "canonical_key": "ashrae:g36:commissioning_step:5_14_7:dual_duct_vav_testing_commissioning_overrides",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "commissioning_step",
+      "title": "Dual-Duct VAV Testing/Commissioning Overrides",
+      "section_id": "5.14.7",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 109,
+          "chunk_id": "chunk_f6d5a0c1cb154ed0",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "5.14.7.  Testing/Commissioning Overrides ."
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_9427854b9341bd3f",
+      "canonical_key": "ashrae:g36:commissioning_step:5_7_7:testing_commissioning_overrides",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "commissioning_step",
+      "title": "Testing/Commissioning Overrides",
+      "section_id": "5.7.7",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: lacks rule/action signal"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 82,
+          "chunk_id": "chunk_60224ddff4204581",
+          "reason": "weak evidence_quote: lacks rule/action signal",
+          "evidence_text": "5.7.7.  Testing/Commissioning Overrides . Provide software switches that interlock to a system level point to"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_a6e70495d3e593ef",
+      "canonical_key": "ashrae:g36:commissioning_step:5_8_7:testing_commissioning_overrides",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "commissioning_step",
+      "title": "Testing/Commissioning Overrides",
+      "section_id": "5.8.7",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: lacks rule/action signal"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 86,
+          "chunk_id": "chunk_9af7adfbe8ac410b",
+          "reason": "weak evidence_quote: lacks rule/action signal",
+          "evidence_text": "5.8.7.  Testing/Commissioning Overrides . Provide software switches that interlock to a system level point to"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_aea497613bf71e87",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_condition_fc_6_oa_fraction_error",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "title": "AFDD Fault Condition FC#6: OA Fraction Error",
+      "section_id": "5.16.14.8",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 137,
+          "chunk_id": "chunk_afc7a0b09d1145b3",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "nevertheless occur if so determined by the fault condition tests in Section 5.16.14.8 ."
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_9e3547fa20b709a7",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_condition_fc_7_sat_too_low_in_full_heating",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "title": "AFDD Fault Condition FC#7: SAT Too Low in Full Heating",
+      "section_id": "5.16.14.8",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 137,
+          "chunk_id": "chunk_afc7a0b09d1145b3",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "nevertheless occur if so determined by the fault condition tests in Section 5.16.14.8 ."
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_8835c64cba01f945",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_18_13:single_zone_vav_ahu_afdd_fault_conditions",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "title": "Single-Zone VAV AHU AFDD Fault Conditions",
+      "section_id": "5.18.13",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 149,
+          "chunk_id": "chunk_2018a3c60ccb4d45",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "AFDD routines for cooling ducts are listed in Sections 5.16.14  and 5.18.13 ."
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_0c077bbcd1686ec3",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_18_13_6:szvav_ahu_afdd_fault_conditions",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "title": "SZVAV AHU AFDD Fault Conditions",
+      "section_id": "5.18.13.6",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 162,
+          "chunk_id": "chunk_f0329405685f4334",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "if so determined by the fault condition tests in Section 5.18.13.6 ."
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_f74a622358576596",
+      "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_22_6:fan_coil_unit_afdd_fault_conditions",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "title": "Fan Coil Unit AFDD Fault Conditions",
+      "section_id": "5.22.6",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 264,
+          "chunk_id": "chunk_661d11a299914f8a",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "5.22.6.  Automatic Fault Detection and Diagnostics"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_5bfa3307608475fe",
+      "canonical_key": "ashrae:g36:operational_sequence:5_14_4:dual_duct_vav_zone_endpoints_as_function_of_zone_group_mode",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Dual-Duct VAV Zone Endpoints as Function of Zone Group Mode",
+      "section_id": "5.14.4",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 108,
+          "chunk_id": "chunk_5a0fbb8589cd48f1",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "Table 5.14.4 Endpoints as a Function of Zone Group Mode"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_ce78f2dd6e611f3d",
+      "canonical_key": "ashrae:g36:operational_sequence:5_16_2_2:supply_air_temperature_setpoint_for_cooldown_warmup_setback",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Supply Air Temperature Setpoint for Cooldown, Warmup, Setback",
+      "section_id": "5.16.2.2",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 112,
+          "chunk_id": "chunk_ad700d5f0183480e",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "5.16.2.2. Supply Air Temperature Setpoint"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_da1929f3739b18e6",
+      "canonical_key": "ashrae:g36:operational_sequence:5_18_4:single_zone_vav_ahu_supply_fan_speed_and_sat_setpoint_reset",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Single-Zone VAV AHU Supply Fan Speed and SAT Setpoint Reset",
+      "section_id": "5.18.4",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 152,
+          "chunk_id": "chunk_57a11e0544d04c6e",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "5.18.4. Supply Fan Speed Control and  Supply Air Temperature Set -Point Reset"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_1536bfaecd77e4e4",
+      "canonical_key": "ashrae:g36:operational_sequence:5_18_5:single_zone_vav_ahu_supply_air_temperature_control",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Single-Zone VAV AHU Supply Air Temperature Control",
+      "section_id": "5.18.5",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 156,
+          "chunk_id": "chunk_0855dfb051f047a1",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "154 ASHRAE Guideline 36 -2021  5.18.5.  Supply Air Temperature Control"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_3ff6aa55e5ef674b",
+      "canonical_key": "ashrae:g36:operational_sequence:5_2_1_3:zone_minimum_outdoor_air_and_minimum_airflow_setpoints_ashrae_62_1",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Zone Minimum Outdoor Air and Minimum Airflow Setpoints (ASHRAE 62.1)",
+      "section_id": "5.2.1.3",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: lacks rule/action signal"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 54,
+          "chunk_id": "chunk_efc20dbc28b3401e",
+          "reason": "weak evidence_quote: lacks rule/action signal",
+          "evidence_text": "condition per Sections 5.20.4.13  and 5.21.3.8 ."
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_21c9d6e062a60cce",
+      "canonical_key": "ashrae:g36:operational_sequence:5_2_2:time_averaged_ventilation_tav_for_zones",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Time-Averaged Ventilation (TAV) for Zones",
+      "section_id": "5.2.2",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 66,
+          "chunk_id": "chunk_87a6a0212fdc4fad",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "64 ASHRAE Guideline 36 -2021  5.2.2.  Time -Averaged Ventilation"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_60c8d7ae7971d248",
+      "canonical_key": "ashrae:g36:operational_sequence:5_7_5_3:zone_state_heating_discharge_temperature_reset",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Zone State Heating - Discharge Temperature Reset",
+      "section_id": "5.7.5.3",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 81,
+          "chunk_id": "chunk_937567df572647bd",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "5.7.5.3.  When Zone State  Is Heating"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_322ebbd278285d1f",
+      "canonical_key": "ashrae:g36:operational_sequence:5_7_5_5:fan_control_logic_for_parallel_fan_powered_terminal_unit",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Fan Control Logic for Parallel Fan-Powered Terminal Unit",
+      "section_id": "5.7.5.5",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 81,
+          "chunk_id": "chunk_a91f19ba75a848aa",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "5.7.5.5.  Fan Control"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_8bc593da1533d650",
+      "canonical_key": "ashrae:g36:operational_sequence:5_8_5_3:heating_mode_sequence_for_parallel_fan_powered_terminal_unit",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Heating Mode Sequence for Parallel Fan-Powered Terminal Unit",
+      "section_id": "5.8.5.3",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 85,
+          "chunk_id": "chunk_6a8a02b47c854e43",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "5.8.5.3.  When Zone State  is Heating"
+        }
+      ]
+    },
+    {
+      "knowledge_object_id": "ko_1394349169ce1b28",
+      "canonical_key": "ashrae:g36:operational_sequence:5_8_8_1:cooling_sat_reset_requests",
+      "equipment_class_id": "ahu",
+      "knowledge_object_type": "operational_sequence",
+      "title": "Cooling SAT Reset Requests",
+      "section_id": "5.8.8.1",
+      "trust_level": "L3",
+      "confidence_score": 0.95,
+      "reasons": [
+        "weak evidence_quote: section heading without supporting rule"
+      ],
+      "weak_evidence_samples": [
+        {
+          "page_no": 87,
+          "chunk_id": "chunk_723e6803f7174dba",
+          "reason": "weak evidence_quote: section heading without supporting rule",
+          "evidence_text": "5.8.8.1.  Cooling SAT Reset Requests"
+        }
+      ]
+    }
+  ]
+}

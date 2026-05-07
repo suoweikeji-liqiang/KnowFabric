@@ -1,0 +1,1287 @@
+{
+  "validation_mode": "ashrae_g36_consumer_validation",
+  "generated_at": "2026-05-07T08:07:10.523930+00:00",
+  "min_trust_level": "L3",
+  "limit": 500,
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0
+  },
+  "results": [
+    {
+      "scenario_id": "ahu_low_airflow_alarm",
+      "question": "For an AHU or VAV terminal, what does G36 say about low airflow alarms?",
+      "equipment_class_id": "ahu",
+      "service_family": "fault_knowledge",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "expected_sections": [
+        "5.5.6.1",
+        "5.6.6.1",
+        "5.7.6.1",
+        "5.8.6.1",
+        "5.10.6.1",
+        "5.12.6.1",
+        "5.13.6.1",
+        "5.14.6.1"
+      ],
+      "keyword_groups": [
+        [
+          "low",
+          "airflow"
+        ],
+        [
+          "alarm"
+        ]
+      ],
+      "min_matches": 3,
+      "service_total_count": 157,
+      "service_returned_count": 157,
+      "service_has_more": false,
+      "matched_count": 32,
+      "matched_with_evidence_count": 32,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_5_6_1_c:low_airflow_alarm_suppression_for_zero_importance_multiplier_zones",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "Low Airflow Alarm Suppression for Zero Importance Multiplier Zones",
+          "section_id": "5.5.6.1.c",
+          "trust_level": "L3",
+          "page_nos": [
+            74
+          ],
+          "evidence_sample": "If a zone has an importance multiplier of 0 (see Section 5.1.14.2.a.1) for its static pressure reset T&R control loop, low airflow alarms shall be suppressed for that zone."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_10_6_1:low_primary_airflow_alarm",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "Low Primary Airflow Alarm",
+          "section_id": "5.10.6.1",
+          "trust_level": "L4",
+          "page_nos": [
+            74,
+            77,
+            81,
+            86,
+            89,
+            93,
+            98,
+            102,
+            106,
+            109
+          ],
+          "evidence_sample": "If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_10_6_1:low_primary_airflow_alarm_level_3",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "Low Primary Airflow Alarm - Level 3",
+          "section_id": "5.10.6.1",
+          "trust_level": "L4",
+          "page_nos": [
+            74,
+            77,
+            81,
+            86,
+            89,
+            93,
+            98
+          ],
+          "evidence_sample": "b. If the measured airflow is less than 50% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 3 alarm."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_10_6_1:low_primary_airflow_alarm_level_4",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "Low Primary Airflow Alarm - Level 4",
+          "section_id": "5.10.6.1",
+          "trust_level": "L4",
+          "page_nos": [
+            77,
+            81,
+            86,
+            89,
+            93,
+            98,
+            102,
+            106,
+            109
+          ],
+          "evidence_sample": "a. If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_12_6_1:dual_duct_vav_terminal_unit_low_airflow_alarm",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "Dual-Duct VAV Terminal Unit Low Airflow Alarm",
+          "section_id": "5.12.6.1",
+          "trust_level": "L4",
+          "page_nos": [
+            74,
+            77,
+            81,
+            86,
+            89,
+            93,
+            98,
+            102,
+            106,
+            109
+          ],
+          "evidence_sample": "If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_12_6_1:low_airflow_alarm_50_of_setpoint",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "Low Airflow Alarm - 50% of Setpoint",
+          "section_id": "5.12.6.1",
+          "trust_level": "L4",
+          "page_nos": [
+            102,
+            109
+          ],
+          "evidence_sample": "If the measured airflow is less than 50% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_12_6_1:low_airflow_alarm_70_of_setpoint",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "Low Airflow Alarm - 70% of Setpoint",
+          "section_id": "5.12.6.1",
+          "trust_level": "L4",
+          "page_nos": [
+            74,
+            77,
+            81,
+            86,
+            89,
+            93,
+            98,
+            102,
+            106,
+            109
+          ],
+          "evidence_sample": "If the measured airflow is less than 70% of setpoint for 10 minutes while setpoint is greater than zero, generate a Level 4 alarm."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_12_6_1:low_airflow_alarm_suppression_for_importance_multiplier_0",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "Low Airflow Alarm Suppression for Importance-Multiplier 0",
+          "section_id": "5.12.6.1",
+          "trust_level": "L4",
+          "page_nos": [
+            77,
+            81,
+            86,
+            89,
+            98,
+            102,
+            106,
+            109
+          ],
+          "evidence_sample": "If a zone has an Importance-Multiplier of 0 (see Section 5.1.14.2.a.1) for its static pressure reset T&R control loop, low airflow alarms shall be suppressed for that zone."
+        }
+      ]
+    },
+    {
+      "scenario_id": "ahu_sat_reset",
+      "question": "How are AHU SAT reset requests generated?",
+      "equipment_class_id": "ahu",
+      "service_family": "operational_guidance",
+      "knowledge_object_type": "operational_sequence",
+      "expected_sections": [
+        "5.6.8.1",
+        "5.8.8.1",
+        "5.10.8.1",
+        "5.12.8.1",
+        "5.14.8.1"
+      ],
+      "keyword_groups": [
+        [
+          "sat",
+          "reset"
+        ],
+        [
+          "request"
+        ]
+      ],
+      "min_matches": 3,
+      "service_total_count": 306,
+      "service_returned_count": 306,
+      "service_has_more": false,
+      "matched_count": 23,
+      "matched_with_evidence_count": 23,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_8_8_1:cooling_sat_reset_requests",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Cooling SAT Reset Requests",
+          "section_id": "5.8.8.1",
+          "trust_level": "L3",
+          "page_nos": [
+            87
+          ],
+          "evidence_sample": "5.8.8.1.  Cooling SAT Reset Requests"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_10_8_1:cooling_sat_reset_requests",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Cooling SAT Reset Requests",
+          "section_id": "5.10.8.1",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            90,
+            94,
+            99,
+            103,
+            107,
+            110
+          ],
+          "evidence_sample": "If the zone temperature exceeds the zone’s cooling setpoint by 3°C (5°F) for 2 minutes and after suppression period due to setpoint change per Section 5.1.20, send 3 requests."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_10_8_1:cooling_sat_reset_requests_0_requests_cooling_loop_95",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Cooling SAT Reset Requests - 0 Requests (Cooling Loop < 95%)",
+          "section_id": "5.10.8.1",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            90,
+            94,
+            99,
+            103,
+            107,
+            110
+          ],
+          "evidence_sample": "d. Else if the Cooling Loop is less than 95%, send 0 requests."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_10_8_1:cooling_sat_reset_requests_1_request_cooling_loop_95",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Cooling SAT Reset Requests - 1 Request (Cooling Loop > 95%)",
+          "section_id": "5.10.8.1",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            90,
+            94,
+            99,
+            103,
+            107,
+            110
+          ],
+          "evidence_sample": "c. Else if the Cooling Loop is greater than 95%, send 1 request until the Cooling Loop is less than 85%."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_10_8_1:cooling_sat_reset_requests_2_requests",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Cooling SAT Reset Requests - 2 Requests",
+          "section_id": "5.10.8.1",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            90,
+            94,
+            103,
+            107
+          ],
+          "evidence_sample": "b. Else if the zone temperature exceeds the zone’s cooling setpoint by 2°C (3°F) for 2 minutes and after suppression period due to setpoint change per Section 5.1.20, send 2 requests."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_10_8_1:cooling_sat_reset_requests_3_requests",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Cooling SAT Reset Requests - 3 Requests",
+          "section_id": "5.10.8.1",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            83,
+            99,
+            103,
+            107,
+            110
+          ],
+          "evidence_sample": "a. If the zone temperature exceeds the zone’s cooling setpoint by 3°C (5°F) for 2 minutes and after suppression period due to setpoint change per Section 5.1.20, send 3 requests."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_12_8_1:cooling_sat_reset_request_0_requests",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Cooling SAT Reset Request - 0 Requests",
+          "section_id": "5.12.8.1",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            90,
+            94,
+            99,
+            103,
+            107,
+            110
+          ],
+          "evidence_sample": "Else if the Cooling Loop is less than 95%, send 0 requests."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_12_8_1:cooling_sat_reset_request_1_request",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Cooling SAT Reset Request - 1 Request",
+          "section_id": "5.12.8.1",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            90,
+            94,
+            99,
+            103,
+            107,
+            110
+          ],
+          "evidence_sample": "Else if the Cooling Loop is greater than 95%, send 1 request until the Cooling Loop is less than 85%."
+        }
+      ]
+    },
+    {
+      "scenario_id": "ahu_static_pressure_reset",
+      "question": "How are duct static pressure reset requests generated?",
+      "equipment_class_id": "ahu",
+      "service_family": "operational_guidance",
+      "knowledge_object_type": "operational_sequence",
+      "expected_sections": [
+        "5.6.8.2",
+        "5.8.8.2",
+        "5.10.8.2",
+        "5.12.8.2",
+        "5.14.8.2",
+        "5.16.1.2",
+        "5.17.1.2"
+      ],
+      "keyword_groups": [
+        [
+          "static",
+          "pressure"
+        ],
+        [
+          "reset"
+        ]
+      ],
+      "min_matches": 3,
+      "service_total_count": 306,
+      "service_returned_count": 306,
+      "service_has_more": false,
+      "matched_count": 25,
+      "matched_with_evidence_count": 25,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_16_1_2:multiple_zone_vav_ahu_static_pressure_setpoint_reset_t_r",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Multiple-Zone VAV AHU – Static Pressure Setpoint Reset (T&R)",
+          "section_id": "5.16.1.2",
+          "trust_level": "L3",
+          "page_nos": [
+            111
+          ],
+          "evidence_sample": "Static pressure setpoint. Setpoint shall be reset using T&R logic (see Section 5.1.14) using the parameters shown in Table 5.16.1.2."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_16_1_2:static_pressure_setpoint_reset_using_t_r_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Static Pressure Setpoint Reset using T&R Logic",
+          "section_id": "5.16.1.2",
+          "trust_level": "L3",
+          "page_nos": [
+            111
+          ],
+          "evidence_sample": "Static pressure setpoint. Setpoint shall be reset using T&R logic (see Section 5.1.14) using the parameters shown in Table 5.16.1.2."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_16_1_2:static_pressure_setpoint_reset_using_trim_respond",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Static Pressure Setpoint Reset using Trim & Respond",
+          "section_id": "5.16.1.2",
+          "trust_level": "L3",
+          "page_nos": [
+            111
+          ],
+          "evidence_sample": "Static pressure setpoint. Setpoint shall be reset using T&R logic (see Section 5.1.14) using the parameters shown in Table 5.16.1.2."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_17_1_2:dual_fan_dual_duct_heating_vav_ahu_static_pressure_setpoint_reset",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Dual-Fan Dual-Duct Heating VAV AHU Static Pressure Setpoint Reset",
+          "section_id": "5.17.1.2",
+          "trust_level": "L3",
+          "page_nos": [
+            146
+          ],
+          "evidence_sample": "Static pressure setpoint. Setpoint shall be reset using T&R logic (see Section 5.1.14) using the parameters in Table 5.17.1.2."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_17_1_2:static_pressure_setpoint_reset_using_t_r_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Static Pressure Setpoint Reset using T&R Logic",
+          "section_id": "5.17.1.2",
+          "trust_level": "L3",
+          "page_nos": [
+            146
+          ],
+          "evidence_sample": "Static pressure setpoint. Setpoint shall be reset using T&R logic (see Section 5.1.14) using the parameters in Table 5.17.1.2."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_10_8_2:static_pressure_reset_requests",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Static Pressure Reset Requests",
+          "section_id": "5.10.8.2",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            91,
+            94,
+            99,
+            100,
+            103,
+            103,
+            107,
+            110
+          ],
+          "evidence_sample": "If the measured airflow is less than 50% of setpoint while setpoint is greater than zero and the damper position is greater than 95% for 1 minute, send 3 requests."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_10_8_2:static_pressure_reset_requests_3_requests",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Static Pressure Reset Requests - 3 Requests",
+          "section_id": "5.10.8.2",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            91,
+            94,
+            99,
+            100,
+            103,
+            103,
+            107,
+            110
+          ],
+          "evidence_sample": "a. If the measured airflow is less than 50% of setpoint while setpoint is greater than zero and the damper position is greater than 95% for 1 minute, send 3 requests."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_12_8_2:cold_duct_static_pressure_reset_request_0_requests",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Cold-Duct Static Pressure Reset Request - 0 Requests",
+          "section_id": "5.12.8.2",
+          "trust_level": "L4",
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            91,
+            95,
+            99,
+            100,
+            103,
+            103,
+            107,
+            107,
+            110,
+            111
+          ],
+          "evidence_sample": "Else if the damper position is less than 95%, send 0 requests."
+        }
+      ]
+    },
+    {
+      "scenario_id": "ahu_afdd",
+      "question": "What AFDD rules and fault conditions are available for AHUs?",
+      "equipment_class_id": "ahu",
+      "service_family": "fault_knowledge",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "expected_sections": [
+        "5.16.14",
+        "5.17.4",
+        "5.18.13",
+        "5.22.6"
+      ],
+      "keyword_groups": [
+        [
+          "afdd"
+        ],
+        [
+          "fc"
+        ]
+      ],
+      "min_matches": 3,
+      "service_total_count": 157,
+      "service_returned_count": 157,
+      "service_has_more": false,
+      "matched_count": 29,
+      "matched_with_evidence_count": 29,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_18_13_6:afdd_fault_condition_fc_13",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD Fault Condition FC#13",
+          "section_id": "5.18.13.6",
+          "trust_level": "L3",
+          "page_nos": [
+            168
+          ],
+          "evidence_sample": "FC #13 Equation: SAT AVG > SAT SP-C + Ɛ SAT and CC ≥ 99% Applies to OS #3, #4 Description: SAT too high in full cooling Possible Diagnosis: SAT sensor error, Cooling coil valve stuck closed or actuator failure, Fouled or undersized cooling "
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_18_13_6:afdd_fault_condition_fc_3",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD Fault Condition FC#3",
+          "section_id": "5.18.13.6",
+          "trust_level": "L3",
+          "page_nos": [
+            166
+          ],
+          "evidence_sample": "FC #3 (omit if no MAT sensor) Equation: MAT AVG - ƐMAT > min[(RAT AVG + Ɛ RAT), (OAT AVG + Ɛ OAT)] Applies to OS #1 – #5 Description: MAT too high; should be between OAT and RAT Possible Diagnosis: RAT sensor error, MAT sensor error, OAT se"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_18_13_6:afdd_fault_condition_fc_7",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD Fault Condition FC#7",
+          "section_id": "5.18.13.6",
+          "trust_level": "L3",
+          "page_nos": [
+            166
+          ],
+          "evidence_sample": "FC #7 (omit if no heating coil) Equation: SAT AVG < SATSP - ƐSAT and HC ≥ 99% Applies to OS #1 Description: SAT too low in full heating Possible Diagnosis: SAT sensor error, Cooling coil valve leaking or stuck open, Heating coil valve stuck"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_condition_fc_1_duct_static_pressure_too_low",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD Fault Condition FC#1: Duct Static Pressure Too Low",
+          "section_id": "5.16.14.8",
+          "trust_level": "L3",
+          "page_nos": [
+            140
+          ],
+          "evidence_sample": "FC#1 Equation: DSP AVG < DSPSP - ƐDSP and VFDSPD ≥ 99% - ƐVFDSPD. Applies to OS #1 – #5. Description: Duct static pressure is too low with fan at full speed."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_condition_fc_6_oa_fraction_error",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD Fault Condition FC#6: OA Fraction Error",
+          "section_id": "5.16.14.8",
+          "trust_level": "L3",
+          "page_nos": [
+            137
+          ],
+          "evidence_sample": "nevertheless occur if so determined by the fault condition tests in Section 5.16.14.8 ."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_condition_fc_7_sat_too_low_in_full_heating",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD Fault Condition FC#7: SAT Too Low in Full Heating",
+          "section_id": "5.16.14.8",
+          "trust_level": "L3",
+          "page_nos": [
+            137
+          ],
+          "evidence_sample": "nevertheless occur if so determined by the fault condition tests in Section 5.16.14.8 ."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_conditions_for_vav_ahu",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD Fault Conditions for VAV AHU",
+          "section_id": "5.16.14.8",
+          "trust_level": "L3",
+          "page_nos": [
+            140
+          ],
+          "evidence_sample": "Table 5.16.14.8 shows potential fault conditions that can be evaluated by the AFDD routines. If the equation statement is TRUE, then the specified fault condition exists."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fc_13_sat_too_high_in_full_cooling",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD FC#13: SAT Too High in Full Cooling",
+          "section_id": "5.16.14.8",
+          "trust_level": "L3",
+          "page_nos": [
+            143
+          ],
+          "evidence_sample": "FC#13 Equation: SAT AVG > SATSP + ƐSAT and CC ≥ 99% Applies to OS #3, #4 Description: SAT too high in full cooling Possible Diagnosis: SAT sensor error, Cooling coil valve stuck closed or actuator failure, Fouled or undersized cooling coil,"
+        }
+      ]
+    },
+    {
+      "scenario_id": "chiller_plant_enable_disable",
+      "question": "How should the chilled water plant be enabled and disabled?",
+      "equipment_class_id": "chiller",
+      "service_family": "operational_guidance",
+      "knowledge_object_type": "operational_sequence",
+      "expected_sections": [
+        "5.20.2.2",
+        "5.20.2.3"
+      ],
+      "keyword_groups": [
+        [
+          "plant"
+        ],
+        [
+          "enable",
+          "disable"
+        ]
+      ],
+      "min_matches": 2,
+      "service_total_count": 72,
+      "service_returned_count": 72,
+      "service_has_more": false,
+      "matched_count": 4,
+      "matched_with_evidence_count": 4,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_2_2:chiller_plant_enable_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Chiller Plant Enable Logic",
+          "section_id": "5.20.2.2",
+          "trust_level": "L3",
+          "page_nos": [
+            172
+          ],
+          "evidence_sample": "5.20.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_2_2:plant_enable_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Chilled Water Plant Enable Logic",
+          "section_id": "5.20.2.2",
+          "trust_level": "L3",
+          "page_nos": [
+            172,
+            172
+          ],
+          "evidence_sample": "5.20.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Chiller Plant Requests > I (I = Ignores shall default to 0, adjustable), and b. OAT>CH -LOT, and c. The chiller plant "
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_2_3:chiller_plant_disable_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Chiller Plant Disable Logic",
+          "section_id": "5.20.2.3",
+          "trust_level": "L3",
+          "page_nos": [
+            172
+          ],
+          "evidence_sample": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Chiller Plant Requests ≤ I for 3 minutes, or b. OAT<CH-LOT – 1°F, or c. The chiller plant enable schedule is inactive."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_2_3:plant_disable_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Chilled Water Plant Disable Logic",
+          "section_id": "5.20.2.3",
+          "trust_level": "L3",
+          "page_nos": [
+            172
+          ],
+          "evidence_sample": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Chiller Plant Requests ≤ I for 3 minutes, or b. OAT<CH-LOT – 1°F, or c. The chiller plant enable schedule is inactive."
+        }
+      ]
+    },
+    {
+      "scenario_id": "chiller_stage_up_down",
+      "question": "What does G36 say about chiller stage up and stage down logic?",
+      "equipment_class_id": "chiller",
+      "service_family": "operational_guidance",
+      "knowledge_object_type": "operational_sequence",
+      "expected_sections": [
+        "5.20.4.15"
+      ],
+      "keyword_groups": [
+        [
+          "stage"
+        ],
+        [
+          "up",
+          "down"
+        ]
+      ],
+      "min_matches": 3,
+      "service_total_count": 72,
+      "service_returned_count": 72,
+      "service_has_more": false,
+      "matched_count": 10,
+      "matched_with_evidence_count": 10,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:stage_up_failsafe_condition_primary_secondary_without_wse",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Stage Up Failsafe Condition (Primary-Secondary without WSE)",
+          "section_id": "5.20.4.15",
+          "trust_level": "L3",
+          "page_nos": [
+            185
+          ],
+          "evidence_sample": "Failsafe Condition: i. Secondary CHW supply temperature > primary CHW supply temperature + 2°F for 10 minutes and the enabled primary pumps are at maximum speed; or ii. Primary CHW supply temperature is 2°F > setpoint for 15 minutes."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_up_availability_condition",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Chiller Stage Up – Availability Condition",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "page_nos": [
+            183,
+            184,
+            185,
+            238
+          ],
+          "evidence_sample": "Availability Condition: The equipment necessary to operate the current stage are unavailable. The availability condition is not subject to the minimum stage runtime requirement."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_staging_stage_down_condition",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Chiller Staging – Stage Down Condition",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "page_nos": [
+            182,
+            183,
+            184
+          ],
+          "evidence_sample": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage "
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_staging_stage_up_efficiency_condition",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Chiller Staging – Stage Up Efficiency Condition",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "page_nos": [
+            182,
+            183,
+            184,
+            185
+          ],
+          "evidence_sample": "Efficiency Condition : Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:stage_down_condition_primary_only_without_wse",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Stage Down Condition (Primary-Only without WSE)",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "page_nos": [
+            182,
+            183,
+            184
+          ],
+          "evidence_sample": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage "
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:stage_down_condition_primary_secondary_without_wse",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Stage Down Condition (Primary-Secondary without WSE)",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "page_nos": [
+            182,
+            183,
+            184
+          ],
+          "evidence_sample": "Stage down if both of the following are true: 1. Next available lower stage OPLR < SPLR DN for 15 minutes and next lower stage OPLR is not increasing at a rate greater than 2.5% per minute averaged over 5 minutes; and 2. The failsafe stage "
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:stage_up_efficiency_condition_primary_only_without_wse",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Stage Up Efficiency Condition (Primary-Only without WSE)",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "page_nos": [
+            182,
+            183,
+            184,
+            185
+          ],
+          "evidence_sample": "Efficiency Condition: Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:stage_up_efficiency_condition_primary_secondary_without_wse",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Stage Up Efficiency Condition (Primary-Secondary without WSE)",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "page_nos": [
+            182,
+            183,
+            184,
+            185
+          ],
+          "evidence_sample": "Efficiency Condition: Current stage OPLR > SPLR UP for 15 minutes and current stage OPLR is not decreasing at a rate greater than 2.5% per minute averaged over 5 minutes; or"
+        }
+      ]
+    },
+    {
+      "scenario_id": "chiller_afdd",
+      "question": "What AFDD fault diagnostics are available for the chilled water plant?",
+      "equipment_class_id": "chiller",
+      "service_family": "fault_knowledge",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "expected_sections": [
+        "5.20.18.6"
+      ],
+      "keyword_groups": [
+        [
+          "afdd"
+        ],
+        [
+          "fc"
+        ]
+      ],
+      "min_matches": 3,
+      "service_total_count": 25,
+      "service_returned_count": 25,
+      "service_has_more": false,
+      "matched_count": 9,
+      "matched_with_evidence_count": 9,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_chilled_water_supply_temperature_too_high",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD – Chilled Water Supply Temperature Too High",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "page_nos": [
+            230
+          ],
+          "evidence_sample": "FC#6 Equation CHWST AVG - ƐCHWT ≥ CHWSTSP Applies to OS #2 – #5 Description Chilled water supply temperature is too high"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_condenser_approach_too_high",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD – Condenser Approach Too High",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "page_nos": [
+            230
+          ],
+          "evidence_sample": "FC#8 Equation Approach COND ≥ RefrigCondTemp CH-x, AVG - CWRT CH-x, AVG Applies to OS #2, #3, #5 Description Condenser approach is too high"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_evaporator_approach_too_high",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD – Evaporator Approach Too High",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "page_nos": [
+            230
+          ],
+          "evidence_sample": "FC#9 Equation Approach EVAP ≥ CHWST CH-x, AVG - RefrigEvapTemp CH-x, AVG Applies to OS #2, #3, #5 Description Evaporator approach is too high"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_fc_14_cwst_too_high_with_towers_at_full_speed",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD FC#14: CWST Too High with Towers at Full Speed",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "page_nos": [
+            232
+          ],
+          "evidence_sample": "FC#14 Equation CWST AVG - ƐCWT ≥ DesCWSTdes and SpeedCT ≥ 99% - ƐVFDSPD Applies to OS #2, #3 Description Condenser water supply temperature is too high with cooling tower(s) at full speed."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_fc_1_dp_too_high_with_pumps_off",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD FC#1: DP Too High with Pumps Off",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "page_nos": [
+            229
+          ],
+          "evidence_sample": "FC#1 Equation DP AVG > Ɛ DSP and Status CHWP = Off Applies to OS #1 Description Differential pressure is too high with the chilled water pumps off Possible Diagnosis DP sensor error"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_fc_2_primary_flow_too_high_with_pumps_off",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD FC#2: Primary Flow Too High with Pumps Off",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "page_nos": [
+            229
+          ],
+          "evidence_sample": "FC#2 Equation FLOW P, AVG > Ɛ FM and Status PCHWP = Off Applies to OS #1 Description Primary chilled water flow is too high with the chilled water pumps off Possible Diagnosis Flow meter error"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_fc_4_dp_too_low_with_pumps_at_full_speed",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD FC#4: DP Too Low with Pumps at Full Speed",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "page_nos": [
+            229
+          ],
+          "evidence_sample": "FC#4 Equation DP AVG < DPSP – ƐDP and Speed CHWP ≥ 99% - ƐVFDSPD Applies to OS #2 – #5 Description Chilled water loop differential pressure is too low with chilled water pump(s) at full speed."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_fc_5_primary_flow_too_low_with_bypass_fully_open",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD FC#5: Primary Flow Too Low with Bypass Fully Open",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "page_nos": [
+            230
+          ],
+          "evidence_sample": "FC#5 Equation FLOW P, AVG < CHW-MinFlowSp – ƐFM and MFBPV ≥ 99% - ƐMFBPV Applies to OS #2, #3, #5 Description Primary chilled water flow is too low with the minimum flow bypass valve fully open."
+        }
+      ]
+    },
+    {
+      "scenario_id": "hot_water_plant_enable_disable",
+      "question": "How should the hot water plant or boiler plant be enabled and disabled?",
+      "equipment_class_id": "hot_water_plant",
+      "service_family": "operational_guidance",
+      "knowledge_object_type": "operational_sequence",
+      "expected_sections": [
+        "5.21.2.2",
+        "5.21.2.3"
+      ],
+      "keyword_groups": [
+        [
+          "plant",
+          "boiler"
+        ],
+        [
+          "enable",
+          "disable"
+        ]
+      ],
+      "min_matches": 2,
+      "service_total_count": 63,
+      "service_returned_count": 63,
+      "service_has_more": false,
+      "matched_count": 6,
+      "matched_with_evidence_count": 6,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_2_2:boiler_plant_enable_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Plant Enable Logic",
+          "section_id": "5.21.2.2",
+          "trust_level": "L3",
+          "page_nos": [
+            235
+          ],
+          "evidence_sample": "5.21.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_2_2:plant_enable_disable",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Hot Water Plant Enable Logic",
+          "section_id": "5.21.2.2",
+          "trust_level": "L3",
+          "page_nos": [
+            235,
+            235
+          ],
+          "evidence_sample": "5.21.2.2. Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and: a. Number of Heating Hot -Water Plant Requests > I (I = Ignores shall default to 0, ad justable), and b. OAT<HW -LOT, and c. The Bo"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_2_2:plant_enable_disable_enable_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Plant Enable/Disable - Enable Logic",
+          "section_id": "5.21.2.2",
+          "trust_level": "L3",
+          "page_nos": [
+            235
+          ],
+          "evidence_sample": "5.21.2.2.  Enable the plant in the lowest stage when the plant has been disabled for at least 15 minutes and:"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_2_3:boiler_plant_disable_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Plant Disable Logic",
+          "section_id": "5.21.2.3",
+          "trust_level": "L3",
+          "page_nos": [
+            235
+          ],
+          "evidence_sample": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_2_3:plant_disable_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Hot Water Plant Disable Logic",
+          "section_id": "5.21.2.3",
+          "trust_level": "L3",
+          "page_nos": [
+            235
+          ],
+          "evidence_sample": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_2_3:plant_enable_disable_disable_logic",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Plant Enable/Disable - Disable Logic",
+          "section_id": "5.21.2.3",
+          "trust_level": "L3",
+          "page_nos": [
+            235
+          ],
+          "evidence_sample": "Disable the plant when it has been enabled for at least 15 minutes and: a. Number of Heating Hot-Water Plant Requests ≤ I for 3 minutes, or b. OAT>HW-LOT + 1°F, or c. The Boiler plant enable schedule is inactive."
+        }
+      ]
+    },
+    {
+      "scenario_id": "hot_water_boiler_staging",
+      "question": "What does G36 say about boiler stage up and stage down logic?",
+      "equipment_class_id": "hot_water_plant",
+      "service_family": "operational_guidance",
+      "knowledge_object_type": "operational_sequence",
+      "expected_sections": [
+        "5.21.3.9"
+      ],
+      "keyword_groups": [
+        [
+          "boiler"
+        ],
+        [
+          "stage"
+        ]
+      ],
+      "min_matches": 3,
+      "service_total_count": 63,
+      "service_returned_count": 63,
+      "service_has_more": false,
+      "matched_count": 17,
+      "matched_with_evidence_count": 17,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_minimum_stage_runtime",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Minimum Stage Runtime",
+          "section_id": "5.21.3.9",
+          "trust_level": "L3",
+          "page_nos": [
+            237
+          ],
+          "evidence_sample": "Each stage shall have a minimum runtime of 10 minutes."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_g:boiler_staging_primary_only_condensing_stage_down",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Staging - Primary Only Condensing: Stage Down",
+          "section_id": "5.21.3.9.g",
+          "trust_level": "L3",
+          "page_nos": [
+            238
+          ],
+          "evidence_sample": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail s"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_h:boiler_staging_variable_primary_variable_secondary_condensing_stage_up",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Staging - Variable Primary/Variable Secondary Condensing: Stage Up",
+          "section_id": "5.21.3.9.h",
+          "trust_level": "L3",
+          "page_nos": [
+            240
+          ],
+          "evidence_sample": "Stage up if any of the following is true: 1. Availability Condition: The equipment necessary to operate the current stage is unavailable. The availability condition is not subject to the minimum stage runtime requirement. Or 2. Efficiency C"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_k:boiler_staging_non_condensing_stage_down",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Staging - Non-Condensing: Stage Down",
+          "section_id": "5.21.3.9.k",
+          "trust_level": "L3",
+          "page_nos": [
+            240
+          ],
+          "evidence_sample": "Stage down if both of the following are true: 1. Qrequired is less than 80% of the design capacity of the next lower available stage for 10 minutes; and 2. The failsafe stage up condition is not true."
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_l:boiler_staging_hybrid_stage_up_to_condensing_stage",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Staging - Hybrid: Stage Up to Condensing Stage",
+          "section_id": "5.21.3.9.l",
+          "trust_level": "L3",
+          "page_nos": [
+            240
+          ],
+          "evidence_sample": "If all boilers enabled in the next higher stage are condensing, stage up if any of the following is true: 1. Availability Condition: The equipment necessary to operate the current stage is unavailable. The availability condition is not subj"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_m:boiler_staging_hybrid_stage_down_from_condensing_stage",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Staging - Hybrid: Stage Down from Condensing Stage",
+          "section_id": "5.21.3.9.m",
+          "trust_level": "L3",
+          "page_nos": [
+            240
+          ],
+          "evidence_sample": "If all boilers enabled in the current stage are condensing, stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. For 5 minutes, Primary HW pumps are "
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_o:boiler_staging_hybrid_stage_down_from_non_condensing_stage",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Staging - Hybrid: Stage Down from Non-Condensing Stage",
+          "section_id": "5.21.3.9.o",
+          "trust_level": "L3",
+          "page_nos": [
+            241
+          ],
+          "evidence_sample": "If any boiler enabled in the current stage is non-condensing, stage down if all of the following are true: 1. Qrequired is less than 80% of the design capacity of the next available lower stage for 10 minutes. 2. The failsafe stage up condi"
+        },
+        {
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_down_efficiency_condition_condensing",
+          "knowledge_object_type": "operational_sequence",
+          "title": "Boiler Stage Down – Efficiency Condition (Condensing)",
+          "section_id": "5.21.3.9",
+          "trust_level": "L3",
+          "page_nos": [
+            238
+          ],
+          "evidence_sample": "Stage down if all of the following are true: 1. Either: i. Qrequired falls below 110% of B-STAGE MIN of the current stage for 5 minutes; or ii. The minimum flow bypass valve, if provided, is greater than 0% open for 5 minutes. 2. The fail s"
+        }
+      ]
+    },
+    {
+      "scenario_id": "hot_water_fault_diagnostics",
+      "question": "What hot water plant AFDD fault conditions are available?",
+      "equipment_class_id": "hot_water_plant",
+      "service_family": "fault_knowledge",
+      "knowledge_object_type": "fault_diagnostic_rule",
+      "expected_sections": [
+        "5.21.11.6"
+      ],
+      "keyword_groups": [
+        [
+          "afdd"
+        ],
+        [
+          "fc"
+        ]
+      ],
+      "min_matches": 3,
+      "service_total_count": 22,
+      "service_returned_count": 22,
+      "service_has_more": false,
+      "matched_count": 11,
+      "matched_with_evidence_count": 11,
+      "status": "pass",
+      "sample_matches": [
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:afdd_fc_10_supply_temperature_sensor_deviation",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD - FC#10: Supply Temperature Sensor Deviation",
+          "section_id": "5.21.11.6",
+          "trust_level": "L3",
+          "page_nos": [
+            260
+          ],
+          "evidence_sample": "FC#10 Equation | (∑(HW-Flow B-X * HWST B-X) / ∑HW-Flow B-X) - HWST AVG | > ƐHWT Applies to OS #2 Description Deviation between the active boiler hot water supply temperature and the common hot water supply temperature is too high."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:afdd_fc_11_return_temperature_sensor_deviation",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD - FC#11: Return Temperature Sensor Deviation",
+          "section_id": "5.21.11.6",
+          "trust_level": "L3",
+          "page_nos": [
+            261
+          ],
+          "evidence_sample": "FC#11 Equation | (∑(HW-Flow B-X * HWRT B-X) / ∑HW-Flow B-X) - HWRT AVG | > ƐHWT Applies to OS #2 Description Deviation between the active boiler hot water return temperature and the common boiler entering water temperature is too high."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:afdd_fc_1_dp_too_high_with_pumps_off",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD - FC#1: DP Too High with Pumps Off",
+          "section_id": "5.21.11.6",
+          "trust_level": "L3",
+          "page_nos": [
+            258
+          ],
+          "evidence_sample": "FC#1 Equation DP AVG > Ɛ DSP and Status HWP = Off Applies to OS #1 Description Differential pressure is too high with the hot water pumps off Possible Diagnosis DP sensor error"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:afdd_fc_2_primary_flow_too_high_with_pumps_off",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD - FC#2: Primary Flow Too High with Pumps Off",
+          "section_id": "5.21.11.6",
+          "trust_level": "L3",
+          "page_nos": [
+            259
+          ],
+          "evidence_sample": "FC#2 Equation FLOW P, AVG > Ɛ FM and Status PHWP = Off Applies to OS #1 Description Primary hot water flow is too high with the hot water pumps off Possible Diagnosis Flow meter error"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:afdd_fc_3_secondary_flow_too_high_with_pumps_off",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD - FC#3: Secondary Flow Too High with Pumps Off",
+          "section_id": "5.21.11.6",
+          "trust_level": "L3",
+          "page_nos": [
+            259
+          ],
+          "evidence_sample": "FC#3 Equation FLOW S, AVG > Ɛ FM and Status SHWP = Off Applies to OS #1 Description Secondary hot water flow is too high with the associated hot water pumps off Possible Diagnosis Flow meter error"
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:afdd_fc_4_dp_too_low_with_pumps_at_full_speed",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD - FC#4: DP Too Low with Pumps at Full Speed",
+          "section_id": "5.21.11.6",
+          "trust_level": "L3",
+          "page_nos": [
+            259
+          ],
+          "evidence_sample": "FC#4 Equation DP AVG < DPSP – ƐDP and Speed HWP ≥ 99% - ƐVFDSPD Applies to OS #2, #3 Description Hot water loop differential pressure is too low with hot water pump(s) at full speed."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:afdd_fc_5_primary_flow_too_low_with_bypass_fully_open",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD - FC#5: Primary Flow Too Low with Bypass Fully Open",
+          "section_id": "5.21.11.6",
+          "trust_level": "L3",
+          "page_nos": [
+            259
+          ],
+          "evidence_sample": "FC#5 Equation FLOW P, AVG < HW-MinFlowSp – ƐFM and MFBPV ≥ 99% - ƐMFBPV Applies to OS #2, #3 Description Primary hot water flow is too low with the minimum flow bypass valve fully open."
+        },
+        {
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:afdd_fc_6_hw_supply_temperature_too_low",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "title": "AFDD - FC#6: HW Supply Temperature Too Low",
+          "section_id": "5.21.11.6",
+          "trust_level": "L3",
+          "page_nos": [
+            260
+          ],
+          "evidence_sample": "FC#6 Equation HWST AVG + Ɛ HWT < HWSTSP Applies to OS #2, #3 Description Hot water supply temperature is too low."
+        }
+      ]
+    }
+  ]
+}
