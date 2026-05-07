@@ -85,6 +85,8 @@ def duplicate_reason(left: DedupeRow, right: DedupeRow, threshold: float) -> str
 def has_conflicting_semantics(left_title: str, right_title: str) -> bool:
     left = normalize_text(left_title)
     right = normalize_text(right_title)
+    if has_conflicting_discriminators(left, right):
+        return True
     checks = (
         ("stage up", "stage down"),
         ("title 24", "ashrae 62 1"),
@@ -95,6 +97,24 @@ def has_conflicting_semantics(left_title: str, right_title: str) -> bool:
     if any(has_opposed_terms(left, right, pair) for pair in checks):
         return True
     return has_opposed_condensing(left, right)
+
+
+def has_conflicting_discriminators(left: str, right: str) -> bool:
+    for pattern in discriminator_patterns():
+        left_values = set(re.findall(pattern, left))
+        right_values = set(re.findall(pattern, right))
+        if left_values and right_values and left_values != right_values:
+            return True
+    return False
+
+
+def discriminator_patterns() -> tuple[str, ...]:
+    return (
+        r"\blevel\s+(\d+)\b",
+        r"\bfc\s*#?\s*(\d+)\b",
+        r"\b(\d+)\s+requests?\b",
+        r"\b(\d+(?:\.\d+)?)\s*%",
+    )
 
 
 def has_opposed_terms(left: str, right: str, pair: tuple[str, str]) -> bool:

@@ -1,0 +1,21 @@
+{
+  "pipeline_mode": "official_standard_import_pipeline",
+  "generated_at": "2026-05-07T04:02:04.611076+00:00",
+  "standard": "ashrae-g36",
+  "workspace_dir": "workspace/review_round_ashrae_g36_section_context_merged",
+  "source_run_dir": null,
+  "candidate_path": "workspace/ashrae_g36_parallel_sections_merged/20260507T040159Z/candidates_input.json",
+  "review_pack_dir": "workspace/review_round_ashrae_g36_section_context_merged/review_packs",
+  "review_pack_manifest_path": "workspace/review_round_ashrae_g36_section_context_merged/review_packs/review_pack_manifest.json",
+  "candidate_count": 476,
+  "review_pack_count": 3,
+  "readiness_summary": {
+    "ready": 0,
+    "blocked_pending": 3,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "apply_summary": null,
+  "api_smoke_summary": null,
+  "next_action": "Complete review decisions in generated review packs, then rerun with --apply --smoke."
+}

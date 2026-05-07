@@ -1,0 +1,51 @@
+{
+  "apply_mode": "chunk_backfill_review_pack_batch",
+  "generated_at": "2026-05-07T07:55:13.604701+00:00",
+  "pack_dir": "workspace/review_round_ashrae_g36_section_context_merged/review_packs",
+  "fixtures_output_dir": "workspace/review_round_ashrae_g36_section_context_merged/review_packs/applied_fixtures",
+  "total_pack_files": 3,
+  "summary": {
+    "applied": 3,
+    "skipped_pending": 0,
+    "skipped_no_accepted": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_4bbd3703c4f84be4__ahu.json",
+      "pack_path": "workspace/review_round_ashrae_g36_section_context_merged/review_packs/hvac__doc_4bbd3703c4f84be4__ahu.json",
+      "candidate_count": 325,
+      "accepted_count": 325,
+      "rejected_count": 0,
+      "pending_count": 0,
+      "status": "applied",
+      "equipment_class_key": "hvac:ahu",
+      "knowledge_object_count": 325,
+      "fixture_path": "workspace/review_round_ashrae_g36_section_context_merged/review_packs/applied_fixtures/hvac__doc_4bbd3703c4f84be4__ahu__fixture.json"
+    },
+    {
+      "pack_file": "hvac__doc_4bbd3703c4f84be4__chiller.json",
+      "pack_path": "workspace/review_round_ashrae_g36_section_context_merged/review_packs/hvac__doc_4bbd3703c4f84be4__chiller.json",
+      "candidate_count": 86,
+      "accepted_count": 86,
+      "rejected_count": 0,
+      "pending_count": 0,
+      "status": "applied",
+      "equipment_class_key": "hvac:chiller",
+      "knowledge_object_count": 86,
+      "fixture_path": "workspace/review_round_ashrae_g36_section_context_merged/review_packs/applied_fixtures/hvac__doc_4bbd3703c4f84be4__chiller__fixture.json"
+    },
+    {
+      "pack_file": "hvac__doc_4bbd3703c4f84be4__hot_water_plant.json",
+      "pack_path": "workspace/review_round_ashrae_g36_section_context_merged/review_packs/hvac__doc_4bbd3703c4f84be4__hot_water_plant.json",
+      "candidate_count": 65,
+      "accepted_count": 65,
+      "rejected_count": 0,
+      "pending_count": 0,
+      "status": "applied",
+      "equipment_class_key": "hvac:hot_water_plant",
+      "knowledge_object_count": 65,
+      "fixture_path": "workspace/review_round_ashrae_g36_section_context_merged/review_packs/applied_fixtures/hvac__doc_4bbd3703c4f84be4__hot_water_plant__fixture.json"
+    }
+  ]
+}

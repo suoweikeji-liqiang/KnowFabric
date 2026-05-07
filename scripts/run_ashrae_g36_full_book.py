@@ -71,17 +71,16 @@ def sanitize_full_book_text(text: str) -> str:
 
 def build_full_book_extract_messages(
     doc: Document,
-    full_book_text: str,
+    source_text: str,
     *,
     target_candidates: int = 100,
     focus_sections: list[str] | None = None,
     focus_text: str = "",
+    input_mode: str = "full_book",
 ) -> list[dict[str, str]]:
     focus_clause = build_focus_clause(focus_sections)
     system = (
-        "You are a senior HVAC controls engineer extracting official ASHRAE Guideline 36 knowledge from the "
-        "entire standard in one pass. Use the whole-book context to resolve cross-chapter references, repeated "
-        "logic, and definitions. Treat chunks only as evidence anchors, not extraction boundaries. "
+        f"{architecture_instruction(input_mode)} "
         f"{focus_clause}"
         f"Allowed knowledge_type values: {', '.join(ALLOWED_TYPES)}. Prefer high-value operational knowledge: "
         "control sequences, enable/disable logic, reset logic, staging logic, setpoints, timers, alarm/fault "
@@ -106,11 +105,11 @@ def build_full_book_extract_messages(
     user = (
         f"standard_id: {STANDARD_ID}\n"
         f"manual_filename: {doc.file_name}\n"
-        "architecture: single-call full-book extraction\n\n"
+        f"architecture: {input_mode}\n\n"
         f"focus_sections: {', '.join(focus_sections or []) or 'all'}\n\n"
         f"{focus_text_block(focus_text)}"
-        "Manual content with chunk anchors:\n"
-        f"{full_book_text}\n\n"
+        f"{source_text_label(input_mode)}:\n"
+        f"{source_text}\n\n"
         "Return JSON shape:\n"
         '{"candidates":[{"knowledge_type":"operational_sequence","title":"...",'
         '"section_id":"5.20.2.2","section_title":"Plant Enable/Disable","equipment_scope":"...",'
@@ -120,6 +119,29 @@ def build_full_book_extract_messages(
         '"skipped_reason":null}'
     )
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+
+
+def architecture_instruction(input_mode: str) -> str:
+    if input_mode == "section_context":
+        return (
+            "You are a senior HVAC controls engineer extracting official ASHRAE Guideline 36 knowledge from a "
+            "focused chapter/section. Use the provided standard context pack for definitions, cross-references, "
+            "and shared control philosophy. The context pack is CONTEXT ONLY: do not extract candidates from it and "
+            "do not use it as the evidence source. Extract candidates only from FOCUS SECTION TEXT, and every "
+            "evidence_quote must be copied from FOCUS SECTION TEXT. Treat chunks only as evidence anchors, not "
+            "extraction boundaries."
+        )
+    return (
+        "You are a senior HVAC controls engineer extracting official ASHRAE Guideline 36 knowledge from the entire "
+        "standard in one pass. Use the whole-book context to resolve cross-chapter references, repeated logic, and "
+        "definitions. Treat chunks only as evidence anchors, not extraction boundaries."
+    )
+
+
+def source_text_label(input_mode: str) -> str:
+    if input_mode == "section_context":
+        return "CONTEXT ONLY STANDARD PACK with chunk/page anchors"
+    return "Manual content with chunk anchors"
 
 
 def build_focus_clause(focus_sections: list[str] | None) -> str:
@@ -139,33 +161,35 @@ def focus_text_block(focus_text: str) -> str:
     if not focus_text:
         return ""
     return (
-        "FOCUS SECTION TEXT (extract candidates from this section text only; full manual below is context):\n"
+        "FOCUS SECTION TEXT (extract candidates and evidence_quote from this section text only):\n"
         f"{focus_text}\n\n"
     )
 
 
 def extract_full_book(
     doc: Document,
-    full_book_text: str,
+    source_text: str,
     backend: OpenAICompatibleBackend,
     raw_extract: list[dict[str, Any]],
     *,
     target_candidates: int,
     focus_sections: list[str] | None = None,
     focus_text: str = "",
+    input_mode: str = "full_book",
 ) -> list[Guideline36Candidate]:
-    print(f"extracting full book tokens~{estimate_tokens(full_book_text)}", flush=True)
+    print(f"extracting {input_mode} tokens~{estimate_tokens(source_text) + estimate_tokens(focus_text)}", flush=True)
     response = request_json_completion_with_retry(
         build_full_book_extract_messages(
             doc,
-            full_book_text,
+            source_text,
             target_candidates=target_candidates,
             focus_sections=focus_sections,
             focus_text=focus_text,
+            input_mode=input_mode,
         ),
         backend,
         response_format={"type": "json_object"},
-        recorder=lambda payload: raw_extract.append({"extract_mode": "full_book", "focus_sections": focus_sections or [], **redact_raw_request(payload)}),
+        recorder=lambda payload: raw_extract.append({"extract_mode": input_mode, "focus_sections": focus_sections or [], **redact_raw_request(payload)}),
     )
     parsed = Guideline36ExtractionResponse.model_validate(response)
     print(f"full-book extraction returned {len(parsed.candidates)} candidates", flush=True)
@@ -427,6 +451,45 @@ def build_focus_text(doc: Document, pages: list[DocumentPage], chunks: list[Cont
     return build_bundle_text(build_section_units(doc, pages, chunks, focus_sections))
 
 
+def build_context_sections(focus_sections: list[str], raw_context_sections: str) -> list[str]:
+    requested = parse_focus_sections(raw_context_sections)
+    return [
+        section
+        for section in requested
+        if not any(section == focus or section.startswith(f"{focus}.") or focus.startswith(f"{section}.") for focus in focus_sections)
+    ]
+
+
+def build_context_pack_text(
+    doc: Document,
+    pages: list[DocumentPage],
+    chunks: list[ContentChunk],
+    focus_sections: list[str],
+    raw_context_sections: str,
+) -> str:
+    context_sections = build_context_sections(focus_sections, raw_context_sections)
+    if not context_sections:
+        return ""
+    context = build_bundle_text(build_section_units(doc, pages, chunks, context_sections))
+    section_list = ", ".join(context_sections)
+    return f"[[standard_context_sections={section_list}]]\n{context}"
+
+
+def build_source_text(
+    args: argparse.Namespace,
+    doc: Document,
+    pages: list[DocumentPage],
+    chunks: list[ContentChunk],
+    focus_sections: list[str],
+) -> tuple[str, str]:
+    focus_text = build_focus_text(doc, pages, chunks, focus_sections)
+    if args.input_mode == "section_context":
+        if not focus_sections:
+            raise ValueError("--input-mode section_context requires --focus-sections")
+        return build_context_pack_text(doc, pages, chunks, focus_sections, args.context_sections), focus_text
+    return assemble_full_book_text(chunks), focus_text
+
+
 def build_summary(args, doc, chunks, timings, artifacts, backends, pricing) -> dict[str, Any]:
     final, raw_entries, anchored, evidence_rejected, judge_input, anchor_rejected, judge_rejected, raw_extract, raw_judge = artifacts
     raw_count = len(raw_entries)
@@ -442,7 +505,8 @@ def build_summary(args, doc, chunks, timings, artifacts, backends, pricing) -> d
         "standard_id": STANDARD_ID,
         "manual": doc.file_name,
         "doc_id": doc.doc_id,
-        "architecture": "single-call full-book extraction + single-call batch judge + verbatim chunk anchoring",
+        "architecture": build_architecture_label(args.input_mode),
+        "input_mode": args.input_mode,
         "focus_sections": parse_focus_sections(getattr(args, "focus_sections", None)),
         "manual_chunks": len(chunks),
         "manual_tokens_estimated": timings["manual_tokens_estimated"],
@@ -498,6 +562,12 @@ def build_g3_gate(final: list[dict[str, Any]], l4_count: int, focus_sections: li
     return {"status": "PASS" if l4_count > 0 else "FAIL", "value": l4_count, "requirement": "L4 count > 0"}
 
 
+def build_architecture_label(input_mode: str) -> str:
+    if input_mode == "section_context":
+        return "chapter-level section_context extraction + single-call batch judge + verbatim chunk anchoring"
+    return "single-call full-book extraction + single-call batch judge + verbatim chunk anchoring"
+
+
 def make_focused_run_id(file_name: str, focus_sections: list[str]) -> str:
     base = make_run_id(file_name).replace("_ashrae_g36", "_ashrae_g36_fullbook")
     if not focus_sections:
@@ -510,7 +580,7 @@ def build_report(summary: dict[str, Any], samples: dict[str, list[str]]) -> str:
     breakdown = ", ".join(f"{k}: {v}" for k, v in summary["judge_rejection_breakdown"].items()) or "none"
     by_type = ", ".join(f"{k}: {v}" for k, v in summary["final_by_type"].items()) or "none"
     gates = summary["gates"]
-    return f"""# ASHRAE Guideline 36 Full-Book Run Report
+    return f"""# ASHRAE Guideline 36 Extraction Run Report
 
 **Run ID:** {summary["run_id"]}
 **Standard:** {summary["standard_id"]}
@@ -574,7 +644,7 @@ Review accepted candidates for operational usefulness, section citation accuracy
 """
 
 
-def write_outputs(args, summary: dict[str, Any], full_book_text: str, artifacts: tuple[Any, ...]) -> None:
+def write_outputs(args, summary: dict[str, Any], source_text: str, focus_text: str, artifacts: tuple[Any, ...]) -> None:
     final, raw_entries, anchored, evidence_rejected, judge_input, anchor_rejected, judge_rejected, raw_extract, raw_judge = artifacts
     output_dir = Path(args.output_dir) / summary["run_id"]
     output_dir.mkdir(parents=True, exist_ok=False)
@@ -586,7 +656,7 @@ def write_outputs(args, summary: dict[str, Any], full_book_text: str, artifacts:
     write_jsonl(output_dir / "candidates_llm_judge_rejected.jsonl", judge_rejected)
     write_jsonl(output_dir / "raw_extract_response.jsonl", raw_extract)
     write_jsonl(output_dir / "raw_judge_responses.jsonl", raw_judge)
-    (output_dir / "full_book_manifest.json").write_text(json.dumps(full_book_manifest(full_book_text), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (output_dir / "input_manifest.json").write_text(json.dumps(input_manifest(args.input_mode, source_text, focus_text), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     samples = build_samples(final, anchor_rejected + evidence_rejected, judge_rejected)
     (output_dir / "REPORT.md").write_text(build_report(summary, samples), encoding="utf-8")
     summary["output_dir"] = str(output_dir)
@@ -594,12 +664,17 @@ def write_outputs(args, summary: dict[str, Any], full_book_text: str, artifacts:
     (output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, default=str) + "\n", encoding="utf-8")
 
 
-def full_book_manifest(full_book_text: str) -> dict[str, Any]:
+def input_manifest(input_mode: str, source_text: str, focus_text: str) -> dict[str, Any]:
     return {
-        "text_chars": len(full_book_text),
-        "text_sha1": sha1_text(full_book_text),
-        "tokens_estimated": estimate_tokens(full_book_text),
-        "note": "Full ASHRAE text is intentionally not persisted; only hash/size metadata is stored.",
+        "input_mode": input_mode,
+        "source_text_chars": len(source_text),
+        "source_text_sha1": sha1_text(source_text),
+        "source_tokens_estimated": estimate_tokens(source_text),
+        "focus_text_chars": len(focus_text),
+        "focus_text_sha1": sha1_text(focus_text) if focus_text else None,
+        "focus_tokens_estimated": estimate_tokens(focus_text),
+        "total_tokens_estimated": estimate_tokens(source_text) + estimate_tokens(focus_text),
+        "note": "ASHRAE source text is intentionally not persisted; only hash/size metadata is stored.",
     }
 
 
@@ -621,23 +696,23 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     )
     doc, pages, chunks = load_document_rows(args.doc_id)
     validate_official_ashrae_doc(doc, pages)
-    full_book_text = assemble_full_book_text(chunks)
-    token_estimate = estimate_tokens(full_book_text)
-    print(f"manual chunks={len(chunks)} tokens~{token_estimate}", flush=True)
+    focus_sections = parse_focus_sections(args.focus_sections)
+    source_text, focus_text = build_source_text(args, doc, pages, chunks, focus_sections)
+    token_estimate = estimate_tokens(source_text) + estimate_tokens(focus_text)
+    print(f"manual chunks={len(chunks)} input_mode={args.input_mode} tokens~{token_estimate}", flush=True)
     if token_estimate > args.context_token_cap:
-        raise ValueError(f"Full-book text exceeds context cap: {token_estimate} > {args.context_token_cap}")
+        raise ValueError(f"Extraction input exceeds context cap: {token_estimate} > {args.context_token_cap}")
     raw_extract: list[dict[str, Any]] = []
     extract_start = time.monotonic()
-    focus_sections = parse_focus_sections(args.focus_sections)
-    focus_text = build_focus_text(doc, pages, chunks, focus_sections)
     extracted = extract_full_book(
         doc,
-        full_book_text,
+        source_text,
         extract_backend,
         raw_extract,
         target_candidates=args.target_candidates,
         focus_sections=focus_sections,
         focus_text=focus_text,
+        input_mode=args.input_mode,
     )
     extracted = filter_candidates_by_focus(extracted, focus_sections)
     if len(extracted) > args.max_raw_candidates:
@@ -658,7 +733,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     }
     artifacts = (final, raw_entries, anchored, evidence_rejected, judge_input, anchor_rejected, judge_rejected, raw_extract, raw_judge)
     summary = build_summary(args, doc, chunks, timings, artifacts, (extract_backend, judge_backend), (extract_pricing, judge_pricing))
-    write_outputs(args, summary, full_book_text, artifacts)
+    write_outputs(args, summary, source_text, focus_text, artifacts)
     return summary
 
 
@@ -678,6 +753,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--target-candidates", type=int, default=100)
     parser.add_argument("--max-raw-candidates", type=int, default=150)
     parser.add_argument("--focus-sections", default="", help="Comma-separated sections to extract while using full-book context, e.g. 5.20,5.21")
+    parser.add_argument("--input-mode", choices=["full_book", "section_context"], default="full_book")
+    parser.add_argument("--context-sections", default="3,5.1", help="Context sections used by --input-mode section_context")
     return parser
 
 

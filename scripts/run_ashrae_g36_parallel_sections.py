@@ -67,6 +67,10 @@ def build_command(args: argparse.Namespace, section: str, workspace: Path) -> li
         str(args.max_raw_candidates_per_section),
         "--focus-sections",
         section,
+        "--input-mode",
+        args.input_mode,
+        "--context-sections",
+        args.context_sections,
     ]
 
 
@@ -153,7 +157,7 @@ def build_summary(args: argparse.Namespace, results: list[dict[str, Any]]) -> di
     passed = [item for item in results if item["status"] == "pass"]
     failed = [item for item in results if item["status"] == "fail"]
     return {
-        "mode": "ashrae_g36_parallel_fullbook_focus_sections",
+        "mode": f"ashrae_g36_parallel_{args.input_mode}_focus_sections",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "doc_id": args.doc_id,
         "workers": args.workers,
@@ -169,7 +173,7 @@ def build_summary(args: argparse.Namespace, results: list[dict[str, Any]]) -> di
 
 def render_markdown(summary: dict[str, Any]) -> str:
     lines = [
-        "# ASHRAE G36 Parallel Full-Book Focus Sections Summary",
+        "# ASHRAE G36 Parallel Focus Sections Summary",
         "",
         f"- Generated: `{summary['generated_at']}`",
         f"- Doc ID: `{summary['doc_id']}`",
@@ -209,6 +213,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--extract-timeout-seconds", type=int, default=1200)
     parser.add_argument("--judge-timeout-seconds", type=int, default=1200)
     parser.add_argument("--max-extract-seconds", type=float, default=1200.0)
+    parser.add_argument("--input-mode", choices=["full_book", "section_context"], default="section_context")
+    parser.add_argument("--context-sections", default="3,5.1")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--fail-fast", action="store_true")
     return parser

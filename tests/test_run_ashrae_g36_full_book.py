@@ -11,17 +11,21 @@ from packages.compiler.llm_compiler import OpenAICompatibleBackend
 from packages.db.models import ContentChunk
 from scripts.run_ashrae_g36_full_book import (
     Guideline36BatchJudgeItem,
+    architecture_instruction,
     apply_batch_verdicts,
     assemble_full_book_text,
     backend_with_overrides,
     build_batch_judge_messages,
+    build_context_sections,
     build_full_book_extract_messages,
     build_g3_gate,
     candidate_in_focus,
     filter_weak_evidence_candidates,
     focus_text_block,
+    input_manifest,
     make_focused_run_id,
     parse_focus_sections,
+    source_text_label,
 )
 
 
@@ -53,7 +57,7 @@ def test_full_book_prompt_requires_whole_book_context_and_verbatim_quotes() -> N
     assert "whole-book context" in messages[0]["content"]
     assert "evidence_quote MUST be a verbatim contiguous substring" in messages[0]["content"]
     assert "section heading alone" in messages[0]["content"]
-    assert "architecture: single-call full-book extraction" in messages[1]["content"]
+    assert "architecture: full_book" in messages[1]["content"]
 
 
 def test_full_book_prompt_can_focus_on_sections_with_full_book_context() -> None:
@@ -67,6 +71,43 @@ def test_full_book_prompt_can_focus_on_sections_with_full_book_context() -> None
     assert "focus_sections: 5.20" in messages[1]["content"]
     assert "FOCUS SECTION TEXT" in messages[1]["content"]
     assert "5.20 focused text" in messages[1]["content"]
+
+
+def test_section_context_prompt_uses_context_pack_and_focus_text() -> None:
+    class Doc:
+        file_name = "ashrae_guideline_36.pdf"
+
+    messages = build_full_book_extract_messages(
+        Doc(),
+        "3 definitions\n5.1 common rules",
+        focus_sections=["5.22"],
+        focus_text="5.22 focused text",
+        input_mode="section_context",
+    )
+
+    assert "focused chapter/section" in messages[0]["content"]
+    assert "context pack is CONTEXT ONLY" in messages[0]["content"]
+    assert "evidence_quote must be copied from FOCUS SECTION TEXT" in messages[0]["content"]
+    assert "architecture: section_context" in messages[1]["content"]
+    assert "CONTEXT ONLY STANDARD PACK" in messages[1]["content"]
+    assert "5.22 focused text" in messages[1]["content"]
+
+
+def test_section_context_helpers_exclude_focus_from_context() -> None:
+    assert architecture_instruction("section_context").startswith("You are a senior HVAC controls engineer")
+    assert source_text_label("section_context") == "CONTEXT ONLY STANDARD PACK with chunk/page anchors"
+    assert build_context_sections(["5.1"], "3,5.1") == ["3"]
+    assert build_context_sections(["5.1.14"], "3,5.1") == ["3"]
+    assert build_context_sections(["5.22"], "3,5.1") == ["3", "5.1"]
+
+
+def test_input_manifest_tracks_context_and_focus_text_separately() -> None:
+    manifest = input_manifest("section_context", "context text", "focus text")
+
+    assert manifest["input_mode"] == "section_context"
+    assert manifest["source_text_chars"] == len("context text")
+    assert manifest["focus_text_chars"] == len("focus text")
+    assert manifest["total_tokens_estimated"] == manifest["source_tokens_estimated"] + manifest["focus_tokens_estimated"]
 
 
 def test_focus_section_helpers_filter_subsections() -> None:

@@ -11,6 +11,7 @@ from scripts.run_standard_review_backfill import (
     _accepted_smoke_targets,
     run_semantic_smoke,
     run_standard_review_backfill,
+    smoke_status,
 )
 
 
@@ -125,6 +126,11 @@ def test_run_semantic_smoke_reports_visible_counts(monkeypatch) -> None:
     assert report["summary"] == {"targets": 2, "passed": 1, "failed": 1}
     assert report["results"][0]["status"] == "pass"
     assert report["results"][1]["status"] == "fail"
+
+
+def test_smoke_status_accepts_truncated_page_when_total_count_covers_expected() -> None:
+    assert smoke_status(expected=104, visible=100, total_count=157, returned_count=100, has_more=True) == "pass"
+    assert smoke_status(expected=104, visible=100, total_count=100, returned_count=100, has_more=False) == "fail"
 
 
 def test_run_standard_review_backfill_writes_summary_outputs(monkeypatch) -> None:

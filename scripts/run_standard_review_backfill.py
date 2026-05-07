@@ -154,14 +154,39 @@ def _smoke_one_target(
     payload = _query_service(service, db, target, min_trust_level=min_trust_level, limit=limit)
     items = payload.get("items", []) if payload else []
     visible = sum(1 for item in items if item.get("knowledge_object_type") == target["knowledge_object_type"])
+    total_count = payload.get("total_count", 0) if payload else 0
+    returned_count = payload.get("returned_count", 0) if payload else 0
+    has_more = payload.get("has_more", False) if payload else False
+    status = smoke_status(
+        expected=target["expected_accepted_count"],
+        visible=visible,
+        total_count=total_count,
+        returned_count=returned_count,
+        has_more=has_more,
+    )
     return {
         **target,
-        "service_total_count": payload.get("total_count", 0) if payload else 0,
-        "service_returned_count": payload.get("returned_count", 0) if payload else 0,
-        "service_has_more": payload.get("has_more", False) if payload else False,
+        "service_total_count": total_count,
+        "service_returned_count": returned_count,
+        "service_has_more": has_more,
         "visible_matching_count": visible,
-        "status": "pass" if visible >= target["expected_accepted_count"] else "fail",
+        "status": status,
     }
+
+
+def smoke_status(
+    *,
+    expected: int,
+    visible: int,
+    total_count: int,
+    returned_count: int,
+    has_more: bool,
+) -> str:
+    if visible >= expected:
+        return "pass"
+    if has_more and total_count >= expected and visible >= min(expected, returned_count):
+        return "pass"
+    return "fail"
 
 
 def run_standard_review_backfill(

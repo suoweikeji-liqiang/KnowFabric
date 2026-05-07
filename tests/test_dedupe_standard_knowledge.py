@@ -40,6 +40,10 @@ def test_conflicting_semantics_prevent_false_duplicate_pairs() -> None:
     assert has_conflicting_semantics("Chiller Stage Up Efficiency", "Chiller Stage Down Efficiency")
     assert has_conflicting_semantics("Ventilation ASHRAE 62.1", "Ventilation Title 24")
     assert has_conflicting_semantics("Condensing Boiler Stage Up", "Non-Condensing Boiler Stage Up")
+    assert has_conflicting_semantics("Low Airflow Alarm Level 3", "Low Airflow Alarm Level 4")
+    assert has_conflicting_semantics("Cooling SAT Reset Request - 1 Request", "Cooling SAT Reset Request - 3 Requests")
+    assert has_conflicting_semantics("AFDD FC#2: MAT Too Low", "AFDD FC#3: MAT Too High")
+    assert has_conflicting_semantics("Low Airflow Alarm 70% of Setpoint", "Low Airflow Alarm 50% of Setpoint")
 
 
 def row(

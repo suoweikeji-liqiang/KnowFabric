@@ -1,0 +1,35 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-07T04:02:04.575830+00:00",
+  "source_generation_mode": "ashrae_g36_parallel_section_context_merge",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 3,
+  "packs": [
+    {
+      "file_name": "hvac__doc_4bbd3703c4f84be4__ahu.json",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "equipment_class_id": "ahu",
+      "equipment_class_key": "hvac:ahu",
+      "candidate_count": 325
+    },
+    {
+      "file_name": "hvac__doc_4bbd3703c4f84be4__chiller.json",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "candidate_count": 86
+    },
+    {
+      "file_name": "hvac__doc_4bbd3703c4f84be4__hot_water_plant.json",
+      "doc_id": "doc_4bbd3703c4f84be4",
+      "doc_name": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+      "equipment_class_id": "hot_water_plant",
+      "equipment_class_key": "hvac:hot_water_plant",
+      "candidate_count": 65
+    }
+  ]
+}

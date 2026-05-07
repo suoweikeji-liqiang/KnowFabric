@@ -31,6 +31,8 @@ def test_build_command_uses_focus_section_and_fullbook_runner() -> None:
     assert command[1] == "scripts/run_ashrae_g36_full_book.py"
     assert "--focus-sections" in command
     assert command[command.index("--focus-sections") + 1] == "5.20"
+    assert command[command.index("--input-mode") + 1] == "section_context"
+    assert command[command.index("--context-sections") + 1] == "3,5.1"
 
 
 def test_parse_summary_line_extracts_counts_and_report() -> None:
@@ -77,5 +79,7 @@ def args_fixture() -> argparse.Namespace:
         target_candidates_per_section=40,
         max_raw_candidates_per_section=80,
         workers=2,
+        input_mode="section_context",
+        context_sections="3,5.1",
         dry_run=False,
     )
