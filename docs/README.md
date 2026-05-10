@@ -64,6 +64,11 @@ This directory contains the governance and standards documentation for KnowFabri
 30. **[28_contract-v0.2-proposal.md](28_contract-v0.2-proposal.md)** - DRAFT contract v0.2 proposal — adds authority hierarchy (§11) + authority-aware response fields (§4.2). Requires paired PR in `sw_base_model/design/DESIGN-10-KNOWFABRIC-INTEGRATION.md`.
 31. **[29_admin-web-ui-design-brief.md](29_admin-web-ui-design-brief.md)** - Self-contained design context package for Claude-driven UI redesign of admin-web (authority-aware). Includes data model, page list, UX principles, real sample data.
 32. **[29_admin-web-ui-design-prompt.md](29_admin-web-ui-design-prompt.md)** - Companion prompt for the design brief; paste into Claude with the brief uploaded as attachment to start a 3-stage design session.
+33. **[29_admin-web-ui-design-prompt-gemini.md](29_admin-web-ui-design-prompt-gemini.md)** - Gemini variant of the design prompt; for Google AI Studio (aistudio.google.com) with Gemini 2.5 Pro. Same brief + adjusted prompt for Gemini's interaction style.
+34. **[30_visual-evidence-anchor-plan.md](30_visual-evidence-anchor-plan.md)** - Direction note for multimodal / visual-evidence handling. Explains why low-text HVAC manuals need page-level visual validation rather than OCR-only treatment.
+35. **[31_semantic-retrieval-direction.md](31_semantic-retrieval-direction.md)** - Direction note explaining why KnowFabric should evolve toward ontology / knowledge-object retrieval with evidence trace-back, not generic chunk-similarity RAG.
+36. **[32_semantic-evaluation-framework.md](32_semantic-evaluation-framework.md)** - Direction note for evaluating KnowFabric as a semantic knowledge engine: parse quality, KO retrieval quality, evidence correctness, and end-to-end task success.
+37. **[33_llm-assisted-target-routing.md](33_llm-assisted-target-routing.md)** - Direction note for moving standard-reference target selection from heuristic-only routing to LLM-assisted document/section routing before extraction.
 
 ---
 
@@ -113,6 +118,10 @@ These documents govern the ontology-first rebuild track:
 - **24_knowfabric-sw-base-model-contract.md** - Binding sw_base_model integration contract and ownership boundary
 - **25_knowfabric-side-contract-implementation-plan.md** - KnowFabric-side execution plan for the contract migration
 - **26_ai-assisted-compilation-pilot-milestone.md** - AI-assisted compilation pilot milestone — defines the operationally-usable bar for Compile/Check/Review/Publish loop
+- **30_visual-evidence-anchor-plan.md** - Direction note for multimodal evidence handling and MiMo-style page validation
+- **31_semantic-retrieval-direction.md** - Direction note for semantic retrieval architecture and the role of similarity search
+- **32_semantic-evaluation-framework.md** - Direction note for layered semantic evaluation beyond answer-only grading
+- **33_llm-assisted-target-routing.md** - Direction note for LLM-assisted document mission and section topic routing before extraction
 
 ### Standards Documents
 
