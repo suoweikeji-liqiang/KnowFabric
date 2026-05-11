@@ -393,6 +393,23 @@ def _cluster_recursive(
     return result
 
 
+def _dump_refinement_trace(cluster_names: list[str], groups: list[dict], llm_response: dict) -> None:
+    """N3: dump what LLM refinement did to each cluster."""
+    import json as _json, os as _os
+    from datetime import datetime as _dt, timezone as _tz
+    from pathlib import Path as _Path
+    run_id = _dt.now(_tz.utc).strftime("%Y%m%dT%H%M%SZ")
+    out_dir = _Path(f"output/diagnostic/{run_id}")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    entry = {
+        "cluster_size": len(cluster_names),
+        "cluster_members": cluster_names,
+        "llm_groups": [{"key": g.get("canonical_key","?"), "members": g.get("member_names",[]), "rationale": g.get("rationale","")} for g in groups],
+    }
+    with open(out_dir / "n3_llm_refinement_trace.jsonl", "a", encoding="utf-8") as f:
+        f.write(_json.dumps(entry, ensure_ascii=False) + "\n")
+
+
 def _llm_refine_cluster(
     cluster_names: list[str],
     *,
@@ -438,6 +455,9 @@ def _llm_refine_cluster(
     try:
         payload = _request_json_completion(messages, backend, response_format={"type": "json_object"})
         groups = payload.get("groups") or []
+        # N3: dump LLM refinement trace
+        _dump_refinement_trace(cluster_names, groups, payload)
+    except Exception:
         covered = set()
         for g in groups:
             for n in g.get("member_names", []):
