@@ -87,12 +87,16 @@ def _parse_json_or_empty(text: str) -> dict[str, Any]:
     return payload if isinstance(payload, dict) else {}
 
 
+DEFAULT_MIMO_BACKEND = "mimo-v2-omni"
+
+
 def call_mimo(
     image_url: str,
     backend: OpenAICompatibleBackend,
     *,
     temperature: float = 0.0,
     timeout_seconds: int = 60,
+    max_tokens: int = 60000,
     request_recorder: Callable[[dict[str, Any]], None] | None = None,
 ) -> tuple[dict[str, Any], str, dict[str, Any]]:
     """Call MiMo multimodal API for one page image.
@@ -103,6 +107,7 @@ def call_mimo(
         "model": backend.model,
         "messages": build_messages(image_url),
         "temperature": temperature,
+        "max_completion_tokens": max_tokens,
         "response_format": {"type": "json_object"},
         "stream": False,
     }
