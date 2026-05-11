@@ -10,7 +10,7 @@ import hashlib
 from datetime import datetime, timezone
 from typing import Any
 
-from packages.compiler.canonical_key import resolve_single_name
+from packages.compiler.canonical_key import group_and_normalize, resolve_single_name
 
 AUTHORITY_RANK = {
     "field_observation": 6,
@@ -140,14 +140,30 @@ def merge_candidates(
         name = payload.get("parameter_name") or c.get("title") or c.get("summary", "")
         names_by_candidate.append(name)
 
-    canonical_keys = []
-    for name in names_by_candidate:
-        key = resolve_single_name(
-            name,
+    # Phase 1: LLM-assisted cross-lingual grouping (T1 plumbing fix, docs/35 §T1)
+    canonical_map: dict[str, str] = {}
+    try:
+        canonical_map = group_and_normalize(
+            names=names_by_candidate,
             domain_id=domain_id,
             equipment_class_id=equipment_class_id,
             knowledge_object_type=knowledge_object_type,
+            backend_name=backend_name,
         )
+    except Exception:
+        canonical_map = {}
+
+    # Phase 2: mechanical fallback for any names LLM didn't cover
+    canonical_keys = []
+    for name in names_by_candidate:
+        key = canonical_map.get(name)
+        if not key:
+            key = resolve_single_name(
+                name,
+                domain_id=domain_id,
+                equipment_class_id=equipment_class_id,
+                knowledge_object_type=knowledge_object_type,
+            )
         canonical_keys.append(key)
 
     groups: dict[str, list[dict[str, Any]]] = {}
