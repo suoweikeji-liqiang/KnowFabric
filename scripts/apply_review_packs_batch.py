@@ -70,7 +70,8 @@ def _fixture_path(fixtures_output_dir: Path, pack_path: Path) -> Path:
     return fixtures_output_dir / f"{pack_path.stem}__fixture.json"
 
 
-def _apply_one_pack(pack_path: Path, fixture_root: Path) -> dict[str, Any]:
+def _apply_one_pack(pack_path: Path, fixture_root: Path, *,
+                     use_merger: bool = False, merger_backend: str | None = None) -> dict[str, Any]:
     result = {
         "pack_file": pack_path.name,
         "pack_path": str(pack_path),
@@ -83,6 +84,35 @@ def _apply_one_pack(pack_path: Path, fixture_root: Path) -> dict[str, Any]:
             result["status"] = "skipped_pending"
         elif inspection["accepted_count"] == 0:
             result["status"] = "skipped_no_accepted"
+        elif use_merger:
+            # Task E: route through merge_with_existing
+            fixture = build_manual_fixture_from_review_candidate_file(pack_path)
+            entries = fixture.get("manual_entries", [])
+            accepted = [e for e in entries if e.get("review_status") == "published" or e.get("review_decision") == "accepted"]
+            if not accepted:
+                accepted = entries  # all entries if no filter matches
+
+            from packages.review.applier import apply_with_merger
+            from packages.db.session import SessionLocal
+            db = SessionLocal()
+            try:
+                ec_id = fixture.get("equipment_class_id", "")
+                ock = fixture.get("equipment_class_key", f"hvac:{ec_id}")
+                stats = apply_with_merger(
+                    session=db,
+                    verified_candidates=accepted,
+                    equipment_class_id=ec_id,
+                    ontology_class_key=ock,
+                    knowledge_object_type=accepted[0].get("knowledge_object_type", "parameter_spec") if accepted else "parameter_spec",
+                    backend_name=merger_backend,
+                )
+                db.commit()
+                result["status"] = "applied_merger"
+                result["equipment_class_key"] = ock
+                result["knowledge_object_count"] = stats["new_merged"] + stats["updated_existing"]
+                result["merger_stats"] = stats
+            finally:
+                db.close()
         else:
             fixture = build_manual_fixture_from_review_candidate_file(pack_path)
             fixture_path = _fixture_path(fixture_root, pack_path)
@@ -104,6 +134,8 @@ def apply_review_pack_paths(
     source_label: str,
     fixtures_output_dir: str | Path,
     report_path: str | Path | None = None,
+    use_merger: bool = False,
+    merger_backend: str | None = None,
 ) -> dict[str, Any]:
     """Apply a selected list of review pack paths and write a report."""
 
@@ -113,7 +145,8 @@ def apply_review_pack_paths(
     results = []
     summary = Counter()
     for pack_path in pack_paths:
-        result = _apply_one_pack(pack_path, fixture_root)
+        result = _apply_one_pack(pack_path, fixture_root,
+                                 use_merger=use_merger, merger_backend=merger_backend)
         summary[result["status"]] += 1
         results.append(result)
 
@@ -142,6 +175,8 @@ def apply_review_packs_in_directory(
     *,
     fixtures_output_dir: str | Path | None = None,
     report_path: str | Path | None = None,
+    use_merger: bool = False,
+    merger_backend: str | None = None,
 ) -> dict[str, Any]:
     """Apply all fully reviewed packs in one directory and write a report."""
 
@@ -153,6 +188,8 @@ def apply_review_packs_in_directory(
         source_label=str(pack_root),
         fixtures_output_dir=fixture_root,
         report_path=report_path,
+        use_merger=use_merger,
+        merger_backend=merger_backend,
     )
 
 
@@ -164,6 +201,10 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Optional directory for generated fixture JSON files",
     )
     parser.add_argument("--report-path", help="Optional output path for the apply report JSON")
+    parser.add_argument("--use-merger", action="store_true",
+                        help="Route candidates through merge_with_existing (cross-source dedup)")
+    parser.add_argument("--merger-backend", default=None,
+                        help="LLM backend for merger canonical_key grouping")
     return parser
 
 
@@ -173,6 +214,8 @@ def main(argv: list[str] | None = None) -> int:
         args.pack_dir,
         fixtures_output_dir=args.fixtures_output_dir,
         report_path=args.report_path,
+        use_merger=args.use_merger,
+        merger_backend=args.merger_backend,
     )
     print(
         f"Applied {report['summary']['applied']} pack(s), "
