@@ -4,15 +4,19 @@
 Reads a source inventory CSV, renders pages, runs triage, calls MiMo for visual
 extraction, and writes document_page_image rows. Tracks cumulative token usage
 with an 8.4e8 cap. Supports resume via existing page_image_id lookup.
+MiMo calls are concurrent (configurable --workers, default 5) to leverage
+MiMo's RPM=100 rate limit. Pages are pre-rendered sequentially (fast at ~0.7s/page).
 
 Usage:
     python scripts/run_visual_evidence_batch.py --inventory source_inventory.csv --dry-run
-    python scripts/run_visual_evidence_batch.py --inventory source_inventory.csv --max-docs 3
-    python scripts/run_visual_evidence_batch.py --inventory source_inventory.csv  # all docs
+    python scripts/run_visual_evidence_batch.py --doc-ids id1,id2 --max-pages-per-doc 5
+    python scripts/run_visual_evidence_batch.py --inventory source_inventory.csv --workers 10
 """
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 import csv
 import subprocess
 import sys
@@ -78,6 +82,7 @@ def process_document(
     *,
     dry_run: bool = False,
     max_pages: int = 0,
+    workers: int = 5,
     output_dir: Path | None = None,
 ) -> dict[str, Any]:
     doc_id = doc_row.get("doc_id", "")
@@ -122,55 +127,69 @@ def process_document(
     results = []
     pages_to_process = candidates[:max_pages] if max_pages > 0 else candidates
     total = len(pages_to_process)
-    for idx, c in enumerate(pages_to_process):
-        page_no = c["page_no"]
-        page_id = c["page_id"]
+    if total == 0:
+        return {"doc_id": doc_id, "status": "done", "reason": "no pages to process"}
 
+    # Phase 1: Pre-render all pages sequentially (fast: ~0.7s/page)
+    render_tasks = []
+    for c in pages_to_process:
+        page_no = c["page_no"]
         if already_processed(session, doc_id, page_no):
             results.append({"page_no": page_no, "status": "skipped", "reason": "already processed"})
             continue
-
-        if counter.total_tokens >= counter.cap:
-            results.append({"page_no": page_no, "status": "skipped", "reason": "token budget exceeded"})
-            continue
-
         if dry_run:
             results.append({"page_no": page_no, "status": "dry_run", "suggested_type": c["suggested_image_type"]})
             continue
-
         image_dir = STORAGE_DIR / doc_id
         image_path = image_dir / f"page_{page_no:04d}.png"
-
         try:
             render_page(pdf_path, page_no, image_path)
+            render_tasks.append({"page_no": page_no, "page_id": c["page_id"], "image_path": image_path})
         except subprocess.CalledProcessError as exc:
-            print(f"\n  [{idx+1}/{total}] p{page_no} render FAILED: {exc}")
             results.append({"page_no": page_no, "status": "failed", "error": f"render: {exc}"})
-            continue
 
+    if not render_tasks:
+        return {"doc_id": doc_id, "status": "done",
+                "candidates_found": len(candidates), "pages_processed": [],
+                "pages_skipped": results}
+
+    # Phase 2: Concurrent MiMo calls
+    print(f"  Rendered {len(render_tasks)} pages, dispatching {workers} concurrent MiMo calls...")
+    counter_lock = Lock()
+    completed = 0
+
+    def process_one(task):
+        nonlocal completed
         try:
             row_dict = extract_visual_evidence(
-                doc_id=doc_id,
-                page_id=page_id,
-                page_no=page_no,
-                image_path=image_path,
-                backend=backend,
+                doc_id=doc_id, page_id=task["page_id"], page_no=task["page_no"],
+                image_path=task["image_path"], backend=backend,
             )
+            row_dict.setdefault("created_at", datetime.now(timezone.utc))
+            row_dict.setdefault("updated_at", datetime.now(timezone.utc))
+            with counter_lock:
+                session_local = SessionLocal()
+                try:
+                    session_local.execute(DocumentPageImageV2.__table__.insert().values(**row_dict))
+                    session_local.commit()
+                finally:
+                    session_local.close()
+                completed += 1
+            return {"page_no": task["page_no"], "status": "ok", "image_type": row_dict["image_type"]}
         except Exception as exc:
-            print(f"\n  [{idx+1}/{total}] p{page_no} MiMo FAILED: {exc}")
-            results.append({"page_no": page_no, "status": "failed", "error": str(exc)})
-            continue
+            with counter_lock:
+                completed += 1
+            return {"page_no": task["page_no"], "status": "failed", "error": str(exc)[:100]}
 
-        row_dict.setdefault("created_at", datetime.now(timezone.utc))
-        row_dict.setdefault("updated_at", datetime.now(timezone.utc))
-        session.execute(DocumentPageImageV2.__table__.insert().values(**row_dict))
-
-        results.append({
-            "page_no": page_no,
-            "status": "ok",
-            "image_type": row_dict["image_type"],
-        })
-        print(f"  [{idx+1}/{total}] p{page_no} {row_dict['image_type']} ok | tokens: {counter.total_tokens:,}")
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(process_one, t): t for t in render_tasks}
+        for future in as_completed(futures):
+            r = future.result()
+            results.append(r)
+            if r["status"] == "ok":
+                print(f"  [{completed}/{total}] p{r['page_no']} {r.get('image_type','?')} ok")
+            else:
+                print(f"  [{completed}/{total}] p{r['page_no']} FAILED: {r.get('error','?')[:60]}")
 
     session.commit()
     return {
@@ -188,6 +207,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--doc-ids", help="Comma-separated doc_ids to process (DB mode, skips CSV)")
     parser.add_argument("--max-docs", type=int, default=0, help="Max docs to process (0=all)")
     parser.add_argument("--max-pages-per-doc", type=int, default=0, help="Max pages per doc (0=all)")
+    parser.add_argument("--workers", type=int, default=5, help="Concurrent MiMo workers (default 5, max 10)")
     parser.add_argument("--dry-run", action="store_true", help="Triage only, no MiMo calls")
     parser.add_argument("--output-dir", help="Output directory for reports")
     args = parser.parse_args(argv)
@@ -253,6 +273,7 @@ def main(argv: list[str] | None = None) -> int:
                 row, backend, counter, session,
                 dry_run=args.dry_run,
                 max_pages=args.max_pages_per_doc,
+                workers=args.workers,
                 output_dir=output_dir,
             )
             elapsed = time.monotonic() - start
