@@ -333,7 +333,8 @@ def _sanity_check_groups(groups: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 })
             continue
 
-        if len(ck) <= 2 or ck.isdigit():
+        slug = ck.split(":")[-1] if ":" in ck else ck
+        if len(slug) <= 2 or slug.isdigit():
             for n in members:
                 slug = _slugify_part(n) or _hashed_slug(n)
                 sane.append({
