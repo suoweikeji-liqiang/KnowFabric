@@ -480,7 +480,8 @@ def _group_via_embedding(
     embeddings = embed_batch(remaining)
 
     # 3. Clustering
-    clusters = _cluster_recursive(remaining, embeddings, threshold=0.78, max_size=15)
+    from packages.compiler.clustering import cluster_by_cosine
+    clusters = cluster_by_cosine(remaining, embeddings, threshold=0.78)
 
     # 4. Per-cluster resolution
     domain_slug = _slugify_part(domain_id)

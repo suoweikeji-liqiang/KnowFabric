@@ -308,15 +308,16 @@ def merge_candidates(
             }
             layers.append(layer)
 
-            for ev in cand_evidence:
+            for ev_idx, ev in enumerate(cand_evidence):
+                auth_role = _resolve_authority_role(authority_level, is_primary)
                 evidence_rows.append({
                     "chunk_id": ev.get("chunk_id", ""),
                     "doc_id": ev.get("doc_id", doc_id),
                     "page_id": ev.get("page_id", ""),
                     "page_no": ev.get("page_no", 0),
                     "evidence_text": ev.get("evidence_text", ""),
-                    "evidence_role": ev.get("evidence_role", "supporting"),
-                    "authority_role": _resolve_authority_role(authority_level, is_primary),
+                    "evidence_role": f"primary_{auth_role}" if is_primary and ev_idx == 0 else f"supporting_{auth_role}",
+                    "authority_role": auth_role,
                     "evidence_citation": layer["citation"],
                 })
 
@@ -488,14 +489,31 @@ def merge_with_existing(
         session.merge(KnowledgeObjectV2(**ko_dict))
         session.flush()
 
-        # Upsert evidence rows
-        for ev in evidence_rows:
-            ev_id = _generate_evidence_id(ko_dict["knowledge_object_id"], ev.get("chunk_id", ""), ev.get("evidence_role", "supporting"))
-            ev["knowledge_evidence_id"] = ev_id
-            ev["knowledge_object_id"] = ko_dict["knowledge_object_id"]
-            if "confidence_score" not in ev:
-                ev["confidence_score"] = ko_dict.get("confidence_score")
-            session.merge(KnowledgeObjectEvidenceV2(**ev))
+        # Delete old evidence rows before inserting merged ones
+        session.query(KnowledgeObjectEvidenceV2).filter(
+            KnowledgeObjectEvidenceV2.knowledge_object_id == ko_dict["knowledge_object_id"]
+        ).delete()
+        session.flush()
+
+        # Insert merged evidence rows (raw SQL to avoid ORM unique constraint issues)
+        for idx, ev in enumerate(evidence_rows):
+            ev_src = f"{ev.get('chunk_id', '')}:{ev.get('evidence_role', 'supporting')}:{idx}"
+            ev_id = _generate_evidence_id(ko_dict["knowledge_object_id"], ev_src, "")
+            session.execute(
+                __import__('sqlalchemy').text(
+                    "INSERT INTO knowledge_object_evidence (knowledge_evidence_id, knowledge_object_id, "
+                    "chunk_id, doc_id, page_id, page_no, evidence_text, evidence_role, "
+                    "authority_role, evidence_citation, confidence_score) "
+                    "VALUES (:eid, :kid, :cid, :did, :pid, :pno, :text, :role, :arole, :cite, :conf) "
+                    "ON CONFLICT ON CONSTRAINT uq_knowledge_object_evidence_ref DO NOTHING"
+                ),
+                {"eid": ev_id, "kid": ko_dict["knowledge_object_id"],
+                 "cid": ev.get("chunk_id", ""), "did": ev.get("doc_id", ""),
+                 "pid": ev.get("page_id", ""), "pno": ev.get("page_no", 0),
+                 "text": ev.get("evidence_text", ""), "role": ev.get("evidence_role", "primary"),
+                 "arole": ev.get("authority_role", ""), "cite": ev.get("evidence_citation", ""),
+                 "conf": ev.get("confidence_score", ko_dict.get("confidence_score"))},
+            )
 
     session.commit()
     return stats
