@@ -29,6 +29,8 @@ HASH_CACHE: dict[str, str] = {}
 
 CANONICAL_KEY_TASK = "canonical_key_normalization"
 CONCEPT_GROUP_TASK = "concept_group_and_normalize"
+BATCH_SIZE = 30  # E2: max names per LLM call
+MAX_GROUP_SIZE = 10  # E2: sanity — no single concept should have >10 true synonyms
 
 
 def _load_registry() -> dict[str, Any]:
@@ -309,6 +311,43 @@ def _split_conflicting_groups(
     return refined
 
 
+def _sanity_check_groups(groups: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """E2: Reject pathological groups where LLM merged unrelated concepts.
+
+    - Oversized groups (>MAX_GROUP_SIZE) → split each member to own group
+    - Degenerate canonical_keys ("1", "x", single digit) → replace with mechanical slug
+    """
+    sane = []
+    for g in groups:
+        members = g.get("member_names", [])
+        ck = g.get("canonical_key", "")
+
+        if len(members) > MAX_GROUP_SIZE:
+            for n in members:
+                slug = _slugify_part(n) or _hashed_slug(n)
+                sane.append({
+                    "canonical_key": slug,
+                    "normalized_name": n,
+                    "member_names": [n],
+                    "rationale": f"E2 split: {len(members)}-member group exceeds max {MAX_GROUP_SIZE}",
+                })
+            continue
+
+        if len(ck) <= 2 or ck.isdigit():
+            for n in members:
+                slug = _slugify_part(n) or _hashed_slug(n)
+                sane.append({
+                    "canonical_key": slug,
+                    "normalized_name": n,
+                    "member_names": [n],
+                    "rationale": f"E2 split: degenerate canonical_key '{ck}'",
+                })
+            continue
+
+        sane.append(g)
+    return sane
+
+
 def group_and_normalize(
     names: list[str],
     *,
@@ -336,21 +375,24 @@ def group_and_normalize(
         if isinstance(cached, dict):
             return cached
 
-    # 2. LLM grouping + normalization
-    groups = _llm_group_and_normalize(
-        cleaned,
-        domain_id=domain_id,
-        equipment_class_id=equipment_class_id,
-        knowledge_object_type=knowledge_object_type,
-        backend_name=backend_name,
-    )
+    # 2. LLM grouping with batching (E2 fix: prevent greedy merge at scale)
+    all_groups: list[dict[str, Any]] = []
+    for i in range(0, len(cleaned), BATCH_SIZE):
+        batch = cleaned[i:i + BATCH_SIZE]
+        batch_groups = _llm_group_and_normalize(
+            batch,
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+            backend_name=backend_name,
+        )
+        batch_groups = _sanity_check_groups(batch_groups)
+        batch_groups = _split_conflicting_groups(batch_groups, domain_id, equipment_class_id, knowledge_object_type)
+        all_groups.extend(batch_groups)
 
-    # 3. Post-process: split groups with conflicting qualifiers (D1 fix)
-    groups = _split_conflicting_groups(groups, domain_id, equipment_class_id, knowledge_object_type)
-
-    # 4. Build name→key map, register all names
+    # 3. Build name→key map, register all names
     mapping: dict[str, str] = {}
-    for g in groups:
+    for g in all_groups:
         ck = g["canonical_key"]
         _register(g["member_names"], ck)
         for name in g["member_names"]:
