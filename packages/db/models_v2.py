@@ -218,3 +218,74 @@ class KOFeedbackEventV2(Base):
         UniqueConstraint("event_key", name="uq_ko_feedback_event_key"),
         Index("idx_ko_feedback_identity", "project_id", "finding_id", "knowledge_object_id", "event_type"),
     )
+
+
+class DocumentPageImageV2(Base):
+    """Rendered page image with MiMo visual-semantic analysis results."""
+
+    __tablename__ = "document_page_image"
+
+    page_image_id = Column(String(64), primary_key=True)
+    doc_id = Column(String(64), ForeignKey("document.doc_id"), nullable=False, index=True)
+    page_id = Column(String(64), ForeignKey("document_page.page_id"), nullable=False, index=True)
+    page_no = Column(Integer, nullable=False)
+    image_path = Column(String(512), nullable=False)
+    bbox = Column(JSON, nullable=True)
+    image_type = Column(String(32), nullable=False, default="other")
+    summary = Column(Text, nullable=True)
+    ocr_text = Column(Text, nullable=True)
+    vl_summary = Column(Text, nullable=True)
+    vl_entities_json = Column(JSON, nullable=True)
+    vl_relationships_json = Column(JSON, nullable=True)
+    useful_for_knowledge_types = Column(JSON, nullable=True)
+    uncertainty_notes = Column(Text, nullable=True)
+    vl_model = Column(String(64), nullable=True)
+    confidence = Column(Float, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
+
+    __table_args__ = (
+        Index("idx_page_image_doc_page", "doc_id", "page_no"),
+        Index("idx_page_image_type", "image_type"),
+    )
+
+
+class VisualEvidenceAnchorV2(Base):
+    """Links a knowledge object to visual evidence from a page image."""
+
+    __tablename__ = "visual_evidence_anchor"
+
+    visual_evidence_id = Column(String(64), primary_key=True)
+    knowledge_object_id = Column(
+        String(64),
+        ForeignKey("knowledge_object.knowledge_object_id"),
+        nullable=False,
+        index=True,
+    )
+    page_image_id = Column(
+        String(64),
+        ForeignKey("document_page_image.page_image_id"),
+        nullable=False,
+        index=True,
+    )
+    doc_id = Column(String(64), ForeignKey("document.doc_id"), nullable=False, index=True)
+    page_id = Column(String(64), ForeignKey("document_page.page_id"), nullable=False, index=True)
+    page_no = Column(Integer, nullable=False)
+    bbox = Column(JSON, nullable=True)
+    evidence_role = Column(String(32), nullable=False, default="primary_visual")
+    extracted_entities_json = Column(JSON, nullable=True)
+    extracted_relationships_json = Column(JSON, nullable=True)
+    model_used = Column(String(64), nullable=True)
+    confidence = Column(Float, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
+
+    __table_args__ = (
+        UniqueConstraint(
+            "knowledge_object_id",
+            "page_image_id",
+            "evidence_role",
+            name="uq_visual_evidence_anchor_ref",
+        ),
+        Index("idx_visual_evidence_trace", "knowledge_object_id", "doc_id", "page_no"),
+    )
