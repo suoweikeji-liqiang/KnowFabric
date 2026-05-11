@@ -1,0 +1,1 @@
+{"anchor": "e2e_test_chiller", "type": "parameter_spec", "existing_count": 0, "new_count": 6, "sample_existing_names": [], "sample_new_names": ["油压差范围上限", "油压差范围下限", "油压差", "外部冷冻水设定范围上限", "最低冷冻水出水温度", "Anti-Recycle Time Delay"], "by_doc_existing": {}}
