@@ -368,16 +368,23 @@ def merge_candidates(
     return merged
 
 
-def _ko_to_candidate(ko_row) -> dict[str, Any]:
-    """Convert a KnowledgeObjectV2 ORM row to a candidate dict for the merger."""
+def _ko_to_candidate(ko_row, session=None) -> dict[str, Any]:
+    """Convert a KnowledgeObjectV2 ORM row to a candidate dict for the merger.
+
+    L2 fix: query evidence rows via session (model has no evidence_rows relationship).
+    """
     payload = ko_row.structured_payload_json or {}
     authority = ko_row.authority_summary_json or {}
     layers = authority.get("layers", []) if isinstance(authority, dict) else []
     first_layer = layers[0] if layers else {}
 
     evidence = []
-    if hasattr(ko_row, "evidence_rows") and ko_row.evidence_rows:
-        for ev in ko_row.evidence_rows:
+    if session is not None:
+        from packages.db.models_v2 import KnowledgeObjectEvidenceV2
+        ev_rows = session.query(KnowledgeObjectEvidenceV2).filter(
+            KnowledgeObjectEvidenceV2.knowledge_object_id == ko_row.knowledge_object_id
+        ).all()
+        for ev in ev_rows:
             evidence.append({
                 "chunk_id": getattr(ev, "chunk_id", ""),
                 "doc_id": getattr(ev, "doc_id", ""),
@@ -397,7 +404,6 @@ def _ko_to_candidate(ko_row) -> dict[str, Any]:
         "authority_level": first_layer.get("authority_level", ko_row.highest_authority_level or "unspecified"),
         "publisher": first_layer.get("publisher"),
         "citation": first_layer.get("citation"),
-        "doc_id": None,
         "evidence": evidence,
     }
 
@@ -432,8 +438,11 @@ def merge_with_existing(
     existing_candidates = []
     ko_id_map: dict[str, str] = {}  # canonical_key → knowledge_object_id
     for ko in existing_kos:
-        existing_candidates.append(_ko_to_candidate(ko))
+        existing_candidates.append(_ko_to_candidate(ko, session=session))
         ko_id_map[ko.canonical_key] = ko.knowledge_object_id
+
+    # L1 diagnostic: dump what reaches the merger
+    _dump_merger_input(existing_candidates, new_candidates, equipment_class_id, knowledge_object_type)
 
     # Merge all candidates
     all_candidates = existing_candidates + list(new_candidates)
@@ -490,6 +499,51 @@ def merge_with_existing(
 
     session.commit()
     return stats
+
+
+def _dump_merger_input(
+    existing_candidates: list[dict[str, Any]],
+    new_candidates: list[dict[str, Any]],
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> None:
+    """L1: Dump what candidates reach merge_with_existing."""
+    import json as _json
+    import os as _os
+    from datetime import datetime as _dt, timezone as _tz
+    from pathlib import Path as _Path
+
+    run_id = _dt.now(_tz.utc).strftime("%Y%m%dT%H%M%SZ")
+    out_dir = _Path(f"output/diagnostic/{run_id}")
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    existing_names = []
+    by_doc: dict[str, int] = {}
+    for c in existing_candidates:
+        payload = c.get("structured_payload") or {}
+        name = payload.get("parameter_name") or c.get("title", "")
+        existing_names.append(str(name))
+        for ev in c.get("evidence", []):
+            did = ev.get("doc_id", "?")
+            by_doc[did] = by_doc.get(did, 0) + 1
+
+    new_names = []
+    for c in new_candidates:
+        payload = c.get("structured_payload") or {}
+        name = payload.get("parameter_name") or c.get("title", "")
+        new_names.append(str(name))
+
+    entry = {
+        "anchor": equipment_class_id,
+        "type": knowledge_object_type,
+        "existing_count": len(existing_candidates),
+        "new_count": len(new_candidates),
+        "sample_existing_names": existing_names[:20],
+        "sample_new_names": new_names[:20],
+        "by_doc_existing": by_doc,
+    }
+    with open(out_dir / "merger_input.jsonl", "a", encoding="utf-8") as f:
+        f.write(_json.dumps(entry, ensure_ascii=False) + "\n")
 
 
 def _generate_ko_id(domain_id: str, equipment_class_id: str, knowledge_object_type: str, canonical_key: str) -> str:
