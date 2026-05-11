@@ -6,6 +6,8 @@ consensus_state, and produces merged KO + evidence rows ready for persistence.
 
 from __future__ import annotations
 
+import hashlib
+from datetime import datetime, timezone
 from typing import Any
 
 from packages.compiler.canonical_key import resolve_single_name
@@ -232,3 +234,129 @@ def merge_candidates(
         })
 
     return merged
+
+
+def _ko_to_candidate(ko_row) -> dict[str, Any]:
+    """Convert a KnowledgeObjectV2 ORM row to a candidate dict for the merger."""
+    payload = ko_row.structured_payload_json or {}
+    authority = ko_row.authority_summary_json or {}
+    layers = authority.get("layers", []) if isinstance(authority, dict) else []
+    first_layer = layers[0] if layers else {}
+
+    evidence = []
+    if hasattr(ko_row, "evidence_rows") and ko_row.evidence_rows:
+        for ev in ko_row.evidence_rows:
+            evidence.append({
+                "chunk_id": getattr(ev, "chunk_id", ""),
+                "doc_id": getattr(ev, "doc_id", ""),
+                "page_id": getattr(ev, "page_id", ""),
+                "page_no": getattr(ev, "page_no", 0),
+                "evidence_text": getattr(ev, "evidence_text", ""),
+                "evidence_role": getattr(ev, "evidence_role", "supporting"),
+            })
+
+    return {
+        "title": ko_row.title,
+        "summary": ko_row.summary,
+        "structured_payload": payload,
+        "confidence_score": ko_row.confidence_score,
+        "trust_level": ko_row.trust_level,
+        "review_status": ko_row.review_status,
+        "authority_level": first_layer.get("authority_level", ko_row.highest_authority_level or "unspecified"),
+        "publisher": first_layer.get("publisher"),
+        "citation": first_layer.get("citation"),
+        "doc_id": None,
+        "evidence": evidence,
+    }
+
+
+def merge_with_existing(
+    session: Any,
+    new_candidates: list[dict[str, Any]],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    ontology_class_key: str,
+    knowledge_object_type: str,
+    package_version: str = "2.0.0-alpha",
+    ontology_version: str = "2.0.0-alpha",
+    backend_name: str | None = None,
+) -> dict[str, Any]:
+    """Merge new candidates with existing DB KOs and upsert.
+
+    Returns stats dict with: new_merged, updated_existing, material_conflicts.
+    """
+    from packages.db.models_v2 import KnowledgeObjectEvidenceV2, KnowledgeObjectV2
+
+    # Query existing KOs with same anchor + type
+    existing_kos = (
+        session.query(KnowledgeObjectV2)
+        .filter(KnowledgeObjectV2.ontology_class_id == equipment_class_id)
+        .filter(KnowledgeObjectV2.knowledge_object_type == knowledge_object_type)
+        .all()
+    )
+
+    # Convert existing KOs to candidate dicts
+    existing_candidates = []
+    ko_id_map: dict[str, str] = {}  # canonical_key → knowledge_object_id
+    for ko in existing_kos:
+        existing_candidates.append(_ko_to_candidate(ko))
+        ko_id_map[ko.canonical_key] = ko.knowledge_object_id
+
+    # Merge all candidates
+    all_candidates = existing_candidates + list(new_candidates)
+    merged = merge_candidates(
+        all_candidates,
+        domain_id=domain_id,
+        equipment_class_id=equipment_class_id,
+        ontology_class_key=ontology_class_key,
+        knowledge_object_type=knowledge_object_type,
+        package_version=package_version,
+        ontology_version=ontology_version,
+        backend_name=backend_name,
+    )
+
+    stats = {"new_merged": 0, "updated_existing": 0, "material_conflicts": 0}
+
+    for ko_dict in merged:
+        canonical_key = ko_dict["canonical_key"]
+        evidence_rows = ko_dict.pop("evidence_rows", [])
+
+        # Reuse existing KO ID or generate new one
+        if canonical_key in ko_id_map:
+            ko_dict["knowledge_object_id"] = ko_id_map[canonical_key]
+            stats["updated_existing"] += 1
+        else:
+            ko_dict["knowledge_object_id"] = _generate_ko_id(
+                domain_id, equipment_class_id, knowledge_object_type, canonical_key
+            )
+            stats["new_merged"] += 1
+
+        if ko_dict["consensus_state"] == "material_conflict":
+            ko_dict["review_status"] = "conflict_review_required"
+            stats["material_conflicts"] += 1
+
+        session.merge(KnowledgeObjectV2(**ko_dict))
+        session.flush()
+
+        # Upsert evidence rows
+        for ev in evidence_rows:
+            ev_id = _generate_evidence_id(ko_dict["knowledge_object_id"], ev.get("chunk_id", ""), ev.get("evidence_role", "supporting"))
+            ev["knowledge_evidence_id"] = ev_id
+            ev["knowledge_object_id"] = ko_dict["knowledge_object_id"]
+            if "confidence_score" not in ev:
+                ev["confidence_score"] = ko_dict.get("confidence_score")
+            session.merge(KnowledgeObjectEvidenceV2(**ev))
+
+    session.commit()
+    return stats
+
+
+def _generate_ko_id(domain_id: str, equipment_class_id: str, knowledge_object_type: str, canonical_key: str) -> str:
+    raw = f"{domain_id}:{equipment_class_id}:{knowledge_object_type}:{canonical_key}"
+    return f"ko_{hashlib.sha1(raw.encode()).hexdigest()[:16]}"
+
+
+def _generate_evidence_id(knowledge_object_id: str, chunk_id: str, evidence_role: str) -> str:
+    raw = f"{knowledge_object_id}:{chunk_id}:{evidence_role}"
+    return f"koev_{hashlib.sha1(raw.encode()).hexdigest()[:16]}"
