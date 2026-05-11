@@ -520,6 +520,24 @@ def merge_with_existing(
             if existing and existing.primary_chunk_id:
                 ko_dict["primary_chunk_id"] = existing.primary_chunk_id
 
+        # Handle canonical_key conflicts: if another KO already has this ck, merge them
+        ck_conflict = session.query(KnowledgeObjectV2).filter(
+            KnowledgeObjectV2.canonical_key == canonical_key,
+            KnowledgeObjectV2.knowledge_object_id != ko_dict["knowledge_object_id"],
+            KnowledgeObjectV2.ontology_class_id == equipment_class_id,
+        ).first()
+        if ck_conflict:
+            # Migrate evidence from conflict KO to this one, then delete conflict
+            session.execute(
+                __import__('sqlalchemy').text(
+                    "UPDATE knowledge_object_evidence SET knowledge_object_id = :target WHERE knowledge_object_id = :src"
+                ), {"target": ko_dict["knowledge_object_id"], "src": ck_conflict.knowledge_object_id}
+            )
+            session.execute(
+                __import__('sqlalchemy').text("DELETE FROM knowledge_object WHERE knowledge_object_id = :src"),
+                {"src": ck_conflict.knowledge_object_id}
+            )
+
         session.merge(KnowledgeObjectV2(**ko_dict))
         session.flush()
 
