@@ -43,13 +43,40 @@ def _coerce_numeric(value: Any) -> float | None:
     return None
 
 
-def _values_agree(v1: Any, v2: Any) -> bool:
-    """Check if two values agree within tolerance."""
-    if v1 is None and v2 is None:
+def _is_empty(v: Any) -> bool:
+    if v is None:
         return True
-    if v1 is None or v2 is None:
-        return False
+    s = str(v).strip()
+    return s == "" or s.lower() in ("none", "null", "n/a", "-")
 
+
+def _values_agree(v1: Any, v2: Any) -> bool:
+    """Check if two values agree within tolerance.
+
+    R3: empty values treated as agree (no data to compare).
+    R4: temperature °F/°C and pressure psi/bar/kPa/MPa unit conversion.
+    """
+    # R3: empty-value short-circuit
+    if _is_empty(v1) and _is_empty(v2):
+        return True
+    if _is_empty(v1) or _is_empty(v2):
+        return True
+
+    s1, s2 = str(v1).strip(), str(v2).strip()
+    if s1.lower() == s2.lower():
+        return True
+
+    # R4: temperature unit conversion (°F ↔ °C)
+    t1, t2 = _normalize_temperature(s1), _normalize_temperature(s2)
+    if t1 is not None and t2 is not None:
+        return abs(t1 - t2) / max(abs(t1), abs(t2), 1.0) <= 0.10
+
+    # R4: pressure unit conversion (psi ↔ bar ↔ kPa ↔ MPa)
+    p1, p2 = _normalize_pressure(s1), _normalize_pressure(s2)
+    if p1 is not None and p2 is not None:
+        return abs(p1 - p2) / max(abs(p1), abs(p2), 1.0) <= 0.10
+
+    # Legacy: numeric comparison
     n1, n2 = _coerce_numeric(v1), _coerce_numeric(v2)
     if n1 is not None and n2 is not None:
         if n1 == 0 and n2 == 0:
@@ -58,7 +85,7 @@ def _values_agree(v1: Any, v2: Any) -> bool:
             return False
         return abs(n1 - n2) / max(abs(n1), abs(n2)) <= NUMERIC_TOLERANCE
 
-    return str(v1).strip().lower() == str(v2).strip().lower()
+    return False
 
 
 def _resolve_authority_role(authority_level: str, is_primary: bool) -> str:
@@ -71,30 +98,67 @@ def _resolve_authority_role(authority_level: str, is_primary: bool) -> str:
     return "unspecified"
 
 
+def _normalize_temperature(value_str: str) -> float | None:
+    import re
+    s = value_str.strip().lower().replace(" ", "")
+    m = re.match(r"^(-?\d+\.?\d*)°?([fc])$", s)
+    if not m:
+        return None
+    num = float(m.group(1))
+    if m.group(2) == "f":
+        return (num - 32) * 5 / 9
+    return num
+
+
+def _normalize_pressure(value_str: str) -> float | None:
+    import re
+    s = value_str.strip().lower().replace(" ", "")
+    m = re.match(r"^(\d+\.?\d*)(psi|bar|mpa|kpa)$", s)
+    if not m:
+        return None
+    num = float(m.group(1))
+    unit = m.group(2)
+    if unit == "psi":
+        return num * 0.0689476
+    if unit == "mpa":
+        return num * 10
+    if unit == "kpa":
+        return num / 100
+    return num
+
+
 def _compute_consensus_state(layers: list[dict[str, Any]]) -> tuple[str, str | None]:
-    """Determine consensus_state by comparing value_summary across layers."""
+    """Determine consensus_state by comparing value_summary across layers.
+
+    R3: empty-value handling — all-empty → single_value_unknown, not conflict.
+    """
     if len(layers) <= 1:
         return "single_source", None
 
     values = [layer.get("value_summary") for layer in layers]
-    base = values[0]
+    non_empty = [v for v in values if not _is_empty(v)]
 
-    all_agree = all(_values_agree(base, v) for v in values[1:])
+    # R3: all sources lack explicit values
+    if len(non_empty) == 0:
+        return "single_value_unknown", "all sources lack explicit values; only parameter name confirmed"
+
+    # R3: only one source has a value → agreed (insufficient data for conflict)
+    if len(non_empty) == 1:
+        return "agreed", None
+
+    base = non_empty[0]
+    all_agree = all(_values_agree(base, v) for v in non_empty[1:])
     if all_agree:
         return "agreed", None
 
-    # 2 sources with disagreement → material_conflict
-    if len(values) == 2:
+    if len(non_empty) == 2:
         return "material_conflict", "Two sources disagree on value"
 
-    # 3+ sources: majority agree → partial, otherwise material
-    agree_count = sum(1 for v in values if _values_agree(base, v))
-    if agree_count > len(values) // 2:
-        summary = f"{agree_count}/{len(values)} sources agree on value; minority diverges"
-        return "partial_conflict", summary
+    agree_count = sum(1 for v in non_empty if _values_agree(base, v))
+    if agree_count > len(non_empty) // 2:
+        return "partial_conflict", f"{agree_count}/{len(non_empty)} sources agree on value; minority diverges"
 
-    summary = f"Significant value disagreement across {len(values)} sources"
-    return "material_conflict", summary
+    return "material_conflict", f"Significant value disagreement across {len(non_empty)} sources"
 
 
 def _extract_value_summary(candidate: dict[str, Any]) -> str | None:

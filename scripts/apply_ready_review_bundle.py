@@ -57,6 +57,7 @@ def apply_ready_review_bundle(
         source_label=str(bootstrapped_dir),
         fixtures_output_dir=fixtures_output_dir,
         report_path=apply_report_path,
+        use_merger=False,  # fixture workflow: KOs pre-deduped, direct INSERT
     )
 
     stats = summarize_review_pipeline_stats(

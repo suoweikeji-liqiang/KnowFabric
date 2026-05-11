@@ -167,7 +167,28 @@ def test_value_agree_helpers():
     assert _values_agree(44.0, 44.2) is True      # within 5%
     assert _values_agree(44.0, 48.0) is False     # outside 5%
     assert _values_agree(None, None) is True
-    assert _values_agree("44F", None) is False
+    assert _values_agree("44F", None) is True   # R3: empty value treated as agree (no data to compare)
+
+def test_temperature_unit_conversion():
+    """R4: °F ↔ °C unit normalization."""
+    assert _values_agree("95°F", "35°C") is True    # 95F = 35C, exact
+    assert _values_agree("95°F", "32°C") is True    # 95F = 35C, diff from 32C is 8.6% within 10%
+    assert _values_agree("100°F", "50°C") is False  # 100F = 37.8C, diff from 50C is 24% outside 10%
+    assert _values_agree("32°F", "0°C") is True     # 32F = 0C, exact
+
+def test_pressure_unit_conversion():
+    """R4: pressure unit normalization."""
+    assert _values_agree("120psi", "8.27bar") is True   # 120 psi ≈ 8.27 bar
+    assert _values_agree("1MPa", "10bar") is True       # 1 MPa = 10 bar
+    assert _values_agree("100kPa", "1bar") is True      # 100 kPa = 1 bar
+    assert _values_agree("100psi", "10bar") is False    # 100 psi ≈ 6.89 bar, diff is 31%
+
+def test_empty_value_short_circuit():
+    """R3: empty/missing values treated as agree."""
+    assert _values_agree("", "") is True
+    assert _values_agree("44F", "") is True
+    assert _values_agree(None, "some value") is True
+    assert _values_agree("none", "N/A") is True
     assert _values_agree(0, 0) is True
 
 

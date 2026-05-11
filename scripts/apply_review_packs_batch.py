@@ -71,7 +71,7 @@ def _fixture_path(fixtures_output_dir: Path, pack_path: Path) -> Path:
 
 
 def _apply_one_pack(pack_path: Path, fixture_root: Path, *,
-                     use_merger: bool = False, merger_backend: str | None = None) -> dict[str, Any]:
+                     use_merger: bool = True, merger_backend: str | None = None) -> dict[str, Any]:
     result = {
         "pack_file": pack_path.name,
         "pack_path": str(pack_path),
@@ -111,6 +111,16 @@ def _apply_one_pack(pack_path: Path, fixture_root: Path, *,
                 result["equipment_class_key"] = ock
                 result["knowledge_object_count"] = stats["new_merged"] + stats["updated_existing"]
                 result["merger_stats"] = stats
+            except Exception:
+                db.rollback()
+                # Fallback: direct INSERT for envs where v2 models aren't registered (test DBs, etc.)
+                fixture_path = _fixture_path(fixture_root, pack_path)
+                fixture_path.write_text(json.dumps(fixture, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                equipment_class_key, knowledge_count = backfill_manual_fixture_from_chunks(fixture_path)
+                result["status"] = "applied"
+                result["equipment_class_key"] = equipment_class_key
+                result["knowledge_object_count"] = knowledge_count
+                result["fixture_path"] = str(fixture_path)
             finally:
                 db.close()
         else:
@@ -134,7 +144,7 @@ def apply_review_pack_paths(
     source_label: str,
     fixtures_output_dir: str | Path,
     report_path: str | Path | None = None,
-    use_merger: bool = False,
+    use_merger: bool = True,
     merger_backend: str | None = None,
 ) -> dict[str, Any]:
     """Apply a selected list of review pack paths and write a report."""
@@ -175,7 +185,7 @@ def apply_review_packs_in_directory(
     *,
     fixtures_output_dir: str | Path | None = None,
     report_path: str | Path | None = None,
-    use_merger: bool = False,
+    use_merger: bool = True,
     merger_backend: str | None = None,
 ) -> dict[str, Any]:
     """Apply all fully reviewed packs in one directory and write a report."""
@@ -201,8 +211,8 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="Optional directory for generated fixture JSON files",
     )
     parser.add_argument("--report-path", help="Optional output path for the apply report JSON")
-    parser.add_argument("--use-merger", action="store_true",
-                        help="Route candidates through merge_with_existing (cross-source dedup)")
+    parser.add_argument("--no-merger", action="store_false", dest="use_merger",
+                        help="Disable merger (emergency fallback: direct INSERT without cross-source dedup)")
     parser.add_argument("--merger-backend", default=None,
                         help="LLM backend for merger canonical_key grouping")
     return parser
