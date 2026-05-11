@@ -468,6 +468,14 @@ def merge_with_existing(
             ko_dict["review_status"] = "conflict_review_required"
             stats["material_conflicts"] += 1
 
+        # Preserve existing primary_chunk_id on update
+        if not ko_dict.get("primary_chunk_id") and canonical_key in ko_id_map:
+            existing_ko = session.query(KnowledgeObjectV2).filter(
+                KnowledgeObjectV2.knowledge_object_id == ko_id_map[canonical_key]
+            ).first()
+            if existing_ko and existing_ko.primary_chunk_id:
+                ko_dict["primary_chunk_id"] = existing_ko.primary_chunk_id
+
         session.merge(KnowledgeObjectV2(**ko_dict))
         session.flush()
 
