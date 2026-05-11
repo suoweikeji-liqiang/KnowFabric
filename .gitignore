@@ -21,5 +21,6 @@ llm_backends*.json
 scripts/llm_backends.json
 !scripts/llm_backends.example.json
 .claude/worktrees/
+**/canonical_key_registry.yaml
 *.log
 .DS_Store
