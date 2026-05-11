@@ -46,28 +46,19 @@ def test_group_via_embedding_merges_cross_lingual():
         [-1.0, 0.0, 0.0],    # different (cosine -1.0)
     ]
 
+    # N3: embedding clusters directly → same cluster = same canonical_key
+    # First 2 names sim 0.99 → same cluster → same key. Third name far → separate.
     with patch("packages.compiler.embedding_client.embed_batch", return_value=fake_embs):
-        with patch("packages.compiler.canonical_key._llm_refine_cluster") as mock_llm:
-            mock_llm.return_value = [{
-                "canonical_key": "chilled_water_setpoint",
-                "member_names": ["Fake Chilled Water Param A", "Fake Chilled Water Param B"],
-                "rationale": "same physical quantity",
-            }, {
-                "canonical_key": "safety_valve_pressure",
-                "member_names": ["Fake Safety Valve Param"],
-                "rationale": "different concept",
-            }]
-            mapping = _group_via_embedding(
-                names, domain_id="hvac", equipment_class_id="centrifugal_chiller",
-                knowledge_object_type="parameter_spec",
-            )
+        mapping = _group_via_embedding(
+            names, domain_id="hvac", equipment_class_id="centrifugal_chiller",
+            knowledge_object_type="parameter_spec",
+        )
 
     ck1 = mapping["Fake Chilled Water Param A"]
     ck2 = mapping["Fake Chilled Water Param B"]
     ck3 = mapping["Fake Safety Valve Param"]
-    assert ck1 == ck2, f"EN pair should share canonical_key: {ck1} vs {ck2}"
-    assert ck1 != ck3, f"Different concept should have different key"
-    assert "chilled_water_setpoint" in ck1
+    assert ck1 == ck2, f"Embedding cluster should share key: {ck1} vs {ck2}"
+    assert ck1 != ck3, f"Different cluster should have different key"
 
 
 def test_embedding_first_is_default():
@@ -87,12 +78,11 @@ def test_group_and_normalize_dispatches_to_embedding(monkeypatch):
     fake_embs = [[1.0, 0.0], [0.5, 0.87]]
 
     with patch("packages.compiler.embedding_client.embed_batch", return_value=fake_embs):
-        with patch.object(ck, "_llm_refine_cluster", return_value=[]):
-            mapping = ck.group_and_normalize(
-                names, domain_id="hvac", equipment_class_id="centrifugal_chiller",
-                knowledge_object_type="parameter_spec",
-            )
-    # Should not crash; each name gets a key
+        mapping = ck.group_and_normalize(
+            names, domain_id="hvac", equipment_class_id="centrifugal_chiller",
+            knowledge_object_type="parameter_spec",
+        )
+    # Should not crash; each name gets a key (N3: embedding clusters directly)
     assert len(mapping) == 2
     for n in names:
         assert n in mapping
