@@ -44,6 +44,101 @@ class OpenAICompatibleBackend:
     request_options: dict[str, Any] | None = None
 
 
+def response_content_text(body: dict[str, Any]) -> str:
+    """Extract one text content string from an OpenAI-compatible response body."""
+
+    content = body.get("choices", [{}])[0].get("message", {}).get("content", "")
+    if isinstance(content, list):
+        return "".join(str(part.get("text", "")) for part in content if isinstance(part, dict)).strip()
+    return str(content).strip()
+
+
+def parse_json_response_content(content: str) -> dict[str, Any]:
+    """Parse one model response as JSON with a few non-destructive repairs."""
+
+    stripped = content.strip()
+    candidates: list[str] = []
+    if stripped:
+        candidates.append(stripped)
+    unfenced = _strip_code_fence(stripped)
+    if unfenced and unfenced not in candidates:
+        candidates.append(unfenced)
+    extracted = _extract_outer_json_object(unfenced or stripped)
+    if extracted and extracted not in candidates:
+        candidates.append(extracted)
+
+    seen: set[str] = set()
+    last_error: Exception | None = None
+    for candidate in candidates:
+        for variant in (candidate, _remove_trailing_commas(candidate)):
+            if not variant or variant in seen:
+                continue
+            seen.add(variant)
+            try:
+                payload = json.loads(variant)
+            except json.JSONDecodeError as exc:
+                last_error = exc
+                continue
+            if isinstance(payload, dict):
+                return payload
+            raise RuntimeError("LLM compile returned non-object JSON content")
+    if last_error is not None:
+        raise last_error
+    raise RuntimeError("LLM compile returned empty content")
+
+
+def repair_json_response_with_backend(
+    content: str,
+    backend: OpenAICompatibleBackend,
+    *,
+    recorder: Callable[[dict[str, Any]], None] | None = None,
+) -> dict[str, Any]:
+    """Ask the backend to repair malformed JSON without changing semantic content."""
+
+    repair_messages = [
+        {
+            "role": "system",
+            "content": (
+                "You repair malformed JSON. Return one valid JSON object only. "
+                "Do not add commentary. Do not invent or remove fields unless required to make the JSON valid. "
+                "Preserve the original meaning as closely as possible."
+            ),
+        },
+        {
+            "role": "user",
+            "content": (
+                "Repair the following malformed JSON object. Return valid JSON only.\n\n"
+                f"{content[:20000]}"
+            ),
+        },
+    ]
+    return _request_json_completion(
+        repair_messages,
+        backend,
+        response_format={"type": "json_object"},
+        recorder=recorder,
+    )
+
+
+def _strip_code_fence(text: str) -> str:
+    if text.startswith("```"):
+        text = re.sub(r"^```(?:json)?\s*", "", text, count=1, flags=re.IGNORECASE)
+        text = re.sub(r"\s*```$", "", text, count=1)
+    return text.strip()
+
+
+def _extract_outer_json_object(text: str) -> str:
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        return ""
+    return text[start : end + 1]
+
+
+def _remove_trailing_commas(text: str) -> str:
+    return re.sub(r",(\s*[}\]])", r"\1", text)
+
+
 def default_backend() -> OpenAICompatibleBackend | None:
     """Return the default compiler backend from settings."""
 
@@ -111,7 +206,7 @@ def resolve_backend(
             raise ValueError(f"Backend '{active_backend_name}' not found in {active_config_path}")
         if len(backends) == 1:
             return backends[0]
-        raise ValueError("Backend name is required when backend config contains multiple entries")
+        return default_backend()
     return default_backend()
 
 
@@ -511,16 +606,10 @@ def _request_json_completion(
     if recorder is not None:
         recorder({"request": payload, "response": body})
 
-    content = (
-        body.get("choices", [{}])[0]
-        .get("message", {})
-        .get("content", "")
-    )
-    if isinstance(content, list):
-        content = "".join(str(part.get("text", "")) for part in content if isinstance(part, dict))
-    if not isinstance(content, str) or not content.strip():
+    content = response_content_text(body)
+    if not content:
         raise RuntimeError("LLM compile returned empty content")
-    return json.loads(content)
+    return parse_json_response_content(content)
 
 
 def _chat_completion_payload(
@@ -535,6 +624,8 @@ def _chat_completion_payload(
         "messages": messages,
         "response_format": response_format or {"type": "json_object"},
     }
+    if _should_disable_deepseek_thinking(backend, response_format):
+        payload["thinking"] = {"type": "disabled"}
     for key, value in (backend.request_options or {}).items():
         if key in {"model", "messages"}:
             continue
@@ -542,6 +633,16 @@ def _chat_completion_payload(
             continue
         payload[key] = value
     return payload
+
+
+def _should_disable_deepseek_thinking(
+    backend: OpenAICompatibleBackend,
+    response_format: dict[str, Any] | None,
+) -> bool:
+    model = backend.model.lower()
+    wants_json = response_format is None or response_format.get("type") == "json_object"
+    has_override = "thinking" in (backend.request_options or {})
+    return wants_json and model.startswith("deepseek-v4") and not has_override
 
 
 def _document_extraction_response_format() -> dict[str, Any]:

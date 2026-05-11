@@ -1,0 +1,86 @@
+# HVAC Chiller Parameter Terminology — Chinese-English Mapping
+# 36 concept groups, 45 parameter names
+# Auto-generated + manually verified — operator must confirm
+
+terms:
+  chilled_water_setpoint:
+  - Chilled Water Setpoint
+  - CHWS Setpoint
+  - 冷冻水出水温度设定
+  chilled_water_leaving_temperature:
+  - 最低冷冻水出水温度
+  - 最低冷冻液体温度
+  - chilled water leaving temperature setpoint
+  chilled_water_entering_temperature:
+  - 冷冻水最高进水温度
+  - 蒸发器进水温度上限
+  current_limit:
+  - 电流限制
+  - 电流限制设定
+  - Current Limit Setpoint
+  - Current Limit
+  current_limit_soft_load_time:
+  - 电流限制控制软载时间
+  current_limit_soft_load_percent:
+  - 电流限制软载起动百分数
+  front_panel_chilled_water_setpoint:
+  - Front Panel Chilled Water Setpoint
+  external_chilled_water_setpoint:
+  - External Chilled Water Setpoint
+  front_panel_current_limit_setpoint:
+  - Front Panel Current Limit Setpoint
+  external_current_limit_setpoint:
+  - External Current Limit Setpoint
+  front_panel_base_load_setpoint:
+  - Front Panel Base Load Setpoint
+  external_base_load_setpoint:
+  - External Base Loading Setpoint
+  differential_to_start:
+  - Differential to Start
+  differential_to_stop:
+  - Differential to Stop
+  return_maximum_reset:
+  - Return Maximum Reset
+  return_reset_ratio:
+  - Return Reset Ratio
+  outdoor_maximum_reset:
+  - Outdoor Maximum Reset
+  outdoor_reset_ratio:
+  - Outdoor Reset Ratio
+  minimum_capacity_limit:
+  - 最小容量限制
+  maximum_capacity_limit:
+  - 最大容量限制
+  minimum_current_limit:
+  - 最小电流限制设定
+  safety_valve_pressure_setting:
+  - 安全阀压力设置
+  - 安全阀设定压力
+  evaporator_water_side_design_pressure:
+  - 蒸发器水侧设计压力
+  evaporator_refrigerant_side_design_pressure:
+  - 蒸发器制冷剂侧设计压力
+  condenser_water_side_design_pressure:
+  - 冷凝器水侧设计压力
+  condenser_refrigerant_side_design_pressure:
+  - 冷凝器制冷剂侧设计压力
+  oil_cooler_min_inlet_temperature:
+  - 油冷/变频器冷却最低进水温度
+  oil_cooler_max_inlet_temperature:
+  - 油冷/变频器冷却最高进水温度
+  supply_oil_temperature_range:
+  - 供油温度范围
+  guide_vane_speed_factory_setting:
+  - 导叶速度出厂设置值
+  capacity_control_soft_load_time:
+  - 容量控制软载时间
+  restart_inhibit_time:
+  - 重启抑制时间设定
+  filter_time:
+  - 滤波器时间
+  hot_gas_bypass_start_current:
+  - 热气旁通启动点电流值
+  maximum_pressure_differential_setpoint:
+  - 最大压差设定值
+  minimum_pressure_differential_setpoint:
+  - 最小压差设定值

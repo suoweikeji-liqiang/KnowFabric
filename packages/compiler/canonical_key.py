@@ -22,6 +22,9 @@ from packages.compiler.llm_compiler import (
 )
 
 REGISTRY_PATH = Path(__file__).resolve().parent / "canonical_key_registry.yaml"
+TERMINOLOGY_PATHS = [
+    Path(__file__).resolve().parents[2] / "domain_packages" / "hvac" / "v2" / "terminology_zh_en.yaml",
+]
 HASH_CACHE: dict[str, str] = {}
 
 CANONICAL_KEY_TASK = "canonical_key_normalization"
@@ -46,11 +49,33 @@ def _hash_inputs(names: list[str], knowledge_object_type: str = "") -> str:
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]
 
 
+def _load_terminology() -> dict[str, list[str]]:
+    """Load domain-specific terminology YAML files into a name→key mapping."""
+    merged: dict[str, list[str]] = {}
+    for path in TERMINOLOGY_PATHS:
+        if not path.exists():
+            continue
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        for ck, aliases in data.get("terms", {}).items():
+            merged[ck] = list(aliases)
+    return merged
+
+
 def _lookup_registry(names: list[str], type_prefix: str) -> str | None:
     """Check if any input name is already registered under a canonical_key with the expected type prefix.
 
-    Prefers semantic keys over auto-generated hashed keys (key_* pattern).
+    Checks terminology YAML first (deterministic, human-reviewed),
+    then dynamic registry. Prefers semantic keys over hashed keys.
     """
+    # 1. Check terminology YAML (authoritative, human-reviewed)
+    terminology = _load_terminology()
+    for name in names:
+        for ck, aliases in terminology.items():
+            if name in aliases:
+                domain_slug = _slugify_part(ck)  # terminology key format
+                return ck  # Return the concept group name as-is
+
+    # 2. Check dynamic registry
     registry = _load_registry()
     keys = registry.get("canonical_keys", {})
     matches: list[str] = []
@@ -60,7 +85,6 @@ def _lookup_registry(names: list[str], type_prefix: str) -> str | None:
                 matches.append(existing_key)
     if not matches:
         return None
-    # Prefer non-hashed (semantic) keys
     semantic = [k for k in matches if not k.split(":")[-1].startswith("key_")]
     return semantic[0] if semantic else matches[0]
 
@@ -80,22 +104,25 @@ def _build_prompt(
     system_prompt = (
         "You are a domain knowledge engineer normalizing industrial HVAC equipment parameter "
         "names into stable, machine-friendly canonical keys.\n\n"
-        "CRITICAL RULES — violations will corrupt the knowledge base:\n"
-        "1. Different physical quantities MUST stay in different groups, even if their names "
-        "share words. Examples of WRONG merges:\n"
-        '   - "Differential to Start" + "Differential to Stop" → DIFFERENT (start vs stop threshold)\n'
-        '   - "Return Maximum Reset" + "Outdoor Maximum Reset" → DIFFERENT (return water vs outdoor air)\n'
-        '   - "Front Panel X" + "External X" → DIFFERENT (local panel vs remote input)\n'
-        '   - "Return Reset Ratio" + "Return Maximum Reset" → DIFFERENT (ratio vs absolute limit)\n'
-        "2. Cross-language synonyms ARE the same concept and SHOULD be merged:\n"
-        '   - "Chilled Water Setpoint" + "冷冻水出水温度设定" → SAME\n'
-        '   - "Current Limit" + "电流限制" → SAME\n'
-        "3. Same quantity with different unit (F vs C) IS the same concept — merge.\n"
-        "4. canonical_key format: lowercase, underscores only, concise (3-5 words).\n"
-        "5. Prefer ASHRAE/IEC standard terminology.\n"
-        "6. When uncertain whether two names are the same quantity, keep them SEPARATE.\n\n"
-        "Return JSON with groups array. Each group has: canonical_key, normalized_name, "
-        "member_names (from input), rationale (one sentence)."
+        "CRITICAL RULES — violations will corrupt the knowledge base:\n\n"
+        "1. These are DIFFERENT concepts and MUST stay in separate groups:\n"
+        '   - "X Front Panel" vs "X External" → DIFFERENT input source (local HMI vs remote analog)\n'
+        '   - "X 水侧" vs "X 制冷剂侧" vs "X 空气侧" → DIFFERENT medium (water/refrigerant/air side)\n'
+        '   - "Differential to Start" vs "Differential to Stop" → DIFFERENT threshold\n'
+        '   - "X Return" vs "X Outdoor" vs "X Supply" → DIFFERENT reference point\n'
+        '   - "X Reset" vs "X Reset Ratio" → DIFFERENT (absolute limit vs proportional ratio)\n'
+        '   - "X Capacity" vs "X Capacity Limit" → DIFFERENT (actual vs constraint)\n'
+        '   - "Maximum X" vs "Minimum X" → DIFFERENT (upper vs lower bound)\n\n'
+        '   When names share core words but differ in: input source (Panel/External/Remote/Local), '
+        'medium (water/refrigerant/air/oil), or bound (Max/Min/Start/Stop) → SEPARATE groups.\n\n'
+        "2. These ARE the same concept and MUST be merged into one group:\n"
+        '   - Cross-language: "Chilled Water Setpoint" + "冷冻水出水温度设定" → SAME\n'
+        '   - Cross-language: "Current Limit" + "电流限制" → SAME\n'
+        '   - Same quantity, different unit: 44F vs 7C → SAME concept\n'
+        '   - Abbreviation vs full name: "CHWS" vs "Chilled Water Supply" → SAME\n\n'
+        "3. canonical_key format: lowercase, underscores only, 3-5 words, ASHRAE/IEC terminology.\n"
+        "4. When uncertain whether two names are the same quantity → keep them SEPARATE.\n\n"
+        "Return JSON: {\"groups\": [{canonical_key, normalized_name, member_names, rationale}]}"
     )
     user_prompt = json.dumps(
         {
@@ -394,6 +421,14 @@ def resolve_single_name(
     input_hash = _hash_inputs([cleaned], knowledge_object_type)
     if input_hash in HASH_CACHE:
         return HASH_CACHE[input_hash]
+
+    # Check terminology YAML first (deterministic, human-reviewed)
+    terminology = _load_terminology()
+    for ck, aliases in terminology.items():
+        if cleaned in aliases:
+            key = f"{_slugify_part(domain_id)}:{_slugify_part(equipment_class_id)}:{_knowledge_type_prefix(knowledge_object_type)}:{ck}"
+            HASH_CACHE[input_hash] = key
+            return key
 
     type_prefix = _knowledge_type_prefix(knowledge_object_type)
     registered = _lookup_registry([cleaned], type_prefix)

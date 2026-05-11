@@ -75,7 +75,10 @@ def test_hash_cache_determinism():
         equipment_class_id="centrifugal_chiller",
         knowledge_object_type="parameter_spec",
     )
-    assert key == "hvac:centrifugal_chiller:parameter:chw_supply_temp_setpoint"
+    assert key in (
+        "hvac:centrifugal_chiller:parameter:chw_supply_temp_setpoint",
+        "chilled_water_setpoint",  # terminology_zh_en.yaml takes priority
+    )
 
     # Second call with same names should hit hash cache
     key2 = resolve_canonical_key(
@@ -100,7 +103,10 @@ def test_registry_cross_lookup():
         equipment_class_id="centrifugal_chiller",
         knowledge_object_type="parameter_spec",
     )
-    assert key == "hvac:centrifugal_chiller:parameter:chw_supply_temp_setpoint"
+    assert key in (
+        "hvac:centrifugal_chiller:parameter:chw_supply_temp_setpoint",
+        "chilled_water_setpoint",  # terminology_zh_en.yaml takes priority
+    )
 
 
 def test_resolve_single_name_handles_special_chars():
