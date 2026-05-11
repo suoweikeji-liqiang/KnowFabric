@@ -18,6 +18,16 @@ from packages.db.models_v2 import (
 )
 
 TRUST_RANK = {"L1": 0, "L2": 1, "L3": 2, "L4": 3}
+AUTHORITY_RANK = {
+    "field_observation": 6,
+    "industry_standard": 5,
+    "regulatory_code": 4,
+    "oem_manual": 3,
+    "vendor_application_note": 2,
+    "academic_reference": 1,
+    "internal_sop": 0,
+    "unspecified": -1,
+}
 FAULT_KNOWLEDGE_TYPES = ("fault_code", "fault_diagnostic_rule", "symptom", "diagnostic_step")
 PARAMETER_PROFILE_TYPES = ("parameter_spec", "performance_spec")
 MAINTENANCE_GUIDANCE_TYPES = ("maintenance_procedure", "diagnostic_step")
@@ -99,6 +109,17 @@ class SemanticRetrievalService:
     def _meets_min_trust_level(self, knowledge_object: KnowledgeObjectV2, min_trust_level: str) -> bool:
         return TRUST_RANK.get(knowledge_object.trust_level, -1) >= TRUST_RANK[min_trust_level]
 
+    def _meets_min_authority_level(self, knowledge_object: KnowledgeObjectV2, min_authority_level: str | None) -> bool:
+        if not min_authority_level:
+            return True
+        ko_rank = AUTHORITY_RANK.get(knowledge_object.highest_authority_level, -1)
+        return ko_rank >= AUTHORITY_RANK.get(min_authority_level, -1)
+
+    def _matches_consensus_filter(self, knowledge_object: KnowledgeObjectV2, consensus_filter: str | None) -> bool:
+        if not consensus_filter:
+            return True
+        return knowledge_object.consensus_state == consensus_filter
+
     def _matches_fault_filters(
         self,
         knowledge_object: KnowledgeObjectV2,
@@ -107,8 +128,14 @@ class SemanticRetrievalService:
         model_family: str | None,
         min_confidence: float | None,
         min_trust_level: str,
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
     ) -> bool:
         if not self._meets_min_trust_level(knowledge_object, min_trust_level):
+            return False
+        if not self._meets_min_authority_level(knowledge_object, min_authority_level):
+            return False
+        if not self._matches_consensus_filter(knowledge_object, consensus_filter):
             return False
         if min_confidence is not None:
             score = knowledge_object.confidence_score or 0.0
@@ -129,8 +156,14 @@ class SemanticRetrievalService:
         model_family: str | None,
         min_confidence: float | None,
         min_trust_level: str,
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
     ) -> bool:
         if not self._meets_min_trust_level(knowledge_object, min_trust_level):
+            return False
+        if not self._meets_min_authority_level(knowledge_object, min_authority_level):
+            return False
+        if not self._matches_consensus_filter(knowledge_object, consensus_filter):
             return False
         if min_confidence is not None:
             score = knowledge_object.confidence_score or 0.0
@@ -171,6 +204,8 @@ class SemanticRetrievalService:
         model_family: str | None,
         min_confidence: float | None,
         min_trust_level: str,
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
     ) -> bool:
         if not self._matches_common_filters(
             knowledge_object,
@@ -178,6 +213,8 @@ class SemanticRetrievalService:
             model_family,
             min_confidence,
             min_trust_level,
+            min_authority_level=min_authority_level,
+            consensus_filter=consensus_filter,
         ):
             return False
         payload = knowledge_object.structured_payload_json
@@ -196,6 +233,8 @@ class SemanticRetrievalService:
         model_family: str | None,
         min_confidence: float | None,
         min_trust_level: str,
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
     ) -> bool:
         if not self._matches_common_filters(
             knowledge_object,
@@ -203,6 +242,8 @@ class SemanticRetrievalService:
             model_family,
             min_confidence,
             min_trust_level,
+            min_authority_level=min_authority_level,
+            consensus_filter=consensus_filter,
         ):
             return False
         if not task_type:
@@ -218,6 +259,8 @@ class SemanticRetrievalService:
         model_family: str | None,
         min_confidence: float | None,
         min_trust_level: str,
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
     ) -> bool:
         if not self._matches_common_filters(
             knowledge_object,
@@ -225,6 +268,8 @@ class SemanticRetrievalService:
             model_family,
             min_confidence,
             min_trust_level,
+            min_authority_level=min_authority_level,
+            consensus_filter=consensus_filter,
         ):
             return False
         if not application_type:
@@ -240,6 +285,8 @@ class SemanticRetrievalService:
         model_family: str | None,
         min_confidence: float | None,
         min_trust_level: str,
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
     ) -> bool:
         if not self._matches_common_filters(
             knowledge_object,
@@ -247,6 +294,8 @@ class SemanticRetrievalService:
             model_family,
             min_confidence,
             min_trust_level,
+            min_authority_level=min_authority_level,
+            consensus_filter=consensus_filter,
         ):
             return False
         if not guidance_type:
@@ -279,6 +328,8 @@ class SemanticRetrievalService:
         self,
         db: Session,
         knowledge_object_ids: list[str],
+        *,
+        include_restricted_evidence: bool = False,
     ) -> dict[str, list[dict[str, Any]]]:
         rows = (
             db.query(KnowledgeObjectEvidenceV2, Document)
@@ -289,14 +340,23 @@ class SemanticRetrievalService:
         )
         grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for evidence, document in rows:
+            is_redistributable = bool(getattr(document, "is_redistributable", False))
+            evidence_text = evidence.evidence_text
+            redistribution_restricted = False
+            if not is_redistributable and not include_restricted_evidence:
+                evidence_text = evidence_text[:200] + ("..." if len(evidence_text) > 200 else "")
+                redistribution_restricted = True
             grouped[evidence.knowledge_object_id].append(
                 {
                     "doc_id": evidence.doc_id,
                     "doc_name": document.file_name,
                     "page_no": evidence.page_no,
                     "chunk_id": evidence.chunk_id,
-                    "evidence_text": evidence.evidence_text,
+                    "evidence_text": evidence_text,
                     "evidence_role": evidence.evidence_role,
+                    "authority_role": getattr(evidence, "authority_role", None) or None,
+                    "evidence_citation": getattr(evidence, "evidence_citation", None) or None,
+                    "redistribution_restricted": redistribution_restricted,
                 }
             )
         return grouped
@@ -308,8 +368,14 @@ class SemanticRetrievalService:
         knowledge_objects: list[KnowledgeObjectV2],
         total_count: int,
         language: str = "en",
+        *,
+        include_restricted_evidence: bool = False,
     ) -> dict[str, Any]:
-        evidence_map = self._load_evidence_map(db, [item.knowledge_object_id for item in knowledge_objects])
+        evidence_map = self._load_evidence_map(
+            db,
+            [item.knowledge_object_id for item in knowledge_objects],
+            include_restricted_evidence=include_restricted_evidence,
+        )
         labels = ontology_class.get("labels") or {}
         label = labels.get(language) or ontology_class["primary_label"]
         items: list[dict[str, Any]] = []
@@ -320,6 +386,9 @@ class SemanticRetrievalService:
             title, summary, structured_payload, display_language = self._resolve_display_content(item, language)
             compiler_metadata = extract_compile_metadata(item.structured_payload_json)
             health_flags = public_health_flags(item.structured_payload_json)
+            authority_summary = item.authority_summary_json or {}
+            authority_layers = authority_summary.get("layers", []) if isinstance(authority_summary, dict) else []
+            any_restricted = any(ev.get("redistribution_restricted", False) for ev in evidence)
             items.append(
                 {
                     "knowledge_object_id": item.knowledge_object_id,
@@ -341,6 +410,11 @@ class SemanticRetrievalService:
                     "compilation_method": compiler_metadata.get("method"),
                     "compiler_version": compiler_metadata.get("version"),
                     "health_flags": health_flags,
+                    "consensus_state": item.consensus_state,
+                    "highest_authority_level": item.highest_authority_level,
+                    "authority_layers": authority_layers,
+                    "conflict_summary": item.conflict_summary,
+                    "redistribution_restricted": any_restricted,
                     "evidence": evidence,
                 }
             )
@@ -424,6 +498,9 @@ class SemanticRetrievalService:
         include_related_symptoms: bool = True,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
+        include_restricted_evidence: bool = False,
         limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
@@ -451,11 +528,16 @@ class SemanticRetrievalService:
                 model_family,
                 min_confidence,
                 min_trust_level,
+                min_authority_level=min_authority_level,
+                consensus_filter=consensus_filter,
             )
         ]
         total_count = len(filtered)
         ranked = self._sort_fault_knowledge(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
+        return self._build_semantic_collection(
+            db, ontology_class, ranked, total_count=total_count, language=language,
+            include_restricted_evidence=include_restricted_evidence,
+        )
 
     def get_parameter_profiles(
         self,
@@ -468,6 +550,9 @@ class SemanticRetrievalService:
         model_family: str | None = None,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
+        include_restricted_evidence: bool = False,
         limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
@@ -494,11 +579,16 @@ class SemanticRetrievalService:
                 model_family,
                 min_confidence,
                 min_trust_level,
+                min_authority_level=min_authority_level,
+                consensus_filter=consensus_filter,
             )
         ]
         total_count = len(filtered)
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
+        return self._build_semantic_collection(
+            db, ontology_class, ranked, total_count=total_count, language=language,
+            include_restricted_evidence=include_restricted_evidence,
+        )
 
     def get_maintenance_guidance(
         self,
@@ -511,6 +601,9 @@ class SemanticRetrievalService:
         include_diagnostic_steps: bool = True,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
+        include_restricted_evidence: bool = False,
         limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
@@ -537,11 +630,16 @@ class SemanticRetrievalService:
                 model_family,
                 min_confidence,
                 min_trust_level,
+                min_authority_level=min_authority_level,
+                consensus_filter=consensus_filter,
             )
         ]
         total_count = len(filtered)
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
+        return self._build_semantic_collection(
+            db, ontology_class, ranked, total_count=total_count, language=language,
+            include_restricted_evidence=include_restricted_evidence,
+        )
 
     def get_application_guidance(
         self,
@@ -553,6 +651,9 @@ class SemanticRetrievalService:
         model_family: str | None = None,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
+        include_restricted_evidence: bool = False,
         limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
@@ -578,11 +679,16 @@ class SemanticRetrievalService:
                 model_family,
                 min_confidence,
                 min_trust_level,
+                min_authority_level=min_authority_level,
+                consensus_filter=consensus_filter,
             )
         ]
         total_count = len(filtered)
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
+        return self._build_semantic_collection(
+            db, ontology_class, ranked, total_count=total_count, language=language,
+            include_restricted_evidence=include_restricted_evidence,
+        )
 
     def get_operational_guidance(
         self,
@@ -594,6 +700,9 @@ class SemanticRetrievalService:
         model_family: str | None = None,
         min_confidence: float | None = None,
         min_trust_level: str = "L4",
+        min_authority_level: str | None = None,
+        consensus_filter: str | None = None,
+        include_restricted_evidence: bool = False,
         limit: int = 100,
         language: str = "en",
     ) -> dict[str, Any] | None:
@@ -619,8 +728,13 @@ class SemanticRetrievalService:
                 model_family,
                 min_confidence,
                 min_trust_level,
+                min_authority_level=min_authority_level,
+                consensus_filter=consensus_filter,
             )
         ]
         total_count = len(filtered)
         ranked = self._sort_semantic_items(filtered)[:limit]
-        return self._build_semantic_collection(db, ontology_class, ranked, total_count=total_count, language=language)
+        return self._build_semantic_collection(
+            db, ontology_class, ranked, total_count=total_count, language=language,
+            include_restricted_evidence=include_restricted_evidence,
+        )

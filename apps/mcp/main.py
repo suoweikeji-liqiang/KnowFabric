@@ -270,6 +270,9 @@ class KnowFabricMcpServer:
                 include_related_symptoms=bool(arguments.get("include_related_symptoms", True)),
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
+                min_authority_level=arguments.get("min_authority_level"),
+                consensus_filter=arguments.get("consensus_filter"),
+                include_restricted_evidence=bool(arguments.get("include_restricted_evidence", False)),
                 limit=int(arguments.get("limit", 20)),
                 language=arguments.get("language", "en"),
             )
@@ -294,6 +297,9 @@ class KnowFabricMcpServer:
                 model_family=arguments.get("model_family"),
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
+                min_authority_level=arguments.get("min_authority_level"),
+                consensus_filter=arguments.get("consensus_filter"),
+                include_restricted_evidence=bool(arguments.get("include_restricted_evidence", False)),
                 limit=int(arguments.get("limit", 20)),
                 language=arguments.get("language", "en"),
             )
@@ -318,6 +324,9 @@ class KnowFabricMcpServer:
                 include_diagnostic_steps=bool(arguments.get("include_diagnostic_steps", True)),
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
+                min_authority_level=arguments.get("min_authority_level"),
+                consensus_filter=arguments.get("consensus_filter"),
+                include_restricted_evidence=bool(arguments.get("include_restricted_evidence", False)),
                 limit=int(arguments.get("limit", 20)),
                 language=arguments.get("language", "en"),
             )
@@ -341,6 +350,9 @@ class KnowFabricMcpServer:
                 model_family=arguments.get("model_family"),
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
+                min_authority_level=arguments.get("min_authority_level"),
+                consensus_filter=arguments.get("consensus_filter"),
+                include_restricted_evidence=bool(arguments.get("include_restricted_evidence", False)),
                 limit=int(arguments.get("limit", 20)),
                 language=arguments.get("language", "en"),
             )
@@ -364,6 +376,9 @@ class KnowFabricMcpServer:
                 model_family=arguments.get("model_family"),
                 min_confidence=arguments.get("min_confidence"),
                 min_trust_level=arguments.get("min_trust_level", "L4"),
+                min_authority_level=arguments.get("min_authority_level"),
+                consensus_filter=arguments.get("consensus_filter"),
+                include_restricted_evidence=bool(arguments.get("include_restricted_evidence", False)),
                 limit=int(arguments.get("limit", 20)),
                 language=arguments.get("language", "en"),
             )
