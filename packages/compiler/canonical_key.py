@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -349,6 +350,144 @@ def _sanity_check_groups(groups: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sane
 
 
+def _apply_terminology(
+    names: list[str],
+    terminology: dict[str, list[str]],
+) -> tuple[dict[str, str], list[str]]:
+    """Resolve names via terminology YAML. Returns (resolved_mapping, unresolved_names)."""
+    resolved: dict[str, str] = {}
+    remaining: list[str] = []
+    for name in names:
+        found = False
+        for ck, aliases in terminology.items():
+            if name in aliases:
+                resolved[name] = ck
+                found = True
+                break
+        if not found:
+            remaining.append(name)
+    return resolved, remaining
+
+
+def _llm_refine_cluster(
+    cluster_names: list[str],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    backend_name: str | None = None,
+) -> list[dict[str, Any]]:
+    """Ask LLM whether cluster names are same concept or should split by facet."""
+    backend = resolve_backend(backend_name=backend_name)
+    if backend is None or len(cluster_names) <= 1:
+        suggested_ck = _slugify_part(cluster_names[0]) if cluster_names else "unknown"
+        return [{"canonical_key": suggested_ck, "member_names": cluster_names,
+                 "rationale": "No LLM backend or single name; trusted embedding cluster"}]
+
+    type_prefix = _knowledge_type_prefix(knowledge_object_type)
+    system = (
+        f"You are normalizing {knowledge_object_type} names within a {equipment_class_id} domain. "
+        f"Given a small set of candidate names that an embedding model judged similar, decide: "
+        f"1. Which names refer to the EXACT same concept (same physical quantity, same facet)? "
+        f"2. Which names are DIFFERENT facets of a related concept (e.g. setpoint vs limit vs alarm)? "
+        f"Return strict JSON: "
+        f'{{"groups": [{{"canonical_key": "slug_name", "member_names": [...], "rationale": "..."}}]}} '
+        f"— split into separate groups when facets differ."
+    )
+    user = json.dumps({"candidate_names": cluster_names}, ensure_ascii=False)
+    messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
+
+    try:
+        payload = _request_json_completion(messages, backend, response_format={"type": "json_object"})
+        groups = payload.get("groups") or []
+        covered = set()
+        for g in groups:
+            for n in g.get("member_names", []):
+                covered.add(n)
+        missing = [n for n in cluster_names if n not in covered]
+        if missing:
+            for n in missing:
+                groups.append({"canonical_key": _slugify_part(n) or _hashed_slug(n),
+                               "member_names": [n], "rationale": "LLM did not assign; mechanical fallback"})
+        return groups
+    except Exception:
+        suggested_ck = _slugify_part(cluster_names[0]) if cluster_names else "unknown"
+        return [{"canonical_key": suggested_ck, "member_names": cluster_names,
+                 "rationale": "LLM refinement failed; trusted embedding cluster"}]
+
+
+def _group_via_embedding(
+    names: list[str],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    backend_name: str | None = None,
+) -> dict[str, str]:
+    """H2: embedding-first grouping — BGE-M3 → cosine clustering → LLM refine."""
+    cleaned = [str(n).strip() for n in names if str(n).strip()]
+    mapping: dict[str, str] = {}
+
+    # 1. Terminology YAML (high-priority override)
+    terminology = _load_terminology()
+    yaml_resolved, remaining = _apply_terminology(cleaned, terminology)
+    mapping.update(yaml_resolved)
+
+    if not remaining:
+        HASH_CACHE[_hash_inputs(cleaned, knowledge_object_type)] = mapping
+        return mapping
+
+    # 2. Embedding
+    from packages.compiler.embedding_client import embed_batch
+    embeddings = embed_batch(remaining)
+
+    # 3. Clustering
+    from packages.compiler.clustering import cluster_by_cosine
+    clusters = cluster_by_cosine(remaining, embeddings, threshold=0.78)
+
+    # 4. Per-cluster resolution
+    domain_slug = _slugify_part(domain_id)
+    equipment_slug = _slugify_part(equipment_class_id)
+    type_prefix = _knowledge_type_prefix(knowledge_object_type)
+
+    for cluster_names in clusters:
+        if len(cluster_names) == 1:
+            n = cluster_names[0]
+            slug = _slugify_part(n) or _hashed_slug(n)
+            ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
+            mapping[n] = ck
+            _register([n], ck)
+        elif len(cluster_names) <= 15:
+            sub_groups = _llm_refine_cluster(
+                cluster_names,
+                domain_id=domain_id,
+                equipment_class_id=equipment_class_id,
+                knowledge_object_type=knowledge_object_type,
+                backend_name=backend_name,
+            )
+            for sg in sub_groups:
+                sg_ck = sg.get("canonical_key", _slugify_part(cluster_names[0]))
+                # Ensure canonical_key has full prefix
+                if ":" not in sg_ck:
+                    sg_ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{sg_ck}"
+                for n in sg.get("member_names", []):
+                    mapping[n] = sg_ck
+                _register(sg.get("member_names", []), sg_ck)
+        else:
+            # Oversize cluster (rare): mechanical split
+            for n in cluster_names:
+                slug = _slugify_part(n) or _hashed_slug(n)
+                ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
+                mapping[n] = ck
+                _register([n], ck)
+
+    HASH_CACHE[_hash_inputs(cleaned, knowledge_object_type)] = mapping
+    return mapping
+
+
+USE_EMBEDDING_FIRST = os.environ.get("KNOWFABRIC_USE_EMBEDDING_FIRST", "1") == "1"
+
+
 def group_and_normalize(
     names: list[str],
     *,
@@ -359,39 +498,40 @@ def group_and_normalize(
 ) -> dict[str, str]:
     """Group names by concept and normalize each group to a canonical key.
 
-    Returns a mapping of name → canonical_key. Each unique concept gets one key.
-    Names that refer to different physical quantities get different keys.
+    H2 (docs/39): embedding-first by default (BGE-M3 → cosine clustering → LLM refine).
+    Set KNOWFABRIC_USE_EMBEDDING_FIRST=0 for E2 batched-LLM fallback.
     """
-    if not names:
-        return {}
-
     cleaned = [str(n).strip() for n in names if str(n).strip()]
     if not cleaned:
         return {}
 
-    # 1. Hash cache
     input_hash = _hash_inputs(cleaned, knowledge_object_type)
     if input_hash in HASH_CACHE:
         cached = HASH_CACHE[input_hash]
         if isinstance(cached, dict):
             return cached
 
-    # 2. LLM grouping with batching (E2 fix: prevent greedy merge at scale)
-    all_groups: list[dict[str, Any]] = []
-    for i in range(0, len(cleaned), BATCH_SIZE):
-        batch = cleaned[i:i + BATCH_SIZE]
-        batch_groups = _llm_group_and_normalize(
-            batch,
+    if USE_EMBEDDING_FIRST:
+        return _group_via_embedding(
+            cleaned,
             domain_id=domain_id,
             equipment_class_id=equipment_class_id,
             knowledge_object_type=knowledge_object_type,
             backend_name=backend_name,
         )
+
+    # Fallback: E2 batched-LLM with sanity checks
+    all_groups: list[dict[str, Any]] = []
+    for i in range(0, len(cleaned), BATCH_SIZE):
+        batch = cleaned[i:i + BATCH_SIZE]
+        batch_groups = _llm_group_and_normalize(
+            batch, domain_id=domain_id, equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type, backend_name=backend_name,
+        )
         batch_groups = _sanity_check_groups(batch_groups)
         batch_groups = _split_conflicting_groups(batch_groups, domain_id, equipment_class_id, knowledge_object_type)
         all_groups.extend(batch_groups)
 
-    # 3. Build name→key map, register all names
     mapping: dict[str, str] = {}
     for g in all_groups:
         ck = g["canonical_key"]
@@ -493,7 +633,9 @@ def resolve_canonical_key(
     # 1. Hash cache
     input_hash = _hash_inputs(cleaned, knowledge_object_type)
     if input_hash in HASH_CACHE:
-        return HASH_CACHE[input_hash]
+        cached = HASH_CACHE[input_hash]
+        if isinstance(cached, str):
+            return cached
 
     # 2. Registry lookup — if any names are already registered, reuse that key
     #    and register any new names under it too
@@ -534,7 +676,9 @@ def resolve_single_name(
 
     input_hash = _hash_inputs([cleaned], knowledge_object_type)
     if input_hash in HASH_CACHE:
-        return HASH_CACHE[input_hash]
+        cached = HASH_CACHE[input_hash]
+        if isinstance(cached, str):
+            return cached
 
     # Check terminology YAML first (deterministic, human-reviewed)
     terminology = _load_terminology()

@@ -89,9 +89,14 @@ def test_group_and_normalize_with_mock_oversized():
     assert len(mapping) == 50
 
 
-def test_batch_split():
-    """E2: 100 names → at least 4 batches (100/30 = 4)."""
+def test_batch_split(monkeypatch):
+    """E2: 100 names → at least 4 batches (100/30 = 4). Forces old LLM path."""
     _clear()
+    monkeypatch.setenv("KNOWFABRIC_USE_EMBEDDING_FIRST", "0")
+    import importlib
+    import packages.compiler.canonical_key as ck
+    importlib.reload(ck)
+
     names = [f"test_param_{i}" for i in range(100)]
 
     call_count = 0
@@ -100,10 +105,10 @@ def test_batch_split():
         call_count += 1
         return [{"canonical_key": f"key_{n}", "normalized_name": n, "member_names": [n], "rationale": "test"} for n in batch]
 
-    with patch("packages.compiler.canonical_key._llm_group_and_normalize", side_effect=mock_llm):
-        group_and_normalize(names, domain_id="hvac",
-                            equipment_class_id="centrifugal_chiller",
-                            knowledge_object_type="parameter_spec")
+    with patch.object(ck, "_llm_group_and_normalize", side_effect=mock_llm):
+        ck.group_and_normalize(names, domain_id="hvac",
+                               equipment_class_id="centrifugal_chiller",
+                               knowledge_object_type="parameter_spec")
 
     expected_batches = (len(names) + BATCH_SIZE - 1) // BATCH_SIZE
     assert call_count == expected_batches, f"Expected {expected_batches} batches, got {call_count}"
