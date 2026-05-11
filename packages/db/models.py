@@ -1,5 +1,5 @@
 """Database models for KnowFabric."""
-from sqlalchemy import Column, String, Integer, Text, Boolean, DateTime, ForeignKey, Index
+from sqlalchemy import Column, String, Integer, Text, Boolean, DateTime, ForeignKey, Index, JSON
 from sqlalchemy.sql import func
 from packages.db.session import Base
 
@@ -19,6 +19,19 @@ class Document(Base):
     source_batch_id = Column(String(64))
     parse_status = Column(String(32), default="pending")
     is_active = Column(Boolean, default=True, nullable=False)
+    authority_level = Column(String(32), nullable=True, default="unspecified")
+    publisher = Column(String(128), nullable=True)
+    standard_id = Column(String(128), nullable=True)
+    publication_year = Column(Integer, nullable=True)
+    revision = Column(String(64), nullable=True)
+    regulatory_scope = Column(String(32), nullable=True)
+    vendor_brand = Column(String(128), nullable=True)
+    vendor_model_family = Column(String(128), nullable=True)
+    applies_to_equipment_classes_json = Column(JSON, nullable=True)
+    language = Column(String(16), nullable=True, default="en")
+    authority_metadata_json = Column(JSON, nullable=True)
+    is_redistributable = Column(Boolean, default=False, nullable=False)
+    authority_review_status = Column(String(32), nullable=True, default="auto_suggested")
     import_time = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
@@ -59,6 +72,8 @@ class ContentChunk(Base):
     cleaned_text = Column(Text, nullable=False)
     text_excerpt = Column(String(512))
     chunk_type = Column(String(32), nullable=False)
+    standard_clause = Column(String(64), nullable=True)
+    clause_path = Column(JSON, nullable=True)
     evidence_anchor = Column(Text)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)

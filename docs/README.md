@@ -69,6 +69,7 @@ This directory contains the governance and standards documentation for KnowFabri
 35. **[31_semantic-retrieval-direction.md](31_semantic-retrieval-direction.md)** - Direction note explaining why KnowFabric should evolve toward ontology / knowledge-object retrieval with evidence trace-back, not generic chunk-similarity RAG.
 36. **[32_semantic-evaluation-framework.md](32_semantic-evaluation-framework.md)** - Direction note for evaluating KnowFabric as a semantic knowledge engine: parse quality, KO retrieval quality, evidence correctness, and end-to-end task success.
 37. **[33_llm-assisted-target-routing.md](33_llm-assisted-target-routing.md)** - Direction note for moving standard-reference target selection from heuristic-only routing to LLM-assisted document/section routing before extraction.
+38. **[34_compile-gap-and-execution-plan.md](34_compile-gap-and-execution-plan.md)** - **EXECUTION BRIEF for Codex.** Self-contained diagnosis of the compile gap, W1-W4+ execution plan, constraints, and do-not-do list. Read this to understand what to build next.
 
 ---
 
@@ -122,6 +123,7 @@ These documents govern the ontology-first rebuild track:
 - **31_semantic-retrieval-direction.md** - Direction note for semantic retrieval architecture and the role of similarity search
 - **32_semantic-evaluation-framework.md** - Direction note for layered semantic evaluation beyond answer-only grading
 - **33_llm-assisted-target-routing.md** - Direction note for LLM-assisted document mission and section topic routing before extraction
+- **34_compile-gap-and-execution-plan.md** - **EXECUTION BRIEF for Codex.** Gap diagnosis, W1-W4+ plan, constraints, do-not-do list
 
 ### Standards Documents
 
