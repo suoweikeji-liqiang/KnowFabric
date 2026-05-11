@@ -70,6 +70,11 @@ This directory contains the governance and standards documentation for KnowFabri
 36. **[32_semantic-evaluation-framework.md](32_semantic-evaluation-framework.md)** - Direction note for evaluating KnowFabric as a semantic knowledge engine: parse quality, KO retrieval quality, evidence correctness, and end-to-end task success.
 37. **[33_llm-assisted-target-routing.md](33_llm-assisted-target-routing.md)** - Direction note for moving standard-reference target selection from heuristic-only routing to LLM-assisted document/section routing before extraction.
 38. **[34_compile-gap-and-execution-plan.md](34_compile-gap-and-execution-plan.md)** - **EXECUTION BRIEF for Codex.** Self-contained diagnosis of the compile gap, W1-W4+ execution plan, constraints, and do-not-do list. Read this to understand what to build next.
+39. **[35_codex-followup-tasks.md](35_codex-followup-tasks.md)** - **[CLOSED]** Codex follow-up tasks T1-T4 (post W1-W3 sweep). Merger plumbing, MiMo batch, e2e smoke.
+40. **[36_merger-production-integration.md](36_merger-production-integration.md)** - **[CLOSED]** Rejects "corpus gap" misdiagnosis. F+E+G tasks: canonical_key rebuild, merger apply path, cross-brand verification.
+41. **[37_merger-production-stabilization.md](37_merger-production-stabilization.md)** - **[CLOSED]** R1-R5: Carrier recovery, merger default-on, empty-value fix, unit conversion, cross-brand regression.
+42. **[38_merger-recovery-and-grouping-fix.md](38_merger-recovery-and-grouping-fix.md)** - **[CLOSED]** E1-E5: DB cleanup, batching+sanity check, defensive merger, R3/R4 e2e, pg_dump governance.
+43. **[39_embedding-first-grouping.md](39_embedding-first-grouping.md)** - **ACTIVE** H1-H4: embedding-first grouping via BGE-M3 + cosine clustering. Replaces LLM batching.
 
 ---
 
@@ -124,6 +129,11 @@ These documents govern the ontology-first rebuild track:
 - **32_semantic-evaluation-framework.md** - Direction note for layered semantic evaluation beyond answer-only grading
 - **33_llm-assisted-target-routing.md** - Direction note for LLM-assisted document mission and section topic routing before extraction
 - **34_compile-gap-and-execution-plan.md** - **EXECUTION BRIEF for Codex.** Gap diagnosis, W1-W4+ plan, constraints, do-not-do list
+- **35_codex-followup-tasks.md** - [CLOSED] Codex follow-up tasks T1-T4
+- **36_merger-production-integration.md** - [CLOSED] Rejects "corpus gap", F+E+G tasks
+- **37_merger-production-stabilization.md** - [CLOSED] R1-R5 stabilization
+- **38_merger-recovery-and-grouping-fix.md** - [CLOSED] E1-E5 recovery + grouping fix
+- **39_embedding-first-grouping.md** - **ACTIVE** H1-H4 embedding-first grouping
 
 ### Standards Documents
 
