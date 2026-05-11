@@ -308,7 +308,7 @@ class SemanticRetrievalService:
         return sorted(
             knowledge_objects,
             key=lambda item: (
-                TRUST_RANK.get(item.trust_level, 99),
+                -TRUST_RANK.get(item.trust_level, -1),
                 -(item.confidence_score or 0.0),
                 item.knowledge_object_type,
                 item.canonical_key,
@@ -319,7 +319,7 @@ class SemanticRetrievalService:
         return sorted(
             knowledge_objects,
             key=lambda item: (
-                TRUST_RANK.get(item.trust_level, 99),
+                -TRUST_RANK.get(item.trust_level, -1),
                 -(item.confidence_score or 0.0),
                 item.knowledge_object_type,
                 item.canonical_key,

@@ -166,6 +166,7 @@ def process_document(
                 doc_id=doc_id, page_id=task["page_id"], page_no=task["page_no"],
                 image_path=task["image_path"], backend=backend,
             )
+            usage = row_dict.pop("_usage", {}) or {}
             row_dict.setdefault("created_at", datetime.now(timezone.utc))
             row_dict.setdefault("updated_at", datetime.now(timezone.utc))
             with counter_lock:
@@ -175,6 +176,7 @@ def process_document(
                     session_local.commit()
                 finally:
                     session_local.close()
+                counter.add(usage)
                 completed += 1
             return {"page_no": task["page_no"], "status": "ok", "image_type": row_dict["image_type"]}
         except Exception as exc:

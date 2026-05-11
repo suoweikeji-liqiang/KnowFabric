@@ -207,6 +207,7 @@ def extract_visual_evidence(
         "uncertainty_notes": parsed.get("uncertainty_notes"),
         "vl_model": backend.model,
         "confidence": parsed.get("confidence"),
+        "_usage": usage,
     }
 
 
