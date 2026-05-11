@@ -81,9 +81,6 @@ terms:
   - 最低冷冻水出水温度
   - 最低冷冻液体温度
   - chilled water leaving temperature setpoint
-  - External chilled water setpoint min
-  - Minimum chilled water leaving temperature
-  - 外部冷冻水设定范围上限
   chilled_water_entering_temperature_maximum:
   - Maximum chilled water entering temperature
   - 冷冻水最高进水温度

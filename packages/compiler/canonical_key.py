@@ -486,22 +486,23 @@ def _group_via_embedding(
     cleaned = [str(n).strip() for n in names if str(n).strip()]
     mapping: dict[str, str] = {}
 
-    # 1. Terminology YAML (high-priority override)
-    terminology = _load_terminology()
-    yaml_resolved, remaining = _apply_terminology(cleaned, terminology)
-    mapping.update(yaml_resolved)
-
-    if not remaining:
-        HASH_CACHE[_hash_inputs(cleaned, knowledge_object_type)] = mapping
+    if not cleaned:
         return mapping
 
-    # 2. Embedding
+    # 1. Embedding on ALL names (YAML is naming hint, not pre-filter)
     from packages.compiler.embedding_client import embed_batch
-    embeddings = embed_batch(remaining)
+    embeddings = embed_batch(cleaned)
 
-    # 3. Clustering
+    # 2. Clustering
     from packages.compiler.clustering import cluster_by_cosine
-    clusters = cluster_by_cosine(remaining, embeddings, threshold=0.78)
+    clusters = cluster_by_cosine(cleaned, embeddings, threshold=0.78)
+
+    # 3. Terminology YAML as naming hint (not grouping)
+    terminology = _load_terminology()
+    yaml_name_to_key = {}
+    for ck, aliases in terminology.items():
+        for a in aliases:
+            yaml_name_to_key[a] = ck
 
     # 4. Per-cluster resolution
     domain_slug = _slugify_part(domain_id)
@@ -511,14 +512,26 @@ def _group_via_embedding(
     for cluster_names in clusters:
         if len(cluster_names) == 1:
             n = cluster_names[0]
-            slug = _slugify_part(n) or _hashed_slug(n)
-            ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
+            yaml_key = yaml_name_to_key.get(n)
+            if yaml_key:
+                ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{yaml_key}"
+            else:
+                slug = _slugify_part(n) or _hashed_slug(n)
+                ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
             mapping[n] = ck
             _register([n], ck)
         elif len(cluster_names) <= 100:
-            # N3 fix: trust embedding cluster directly (LLM refinement too conservative)
-            suggested_ck = _slugify_part(cluster_names[0]) or _hashed_slug(cluster_names[0])
-            ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{suggested_ck}"
+            # N3: trust embedding cluster. Prefer YAML key as canonical_key name.
+            yaml_ck = None
+            for n in cluster_names:
+                if n in yaml_name_to_key:
+                    yaml_ck = yaml_name_to_key[n]
+                    break
+            if yaml_ck:
+                ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{yaml_ck}"
+            else:
+                suggested_ck = _slugify_part(cluster_names[0]) or _hashed_slug(cluster_names[0])
+                ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{suggested_ck}"
             for n in cluster_names:
                 mapping[n] = ck
             _register(cluster_names, ck)
