@@ -11,10 +11,12 @@ from packages.compiler.contracts import extract_compile_metadata, public_health_
 from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
 from packages.db.models import Document
 from packages.db.models_v2 import (
+    DocumentPageImageV2,
     KnowledgeObjectEvidenceV2,
     KnowledgeObjectV2,
     OntologyAliasV2,
     OntologyMappingV2,
+    VisualEvidenceAnchorV2,
 )
 
 TRUST_RANK = {"L1": 0, "L2": 1, "L3": 2, "L4": 3}
@@ -361,6 +363,36 @@ class SemanticRetrievalService:
             )
         return grouped
 
+    def _load_visual_evidence_map(
+        self,
+        db: Session,
+        knowledge_object_ids: list[str],
+    ) -> dict[str, list[dict[str, Any]]]:
+        try:
+            rows = (
+                db.query(VisualEvidenceAnchorV2, DocumentPageImageV2)
+                .join(DocumentPageImageV2, DocumentPageImageV2.page_image_id == VisualEvidenceAnchorV2.page_image_id)
+                .filter(VisualEvidenceAnchorV2.knowledge_object_id.in_(knowledge_object_ids))
+                .order_by(VisualEvidenceAnchorV2.knowledge_object_id, VisualEvidenceAnchorV2.page_no)
+                .all()
+            )
+        except Exception:
+            return defaultdict(list)
+        grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for anchor, page_image in rows:
+            grouped[anchor.knowledge_object_id].append({
+                "page_image_id": page_image.page_image_id,
+                "page_no": page_image.page_no,
+                "bbox": anchor.bbox,
+                "image_path": page_image.image_path if getattr(page_image, "image_path", None) else None,
+                "image_type": page_image.image_type,
+                "vl_summary": page_image.vl_summary,
+                "model_used": anchor.model_used,
+                "confidence": anchor.confidence,
+                "evidence_role": anchor.evidence_role,
+            })
+        return grouped
+
     def _build_semantic_collection(
         self,
         db: Session,
@@ -371,11 +403,11 @@ class SemanticRetrievalService:
         *,
         include_restricted_evidence: bool = False,
     ) -> dict[str, Any]:
+        ko_ids = [item.knowledge_object_id for item in knowledge_objects]
         evidence_map = self._load_evidence_map(
-            db,
-            [item.knowledge_object_id for item in knowledge_objects],
-            include_restricted_evidence=include_restricted_evidence,
+            db, ko_ids, include_restricted_evidence=include_restricted_evidence,
         )
+        visual_evidence_map = self._load_visual_evidence_map(db, ko_ids)
         labels = ontology_class.get("labels") or {}
         label = labels.get(language) or ontology_class["primary_label"]
         items: list[dict[str, Any]] = []
@@ -416,6 +448,7 @@ class SemanticRetrievalService:
                     "conflict_summary": item.conflict_summary,
                     "redistribution_restricted": any_restricted,
                     "evidence": evidence,
+                    "visual_evidence": visual_evidence_map.get(item.knowledge_object_id, []),
                 }
             )
         return {

@@ -15,10 +15,12 @@ from apps.api.main import app
 from packages.db.models import ContentChunk, Document, DocumentPage
 from packages.db.models_v2 import (
     ChunkOntologyAnchorV2,
+    DocumentPageImageV2,
     KnowledgeObjectEvidenceV2,
     KnowledgeObjectV2,
     OntologyAliasV2,
     OntologyMappingV2,
+    VisualEvidenceAnchorV2,
 )
 from packages.db.session import Base, get_db
 from packages.domain_kit_v2.loader import load_domain_package_v2
@@ -41,6 +43,8 @@ def _build_tables() -> list:
         ChunkOntologyAnchorV2.__table__,
         KnowledgeObjectV2.__table__,
         KnowledgeObjectEvidenceV2.__table__,
+        DocumentPageImageV2.__table__,
+        VisualEvidenceAnchorV2.__table__,
     ]
 
 
