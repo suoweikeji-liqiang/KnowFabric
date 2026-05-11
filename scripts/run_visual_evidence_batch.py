@@ -77,6 +77,7 @@ def process_document(
     session,
     *,
     dry_run: bool = False,
+    max_pages: int = 0,
     output_dir: Path | None = None,
 ) -> dict[str, Any]:
     doc_id = doc_row.get("doc_id", "")
@@ -119,7 +120,9 @@ def process_document(
         return {"doc_id": doc_id, "status": "skipped", "reason": "no visual pages found by triage"}
 
     results = []
-    for c in candidates:
+    pages_to_process = candidates[:max_pages] if max_pages > 0 else candidates
+    total = len(pages_to_process)
+    for idx, c in enumerate(pages_to_process):
         page_no = c["page_no"]
         page_id = c["page_id"]
 
@@ -141,6 +144,7 @@ def process_document(
         try:
             render_page(pdf_path, page_no, image_path)
         except subprocess.CalledProcessError as exc:
+            print(f"\n  [{idx+1}/{total}] p{page_no} render FAILED: {exc}")
             results.append({"page_no": page_no, "status": "failed", "error": f"render: {exc}"})
             continue
 
@@ -153,6 +157,7 @@ def process_document(
                 backend=backend,
             )
         except Exception as exc:
+            print(f"\n  [{idx+1}/{total}] p{page_no} MiMo FAILED: {exc}")
             results.append({"page_no": page_no, "status": "failed", "error": str(exc)})
             continue
 
@@ -165,6 +170,7 @@ def process_document(
             "status": "ok",
             "image_type": row_dict["image_type"],
         })
+        print(f"  [{idx+1}/{total}] p{page_no} {row_dict['image_type']} ok | tokens: {counter.total_tokens:,}")
 
     session.commit()
     return {
@@ -178,23 +184,18 @@ def process_document(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--inventory", required=True, help="Path to source inventory CSV")
+    parser.add_argument("--inventory", help="Path to source inventory CSV")
+    parser.add_argument("--doc-ids", help="Comma-separated doc_ids to process (DB mode, skips CSV)")
     parser.add_argument("--max-docs", type=int, default=0, help="Max docs to process (0=all)")
+    parser.add_argument("--max-pages-per-doc", type=int, default=0, help="Max pages per doc (0=all)")
     parser.add_argument("--dry-run", action="store_true", help="Triage only, no MiMo calls")
     parser.add_argument("--output-dir", help="Output directory for reports")
     args = parser.parse_args(argv)
 
-    backend = resolve_backend()
+    backend = resolve_backend(backend_name="mimo-v2-omni")
     if backend is None and not args.dry_run:
-        print("ERROR: No MiMo backend configured. Set llm_backend_config_path or env vars.")
+        print("ERROR: No MiMo backend configured.")
         return 1
-
-    inventory = load_inventory(Path(args.inventory))
-    low_text_rows = [
-        r for r in inventory
-        if (r.get("text_quality") or r.get("ocr_quality") or "") in ("low_or_no_text", "partial_text")
-    ]
-    print(f"Inventory: {len(inventory)} total, {len(low_text_rows)} low-text candidates")
 
     counter = CumulativeTokenCounter()
     session = SessionLocal()
@@ -202,8 +203,46 @@ def main(argv: list[str] | None = None) -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 
+    rows_to_process = []
+
+    if args.doc_ids:
+        # DB mode: process specific doc_ids
+        from packages.db.models import Document
+        import csv as _csv
+        # Load inventory to map doc_ids to actual PDF paths
+        inv_path = Path("workspace/hvac_source_inventory/20260507T083207Z/source_inventory.csv")
+        inv_map = {}
+        if inv_path.exists():
+            for row in _csv.DictReader(open(inv_path)):
+                inv_map[row.get("file_name", "")] = row.get("path", "")
+
+        doc_ids = [d.strip() for d in args.doc_ids.split(",") if d.strip()]
+        for did in doc_ids:
+            doc = session.query(Document).filter(Document.doc_id == did).first()
+            if doc:
+                pdf_path = inv_map.get(doc.file_name, "") or doc.storage_path
+                rows_to_process.append({
+                    "doc_id": did,
+                    "file_name": doc.file_name,
+                    "text_quality": "low_or_no_text",
+                    "pdf_path": pdf_path,
+                })
+        print(f"DB mode: {len(rows_to_process)} docs by doc_id")
+    elif args.inventory:
+        inventory = load_inventory(Path(args.inventory))
+        low_text_rows = [
+            r for r in inventory
+            if (r.get("text_quality") or r.get("ocr_quality") or "") in ("low_or_no_text", "partial_text")
+        ]
+        rows_to_process = low_text_rows
+        print(f"CSV mode: {len(inventory)} total, {len(rows_to_process)} low-text candidates")
+    else:
+        print("ERROR: --inventory or --doc-ids required")
+        return 1
+
+    rows_to_process = rows_to_process[:args.max_docs] if args.max_docs > 0 else rows_to_process
+
     doc_results = []
-    rows_to_process = low_text_rows[:args.max_docs] if args.max_docs > 0 else low_text_rows
 
     try:
         for i, row in enumerate(rows_to_process):
@@ -213,6 +252,7 @@ def main(argv: list[str] | None = None) -> int:
             result = process_document(
                 row, backend, counter, session,
                 dry_run=args.dry_run,
+                max_pages=args.max_pages_per_doc,
                 output_dir=output_dir,
             )
             elapsed = time.monotonic() - start

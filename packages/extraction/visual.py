@@ -171,6 +171,7 @@ def extract_visual_evidence(
     parsed, raw_text, usage = call_mimo(
         image_url,
         backend,
+        timeout_seconds=backend.timeout_seconds,
         request_recorder=request_recorder,
     )
 
