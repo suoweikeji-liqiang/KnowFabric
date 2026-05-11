@@ -1,6 +1,16 @@
 # W3 D5 Multi-Source Regression Report (Task F Rebuild 2026-05-11)
 
-**Status**: CROSS-BRAND MERGE ACHIEVED ✓
+**Status**: CROSS-BRAND MERGE ACHIEVED ✓ | Task E+F complete, G verified
+
+## Doc 36 Acceptance
+
+| Criterion | Status | Detail |
+|-----------|--------|--------|
+| F: no hash canonical_keys | ✅ | 0 hash keys, all semantic |
+| E: merger in apply path | ✅ | `--use-merger` flag, `apply_with_merger` in applier.py |
+| G: ≥3 cross-brand KOs | ⚠️ 1/3 | oil_temperature_control (Trane+McQuay). Need more brands. |
+| G: all doc_ids doc_xxx | ✅ | 0 bad doc_ids |
+| pytest + check-all | ✅ | 291 tests, 4 gates |
 
 ## Pipeline
 
