@@ -6,6 +6,19 @@ from pydantic_settings import BaseSettings
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 ENV_FILE = ROOT_DIR / ".env"
+ENV_LLM_LOCAL = ROOT_DIR / ".env.llm.local"
+
+# Load .env.llm.local if present (MiMo API keys etc.)
+if ENV_LLM_LOCAL.exists():
+    with open(ENV_LLM_LOCAL, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, _, value = line.partition("=")
+                key = key.strip()
+                value = value.strip().strip('"').strip("'")
+                if key and value and key not in __import__("os").environ:
+                    __import__("os").environ[key] = value
 
 
 class Settings(BaseSettings):
