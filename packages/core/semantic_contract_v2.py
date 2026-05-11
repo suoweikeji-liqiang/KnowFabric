@@ -39,7 +39,7 @@ class EquipmentClassRef(SemanticBaseModel):
 
 
 class EvidenceCitation(SemanticBaseModel):
-    """Traceability citation for a semantic knowledge response."""
+    """Traceability citation for a semantic knowledge response (v0.2 authority-aware)."""
 
     doc_id: str
     doc_name: str | None = None
@@ -47,10 +47,13 @@ class EvidenceCitation(SemanticBaseModel):
     chunk_id: str
     evidence_text: str
     evidence_role: Literal["primary", "supporting"] = "supporting"
+    authority_role: str | None = None
+    evidence_citation: str | None = None
+    redistribution_restricted: bool = False
 
 
 class SemanticKnowledgeObject(SemanticBaseModel):
-    """Structured semantic knowledge object attached to an ontology anchor."""
+    """Structured semantic knowledge object attached to an ontology anchor (v0.2 authority-aware)."""
 
     knowledge_object_id: str
     knowledge_object_type: KnowledgeObjectType
@@ -67,6 +70,11 @@ class SemanticKnowledgeObject(SemanticBaseModel):
     compilation_method: str | None = None
     compiler_version: str | None = None
     health_flags: list[str] = Field(default_factory=list)
+    consensus_state: str | None = None
+    highest_authority_level: str | None = None
+    authority_layers: list[dict[str, Any]] = Field(default_factory=list)
+    conflict_summary: str | None = None
+    redistribution_restricted: bool = False
     evidence: list[EvidenceCitation] = Field(min_length=1)
 
 
@@ -273,6 +281,19 @@ MCP_TOOL_GET_FAULT_KNOWLEDGE: dict[str, Any] = {
                 "default": "en",
                 "description": "Preferred response language for display fields such as labels, titles, and summaries.",
             },
+            "min_authority_level": {
+                "type": "string",
+                "description": "Optional minimum authority level filter (e.g. 'oem_manual', 'industry_standard').",
+            },
+            "consensus_filter": {
+                "type": "string",
+                "description": "Optional consensus state filter (e.g. 'single_source', 'agreed', 'material_conflict').",
+            },
+            "include_restricted_evidence": {
+                "type": "boolean",
+                "default": False,
+                "description": "When true, return verbatim evidence from restricted documents.",
+            },
         },
         "required": ["domain_id", "equipment_class_id"],
     },
@@ -333,6 +354,19 @@ MCP_TOOL_GET_PARAMETER_PROFILE: dict[str, Any] = {
                 "type": "string",
                 "default": "en",
                 "description": "Preferred response language for display fields such as labels, titles, and summaries.",
+            },
+            "min_authority_level": {
+                "type": "string",
+                "description": "Optional minimum authority level filter.",
+            },
+            "consensus_filter": {
+                "type": "string",
+                "description": "Optional consensus state filter.",
+            },
+            "include_restricted_evidence": {
+                "type": "boolean",
+                "default": False,
+                "description": "When true, return verbatim evidence from restricted documents.",
             },
         },
         "required": ["domain_id", "equipment_class_id"],
