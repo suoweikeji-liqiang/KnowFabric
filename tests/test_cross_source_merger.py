@@ -203,8 +203,11 @@ def test_multi_facet_detection():
     assert "setpoint" in (summary or "").lower()
 
 
-def test_merger_sanity_pathological_split():
-    """E3: defensive sanity forces split of oversized groups."""
+def test_merger_sanity_pathological_split(monkeypatch):
+    """E3: defensive sanity forces split of oversized groups (LLM path only)."""
+    monkeypatch.setenv("KNOWFABRIC_USE_EMBEDDING_FIRST", "0")
+    import importlib, packages.compiler.cross_source_merger as ckmod
+    importlib.reload(ckmod)
     from packages.compiler.cross_source_merger import merge_candidates, MERGER_MAX_GROUP_CANDIDATES
     from unittest.mock import patch
 
@@ -222,8 +225,8 @@ def test_merger_sanity_pathological_split():
     # Mock group_and_normalize to return all-in-one bad key
     bad_key = "bad_merge_key"
     name_map = {c["title"]: bad_key for c in candidates}
-    with patch("packages.compiler.cross_source_merger.group_and_normalize", return_value=name_map):
-        result = merge_candidates(
+    with patch.object(ckmod, "group_and_normalize", return_value=name_map):
+        merged_result = ckmod.merge_candidates(
             candidates, domain_id="hvac",
             equipment_class_id="centrifugal_chiller",
             ontology_class_key="hvac:centrifugal_chiller",
@@ -231,7 +234,7 @@ def test_merger_sanity_pathological_split():
         )
 
     # Sanity check should split them into multiple KOs
-    unique_keys = {ko["canonical_key"] for ko in result}
+    unique_keys = {ko["canonical_key"] for ko in merged_result}
     assert len(unique_keys) >= MERGER_MAX_GROUP_CANDIDATES, \
         f"Expected ≥{MERGER_MAX_GROUP_CANDIDATES} unique keys after split, got {len(unique_keys)}"
     assert _values_agree(0, 0) is True

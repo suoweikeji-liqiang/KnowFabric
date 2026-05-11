@@ -134,7 +134,7 @@ FACET_KEYWORDS = [
     ("alarm",    ["alarm", "warning", "trip", "shutdown", "报警", "保护"]),
     ("range",    ["range", "between", "from", "范围"]),
 ]
-MERGER_MAX_GROUP_CANDIDATES = 5
+MERGER_MAX_GROUP_CANDIDATES = 5  # E3: only for LLM path. Embedding path handles grouping via clustering.
 
 
 def _detect_facets(layers: list[dict]) -> set[str]:
@@ -265,19 +265,22 @@ def merge_candidates(
     for c, ck in zip(candidates, canonical_keys):
         groups.setdefault(ck, []).append(c)
 
-    # E3 defensive sanity: force-split pathological groups
-    pathological_keys = [k for k, v in groups.items() if len(v) > MERGER_MAX_GROUP_CANDIDATES]
-    if pathological_keys:
-        for c, ck in zip(candidates, canonical_keys):
-            if ck in pathological_keys:
-                payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
-                fallback_name = payload.get("parameter_name") or c.get("title", "unknown")
-                slug = _slugify_part(fallback_name) or _hashed_slug(fallback_name)
-                idx = candidates.index(c)
-                canonical_keys[idx] = slug
-        groups = {}
-        for c, ck in zip(candidates, canonical_keys):
-            groups.setdefault(ck, []).append(c)
+    # E3 defensive sanity: force-split pathological groups (LLM path only)
+    # Embedding-first path handles grouping via clustering — trust it.
+    import os as _os
+    if _os.environ.get("KNOWFABRIC_USE_EMBEDDING_FIRST", "1") != "1":
+        pathological_keys = [k for k, v in groups.items() if len(v) > MERGER_MAX_GROUP_CANDIDATES]
+        if pathological_keys:
+            for c, ck in zip(candidates, canonical_keys):
+                if ck in pathological_keys:
+                    payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
+                    fallback_name = payload.get("parameter_name") or c.get("title", "unknown")
+                    slug = _slugify_part(fallback_name) or _hashed_slug(fallback_name)
+                    idx = candidates.index(c)
+                    canonical_keys[idx] = slug
+            groups = {}
+            for c, ck in zip(candidates, canonical_keys):
+                groups.setdefault(ck, []).append(c)
 
     # Step 2: Build merged KOs
     merged = []
@@ -343,6 +346,14 @@ def merge_candidates(
         authority_summary = {"layers": layers}
         first_payload = group[0].get("structured_payload") or group[0].get("structured_payload_candidate") or {}
 
+        # Collect all source names for N1 name-based matching
+        source_names = []
+        for cand in group:
+            payload = cand.get("structured_payload") or cand.get("structured_payload_candidate") or {}
+            name = payload.get("parameter_name") or cand.get("title", "")
+            if name:
+                source_names.append(str(name).strip())
+
         merged.append({
             "domain_id": domain_id,
             "ontology_class_key": ontology_class_key,
@@ -350,6 +361,7 @@ def merge_candidates(
             "knowledge_object_type": knowledge_object_type,
             "canonical_key": canonical_key,
             "title": title,
+            "_source_names": list(dict.fromkeys(source_names)),
             "summary": summary_text,
             "structured_payload_json": first_payload,
             "applicability_json": group[0].get("applicability", {}),
@@ -467,14 +479,10 @@ def merge_with_existing(
         canonical_key = ko_dict["canonical_key"]
         evidence_rows = ko_dict.pop("evidence_rows", [])
 
-        # N1: name-based matching — find existing KOs by parameter_name
-        authority_layers = (ko_dict.get("authority_summary_json") or {}).get("layers", [])
-        member_names = set()
-        for layer in authority_layers:
-            vs = layer.get("value_summary", "")
-            if vs:
-                member_names.add(str(vs))
-        member_names.add(ko_dict.get("title", ""))
+        # N1: name-based matching — use _source_names from merge_candidates
+        member_names = set(ko_dict.pop("_source_names", []))
+        if not member_names:
+            member_names.add(ko_dict.get("title", ""))
 
         matched_ids = set()
         for name in member_names:
@@ -485,8 +493,15 @@ def merge_with_existing(
             # N1: multiple old KOs merge into one → keep earliest, migrate others
             target_id = min(matched_ids)
             ko_dict["knowledge_object_id"] = target_id
-            # Migrate evidence from other matched KOs
+            # Migrate evidence from other matched KOs (skip duplicates)
             for src_id in matched_ids - {target_id}:
+                # Delete duplicate evidence in target first, then migrate
+                session.execute(
+                    __import__('sqlalchemy').text(
+                        "DELETE FROM knowledge_object_evidence WHERE knowledge_object_id = :target "
+                        "AND (chunk_id, evidence_role) IN (SELECT chunk_id, evidence_role FROM knowledge_object_evidence WHERE knowledge_object_id = :src)"
+                    ), {"target": target_id, "src": src_id}
+                )
                 session.execute(
                     __import__('sqlalchemy').text(
                         "UPDATE knowledge_object_evidence SET knowledge_object_id = :target WHERE knowledge_object_id = :src"

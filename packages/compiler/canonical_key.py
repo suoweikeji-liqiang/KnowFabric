@@ -536,18 +536,20 @@ def _group_via_embedding(
                 mapping[n] = ck
             _register(cluster_names, ck)
         else:
-            # K3: Oversize cluster (>100) → force LLM split directly
-            sub_groups = _llm_refine_cluster(
-                cluster_names, domain_id=domain_id, equipment_class_id=equipment_class_id,
-                knowledge_object_type=knowledge_object_type, backend_name=backend_name,
-            )
-            for sg in sub_groups:
-                sg_ck = sg.get("canonical_key", _slugify_part(cluster_names[0]))
-                if ":" not in sg_ck:
-                    sg_ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{sg_ck}"
-                for n in sg.get("member_names", []):
-                    mapping[n] = sg_ck
-                _register(sg.get("member_names", []), sg_ck)
+            # Oversize cluster (>100): trust embedding, use best YAML name as key
+            yaml_ck = None
+            for n in cluster_names:
+                if n in yaml_name_to_key:
+                    yaml_ck = yaml_name_to_key[n]
+                    break
+            if yaml_ck:
+                ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{yaml_ck}"
+            else:
+                suggested_ck = _slugify_part(cluster_names[0]) or _hashed_slug(cluster_names[0])
+                ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{suggested_ck}"
+            for n in cluster_names:
+                mapping[n] = ck
+            _register(cluster_names, ck)
 
     HASH_CACHE[_hash_inputs(cleaned, knowledge_object_type)] = mapping
     return mapping
