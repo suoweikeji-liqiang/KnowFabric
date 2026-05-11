@@ -25,6 +25,7 @@ REGISTRY_PATH = Path(__file__).resolve().parent / "canonical_key_registry.yaml"
 HASH_CACHE: dict[str, str] = {}
 
 CANONICAL_KEY_TASK = "canonical_key_normalization"
+CONCEPT_GROUP_TASK = "concept_group_and_normalize"
 
 
 def _load_registry() -> dict[str, Any]:
@@ -77,25 +78,43 @@ def _build_prompt(
     key_format = f"{domain_slug}:{equipment_slug}:{type_prefix}:<normalized_name>"
 
     system_prompt = (
-        "You are a domain knowledge engineer normalizing industrial equipment parameter names "
-        "into stable, machine-friendly canonical keys. Your output must be deterministic.\n\n"
-        "Rules:\n"
-        "1. canonical_key must be lowercase, underscores only, no spaces or punctuation.\n"
-        "2. Prefer standard industry terminology (ASHRAE, IEC, ISO conventions).\n"
-        "3. Merge synonyms aggressively: 'CHWS temp', 'chilled water supply temperature', "
-        "'leaving chilled water temp' are the same concept.\n"
-        "4. The normalized_name part should be concise (3-5 words max).\n"
-        "5. Do NOT invent new distinctions. If inputs are clearly the same concept, merge them.\n\n"
-        "Return only: {\"canonical_key\": \"...\", \"normalized_name\": \"...\", \"rationale\": \"...\"}"
+        "You are a domain knowledge engineer normalizing industrial HVAC equipment parameter "
+        "names into stable, machine-friendly canonical keys.\n\n"
+        "CRITICAL RULES — violations will corrupt the knowledge base:\n"
+        "1. Different physical quantities MUST stay in different groups, even if their names "
+        "share words. Examples of WRONG merges:\n"
+        '   - "Differential to Start" + "Differential to Stop" → DIFFERENT (start vs stop threshold)\n'
+        '   - "Return Maximum Reset" + "Outdoor Maximum Reset" → DIFFERENT (return water vs outdoor air)\n'
+        '   - "Front Panel X" + "External X" → DIFFERENT (local panel vs remote input)\n'
+        '   - "Return Reset Ratio" + "Return Maximum Reset" → DIFFERENT (ratio vs absolute limit)\n'
+        "2. Cross-language synonyms ARE the same concept and SHOULD be merged:\n"
+        '   - "Chilled Water Setpoint" + "冷冻水出水温度设定" → SAME\n'
+        '   - "Current Limit" + "电流限制" → SAME\n'
+        "3. Same quantity with different unit (F vs C) IS the same concept — merge.\n"
+        "4. canonical_key format: lowercase, underscores only, concise (3-5 words).\n"
+        "5. Prefer ASHRAE/IEC standard terminology.\n"
+        "6. When uncertain whether two names are the same quantity, keep them SEPARATE.\n\n"
+        "Return JSON with groups array. Each group has: canonical_key, normalized_name, "
+        "member_names (from input), rationale (one sentence)."
     )
     user_prompt = json.dumps(
         {
-            "task": CANONICAL_KEY_TASK,
+            "task": CONCEPT_GROUP_TASK,
             "domain_id": domain_id,
             "equipment_class_id": equipment_class_id,
             "knowledge_object_type": knowledge_object_type,
             "key_format": key_format,
             "input_names": names,
+            "required_output": {
+                "groups": [
+                    {
+                        "canonical_key": key_format,
+                        "normalized_name": "concise_slug",
+                        "member_names": ["name1", "name2"],
+                        "rationale": "why these are the same concept",
+                    }
+                ]
+            },
         },
         ensure_ascii=False,
     )
@@ -103,6 +122,144 @@ def _build_prompt(
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
     ]
+
+
+def _llm_group_and_normalize(
+    names: list[str],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    backend_name: str | None = None,
+) -> list[dict[str, Any]]:
+    """Call LLM (temperature 0) to group names by concept and assign canonical keys.
+
+    Returns list of group dicts: {canonical_key, normalized_name, member_names, rationale}.
+    """
+    backend = resolve_backend(backend_name=backend_name)
+    if backend is None:
+        raise RuntimeError("No LLM backend available for canonical key normalization")
+
+    messages = _build_prompt(
+        names,
+        domain_id=domain_id,
+        equipment_class_id=equipment_class_id,
+        knowledge_object_type=knowledge_object_type,
+    )
+
+    try:
+        body = _request_json_completion(
+            messages,
+            backend,
+            response_format={"type": "json_object"},
+        )
+    except Exception:
+        body = {}
+
+    groups = body.get("groups")
+    if not isinstance(groups, list) or not groups:
+        # Fallback: all names in one group with mechanical key
+        domain_slug = _slugify_part(domain_id)
+        equipment_slug = _slugify_part(equipment_class_id)
+        type_prefix = _knowledge_type_prefix(knowledge_object_type)
+        slug = _slugify_part(names[0]) if names else "unknown"
+        if not slug:
+            slug = _hashed_slug(names[0]) if names else "unknown"
+        return [{
+            "canonical_key": f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}",
+            "normalized_name": slug,
+            "member_names": list(names),
+            "rationale": "Mechanical fallback — LLM returned no groups",
+        }]
+
+    # Validate and clean groups
+    validated = []
+    seen_names = set()
+    for g in groups:
+        if not isinstance(g, dict):
+            continue
+        ck = str(g.get("canonical_key") or "").strip()
+        members = g.get("member_names") or []
+        if not isinstance(members, list):
+            members = [str(members)]
+        members = [str(m) for m in members if str(m).strip()]
+        members = [m for m in members if m not in seen_names]
+        if not ck or not members:
+            continue
+        for m in members:
+            seen_names.add(m)
+        validated.append({
+            "canonical_key": ck,
+            "normalized_name": str(g.get("normalized_name", "") or ""),
+            "member_names": members,
+            "rationale": str(g.get("rationale", "") or ""),
+        })
+
+    # Any names not in any group → each gets its own mechanical group
+    domain_slug = _slugify_part(domain_id)
+    equipment_slug = _slugify_part(equipment_class_id)
+    type_prefix = _knowledge_type_prefix(knowledge_object_type)
+    for name in names:
+        if name not in seen_names:
+            slug = _slugify_part(name)
+            if not slug:
+                slug = _hashed_slug(name)
+            validated.append({
+                "canonical_key": f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}",
+                "normalized_name": slug,
+                "member_names": [name],
+                "rationale": "Unmatched by LLM — mechanical key",
+            })
+
+    return validated
+
+
+def group_and_normalize(
+    names: list[str],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    backend_name: str | None = None,
+) -> dict[str, str]:
+    """Group names by concept and normalize each group to a canonical key.
+
+    Returns a mapping of name → canonical_key. Each unique concept gets one key.
+    Names that refer to different physical quantities get different keys.
+    """
+    if not names:
+        return {}
+
+    cleaned = [str(n).strip() for n in names if str(n).strip()]
+    if not cleaned:
+        return {}
+
+    # 1. Hash cache
+    input_hash = _hash_inputs(cleaned, knowledge_object_type)
+    if input_hash in HASH_CACHE:
+        cached = HASH_CACHE[input_hash]
+        if isinstance(cached, dict):
+            return cached
+
+    # 2. LLM grouping + normalization
+    groups = _llm_group_and_normalize(
+        cleaned,
+        domain_id=domain_id,
+        equipment_class_id=equipment_class_id,
+        knowledge_object_type=knowledge_object_type,
+        backend_name=backend_name,
+    )
+
+    # 3. Build name→key map, register all names
+    mapping: dict[str, str] = {}
+    for g in groups:
+        ck = g["canonical_key"]
+        _register(g["member_names"], ck)
+        for name in g["member_names"]:
+            mapping[name] = ck
+
+    HASH_CACHE[input_hash] = mapping
+    return mapping
 
 
 def _llm_normalize(
