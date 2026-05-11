@@ -62,8 +62,11 @@ def test_sanity_check_passes_normal_group():
     assert result[0]["canonical_key"] == "chilled_water_setpoint"
 
 
-def test_group_and_normalize_with_mock_oversized():
+def test_group_and_normalize_with_mock_oversized(monkeypatch):
     """E2 integration: mock LLM returns 280-member group → sanity splits it."""
+    monkeypatch.setenv("KNOWFABRIC_USE_EMBEDDING_FIRST", "0")
+    import importlib, packages.compiler.canonical_key as ck
+    importlib.reload(ck)
     _clear()
     names = [f"param_{i}" for i in range(50)]
     mock_groups = [{
@@ -73,9 +76,8 @@ def test_group_and_normalize_with_mock_oversized():
         "rationale": "mock pathological",
     }]
 
-    with patch("packages.compiler.canonical_key._llm_group_and_normalize",
-               return_value=mock_groups):
-        mapping = group_and_normalize(
+    with patch.object(ck, "_llm_group_and_normalize", return_value=mock_groups):
+        mapping = ck.group_and_normalize(
             names, domain_id="hvac",
             equipment_class_id="centrifugal_chiller",
             knowledge_object_type="parameter_spec",

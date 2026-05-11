@@ -443,7 +443,7 @@ def _group_via_embedding(
 
     # 3. Clustering
     from packages.compiler.clustering import cluster_by_cosine
-    clusters = cluster_by_cosine(remaining, embeddings, threshold=0.78)
+    clusters = cluster_by_cosine(remaining, embeddings, threshold=0.85)
 
     # 4. Per-cluster resolution
     domain_slug = _slugify_part(domain_id)
@@ -457,7 +457,7 @@ def _group_via_embedding(
             ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
             mapping[n] = ck
             _register([n], ck)
-        elif len(cluster_names) <= 15:
+        elif len(cluster_names) <= 50:
             sub_groups = _llm_refine_cluster(
                 cluster_names,
                 domain_id=domain_id,
