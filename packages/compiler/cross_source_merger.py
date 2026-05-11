@@ -435,12 +435,15 @@ def merge_with_existing(
         .all()
     )
 
-    # Convert existing KOs to candidate dicts
+    # N1: name-based matching (not canonical_key)
     existing_candidates = []
-    ko_id_map: dict[str, str] = {}  # canonical_key → knowledge_object_id
+    existing_by_name: dict[str, str] = {}  # parameter_name → knowledge_object_id
     for ko in existing_kos:
         existing_candidates.append(_ko_to_candidate(ko, session=session))
-        ko_id_map[ko.canonical_key] = ko.knowledge_object_id
+        payload = ko.structured_payload_json or {}
+        name = payload.get("parameter_name") or ko.title or ""
+        if name:
+            existing_by_name[str(name).strip()] = ko.knowledge_object_id
 
     # L1 diagnostic: dump what reaches the merger
     _dump_merger_input(existing_candidates, new_candidates, equipment_class_id, knowledge_object_type)
@@ -458,17 +461,48 @@ def merge_with_existing(
         backend_name=backend_name,
     )
 
-    stats = {"new_merged": 0, "updated_existing": 0, "material_conflicts": 0}
+    stats = {"new_merged": 0, "updated_existing": 0, "merged_existing": 0, "material_conflicts": 0}
 
     for ko_dict in merged:
         canonical_key = ko_dict["canonical_key"]
         evidence_rows = ko_dict.pop("evidence_rows", [])
 
-        # Reuse existing KO ID or generate new one
-        if canonical_key in ko_id_map:
-            ko_dict["knowledge_object_id"] = ko_id_map[canonical_key]
+        # N1: name-based matching — find existing KOs by parameter_name
+        authority_layers = (ko_dict.get("authority_summary_json") or {}).get("layers", [])
+        member_names = set()
+        for layer in authority_layers:
+            vs = layer.get("value_summary", "")
+            if vs:
+                member_names.add(str(vs))
+        member_names.add(ko_dict.get("title", ""))
+
+        matched_ids = set()
+        for name in member_names:
+            if name in existing_by_name:
+                matched_ids.add(existing_by_name[name])
+
+        if len(matched_ids) >= 2:
+            # N1: multiple old KOs merge into one → keep earliest, migrate others
+            target_id = min(matched_ids)
+            ko_dict["knowledge_object_id"] = target_id
+            # Migrate evidence from other matched KOs
+            for src_id in matched_ids - {target_id}:
+                session.execute(
+                    __import__('sqlalchemy').text(
+                        "UPDATE knowledge_object_evidence SET knowledge_object_id = :target WHERE knowledge_object_id = :src"
+                    ), {"target": target_id, "src": src_id}
+                )
+                session.execute(
+                    __import__('sqlalchemy').text("DELETE FROM knowledge_object WHERE knowledge_object_id = :src"),
+                    {"src": src_id}
+                )
+            stats["merged_existing"] += 1
+        elif len(matched_ids) == 1:
+            # N1: single match → update existing KO
+            ko_dict["knowledge_object_id"] = matched_ids.pop()
             stats["updated_existing"] += 1
         else:
+            # N1: no match → genuinely new concept
             ko_dict["knowledge_object_id"] = _generate_ko_id(
                 domain_id, equipment_class_id, knowledge_object_type, canonical_key
             )
@@ -478,24 +512,22 @@ def merge_with_existing(
             ko_dict["review_status"] = "conflict_review_required"
             stats["material_conflicts"] += 1
 
-        # Preserve existing primary_chunk_id on update
-        if not ko_dict.get("primary_chunk_id") and canonical_key in ko_id_map:
-            existing_ko = session.query(KnowledgeObjectV2).filter(
-                KnowledgeObjectV2.knowledge_object_id == ko_id_map[canonical_key]
+        # Preserve primary_chunk_id if missing
+        if not ko_dict.get("primary_chunk_id"):
+            existing = session.query(KnowledgeObjectV2).filter(
+                KnowledgeObjectV2.knowledge_object_id == ko_dict["knowledge_object_id"]
             ).first()
-            if existing_ko and existing_ko.primary_chunk_id:
-                ko_dict["primary_chunk_id"] = existing_ko.primary_chunk_id
+            if existing and existing.primary_chunk_id:
+                ko_dict["primary_chunk_id"] = existing.primary_chunk_id
 
         session.merge(KnowledgeObjectV2(**ko_dict))
         session.flush()
 
-        # Delete old evidence rows before inserting merged ones
         session.query(KnowledgeObjectEvidenceV2).filter(
             KnowledgeObjectEvidenceV2.knowledge_object_id == ko_dict["knowledge_object_id"]
         ).delete()
         session.flush()
 
-        # Insert merged evidence rows (raw SQL to avoid ORM unique constraint issues)
         for idx, ev in enumerate(evidence_rows):
             ev_src = f"{ev.get('chunk_id', '')}:{ev.get('evidence_role', 'supporting')}:{idx}"
             ev_id = _generate_evidence_id(ko_dict["knowledge_object_id"], ev_src, "")
