@@ -3,10 +3,6 @@ terms:
   - Chilled Water Setpoint
   - CHWS Setpoint
   - 冷冻水出水温度设定
-  chilled_water_leaving_temperature:
-  - 最低冷冻水出水温度
-  - 最低冷冻液体温度
-  - chilled water leaving temperature setpoint
   chilled_water_entering_temperature:
   - 冷冻水最高进水温度
   - 蒸发器进水温度上限
@@ -81,10 +77,13 @@ terms:
   - 最大压差设定值
   minimum_pressure_differential_setpoint:
   - 最小压差设定值
-  chilled_water_leaving_temperature_minimum:
+  chilled_water_leaving_temperature:
+  - 最低冷冻水出水温度
+  - 最低冷冻液体温度
+  - chilled water leaving temperature setpoint
   - External chilled water setpoint min
   - Minimum chilled water leaving temperature
-  - 最低冷冻水出水温度
+  - 外部冷冻水设定范围上限
   chilled_water_entering_temperature_maximum:
   - Maximum chilled water entering temperature
   - 冷冻水最高进水温度
