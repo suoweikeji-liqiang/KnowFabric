@@ -241,6 +241,74 @@ def _llm_group_and_normalize(
     return validated
 
 
+CONFLICTING_QUALIFIERS = [
+    # (category, [mutually_exclusive_patterns])
+    ("source", ["front panel", "external", "active", "default", "remote", "local"]),
+    ("medium", ["水侧", "制冷剂侧", "空气侧", "油侧", "water side", "refrigerant side"]),
+    ("bound", ["maximum", "minimum", "最高", "最低", "最大", "最小", "start", "stop"]),
+    ("reference", ["return", "outdoor", "supply", "indoor", "outdoor air"]),
+    ("type", ["setpoint", "limit", "reset", "pressure", "temperature", "ratio", "time"]),
+]
+
+
+def _find_qualifier(name: str, patterns: list[str]) -> str | None:
+    lower = name.lower()
+    for p in patterns:
+        if p in lower:
+            return p
+    return None
+
+
+def _split_conflicting_groups(
+    groups: list[dict[str, Any]],
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> list[dict[str, Any]]:
+    """Split LLM groups where member names have conflicting qualifiers.
+
+    E.g. 'Front Panel Chilled Water' and 'External Chilled Water' in the same
+    group → split into separate groups (different input sources).
+    """
+    refined = []
+    for g in groups:
+        members = g.get("member_names", [])
+        if len(members) <= 1:
+            refined.append(g)
+            continue
+
+        # Check each qualifier category
+        split = False
+        for category, patterns in CONFLICTING_QUALIFIERS:
+            qualifiers = {}
+            for name in members:
+                q = _find_qualifier(name, patterns)
+                if q:
+                    qualifiers.setdefault(q, []).append(name)
+            # If multiple different qualifiers found in same category → split
+            if len(qualifiers) >= 2:
+                split = True
+                for q, q_members in qualifiers.items():
+                    suffix = q.replace(" ", "_")
+                    ck = g.get("canonical_key", f"unknown_{suffix}")
+                    if not ck.endswith(f"_{suffix}"):
+                        ck = f"{ck}_{suffix}"
+                    refined.append({
+                        "canonical_key": ck,
+                        "normalized_name": g.get("normalized_name", "") + f"_{suffix}",
+                        "member_names": q_members,
+                        "rationale": f"Split from group '{g.get('canonical_key','?')}' — conflicting {category} qualifier: {q}",
+                    })
+                # Any unqualified names stay in original group
+                unqualified = [n for n in members if all(n not in v for v in qualifiers.values())]
+                if unqualified:
+                    refined.append({**g, "member_names": unqualified})
+                break  # Only split once per group
+        if not split:
+            refined.append(g)
+    return refined
+
+
 def group_and_normalize(
     names: list[str],
     *,
@@ -277,7 +345,10 @@ def group_and_normalize(
         backend_name=backend_name,
     )
 
-    # 3. Build name→key map, register all names
+    # 3. Post-process: split groups with conflicting qualifiers (D1 fix)
+    groups = _split_conflicting_groups(groups, domain_id, equipment_class_id, knowledge_object_type)
+
+    # 4. Build name→key map, register all names
     mapping: dict[str, str] = {}
     for g in groups:
         ck = g["canonical_key"]

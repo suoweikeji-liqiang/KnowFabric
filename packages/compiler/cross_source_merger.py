@@ -182,20 +182,27 @@ def merge_candidates(
         for cand in group:
             authority_level = cand.get("authority_level", "unspecified")
             is_primary = len(layers) == 0
+            # D2 fix: doc_id must come from evidence (doc_xxx), not KO id (ko_xxx)
+            cand_evidence = cand.get("evidence", [])
+            doc_id = (
+                (cand_evidence[0].get("doc_id") if cand_evidence else None)
+                or cand.get("doc_id")
+                or ""
+            )
             layer = {
                 "authority_level": authority_level,
                 "publisher": cand.get("publisher"),
                 "citation": cand.get("citation") or cand.get("evidence_citation"),
                 "value_summary": _extract_value_summary(cand),
                 "evidence_role": "primary" if is_primary else "corroborating",
-                "doc_id": cand.get("doc_id"),
+                "doc_id": doc_id,
             }
             layers.append(layer)
 
-            for ev in cand.get("evidence", []):
+            for ev in cand_evidence:
                 evidence_rows.append({
                     "chunk_id": ev.get("chunk_id", ""),
-                    "doc_id": ev.get("doc_id", ""),
+                    "doc_id": ev.get("doc_id", doc_id),
                     "page_id": ev.get("page_id", ""),
                     "page_no": ev.get("page_no", 0),
                     "evidence_text": ev.get("evidence_text", ""),
