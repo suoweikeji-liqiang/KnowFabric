@@ -1,0 +1,11 @@
+{
+  "total_candidates": 147,
+  "unique_names": 116,
+  "llm_groups": 97,
+  "llm_multi_name": 19,
+  "mech_groups": 97,
+  "mech_multi_name": 19,
+  "llm_crossbrand_mech_split": 0,
+  "merged_kos": 97,
+  "cross_brand_llm_pairs": []
+}
