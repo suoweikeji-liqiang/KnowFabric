@@ -15,6 +15,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 import csv
@@ -231,16 +232,39 @@ def main(argv: list[str] | None = None) -> int:
         import csv as _csv
         # Load inventory to map doc_ids to actual PDF paths
         inv_path = Path("workspace/hvac_source_inventory/20260507T083207Z/source_inventory.csv")
-        inv_map = {}
+        inv_paths: dict[str, str] = {}  # file_path → original path
+        inv_by_substring: list[tuple[str, str]] = []  # (key_substring, path)
         if inv_path.exists():
             for row in _csv.DictReader(open(inv_path)):
-                inv_map[row.get("file_name", "")] = row.get("path", "")
+                fp = row.get("path", "")
+                fn = row.get("file_name", "")
+                if fp:
+                    inv_paths[fp] = fp
+                if fn:
+                    # Extract a unique substring for fuzzy matching
+                    key = fn.replace(".pdf", "").replace("（", "(").replace("）", ")")[-40:]
+                    inv_by_substring.append((key, fp))
 
         doc_ids = [d.strip() for d in args.doc_ids.split(",") if d.strip()]
         for did in doc_ids:
             doc = session.query(Document).filter(Document.doc_id == did).first()
             if doc:
-                pdf_path = inv_map.get(doc.file_name, "") or doc.storage_path
+                # Bidirectional fuzzy match: extract tokens from DB filename,
+                # find inventory entry with most token overlap
+                db_tokens = set(re.findall(r'[a-zA-Z0-9]+', doc.file_name.lower()))
+                best_path = ""
+                best_score = 0
+                for fn, fp in [(r.get("file_name", ""), r.get("path", "")) for r in _csv.DictReader(open(inv_path))]:
+                    inv_tokens = set(re.findall(r'[a-zA-Z0-9]+', fn.lower()))
+                    score = len(db_tokens & inv_tokens)
+                    if score > best_score:
+                        best_score = score
+                        best_path = fp
+                pdf_path = best_path if best_score >= 2 else ""
+                if not pdf_path:
+                    sp = doc.storage_path
+                    if sp and Path(sp).exists():
+                        pdf_path = sp
                 rows_to_process.append({
                     "doc_id": did,
                     "file_name": doc.file_name,
