@@ -212,7 +212,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--judge-max-tokens", type=int, default=50_000)
     parser.add_argument("--extract-timeout-seconds", type=int, default=1200)
     parser.add_argument("--judge-timeout-seconds", type=int, default=1200)
-    parser.add_argument("--max-extract-seconds", type=float, default=1200.0)
+    parser.add_argument("--max-extract-seconds", type=float, default=1800.0)
     parser.add_argument("--input-mode", choices=["full_book", "section_context"], default="section_context")
     parser.add_argument("--context-sections", default="3,5.1")
     parser.add_argument("--dry-run", action="store_true")

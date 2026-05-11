@@ -1,0 +1,80 @@
+{
+  "status": "completed",
+  "row_index": 3,
+  "file_name": "【麦克维尔】MWH008～350C(R)水源热泵安装使用说明书（36页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MWH008～350C(R)水源热泵安装使用说明书（36页）-制冷百家网.pdf",
+  "doc_id": "doc_7adc3a4af7e34b5f",
+  "chunks": 42,
+  "manual_tokens_estimated": 10584,
+  "equipment_class_id": "cooling_tower",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "boiler",
+      "equipment_class_key": "hvac:boiler",
+      "confidence": 0.386,
+      "matched_aliases": [
+        "锅炉"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 36,
+      "chunks_after": 42,
+      "parse_result": {
+        "job_id": "job_133df60c0f484980",
+        "doc_id": "doc_7adc3a4af7e34b5f",
+        "pages_created": 36,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_73227e7d133741fc",
+        "doc_id": "doc_7adc3a4af7e34b5f",
+        "chunks_created": 42,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 20,
+      "judge_rejected": 20,
+      "judge_acceptance_rate": 50.0,
+      "judge_rejection_breakdown": {
+        "other": 20
+      },
+      "review_candidates": 20,
+      "by_type": {
+        "parameter_spec": 20
+      },
+      "usage": {
+        "prompt_tokens": 17339,
+        "completion_tokens": 5620,
+        "total_tokens": 22959
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1178,
+        "total_tokens": 2458
+      },
+      "extract_cost_rmb": 0.085737,
+      "judge_cost_rmb": 0.010908,
+      "cost_rmb": 0.096645,
+      "elapsed_seconds": 171.534,
+      "judge_elapsed_seconds": 73.88,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T071326Z_hvac_doclevel_extraction_batch/0003_麦克维尔_mwh008_350c_r_水源热泵安装使用说明书_36页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T071326Z_hvac_doclevel_extraction_batch/0003_麦克维尔_mwh008_350c_r_水源热泵安装使用说明书_36页_制冷百家网"
+}

@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-10T00:54:23.215733+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_ba91945372ad4cbf__chiller.json",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "candidate_count": 9
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【麦克维尔】WSC WDC HSC HDC单／双压缩机离心式安装维护手册（49页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】WSC WDC HSC HDC单／双压缩机离心式安装维护手册（49页）-制冷百家网.pdf",
+  "doc_id": "doc_cade8d8ac44c4bd6",
+  "chunks": 50,
+  "manual_tokens_estimated": 12943,
+  "equipment_class_id": "centrifugal_chiller",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "chilled_water_pump",
+      "equipment_class_key": "hvac:chilled_water_pump",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "冷冻水泵"
+      ]
+    },
+    {
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "冷水机组"
+      ]
+    },
+    {
+      "equipment_class_id": "pump",
+      "equipment_class_key": "hvac:pump",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "Pump",
+        "pump"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 47,
+      "chunks_before": 50,
+      "pages_after": 47,
+      "chunks_after": 50,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 39,
+      "anchor_passed": 36,
+      "anchor_rejected": 3,
+      "anchor_match_rate": 92.3,
+      "judge_accepted": 19,
+      "judge_rejected": 17,
+      "judge_acceptance_rate": 52.8,
+      "judge_rejection_breakdown": {
+        "other": 17
+      },
+      "review_candidates": 19,
+      "by_type": {
+        "parameter_spec": 18,
+        "maintenance_procedure": 1
+      },
+      "usage": {
+        "prompt_tokens": 21173,
+        "completion_tokens": 6879,
+        "total_tokens": 28052
+      },
+      "judge_usage": {
+        "prompt_tokens": 1279,
+        "completion_tokens": 1200,
+        "total_tokens": 2479
+      },
+      "extract_cost_rmb": 0.104793,
+      "judge_cost_rmb": 0.011037,
+      "cost_rmb": 0.11583,
+      "elapsed_seconds": 199.531,
+      "judge_elapsed_seconds": 65.371,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T104201Z_hvac_doclevel_extraction_batch/0002_麦克维尔_wsc_wdc_hsc_hdc单_双压缩机离心式安装维护手册_49页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T104201Z_hvac_doclevel_extraction_batch/0002_麦克维尔_wsc_wdc_hsc_hdc单_双压缩机离心式安装维护手册_49页_制冷百家网"
+}

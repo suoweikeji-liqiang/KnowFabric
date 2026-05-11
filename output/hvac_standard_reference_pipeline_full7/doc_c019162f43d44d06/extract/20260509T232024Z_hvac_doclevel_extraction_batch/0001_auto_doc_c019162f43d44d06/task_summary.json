@@ -1,0 +1,65 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "auto_doc_c019162f43d44d06.pdf",
+  "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_c019162f43d44d06/subset/auto_doc_c019162f43d44d06.pdf",
+  "doc_id": "doc_58f6c629bc6a494a",
+  "chunks": 6,
+  "manual_tokens_estimated": 199,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 6,
+      "chunks_before": 6,
+      "pages_after": 6,
+      "chunks_after": 6,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 3,
+      "anchor_passed": 3,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 0,
+      "judge_rejected": 3,
+      "judge_acceptance_rate": 0.0,
+      "judge_rejection_breakdown": {
+        "other": 3
+      },
+      "review_candidates": 0,
+      "by_type": {},
+      "usage": {
+        "prompt_tokens": 777,
+        "completion_tokens": 336,
+        "total_tokens": 1113
+      },
+      "judge_usage": {
+        "prompt_tokens": 775,
+        "completion_tokens": 228,
+        "total_tokens": 1003
+      },
+      "extract_cost_rmb": 0.004347,
+      "judge_cost_rmb": 0.003693,
+      "cost_rmb": 0.00804,
+      "elapsed_seconds": 12.162,
+      "judge_elapsed_seconds": 8.18,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_c019162f43d44d06/extract/20260509T232024Z_hvac_doclevel_extraction_batch/0001_auto_doc_c019162f43d44d06/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_c019162f43d44d06/extract/20260509T232024Z_hvac_doclevel_extraction_batch/0001_auto_doc_c019162f43d44d06"
+}

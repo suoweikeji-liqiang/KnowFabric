@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-07T09:04:15.834186+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json",
+      "doc_id": "doc_e312bbfa86684629",
+      "doc_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+      "equipment_class_id": "air_cooled_modular_heat_pump",
+      "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+      "candidate_count": 4
+    }
+  ]
+}

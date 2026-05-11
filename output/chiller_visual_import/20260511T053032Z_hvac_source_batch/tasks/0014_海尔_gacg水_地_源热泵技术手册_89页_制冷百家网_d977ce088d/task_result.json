@@ -1,0 +1,17 @@
+{
+  "row_index": 14,
+  "path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔 】GACG水( ( 地) ) 源热泵技术手册（89页）-制冷百家网.pdf",
+  "file_name": "【海尔 】GACG水( ( 地) ) 源热泵技术手册（89页）-制冷百家网.pdf",
+  "batch_group": "chiller_visual",
+  "priority": "P1_visual",
+  "brand": "Haier",
+  "authority_level": "oem_manual",
+  "document_kind": "standard_or_best_practice",
+  "equipment_scope": "screw_chiller",
+  "page_count": "89",
+  "text_quality": "partial_text",
+  "recommended_mode": "visual_page_level",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/chiller_visual_import/20260511T053032Z_hvac_source_batch/tasks/0014_海尔_gacg水_地_源热泵技术手册_89页_制冷百家网_d977ce088d",
+  "status": "planned"
+}

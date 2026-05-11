@@ -1,0 +1,92 @@
+{
+  "run_id": "20260509T230935Z_hvac_doclevel_extraction_batch",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_ashrae2019/mimo_omni_run/20260509T230935Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "completed",
+      "row_index": 1,
+      "file_name": "auto_ashrae2019.pdf",
+      "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_ashrae2019/auto_ashrae2019.pdf",
+      "doc_id": "doc_09193d9f0adc49fe",
+      "chunks": 49,
+      "manual_tokens_estimated": 10682,
+      "equipment_class_id": "cooling_tower",
+      "equipment_alternatives": [
+        {
+          "equipment_class_id": "chiller",
+          "equipment_class_key": "hvac:chiller",
+          "confidence": 0.554,
+          "matched_aliases": [
+            "Chiller",
+            "chiller"
+          ]
+        },
+        {
+          "equipment_class_id": "pump",
+          "equipment_class_key": "hvac:pump",
+          "confidence": 0.471,
+          "matched_aliases": [
+            "Pump",
+            "pump"
+          ]
+        }
+      ],
+      "processing": {
+        "import_status": "existing",
+        "processing": {
+          "pages_before": 6,
+          "chunks_before": 49,
+          "pages_after": 6,
+          "chunks_after": 49,
+          "parse_result": {
+            "status": "skipped_existing_pages",
+            "pages_created": 0
+          },
+          "chunk_result": {
+            "status": "skipped_existing_chunks",
+            "chunks_created": 0
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "mimo-v2-omni",
+          "model": "mimo-v2-omni",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 13,
+          "anchor_passed": 13,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 8,
+          "judge_rejected": 5,
+          "judge_acceptance_rate": 61.5,
+          "judge_rejection_breakdown": {
+            "weak_evidence": 5
+          },
+          "review_candidates": 8,
+          "by_type": {
+            "application_guidance": 8
+          },
+          "usage": {
+            "prompt_tokens": 10938,
+            "completion_tokens": 1412,
+            "total_tokens": 12350
+          },
+          "judge_usage": {
+            "prompt_tokens": 4811,
+            "completion_tokens": 874,
+            "total_tokens": 5685
+          },
+          "extract_cost_rmb": 0.0,
+          "judge_cost_rmb": 0.019677,
+          "cost_rmb": 0.019677,
+          "elapsed_seconds": 11.943,
+          "judge_elapsed_seconds": 27.959,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_ashrae2019/mimo_omni_run/20260509T230935Z_hvac_doclevel_extraction_batch/0001_auto_ashrae2019/mimo-v2-omni"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_ashrae2019/mimo_omni_run/20260509T230935Z_hvac_doclevel_extraction_batch/0001_auto_ashrae2019"
+    }
+  ]
+}

@@ -1,0 +1,760 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-09T22:34:12.727267+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_ba91945372ad4cbf",
+  "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+  "equipment_class": {
+    "equipment_class_id": "cooling_tower",
+    "equipment_class_key": "hvac:cooling_tower",
+    "label": "Cooling Tower",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 10,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_a637219c5fa9c9b4",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_059995b8e7d54e69",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:parameter_spec:glycol_solution_rating_parameters",
+      "structured_payload_candidate": {
+        "parameter_name": "Glycol Coil Rating Parameters",
+        "title": "Glycol Solution Rating Parameters",
+        "summary": "Rating parameters for ethylene glycol solution coils."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The final choice can then\nbe made based on system perform ance and economic requirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard  410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units  using different combinations of coils, are\nusually rated within the following parameters:\nEntering air dry-bulb temperature: 65 to 100°F\nEntering air wet-bulb temperature: 60 to 85°F (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 200 to 800 fpmEvaporator refrigerant saturation te mperature: 30 to 55°F at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 6°F or higher)\nEntering chilled-water temperature: 35 to 65°FWater velocity: 1 to 8 fpsFor ethylene glycol solution: 1 to  6 fps, 0 to 90°F entering dry-\nbulb temperature, 60 to 80°F entering wet-bulb temperature,\n10 to 60% aqueous glycol concentration by weight\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_059995b8e7d54e69"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists specific rating parameters for ethylene glycol solution coils (1-6 fps, 0-90°F entering dry-bulb, 60-80°F wet-bulb, 10-60% concentration).",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:cooling_tower:parameter_spec:glycol_solution_rating_parameters for Cooling Tower",
+        "summary": "Draft review summary for parameter spec hvac:cooling_tower:parameter_spec:glycol_solution_rating_parameters derived from chunk chunk_059995b8e7d54e69 on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:parameter_spec:glycol_solution_rating_parameters",
+        "structured_payload": {
+          "parameter_name": "Glycol Coil Rating Parameters",
+          "title": "Glycol Solution Rating Parameters",
+          "summary": "Rating parameters for ethylene glycol solution coils."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The final choice can then\nbe made based on system perform ance and economic requirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard  410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units  using different combinations of coils, are\nusually rated within the following parameters:\nEntering air dry-bulb temperature: 65 to 100°F\nEntering air wet-bulb temperature: 60 to 85°F (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 200 to 800 fpmEvaporator refrigerant saturation te mperature: 30 to 55°F at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 6°F or higher)\nEntering chilled-water temperature: 35 to 65°FWater velocity: 1 to 8 fpsFor ethylene glycol solution: 1 to  6 fps, 0 to 90°F entering dry-\nbulb temperature, 60 to 80°F entering wet-bulb temperature,\n10 to 60% aqueous glycol concentration by weight\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c09c18c7b410a272",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_e356dbbbcfff4838",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:standard_rating_airflow_for_unitary_equipment",
+      "structured_payload_candidate": {
+        "parameter_name": "Standard Airflow Rating",
+        "title": "Standard Rating Airflow for Unitary Equipment",
+        "summary": "Standard airflow rating point for unitary equipment is 33.4 cfm per 1000 Btu/h (400 cfm per ton), not to exceed 37.5 cfm per 1000 Btu/h."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "For example, a standard rating point has been\n33.4 cfm per 1000 Btu/h (or 400 cfm per ton of refrigeration effect),\nnot to exceed 37.5 cfm per 100 Btu/ h for unitary equipment. Refrig-\nerant (e.g., R-22) duty would be 6 to 10°F superheat for an appro-\npriate balance at 45°F saturated su ction. For water coils, circuitry\nwould operate at 4 fps, 42°F inlet water, 12°F rise (or 2 gpm per ton\nof refrigeration effect). The stan dard ratings at 80°F db and 67°F wb\nare representative of the entering air conditions encountered in\nmany comfort operations.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_e356dbbbcfff4838"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence specifies standard airflow rating point of 33.4 cfm/1000 Btu/h (400 cfm/ton), max 37.5 cfm/1000 Btu/h for unitary equipment.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Performance Spec hvac:cooling_tower:performance_spec:standard_rating_airflow_for_unitary_equipment for Cooling Tower",
+        "summary": "Draft review summary for performance_spec hvac:cooling_tower:performance_spec:standard_rating_airflow_for_unitary_equipment derived from chunk chunk_e356dbbbcfff4838 on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:performance_spec:standard_rating_airflow_for_unitary_equipment",
+        "structured_payload": {
+          "parameter_name": "Standard Airflow Rating",
+          "title": "Standard Rating Airflow for Unitary Equipment",
+          "summary": "Standard airflow rating point for unitary equipment is 33.4 cfm per 1000 Btu/h (400 cfm per ton), not to exceed 37.5 cfm per 1000 Btu/h."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "For example, a standard rating point has been\n33.4 cfm per 1000 Btu/h (or 400 cfm per ton of refrigeration effect),\nnot to exceed 37.5 cfm per 100 Btu/ h for unitary equipment. Refrig-\nerant (e.g., R-22) duty would be 6 to 10°F superheat for an appro-\npriate balance at 45°F saturated su ction. For water coils, circuitry\nwould operate at 4 fps, 42°F inlet water, 12°F rise (or 2 gpm per ton\nof refrigeration effect). The stan dard ratings at 80°F db and 67°F wb\nare representative of the entering air conditions encountered in\nmany comfort operations.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f9725506413a58a4",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_e356dbbbcfff4838",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:standard_water_coil_operating_conditions",
+      "structured_payload_candidate": {
+        "parameter_name": "Water Coil Standard Conditions",
+        "title": "Standard Water Coil Operating Conditions",
+        "summary": "Standard water coil circuitry operates at 4 fps, 42°F inlet water, 12°F rise (2 gpm per ton)."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "For example, a standard rating point has been\n33.4 cfm per 1000 Btu/h (or 400 cfm per ton of refrigeration effect),\nnot to exceed 37.5 cfm per 100 Btu/ h for unitary equipment. Refrig-\nerant (e.g., R-22) duty would be 6 to 10°F superheat for an appro-\npriate balance at 45°F saturated su ction. For water coils, circuitry\nwould operate at 4 fps, 42°F inlet water, 12°F rise (or 2 gpm per ton\nof refrigeration effect). The stan dard ratings at 80°F db and 67°F wb\nare representative of the entering air conditions encountered in\nmany comfort operations.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_e356dbbbcfff4838"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence states water coil circuitry operates at 4 fps, 42°F inlet water, 12°F rise (2 gpm/ton).",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Performance Spec hvac:cooling_tower:performance_spec:standard_water_coil_operating_conditions for Cooling Tower",
+        "summary": "Draft review summary for performance_spec hvac:cooling_tower:performance_spec:standard_water_coil_operating_conditions derived from chunk chunk_e356dbbbcfff4838 on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:performance_spec:standard_water_coil_operating_conditions",
+        "structured_payload": {
+          "parameter_name": "Water Coil Standard Conditions",
+          "title": "Standard Water Coil Operating Conditions",
+          "summary": "Standard water coil circuitry operates at 4 fps, 42°F inlet water, 12°F rise (2 gpm per ton)."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "For example, a standard rating point has been\n33.4 cfm per 1000 Btu/h (or 400 cfm per ton of refrigeration effect),\nnot to exceed 37.5 cfm per 100 Btu/ h for unitary equipment. Refrig-\nerant (e.g., R-22) duty would be 6 to 10°F superheat for an appro-\npriate balance at 45°F saturated su ction. For water coils, circuitry\nwould operate at 4 fps, 42°F inlet water, 12°F rise (or 2 gpm per ton\nof refrigeration effect). The stan dard ratings at 80°F db and 67°F wb\nare representative of the entering air conditions encountered in\nmany comfort operations.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_15bd530f0adf7725",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_e356dbbbcfff4838",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:standard_entering_air_conditions_for_comfort_operations",
+      "structured_payload_candidate": {
+        "parameter_name": "Standard Entering Air Conditions",
+        "title": "Standard Entering Air Conditions for Comfort Operations",
+        "summary": "Standard entering air conditions for comfort operations are 80°F db and 67°F wb."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "For example, a standard rating point has been\n33.4 cfm per 1000 Btu/h (or 400 cfm per ton of refrigeration effect),\nnot to exceed 37.5 cfm per 100 Btu/ h for unitary equipment. Refrig-\nerant (e.g., R-22) duty would be 6 to 10°F superheat for an appro-\npriate balance at 45°F saturated su ction. For water coils, circuitry\nwould operate at 4 fps, 42°F inlet water, 12°F rise (or 2 gpm per ton\nof refrigeration effect). The stan dard ratings at 80°F db and 67°F wb\nare representative of the entering air conditions encountered in\nmany comfort operations.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_e356dbbbcfff4838"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence gives standard entering air conditions of 80°F db and 67°F wb for comfort operations.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Performance Spec hvac:cooling_tower:performance_spec:standard_entering_air_conditions_for_comfort_operations for Cooling Tower",
+        "summary": "Draft review summary for performance_spec hvac:cooling_tower:performance_spec:standard_entering_air_conditions_for_comfort_operations derived from chunk chunk_e356dbbbcfff4838 on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:performance_spec:standard_entering_air_conditions_for_comfort_operations",
+        "structured_payload": {
+          "parameter_name": "Standard Entering Air Conditions",
+          "title": "Standard Entering Air Conditions for Comfort Operations",
+          "summary": "Standard entering air conditions for comfort operations are 80°F db and 67°F wb."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "For example, a standard rating point has been\n33.4 cfm per 1000 Btu/h (or 400 cfm per ton of refrigeration effect),\nnot to exceed 37.5 cfm per 100 Btu/ h for unitary equipment. Refrig-\nerant (e.g., R-22) duty would be 6 to 10°F superheat for an appro-\npriate balance at 45°F saturated su ction. For water coils, circuitry\nwould operate at 4 fps, 42°F inlet water, 12°F rise (or 2 gpm per ton\nof refrigeration effect). The stan dard ratings at 80°F db and 67°F wb\nare representative of the entering air conditions encountered in\nmany comfort operations.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a79be80dcea10521",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_5d4376a602bd4a2e",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:typical_air_face_velocity_for_comfort_dehumidifying_coils",
+      "structured_payload_candidate": {
+        "parameter_name": "Typical Air Face Velocity",
+        "title": "Typical Air Face Velocity for Comfort Dehumidifying Coils",
+        "summary": "Dehumidifying coils for comfort applications are frequently selected in the range of 400 to 500 fpm air face velocity."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "For\ninformation on calculating a dehumidi fying coil’s sensible heat ratio,\nsee the section on Performance of Dehumidifying Coils, or Appen-\ndix D of Cooling and Heating Load Calculation Principles  (Peder-\nsen et al. 1998). For a given coil surface design and arrangement, therequired sensible heat ratio may be satisfied by wide variations in and\ncombinations of air face velocity, in-tube temperature, flow rate,entering air temperature, coil de pth, etc., although the variations\nmay be self limiting. The maximum coil air face velocity should be\nlimited to a value that prevents water carryover into the air ductwork.\nDehumidifying coils for comfort applications are frequently selectedin the range of 400 to 500 fpm air face velocity.\nOperating ratings of dehumidifyi ng coils for factory-assembled,\nself-contained air conditi oners are generally de termined in conjunc-\ntion with laboratory testing for the system capacity of the completeunit assembly.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_5d4376a602bd4a2e"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence states dehumidifying coils for comfort are frequently selected at 400-500 fpm air face velocity.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Performance Spec hvac:cooling_tower:performance_spec:typical_air_face_velocity_for_comfort_dehumidifying_coils for Cooling Tower",
+        "summary": "Draft review summary for performance_spec hvac:cooling_tower:performance_spec:typical_air_face_velocity_for_comfort_dehumidifying_coils derived from chunk chunk_5d4376a602bd4a2e on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:performance_spec:typical_air_face_velocity_for_comfort_dehumidifying_coils",
+        "structured_payload": {
+          "parameter_name": "Typical Air Face Velocity",
+          "title": "Typical Air Face Velocity for Comfort Dehumidifying Coils",
+          "summary": "Dehumidifying coils for comfort applications are frequently selected in the range of 400 to 500 fpm air face velocity."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "For\ninformation on calculating a dehumidi fying coil’s sensible heat ratio,\nsee the section on Performance of Dehumidifying Coils, or Appen-\ndix D of Cooling and Heating Load Calculation Principles  (Peder-\nsen et al. 1998). For a given coil surface design and arrangement, therequired sensible heat ratio may be satisfied by wide variations in and\ncombinations of air face velocity, in-tube temperature, flow rate,entering air temperature, coil de pth, etc., although the variations\nmay be self limiting. The maximum coil air face velocity should be\nlimited to a value that prevents water carryover into the air ductwork.\nDehumidifying coils for comfort applications are frequently selectedin the range of 400 to 500 fpm air face velocity.\nOperating ratings of dehumidifyi ng coils for factory-assembled,\nself-contained air conditi oners are generally de termined in conjunc-\ntion with laboratory testing for the system capacity of the completeunit assembly.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c912ebca1e623aa6",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_0b45eb10373a4bde",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:air_friction_reduction_with_hydrophilic_coating",
+      "structured_payload_candidate": {
+        "parameter_name": "Hydrophilic Coating Pressure Drop Reduction",
+        "title": "Air Friction Reduction with Hydrophilic Coating",
+        "summary": "Hydrophilic coatings can reduce air pressure drop across a coil by up to 30% compared to new untreated coil."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Therefore, final selection involves\neconomic balancing of the initial co st of the coil against the operat-\ning costs of the coil geometry co mbinations available to adequately\nmeet the performa nce requirements.\nThe aluminum fin surfaces of new dehumidifying coils tend to in-\nhibit condensate sheeting action until they have aged for a year. Hy-\ndrophilic aluminum fin surface coatings reduce water droplet surface\ntension, producing a more evenly  dispersed wetted surface action at\ninitial start-up. Manufacturers have tried different methods of apply-\ning such coatings, including dipping the coil into a tank, coating thefin stock material, or subjecting the material to a chemical etching\nprocess. Tests have shown as much  as a 30% reduction in air pressure\ndrop across a hydrophilic coil as opposed a new untreated coil.\n5.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_0b45eb10373a4bde"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence states tests show up to 30% reduction in air pressure drop with hydrophilic coating vs. new untreated coil.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Performance Spec hvac:cooling_tower:performance_spec:air_friction_reduction_with_hydrophilic_coating for Cooling Tower",
+        "summary": "Draft review summary for performance_spec hvac:cooling_tower:performance_spec:air_friction_reduction_with_hydrophilic_coating derived from chunk chunk_0b45eb10373a4bde on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:performance_spec:air_friction_reduction_with_hydrophilic_coating",
+        "structured_payload": {
+          "parameter_name": "Hydrophilic Coating Pressure Drop Reduction",
+          "title": "Air Friction Reduction with Hydrophilic Coating",
+          "summary": "Hydrophilic coatings can reduce air pressure drop across a coil by up to 30% compared to new untreated coil."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Therefore, final selection involves\neconomic balancing of the initial co st of the coil against the operat-\ning costs of the coil geometry co mbinations available to adequately\nmeet the performa nce requirements.\nThe aluminum fin surfaces of new dehumidifying coils tend to in-\nhibit condensate sheeting action until they have aged for a year. Hy-\ndrophilic aluminum fin surface coatings reduce water droplet surface\ntension, producing a more evenly  dispersed wetted surface action at\ninitial start-up. Manufacturers have tried different methods of apply-\ning such coatings, including dipping the coil into a tank, coating thefin stock material, or subjecting the material to a chemical etching\nprocess. Tests have shown as much  as a 30% reduction in air pressure\ndrop across a hydrophilic coil as opposed a new untreated coil.\n5.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a6a201414a854660",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_407ce58377414948",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:freezing_risk_for_dehumidifying_coils",
+      "structured_payload_candidate": {
+        "parameter_name": "Freezing Temperature Threshold",
+        "title": "Freezing Risk for Dehumidifying Coils",
+        "summary": "Freezing occurs when coil surface temperature falls below 32°F; typically not with standard coils unless refrigerant evaporating temperature at coil outlet is below 25 to 28°F saturated."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "In ho t, humid climates, the light-load\ncondition has a higher proportion of moisture and a correspond-\ningly lower proportion of sensible  heat. The result is higher dew\npoints in the conditioned spaces during light-load  conditions un-\nless a special means for controlling inside dew points (e.g., reheator dual path) is used.\nFin surface freezing at light lo ads should be avoided. Freezing\noccurs when a dehumidification coil’s surface temperature fallsbelow 32°F. Freezing does not occur with standard coils for comfort\ninstallations unless the refrigerant evaporating temperature at the\ncoil outlet is below 25 to 28°F sa turated; the exact value depends on\nthe design of the coil, its operating dew point, and the amount of\nloading. With coil and condensing units to balance at low tempera-\ntures at peak loads (not a customary design choice), freezing mayoccur when load suddenly decreases.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_407ce58377414948"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence states freezing occurs at surface temp below 32°F; standard coils don't freeze unless evaporating temp below 25-28°F saturated.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Performance Spec hvac:cooling_tower:performance_spec:freezing_risk_for_dehumidifying_coils for Cooling Tower",
+        "summary": "Draft review summary for performance_spec hvac:cooling_tower:performance_spec:freezing_risk_for_dehumidifying_coils derived from chunk chunk_407ce58377414948 on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:performance_spec:freezing_risk_for_dehumidifying_coils",
+        "structured_payload": {
+          "parameter_name": "Freezing Temperature Threshold",
+          "title": "Freezing Risk for Dehumidifying Coils",
+          "summary": "Freezing occurs when coil surface temperature falls below 32°F; typically not with standard coils unless refrigerant evaporating temperature at coil outlet is below 25 to 28°F saturated."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "In ho t, humid climates, the light-load\ncondition has a higher proportion of moisture and a correspond-\ningly lower proportion of sensible  heat. The result is higher dew\npoints in the conditioned spaces during light-load  conditions un-\nless a special means for controlling inside dew points (e.g., reheator dual path) is used.\nFin surface freezing at light lo ads should be avoided. Freezing\noccurs when a dehumidification coil’s surface temperature fallsbelow 32°F. Freezing does not occur with standard coils for comfort\ninstallations unless the refrigerant evaporating temperature at the\ncoil outlet is below 25 to 28°F sa turated; the exact value depends on\nthe design of the coil, its operating dew point, and the amount of\nloading. With coil and condensing units to balance at low tempera-\ntures at peak loads (not a customary design choice), freezing mayoccur when load suddenly decreases.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_687c45e247e49022",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_10f26e4c41c442c2",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:dual_path_air_process_for_humid_areas",
+      "structured_payload_candidate": {
+        "parameter_name": null,
+        "title": "Dual-Path Air Process for Humid Areas",
+        "summary": "Dual-path air process uses a separate cooling coil to dehumidify ventilation air before mixing with recirculated air."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Although indoor conditions are usually\nlower than 67°F wb, it is usuall y assumed that introducing outdoor\nair brings the air mixture to the cooling coil up to about 80°F db/\n67°F wb entering air design conditions.\nDehumidifying coils for field-asse mbled projects and central sta-\ntion air-handling units were formerly  selected according to coil rat-\ning tables but are now selected by computerized  selection programs.\nEither way, selecting coils from the load division indicated by the\nload calculation works satisfactorily for the usual human comfortapplications. Additional design pr ecautions and refinements are\nnecessary for more exacting industri al applications and for all typesof air conditioning in humid areas.  One such refinement, the dual-\npath air process, uses a separate cooling coil to coo l and dehumidify\nventilation air before mixing it wi th recirculated air. This process\ndehumidifies what is usually the main source of moisture: makeupoutdoor air.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_10f26e4c41c442c2"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence describes dual-path air process using separate cooling coil to dehumidify ventilation air before mixing.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:cooling_tower:application_guidance:dual_path_air_process_for_humid_areas for Cooling Tower",
+        "summary": "Draft review summary for application_guidance hvac:cooling_tower:application_guidance:dual_path_air_process_for_humid_areas derived from chunk chunk_10f26e4c41c442c2 on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:application_guidance:dual_path_air_process_for_humid_areas",
+        "structured_payload": {
+          "parameter_name": null,
+          "title": "Dual-Path Air Process for Humid Areas",
+          "summary": "Dual-path air process uses a separate cooling coil to dehumidify ventilation air before mixing with recirculated air."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Although indoor conditions are usually\nlower than 67°F wb, it is usuall y assumed that introducing outdoor\nair brings the air mixture to the cooling coil up to about 80°F db/\n67°F wb entering air design conditions.\nDehumidifying coils for field-asse mbled projects and central sta-\ntion air-handling units were formerly  selected according to coil rat-\ning tables but are now selected by computerized  selection programs.\nEither way, selecting coils from the load division indicated by the\nload calculation works satisfactorily for the usual human comfortapplications. Additional design pr ecautions and refinements are\nnecessary for more exacting industri al applications and for all typesof air conditioning in humid areas.  One such refinement, the dual-\npath air process, uses a separate cooling coil to coo l and dehumidify\nventilation air before mixing it wi th recirculated air. This process\ndehumidifies what is usually the main source of moisture: makeupoutdoor air.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_3784d022d4272f99",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_5d4376a602bd4a2e",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:maximum_coil_air_face_velocity_to_prevent_water_carryover",
+      "structured_payload_candidate": {
+        "parameter_name": null,
+        "title": "Maximum Coil Air Face Velocity to Prevent Water Carryover",
+        "summary": "The maximum coil air face velocity should be limited to prevent water carryover into air ductwork."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "For\ninformation on calculating a dehumidi fying coil’s sensible heat ratio,\nsee the section on Performance of Dehumidifying Coils, or Appen-\ndix D of Cooling and Heating Load Calculation Principles  (Peder-\nsen et al. 1998). For a given coil surface design and arrangement, therequired sensible heat ratio may be satisfied by wide variations in and\ncombinations of air face velocity, in-tube temperature, flow rate,entering air temperature, coil de pth, etc., although the variations\nmay be self limiting. The maximum coil air face velocity should be\nlimited to a value that prevents water carryover into the air ductwork.\nDehumidifying coils for comfort applications are frequently selectedin the range of 400 to 500 fpm air face velocity.\nOperating ratings of dehumidifyi ng coils for factory-assembled,\nself-contained air conditi oners are generally de termined in conjunc-\ntion with laboratory testing for the system capacity of the completeunit assembly.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_5d4376a602bd4a2e"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence states maximum coil air face velocity should be limited to prevent water carryover into ductwork.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:cooling_tower:application_guidance:maximum_coil_air_face_velocity_to_prevent_water_carryover for Cooling Tower",
+        "summary": "Draft review summary for application_guidance hvac:cooling_tower:application_guidance:maximum_coil_air_face_velocity_to_prevent_water_carryover derived from chunk chunk_5d4376a602bd4a2e on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:application_guidance:maximum_coil_air_face_velocity_to_prevent_water_carryover",
+        "structured_payload": {
+          "parameter_name": null,
+          "title": "Maximum Coil Air Face Velocity to Prevent Water Carryover",
+          "summary": "The maximum coil air face velocity should be limited to prevent water carryover into air ductwork."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "For\ninformation on calculating a dehumidi fying coil’s sensible heat ratio,\nsee the section on Performance of Dehumidifying Coils, or Appen-\ndix D of Cooling and Heating Load Calculation Principles  (Peder-\nsen et al. 1998). For a given coil surface design and arrangement, therequired sensible heat ratio may be satisfied by wide variations in and\ncombinations of air face velocity, in-tube temperature, flow rate,entering air temperature, coil de pth, etc., although the variations\nmay be self limiting. The maximum coil air face velocity should be\nlimited to a value that prevents water carryover into the air ductwork.\nDehumidifying coils for comfort applications are frequently selectedin the range of 400 to 500 fpm air face velocity.\nOperating ratings of dehumidifyi ng coils for factory-assembled,\nself-contained air conditi oners are generally de termined in conjunc-\ntion with laboratory testing for the system capacity of the completeunit assembly.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_18eb7e0435b4b4b1",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_407ce58377414948",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:fin_surface_freezing_avoidance",
+      "structured_payload_candidate": {
+        "parameter_name": null,
+        "title": "Fin Surface Freezing Avoidance",
+        "summary": "Fin surface freezing at light loads should be avoided; occurs when coil surface temperature falls below 32°F."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "In ho t, humid climates, the light-load\ncondition has a higher proportion of moisture and a correspond-\ningly lower proportion of sensible  heat. The result is higher dew\npoints in the conditioned spaces during light-load  conditions un-\nless a special means for controlling inside dew points (e.g., reheator dual path) is used.\nFin surface freezing at light lo ads should be avoided. Freezing\noccurs when a dehumidification coil’s surface temperature fallsbelow 32°F. Freezing does not occur with standard coils for comfort\ninstallations unless the refrigerant evaporating temperature at the\ncoil outlet is below 25 to 28°F sa turated; the exact value depends on\nthe design of the coil, its operating dew point, and the amount of\nloading. With coil and condensing units to balance at low tempera-\ntures at peak loads (not a customary design choice), freezing mayoccur when load suddenly decreases.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_407ce58377414948"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence states fin surface freezing at light loads should be avoided and occurs when coil surface temperature below 32°F.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:cooling_tower:application_guidance:fin_surface_freezing_avoidance for Cooling Tower",
+        "summary": "Draft review summary for application_guidance hvac:cooling_tower:application_guidance:fin_surface_freezing_avoidance derived from chunk chunk_407ce58377414948 on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:application_guidance:fin_surface_freezing_avoidance",
+        "structured_payload": {
+          "parameter_name": null,
+          "title": "Fin Surface Freezing Avoidance",
+          "summary": "Fin surface freezing at light loads should be avoided; occurs when coil surface temperature falls below 32°F."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "In ho t, humid climates, the light-load\ncondition has a higher proportion of moisture and a correspond-\ningly lower proportion of sensible  heat. The result is higher dew\npoints in the conditioned spaces during light-load  conditions un-\nless a special means for controlling inside dew points (e.g., reheator dual path) is used.\nFin surface freezing at light lo ads should be avoided. Freezing\noccurs when a dehumidification coil’s surface temperature fallsbelow 32°F. Freezing does not occur with standard coils for comfort\ninstallations unless the refrigerant evaporating temperature at the\ncoil outlet is below 25 to 28°F sa turated; the exact value depends on\nthe design of the coil, its operating dew point, and the amount of\nloading. With coil and condensing units to balance at low tempera-\ntures at peak loads (not a customary design choice), freezing mayoccur when load suddenly decreases.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-09T22:34:12.730241+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 10
+  }
+}

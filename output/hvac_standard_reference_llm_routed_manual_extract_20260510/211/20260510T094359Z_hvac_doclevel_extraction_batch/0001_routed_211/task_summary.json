@@ -1,0 +1,72 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "routed_211.pdf",
+  "source_path": "/tmp/kf_manual_retry_211/subset/routed_211.pdf",
+  "doc_id": "doc_f7e44f58b5a24e06",
+  "chunks": 6,
+  "manual_tokens_estimated": 777,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 5,
+      "chunks_after": 6,
+      "parse_result": {
+        "job_id": "job_ce5eaa953a49400e",
+        "doc_id": "doc_f7e44f58b5a24e06",
+        "pages_created": 5,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_5a93b8ad5770404c",
+        "doc_id": "doc_f7e44f58b5a24e06",
+        "chunks_created": 6,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 15,
+      "anchor_passed": 15,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 13,
+      "judge_rejected": 2,
+      "judge_acceptance_rate": 86.7,
+      "judge_rejection_breakdown": {
+        "marketing": 2
+      },
+      "review_candidates": 13,
+      "by_type": {
+        "parameter_spec": 2,
+        "application_guidance": 11
+      },
+      "usage": {
+        "prompt_tokens": 1639,
+        "completion_tokens": 2224,
+        "total_tokens": 3863
+      },
+      "judge_usage": {
+        "prompt_tokens": 4718,
+        "completion_tokens": 1061,
+        "total_tokens": 5779
+      },
+      "extract_cost_rmb": 0.018261,
+      "judge_cost_rmb": 0.02052,
+      "cost_rmb": 0.038781,
+      "elapsed_seconds": 71.227,
+      "judge_elapsed_seconds": 38.48,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_llm_routed_manual_extract_20260510/211/20260510T094359Z_hvac_doclevel_extraction_batch/0001_routed_211/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_llm_routed_manual_extract_20260510/211/20260510T094359Z_hvac_doclevel_extraction_batch/0001_routed_211"
+}

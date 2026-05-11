@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "row_index": 5,
+  "file_name": "【美的】MDV4+多联机故障代码及维修流程图手册（25页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】MDV4+多联机故障代码及维修流程图手册（25页）-制冷百家网.pdf",
+  "doc_id": "doc_8b64c0ec06ae452b",
+  "chunks": 25,
+  "manual_tokens_estimated": 622,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 25,
+      "chunks_after": 25,
+      "parse_result": {
+        "job_id": "job_ccca90ecc86f4884",
+        "doc_id": "doc_8b64c0ec06ae452b",
+        "pages_created": 25,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_9b254a639bb940df",
+        "doc_id": "doc_8b64c0ec06ae452b",
+        "chunks_created": 25,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 30,
+      "anchor_passed": 0,
+      "anchor_rejected": 30,
+      "anchor_match_rate": 0.0,
+      "judge_accepted": 0,
+      "judge_rejected": 0,
+      "judge_acceptance_rate": 100.0,
+      "judge_rejection_breakdown": {},
+      "review_candidates": 0,
+      "by_type": {},
+      "usage": {
+        "prompt_tokens": 1677,
+        "completion_tokens": 3681,
+        "total_tokens": 5358
+      },
+      "judge_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "extract_cost_rmb": 0.027117,
+      "judge_cost_rmb": 0.0,
+      "cost_rmb": 0.027117,
+      "elapsed_seconds": 115.765,
+      "judge_elapsed_seconds": null,
+      "output_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0005_美的_mdv4_多联机故障代码及维修流程图手册_25页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0005_美的_mdv4_多联机故障代码及维修流程图手册_25页_制冷百家网"
+}

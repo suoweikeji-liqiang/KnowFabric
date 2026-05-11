@@ -1,0 +1,77 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "【开利】30AQ开利风冷式热泵机组（28页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/03、开利中央空调/技术手册/【开利】30AQ开利风冷式热泵机组（28页）-制冷百家网.pdf",
+  "doc_id": "doc_53c93cd27c09452f",
+  "chunks": 28,
+  "manual_tokens_estimated": 2356,
+  "equipment_class_id": "chiller",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "pump",
+      "equipment_class_key": "hvac:pump",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "Pump",
+        "pump"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 28,
+      "chunks_before": 28,
+      "pages_after": 28,
+      "chunks_after": 28,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 10,
+      "anchor_passed": 10,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 9,
+      "judge_rejected": 1,
+      "judge_acceptance_rate": 90.0,
+      "judge_rejection_breakdown": {
+        "weak_evidence": 1
+      },
+      "review_candidates": 9,
+      "by_type": {
+        "parameter_spec": 9
+      },
+      "usage": {
+        "prompt_tokens": 5994,
+        "completion_tokens": 1835,
+        "total_tokens": 7829
+      },
+      "judge_usage": {
+        "prompt_tokens": 8972,
+        "completion_tokens": 672,
+        "total_tokens": 9644
+      },
+      "extract_cost_rmb": 0.028992,
+      "judge_cost_rmb": 0.030948,
+      "cost_rmb": 0.05994,
+      "elapsed_seconds": 50.349,
+      "judge_elapsed_seconds": 19.511,
+      "output_dir": "output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200558Z_hvac_doclevel_extraction_batch/0001_开利_30aq开利风冷式热泵机组_28页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200558Z_hvac_doclevel_extraction_batch/0001_开利_30aq开利风冷式热泵机组_28页_制冷百家网"
+}

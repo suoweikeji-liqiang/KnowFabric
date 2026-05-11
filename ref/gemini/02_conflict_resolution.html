@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冲突仲裁 - KnowFabric Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: { base: '13px', xs: '12px', sm: '14px', tiny: '11px' },
+          fontFamily: {
+            sans:['Inter', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono:['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-100 text-slate-900 font-sans h-screen flex flex-col overflow-hidden text-base">
+
+  <!-- 顶部返回栏 -->
+  <header class="bg-white border-b border-slate-200 h-14 flex items-center px-4 shrink-0 justify-between shadow-sm z-10">
+    <div class="flex items-center gap-3">
+      <button class="text-slate-500 hover:text-slate-800 flex items-center gap-1 text-xs font-medium">
+        <span>←</span> 返回审阅中心
+      </button>
+      <div class="w-px h-4 bg-slate-300 mx-2"></div>
+      <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-tiny font-bold tracking-wider">冲突仲裁</span>
+      <h1 class="font-semibold text-slate-900">Chilled Water Reset Maximum</h1>
+    </div>
+    <div class="text-xs text-slate-500 font-mono">KO ID: ko_imagined_conflict_example</div>
+  </header>
+
+  <!-- 三栏对照区 -->
+  <div class="flex flex-1 overflow-hidden p-4 gap-4">
+    
+    <!-- 列 A: ASHRAE -->
+    <div class="flex-1 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col overflow-hidden">
+      <div class="p-3 border-b border-slate-200 bg-blue-50/50 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-tiny font-medium bg-blue-100 text-blue-700 border border-blue-200">🛡️ 行业标准</span>
+          <span class="font-semibold text-sm">ASHRAE 90.1-2022</span>
+        </div>
+        <button class="text-xs text-indigo-600 hover:underline">查看原文档 ↗</button>
+      </div>
+      <div class="p-4 overflow-y-auto flex-1 text-slate-700 leading-relaxed">
+        <div class="text-xs text-slate-400 mb-2 font-mono">引文: §6.5.3.2</div>
+        <p>...For systems with DDC of individual zones, reset the active chilled-water setpoint based on the highest zone cooling demand. The maximum reset shall be <mark class="bg-rose-200 text-rose-900 px-1 rounded font-mono font-bold">10°F</mark> (5.6°C) above the design chilled-water setpoint...</p>
+      </div>
+      <div class="p-3 border-t border-slate-100 bg-slate-50">
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="radio" name="winner" class="w-4 h-4 accent-indigo-600">
+          <span class="font-medium text-sm">指定权威方: ASHRAE</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- 列 B: Trane -->
+    <div class="flex-1 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col overflow-hidden">
+      <div class="p-3 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-tiny font-medium bg-slate-200 text-slate-700 border border-slate-300">🏭 厂商手册</span>
+          <span class="font-semibold text-sm">Trane CVGF</span>
+        </div>
+        <button class="text-xs text-indigo-600 hover:underline">查看原文档 ↗</button>
+      </div>
+      <div class="p-4 overflow-y-auto flex-1 text-slate-700 leading-relaxed">
+        <div class="text-xs text-slate-400 mb-2 font-mono">引文: 操作手册 p.29</div>
+        <p>...To maximize chiller efficiency during part-load conditions, it is recommended to utilize the External Chilled Water Setpoint (ECWS) feature. Set the maximum reset limit to <mark class="bg-rose-200 text-rose-900 px-1 rounded font-mono font-bold">12°F</mark> to prevent excessive compressor cycling...</p>
+      </div>
+      <div class="p-3 border-t border-slate-100 bg-slate-50">
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="radio" name="winner" class="w-4 h-4 accent-indigo-600">
+          <span class="font-medium text-sm">指定权威方: Trane</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- 列 C: 现场实测 -->
+    <div class="flex-1 bg-white border border-orange-300 rounded-lg shadow-sm flex flex-col overflow-hidden ring-2 ring-orange-500/20">
+      <div class="p-3 border-b border-orange-200 bg-orange-50 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-tiny font-medium bg-orange-500 text-white shadow-sm">🎯 现场实测</span>
+          <span class="font-semibold text-sm">Operator's Fleet</span>
+        </div>
+      </div>
+      <div class="p-4 overflow-y-auto flex-1 text-slate-700 leading-relaxed">
+        <div class="text-xs text-slate-400 mb-2 font-mono">引文: 23 项目实测 2024Q4-2025Q1</div>
+        <p>Based on telemetry data from 23 CVGF chillers across our portfolio, allowing a reset up to 12°F frequently causes flow instability in secondary loops. Capping the reset at <mark class="bg-emerald-200 text-emerald-900 px-1 rounded font-mono font-bold">10°F</mark> provides the best balance of energy savings and hydraulic stability.</p>
+      </div>
+      <div class="p-3 border-t border-orange-200 bg-orange-50">
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="radio" name="winner" class="w-4 h-4 accent-orange-600" checked>
+          <span class="font-medium text-sm text-orange-900">指定权威方: 现场实测</span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 底部仲裁操作栏 -->
+  <div class="bg-white border-t border-slate-200 p-4 shrink-0 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-10">
+    <div class="max-w-5xl mx-auto flex gap-6 items-start">
+      
+      <div class="flex-1">
+        <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+          偏离理由 <span class="text-rose-500">*</span>
+        </label>
+        <textarea class="w-full border border-slate-300 rounded-md p-2 text-xs focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none resize-none h-16" placeholder="请说明偏离标准/厂商手册的原因、实测样本量等...">已选择现场实测覆盖厂商手册。理由：基于 23 个实际项目的遥测数据，12°F 会导致水力不稳，10°F 是更安全的上限。符合 ASHRAE 90.1 底线要求。</textarea>
+      </div>
+
+      <div class="w-64 shrink-0 flex flex-col gap-2 justify-end pt-5">
+        <button class="w-full py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm font-medium shadow-sm flex justify-center items-center gap-2 transition-colors">
+          <span>✓ 确认仲裁</span>
+        </button>
+        <button class="w-full py-1.5 bg-white border border-slate-300 text-slate-700 rounded-md hover:bg-slate-50 text-xs font-medium transition-colors">
+          保留双源 (交由下游决策)
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

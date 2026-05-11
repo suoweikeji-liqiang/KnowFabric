@@ -1,0 +1,58 @@
+{
+  "row_index": 16,
+  "path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】风冷冷水机组YCAC，YMAC，YSAC通用控制器使用手册3.0.pdf",
+  "file_name": "【约克】风冷冷水机组YCAC，YMAC，YSAC通用控制器使用手册3.0.pdf",
+  "batch_group": "B_oem_manual_text_first",
+  "priority": "P1_batch_extract",
+  "brand": "York/JCI",
+  "authority_level": "oem_manual_or_vendor_doc",
+  "document_kind": "controller_manual",
+  "equipment_scope": "air_cooled_chiller_heat_pump,controller",
+  "page_count": "23",
+  "text_quality": "good_text",
+  "recommended_mode": "doc_level_single_call",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0016_约克_风冷冷水机组ycac_ymac_ysac通用控制器使用手册3_0_6ca330e1cc",
+  "status": "prepared",
+  "doc_id": "doc_1f7a392bdd7b4e4c",
+  "import_status": "imported",
+  "processing": {
+    "pages_before": 0,
+    "chunks_before": 0,
+    "pages_after": 23,
+    "chunks_after": 23,
+    "parse_result": {
+      "job_id": "job_12487082ac4646ac",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "pages_created": 23,
+      "status": "success"
+    },
+    "chunk_result": {
+      "job_id": "job_897dc927b5734978",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "chunks_created": 23,
+      "status": "success"
+    }
+  },
+  "review_bundle": {
+    "prepare_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0016_约克_风冷冷水机组ycac_ymac_ysac通用控制器使用手册3_0_6ca330e1cc/review_bundle/prepare_manifest.json",
+    "candidate_entries": 81,
+    "review_packs": 1,
+    "ready_packs": 0,
+    "compiler": {
+      "enable_llm": false,
+      "backend_name": null,
+      "backend_model": null,
+      "enabled_types": []
+    },
+    "health": {
+      "total_findings": 89,
+      "by_code": {
+        "anchor_uncertainty": 81,
+        "weak_evidence": 7,
+        "coverage_gap": 1
+      },
+      "review_packs": 1
+    }
+  }
+}

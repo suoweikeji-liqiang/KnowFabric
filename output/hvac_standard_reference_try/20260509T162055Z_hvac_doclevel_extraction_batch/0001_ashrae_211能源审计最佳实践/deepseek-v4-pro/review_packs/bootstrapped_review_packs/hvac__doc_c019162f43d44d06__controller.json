@@ -1,0 +1,992 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-09T16:22:10.288309+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_c019162f43d44d06",
+  "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+  "equipment_class": {
+    "equipment_class_id": "controller",
+    "equipment_class_key": "hvac:controller",
+    "label": "Controller",
+    "supported_knowledge_anchors": [
+      "parameter_spec",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 10,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_8e32df888b6bb7a0",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_8ccf9e452b6543a4",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:eui",
+      "structured_payload_candidate": {
+        "parameter_name": "EUI",
+        "formula": "total energy consumed / total gross floor area",
+        "units": "kBtu/sq ft or GJ/sq m",
+        "title": "Energy Use Intensity (EUI) Definition",
+        "summary": "EUI is total energy consumed by the building in one year divided by total gross floor area."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_8ccf9e452b6543a4",
+        "chunk_36eea16a95764b14",
+        "chunk_dee745f70eed45c7",
+        "chunk_fd39fe1107c34590",
+        "chunk_4dd7abe589b14c29",
+        "chunk_dbf8b4f3167c47b7",
+        "chunk_698eeb7479804d82",
+        "chunk_ff59f41de343489a",
+        "chunk_26613da340624bb3",
+        "chunk_4a64a81ac92c43f1",
+        "chunk_c071c00e04b14e55",
+        "chunk_b12aa82ba18d4d28"
+      ],
+      "source_page_nos": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14,
+        15,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "EUI definition with formula and units is a useful operational parameter for energy audits.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:eui for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:eui derived from chunk chunk_8ccf9e452b6543a4 on page 1 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:eui",
+        "structured_payload": {
+          "parameter_name": "EUI",
+          "formula": "total energy consumed / total gross floor area",
+          "units": "kBtu/sq ft or GJ/sq m",
+          "title": "Energy Use Intensity (EUI) Definition",
+          "summary": "EUI is total energy consumed by the building in one year divided by total gross floor area."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_8641cdd5ed6bee3b",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_8ccf9e452b6543a4",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:eci",
+      "structured_payload_candidate": {
+        "parameter_name": "ECI",
+        "formula": "total cost of energy consumed / total gross floor area",
+        "units": "$/sq ft or $/sq m",
+        "title": "Energy Cost Index (ECI) Definition",
+        "summary": "ECI is total cost of energy consumed by the building in one year divided by total gross floor area."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_8ccf9e452b6543a4",
+        "chunk_36eea16a95764b14",
+        "chunk_dee745f70eed45c7",
+        "chunk_fd39fe1107c34590",
+        "chunk_4dd7abe589b14c29",
+        "chunk_dbf8b4f3167c47b7",
+        "chunk_698eeb7479804d82",
+        "chunk_ff59f41de343489a",
+        "chunk_26613da340624bb3",
+        "chunk_3107ff0248e246a9",
+        "chunk_4a64a81ac92c43f1",
+        "chunk_c071c00e04b14e55",
+        "chunk_b12aa82ba18d4d28"
+      ],
+      "source_page_nos": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14,
+        15,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "ECI definition with formula and units is a useful operational parameter for energy audits.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:eci for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:eci derived from chunk chunk_8ccf9e452b6543a4 on page 1 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:eci",
+        "structured_payload": {
+          "parameter_name": "ECI",
+          "formula": "total cost of energy consumed / total gross floor area",
+          "units": "$/sq ft or $/sq m",
+          "title": "Energy Cost Index (ECI) Definition",
+          "summary": "ECI is total cost of energy consumed by the building in one year divided by total gross floor area."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6b7b0aa6406e2fe5",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_4dd7abe589b14c29",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:controller:application_guidance:preliminary_energy_use_analysis",
+      "structured_payload_candidate": {
+        "requirement": "minimum 1 calendar year of utility bills and schedules",
+        "title": "Preliminary Energy Use Analysis Data Requirements",
+        "summary": "Preliminary energy use analysis requires utility bills and schedules for at least one calendar year."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Planning the Audit\nPreliminary Energy\nUse Analysis:\n•Baseline overview of\nbuilding's energy\nperformance\n•Early Stage Benchmarking\n•Data Sources: utility bills,\nschedules (min. 1 calendar\nyear)\n•Key Metrics:\n•EUI\n•ECI\n•Informs depth & focus of\nmain audit",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4dd7abe589b14c29",
+        "chunk_dbf8b4f3167c47b7"
+      ],
+      "source_page_nos": [
+        7,
+        8
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies data requirements for a preliminary energy use analysis, useful application guidance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:controller:application_guidance:preliminary_energy_use_analysis for Controller",
+        "summary": "Draft review summary for application_guidance hvac:controller:application_guidance:preliminary_energy_use_analysis derived from chunk chunk_4dd7abe589b14c29 on page 7 for Controller.",
+        "canonical_key": "hvac:controller:application_guidance:preliminary_energy_use_analysis",
+        "structured_payload": {
+          "requirement": "minimum 1 calendar year of utility bills and schedules",
+          "title": "Preliminary Energy Use Analysis Data Requirements",
+          "summary": "Preliminary energy use analysis requires utility bills and schedules for at least one calendar year."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Planning the Audit\nPreliminary Energy\nUse Analysis:\n•Baseline overview of\nbuilding's energy\nperformance\n•Early Stage Benchmarking\n•Data Sources: utility bills,\nschedules (min. 1 calendar\nyear)\n•Key Metrics:\n•EUI\n•ECI\n•Informs depth & focus of\nmain audit",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_814a5ea51bf4421d",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 15,
+      "chunk_id": "chunk_c071c00e04b14e55",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:controller:performance_spec:model_calibration_tolerance",
+      "structured_payload_candidate": {
+        "tolerance": "±10%",
+        "title": "Model Calibration Tolerance",
+        "summary": "Energy model calibration should be within ±10% of real energy consumption."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "After the Audit\n•Model Calibration\n•Is the process that allows us to\ncompare the energy consumption\ncalculated by the model, with the\nreal energy consumption.\n•Good practice: it should be in the\nrange of ±10%\n•Schedules are important to know,\nand be able to correctly put them\non the model\nLet’s go with Live Example!\nSome Resources\n(particularly this one)",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_c071c00e04b14e55"
+      ],
+      "source_page_nos": [
+        15
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a calibration tolerance for energy models, a useful performance spec.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Performance Spec hvac:controller:performance_spec:model_calibration_tolerance for Controller",
+        "summary": "Draft review summary for performance_spec hvac:controller:performance_spec:model_calibration_tolerance derived from chunk chunk_c071c00e04b14e55 on page 15 for Controller.",
+        "canonical_key": "hvac:controller:performance_spec:model_calibration_tolerance",
+        "structured_payload": {
+          "tolerance": "±10%",
+          "title": "Model Calibration Tolerance",
+          "summary": "Energy model calibration should be within ±10% of real energy consumption."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "After the Audit\n•Model Calibration\n•Is the process that allows us to\ncompare the energy consumption\ncalculated by the model, with the\nreal energy consumption.\n•Good practice: it should be in the\nrange of ±10%\n•Schedules are important to know,\nand be able to correctly put them\non the model\nLet’s go with Live Example!\nSome Resources\n(particularly this one)",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_47f18a162782cce1",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_8ccf9e452b6543a4",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:controller:application_guidance:level_1_audit_team",
+      "structured_payload_candidate": {
+        "level": "1",
+        "roles": [
+          "energy auditor",
+          "energy analyst (optional)"
+        ],
+        "title": "Audit Team Composition for Level 1",
+        "summary": "Basic team for Level 1 audit includes energy auditor (solo) and optionally an energy analyst."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_8ccf9e452b6543a4",
+        "chunk_36eea16a95764b14",
+        "chunk_dee745f70eed45c7",
+        "chunk_fd39fe1107c34590",
+        "chunk_1382db8dc9644e66",
+        "chunk_b1bdf75ffb6248b0",
+        "chunk_4dd7abe589b14c29",
+        "chunk_dbf8b4f3167c47b7",
+        "chunk_698eeb7479804d82",
+        "chunk_ff59f41de343489a",
+        "chunk_1a50abf6c5544fd5",
+        "chunk_33f7098f6e314817",
+        "chunk_26613da340624bb3",
+        "chunk_3107ff0248e246a9",
+        "chunk_4a64a81ac92c43f1",
+        "chunk_c071c00e04b14e55",
+        "chunk_b28873971fa64b31",
+        "chunk_b12aa82ba18d4d28"
+      ],
+      "source_page_nos": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Describes audit team composition, a valid application guidance for planning.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:controller:application_guidance:level_1_audit_team for Controller",
+        "summary": "Draft review summary for application_guidance hvac:controller:application_guidance:level_1_audit_team derived from chunk chunk_8ccf9e452b6543a4 on page 1 for Controller.",
+        "canonical_key": "hvac:controller:application_guidance:level_1_audit_team",
+        "structured_payload": {
+          "level": "1",
+          "roles": [
+            "energy auditor",
+            "energy analyst (optional)"
+          ],
+          "title": "Audit Team Composition for Level 1",
+          "summary": "Basic team for Level 1 audit includes energy auditor (solo) and optionally an energy analyst."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d1e9dc9486b76c19",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_8ccf9e452b6543a4",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:controller:application_guidance:level_2_audit_team",
+      "structured_payload_candidate": {
+        "level": "2",
+        "roles": [
+          "surveyor/drafter",
+          "energy modeler",
+          "mechanical engineer (optional)",
+          "electrical engineer (optional)",
+          "power engineer (optional)"
+        ],
+        "title": "Audit Team Composition for Level 2",
+        "summary": "For Level 2 audit, consider adding surveyor/drafter, energy modeler, and optionally discipline specialists."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_8ccf9e452b6543a4",
+        "chunk_36eea16a95764b14",
+        "chunk_dee745f70eed45c7",
+        "chunk_fd39fe1107c34590",
+        "chunk_1382db8dc9644e66",
+        "chunk_b1bdf75ffb6248b0",
+        "chunk_4dd7abe589b14c29",
+        "chunk_dbf8b4f3167c47b7",
+        "chunk_698eeb7479804d82",
+        "chunk_ff59f41de343489a",
+        "chunk_1a50abf6c5544fd5",
+        "chunk_33f7098f6e314817",
+        "chunk_26613da340624bb3",
+        "chunk_3107ff0248e246a9",
+        "chunk_4a64a81ac92c43f1",
+        "chunk_c071c00e04b14e55",
+        "chunk_b28873971fa64b31",
+        "chunk_b12aa82ba18d4d28"
+      ],
+      "source_page_nos": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Describes audit team composition for Level 2, a valid application guidance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:controller:application_guidance:level_2_audit_team for Controller",
+        "summary": "Draft review summary for application_guidance hvac:controller:application_guidance:level_2_audit_team derived from chunk chunk_8ccf9e452b6543a4 on page 1 for Controller.",
+        "canonical_key": "hvac:controller:application_guidance:level_2_audit_team",
+        "structured_payload": {
+          "level": "2",
+          "roles": [
+            "surveyor/drafter",
+            "energy modeler",
+            "mechanical engineer (optional)",
+            "electrical engineer (optional)",
+            "power engineer (optional)"
+          ],
+          "title": "Audit Team Composition for Level 2",
+          "summary": "For Level 2 audit, consider adding surveyor/drafter, energy modeler, and optionally discipline specialists."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_b71d7cfef5b37ffb",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_8ccf9e452b6543a4",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:controller:application_guidance:level_3_audit_team",
+      "structured_payload_candidate": {
+        "level": "3",
+        "roles": [
+          "second auditor",
+          "electrician on site",
+          "light specialist (optional)",
+          "emissions specialist (optional)",
+          "additional technician"
+        ],
+        "title": "Audit Team Composition for Level 3",
+        "summary": "For Level 3 audit, consider adding a second auditor, electrician, and optional specialists."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_8ccf9e452b6543a4",
+        "chunk_36eea16a95764b14",
+        "chunk_dee745f70eed45c7",
+        "chunk_fd39fe1107c34590",
+        "chunk_1382db8dc9644e66",
+        "chunk_b1bdf75ffb6248b0",
+        "chunk_4dd7abe589b14c29",
+        "chunk_dbf8b4f3167c47b7",
+        "chunk_698eeb7479804d82",
+        "chunk_ff59f41de343489a",
+        "chunk_1a50abf6c5544fd5",
+        "chunk_33f7098f6e314817",
+        "chunk_26613da340624bb3",
+        "chunk_3107ff0248e246a9",
+        "chunk_4a64a81ac92c43f1",
+        "chunk_c071c00e04b14e55",
+        "chunk_b28873971fa64b31",
+        "chunk_b12aa82ba18d4d28"
+      ],
+      "source_page_nos": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Describes audit team composition for Level 3, a valid application guidance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:controller:application_guidance:level_3_audit_team for Controller",
+        "summary": "Draft review summary for application_guidance hvac:controller:application_guidance:level_3_audit_team derived from chunk chunk_8ccf9e452b6543a4 on page 1 for Controller.",
+        "canonical_key": "hvac:controller:application_guidance:level_3_audit_team",
+        "structured_payload": {
+          "level": "3",
+          "roles": [
+            "second auditor",
+            "electrician on site",
+            "light specialist (optional)",
+            "emissions specialist (optional)",
+            "additional technician"
+          ],
+          "title": "Audit Team Composition for Level 3",
+          "summary": "For Level 3 audit, consider adding a second auditor, electrician, and optional specialists."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_bb90e81a475c9693",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_1a50abf6c5544fd5",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "hvac:controller:operational_sequence:site_visit_sequence",
+      "structured_payload_candidate": {
+        "steps": [
+          "Preliminary Walkthrough",
+          "SAFETY toolbox meeting",
+          "Equipment Checks",
+          "Data Collection",
+          "Interviews",
+          "Documentation"
+        ],
+        "title": "Site Visit Activities Sequence",
+        "summary": "Site visits include preliminary walkthrough, safety toolbox meeting, equipment checks, data collection, interviews, and documentation."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Conducting the Audit\n•Site Visits\n•Stick to your\nplan… unless\nreality hits you in\nthe face!\nPreliminary\nWalkthroughSAFETY\ntoolbox\nmeeting\nEquipment\nChecks\nData\nCollection\nInterviews\nDocumentation",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1a50abf6c5544fd5"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a sequence of site visit activities, a valid operational sequence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Operational Sequence hvac:controller:operational_sequence:site_visit_sequence for Controller",
+        "summary": "Draft review summary for operational_sequence hvac:controller:operational_sequence:site_visit_sequence derived from chunk chunk_1a50abf6c5544fd5 on page 11 for Controller.",
+        "canonical_key": "hvac:controller:operational_sequence:site_visit_sequence",
+        "structured_payload": {
+          "steps": [
+            "Preliminary Walkthrough",
+            "SAFETY toolbox meeting",
+            "Equipment Checks",
+            "Data Collection",
+            "Interviews",
+            "Documentation"
+          ],
+          "title": "Site Visit Activities Sequence",
+          "summary": "Site visits include preliminary walkthrough, safety toolbox meeting, equipment checks, data collection, interviews, and documentation."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Conducting the Audit\n•Site Visits\n•Stick to your\nplan… unless\nreality hits you in\nthe face!\nPreliminary\nWalkthroughSAFETY\ntoolbox\nmeeting\nEquipment\nChecks\nData\nCollection\nInterviews\nDocumentation",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_669aacc12fad5546",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_8ccf9e452b6543a4",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:controller:application_guidance:report_structure",
+      "structured_payload_candidate": {
+        "sections": [
+          "Executive Summary",
+          "Background Information",
+          "Description of the Existing Building Systems",
+          "Energy Efficiency Measures",
+          "Supporting Information"
+        ],
+        "title": "Energy Audit Report Structure",
+        "summary": "Report includes executive summary, background, existing systems, EEMs, and supporting information."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_8ccf9e452b6543a4",
+        "chunk_36eea16a95764b14",
+        "chunk_dee745f70eed45c7",
+        "chunk_fd39fe1107c34590",
+        "chunk_1382db8dc9644e66",
+        "chunk_b1bdf75ffb6248b0",
+        "chunk_4dd7abe589b14c29",
+        "chunk_dbf8b4f3167c47b7",
+        "chunk_698eeb7479804d82",
+        "chunk_ff59f41de343489a",
+        "chunk_1a50abf6c5544fd5",
+        "chunk_33f7098f6e314817",
+        "chunk_26613da340624bb3",
+        "chunk_4a64a81ac92c43f1",
+        "chunk_c071c00e04b14e55",
+        "chunk_b28873971fa64b31",
+        "chunk_ef1915ab717649bd",
+        "chunk_b12aa82ba18d4d28"
+      ],
+      "source_page_nos": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies report structure, useful application guidance for audit deliverables.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:controller:application_guidance:report_structure for Controller",
+        "summary": "Draft review summary for application_guidance hvac:controller:application_guidance:report_structure derived from chunk chunk_8ccf9e452b6543a4 on page 1 for Controller.",
+        "canonical_key": "hvac:controller:application_guidance:report_structure",
+        "structured_payload": {
+          "sections": [
+            "Executive Summary",
+            "Background Information",
+            "Description of the Existing Building Systems",
+            "Energy Efficiency Measures",
+            "Supporting Information"
+          ],
+          "title": "Energy Audit Report Structure",
+          "summary": "Report includes executive summary, background, existing systems, EEMs, and supporting information."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_85bc7d8c41b6b887",
+      "domain_id": "hvac",
+      "doc_id": "doc_c019162f43d44d06",
+      "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_8ccf9e452b6543a4",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:controller:application_guidance:eem_categories",
+      "structured_payload_candidate": {
+        "categories": [
+          "No-cost/low-cost measures",
+          "Capital investment measures",
+          "Demand response measures",
+          "Distributed generation/renewable energy measures",
+          "O&M measures"
+        ],
+        "title": "Energy Efficiency Measures Categories",
+        "summary": "EEMs include no-cost/low-cost, capital investment, demand response, distributed generation/renewable, and O&M measures."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_8ccf9e452b6543a4",
+        "chunk_36eea16a95764b14",
+        "chunk_dee745f70eed45c7",
+        "chunk_fd39fe1107c34590",
+        "chunk_4dd7abe589b14c29",
+        "chunk_dbf8b4f3167c47b7",
+        "chunk_698eeb7479804d82",
+        "chunk_ff59f41de343489a",
+        "chunk_26613da340624bb3",
+        "chunk_4a64a81ac92c43f1",
+        "chunk_c071c00e04b14e55",
+        "chunk_b12aa82ba18d4d28"
+      ],
+      "source_page_nos": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14,
+        15,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Lists categories of energy efficiency measures, useful application guidance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:controller:application_guidance:eem_categories for Controller",
+        "summary": "Draft review summary for application_guidance hvac:controller:application_guidance:eem_categories derived from chunk chunk_8ccf9e452b6543a4 on page 1 for Controller.",
+        "canonical_key": "hvac:controller:application_guidance:eem_categories",
+        "structured_payload": {
+          "categories": [
+            "No-cost/low-cost measures",
+            "Capital investment measures",
+            "Demand response measures",
+            "Distributed generation/renewable energy measures",
+            "O&M measures"
+          ],
+          "title": "Energy Efficiency Measures Categories",
+          "summary": "EEMs include no-cost/low-cost, capital investment, demand response, distributed generation/renewable, and O&M measures."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Best Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-09T16:22:10.291319+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 10
+  }
+}

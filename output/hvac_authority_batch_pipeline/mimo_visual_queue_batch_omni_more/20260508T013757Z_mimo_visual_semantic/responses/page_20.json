@@ -1,0 +1,164 @@
+{
+  "page": 20,
+  "response": {
+    "id": "01f6141722d540d7ae7e14a205de97b0",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is a promotional brochure page for Haier Central Air Conditioning, highlighting the company's 22-year history, product range, and service guarantees. It features text descriptions, product illustrations, and images representing service stages.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Main Title: Haier Central Air Conditioning Professional Leading\"},\n    {\"type\": \"text_block\", \"label\": \"22 Years Anniversary\"},\n    {\"type\": \"illustration\", \"label\": \"Air conditioning unit illustrations (ceiling cassette, duct, floor-standing)\"},\n    {\"type\": \"text_block\", \"label\": \"Company introduction text\"},\n    {\"type\": \"text_block\", \"label\": \"Five-stage Full Standard Service description\"},\n    {\"type\": \"image\", \"label\": \"Procurement stage image (warehouse)\"},\n    {\"type\": \"image\", \"label\": \"Design stage image (drafting)\"},\n    {\"type\": \"image\", \"label\": \"Installation stage image (measuring)\"},\n    {\"type\": \"image\", \"label\": \"Supervision stage image (tablet)\"},\n    {\"type\": \"image\", \"label\": \"Maintenance stage image (technician)\"},\n    {\"type\": \"text_block\", \"label\": \"Four Major Professional Guarantees section\"},\n    {\"type\": \"image\", \"label\": \"Technical support images (buildings, labs)\"},\n    {\"type\": \"image\", \"label\": \"Production images (factory, workers)\"},\n    {\"type\": \"circular_diagram\", \"label\": \"22-year guarantee wheel (Technical, Production, Solution, Service)\"},\n    {\"type\": \"text_block\", \"label\": \"Professional Installation and Service text\"},\n    {\"type\": \"image\", \"label\": \"Service team images (people, van)\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"22 Years Anniversary\", \"relation\": \"is associated with\", \"to\": \"Four Major Professional Guarantees section\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Procurement stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Design stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Installation stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Supervision stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Maintenance stage image\"},\n    {\"from\": \"Four Major Professional Guarantees section\", \"relation\": \"includes\", \"to\": \"Technical support images\"},\n    {\"from\": \"Four Major Professional Guarantees section\", \"relation\": \"includes\", \"to\": \"Production images\"},\n    {\"from\": \"Four Major Professional Guarantees section\", \"relation\": \"includes\", \"to\": \"circular_diagram\"},\n    {\"from\": \"circular_diagram\", \"relation\": \"lists guarantee types\", \"to\": \"Professional Installation and Service text\"}\n  ],\n  \"useful_for_knowledge_types\": [\"company_background\", \"service_process\", \"product_range\", \"marketing_material\"],\n  \"ocr_text_if_useful\": \"海尔中央空调专业打造领先\\nHAIER CENTRAL AIR CONDITIONING PROFESSIONAL LEADING\\n22年\\n专业技术保障 / 专业生产保障\\n专业方案保障 / 专业服务保障\\n五段全程标准服务\\n五段标准 · 全程无忧\\n海尔中央空调，为了提供超乎消费者需求的产品与服务，不断突破创新。“五段全程标准”服务，集结5大专家，从采购、设计、安装、监理、维保五个环节，提供“售前、售中、售后”三位一体的服务模式，为全球用户提供极致贴心服务。“五段全程标准”服务，再次提升行业服务新要求，构筑服务新标准！\\n4大专业保障 打造行业领先\\n依托于集团专业技术资源支持，海尔中央空调拥有行业领先的专业技术\\n海尔中央空调致力于成为全球领先的中央空调整体解决方案服务商\\n在强大的研发、生产实力推动下，海尔中央空调拥有行业领先的产品类型，并以此提供小到7㎡、大到10万㎡的舒适空间解决方案\\n海尔中央空调拥有世界领先的制造水平，是目前国内规模最大、品种最多、技术水平最高的商用及家庭中央空调生产基地\\n专业安装：海尔中央空调金牌服务网络500家、上百家战略安装商、专业监理40家。\\n专业服务：通过“采购、设计、安装、监理、维保”五大环节的全程标准服务。\",\n  \"uncertainty_notes\": \"The page is promotional, not technical. Relationships are inferred from layout and text grouping, not explicit wiring or schematic connections. Some text is small and may have minor OCR errors.\",\n  \"confidence\": 0.9\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204316,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1044,
+      "prompt_tokens": 1517,
+      "total_tokens": 2561,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 1320
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "other",
+    "summary": "This is a promotional brochure page for Haier Central Air Conditioning, highlighting the company's 22-year history, product range, and service guarantees. It features text descriptions, product illustrations, and images representing service stages.",
+    "visual_entities": [
+      {
+        "type": "text_block",
+        "label": "Main Title: Haier Central Air Conditioning Professional Leading"
+      },
+      {
+        "type": "text_block",
+        "label": "22 Years Anniversary"
+      },
+      {
+        "type": "illustration",
+        "label": "Air conditioning unit illustrations (ceiling cassette, duct, floor-standing)"
+      },
+      {
+        "type": "text_block",
+        "label": "Company introduction text"
+      },
+      {
+        "type": "text_block",
+        "label": "Five-stage Full Standard Service description"
+      },
+      {
+        "type": "image",
+        "label": "Procurement stage image (warehouse)"
+      },
+      {
+        "type": "image",
+        "label": "Design stage image (drafting)"
+      },
+      {
+        "type": "image",
+        "label": "Installation stage image (measuring)"
+      },
+      {
+        "type": "image",
+        "label": "Supervision stage image (tablet)"
+      },
+      {
+        "type": "image",
+        "label": "Maintenance stage image (technician)"
+      },
+      {
+        "type": "text_block",
+        "label": "Four Major Professional Guarantees section"
+      },
+      {
+        "type": "image",
+        "label": "Technical support images (buildings, labs)"
+      },
+      {
+        "type": "image",
+        "label": "Production images (factory, workers)"
+      },
+      {
+        "type": "circular_diagram",
+        "label": "22-year guarantee wheel (Technical, Production, Solution, Service)"
+      },
+      {
+        "type": "text_block",
+        "label": "Professional Installation and Service text"
+      },
+      {
+        "type": "image",
+        "label": "Service team images (people, van)"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "22 Years Anniversary",
+        "relation": "is associated with",
+        "to": "Four Major Professional Guarantees section"
+      },
+      {
+        "from": "Five-stage Full Standard Service description",
+        "relation": "lists stages including",
+        "to": "Procurement stage image"
+      },
+      {
+        "from": "Five-stage Full Standard Service description",
+        "relation": "lists stages including",
+        "to": "Design stage image"
+      },
+      {
+        "from": "Five-stage Full Standard Service description",
+        "relation": "lists stages including",
+        "to": "Installation stage image"
+      },
+      {
+        "from": "Five-stage Full Standard Service description",
+        "relation": "lists stages including",
+        "to": "Supervision stage image"
+      },
+      {
+        "from": "Five-stage Full Standard Service description",
+        "relation": "lists stages including",
+        "to": "Maintenance stage image"
+      },
+      {
+        "from": "Four Major Professional Guarantees section",
+        "relation": "includes",
+        "to": "Technical support images"
+      },
+      {
+        "from": "Four Major Professional Guarantees section",
+        "relation": "includes",
+        "to": "Production images"
+      },
+      {
+        "from": "Four Major Professional Guarantees section",
+        "relation": "includes",
+        "to": "circular_diagram"
+      },
+      {
+        "from": "circular_diagram",
+        "relation": "lists guarantee types",
+        "to": "Professional Installation and Service text"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "company_background",
+      "service_process",
+      "product_range",
+      "marketing_material"
+    ],
+    "ocr_text_if_useful": "海尔中央空调专业打造领先\nHAIER CENTRAL AIR CONDITIONING PROFESSIONAL LEADING\n22年\n专业技术保障 / 专业生产保障\n专业方案保障 / 专业服务保障\n五段全程标准服务\n五段标准 · 全程无忧\n海尔中央空调，为了提供超乎消费者需求的产品与服务，不断突破创新。“五段全程标准”服务，集结5大专家，从采购、设计、安装、监理、维保五个环节，提供“售前、售中、售后”三位一体的服务模式，为全球用户提供极致贴心服务。“五段全程标准”服务，再次提升行业服务新要求，构筑服务新标准！\n4大专业保障 打造行业领先\n依托于集团专业技术资源支持，海尔中央空调拥有行业领先的专业技术\n海尔中央空调致力于成为全球领先的中央空调整体解决方案服务商\n在强大的研发、生产实力推动下，海尔中央空调拥有行业领先的产品类型，并以此提供小到7㎡、大到10万㎡的舒适空间解决方案\n海尔中央空调拥有世界领先的制造水平，是目前国内规模最大、品种最多、技术水平最高的商用及家庭中央空调生产基地\n专业安装：海尔中央空调金牌服务网络500家、上百家战略安装商、专业监理40家。\n专业服务：通过“采购、设计、安装、监理、维保”五大环节的全程标准服务。",
+    "uncertainty_notes": "The page is promotional, not technical. Relationships are inferred from layout and text grouping, not explicit wiring or schematic connections. Some text is small and may have minor OCR errors.",
+    "confidence": 0.9
+  },
+  "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is a promotional brochure page for Haier Central Air Conditioning, highlighting the company's 22-year history, product range, and service guarantees. It features text descriptions, product illustrations, and images representing service stages.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Main Title: Haier Central Air Conditioning Professional Leading\"},\n    {\"type\": \"text_block\", \"label\": \"22 Years Anniversary\"},\n    {\"type\": \"illustration\", \"label\": \"Air conditioning unit illustrations (ceiling cassette, duct, floor-standing)\"},\n    {\"type\": \"text_block\", \"label\": \"Company introduction text\"},\n    {\"type\": \"text_block\", \"label\": \"Five-stage Full Standard Service description\"},\n    {\"type\": \"image\", \"label\": \"Procurement stage image (warehouse)\"},\n    {\"type\": \"image\", \"label\": \"Design stage image (drafting)\"},\n    {\"type\": \"image\", \"label\": \"Installation stage image (measuring)\"},\n    {\"type\": \"image\", \"label\": \"Supervision stage image (tablet)\"},\n    {\"type\": \"image\", \"label\": \"Maintenance stage image (technician)\"},\n    {\"type\": \"text_block\", \"label\": \"Four Major Professional Guarantees section\"},\n    {\"type\": \"image\", \"label\": \"Technical support images (buildings, labs)\"},\n    {\"type\": \"image\", \"label\": \"Production images (factory, workers)\"},\n    {\"type\": \"circular_diagram\", \"label\": \"22-year guarantee wheel (Technical, Production, Solution, Service)\"},\n    {\"type\": \"text_block\", \"label\": \"Professional Installation and Service text\"},\n    {\"type\": \"image\", \"label\": \"Service team images (people, van)\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"22 Years Anniversary\", \"relation\": \"is associated with\", \"to\": \"Four Major Professional Guarantees section\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Procurement stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Design stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Installation stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Supervision stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Maintenance stage image\"},\n    {\"from\": \"Four Major Professional Guarantees section\", \"relation\": \"includes\", \"to\": \"Technical support images\"},\n    {\"from\": \"Four Major Professional Guarantees section\", \"relation\": \"includes\", \"to\": \"Production images\"},\n    {\"from\": \"Four Major Professional Guarantees section\", \"relation\": \"includes\", \"to\": \"circular_diagram\"},\n    {\"from\": \"circular_diagram\", \"relation\": \"lists guarantee types\", \"to\": \"Professional Installation and Service text\"}\n  ],\n  \"useful_for_knowledge_types\": [\"company_background\", \"service_process\", \"product_range\", \"marketing_material\"],\n  \"ocr_text_if_useful\": \"海尔中央空调专业打造领先\\nHAIER CENTRAL AIR CONDITIONING PROFESSIONAL LEADING\\n22年\\n专业技术保障 / 专业生产保障\\n专业方案保障 / 专业服务保障\\n五段全程标准服务\\n五段标准 · 全程无忧\\n海尔中央空调，为了提供超乎消费者需求的产品与服务，不断突破创新。“五段全程标准”服务，集结5大专家，从采购、设计、安装、监理、维保五个环节，提供“售前、售中、售后”三位一体的服务模式，为全球用户提供极致贴心服务。“五段全程标准”服务，再次提升行业服务新要求，构筑服务新标准！\\n4大专业保障 打造行业领先\\n依托于集团专业技术资源支持，海尔中央空调拥有行业领先的专业技术\\n海尔中央空调致力于成为全球领先的中央空调整体解决方案服务商\\n在强大的研发、生产实力推动下，海尔中央空调拥有行业领先的产品类型，并以此提供小到7㎡、大到10万㎡的舒适空间解决方案\\n海尔中央空调拥有世界领先的制造水平，是目前国内规模最大、品种最多、技术水平最高的商用及家庭中央空调生产基地\\n专业安装：海尔中央空调金牌服务网络500家、上百家战略安装商、专业监理40家。\\n专业服务：通过“采购、设计、安装、监理、维保”五大环节的全程标准服务。\",\n  \"uncertainty_notes\": \"The page is promotional, not technical. Relationships are inferred from layout and text grouping, not explicit wiring or schematic connections. Some text is small and may have minor OCR errors.\",\n  \"confidence\": 0.9\n}"
+}

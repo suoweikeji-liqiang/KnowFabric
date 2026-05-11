@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-11T04:25:33.062258+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_36640e9f378f4667__centrifugal_chiller.json",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_class_key": "hvac:centrifugal_chiller",
+      "candidate_count": 10
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-09T23:23:53.604043+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_4a9b0fec1dfb4103/extract/20260509T232306Z_hvac_doclevel_extraction_batch/0001_auto_doc_4a9b0fec1dfb4103/mimo-v2-omni/review_packs/bootstrapped_review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 0,
+    "blocked_pending": 1,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_39d12963b83649eb__valve.json",
+      "pack_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_4a9b0fec1dfb4103/extract/20260509T232306Z_hvac_doclevel_extraction_batch/0001_auto_doc_4a9b0fec1dfb4103/mimo-v2-omni/review_packs/bootstrapped_review_packs/hvac__doc_39d12963b83649eb__valve.json",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "equipment_class_id": "valve",
+      "equipment_class_key": "hvac:valve",
+      "candidate_count": 9,
+      "accepted_count": 0,
+      "rejected_count": 0,
+      "pending_count": 9,
+      "status": "blocked_pending",
+      "blocker": "pending_review_decisions"
+    }
+  ]
+}

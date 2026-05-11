@@ -1,0 +1,75 @@
+{
+  "run_id": "20260507T010214Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_1",
+  "standard_id": "ASHRAE Guideline 36-2021",
+  "manual": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+  "doc_id": "doc_4bbd3703c4f84be4",
+  "architecture": "single-call full-book extraction + single-call batch judge + verbatim chunk anchoring",
+  "focus_sections": [
+    "5.1"
+  ],
+  "manual_chunks": 923,
+  "manual_tokens_estimated": 196618,
+  "extract_backend": "deepseek-parameter-spec",
+  "extract_model": "deepseek-v4-flash",
+  "judge_backend": "deepseek-v4-pro-judge",
+  "judge_model": "deepseek-v4-pro",
+  "extract_usage": {
+    "prompt_tokens": 210512,
+    "completion_tokens": 18644,
+    "total_tokens": 229156,
+    "request_count": 1
+  },
+  "judge_usage": {
+    "prompt_tokens": 326,
+    "completion_tokens": 181,
+    "total_tokens": 507,
+    "request_count": 1
+  },
+  "extract_cost_rmb": 0.253252,
+  "judge_cost_rmb": 0.002064,
+  "total_cost_rmb": 0.255316,
+  "budget_rmb": 10.0,
+  "raw_candidates": 1,
+  "anchor_passed": 1,
+  "anchor_rejected": 0,
+  "weak_evidence_rejected": 0,
+  "judge_input": 1,
+  "judge_accepted": 1,
+  "judge_rejected": 0,
+  "judge_rejection_breakdown": {},
+  "final_by_type": {
+    "operational_sequence": 1
+  },
+  "l4_final": 0,
+  "l3_final": 1,
+  "timings": {
+    "manual_tokens_estimated": 196618,
+    "extract_seconds": 242.75413529097568,
+    "total_seconds": 249.12444295792375
+  },
+  "gates": {
+    "G1": {
+      "status": "PASS",
+      "value": 100.0,
+      "requirement": "anchor_match_rate >= 80%"
+    },
+    "G2": {
+      "status": "PASS",
+      "value": 100.0,
+      "requirement": "judge_acceptance_rate >= 50%"
+    },
+    "G3": {
+      "status": "FAIL",
+      "value": 0,
+      "requirement": "L4 count > 0"
+    },
+    "G4": {
+      "status": "PASS",
+      "value": 242.75413529097568,
+      "limit_seconds": 1200.0,
+      "requirement": "single full-book extraction completed within configured limit"
+    }
+  },
+  "output_dir": "output/ashrae_guideline36_parallel_fullbook/20260507T010214Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_1",
+  "report_path": "output/ashrae_guideline36_parallel_fullbook/20260507T010214Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_1/REPORT.md"
+}

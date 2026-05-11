@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-07T20:12:16.675180+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_73f432de87fa4968__controller.json",
+      "doc_id": "doc_73f432de87fa4968",
+      "doc_name": "【海尔】商用柜机KFR(d)-120LW】维修手册（29页）-制冷百家网.pdf",
+      "equipment_class_id": "controller",
+      "equipment_class_key": "hvac:controller",
+      "candidate_count": 9
+    }
+  ]
+}

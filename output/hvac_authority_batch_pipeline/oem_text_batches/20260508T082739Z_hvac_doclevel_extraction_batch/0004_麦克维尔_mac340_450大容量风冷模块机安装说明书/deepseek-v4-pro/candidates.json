@@ -1,0 +1,1009 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_d4cdd95c2551c8f5",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac340dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_cooling_capacity",
+        "value": "100 kW",
+        "unit": "kW",
+        "title": "MAC340DR5 nominal cooling capacity",
+        "summary": "Nominal cooling capacity 100 kW, heating 100 kW, cooling input power 29.6 kW, heating input power 29.9 kW, COP 3.38, energy efficiency level 2."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Nominal cooling capacity extracted from spec table, supported by evidence."
+    },
+    {
+      "candidate_id": "cand_a84d7d35ecf081f9",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac450dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_cooling_capacity",
+        "value": "130 kW",
+        "unit": "kW",
+        "title": "MAC450DR5 nominal cooling capacity",
+        "summary": "Nominal cooling capacity 130 kW, heating 130 kW, cooling input power 39 kW, heating input power 39.8 kW, COP 3.33, energy efficiency level 2."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Nominal cooling capacity for another model, clearly from spec table and evidence."
+    },
+    {
+      "candidate_id": "cand_ffda1c332b5731cc",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac450d5",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_cooling_capacity",
+        "value": "135 kW",
+        "unit": "kW",
+        "title": "MAC450D5 nominal cooling capacity",
+        "summary": "Nominal cooling capacity 135 kW, cooling input power 40.3 kW, COP 3.35, energy efficiency level 2, no heating."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Nominal cooling capacity for MAC450D5, from spec table."
+    },
+    {
+      "candidate_id": "cand_a46ef14eb768dd6e",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac340dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_water_flow",
+        "value": "17.2 m³/h",
+        "unit": "m³/h",
+        "title": "MAC340DR5 nominal water flow rate",
+        "summary": "Nominal cooling water flow 17.2 m³/h, heating water flow 17.2 m³/h, water pressure drop 42 kPa."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Nominal water flow rate from spec table, with value and unit."
+    },
+    {
+      "candidate_id": "cand_2f168221c7adfdcf",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac450dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_water_flow",
+        "value": "22.4 m³/h",
+        "unit": "m³/h",
+        "title": "MAC450DR5 nominal water flow rate",
+        "summary": "Nominal cooling water flow 22.4 m³/h, heating water flow 22.4 m³/h, water pressure drop 56 kPa."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Nominal water flow rate for MAC450DR5, from spec table."
+    },
+    {
+      "candidate_id": "cand_ac5b7faf9eac1472",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac450d5",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_water_flow",
+        "value": "23.2 m³/h",
+        "unit": "m³/h",
+        "title": "MAC450D5 nominal water flow rate",
+        "summary": "Nominal cooling water flow 23.2 m³/h, water pressure drop 56 kPa."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Nominal water flow rate for MAC450D5, from spec table."
+    },
+    {
+      "candidate_id": "cand_40eebabc8566fbff",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac340dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "power_supply",
+        "value": "380V/3N~/50Hz",
+        "title": "MAC340DR5 power supply and compressor quantity",
+        "summary": "Power supply 380V/3N~/50Hz, 3 scroll compressors, 2 axial fans."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Power supply and compressor quantity are operational parameters from spec table."
+    },
+    {
+      "candidate_id": "cand_f0c59c48b59d5fc2",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac450dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "compressor_quantity",
+        "value": "4",
+        "unit": "台",
+        "title": "MAC450DR5/D5 compressor quantity",
+        "summary": "MAC450DR5 and MAC450D5 have 4 scroll compressors."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Compressor quantity for MAC450 models, supported by evidence."
+    },
+    {
+      "candidate_id": "cand_ac2cabe73e474a0d",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac340dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "fan_input_power",
+        "value": "1.4+1.25/1.16+0.7 kW",
+        "unit": "kW",
+        "title": "Fan input power MAC340DR5",
+        "summary": "Fan input power high/low: 1.4+1.25/1.16+0.7 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fan input power for MAC340DR5, distinct value from spec table."
+    },
+    {
+      "candidate_id": "cand_233a9bd4eba0eb42",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac450dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "fan_input_power",
+        "value": "1.40x2/1.16x2 kW",
+        "unit": "kW",
+        "title": "Fan input power MAC450DR5/D5",
+        "summary": "Fan input power high/low: 1.40x2/1.16x2 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fan input power for MAC450 models, distinct value from spec table."
+    },
+    {
+      "candidate_id": "cand_09a29cad5c279376",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:maximum_inlet_outlet_water_temperature_difference",
+      "structured_payload_candidate": {
+        "parameter_name": "max_water_temp_diff",
+        "value": "7 °C",
+        "unit": "°C",
+        "title": "Maximum inlet/outlet water temperature difference",
+        "summary": "Design maximum inlet/outlet water temperature difference is 7°C."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Design maximum water temperature difference is an operational parameter from spec table."
+    },
+    {
+      "candidate_id": "cand_ec73d45e19ff2b94",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:unit_dimensions",
+      "structured_payload_candidate": {
+        "parameter_name": "dimensions",
+        "value": "2100x1100x2300 mm",
+        "unit": "mm",
+        "title": "Unit dimensions",
+        "summary": "Dimensions (L×W×H) 2100×1100×2300 mm for all models."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Unit dimensions from spec table, useful for installation and space planning."
+    },
+    {
+      "candidate_id": "cand_f3b7d2debeee04ea",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac340dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "operating_weight",
+        "value": "880 kg",
+        "unit": "kg",
+        "title": "Operating weight MAC340DR5",
+        "summary": "Operating weight 880 kg, total weight 870 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operating weight for MAC340DR5, from spec table, relevant for installation."
+    },
+    {
+      "candidate_id": "cand_6fb8f28ae0dd3669",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac450dr5",
+      "structured_payload_candidate": {
+        "parameter_name": "operating_weight",
+        "value": "1000 kg",
+        "unit": "kg",
+        "title": "Operating weight MAC450DR5",
+        "summary": "Operating weight 1000 kg, total weight 990 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operating weight for MAC450DR5, from spec table."
+    },
+    {
+      "candidate_id": "cand_4bea434df687c1c9",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:mac450d5",
+      "structured_payload_candidate": {
+        "parameter_name": "operating_weight",
+        "value": "950 kg",
+        "unit": "kg",
+        "title": "Operating weight MAC450D5",
+        "summary": "Operating weight 950 kg, total weight 940 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operating weight for MAC450D5, from spec table."
+    },
+    {
+      "candidate_id": "cand_87b5c6bf1df569f3",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_a49bfe10b5b24b4f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:water_connection_size",
+      "structured_payload_candidate": {
+        "parameter_name": "water_connection_size",
+        "value": "Rc 2 1/2",
+        "title": "Water connection size",
+        "summary": "Inlet/outlet water connection size Rc 2 1/2."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 8\n33 33 技术参数技术参数 技术参数技术参数\n3.13.1 3.13.1 规格参数规格参数 规格参数规格参数\n机组型号  MAC340DR5 MAC450DR5 MAC450D5\n名义制冷量 kW 100 130 135\n名义制热量 kW 100 130 /\n名义制冷输入功率 kW 29.6 39 40.3\n名义制冷电流 A 54.4 73.6 76.1\n名义制热输入功率 kW 29.9 39.8 /\n名义制热电流 A 55.8 73.2 /\n性能系数 - 3.38 3.33 3.35\n能效等级 - 2 2 2\n电源 - 380V/3N~/50Hz\n类型 - 全封闭涡旋压缩机  压缩机\n数量 台 3 4\n型式 - 轴流式大叶片低噪声风机\n数量 台 2 风机\n输入功率（高/低档）  kW 1.4+1.25/1.16+0.7  1.40x2/1.16x2\n类型 - 高效板式热交换器\n名义制冷水流量  m3/h 17.2 22.4 23.2 水侧换热器\n名义制热水流量  m3/h 17.2 22.4 /\n机组水阻力 kPa 42 56\n机组进出水管接管尺寸  Rc 2 1/2\n设计最大进、出水温差 ℃ 7\n外形尺寸 长×宽×高 mm 2100x1100x2300\n机组运行质量 kg 880 1000 950\n机组总质量 kg 870 990 940\n备注：1. 名义制冷量的工况 : 出水温度 7℃，水流量 0.172[m3/(h·kW)]，室外环境温度 35℃。\n2. 名义制热量的工况 : 出水温度 45℃，水流量 0.172[m3/(h·kW)]，室外环境干球温度 7℃，湿球温度 6℃。\n3. 表中水阻力参数包含机组水压降和随机附带的 Y型水过滤器压降。\n4. 表中的规格参数会随厂家产品设计的变更而有所改变，恕不另行通知。\n5. 执行标准： GB/T18430.1-2007 ，能效等级执行标准： GB 19577-2004 。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a49bfe10b5b24b4f"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Water connection size, important parameter for installation, from spec table."
+    },
+    {
+      "candidate_id": "cand_dee1046d703f2f11",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_b1f9d815e85c4cd9",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:chiller:performance_spec:operating_range_cooling",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_operating_range",
+        "value": "Outdoor 5~48°C, LWT 5~20°C",
+        "title": "Operating range cooling",
+        "summary": "Cooling operation: outdoor temperature 5~48°C, leaving water temperature 5~20°C. Gray area (ambient <15°C and LWT <7°C) is restricted."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 9\n3.23.2 3.23.2 机组运行范围机组运行范围机组运行范围机组运行范围\n/square6 机组运行范围\n5 10 15 20 25 30 40 35 45 50 55 60 65-10-505制冷\n制热\n出水温度(℃)环\n境\n温\n度\n（℃） 101520253035404550\n-15\n/square6 使用条件\n项目 内容\n电源电压 额定电压的± 10%以内\n电源频率 电网频率波动范围为额定频率的± 1％\n各相之间不平衡  电源任意两相之间电压差值须小于额定电压的 2％\n空气质量 不能含有腐蚀铜、铝、铁的溶解物\n冷冻水的流量  名义水流量的± 30%以内\n冷冻水的水速  0.5~2.0m/s\n冷冻水的水压  1MPa 以下\n冷冻水的水质  不含腐蚀铜、铁、焊材的溶解物（具体见第九章“水质管理” ）\n安装场所 根据需要采取防积雪、通风的措施\n环境温度 以上图（运行范围）为准\n相对湿度 90% 以下\n备注：\n1、机组在工厂时经过严格的测试，可以保证机组在运行范围图之内安全的运行。\n2、机组在不同工况点下的性能参数参见  3.3 “机组性能参数变化表 ”章节。\n3、此运行范围为机组按照 GB/T 18430.1 现行的有效版本 ，在名义水流量下测得的正常运行范围，超出此范围时，\n机组只能作短暂的运行，否则会出现机组故障报警。  备注：\n1、制冷运行范围左下角灰色区\n域：环境温度小于 15℃且出水\n温度小于 7℃，机组在此区域运\n行时会受到限制；\n2、 确保水流量在使用范围以内。\n如果流量太低， 将产生水垢吸附\n而使机组性能降低、 防冻保护传\n感器动作、 或由于锈点腐蚀而造\n成制冷剂泄漏。如果流量太大，\n会引起冲击腐蚀。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_b1f9d815e85c4cd9"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Cooling operating range with restrictions, supported by performance chart and notes."
+    },
+    {
+      "candidate_id": "cand_a7b559491bb76820",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_b1f9d815e85c4cd9",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:chiller:performance_spec:operating_range_heating",
+      "structured_payload_candidate": {
+        "parameter_name": "heating_operating_range",
+        "value": "Outdoor -15~30°C, LWT 30~55°C",
+        "title": "Operating range heating",
+        "summary": "Heating operation: outdoor temperature -15~30°C, leaving water temperature 30~55°C."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 9\n3.23.2 3.23.2 机组运行范围机组运行范围机组运行范围机组运行范围\n/square6 机组运行范围\n5 10 15 20 25 30 40 35 45 50 55 60 65-10-505制冷\n制热\n出水温度(℃)环\n境\n温\n度\n（℃） 101520253035404550\n-15\n/square6 使用条件\n项目 内容\n电源电压 额定电压的± 10%以内\n电源频率 电网频率波动范围为额定频率的± 1％\n各相之间不平衡  电源任意两相之间电压差值须小于额定电压的 2％\n空气质量 不能含有腐蚀铜、铝、铁的溶解物\n冷冻水的流量  名义水流量的± 30%以内\n冷冻水的水速  0.5~2.0m/s\n冷冻水的水压  1MPa 以下\n冷冻水的水质  不含腐蚀铜、铁、焊材的溶解物（具体见第九章“水质管理” ）\n安装场所 根据需要采取防积雪、通风的措施\n环境温度 以上图（运行范围）为准\n相对湿度 90% 以下\n备注：\n1、机组在工厂时经过严格的测试，可以保证机组在运行范围图之内安全的运行。\n2、机组在不同工况点下的性能参数参见  3.3 “机组性能参数变化表 ”章节。\n3、此运行范围为机组按照 GB/T 18430.1 现行的有效版本 ，在名义水流量下测得的正常运行范围，超出此范围时，\n机组只能作短暂的运行，否则会出现机组故障报警。  备注：\n1、制冷运行范围左下角灰色区\n域：环境温度小于 15℃且出水\n温度小于 7℃，机组在此区域运\n行时会受到限制；\n2、 确保水流量在使用范围以内。\n如果流量太低， 将产生水垢吸附\n而使机组性能降低、 防冻保护传\n感器动作、 或由于锈点腐蚀而造\n成制冷剂泄漏。如果流量太大，\n会引起冲击腐蚀。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_b1f9d815e85c4cd9"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Heating operating range, supported by performance chart."
+    },
+    {
+      "candidate_id": "cand_f9edc77ddbedc352",
+      "domain_id": "hvac",
+      "doc_id": "doc_0706ecb530b24b82",
+      "doc_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_b1f9d815e85c4cd9",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:power_supply_voltage_tolerance",
+      "structured_payload_candidate": {
+        "parameter_name": "voltage_tolerance",
+        "value": "±10%",
+        "title": "Power supply voltage tolerance",
+        "summary": "Power supply voltage within ±10% of rated voltage."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "©2015 ShenZhen McQuay 9\n3.23.2 3.23.2 机组运行范围机组运行范围机组运行范围机组运行范围\n/square6 机组运行范围\n5 10 15 20 25 30 40 35 45 50 55 60 65-10-505制冷\n制热\n出水温度(℃)环\n境\n温\n度\n（℃） 101520253035404550\n-15\n/square6 使用条件\n项目 内容\n电源电压 额定电压的± 10%以内\n电源频率 电网频率波动范围为额定频率的± 1％\n各相之间不平衡  电源任意两相之间电压差值须小于额定电压的 2％\n空气质量 不能含有腐蚀铜、铝、铁的溶解物\n冷冻水的流量  名义水流量的± 30%以内\n冷冻水的水速  0.5~2.0m/s\n冷冻水的水压  1MPa 以下\n冷冻水的水质  不含腐蚀铜、铁、焊材的溶解物（具体见第九章“水质管理” ）\n安装场所 根据需要采取防积雪、通风的措施\n环境温度 以上图（运行范围）为准\n相对湿度 90% 以下\n备注：\n1、机组在工厂时经过严格的测试，可以保证机组在运行范围图之内安全的运行。\n2、机组在不同工况点下的性能参数参见  3.3 “机组性能参数变化表 ”章节。\n3、此运行范围为机组按照 GB/T 18430.1 现行的有效版本 ，在名义水流量下测得的正常运行范围，超出此范围时，\n机组只能作短暂的运行，否则会出现机组故障报警。  备注：\n1、制冷运行范围左下角灰色区\n域：环境温度小于 15℃且出水\n温度小于 7℃，机组在此区域运\n行时会受到限制；\n2、 确保水流量在使用范围以内。\n如果流量太低， 将产生水垢吸附\n而使机组性能降低、 防冻保护传\n感器动作、 或由于锈点腐蚀而造\n成制冷剂泄漏。如果流量太大，\n会引起冲击腐蚀。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_b1f9d815e85c4cd9"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Voltage tolerance from usage conditions table."
+    }
+  ]
+}

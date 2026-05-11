@@ -1,0 +1,38 @@
+{
+  "row_index": 9,
+  "path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】离心机技术资料合成本（95页）-制冷百家网.pdf",
+  "file_name": "【麦克维尔】离心机技术资料合成本（95页）-制冷百家网.pdf",
+  "batch_group": "chiller_visual",
+  "priority": "P1_visual",
+  "brand": "McQuay/Daikin",
+  "authority_level": "oem_manual",
+  "document_kind": "technical_manual",
+  "equipment_scope": "centrifugal_chiller",
+  "page_count": "95",
+  "text_quality": "low_or_no_text",
+  "recommended_mode": "visual_page_level",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/chiller_visual_import/20260511T053112Z_hvac_source_batch/tasks/0009_麦克维尔_离心机技术资料合成本_95页_制冷百家网_f9126814e7",
+  "status": "chunked",
+  "doc_id": "doc_fa41ab46ea8d4bd7",
+  "import_status": "imported",
+  "processing": {
+    "pages_before": 0,
+    "chunks_before": 0,
+    "pages_after": 95,
+    "chunks_after": 105,
+    "parse_result": {
+      "job_id": "job_b3395e6e55a74095",
+      "doc_id": "doc_fa41ab46ea8d4bd7",
+      "pages_created": 95,
+      "status": "success"
+    },
+    "chunk_result": {
+      "job_id": "job_89c807fb628341cd",
+      "doc_id": "doc_fa41ab46ea8d4bd7",
+      "chunks_created": 105,
+      "status": "success"
+    }
+  },
+  "review_bundle": null
+}

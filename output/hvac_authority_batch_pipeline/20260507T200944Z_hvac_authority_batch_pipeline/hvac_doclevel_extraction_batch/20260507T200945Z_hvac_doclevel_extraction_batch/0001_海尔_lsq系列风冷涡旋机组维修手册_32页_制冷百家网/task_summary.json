@@ -1,0 +1,87 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "【海尔】LSQ系列风冷涡旋机组维修手册（32页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】LSQ系列风冷涡旋机组维修手册（32页）-制冷百家网.pdf",
+  "doc_id": "doc_890a1463187b4da4",
+  "chunks": 31,
+  "manual_tokens_estimated": 7506,
+  "equipment_class_id": "chiller",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "air_cooled_modular_heat_pump",
+      "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+      "confidence": 0.383,
+      "matched_aliases": [
+        "模块机"
+      ]
+    },
+    {
+      "equipment_class_id": "modular_chiller",
+      "equipment_class_key": "hvac:modular_chiller",
+      "confidence": 0.383,
+      "matched_aliases": [
+        "模块机"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 28,
+      "chunks_after": 31,
+      "parse_result": {
+        "job_id": "job_9d7678f9c80e4c99",
+        "doc_id": "doc_890a1463187b4da4",
+        "pages_created": 28,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_02d520f6a5b14264",
+        "doc_id": "doc_890a1463187b4da4",
+        "chunks_created": 31,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 10,
+      "anchor_passed": 10,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 10,
+      "judge_rejected": 0,
+      "judge_acceptance_rate": 100.0,
+      "judge_rejection_breakdown": {},
+      "review_candidates": 10,
+      "by_type": {
+        "parameter_spec": 1,
+        "fault_code": 9
+      },
+      "usage": {
+        "prompt_tokens": 12923,
+        "completion_tokens": 2341,
+        "total_tokens": 15264
+      },
+      "judge_usage": {
+        "prompt_tokens": 8053,
+        "completion_tokens": 703,
+        "total_tokens": 8756
+      },
+      "extract_cost_rmb": 0.052815,
+      "judge_cost_rmb": 0.028377,
+      "cost_rmb": 0.081192,
+      "elapsed_seconds": 65.378,
+      "judge_elapsed_seconds": 18.195,
+      "output_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0001_海尔_lsq系列风冷涡旋机组维修手册_32页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0001_海尔_lsq系列风冷涡旋机组维修手册_32页_制冷百家网"
+}

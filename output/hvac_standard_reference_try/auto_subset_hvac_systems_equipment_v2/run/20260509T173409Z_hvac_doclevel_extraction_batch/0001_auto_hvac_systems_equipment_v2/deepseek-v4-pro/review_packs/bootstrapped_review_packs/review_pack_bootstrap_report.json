@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-09T17:35:47.634045+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_hvac_systems_equipment_v2/run/20260509T173409Z_hvac_doclevel_extraction_batch/0001_auto_hvac_systems_equipment_v2/deepseek-v4-pro/review_packs",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_hvac_systems_equipment_v2/run/20260509T173409Z_hvac_doclevel_extraction_batch/0001_auto_hvac_systems_equipment_v2/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 9,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_ba91945372ad4cbf__cooling_tower.json",
+      "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_hvac_systems_equipment_v2/run/20260509T173409Z_hvac_doclevel_extraction_batch/0001_auto_hvac_systems_equipment_v2/deepseek-v4-pro/review_packs/hvac__doc_ba91945372ad4cbf__cooling_tower.json",
+      "status": "bootstrapped",
+      "entries_updated": 9,
+      "output_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_hvac_systems_equipment_v2/run/20260509T173409Z_hvac_doclevel_extraction_batch/0001_auto_hvac_systems_equipment_v2/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_ba91945372ad4cbf__cooling_tower.json"
+    }
+  ]
+}

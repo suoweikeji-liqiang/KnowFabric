@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-07T20:08:07.116602+00:00",
+  "pack_dir": "output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200558Z_hvac_doclevel_extraction_batch/0002_开利_中央空调30aq风冷式热泵机组安装维修手册_28页_制冷百家网/deepseek-v4-pro/review_packs",
+  "output_dir": "output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200558Z_hvac_doclevel_extraction_batch/0002_开利_中央空调30aq风冷式热泵机组安装维修手册_28页_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 9,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_310a78e42c9b4312__chiller.json",
+      "source_path": "output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200558Z_hvac_doclevel_extraction_batch/0002_开利_中央空调30aq风冷式热泵机组安装维修手册_28页_制冷百家网/deepseek-v4-pro/review_packs/hvac__doc_310a78e42c9b4312__chiller.json",
+      "status": "bootstrapped",
+      "entries_updated": 9,
+      "output_path": "output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200558Z_hvac_doclevel_extraction_batch/0002_开利_中央空调30aq风冷式热泵机组安装维修手册_28页_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_310a78e42c9b4312__chiller.json"
+    }
+  ]
+}

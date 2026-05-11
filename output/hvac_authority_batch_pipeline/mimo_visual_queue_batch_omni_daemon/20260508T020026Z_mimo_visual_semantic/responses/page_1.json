@@ -1,0 +1,91 @@
+{
+  "page": 1,
+  "response": {
+    "id": "f6618c90c35246aaa0ec24010cbea31d",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a Carrier screw chiller manual (model 30HXC130A-400A). It displays the manufacturer logo, model number, equipment type in Chinese (螺杆冷水机组), nominal cooling capacity range (464-1392 kW), a photograph of the chiller unit, the manual type (startup, operation, and maintenance manual), publication date (September 2001), and the manufacturer's name in Chinese and English.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Carrier logo\"},\n    {\"type\": \"logo\", \"label\": \"HFC-134a logo\"},\n    {\"type\": \"text\", \"label\": \"Model number: 30HXC130A-400A\"},\n    {\"type\": \"text\", \"label\": \"Equipment type: 螺杆冷水机组 (Screw Chiller)\"},\n    {\"type\": \"text\", \"label\": \"Nominal cooling capacity: 464-1392kW\"},\n    {\"type\": \"image\", \"label\": \"Photograph of screw chiller unit\"},\n    {\"type\": \"text\", \"label\": \"Manual type: 开机、运行维护手册 (Startup, Operation, and Maintenance Manual)\"},\n    {\"type\": \"text\", \"label\": \"Publication date: 2001年9月版 (September 2001 Edition)\"},\n    {\"type\": \"text\", \"label\": \"Manufacturer (Chinese): 上海一冷开利空调设备有限公司\"},\n    {\"type\": \"text\", \"label\": \"Manufacturer (English): SHANGHAI YILENG CARRIER AIR-CONDITIONING EQUIP. CO.,\"},\n    {\"type\": \"text\", \"label\": \"Website watermark: 制冷百家网整理: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_metadata\", \"manufacturer_info\"],\n  \"ocr_text_if_useful\": \"Carrier\\n30HXC130A-400A\\n螺杆冷水机组\\n名义制冷量 464-1392kW\\nHFC-134a\\n开机、运行维护手册\\n2001年9月版\\n上海一冷开利空调设备有限公司\\nSHANGHAI YILENG CARRIER AIR-CONDITIONING EQUIP. CO.,\\n制冷百家网整理: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page is a cover page, not a technical diagram or table. No specific component connections or operational relationships are visually depicted. The relationships between entities (e.g., model to capacity) are inferred from text layout, not from explicit visual connectors.\",\n  \"confidence\": 1.0\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778205637,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 615,
+      "prompt_tokens": 2493,
+      "total_tokens": 3108,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "image_tokens": 2296
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "other",
+    "summary": "This is the cover page of a Carrier screw chiller manual (model 30HXC130A-400A). It displays the manufacturer logo, model number, equipment type in Chinese (螺杆冷水机组), nominal cooling capacity range (464-1392 kW), a photograph of the chiller unit, the manual type (startup, operation, and maintenance manual), publication date (September 2001), and the manufacturer's name in Chinese and English.",
+    "visual_entities": [
+      {
+        "type": "logo",
+        "label": "Carrier logo"
+      },
+      {
+        "type": "logo",
+        "label": "HFC-134a logo"
+      },
+      {
+        "type": "text",
+        "label": "Model number: 30HXC130A-400A"
+      },
+      {
+        "type": "text",
+        "label": "Equipment type: 螺杆冷水机组 (Screw Chiller)"
+      },
+      {
+        "type": "text",
+        "label": "Nominal cooling capacity: 464-1392kW"
+      },
+      {
+        "type": "image",
+        "label": "Photograph of screw chiller unit"
+      },
+      {
+        "type": "text",
+        "label": "Manual type: 开机、运行维护手册 (Startup, Operation, and Maintenance Manual)"
+      },
+      {
+        "type": "text",
+        "label": "Publication date: 2001年9月版 (September 2001 Edition)"
+      },
+      {
+        "type": "text",
+        "label": "Manufacturer (Chinese): 上海一冷开利空调设备有限公司"
+      },
+      {
+        "type": "text",
+        "label": "Manufacturer (English): SHANGHAI YILENG CARRIER AIR-CONDITIONING EQUIP. CO.,"
+      },
+      {
+        "type": "text",
+        "label": "Website watermark: 制冷百家网整理: www.zhilengbj.cn"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "equipment_identification",
+      "manual_metadata",
+      "manufacturer_info"
+    ],
+    "ocr_text_if_useful": "Carrier\n30HXC130A-400A\n螺杆冷水机组\n名义制冷量 464-1392kW\nHFC-134a\n开机、运行维护手册\n2001年9月版\n上海一冷开利空调设备有限公司\nSHANGHAI YILENG CARRIER AIR-CONDITIONING EQUIP. CO.,\n制冷百家网整理: www.zhilengbj.cn",
+    "uncertainty_notes": "The page is a cover page, not a technical diagram or table. No specific component connections or operational relationships are visually depicted. The relationships between entities (e.g., model to capacity) are inferred from text layout, not from explicit visual connectors.",
+    "confidence": 1.0
+  },
+  "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a Carrier screw chiller manual (model 30HXC130A-400A). It displays the manufacturer logo, model number, equipment type in Chinese (螺杆冷水机组), nominal cooling capacity range (464-1392 kW), a photograph of the chiller unit, the manual type (startup, operation, and maintenance manual), publication date (September 2001), and the manufacturer's name in Chinese and English.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Carrier logo\"},\n    {\"type\": \"logo\", \"label\": \"HFC-134a logo\"},\n    {\"type\": \"text\", \"label\": \"Model number: 30HXC130A-400A\"},\n    {\"type\": \"text\", \"label\": \"Equipment type: 螺杆冷水机组 (Screw Chiller)\"},\n    {\"type\": \"text\", \"label\": \"Nominal cooling capacity: 464-1392kW\"},\n    {\"type\": \"image\", \"label\": \"Photograph of screw chiller unit\"},\n    {\"type\": \"text\", \"label\": \"Manual type: 开机、运行维护手册 (Startup, Operation, and Maintenance Manual)\"},\n    {\"type\": \"text\", \"label\": \"Publication date: 2001年9月版 (September 2001 Edition)\"},\n    {\"type\": \"text\", \"label\": \"Manufacturer (Chinese): 上海一冷开利空调设备有限公司\"},\n    {\"type\": \"text\", \"label\": \"Manufacturer (English): SHANGHAI YILENG CARRIER AIR-CONDITIONING EQUIP. CO.,\"},\n    {\"type\": \"text\", \"label\": \"Website watermark: 制冷百家网整理: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_metadata\", \"manufacturer_info\"],\n  \"ocr_text_if_useful\": \"Carrier\\n30HXC130A-400A\\n螺杆冷水机组\\n名义制冷量 464-1392kW\\nHFC-134a\\n开机、运行维护手册\\n2001年9月版\\n上海一冷开利空调设备有限公司\\nSHANGHAI YILENG CARRIER AIR-CONDITIONING EQUIP. CO.,\\n制冷百家网整理: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page is a cover page, not a technical diagram or table. No specific component connections or operational relationships are visually depicted. The relationships between entities (e.g., model to capacity) are inferred from text layout, not from explicit visual connectors.\",\n  \"confidence\": 1.0\n}"
+}

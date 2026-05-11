@@ -1,0 +1,1446 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T12:48:24.074289+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_576787c42cc64301",
+  "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+  "equipment_class": {
+    "equipment_class_id": "controller",
+    "equipment_class_key": "hvac:controller",
+    "label": "Controller",
+    "supported_knowledge_anchors": [
+      "parameter_spec",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 20,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_bd2f780328f556be",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_5cc3751f107f4acb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "防忘关计时器时间",
+        "range": "30～240分",
+        "unit": "10分钟单位",
+        "title": "防忘关计时器时间范围",
+        "summary": "防忘关计时器可设定运转开始到停止的时间，范围30～240分钟，以10分钟为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5cc3751f107f4acb"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for anti-forget timer range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_5cc3751f107f4acb on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "防忘关计时器时间",
+          "range": "30～240分",
+          "unit": "10分钟单位",
+          "title": "防忘关计时器时间范围",
+          "summary": "防忘关计时器可设定运转开始到停止的时间，范围30～240分钟，以10分钟为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_7e88d761802c0999",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_5cc3751f107f4acb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "能力节约值",
+        "range": "0～80%",
+        "unit": "20%为单位",
+        "title": "用电高峰控制定时器能力节约值范围",
+        "summary": "用电高峰控制定时器的能力节约值可在0～80%中选择，以20%为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5cc3751f107f4acb"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for demand control capacity saving range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_5cc3751f107f4acb on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "能力节约值",
+          "range": "0～80%",
+          "unit": "20%为单位",
+          "title": "用电高峰控制定时器能力节约值范围",
+          "summary": "用电高峰控制定时器的能力节约值可在0～80%中选择，以20%为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9169f0fe11bdc6de",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_5cc3751f107f4acb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "设定温度自动控制时间",
+        "range": "20～120分",
+        "unit": "10分单位",
+        "title": "设定温度自动控制时间范围",
+        "summary": "设定温度自动控制的时间可在20～120分钟范围内选择，以10分钟为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5cc3751f107f4acb"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for set temperature auto control time range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_5cc3751f107f4acb on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "设定温度自动控制时间",
+          "range": "20～120分",
+          "unit": "10分单位",
+          "title": "设定温度自动控制时间范围",
+          "summary": "设定温度自动控制的时间可在20～120分钟范围内选择，以10分钟为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_e82e60ce0ec304df",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_5cc3751f107f4acb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "时间段后开型定时器时间",
+        "range": "1～12小时",
+        "unit": "1个小时单位",
+        "title": "时间段后开型定时器时间范围",
+        "summary": "时间段后开型定时器可设定停止后到开始运转的时间，范围1～12小时，以1小时为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5cc3751f107f4acb"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for delayed start timer range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_5cc3751f107f4acb on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "时间段后开型定时器时间",
+          "range": "1～12小时",
+          "unit": "1个小时单位",
+          "title": "时间段后开型定时器时间范围",
+          "summary": "时间段后开型定时器可设定停止后到开始运转的时间，范围1～12小时，以1小时为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9d551df83e5527b0",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_5cc3751f107f4acb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "时间段后关型定时器时间",
+        "range": "1～12小时",
+        "unit": "1个小时单位",
+        "title": "时间段后关型定时器时间范围",
+        "summary": "时间段后关型定时器可设定运转后到停止的时间，范围1～12小时，以1小时为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5cc3751f107f4acb"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for delayed stop timer range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_5cc3751f107f4acb on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "时间段后关型定时器时间",
+          "range": "1～12小时",
+          "unit": "1个小时单位",
+          "title": "时间段后关型定时器时间范围",
+          "summary": "时间段后关型定时器可设定运转后到停止的时间，范围1～12小时，以1小时为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "主菜单一览\n需要输入管理员密码才能显示菜单项目。\n设定以及显示项目 详细内容 页\n节能设定\n管理员密码防忘关计时器 设定运转开始到停止为止的时间。\n˙\u0001设定时间范围30～240分（以10分钟为单位） 。\n˙\u0001设定“有效”时，计时器每次都动作。18 页\n用电高峰控制定\n时器设定限制能力的运转开始时间和停止时间，能力节约值。\n˙\u00011天最多可设定4种模式。\n˙\u0001设定时刻单位可设到5分钟。\n˙\u0001能力节约值可以在0～80% （20%为单位）中进行选择。\n˙节假日以及休息日等，可进行休息日设定。\n* 需要设定时刻。18 页\n设定温度自动\n控制设定时间后回到设定温度。\n˙\u0001设定时间可以在20～120分（ 10分单位）之内进行选择。21 页\n面板升降 使用面板自动升降时，进行面板升降操作。 22 页\n自由出风设定 设定各吹出口的摆叶动作范围（上限位置 ·下限位置） 24 页\n换气 进行换气ON/OFF操作。˙\n\u0001将换气设定设为“单独操作”时，可以进行换气运转，\n停止操作。27 页\n初始设定 时刻设定 对当前的日期，时刻进行设定和修正。\n˙\u0001停电时间在80小时之内时，内置后备电源可以让时间\n继续有效显示。\n停电超过80小时时，需要进行重新设定。29 页\n时刻显示设定 可以设定时刻需要/不需要，12H/24H，AM/PM位置。 30 页\n夏令时调整 针对当前时刻进行±1小时的补正。 30 页\n对比度 调整液晶浓度。 30 页\n背景灯 背景灯有效/无效，点亮时间设定。 31 页\n蜂鸣音 设定操作触摸屏时蜂鸣音 需要/不需要。 31 页\n定时器设定 时间段后开型\n定时器停止后，设定开始运转时间，范围在1 ～12小时（1 个小\n时单位） 。33 页\n时间段后关型\n定时器运转后设定想停止的时间，范围为1 ～12小时（1 个小时\n单位） 。35 页\n时间点后开型定时器 设定运转开始时刻。\n˙时刻设定5分钟为一个单位。\n˙可以进行1次/每次变更 ɻ\n* 需要进行时刻设定。35 页\n时间点后关型\n定时器设定运转停止时刻。\n˙\u0001可以以5分钟为单位设定时刻。\n˙可以进行1次/每次变更。\n* 需要设定时刻。35 页\n周间定时器设定 可设定1周的开机时间或关机时间。˙\u00011天可最多设定8种类型。\n˙设定时刻5分钟为单位。\n˙可设定节假日，临时休假，休息日设定等。\n* 需要设定时刻。36 页\n无人运转\n管理员密码长期不使用时可进行设定防止屋内高温/低温。˙\u0001根据外温和温度控制进行冷房/暖房。\n˙可设定温度，风量。 40 页管理员密码\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0b1437fcedd72373",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 42,
+      "chunk_id": "chunk_d84e0fb9d7f5465a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "冷房判定温度",
+        "range": "26°C～35°C",
+        "unit": "3°C单位",
+        "title": "无人运转冷房判定温度范围",
+        "summary": "无人运转中冷房判定的室外温度可设定范围26°C～35°C，以3°C为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 41 —\u0015\u0001显示外出运转操作（开始/结束）画面。\n设定运转开始条件，运转时的温度，风量，进行设定时\n按 详细设定  键，确认各个项目并进行设定。\n（‛转 \u0016）\n确认外出运转条件，运转开始时，按  开始  键。\n结束外出运转时按  结束  键。\n\u0016\u0001在详细设定菜单上设定下列项目。\nᶃ\u0001冷房判定 ： 设定判断冷房运转的室外温度。\n可设定范围 ： 26°C～35 °C（3°C单位）  （‛转 \u0017）\nᶄ\u0001暖房判定 ： 设定判断暖房运转的室外温度。可设定范围 ： 0\n°C～15 °C（5°C单位）  （‛转 \u0018）\nᶅ\u0001冷房设定温度 ： 判断冷房后设定室内温度。可设定范围 ： 26\n°C～33 °C（1°C单位）  （‛转 \u0019）\nᶆ\u0001暖房设定温度 ： 判断暖房后设定室内温度。可设定范围 ： 10\n°C～18 °C（1°C单位）  （‛转 \u001a）\nᶇ冷房风量 ： 设定冷房风量。 （ ‛转 \u0012\u0011）\nᶈ\u0001暖房风量 ： 设定暖房风量。 （ ‛转 \u0012\u0012）\n˙\u0001\u0001在详细设定菜单设定的项目，下次外出运转时也生效。\n˙\u0001\u0001初次进行外出运转时内容如下。\n请根据喜好变更设定。\nᶃ冷房判定 ：35°C\nᶄ暖房判定 ：0°C\nᶅ冷房温度设定 ：33°C\nᶆ暖房设定温度 ：10°C\nᶇ冷房风量 ：弱\nᶈ暖房风量 ：弱\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d84e0fb9d7f5465a"
+      ],
+      "source_page_nos": [
+        42
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for unoccupied cooling judgment temperature range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_d84e0fb9d7f5465a on page 42 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "冷房判定温度",
+          "range": "26°C～35°C",
+          "unit": "3°C单位",
+          "title": "无人运转冷房判定温度范围",
+          "summary": "无人运转中冷房判定的室外温度可设定范围26°C～35°C，以3°C为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 41 —\u0015\u0001显示外出运转操作（开始/结束）画面。\n设定运转开始条件，运转时的温度，风量，进行设定时\n按 详细设定  键，确认各个项目并进行设定。\n（‛转 \u0016）\n确认外出运转条件，运转开始时，按  开始  键。\n结束外出运转时按  结束  键。\n\u0016\u0001在详细设定菜单上设定下列项目。\nᶃ\u0001冷房判定 ： 设定判断冷房运转的室外温度。\n可设定范围 ： 26°C～35 °C（3°C单位）  （‛转 \u0017）\nᶄ\u0001暖房判定 ： 设定判断暖房运转的室外温度。可设定范围 ： 0\n°C～15 °C（5°C单位）  （‛转 \u0018）\nᶅ\u0001冷房设定温度 ： 判断冷房后设定室内温度。可设定范围 ： 26\n°C～33 °C（1°C单位）  （‛转 \u0019）\nᶆ\u0001暖房设定温度 ： 判断暖房后设定室内温度。可设定范围 ： 10\n°C～18 °C（1°C单位）  （‛转 \u001a）\nᶇ冷房风量 ： 设定冷房风量。 （ ‛转 \u0012\u0011）\nᶈ\u0001暖房风量 ： 设定暖房风量。 （ ‛转 \u0012\u0012）\n˙\u0001\u0001在详细设定菜单设定的项目，下次外出运转时也生效。\n˙\u0001\u0001初次进行外出运转时内容如下。\n请根据喜好变更设定。\nᶃ冷房判定 ：35°C\nᶄ暖房判定 ：0°C\nᶅ冷房温度设定 ：33°C\nᶆ暖房设定温度 ：10°C\nᶇ冷房风量 ：弱\nᶈ暖房风量 ：弱\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_7a38de010b9b8d2f",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 42,
+      "chunk_id": "chunk_d84e0fb9d7f5465a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "暖房判定温度",
+        "range": "0°C～15°C",
+        "unit": "5°C单位",
+        "title": "无人运转暖房判定温度范围",
+        "summary": "无人运转中暖房判定的室外温度可设定范围0°C～15°C，以5°C为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 41 —\u0015\u0001显示外出运转操作（开始/结束）画面。\n设定运转开始条件，运转时的温度，风量，进行设定时\n按 详细设定  键，确认各个项目并进行设定。\n（‛转 \u0016）\n确认外出运转条件，运转开始时，按  开始  键。\n结束外出运转时按  结束  键。\n\u0016\u0001在详细设定菜单上设定下列项目。\nᶃ\u0001冷房判定 ： 设定判断冷房运转的室外温度。\n可设定范围 ： 26°C～35 °C（3°C单位）  （‛转 \u0017）\nᶄ\u0001暖房判定 ： 设定判断暖房运转的室外温度。可设定范围 ： 0\n°C～15 °C（5°C单位）  （‛转 \u0018）\nᶅ\u0001冷房设定温度 ： 判断冷房后设定室内温度。可设定范围 ： 26\n°C～33 °C（1°C单位）  （‛转 \u0019）\nᶆ\u0001暖房设定温度 ： 判断暖房后设定室内温度。可设定范围 ： 10\n°C～18 °C（1°C单位）  （‛转 \u001a）\nᶇ冷房风量 ： 设定冷房风量。 （ ‛转 \u0012\u0011）\nᶈ\u0001暖房风量 ： 设定暖房风量。 （ ‛转 \u0012\u0012）\n˙\u0001\u0001在详细设定菜单设定的项目，下次外出运转时也生效。\n˙\u0001\u0001初次进行外出运转时内容如下。\n请根据喜好变更设定。\nᶃ冷房判定 ：35°C\nᶄ暖房判定 ：0°C\nᶅ冷房温度设定 ：33°C\nᶆ暖房设定温度 ：10°C\nᶇ冷房风量 ：弱\nᶈ暖房风量 ：弱\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d84e0fb9d7f5465a"
+      ],
+      "source_page_nos": [
+        42
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for unoccupied heating judgment temperature range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_d84e0fb9d7f5465a on page 42 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "暖房判定温度",
+          "range": "0°C～15°C",
+          "unit": "5°C单位",
+          "title": "无人运转暖房判定温度范围",
+          "summary": "无人运转中暖房判定的室外温度可设定范围0°C～15°C，以5°C为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 41 —\u0015\u0001显示外出运转操作（开始/结束）画面。\n设定运转开始条件，运转时的温度，风量，进行设定时\n按 详细设定  键，确认各个项目并进行设定。\n（‛转 \u0016）\n确认外出运转条件，运转开始时，按  开始  键。\n结束外出运转时按  结束  键。\n\u0016\u0001在详细设定菜单上设定下列项目。\nᶃ\u0001冷房判定 ： 设定判断冷房运转的室外温度。\n可设定范围 ： 26°C～35 °C（3°C单位）  （‛转 \u0017）\nᶄ\u0001暖房判定 ： 设定判断暖房运转的室外温度。可设定范围 ： 0\n°C～15 °C（5°C单位）  （‛转 \u0018）\nᶅ\u0001冷房设定温度 ： 判断冷房后设定室内温度。可设定范围 ： 26\n°C～33 °C（1°C单位）  （‛转 \u0019）\nᶆ\u0001暖房设定温度 ： 判断暖房后设定室内温度。可设定范围 ： 10\n°C～18 °C（1°C单位）  （‛转 \u001a）\nᶇ冷房风量 ： 设定冷房风量。 （ ‛转 \u0012\u0011）\nᶈ\u0001暖房风量 ： 设定暖房风量。 （ ‛转 \u0012\u0012）\n˙\u0001\u0001在详细设定菜单设定的项目，下次外出运转时也生效。\n˙\u0001\u0001初次进行外出运转时内容如下。\n请根据喜好变更设定。\nᶃ冷房判定 ：35°C\nᶄ暖房判定 ：0°C\nᶅ冷房温度设定 ：33°C\nᶆ暖房设定温度 ：10°C\nᶇ冷房风量 ：弱\nᶈ暖房风量 ：弱\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_94b80b1ad391f7d4",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 42,
+      "chunk_id": "chunk_d84e0fb9d7f5465a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "冷房设定温度",
+        "range": "26°C～33°C",
+        "unit": "1°C单位",
+        "title": "无人运转冷房设定温度范围",
+        "summary": "无人运转中冷房设定温度范围26°C～33°C，以1°C为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 41 —\u0015\u0001显示外出运转操作（开始/结束）画面。\n设定运转开始条件，运转时的温度，风量，进行设定时\n按 详细设定  键，确认各个项目并进行设定。\n（‛转 \u0016）\n确认外出运转条件，运转开始时，按  开始  键。\n结束外出运转时按  结束  键。\n\u0016\u0001在详细设定菜单上设定下列项目。\nᶃ\u0001冷房判定 ： 设定判断冷房运转的室外温度。\n可设定范围 ： 26°C～35 °C（3°C单位）  （‛转 \u0017）\nᶄ\u0001暖房判定 ： 设定判断暖房运转的室外温度。可设定范围 ： 0\n°C～15 °C（5°C单位）  （‛转 \u0018）\nᶅ\u0001冷房设定温度 ： 判断冷房后设定室内温度。可设定范围 ： 26\n°C～33 °C（1°C单位）  （‛转 \u0019）\nᶆ\u0001暖房设定温度 ： 判断暖房后设定室内温度。可设定范围 ： 10\n°C～18 °C（1°C单位）  （‛转 \u001a）\nᶇ冷房风量 ： 设定冷房风量。 （ ‛转 \u0012\u0011）\nᶈ\u0001暖房风量 ： 设定暖房风量。 （ ‛转 \u0012\u0012）\n˙\u0001\u0001在详细设定菜单设定的项目，下次外出运转时也生效。\n˙\u0001\u0001初次进行外出运转时内容如下。\n请根据喜好变更设定。\nᶃ冷房判定 ：35°C\nᶄ暖房判定 ：0°C\nᶅ冷房温度设定 ：33°C\nᶆ暖房设定温度 ：10°C\nᶇ冷房风量 ：弱\nᶈ暖房风量 ：弱\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d84e0fb9d7f5465a"
+      ],
+      "source_page_nos": [
+        42
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for unoccupied cooling set temperature range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_d84e0fb9d7f5465a on page 42 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "冷房设定温度",
+          "range": "26°C～33°C",
+          "unit": "1°C单位",
+          "title": "无人运转冷房设定温度范围",
+          "summary": "无人运转中冷房设定温度范围26°C～33°C，以1°C为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 41 —\u0015\u0001显示外出运转操作（开始/结束）画面。\n设定运转开始条件，运转时的温度，风量，进行设定时\n按 详细设定  键，确认各个项目并进行设定。\n（‛转 \u0016）\n确认外出运转条件，运转开始时，按  开始  键。\n结束外出运转时按  结束  键。\n\u0016\u0001在详细设定菜单上设定下列项目。\nᶃ\u0001冷房判定 ： 设定判断冷房运转的室外温度。\n可设定范围 ： 26°C～35 °C（3°C单位）  （‛转 \u0017）\nᶄ\u0001暖房判定 ： 设定判断暖房运转的室外温度。可设定范围 ： 0\n°C～15 °C（5°C单位）  （‛转 \u0018）\nᶅ\u0001冷房设定温度 ： 判断冷房后设定室内温度。可设定范围 ： 26\n°C～33 °C（1°C单位）  （‛转 \u0019）\nᶆ\u0001暖房设定温度 ： 判断暖房后设定室内温度。可设定范围 ： 10\n°C～18 °C（1°C单位）  （‛转 \u001a）\nᶇ冷房风量 ： 设定冷房风量。 （ ‛转 \u0012\u0011）\nᶈ\u0001暖房风量 ： 设定暖房风量。 （ ‛转 \u0012\u0012）\n˙\u0001\u0001在详细设定菜单设定的项目，下次外出运转时也生效。\n˙\u0001\u0001初次进行外出运转时内容如下。\n请根据喜好变更设定。\nᶃ冷房判定 ：35°C\nᶄ暖房判定 ：0°C\nᶅ冷房温度设定 ：33°C\nᶆ暖房设定温度 ：10°C\nᶇ冷房风量 ：弱\nᶈ暖房风量 ：弱\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_43bf98ce5d22b0ab",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 42,
+      "chunk_id": "chunk_d84e0fb9d7f5465a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "暖房设定温度",
+        "range": "10°C～18°C",
+        "unit": "1°C单位",
+        "title": "无人运转暖房设定温度范围",
+        "summary": "无人运转中暖房设定温度范围10°C～18°C，以1°C为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 41 —\u0015\u0001显示外出运转操作（开始/结束）画面。\n设定运转开始条件，运转时的温度，风量，进行设定时\n按 详细设定  键，确认各个项目并进行设定。\n（‛转 \u0016）\n确认外出运转条件，运转开始时，按  开始  键。\n结束外出运转时按  结束  键。\n\u0016\u0001在详细设定菜单上设定下列项目。\nᶃ\u0001冷房判定 ： 设定判断冷房运转的室外温度。\n可设定范围 ： 26°C～35 °C（3°C单位）  （‛转 \u0017）\nᶄ\u0001暖房判定 ： 设定判断暖房运转的室外温度。可设定范围 ： 0\n°C～15 °C（5°C单位）  （‛转 \u0018）\nᶅ\u0001冷房设定温度 ： 判断冷房后设定室内温度。可设定范围 ： 26\n°C～33 °C（1°C单位）  （‛转 \u0019）\nᶆ\u0001暖房设定温度 ： 判断暖房后设定室内温度。可设定范围 ： 10\n°C～18 °C（1°C单位）  （‛转 \u001a）\nᶇ冷房风量 ： 设定冷房风量。 （ ‛转 \u0012\u0011）\nᶈ\u0001暖房风量 ： 设定暖房风量。 （ ‛转 \u0012\u0012）\n˙\u0001\u0001在详细设定菜单设定的项目，下次外出运转时也生效。\n˙\u0001\u0001初次进行外出运转时内容如下。\n请根据喜好变更设定。\nᶃ冷房判定 ：35°C\nᶄ暖房判定 ：0°C\nᶅ冷房温度设定 ：33°C\nᶆ暖房设定温度 ：10°C\nᶇ冷房风量 ：弱\nᶈ暖房风量 ：弱\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d84e0fb9d7f5465a"
+      ],
+      "source_page_nos": [
+        42
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for unoccupied heating set temperature range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_d84e0fb9d7f5465a on page 42 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "暖房设定温度",
+          "range": "10°C～18°C",
+          "unit": "1°C单位",
+          "title": "无人运转暖房设定温度范围",
+          "summary": "无人运转中暖房设定温度范围10°C～18°C，以1°C为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 41 —\u0015\u0001显示外出运转操作（开始/结束）画面。\n设定运转开始条件，运转时的温度，风量，进行设定时\n按 详细设定  键，确认各个项目并进行设定。\n（‛转 \u0016）\n确认外出运转条件，运转开始时，按  开始  键。\n结束外出运转时按  结束  键。\n\u0016\u0001在详细设定菜单上设定下列项目。\nᶃ\u0001冷房判定 ： 设定判断冷房运转的室外温度。\n可设定范围 ： 26°C～35 °C（3°C单位）  （‛转 \u0017）\nᶄ\u0001暖房判定 ： 设定判断暖房运转的室外温度。可设定范围 ： 0\n°C～15 °C（5°C单位）  （‛转 \u0018）\nᶅ\u0001冷房设定温度 ： 判断冷房后设定室内温度。可设定范围 ： 26\n°C～33 °C（1°C单位）  （‛转 \u0019）\nᶆ\u0001暖房设定温度 ： 判断暖房后设定室内温度。可设定范围 ： 10\n°C～18 °C（1°C单位）  （‛转 \u001a）\nᶇ冷房风量 ： 设定冷房风量。 （ ‛转 \u0012\u0011）\nᶈ\u0001暖房风量 ： 设定暖房风量。 （ ‛转 \u0012\u0012）\n˙\u0001\u0001在详细设定菜单设定的项目，下次外出运转时也生效。\n˙\u0001\u0001初次进行外出运转时内容如下。\n请根据喜好变更设定。\nᶃ冷房判定 ：35°C\nᶄ暖房判定 ：0°C\nᶅ冷房温度设定 ：33°C\nᶆ暖房设定温度 ：10°C\nᶇ冷房风量 ：弱\nᶈ暖房风量 ：弱\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_4db3a240fa1db43b",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 48,
+      "chunk_id": "chunk_ef5d1c451a204df1",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "冷房温度范围",
+        "lower_limit": "16～28°C",
+        "upper_limit": "30～35°C",
+        "title": "设定温度范围冷房上下限",
+        "summary": "冷房运转时设定温度下限16～28°C，上限30～35°C。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 47 —\n\u0012\u0001\u0001在管理员设定菜单画面点“设定温度范围” ，显示设定温\n度范围菜单。\nᶃ设定冷房上 ·下限设定\n......................... 设定冷房运转时的温度范围。 （含除湿运\n转，自动运转。 ）\nᶄ暖房上 ·下限设定\n.........................  设定暖房运转时的温度范围。\nᶅ控制切换\n......................... 设定温度范围有效/无效。\n\u0013\u0001冷房运转时的温度范围设定。\n用 ˛˝  键，找想要的温度下限，上限（1 °C单\n位） 。\n找到想要的温度后按  设定  键。\n\u0014\u0001 \u0001设定暖房运转时的温度范围。\n用 ˛˝  键， 找想要的温度下限， 上限 （1°C单位）。\n找到想要的温度后按  设定  键。˙设定温度范围\n限定了冷房运转时或暖房运转时的温度设定范围。\n下限值 上限值\n冷房 ·除湿 ·自动 16～28 °C 30～35 °C\n暖房 10～22 °C 22～30 °C˙设定温度范围如下。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ef5d1c451a204df1"
+      ],
+      "source_page_nos": [
+        48
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for cooling temperature limit range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_ef5d1c451a204df1 on page 48 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "冷房温度范围",
+          "lower_limit": "16～28°C",
+          "upper_limit": "30～35°C",
+          "title": "设定温度范围冷房上下限",
+          "summary": "冷房运转时设定温度下限16～28°C，上限30～35°C。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 47 —\n\u0012\u0001\u0001在管理员设定菜单画面点“设定温度范围” ，显示设定温\n度范围菜单。\nᶃ设定冷房上 ·下限设定\n......................... 设定冷房运转时的温度范围。 （含除湿运\n转，自动运转。 ）\nᶄ暖房上 ·下限设定\n.........................  设定暖房运转时的温度范围。\nᶅ控制切换\n......................... 设定温度范围有效/无效。\n\u0013\u0001冷房运转时的温度范围设定。\n用 ˛˝  键，找想要的温度下限，上限（1 °C单\n位） 。\n找到想要的温度后按  设定  键。\n\u0014\u0001 \u0001设定暖房运转时的温度范围。\n用 ˛˝  键， 找想要的温度下限， 上限 （1°C单位）。\n找到想要的温度后按  设定  键。˙设定温度范围\n限定了冷房运转时或暖房运转时的温度设定范围。\n下限值 上限值\n冷房 ·除湿 ·自动 16～28 °C 30～35 °C\n暖房 10～22 °C 22～30 °C˙设定温度范围如下。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_31016699d01e7d48",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 48,
+      "chunk_id": "chunk_ef5d1c451a204df1",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "暖房温度范围",
+        "lower_limit": "10～22°C",
+        "upper_limit": "22～30°C",
+        "title": "设定温度范围暖房上下限",
+        "summary": "暖房运转时设定温度下限10～22°C，上限22～30°C。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 47 —\n\u0012\u0001\u0001在管理员设定菜单画面点“设定温度范围” ，显示设定温\n度范围菜单。\nᶃ设定冷房上 ·下限设定\n......................... 设定冷房运转时的温度范围。 （含除湿运\n转，自动运转。 ）\nᶄ暖房上 ·下限设定\n.........................  设定暖房运转时的温度范围。\nᶅ控制切换\n......................... 设定温度范围有效/无效。\n\u0013\u0001冷房运转时的温度范围设定。\n用 ˛˝  键，找想要的温度下限，上限（1 °C单\n位） 。\n找到想要的温度后按  设定  键。\n\u0014\u0001 \u0001设定暖房运转时的温度范围。\n用 ˛˝  键， 找想要的温度下限， 上限 （1°C单位）。\n找到想要的温度后按  设定  键。˙设定温度范围\n限定了冷房运转时或暖房运转时的温度设定范围。\n下限值 上限值\n冷房 ·除湿 ·自动 16～28 °C 30～35 °C\n暖房 10～22 °C 22～30 °C˙设定温度范围如下。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ef5d1c451a204df1"
+      ],
+      "source_page_nos": [
+        48
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for heating temperature limit range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_ef5d1c451a204df1 on page 48 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "暖房温度范围",
+          "lower_limit": "10～22°C",
+          "upper_limit": "22～30°C",
+          "title": "设定温度范围暖房上下限",
+          "summary": "暖房运转时设定温度下限10～22°C，上限22～30°C。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 47 —\n\u0012\u0001\u0001在管理员设定菜单画面点“设定温度范围” ，显示设定温\n度范围菜单。\nᶃ设定冷房上 ·下限设定\n......................... 设定冷房运转时的温度范围。 （含除湿运\n转，自动运转。 ）\nᶄ暖房上 ·下限设定\n.........................  设定暖房运转时的温度范围。\nᶅ控制切换\n......................... 设定温度范围有效/无效。\n\u0013\u0001冷房运转时的温度范围设定。\n用 ˛˝  键，找想要的温度下限，上限（1 °C单\n位） 。\n找到想要的温度后按  设定  键。\n\u0014\u0001 \u0001设定暖房运转时的温度范围。\n用 ˛˝  键， 找想要的温度下限， 上限 （1°C单位）。\n找到想要的温度后按  设定  键。˙设定温度范围\n限定了冷房运转时或暖房运转时的温度设定范围。\n下限值 上限值\n冷房 ·除湿 ·自动 16～28 °C 30～35 °C\n暖房 10～22 °C 22～30 °C˙设定温度范围如下。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_43b29169eb858627",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 32,
+      "chunk_id": "chunk_654f5167aee14f9b",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "背景灯点亮时间",
+        "range": "5～90秒",
+        "unit": "间隔5秒",
+        "title": "背景灯点亮时间范围",
+        "summary": "背景灯点亮时间可设定5～90秒，间隔5秒。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 31 —\u0012\u0001\u0001在初始设定画面按“蜂鸣音” ，显示蜂鸣音设定画面。\n设定蜂鸣音需要 / 不需要。\n有 … 按画面上的键会有「嘀」音。\n无 … 没有声音。\u0012\u0001\u0001在初始设定画面按“背光” ，显示背景灯画面。\n设定背景灯点亮的 亮灯  / 灭灯  及亮灯时间\n（5～90秒： 间 隔 5秒） 。\n亮灯…  接触液晶显示部位，背光亮灯。\n不进行时间设定，操作时，自动熄灭。\n灭灯… 接触液晶显示部位背光也不亮。\n\u0013\u0001设定后按  设定  键。˙背光\n˙蜂鸣音\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_654f5167aee14f9b"
+      ],
+      "source_page_nos": [
+        32
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for backlight on time range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_654f5167aee14f9b on page 32 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "背景灯点亮时间",
+          "range": "5～90秒",
+          "unit": "间隔5秒",
+          "title": "背景灯点亮时间范围",
+          "summary": "背景灯点亮时间可设定5～90秒，间隔5秒。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 31 —\u0012\u0001\u0001在初始设定画面按“蜂鸣音” ，显示蜂鸣音设定画面。\n设定蜂鸣音需要 / 不需要。\n有 … 按画面上的键会有「嘀」音。\n无 … 没有声音。\u0012\u0001\u0001在初始设定画面按“背光” ，显示背景灯画面。\n设定背景灯点亮的 亮灯  / 灭灯  及亮灯时间\n（5～90秒： 间 隔 5秒） 。\n亮灯…  接触液晶显示部位，背光亮灯。\n不进行时间设定，操作时，自动熄灭。\n灭灯… 接触液晶显示部位背光也不亮。\n\u0013\u0001设定后按  设定  键。˙背光\n˙蜂鸣音\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_95c3adbd8304c295",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_0c15aa57c4e14ca3",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "下降长度",
+        "range": "0.1m～4.0m",
+        "unit": "0.1m为单位",
+        "title": "面板下降长度设定范围",
+        "summary": "面板下降长度可设定0.1m～4.0m，以0.1m为单位。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 23 —\u0014按 ˝  键。\n按 ˝  键，回风栅降到设定的下降长度，自动停止。\n想中途停止下降时按 ▲  键。\n收回回风栅时按 ▲  键。回风栅会上升，收好后会自\n动停止。\n想中途停止上升时按 ˝  键。\n设定回风栅下降长度时，按  设定下降高度   长度键。 （ ‛\n转\u0015）\n\u0015设定回风栅的下降长度。\n˛  ˝  键可将设定长度以0.1m为单位进行设定。\n下降长度设定范围 ： 0.1m～4.0m\n显示管理人密码输入画面时，请输入管理员密码。（‛转第15页） 。\n■有时进行操作限制设定时 （‛转第45页） 也会显示管理员密码输入画面。\n\u0016设定下降长度后按  设定  键。\n注意事项\nɾ 除吸入面板下降时外，用子线控制器或中央控制器下达运转指示时，该空调会运转，请注意。 （线控显示不变）\nɾ 暖房过程中按上述1， 「面板升降」时，室内机送风机可能会持续运转40秒。\nɾ线控器被设定为子线控制器时，无法选择室内机。会导致全部同时升降。\nɾ 面板在规定位置停留后，吊绳（2根）最多可能会倾斜8cm，面板也倾斜，收回时会自动调整。\nɾ收纳时调整位置会有较大的噪音，这不是故障音。\nɾ 四方嵌顶式时，面板碰到障碍物，钢丝松动时，会停止升降。碰到障碍物停止升降时，请将障碍物拿掉，使钢\n丝恢复紧绷状态后再按 ˛  ˝  键。特别提醒˙使用方法\n使用方法\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_0c15aa57c4e14ca3"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for panel lowering length range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_0c15aa57c4e14ca3 on page 24 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "下降长度",
+          "range": "0.1m～4.0m",
+          "unit": "0.1m为单位",
+          "title": "面板下降长度设定范围",
+          "summary": "面板下降长度可设定0.1m～4.0m，以0.1m为单位。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 23 —\u0014按 ˝  键。\n按 ˝  键，回风栅降到设定的下降长度，自动停止。\n想中途停止下降时按 ▲  键。\n收回回风栅时按 ▲  键。回风栅会上升，收好后会自\n动停止。\n想中途停止上升时按 ˝  键。\n设定回风栅下降长度时，按  设定下降高度   长度键。 （ ‛\n转\u0015）\n\u0015设定回风栅的下降长度。\n˛  ˝  键可将设定长度以0.1m为单位进行设定。\n下降长度设定范围 ： 0.1m～4.0m\n显示管理人密码输入画面时，请输入管理员密码。（‛转第15页） 。\n■有时进行操作限制设定时 （‛转第45页） 也会显示管理员密码输入画面。\n\u0016设定下降长度后按  设定  键。\n注意事项\nɾ 除吸入面板下降时外，用子线控制器或中央控制器下达运转指示时，该空调会运转，请注意。 （线控显示不变）\nɾ 暖房过程中按上述1， 「面板升降」时，室内机送风机可能会持续运转40秒。\nɾ线控器被设定为子线控制器时，无法选择室内机。会导致全部同时升降。\nɾ 面板在规定位置停留后，吊绳（2根）最多可能会倾斜8cm，面板也倾斜，收回时会自动调整。\nɾ收纳时调整位置会有较大的噪音，这不是故障音。\nɾ 四方嵌顶式时，面板碰到障碍物，钢丝松动时，会停止升降。碰到障碍物停止升降时，请将障碍物拿掉，使钢\n丝恢复紧绷状态后再按 ˛  ˝  键。特别提醒˙使用方法\n使用方法\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_063b43e2490a00fd",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 14,
+      "chunk_id": "chunk_913bc5ebedad47db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "高能力运转持续时间",
+        "value": "15分钟",
+        "title": "高能力运转最大持续时间",
+        "summary": "高能力运转最多运转15分钟后自动转为普通运转。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 13 —\n\u0012\u0001\u0001按 高能力控制运转后开始高能力控制运转。\n˙\u0001 \u0001空调停止中按  高能力运转键时开始  运转。\n\u0013\u0001\u0001高能力控制运转中， 线控画面显示 「高能力控制运转中」 ，\n设定温度变为 「—, —°C」 。\n\u0014\u0001 \u0001再按一次 高能力控制运转时，高能力控制运转结束，\n返回普通运转。\n按运转/停止键时，停止运转。\n˙  高能力控制运转中进行运转模式，设定温度，风量变更时，高能力控\n制运转自动停止。\n˙变更运转模式，设定温度，风量变更时，高能力控制运转也会被解除。\n\u0012\u0001按  节能键开始节能运转。\n˙  空调  停止中按   节能开关也开始运转。\n\u0013\u0001\u0001节能运转中在线控画面上显示  「节能运转中」 ，设定温度冷\n房时为「28.0 °C」 ，暖房时为「22.0 °C」 。\n运转模式为自动时，设定温度显示为“－－℃” 。\n\u0014\u0001\u0001\u0001再按一次  节能开关，结束节能运转，回到普通运转。\n按  运转/停止开关停止运转。\n˙  节能运转中设定温度变更操作无效。操作时会在线控画面\n上显示“操作无效” 。\n˙  节能运转只在冷房，暖房，自动时有效。除冷房，暖房，自动以外的模式下按\n节能运转会显示“操作无效” 。\n˙  运转模式变更时节能运转会被解除。高能力运转\n提高运转能力快速达到舒适的温度。\n高能力运转最多运转15分钟后，自动转为普通运转。变更运转模式后，回到普通运转。\n节能运转\n节能运转时请使用该功能。冷房时固定在28 °C，暖房时固定在22 °C，会根据室外温度自动控制，不影响舒适性，进行节能运转。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_913bc5ebedad47db"
+      ],
+      "source_page_nos": [
+        14
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for high-power operation max duration.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_913bc5ebedad47db on page 14 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "高能力运转持续时间",
+          "value": "15分钟",
+          "title": "高能力运转最大持续时间",
+          "summary": "高能力运转最多运转15分钟后自动转为普通运转。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 13 —\n\u0012\u0001\u0001按 高能力控制运转后开始高能力控制运转。\n˙\u0001 \u0001空调停止中按  高能力运转键时开始  运转。\n\u0013\u0001\u0001高能力控制运转中， 线控画面显示 「高能力控制运转中」 ，\n设定温度变为 「—, —°C」 。\n\u0014\u0001 \u0001再按一次 高能力控制运转时，高能力控制运转结束，\n返回普通运转。\n按运转/停止键时，停止运转。\n˙  高能力控制运转中进行运转模式，设定温度，风量变更时，高能力控\n制运转自动停止。\n˙变更运转模式，设定温度，风量变更时，高能力控制运转也会被解除。\n\u0012\u0001按  节能键开始节能运转。\n˙  空调  停止中按   节能开关也开始运转。\n\u0013\u0001\u0001节能运转中在线控画面上显示  「节能运转中」 ，设定温度冷\n房时为「28.0 °C」 ，暖房时为「22.0 °C」 。\n运转模式为自动时，设定温度显示为“－－℃” 。\n\u0014\u0001\u0001\u0001再按一次  节能开关，结束节能运转，回到普通运转。\n按  运转/停止开关停止运转。\n˙  节能运转中设定温度变更操作无效。操作时会在线控画面\n上显示“操作无效” 。\n˙  节能运转只在冷房，暖房，自动时有效。除冷房，暖房，自动以外的模式下按\n节能运转会显示“操作无效” 。\n˙  运转模式变更时节能运转会被解除。高能力运转\n提高运转能力快速达到舒适的温度。\n高能力运转最多运转15分钟后，自动转为普通运转。变更运转模式后，回到普通运转。\n节能运转\n节能运转时请使用该功能。冷房时固定在28 °C，暖房时固定在22 °C，会根据室外温度自动控制，不影响舒适性，进行节能运转。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_27b4b80d11b7ba55",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 14,
+      "chunk_id": "chunk_913bc5ebedad47db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "节能运转温度",
+        "cooling": "28.0°C",
+        "heating": "22.0°C",
+        "title": "节能运转固定温度",
+        "summary": "节能运转时冷房固定在28°C，暖房固定在22°C。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 13 —\n\u0012\u0001\u0001按 高能力控制运转后开始高能力控制运转。\n˙\u0001 \u0001空调停止中按  高能力运转键时开始  运转。\n\u0013\u0001\u0001高能力控制运转中， 线控画面显示 「高能力控制运转中」 ，\n设定温度变为 「—, —°C」 。\n\u0014\u0001 \u0001再按一次 高能力控制运转时，高能力控制运转结束，\n返回普通运转。\n按运转/停止键时，停止运转。\n˙  高能力控制运转中进行运转模式，设定温度，风量变更时，高能力控\n制运转自动停止。\n˙变更运转模式，设定温度，风量变更时，高能力控制运转也会被解除。\n\u0012\u0001按  节能键开始节能运转。\n˙  空调  停止中按   节能开关也开始运转。\n\u0013\u0001\u0001节能运转中在线控画面上显示  「节能运转中」 ，设定温度冷\n房时为「28.0 °C」 ，暖房时为「22.0 °C」 。\n运转模式为自动时，设定温度显示为“－－℃” 。\n\u0014\u0001\u0001\u0001再按一次  节能开关，结束节能运转，回到普通运转。\n按  运转/停止开关停止运转。\n˙  节能运转中设定温度变更操作无效。操作时会在线控画面\n上显示“操作无效” 。\n˙  节能运转只在冷房，暖房，自动时有效。除冷房，暖房，自动以外的模式下按\n节能运转会显示“操作无效” 。\n˙  运转模式变更时节能运转会被解除。高能力运转\n提高运转能力快速达到舒适的温度。\n高能力运转最多运转15分钟后，自动转为普通运转。变更运转模式后，回到普通运转。\n节能运转\n节能运转时请使用该功能。冷房时固定在28 °C，暖房时固定在22 °C，会根据室外温度自动控制，不影响舒适性，进行节能运转。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_913bc5ebedad47db"
+      ],
+      "source_page_nos": [
+        14
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for energy-saving operation fixed temperatures.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_913bc5ebedad47db on page 14 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "节能运转温度",
+          "cooling": "28.0°C",
+          "heating": "22.0°C",
+          "title": "节能运转固定温度",
+          "summary": "节能运转时冷房固定在28°C，暖房固定在22°C。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 13 —\n\u0012\u0001\u0001按 高能力控制运转后开始高能力控制运转。\n˙\u0001 \u0001空调停止中按  高能力运转键时开始  运转。\n\u0013\u0001\u0001高能力控制运转中， 线控画面显示 「高能力控制运转中」 ，\n设定温度变为 「—, —°C」 。\n\u0014\u0001 \u0001再按一次 高能力控制运转时，高能力控制运转结束，\n返回普通运转。\n按运转/停止键时，停止运转。\n˙  高能力控制运转中进行运转模式，设定温度，风量变更时，高能力控\n制运转自动停止。\n˙变更运转模式，设定温度，风量变更时，高能力控制运转也会被解除。\n\u0012\u0001按  节能键开始节能运转。\n˙  空调  停止中按   节能开关也开始运转。\n\u0013\u0001\u0001节能运转中在线控画面上显示  「节能运转中」 ，设定温度冷\n房时为「28.0 °C」 ，暖房时为「22.0 °C」 。\n运转模式为自动时，设定温度显示为“－－℃” 。\n\u0014\u0001\u0001\u0001再按一次  节能开关，结束节能运转，回到普通运转。\n按  运转/停止开关停止运转。\n˙  节能运转中设定温度变更操作无效。操作时会在线控画面\n上显示“操作无效” 。\n˙  节能运转只在冷房，暖房，自动时有效。除冷房，暖房，自动以外的模式下按\n节能运转会显示“操作无效” 。\n˙  运转模式变更时节能运转会被解除。高能力运转\n提高运转能力快速达到舒适的温度。\n高能力运转最多运转15分钟后，自动转为普通运转。变更运转模式后，回到普通运转。\n节能运转\n节能运转时请使用该功能。冷房时固定在28 °C，暖房时固定在22 °C，会根据室外温度自动控制，不影响舒适性，进行节能运转。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a5712dc0b4fe1380",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_10fba178f9414642",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "初始设定温度",
+        "value": "23.0°C",
+        "title": "初始设定温度默认值",
+        "summary": "初次连接电源时设定温度为23.0°C。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 10 —\u0012\u0001运转\n按运转/停止 键。\n运转灯（绿色）点亮，开始运转。\n\u0013\u0001停止\n再按一次运转/停止 键。\n运转灯熄灭，停止运转。\n停止后，画面各操作灯会熄灭，经过设定的背景灯设定时间\n（‛转第31页）后，背景灯熄灭。\n点击画面后背景灯点亮，显示各操作键。4. 使用方法\n运转/停止\n特别提醒\n· 运转停止后请不要立即切断电源。\n请维持 5分钟以上，以便结束排水剩余运转。否则可能会导致漏水或\n引起故障。\n· 有时按键后会显示“此操作无效” ，这不是故障，只是该键被设定为无效。 （‛转第 45页）\n· 初次连接电源时会按照下列内容运转，请根据喜好变更设定内容。\n集中管理中  … 灭灯\n运转模式  … 有自动模式时 ： 自动冷房\n没有自动模式时： 冷房\n设定温度  … 23.0 °C\n风量变更  … 高速\n摆叶位置  … 水平\n· 下列情况下和运转模式不符，会显示“运转模式无效” ，会变更为送风运转。\nᶃ连接了冷房专用室外机的情况下，选择暖房（含自动暖房）功能时。\nᶄ混合连接了冷房暖房兼用机和冷房专用机，进行多台控制时选择暖房模式时。\nᶅ无法进行冷房暖房混合运转的室外机上连接的室内机之间的运转模式不同时。特别提醒\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_10fba178f9414642"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for initial set temperature default.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_10fba178f9414642 on page 11 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "初始设定温度",
+          "value": "23.0°C",
+          "title": "初始设定温度默认值",
+          "summary": "初次连接电源时设定温度为23.0°C。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 10 —\u0012\u0001运转\n按运转/停止 键。\n运转灯（绿色）点亮，开始运转。\n\u0013\u0001停止\n再按一次运转/停止 键。\n运转灯熄灭，停止运转。\n停止后，画面各操作灯会熄灭，经过设定的背景灯设定时间\n（‛转第31页）后，背景灯熄灭。\n点击画面后背景灯点亮，显示各操作键。4. 使用方法\n运转/停止\n特别提醒\n· 运转停止后请不要立即切断电源。\n请维持 5分钟以上，以便结束排水剩余运转。否则可能会导致漏水或\n引起故障。\n· 有时按键后会显示“此操作无效” ，这不是故障，只是该键被设定为无效。 （‛转第 45页）\n· 初次连接电源时会按照下列内容运转，请根据喜好变更设定内容。\n集中管理中  … 灭灯\n运转模式  … 有自动模式时 ： 自动冷房\n没有自动模式时： 冷房\n设定温度  … 23.0 °C\n风量变更  … 高速\n摆叶位置  … 水平\n· 下列情况下和运转模式不符，会显示“运转模式无效” ，会变更为送风运转。\nᶃ连接了冷房专用室外机的情况下，选择暖房（含自动暖房）功能时。\nᶄ混合连接了冷房暖房兼用机和冷房专用机，进行多台控制时选择暖房模式时。\nᶅ无法进行冷房暖房混合运转的室外机上连接的室内机之间的运转模式不同时。特别提醒\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_e565172ff19a92f3",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_10fba178f9414642",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "初始运转模式",
+        "value": "自动冷房或冷房",
+        "title": "初始运转模式默认值",
+        "summary": "初次连接电源时运转模式为自动冷房（有自动模式时）或冷房（无自动模式时）。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 10 —\u0012\u0001运转\n按运转/停止 键。\n运转灯（绿色）点亮，开始运转。\n\u0013\u0001停止\n再按一次运转/停止 键。\n运转灯熄灭，停止运转。\n停止后，画面各操作灯会熄灭，经过设定的背景灯设定时间\n（‛转第31页）后，背景灯熄灭。\n点击画面后背景灯点亮，显示各操作键。4. 使用方法\n运转/停止\n特别提醒\n· 运转停止后请不要立即切断电源。\n请维持 5分钟以上，以便结束排水剩余运转。否则可能会导致漏水或\n引起故障。\n· 有时按键后会显示“此操作无效” ，这不是故障，只是该键被设定为无效。 （‛转第 45页）\n· 初次连接电源时会按照下列内容运转，请根据喜好变更设定内容。\n集中管理中  … 灭灯\n运转模式  … 有自动模式时 ： 自动冷房\n没有自动模式时： 冷房\n设定温度  … 23.0 °C\n风量变更  … 高速\n摆叶位置  … 水平\n· 下列情况下和运转模式不符，会显示“运转模式无效” ，会变更为送风运转。\nᶃ连接了冷房专用室外机的情况下，选择暖房（含自动暖房）功能时。\nᶄ混合连接了冷房暖房兼用机和冷房专用机，进行多台控制时选择暖房模式时。\nᶅ无法进行冷房暖房混合运转的室外机上连接的室内机之间的运转模式不同时。特别提醒\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_10fba178f9414642"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for initial operation mode default.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_10fba178f9414642 on page 11 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "初始运转模式",
+          "value": "自动冷房或冷房",
+          "title": "初始运转模式默认值",
+          "summary": "初次连接电源时运转模式为自动冷房（有自动模式时）或冷房（无自动模式时）。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 10 —\u0012\u0001运转\n按运转/停止 键。\n运转灯（绿色）点亮，开始运转。\n\u0013\u0001停止\n再按一次运转/停止 键。\n运转灯熄灭，停止运转。\n停止后，画面各操作灯会熄灭，经过设定的背景灯设定时间\n（‛转第31页）后，背景灯熄灭。\n点击画面后背景灯点亮，显示各操作键。4. 使用方法\n运转/停止\n特别提醒\n· 运转停止后请不要立即切断电源。\n请维持 5分钟以上，以便结束排水剩余运转。否则可能会导致漏水或\n引起故障。\n· 有时按键后会显示“此操作无效” ，这不是故障，只是该键被设定为无效。 （‛转第 45页）\n· 初次连接电源时会按照下列内容运转，请根据喜好变更设定内容。\n集中管理中  … 灭灯\n运转模式  … 有自动模式时 ： 自动冷房\n没有自动模式时： 冷房\n设定温度  … 23.0 °C\n风量变更  … 高速\n摆叶位置  … 水平\n· 下列情况下和运转模式不符，会显示“运转模式无效” ，会变更为送风运转。\nᶃ连接了冷房专用室外机的情况下，选择暖房（含自动暖房）功能时。\nᶄ混合连接了冷房暖房兼用机和冷房专用机，进行多台控制时选择暖房模式时。\nᶅ无法进行冷房暖房混合运转的室外机上连接的室内机之间的运转模式不同时。特别提醒\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_04db01cf19ff430c",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_10fba178f9414642",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "初始风量",
+        "value": "高速",
+        "title": "初始风量默认值",
+        "summary": "初次连接电源时风量为高速。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 10 —\u0012\u0001运转\n按运转/停止 键。\n运转灯（绿色）点亮，开始运转。\n\u0013\u0001停止\n再按一次运转/停止 键。\n运转灯熄灭，停止运转。\n停止后，画面各操作灯会熄灭，经过设定的背景灯设定时间\n（‛转第31页）后，背景灯熄灭。\n点击画面后背景灯点亮，显示各操作键。4. 使用方法\n运转/停止\n特别提醒\n· 运转停止后请不要立即切断电源。\n请维持 5分钟以上，以便结束排水剩余运转。否则可能会导致漏水或\n引起故障。\n· 有时按键后会显示“此操作无效” ，这不是故障，只是该键被设定为无效。 （‛转第 45页）\n· 初次连接电源时会按照下列内容运转，请根据喜好变更设定内容。\n集中管理中  … 灭灯\n运转模式  … 有自动模式时 ： 自动冷房\n没有自动模式时： 冷房\n设定温度  … 23.0 °C\n风量变更  … 高速\n摆叶位置  … 水平\n· 下列情况下和运转模式不符，会显示“运转模式无效” ，会变更为送风运转。\nᶃ连接了冷房专用室外机的情况下，选择暖房（含自动暖房）功能时。\nᶄ混合连接了冷房暖房兼用机和冷房专用机，进行多台控制时选择暖房模式时。\nᶅ无法进行冷房暖房混合运转的室外机上连接的室内机之间的运转模式不同时。特别提醒\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_10fba178f9414642"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for initial fan speed default.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_10fba178f9414642 on page 11 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "初始风量",
+          "value": "高速",
+          "title": "初始风量默认值",
+          "summary": "初次连接电源时风量为高速。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 10 —\u0012\u0001运转\n按运转/停止 键。\n运转灯（绿色）点亮，开始运转。\n\u0013\u0001停止\n再按一次运转/停止 键。\n运转灯熄灭，停止运转。\n停止后，画面各操作灯会熄灭，经过设定的背景灯设定时间\n（‛转第31页）后，背景灯熄灭。\n点击画面后背景灯点亮，显示各操作键。4. 使用方法\n运转/停止\n特别提醒\n· 运转停止后请不要立即切断电源。\n请维持 5分钟以上，以便结束排水剩余运转。否则可能会导致漏水或\n引起故障。\n· 有时按键后会显示“此操作无效” ，这不是故障，只是该键被设定为无效。 （‛转第 45页）\n· 初次连接电源时会按照下列内容运转，请根据喜好变更设定内容。\n集中管理中  … 灭灯\n运转模式  … 有自动模式时 ： 自动冷房\n没有自动模式时： 冷房\n设定温度  … 23.0 °C\n风量变更  … 高速\n摆叶位置  … 水平\n· 下列情况下和运转模式不符，会显示“运转模式无效” ，会变更为送风运转。\nᶃ连接了冷房专用室外机的情况下，选择暖房（含自动暖房）功能时。\nᶄ混合连接了冷房暖房兼用机和冷房专用机，进行多台控制时选择暖房模式时。\nᶅ无法进行冷房暖房混合运转的室外机上连接的室内机之间的运转模式不同时。特别提醒\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_e8981fc5c78de5a0",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_10fba178f9414642",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "初始摆叶位置",
+        "value": "水平",
+        "title": "初始摆叶位置默认值",
+        "summary": "初次连接电源时摆叶位置为水平。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 10 —\u0012\u0001运转\n按运转/停止 键。\n运转灯（绿色）点亮，开始运转。\n\u0013\u0001停止\n再按一次运转/停止 键。\n运转灯熄灭，停止运转。\n停止后，画面各操作灯会熄灭，经过设定的背景灯设定时间\n（‛转第31页）后，背景灯熄灭。\n点击画面后背景灯点亮，显示各操作键。4. 使用方法\n运转/停止\n特别提醒\n· 运转停止后请不要立即切断电源。\n请维持 5分钟以上，以便结束排水剩余运转。否则可能会导致漏水或\n引起故障。\n· 有时按键后会显示“此操作无效” ，这不是故障，只是该键被设定为无效。 （‛转第 45页）\n· 初次连接电源时会按照下列内容运转，请根据喜好变更设定内容。\n集中管理中  … 灭灯\n运转模式  … 有自动模式时 ： 自动冷房\n没有自动模式时： 冷房\n设定温度  … 23.0 °C\n风量变更  … 高速\n摆叶位置  … 水平\n· 下列情况下和运转模式不符，会显示“运转模式无效” ，会变更为送风运转。\nᶃ连接了冷房专用室外机的情况下，选择暖房（含自动暖房）功能时。\nᶄ混合连接了冷房暖房兼用机和冷房专用机，进行多台控制时选择暖房模式时。\nᶅ无法进行冷房暖房混合运转的室外机上连接的室内机之间的运转模式不同时。特别提醒\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_10fba178f9414642"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for initial louver position default.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_10fba178f9414642 on page 11 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "初始摆叶位置",
+          "value": "水平",
+          "title": "初始摆叶位置默认值",
+          "summary": "初次连接电源时摆叶位置为水平。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 10 —\u0012\u0001运转\n按运转/停止 键。\n运转灯（绿色）点亮，开始运转。\n\u0013\u0001停止\n再按一次运转/停止 键。\n运转灯熄灭，停止运转。\n停止后，画面各操作灯会熄灭，经过设定的背景灯设定时间\n（‛转第31页）后，背景灯熄灭。\n点击画面后背景灯点亮，显示各操作键。4. 使用方法\n运转/停止\n特别提醒\n· 运转停止后请不要立即切断电源。\n请维持 5分钟以上，以便结束排水剩余运转。否则可能会导致漏水或\n引起故障。\n· 有时按键后会显示“此操作无效” ，这不是故障，只是该键被设定为无效。 （‛转第 45页）\n· 初次连接电源时会按照下列内容运转，请根据喜好变更设定内容。\n集中管理中  … 灭灯\n运转模式  … 有自动模式时 ： 自动冷房\n没有自动模式时： 冷房\n设定温度  … 23.0 °C\n风量变更  … 高速\n摆叶位置  … 水平\n· 下列情况下和运转模式不符，会显示“运转模式无效” ，会变更为送风运转。\nᶃ连接了冷房专用室外机的情况下，选择暖房（含自动暖房）功能时。\nᶄ混合连接了冷房暖房兼用机和冷房专用机，进行多台控制时选择暖房模式时。\nᶅ无法进行冷房暖房混合运转的室外机上连接的室内机之间的运转模式不同时。特别提醒\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_ef383982c0c799ab",
+      "domain_id": "hvac",
+      "doc_id": "doc_576787c42cc64301",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_55d650f27f2c4faf",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "最大输入电压",
+        "value": "DC 18V",
+        "title": "线控器最大输入电压",
+        "summary": "线控器能接受的最大电压为DC 18V，不要连接AC220~240V或380/415V。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "— 3 —线控器能接受的最大电压为DC 18V。不要连接AC220~240V，380/415V。\n会导致破坏，着火，火灾事故。\n异常时请停止运转。\n异常情况下继续运转会导致故障，触电，引发火灾等。\n异常时（有焦糊味）请停止运转，切断电源，和销售店联络。\n有不正常现象时请停止运转。\n放置不管会导致火灾或事故。请和销售店联系。\n注意\n不要玩弄本体及线控器（不要让人玩） 。\n可能会因操作失误导致身体不适，损害健康。\n绝对不要分解线控器。\n用手碰到内部可能会导致触电以及事故。内部点检等请和销售店联络。\n不要用水，液体清洗线控器。\n会导致触电，火灾，故障。\n请不要将线控器安装在可能会被水淋的地方。\n水进入机器内部除了可能会触电，还会导致内部电子部件故障。\n请不要用湿手碰触电子部件，按钮和画面。\n会导致触电，火灾，故障。\n维护时请务必停止运转，切断电源开关。\n可能会导致触电，受伤。\n请安装在耐重的地方。\n强度不足或安装不到位时，线控器可能会跌落。\n请不要自行废弃线控器。\n会破坏环境。丢弃线控器时请和销售店联系。\n依赖事项线控安装时请避开阳光直射的地方或周围温度高于40 °C，低于-0 °C的地方。\n会变形，变色，导致故障。\n请不要用汽油，吸湿剂，化学抹布擦拭。\n会变形，导致故障。请用抹布沾上用水稀释过的中性洗涤剂，拧干后擦拭，再用干布擦拭。\n请不要拉拽，拧线控器线。\n可能会导致故障。\n请不要用尖锐的东西碰线控器按键，画面。\n可能会破损，产生故障。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_55d650f27f2c4faf"
+      ],
+      "source_page_nos": [
+        4
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec for controller maximum input voltage.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:candidate for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:candidate derived from chunk chunk_55d650f27f2c4faf on page 4 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "最大输入电压",
+          "value": "DC 18V",
+          "title": "线控器最大输入电压",
+          "summary": "线控器能接受的最大电压为DC 18V，不要连接AC220~240V或380/415V。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "— 3 —线控器能接受的最大电压为DC 18V。不要连接AC220~240V，380/415V。\n会导致破坏，着火，火灾事故。\n异常时请停止运转。\n异常情况下继续运转会导致故障，触电，引发火灾等。\n异常时（有焦糊味）请停止运转，切断电源，和销售店联络。\n有不正常现象时请停止运转。\n放置不管会导致火灾或事故。请和销售店联系。\n注意\n不要玩弄本体及线控器（不要让人玩） 。\n可能会因操作失误导致身体不适，损害健康。\n绝对不要分解线控器。\n用手碰到内部可能会导致触电以及事故。内部点检等请和销售店联络。\n不要用水，液体清洗线控器。\n会导致触电，火灾，故障。\n请不要将线控器安装在可能会被水淋的地方。\n水进入机器内部除了可能会触电，还会导致内部电子部件故障。\n请不要用湿手碰触电子部件，按钮和画面。\n会导致触电，火灾，故障。\n维护时请务必停止运转，切断电源开关。\n可能会导致触电，受伤。\n请安装在耐重的地方。\n强度不足或安装不到位时，线控器可能会跌落。\n请不要自行废弃线控器。\n会破坏环境。丢弃线控器时请和销售店联系。\n依赖事项线控安装时请避开阳光直射的地方或周围温度高于40 °C，低于-0 °C的地方。\n会变形，变色，导致故障。\n请不要用汽油，吸湿剂，化学抹布擦拭。\n会变形，导致故障。请用抹布沾上用水稀释过的中性洗涤剂，拧干后擦拭，再用干布擦拭。\n请不要拉拽，拧线控器线。\n可能会导致故障。\n请不要用尖锐的东西碰线控器按键，画面。\n可能会破损，产生故障。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-08T12:48:24.080086+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 20
+  }
+}

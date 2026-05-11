@@ -1,0 +1,399 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_f815a92300dac349",
+      "domain_id": "hvac",
+      "doc_id": "doc_06f0ec2be1b94fa6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_131d279a065546e0",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:envelope_thermal_mass_effect",
+      "structured_payload_candidate": {
+        "title": "Envelope Thermal Mass Effect",
+        "summary": "Heavy envelope provides thermal mass that shifts loads and affects equipment operating cycle."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "AIR-CONDITIONING  SYSTEM  DESIGN  MANUAL ⏐23\nA heavy envelope of brick or masonry provides thermal mass;\nsuch mass, by shifting loads, affect s the operating cycle of the heat-\ning and cooling equipment. The gr eater the internal building mass,\nthe less extensive are the indoor temperature excursions. The place-\nment of thermal insulation, whethe r on the exterior or the interior\nside of the envelope, affects hea ting and cooling load patterns. The\nenvelope construction and the location of the vapor retarder (if\nrequired) also determine the transfer of moisture between the build-\ning spaces and the outdoors, t hus affecting humidification and\ndehumidification requirements. The interaction of HV AC system\nand envelope relative to moisture flows is especially critical to\nbuilding success in hot-humid and cold climates.\nA building can be configured to provide solar shading and\nwind protection, which will influence heating and cooling loads and\ncontrol strategies.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_131d279a065546e0",
+        "chunk_8bba3fcccfab446a",
+        "chunk_3c22b44861994801",
+        "chunk_d7b6d9ff38114913",
+        "chunk_35397178130341df"
+      ],
+      "source_page_nos": [
+        3,
+        4,
+        6
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides application guidance on how building envelope thermal mass affects heating and cooling loads and equipment operation, relevant to chiller system design."
+    },
+    {
+      "candidate_id": "cand_bfb253ad8d565c32",
+      "domain_id": "hvac",
+      "doc_id": "doc_06f0ec2be1b94fa6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_8bba3fcccfab446a",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:daylighting_reduces_cooling_load",
+      "structured_payload_candidate": {
+        "title": "Daylighting Reduces Cooling Load",
+        "summary": "Well-designed daylighting reduces heat gain compared to electric lighting, lowering cooling requirements."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "By reducing transmission and radiation transfer\nat the perimeter, the envelope reduces the influence of climate on\nthe building interior and thereby affects the designation of thermal\nzones. If loads in a building do not vary much with time of day,\nsolar intensity, and wind velocity and direction, an HV AC system\ncan be less complex and less costly.\nAnother effect of the envelope on HV AC&R design is the use\nof daylighting to offset electric lighting. Less heat is gained with\nwell-designed daylighting than w ith electric lighting for the same\nillumination levels, so cooling requirements are reduced.\n2.4.1.2 How the HV AC&R System Affects a Building\nEnvelope. The HV AC&R system can affect the appearance of the\nbuilding envelope. Outdoor air intake louvers in walls, window air\nconditioners, and through-the-wall  units obviously affect the\nappearance of a building.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_8bba3fcccfab446a"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Application guidance on daylighting reducing cooling loads, a valid design consideration for HVAC sizing and operation."
+    },
+    {
+      "candidate_id": "cand_62437216fb873037",
+      "domain_id": "hvac",
+      "doc_id": "doc_06f0ec2be1b94fa6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_161c82f074044f75",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:cooling_tower_piping_design",
+      "structured_payload_candidate": {
+        "title": "Cooling Tower Piping Design",
+        "summary": "Piping from tower sump to pump should be pitched up to eliminate air pockets; sump level above pump casing for positive prime."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_161c82f074044f75"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Clear application guidance on cooling tower piping design to ensure proper pump priming and avoid air pockets, directly relevant to chiller condenser water systems."
+    },
+    {
+      "candidate_id": "cand_692a243e1b92b1fc",
+      "domain_id": "hvac",
+      "doc_id": "doc_06f0ec2be1b94fa6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_161c82f074044f75",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:cooling_tower_water_velocity_range",
+      "structured_payload_candidate": {
+        "parameter_name": "Cooling tower water velocity",
+        "title": "Cooling Tower Water Velocity Range",
+        "summary": "Piping sized for water velocities between 5 and 12 fps (1.5 to 3.7 m/s)."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_161c82f074044f75"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter specification for cooling tower water velocity range, useful for piping design in chiller systems."
+    },
+    {
+      "candidate_id": "cand_b52d7526325925dd",
+      "domain_id": "hvac",
+      "doc_id": "doc_06f0ec2be1b94fa6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_161c82f074044f75",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:equalizing_lines_for_multiple_cooling_towers",
+      "structured_payload_candidate": {
+        "title": "Equalizing Lines for Multiple Cooling Towers",
+        "summary": "Install equalizing lines between towers to prevent one tower from filling and another overflowing."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_161c82f074044f75"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Application guidance on installing equalizing lines for multiple cooling towers, a practical design rule for preventing flow imbalance."
+    },
+    {
+      "candidate_id": "cand_2ce97cea98707c35",
+      "domain_id": "hvac",
+      "doc_id": "doc_06f0ec2be1b94fa6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_35397178130341df",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:winterization_of_cooling_tower_piping",
+      "structured_payload_candidate": {
+        "title": "Winterization of Cooling Tower Piping",
+        "summary": "Winterize tower piping or provide drain-down when pumps shut off; isolation valves in heated space."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Winterize the tower\npiping if necessary or provide for drain-down when pumps shut off.\nIn the latter case, the isolation va lves must be located in a heated\nspace. Provide valving or sump pump isolation so that any single\ncell can be serviced while the others are active.\n5.4.6 Evaporative Condensers\nEvaporative condensers are used to  reject heat to the outdoor\nair by means of the evaporation of water. Water is sprayed on the\ncondenser coils, and the resultant heat of vaporization, combined\nwith any sensible heat effect, co ols the liquid inside the coils. The\nresidual spray water is usually recirculated. An evaporative con-\ndenser uses much less makeup water than a cooling tower in a con-\nventional water-cooled condenser arrangement (approximately 1.6\nto 2.0 gph/ton [0.5 to 0.6 mL/s pe r kW] by evaporation plus 0.5 to\n0.6 gph/ton [0.15 to 0.18 mL/s pe r kW] for bleed water). Evapora-\ntive condensers are used primarily  as refrigeration system condens-\ners.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_35397178130341df"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Application guidance on winterizing cooling tower piping, essential for cold-climate operation of chiller condenser water systems."
+    },
+    {
+      "candidate_id": "cand_4949e04ed126dbf2",
+      "domain_id": "hvac",
+      "doc_id": "doc_06f0ec2be1b94fa6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_c8485e45ed1c4a6a",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:evaporative_condenser_location",
+      "structured_payload_candidate": {
+        "title": "Evaporative Condenser Location",
+        "summary": "Locate evaporative condensers as close as possible to refrigeration machinery to keep refrigerant lines short."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "In such applications, they should be located as close as possible\nto the refrigeration machinery to keep the refrigerant lines short. In\nthe winter, the water can often be shut off with the dry coil provid-\ning adequate heat rejection. Evaporative condensers are also used to\ncool recirculating water in closed-loop water-source heat pump sys-\ntems (see Chapter 7).\nFigure 5-8 shows two evaporative condenser types using city,\nwell, or river makeup water. Piping should be sized in accordance\nwith the principles outlined in Section 5.4.5 with flow velocities of\n5 to 10 fps [1.5 to 3.0 m/s]. Where city water is used, a pump is\nusually not required since the water arrives under pressure. For\nwell or river water, pumps may be necessary, in which case the.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_c8485e45ed1c4a6a"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Application guidance on locating evaporative condensers close to refrigeration machinery to minimize refrigerant line length, relevant to chiller design."
+    },
+    {
+      "candidate_id": "cand_0c56014aa32ca4bc",
+      "domain_id": "hvac",
+      "doc_id": "doc_06f0ec2be1b94fa6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_c8485e45ed1c4a6a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:evaporative_condenser_piping_velocity",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporative condenser water velocity",
+        "title": "Evaporative Condenser Piping Velocity",
+        "summary": "Piping flow velocities of 5 to 10 fps (1.5 to 3.0 m/s)."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "In such applications, they should be located as close as possible\nto the refrigeration machinery to keep the refrigerant lines short. In\nthe winter, the water can often be shut off with the dry coil provid-\ning adequate heat rejection. Evaporative condensers are also used to\ncool recirculating water in closed-loop water-source heat pump sys-\ntems (see Chapter 7).\nFigure 5-8 shows two evaporative condenser types using city,\nwell, or river makeup water. Piping should be sized in accordance\nwith the principles outlined in Section 5.4.5 with flow velocities of\n5 to 10 fps [1.5 to 3.0 m/s]. Where city water is used, a pump is\nusually not required since the water arrives under pressure. For\nwell or river water, pumps may be necessary, in which case the.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_c8485e45ed1c4a6a"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter specification for evaporative condenser piping velocity, directly from sizing guidance."
+    }
+  ]
+}

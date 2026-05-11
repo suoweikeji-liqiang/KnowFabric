@@ -1,0 +1,80 @@
+{
+  "page": 1,
+  "response": {
+    "id": "0e179b5767334eedabca219e9b58e564",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is the cover page of a Carrier 19XL Centrifugal Liquid Chiller manual, showing the brand logo, model name, manual title in Chinese and English, and the manufacturer's name.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Carrier logo\"},\n    {\"type\": \"text\", \"label\": \"19XL 离心式冷水机组\"},\n    {\"type\": \"text\", \"label\": \"19XL Centrifugal Liquid Chiller\"},\n    {\"type\": \"text\", \"label\": \"开机、操作及维护说明书\"},\n    {\"type\": \"text\", \"label\": \"Start - up, Operation, and Maintenance Instructions\"},\n    {\"type\": \"text\", \"label\": \"上海合众－开利空调设备有限公司\"},\n    {\"type\": \"text\", \"label\": \"SHANGHAI HEZHONG - CARRIER AIR - CONDITIONING EQUIPMENT CO., LTD.\"},\n    {\"type\": \"text\", \"label\": \"制冷百家网整理：www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"manual_identification\", \"equipment_model\", \"manufacturer_info\"],\n  \"ocr_text_if_useful\": \"Carrier\\n19XL 离心式冷水机组\\n19XL Centrifugal Liquid Chiller\\n开机、操作及维护说明书\\nStart - up, Operation, and Maintenance Instructions\\n上海合众－开利空调设备有限公司\\nSHANGHAI HEZHONG - CARRIER AIR - CONDITIONING EQUIPMENT CO., LTD.\\n制冷百家网整理：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page is a cover page with no technical diagrams or detailed operational information. The blue text at the bottom appears to be a watermark or source attribution added later, not part of the original manual.\",\n  \"confidence\": 1.0\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778205740,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 413,
+      "prompt_tokens": 2157,
+      "total_tokens": 2570,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 1960
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "text_scan",
+    "summary": "This is the cover page of a Carrier 19XL Centrifugal Liquid Chiller manual, showing the brand logo, model name, manual title in Chinese and English, and the manufacturer's name.",
+    "visual_entities": [
+      {
+        "type": "logo",
+        "label": "Carrier logo"
+      },
+      {
+        "type": "text",
+        "label": "19XL 离心式冷水机组"
+      },
+      {
+        "type": "text",
+        "label": "19XL Centrifugal Liquid Chiller"
+      },
+      {
+        "type": "text",
+        "label": "开机、操作及维护说明书"
+      },
+      {
+        "type": "text",
+        "label": "Start - up, Operation, and Maintenance Instructions"
+      },
+      {
+        "type": "text",
+        "label": "上海合众－开利空调设备有限公司"
+      },
+      {
+        "type": "text",
+        "label": "SHANGHAI HEZHONG - CARRIER AIR - CONDITIONING EQUIPMENT CO., LTD."
+      },
+      {
+        "type": "text",
+        "label": "制冷百家网整理：www.zhilengbj.cn"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "manual_identification",
+      "equipment_model",
+      "manufacturer_info"
+    ],
+    "ocr_text_if_useful": "Carrier\n19XL 离心式冷水机组\n19XL Centrifugal Liquid Chiller\n开机、操作及维护说明书\nStart - up, Operation, and Maintenance Instructions\n上海合众－开利空调设备有限公司\nSHANGHAI HEZHONG - CARRIER AIR - CONDITIONING EQUIPMENT CO., LTD.\n制冷百家网整理：www.zhilengbj.cn",
+    "uncertainty_notes": "The page is a cover page with no technical diagrams or detailed operational information. The blue text at the bottom appears to be a watermark or source attribution added later, not part of the original manual.",
+    "confidence": 1.0
+  },
+  "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is the cover page of a Carrier 19XL Centrifugal Liquid Chiller manual, showing the brand logo, model name, manual title in Chinese and English, and the manufacturer's name.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Carrier logo\"},\n    {\"type\": \"text\", \"label\": \"19XL 离心式冷水机组\"},\n    {\"type\": \"text\", \"label\": \"19XL Centrifugal Liquid Chiller\"},\n    {\"type\": \"text\", \"label\": \"开机、操作及维护说明书\"},\n    {\"type\": \"text\", \"label\": \"Start - up, Operation, and Maintenance Instructions\"},\n    {\"type\": \"text\", \"label\": \"上海合众－开利空调设备有限公司\"},\n    {\"type\": \"text\", \"label\": \"SHANGHAI HEZHONG - CARRIER AIR - CONDITIONING EQUIPMENT CO., LTD.\"},\n    {\"type\": \"text\", \"label\": \"制冷百家网整理：www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"manual_identification\", \"equipment_model\", \"manufacturer_info\"],\n  \"ocr_text_if_useful\": \"Carrier\\n19XL 离心式冷水机组\\n19XL Centrifugal Liquid Chiller\\n开机、操作及维护说明书\\nStart - up, Operation, and Maintenance Instructions\\n上海合众－开利空调设备有限公司\\nSHANGHAI HEZHONG - CARRIER AIR - CONDITIONING EQUIPMENT CO., LTD.\\n制冷百家网整理：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page is a cover page with no technical diagrams or detailed operational information. The blue text at the bottom appears to be a watermark or source attribution added later, not part of the original manual.\",\n  \"confidence\": 1.0\n}"
+}

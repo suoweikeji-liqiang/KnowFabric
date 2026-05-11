@@ -1,0 +1,11 @@
+Review Pipeline Summary
+Candidates: 2 entries from 1/28 matched chunks (hit rate 0.036)
+Packs: 1 total, 0 ready, 1 pending, 0 rejected-only
+Readiness: 0 ready, 1 blocked-pending, 0 blocked-no-accepted, 0 blocked-invalid
+Apply: 0 applied, 0 skipped-pending, 0 skipped-no-accepted, 0 failed
+
+Documents
+- doc_310a78e42c9b4312: 1/28 matched chunks, 2 candidates, review a/r/p=0/0/2, packs 0/1 ready, readiness 0/1/0/0
+
+Packs Needing Review
+- hvac__doc_310a78e42c9b4312__chiller.json: doc=doc_310a78e42c9b4312, accepted=0, rejected=0, pending=2

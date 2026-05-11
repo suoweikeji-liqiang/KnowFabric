@@ -1,0 +1,34 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-08T08:56:01.407019+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T082739Z_hvac_doclevel_extraction_batch/0005_三菱重工_eco_touch_触摸线控器技术手册_47页/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 0,
+    "blocked_pending": 1,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_3b167dc435cd4b52__controller.json",
+      "pack_path": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T082739Z_hvac_doclevel_extraction_batch/0005_三菱重工_eco_touch_触摸线控器技术手册_47页/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_3b167dc435cd4b52__controller.json",
+      "doc_id": "doc_3b167dc435cd4b52",
+      "doc_name": "【三菱重工】eco-touch 触摸线控器技术手册（47页）.pdf",
+      "equipment_class_id": "controller",
+      "equipment_class_key": "hvac:controller",
+      "candidate_count": 15,
+      "accepted_count": 0,
+      "rejected_count": 0,
+      "pending_count": 15,
+      "status": "blocked_pending",
+      "blocker": "pending_review_decisions"
+    }
+  ]
+}

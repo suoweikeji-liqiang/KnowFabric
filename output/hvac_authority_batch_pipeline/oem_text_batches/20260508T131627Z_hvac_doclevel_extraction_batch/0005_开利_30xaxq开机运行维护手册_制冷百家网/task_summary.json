@@ -1,0 +1,81 @@
+{
+  "status": "completed",
+  "row_index": 5,
+  "file_name": "【开利】30XAXQ开机运行维护手册-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/03、开利中央空调/技术手册/【开利】30XAXQ开机运行维护手册-制冷百家网.pdf",
+  "doc_id": "doc_5baf82be74f041f0",
+  "chunks": 88,
+  "manual_tokens_estimated": 21041,
+  "equipment_class_id": "air_cooled_modular_heat_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "modular_chiller",
+      "equipment_class_key": "hvac:modular_chiller",
+      "confidence": 0.383,
+      "matched_aliases": [
+        "模块机"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 68,
+      "chunks_after": 88,
+      "parse_result": {
+        "job_id": "job_ac348fb9f30641bf",
+        "doc_id": "doc_5baf82be74f041f0",
+        "pages_created": 68,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_8b5f8837318345ad",
+        "doc_id": "doc_5baf82be74f041f0",
+        "chunks_created": 88,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 2,
+      "judge_rejected": 38,
+      "judge_acceptance_rate": 5.0,
+      "judge_rejection_breakdown": {
+        "weak_evidence": 17,
+        "other": 21
+      },
+      "review_candidates": 2,
+      "by_type": {
+        "parameter_spec": 2
+      },
+      "usage": {
+        "prompt_tokens": 30586,
+        "completion_tokens": 7807,
+        "total_tokens": 38393
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1181,
+        "total_tokens": 2461
+      },
+      "extract_cost_rmb": 0.1386,
+      "judge_cost_rmb": 0.010926,
+      "cost_rmb": 0.149526,
+      "elapsed_seconds": 226.154,
+      "judge_elapsed_seconds": 71.802,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T131627Z_hvac_doclevel_extraction_batch/0005_开利_30xaxq开机运行维护手册_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T131627Z_hvac_doclevel_extraction_batch/0005_开利_30xaxq开机运行维护手册_制冷百家网"
+}

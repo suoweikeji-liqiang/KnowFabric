@@ -1,0 +1,143 @@
+{
+  "page": 37,
+  "response": {
+    "id": "5f182aea4a0244b684afd2935bd8bdf5",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"fault_table\",\n  \"summary\": \"This page lists HVAC fault codes (E58-E76) with their descriptions, judgment conditions, fault handling, and recovery procedures. It includes a note about severe protection faults (E22, E23, E24, E39, E52, E53, E54, E69) that require manual reset if they occur 3 times within 30 minutes. The page is dated 2016-5-17 and has a footer with a website URL.\",\n  \"visual_entities\": [\n    {\"type\": \"fault_code\", \"label\": \"E58\"},\n    {\"type\": \"fault_code\", \"label\": \"E59\"},\n    {\"type\": \"fault_code\", \"label\": \"E60\"},\n    {\"type\": \"fault_code\", \"label\": \"E61\"},\n    {\"type\": \"fault_code\", \"label\": \"E62\"},\n    {\"type\": \"fault_code\", \"label\": \"E69\"},\n    {\"type\": \"fault_code\", \"label\": \"E70\"},\n    {\"type\": \"fault_code\", \"label\": \"E76\"},\n    {\"type\": \"text_block\", \"label\": \"Note about severe protection faults\"},\n    {\"type\": \"date\", \"label\": \"2016-5-17\"},\n    {\"type\": \"page_number\", \"label\": \"3\"},\n    {\"type\": \"website_url\", \"label\": \"www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"E58\", \"relation\": \"describes fault for\", \"to\": \"B system water heat exchanger outlet temperature sensor\"},\n    {\"from\": \"E59\", \"relation\": \"describes fault for\", \"to\": \"B system suction temperature sensor\"},\n    {\"from\": \"E60\", \"relation\": \"describes fault for\", \"to\": \"B system coil (inlet) temperature sensor\"},\n    {\"from\": \"E61\", \"relation\": \"describes fault for\", \"to\": \"Compressor 3 exhaust temperature\"},\n    {\"from\": \"E62\", \"relation\": \"describes fault for\", \"to\": \"B system coil (outlet) temperature sensor\"},\n    {\"from\": \"E69\", \"relation\": \"describes fault for\", \"to\": \"Compressor 4 overcurrent protection\"},\n    {\"from\": \"E70\", \"relation\": \"describes fault for\", \"to\": \"Compressor 4 exhaust temperature sensor\"},\n    {\"from\": \"E76\", \"relation\": \"describes fault for\", \"to\": \"Compressor 4 exhaust temperature\"},\n    {\"from\": \"Note\", \"relation\": \"lists severe faults including\", \"to\": \"E69\"}\n  ],\n  \"useful_for_knowledge_types\": [\"fault_diagnosis\", \"troubleshooting\", \"HVAC_system_maintenance\", \"error_code_reference\"],\n  \"ocr_text_if_useful\": \"E58 B系统水换冷媒出口端温度传感器开路或短路\\n判断条件: B系统水换冷媒出口端温度传感器开路或短路;\\n故障处理: 停B系统压缩机;\\n故障恢复: 更换传感器正常后, 自动恢复。\\nE59 B系统吸气温度传感器开路或短路\\n判断条件: B系统吸气温度传感器开路或短路;\\n故障处理: 停B系统压缩机;\\n故障恢复: 更换传感器正常后, 自动恢复。\\nE60 B系统盘管(入口)温度传感器开路或短路;\\n判断条件: B系统盘管(入口)温度传感器开路或短路 ;\\n故障处理: 停B系统压机;\\n故障恢复: 更换传感器正常后, 自动恢复;\\nE61 压机3排气温度过高\\n判断条件: 压机3排气温度>115℃;\\n故障处理: 停B系统压机;\\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\\nE62 B系统盘管(出口)温度传感器温度过高\\n判断条件: B系统盘管(出口)传感器温度>66℃;\\n故障处理: 停B系统压机;\\n故障恢复: B系统盘管(出口)传感器温度<55℃恢复。\\nE69 压机4过电流保护\\n判断条件: IAC4>17.5A;\\n故障处理: 停B系统压机;\\n故障恢复: 自恢复;\\nE70 压机4排气温度传感器开路或短路\\n判断条件: 压机4排气温度传感器开路或短路;\\n故障处理: 停B系统压机;\\n故障恢复: 更换传感器正常后, 自动恢复;\\nE76 压机4排气温度过高\\n判断条件: 压机4排气温度>115℃;\\n故障处理: 停B系统压机;\\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\\n注: 上述故障中E22、E23、E24、E39、E52、E53、E54、E69为严重保护故障,\\n如果这些故障在30min内累计达到3次, 则对应系统按不可自动恢复故障处理, 必\\n须断电排除故障后恢复。\\n2016-5-17\\n3\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The visual relationships are inferred from the text descriptions; the page is purely textual with no diagrams. The note lists severe faults, but only E69 is visible on this page; others (E22, E23, E24, E39, E52, E53, E54) are referenced but not detailed here.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204457,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1315,
+      "prompt_tokens": 2437,
+      "total_tokens": 3752,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "fault_table",
+    "summary": "This page lists HVAC fault codes (E58-E76) with their descriptions, judgment conditions, fault handling, and recovery procedures. It includes a note about severe protection faults (E22, E23, E24, E39, E52, E53, E54, E69) that require manual reset if they occur 3 times within 30 minutes. The page is dated 2016-5-17 and has a footer with a website URL.",
+    "visual_entities": [
+      {
+        "type": "fault_code",
+        "label": "E58"
+      },
+      {
+        "type": "fault_code",
+        "label": "E59"
+      },
+      {
+        "type": "fault_code",
+        "label": "E60"
+      },
+      {
+        "type": "fault_code",
+        "label": "E61"
+      },
+      {
+        "type": "fault_code",
+        "label": "E62"
+      },
+      {
+        "type": "fault_code",
+        "label": "E69"
+      },
+      {
+        "type": "fault_code",
+        "label": "E70"
+      },
+      {
+        "type": "fault_code",
+        "label": "E76"
+      },
+      {
+        "type": "text_block",
+        "label": "Note about severe protection faults"
+      },
+      {
+        "type": "date",
+        "label": "2016-5-17"
+      },
+      {
+        "type": "page_number",
+        "label": "3"
+      },
+      {
+        "type": "website_url",
+        "label": "www.zhilengbj.cn"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "E58",
+        "relation": "describes fault for",
+        "to": "B system water heat exchanger outlet temperature sensor"
+      },
+      {
+        "from": "E59",
+        "relation": "describes fault for",
+        "to": "B system suction temperature sensor"
+      },
+      {
+        "from": "E60",
+        "relation": "describes fault for",
+        "to": "B system coil (inlet) temperature sensor"
+      },
+      {
+        "from": "E61",
+        "relation": "describes fault for",
+        "to": "Compressor 3 exhaust temperature"
+      },
+      {
+        "from": "E62",
+        "relation": "describes fault for",
+        "to": "B system coil (outlet) temperature sensor"
+      },
+      {
+        "from": "E69",
+        "relation": "describes fault for",
+        "to": "Compressor 4 overcurrent protection"
+      },
+      {
+        "from": "E70",
+        "relation": "describes fault for",
+        "to": "Compressor 4 exhaust temperature sensor"
+      },
+      {
+        "from": "E76",
+        "relation": "describes fault for",
+        "to": "Compressor 4 exhaust temperature"
+      },
+      {
+        "from": "Note",
+        "relation": "lists severe faults including",
+        "to": "E69"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "fault_diagnosis",
+      "troubleshooting",
+      "HVAC_system_maintenance",
+      "error_code_reference"
+    ],
+    "ocr_text_if_useful": "E58 B系统水换冷媒出口端温度传感器开路或短路\n判断条件: B系统水换冷媒出口端温度传感器开路或短路;\n故障处理: 停B系统压缩机;\n故障恢复: 更换传感器正常后, 自动恢复。\nE59 B系统吸气温度传感器开路或短路\n判断条件: B系统吸气温度传感器开路或短路;\n故障处理: 停B系统压缩机;\n故障恢复: 更换传感器正常后, 自动恢复。\nE60 B系统盘管(入口)温度传感器开路或短路;\n判断条件: B系统盘管(入口)温度传感器开路或短路 ;\n故障处理: 停B系统压机;\n故障恢复: 更换传感器正常后, 自动恢复;\nE61 压机3排气温度过高\n判断条件: 压机3排气温度>115℃;\n故障处理: 停B系统压机;\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\nE62 B系统盘管(出口)温度传感器温度过高\n判断条件: B系统盘管(出口)传感器温度>66℃;\n故障处理: 停B系统压机;\n故障恢复: B系统盘管(出口)传感器温度<55℃恢复。\nE69 压机4过电流保护\n判断条件: IAC4>17.5A;\n故障处理: 停B系统压机;\n故障恢复: 自恢复;\nE70 压机4排气温度传感器开路或短路\n判断条件: 压机4排气温度传感器开路或短路;\n故障处理: 停B系统压机;\n故障恢复: 更换传感器正常后, 自动恢复;\nE76 压机4排气温度过高\n判断条件: 压机4排气温度>115℃;\n故障处理: 停B系统压机;\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\n注: 上述故障中E22、E23、E24、E39、E52、E53、E54、E69为严重保护故障,\n如果这些故障在30min内累计达到3次, 则对应系统按不可自动恢复故障处理, 必\n须断电排除故障后恢复。\n2016-5-17\n3\n制冷百家网: www.zhilengbj.cn",
+    "uncertainty_notes": "The visual relationships are inferred from the text descriptions; the page is purely textual with no diagrams. The note lists severe faults, but only E69 is visible on this page; others (E22, E23, E24, E39, E52, E53, E54) are referenced but not detailed here.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"fault_table\",\n  \"summary\": \"This page lists HVAC fault codes (E58-E76) with their descriptions, judgment conditions, fault handling, and recovery procedures. It includes a note about severe protection faults (E22, E23, E24, E39, E52, E53, E54, E69) that require manual reset if they occur 3 times within 30 minutes. The page is dated 2016-5-17 and has a footer with a website URL.\",\n  \"visual_entities\": [\n    {\"type\": \"fault_code\", \"label\": \"E58\"},\n    {\"type\": \"fault_code\", \"label\": \"E59\"},\n    {\"type\": \"fault_code\", \"label\": \"E60\"},\n    {\"type\": \"fault_code\", \"label\": \"E61\"},\n    {\"type\": \"fault_code\", \"label\": \"E62\"},\n    {\"type\": \"fault_code\", \"label\": \"E69\"},\n    {\"type\": \"fault_code\", \"label\": \"E70\"},\n    {\"type\": \"fault_code\", \"label\": \"E76\"},\n    {\"type\": \"text_block\", \"label\": \"Note about severe protection faults\"},\n    {\"type\": \"date\", \"label\": \"2016-5-17\"},\n    {\"type\": \"page_number\", \"label\": \"3\"},\n    {\"type\": \"website_url\", \"label\": \"www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"E58\", \"relation\": \"describes fault for\", \"to\": \"B system water heat exchanger outlet temperature sensor\"},\n    {\"from\": \"E59\", \"relation\": \"describes fault for\", \"to\": \"B system suction temperature sensor\"},\n    {\"from\": \"E60\", \"relation\": \"describes fault for\", \"to\": \"B system coil (inlet) temperature sensor\"},\n    {\"from\": \"E61\", \"relation\": \"describes fault for\", \"to\": \"Compressor 3 exhaust temperature\"},\n    {\"from\": \"E62\", \"relation\": \"describes fault for\", \"to\": \"B system coil (outlet) temperature sensor\"},\n    {\"from\": \"E69\", \"relation\": \"describes fault for\", \"to\": \"Compressor 4 overcurrent protection\"},\n    {\"from\": \"E70\", \"relation\": \"describes fault for\", \"to\": \"Compressor 4 exhaust temperature sensor\"},\n    {\"from\": \"E76\", \"relation\": \"describes fault for\", \"to\": \"Compressor 4 exhaust temperature\"},\n    {\"from\": \"Note\", \"relation\": \"lists severe faults including\", \"to\": \"E69\"}\n  ],\n  \"useful_for_knowledge_types\": [\"fault_diagnosis\", \"troubleshooting\", \"HVAC_system_maintenance\", \"error_code_reference\"],\n  \"ocr_text_if_useful\": \"E58 B系统水换冷媒出口端温度传感器开路或短路\\n判断条件: B系统水换冷媒出口端温度传感器开路或短路;\\n故障处理: 停B系统压缩机;\\n故障恢复: 更换传感器正常后, 自动恢复。\\nE59 B系统吸气温度传感器开路或短路\\n判断条件: B系统吸气温度传感器开路或短路;\\n故障处理: 停B系统压缩机;\\n故障恢复: 更换传感器正常后, 自动恢复。\\nE60 B系统盘管(入口)温度传感器开路或短路;\\n判断条件: B系统盘管(入口)温度传感器开路或短路 ;\\n故障处理: 停B系统压机;\\n故障恢复: 更换传感器正常后, 自动恢复;\\nE61 压机3排气温度过高\\n判断条件: 压机3排气温度>115℃;\\n故障处理: 停B系统压机;\\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\\nE62 B系统盘管(出口)温度传感器温度过高\\n判断条件: B系统盘管(出口)传感器温度>66℃;\\n故障处理: 停B系统压机;\\n故障恢复: B系统盘管(出口)传感器温度<55℃恢复。\\nE69 压机4过电流保护\\n判断条件: IAC4>17.5A;\\n故障处理: 停B系统压机;\\n故障恢复: 自恢复;\\nE70 压机4排气温度传感器开路或短路\\n判断条件: 压机4排气温度传感器开路或短路;\\n故障处理: 停B系统压机;\\n故障恢复: 更换传感器正常后, 自动恢复;\\nE76 压机4排气温度过高\\n判断条件: 压机4排气温度>115℃;\\n故障处理: 停B系统压机;\\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\\n注: 上述故障中E22、E23、E24、E39、E52、E53、E54、E69为严重保护故障,\\n如果这些故障在30min内累计达到3次, 则对应系统按不可自动恢复故障处理, 必\\n须断电排除故障后恢复。\\n2016-5-17\\n3\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The visual relationships are inferred from the text descriptions; the page is purely textual with no diagrams. The note lists severe faults, but only E69 is visible on this page; others (E22, E23, E24, E39, E52, E53, E54) are referenced but not detailed here.\",\n  \"confidence\": 0.95\n}"
+}

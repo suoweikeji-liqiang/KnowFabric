@@ -1,0 +1,16 @@
+{
+  "row_index": 6,
+  "path": "/Volumes/TSD302/pan/a00238/03、开利中央空调/技术手册/【开利】19XR离心式冷水机组开机运行维护说明书-制冷百家网.pdf",
+  "file_name": "【开利】19XR离心式冷水机组开机运行维护说明书-制冷百家网.pdf",
+  "batch_group": "chiller_visual",
+  "priority": "P1_visual",
+  "brand": "Carrier",
+  "authority_level": "oem_manual",
+  "document_kind": "technical_manual",
+  "equipment_scope": "centrifugal_chiller",
+  "page_count": "97",
+  "text_quality": "low_or_no_text",
+  "recommended_mode": "visual_page_level",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/chiller_visual_import/20260511T053112Z_hvac_source_batch/tasks/0006_开利_19xr离心式冷水机组开机运行维护说明书_制冷百家网_06acea9778"
+}

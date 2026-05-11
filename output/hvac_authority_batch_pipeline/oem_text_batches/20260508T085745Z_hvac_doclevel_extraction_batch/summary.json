@@ -1,0 +1,118 @@
+{
+  "run_id": "20260508T085745Z_hvac_doclevel_extraction_batch",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T085745Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "failed",
+      "row_index": 1,
+      "file_name": "【美的】C系列干式螺杆冷水机组技术手册（44页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】C系列干式螺杆冷水机组技术手册（44页）-制冷百家网.pdf",
+      "doc_id": "doc_33e129a572b44906",
+      "chunks": 44,
+      "manual_tokens_estimated": 11582,
+      "equipment_class_id": "screw_chiller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "existing",
+        "processing": {
+          "pages_before": 44,
+          "chunks_before": 44,
+          "pages_after": 44,
+          "chunks_after": 44,
+          "parse_result": {
+            "status": "skipped_existing_pages",
+            "pages_created": 0
+          },
+          "chunk_result": {
+            "status": "skipped_existing_chunks",
+            "chunks_created": 0
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "failed",
+          "error": "LLM JSON request failed after 3 attempts: Expecting ',' delimiter: line 116 column 6 (char 4116)"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T085745Z_hvac_doclevel_extraction_batch/0001_美的_c系列干式螺杆冷水机组技术手册_44页_制冷百家网"
+    },
+    {
+      "status": "completed",
+      "row_index": 2,
+      "file_name": "【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+      "doc_id": "doc_76abe7d1509f4c4b",
+      "chunks": 48,
+      "manual_tokens_estimated": 5873,
+      "equipment_class_id": "controller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "existing",
+        "processing": {
+          "pages_before": 46,
+          "chunks_before": 48,
+          "pages_after": 46,
+          "chunks_after": 48,
+          "parse_result": {
+            "status": "skipped_existing_pages",
+            "pages_created": 0
+          },
+          "chunk_result": {
+            "status": "skipped_existing_chunks",
+            "chunks_created": 0
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 40,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 7,
+          "judge_rejected": 33,
+          "judge_acceptance_rate": 17.5,
+          "judge_rejection_breakdown": {
+            "terminal_label": 12,
+            "other": 21
+          },
+          "review_candidates": 7,
+          "by_type": {
+            "parameter_spec": 7
+          },
+          "usage": {
+            "prompt_tokens": 9824,
+            "completion_tokens": 4827,
+            "total_tokens": 14651
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1189,
+            "total_tokens": 2469
+          },
+          "extract_cost_rmb": 0.058434,
+          "judge_cost_rmb": 0.010974,
+          "cost_rmb": 0.069408,
+          "elapsed_seconds": 140.91,
+          "judge_elapsed_seconds": 72.554,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T085745Z_hvac_doclevel_extraction_batch/0002_约克_ymac风冷冷水热泵机组维修手册_46页_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T085745Z_hvac_doclevel_extraction_batch/0002_约克_ymac风冷冷水热泵机组维修手册_46页_制冷百家网"
+    },
+    {
+      "row_index": 3,
+      "file_name": "【约克】RWF螺杆压缩机组100-480安装、操作、维护手册（47页）-制冷百家网.pdf",
+      "status": "failed",
+      "error": "cannot access local variable 'raw' where it is not associated with a value",
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T085745Z_hvac_doclevel_extraction_batch/0003_约克_rwf螺杆压缩机组100_480安装_操作_维护手册_47页_制冷百家网"
+    }
+  ]
+}

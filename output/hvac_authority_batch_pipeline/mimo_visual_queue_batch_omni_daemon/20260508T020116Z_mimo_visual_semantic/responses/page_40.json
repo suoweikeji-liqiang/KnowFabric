@@ -1,0 +1,85 @@
+{
+  "page": 40,
+  "response": {
+    "id": "f01f108d496e4830a4585d579d7c0cb1",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is a maintenance troubleshooting page for a Johnson Controls RWF II screw compressor unit, listing various pump-related issues, their possible causes, and corrective actions in Chinese.\",\n  \"visual_entities\": [\n    {\"type\": \"header\", \"label\": \"RWF II 螺杆式压缩机组 维护\"},\n    {\"type\": \"logo\", \"label\": \"Johnson Controls\"},\n    {\"type\": \"document_id\", \"label\": \"6RP-B03C-RPA-ZH 第 40 页\"},\n    {\"type\": \"watermark\", \"label\": \"www.duomianshou.net\"},\n    {\"type\": \"footer\", \"label\": \"制冷百家网：www.zhilengbj.cn\"},\n    {\"type\": \"text_block\", \"label\": \"泵不工作 troubleshooting list\"},\n    {\"type\": \"text_block\", \"label\": \"泵工作噪音过大 troubleshooting list\"},\n    {\"type\": \"text_block\", \"label\": \"泵没有到达额定能力 troubleshooting list\"},\n    {\"type\": \"text_block\", \"label\": \"泵耗电量太大 troubleshooting list\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"troubleshooting\", \"maintenance_procedures\", \"fault_diagnosis\", \"component_issues\"],\n  \"ocr_text_if_useful\": \"d.垂直压头未考虑液体的过大比重\\ne.管道内由于杂物堆积而部分堵塞\\nf.管道内液体温度太低\\ng.管道内液体发生化学反应并产生了结块\\nH.缓解阀设定过高\\n2. 小的读数表明：\\na. 缓解阀设定过低。\\nb. 缓解阀的提动头不在正确的位置\\nc. 外部间隙太大\\nd. 泵破损\\n3. 起伏跳动或不稳定的读数：\\na. 气蚀\\nb. 液体以液滴形式进入泵体\\nc. 吸液管有空气渗入\\nd. 振动来自安装不平衡或机械问题\\n下面一些方法也会帮助找到问题点：\\n1. 泵不工作\\na. 空气泄漏进来，箱体内液位太低。\\nb. 旋转方向不正确\\nc. 电机转速较慢\\nd. 吸排液阀没有打开\\ne. 过滤器阻塞\\nf. 缓解阀开得太小或提升头还开着\\ng. 泵破损\\nh. 液体系统的任何变化或操作将会帮助解释问题。比如新的液体来源，添加了比较多的管线，缺乏经验的操作者等等。\\ni. 拧紧末端间隙。\\nj. 泵的头部位置不正确。\\n2. 开启泵以后，一会就不工作了。\\na. 箱体内液位太低。\\nb. 吸液管线内液体发生蒸发。\\nc. 吸液管线内有空气渗入，在密封处有空气渗入。\\nd. 泵破损。\\n3. 泵工作噪音过大。\\na. 没有足够的液体进入泵内(比重比较大的液体不能很快进入)。增加吸液管径或减少长度。\\nb. 泵发生气蚀(吸液管内液体蒸发)。增加吸液管径或减少长度。如果泵在液体上面，提升液面靠近泵体。如果液体在泵上面的话，提升液体的压头。\\nc. 检查校准。\\nd. 可能轴或转轮齿瓣发生弯曲。把它们弄直或者更换。\\ne. 可能在泵的吸入口有一外来物体试图进入泵内。\\n4. 泵没有到达额定能力。\\na. 液体不够或者发生气蚀 --- 增加吸液管径 或减少长度。\\nb. 过滤器部分阻塞—清洗。\\nc. 在吸液管或泵轴有空气进入。\\nd. 转动太慢-马达是否在正确的速度，接线是否正确。\\ne. 减压阀设定值太小或者完全开着。\\nf. 泵破损。\\ng. 拧紧末端间隙。\\nh. 泵的头部位置不正确。\\n5. 泵耗电量太大。\\na. 转的太快-马达是否在正确的转速，减少转比和传动带尺寸。\\nb. 液体粘性太大超过了泵所能够泵送的能力 □ 加热液体，增加管路尺寸，降低转速或者更换更大的马达。\\nc. 排液口压力超过计算值—检查压力表。增加管路尺寸或减少长度。降低转速或者更换大的马达。\\nd. 泵的校准不正确。\\ne. 泵的部件间隙不能满足工作条件。检查泵内部件之间的接触，在需要的地方增加间隙。\",\n  \"uncertainty_notes\": \"The page is purely textual with no diagrams or schematics. The content is in Chinese. The watermark and footer are from third-party websites, not the original manual.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778205699,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1093,
+      "prompt_tokens": 2437,
+      "total_tokens": 3530,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "text_scan",
+    "summary": "This is a maintenance troubleshooting page for a Johnson Controls RWF II screw compressor unit, listing various pump-related issues, their possible causes, and corrective actions in Chinese.",
+    "visual_entities": [
+      {
+        "type": "header",
+        "label": "RWF II 螺杆式压缩机组 维护"
+      },
+      {
+        "type": "logo",
+        "label": "Johnson Controls"
+      },
+      {
+        "type": "document_id",
+        "label": "6RP-B03C-RPA-ZH 第 40 页"
+      },
+      {
+        "type": "watermark",
+        "label": "www.duomianshou.net"
+      },
+      {
+        "type": "footer",
+        "label": "制冷百家网：www.zhilengbj.cn"
+      },
+      {
+        "type": "text_block",
+        "label": "泵不工作 troubleshooting list"
+      },
+      {
+        "type": "text_block",
+        "label": "泵工作噪音过大 troubleshooting list"
+      },
+      {
+        "type": "text_block",
+        "label": "泵没有到达额定能力 troubleshooting list"
+      },
+      {
+        "type": "text_block",
+        "label": "泵耗电量太大 troubleshooting list"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "troubleshooting",
+      "maintenance_procedures",
+      "fault_diagnosis",
+      "component_issues"
+    ],
+    "ocr_text_if_useful": "d.垂直压头未考虑液体的过大比重\ne.管道内由于杂物堆积而部分堵塞\nf.管道内液体温度太低\ng.管道内液体发生化学反应并产生了结块\nH.缓解阀设定过高\n2. 小的读数表明：\na. 缓解阀设定过低。\nb. 缓解阀的提动头不在正确的位置\nc. 外部间隙太大\nd. 泵破损\n3. 起伏跳动或不稳定的读数：\na. 气蚀\nb. 液体以液滴形式进入泵体\nc. 吸液管有空气渗入\nd. 振动来自安装不平衡或机械问题\n下面一些方法也会帮助找到问题点：\n1. 泵不工作\na. 空气泄漏进来，箱体内液位太低。\nb. 旋转方向不正确\nc. 电机转速较慢\nd. 吸排液阀没有打开\ne. 过滤器阻塞\nf. 缓解阀开得太小或提升头还开着\ng. 泵破损\nh. 液体系统的任何变化或操作将会帮助解释问题。比如新的液体来源，添加了比较多的管线，缺乏经验的操作者等等。\ni. 拧紧末端间隙。\nj. 泵的头部位置不正确。\n2. 开启泵以后，一会就不工作了。\na. 箱体内液位太低。\nb. 吸液管线内液体发生蒸发。\nc. 吸液管线内有空气渗入，在密封处有空气渗入。\nd. 泵破损。\n3. 泵工作噪音过大。\na. 没有足够的液体进入泵内(比重比较大的液体不能很快进入)。增加吸液管径或减少长度。\nb. 泵发生气蚀(吸液管内液体蒸发)。增加吸液管径或减少长度。如果泵在液体上面，提升液面靠近泵体。如果液体在泵上面的话，提升液体的压头。\nc. 检查校准。\nd. 可能轴或转轮齿瓣发生弯曲。把它们弄直或者更换。\ne. 可能在泵的吸入口有一外来物体试图进入泵内。\n4. 泵没有到达额定能力。\na. 液体不够或者发生气蚀 --- 增加吸液管径 或减少长度。\nb. 过滤器部分阻塞—清洗。\nc. 在吸液管或泵轴有空气进入。\nd. 转动太慢-马达是否在正确的速度，接线是否正确。\ne. 减压阀设定值太小或者完全开着。\nf. 泵破损。\ng. 拧紧末端间隙。\nh. 泵的头部位置不正确。\n5. 泵耗电量太大。\na. 转的太快-马达是否在正确的转速，减少转比和传动带尺寸。\nb. 液体粘性太大超过了泵所能够泵送的能力 □ 加热液体，增加管路尺寸，降低转速或者更换更大的马达。\nc. 排液口压力超过计算值—检查压力表。增加管路尺寸或减少长度。降低转速或者更换大的马达。\nd. 泵的校准不正确。\ne. 泵的部件间隙不能满足工作条件。检查泵内部件之间的接触，在需要的地方增加间隙。",
+    "uncertainty_notes": "The page is purely textual with no diagrams or schematics. The content is in Chinese. The watermark and footer are from third-party websites, not the original manual.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is a maintenance troubleshooting page for a Johnson Controls RWF II screw compressor unit, listing various pump-related issues, their possible causes, and corrective actions in Chinese.\",\n  \"visual_entities\": [\n    {\"type\": \"header\", \"label\": \"RWF II 螺杆式压缩机组 维护\"},\n    {\"type\": \"logo\", \"label\": \"Johnson Controls\"},\n    {\"type\": \"document_id\", \"label\": \"6RP-B03C-RPA-ZH 第 40 页\"},\n    {\"type\": \"watermark\", \"label\": \"www.duomianshou.net\"},\n    {\"type\": \"footer\", \"label\": \"制冷百家网：www.zhilengbj.cn\"},\n    {\"type\": \"text_block\", \"label\": \"泵不工作 troubleshooting list\"},\n    {\"type\": \"text_block\", \"label\": \"泵工作噪音过大 troubleshooting list\"},\n    {\"type\": \"text_block\", \"label\": \"泵没有到达额定能力 troubleshooting list\"},\n    {\"type\": \"text_block\", \"label\": \"泵耗电量太大 troubleshooting list\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"troubleshooting\", \"maintenance_procedures\", \"fault_diagnosis\", \"component_issues\"],\n  \"ocr_text_if_useful\": \"d.垂直压头未考虑液体的过大比重\\ne.管道内由于杂物堆积而部分堵塞\\nf.管道内液体温度太低\\ng.管道内液体发生化学反应并产生了结块\\nH.缓解阀设定过高\\n2. 小的读数表明：\\na. 缓解阀设定过低。\\nb. 缓解阀的提动头不在正确的位置\\nc. 外部间隙太大\\nd. 泵破损\\n3. 起伏跳动或不稳定的读数：\\na. 气蚀\\nb. 液体以液滴形式进入泵体\\nc. 吸液管有空气渗入\\nd. 振动来自安装不平衡或机械问题\\n下面一些方法也会帮助找到问题点：\\n1. 泵不工作\\na. 空气泄漏进来，箱体内液位太低。\\nb. 旋转方向不正确\\nc. 电机转速较慢\\nd. 吸排液阀没有打开\\ne. 过滤器阻塞\\nf. 缓解阀开得太小或提升头还开着\\ng. 泵破损\\nh. 液体系统的任何变化或操作将会帮助解释问题。比如新的液体来源，添加了比较多的管线，缺乏经验的操作者等等。\\ni. 拧紧末端间隙。\\nj. 泵的头部位置不正确。\\n2. 开启泵以后，一会就不工作了。\\na. 箱体内液位太低。\\nb. 吸液管线内液体发生蒸发。\\nc. 吸液管线内有空气渗入，在密封处有空气渗入。\\nd. 泵破损。\\n3. 泵工作噪音过大。\\na. 没有足够的液体进入泵内(比重比较大的液体不能很快进入)。增加吸液管径或减少长度。\\nb. 泵发生气蚀(吸液管内液体蒸发)。增加吸液管径或减少长度。如果泵在液体上面，提升液面靠近泵体。如果液体在泵上面的话，提升液体的压头。\\nc. 检查校准。\\nd. 可能轴或转轮齿瓣发生弯曲。把它们弄直或者更换。\\ne. 可能在泵的吸入口有一外来物体试图进入泵内。\\n4. 泵没有到达额定能力。\\na. 液体不够或者发生气蚀 --- 增加吸液管径 或减少长度。\\nb. 过滤器部分阻塞—清洗。\\nc. 在吸液管或泵轴有空气进入。\\nd. 转动太慢-马达是否在正确的速度，接线是否正确。\\ne. 减压阀设定值太小或者完全开着。\\nf. 泵破损。\\ng. 拧紧末端间隙。\\nh. 泵的头部位置不正确。\\n5. 泵耗电量太大。\\na. 转的太快-马达是否在正确的转速，减少转比和传动带尺寸。\\nb. 液体粘性太大超过了泵所能够泵送的能力 □ 加热液体，增加管路尺寸，降低转速或者更换更大的马达。\\nc. 排液口压力超过计算值—检查压力表。增加管路尺寸或减少长度。降低转速或者更换大的马达。\\nd. 泵的校准不正确。\\ne. 泵的部件间隙不能满足工作条件。检查泵内部件之间的接触，在需要的地方增加间隙。\",\n  \"uncertainty_notes\": \"The page is purely textual with no diagrams or schematics. The content is in Chinese. The watermark and footer are from third-party websites, not the original manual.\",\n  \"confidence\": 0.95\n}"
+}

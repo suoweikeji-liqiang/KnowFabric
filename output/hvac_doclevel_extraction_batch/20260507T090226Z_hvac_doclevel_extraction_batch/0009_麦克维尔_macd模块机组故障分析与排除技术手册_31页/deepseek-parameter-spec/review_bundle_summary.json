@@ -1,0 +1,80 @@
+{
+  "review_pack_manifest": {
+    "review_mode": "chunk_backfill_review_pack_manifest",
+    "generated_at": "2026-05-07T09:04:15.834186+00:00",
+    "source_generation_mode": "llm_doclevel_batch",
+    "source_review_mode": "chunk_backfill_review_scaffold",
+    "domain_id": "hvac",
+    "filters_applied": {},
+    "total_packs": 1,
+    "packs": [
+      {
+        "file_name": "hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json",
+        "doc_id": "doc_e312bbfa86684629",
+        "doc_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "candidate_count": 4
+      }
+    ]
+  },
+  "bootstrap": {
+    "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+    "generated_at": "2026-05-07T09:04:15.836149+00:00",
+    "pack_dir": "output/hvac_doclevel_extraction_batch/20260507T090226Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-parameter-spec/review_packs",
+    "output_dir": "output/hvac_doclevel_extraction_batch/20260507T090226Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-parameter-spec/review_packs/bootstrapped_review_packs",
+    "total_pack_files": 1,
+    "total_entries_updated": 4,
+    "target_decisions": null,
+    "summary": {
+      "bootstrapped": 1,
+      "unchanged": 0,
+      "failed": 0
+    },
+    "results": [
+      {
+        "pack_file": "hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json",
+        "source_path": "output/hvac_doclevel_extraction_batch/20260507T090226Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-parameter-spec/review_packs/hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json",
+        "status": "bootstrapped",
+        "entries_updated": 4,
+        "output_path": "output/hvac_doclevel_extraction_batch/20260507T090226Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-parameter-spec/review_packs/bootstrapped_review_packs/hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json"
+      }
+    ],
+    "report_path": "output/hvac_doclevel_extraction_batch/20260507T090226Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-parameter-spec/review_packs/bootstrapped_review_packs/review_pack_bootstrap_report.json"
+  },
+  "readiness": {
+    "readiness_mode": "chunk_backfill_review_pack_readiness",
+    "generated_at": "2026-05-07T09:04:15.837134+00:00",
+    "pack_dir": "output/hvac_doclevel_extraction_batch/20260507T090226Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-parameter-spec/review_packs/bootstrapped_review_packs",
+    "ignored_files": [
+      "review_pack_manifest.json",
+      "review_pack_apply_report.json",
+      "review_pack_readiness_report.json",
+      "review_pack_bootstrap_report.json"
+    ],
+    "total_pack_files": 1,
+    "summary": {
+      "ready": 0,
+      "blocked_pending": 1,
+      "blocked_no_accepted": 0,
+      "blocked_invalid": 0
+    },
+    "results": [
+      {
+        "pack_file": "hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json",
+        "pack_path": "output/hvac_doclevel_extraction_batch/20260507T090226Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-parameter-spec/review_packs/bootstrapped_review_packs/hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json",
+        "doc_id": "doc_e312bbfa86684629",
+        "doc_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "candidate_count": 4,
+        "accepted_count": 0,
+        "rejected_count": 0,
+        "pending_count": 4,
+        "status": "blocked_pending",
+        "blocker": "pending_review_decisions"
+      }
+    ],
+    "report_path": "output/hvac_doclevel_extraction_batch/20260507T090226Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-parameter-spec/review_packs/bootstrapped_review_packs/review_pack_readiness_report.json"
+  }
+}

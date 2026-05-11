@@ -1,0 +1,728 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-10T12:06:05.554312+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_e2ac1a5624684089",
+  "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+  "equipment_class": {
+    "equipment_class_id": "valve",
+    "equipment_class_key": "hvac:valve",
+    "label": "Valve",
+    "supported_knowledge_anchors": [
+      "parameter_spec",
+      "maintenance_procedure"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 10,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_bfaa9f40c1eb989c",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_0c81446952d042b8",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:maximum_air_movement_for_thermal_comfort",
+      "structured_payload_candidate": {
+        "parameter_name": "maximum_air_speed_comfort",
+        "title": "Maximum air movement for thermal comfort",
+        "summary": "Standard 55 prescribes maximum air speed of 30 fpm for winter and 50 fpm for summer."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Notwithstanding such gas removal provi-\nsions, the ventilation rate in these types of spaces should be main-\ntained at no less than 15 cf m [7.1 L/s] per person (except as\notherwise permitted by Standard 62.1) to limit the carbon dioxide\nconcentration.\n3.4 ROOM AIR DISTRIBUTION\n3.4.1 Predicting Thermal Comfort\nStandard  55 is based upon the presumption (explicitly stated\nin early versions of the standard) that “there is no minimum air\nmovement that is necessary for thermal comfort,” although this is\ncontrary to the experience of many building operators (see Section\n3.4.2). The standard further prescribes a maximum rate of air\nmovement (air speed) of 30 fpm [0.15 m/s] for winter and 50 fpm\n[0.25 m/s] for summer. Those values essentially agree with the\ndata found in the “Space Air Diffusion “chapter in the ASHRAE\nHandbook—Fundamentals .\nThat chapter of the Handbook  describes different methods of\nroom air distribution.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_0c81446952d042b8"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Directly cites Standard 55 maximum air speeds with clear values, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:parameter_spec:maximum_air_movement_for_thermal_comfort",
+        "structured_payload": {
+          "parameter_name": "maximum_air_speed_comfort",
+          "title": "Maximum air movement for thermal comfort",
+          "summary": "Standard 55 prescribes maximum air speed of 30 fpm for winter and 50 fpm for summer."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Notwithstanding such gas removal provi-\nsions, the ventilation rate in these types of spaces should be main-\ntained at no less than 15 cf m [7.1 L/s] per person (except as\notherwise permitted by Standard 62.1) to limit the carbon dioxide\nconcentration.\n3.4 ROOM AIR DISTRIBUTION\n3.4.1 Predicting Thermal Comfort\nStandard  55 is based upon the presumption (explicitly stated\nin early versions of the standard) that “there is no minimum air\nmovement that is necessary for thermal comfort,” although this is\ncontrary to the experience of many building operators (see Section\n3.4.2). The standard further prescribes a maximum rate of air\nmovement (air speed) of 30 fpm [0.15 m/s] for winter and 50 fpm\n[0.25 m/s] for summer. Those values essentially agree with the\ndata found in the “Space Air Diffusion “chapter in the ASHRAE\nHandbook—Fundamentals .\nThat chapter of the Handbook  describes different methods of\nroom air distribution.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_b34cf2877840d9d1",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_4045a18d4a2d4da0",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:valve:application_guidance:quick_opening_valve_application",
+      "structured_payload_candidate": {
+        "title": "Quick-opening valve application",
+        "summary": "Quick-opening characteristic is applied where process requires essentially ON/OFF operation, e.g., preheat coil in outdoor air duct."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "104⏐ COMPONENTS\nconstant pressure drop. The quick-opening characteristic is usually\napplied where a process requires essentially ON/OFF operation. For\nexample, a preheat coil in an outdoo r air duct may be operated by a\nquick-opening valve, the controller of which has a sensor in the out-\ndoor air.\nA linear valve gives a uniform percentage change in flow for\neach percentage change in valve position. A typical application\nwould be on a steam-heating coil operated by a controller whose\nsensor is on the discharge side of the coil.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_4045a18d4a2d4da0"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Clear application guidance with specific example for quick-opening valve, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:application_guidance:quick_opening_valve_application",
+        "structured_payload": {
+          "title": "Quick-opening valve application",
+          "summary": "Quick-opening characteristic is applied where process requires essentially ON/OFF operation, e.g., preheat coil in outdoor air duct."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "104⏐ COMPONENTS\nconstant pressure drop. The quick-opening characteristic is usually\napplied where a process requires essentially ON/OFF operation. For\nexample, a preheat coil in an outdoo r air duct may be operated by a\nquick-opening valve, the controller of which has a sensor in the out-\ndoor air.\nA linear valve gives a uniform percentage change in flow for\neach percentage change in valve position. A typical application\nwould be on a steam-heating coil operated by a controller whose\nsensor is on the discharge side of the coil.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9f737e13804f2a3c",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_4045a18d4a2d4da0",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:valve:application_guidance:linear_valve_application_on_steam_coil",
+      "structured_payload_candidate": {
+        "title": "Linear valve application on steam coil",
+        "summary": "Linear valve is typically applied on a steam-heating coil with discharge sensor."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "104⏐ COMPONENTS\nconstant pressure drop. The quick-opening characteristic is usually\napplied where a process requires essentially ON/OFF operation. For\nexample, a preheat coil in an outdoo r air duct may be operated by a\nquick-opening valve, the controller of which has a sensor in the out-\ndoor air.\nA linear valve gives a uniform percentage change in flow for\neach percentage change in valve position. A typical application\nwould be on a steam-heating coil operated by a controller whose\nsensor is on the discharge side of the coil.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_4045a18d4a2d4da0"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Defines linear valve application with sensor placement, directly from evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:application_guidance:linear_valve_application_on_steam_coil",
+        "structured_payload": {
+          "title": "Linear valve application on steam coil",
+          "summary": "Linear valve is typically applied on a steam-heating coil with discharge sensor."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "104⏐ COMPONENTS\nconstant pressure drop. The quick-opening characteristic is usually\napplied where a process requires essentially ON/OFF operation. For\nexample, a preheat coil in an outdoo r air duct may be operated by a\nquick-opening valve, the controller of which has a sensor in the out-\ndoor air.\nA linear valve gives a uniform percentage change in flow for\neach percentage change in valve position. A typical application\nwould be on a steam-heating coil operated by a controller whose\nsensor is on the discharge side of the coil.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_84d8954e78015553",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_3229b7a43d1343c4",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:valve:application_guidance:equal_percentage_valve_for_hydronic_coil",
+      "structured_payload_candidate": {
+        "title": "Equal-percentage valve for hydronic coil",
+        "summary": "Equal-percentage valve is used for hydronic heating or cooling coil to counteract nonlinear coil heat transfer."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Since the coil output is\nuniform  with steam flow, a linear valve provides a uniform change\nin temperature as the proportional controller increases or\ndecreases the valve position to ma tch the load to maintain a tem-\nperature setpoint.\nAn equal-percentage valve gives a very gradual change in flow\nfor each percentage change in valve position near the closed posi-\ntion and a very rapid increase in flow near the fully open position.\nAn example is the control of a hydr onic heating or cooling coil. The\nnonlinear coil heat transfer characte ristic (Figure 5-11a) is counter-\nacted by the equal-percentage valv e characteristic (Figure 5-11b),\nresulting in a nearly linear coil output.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_3229b7a43d1343c4"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Explains equal-percentage valve use for hydronic coils to linearize output, well-supported.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:application_guidance:equal_percentage_valve_for_hydronic_coil",
+        "structured_payload": {
+          "title": "Equal-percentage valve for hydronic coil",
+          "summary": "Equal-percentage valve is used for hydronic heating or cooling coil to counteract nonlinear coil heat transfer."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Since the coil output is\nuniform  with steam flow, a linear valve provides a uniform change\nin temperature as the proportional controller increases or\ndecreases the valve position to ma tch the load to maintain a tem-\nperature setpoint.\nAn equal-percentage valve gives a very gradual change in flow\nfor each percentage change in valve position near the closed posi-\ntion and a very rapid increase in flow near the fully open position.\nAn example is the control of a hydr onic heating or cooling coil. The\nnonlinear coil heat transfer characte ristic (Figure 5-11a) is counter-\nacted by the equal-percentage valv e characteristic (Figure 5-11b),\nresulting in a nearly linear coil output.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5bca6143eb0a08da",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_96dcef6724d443a9",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:valve_coefficient_cv_definition",
+      "structured_payload_candidate": {
+        "parameter_name": "Cv_coefficient",
+        "title": "Valve coefficient Cv definition",
+        "summary": "Cv coefficient is flow in gpm through a wide-open valve at 1 psi pressure drop."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The flow-versus-valve-posi-\ntion characteristics (Figure 5-11c) assist the controller in matching\nthe flow to the load and minimizing coil discharge fluctuations.\n5.6.3 Valve Sizing\nSizing of control valves should be undertaken by determining\nthe Cv (valve coefficient) required to provide the design flow condi-\ntions at full load, i.e., in the wide-open position. Manufacturers fur-\nnish values of Cv coefficients for each valve size. By definition, the\nCv coefficient is the flow (in gpm) through a wide-open valve at a\n1 psi pressure drop across the valve [or SI equivalents]. For water\n(with a specific gravity of 1), this reduces to\nQ = Cv (Δp)0.5, (5-11)\nwhere\nQ = flow rate, gpm (m3/s);\nCv= required valve coefficient; and\nΔp= pressure drop across valve, psi (Pa).\nFor steam, this formula becomes\nWs = 2.1 Cv [(p1 + p2) (p1 – p2)]0.5, (5-12)\nwhere\nCv= required valve coefficient;\np1= valve inlet pressure, psia;.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_96dcef6724d443a9"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides operational definition of Cv coefficient from evidence, grounded and reviewable.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:parameter_spec:valve_coefficient_cv_definition",
+        "structured_payload": {
+          "parameter_name": "Cv_coefficient",
+          "title": "Valve coefficient Cv definition",
+          "summary": "Cv coefficient is flow in gpm through a wide-open valve at 1 psi pressure drop."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The flow-versus-valve-posi-\ntion characteristics (Figure 5-11c) assist the controller in matching\nthe flow to the load and minimizing coil discharge fluctuations.\n5.6.3 Valve Sizing\nSizing of control valves should be undertaken by determining\nthe Cv (valve coefficient) required to provide the design flow condi-\ntions at full load, i.e., in the wide-open position. Manufacturers fur-\nnish values of Cv coefficients for each valve size. By definition, the\nCv coefficient is the flow (in gpm) through a wide-open valve at a\n1 psi pressure drop across the valve [or SI equivalents]. For water\n(with a specific gravity of 1), this reduces to\nQ = Cv (Δp)0.5, (5-11)\nwhere\nQ = flow rate, gpm (m3/s);\nCv= required valve coefficient; and\nΔp= pressure drop across valve, psi (Pa).\nFor steam, this formula becomes\nWs = 2.1 Cv [(p1 + p2) (p1 – p2)]0.5, (5-12)\nwhere\nCv= required valve coefficient;\np1= valve inlet pressure, psia;.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_994b9501a8e3564f",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_96dcef6724d443a9",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:valve:performance_spec:water_flow_formula_through_valve",
+      "structured_payload_candidate": {
+        "parameter_name": "water_flow_formula",
+        "title": "Water flow formula through valve",
+        "summary": "For water, flow Q = Cv (Δp)^0.5."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The flow-versus-valve-posi-\ntion characteristics (Figure 5-11c) assist the controller in matching\nthe flow to the load and minimizing coil discharge fluctuations.\n5.6.3 Valve Sizing\nSizing of control valves should be undertaken by determining\nthe Cv (valve coefficient) required to provide the design flow condi-\ntions at full load, i.e., in the wide-open position. Manufacturers fur-\nnish values of Cv coefficients for each valve size. By definition, the\nCv coefficient is the flow (in gpm) through a wide-open valve at a\n1 psi pressure drop across the valve [or SI equivalents]. For water\n(with a specific gravity of 1), this reduces to\nQ = Cv (Δp)0.5, (5-11)\nwhere\nQ = flow rate, gpm (m3/s);\nCv= required valve coefficient; and\nΔp= pressure drop across valve, psi (Pa).\nFor steam, this formula becomes\nWs = 2.1 Cv [(p1 + p2) (p1 – p2)]0.5, (5-12)\nwhere\nCv= required valve coefficient;\np1= valve inlet pressure, psia;.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_96dcef6724d443a9"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Contains water flow formula directly from evidence, a performance specification.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:performance_spec:water_flow_formula_through_valve",
+        "structured_payload": {
+          "parameter_name": "water_flow_formula",
+          "title": "Water flow formula through valve",
+          "summary": "For water, flow Q = Cv (Δp)^0.5."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The flow-versus-valve-posi-\ntion characteristics (Figure 5-11c) assist the controller in matching\nthe flow to the load and minimizing coil discharge fluctuations.\n5.6.3 Valve Sizing\nSizing of control valves should be undertaken by determining\nthe Cv (valve coefficient) required to provide the design flow condi-\ntions at full load, i.e., in the wide-open position. Manufacturers fur-\nnish values of Cv coefficients for each valve size. By definition, the\nCv coefficient is the flow (in gpm) through a wide-open valve at a\n1 psi pressure drop across the valve [or SI equivalents]. For water\n(with a specific gravity of 1), this reduces to\nQ = Cv (Δp)0.5, (5-11)\nwhere\nQ = flow rate, gpm (m3/s);\nCv= required valve coefficient; and\nΔp= pressure drop across valve, psi (Pa).\nFor steam, this formula becomes\nWs = 2.1 Cv [(p1 + p2) (p1 – p2)]0.5, (5-12)\nwhere\nCv= required valve coefficient;\np1= valve inlet pressure, psia;.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6461864c0d52d531",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_96dcef6724d443a9",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:valve:performance_spec:steam_flow_formula_through_valve",
+      "structured_payload_candidate": {
+        "parameter_name": "steam_flow_formula",
+        "title": "Steam flow formula through valve",
+        "summary": "For steam, Ws = 2.1 Cv [(p1 + p2)(p1 - p2)]^0.5."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The flow-versus-valve-posi-\ntion characteristics (Figure 5-11c) assist the controller in matching\nthe flow to the load and minimizing coil discharge fluctuations.\n5.6.3 Valve Sizing\nSizing of control valves should be undertaken by determining\nthe Cv (valve coefficient) required to provide the design flow condi-\ntions at full load, i.e., in the wide-open position. Manufacturers fur-\nnish values of Cv coefficients for each valve size. By definition, the\nCv coefficient is the flow (in gpm) through a wide-open valve at a\n1 psi pressure drop across the valve [or SI equivalents]. For water\n(with a specific gravity of 1), this reduces to\nQ = Cv (Δp)0.5, (5-11)\nwhere\nQ = flow rate, gpm (m3/s);\nCv= required valve coefficient; and\nΔp= pressure drop across valve, psi (Pa).\nFor steam, this formula becomes\nWs = 2.1 Cv [(p1 + p2) (p1 – p2)]0.5, (5-12)\nwhere\nCv= required valve coefficient;\np1= valve inlet pressure, psia;.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_96dcef6724d443a9"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Steam flow formula provided with equation, directly supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:performance_spec:steam_flow_formula_through_valve",
+        "structured_payload": {
+          "parameter_name": "steam_flow_formula",
+          "title": "Steam flow formula through valve",
+          "summary": "For steam, Ws = 2.1 Cv [(p1 + p2)(p1 - p2)]^0.5."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The flow-versus-valve-posi-\ntion characteristics (Figure 5-11c) assist the controller in matching\nthe flow to the load and minimizing coil discharge fluctuations.\n5.6.3 Valve Sizing\nSizing of control valves should be undertaken by determining\nthe Cv (valve coefficient) required to provide the design flow condi-\ntions at full load, i.e., in the wide-open position. Manufacturers fur-\nnish values of Cv coefficients for each valve size. By definition, the\nCv coefficient is the flow (in gpm) through a wide-open valve at a\n1 psi pressure drop across the valve [or SI equivalents]. For water\n(with a specific gravity of 1), this reduces to\nQ = Cv (Δp)0.5, (5-11)\nwhere\nQ = flow rate, gpm (m3/s);\nCv= required valve coefficient; and\nΔp= pressure drop across valve, psi (Pa).\nFor steam, this formula becomes\nWs = 2.1 Cv [(p1 + p2) (p1 – p2)]0.5, (5-12)\nwhere\nCv= required valve coefficient;\np1= valve inlet pressure, psia;.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_923cce2ad20cdb2d",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_d2fe2df705b54ef6",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:valve:application_guidance:thermostat_location_guidelines",
+      "structured_payload_candidate": {
+        "title": "Thermostat location guidelines",
+        "summary": "Room thermostats should not be on exterior walls, dead corners, or unsuitable locations; best locations provide air motion and sense average temperature."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "An alternative is to install temperature sensors with a slider\nbar that permits local adjustment. The slider bar can be programmed\nto establish how much temperature adjustment is allowed. The tem-\nperature control profile for the V A V dampers and heating coil (or\nbaseboard heaters) should be as shown in Figures 10-7 and 10-8.\nRoom thermostats should not be located on exterior walls, in\ndead corners, or in other unsuitable locations where they are likely\nto be unduly affected by equipment,  occupant, or solar radiation\nloads. The best locations are those that provide some air motion and\nallow thermostats to sense the average room temperature. The loca-\ntion of all thermostats should be in dicated on the plans. If add-on,\ntamperproof covers are used, they should be constructed to allow\nfree air movement over the thermostat.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_d2fe2df705b54ef6"
+      ],
+      "source_page_nos": [
+        4
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Thermostat location guidelines are operational application guidance, supported.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:application_guidance:thermostat_location_guidelines",
+        "structured_payload": {
+          "title": "Thermostat location guidelines",
+          "summary": "Room thermostats should not be on exterior walls, dead corners, or unsuitable locations; best locations provide air motion and sense average temperature."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "An alternative is to install temperature sensors with a slider\nbar that permits local adjustment. The slider bar can be programmed\nto establish how much temperature adjustment is allowed. The tem-\nperature control profile for the V A V dampers and heating coil (or\nbaseboard heaters) should be as shown in Figures 10-7 and 10-8.\nRoom thermostats should not be located on exterior walls, in\ndead corners, or in other unsuitable locations where they are likely\nto be unduly affected by equipment,  occupant, or solar radiation\nloads. The best locations are those that provide some air motion and\nallow thermostats to sense the average room temperature. The loca-\ntion of all thermostats should be in dicated on the plans. If add-on,\ntamperproof covers are used, they should be constructed to allow\nfree air movement over the thermostat.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1c134618617bbe42",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_a9794341c0354d16",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:valve:application_guidance:security_enclosure_airflow_requirement",
+      "structured_payload_candidate": {
+        "title": "Security enclosure airflow requirement",
+        "summary": "Metal or plastic box-type security enclosures with minimal air slits should not be used as they restrict airflow."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Metal or plastic box-type\nsecurity enclosures with minimal ai r slits should not be used, since\nthey do not provide enough airflow over the thermostat for it to\nrespond rapidly to changing room conditions. If thermostats must be\ninstalled on exterior walls, insula ting bases should be used and the\nwall penetration sealed airtight.\n10.5.2 Single-Zone, Constant-Volume Air Systems\nVery small single-zone air-ha ndling units are thermodynami-\ncally equivalent to room fan-coil units or residential air-condition-\ning systems and can be controlled by  simple two-position electric or\nelectronic thermostat/valve systems common in this type of unit.\nFor larger single-zone systems, one of the schemes illustrated\nin Figures 10-9 and 10-11 can be used. Figure 10-9 shows a mini-\nmum configuration, which may provide inadequate control and\nshould be used only on closely coupled systems, i.e., systems with.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_a9794341c0354d16"
+      ],
+      "source_page_nos": [
+        4
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Security enclosure airflow restriction advice is actionable guidance, from evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:application_guidance:security_enclosure_airflow_requirement",
+        "structured_payload": {
+          "title": "Security enclosure airflow requirement",
+          "summary": "Metal or plastic box-type security enclosures with minimal air slits should not be used as they restrict airflow."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Metal or plastic box-type\nsecurity enclosures with minimal ai r slits should not be used, since\nthey do not provide enough airflow over the thermostat for it to\nrespond rapidly to changing room conditions. If thermostats must be\ninstalled on exterior walls, insula ting bases should be used and the\nwall penetration sealed airtight.\n10.5.2 Single-Zone, Constant-Volume Air Systems\nVery small single-zone air-ha ndling units are thermodynami-\ncally equivalent to room fan-coil units or residential air-condition-\ning systems and can be controlled by  simple two-position electric or\nelectronic thermostat/valve systems common in this type of unit.\nFor larger single-zone systems, one of the schemes illustrated\nin Figures 10-9 and 10-11 can be used. Figure 10-9 shows a mini-\nmum configuration, which may provide inadequate control and\nshould be used only on closely coupled systems, i.e., systems with.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c1e7bb4fa5b1fcbf",
+      "domain_id": "hvac",
+      "doc_id": "doc_e2ac1a5624684089",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_a9794341c0354d16",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:valve:application_guidance:thermostat_on_exterior_wall_insulation",
+      "structured_payload_candidate": {
+        "title": "Thermostat on exterior wall insulation",
+        "summary": "If thermostats must be on exterior walls, insulating bases should be used and wall penetration sealed airtight."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Metal or plastic box-type\nsecurity enclosures with minimal ai r slits should not be used, since\nthey do not provide enough airflow over the thermostat for it to\nrespond rapidly to changing room conditions. If thermostats must be\ninstalled on exterior walls, insula ting bases should be used and the\nwall penetration sealed airtight.\n10.5.2 Single-Zone, Constant-Volume Air Systems\nVery small single-zone air-ha ndling units are thermodynami-\ncally equivalent to room fan-coil units or residential air-condition-\ning systems and can be controlled by  simple two-position electric or\nelectronic thermostat/valve systems common in this type of unit.\nFor larger single-zone systems, one of the schemes illustrated\nin Figures 10-9 and 10-11 can be used. Figure 10-9 shows a mini-\nmum configuration, which may provide inadequate control and\nshould be used only on closely coupled systems, i.e., systems with.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_a9794341c0354d16"
+      ],
+      "source_page_nos": [
+        4
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specific instruction for exterior wall thermostat installation, supported.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:valve:application_guidance:thermostat_on_exterior_wall_insulation",
+        "structured_payload": {
+          "title": "Thermostat on exterior wall insulation",
+          "summary": "If thermostats must be on exterior walls, insulating bases should be used and wall penetration sealed airtight."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Metal or plastic box-type\nsecurity enclosures with minimal ai r slits should not be used, since\nthey do not provide enough airflow over the thermostat for it to\nrespond rapidly to changing room conditions. If thermostats must be\ninstalled on exterior walls, insula ting bases should be used and the\nwall penetration sealed airtight.\n10.5.2 Single-Zone, Constant-Volume Air Systems\nVery small single-zone air-ha ndling units are thermodynami-\ncally equivalent to room fan-coil units or residential air-condition-\ning systems and can be controlled by  simple two-position electric or\nelectronic thermostat/valve systems common in this type of unit.\nFor larger single-zone systems, one of the schemes illustrated\nin Figures 10-9 and 10-11 can be used. Figure 10-9 shows a mini-\nmum configuration, which may provide inadequate control and\nshould be used only on closely coupled systems, i.e., systems with.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

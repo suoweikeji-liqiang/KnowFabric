@@ -1,0 +1,1419 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T15:46:58.638515+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_98015153b0e642eb",
+  "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+  "equipment_class": {
+    "equipment_class_id": "screw_chiller",
+    "equipment_class_key": "hvac:screw_chiller",
+    "label": "Screw Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 19,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_2e4332010cc27102",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_1f1efce6feca443f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg210h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "215",
+        "unit": "kW",
+        "title": "LSBLG210H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 215 kW, COP 5.06, IPLV 5.62, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1f1efce6feca443f"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg210h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "215",
+          "unit": "kW",
+          "title": "LSBLG210H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 215 kW, COP 5.06, IPLV 5.62, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_33a60aed88358a1e",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_1f1efce6feca443f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg240h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "240",
+        "unit": "kW",
+        "title": "LSBLG240H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 240 kW, COP 5.16, IPLV 5.78, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1f1efce6feca443f"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg240h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "240",
+          "unit": "kW",
+          "title": "LSBLG240H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 240 kW, COP 5.16, IPLV 5.78, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_ad7b5b607200591d",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_1f1efce6feca443f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg270h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "270",
+        "unit": "kW",
+        "title": "LSBLG270H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 270 kW, COP 5.24, IPLV 5.76, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1f1efce6feca443f"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg270h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "270",
+          "unit": "kW",
+          "title": "LSBLG270H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 270 kW, COP 5.24, IPLV 5.76, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0de89d75b4478daf",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_1f1efce6feca443f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg310h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "315",
+        "unit": "kW",
+        "title": "LSBLG310H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 315 kW, COP 5.25, IPLV 5.88, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1f1efce6feca443f"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg310h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "315",
+          "unit": "kW",
+          "title": "LSBLG310H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 315 kW, COP 5.25, IPLV 5.88, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_426c1ba6b2858678",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_1f1efce6feca443f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg350h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "350",
+        "unit": "kW",
+        "title": "LSBLG350H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 350 kW, COP 5.43, IPLV 5.92, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1f1efce6feca443f"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg350h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "350",
+          "unit": "kW",
+          "title": "LSBLG350H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 350 kW, COP 5.43, IPLV 5.92, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a66fd8c241b498d6",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_1f1efce6feca443f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg390h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "390",
+        "unit": "kW",
+        "title": "LSBLG390H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 390 kW, COP 5.57, IPLV 6.02, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1f1efce6feca443f"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg390h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "390",
+          "unit": "kW",
+          "title": "LSBLG390H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 390 kW, COP 5.57, IPLV 6.02, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_7d52dfd5800c3b8f",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_1f1efce6feca443f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg450h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "450",
+        "unit": "kW",
+        "title": "LSBLG450H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 450 kW, COP 5.49, IPLV 6.09, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1f1efce6feca443f"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg450h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "450",
+          "unit": "kW",
+          "title": "LSBLG450H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 450 kW, COP 5.49, IPLV 6.09, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_06a859ca3abfca15",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_1f1efce6feca443f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg500h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "500",
+        "unit": "kW",
+        "title": "LSBLG500H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 500 kW, COP 5.56, IPLV 6.06, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1f1efce6feca443f"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg500h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "500",
+          "unit": "kW",
+          "title": "LSBLG500H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 500 kW, COP 5.56, IPLV 6.06, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fd83443537eb1f1d",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_1f1efce6feca443f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg550h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "550",
+        "unit": "kW",
+        "title": "LSBLG550H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 550 kW, COP 5.61, IPLV 5.95, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1f1efce6feca443f"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg550h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "550",
+          "unit": "kW",
+          "title": "LSBLG550H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 550 kW, COP 5.61, IPLV 5.95, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇3.5.2 格力智能服务系统\n(1)\t对大型机组（离心机、螺杆机）调试数据进行接收和确认，保证机组以可靠状态交付甲方使用。\n(2)\t对维保期内大型机组进行定期抽测，及时掌握机组运行情况，通过监控数据查找故障原因，并能对\n空调可能发生的故障及时进行预警，有效减少或杜绝故障产生。\n(3)\t接收未主动访问的机组的故障报警提示，实现故障信息的及时传递，保证售后问题的及时有效处理。\n(4)\t具备维保信息短信提示功能，提醒用户实际对机组进行维保，减少不必要的机组故障。\n4 产品性能参数表\n型号 LSBLG__H/D 210 240 270 310 350 390 450 500 550\n制冷\n量kW 215 240 270 315 350 390 450 500 550\nRT 61.1\t68.3\t76.8\t89.6\t99.5\t110.9\t128.0\t142.2\t156.4\n输入功率 42.5 46.5 51.5 60 64.5 71 82 90 98\n电流 73\t79\t88\t102\t110\t120\t140\t154\t167\nCOP 5.06\t5.16\t5.24\t5.25\t5.43\t5.57\t5.49\t5.56\t5.61\nIPLV 5.62\t5.78\t5.76\t5.88\t5.92\t6.02\t6.09\t6.06\t5.95\n能效等级 1 1 1 1 1 1 1 1 1\n压缩\n机数量 1 1 1 1 1 1 1 1 1\n容调方式 \t 无级调节\n制冷剂 　R22\n蒸发\n器水流量 m3/h37\t41\t46\t54\t60\t67\t77\t86\t95\n水压降 kPa 52 52 52 50 51 52 55 56 54\n接管尺寸 mmDN80 DN80 DN80 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n冷凝\n器水流量 m3/h45\t50\t56\t65\t72\t80\t92\t103\t113\n水压降 kPa 65 65 65 66 67 67 69 70 68\n接管尺寸 mmDN100 DN100 DN100 DN100 DN100 DN100 DN125 DN125 DN125\n接管方式 - 卡箍式\n外型\n尺寸宽 mm2670 2670 2670 2670 2670 2670 2720 2720 2720\n深 mm 900 900 900 1050 1050 1050 1170 1170 1170\n高 mm1460 1460 1460 1590 1590 1590 1655 1655 1655\n机组净重 kg1720\t1750\t1800\t2110\t2130\t2150\t2600\t2630\t2660\n机组毛重 kg1760\t1790\t1840\t2155\t2175\t2195\t2650\t2680\t2710\n运行净重 kg1806\t1838\t1890\t2216\t2237\t2258\t2730\t2762\t2793\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0c06c5dba949740b",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_d2bb07b4561047bc",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg610h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "610",
+        "unit": "kW",
+        "title": "LSBLG610H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 610 kW, COP 5.55, IPLV 6.05, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d2bb07b4561047bc"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg610h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "610",
+          "unit": "kW",
+          "title": "LSBLG610H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 610 kW, COP 5.55, IPLV 6.05, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c9d79a38cd73043d",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_d2bb07b4561047bc",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg670h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "675",
+        "unit": "kW",
+        "title": "LSBLG670H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 675 kW, COP 5.63, IPLV 6.08, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d2bb07b4561047bc"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg670h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "675",
+          "unit": "kW",
+          "title": "LSBLG670H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 675 kW, COP 5.63, IPLV 6.08, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_3cf3b3cd912b2265",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_d2bb07b4561047bc",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg720h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "720",
+        "unit": "kW",
+        "title": "LSBLG720H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 720 kW, COP 5.71, IPLV 6.05, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d2bb07b4561047bc"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg720h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "720",
+          "unit": "kW",
+          "title": "LSBLG720H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 720 kW, COP 5.71, IPLV 6.05, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f18cfd5e106a66fb",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_d2bb07b4561047bc",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg800h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "800",
+        "unit": "kW",
+        "title": "LSBLG800H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 800 kW, COP 5.52, IPLV 6.02, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d2bb07b4561047bc"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg800h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "800",
+          "unit": "kW",
+          "title": "LSBLG800H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 800 kW, COP 5.52, IPLV 6.02, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fc96e3269e6dd30f",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_d2bb07b4561047bc",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg880h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "880",
+        "unit": "kW",
+        "title": "LSBLG880H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 880 kW, COP 5.57, IPLV 6.02, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d2bb07b4561047bc"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg880h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "880",
+          "unit": "kW",
+          "title": "LSBLG880H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 880 kW, COP 5.57, IPLV 6.02, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_ad1d22cd66c95261",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_d2bb07b4561047bc",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg960h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "960",
+        "unit": "kW",
+        "title": "LSBLG960H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 960 kW, COP 5.61, IPLV 6.00, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d2bb07b4561047bc"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg960h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "960",
+          "unit": "kW",
+          "title": "LSBLG960H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 960 kW, COP 5.61, IPLV 6.00, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "21LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 610 670 720 800 880 960\n制冷量kW 610 675 720 800 880 960\nRT 173.5\t 192.0\t 204.8\t 227.5\t 250.3\t 273.0\n输入功率 110 120 126 145 158 171\n电流 188\t 205\t 215\t 247\t 270 292\nCOP 5.55\t 5.63\t 5.71\t 5.52\t 5.57\t 5.61\nIPLV 6.05\t 6.08\t 6.05\t 6.02\t 6.02\t 6.00\n能效等级 1 1 1 1 1 1\n压缩机数量 1 1 1 1 1 1\n容调方式 \t 　无级调节\n制冷剂 R22\n蒸发器水流量 m3/h 105\t 116\t 124\t 138\t 151\t 165\n水压降 kPa 77 78 80 75 77 80\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 125\t 138\t 147\t 163\t 180\t 196\n水压降 kPa 78 82 80 80 82 81\n接管尺寸 mm DN150 DN150 DN150 DN150 DN150 DN150\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3180 3180 3180 3300 3300 3300\n深 mm 1170 1170 1170 1260 1260 1260\n高 mm 1770 1770 1770 1930 1930 1930\n机组净重 kg 3140\t 3190\t 3230\t 3760\t 3830\t 3900\n机组毛重 kg 3195\t 3245\t 3285\t 3820\t 3890\t 3960\n运行净重 kg 3297\t 3350\t 3392\t 3948\t 4022\t 4095\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_8c31b430c61617c1",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 25,
+      "chunk_id": "chunk_ccd081cf03bc4375",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg1000h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "1000",
+        "unit": "kW",
+        "title": "LSBLG1000H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 1000 kW, COP 5.56, IPLV 6.00, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "22LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 1000 1100 1230 1360 1450 1600 1760 1950\n制冷量kW 1000 1110 1210 1365 1450 1600 1760 1950\nRT 284.4\t315.7\t344\t388.2\t412.4\t455.1\t500.6\t554.6\n输入功率 180 196 216 240 252 290 316 342\n电流 307\t335\t368\t410\t430\t494 540 584\nCOP 5.56\t5.66\t5.60 5.69\t5.75\t5.52\t5.57\t5.70\nIPLV 6.00\t6.06\t6.05\t6.09\t6.15\t6.18\t6.13\t6.16\n能效等级 1 1 2 2 2 2 2 2\n压缩机数量 2 2 2 2 2 2 2 2\n容调方式 \t 无级调节看\n制冷剂 　R22\n蒸发器水流量 m3/h 172\t191\t208 235\t249\t275\t303\t335\n水压降 kPa 80 80 74 74 76 78 80 82\n接管尺寸 mm DN150 DN150 DN200 DN200 DN200 DN200 DN200 DN200\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 205\t227\t247\t279\t296\t327\t360\t398\n水压降 kPa 82 84 82 82 84 87 88 92\n接管尺寸 mm DN200 DN200 DN200 DN200 DN200 DN250 DN250 DN250\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3300 3300 3500 3500 3500 4100 4100 4100\n深 mm 1700 1700 1880 1880 1880 1950 1950 1950\n高 mm 2000 2000 2000 2000 2000 2260 2260 2260\n机组净重 kg 4700\t4800\t5440\t5560\t5680\t6850\t7040\t7250\n机组毛重 kg 4800\t4900\t5540\t5660\t5780\t6980\t7170\t7380\n运行净重 kg 4935\t5040\t5712\t5838\t5964\t7193\t7392\t7613\n说明：\n①\t机组按 GB/T18430.1-2007 标准设计、制造、检验。\n②\t表中机组制冷量适用于：冷冻水出水温度7℃，冷却水进水温度30℃；冷冻水、冷却水水流量按表\n内数据，冷冻水、冷却水侧污垢系数 0.086 ㎡ .℃ /kW。\n③\t标准机组水侧承压 1.0MPa，可供选项 1.6MPa。\n④\t机组性能参数会因产品的改良有所改变，恕不另行通知，具体参数请以铭牌为准。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ccd081cf03bc4375"
+      ],
+      "source_page_nos": [
+        25
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg1000h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "1000",
+          "unit": "kW",
+          "title": "LSBLG1000H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 1000 kW, COP 5.56, IPLV 6.00, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "22LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 1000 1100 1230 1360 1450 1600 1760 1950\n制冷量kW 1000 1110 1210 1365 1450 1600 1760 1950\nRT 284.4\t315.7\t344\t388.2\t412.4\t455.1\t500.6\t554.6\n输入功率 180 196 216 240 252 290 316 342\n电流 307\t335\t368\t410\t430\t494 540 584\nCOP 5.56\t5.66\t5.60 5.69\t5.75\t5.52\t5.57\t5.70\nIPLV 6.00\t6.06\t6.05\t6.09\t6.15\t6.18\t6.13\t6.16\n能效等级 1 1 2 2 2 2 2 2\n压缩机数量 2 2 2 2 2 2 2 2\n容调方式 \t 无级调节看\n制冷剂 　R22\n蒸发器水流量 m3/h 172\t191\t208 235\t249\t275\t303\t335\n水压降 kPa 80 80 74 74 76 78 80 82\n接管尺寸 mm DN150 DN150 DN200 DN200 DN200 DN200 DN200 DN200\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 205\t227\t247\t279\t296\t327\t360\t398\n水压降 kPa 82 84 82 82 84 87 88 92\n接管尺寸 mm DN200 DN200 DN200 DN200 DN200 DN250 DN250 DN250\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3300 3300 3500 3500 3500 4100 4100 4100\n深 mm 1700 1700 1880 1880 1880 1950 1950 1950\n高 mm 2000 2000 2000 2000 2000 2260 2260 2260\n机组净重 kg 4700\t4800\t5440\t5560\t5680\t6850\t7040\t7250\n机组毛重 kg 4800\t4900\t5540\t5660\t5780\t6980\t7170\t7380\n运行净重 kg 4935\t5040\t5712\t5838\t5964\t7193\t7392\t7613\n说明：\n①\t机组按 GB/T18430.1-2007 标准设计、制造、检验。\n②\t表中机组制冷量适用于：冷冻水出水温度7℃，冷却水进水温度30℃；冷冻水、冷却水水流量按表\n内数据，冷冻水、冷却水侧污垢系数 0.086 ㎡ .℃ /kW。\n③\t标准机组水侧承压 1.0MPa，可供选项 1.6MPa。\n④\t机组性能参数会因产品的改良有所改变，恕不另行通知，具体参数请以铭牌为准。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6ef3d15b861dff72",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 25,
+      "chunk_id": "chunk_ccd081cf03bc4375",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg1100h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "1110",
+        "unit": "kW",
+        "title": "LSBLG1100H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 1110 kW, COP 5.66, IPLV 6.06, energy efficiency level 1."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "22LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 1000 1100 1230 1360 1450 1600 1760 1950\n制冷量kW 1000 1110 1210 1365 1450 1600 1760 1950\nRT 284.4\t315.7\t344\t388.2\t412.4\t455.1\t500.6\t554.6\n输入功率 180 196 216 240 252 290 316 342\n电流 307\t335\t368\t410\t430\t494 540 584\nCOP 5.56\t5.66\t5.60 5.69\t5.75\t5.52\t5.57\t5.70\nIPLV 6.00\t6.06\t6.05\t6.09\t6.15\t6.18\t6.13\t6.16\n能效等级 1 1 2 2 2 2 2 2\n压缩机数量 2 2 2 2 2 2 2 2\n容调方式 \t 无级调节看\n制冷剂 　R22\n蒸发器水流量 m3/h 172\t191\t208 235\t249\t275\t303\t335\n水压降 kPa 80 80 74 74 76 78 80 82\n接管尺寸 mm DN150 DN150 DN200 DN200 DN200 DN200 DN200 DN200\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 205\t227\t247\t279\t296\t327\t360\t398\n水压降 kPa 82 84 82 82 84 87 88 92\n接管尺寸 mm DN200 DN200 DN200 DN200 DN200 DN250 DN250 DN250\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3300 3300 3500 3500 3500 4100 4100 4100\n深 mm 1700 1700 1880 1880 1880 1950 1950 1950\n高 mm 2000 2000 2000 2000 2000 2260 2260 2260\n机组净重 kg 4700\t4800\t5440\t5560\t5680\t6850\t7040\t7250\n机组毛重 kg 4800\t4900\t5540\t5660\t5780\t6980\t7170\t7380\n运行净重 kg 4935\t5040\t5712\t5838\t5964\t7193\t7392\t7613\n说明：\n①\t机组按 GB/T18430.1-2007 标准设计、制造、检验。\n②\t表中机组制冷量适用于：冷冻水出水温度7℃，冷却水进水温度30℃；冷冻水、冷却水水流量按表\n内数据，冷冻水、冷却水侧污垢系数 0.086 ㎡ .℃ /kW。\n③\t标准机组水侧承压 1.0MPa，可供选项 1.6MPa。\n④\t机组性能参数会因产品的改良有所改变，恕不另行通知，具体参数请以铭牌为准。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ccd081cf03bc4375"
+      ],
+      "source_page_nos": [
+        25
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg1100h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "1110",
+          "unit": "kW",
+          "title": "LSBLG1100H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 1110 kW, COP 5.66, IPLV 6.06, energy efficiency level 1."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "22LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 1000 1100 1230 1360 1450 1600 1760 1950\n制冷量kW 1000 1110 1210 1365 1450 1600 1760 1950\nRT 284.4\t315.7\t344\t388.2\t412.4\t455.1\t500.6\t554.6\n输入功率 180 196 216 240 252 290 316 342\n电流 307\t335\t368\t410\t430\t494 540 584\nCOP 5.56\t5.66\t5.60 5.69\t5.75\t5.52\t5.57\t5.70\nIPLV 6.00\t6.06\t6.05\t6.09\t6.15\t6.18\t6.13\t6.16\n能效等级 1 1 2 2 2 2 2 2\n压缩机数量 2 2 2 2 2 2 2 2\n容调方式 \t 无级调节看\n制冷剂 　R22\n蒸发器水流量 m3/h 172\t191\t208 235\t249\t275\t303\t335\n水压降 kPa 80 80 74 74 76 78 80 82\n接管尺寸 mm DN150 DN150 DN200 DN200 DN200 DN200 DN200 DN200\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 205\t227\t247\t279\t296\t327\t360\t398\n水压降 kPa 82 84 82 82 84 87 88 92\n接管尺寸 mm DN200 DN200 DN200 DN200 DN200 DN250 DN250 DN250\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3300 3300 3500 3500 3500 4100 4100 4100\n深 mm 1700 1700 1880 1880 1880 1950 1950 1950\n高 mm 2000 2000 2000 2000 2000 2260 2260 2260\n机组净重 kg 4700\t4800\t5440\t5560\t5680\t6850\t7040\t7250\n机组毛重 kg 4800\t4900\t5540\t5660\t5780\t6980\t7170\t7380\n运行净重 kg 4935\t5040\t5712\t5838\t5964\t7193\t7392\t7613\n说明：\n①\t机组按 GB/T18430.1-2007 标准设计、制造、检验。\n②\t表中机组制冷量适用于：冷冻水出水温度7℃，冷却水进水温度30℃；冷冻水、冷却水水流量按表\n内数据，冷冻水、冷却水侧污垢系数 0.086 ㎡ .℃ /kW。\n③\t标准机组水侧承压 1.0MPa，可供选项 1.6MPa。\n④\t机组性能参数会因产品的改良有所改变，恕不另行通知，具体参数请以铭牌为准。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_ed715733de9930f2",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 25,
+      "chunk_id": "chunk_ccd081cf03bc4375",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg1230h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "1210",
+        "unit": "kW",
+        "title": "LSBLG1230H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 1210 kW, COP 5.60, IPLV 6.05, energy efficiency level 2."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "22LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 1000 1100 1230 1360 1450 1600 1760 1950\n制冷量kW 1000 1110 1210 1365 1450 1600 1760 1950\nRT 284.4\t315.7\t344\t388.2\t412.4\t455.1\t500.6\t554.6\n输入功率 180 196 216 240 252 290 316 342\n电流 307\t335\t368\t410\t430\t494 540 584\nCOP 5.56\t5.66\t5.60 5.69\t5.75\t5.52\t5.57\t5.70\nIPLV 6.00\t6.06\t6.05\t6.09\t6.15\t6.18\t6.13\t6.16\n能效等级 1 1 2 2 2 2 2 2\n压缩机数量 2 2 2 2 2 2 2 2\n容调方式 \t 无级调节看\n制冷剂 　R22\n蒸发器水流量 m3/h 172\t191\t208 235\t249\t275\t303\t335\n水压降 kPa 80 80 74 74 76 78 80 82\n接管尺寸 mm DN150 DN150 DN200 DN200 DN200 DN200 DN200 DN200\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 205\t227\t247\t279\t296\t327\t360\t398\n水压降 kPa 82 84 82 82 84 87 88 92\n接管尺寸 mm DN200 DN200 DN200 DN200 DN200 DN250 DN250 DN250\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3300 3300 3500 3500 3500 4100 4100 4100\n深 mm 1700 1700 1880 1880 1880 1950 1950 1950\n高 mm 2000 2000 2000 2000 2000 2260 2260 2260\n机组净重 kg 4700\t4800\t5440\t5560\t5680\t6850\t7040\t7250\n机组毛重 kg 4800\t4900\t5540\t5660\t5780\t6980\t7170\t7380\n运行净重 kg 4935\t5040\t5712\t5838\t5964\t7193\t7392\t7613\n说明：\n①\t机组按 GB/T18430.1-2007 标准设计、制造、检验。\n②\t表中机组制冷量适用于：冷冻水出水温度7℃，冷却水进水温度30℃；冷冻水、冷却水水流量按表\n内数据，冷冻水、冷却水侧污垢系数 0.086 ㎡ .℃ /kW。\n③\t标准机组水侧承压 1.0MPa，可供选项 1.6MPa。\n④\t机组性能参数会因产品的改良有所改变，恕不另行通知，具体参数请以铭牌为准。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ccd081cf03bc4375"
+      ],
+      "source_page_nos": [
+        25
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg1230h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "1210",
+          "unit": "kW",
+          "title": "LSBLG1230H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 1210 kW, COP 5.60, IPLV 6.05, energy efficiency level 2."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "22LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 1000 1100 1230 1360 1450 1600 1760 1950\n制冷量kW 1000 1110 1210 1365 1450 1600 1760 1950\nRT 284.4\t315.7\t344\t388.2\t412.4\t455.1\t500.6\t554.6\n输入功率 180 196 216 240 252 290 316 342\n电流 307\t335\t368\t410\t430\t494 540 584\nCOP 5.56\t5.66\t5.60 5.69\t5.75\t5.52\t5.57\t5.70\nIPLV 6.00\t6.06\t6.05\t6.09\t6.15\t6.18\t6.13\t6.16\n能效等级 1 1 2 2 2 2 2 2\n压缩机数量 2 2 2 2 2 2 2 2\n容调方式 \t 无级调节看\n制冷剂 　R22\n蒸发器水流量 m3/h 172\t191\t208 235\t249\t275\t303\t335\n水压降 kPa 80 80 74 74 76 78 80 82\n接管尺寸 mm DN150 DN150 DN200 DN200 DN200 DN200 DN200 DN200\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 205\t227\t247\t279\t296\t327\t360\t398\n水压降 kPa 82 84 82 82 84 87 88 92\n接管尺寸 mm DN200 DN200 DN200 DN200 DN200 DN250 DN250 DN250\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3300 3300 3500 3500 3500 4100 4100 4100\n深 mm 1700 1700 1880 1880 1880 1950 1950 1950\n高 mm 2000 2000 2000 2000 2000 2260 2260 2260\n机组净重 kg 4700\t4800\t5440\t5560\t5680\t6850\t7040\t7250\n机组毛重 kg 4800\t4900\t5540\t5660\t5780\t6980\t7170\t7380\n运行净重 kg 4935\t5040\t5712\t5838\t5964\t7193\t7392\t7613\n说明：\n①\t机组按 GB/T18430.1-2007 标准设计、制造、检验。\n②\t表中机组制冷量适用于：冷冻水出水温度7℃，冷却水进水温度30℃；冷冻水、冷却水水流量按表\n内数据，冷冻水、冷却水侧污垢系数 0.086 ㎡ .℃ /kW。\n③\t标准机组水侧承压 1.0MPa，可供选项 1.6MPa。\n④\t机组性能参数会因产品的改良有所改变，恕不另行通知，具体参数请以铭牌为准。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_dd4294799611e864",
+      "domain_id": "hvac",
+      "doc_id": "doc_98015153b0e642eb",
+      "doc_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+      "page_no": 25,
+      "chunk_id": "chunk_ccd081cf03bc4375",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:lsblg1360h_d",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "1365",
+        "unit": "kW",
+        "title": "LSBLG1360H/D Rated Cooling Capacity",
+        "summary": "Rated cooling capacity 1365 kW, COP 5.69, IPLV 6.09, energy efficiency level 2."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "22LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 1000 1100 1230 1360 1450 1600 1760 1950\n制冷量kW 1000 1110 1210 1365 1450 1600 1760 1950\nRT 284.4\t315.7\t344\t388.2\t412.4\t455.1\t500.6\t554.6\n输入功率 180 196 216 240 252 290 316 342\n电流 307\t335\t368\t410\t430\t494 540 584\nCOP 5.56\t5.66\t5.60 5.69\t5.75\t5.52\t5.57\t5.70\nIPLV 6.00\t6.06\t6.05\t6.09\t6.15\t6.18\t6.13\t6.16\n能效等级 1 1 2 2 2 2 2 2\n压缩机数量 2 2 2 2 2 2 2 2\n容调方式 \t 无级调节看\n制冷剂 　R22\n蒸发器水流量 m3/h 172\t191\t208 235\t249\t275\t303\t335\n水压降 kPa 80 80 74 74 76 78 80 82\n接管尺寸 mm DN150 DN150 DN200 DN200 DN200 DN200 DN200 DN200\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 205\t227\t247\t279\t296\t327\t360\t398\n水压降 kPa 82 84 82 82 84 87 88 92\n接管尺寸 mm DN200 DN200 DN200 DN200 DN200 DN250 DN250 DN250\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3300 3300 3500 3500 3500 4100 4100 4100\n深 mm 1700 1700 1880 1880 1880 1950 1950 1950\n高 mm 2000 2000 2000 2000 2000 2260 2260 2260\n机组净重 kg 4700\t4800\t5440\t5560\t5680\t6850\t7040\t7250\n机组毛重 kg 4800\t4900\t5540\t5660\t5780\t6980\t7170\t7380\n运行净重 kg 4935\t5040\t5712\t5838\t5964\t7193\t7392\t7613\n说明：\n①\t机组按 GB/T18430.1-2007 标准设计、制造、检验。\n②\t表中机组制冷量适用于：冷冻水出水温度7℃，冷却水进水温度30℃；冷冻水、冷却水水流量按表\n内数据，冷冻水、冷却水侧污垢系数 0.086 ㎡ .℃ /kW。\n③\t标准机组水侧承压 1.0MPa，可供选项 1.6MPa。\n④\t机组性能参数会因产品的改良有所改变，恕不另行通知，具体参数请以铭牌为准。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ccd081cf03bc4375"
+      ],
+      "source_page_nos": [
+        25
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated cooling capacity from performance table; supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:lsblg1360h_d",
+        "structured_payload": {
+          "parameter_name": "cooling_capacity",
+          "value": "1365",
+          "unit": "kW",
+          "title": "LSBLG1360H/D Rated Cooling Capacity",
+          "summary": "Rated cooling capacity 1365 kW, COP 5.69, IPLV 6.09, energy efficiency level 2."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "22LHD 系列螺杆式水冷\n冷水机组技术服务手册\n产品篇型号 LSBLG__H/D 1000 1100 1230 1360 1450 1600 1760 1950\n制冷量kW 1000 1110 1210 1365 1450 1600 1760 1950\nRT 284.4\t315.7\t344\t388.2\t412.4\t455.1\t500.6\t554.6\n输入功率 180 196 216 240 252 290 316 342\n电流 307\t335\t368\t410\t430\t494 540 584\nCOP 5.56\t5.66\t5.60 5.69\t5.75\t5.52\t5.57\t5.70\nIPLV 6.00\t6.06\t6.05\t6.09\t6.15\t6.18\t6.13\t6.16\n能效等级 1 1 2 2 2 2 2 2\n压缩机数量 2 2 2 2 2 2 2 2\n容调方式 \t 无级调节看\n制冷剂 　R22\n蒸发器水流量 m3/h 172\t191\t208 235\t249\t275\t303\t335\n水压降 kPa 80 80 74 74 76 78 80 82\n接管尺寸 mm DN150 DN150 DN200 DN200 DN200 DN200 DN200 DN200\n接管方式 - 卡箍式\n冷凝器水流量 m3/h 205\t227\t247\t279\t296\t327\t360\t398\n水压降 kPa 82 84 82 82 84 87 88 92\n接管尺寸 mm DN200 DN200 DN200 DN200 DN200 DN250 DN250 DN250\n接管方式 - 卡箍式\n外型\n尺寸宽 mm 3300 3300 3500 3500 3500 4100 4100 4100\n深 mm 1700 1700 1880 1880 1880 1950 1950 1950\n高 mm 2000 2000 2000 2000 2000 2260 2260 2260\n机组净重 kg 4700\t4800\t5440\t5560\t5680\t6850\t7040\t7250\n机组毛重 kg 4800\t4900\t5540\t5660\t5780\t6980\t7170\t7380\n运行净重 kg 4935\t5040\t5712\t5838\t5964\t7193\t7392\t7613\n说明：\n①\t机组按 GB/T18430.1-2007 标准设计、制造、检验。\n②\t表中机组制冷量适用于：冷冻水出水温度7℃，冷却水进水温度30℃；冷冻水、冷却水水流量按表\n内数据，冷冻水、冷却水侧污垢系数 0.086 ㎡ .℃ /kW。\n③\t标准机组水侧承压 1.0MPa，可供选项 1.6MPa。\n④\t机组性能参数会因产品的改良有所改变，恕不另行通知，具体参数请以铭牌为准。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

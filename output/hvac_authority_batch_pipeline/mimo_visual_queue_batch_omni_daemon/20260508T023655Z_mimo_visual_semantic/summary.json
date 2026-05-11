@@ -1,0 +1,211 @@
+{
+  "run_id": "20260508T023655Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/03、开利中央空调/技术手册/【开利】19XR离心机开机运行维护说明书97页-制冷百家网.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 9.392,
+      "parsed": {
+        "page_type": "other",
+        "summary": "This is the cover page of a Carrier 19XR series hermetic centrifugal liquid chiller manual, titled 'Start-up, Operation, and Maintenance Instructions' in both Chinese and English. It features a photograph of the chiller unit and a line drawing of its internal components, along with manufacturer information.",
+        "visual_entities": [
+          {
+            "type": "logo",
+            "label": "Carrier logo"
+          },
+          {
+            "type": "text_block",
+            "label": "19XR series title"
+          },
+          {
+            "type": "text_block",
+            "label": "Manual title (Chinese and English)"
+          },
+          {
+            "type": "photograph",
+            "label": "Chiller unit photograph"
+          },
+          {
+            "type": "line_drawing",
+            "label": "Chiller internal components line drawing"
+          },
+          {
+            "type": "badge",
+            "label": "HFC-134a badge"
+          },
+          {
+            "type": "text_block",
+            "label": "Manufacturer name (Chinese and English)"
+          },
+          {
+            "type": "text_block",
+            "label": "Website watermark"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "Chiller unit photograph",
+            "relation": "shows",
+            "to": "Evergreen compressor"
+          },
+          {
+            "from": "Line drawing",
+            "relation": "overlays",
+            "to": "Chiller unit photograph"
+          },
+          {
+            "from": "HFC-134a badge",
+            "relation": "points to",
+            "to": "Line drawing"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "equipment_identification",
+          "manual_documentation",
+          "manufacturer_information"
+        ],
+        "ocr_text_if_useful": "Carrier\n19XR 系列高效封闭型离心式冷水机组\nHermetic Centrifugal Liquid Chillers\n开机、运行和维护说明书\nStart-up, Operation, and Maintenance Instructions\nEvergreen\nHFC-134a\n上海合众－开利空调设备有限公司\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\n制冷百家网整理：www.zhilengbj.cn",
+        "uncertainty_notes": "The exact spatial relationship between the line drawing and the photograph is not explicitly defined; the drawing appears as an overlay. The specific components in the line drawing are not labeled.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a Carrier 19XR series hermetic centrifugal liquid chiller manual, titled 'Start-up, Operation, and Maintenance Instructions' in both Chinese and English. It features a photograph of the chiller unit and a line drawing of its internal components, along with manufacturer information.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Carrier logo\"},\n    {\"type\": \"text_block\", \"label\": \"19XR series title\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title (Chinese and English)\"},\n    {\"type\": \"photograph\", \"label\": \"Chiller unit photograph\"},\n    {\"type\": \"line_drawing\", \"label\": \"Chiller internal components line drawing\"},\n    {\"type\": \"badge\", \"label\": \"HFC-134a badge\"},\n    {\"type\": \"text_block\", \"label\": \"Manufacturer name (Chinese and English)\"},\n    {\"type\": \"text_block\", \"label\": \"Website watermark\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Chiller unit photograph\", \"relation\": \"shows\", \"to\": \"Evergreen compressor\"},\n    {\"from\": \"Line drawing\", \"relation\": \"overlays\", \"to\": \"Chiller unit photograph\"},\n    {\"from\": \"HFC-134a badge\", \"relation\": \"points to\", \"to\": \"Line drawing\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\", \"manufacturer_information\"],\n  \"ocr_text_if_useful\": \"Carrier\\n19XR 系列高效封闭型离心式冷水机组\\nHermetic Centrifugal Liquid Chillers\\n开机、运行和维护说明书\\nStart-up, Operation, and Maintenance Instructions\\nEvergreen\\nHFC-134a\\n上海合众－开利空调设备有限公司\\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\\n制冷百家网整理：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The exact spatial relationship between the line drawing and the photograph is not explicitly defined; the drawing appears as an overlay. The specific components in the line drawing are not labeled.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 492,
+        "prompt_tokens": 2437,
+        "total_tokens": 2929,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 2432,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 49,
+      "status": "ok",
+      "elapsed_seconds": 11.595,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This page is a section from an HVAC manual, primarily text-based with one diagram. It lists required tools, provides instructions for unit sealing and leak detection, includes a warning about pressurizing with air/oxygen, and begins a section on unit leak testing procedures. The diagram illustrates a typical wet-bulb vacuum gauge.",
+        "visual_entities": [
+          {
+            "type": "diagram",
+            "label": "Typical wet-bulb vacuum gauge (Fig. 20)"
+          },
+          {
+            "type": "list",
+            "label": "Required tools list"
+          },
+          {
+            "type": "warning_box",
+            "label": "Warning about pressurizing with air/oxygen"
+          },
+          {
+            "type": "section_header",
+            "label": "1. Unit sealing detection"
+          },
+          {
+            "type": "section_header",
+            "label": "2. Refrigerant leak detector"
+          },
+          {
+            "type": "section_header",
+            "label": "3. Unit leak test"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "diagram",
+            "relation": "is labeled as",
+            "to": "Fig. 20"
+          },
+          {
+            "from": "warning_box",
+            "relation": "contains text about",
+            "to": "HFC-134a and air mixture combustion risk"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "maintenance_procedures",
+          "safety_warnings",
+          "tool_requirements",
+          "leak_detection_methods"
+        ],
+        "ocr_text_if_useful": "需用工具\n• 制冷常用工具\n• 数字型电压/欧姆表(DVM)\n• 钳形电流表\n• 电子检漏仪\n• 500V绝缘测试仪(兆欧表)\n\n—使用附加储存容器及泵出系统\n—除去运输包装\n—打开油回路阀\n—紧固所有垫片接头及导叶轴密封\n\n1、机组密封性检测\n图21是机组泄漏试验的步骤和方法\n19XR机组在运输过程中，若机组要求完全充注制冷剂则主要在冷凝器中，压缩机已加润滑油，蒸发器允许有15psig(103kPa)制冷剂。标准产品机组充注15PSIG的保持性氮气，与制冷剂分别运输或制冷剂另行购置。\n要确定机组是否泄漏，机组抽真空后充注剂冷剂。在机组加压后，用电子检漏仪检查所有的法兰及焊接连接处，如果发现泄漏，继续进行泄漏测试步骤：\n如果压缩机组是弹簧减振，保持所有弹簧两头固定。以防可能的管压及在检漏试验过程中，将制冷剂从一个容器移入另一个容器或任何转移制冷剂的时候引起伤害。当制冷剂处于工作状态且回路已充满时再调整弹簧。\n\n2、制冷剂检漏仪\n开利推荐使用符合环保要求的制冷剂检漏仪（即电子检漏仪或卤素灯）。\n如果机组处于压力下，也可用超声波检漏仪。\n\n警告\n不要用空气或氧气对机组加压，HFC-134a与空气混合物可能会燃烧。\n图21-19XR泄漏试验过程见下页。\n\n3、机组泄漏试验\n由于考虑到制冷剂泄漏难以控制及从制冷剂中分离杂质的难度，开利推荐以下泄漏试验步骤，图21为泄漏试验步骤概览。\n1）如果机组工作压力正常\na. 从容器中排出保持性充注气体\nb. 如果需要，通过增加制冷剂提高机组压力，直到机组压力等于周围环境温度的饱和压力。\n按泵出程序，将制冷剂从储存容器送入机组。\nc. 机组泄漏试验如步骤3-9所述",
+        "uncertainty_notes": "The diagram (Fig. 20) is clearly visible and labeled, but its specific components (e.g., thermometer, cotton wick) are labeled in Chinese. The text references 'Fig. 21' for leak test steps, but that figure is not on this page. The page number '46' is visible at the bottom.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page is a section from an HVAC manual, primarily text-based with one diagram. It lists required tools, provides instructions for unit sealing and leak detection, includes a warning about pressurizing with air/oxygen, and begins a section on unit leak testing procedures. The diagram illustrates a typical wet-bulb vacuum gauge.\",\n  \"visual_entities\": [\n    {\"type\": \"diagram\", \"label\": \"Typical wet-bulb vacuum gauge (Fig. 20)\"},\n    {\"type\": \"list\", \"label\": \"Required tools list\"},\n    {\"type\": \"warning_box\", \"label\": \"Warning about pressurizing with air/oxygen\"},\n    {\"type\": \"section_header\", \"label\": \"1. Unit sealing detection\"},\n    {\"type\": \"section_header\", \"label\": \"2. Refrigerant leak detector\"},\n    {\"type\": \"section_header\", \"label\": \"3. Unit leak test\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"diagram\", \"relation\": \"is labeled as\", \"to\": \"Fig. 20\"},\n    {\"from\": \"warning_box\", \"relation\": \"contains text about\", \"to\": \"HFC-134a and air mixture combustion risk\"}\n  ],\n  \"useful_for_knowledge_types\": [\"maintenance_procedures\", \"safety_warnings\", \"tool_requirements\", \"leak_detection_methods\"],\n  \"ocr_text_if_useful\": \"需用工具\\n• 制冷常用工具\\n• 数字型电压/欧姆表(DVM)\\n• 钳形电流表\\n• 电子检漏仪\\n• 500V绝缘测试仪(兆欧表)\\n\\n—使用附加储存容器及泵出系统\\n—除去运输包装\\n—打开油回路阀\\n—紧固所有垫片接头及导叶轴密封\\n\\n1、机组密封性检测\\n图21是机组泄漏试验的步骤和方法\\n19XR机组在运输过程中，若机组要求完全充注制冷剂则主要在冷凝器中，压缩机已加润滑油，蒸发器允许有15psig(103kPa)制冷剂。标准产品机组充注15PSIG的保持性氮气，与制冷剂分别运输或制冷剂另行购置。\\n要确定机组是否泄漏，机组抽真空后充注剂冷剂。在机组加压后，用电子检漏仪检查所有的法兰及焊接连接处，如果发现泄漏，继续进行泄漏测试步骤：\\n如果压缩机组是弹簧减振，保持所有弹簧两头固定。以防可能的管压及在检漏试验过程中，将制冷剂从一个容器移入另一个容器或任何转移制冷剂的时候引起伤害。当制冷剂处于工作状态且回路已充满时再调整弹簧。\\n\\n2、制冷剂检漏仪\\n开利推荐使用符合环保要求的制冷剂检漏仪（即电子检漏仪或卤素灯）。\\n如果机组处于压力下，也可用超声波检漏仪。\\n\\n警告\\n不要用空气或氧气对机组加压，HFC-134a与空气混合物可能会燃烧。\\n图21-19XR泄漏试验过程见下页。\\n\\n3、机组泄漏试验\\n由于考虑到制冷剂泄漏难以控制及从制冷剂中分离杂质的难度，开利推荐以下泄漏试验步骤，图21为泄漏试验步骤概览。\\n1）如果机组工作压力正常\\na. 从容器中排出保持性充注气体\\nb. 如果需要，通过增加制冷剂提高机组压力，直到机组压力等于周围环境温度的饱和压力。\\n按泵出程序，将制冷剂从储存容器送入机组。\\nc. 机组泄漏试验如步骤3-9所述\",\n  \"uncertainty_notes\": \"The diagram (Fig. 20) is clearly visible and labeled, but its specific components (e.g., thermometer, cotton wick) are labeled in Chinese. The text references 'Fig. 21' for leak test steps, but that figure is not on this page. The page number '46' is visible at the bottom.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 910,
+        "prompt_tokens": 2381,
+        "total_tokens": 3291,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2184
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 97,
+      "status": "ok",
+      "elapsed_seconds": 7.32,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This page displays contact information for Shanghai Hezhong-Carrier Air-Conditioning Equip. Co., Ltd., including address, telephone, and fax numbers, along with a website reference at the bottom.",
+        "visual_entities": [
+          {
+            "type": "text_block",
+            "label": "company_name"
+          },
+          {
+            "type": "text_block",
+            "label": "address"
+          },
+          {
+            "type": "text_block",
+            "label": "telephone"
+          },
+          {
+            "type": "text_block",
+            "label": "fax"
+          },
+          {
+            "type": "text_block",
+            "label": "website_reference"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "manufacturer_contact",
+          "company_location"
+        ],
+        "ocr_text_if_useful": "上海合众－开利空调设备有限公司\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\n地址：上海市双阳支路24号 邮编：200090\nADD: No.24 Shuang Yang Zhi Road. P.C.: 200090, Shanghai, China.\n电话Tel: 86-21-65661188\n传真Fax: 86-21-65695404\n制冷百家网整理：www.zhilengbj.cn",
+        "uncertainty_notes": "The page contains only contact details and a website reference; no HVAC technical diagrams or specifications are visible.",
+        "confidence": 1.0
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page displays contact information for Shanghai Hezhong-Carrier Air-Conditioning Equip. Co., Ltd., including address, telephone, and fax numbers, along with a website reference at the bottom.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"company_name\"},\n    {\"type\": \"text_block\", \"label\": \"address\"},\n    {\"type\": \"text_block\", \"label\": \"telephone\"},\n    {\"type\": \"text_block\", \"label\": \"fax\"},\n    {\"type\": \"text_block\", \"label\": \"website_reference\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"manufacturer_contact\", \"company_location\"],\n  \"ocr_text_if_useful\": \"上海合众－开利空调设备有限公司\\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\\n地址：上海市双阳支路24号 邮编：200090\\nADD: No.24 Shuang Yang Zhi Road. P.C.: 200090, Shanghai, China.\\n电话Tel: 86-21-65661188\\n传真Fax: 86-21-65695404\\n制冷百家网整理：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page contains only contact details and a website reference; no HVAC technical diagrams or specifications are visible.\",\n  \"confidence\": 1.0\n}",
+      "usage": {
+        "completion_tokens": 339,
+        "prompt_tokens": 2381,
+        "total_tokens": 2720,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 2368,
+          "image_tokens": 2184
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

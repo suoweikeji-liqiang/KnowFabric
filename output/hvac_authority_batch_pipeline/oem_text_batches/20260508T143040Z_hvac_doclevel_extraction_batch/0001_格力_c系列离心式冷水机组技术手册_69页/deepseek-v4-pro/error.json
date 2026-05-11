@@ -1,0 +1,4 @@
+{
+  "error": "LLM JSON request failed after 3 attempts: Expecting ',' delimiter: line 122 column 6 (char 4170)",
+  "error_type": "RuntimeError"
+}

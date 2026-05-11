@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-08T08:26:42.203944+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T075534Z_hvac_doclevel_extraction_batch/0005_天加_满液式水源螺杆热泵机组_用户手册_46页/deepseek-v4-pro/review_packs",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T075534Z_hvac_doclevel_extraction_batch/0005_天加_满液式水源螺杆热泵机组_用户手册_46页/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 16,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_9582a2d2585d4d95__screw_chiller.json",
+      "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T075534Z_hvac_doclevel_extraction_batch/0005_天加_满液式水源螺杆热泵机组_用户手册_46页/deepseek-v4-pro/review_packs/hvac__doc_9582a2d2585d4d95__screw_chiller.json",
+      "status": "bootstrapped",
+      "entries_updated": 16,
+      "output_path": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T075534Z_hvac_doclevel_extraction_batch/0005_天加_满液式水源螺杆热泵机组_用户手册_46页/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_9582a2d2585d4d95__screw_chiller.json"
+    }
+  ]
+}

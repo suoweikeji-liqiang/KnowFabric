@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-08T11:57:06.763147+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_eed8b188951944fe__pump.json",
+      "doc_id": "doc_eed8b188951944fe",
+      "doc_name": "【特灵】HWWD水源热泵安装操作维护手册（56页）-制冷百家网.pdf",
+      "equipment_class_id": "pump",
+      "equipment_class_key": "hvac:pump",
+      "candidate_count": 18
+    }
+  ]
+}

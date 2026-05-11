@@ -1,0 +1,301 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_bb1ce4bc949c0243",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1ed294d4c084119",
+      "doc_name": "auto_doc_a5de4244eeda4637.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_0094b571f65544b6",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:closed_water_system_definition",
+      "structured_payload_candidate": {
+        "parameter_name": "system_type",
+        "title": "Closed Water System Definition",
+        "summary": "A closed water system has no more than one point of interface with a compressible gas or surface and will not create system flow by changes in elevation."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "A closed water system  is defined as one\nwith no more than one point of interface with a compressible gas or\nsurface, and that will not create sy stem flow by cha nges in elevation.\nThis definition is fundamental to understanding the hydraulic\ndynamics of these systems. Earlie r literature referred to a system\nwith an open or vented expansion tank as an “open” system, but thisis actually a closed system; the atmospheric interface of the tanksimply establishes the system pressure.\nAn open system , on the other hand, has more than one such\ninterface. For example, a cooling tower system has at least twopoints of interface: the tower basi n and the discharge pipe or nozzles\nentering the tower. One major difference in hydraulics between\nopen and closed system s is that some hydraulic characteristics of\nopen systems cannot occur in closed  systems.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_0094b571f65544b6"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Clearly defines a closed water system with operational implications for hydronic design, supported by direct evidence on page 3."
+    },
+    {
+      "candidate_id": "cand_f4eac61b00a1a5ac",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1ed294d4c084119",
+      "doc_name": "auto_doc_a5de4244eeda4637.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_1a9ba082fb67472f",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:open_vs_closed_system_hydraulics",
+      "structured_payload_candidate": {
+        "parameter_name": "hydraulic_characteristic",
+        "title": "Open vs. Closed System Hydraulics",
+        "summary": "In a closed system, flow cannot be motivated by static head differences, pumps do not provide static lift, and the entire piping system is always filled with water."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "For example, in con-\ntrast to the hydraulics of an open system, in a closed system (1) flowcannot be motivated by static head  differences, (2) pumps do not\nprovide static lift, and (3) the enti re piping system is always filled\nwith water.\nFigure 1 shows the fundamental components of a closed hydronic\nsystem. Actual systems generally have additional components such\nas valves, vents, regulators, etc., but these are not essential to the\nbasic principles underlying the system.\nThese fundamental components are\n Loads\n Source Expansion chamber Pump Distribution system\nTheoretically, a hydronic system c ould operate with only these five\ncomponents.\nThe components are subdivided into two groups: thermal and\nhydraulic. Thermal comp onents consist of th e load, source, and\nexpansion chamber. Hydraulic comp onents consist of the distribution\nsystem, pump, and expansion chamber.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_1a9ba082fb67472f"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Describes key hydraulic differences between open and closed systems relevant to system operation, backed by explicit evidence."
+    },
+    {
+      "candidate_id": "cand_c4114c213e5c507a",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1ed294d4c084119",
+      "doc_name": "auto_doc_a5de4244eeda4637.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_c971b43b70f1434e",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:expansion_chamber_dual_function",
+      "structured_payload_candidate": {
+        "parameter_name": "component_function",
+        "title": "Expansion Chamber Dual Function",
+        "summary": "The expansion chamber is the only component that serves both a thermal and a hydraulic function in a hydronic system."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The expansion chamber is the\nonly component that serves both a thermal and a hydraulic function.2.1 METHOD OF DESIGN\nThis section outlines general st eps a designer may follow to com-\nplete system design. The methodol ogy is not a rigid framework, but\nrather a flexible outline that should be adapted by the designer to\nsuit current needs. The general order as shown is approximatelychronological, but note that succeeding steps often affect preceding\nsteps, so a fundamental reading of this entire chapter is required to\nfully understand the design process.\n1.Determine system and zone loads.  Loads are covered in Chap-\nters 14 to 19 of the 2017 ASHRAE Handbook—Fundamentals .\nSeveral load calculation procedur es have been developed, with\nvarying degrees of calculation accuracy. The load, in conjunc-tion with design water temperature difference, determines the\nflow of the hydronic system, which ultimately affects the sys-\ntem’s heat transfer ability and energy performance.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_c971b43b70f1434e"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Identifies the expansion chamber's dual thermal/hydraulic role, directly supported by the cited source text."
+    },
+    {
+      "candidate_id": "cand_d677584ab4021a4e",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1ed294d4c084119",
+      "doc_name": "auto_doc_a5de4244eeda4637.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_6701d5f283374858",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:pipe_vs_ductwork_space_requirement",
+      "structured_payload_candidate": {
+        "parameter_name": "space_requirement",
+        "title": "Pipe vs. Ductwork Space Requirement",
+        "summary": "Pipe distribution requires less ceiling space to install when compared to air ductwork, which can influence floor-to-floor height requirements."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "PIPE DISTRIBUTION\nPiping should deliver refrigerant , heating water, chilled water,\ncondenser water, fuel oil, gas, steam, and condensate drainage and\nreturn to and from HVAC equipmen t as directly, quietly, and eco-\nnomically as possible. Structural features of the building generallyrequire mechanical and electric al coordination to accommodate\nP-traps, pipe pitch-draining of lo w points in the system, and vent-\ning of high points. When  assessing application of pipe distribution\nto air distribution, the floor-to-fl oor height require ment can influ-\nence the pipe system: it requires less ceiling space to install pipe\nwhen compared to air ductwork. An alternative to horizontal pip-\ning is vertical pipe distribution, which may further reduce floor-to-\nfloor height criteria.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_6701d5f283374858"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Directly states pipe requires less ceiling space than ductwork, supported by page 2 evidence on distribution space requirements."
+    },
+    {
+      "candidate_id": "cand_1bbc9c9767ac2b60",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1ed294d4c084119",
+      "doc_name": "auto_doc_a5de4244eeda4637.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_00d6bc7cef0446e7",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:enhanced_filtration_for_security",
+      "structured_payload_candidate": {
+        "parameter_name": "filtration_level",
+        "title": "Enhanced Filtration for Security",
+        "summary": "Enhanced particulate filtration (MERV 14 to 16) for air-handling systems reduces circulation of dangerous substances and provides better indoor air quality."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The level of protec-\ntion designed into these buildings may include enhanced\nparticulate filtration, gaseous-phas e filtration, and various control\nschemes to allow purging of the facility using either the HVAC\nsystem or an independe nt dedicated system.\nEnhanced particulate filtration for air-handling systems to the\nlevel of MERV 14 to 16 filters not only tends to re duce circulation\nof dangerous substances (e.g., an thrax), but also provides better\nindoor air quality (IAQ). Gaseou s-phase filtration can remove\nharmful substances such as sari n and other gaseous  threats. For\nbuildings of all risk levels, consideration should be taken to\ninclude proper location of outdoor air intakes to account for other\nsecurity concerns, such as toxic fumes from a local accident (e.g.,punctured tank from a nearby rail road car or tanker truck).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_00d6bc7cef0446e7"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Explains enhanced filtration (MERV 14-16) benefits for security/IAQ, clearly backed by the source text."
+    },
+    {
+      "candidate_id": "cand_f97f950b0adc79d9",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1ed294d4c084119",
+      "doc_name": "auto_doc_a5de4244eeda4637.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_e671d51b931c4018",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:separate_systems_for_vulnerable_spaces",
+      "structured_payload_candidate": {
+        "parameter_name": "system_segregation",
+        "title": "Separate Systems for Vulnerable Spaces",
+        "summary": "Separate systems for mailrooms, loading docks, and similar spaces should be considered to prevent spread of dangerous material received there throughout the building."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The\nextent to which the HVAC system  designer should use these mea-\nsures could depend on the recomm endations of an experienced\nsecurity and environmental health and safety consultant or agency.\nIn any building, consideration should be given to protecting out-\ndoor air intakes against insertion of dangerous materials by locat-\ning the intakes on the roof or substantially above grade level.\nSeparate systems for ma ilrooms, loading dock s, and other similar\nspaces should be considered so that any dangerous material\nreceived cannot be spread thr oughout the building from these types\nof vulnerable spaces. Emergenc y ventilation systems for these\ntypes of spaces should be designe d so that upon detection of suspi-\ncious material, toxic fumes, or chemical spill, these spaces can be\nquickly purged and maintained at a negative pressure.\nA more extensive discussion of this topic can be found in\nASHRAE’s Guideline  29.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_e671d51b931c4018"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Recommends separate systems for mailrooms/loading docks to prevent spread of dangerous materials, directly from evidence."
+    }
+  ]
+}

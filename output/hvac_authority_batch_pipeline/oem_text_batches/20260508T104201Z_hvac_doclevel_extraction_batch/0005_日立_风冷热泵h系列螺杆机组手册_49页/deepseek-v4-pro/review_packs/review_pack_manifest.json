@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-08T11:08:24.865706+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_af83f5144dc645da__chilled_water_pump.json",
+      "doc_id": "doc_af83f5144dc645da",
+      "doc_name": "【日立】风冷热泵H系列螺杆机组手册（49页）.pdf",
+      "equipment_class_id": "chilled_water_pump",
+      "equipment_class_key": "hvac:chilled_water_pump",
+      "candidate_count": 18
+    }
+  ]
+}

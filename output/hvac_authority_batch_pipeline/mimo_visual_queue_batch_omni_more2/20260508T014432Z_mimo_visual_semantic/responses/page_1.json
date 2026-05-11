@@ -1,0 +1,115 @@
+{
+  "page": 1,
+  "response": {
+    "id": "deb2a2ae970a4539bab8273016abc675",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"equipment_structure\",\n  \"summary\": \"This is the cover page of a YORK MILLENNIUM centrifugal chiller operation and maintenance manual. It features a photograph of the chiller unit, identifies the model as YK (Design Series E) using R-134a refrigerant, and notes it includes a color image display control center for electromechanical starters, solid-state starters, and variable speed drives. A note states the YK E model has no Y2K issue.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"MILLENNIUM title and Chinese text\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and form number\"},\n    {\"type\": \"text_block\", \"label\": \"Model and refrigerant specification\"},\n    {\"type\": \"text_block\", \"label\": \"Control center description\"},\n    {\"type\": \"equipment_image\", \"label\": \"Centrifugal chiller unit\"},\n    {\"type\": \"control_panel\", \"label\": \"YORK control panel on chiller\"},\n    {\"type\": \"text_block\", \"label\": \"Y2K note\"},\n    {\"type\": \"text_block\", \"label\": \"Website footer\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"YORK logo\", \"relation\": \"is part of\", \"to\": \"Manual header\"},\n    {\"from\": \"MILLENNIUM title\", \"relation\": \"is part of\", \"to\": \"Manual header\"},\n    {\"from\": \"Model specification\", \"relation\": \"describes\", \"to\": \"Centrifugal chiller unit\"},\n    {\"from\": \"Control center description\", \"relation\": \"applies to\", \"to\": \"Centrifugal chiller unit\"},\n    {\"from\": \"Control panel\", \"relation\": \"is mounted on\", \"to\": \"Centrifugal chiller unit\"},\n    {\"from\": \"Y2K note\", \"relation\": \"refers to\", \"to\": \"Centrifugal chiller unit\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"model_specification\", \"manual_documentation\"],\n  \"ocr_text_if_useful\": \"YORK MILLENNIUM 离心式冷水机组 操作 & 维护手册 替代: 无 Form 160.54-O1(1001) 机组型号 YK(设计序号 E) R-134a(单冷型) 配有彩色图像显示控制中心 用于机电启动器、固态启动器 & 变速驱动装置 注: YK E 型冷水机组无千年问题 1 制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The image is a general equipment photo, not a detailed schematic. Specific internal components or wiring are not visible. The relationship between the control panel and the chiller is visually apparent as mounted, but internal connections are not shown.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204681,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 659,
+      "prompt_tokens": 2493,
+      "total_tokens": 3152,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2296
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "equipment_structure",
+    "summary": "This is the cover page of a YORK MILLENNIUM centrifugal chiller operation and maintenance manual. It features a photograph of the chiller unit, identifies the model as YK (Design Series E) using R-134a refrigerant, and notes it includes a color image display control center for electromechanical starters, solid-state starters, and variable speed drives. A note states the YK E model has no Y2K issue.",
+    "visual_entities": [
+      {
+        "type": "logo",
+        "label": "YORK logo"
+      },
+      {
+        "type": "text_block",
+        "label": "MILLENNIUM title and Chinese text"
+      },
+      {
+        "type": "text_block",
+        "label": "Manual title and form number"
+      },
+      {
+        "type": "text_block",
+        "label": "Model and refrigerant specification"
+      },
+      {
+        "type": "text_block",
+        "label": "Control center description"
+      },
+      {
+        "type": "equipment_image",
+        "label": "Centrifugal chiller unit"
+      },
+      {
+        "type": "control_panel",
+        "label": "YORK control panel on chiller"
+      },
+      {
+        "type": "text_block",
+        "label": "Y2K note"
+      },
+      {
+        "type": "text_block",
+        "label": "Website footer"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "YORK logo",
+        "relation": "is part of",
+        "to": "Manual header"
+      },
+      {
+        "from": "MILLENNIUM title",
+        "relation": "is part of",
+        "to": "Manual header"
+      },
+      {
+        "from": "Model specification",
+        "relation": "describes",
+        "to": "Centrifugal chiller unit"
+      },
+      {
+        "from": "Control center description",
+        "relation": "applies to",
+        "to": "Centrifugal chiller unit"
+      },
+      {
+        "from": "Control panel",
+        "relation": "is mounted on",
+        "to": "Centrifugal chiller unit"
+      },
+      {
+        "from": "Y2K note",
+        "relation": "refers to",
+        "to": "Centrifugal chiller unit"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "equipment_identification",
+      "model_specification",
+      "manual_documentation"
+    ],
+    "ocr_text_if_useful": "YORK MILLENNIUM 离心式冷水机组 操作 & 维护手册 替代: 无 Form 160.54-O1(1001) 机组型号 YK(设计序号 E) R-134a(单冷型) 配有彩色图像显示控制中心 用于机电启动器、固态启动器 & 变速驱动装置 注: YK E 型冷水机组无千年问题 1 制冷百家网: www.zhilengbj.cn",
+    "uncertainty_notes": "The image is a general equipment photo, not a detailed schematic. Specific internal components or wiring are not visible. The relationship between the control panel and the chiller is visually apparent as mounted, but internal connections are not shown.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"equipment_structure\",\n  \"summary\": \"This is the cover page of a YORK MILLENNIUM centrifugal chiller operation and maintenance manual. It features a photograph of the chiller unit, identifies the model as YK (Design Series E) using R-134a refrigerant, and notes it includes a color image display control center for electromechanical starters, solid-state starters, and variable speed drives. A note states the YK E model has no Y2K issue.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"MILLENNIUM title and Chinese text\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and form number\"},\n    {\"type\": \"text_block\", \"label\": \"Model and refrigerant specification\"},\n    {\"type\": \"text_block\", \"label\": \"Control center description\"},\n    {\"type\": \"equipment_image\", \"label\": \"Centrifugal chiller unit\"},\n    {\"type\": \"control_panel\", \"label\": \"YORK control panel on chiller\"},\n    {\"type\": \"text_block\", \"label\": \"Y2K note\"},\n    {\"type\": \"text_block\", \"label\": \"Website footer\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"YORK logo\", \"relation\": \"is part of\", \"to\": \"Manual header\"},\n    {\"from\": \"MILLENNIUM title\", \"relation\": \"is part of\", \"to\": \"Manual header\"},\n    {\"from\": \"Model specification\", \"relation\": \"describes\", \"to\": \"Centrifugal chiller unit\"},\n    {\"from\": \"Control center description\", \"relation\": \"applies to\", \"to\": \"Centrifugal chiller unit\"},\n    {\"from\": \"Control panel\", \"relation\": \"is mounted on\", \"to\": \"Centrifugal chiller unit\"},\n    {\"from\": \"Y2K note\", \"relation\": \"refers to\", \"to\": \"Centrifugal chiller unit\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"model_specification\", \"manual_documentation\"],\n  \"ocr_text_if_useful\": \"YORK MILLENNIUM 离心式冷水机组 操作 & 维护手册 替代: 无 Form 160.54-O1(1001) 机组型号 YK(设计序号 E) R-134a(单冷型) 配有彩色图像显示控制中心 用于机电启动器、固态启动器 & 变速驱动装置 注: YK E 型冷水机组无千年问题 1 制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The image is a general equipment photo, not a detailed schematic. Specific internal components or wiring are not visible. The relationship between the control panel and the chiller is visually apparent as mounted, but internal connections are not shown.\",\n  \"confidence\": 0.95\n}"
+}

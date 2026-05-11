@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-08T08:26:42.199109+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_9582a2d2585d4d95__screw_chiller.json",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "equipment_class_id": "screw_chiller",
+      "equipment_class_key": "hvac:screw_chiller",
+      "candidate_count": 16
+    }
+  ]
+}

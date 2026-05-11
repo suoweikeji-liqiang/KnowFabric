@@ -1,0 +1,56 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_b10752049bdbf0de",
+      "domain_id": "hvac",
+      "doc_id": "doc_2821fe877b1743dd",
+      "doc_name": "auto_doc_90583657120442bb.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_acb021b9987c4806",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:parameter_spec:legionella_optimum_growth_temperature",
+      "structured_payload_candidate": {
+        "parameter_name": "Temperature Range",
+        "title": "Legionella Optimum Growth Temperature",
+        "summary": "Optimum temperature range for Legionella bacteria growth in water systems."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The dose of Legionella pneumophila  (or other species of\nLegionella ) required to infect humans is not known, and is most\nprobably influenced by host susceptibility.\nLegionella  grow well and amp lify in warm water environments\nand systems that provide favorabl e conditions for bacterial growth\nand the formation of biofilm. Th e optimum temperature range for\ngrowth is 32 to 41°C. The subsequent use of water from such sys -\ntems harboring Legionella , through faucets, shower sprays, humid -\nifying, aerosolizing (misting) de vices, or other spray or drift\nmech anisms of the system may transmit the bacteria to susceptible\nhosts.Legionella pneumophila  was first identified in 1977, following\nan outbr eak of disease associated with a Philadelphia host hotel for\nan American Legion bicentennial  convention in 1976. Since then,\nsurveillance systems and research studies have be en established\naround the world.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_acb021b9987c4806"
+      ],
+      "source_page_nos": [
+        17
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Legionella growth temperature range is relevant operational knowledge for cooling tower water treatment. Evidence is from a general ASHRAE chapter but the manual filename suggests an equipment manual; the trust level is L3, and the candidate is explicitly tied to cooling tower equipment. The structured payload matches the evidence."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "row_index": 7,
+  "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册 - 基础理论篇.pdf",
+  "file_name": "ASHRAE手册 - 基础理论篇.pdf",
+  "batch_group": "A_standard_authority_first",
+  "priority": "P0_official_reference",
+  "brand": "ASHRAE",
+  "authority_level": "industry_standard_or_reference",
+  "document_kind": "standard_handbook",
+  "equipment_scope": "general_hvac",
+  "page_count": "1014",
+  "text_quality": "good_text",
+  "recommended_mode": "section_context_or_chapter_batch",
+  "planned_action": "standard_reference_chunk_prepare",
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_batch/20260509T153925Z_hvac_source_batch/tasks/0007_ashrae手册_基础理论篇_880c3314a9"
+}

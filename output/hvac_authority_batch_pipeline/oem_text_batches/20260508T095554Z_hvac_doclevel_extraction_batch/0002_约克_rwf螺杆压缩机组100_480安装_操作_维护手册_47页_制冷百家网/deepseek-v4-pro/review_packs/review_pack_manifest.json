@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-08T10:22:08.704637+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_020eb9eaaa8f47ec__screw_chiller.json",
+      "doc_id": "doc_020eb9eaaa8f47ec",
+      "doc_name": "【约克】RWF螺杆压缩机组100-480安装、操作、维护手册（47页）-制冷百家网.pdf",
+      "equipment_class_id": "screw_chiller",
+      "equipment_class_key": "hvac:screw_chiller",
+      "candidate_count": 18
+    }
+  ]
+}

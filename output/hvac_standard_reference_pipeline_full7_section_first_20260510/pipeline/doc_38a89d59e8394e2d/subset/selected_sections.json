@@ -1,0 +1,60 @@
+{
+  "doc_id": "doc_38a89d59e8394e2d",
+  "doc_name": "ASHRAE绿色建筑指南.pdf",
+  "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE绿色建筑指南.pdf",
+  "selected_pages": [
+    130,
+    242
+  ],
+  "selected_page_count": 2,
+  "knowledge_types_filter": [
+    "application_guidance",
+    "parameter_spec",
+    "operational_sequence"
+  ],
+  "min_confidence": "high",
+  "equipment_scope_id": "chiller",
+  "subset_pdf": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_38a89d59e8394e2d/subset/auto_doc_38a89d59e8394e2d.pdf",
+  "manifest_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_38a89d59e8394e2d/subset/manifest.csv",
+  "sections": [
+    {
+      "section_title": "AS H R AE G R E E N G U I D E  1 1 3 D yn a m i c G l a zi n g G E N E R AL D E S C R I P TI O N D",
+      "page_start": 130,
+      "page_end": 130,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "AS H R AE G R E E N G U I D E  1 1 3 D yn a m i c G l a zi n g G E N E R AL D E S C R I P TI O N Dynamic ar chitectural glazing uses electrochromic technology to dar k en the interior of a piece of glass, enabling a th",
+      "section_source": "unknown",
+      "score": 11
+    },
+    {
+      "section_title": "AS H R AE G R E E N G U I D E   22 5 Desic c a n t Cool in g a n d D eh u m id ific a tion GE N E",
+      "page_start": 242,
+      "page_end": 242,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "AS H R AE G R E E N G U I D E   22 5 Desic c a n t Cool in g a n d D eh u m id ific a tion GE N E RAL D E SCRI P TI O N Ther e are two basic types of open-cycle desiccant process: solid and liq uid desiccant. Each of ",
+      "section_source": "unknown",
+      "score": 11
+    },
+    {
+      "section_title": ", moisture content) , it can be used to ind ir ectly cool out door air f or supply to the build ing",
+      "page_start": 242,
+      "page_end": 242,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": ", moisture content) , it can be used to ind ir ectly cool out door air f or supply to the build ing that has not contacted d esiccant. Using the recovered energy, this arr angement can be used to process the total ventil",
+      "section_source": "unknown",
+      "score": 11
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "row_index": 15,
+  "path": "/Volumes/TSD302/pan/a00238/13、天加中央空调/【天加 】风冷净化空调机组安装操作手册.pdf",
+  "file_name": "【天加 】风冷净化空调机组安装操作手册.pdf",
+  "batch_group": "B_oem_manual_text_first",
+  "priority": "P1_batch_extract",
+  "brand": "TICA",
+  "authority_level": "oem_manual_or_vendor_doc",
+  "document_kind": "operation_installation_manual",
+  "equipment_scope": "air_cooled_chiller_heat_pump,ahu,controller",
+  "page_count": "21",
+  "text_quality": "good_text",
+  "recommended_mode": "doc_level_single_call",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0015_天加_风冷净化空调机组安装操作手册_52dc3b6e71",
+  "status": "prepared",
+  "doc_id": "doc_a8258f8764a54269",
+  "import_status": "imported",
+  "processing": {
+    "pages_before": 0,
+    "chunks_before": 0,
+    "pages_after": 21,
+    "chunks_after": 27,
+    "parse_result": {
+      "job_id": "job_928eead9082f4cb4",
+      "doc_id": "doc_a8258f8764a54269",
+      "pages_created": 21,
+      "status": "success"
+    },
+    "chunk_result": {
+      "job_id": "job_5362024e30a54824",
+      "doc_id": "doc_a8258f8764a54269",
+      "chunks_created": 27,
+      "status": "success"
+    }
+  },
+  "review_bundle": {
+    "prepare_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0015_天加_风冷净化空调机组安装操作手册_52dc3b6e71/review_bundle/prepare_manifest.json",
+    "candidate_entries": 1,
+    "review_packs": 1,
+    "ready_packs": 0,
+    "compiler": {
+      "enable_llm": false,
+      "backend_name": null,
+      "backend_model": null,
+      "enabled_types": []
+    },
+    "health": {
+      "total_findings": 2,
+      "by_code": {
+        "anchor_uncertainty": 1,
+        "coverage_gap": 1
+      },
+      "review_packs": 1
+    }
+  }
+}

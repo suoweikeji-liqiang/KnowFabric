@@ -1,0 +1,97 @@
+{
+  "doc_id": "doc_a5de4244eeda4637",
+  "doc_name": "ASHRAE手册 - HVAC系统和设备篇.pdf",
+  "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册 - HVAC系统和设备篇.pdf",
+  "selected_pages": [
+    10,
+    17,
+    269,
+    304,
+    358,
+    409
+  ],
+  "selected_page_count": 6,
+  "knowledge_types_filter": [
+    "application_guidance",
+    "parameter_spec",
+    "operational_sequence"
+  ],
+  "min_confidence": "high",
+  "equipment_scope_id": "chiller",
+  "subset_pdf": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/anchor_override_verify/anchor_override_verify.pdf",
+  "manifest_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/anchor_override_verify/manifest.csv",
+  "sections": [
+    {
+      "section_title": "Henc e, the owner must be proactive and involved in system selection in the conceptual phase of the",
+      "page_start": 10,
+      "page_end": 10,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Henc e, the owner must be proactive and involved in system selection in the conceptual phase of the job. The same can be said for operator participation so that the finaldesign intent is sustainable and can continue to f",
+      "score": 16
+    },
+    {
+      "section_title": "HVAC System Analysis and Selection 1.9 Duct Insulation In new construction and renovation upgrade pr",
+      "page_start": 17,
+      "page_end": 17,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "HVAC System Analysis and Selection 1.9 Duct Insulation In new construction and renovation upgrade projects, HVAC supply air ducts should be insulated and sealed in accordance with energy code requirements. ASHRAE Standar",
+      "score": 16
+    },
+    {
+      "section_title": "Based on the selection of the coil, its controlling devices, style of installation, and location, br",
+      "page_start": 269,
+      "page_end": 269,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "Based on the selection of the coil, its controlling devices, style of installation, and location, branch piping is sized to provide required flow, and head loss is calculated. 5.Calculate distribution piping head loss. A",
+      "score": 16
+    },
+    {
+      "section_title": "Figure 9 shows the basic sc hematic control diagram for an HTW generator. Control valve selection an",
+      "page_start": 304,
+      "page_end": 304,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "Figure 9 shows the basic sc hematic control diagram for an HTW generator. Control valve selection and sizi ng are important because of rel- atively high temperature drops an d smaller flows in HTW systems. The valve must",
+      "score": 16
+    },
+    {
+      "section_title": "S upply outlet selections for heat- ing and cooling applica tions from the same device should be car",
+      "page_start": 358,
+      "page_end": 358,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "S upply outlet selections for heat- ing and cooling applica tions from the same device should be care- fully examined for use in both applications. Sill. Linear bar grilles are commonly used in sill applications. The gri",
+      "score": 16
+    },
+    {
+      "section_title": "Therefore, final selection involves economic balancing of the initial co st of the coil against the",
+      "page_start": 409,
+      "page_end": 409,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Therefore, final selection involves economic balancing of the initial co st of the coil against the operat- ing costs of the coil geometry co mbinations available to adequately meet the performa nce requirements. The alu",
+      "score": 16
+    }
+  ]
+}

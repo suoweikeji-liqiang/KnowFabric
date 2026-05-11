@@ -1,0 +1,65 @@
+{
+  "health_mode": "review_bundle_health_report",
+  "generated_at": "2026-05-07T08:52:10.737915+00:00",
+  "summary": {
+    "total_findings": 5,
+    "by_code": {
+      "weak_evidence": 2,
+      "anchor_uncertainty": 2,
+      "coverage_gap": 1
+    },
+    "review_packs": 1
+  },
+  "findings": [
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_53c93cd27c09452f",
+      "candidate_id": "cand_f0efb455ea7235ff",
+      "code": "weak_evidence",
+      "severity": "medium",
+      "message": "Candidate relies on limited confidence or a short evidence span."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_53c93cd27c09452f",
+      "candidate_id": "cand_f0efb455ea7235ff",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_53c93cd27c09452f",
+      "candidate_id": "cand_984c58dabf76dee3",
+      "code": "weak_evidence",
+      "severity": "medium",
+      "message": "Candidate relies on limited confidence or a short evidence span."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_53c93cd27c09452f",
+      "candidate_id": "cand_984c58dabf76dee3",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "equipment_class",
+      "equipment_class_key": "hvac:chiller",
+      "code": "coverage_gap",
+      "severity": "medium",
+      "message": "Supported knowledge anchors are missing from the prepared candidate set.",
+      "missing_knowledge_types": [
+        "fault_code",
+        "fault_diagnostic_rule",
+        "operational_sequence",
+        "parameter_spec",
+        "performance_spec"
+      ]
+    }
+  ]
+}

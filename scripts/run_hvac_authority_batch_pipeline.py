@@ -45,14 +45,28 @@ def is_g36_item(item: SourceItem) -> bool:
 def plan_lanes(items: list[SourceItem], args: argparse.Namespace) -> dict[str, list[SourceItem]]:
     selected = select_items(items, groups={STANDARD_GROUP, OEM_GROUP}, limit=None)
     standards = [item for item in selected if item.batch_group == STANDARD_GROUP]
-    oem = [item for item in selected if item.batch_group == OEM_GROUP][: args.oem_limit]
+    oem_all = [item for item in selected if item.batch_group == OEM_GROUP]
+    oem_candidates = [item for item in oem_all if is_general_oem_text_item(item)]
+    oem = oem_candidates[args.oem_offset : args.oem_offset + args.oem_limit]
     visual = visual_items(items)[: args.visual_limit]
     return {
         "g36_standard": [item for item in standards if is_g36_item(item)][: args.standard_limit],
         "standard_reference_hold": [item for item in standards if not is_g36_item(item)][: args.standard_reference_limit],
         "oem_text": oem,
+        "oem_fault_reference_hold": [item for item in oem_all if is_fault_reference_item(item)][: args.oem_fault_hold_limit],
         "visual_queue": visual,
     }
+
+
+def is_general_oem_text_item(item: SourceItem) -> bool:
+    if is_fault_reference_item(item):
+        return False
+    return item.recommended_mode != "ocr_or_multimodal_first" and item.text_quality != "low_or_no_text"
+
+
+def is_fault_reference_item(item: SourceItem) -> bool:
+    text = " ".join([item.document_kind, item.path.name]).lower()
+    return any(token in text for token in ("fault", "故障", "报警", "代码"))
 
 
 def visual_items(items: list[SourceItem]) -> list[SourceItem]:
@@ -96,15 +110,17 @@ def g36_command(args: argparse.Namespace, doc_id: str) -> list[str]:
         args.g36_input_mode,
         "--context-sections",
         args.g36_context_sections,
+        "--max-extract-seconds",
+        str(args.g36_max_extract_seconds),
     ]
 
 
-def oem_command(args: argparse.Namespace, output_dir: Path) -> list[str]:
+def oem_command(args: argparse.Namespace, output_dir: Path, manifest: Path) -> list[str]:
     return [
         sys.executable,
         "scripts/run_hvac_doclevel_extraction_batch.py",
         "--manifest",
-        args.manifest,
+        str(manifest),
         "--groups",
         OEM_GROUP,
         "--output-dir",
@@ -154,6 +170,16 @@ def write_visual_queue(path: Path, items: list[SourceItem]) -> None:
             writer.writerow({field: getattr(item, field, "") for field in fields})
 
 
+def write_lane_manifest(path: Path, items: list[SourceItem]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fields = list(items[0].raw.keys()) if items else ["path"]
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        for item in items:
+            writer.writerow({field: item.raw.get(field, "") for field in fields})
+
+
 def item_summary(item: SourceItem) -> dict[str, Any]:
     return {
         "row_index": item.row_index,
@@ -184,7 +210,9 @@ def build_initial_results(lanes: dict[str, list[SourceItem]], run_dir: Path, arg
     for item in lanes["g36_standard"]:
         results.append(run_g36_lane(args, item, run_dir))
     if lanes["oem_text"]:
-        results.append(run_command(oem_command(args, run_dir), run_dir / "logs", "oem_text_doclevel", args.execute))
+        oem_manifest = run_dir / "oem_text_manifest.csv"
+        write_lane_manifest(oem_manifest, lanes["oem_text"])
+        results.append(run_command(oem_command(args, run_dir, oem_manifest), run_dir / "logs", "oem_text_doclevel", args.execute))
     write_visual_queue(run_dir / "visual_queue.csv", lanes["visual_queue"])
     return results
 
@@ -277,7 +305,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--extract-backend", default="deepseek-v4-pro")
     parser.add_argument("--judge-backend", default="deepseek-v4-pro-judge")
     parser.add_argument("--oem-limit", type=int, default=5)
-    parser.add_argument("--oem-target-candidates", type=int, default=60)
+    parser.add_argument("--oem-offset", type=int, default=0)
+    parser.add_argument("--oem-target-candidates", type=int, default=10)
     parser.add_argument("--standard-limit", type=int, default=1)
     parser.add_argument("--standard-reference-limit", type=int, default=20)
     parser.add_argument("--visual-limit", type=int, default=20)
@@ -287,8 +316,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--g36-target-candidates", type=int, default=40)
     parser.add_argument("--g36-input-mode", choices=["full_book", "section_context"], default="section_context")
     parser.add_argument("--g36-context-sections", default="3,5.1")
+    parser.add_argument("--g36-max-extract-seconds", type=float, default=1800.0)
     parser.add_argument("--budget-rmb-per-section", type=float, default=10.0)
     parser.add_argument("--backend-timeout-seconds", type=int, default=1500)
+    parser.add_argument("--oem-fault-hold-limit", type=int, default=20)
     return parser
 
 

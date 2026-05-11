@@ -1,0 +1,1005 @@
+{
+  "mode": "standard_knowledge_dedupe_dry_run",
+  "generated_at": "2026-05-07T00:43:05.880316+00:00",
+  "standard_id": "ASHRAE Guideline 36-2021",
+  "threshold": 0.78,
+  "row_count": 246,
+  "duplicate_group_count": 21,
+  "recommended_duplicate_count": 30,
+  "estimated_unique_after_dedupe": 216,
+  "groups": [
+    {
+      "keep": {
+        "knowledge_object_id": "ko_b766d84d16cfc10a",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:vav_ahu_fc_7_sat_too_low_in_full_heating",
+        "title": "VAV AHU – FC#7: SAT Too Low in Full Heating",
+        "section_id": "5.16.14.8",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          141
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_9e3547fa20b709a7",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:afdd_fault_condition_fc_7_sat_too_low_in_full_heating",
+          "title": "AFDD Fault Condition FC#7: SAT Too Low in Full Heating",
+          "section_id": "5.16.14.8",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            137
+          ]
+        },
+        {
+          "knowledge_object_id": "ko_b3dc4f8b1af762ac",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_16_14_8:vav_ahu_fc_13_sat_too_high_in_full_cooling",
+          "title": "VAV AHU – FC#13: SAT Too High in Full Cooling",
+          "section_id": "5.16.14.8",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            143
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_9e3547fa20b709a7",
+          "right": "ko_b766d84d16cfc10a",
+          "reason": "title_similarity=0.80"
+        },
+        {
+          "left": "ko_b3dc4f8b1af762ac",
+          "right": "ko_b766d84d16cfc10a",
+          "reason": "title_similarity=0.78"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_6d02ce616fcfa72f",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_6_6_2:low_discharge_air_temperature_alarm",
+        "title": "Low-Discharge Air Temperature Alarm",
+        "section_id": "5.6.6.2",
+        "trust_level": "L4",
+        "evidence_count": 5,
+        "page_nos": [
+          77,
+          82,
+          86,
+          89,
+          93
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_a46de9bfbeed88c5",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_6_6_2:vav_reheat_zone_low_discharge_air_temperature_alarm",
+          "title": "VAV Reheat Zone – Low Discharge Air Temperature Alarm",
+          "section_id": "5.6.6.2",
+          "trust_level": "L4",
+          "evidence_count": 4,
+          "page_nos": [
+            77,
+            82,
+            86,
+            93
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_6d02ce616fcfa72f",
+          "right": "ko_a46de9bfbeed88c5",
+          "reason": "title_similarity=0.81"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_1a6dc67ec54044dc",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_6_6_3:airflow_sensor_calibration_alarm",
+        "title": "Airflow Sensor Calibration Alarm",
+        "section_id": "5.6.6.3",
+        "trust_level": "L4",
+        "evidence_count": 6,
+        "page_nos": [
+          74,
+          77,
+          82,
+          86,
+          90,
+          93
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_b4e606430d007373",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_6_6_3:vav_reheat_zone_airflow_sensor_calibration_alarm",
+          "title": "VAV Reheat Zone – Airflow Sensor Calibration Alarm",
+          "section_id": "5.6.6.3",
+          "trust_level": "L4",
+          "evidence_count": 5,
+          "page_nos": [
+            74,
+            77,
+            82,
+            86,
+            90
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_1a6dc67ec54044dc",
+          "right": "ko_b4e606430d007373",
+          "reason": "title_similarity=0.80"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_299d7274bf02aa45",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_6_6_5:vav_reheat_zone_leaking_valve_alarm",
+        "title": "VAV Reheat Zone – Leaking Valve Alarm",
+        "section_id": "5.6.6.5",
+        "trust_level": "L4",
+        "evidence_count": 2,
+        "page_nos": [
+          78,
+          82
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_7374603b46d475d5",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_6_6_5:leaking_valve_alarm",
+          "title": "Leaking Valve Alarm",
+          "section_id": "5.6.6.5",
+          "trust_level": "L4",
+          "evidence_count": 2,
+          "page_nos": [
+            78,
+            82
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_299d7274bf02aa45",
+          "right": "ko_7374603b46d475d5",
+          "reason": "body_similarity=0.86"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_86bbc0a34ec16597",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_16_2_2:supply_air_temperature_setpoint_reset",
+        "title": "Supply Air Temperature Setpoint Reset",
+        "section_id": "5.16.2.2",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          113
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_4436778f785f5638",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_16_2_2:multiple_zone_vav_ahu_supply_air_temperature_setpoint_reset_occupied_setup",
+          "title": "Multiple-Zone VAV AHU – Supply Air Temperature Setpoint Reset (Occupied/Setup)",
+          "section_id": "5.16.2.2",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            113
+          ]
+        },
+        {
+          "knowledge_object_id": "ko_d8e1162b7ada1c07",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_16_2_2:supply_air_temperature_setpoint_reset_occupied_setup",
+          "title": "Supply Air Temperature Setpoint Reset (Occupied/Setup)",
+          "section_id": "5.16.2.2",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            113
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_4436778f785f5638",
+          "right": "ko_d8e1162b7ada1c07",
+          "reason": "title_similarity=0.83"
+        },
+        {
+          "left": "ko_86bbc0a34ec16597",
+          "right": "ko_d8e1162b7ada1c07",
+          "reason": "title_similarity=0.83"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_b5e5eee2717ff3e4",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_16_2_2:multiple_zone_vav_ahu_sat_setpoint_in_warmup_setback_mode",
+        "title": "Multiple-Zone VAV AHU – SAT Setpoint in Warmup/Setback Mode",
+        "section_id": "5.16.2.2",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          114
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_7b725cdb75c142da",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_16_2_2:multiple_zone_vav_ahu_sat_setpoint_in_cooldown_mode",
+          "title": "Multiple-Zone VAV AHU – SAT Setpoint in Cooldown Mode",
+          "section_id": "5.16.2.2",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            114
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_7b725cdb75c142da",
+          "right": "ko_b5e5eee2717ff3e4",
+          "reason": "title_similarity=0.81"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_93d230d5b4e82055",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_16_4_4:minimum_outdoor_air_control_enable_disable_separate_damper_dp_return_fan",
+        "title": "Minimum Outdoor Air Control Enable/Disable (Separate Damper, DP, Return Fan)",
+        "section_id": "5.16.4.4",
+        "trust_level": "L4",
+        "evidence_count": 2,
+        "page_nos": [
+          120,
+          123
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_925c5d4df42a9333",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_16_4_4:minimum_outdoor_air_control_enable_disable_separate_damper_dp_control_return_fan",
+          "title": "Minimum Outdoor Air Control Enable/Disable (Separate Damper, DP Control, Return Fan)",
+          "section_id": "5.16.4.4",
+          "trust_level": "L4",
+          "evidence_count": 2,
+          "page_nos": [
+            120,
+            123
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_925c5d4df42a9333",
+          "right": "ko_93d230d5b4e82055",
+          "reason": "title_similarity=0.95"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_da1929f3739b18e6",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_18_4:single_zone_vav_ahu_supply_fan_speed_and_sat_setpoint_reset",
+        "title": "Single-Zone VAV AHU Supply Fan Speed and SAT Setpoint Reset",
+        "section_id": "5.18.4",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          152
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_03f1a70f702efbb0",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_18_4:single_zone_vav_ahu_supply_fan_speed_and_sat_control",
+          "title": "Single-Zone VAV AHU – Supply Fan Speed and SAT Control",
+          "section_id": "5.18.4",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            153
+          ]
+        },
+        {
+          "knowledge_object_id": "ko_9948b1b650718ae0",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_18_4:szvav_ahu_supply_fan_speed_and_sat_setpoint_reset",
+          "title": "SZVAV AHU Supply Fan Speed and SAT Setpoint Reset",
+          "section_id": "5.18.4",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            154
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_03f1a70f702efbb0",
+          "right": "ko_da1929f3739b18e6",
+          "reason": "title_similarity=0.88"
+        },
+        {
+          "left": "ko_9948b1b650718ae0",
+          "right": "ko_da1929f3739b18e6",
+          "reason": "title_similarity=0.91"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_05ad27d8db52c268",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_18_6_2:single_zone_vav_ahu_minimum_outdoor_air_control_without_afms",
+        "title": "Single-Zone VAV AHU Minimum Outdoor Air Control (Without AFMS)",
+        "section_id": "5.18.6.2",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          157
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_dc309853b5ce2124",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_18_6_2:szvav_ahu_minimum_outdoor_air_control_without_afms",
+          "title": "SZVAV AHU Minimum Outdoor Air Control without AFMS",
+          "section_id": "5.18.6.2",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            157
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_05ad27d8db52c268",
+          "right": "ko_dc309853b5ce2124",
+          "reason": "title_similarity=0.91"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_eb5573fe04421c86",
+        "equipment_class_id": "ahu",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_8_5_1_d:parallel_fan_start_stop_for_ventilation_title_24",
+        "title": "Parallel Fan Start/Stop for Ventilation (Title 24)",
+        "section_id": "5.8.5.1.d",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          85
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_24a60d10a580cf49",
+          "equipment_class_id": "ahu",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_8_5_1_c:parallel_fan_start_stop_for_ventilation_ashrae_62_1",
+          "title": "Parallel Fan Start/Stop for Ventilation (ASHRAE 62.1)",
+          "section_id": "5.8.5.1.c",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            85
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_24a60d10a580cf49",
+          "right": "ko_eb5573fe04421c86",
+          "reason": "title_similarity=0.87"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_3b924e63065c9d64",
+        "equipment_class_id": "chiller",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:chw_plant_fc_6_chilled_water_supply_temperature_too_high",
+        "title": "CHW Plant – FC#6: Chilled Water Supply Temperature Too High",
+        "section_id": "5.20.18.6",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          230
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_80b887a27bf38854",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_chilled_water_supply_temperature_too_high",
+          "title": "AFDD – Chilled Water Supply Temperature Too High",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            230
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_3b924e63065c9d64",
+          "right": "ko_80b887a27bf38854",
+          "reason": "title_similarity=0.86"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_fb78f73ab2472072",
+        "equipment_class_id": "chiller",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:chw_plant_fc_8_condenser_approach_too_high",
+        "title": "CHW Plant – FC#8: Condenser Approach Too High",
+        "section_id": "5.20.18.6",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          230
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_ed34327dd6c6c391",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_evaporator_approach_too_high",
+          "title": "AFDD – Evaporator Approach Too High",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            230
+          ]
+        },
+        {
+          "knowledge_object_id": "ko_f576867d97db0da9",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_20_18_6:afdd_condenser_approach_too_high",
+          "title": "AFDD – Condenser Approach Too High",
+          "section_id": "5.20.18.6",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            230
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_ed34327dd6c6c391",
+          "right": "ko_f576867d97db0da9",
+          "reason": "body_similarity=0.78"
+        },
+        {
+          "left": "ko_f576867d97db0da9",
+          "right": "ko_fb78f73ab2472072",
+          "reason": "title_similarity=0.81"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_05f5732fd2bb2b08",
+        "equipment_class_id": "chiller",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_2_2:plant_enable_logic",
+        "title": "Chilled Water Plant Enable Logic",
+        "section_id": "5.20.2.2",
+        "trust_level": "L3",
+        "evidence_count": 2,
+        "page_nos": [
+          172
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_aaf4be54f82b2100",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_2_2:chiller_plant_enable_logic",
+          "title": "Chiller Plant Enable Logic",
+          "section_id": "5.20.2.2",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            172
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_05f5732fd2bb2b08",
+          "right": "ko_aaf4be54f82b2100",
+          "reason": "title_similarity=0.90"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_8cb0a403097c0189",
+        "equipment_class_id": "chiller",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_2_3:chiller_plant_disable_logic",
+        "title": "Chiller Plant Disable Logic",
+        "section_id": "5.20.2.3",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          172
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_e0511a7fcbdbd6bd",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_2_3:plant_disable_logic",
+          "title": "Chilled Water Plant Disable Logic",
+          "section_id": "5.20.2.3",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            172
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_8cb0a403097c0189",
+          "right": "ko_e0511a7fcbdbd6bd",
+          "reason": "title_similarity=0.90"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_197d9d04fccd1dba",
+        "equipment_class_id": "chiller",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_up_availability_condition",
+        "title": "Chiller Stage Up – Availability Condition",
+        "section_id": "5.20.4.15",
+        "trust_level": "L4",
+        "evidence_count": 4,
+        "page_nos": [
+          183,
+          184,
+          185,
+          238
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_1716f9779bdb98ae",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_down_efficiency_condition",
+          "title": "Chiller Stage Down – Efficiency Condition",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "evidence_count": 3,
+          "page_nos": [
+            182,
+            183,
+            184
+          ]
+        },
+        {
+          "knowledge_object_id": "ko_6207ca3927455605",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_staging_stage_up_efficiency_condition",
+          "title": "Chiller Staging – Stage Up Efficiency Condition",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "evidence_count": 4,
+          "page_nos": [
+            182,
+            183,
+            184,
+            185
+          ]
+        },
+        {
+          "knowledge_object_id": "ko_f66dce37fefd74bf",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_stage_up_efficiency_condition",
+          "title": "Chiller Stage Up – Efficiency Condition",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "evidence_count": 4,
+          "page_nos": [
+            182,
+            183,
+            184,
+            185
+          ]
+        },
+        {
+          "knowledge_object_id": "ko_f9622e405a6dd1bb",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:chiller_staging_stage_down_condition",
+          "title": "Chiller Staging – Stage Down Condition",
+          "section_id": "5.20.4.15",
+          "trust_level": "L4",
+          "evidence_count": 3,
+          "page_nos": [
+            182,
+            183,
+            184
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_1716f9779bdb98ae",
+          "right": "ko_6207ca3927455605",
+          "reason": "title_similarity=0.83"
+        },
+        {
+          "left": "ko_1716f9779bdb98ae",
+          "right": "ko_f66dce37fefd74bf",
+          "reason": "title_similarity=0.92"
+        },
+        {
+          "left": "ko_197d9d04fccd1dba",
+          "right": "ko_f66dce37fefd74bf",
+          "reason": "title_similarity=0.79"
+        },
+        {
+          "left": "ko_6207ca3927455605",
+          "right": "ko_f66dce37fefd74bf",
+          "reason": "title_similarity=0.90"
+        },
+        {
+          "left": "ko_6207ca3927455605",
+          "right": "ko_f9622e405a6dd1bb",
+          "reason": "title_similarity=0.81"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_525cb177e9a3237f",
+        "equipment_class_id": "chiller",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_5_2:chilled_water_supply_temperature_reset_dp_controlled_loops",
+        "title": "Chilled Water Supply Temperature Reset (DP Controlled Loops)",
+        "section_id": "5.20.5.2",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          200
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_cef31b83a98c1e22",
+          "equipment_class_id": "chiller",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_5_2:chilled_water_supply_temperature_reset_differential_pressure_controlled_loops",
+          "title": "Chilled Water Supply Temperature Reset – Differential Pressure Controlled Loops",
+          "section_id": "5.20.5.2",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            200
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_525cb177e9a3237f",
+          "right": "ko_cef31b83a98c1e22",
+          "reason": "title_similarity=0.86"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_aa719e9412cf1ccf",
+        "equipment_class_id": "hot_water_plant",
+        "knowledge_object_type": "fault_diagnostic_rule",
+        "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:hw_plant_fc_8_return_temperature_too_high_for_condensing",
+        "title": "HW Plant – FC#8: Return Temperature Too High for Condensing",
+        "section_id": "5.21.11.6",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          260
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_38f5562445088806",
+          "equipment_class_id": "hot_water_plant",
+          "knowledge_object_type": "fault_diagnostic_rule",
+          "canonical_key": "ashrae:g36:fault_diagnostic_rule:5_21_11_6:hw_plant_fc_9_return_temperature_too_low_condensing_risk",
+          "title": "HW Plant – FC#9: Return Temperature Too Low (Condensing Risk)",
+          "section_id": "5.21.11.6",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            260
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_38f5562445088806",
+          "right": "ko_aa719e9412cf1ccf",
+          "reason": "title_similarity=0.86"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_cd318fe602e8a59f",
+        "equipment_class_id": "hot_water_plant",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_2_2:plant_enable_disable",
+        "title": "Hot Water Plant Enable Logic",
+        "section_id": "5.21.2.2",
+        "trust_level": "L3",
+        "evidence_count": 2,
+        "page_nos": [
+          235
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_7d1d86608cf4abb7",
+          "equipment_class_id": "hot_water_plant",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_2_2:boiler_plant_enable_logic",
+          "title": "Boiler Plant Enable Logic",
+          "section_id": "5.21.2.2",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            235
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_7d1d86608cf4abb7",
+          "right": "ko_cd318fe602e8a59f",
+          "reason": "title_similarity=0.83"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_4787dcde08ab167f",
+        "equipment_class_id": "hot_water_plant",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_2_3:boiler_plant_disable_logic",
+        "title": "Boiler Plant Disable Logic",
+        "section_id": "5.21.2.3",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          235
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_0eb3b69e0dc25363",
+          "equipment_class_id": "hot_water_plant",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_2_3:plant_disable_logic",
+          "title": "Hot Water Plant Disable Logic",
+          "section_id": "5.21.2.3",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            235
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_0eb3b69e0dc25363",
+          "right": "ko_4787dcde08ab167f",
+          "reason": "title_similarity=0.84"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_479e3f64bd68fe16",
+        "equipment_class_id": "hot_water_plant",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_up_efficiency_condition_non_condensing",
+        "title": "Boiler Stage Up – Efficiency Condition (Non-Condensing)",
+        "section_id": "5.21.3.9",
+        "trust_level": "L4",
+        "evidence_count": 2,
+        "page_nos": [
+          240,
+          241
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_0037e3539cb25e49",
+          "equipment_class_id": "hot_water_plant",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_down_efficiency_condition_condensing",
+          "title": "Boiler Stage Down – Efficiency Condition (Condensing)",
+          "section_id": "5.21.3.9",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            238
+          ]
+        },
+        {
+          "knowledge_object_id": "ko_aa76266f1d189904",
+          "equipment_class_id": "hot_water_plant",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_up_efficiency_condition_condensing",
+          "title": "Boiler Stage Up – Efficiency Condition (Condensing)",
+          "section_id": "5.21.3.9",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            238
+          ]
+        },
+        {
+          "knowledge_object_id": "ko_e7fdd9316692857f",
+          "equipment_class_id": "hot_water_plant",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9:boiler_stage_down_efficiency_condition_non_condensing",
+          "title": "Boiler Stage Down – Efficiency Condition (Non-Condensing)",
+          "section_id": "5.21.3.9",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            240
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_0037e3539cb25e49",
+          "right": "ko_479e3f64bd68fe16",
+          "reason": "title_similarity=0.90"
+        },
+        {
+          "left": "ko_0037e3539cb25e49",
+          "right": "ko_aa76266f1d189904",
+          "reason": "title_similarity=0.94"
+        },
+        {
+          "left": "ko_0037e3539cb25e49",
+          "right": "ko_e7fdd9316692857f",
+          "reason": "title_similarity=0.96"
+        },
+        {
+          "left": "ko_479e3f64bd68fe16",
+          "right": "ko_aa76266f1d189904",
+          "reason": "title_similarity=0.96"
+        },
+        {
+          "left": "ko_479e3f64bd68fe16",
+          "right": "ko_e7fdd9316692857f",
+          "reason": "title_similarity=0.94"
+        },
+        {
+          "left": "ko_aa76266f1d189904",
+          "right": "ko_e7fdd9316692857f",
+          "reason": "title_similarity=0.90"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "ko_384a0b5c8ff7e2ea",
+        "equipment_class_id": "hot_water_plant",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_g:primary_only_condensing_boiler_staging_down",
+        "title": "Primary Only Condensing Boiler Staging Down",
+        "section_id": "5.21.3.9.g",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          238
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "ko_1f43deb051fcb35a",
+          "equipment_class_id": "hot_water_plant",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_21_3_9_k:non_condensing_boiler_staging_down",
+          "title": "Non-Condensing Boiler Staging Down",
+          "section_id": "5.21.3.9.k",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            240
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "ko_1f43deb051fcb35a",
+          "right": "ko_384a0b5c8ff7e2ea",
+          "reason": "title_similarity=0.86"
+        }
+      ]
+    }
+  ]
+}

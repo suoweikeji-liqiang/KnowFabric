@@ -1,0 +1,567 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T07:30:47.725366+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_1a61f6ee0b404da2",
+  "doc_name": "【顿汉布什】风冷螺杆冷水机组安装操作维修说明书.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chiller",
+    "equipment_class_key": "hvac:chiller",
+    "label": "Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "operational_sequence",
+      "fault_diagnostic_rule"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 7,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_a326f3585bc8a39c",
+      "domain_id": "hvac",
+      "doc_id": "doc_1a61f6ee0b404da2",
+      "doc_name": "【顿汉布什】风冷螺杆冷水机组安装操作维修说明书.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_97c1d94ef47b4686",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:minimum_clearance",
+      "structured_payload_candidate": {
+        "parameter_name": "minimum_clearance",
+        "title": "Minimum Clearance",
+        "summary": "Minimum clearance of 50mm required"
+      },
+      "confidence_score": 0.7,
+      "review_status": "candidate",
+      "evidence_text": "2.  \u0001\u0002\n2.1 \u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005\u0001\u0006\u0007\b&'\u000b\f*\u0007\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0007\u0015\n1.\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000b   \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\n2.\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0003\u0004\u0013\u0014\u0015\u0016\u0017\n3.\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\u0003\u0004\u0005\u0001\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\n2.2 \u0001\u0002\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0011\u0019 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0005\b&\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010 \u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\f\u0010\u0004\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0007\b&'\u000b\f*\u000e\n\u0001ACDSX\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u0002\u0003\u000f\u0010 \u0001\u0002\u0003\u0004\n\u00012.2\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u0013'\u000b\u001c \u0001\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' 50mm\u0001\n2.3 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019'\u001a\u001b\u001c\u001d\u001e \u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0004&'\u000b\f*\u000e\u000f\u0010\u0011 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010 \u0001\u0002\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\u000b\f*\u000e\u000f 2.3.1\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u0003\u000b\f*\u000e\u000f\u0010\u0011\u0001\u0012\u0003\u0013\u0014\u0015\u0016\u0017 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\n4\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_97c1d94ef47b4686"
+      ],
+      "source_page_nos": [
+        4
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Minimum clearance of 50mm is a clear installation parameter with operational safety implications.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:minimum_clearance for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:minimum_clearance derived from chunk chunk_97c1d94ef47b4686 on page 4 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:minimum_clearance",
+        "structured_payload": {
+          "parameter_name": "minimum_clearance",
+          "title": "Minimum Clearance",
+          "summary": "Minimum clearance of 50mm required"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "2.  \u0001\u0002\n2.1 \u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005\u0001\u0006\u0007\b&'\u000b\f*\u0007\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0007\u0015\n1.\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000b   \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\n2.\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0003\u0004\u0013\u0014\u0015\u0016\u0017\n3.\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\u0003\u0004\u0005\u0001\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\n2.2 \u0001\u0002\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0011\u0019 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0005\b&\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010 \u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\f\u0010\u0004\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0007\b&'\u000b\f*\u000e\n\u0001ACDSX\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u0002\u0003\u000f\u0010 \u0001\u0002\u0003\u0004\n\u00012.2\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u0013'\u000b\u001c \u0001\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' 50mm\u0001\n2.3 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019'\u001a\u001b\u001c\u001d\u001e \u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0004&'\u000b\f*\u000e\u000f\u0010\u0011 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010 \u0001\u0002\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\u000b\f*\u000e\u000f 2.3.1\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u0003\u000b\f*\u000e\u000f\u0010\u0011\u0001\u0012\u0003\u0013\u0014\u0015\u0016\u0017 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\n4\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9a0f0d3972be9ebf",
+      "domain_id": "hvac",
+      "doc_id": "doc_1a61f6ee0b404da2",
+      "doc_name": "【顿汉布什】风冷螺杆冷水机组安装操作维修说明书.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_1629a8fa91594844",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:minimum_water_flow_rate",
+      "structured_payload_candidate": {
+        "parameter_name": "min_water_flow_percent",
+        "title": "Minimum Water Flow Rate",
+        "summary": "Minimum water flow rate 10% of design"
+      },
+      "confidence_score": 0.7,
+      "review_status": "candidate",
+      "evidence_text": "\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0003\u0016\u0017\u0018\u0019\u001a\u001b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0004\u0012\u0013\u0014 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f\u0006*\u000e\u000f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013'\n\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0007\u0010\u0011 \u0001\u0002\u0003\u0004\u0005\u0006\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e&'\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\u0005\f\u0004*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\n\u0001\u0002\u0003\u0004\u0003\u0005\u0006\u0007\b&'\u0004\u000b\f*\u000e\u000f\u0010\u0011\n2.7 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b ACDSX\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0002& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' 10%\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\n\u0001\u0002\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0007'\u000b\f*\u000e\u000f\u0010\u0001\u0011\u0012&\u0013 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0006'\u000b\f*\n\u0001\u0002\u0003\u0004\u0005 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u0012\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u0003\u0005\u000b'\f\u0005* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f&'*\u000e\u0003\u000f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u0004 32\u0001\n\u0001\u0002\u0001\u0001\u0002\u0003\u0004 -ACDSX\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011 \u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u0005\u000b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\b\u0013 \u0001\u0002\u0003\u0004\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f \u0001\u0002\u0003\u0004\u0005\u0006\n\u0001\u0002\u0003\u0004\n6\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1629a8fa91594844",
+        "chunk_79d8fef65f684b90",
+        "chunk_3f29b2bcd9be4f77"
+      ],
+      "source_page_nos": [
+        6,
+        14,
+        35
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Minimum water flow rate 10% of design is a critical operational limit to avoid damage, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:minimum_water_flow_rate for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:minimum_water_flow_rate derived from chunk chunk_1629a8fa91594844 on page 6 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:minimum_water_flow_rate",
+        "structured_payload": {
+          "parameter_name": "min_water_flow_percent",
+          "title": "Minimum Water Flow Rate",
+          "summary": "Minimum water flow rate 10% of design"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0003\u0016\u0017\u0018\u0019\u001a\u001b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0004\u0012\u0013\u0014 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f\u0006*\u000e\u000f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013'\n\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0007\u0010\u0011 \u0001\u0002\u0003\u0004\u0005\u0006\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e&'\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\u0005\f\u0004*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\n\u0001\u0002\u0003\u0004\u0003\u0005\u0006\u0007\b&'\u0004\u000b\f*\u000e\u000f\u0010\u0011\n2.7 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b ACDSX\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0002& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' 10%\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\n\u0001\u0002\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0007'\u000b\f*\u000e\u000f\u0010\u0001\u0011\u0012&\u0013 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0006'\u000b\f*\n\u0001\u0002\u0003\u0004\u0005 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u0012\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u0003\u0005\u000b'\f\u0005* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f&'*\u000e\u0003\u000f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u0004 32\u0001\n\u0001\u0002\u0001\u0001\u0002\u0003\u0004 -ACDSX\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011 \u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u0005\u000b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\u0011\u0012\b\u0013 \u0001\u0002\u0003\u0004\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f \u0001\u0002\u0003\u0004\u0005\u0006\n\u0001\u0002\u0003\u0004\n6\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a8b6f9c15cdafc24",
+      "domain_id": "hvac",
+      "doc_id": "doc_1a61f6ee0b404da2",
+      "doc_name": "【顿汉布什】风冷螺杆冷水机组安装操作维修说明书.pdf",
+      "page_no": 22,
+      "chunk_id": "chunk_6af7dbeb40fc4e08",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:high_pressure_cutout_setting",
+      "structured_payload_candidate": {
+        "parameter_name": "high_pressure_cutout",
+        "title": "High Pressure Cutout Setting",
+        "summary": "High pressure cutout set at 2500 KPa"
+      },
+      "confidence_score": 0.8,
+      "review_status": "candidate",
+      "evidence_text": "\u0001\u0002\u000350%\u0001\u0001\u0001\u0002\u0003   \u0001\u0002\u0003 75%\u0001\u0001\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 M1\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004M2\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004\u0001\u0002\u0003\u0004\u0005\u0006\u0004\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\n4.4.3d \u0001Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005 \u0006\n\u0001 Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004 \u00017.0 \u0001      \u0001\u0002\u0001 0.5\n\u0001\u0002\u0003\u0004 \u0001350 KPa    \u0001\u0002\u0003\u0004 \u00011723 KPa\n\u0001\u0002\u0003\u0004 \u0001600 KPa    \u0001\u0002\u0003\u0004 \u0001180S\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 2-15\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u000e \u0001\u0002\u0003\u0004\u0005 0.5\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0005\u0006'\n\u0001\u00020.5\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006& 350KPa,\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0003\u0006 2500Kpa\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 300Kpa\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 2500Kpa,\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0001\b&' \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001600Kpa\u0001,\u0001\u0002\u0003\u0004\n\u0001\u0002600Kpa\u0001\u0001\u0002\u00033\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\n\u0001\u0002\u0003Page down \u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\n\u0001\u0002\u0003\u0001\u0002\u000325%\n\u0001\n\u0001\n\u0001\n\u000125%\u0001\u0002\n50%\u0001\u0002\n75%\u0001\u0002\n100%\u0001\u000250%\n\u0001\u0001\n\u0001\n\u000175%\n\u0001\u0001\n\u0001\n\u0001\n22\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_6af7dbeb40fc4e08"
+      ],
+      "source_page_nos": [
+        22
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "High pressure cutout setting at 2500 KPa is an important safety parameter clearly stated in evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:high_pressure_cutout_setting for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:high_pressure_cutout_setting derived from chunk chunk_6af7dbeb40fc4e08 on page 22 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:high_pressure_cutout_setting",
+        "structured_payload": {
+          "parameter_name": "high_pressure_cutout",
+          "title": "High Pressure Cutout Setting",
+          "summary": "High pressure cutout set at 2500 KPa"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "\u0001\u0002\u000350%\u0001\u0001\u0001\u0002\u0003   \u0001\u0002\u0003 75%\u0001\u0001\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 M1\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004M2\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004\u0001\u0002\u0003\u0004\u0005\u0006\u0004\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\n4.4.3d \u0001Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005 \u0006\n\u0001 Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004 \u00017.0 \u0001      \u0001\u0002\u0001 0.5\n\u0001\u0002\u0003\u0004 \u0001350 KPa    \u0001\u0002\u0003\u0004 \u00011723 KPa\n\u0001\u0002\u0003\u0004 \u0001600 KPa    \u0001\u0002\u0003\u0004 \u0001180S\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 2-15\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u000e \u0001\u0002\u0003\u0004\u0005 0.5\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0005\u0006'\n\u0001\u00020.5\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006& 350KPa,\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0003\u0006 2500Kpa\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 300Kpa\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 2500Kpa,\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0001\b&' \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001600Kpa\u0001,\u0001\u0002\u0003\u0004\n\u0001\u0002600Kpa\u0001\u0001\u0002\u00033\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\n\u0001\u0002\u0003Page down \u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\n\u0001\u0002\u0003\u0001\u0002\u000325%\n\u0001\n\u0001\n\u0001\n\u000125%\u0001\u0002\n50%\u0001\u0002\n75%\u0001\u0002\n100%\u0001\u000250%\n\u0001\u0001\n\u0001\n\u000175%\n\u0001\u0001\n\u0001\n\u0001\n22\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_2a12ea9e38816710",
+      "domain_id": "hvac",
+      "doc_id": "doc_1a61f6ee0b404da2",
+      "doc_name": "【顿汉布什】风冷螺杆冷水机组安装操作维修说明书.pdf",
+      "page_no": 22,
+      "chunk_id": "chunk_6af7dbeb40fc4e08",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:low_pressure_cutout_setting",
+      "structured_payload_candidate": {
+        "parameter_name": "low_pressure_cutout",
+        "title": "Low Pressure Cutout Setting",
+        "summary": "Low pressure cutout set at 350 KPa"
+      },
+      "confidence_score": 0.8,
+      "review_status": "candidate",
+      "evidence_text": "\u0001\u0002\u000350%\u0001\u0001\u0001\u0002\u0003   \u0001\u0002\u0003 75%\u0001\u0001\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 M1\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004M2\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004\u0001\u0002\u0003\u0004\u0005\u0006\u0004\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\n4.4.3d \u0001Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005 \u0006\n\u0001 Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004 \u00017.0 \u0001      \u0001\u0002\u0001 0.5\n\u0001\u0002\u0003\u0004 \u0001350 KPa    \u0001\u0002\u0003\u0004 \u00011723 KPa\n\u0001\u0002\u0003\u0004 \u0001600 KPa    \u0001\u0002\u0003\u0004 \u0001180S\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 2-15\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u000e \u0001\u0002\u0003\u0004\u0005 0.5\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0005\u0006'\n\u0001\u00020.5\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006& 350KPa,\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0003\u0006 2500Kpa\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 300Kpa\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 2500Kpa,\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0001\b&' \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001600Kpa\u0001,\u0001\u0002\u0003\u0004\n\u0001\u0002600Kpa\u0001\u0001\u0002\u00033\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\n\u0001\u0002\u0003Page down \u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\n\u0001\u0002\u0003\u0001\u0002\u000325%\n\u0001\n\u0001\n\u0001\n\u000125%\u0001\u0002\n50%\u0001\u0002\n75%\u0001\u0002\n100%\u0001\u000250%\n\u0001\u0001\n\u0001\n\u000175%\n\u0001\u0001\n\u0001\n\u0001\n22\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_6af7dbeb40fc4e08"
+      ],
+      "source_page_nos": [
+        22
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Low pressure cutout setting at 350 KPa is a key operational protection parameter, clear in evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:low_pressure_cutout_setting for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:low_pressure_cutout_setting derived from chunk chunk_6af7dbeb40fc4e08 on page 22 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:low_pressure_cutout_setting",
+        "structured_payload": {
+          "parameter_name": "low_pressure_cutout",
+          "title": "Low Pressure Cutout Setting",
+          "summary": "Low pressure cutout set at 350 KPa"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "\u0001\u0002\u000350%\u0001\u0001\u0001\u0002\u0003   \u0001\u0002\u0003 75%\u0001\u0001\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 M1\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004M2\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004\u0001\u0002\u0003\u0004\u0005\u0006\u0004\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\n4.4.3d \u0001Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005 \u0006\n\u0001 Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004 \u00017.0 \u0001      \u0001\u0002\u0001 0.5\n\u0001\u0002\u0003\u0004 \u0001350 KPa    \u0001\u0002\u0003\u0004 \u00011723 KPa\n\u0001\u0002\u0003\u0004 \u0001600 KPa    \u0001\u0002\u0003\u0004 \u0001180S\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 2-15\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u000e \u0001\u0002\u0003\u0004\u0005 0.5\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0005\u0006'\n\u0001\u00020.5\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006& 350KPa,\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0003\u0006 2500Kpa\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 300Kpa\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 2500Kpa,\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0001\b&' \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001600Kpa\u0001,\u0001\u0002\u0003\u0004\n\u0001\u0002600Kpa\u0001\u0001\u0002\u00033\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\n\u0001\u0002\u0003Page down \u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\n\u0001\u0002\u0003\u0001\u0002\u000325%\n\u0001\n\u0001\n\u0001\n\u000125%\u0001\u0002\n50%\u0001\u0002\n75%\u0001\u0002\n100%\u0001\u000250%\n\u0001\u0001\n\u0001\n\u000175%\n\u0001\u0001\n\u0001\n\u0001\n22\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0e718648c54fac7f",
+      "domain_id": "hvac",
+      "doc_id": "doc_1a61f6ee0b404da2",
+      "doc_name": "【顿汉布什】风冷螺杆冷水机组安装操作维修说明书.pdf",
+      "page_no": 22,
+      "chunk_id": "chunk_6af7dbeb40fc4e08",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:oil_pressure_differential_setting",
+      "structured_payload_candidate": {
+        "parameter_name": "oil_pressure_differential",
+        "title": "Oil Pressure Differential Setting",
+        "summary": "Oil pressure differential set at 600 KPa"
+      },
+      "confidence_score": 0.8,
+      "review_status": "candidate",
+      "evidence_text": "\u0001\u0002\u000350%\u0001\u0001\u0001\u0002\u0003   \u0001\u0002\u0003 75%\u0001\u0001\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 M1\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004M2\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004\u0001\u0002\u0003\u0004\u0005\u0006\u0004\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\n4.4.3d \u0001Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005 \u0006\n\u0001 Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004 \u00017.0 \u0001      \u0001\u0002\u0001 0.5\n\u0001\u0002\u0003\u0004 \u0001350 KPa    \u0001\u0002\u0003\u0004 \u00011723 KPa\n\u0001\u0002\u0003\u0004 \u0001600 KPa    \u0001\u0002\u0003\u0004 \u0001180S\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 2-15\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u000e \u0001\u0002\u0003\u0004\u0005 0.5\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0005\u0006'\n\u0001\u00020.5\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006& 350KPa,\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0003\u0006 2500Kpa\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 300Kpa\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 2500Kpa,\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0001\b&' \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001600Kpa\u0001,\u0001\u0002\u0003\u0004\n\u0001\u0002600Kpa\u0001\u0001\u0002\u00033\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\n\u0001\u0002\u0003Page down \u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\n\u0001\u0002\u0003\u0001\u0002\u000325%\n\u0001\n\u0001\n\u0001\n\u000125%\u0001\u0002\n50%\u0001\u0002\n75%\u0001\u0002\n100%\u0001\u000250%\n\u0001\u0001\n\u0001\n\u000175%\n\u0001\u0001\n\u0001\n\u0001\n22\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_6af7dbeb40fc4e08",
+        "chunk_ddabdc1c990c4311"
+      ],
+      "source_page_nos": [
+        22,
+        23
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Oil pressure differential setting at 600 KPa is a critical compressor lubrication parameter, evident in source.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:oil_pressure_differential_setting for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:oil_pressure_differential_setting derived from chunk chunk_6af7dbeb40fc4e08 on page 22 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:oil_pressure_differential_setting",
+        "structured_payload": {
+          "parameter_name": "oil_pressure_differential",
+          "title": "Oil Pressure Differential Setting",
+          "summary": "Oil pressure differential set at 600 KPa"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "\u0001\u0002\u000350%\u0001\u0001\u0001\u0002\u0003   \u0001\u0002\u0003 75%\u0001\u0001\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 M1\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004M2\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004\u0001\u0002\u0003\u0004\u0005\u0006\u0004\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\n4.4.3d \u0001Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005 \u0006\n\u0001 Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004 \u00017.0 \u0001      \u0001\u0002\u0001 0.5\n\u0001\u0002\u0003\u0004 \u0001350 KPa    \u0001\u0002\u0003\u0004 \u00011723 KPa\n\u0001\u0002\u0003\u0004 \u0001600 KPa    \u0001\u0002\u0003\u0004 \u0001180S\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 2-15\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u000e \u0001\u0002\u0003\u0004\u0005 0.5\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0005\u0006'\n\u0001\u00020.5\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006& 350KPa,\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0003\u0006 2500Kpa\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 300Kpa\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 2500Kpa,\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0001\b&' \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001600Kpa\u0001,\u0001\u0002\u0003\u0004\n\u0001\u0002600Kpa\u0001\u0001\u0002\u00033\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\n\u0001\u0002\u0003Page down \u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\n\u0001\u0002\u0003\u0001\u0002\u000325%\n\u0001\n\u0001\n\u0001\n\u000125%\u0001\u0002\n50%\u0001\u0002\n75%\u0001\u0002\n100%\u0001\u000250%\n\u0001\u0001\n\u0001\n\u000175%\n\u0001\u0001\n\u0001\n\u0001\n22\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_20beb77bf14ac18f",
+      "domain_id": "hvac",
+      "doc_id": "doc_1a61f6ee0b404da2",
+      "doc_name": "【顿汉布什】风冷螺杆冷水机组安装操作维修说明书.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_ddabdc1c990c4311",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:compressor_start_delay",
+      "structured_payload_candidate": {
+        "parameter_name": "compressor_start_delay",
+        "title": "Compressor Start Delay",
+        "summary": "Compressor start delay 15 minutes"
+      },
+      "confidence_score": 0.8,
+      "review_status": "candidate",
+      "evidence_text": "\u0001\u0002\u0003\u0004 \u00011#\u00012#\u00012#\u00011#\u0001   \u0001\u0002\u0003\u0004 \u000115M\n\u0001\u0002\u0003\u0004 \u00012.0                   \u0001\u0002\u0003\u0004 \u0001\n\u0001\u0002\u0003\u0004 \u00011S                 \u0001\u0002\u0003\u0004 \u0001Y/N\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f * \u0001\u0002\u0003\u00011\u0001\u0001\u00021#\u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0001\u0002\u0003\u00010\u0001 \u0002\u0001\u00022#\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* 15\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007 2\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005\u0006\u0007\n\u0001\u0002\u00031\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010 \u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005 \u0001\nY/N\u0001\u0001\u0002\u0001Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005 \u00011000\u0001 \u0002\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\n\u0001\u0002\u0001YES\u0001 \u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0001\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0002'\u000b\f*\u000e\u000f\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u00022\u0001\u0002\u00011500     \u0001\u00026\u0001\u0002\u00012300\n\u0001\u00023\u0001\u0002\u00011700     \u0001\u0002\u0003\u0004 \u0001  150\n\u0001\u00024\u0001\u0002\u00011900\n\u0001\u00025\u0001\u0002\u00012100\n\u0001\u00021\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0006\u0004\u0005\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007 1500Kpa \u0001\u0002\u00032\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 150Kpa\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005 1700Kpa \u0001\u0002\u00014\u0001\u0002\u0003\u0004\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005 1600Kpa \u0001\u0002\u0001\u00024\u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001Enter\u0001\u0002\u0001\u0002\u0003\u0004\u0005\n\u0001\u00011000\u0001 \u0002\u0001\u0002\u0003\u0004\u0005 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005 Enter\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\n\u0001\u0002\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\n4.4.3e \u0001 Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006 \u0007\n\u0001 Enter\u0001\u0002\u0001\u0002\n23\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ddabdc1c990c4311"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Compressor start delay of 15 minutes is an operational timing parameter to prevent short cycling, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:compressor_start_delay for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:compressor_start_delay derived from chunk chunk_ddabdc1c990c4311 on page 23 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:compressor_start_delay",
+        "structured_payload": {
+          "parameter_name": "compressor_start_delay",
+          "title": "Compressor Start Delay",
+          "summary": "Compressor start delay 15 minutes"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "\u0001\u0002\u0003\u0004 \u00011#\u00012#\u00012#\u00011#\u0001   \u0001\u0002\u0003\u0004 \u000115M\n\u0001\u0002\u0003\u0004 \u00012.0                   \u0001\u0002\u0003\u0004 \u0001\n\u0001\u0002\u0003\u0004 \u00011S                 \u0001\u0002\u0003\u0004 \u0001Y/N\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f * \u0001\u0002\u0003\u00011\u0001\u0001\u00021#\u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0001\u0002\u0003\u00010\u0001 \u0002\u0001\u00022#\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* 15\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007 2\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005\u0006\u0007\n\u0001\u0002\u00031\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010 \u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005 \u0001\nY/N\u0001\u0001\u0002\u0001Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005 \u00011000\u0001 \u0002\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\n\u0001\u0002\u0001YES\u0001 \u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0001\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0002'\u000b\f*\u000e\u000f\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u00022\u0001\u0002\u00011500     \u0001\u00026\u0001\u0002\u00012300\n\u0001\u00023\u0001\u0002\u00011700     \u0001\u0002\u0003\u0004 \u0001  150\n\u0001\u00024\u0001\u0002\u00011900\n\u0001\u00025\u0001\u0002\u00012100\n\u0001\u00021\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0006\u0004\u0005\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007 1500Kpa \u0001\u0002\u00032\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 150Kpa\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005 1700Kpa \u0001\u0002\u00014\u0001\u0002\u0003\u0004\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005 1600Kpa \u0001\u0002\u0001\u00024\u0001\u0002\u0003\u0004\u0005\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001Enter\u0001\u0002\u0001\u0002\u0003\u0004\u0005\n\u0001\u00011000\u0001 \u0002\u0001\u0002\u0003\u0004\u0005 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&' \u0001\u0002\u0003\u0004\u0005 Enter\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\n\u0001\u0002\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\n4.4.3e \u0001 Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b \u0001\u0002\u0003\u0004\u0005\u0006 \u0007\n\u0001 Enter\u0001\u0002\u0001\u0002\n23\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_be7ad6988ac96862",
+      "domain_id": "hvac",
+      "doc_id": "doc_1a61f6ee0b404da2",
+      "doc_name": "【顿汉布什】风冷螺杆冷水机组安装操作维修说明书.pdf",
+      "page_no": 22,
+      "chunk_id": "chunk_6af7dbeb40fc4e08",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:pumpdown_time",
+      "structured_payload_candidate": {
+        "parameter_name": "pumpdown_time",
+        "title": "Pumpdown Time",
+        "summary": "Pumpdown time set to 180 seconds"
+      },
+      "confidence_score": 0.8,
+      "review_status": "candidate",
+      "evidence_text": "\u0001\u0002\u000350%\u0001\u0001\u0001\u0002\u0003   \u0001\u0002\u0003 75%\u0001\u0001\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 M1\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004M2\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004\u0001\u0002\u0003\u0004\u0005\u0006\u0004\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\n4.4.3d \u0001Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005 \u0006\n\u0001 Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004 \u00017.0 \u0001      \u0001\u0002\u0001 0.5\n\u0001\u0002\u0003\u0004 \u0001350 KPa    \u0001\u0002\u0003\u0004 \u00011723 KPa\n\u0001\u0002\u0003\u0004 \u0001600 KPa    \u0001\u0002\u0003\u0004 \u0001180S\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 2-15\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u000e \u0001\u0002\u0003\u0004\u0005 0.5\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0005\u0006'\n\u0001\u00020.5\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006& 350KPa,\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0003\u0006 2500Kpa\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 300Kpa\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 2500Kpa,\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0001\b&' \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001600Kpa\u0001,\u0001\u0002\u0003\u0004\n\u0001\u0002600Kpa\u0001\u0001\u0002\u00033\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\n\u0001\u0002\u0003Page down \u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\n\u0001\u0002\u0003\u0001\u0002\u000325%\n\u0001\n\u0001\n\u0001\n\u000125%\u0001\u0002\n50%\u0001\u0002\n75%\u0001\u0002\n100%\u0001\u000250%\n\u0001\u0001\n\u0001\n\u000175%\n\u0001\u0001\n\u0001\n\u0001\n22\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_6af7dbeb40fc4e08"
+      ],
+      "source_page_nos": [
+        22
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Pumpdown time of 180 seconds is a procedural parameter, clearly stated in evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:pumpdown_time for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:pumpdown_time derived from chunk chunk_6af7dbeb40fc4e08 on page 22 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:pumpdown_time",
+        "structured_payload": {
+          "parameter_name": "pumpdown_time",
+          "title": "Pumpdown Time",
+          "summary": "Pumpdown time set to 180 seconds"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "\u0001\u0002\u000350%\u0001\u0001\u0001\u0002\u0003   \u0001\u0002\u0003 75%\u0001\u0001\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007 M1\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004M2\u0001\u0002\u0003\u0004 \u0001\u0002\u0003 \u0004\u0001\u0002\u0003\u0004\u0005\u0006\u0004\u0007\b&'\n\u0001\u0002\u0003\u0004 \u0001\n4.4.3d \u0001Esc\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0003\u0004\u0007\b\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0001\u0002\u0003\u0004\u0005 \u0006\n\u0001 Enter\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007 \u0001\n\u0001\u0002\u0003\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004 \u00017.0 \u0001      \u0001\u0002\u0001 0.5\n\u0001\u0002\u0003\u0004 \u0001350 KPa    \u0001\u0002\u0003\u0004 \u00011723 KPa\n\u0001\u0002\u0003\u0004 \u0001600 KPa    \u0001\u0002\u0003\u0004 \u0001180S\n\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005 2-15\u0001\u0002\u0003\u0004 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f*\u000e\u000f\u0010\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u000e \u0001\u0002\u0003\u0004\u0005 0.5\u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&\u0005\u0006'\n\u0001\u00020.5\u0001\u0002\u0003\u0004\u0005\u0006 \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b& \u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0006& 350KPa,\u0001\u0002\u0003\n\u0001\u0002\u0003\u0004\u0005\u0003\u0006 2500Kpa\u0001\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 300Kpa\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b 2500Kpa,\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0001\b&' \u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f* \u0001600Kpa\u0001,\u0001\u0002\u0003\u0004\n\u0001\u0002600Kpa\u0001\u0001\u0002\u00033\u0001\u0002\u0003\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\u0003&'\n\u0001\u0002\u0003Page down \u0001\u0002\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b&'\u000b\f \u0001\u0002\n\u0001\u0002\u0003\u0001\u0002\u000325%\n\u0001\n\u0001\n\u0001\n\u000125%\u0001\u0002\n50%\u0001\u0002\n75%\u0001\u0002\n100%\u0001\u000250%\n\u0001\u0001\n\u0001\n\u000175%\n\u0001\u0001\n\u0001\n\u0001\n22\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-08T07:30:47.729502+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 7
+  }
+}

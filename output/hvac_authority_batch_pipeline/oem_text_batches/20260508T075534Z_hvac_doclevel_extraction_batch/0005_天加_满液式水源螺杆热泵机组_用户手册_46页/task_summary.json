@@ -1,0 +1,100 @@
+{
+  "status": "completed",
+  "row_index": 5,
+  "file_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/13、天加中央空调/【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+  "doc_id": "doc_9582a2d2585d4d95",
+  "chunks": 46,
+  "manual_tokens_estimated": 10451,
+  "equipment_class_id": "screw_chiller",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "confidence": 0.554,
+      "matched_aliases": [
+        "Chiller",
+        "chiller",
+        "冷水机组"
+      ]
+    },
+    {
+      "equipment_class_id": "chilled_water_pump",
+      "equipment_class_key": "hvac:chilled_water_pump",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "冷冻水泵"
+      ]
+    },
+    {
+      "equipment_class_id": "pump",
+      "equipment_class_key": "hvac:pump",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "Pump",
+        "pump"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 46,
+      "chunks_after": 46,
+      "parse_result": {
+        "job_id": "job_633a53dd06a84189",
+        "doc_id": "doc_9582a2d2585d4d95",
+        "pages_created": 46,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_c1401853be3a447a",
+        "doc_id": "doc_9582a2d2585d4d95",
+        "chunks_created": 46,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 37,
+      "anchor_rejected": 3,
+      "anchor_match_rate": 92.5,
+      "judge_accepted": 16,
+      "judge_rejected": 21,
+      "judge_acceptance_rate": 43.2,
+      "judge_rejection_breakdown": {
+        "other": 21
+      },
+      "review_candidates": 16,
+      "by_type": {
+        "parameter_spec": 8,
+        "fault_code": 8
+      },
+      "usage": {
+        "prompt_tokens": 15769,
+        "completion_tokens": 6725,
+        "total_tokens": 22494
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1193,
+        "total_tokens": 2473
+      },
+      "extract_cost_rmb": 0.087657,
+      "judge_cost_rmb": 0.010998,
+      "cost_rmb": 0.098655,
+      "elapsed_seconds": 189.699,
+      "judge_elapsed_seconds": 68.84,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T075534Z_hvac_doclevel_extraction_batch/0005_天加_满液式水源螺杆热泵机组_用户手册_46页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T075534Z_hvac_doclevel_extraction_batch/0005_天加_满液式水源螺杆热泵机组_用户手册_46页"
+}

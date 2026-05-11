@@ -1,0 +1,96 @@
+{
+  "doc_id": "doc_4a9b0fec1dfb4103",
+  "doc_name": "ASHRAE手册2024.pdf",
+  "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册2024.pdf",
+  "selected_pages": [
+    11,
+    16,
+    287,
+    366,
+    424,
+    873
+  ],
+  "selected_page_count": 6,
+  "knowledge_types_filter": [
+    "application_guidance",
+    "parameter_spec",
+    "operational_sequence"
+  ],
+  "min_confidence": "high",
+  "subset_pdf": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_4a9b0fec1dfb4103/subset/auto_doc_4a9b0fec1dfb4103.pdf",
+  "manifest_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_4a9b0fec1dfb4103/subset/manifest.csv",
+  "sections": [
+    {
+      "section_title": "The analysis should refer to thesystem selection matrix (such as in Table 1) and the reasons for sco",
+      "page_start": 11,
+      "page_end": 11,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "The analysis should refer to thesystem selection matrix (such as in Table 1) and the reasons for scor - ing.With each HV AC system considered, the design engineer should note the criteria associated with each selection. ",
+      "score": 15
+    },
+    {
+      "section_title": "HVAC System Analysis and Selection 1.9 construction or renovation because most codes prohibit combus",
+      "page_start": 16,
+      "page_end": 16,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "HVAC System Analysis and Selection 1.9 construction or renovation because most codes prohibit combusti- ble material in a ceiling return air plenum. Ceiling plenums andraised floors can also be used for supply air displa",
+      "score": 15
+    },
+    {
+      "section_title": "Applications of this con- trol method must also take into ac count the potential of gravity flow in",
+      "page_start": 287,
+      "page_end": 287,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Applications of this con- trol method must also take into ac count the potential of gravity flow in the piping scheme. 2.6 LOW-TEMPERATURE HEATING SYSTEMS These systems are used for heati ng spaces or processes directly,",
+      "score": 16
+    },
+    {
+      "section_title": "More informationregarding selection of outlets can be found in Chapter 58 of the 2023 ASHRAE Handboo",
+      "page_start": 366,
+      "page_end": 366,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "More informationregarding selection of outlets can be found in Chapter 58 of the 2023 ASHRAE Handbook—HVAC Applications . Outlet Selection Procedure The following procedure is genera lly used in selecting and locat- ing ",
+      "score": 16
+    },
+    {
+      "section_title": "Therefore, final selection involves economic balancing of the initial co st of the coil against the",
+      "page_start": 424,
+      "page_end": 424,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Therefore, final selection involves economic balancing of the initial co st of the coil against the operat- ing costs of the coil geometry co mbinations available to adequately meet the performa nce requirements. The alu",
+      "score": 16
+    },
+    {
+      "section_title": "The fan motor selection process shouldconsider the advantages and disadvantages of each motor techno",
+      "page_start": 873,
+      "page_end": 873,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "The fan motor selection process shouldconsider the advantages and disadvantages of each motor technol - ogy, as well as the cost implications. Further information on motorsused in HVAC applications may be found in Chapte",
+      "score": 16
+    }
+  ]
+}

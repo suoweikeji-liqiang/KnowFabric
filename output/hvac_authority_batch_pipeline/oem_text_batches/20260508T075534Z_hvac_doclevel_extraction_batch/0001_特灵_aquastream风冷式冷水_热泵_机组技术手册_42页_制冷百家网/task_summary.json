@@ -1,0 +1,99 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "【特灵】Aquastream风冷式冷水（热泵）机组技术手册（42页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/05、特灵中央空调/特灵/【特灵】Aquastream风冷式冷水（热泵）机组技术手册（42页）-制冷百家网.pdf",
+  "doc_id": "doc_0bee211ad4ce4c84",
+  "chunks": 64,
+  "manual_tokens_estimated": 16584,
+  "equipment_class_id": "chilled_water_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "sensor",
+      "equipment_class_key": "hvac:sensor",
+      "confidence": 0.527,
+      "matched_aliases": [
+        "Sensor",
+        "sensor"
+      ]
+    },
+    {
+      "equipment_class_id": "valve",
+      "equipment_class_key": "hvac:valve",
+      "confidence": 0.499,
+      "matched_aliases": [
+        "Valve",
+        "valve"
+      ]
+    },
+    {
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "冷水机组"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 42,
+      "chunks_before": 64,
+      "pages_after": 42,
+      "chunks_after": 64,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 18,
+      "judge_rejected": 22,
+      "judge_acceptance_rate": 45.0,
+      "judge_rejection_breakdown": {
+        "other": 22
+      },
+      "review_candidates": 18,
+      "by_type": {
+        "parameter_spec": 6,
+        "fault_code": 6,
+        "performance_spec": 2,
+        "maintenance_procedure": 1,
+        "application_guidance": 2,
+        "operational_sequence": 1
+      },
+      "usage": {
+        "prompt_tokens": 32071,
+        "completion_tokens": 6480,
+        "total_tokens": 38551
+      },
+      "judge_usage": {
+        "prompt_tokens": 1279,
+        "completion_tokens": 1200,
+        "total_tokens": 2479
+      },
+      "extract_cost_rmb": 0.135093,
+      "judge_cost_rmb": 0.011037,
+      "cost_rmb": 0.14613,
+      "elapsed_seconds": 447.043,
+      "judge_elapsed_seconds": 62.096,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T075534Z_hvac_doclevel_extraction_batch/0001_特灵_aquastream风冷式冷水_热泵_机组技术手册_42页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T075534Z_hvac_doclevel_extraction_batch/0001_特灵_aquastream风冷式冷水_热泵_机组技术手册_42页_制冷百家网"
+}

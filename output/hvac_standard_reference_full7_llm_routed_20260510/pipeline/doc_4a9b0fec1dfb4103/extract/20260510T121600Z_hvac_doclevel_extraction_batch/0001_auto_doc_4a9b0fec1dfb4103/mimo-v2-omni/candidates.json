@@ -1,0 +1,439 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_21c4d5bf1744377d",
+      "domain_id": "hvac",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_01be90460cbb4b62",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:condenser_water_pump:application_guidance:cooling_tower_placement_for_noise_and_contamination",
+      "structured_payload_candidate": {
+        "parameter_name": "minimum_distance",
+        "title": "Cooling Tower Placement for Noise and Contamination",
+        "summary": "Cooling towers should be located at least 30 m from the building to reduce noise and prevent discharge air/moisture from affecting windows, facade, or outdoor air intakes."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "Design of these rooms needs to consider(1) equipment size and weight, (2) installation, maintenance, andreplacement, (3) applicable regulations relative to combustion air andventilation air, and (4) noise and vibration transmission to adjacentspaces. Consult ASHRAE  Standard  15 for refrigeration equipment\nroom safety requirements. Note that primary equipment roomsshould not be located below ground or even at ground level if theproject is to be located in a designated flood zone area, due to thepotential of the equipment room being flooded.\nMany air-conditioned buildings require a cooling tower or other\ntype of heat rejection equipment. If the cooling tower or water-cooled condenser is located at ground level, it should be at least30 m away from the building to reduce tower noise in the building,and to keep discharge air and moisture carryover from fogging thebuilding’s windows and discoloring the building facade or fromcontaminating outdoor air being introduced into the building.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "condenser_water_pump",
+        "equipment_class_key": "hvac:condenser_water_pump",
+        "label": "Condenser Water Pump",
+        "confidence": 0.916,
+        "matched_aliases": [
+          "Condenser Water Pump",
+          "condenser water pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_01be90460cbb4b62"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides specific operational guidance for cooling tower placement to avoid noise and contamination, supported by evidence on page 2."
+    },
+    {
+      "candidate_id": "cand_fe7bad23a5d9c81d",
+      "domain_id": "hvac",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_7c48f36c3cbe481a",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:condenser_water_pump:application_guidance:equipment_room_ceiling_height_requirement",
+      "structured_payload_candidate": {
+        "parameter_name": "clear_ceiling_height_range",
+        "title": "Equipment Room Ceiling Height Requirement",
+        "summary": "Equipment rooms generally require clear ceiling heights ranging from 3 to 5 m, depending on equipment sizes and distribution complexity."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "HVAC System Analysis and Selection 1.7\nMost equipment rooms should be centrally located to (1) mini -\nmize long duct, pipe, and conduit runs and sizes; (2) simplify shaft\nlayouts; and (3) centralize maintenance and operation. With shorterduct and pipe runs, a central location could also reduce pump andfan motor power requirements, which reduces building operatingcosts. But, for many reasons, not all mechanical and electricalequipment rooms can be centrally located in the building. In anycase, equipment should be kept together whenever possible to min -\nimize space requirements, centralize maintenance and operation,and simplify the electrical system.\nEquipment rooms generally require clear ceiling height ranging\nfrom 3 to 5 m, depending on equipment sizes and the complexity of\nair and/or water distribution.\nThe main electrical transformer and switchgear rooms should be\nlocated as close to the incoming electrical service as practical.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "condenser_water_pump",
+        "equipment_class_key": "hvac:condenser_water_pump",
+        "label": "Condenser Water Pump",
+        "confidence": 0.916,
+        "matched_aliases": [
+          "Condenser Water Pump",
+          "condenser water pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_7c48f36c3cbe481a"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a clear parameter range for equipment room ceiling height, supported by evidence on page 2."
+    },
+    {
+      "candidate_id": "cand_812c7404db85aac8",
+      "domain_id": "hvac",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_01be90460cbb4b62",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:condenser_water_pump:application_guidance:primary_equipment_room_flood_zone_restriction",
+      "structured_payload_candidate": {
+        "parameter_name": "location_constraint",
+        "title": "Primary Equipment Room Flood Zone Restriction",
+        "summary": "Primary equipment rooms should not be located below ground or at ground level in designated flood zones due to flooding risk."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Design of these rooms needs to consider(1) equipment size and weight, (2) installation, maintenance, andreplacement, (3) applicable regulations relative to combustion air andventilation air, and (4) noise and vibration transmission to adjacentspaces. Consult ASHRAE  Standard  15 for refrigeration equipment\nroom safety requirements. Note that primary equipment roomsshould not be located below ground or even at ground level if theproject is to be located in a designated flood zone area, due to thepotential of the equipment room being flooded.\nMany air-conditioned buildings require a cooling tower or other\ntype of heat rejection equipment. If the cooling tower or water-cooled condenser is located at ground level, it should be at least30 m away from the building to reduce tower noise in the building,and to keep discharge air and moisture carryover from fogging thebuilding’s windows and discoloring the building facade or fromcontaminating outdoor air being introduced into the building.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "condenser_water_pump",
+        "equipment_class_key": "hvac:condenser_water_pump",
+        "label": "Condenser Water Pump",
+        "confidence": 0.916,
+        "matched_aliases": [
+          "Condenser Water Pump",
+          "condenser water pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_01be90460cbb4b62"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a location constraint for equipment rooms in flood zones, supported by evidence on page 2."
+    },
+    {
+      "candidate_id": "cand_c9f6014a5cda16f0",
+      "domain_id": "hvac",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_2f5d7229fc9f4a3a",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:condenser_water_pump:application_guidance:vertical_shaft_aspect_ratio_recommendation",
+      "structured_payload_candidate": {
+        "parameter_name": "aspect_ratio_range",
+        "title": "Vertical Shaft Aspect Ratio Recommendation",
+        "summary": "Duct shafts with an aspect ratio of 2:1 to 4:1 are easier to develop than large square shafts and facilitate transitions from fan rooms."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Other distribution systems found in vertical shafts or locatedvertically in the building include electric conduits/bus ducts/clos -\nets, telephone cabling/closets, uninterruptible power supply (UPS),plumbing, fire protection piping, pneumatic tubes, and conveyors.\nVertical shafts should not be adjacent to stairs, electrical closets,\nand elevators unless at least two sides are available to allow accessto ducts, pipes, and conduits that enter and exit the shaft whileallowing maximum headroom at the ceiling. In general, duct shaftswith an aspect ratio of 2:1 to 4:1 are easier to develop than largesquare shafts. The rectangular shape also facilitates transition fromthe equipment in the fan rooms to the shafts. In addition, significantspace is required for motorized and fire/smoke dampers when ductsleave shafts.\nIn multistory buildings, a central vertical distribution system\nwith minimal horizontal branch ducts is desirable.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "condenser_water_pump",
+        "equipment_class_key": "hvac:condenser_water_pump",
+        "label": "Condenser Water Pump",
+        "confidence": 0.916,
+        "matched_aliases": [
+          "Condenser Water Pump",
+          "condenser water pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_2f5d7229fc9f4a3a"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a design recommendation for duct shaft aspect ratio, supported by evidence on page 3."
+    },
+    {
+      "candidate_id": "cand_8a1e420817e3329f",
+      "domain_id": "hvac",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_a01e2676aa4d4cc8",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:condenser_water_pump:application_guidance:rooftop_equipment_access_requirement",
+      "structured_payload_candidate": {
+        "parameter_name": "access_method",
+        "title": "Rooftop Equipment Access Requirement",
+        "summary": "Access to rooftop equipment should be by means of, at a minimum, a ship’s ladder, not a vertical ladder, considering technicians carrying replacement filters."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "If a building is being renovated for anotherapplication, floor loading should be assessed to determine whetherheavier equipment can be installed on the existing floor. Equipmentreplacement and maintenance can be very costly if access is notplanned properly. Access to rooftop equipment should be by meansof, at a minimum, a ship’s ladder and not by a vertical ladder, takinginto account a technician carrying boxes of replacement filters. Usecaution when accessing equipment on sloped roofs.Because systems vary greatly, it is difficult to estimate space\nrequirements for refrigeration and boiler rooms without makingblock layouts of the system selected. Block layouts allow the designengineer to develop the most efficient arrangement of the equip -\nment with adequate access and serviceability. Block layouts canalso be used in preliminary discussions with the owner and archi -\ntect. Only then can the design engineer verify the estimates and pro -\nvide a workable and economical design.\n4.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "condenser_water_pump",
+        "equipment_class_key": "hvac:condenser_water_pump",
+        "label": "Condenser Water Pump",
+        "confidence": 0.916,
+        "matched_aliases": [
+          "Condenser Water Pump",
+          "condenser water pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_a01e2676aa4d4cc8"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies access method for rooftop equipment, supported by evidence on page 3."
+    },
+    {
+      "candidate_id": "cand_34fb361156f2013b",
+      "domain_id": "hvac",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_56b35f4478394891",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:condenser_water_pump:parameter_spec:return_air_plenum_temperature_differential",
+      "structured_payload_candidate": {
+        "parameter_name": "temperature_differential",
+        "title": "Return Air Plenum Temperature Differential",
+        "summary": "The air temperature in a return air plenum directly below a roof deck is usually 2 to 3 K higher during air-conditioning season than in a ducted return."
+      },
+      "confidence_score": 0.85,
+      "review_status": "candidate",
+      "evidence_text": "HVAC System Analysis and Selection 1.9\nconstruction or renovation because most codes prohibit combusti-\nble material in a ceiling return air plenum. Ceiling plenums andraised floors can also be used for supply air displacement systems tominimize horizontal distribution, along with other features dis -\ncussed in Chapter 4.\nSome ceiling plenum applications with lay-in panels do not work\nwell where the stack effect of a high-rise building or high-rise ele -\nvators creates a negative pressure. If the plenum leaks to the low-pressure area, tiles may lift and drop out when the outside door isopened and closed.\nThe air temperature in a return air plenum directly below a roof\ndeck is usually higher by 2 to 3 K during the air-conditioning season\nthan in a ducted return. This can be an advantage to the occupiedspace below because heat gain to the space is reduced.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "condenser_water_pump",
+        "equipment_class_key": "hvac:condenser_water_pump",
+        "label": "Condenser Water Pump",
+        "confidence": 0.916,
+        "matched_aliases": [
+          "Condenser Water Pump",
+          "condenser water pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_56b35f4478394891"
+      ],
+      "source_page_nos": [
+        4
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a quantitative parameter (temperature differential) for return air plenum conditions, supported by evidence on page 4."
+    },
+    {
+      "candidate_id": "cand_78698dbf3d2fd293",
+      "domain_id": "hvac",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_b834004734404fca",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:condenser_water_pump:application_guidance:enhanced_particulate_filtration_for_security",
+      "structured_payload_candidate": {
+        "parameter_name": "filtration_level",
+        "title": "Enhanced Particulate Filtration for Security",
+        "summary": "Enhanced particulate filtration for air-handling systems to MERV 14 to 16 filters reduces circulation of dangerous substances and improves indoor air quality."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The level of protection designed into thesebuildings may include enhanced particulate filtration, gaseous-phase filtration, and various control schemes to allow purging of thefacility using either the HV AC system or an independent dedicatedsystem.\nEnhanced particulate filtration for air-handling systems to the\nlevel of MERV 14 to 16 filters not only tends to reduce circulationof dangerous substances (e.g., anthrax), but also provides betterindoor air quality (IAQ). Gaseous-phase filtration can removeharmful substances such as sarin and other gaseous threats. Forbuildings of all risk levels, consideration should include properlocation of outdoor air intakes to account for other security con -\ncerns, such as toxic fumes from a local accident (e.g., puncturedtank from a nearby railroad car or tanker truck).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "condenser_water_pump",
+        "equipment_class_key": "hvac:condenser_water_pump",
+        "label": "Condenser Water Pump",
+        "confidence": 0.916,
+        "matched_aliases": [
+          "Condenser Water Pump",
+          "condenser water pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_b834004734404fca"
+      ],
+      "source_page_nos": [
+        4
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies MERV 14-16 filtration for security and IAQ, supported by evidence on page 4."
+    },
+    {
+      "candidate_id": "cand_895411917bf844ad",
+      "domain_id": "hvac",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "page_no": 13,
+      "chunk_id": "chunk_07b286bf7fcb4c28",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:condenser_water_pump:parameter_spec:safety_valve_minimum_differential_pressure",
+      "structured_payload_candidate": {
+        "parameter_name": "minimum_differential_pressure",
+        "title": "Safety Valve Minimum Differential Pressure",
+        "summary": "A minimum differential of 35 kPa or 10% of inlet pressure (whichever is greater) is recommended for safety valve set pressure to allow proper cycling."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Accu-mulation may be as high as 33.3%  for Section IV valves and 10%\nfor Section VIII. To properly size a safety valve, the required capac-\nity and set pressure must be known. On a pressure-reducing\nvalve\nstation, the safety valve must have  sufficient capacity to prevent an\nunsafe pressure rise if the reduci ng valve fails in the open position.\nThe safety valve set pressure should be high enough to allow the\nvalve to remain closed during normal operation, yet allow it to openand reseat tightly when cycling. A minimum differential of 35 kPa\nor 10% of inlet pressure (whichev er is greater) is recommended.\nWhen installing a safety valve, consider the following:\n• Install the valve vertically with th e drain holes open or piped to drain.\n• The seat can be distorted if the valve is overtight or the weight of\nthe discharge piping is carried by the valve body.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "condenser_water_pump",
+        "equipment_class_key": "hvac:condenser_water_pump",
+        "label": "Condenser Water Pump",
+        "confidence": 0.916,
+        "matched_aliases": [
+          "Condenser Water Pump",
+          "condenser water pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_07b286bf7fcb4c28"
+      ],
+      "source_page_nos": [
+        13
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a parameter spec for safety valve minimum differential pressure, supported by evidence on page 13."
+    },
+    {
+      "candidate_id": "cand_c87f49c1d5526e11",
+      "domain_id": "hvac",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "page_no": 13,
+      "chunk_id": "chunk_60f6175b551747a1",
+      "knowledge_object_type": "maintenance_procedure",
+      "canonical_key_candidate": "hvac:condenser_water_pump:maintenance_procedure:safety_valve_testing_frequency",
+      "structured_payload_candidate": {
+        "parameter_name": "testing_frequency",
+        "title": "Safety Valve Testing Frequency",
+        "summary": "Under normal conditions, safety valves with working pressure under 2.8 MPa should be tested manually once per month and pressure-tested once each year."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "A drip-panelbow on the discharge of the safe ty valve prevents the weight of\nthe discharge piping from resting on the valve (Figure 26).\n• Use a moderate amount of pipe th read lubricant (first two to three\nthreads) on male threads only.\n• Install clean flange connections w ith new gaskets, properly aligned\nand parallel, and bolted with ev en torque to prevent distortion.\n• Wire cable or chain pulls attached to  the test levers should allow for\na vertical pull, and their weight should not be carried by the valve.\nTesting of safety valves varies  between facilities depending on\noperating conditions. U nder normal conditions,  safety valves with\na working pressure under 2.8 MP a should be tested manually once\nper month and pressu re-tested once each year.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "condenser_water_pump",
+        "equipment_class_key": "hvac:condenser_water_pump",
+        "label": "Condenser Water Pump",
+        "confidence": 0.916,
+        "matched_aliases": [
+          "Condenser Water Pump",
+          "condenser water pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_60f6175b551747a1"
+      ],
+      "source_page_nos": [
+        13
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Prescribes testing intervals for safety valves, grounded in evidence on page 13."
+    }
+  ]
+}

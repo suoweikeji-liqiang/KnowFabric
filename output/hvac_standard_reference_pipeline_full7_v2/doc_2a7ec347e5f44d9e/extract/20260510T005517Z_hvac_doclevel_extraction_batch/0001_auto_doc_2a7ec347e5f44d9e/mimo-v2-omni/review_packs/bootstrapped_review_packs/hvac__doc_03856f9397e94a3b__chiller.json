@@ -1,0 +1,331 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-10T00:56:03.187359+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_03856f9397e94a3b",
+  "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chiller",
+    "equipment_class_key": "hvac:chiller",
+    "label": "Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "operational_sequence",
+      "fault_diagnostic_rule"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 4,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_acd78f7d70592b39",
+      "domain_id": "hvac",
+      "doc_id": "doc_03856f9397e94a3b",
+      "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_ebaf281af0e84066",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:compressibility_threshold_for_incompressible_flow_analysis",
+      "structured_payload_candidate": {
+        "parameter_name": "Velocity threshold for incompressible flow assumption",
+        "title": "Compressibility Threshold for Incompressible Flow Analysis",
+        "summary": "Incompressible flow analysis is satisfactory for gases and vapors at velocities below about 20 to 40 m/s, except in long conduits."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Steady liquid flow may ordinarily be\ntreated as incompressible, and incompressible flow analysis is\nsatisfactory for gases and vapors at velocities below about 20 to\n40 m/s, except in long conduits.\nFor liquids in pipelines, a severe pressure surge or water hammer\nmay be produced if flow is sudden ly stopped. This pressure surge\ntravels along the pipe at the speed of sound in the liquid, alternately\ncompressing and decompressing the liquid. For steady gas flows in\nlong conduits, the pressure drop along the conduit can reduce gas\ndensity enough to increase the velocity. If the conduit is long\nenough, the velocity may reach th e speed of sound, and the Mach\nnumber (ratio of flow ve locity to the speed of  sound) must be con-\nsidered.\nSome compressible flows occur wi thout heat gain or loss (adia-\nbatically).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_ebaf281af0e84066"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence directly supports parameter spec for velocity threshold in compressible flow; relevant to chiller system analysis.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:compressibility_threshold_for_incompressible_flow_analysis for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:compressibility_threshold_for_incompressible_flow_analysis derived from chunk chunk_ebaf281af0e84066 on page 2 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:compressibility_threshold_for_incompressible_flow_analysis",
+        "structured_payload": {
+          "parameter_name": "Velocity threshold for incompressible flow assumption",
+          "title": "Compressibility Threshold for Incompressible Flow Analysis",
+          "summary": "Incompressible flow analysis is satisfactory for gases and vapors at velocities below about 20 to 40 m/s, except in long conduits."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Steady liquid flow may ordinarily be\ntreated as incompressible, and incompressible flow analysis is\nsatisfactory for gases and vapors at velocities below about 20 to\n40 m/s, except in long conduits.\nFor liquids in pipelines, a severe pressure surge or water hammer\nmay be produced if flow is sudden ly stopped. This pressure surge\ntravels along the pipe at the speed of sound in the liquid, alternately\ncompressing and decompressing the liquid. For steady gas flows in\nlong conduits, the pressure drop along the conduit can reduce gas\ndensity enough to increase the velocity. If the conduit is long\nenough, the velocity may reach th e speed of sound, and the Mach\nnumber (ratio of flow ve locity to the speed of  sound) must be con-\nsidered.\nSome compressible flows occur wi thout heat gain or loss (adia-\nbatically).",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d2bdfd95325b85e8",
+      "domain_id": "hvac",
+      "doc_id": "doc_03856f9397e94a3b",
+      "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_b72c763738ef44d6",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:ratio_of_specific_heats_for_air",
+      "structured_payload_candidate": {
+        "parameter_name": "Ratio of specific heats (k)",
+        "title": "Ratio of Specific Heats for Air",
+        "summary": "The ratio of specific heats at constant pressure and volume (k) is 1.4 for air and diatomic gases."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "If there is no frict ion (conversion of flow mechanicalenergy into internal energy), the process is reversible (isentropic)\nand follows the relationship\np/k = constant\nk = cp/cv\nwhere k, the ratio of specific heats at  constant pressure and volume,\nis 1.4 for air and diatomic gases.\nWhen the elevation term gz is neglected, as it is in most com-\npressible flow analyses, the Bernoulli equation of steady flow,\nEquation (21), becomes\n= constant (55)\nFor a frictionless adiabatic process,\n(56)\nIntegrating between upstream stat ion 1 and downstream station 2\ngives\n= 0 (57)\nEquation (57) replaces the Ber noulli equation for compressible\nflows.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_b72c763738ef44d6"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specific heat ratio for air is a fundamental parameter for HVAC&R compressible flow calculations.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:ratio_of_specific_heats_for_air for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:ratio_of_specific_heats_for_air derived from chunk chunk_b72c763738ef44d6 on page 2 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:ratio_of_specific_heats_for_air",
+        "structured_payload": {
+          "parameter_name": "Ratio of specific heats (k)",
+          "title": "Ratio of Specific Heats for Air",
+          "summary": "The ratio of specific heats at constant pressure and volume (k) is 1.4 for air and diatomic gases."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "If there is no frict ion (conversion of flow mechanicalenergy into internal energy), the process is reversible (isentropic)\nand follows the relationship\np/k = constant\nk = cp/cv\nwhere k, the ratio of specific heats at  constant pressure and volume,\nis 1.4 for air and diatomic gases.\nWhen the elevation term gz is neglected, as it is in most com-\npressible flow analyses, the Bernoulli equation of steady flow,\nEquation (21), becomes\n= constant (55)\nFor a frictionless adiabatic process,\n(56)\nIntegrating between upstream stat ion 1 and downstream station 2\ngives\n= 0 (57)\nEquation (57) replaces the Ber noulli equation for compressible\nflows.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_215c6487587299c7",
+      "domain_id": "hvac",
+      "doc_id": "doc_03856f9397e94a3b",
+      "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_4c29bd4b64ce4f93",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:chiller:performance_spec:maximum_heat_production_from_shivering",
+      "structured_payload_candidate": {
+        "parameter_name": "Maximum shivering heat production",
+        "title": "Maximum Heat Production from Shivering",
+        "summary": "Violent, whole-body shivering causes maximum heat production of about 6 times resting levels."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Ultimately violent, whole-\nbody shivering causes maximum heat  production of about 6 times\nresting levels, rendering the individual totally ineffective.\nGiven sufficient cold exposure,  the body undergoes changes that\nindicate cold ac climatization. These physiological changes include\n(1) endocrine changes (e .g., sensitivity to norepinephrine), causing\nnonshivering heat production by meta bolism of free fatty acids re-\nleased from adipose tissue; (2) im proved circulatory heat flow to\nskin, causing an overall sensati on of greater comfort; and (3) im-\nproved circulatory heat flow to the extremities, reducing the risk of\ninjury and allowing activities at what ordinarily would be severely\nuncomfortable temperatures in th e extremities. Generally, these\nphysiological changes are minor and are induced only by repeated\nextreme exposures.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_4c29bd4b64ce4f93"
+      ],
+      "source_page_nos": [
+        4
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence explicitly states max heat production from shivering is 6 times resting levels.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Performance Spec hvac:chiller:performance_spec:maximum_heat_production_from_shivering for Chiller",
+        "summary": "Draft review summary for performance_spec hvac:chiller:performance_spec:maximum_heat_production_from_shivering derived from chunk chunk_4c29bd4b64ce4f93 on page 4 for Chiller.",
+        "canonical_key": "hvac:chiller:performance_spec:maximum_heat_production_from_shivering",
+        "structured_payload": {
+          "parameter_name": "Maximum shivering heat production",
+          "title": "Maximum Heat Production from Shivering",
+          "summary": "Violent, whole-body shivering causes maximum heat production of about 6 times resting levels."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Ultimately violent, whole-\nbody shivering causes maximum heat  production of about 6 times\nresting levels, rendering the individual totally ineffective.\nGiven sufficient cold exposure,  the body undergoes changes that\nindicate cold ac climatization. These physiological changes include\n(1) endocrine changes (e .g., sensitivity to norepinephrine), causing\nnonshivering heat production by meta bolism of free fatty acids re-\nleased from adipose tissue; (2) im proved circulatory heat flow to\nskin, causing an overall sensati on of greater comfort; and (3) im-\nproved circulatory heat flow to the extremities, reducing the risk of\ninjury and allowing activities at what ordinarily would be severely\nuncomfortable temperatures in th e extremities. Generally, these\nphysiological changes are minor and are induced only by repeated\nextreme exposures.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_72dc85558701504c",
+      "domain_id": "hvac",
+      "doc_id": "doc_03856f9397e94a3b",
+      "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_ed2eb6614ab84b2f",
+      "knowledge_object_type": "maintenance_procedure",
+      "canonical_key_candidate": "hvac:chiller:maintenance_procedure:damper_actuator_mounting_recommendation",
+      "structured_payload_candidate": {
+        "parameter_name": "Damper actuator mounting",
+        "title": "Damper Actuator Mounting Recommendation",
+        "summary": "Mounting methods that link the actuator to a single blade are not recommended because of the potential to bend the single drive blade or to have the blade-to-blade linkages get out of adjustment."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "The most common method of mounting\nelectric actuators is directly ove r the damper shaft (direct coupling)\nwith no external linkage. Actuators can also be mounted in the air-\nflow on the damper frame and be li nked directly to a damper blade\n(though this may deform blades and make access for repairs diffi-\ncult), or mounted outside the duct and connected to a crank arm at-\ntached to a shaft extension of one of the blades. Mounting methods\nthat link the actuator to a single blade are not recommended because\nof the potential to bend the single drive blade or to have the blade-\nto-blade linkages get out of adjustment.\nLarge dampers may require two or more actuators, which are\nusually mounted at separate point s on the damper. An alternative is\nto install the damper in two or more sections, each section being\ncontrolled by a single damper actu ator.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_ed2eb6614ab84b2f"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence directly describes actuator mounting recommendation and rationale.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Maintenance Procedure hvac:chiller:maintenance_procedure:damper_actuator_mounting_recommendation for Chiller",
+        "summary": "Draft review summary for maintenance procedure hvac:chiller:maintenance_procedure:damper_actuator_mounting_recommendation derived from chunk chunk_ed2eb6614ab84b2f on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:maintenance_procedure:damper_actuator_mounting_recommendation",
+        "structured_payload": {
+          "parameter_name": "Damper actuator mounting",
+          "title": "Damper Actuator Mounting Recommendation",
+          "summary": "Mounting methods that link the actuator to a single blade are not recommended because of the potential to bend the single drive blade or to have the blade-to-blade linkages get out of adjustment."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The most common method of mounting\nelectric actuators is directly ove r the damper shaft (direct coupling)\nwith no external linkage. Actuators can also be mounted in the air-\nflow on the damper frame and be li nked directly to a damper blade\n(though this may deform blades and make access for repairs diffi-\ncult), or mounted outside the duct and connected to a crank arm at-\ntached to a shaft extension of one of the blades. Mounting methods\nthat link the actuator to a single blade are not recommended because\nof the potential to bend the single drive blade or to have the blade-\nto-blade linkages get out of adjustment.\nLarge dampers may require two or more actuators, which are\nusually mounted at separate point s on the damper. An alternative is\nto install the damper in two or more sections, each section being\ncontrolled by a single damper actu ator.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-10T00:56:03.189735+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 4
+  }
+}

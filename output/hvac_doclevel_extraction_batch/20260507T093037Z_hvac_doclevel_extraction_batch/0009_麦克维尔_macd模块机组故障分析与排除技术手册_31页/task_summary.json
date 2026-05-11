@@ -1,0 +1,87 @@
+{
+  "status": "completed",
+  "row_index": 9,
+  "file_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+  "doc_id": "doc_e312bbfa86684629",
+  "chunks": 31,
+  "manual_tokens_estimated": 4978,
+  "equipment_class_id": "air_cooled_modular_heat_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "modular_chiller",
+      "equipment_class_key": "hvac:modular_chiller",
+      "confidence": 0.383,
+      "matched_aliases": [
+        "模块机"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 31,
+      "chunks_before": 31,
+      "pages_after": 31,
+      "chunks_after": 31,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-parameter-spec",
+      "model": "deepseek-v4-flash",
+      "status": "ok",
+      "raw_candidates": 48,
+      "anchor_passed": 48,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "review_candidates": 48,
+      "by_type": {
+        "fault_code": 21,
+        "parameter_spec": 6,
+        "fault_diagnostic_rule": 21
+      },
+      "usage": {
+        "prompt_tokens": 8188,
+        "completion_tokens": 8866,
+        "total_tokens": 17054
+      },
+      "cost_rmb": 0.02649,
+      "elapsed_seconds": 143.081,
+      "output_dir": "output/hvac_doclevel_extraction_batch/20260507T093037Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-parameter-spec"
+    },
+    {
+      "backend": "mimo-v2.5-pro",
+      "model": "mimo-v2.5-pro",
+      "status": "ok",
+      "raw_candidates": 41,
+      "anchor_passed": 41,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "review_candidates": 41,
+      "by_type": {
+        "fault_code": 27,
+        "performance_spec": 5,
+        "fault_diagnostic_rule": 1,
+        "diagnostic_step": 8
+      },
+      "usage": {
+        "prompt_tokens": 9229,
+        "completion_tokens": 6164,
+        "total_tokens": 15393
+      },
+      "cost_rmb": 0.0,
+      "elapsed_seconds": 91.934,
+      "output_dir": "output/hvac_doclevel_extraction_batch/20260507T093037Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页/mimo-v2.5-pro"
+    }
+  ],
+  "task_dir": "output/hvac_doclevel_extraction_batch/20260507T093037Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页"
+}

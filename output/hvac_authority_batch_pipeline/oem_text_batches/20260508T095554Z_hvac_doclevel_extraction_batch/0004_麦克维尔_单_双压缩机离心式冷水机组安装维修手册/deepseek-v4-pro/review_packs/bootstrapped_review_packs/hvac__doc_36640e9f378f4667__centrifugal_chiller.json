@@ -1,0 +1,1471 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T10:33:10.570747+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_36640e9f378f4667",
+  "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+  "equipment_class": {
+    "equipment_class_id": "centrifugal_chiller",
+    "equipment_class_key": "hvac:centrifugal_chiller",
+    "label": "Centrifugal Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 19,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_ea50cfd2e8a57de3",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_c07d253ad7a2499b",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:standby_ambient_temp_with_water",
+      "structured_payload_candidate": {
+        "parameter_name": "待机时机房温度（容器和油冷中有水）",
+        "value_range": "0℃ to 50℃",
+        "unit": "℃",
+        "title": "待机时机房温度（容器和油冷中有水）",
+        "summary": "待机时机房温度范围：0℃ to 50℃（容器和油冷中有水）"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n5\n图\n2-2 WDC 系列机组结构图\n定位与安装\n机组应水平放置在水泥或钢基等坚固的平面上，机组基础必须在支撑机组运行重\n量的强度之上。在机组一边应留有足够的空间（至少为一个容器的长度），为可能发生\n的蒸发器/冷凝器换热管的更换提供必要的维修条件，具体要求见下表：\n蒸发器/冷凝器筒体长度（英尺/米） 要求留有穿梭间的最小长度（英尺/米）\n16/4.88 18/5.49\n14/4.27 16/4.88\n12/3.66 14/4.27\n8/2.44 10/3.05\n其它各边的维修空间要求不少于3英尺或1米宽。\n操作/待机条件限制\n待机时机房温度\n---容器和油冷中有水的温度：0℃ to 50℃\n---容器和油冷中无水的温度：-18℃ to 60℃ 注意！\n1、容器的接管位置可以调节，如有特殊需求可以通过检查机组上的标\n识或者参照机组接管定位图纸来进行更改。\n2、WCC机组蒸发器和冷凝器是相对独立的，其上有各自的安全阀。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_c07d253ad7a2499b"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies acceptable standby ambient temperature range with water in vessels for chiller operation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:standby_ambient_temp_with_water for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:standby_ambient_temp_with_water derived from chunk chunk_c07d253ad7a2499b on page 6 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:standby_ambient_temp_with_water",
+        "structured_payload": {
+          "parameter_name": "待机时机房温度（容器和油冷中有水）",
+          "value_range": "0℃ to 50℃",
+          "unit": "℃",
+          "title": "待机时机房温度（容器和油冷中有水）",
+          "summary": "待机时机房温度范围：0℃ to 50℃（容器和油冷中有水）"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n5\n图\n2-2 WDC 系列机组结构图\n定位与安装\n机组应水平放置在水泥或钢基等坚固的平面上，机组基础必须在支撑机组运行重\n量的强度之上。在机组一边应留有足够的空间（至少为一个容器的长度），为可能发生\n的蒸发器/冷凝器换热管的更换提供必要的维修条件，具体要求见下表：\n蒸发器/冷凝器筒体长度（英尺/米） 要求留有穿梭间的最小长度（英尺/米）\n16/4.88 18/5.49\n14/4.27 16/4.88\n12/3.66 14/4.27\n8/2.44 10/3.05\n其它各边的维修空间要求不少于3英尺或1米宽。\n操作/待机条件限制\n待机时机房温度\n---容器和油冷中有水的温度：0℃ to 50℃\n---容器和油冷中无水的温度：-18℃ to 60℃ 注意！\n1、容器的接管位置可以调节，如有特殊需求可以通过检查机组上的标\n识或者参照机组接管定位图纸来进行更改。\n2、WCC机组蒸发器和冷凝器是相对独立的，其上有各自的安全阀。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f09e1563952b4276",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_c07d253ad7a2499b",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:standby_ambient_temp_without_water",
+      "structured_payload_candidate": {
+        "parameter_name": "待机时机房温度（容器和油冷中无水）",
+        "value_range": "-18℃ to 60℃",
+        "unit": "℃",
+        "title": "待机时机房温度（容器和油冷中无水）",
+        "summary": "待机时机房温度范围：-18℃ to 60℃（容器和油冷中无水）"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n5\n图\n2-2 WDC 系列机组结构图\n定位与安装\n机组应水平放置在水泥或钢基等坚固的平面上，机组基础必须在支撑机组运行重\n量的强度之上。在机组一边应留有足够的空间（至少为一个容器的长度），为可能发生\n的蒸发器/冷凝器换热管的更换提供必要的维修条件，具体要求见下表：\n蒸发器/冷凝器筒体长度（英尺/米） 要求留有穿梭间的最小长度（英尺/米）\n16/4.88 18/5.49\n14/4.27 16/4.88\n12/3.66 14/4.27\n8/2.44 10/3.05\n其它各边的维修空间要求不少于3英尺或1米宽。\n操作/待机条件限制\n待机时机房温度\n---容器和油冷中有水的温度：0℃ to 50℃\n---容器和油冷中无水的温度：-18℃ to 60℃ 注意！\n1、容器的接管位置可以调节，如有特殊需求可以通过检查机组上的标\n识或者参照机组接管定位图纸来进行更改。\n2、WCC机组蒸发器和冷凝器是相对独立的，其上有各自的安全阀。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_c07d253ad7a2499b"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies acceptable standby ambient temperature range without water in vessels for chiller operation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:standby_ambient_temp_without_water for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:standby_ambient_temp_without_water derived from chunk chunk_c07d253ad7a2499b on page 6 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:standby_ambient_temp_without_water",
+        "structured_payload": {
+          "parameter_name": "待机时机房温度（容器和油冷中无水）",
+          "value_range": "-18℃ to 60℃",
+          "unit": "℃",
+          "title": "待机时机房温度（容器和油冷中无水）",
+          "summary": "待机时机房温度范围：-18℃ to 60℃（容器和油冷中无水）"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n5\n图\n2-2 WDC 系列机组结构图\n定位与安装\n机组应水平放置在水泥或钢基等坚固的平面上，机组基础必须在支撑机组运行重\n量的强度之上。在机组一边应留有足够的空间（至少为一个容器的长度），为可能发生\n的蒸发器/冷凝器换热管的更换提供必要的维修条件，具体要求见下表：\n蒸发器/冷凝器筒体长度（英尺/米） 要求留有穿梭间的最小长度（英尺/米）\n16/4.88 18/5.49\n14/4.27 16/4.88\n12/3.66 14/4.27\n8/2.44 10/3.05\n其它各边的维修空间要求不少于3英尺或1米宽。\n操作/待机条件限制\n待机时机房温度\n---容器和油冷中有水的温度：0℃ to 50℃\n---容器和油冷中无水的温度：-18℃ to 60℃ 注意！\n1、容器的接管位置可以调节，如有特殊需求可以通过检查机组上的标\n识或者参照机组接管定位图纸来进行更改。\n2、WCC机组蒸发器和冷凝器是相对独立的，其上有各自的安全阀。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a46500651a234fcf",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_d0d57b3ea36f4f4c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:operating_ambient_temp",
+      "structured_payload_candidate": {
+        "parameter_name": "运行时机房温度",
+        "value_range": "0℃ to 40℃",
+        "unit": "℃",
+        "title": "运行时机房温度",
+        "summary": "运行时机房温度范围：0℃ to 40℃"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d0d57b3ea36f4f4c"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies acceptable operating ambient temperature range for the chiller.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:operating_ambient_temp for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:operating_ambient_temp derived from chunk chunk_d0d57b3ea36f4f4c on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:operating_ambient_temp",
+        "structured_payload": {
+          "parameter_name": "运行时机房温度",
+          "value_range": "0℃ to 40℃",
+          "unit": "℃",
+          "title": "运行时机房温度",
+          "summary": "运行时机房温度范围：0℃ to 40℃"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_17fc572df9a1e5b7",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_d0d57b3ea36f4f4c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:startup_max_condenser_entering_water_temp",
+      "structured_payload_candidate": {
+        "parameter_name": "启动时冷凝器最高进水温度",
+        "value": "比设计温度高2.7℃",
+        "title": "启动时冷凝器最高进水温度",
+        "summary": "启动时冷凝器最高进水温度：比设计温度高2.7℃"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d0d57b3ea36f4f4c"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Defines maximum condenser entering water temperature at startup relative to design.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:startup_max_condenser_entering_water_temp for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:startup_max_condenser_entering_water_temp derived from chunk chunk_d0d57b3ea36f4f4c on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:startup_max_condenser_entering_water_temp",
+        "structured_payload": {
+          "parameter_name": "启动时冷凝器最高进水温度",
+          "value": "比设计温度高2.7℃",
+          "title": "启动时冷凝器最高进水温度",
+          "summary": "启动时冷凝器最高进水温度：比设计温度高2.7℃"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d58022b3fdfcdd19",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_d0d57b3ea36f4f4c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:min_chilled_water_leaving_temp",
+      "structured_payload_candidate": {
+        "parameter_name": "最低冷冻水出水温度",
+        "value": "3.3℃",
+        "unit": "℃",
+        "title": "最低冷冻水出水温度",
+        "summary": "最低冷冻水出水温度：3.3℃"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d0d57b3ea36f4f4c"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies minimum leaving chilled water temperature limit.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:min_chilled_water_leaving_temp for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:min_chilled_water_leaving_temp derived from chunk chunk_d0d57b3ea36f4f4c on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:min_chilled_water_leaving_temp",
+        "structured_payload": {
+          "parameter_name": "最低冷冻水出水温度",
+          "value": "3.3℃",
+          "unit": "℃",
+          "title": "最低冷冻水出水温度",
+          "summary": "最低冷冻水出水温度：3.3℃"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d82187513e60b7d9",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_d0d57b3ea36f4f4c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:min_fluid_temp_with_antifreeze",
+      "structured_payload_candidate": {
+        "parameter_name": "最低冷冻液体温度（含正确防冻液）",
+        "value": "-9.4℃",
+        "unit": "℃",
+        "title": "最低冷冻液体温度（含正确防冻液）",
+        "summary": "最低冷冻液体温度（含正确防冻液）：-9.4℃"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d0d57b3ea36f4f4c"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies minimum chilled liquid temperature with proper antifreeze.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:min_fluid_temp_with_antifreeze for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:min_fluid_temp_with_antifreeze derived from chunk chunk_d0d57b3ea36f4f4c on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:min_fluid_temp_with_antifreeze",
+        "structured_payload": {
+          "parameter_name": "最低冷冻液体温度（含正确防冻液）",
+          "value": "-9.4℃",
+          "unit": "℃",
+          "title": "最低冷冻液体温度（含正确防冻液）",
+          "summary": "最低冷冻液体温度（含正确防冻液）：-9.4℃"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0fc173eb2d66723f",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_d0d57b3ea36f4f4c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:max_chilled_water_entering_temp",
+      "structured_payload_candidate": {
+        "parameter_name": "冷冻水最高进水温度",
+        "value": "32.2℃",
+        "unit": "℃",
+        "title": "冷冻水最高进水温度",
+        "summary": "冷冻水最高进水温度：32.2℃"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d0d57b3ea36f4f4c"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies maximum entering chilled water temperature.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:max_chilled_water_entering_temp for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:max_chilled_water_entering_temp derived from chunk chunk_d0d57b3ea36f4f4c on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:max_chilled_water_entering_temp",
+        "structured_payload": {
+          "parameter_name": "冷冻水最高进水温度",
+          "value": "32.2℃",
+          "unit": "℃",
+          "title": "冷冻水最高进水温度",
+          "summary": "冷冻水最高进水温度：32.2℃"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_e49d27cceac6bcde",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_d0d57b3ea36f4f4c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:max_oil_cooler_vfd_entering_water_temp",
+      "structured_payload_candidate": {
+        "parameter_name": "油冷/变频器冷却最高进水温度",
+        "value": "32.2℃",
+        "unit": "℃",
+        "title": "油冷/变频器冷却最高进水温度",
+        "summary": "油冷/变频器冷却最高进水温度：32.2℃"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d0d57b3ea36f4f4c"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies maximum oil cooler/VFD cooling entering water temperature.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:max_oil_cooler_vfd_entering_water_temp for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:max_oil_cooler_vfd_entering_water_temp derived from chunk chunk_d0d57b3ea36f4f4c on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:max_oil_cooler_vfd_entering_water_temp",
+        "structured_payload": {
+          "parameter_name": "油冷/变频器冷却最高进水温度",
+          "value": "32.2℃",
+          "unit": "℃",
+          "title": "油冷/变频器冷却最高进水温度",
+          "summary": "油冷/变频器冷却最高进水温度：32.2℃"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_eb65b01d96b2b497",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_d0d57b3ea36f4f4c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:min_oil_cooler_vfd_entering_water_temp",
+      "structured_payload_candidate": {
+        "parameter_name": "油冷/变频器冷却最低进水温度",
+        "value": "5.6℃",
+        "unit": "℃",
+        "title": "油冷/变频器冷却最低进水温度",
+        "summary": "油冷/变频器冷却最低进水温度：5.6℃"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d0d57b3ea36f4f4c"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies minimum oil cooler/VFD cooling entering water temperature.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:min_oil_cooler_vfd_entering_water_temp for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:min_oil_cooler_vfd_entering_water_temp derived from chunk chunk_d0d57b3ea36f4f4c on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:min_oil_cooler_vfd_entering_water_temp",
+        "structured_payload": {
+          "parameter_name": "油冷/变频器冷却最低进水温度",
+          "value": "5.6℃",
+          "unit": "℃",
+          "title": "油冷/变频器冷却最低进水温度",
+          "summary": "油冷/变频器冷却最低进水温度：5.6℃"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n6 ---船用水箱(WMC)及容器中无水的温度：-18℃ to 54.4℃\n运行时机房温度： 0℃ to 40℃\n启动时冷凝器最高进水温度：比设计温度高2.7℃\n运行时冷凝器最高进水温度：根据实际运行工况不同而改变\n运行时冷凝器最低进水温度：见第7页\n最低冷冻水出水温度：3.3℃\n最低冷冻液体温度（含正确防冻液）：-9.4℃\n冷冻水最高进水温度：32.2℃\n油冷/变频器冷却最高进水温度：32.2℃\n油冷/变频器冷却最低进水温度：5.6℃\n防震垫\n运输防震垫需要装配在机组脚板下面。大部分WSC机组尽管有6个脚板，但是只\n有最靠外的4个需要加装防震垫。但是运输时要配好6个垫子而安装者可以根据实际\n情况的需要而加装防震垫。\n安装\n保证地板或者结构支撑足够结实来支持整个机组运行时的重量。\n机组在安装时，可不用螺栓，但要确保机组安装水平，无滑动，最好是利用机组\n四脚处的28mm的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫板的四个角\n下，减少机组的在运行时的震动。\n铭牌（术语）\n每台离心机组都有一组数字用以描述机组特征和不同机组的区分，这些数字刻在\n机组铭牌上。\n机组铭牌位于机组控制盒的侧部。在上面刻有机组的型号和系列号，这是独一无\n二的代码，这些号码在机组服务和一些其他问题时提供识别的功能。并且在铭牌上还\n标注了制冷剂的充注量。\n机组的几大部件也有铭牌标识，提供安装和操作者一些必要的信息。\n压缩机命名为CE型，例如CE087 型压缩机用于WSC087，WDC087，HSC087，\nHDC087冷水机组上，从压缩机标牌上可知道压缩机的型号、类型和编号以及压缩机马\n达的电气特征。\n冷凝器和蒸发器铭牌上都带有容器的最大工作压力，管理部门编号和容器类型代注意！\n机组运输时所有的阀必须保持关闭以分隔制冷剂和油的液体，到达现\n场后，直到McQuay的专业人员开启机组的时候才能将阀打开。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_75a90030f36acfd3",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_cc3f1fc81f334d20",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_refrigerant_side_wsc",
+      "structured_payload_candidate": {
+        "parameter_name": "蒸发器制冷剂侧设计压力（WSC/WCC/HSC）",
+        "value": "1400kPa",
+        "unit": "kPa",
+        "title": "蒸发器制冷剂侧设计压力（WSC/WCC/HSC）",
+        "summary": "WSC/WCC/HSC蒸发器制冷剂侧设计压力：1400kPa"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc3f1fc81f334d20"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies evaporator refrigerant side design pressure for WSC/WCC/HSC models.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_refrigerant_side_wsc for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_refrigerant_side_wsc derived from chunk chunk_cc3f1fc81f334d20 on page 16 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_refrigerant_side_wsc",
+        "structured_payload": {
+          "parameter_name": "蒸发器制冷剂侧设计压力（WSC/WCC/HSC）",
+          "value": "1400kPa",
+          "unit": "kPa",
+          "title": "蒸发器制冷剂侧设计压力（WSC/WCC/HSC）",
+          "summary": "WSC/WCC/HSC蒸发器制冷剂侧设计压力：1400kPa"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c0936ad7128cd247",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_cc3f1fc81f334d20",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_refrigerant_side_wdc",
+      "structured_payload_candidate": {
+        "parameter_name": "蒸发器制冷剂侧设计压力（WDC）",
+        "value": "1300kPa",
+        "unit": "kPa",
+        "title": "蒸发器制冷剂侧设计压力（WDC）",
+        "summary": "WDC蒸发器制冷剂侧设计压力：1300kPa"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc3f1fc81f334d20"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies evaporator refrigerant side design pressure for WDC models.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_refrigerant_side_wdc for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_refrigerant_side_wdc derived from chunk chunk_cc3f1fc81f334d20 on page 16 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_refrigerant_side_wdc",
+        "structured_payload": {
+          "parameter_name": "蒸发器制冷剂侧设计压力（WDC）",
+          "value": "1300kPa",
+          "unit": "kPa",
+          "title": "蒸发器制冷剂侧设计压力（WDC）",
+          "summary": "WDC蒸发器制冷剂侧设计压力：1300kPa"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_7e32b9f087cbf76f",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_cc3f1fc81f334d20",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_water_side",
+      "structured_payload_candidate": {
+        "parameter_name": "蒸发器水侧设计压力",
+        "value": "1000kPa",
+        "unit": "kPa",
+        "title": "蒸发器水侧设计压力",
+        "summary": "蒸发器水侧设计压力：1000kPa"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc3f1fc81f334d20"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies evaporator water side design pressure.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_water_side for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_water_side derived from chunk chunk_cc3f1fc81f334d20 on page 16 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:evap_design_pressure_water_side",
+        "structured_payload": {
+          "parameter_name": "蒸发器水侧设计压力",
+          "value": "1000kPa",
+          "unit": "kPa",
+          "title": "蒸发器水侧设计压力",
+          "summary": "蒸发器水侧设计压力：1000kPa"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_4ad6ae9ba2ade6ef",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_cc3f1fc81f334d20",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_refrigerant_side_wsc",
+      "structured_payload_candidate": {
+        "parameter_name": "冷凝器制冷剂侧设计压力（WSC/WCC/HSC）",
+        "value": "1400kPa",
+        "unit": "kPa",
+        "title": "冷凝器制冷剂侧设计压力（WSC/WCC/HSC）",
+        "summary": "WSC/WCC/HSC冷凝器制冷剂侧设计压力：1400kPa"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc3f1fc81f334d20"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies condenser refrigerant side design pressure for WSC/WCC/HSC models.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_refrigerant_side_wsc for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_refrigerant_side_wsc derived from chunk chunk_cc3f1fc81f334d20 on page 16 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_refrigerant_side_wsc",
+        "structured_payload": {
+          "parameter_name": "冷凝器制冷剂侧设计压力（WSC/WCC/HSC）",
+          "value": "1400kPa",
+          "unit": "kPa",
+          "title": "冷凝器制冷剂侧设计压力（WSC/WCC/HSC）",
+          "summary": "WSC/WCC/HSC冷凝器制冷剂侧设计压力：1400kPa"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_ff41384fed9d7a11",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_cc3f1fc81f334d20",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_refrigerant_side_wdc",
+      "structured_payload_candidate": {
+        "parameter_name": "冷凝器制冷剂侧设计压力（WDC）",
+        "value": "1600kPa",
+        "unit": "kPa",
+        "title": "冷凝器制冷剂侧设计压力（WDC）",
+        "summary": "WDC冷凝器制冷剂侧设计压力：1600kPa"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc3f1fc81f334d20"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies condenser refrigerant side design pressure for WDC models.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_refrigerant_side_wdc for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_refrigerant_side_wdc derived from chunk chunk_cc3f1fc81f334d20 on page 16 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_refrigerant_side_wdc",
+        "structured_payload": {
+          "parameter_name": "冷凝器制冷剂侧设计压力（WDC）",
+          "value": "1600kPa",
+          "unit": "kPa",
+          "title": "冷凝器制冷剂侧设计压力（WDC）",
+          "summary": "WDC冷凝器制冷剂侧设计压力：1600kPa"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6bd1ea1cbc7f0909",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_cc3f1fc81f334d20",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_water_side",
+      "structured_payload_candidate": {
+        "parameter_name": "冷凝器水侧设计压力",
+        "value": "1000kPa",
+        "unit": "kPa",
+        "title": "冷凝器水侧设计压力",
+        "summary": "冷凝器水侧设计压力：1000kPa"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc3f1fc81f334d20"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies condenser water side design pressure.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_water_side for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_water_side derived from chunk chunk_cc3f1fc81f334d20 on page 16 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:cond_design_pressure_water_side",
+        "structured_payload": {
+          "parameter_name": "冷凝器水侧设计压力",
+          "value": "1000kPa",
+          "unit": "kPa",
+          "title": "冷凝器水侧设计压力",
+          "summary": "冷凝器水侧设计压力：1000kPa"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n15\n机组参数\n蒸发器\n标准的机组保温包括蒸发器筒体部分、水盖、吸气管、压缩机的进气管、电机壳\n体、电机冷却回液管道上的保温。\n保温材料必须通过UL认证。保温材料为19mm厚并且其表面为ABS/PVC柔性泡沫。管\n板保温是按照实际尺寸制作并且粘贴到到位以防止冷凝水，然后涂上环氧弹性漆以防\n止破裂。\n保温应通过或者遵守以下标准：\nGB/T 17794\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1300kPa。在\nWSC/WCC/HSC/WDC中水侧的设计压力为1000kPa。\n如果机组需要现场包装保温，那么保温细节就需要看前面提到的现场保温指导。\n冷凝器\n在正压系统中，随着温度的改变而发生的压力变化是可以预知的，所以其容器设\n计和安全保护就基本上可以单纯的去考虑制冷剂的特性。R-134a制冷剂要求使用了弹\n簧压力安全阀。当机组容器过压时，弹簧安全阀喷出一定量的制冷剂气体使系统内部\n压力达到预设值之后就会关闭。\n在WSC/WCC/HSC中制冷剂侧的设计压力为1400kPa，WDC中则为1600kPa。在\nWSC/WCC/HSC/WDC 中水侧的设计压力为 1000kPa。\n抽空\n为了方便压缩机维修，所有的McQuay离心式冷水机组在设计上都允许将所有制冷\n剂抽到冷凝器中。双机头和单机头机组可以有选择性的安装吸气止逆阀，如果安装了\n的话，也允许将制冷剂抽注到蒸发器之中。\n压缩机\n表2-2 压缩机重量\n油冷却器\nMcQuay离心式063-126机头WSC/WCD冷水机组在出厂前就已经配有水冷式油冷却\n器，它是通过水量调节和电磁阀来控制的。冷却器连接的水管、水过滤器（40目）、\n电磁阀、排放阀或水塞等均应在现场按图纸要求安装，其冷却器的水源可能是内部水\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1860363933d8a347",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 21,
+      "chunk_id": "chunk_f6761f8788f146f5",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:relief_valve_pressure_settings",
+      "structured_payload_candidate": {
+        "parameter_name": "安全阀压力设置",
+        "values": [
+          "180 psi (1242kPa) 排气量 68.5 # air/min",
+          "200 psi (1380kPa) 排气量 75.5 # air/min",
+          "225 psi (1552kPa) 排气量 84.4 # air/min"
+        ],
+        "title": "安全阀压力设置及排气量",
+        "summary": "安全阀压力设置：180 psi (1242kPa), 200 psi (1380kPa), 225 psi (1552kPa)；对应排气量：68.5, 75.5, 84.4 # air/min"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n20 如果没有地方标准，建议按ANSI/ASHEAE15-1987 标准执行。\n冷凝器上装有一个三通截止阀，此阀上装了两个安全阀，一阀工作，一阀备用。\n但这种设计仅对小冷凝器适用。具体结构见图2-11。\n注意：当三通截止阀调节阀芯在内端 时，1号安全阀为开，当阀芯在外端时，2号安全\n阀为开。\n图2-11   WSC/WDC系列冷凝器安全阀组结构图\n当安装排空管到双安全阀时，排空管的尺寸根据一个安全阀的大小来选择，然后\n连接到两个阀上。对于大容量的冷凝器，两个安全阀必须同时使用，排空管的尺寸根\n据两个安全阀的大小选择。\n制冷剂排放管道\n安全阀接管型式为FPT1。在冷凝器上安全阀成对安装，如果双安全阀中一个安全\n阀出现问题，截止阀会将损坏的阀隔离，同时另外一个安全阀承担保护作用，同时可\n以对已损坏安全阀进行更换。\n根据最新的ANSI/ASHRAE 15标准，推荐冷凝器抽空量为32℃ 的外界条件下充满\n筒体容量的90％，如果想转换到以前的ARI标准，乘以0.888的抽空量转换系数即可。\n制冷剂排放管道规格\n安全阀接管型号是通过给定蒸发器或者冷凝器的排气量。R134a 制冷剂容器的的\n排气量、安全阀容量、摩擦系数、管子型号、出口压力、背压使用过一个复杂的公式\n计算所得。该方程式在ASHRAE15-2001标准里面可以见到。\nMcQuay 离心机组安全阀的压力设置 为180 psi（1242kPa），200 psi(1380kPa) ，\n225 psi(1552kPa)三种，其各自的排气量为68.5 # air/min, 75.5 # air/min, and 84.4\n# air/min。\n表2-7---安全阀管径\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_f6761f8788f146f5"
+      ],
+      "source_page_nos": [
+        21
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides safety valve pressure settings and corresponding discharge capacities.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:relief_valve_pressure_settings for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:relief_valve_pressure_settings derived from chunk chunk_f6761f8788f146f5 on page 21 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:relief_valve_pressure_settings",
+        "structured_payload": {
+          "parameter_name": "安全阀压力设置",
+          "values": [
+            "180 psi (1242kPa) 排气量 68.5 # air/min",
+            "200 psi (1380kPa) 排气量 75.5 # air/min",
+            "225 psi (1552kPa) 排气量 84.4 # air/min"
+          ],
+          "title": "安全阀压力设置及排气量",
+          "summary": "安全阀压力设置：180 psi (1242kPa), 200 psi (1380kPa), 225 psi (1552kPa)；对应排气量：68.5, 75.5, 84.4 # air/min"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n20 如果没有地方标准，建议按ANSI/ASHEAE15-1987 标准执行。\n冷凝器上装有一个三通截止阀，此阀上装了两个安全阀，一阀工作，一阀备用。\n但这种设计仅对小冷凝器适用。具体结构见图2-11。\n注意：当三通截止阀调节阀芯在内端 时，1号安全阀为开，当阀芯在外端时，2号安全\n阀为开。\n图2-11   WSC/WDC系列冷凝器安全阀组结构图\n当安装排空管到双安全阀时，排空管的尺寸根据一个安全阀的大小来选择，然后\n连接到两个阀上。对于大容量的冷凝器，两个安全阀必须同时使用，排空管的尺寸根\n据两个安全阀的大小选择。\n制冷剂排放管道\n安全阀接管型式为FPT1。在冷凝器上安全阀成对安装，如果双安全阀中一个安全\n阀出现问题，截止阀会将损坏的阀隔离，同时另外一个安全阀承担保护作用，同时可\n以对已损坏安全阀进行更换。\n根据最新的ANSI/ASHRAE 15标准，推荐冷凝器抽空量为32℃ 的外界条件下充满\n筒体容量的90％，如果想转换到以前的ARI标准，乘以0.888的抽空量转换系数即可。\n制冷剂排放管道规格\n安全阀接管型号是通过给定蒸发器或者冷凝器的排气量。R134a 制冷剂容器的的\n排气量、安全阀容量、摩擦系数、管子型号、出口压力、背压使用过一个复杂的公式\n计算所得。该方程式在ASHRAE15-2001标准里面可以见到。\nMcQuay 离心机组安全阀的压力设置 为180 psi（1242kPa），200 psi(1380kPa) ，\n225 psi(1552kPa)三种，其各自的排气量为68.5 # air/min, 75.5 # air/min, and 84.4\n# air/min。\n表2-7---安全阀管径\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_103a0574e5cfdd6f",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 33,
+      "chunk_id": "chunk_1ff60f147aa14eb5",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:guide_vane_timing_defaults",
+      "structured_payload_candidate": {
+        "parameter_name": "导叶速度出厂设置",
+        "values": [
+          "CE063-CE100: 开启3-5 min, 关闭1-2 min",
+          "CE126: 开启5-8 min, 关闭1-2 min"
+        ],
+        "title": "导叶开启/关闭时间出厂设置",
+        "summary": "导叶速度出厂设置：CE063-CE100开启3-5 min，关闭1-2 min；CE126开启5-8 min，关闭1-2 min"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n32●测量值\n调整能量控制导叶的开关速度可适合系统的要求。调整排油管上的针阀可控制排\n油速度，因而控制“导叶速度”。针阀是位于压缩机润滑油分配盒中四通电磁阀的一\n部分。\n这些阀一般在工厂设定，从全关到全开所需时间见表。\n导叶速度必须足够慢来防止其失控以及保护组件不被损坏。流经导叶开启处的排\n油速度控制了能量控制导叶的开关速度。排油速度可通过润滑油盒内电磁阀SA、SB\n上的针阀调整。用螺丝刀从左边打开润滑油盒上的圆形盖板以便调整。增载时调整上\n面电磁阀SB的针阀以改变导叶开启速度，顺时针减小导叶的开启速度，逆时针增加\n导叶开启速度。减载时调整下面电磁阀SA上的针阀以改变导叶关闭速度顺时针减小\n导叶的关闭速度，逆时针增加关闭速度。\n由于该调节灵敏度极高，所以在调节时要慢慢转动螺母。\n在开启时根据工况的不同可以重新调节导叶开启速度。\n图3-4 针阀位置\n压缩机型号 开启时间 关闭时间\nCE063-CE100        3-5 min        1-2 min\nCE126        5-8 min        1-2 min\n表3-1导叶速度出厂设置值\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1ff60f147aa14eb5"
+      ],
+      "source_page_nos": [
+        33
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies factory-set vane opening/closing times for different compressor models.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:guide_vane_timing_defaults for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:guide_vane_timing_defaults derived from chunk chunk_1ff60f147aa14eb5 on page 33 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:guide_vane_timing_defaults",
+        "structured_payload": {
+          "parameter_name": "导叶速度出厂设置",
+          "values": [
+            "CE063-CE100: 开启3-5 min, 关闭1-2 min",
+            "CE126: 开启5-8 min, 关闭1-2 min"
+          ],
+          "title": "导叶开启/关闭时间出厂设置",
+          "summary": "导叶速度出厂设置：CE063-CE100开启3-5 min，关闭1-2 min；CE126开启5-8 min，关闭1-2 min"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n32●测量值\n调整能量控制导叶的开关速度可适合系统的要求。调整排油管上的针阀可控制排\n油速度，因而控制“导叶速度”。针阀是位于压缩机润滑油分配盒中四通电磁阀的一\n部分。\n这些阀一般在工厂设定，从全关到全开所需时间见表。\n导叶速度必须足够慢来防止其失控以及保护组件不被损坏。流经导叶开启处的排\n油速度控制了能量控制导叶的开关速度。排油速度可通过润滑油盒内电磁阀SA、SB\n上的针阀调整。用螺丝刀从左边打开润滑油盒上的圆形盖板以便调整。增载时调整上\n面电磁阀SB的针阀以改变导叶开启速度，顺时针减小导叶的开启速度，逆时针增加\n导叶开启速度。减载时调整下面电磁阀SA上的针阀以改变导叶关闭速度顺时针减小\n导叶的关闭速度，逆时针增加关闭速度。\n由于该调节灵敏度极高，所以在调节时要慢慢转动螺母。\n在开启时根据工况的不同可以重新调节导叶开启速度。\n图3-4 针阀位置\n压缩机型号 开启时间 关闭时间\nCE063-CE100        3-5 min        1-2 min\nCE126        5-8 min        1-2 min\n表3-1导叶速度出厂设置值\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_391a02784fbbe6d3",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 36,
+      "chunk_id": "chunk_d99a59ca656e40f7",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:oil_temp_control_range",
+      "structured_payload_candidate": {
+        "parameter_name": "油温控制范围",
+        "value_range": "35ºC-41ºC",
+        "unit": "ºC",
+        "title": "油温控制范围",
+        "summary": "温度控制阀控制油温在35ºC-41ºC之间"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n35对于CE050压缩机，油系统包括油泵、油泵马达、油加热器和油分离器。油泵的\n油经过过滤器后进入压缩机机体内，油是用冷媒冷却。\n其它尺寸的压缩机（CE063-CE126）都使用独立的油泵供油，油泵由马达、加热\n器、油分离器组成，同样油经过过滤器后进压缩机。\n供油温度取决于油冷却器的冷却效果。温度控制阀控制油温 在35ºC-41ºC之间。\n润滑保护取决于油压差的大小。一个突发的停车会造成故障和损坏轴承。采用紧急供\n油可保持油压，避免了突发停车造成的危害。当突发停车时，紧急供油槽内的活塞会\n强制性向润滑轴承供油。CE126压缩机紧急停车润滑油的提供有赖于一个以重力为动\n力的紧急供油箱。\n油牌号推荐表见表3-2\n表3-2：被证明适用于R-134a机组的合成脂类油\n压缩机型号 CE 050---126\n润滑指示 Mobil Artic EAL46 ；\nIci Emkarate RL32H(2)\nMcQuay部件号码   Z1502109\n1. 不同来源的同一种认可的油能混合使用\n2. 任何一个供应商所提供的油只要符合McQuay物料号码的均可使用。\n典型的油流程图，如下：\n图3-8 标准油路流程图\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d99a59ca656e40f7"
+      ],
+      "source_page_nos": [
+        36
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies oil temperature control range maintained by temperature control valve.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:oil_temp_control_range for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:oil_temp_control_range derived from chunk chunk_d99a59ca656e40f7 on page 36 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:oil_temp_control_range",
+        "structured_payload": {
+          "parameter_name": "油温控制范围",
+          "value_range": "35ºC-41ºC",
+          "unit": "ºC",
+          "title": "油温控制范围",
+          "summary": "温度控制阀控制油温在35ºC-41ºC之间"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n35对于CE050压缩机，油系统包括油泵、油泵马达、油加热器和油分离器。油泵的\n油经过过滤器后进入压缩机机体内，油是用冷媒冷却。\n其它尺寸的压缩机（CE063-CE126）都使用独立的油泵供油，油泵由马达、加热\n器、油分离器组成，同样油经过过滤器后进压缩机。\n供油温度取决于油冷却器的冷却效果。温度控制阀控制油温 在35ºC-41ºC之间。\n润滑保护取决于油压差的大小。一个突发的停车会造成故障和损坏轴承。采用紧急供\n油可保持油压，避免了突发停车造成的危害。当突发停车时，紧急供油槽内的活塞会\n强制性向润滑轴承供油。CE126压缩机紧急停车润滑油的提供有赖于一个以重力为动\n力的紧急供油箱。\n油牌号推荐表见表3-2\n表3-2：被证明适用于R-134a机组的合成脂类油\n压缩机型号 CE 050---126\n润滑指示 Mobil Artic EAL46 ；\nIci Emkarate RL32H(2)\nMcQuay部件号码   Z1502109\n1. 不同来源的同一种认可的油能混合使用\n2. 任何一个供应商所提供的油只要符合McQuay物料号码的均可使用。\n典型的油流程图，如下：\n图3-8 标准油路流程图\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_b4839d4b5566ff67",
+      "domain_id": "hvac",
+      "doc_id": "doc_36640e9f378f4667",
+      "doc_name": "【麦克维尔】单、双压缩机离心式冷水机组安装维修手册.pdf",
+      "page_no": 37,
+      "chunk_id": "chunk_e9b9ab7ce9cf48b3",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:hot_gas_bypass_start_current",
+      "structured_payload_candidate": {
+        "parameter_name": "热气旁通启动点电流",
+        "value": "满负荷时电流的40%",
+        "title": "热气旁通启动点电流设定",
+        "summary": "出厂时设置的机组热气旁通启动点电流值为满负荷时电流的40%"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n36注意：\n1. 图表为CE063-126压缩机组油路，由于 CE050机组自含润滑油系统，所以与\n该图不符合。\n2.  图中接管相对位置不一定和实际机组接管位置相符。\n3.R=安全阀、P=压力传感器、T=温度传感器、S=电磁阀。\n热气旁通\n所有机组都可以选择装配热气旁通管路。用于当系统负载低于预定的压缩机最小\n能量时，将压缩机排气直接排到蒸发器中，可用于压缩机能量小于10%的情况。\nMicrotech II控制屏用额定电流的百分比来指示卸载运行状态，当电流降到设\n定点，热气旁通电磁阀上电，热气旁通开始工作，热气旁通的引入给压缩机提供了一\n个稳定的制冷剂流量以防止制冷剂 在轻载下发生短路循环，同时它也防止了热回收\n操作过程中喘振。\n出厂时设置的机组热气旁通启动 点电流值为满负荷时电流的40%.\n冷凝器温度\n当外界的湿球温度低于设计值时，可以考虑降低冷却水进水温度来改善机组性\n能。\nMcQuay机组在冷凝器进水温度55℉ (12.8℃)时也能提供较低的机组出水温度。\n机组运行时冷却水最低进水温度可以根据冷冻水出水温度和机组负载计算得出。\n可以控制冷却塔风扇，或者运用一些控制水流量的方法例如将通过冷却塔的水旁通。\nwww.zhulong.com",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_e9b9ab7ce9cf48b3"
+      ],
+      "source_page_nos": [
+        37
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies hot gas bypass activation current setpoint as percentage of full load.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:hot_gas_bypass_start_current for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:hot_gas_bypass_start_current derived from chunk chunk_e9b9ab7ce9cf48b3 on page 37 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:hot_gas_bypass_start_current",
+        "structured_payload": {
+          "parameter_name": "热气旁通启动点电流",
+          "value": "满负荷时电流的40%",
+          "title": "热气旁通启动点电流设定",
+          "summary": "出厂时设置的机组热气旁通启动点电流值为满负荷时电流的40%"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "离心式冷水机组安装维护手册\n您的冷暖我关怀\n36注意：\n1. 图表为CE063-126压缩机组油路，由于 CE050机组自含润滑油系统，所以与\n该图不符合。\n2.  图中接管相对位置不一定和实际机组接管位置相符。\n3.R=安全阀、P=压力传感器、T=温度传感器、S=电磁阀。\n热气旁通\n所有机组都可以选择装配热气旁通管路。用于当系统负载低于预定的压缩机最小\n能量时，将压缩机排气直接排到蒸发器中，可用于压缩机能量小于10%的情况。\nMicrotech II控制屏用额定电流的百分比来指示卸载运行状态，当电流降到设\n定点，热气旁通电磁阀上电，热气旁通开始工作，热气旁通的引入给压缩机提供了一\n个稳定的制冷剂流量以防止制冷剂 在轻载下发生短路循环，同时它也防止了热回收\n操作过程中喘振。\n出厂时设置的机组热气旁通启动 点电流值为满负荷时电流的40%.\n冷凝器温度\n当外界的湿球温度低于设计值时，可以考虑降低冷却水进水温度来改善机组性\n能。\nMcQuay机组在冷凝器进水温度55℉ (12.8℃)时也能提供较低的机组出水温度。\n机组运行时冷却水最低进水温度可以根据冷冻水出水温度和机组负载计算得出。\n可以控制冷却塔风扇，或者运用一些控制水流量的方法例如将通过冷却塔的水旁通。\nwww.zhulong.com",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-08T10:33:10.577208+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 19
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "run_id": "20260508T013918Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/13、天加中央空调/【天加 】模块化风冷式冷(热)水机组D-安装操作手册.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 8.145,
+      "parsed": {
+        "page_type": "other",
+        "summary": "This is the cover page of an installation and operation manual for a TICA brand modular air-cooled chiller (heat pump). The page displays the manual title in English and Chinese, the equipment type, and the manufacturer's logo.",
+        "visual_entities": [
+          {
+            "type": "text",
+            "label": "INSTALLATION & OPERATION MANUAL"
+          },
+          {
+            "type": "text",
+            "label": "MODULAR AIR-COOLED CHILLER (HEAT PUMP)"
+          },
+          {
+            "type": "text",
+            "label": "安装操作手册"
+          },
+          {
+            "type": "text",
+            "label": "模块化风冷式冷（热）水机组-D"
+          },
+          {
+            "type": "logo",
+            "label": "TICA 天加中央空调"
+          },
+          {
+            "type": "text",
+            "label": "制冷百家网: www.zh lengbj.cn"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "manual_identification",
+          "equipment_model"
+        ],
+        "ocr_text_if_useful": "INSTALLATION & OPERATION MANUAL\n安装操作手册\nMODULAR AIR-COOLED CHILLER (HEAT PUMP)\n模块化风冷式冷（热）水机组-D\nTICA 天加中央空调\n制冷百家网: www.zh lengbj.cn",
+        "uncertainty_notes": "The specific model number 'D' is visible in the Chinese text but its full context is not provided on this cover page. The watermark at the bottom is from a third-party website.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of an installation and operation manual for a TICA brand modular air-cooled chiller (heat pump). The page displays the manual title in English and Chinese, the equipment type, and the manufacturer's logo.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"INSTALLATION & OPERATION MANUAL\"},\n    {\"type\": \"text\", \"label\": \"MODULAR AIR-COOLED CHILLER (HEAT PUMP)\"},\n    {\"type\": \"text\", \"label\": \"安装操作手册\"},\n    {\"type\": \"text\", \"label\": \"模块化风冷式冷（热）水机组-D\"},\n    {\"type\": \"logo\", \"label\": \"TICA 天加中央空调\"},\n    {\"type\": \"text\", \"label\": \"制冷百家网: www.zh lengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"manual_identification\", \"equipment_model\"],\n  \"ocr_text_if_useful\": \"INSTALLATION & OPERATION MANUAL\\n安装操作手册\\nMODULAR AIR-COOLED CHILLER (HEAT PUMP)\\n模块化风冷式冷（热）水机组-D\\nTICA 天加中央空调\\n制冷百家网: www.zh lengbj.cn\",\n  \"uncertainty_notes\": \"The specific model number 'D' is visible in the Chinese text but its full context is not provided on this cover page. The watermark at the bottom is from a third-party website.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 336,
+        "prompt_tokens": 1561,
+        "total_tokens": 1897,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1364
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 18,
+      "status": "ok_unparsed_json",
+      "elapsed_seconds": 34.239,
+      "parsed": null,
+      "raw_text": "{\n  \"page_type\": \"wiring_diagram\",\n  \"summary\": \"This page displays the electrical wiring diagram for a TICA TCA20X CH/FH heat pump unit (three-wire simple controller). It includes a main controller board layout, connection tables, switch settings, and a power circuit diagram showing connections for compressors, fans, and heaters.\",\n  \"visual_entities\": [\n    {\"type\": \"component\", \"label\": \"Main Controller Board\"},\n    {\"type\": \"component\", \"label\": \"Compressor 1 (CM)\"},\n    {\"type\": \"component\", \"label\": \"Compressor 2 (CM)\"},\n    {\"type\": \"component\", \"label\": \"Fan 1 (FM)\"},\n    {\"type\": \"component\", \"label\": \"Fan 2 (FM)\"},\n    {\"type\": \"component\", \"label\": \"Electric Heater (CCH)\"},\n    {\"type\": \"component\", \"label\": \"Power Supply (380V/3N~/50Hz)\"},\n    {\"type\": \"component\", \"label\": \"Fuse (FU)\"},\n    {\"type\": \"component\", \"label\": \"Contactor (KM1)\"},\n    {\"type\": \"component\", \"label\": \"Contactor (KM2)\"},\n    {\"type\": \"component\", \"label\": \"Contactor (KM4)\"},\n    {\"type\": \"component\", \"label\": \"Relay (RVR)\"},\n    {\"type\": \"component\", \"label\": \"High Pressure Switch (HP)\"},\n    {\"type\": \"component\", \"label\": \"Low Pressure Switch (LP)\"},\n    {\"type\": \"component\", \"label\": \"Thermostat (DT)\"},\n    {\"type\": \"component\", \"label\": \"Terminal Block (S1, S2, S3)\"},\n    {\"type\": \"table\", \"label\": \"Component Symbol Table\"},\n    {\"type\": \"table\", \"label\": \"DIP Switch Settings Table\"},\n    {\"type\": \"table\", \"label\": \"Low Pressure Switch Settings Table\"},\n    {\"type\": \"table\", \"label\": \"Model Settings Table\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Power Supply\", \"relation\": \"connects to\", \"to\": \"Fuse (FU)\"},\n    {\"from\": \"Fuse (FU)\", \"relation\": \"connects to\", \"to\": \"Contactor (KM1)\"},\n    {\"from\": \"Contactor (KM1)\", \"relation\": \"controls\", \"to\": \"Compressor 1 (CM)\"},\n    {\"from\": \"Contactor (KM2)\", \"relation\": \"controls\", \"to\": \"Compressor 2 (CM)\"},\n    {\"from\": \"Contactor (KM4)\", \"relation\": \"controls\", \"to\": \"Fan 1 (FM)\"},\n    {\"from\": \"Contactor (KM4)\", \"relation\": \"controls\", \"to\": \"Fan 2 (FM)\"},\n    {\"from\": \"Relay (RVR)\", \"relation\": \"controls\", \"to\": \"Electric Heater (CCH)\"},\n    {\"from\": \"High Pressure Switch (HP)\", \"relation\": \"safety interlock for\", \"to\": \"Compressor 1 (CM)\"},\n    {\"from\": \"Low Pressure Switch (LP)\", \"relation\": \"safety interlock for\", \"to\": \"Compressor 1 (CM)\"},\n    {\"from\": \"Thermostat (DT)\", \"relation\": \"controls\", \"to\": \"Electric Heater (CCH)\"},\n    {\"from\": \"Main Controller Board\", \"relation\": \"outputs signals to\", \"to\": \"Contactor (KM1)\"},\n    {\"from\": \"Main Controller Board\", \"relation\": \"outputs signals to\", \"to\": \"Contactor (KM2)\"},\n    {\"from\": \"Main Controller Board\", \"relation\": \"outputs signals to\", \"to\": \"Contactor (KM4)\"},\n    {\"from\": \"Main Controller Board\", \"relation\": \"outputs signals to\", \"to\": \"Relay (RVR)\"},\n    {\"from\": \"Terminal Block (S1, S2, S3)\", \"relation\": \"connects to\", \"to\": \"Main Controller Board\"}\n  ],\n  \"useful_for_knowledge_types\": [\"wiring\", \"component identification\", \"safety interlocks\", \"control logic\", \"troubleshooting\"],\n  \"ocr_text_if_useful\": \"1、TCA20X CH/FH 热泵型主机电气原理图 (三线简易型控制器)\\n符号说明:\\n符号 说明 符号 说明\\nKM1-4 交流接触器 FU 电源保险管\\nRVR 相序保护器 CCH 电辅加热器\\nFR1-2 热继电器 DT 排气温度探头\\nFM 风机电机 LCCH 电辅热开关(常闭)\\nHP 高压开关 CM 压缩机\\nFU 电源保险管\\n低压开关设定:\\n开关用 FR1 FR2\\n开关用 TCA20XCH 21.6A 21.6A\\n结果 16/21 19/24\\n跳线开关设定:\\nJP1 JP2\\n结果 常闭 → 开\\n跳线开关设定:\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF\\nMODEL 1 2 3 4\\nS1 模式设定:\\nMODEL 1 2 3 4\\nS1 CONDITON ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON OFF ON",
+      "usage": {
+        "completion_tokens": 4096,
+        "prompt_tokens": 1693,
+        "total_tokens": 5789,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1496
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 35,
+      "status": "ok",
+      "elapsed_seconds": 9.206,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This is a mostly blank page with contact information for two HVAC companies (TICA Nanjing and TICA Tianjin) printed vertically on the right side, along with a disclaimer about product changes and a version number. There is also a handwritten note '30/5-2-35' and a watermark at the bottom.",
+        "visual_entities": [
+          {
+            "type": "text_block",
+            "label": "Company contact info (Nanjing)"
+          },
+          {
+            "type": "text_block",
+            "label": "Company contact info (Tianjin)"
+          },
+          {
+            "type": "text_block",
+            "label": "Disclaimer and version note"
+          },
+          {
+            "type": "handwritten_note",
+            "label": "30/5-2-35"
+          },
+          {
+            "type": "watermark",
+            "label": "制冷百家网: www.zhilengbj.cn"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "company_contact",
+          "document_version"
+        ],
+        "ocr_text_if_useful": "南京天加空调设备有限公司\nTICA (NANJING) AIR-CONDITIONING CO.,LTD.\n地址：中国江苏南京经济技术开发区恒业路6号\n电话：86-25-85326977 传真：86-25-85323095\nhttp://www.ticachina.com E-mail:tca@ticachina.com\n邮编：210046\n\n天津天加空调设备有限公司\nTICA (TIANJIN) AIR-CONDITIONING CO.,LTD.\n地址：中国天津市北辰区华苑产业区祥苑路12号\n电话：022-83712735 传真：022-83712731\nhttp://www.ticachina.com E-mail:jp@ticachina.com\n邮编：300384\n\n注：由于天加公司产品会不断改良和创新，因此本资料所载产品型号、规格和参数如有变动，恕不另行通知，敬请注意和谅解。 版号：10-05",
+        "uncertainty_notes": "The page is largely blank; the primary content is contact information and a disclaimer. The handwritten note's meaning is unclear.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is a mostly blank page with contact information for two HVAC companies (TICA Nanjing and TICA Tianjin) printed vertically on the right side, along with a disclaimer about product changes and a version number. There is also a handwritten note '30/5-2-35' and a watermark at the bottom.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Company contact info (Nanjing)\"},\n    {\"type\": \"text_block\", \"label\": \"Company contact info (Tianjin)\"},\n    {\"type\": \"text_block\", \"label\": \"Disclaimer and version note\"},\n    {\"type\": \"handwritten_note\", \"label\": \"30/5-2-35\"},\n    {\"type\": \"watermark\", \"label\": \"制冷百家网: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"company_contact\", \"document_version\"],\n  \"ocr_text_if_useful\": \"南京天加空调设备有限公司\\nTICA (NANJING) AIR-CONDITIONING CO.,LTD.\\n地址：中国江苏南京经济技术开发区恒业路6号\\n电话：86-25-85326977 传真：86-25-85323095\\nhttp://www.ticachina.com E-mail:tca@ticachina.com\\n邮编：210046\\n\\n天津天加空调设备有限公司\\nTICA (TIANJIN) AIR-CONDITIONING CO.,LTD.\\n地址：中国天津市北辰区华苑产业区祥苑路12号\\n电话：022-83712735 传真：022-83712731\\nhttp://www.ticachina.com E-mail:jp@ticachina.com\\n邮编：300384\\n\\n注：由于天加公司产品会不断改良和创新，因此本资料所载产品型号、规格和参数如有变动，恕不另行通知，敬请注意和谅解。 版号：10-05\",\n  \"uncertainty_notes\": \"The page is largely blank; the primary content is contact information and a disclaimer. The handwritten note's meaning is unclear.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 519,
+        "prompt_tokens": 1693,
+        "total_tokens": 2212,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1496
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

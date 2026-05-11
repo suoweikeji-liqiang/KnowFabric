@@ -1,0 +1,19 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-09T23:00:58.698309+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_ashrae211/mimo_omni_run/20260509T230045Z_hvac_doclevel_extraction_batch/0001_auto_ashrae211/mimo-v2-omni/review_packs/bootstrapped_review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 0,
+  "summary": {
+    "ready": 0,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": []
+}

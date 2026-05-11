@@ -1,0 +1,7 @@
+{
+  "row_index": 3,
+  "file_name": "【特灵】Aquastream风冷式冷水（热泵）机组技术手册（42页）-制冷百家网.pdf",
+  "status": "failed",
+  "error": "cannot access local variable 'raw' where it is not associated with a value",
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T073530Z_hvac_doclevel_extraction_batch/0003_特灵_aquastream风冷式冷水_热泵_机组技术手册_42页_制冷百家网"
+}

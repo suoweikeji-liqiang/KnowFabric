@@ -1,0 +1,256 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-09T23:25:35.259199+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_09193d9f0adc49fe",
+  "doc_name": "auto_ashrae2019.pdf",
+  "equipment_class": {
+    "equipment_class_id": "cooling_tower",
+    "equipment_class_key": "hvac:cooling_tower",
+    "label": "Cooling Tower",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 3,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_e6c6d9532b0e839c",
+      "domain_id": "hvac",
+      "doc_id": "doc_09193d9f0adc49fe",
+      "doc_name": "auto_ashrae2019.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_5a27048eed534ea2",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:vapor_pressure_differential_and_diffusion",
+      "structured_payload_candidate": {
+        "parameter_name": "Vapor diffusion mechanism",
+        "title": "Vapor Pressure Differential and Diffusion",
+        "summary": "Vapor diffusion occurs from higher to lower vapor pressure and can cause structural damage depending on climate and interior conditions."
+      },
+      "confidence_score": 0.85,
+      "review_status": "candidate",
+      "evidence_text": "Air leakage or gaps speed heat transfer, but may\nbe defeated for thermal loads with positive pressurization. Vapor\ncarried by air cannot be fully miti gated pressurizati on: it slows the\nprocess by slowing air transfer, but vapor flow and equilibration\nbetween interior and exterior spac es continue inde pendently based\non vapor, rather than air, pressu re. The differential between interior\nand exterior vapor pressures also  drives diffusion (movement of\nwater vapor through permeable ma terials) from areas of higher\nvapor pressure to lower. Diffus ion manifests diffe rently depending\non exterior climates and interior environments. When exterior mois -\nture conditions are higher than inte rior con ditions, wh ether typically\nor seasonally, vapor may move inward, especially during dehumid-\nification, adding to system load and causing efflorescen ce or other\ndamage on interior surfaces.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_5a27048eed534ea2"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence directly explains vapor diffusion mechanism from higher to lower vapor pressure and its effects.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:cooling_tower:application_guidance:vapor_pressure_differential_and_diffusion for Cooling Tower",
+        "summary": "Draft review summary for application_guidance hvac:cooling_tower:application_guidance:vapor_pressure_differential_and_diffusion derived from chunk chunk_5a27048eed534ea2 on page 3 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:application_guidance:vapor_pressure_differential_and_diffusion",
+        "structured_payload": {
+          "parameter_name": "Vapor diffusion mechanism",
+          "title": "Vapor Pressure Differential and Diffusion",
+          "summary": "Vapor diffusion occurs from higher to lower vapor pressure and can cause structural damage depending on climate and interior conditions."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Air leakage or gaps speed heat transfer, but may\nbe defeated for thermal loads with positive pressurization. Vapor\ncarried by air cannot be fully miti gated pressurizati on: it slows the\nprocess by slowing air transfer, but vapor flow and equilibration\nbetween interior and exterior spac es continue inde pendently based\non vapor, rather than air, pressu re. The differential between interior\nand exterior vapor pressures also  drives diffusion (movement of\nwater vapor through permeable ma terials) from areas of higher\nvapor pressure to lower. Diffus ion manifests diffe rently depending\non exterior climates and interior environments. When exterior mois -\nture conditions are higher than inte rior con ditions, wh ether typically\nor seasonally, vapor may move inward, especially during dehumid-\nification, adding to system load and causing efflorescen ce or other\ndamage on interior surfaces.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f88d5adc9dac6bc4",
+      "domain_id": "hvac",
+      "doc_id": "doc_09193d9f0adc49fe",
+      "doc_name": "auto_ashrae2019.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_76ece81eaf744fc6",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:air_curtain_effectiveness_range",
+      "structured_payload_candidate": {
+        "parameter_name": "Air curtain effectiveness",
+        "title": "Air Curtain Effectiveness Range",
+        "summary": "Research shows air curtains have a range of effectiveness from 60 to 90%, depending on type and application."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "It is represented as a percent-\nage, and the amount of energy sa ved is reduced by the energy con-\nsumed by the unit. Research (e.g ., Pappas and Tassou [2003]) shows\nthat air curtains have a range of effectiveness from 60 to 90%,\ndepending on the type and application.\nTo fully realize benefi ts of using an air curtain unit, make sure\nthat equipment is prope rly sized, installed, adjusted, and main-\ntained.\nApplication Considerations\nAir curtain unit selection depe nds on the opening’s width and\nheight. To maximize effectiveness, the air curtain unit must at leastcover or slightly overlap the entire opening, and have a minimum\nvelocity projection of 2 m/s at the target surface (Wang and Zhong\n2014). The unit is usually mounted above or beside a door or windowopening. When mounted above the opening, the horizontal air cur-\ntain unit discharges its air verti cally down across the opening.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_76ece81eaf744fc6"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence explicitly states air curtains have effectiveness from 60 to 90%, supported by research.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:cooling_tower:application_guidance:air_curtain_effectiveness_range for Cooling Tower",
+        "summary": "Draft review summary for application_guidance hvac:cooling_tower:application_guidance:air_curtain_effectiveness_range derived from chunk chunk_76ece81eaf744fc6 on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:application_guidance:air_curtain_effectiveness_range",
+        "structured_payload": {
+          "parameter_name": "Air curtain effectiveness",
+          "title": "Air Curtain Effectiveness Range",
+          "summary": "Research shows air curtains have a range of effectiveness from 60 to 90%, depending on type and application."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "It is represented as a percent-\nage, and the amount of energy sa ved is reduced by the energy con-\nsumed by the unit. Research (e.g ., Pappas and Tassou [2003]) shows\nthat air curtains have a range of effectiveness from 60 to 90%,\ndepending on the type and application.\nTo fully realize benefi ts of using an air curtain unit, make sure\nthat equipment is prope rly sized, installed, adjusted, and main-\ntained.\nApplication Considerations\nAir curtain unit selection depe nds on the opening’s width and\nheight. To maximize effectiveness, the air curtain unit must at leastcover or slightly overlap the entire opening, and have a minimum\nvelocity projection of 2 m/s at the target surface (Wang and Zhong\n2014). The unit is usually mounted above or beside a door or windowopening. When mounted above the opening, the horizontal air cur-\ntain unit discharges its air verti cally down across the opening.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_bdea4ab804182880",
+      "domain_id": "hvac",
+      "doc_id": "doc_09193d9f0adc49fe",
+      "doc_name": "auto_ashrae2019.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_76ece81eaf744fc6",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:air_curtain_minimum_velocity",
+      "structured_payload_candidate": {
+        "parameter_name": "Air curtain velocity requirement",
+        "title": "Air Curtain Minimum Velocity",
+        "summary": "To maximize effectiveness, the air curtain unit must cover the opening and have a minimum velocity projection of 2 m/s at the target surface."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "It is represented as a percent-\nage, and the amount of energy sa ved is reduced by the energy con-\nsumed by the unit. Research (e.g ., Pappas and Tassou [2003]) shows\nthat air curtains have a range of effectiveness from 60 to 90%,\ndepending on the type and application.\nTo fully realize benefi ts of using an air curtain unit, make sure\nthat equipment is prope rly sized, installed, adjusted, and main-\ntained.\nApplication Considerations\nAir curtain unit selection depe nds on the opening’s width and\nheight. To maximize effectiveness, the air curtain unit must at leastcover or slightly overlap the entire opening, and have a minimum\nvelocity projection of 2 m/s at the target surface (Wang and Zhong\n2014). The unit is usually mounted above or beside a door or windowopening. When mounted above the opening, the horizontal air cur-\ntain unit discharges its air verti cally down across the opening.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_76ece81eaf744fc6"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence specifies minimum velocity projection of 2 m/s for air curtain effectiveness.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:cooling_tower:application_guidance:air_curtain_minimum_velocity for Cooling Tower",
+        "summary": "Draft review summary for application_guidance hvac:cooling_tower:application_guidance:air_curtain_minimum_velocity derived from chunk chunk_76ece81eaf744fc6 on page 6 for Cooling Tower.",
+        "canonical_key": "hvac:cooling_tower:application_guidance:air_curtain_minimum_velocity",
+        "structured_payload": {
+          "parameter_name": "Air curtain velocity requirement",
+          "title": "Air Curtain Minimum Velocity",
+          "summary": "To maximize effectiveness, the air curtain unit must cover the opening and have a minimum velocity projection of 2 m/s at the target surface."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "It is represented as a percent-\nage, and the amount of energy sa ved is reduced by the energy con-\nsumed by the unit. Research (e.g ., Pappas and Tassou [2003]) shows\nthat air curtains have a range of effectiveness from 60 to 90%,\ndepending on the type and application.\nTo fully realize benefi ts of using an air curtain unit, make sure\nthat equipment is prope rly sized, installed, adjusted, and main-\ntained.\nApplication Considerations\nAir curtain unit selection depe nds on the opening’s width and\nheight. To maximize effectiveness, the air curtain unit must at leastcover or slightly overlap the entire opening, and have a minimum\nvelocity projection of 2 m/s at the target surface (Wang and Zhong\n2014). The unit is usually mounted above or beside a door or windowopening. When mounted above the opening, the horizontal air cur-\ntain unit discharges its air verti cally down across the opening.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-09T23:25:35.261274+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 3
+  }
+}

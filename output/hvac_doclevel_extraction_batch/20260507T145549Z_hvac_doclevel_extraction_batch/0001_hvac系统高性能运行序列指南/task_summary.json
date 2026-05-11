@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "HVAC系统高性能运行序列指南.pdf",
+  "source_path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/HVAC系统高性能运行序列指南.pdf",
+  "doc_id": "doc_4bbd3703c4f84be4",
+  "chunks": 923,
+  "manual_tokens_estimated": 193387,
+  "equipment_class_id": "condenser_water_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_class_key": "hvac:centrifugal_chiller",
+      "confidence": 0.888,
+      "matched_aliases": [
+        "Centrifugal Chiller",
+        "centrifugal chiller"
+      ]
+    },
+    {
+      "equipment_class_id": "chilled_water_pump",
+      "equipment_class_key": "hvac:chilled_water_pump",
+      "confidence": 0.86,
+      "matched_aliases": [
+        "Chilled Water Pump",
+        "chilled water pump",
+        "chw pump"
+      ]
+    },
+    {
+      "equipment_class_id": "ahu",
+      "equipment_class_key": "hvac:ahu",
+      "confidence": 0.772,
+      "matched_aliases": [
+        "AHU",
+        "ahu",
+        "air handling unit"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 292,
+      "chunks_before": 923,
+      "pages_after": 292,
+      "chunks_after": 923,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "failed",
+      "error": "7 validation errors for HvacDocExtractionResponse\ncandidates.4.structured_payload\n  Input should be a valid dictionary [type=dict_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/dict_type\ncandidates.5.structured_payload\n  Input should be a valid dictionary [type=dict_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/dict_type\ncandidates.6.structured_payload\n  Input should be a valid dictionary [type=dict_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/dict_type\ncandidates.7.structured_payload\n  Input should be a valid dictionary [type=dict_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/dict_type\ncandidates.8.structured_payload\n  Input should be a valid dictionary [type=dict_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/dict_type\ncandidates.9.structured_payload\n  Input should be a valid dictionary [type=dict_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/dict_type\ncandidates.10.structured_payload\n  Input should be a valid dictionary [type=dict_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/dict_type"
+    }
+  ],
+  "task_dir": "output/hvac_doclevel_extraction_batch/20260507T145549Z_hvac_doclevel_extraction_batch/0001_hvac系统高性能运行序列指南"
+}

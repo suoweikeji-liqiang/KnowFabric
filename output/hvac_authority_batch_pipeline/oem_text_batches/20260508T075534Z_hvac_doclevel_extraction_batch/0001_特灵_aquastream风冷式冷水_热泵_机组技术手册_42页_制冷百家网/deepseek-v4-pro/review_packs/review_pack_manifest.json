@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-08T08:04:03.795588+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_0bee211ad4ce4c84__chilled_water_pump.json",
+      "doc_id": "doc_0bee211ad4ce4c84",
+      "doc_name": "【特灵】Aquastream风冷式冷水（热泵）机组技术手册（42页）-制冷百家网.pdf",
+      "equipment_class_id": "chilled_water_pump",
+      "equipment_class_key": "hvac:chilled_water_pump",
+      "candidate_count": 18
+    }
+  ]
+}

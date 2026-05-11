@@ -1,0 +1,957 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-10T09:21:23.755292+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_77c445eca71546f6",
+  "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chiller",
+    "equipment_class_key": "hvac:chiller",
+    "label": "Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "operational_sequence",
+      "fault_diagnostic_rule"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 13,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_505c865df8fdebc3",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_00367f7f598d42ab",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:cooling_tower_piping_water_velocity",
+      "structured_payload_candidate": {
+        "parameter_name": "Cooling tower piping water velocity",
+        "title": "Cooling tower piping water velocity",
+        "summary": "Piping is sized to yield water velocities between 5 and 12 fps [1.5 and 3.7 m/s]."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_00367f7f598d42ab"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a specific design parameter (water velocity range) for cooling tower piping, supported by the evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:cooling_tower_piping_water_velocity for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:cooling_tower_piping_water_velocity derived from chunk chunk_00367f7f598d42ab on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:cooling_tower_piping_water_velocity",
+        "structured_payload": {
+          "parameter_name": "Cooling tower piping water velocity",
+          "title": "Cooling tower piping water velocity",
+          "summary": "Piping is sized to yield water velocities between 5 and 12 fps [1.5 and 3.7 m/s]."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_47e656a8248b50e5",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_89973a93ee264934",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:evaporative_condenser_water_flow_velocity",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporative condenser water flow velocity",
+        "title": "Evaporative condenser water flow velocity",
+        "summary": "Piping should be sized with flow velocities of 5 to 10 fps [1.5 to 3.0 m/s]."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "In such applications, they should be located as close as possible\nto the refrigeration machinery to keep the refrigerant lines short. In\nthe winter, the water can often be shut off with the dry coil provid-\ning adequate heat rejection. Evaporative condensers are also used to\ncool recirculating water in closed-loop water-source heat pump sys-\ntems (see Chapter 7).\nFigure 5-8 shows two evaporative condenser types using city,\nwell, or river makeup water. Piping should be sized in accordance\nwith the principles outlined in Section 5.4.5 with flow velocities of\n5 to 10 fps [1.5 to 3.0 m/s]. Where city water is used, a pump is\nusually not required since the water arrives under pressure. For\nwell or river water, pumps may be necessary, in which case the.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_89973a93ee264934"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a specific design parameter (flow velocity) for evaporative condenser piping, directly from the evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:evaporative_condenser_water_flow_velocity for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:evaporative_condenser_water_flow_velocity derived from chunk chunk_89973a93ee264934 on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:evaporative_condenser_water_flow_velocity",
+        "structured_payload": {
+          "parameter_name": "Evaporative condenser water flow velocity",
+          "title": "Evaporative condenser water flow velocity",
+          "summary": "Piping should be sized with flow velocities of 5 to 10 fps [1.5 to 3.0 m/s]."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "In such applications, they should be located as close as possible\nto the refrigeration machinery to keep the refrigerant lines short. In\nthe winter, the water can often be shut off with the dry coil provid-\ning adequate heat rejection. Evaporative condensers are also used to\ncool recirculating water in closed-loop water-source heat pump sys-\ntems (see Chapter 7).\nFigure 5-8 shows two evaporative condenser types using city,\nwell, or river makeup water. Piping should be sized in accordance\nwith the principles outlined in Section 5.4.5 with flow velocities of\n5 to 10 fps [1.5 to 3.0 m/s]. Where city water is used, a pump is\nusually not required since the water arrives under pressure. For\nwell or river water, pumps may be necessary, in which case the.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_32d3c95cd720234d",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_00367f7f598d42ab",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:cooling_tower_sump_and_pump_piping_design",
+      "structured_payload_candidate": {
+        "title": "Cooling tower sump and pump piping design",
+        "summary": "Place sump level above pump casing top for positive prime; pitch piping up to tower or pump suction to eliminate air pockets."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_00367f7f598d42ab"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides practical guidance on sump and pump piping design to ensure proper priming and avoid air pockets, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:cooling_tower_sump_and_pump_piping_design for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:cooling_tower_sump_and_pump_piping_design derived from chunk chunk_00367f7f598d42ab on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:cooling_tower_sump_and_pump_piping_design",
+        "structured_payload": {
+          "title": "Cooling tower sump and pump piping design",
+          "summary": "Place sump level above pump casing top for positive prime; pitch piping up to tower or pump suction to eliminate air pockets."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f9c9bffe69cc33b2",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_00367f7f598d42ab",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:cooling_tower_equalizing_lines",
+      "structured_payload_candidate": {
+        "title": "Cooling tower equalizing lines",
+        "summary": "Install equalizing lines of proper size between towers to prevent one tower from filling and the other overflowing."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_00367f7f598d42ab"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides guidance on installing equalizing lines between cooling towers for balanced flow, directly from the evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:cooling_tower_equalizing_lines for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:cooling_tower_equalizing_lines derived from chunk chunk_00367f7f598d42ab on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:cooling_tower_equalizing_lines",
+        "structured_payload": {
+          "title": "Cooling tower equalizing lines",
+          "summary": "Install equalizing lines of proper size between towers to prevent one tower from filling and the other overflowing."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c6706279015ea3aa",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_89973a93ee264934",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:evaporative_condenser_location",
+      "structured_payload_candidate": {
+        "title": "Evaporative condenser location",
+        "summary": "Locate evaporative condensers as close as possible to refrigeration machinery to keep refrigerant lines short."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "In such applications, they should be located as close as possible\nto the refrigeration machinery to keep the refrigerant lines short. In\nthe winter, the water can often be shut off with the dry coil provid-\ning adequate heat rejection. Evaporative condensers are also used to\ncool recirculating water in closed-loop water-source heat pump sys-\ntems (see Chapter 7).\nFigure 5-8 shows two evaporative condenser types using city,\nwell, or river makeup water. Piping should be sized in accordance\nwith the principles outlined in Section 5.4.5 with flow velocities of\n5 to 10 fps [1.5 to 3.0 m/s]. Where city water is used, a pump is\nusually not required since the water arrives under pressure. For\nwell or river water, pumps may be necessary, in which case the.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_89973a93ee264934"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Advises locating evaporative condensers close to refrigeration machinery to minimize refrigerant line length, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:evaporative_condenser_location for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:evaporative_condenser_location derived from chunk chunk_89973a93ee264934 on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:evaporative_condenser_location",
+        "structured_payload": {
+          "title": "Evaporative condenser location",
+          "summary": "Locate evaporative condensers as close as possible to refrigeration machinery to keep refrigerant lines short."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "In such applications, they should be located as close as possible\nto the refrigeration machinery to keep the refrigerant lines short. In\nthe winter, the water can often be shut off with the dry coil provid-\ning adequate heat rejection. Evaporative condensers are also used to\ncool recirculating water in closed-loop water-source heat pump sys-\ntems (see Chapter 7).\nFigure 5-8 shows two evaporative condenser types using city,\nwell, or river makeup water. Piping should be sized in accordance\nwith the principles outlined in Section 5.4.5 with flow velocities of\n5 to 10 fps [1.5 to 3.0 m/s]. Where city water is used, a pump is\nusually not required since the water arrives under pressure. For\nwell or river water, pumps may be necessary, in which case the.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d74e733bbf75fa29",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_00367f7f598d42ab",
+      "knowledge_object_type": "maintenance_procedure",
+      "canonical_key_candidate": "hvac:chiller:maintenance_procedure:suction_strainer_gauge_indication",
+      "structured_payload_candidate": {
+        "title": "Suction strainer gauge indication",
+        "summary": "Suction strainers should be equipped with inlet and outlet gauges that indicate when cleaning is required."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_00367f7f598d42ab"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies that suction strainers should have inlet/outlet gauges to indicate cleaning need, useful for maintenance, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Maintenance Procedure hvac:chiller:maintenance_procedure:suction_strainer_gauge_indication for Chiller",
+        "summary": "Draft review summary for maintenance procedure hvac:chiller:maintenance_procedure:suction_strainer_gauge_indication derived from chunk chunk_00367f7f598d42ab on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:maintenance_procedure:suction_strainer_gauge_indication",
+        "structured_payload": {
+          "title": "Suction strainer gauge indication",
+          "summary": "Suction strainers should be equipped with inlet and outlet gauges that indicate when cleaning is required."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_e9ba8e5fac18839a",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_53198b527e14423b",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:cooling_tower_winterization",
+      "structured_payload_candidate": {
+        "title": "Cooling tower winterization",
+        "summary": "Winterize tower piping if necessary or provide for drain-down when pumps shut off; isolation valves must be in heated space."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Winterize the tower\npiping if necessary or provide for drain-down when pumps shut off.\nIn the latter case, the isolation va lves must be located in a heated\nspace. Provide valving or sump pump isolation so that any single\ncell can be serviced while the others are active.\n5.4.6 Evaporative Condensers\nEvaporative condensers are used to  reject heat to the outdoor\nair by means of the evaporation of water. Water is sprayed on the\ncondenser coils, and the resultant heat of vaporization, combined\nwith any sensible heat effect, co ols the liquid inside the coils. The\nresidual spray water is usually recirculated. An evaporative con-\ndenser uses much less makeup water than a cooling tower in a con-\nventional water-cooled condenser arrangement (approximately 1.6\nto 2.0 gph/ton [0.5 to 0.6 mL/s pe r kW] by evaporation plus 0.5 to\n0.6 gph/ton [0.15 to 0.18 mL/s pe r kW] for bleed water). Evapora-\ntive condensers are used primarily  as refrigeration system condens-\ners.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_53198b527e14423b"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides guidance on winterizing tower piping or draining, and valve location, backed by the evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:cooling_tower_winterization for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:cooling_tower_winterization derived from chunk chunk_53198b527e14423b on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:cooling_tower_winterization",
+        "structured_payload": {
+          "title": "Cooling tower winterization",
+          "summary": "Winterize tower piping if necessary or provide for drain-down when pumps shut off; isolation valves must be in heated space."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Winterize the tower\npiping if necessary or provide for drain-down when pumps shut off.\nIn the latter case, the isolation va lves must be located in a heated\nspace. Provide valving or sump pump isolation so that any single\ncell can be serviced while the others are active.\n5.4.6 Evaporative Condensers\nEvaporative condensers are used to  reject heat to the outdoor\nair by means of the evaporation of water. Water is sprayed on the\ncondenser coils, and the resultant heat of vaporization, combined\nwith any sensible heat effect, co ols the liquid inside the coils. The\nresidual spray water is usually recirculated. An evaporative con-\ndenser uses much less makeup water than a cooling tower in a con-\nventional water-cooled condenser arrangement (approximately 1.6\nto 2.0 gph/ton [0.5 to 0.6 mL/s pe r kW] by evaporation plus 0.5 to\n0.6 gph/ton [0.15 to 0.18 mL/s pe r kW] for bleed water). Evapora-\ntive condensers are used primarily  as refrigeration system condens-\ners.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_3c82743fd6bae08e",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_53198b527e14423b",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:cooling_tower_cell_isolation_valving",
+      "structured_payload_candidate": {
+        "title": "Cooling tower cell isolation valving",
+        "summary": "Provide valving or sump pump isolation so that any single cell can be serviced while others are active."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Winterize the tower\npiping if necessary or provide for drain-down when pumps shut off.\nIn the latter case, the isolation va lves must be located in a heated\nspace. Provide valving or sump pump isolation so that any single\ncell can be serviced while the others are active.\n5.4.6 Evaporative Condensers\nEvaporative condensers are used to  reject heat to the outdoor\nair by means of the evaporation of water. Water is sprayed on the\ncondenser coils, and the resultant heat of vaporization, combined\nwith any sensible heat effect, co ols the liquid inside the coils. The\nresidual spray water is usually recirculated. An evaporative con-\ndenser uses much less makeup water than a cooling tower in a con-\nventional water-cooled condenser arrangement (approximately 1.6\nto 2.0 gph/ton [0.5 to 0.6 mL/s pe r kW] by evaporation plus 0.5 to\n0.6 gph/ton [0.15 to 0.18 mL/s pe r kW] for bleed water). Evapora-\ntive condensers are used primarily  as refrigeration system condens-\ners.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_53198b527e14423b"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Advises providing valving for individual cell isolation in cooling towers for serviceability, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:cooling_tower_cell_isolation_valving for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:cooling_tower_cell_isolation_valving derived from chunk chunk_53198b527e14423b on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:cooling_tower_cell_isolation_valving",
+        "structured_payload": {
+          "title": "Cooling tower cell isolation valving",
+          "summary": "Provide valving or sump pump isolation so that any single cell can be serviced while others are active."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Winterize the tower\npiping if necessary or provide for drain-down when pumps shut off.\nIn the latter case, the isolation va lves must be located in a heated\nspace. Provide valving or sump pump isolation so that any single\ncell can be serviced while the others are active.\n5.4.6 Evaporative Condensers\nEvaporative condensers are used to  reject heat to the outdoor\nair by means of the evaporation of water. Water is sprayed on the\ncondenser coils, and the resultant heat of vaporization, combined\nwith any sensible heat effect, co ols the liquid inside the coils. The\nresidual spray water is usually recirculated. An evaporative con-\ndenser uses much less makeup water than a cooling tower in a con-\nventional water-cooled condenser arrangement (approximately 1.6\nto 2.0 gph/ton [0.5 to 0.6 mL/s pe r kW] by evaporation plus 0.5 to\n0.6 gph/ton [0.15 to 0.18 mL/s pe r kW] for bleed water). Evapora-\ntive condensers are used primarily  as refrigeration system condens-\ners.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fa0c7b54785d851d",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_5eaad2249f084d26",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:noise_control_initial_step",
+      "structured_payload_candidate": {
+        "title": "Noise control initial step",
+        "summary": "Establish noise criteria for all spaces and communicate to client early in design process."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Even after a system has been selected, component\nselection will significantly affect  system acoustical performance.\nNoise can be transmitted to occupied spaces from central station\nequipment along several airborne paths, through air or water flows,\nalong the walls of ducts or pipes,  or through the building structure.\nIf central station pumps or fans are used, each of these paths must\nbe analyzed and the transmission of sound and vibration reduced to\nan acceptable level. Supply air outlets (and other terminal devices)\nmust be selected to provide ap propriate acoustical performance.\nAn initial step in noise control is to establish noise criteria for\nall spaces. These criteria should be communicated to the client\nearly in the design process. All noise-generating sources within the\nair-conditioning system must be identified.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_5eaad2249f084d26"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a design step to establish noise criteria early, relevant for system design, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:noise_control_initial_step for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:noise_control_initial_step derived from chunk chunk_5eaad2249f084d26 on page 2 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:noise_control_initial_step",
+        "structured_payload": {
+          "title": "Noise control initial step",
+          "summary": "Establish noise criteria for all spaces and communicate to client early in design process."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Even after a system has been selected, component\nselection will significantly affect  system acoustical performance.\nNoise can be transmitted to occupied spaces from central station\nequipment along several airborne paths, through air or water flows,\nalong the walls of ducts or pipes,  or through the building structure.\nIf central station pumps or fans are used, each of these paths must\nbe analyzed and the transmission of sound and vibration reduced to\nan acceptable level. Supply air outlets (and other terminal devices)\nmust be selected to provide ap propriate acoustical performance.\nAn initial step in noise control is to establish noise criteria for\nall spaces. These criteria should be communicated to the client\nearly in the design process. All noise-generating sources within the\nair-conditioning system must be identified.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_94d9dd6b1d600039",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_faf6e63110fe4f10",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:access_for_routine_maintenance",
+      "structured_payload_candidate": {
+        "title": "Access for routine maintenance",
+        "summary": "Ensure ready access for routine maintenance tasks such as changing air filters."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "30⏐ THE DESIGN  PROCESS\n Ensure that there is ready acce ss for routine maintenance tasks,\nsuch as changing air filters.\n Specify accessible service shutoff drain and vent valves for all\nwater coils and risers.\n Incorporate appropriate chemical treatment equipment for\nopen- and closed-loop water systems.\n2.5.3 Noise and Vibration Control\nNoise and vibration from HV AC&R equipment can be reduced\nby proper selection of equipment, vibration control, and the interpo-\nsition of sound attenuators and ba rriers. Residual sound may still be\nobjectionable, however, when e quipment is located near occupied\nareas. HV AC&R and architectural de sign decisions must go hand-in-\nhand since acoustical control may involve equipment location, floor\nand wall assemblies, and room function.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_faf6e63110fe4f10"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Advises ensuring access for maintenance like filter changes, a practical design consideration supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:access_for_routine_maintenance for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:access_for_routine_maintenance derived from chunk chunk_faf6e63110fe4f10 on page 2 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:access_for_routine_maintenance",
+        "structured_payload": {
+          "title": "Access for routine maintenance",
+          "summary": "Ensure ready access for routine maintenance tasks such as changing air filters."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30⏐ THE DESIGN  PROCESS\n Ensure that there is ready acce ss for routine maintenance tasks,\nsuch as changing air filters.\n Specify accessible service shutoff drain and vent valves for all\nwater coils and risers.\n Incorporate appropriate chemical treatment equipment for\nopen- and closed-loop water systems.\n2.5.3 Noise and Vibration Control\nNoise and vibration from HV AC&R equipment can be reduced\nby proper selection of equipment, vibration control, and the interpo-\nsition of sound attenuators and ba rriers. Residual sound may still be\nobjectionable, however, when e quipment is located near occupied\nareas. HV AC&R and architectural de sign decisions must go hand-in-\nhand since acoustical control may involve equipment location, floor\nand wall assemblies, and room function.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_df26438ee3414857",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_faf6e63110fe4f10",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:service_shutoff_drain_and_vent_valves",
+      "structured_payload_candidate": {
+        "title": "Service shutoff drain and vent valves",
+        "summary": "Specify accessible service shutoff drain and vent valves for all water coils and risers."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "30⏐ THE DESIGN  PROCESS\n Ensure that there is ready acce ss for routine maintenance tasks,\nsuch as changing air filters.\n Specify accessible service shutoff drain and vent valves for all\nwater coils and risers.\n Incorporate appropriate chemical treatment equipment for\nopen- and closed-loop water systems.\n2.5.3 Noise and Vibration Control\nNoise and vibration from HV AC&R equipment can be reduced\nby proper selection of equipment, vibration control, and the interpo-\nsition of sound attenuators and ba rriers. Residual sound may still be\nobjectionable, however, when e quipment is located near occupied\nareas. HV AC&R and architectural de sign decisions must go hand-in-\nhand since acoustical control may involve equipment location, floor\nand wall assemblies, and room function.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_faf6e63110fe4f10"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies accessible service valves for water coils/risers, a design detail supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:service_shutoff_drain_and_vent_valves for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:service_shutoff_drain_and_vent_valves derived from chunk chunk_faf6e63110fe4f10 on page 2 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:service_shutoff_drain_and_vent_valves",
+        "structured_payload": {
+          "title": "Service shutoff drain and vent valves",
+          "summary": "Specify accessible service shutoff drain and vent valves for all water coils and risers."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30⏐ THE DESIGN  PROCESS\n Ensure that there is ready acce ss for routine maintenance tasks,\nsuch as changing air filters.\n Specify accessible service shutoff drain and vent valves for all\nwater coils and risers.\n Incorporate appropriate chemical treatment equipment for\nopen- and closed-loop water systems.\n2.5.3 Noise and Vibration Control\nNoise and vibration from HV AC&R equipment can be reduced\nby proper selection of equipment, vibration control, and the interpo-\nsition of sound attenuators and ba rriers. Residual sound may still be\nobjectionable, however, when e quipment is located near occupied\nareas. HV AC&R and architectural de sign decisions must go hand-in-\nhand since acoustical control may involve equipment location, floor\nand wall assemblies, and room function.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f6141c7b50c13688",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_faf6e63110fe4f10",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:chemical_treatment_for_water_systems",
+      "structured_payload_candidate": {
+        "title": "Chemical treatment for water systems",
+        "summary": "Incorporate appropriate chemical treatment equipment for open- and closed-loop water systems."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "30⏐ THE DESIGN  PROCESS\n Ensure that there is ready acce ss for routine maintenance tasks,\nsuch as changing air filters.\n Specify accessible service shutoff drain and vent valves for all\nwater coils and risers.\n Incorporate appropriate chemical treatment equipment for\nopen- and closed-loop water systems.\n2.5.3 Noise and Vibration Control\nNoise and vibration from HV AC&R equipment can be reduced\nby proper selection of equipment, vibration control, and the interpo-\nsition of sound attenuators and ba rriers. Residual sound may still be\nobjectionable, however, when e quipment is located near occupied\nareas. HV AC&R and architectural de sign decisions must go hand-in-\nhand since acoustical control may involve equipment location, floor\nand wall assemblies, and room function.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_faf6e63110fe4f10"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Recommends chemical treatment for water systems, a standard practice, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:chemical_treatment_for_water_systems for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:chemical_treatment_for_water_systems derived from chunk chunk_faf6e63110fe4f10 on page 2 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:chemical_treatment_for_water_systems",
+        "structured_payload": {
+          "title": "Chemical treatment for water systems",
+          "summary": "Incorporate appropriate chemical treatment equipment for open- and closed-loop water systems."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30⏐ THE DESIGN  PROCESS\n Ensure that there is ready acce ss for routine maintenance tasks,\nsuch as changing air filters.\n Specify accessible service shutoff drain and vent valves for all\nwater coils and risers.\n Incorporate appropriate chemical treatment equipment for\nopen- and closed-loop water systems.\n2.5.3 Noise and Vibration Control\nNoise and vibration from HV AC&R equipment can be reduced\nby proper selection of equipment, vibration control, and the interpo-\nsition of sound attenuators and ba rriers. Residual sound may still be\nobjectionable, however, when e quipment is located near occupied\nareas. HV AC&R and architectural de sign decisions must go hand-in-\nhand since acoustical control may involve equipment location, floor\nand wall assemblies, and room function.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_781b03d6ecf06f09",
+      "domain_id": "hvac",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_00367f7f598d42ab",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:npsh_for_condenser_water_pump",
+      "structured_payload_candidate": {
+        "title": "NPSH for condenser-water pump",
+        "summary": "Ascertain sufficient NPSH for the condenser-water pump is provided."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_00367f7f598d42ab"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Advises checking NPSH for condenser-water pump, a critical design consideration, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Application Guidance hvac:chiller:application_guidance:npsh_for_condenser_water_pump for Chiller",
+        "summary": "Draft review summary for application_guidance hvac:chiller:application_guidance:npsh_for_condenser_water_pump derived from chunk chunk_00367f7f598d42ab on page 3 for Chiller.",
+        "canonical_key": "hvac:chiller:application_guidance:npsh_for_condenser_water_pump",
+        "structured_payload": {
+          "title": "NPSH for condenser-water pump",
+          "summary": "Ascertain sufficient NPSH for the condenser-water pump is provided."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "98⏐ COMPONENTS\nDesign of piping from the tower sump to the pump should be\nundertaken with caution. Place the sump level above the top of the\npump casing to provide positive pr ime. Pitch all piping up, either to\nthe tower or to the pump suction, to eliminate air pockets. Suction\nstrainers should be equipped with inlet and outlet gauges that indi-\ncate when cleaning is required. Norm ally, piping is sized to yield\nwater velocities between 5 and 12 fps [1.5 and 3.7 m/s]. Use fric-\ntion factors for aged or old pipes.\nIn cooling tower installations, ascertain that sufficient NPSH\n(net positive suction head—see Section 5.5.2) for the condenser-\nwater pump is provided, and design  the connections so that the flow\nthrough each cooling tower has th e same pressure drop. Install\nequalizing lines of proper size between towers; otherwise, one\ntower will fill and the other one will overflow.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-10T09:21:23.759640+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 13
+  }
+}

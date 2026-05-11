@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "row_index": 3,
+  "file_name": "【美的】商用空气能热泵热水机技术手册（60页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】商用空气能热泵热水机技术手册（60页）-制冷百家网.pdf",
+  "doc_id": "doc_d5c1e2dc2df1420b",
+  "chunks": 63,
+  "manual_tokens_estimated": 16937,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 60,
+      "chunks_after": 63,
+      "parse_result": {
+        "job_id": "job_8a8e3c97fa0e4bf9",
+        "doc_id": "doc_d5c1e2dc2df1420b",
+        "pages_created": 60,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_17910edd80a340bd",
+        "doc_id": "doc_d5c1e2dc2df1420b",
+        "chunks_created": 63,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 18,
+      "judge_rejected": 22,
+      "judge_acceptance_rate": 45.0,
+      "judge_rejection_breakdown": {
+        "other": 22
+      },
+      "review_candidates": 18,
+      "by_type": {
+        "parameter_spec": 18
+      },
+      "usage": {
+        "prompt_tokens": 28129,
+        "completion_tokens": 6053,
+        "total_tokens": 34182
+      },
+      "judge_usage": {
+        "prompt_tokens": 1279,
+        "completion_tokens": 1166,
+        "total_tokens": 2445
+      },
+      "extract_cost_rmb": 0.120705,
+      "judge_cost_rmb": 0.010833,
+      "cost_rmb": 0.131538,
+      "elapsed_seconds": 178.034,
+      "judge_elapsed_seconds": 222.965,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T124021Z_hvac_doclevel_extraction_batch/0003_美的_商用空气能热泵热水机技术手册_60页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T124021Z_hvac_doclevel_extraction_batch/0003_美的_商用空气能热泵热水机技术手册_60页_制冷百家网"
+}

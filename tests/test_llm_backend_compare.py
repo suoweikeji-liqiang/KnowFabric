@@ -79,6 +79,20 @@ def test_backend_request_options_are_applied_to_chat_payload() -> None:
     assert payload["response_format"] == {"type": "json_object"}
 
 
+def test_deepseek_v4_json_payload_disables_thinking_by_default() -> None:
+    backend = backend_from_dict(
+        {
+            "name": "deepseek-pro",
+            "api_base_url": "https://api.deepseek.com",
+            "model": "deepseek-v4-pro",
+        }
+    )
+
+    payload = _chat_completion_payload([{"role": "user", "content": "extract json"}], backend)
+
+    assert payload["thinking"] == {"type": "disabled"}
+
+
 def test_compare_llm_compile_backends_writes_rule_and_backend_reports() -> None:
     backends = [
         backend_from_dict(

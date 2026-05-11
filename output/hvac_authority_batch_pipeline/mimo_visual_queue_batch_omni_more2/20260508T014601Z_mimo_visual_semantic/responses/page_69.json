@@ -1,0 +1,68 @@
+{
+  "page": 69,
+  "response": {
+    "id": "614e334a15944190bc52b96b2322ea6b",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page is a contact information directory for YORK (a Johnson Controls company) service stations across China, listing addresses, postal codes, and phone numbers for various cities. It includes a header with the YORK logo, a form number, and a disclaimer about design changes and translation accuracy.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"header disclaimer\"},\n    {\"type\": \"text_block\", \"label\": \"form number\"},\n    {\"type\": \"text_block\", \"label\": \"service station list\"},\n    {\"type\": \"text_block\", \"label\": \"contact details\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"contact_information\", \"service_locations\", \"company_documentation\"],\n  \"ocr_text_if_useful\": \"约克公司保留变更产品设计恕不预先通知的权利\\n本译文如有错误之处，请以英文版为准。\\nYORK®\\nA JOHNSON CONTROLS COMPANY\\nFORM NO.: AP1203-IOM02(0606)\\nSupersedes: 无\\n上海维修站 上海市西康路1390号 邮政编码: 200060 电话: (86-21) 6276 6509\\n无锡维修站 无锡市长江路32号 邮政编码: 214028 电话: (86-510) 8522 6743/6476\\n... [full list of service stations and contact details] ...\",\n  \"uncertainty_notes\": \"The page contains a watermark 'www.duomianshou.net' and a footer '制冷百家网: www.zhilengbj.cn', which are not part of the original manual content but overlaid on the image.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204790,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 435,
+      "prompt_tokens": 2437,
+      "total_tokens": 2872,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "text_scan",
+    "summary": "This page is a contact information directory for YORK (a Johnson Controls company) service stations across China, listing addresses, postal codes, and phone numbers for various cities. It includes a header with the YORK logo, a form number, and a disclaimer about design changes and translation accuracy.",
+    "visual_entities": [
+      {
+        "type": "logo",
+        "label": "YORK logo"
+      },
+      {
+        "type": "text_block",
+        "label": "header disclaimer"
+      },
+      {
+        "type": "text_block",
+        "label": "form number"
+      },
+      {
+        "type": "text_block",
+        "label": "service station list"
+      },
+      {
+        "type": "text_block",
+        "label": "contact details"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "contact_information",
+      "service_locations",
+      "company_documentation"
+    ],
+    "ocr_text_if_useful": "约克公司保留变更产品设计恕不预先通知的权利\n本译文如有错误之处，请以英文版为准。\nYORK®\nA JOHNSON CONTROLS COMPANY\nFORM NO.: AP1203-IOM02(0606)\nSupersedes: 无\n上海维修站 上海市西康路1390号 邮政编码: 200060 电话: (86-21) 6276 6509\n无锡维修站 无锡市长江路32号 邮政编码: 214028 电话: (86-510) 8522 6743/6476\n... [full list of service stations and contact details] ...",
+    "uncertainty_notes": "The page contains a watermark 'www.duomianshou.net' and a footer '制冷百家网: www.zhilengbj.cn', which are not part of the original manual content but overlaid on the image.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page is a contact information directory for YORK (a Johnson Controls company) service stations across China, listing addresses, postal codes, and phone numbers for various cities. It includes a header with the YORK logo, a form number, and a disclaimer about design changes and translation accuracy.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"header disclaimer\"},\n    {\"type\": \"text_block\", \"label\": \"form number\"},\n    {\"type\": \"text_block\", \"label\": \"service station list\"},\n    {\"type\": \"text_block\", \"label\": \"contact details\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"contact_information\", \"service_locations\", \"company_documentation\"],\n  \"ocr_text_if_useful\": \"约克公司保留变更产品设计恕不预先通知的权利\\n本译文如有错误之处，请以英文版为准。\\nYORK®\\nA JOHNSON CONTROLS COMPANY\\nFORM NO.: AP1203-IOM02(0606)\\nSupersedes: 无\\n上海维修站 上海市西康路1390号 邮政编码: 200060 电话: (86-21) 6276 6509\\n无锡维修站 无锡市长江路32号 邮政编码: 214028 电话: (86-510) 8522 6743/6476\\n... [full list of service stations and contact details] ...\",\n  \"uncertainty_notes\": \"The page contains a watermark 'www.duomianshou.net' and a footer '制冷百家网: www.zhilengbj.cn', which are not part of the original manual content but overlaid on the image.\",\n  \"confidence\": 0.95\n}"
+}

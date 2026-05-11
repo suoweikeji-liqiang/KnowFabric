@@ -1,0 +1,84 @@
+{
+  "run_id": "20260507T150729Z_mimo_visual_semantic",
+  "pdf": "storage/documents/doc_883beab5e0004a2c/trane_cvgf_400_1000_chiller_manual.pdf",
+  "results": [
+    {
+      "page": 45,
+      "status": "ok",
+      "elapsed_seconds": 16.935,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This page from a Trane HVAC manual describes control system components, including external setpoints, module features, and communication interfaces. It provides technical specifications for various modules like 1A1 (power), 1A4/1A6 (digital inputs), 1A5/1A8/1A9 (relay outputs), and 1A14 (communication interface), along with pinout tables for communication ports.",
+        "visual_entities": [
+          {
+            "type": "text_block",
+            "label": "控制系统组件 (Control System Components)"
+          },
+          {
+            "type": "text_block",
+            "label": "外部冷冻水设定 External Chilled Water Setpoint (ECWS)"
+          },
+          {
+            "type": "text_block",
+            "label": "外部电流限制设定值 External Current Limit Setpoint"
+          },
+          {
+            "type": "text_block",
+            "label": "模块特征 (Module Features)"
+          },
+          {
+            "type": "text_block",
+            "label": "1A1, 电源 (Power)"
+          },
+          {
+            "type": "text_block",
+            "label": "1A4,1A6,双路高压数字信号输入模块 (Dual High-Voltage Digital Input Modules)"
+          },
+          {
+            "type": "text_block",
+            "label": "1A5, 1A8, 1A9四位继电器输出状态 (Four-Channel Relay Output Status)"
+          },
+          {
+            "type": "text_block",
+            "label": "1A13, 1A18, 1A19, 1A20 双两元输入模块 (Dual Binary Input Modules)"
+          },
+          {
+            "type": "text_block",
+            "label": "1A14 通信界面模块 (Communication Interface Module)"
+          },
+          {
+            "type": "table",
+            "label": "1A14通讯口极性 (1A14 Communication Port Pinout)"
+          },
+          {
+            "type": "logo",
+            "label": "TRANE logo"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "technical_specifications",
+          "module_descriptions",
+          "pinout_diagrams",
+          "control_system_overview"
+        ],
+        "ocr_text_if_useful": "控制系统组件\n外部冷冻水设定 External Chilled Water Setpoint(ECWS)\n外部冷冻水设定可对冷冻水的设定在远程进行修改。\n外部冷冻水设定建立在1A16 J2-2至J2-6(接地)的输入基础上。2-10 vdc和4-20 mA对应于34至65°F (-36.7 to 18.3 °C)的CWS范围。缺省的34°F至65°F可通过维护工具调节。\n外部电流限制设定值 External Current Limit Setpoint\n外部电流限制选项运行远程调整电流限制设定值。外部电流限制设定值位于1A16 J2-5到J2-6(接地), 2-10V直流电压和4-20 mA电流对应于40-120%RLA。CH530限制最大ECLS为100%。\n模块特征\n1A1,电源:\n机组控制电源模块将27V交流电转换为24V直流电。\n电源输入电压: 最低23VRMS, 额定27VRMS, 最高30VRMS\n频率: 50-60Hz\n电流: 满负荷27V交流-4.30A (RMS), 启动电流27V交流-30A (RMS)\n电源输出: 第二级电压24V直流, 额定电流2.44安培。\n1A4,1A6,双路高压数字信号输入模块:\n数字输入信号#1 J2-1至2\n数字输入信号#2 J3-1至2\n高压数字信号输入: 关时电压: 0-40V交流RMS, 开时电压: 70-276V交流RMS\n输入无极性敏感(可以切换Hot和neutral)。输入电阻130K-280K欧姆。\n14-26AWG, 带两个14AWG的最大值。\n电源: 24V直流+/-10%VDC, 最大20mA。特灵IPC3协议。J1-1 +24V直流, J1-2 接地, J1-3 COMM +, J1-4 COMM -。\n1A5, 1A8, 1A9四位继电器输出状态:\n继电器#1 J2-1 NO, J2-2 NC,\nJ2-3 COMM\n继电器#2 J2-4 NO, J2-5 NC, J2-6 COMM\n继电器#3 J2-7 NO, J2-8 NC, J2-9 COMM\n继电器#4 J2-10 NO, J2-11 NC, J2-12 COMM\n继电器输出: 120 VAC时的继电器输出: 吸合时7.2 A, 断开时2.88 A, 1/3 HP, 240 VAC时7.2 FLA: 5 A, 普通用途, 14 - 26 AWG 带两个14 AWG, 24 +/-10 percent VDC, 最大100 mA. Trane IPC3协议.\n1A13, 1A18, 1A19, 1A20 双两元输入模块:\nJ2-1 两元输入信号#1, J2-2 接地, J2-3 两元输入信号#2, J2-4 接地\n两元输入: 寻找一个干式接触关闭。低电压24V 12 mA.\n14 - 26 AWG带两个14 AWG 电源, 24 +/- 10 %VDC, 最大40 mA Trane IPC3协议.\n1A14 通信界面模块\n1A14通讯口极性\nJ1-1 +24 VDC J2-1 COMM +. J11-1+24 VDC\nJ1-2 Ground J2-2 COMM - J11-2 Ground\nJ1-3 COMM + J2-3 COMM + J11-3 COMM +\nJ1-4 COMM - J2-4 COMM - J11-4 COMM-",
+        "uncertainty_notes": "The page contains dense technical text in Chinese with some English terms. Relationships between modules (e.g., how they connect to each other) are not visually depicted; only individual module specifications and a pinout table are shown. The pinout table is for module 1A14 only.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page from a Trane HVAC manual describes control system components, including external setpoints, module features, and communication interfaces. It provides technical specifications for various modules like 1A1 (power), 1A4/1A6 (digital inputs), 1A5/1A8/1A9 (relay outputs), and 1A14 (communication interface), along with pinout tables for communication ports.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"控制系统组件 (Control System Components)\"},\n    {\"type\": \"text_block\", \"label\": \"外部冷冻水设定 External Chilled Water Setpoint (ECWS)\"},\n    {\"type\": \"text_block\", \"label\": \"外部电流限制设定值 External Current Limit Setpoint\"},\n    {\"type\": \"text_block\", \"label\": \"模块特征 (Module Features)\"},\n    {\"type\": \"text_block\", \"label\": \"1A1, 电源 (Power)\"},\n    {\"type\": \"text_block\", \"label\": \"1A4,1A6,双路高压数字信号输入模块 (Dual High-Voltage Digital Input Modules)\"},\n    {\"type\": \"text_block\", \"label\": \"1A5, 1A8, 1A9四位继电器输出状态 (Four-Channel Relay Output Status)\"},\n    {\"type\": \"text_block\", \"label\": \"1A13, 1A18, 1A19, 1A20 双两元输入模块 (Dual Binary Input Modules)\"},\n    {\"type\": \"text_block\", \"label\": \"1A14 通信界面模块 (Communication Interface Module)\"},\n    {\"type\": \"table\", \"label\": \"1A14通讯口极性 (1A14 Communication Port Pinout)\"},\n    {\"type\": \"logo\", \"label\": \"TRANE logo\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"technical_specifications\", \"module_descriptions\", \"pinout_diagrams\", \"control_system_overview\"],\n  \"ocr_text_if_useful\": \"控制系统组件\\n外部冷冻水设定 External Chilled Water Setpoint(ECWS)\\n外部冷冻水设定可对冷冻水的设定在远程进行修改。\\n外部冷冻水设定建立在1A16 J2-2至J2-6(接地)的输入基础上。2-10 vdc和4-20 mA对应于34至65°F (-36.7 to 18.3 °C)的CWS范围。缺省的34°F至65°F可通过维护工具调节。\\n外部电流限制设定值 External Current Limit Setpoint\\n外部电流限制选项运行远程调整电流限制设定值。外部电流限制设定值位于1A16 J2-5到J2-6(接地), 2-10V直流电压和4-20 mA电流对应于40-120%RLA。CH530限制最大ECLS为100%。\\n模块特征\\n1A1,电源:\\n机组控制电源模块将27V交流电转换为24V直流电。\\n电源输入电压: 最低23VRMS, 额定27VRMS, 最高30VRMS\\n频率: 50-60Hz\\n电流: 满负荷27V交流-4.30A (RMS), 启动电流27V交流-30A (RMS)\\n电源输出: 第二级电压24V直流, 额定电流2.44安培。\\n1A4,1A6,双路高压数字信号输入模块:\\n数字输入信号#1 J2-1至2\\n数字输入信号#2 J3-1至2\\n高压数字信号输入: 关时电压: 0-40V交流RMS, 开时电压: 70-276V交流RMS\\n输入无极性敏感(可以切换Hot和neutral)。输入电阻130K-280K欧姆。\\n14-26AWG, 带两个14AWG的最大值。\\n电源: 24V直流+/-10%VDC, 最大20mA。特灵IPC3协议。J1-1 +24V直流, J1-2 接地, J1-3 COMM +, J1-4 COMM -。\\n1A5, 1A8, 1A9四位继电器输出状态:\\n继电器#1 J2-1 NO, J2-2 NC,\\nJ2-3 COMM\\n继电器#2 J2-4 NO, J2-5 NC, J2-6 COMM\\n继电器#3 J2-7 NO, J2-8 NC, J2-9 COMM\\n继电器#4 J2-10 NO, J2-11 NC, J2-12 COMM\\n继电器输出: 120 VAC时的继电器输出: 吸合时7.2 A, 断开时2.88 A, 1/3 HP, 240 VAC时7.2 FLA: 5 A, 普通用途, 14 - 26 AWG 带两个14 AWG, 24 +/-10 percent VDC, 最大100 mA. Trane IPC3协议.\\n1A13, 1A18, 1A19, 1A20 双两元输入模块:\\nJ2-1 两元输入信号#1, J2-2 接地, J2-3 两元输入信号#2, J2-4 接地\\n两元输入: 寻找一个干式接触关闭。低电压24V 12 mA.\\n14 - 26 AWG带两个14 AWG 电源, 24 +/- 10 %VDC, 最大40 mA Trane IPC3协议.\\n1A14 通信界面模块\\n1A14通讯口极性\\nJ1-1 +24 VDC J2-1 COMM +. J11-1+24 VDC\\nJ1-2 Ground J2-2 COMM - J11-2 Ground\\nJ1-3 COMM + J2-3 COMM + J11-3 COMM +\\nJ1-4 COMM - J2-4 COMM - J11-4 COMM-\",\n  \"uncertainty_notes\": \"The page contains dense technical text in Chinese with some English terms. Relationships between modules (e.g., how they connect to each other) are not visually depicted; only individual module specifications and a pinout table are shown. The pinout table is for module 1A14 only.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 1498,
+        "prompt_tokens": 2493,
+        "total_tokens": 3991,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 2296
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

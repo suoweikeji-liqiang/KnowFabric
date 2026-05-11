@@ -1,0 +1,30 @@
+{
+  "pipeline_mode": "official_standard_import_pipeline",
+  "generated_at": "2026-05-07T07:53:29.237177+00:00",
+  "standard": "ashrae-g36",
+  "workspace_dir": "workspace/review_round_ashrae_g36_section_context_merged_apply",
+  "source_run_dir": null,
+  "candidate_path": "workspace/ashrae_g36_parallel_sections_merged/20260507T040159Z/candidates_input.json",
+  "review_pack_dir": "workspace/review_round_ashrae_g36_section_context_merged/review_packs",
+  "review_pack_manifest_path": null,
+  "candidate_count": 476,
+  "review_pack_count": 3,
+  "readiness_summary": {
+    "ready": 3,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "apply_summary": {
+    "applied": 3,
+    "skipped_pending": 0,
+    "skipped_no_accepted": 0,
+    "failed": 0
+  },
+  "api_smoke_summary": {
+    "targets": 9,
+    "passed": 7,
+    "failed": 2
+  },
+  "next_action": "Investigate semantic service smoke failures before consuming the standard knowledge."
+}

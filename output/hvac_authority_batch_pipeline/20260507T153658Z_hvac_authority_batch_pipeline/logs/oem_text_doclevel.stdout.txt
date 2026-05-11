@@ -1,0 +1,13 @@
+start task=9 file=【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf
+start backend=deepseek-v4-pro task=9 pages=31 chunks=31 timeout=1500s
+failed backend=deepseek-v4-pro task=9: RuntimeError: LLM JSON request failed after 3 attempts: LLM compile returned empty content
+done task=9
+start task=10 file=（制冷百家）海尔商用故障代码手册-制冷百家网.pdf
+start backend=deepseek-v4-pro task=10 pages=111 chunks=111 timeout=1500s
+failed backend=deepseek-v4-pro task=10: RuntimeError: LLM JSON request failed after 3 attempts: LLM compile returned empty content
+done task=10
+start task=11 file=【格力】中央空调 MB 系列模块式风冷冷（热）水机组手册-.pdf
+start backend=deepseek-v4-pro task=11 pages=15 chunks=15 timeout=1500s
+failed backend=deepseek-v4-pro task=11: RuntimeError: LLM JSON request failed after 3 attempts: LLM compile returned empty content
+done task=11
+doclevel batch tasks=3 report=output/hvac_authority_batch_pipeline/20260507T153658Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T173624Z_hvac_doclevel_extraction_batch/REPORT.md

@@ -1,0 +1,78 @@
+{
+  "run_id": "20260507T013251Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_22",
+  "standard_id": "ASHRAE Guideline 36-2021",
+  "manual": "ashrae_guideline_36_2021_high_performance_sequences.pdf",
+  "doc_id": "doc_4bbd3703c4f84be4",
+  "architecture": "chapter-level section_context extraction + single-call batch judge + verbatim chunk anchoring",
+  "input_mode": "section_context",
+  "focus_sections": [
+    "5.22"
+  ],
+  "manual_chunks": 923,
+  "manual_tokens_estimated": 33054,
+  "extract_backend": "deepseek-parameter-spec",
+  "extract_model": "deepseek-v4-flash",
+  "judge_backend": "deepseek-v4-pro-judge",
+  "judge_model": "deepseek-v4-pro",
+  "extract_usage": {
+    "prompt_tokens": 34215,
+    "completion_tokens": 8430,
+    "total_tokens": 42645,
+    "request_count": 1
+  },
+  "judge_usage": {
+    "prompt_tokens": 4222,
+    "completion_tokens": 4017,
+    "total_tokens": 8239,
+    "request_count": 1
+  },
+  "extract_cost_rmb": 0.052199,
+  "judge_cost_rmb": 0.036768,
+  "total_cost_rmb": 0.088967,
+  "budget_rmb": 10.0,
+  "raw_candidates": 31,
+  "anchor_passed": 29,
+  "anchor_rejected": 2,
+  "weak_evidence_rejected": 4,
+  "judge_input": 25,
+  "judge_accepted": 25,
+  "judge_rejected": 0,
+  "judge_rejection_breakdown": {},
+  "final_by_type": {
+    "operational_sequence": 18,
+    "fault_diagnostic_rule": 6,
+    "parameter_spec": 1
+  },
+  "l4_final": 10,
+  "l3_final": 15,
+  "timings": {
+    "manual_tokens_estimated": 33054,
+    "extract_seconds": 121.926852124976,
+    "total_seconds": 238.53669162502047
+  },
+  "gates": {
+    "G1": {
+      "status": "PASS",
+      "value": 93.54838709677419,
+      "requirement": "anchor_match_rate >= 80%"
+    },
+    "G2": {
+      "status": "PASS",
+      "value": 100.0,
+      "requirement": "judge_acceptance_rate >= 50%"
+    },
+    "G3": {
+      "status": "PASS",
+      "value": 25,
+      "requirement": "focused section run produced at least one verified candidate"
+    },
+    "G4": {
+      "status": "PASS",
+      "value": 121.926852124976,
+      "limit_seconds": 1200.0,
+      "requirement": "single full-book extraction completed within configured limit"
+    }
+  },
+  "output_dir": "output/ashrae_guideline36_parallel_fullbook/20260507T013251Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_22",
+  "report_path": "output/ashrae_guideline36_parallel_fullbook/20260507T013251Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_22/REPORT.md"
+}

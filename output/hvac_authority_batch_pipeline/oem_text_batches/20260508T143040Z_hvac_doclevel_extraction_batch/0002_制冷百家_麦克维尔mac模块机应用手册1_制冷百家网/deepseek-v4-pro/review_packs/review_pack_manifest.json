@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-08T14:41:37.329735+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_0cb31c660f19458b__controller.json",
+      "doc_id": "doc_0cb31c660f19458b",
+      "doc_name": "（制冷百家）麦克维尔MAC模块机应用手册1-制冷百家网.pdf",
+      "equipment_class_id": "controller",
+      "equipment_class_key": "hvac:controller",
+      "candidate_count": 4
+    }
+  ]
+}

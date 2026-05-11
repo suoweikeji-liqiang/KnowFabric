@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-08T14:54:45.417705+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_3d2fd0b7b24e4949__controller.json",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "equipment_class_id": "controller",
+      "equipment_class_key": "hvac:controller",
+      "candidate_count": 19
+    }
+  ]
+}

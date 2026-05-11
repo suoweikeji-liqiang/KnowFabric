@@ -1,0 +1,98 @@
+{
+  "doc_id": "doc_4a9b0fec1dfb4103",
+  "doc_name": "ASHRAE手册2024.pdf",
+  "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册2024.pdf",
+  "selected_pages": [
+    8,
+    14,
+    15,
+    16,
+    17,
+    587,
+    588,
+    589,
+    852,
+    853,
+    854,
+    855,
+    856,
+    857
+  ],
+  "selected_page_count": 14,
+  "knowledge_types_filter": [
+    "application_guidance",
+    "parameter_spec",
+    "operational_sequence"
+  ],
+  "min_confidence": "high",
+  "equipment_scope_id": "general_hvac",
+  "subset_pdf": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_4a9b0fec1dfb4103/subset/auto_doc_4a9b0fec1dfb4103.pdf",
+  "manifest_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_4a9b0fec1dfb4103/subset/manifest.csv",
+  "sections": [
+    {
+      "section_title": "HV AC SYSTEM ANALYSIS AND SELECTION",
+      "page_start": 8,
+      "page_end": 8,
+      "chunk_count": 7,
+      "candidate_knowledge_types": [
+        "parameter_spec",
+        "maintenance_procedure",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "1.1CHAPTER 1 HV AC SYSTEM ANALYSIS AND SELECTION Selecting a System ...................................................................... 1.1 HVAC Systems and Equipment .................................................. 1.4 Space Requirements ................................................................... 1.6 Air ",
+      "section_source": "page_heading",
+      "score": 35
+    },
+    {
+      "section_title": "HVAC System Analysis and Selection",
+      "page_start": 14,
+      "page_end": 17,
+      "chunk_count": 36,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "maintenance_procedure",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "HVAC System Analysis and Selection 1.7 Most equipment rooms should be centrally located to (1) mini - mize long duct, pipe, and conduit runs and sizes; (2) simplify shaft layouts; and (3) centralize maintenance and operation. With shorterduct and pipe runs, a central location could also reduce pump andfan motor power r",
+      "section_source": "page_heading",
+      "score": 36
+    },
+    {
+      "section_title": "Automatic Fuel-Burning Systems",
+      "page_start": 587,
+      "page_end": 589,
+      "chunk_count": 24,
+      "candidate_knowledge_types": [
+        "fault_code",
+        "parameter_spec",
+        "performance_spec",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "Automatic Fuel-Burning Systems 31.21 Limit Controls In a warm-air furnace or space heater, excessive air temperature must be prevented. In a hot-water boiler, water temperature and pres- sure must not exceed the ratings of external piping and terminal equipment. Steam pressure must no t exceed ratings of pressure ves- ",
+      "section_source": "page_heading",
+      "score": 36
+    },
+    {
+      "section_title": "Control of Automatic Valves",
+      "page_start": 852,
+      "page_end": 857,
+      "chunk_count": 33,
+      "candidate_knowledge_types": [
+        "parameter_spec",
+        "maintenance_procedure",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "46.8 2024 ASHRAE Handbook—HV AC Systems and Equipment (SI) Control of Automatic Valves Computer-based (direct digital) control of automatic control valves has replaced older technol ogies and provides many benefits, including speed, accuracy, and data communication. However, care must be taken in selecting the va lue o",
+      "section_source": "page_heading",
+      "score": 36
+    }
+  ]
+}

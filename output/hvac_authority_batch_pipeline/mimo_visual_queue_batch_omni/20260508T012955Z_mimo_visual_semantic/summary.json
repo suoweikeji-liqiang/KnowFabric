@@ -1,0 +1,606 @@
+{
+  "run_id": "20260508T012955Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/18、顿汉布什/【顿汉布什】WCFX-R-螺杆式冷水机组操作说明书.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 10.219,
+      "parsed": {
+        "page_type": "other",
+        "summary": "This is a cover page for a Dunham-Bush vertical fully enclosed screw chiller installation, operation, and maintenance manual. It displays the company logo, a product image, contact information for various regional offices, and certification logos. The page serves as a title and contact information sheet.",
+        "visual_entities": [
+          {
+            "type": "logo",
+            "label": "Dunham-Bush logo"
+          },
+          {
+            "type": "product_image",
+            "label": "Vertical fully enclosed screw chiller unit"
+          },
+          {
+            "type": "text_block",
+            "label": "Regional office contact list"
+          },
+          {
+            "type": "text_block",
+            "label": "Sales headquarters contact information"
+          },
+          {
+            "type": "certification_logo",
+            "label": "R mark logo"
+          },
+          {
+            "type": "certification_logo",
+            "label": "SGS logo"
+          },
+          {
+            "type": "certification_logo",
+            "label": "QS logo"
+          },
+          {
+            "type": "text",
+            "label": "Version number: A410105"
+          },
+          {
+            "type": "text",
+            "label": "Manual title: 立式全封闭螺杆冷水机组 安装、操作及维护说明书"
+          },
+          {
+            "type": "text",
+            "label": "Website: 制冷百家网: www.zhilengbj.cn"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "Dunham-Bush logo",
+            "relation": "is located above",
+            "to": "Product image"
+          },
+          {
+            "from": "Product image",
+            "relation": "is located to the right of",
+            "to": "Regional office contact list"
+          },
+          {
+            "from": "Manual title",
+            "relation": "is located below",
+            "to": "Product image"
+          },
+          {
+            "from": "Sales headquarters contact information",
+            "relation": "is located below",
+            "to": "Regional office contact list"
+          },
+          {
+            "from": "Certification logos",
+            "relation": "are located to the right of",
+            "to": "Sales headquarters contact information"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "manufacturer_contact",
+          "product_identification",
+          "document_metadata"
+        ],
+        "ocr_text_if_useful": "版本号: A410105\nDUNHAM-BUSH\n立式全封闭螺杆冷水机组\n安装、操作及维护说明书\n销售总部\n烟台市莱山经济开发区顿汉布什路1号, 264003\n电话: 0535-6587615 6722231 6725702\n传真: 0535-6587629\n全国售后服务热线: 8007070998\n制冷百家网: www.zhilengbj.cn",
+        "uncertainty_notes": "The specific model number of the chiller in the image is not clearly visible. The exact nature of the certification logos (R, SGS, QS) is based on common symbols, but their specific meanings in this context are not detailed on the page.",
+        "confidence": 0.9
+      },
+      "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is a cover page for a Dunham-Bush vertical fully enclosed screw chiller installation, operation, and maintenance manual. It displays the company logo, a product image, contact information for various regional offices, and certification logos. The page serves as a title and contact information sheet.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Dunham-Bush logo\"},\n    {\"type\": \"product_image\", \"label\": \"Vertical fully enclosed screw chiller unit\"},\n    {\"type\": \"text_block\", \"label\": \"Regional office contact list\"},\n    {\"type\": \"text_block\", \"label\": \"Sales headquarters contact information\"},\n    {\"type\": \"certification_logo\", \"label\": \"R mark logo\"},\n    {\"type\": \"certification_logo\", \"label\": \"SGS logo\"},\n    {\"type\": \"certification_logo\", \"label\": \"QS logo\"},\n    {\"type\": \"text\", \"label\": \"Version number: A410105\"},\n    {\"type\": \"text\", \"label\": \"Manual title: 立式全封闭螺杆冷水机组 安装、操作及维护说明书\"},\n    {\"type\": \"text\", \"label\": \"Website: 制冷百家网: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Dunham-Bush logo\", \"relation\": \"is located above\", \"to\": \"Product image\"},\n    {\"from\": \"Product image\", \"relation\": \"is located to the right of\", \"to\": \"Regional office contact list\"},\n    {\"from\": \"Manual title\", \"relation\": \"is located below\", \"to\": \"Product image\"},\n    {\"from\": \"Sales headquarters contact information\", \"relation\": \"is located below\", \"to\": \"Regional office contact list\"},\n    {\"from\": \"Certification logos\", \"relation\": \"are located to the right of\", \"to\": \"Sales headquarters contact information\"}\n  ],\n  \"useful_for_knowledge_types\": [\"manufacturer_contact\", \"product_identification\", \"document_metadata\"],\n  \"ocr_text_if_useful\": \"版本号: A410105\\nDUNHAM-BUSH\\n立式全封闭螺杆冷水机组\\n安装、操作及维护说明书\\n销售总部\\n烟台市莱山经济开发区顿汉布什路1号, 264003\\n电话: 0535-6587615 6722231 6725702\\n传真: 0535-6587629\\n全国售后服务热线: 8007070998\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The specific model number of the chiller in the image is not clearly visible. The exact nature of the certification logos (R, SGS, QS) is based on common symbols, but their specific meanings in this context are not detailed on the page.\",\n  \"confidence\": 0.9\n}",
+      "usage": {
+        "completion_tokens": 658,
+        "prompt_tokens": 1473,
+        "total_tokens": 2131,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1276
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 9,
+      "status": "ok",
+      "elapsed_seconds": 15.925,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This is a two-page spread from an HVAC manual (pages 14 and 15) describing the operation and parameter settings of a chiller control system. It includes screenshots of the controller's graphical user interface (GUI) for the main menu, unit start/stop control, and parameter settings pages, along with explanatory text in Chinese.",
+        "visual_entities": [
+          {
+            "type": "gui_screen",
+            "label": "Main Menu Screen"
+          },
+          {
+            "type": "gui_screen",
+            "label": "Unit Start/Stop Control Screen"
+          },
+          {
+            "type": "gui_screen",
+            "label": "Parameter Settings Screen (1/7)"
+          },
+          {
+            "type": "gui_screen",
+            "label": "Parameter Settings Screen (2/7)"
+          },
+          {
+            "type": "gui_screen",
+            "label": "Parameter Settings Screen (3/7)"
+          },
+          {
+            "type": "button",
+            "label": "Operation Control Button"
+          },
+          {
+            "type": "button",
+            "label": "Parameter Settings Button"
+          },
+          {
+            "type": "button",
+            "label": "Digital Input Button"
+          },
+          {
+            "type": "button",
+            "label": "Digital Output Button"
+          },
+          {
+            "type": "button",
+            "label": "Analog Input Button"
+          },
+          {
+            "type": "button",
+            "label": "Alarm Record Button"
+          },
+          {
+            "type": "button",
+            "label": "Scheduled Start/Stop Button"
+          },
+          {
+            "type": "button",
+            "label": "Temperature Curve Button"
+          },
+          {
+            "type": "button",
+            "label": "Operation Authorization Button"
+          },
+          {
+            "type": "button",
+            "label": "Other Options Button"
+          },
+          {
+            "type": "button",
+            "label": "Monitor Main Page Button"
+          },
+          {
+            "type": "icon",
+            "label": "Chiller On/Off Icon"
+          },
+          {
+            "type": "icon",
+            "label": "Local/Remote Switch Icon"
+          },
+          {
+            "type": "icon",
+            "label": "Water Flow Switch Icon"
+          },
+          {
+            "type": "icon",
+            "label": "Remote Switch Icon"
+          },
+          {
+            "type": "icon",
+            "label": "Alarm Status Icon"
+          },
+          {
+            "type": "icon",
+            "label": "Scheduled Status Icon"
+          },
+          {
+            "type": "icon",
+            "label": "Operation Authorization Icon"
+          },
+          {
+            "type": "icon",
+            "label": "Start Condition Icon"
+          },
+          {
+            "type": "display",
+            "label": "Outlet Temperature Display"
+          },
+          {
+            "type": "button",
+            "label": "Return to Main Menu Button"
+          },
+          {
+            "type": "button",
+            "label": "Previous Page Button"
+          },
+          {
+            "type": "button",
+            "label": "Next Page Button"
+          },
+          {
+            "type": "parameter",
+            "label": "Chilled Water Outlet Temperature Setpoint"
+          },
+          {
+            "type": "parameter",
+            "label": "Chilled Water Outlet Temperature Control Deadband"
+          },
+          {
+            "type": "parameter",
+            "label": "Main Compressor Start Setting"
+          },
+          {
+            "type": "parameter",
+            "label": "Compressor Rotation Mode Setting"
+          },
+          {
+            "type": "parameter",
+            "label": "Climb Start Point"
+          },
+          {
+            "type": "parameter",
+            "label": "Climb Rate"
+          },
+          {
+            "type": "parameter",
+            "label": "Anti-freeze Protection Temperature"
+          },
+          {
+            "type": "parameter",
+            "label": "Outlet Temperature Voltage Regulation Range"
+          },
+          {
+            "type": "parameter",
+            "label": "Chilled Water Outlet Temperature Change Rate Limit"
+          },
+          {
+            "type": "parameter",
+            "label": "1# Compressor Start Current Overload"
+          },
+          {
+            "type": "parameter",
+            "label": "1# Compressor Running Current Overload"
+          },
+          {
+            "type": "parameter",
+            "label": "1# Compressor Current Limit (Unload)"
+          },
+          {
+            "type": "parameter",
+            "label": "1# Compressor Current Limit (Hold)"
+          },
+          {
+            "type": "parameter",
+            "label": "2# Compressor Start Current Overload"
+          },
+          {
+            "type": "parameter",
+            "label": "2# Compressor Running Current Overload"
+          },
+          {
+            "type": "parameter",
+            "label": "2# Compressor Current Limit (Unload)"
+          },
+          {
+            "type": "parameter",
+            "label": "2# Compressor Current Limit (Hold)"
+          },
+          {
+            "type": "parameter",
+            "label": "Compressor Current Maximum Limit"
+          },
+          {
+            "type": "parameter",
+            "label": "3# Compressor Start Current Overload"
+          },
+          {
+            "type": "parameter",
+            "label": "3# Compressor Running Current Overload"
+          },
+          {
+            "type": "parameter",
+            "label": "3# Compressor Current Limit (Unload)"
+          },
+          {
+            "type": "parameter",
+            "label": "3# Compressor Current Limit (Hold)"
+          },
+          {
+            "type": "parameter",
+            "label": "Discharge Pressure Upper Limit"
+          },
+          {
+            "type": "parameter",
+            "label": "Discharge Pressure Limit (Compressor Unload)"
+          },
+          {
+            "type": "parameter",
+            "label": "Discharge Pressure Limit (Compressor Hold)"
+          },
+          {
+            "type": "parameter",
+            "label": "Suction Pressure Lower Limit"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "Operation Control Button",
+            "relation": "leads to",
+            "to": "Unit Start/Stop Control Screen"
+          },
+          {
+            "from": "Parameter Settings Button",
+            "relation": "leads to",
+            "to": "Parameter Settings Screen (1/7)"
+          },
+          {
+            "from": "Next Page Button",
+            "relation": "navigates to",
+            "to": "Parameter Settings Screen (2/7)"
+          },
+          {
+            "from": "Next Page Button",
+            "relation": "navigates to",
+            "to": "Parameter Settings Screen (3/7)"
+          },
+          {
+            "from": "Previous Page Button",
+            "relation": "navigates to",
+            "to": "Parameter Settings Screen (1/7)"
+          },
+          {
+            "from": "Return to Main Menu Button",
+            "relation": "returns to",
+            "to": "Main Menu Screen"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "control_system_operation",
+          "parameter_configuration",
+          "user_interface_navigation",
+          "safety_protocols"
+        ],
+        "ocr_text_if_useful": "The page contains extensive Chinese text describing the functionality of the GUI screens, parameter settings, and operational logic (e.g., compressor rotation, anti-freeze protection, current limits). Key parameter values are visible, such as Chilled Water Outlet Temperature Setpoint: 7.0°C, 1# Compressor Start Current Overload: 750.0 A, Discharge Pressure Upper Limit: 1720 kPa.",
+        "uncertainty_notes": "The exact model or brand of the HVAC system is not explicitly stated on this page, though the logo 'DB' is present. The text describes general operational principles for a chiller control system. Some relationships between GUI elements and their functions are inferred from the accompanying text descriptions rather than being explicitly labeled on the screenshots themselves.",
+        "confidence": 0.9
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is a two-page spread from an HVAC manual (pages 14 and 15) describing the operation and parameter settings of a chiller control system. It includes screenshots of the controller's graphical user interface (GUI) for the main menu, unit start/stop control, and parameter settings pages, along with explanatory text in Chinese.\",\n  \"visual_entities\": [\n    {\"type\": \"gui_screen\", \"label\": \"Main Menu Screen\"},\n    {\"type\": \"gui_screen\", \"label\": \"Unit Start/Stop Control Screen\"},\n    {\"type\": \"gui_screen\", \"label\": \"Parameter Settings Screen (1/7)\"},\n    {\"type\": \"gui_screen\", \"label\": \"Parameter Settings Screen (2/7)\"},\n    {\"type\": \"gui_screen\", \"label\": \"Parameter Settings Screen (3/7)\"},\n    {\"type\": \"button\", \"label\": \"Operation Control Button\"},\n    {\"type\": \"button\", \"label\": \"Parameter Settings Button\"},\n    {\"type\": \"button\", \"label\": \"Digital Input Button\"},\n    {\"type\": \"button\", \"label\": \"Digital Output Button\"},\n    {\"type\": \"button\", \"label\": \"Analog Input Button\"},\n    {\"type\": \"button\", \"label\": \"Alarm Record Button\"},\n    {\"type\": \"button\", \"label\": \"Scheduled Start/Stop Button\"},\n    {\"type\": \"button\", \"label\": \"Temperature Curve Button\"},\n    {\"type\": \"button\", \"label\": \"Operation Authorization Button\"},\n    {\"type\": \"button\", \"label\": \"Other Options Button\"},\n    {\"type\": \"button\", \"label\": \"Monitor Main Page Button\"},\n    {\"type\": \"icon\", \"label\": \"Chiller On/Off Icon\"},\n    {\"type\": \"icon\", \"label\": \"Local/Remote Switch Icon\"},\n    {\"type\": \"icon\", \"label\": \"Water Flow Switch Icon\"},\n    {\"type\": \"icon\", \"label\": \"Remote Switch Icon\"},\n    {\"type\": \"icon\", \"label\": \"Alarm Status Icon\"},\n    {\"type\": \"icon\", \"label\": \"Scheduled Status Icon\"},\n    {\"type\": \"icon\", \"label\": \"Operation Authorization Icon\"},\n    {\"type\": \"icon\", \"label\": \"Start Condition Icon\"},\n    {\"type\": \"display\", \"label\": \"Outlet Temperature Display\"},\n    {\"type\": \"button\", \"label\": \"Return to Main Menu Button\"},\n    {\"type\": \"button\", \"label\": \"Previous Page Button\"},\n    {\"type\": \"button\", \"label\": \"Next Page Button\"},\n    {\"type\": \"parameter\", \"label\": \"Chilled Water Outlet Temperature Setpoint\"},\n    {\"type\": \"parameter\", \"label\": \"Chilled Water Outlet Temperature Control Deadband\"},\n    {\"type\": \"parameter\", \"label\": \"Main Compressor Start Setting\"},\n    {\"type\": \"parameter\", \"label\": \"Compressor Rotation Mode Setting\"},\n    {\"type\": \"parameter\", \"label\": \"Climb Start Point\"},\n    {\"type\": \"parameter\", \"label\": \"Climb Rate\"},\n    {\"type\": \"parameter\", \"label\": \"Anti-freeze Protection Temperature\"},\n    {\"type\": \"parameter\", \"label\": \"Outlet Temperature Voltage Regulation Range\"},\n    {\"type\": \"parameter\", \"label\": \"Chilled Water Outlet Temperature Change Rate Limit\"},\n    {\"type\": \"parameter\", \"label\": \"1# Compressor Start Current Overload\"},\n    {\"type\": \"parameter\", \"label\": \"1# Compressor Running Current Overload\"},\n    {\"type\": \"parameter\", \"label\": \"1# Compressor Current Limit (Unload)\"},\n    {\"type\": \"parameter\", \"label\": \"1# Compressor Current Limit (Hold)\"},\n    {\"type\": \"parameter\", \"label\": \"2# Compressor Start Current Overload\"},\n    {\"type\": \"parameter\", \"label\": \"2# Compressor Running Current Overload\"},\n    {\"type\": \"parameter\", \"label\": \"2# Compressor Current Limit (Unload)\"},\n    {\"type\": \"parameter\", \"label\": \"2# Compressor Current Limit (Hold)\"},\n    {\"type\": \"parameter\", \"label\": \"Compressor Current Maximum Limit\"},\n    {\"type\": \"parameter\", \"label\": \"3# Compressor Start Current Overload\"},\n    {\"type\": \"parameter\", \"label\": \"3# Compressor Running Current Overload\"},\n    {\"type\": \"parameter\", \"label\": \"3# Compressor Current Limit (Unload)\"},\n    {\"type\": \"parameter\", \"label\": \"3# Compressor Current Limit (Hold)\"},\n    {\"type\": \"parameter\", \"label\": \"Discharge Pressure Upper Limit\"},\n    {\"type\": \"parameter\", \"label\": \"Discharge Pressure Limit (Compressor Unload)\"},\n    {\"type\": \"parameter\", \"label\": \"Discharge Pressure Limit (Compressor Hold)\"},\n    {\"type\": \"parameter\", \"label\": \"Suction Pressure Lower Limit\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Operation Control Button\", \"relation\": \"leads to\", \"to\": \"Unit Start/Stop Control Screen\"},\n    {\"from\": \"Parameter Settings Button\", \"relation\": \"leads to\", \"to\": \"Parameter Settings Screen (1/7)\"},\n    {\"from\": \"Next Page Button\", \"relation\": \"navigates to\", \"to\": \"Parameter Settings Screen (2/7)\"},\n    {\"from\": \"Next Page Button\", \"relation\": \"navigates to\", \"to\": \"Parameter Settings Screen (3/7)\"},\n    {\"from\": \"Previous Page Button\", \"relation\": \"navigates to\", \"to\": \"Parameter Settings Screen (1/7)\"},\n    {\"from\": \"Return to Main Menu Button\", \"relation\": \"returns to\", \"to\": \"Main Menu Screen\"}\n  ],\n  \"useful_for_knowledge_types\": [\"control_system_operation\", \"parameter_configuration\", \"user_interface_navigation\", \"safety_protocols\"],\n  \"ocr_text_if_useful\": \"The page contains extensive Chinese text describing the functionality of the GUI screens, parameter settings, and operational logic (e.g., compressor rotation, anti-freeze protection, current limits). Key parameter values are visible, such as Chilled Water Outlet Temperature Setpoint: 7.0°C, 1# Compressor Start Current Overload: 750.0 A, Discharge Pressure Upper Limit: 1720 kPa.\",\n  \"uncertainty_notes\": \"The exact model or brand of the HVAC system is not explicitly stated on this page, though the logo 'DB' is present. The text describes general operational principles for a chiller control system. Some relationships between GUI elements and their functions are inferred from the accompanying text descriptions rather than being explicitly labeled on the screenshots themselves.\",\n  \"confidence\": 0.9\n}",
+      "usage": {
+        "completion_tokens": 1425,
+        "prompt_tokens": 1517,
+        "total_tokens": 2942,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1320
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 18,
+      "status": "ok",
+      "elapsed_seconds": 13.319,
+      "parsed": {
+        "page_type": "parameter_table",
+        "summary": "This page displays a table titled 'Appendix D Cooling Water Quality' with parameters, reference values, and indicators for corrosion and scaling tendencies. It includes both baseline and reference items for water quality metrics.",
+        "visual_entities": [
+          {
+            "type": "table",
+            "label": "Cooling Water Quality Table"
+          },
+          {
+            "type": "header",
+            "label": "Appendix D Cooling Water Quality"
+          },
+          {
+            "type": "column",
+            "label": "Item"
+          },
+          {
+            "type": "column",
+            "label": "Reference Value"
+          },
+          {
+            "type": "column",
+            "label": "Tendency (Corrosion)"
+          },
+          {
+            "type": "column",
+            "label": "Tendency (Scaling)"
+          },
+          {
+            "type": "row",
+            "label": "pH (25°C)"
+          },
+          {
+            "type": "row",
+            "label": "Conductivity (25°C)"
+          },
+          {
+            "type": "row",
+            "label": "Chloride Ion Cl⁻"
+          },
+          {
+            "type": "row",
+            "label": "Sulfate Ion SO₄²⁻"
+          },
+          {
+            "type": "row",
+            "label": "Acid Consumption (pH=4.8)"
+          },
+          {
+            "type": "row",
+            "label": "Total Hardness"
+          },
+          {
+            "type": "row",
+            "label": "Iron Fe"
+          },
+          {
+            "type": "row",
+            "label": "Sulfide Ion S²⁻"
+          },
+          {
+            "type": "row",
+            "label": "Ammonium Ion NH₄⁺"
+          },
+          {
+            "type": "row",
+            "label": "Silica SiO₂"
+          },
+          {
+            "type": "note",
+            "label": "Note: O indicates factors related to corrosion or scaling tendency."
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "pH (25°C)",
+            "relation": "has reference value",
+            "to": "6.5-8.0"
+          },
+          {
+            "from": "pH (25°C)",
+            "relation": "has corrosion tendency",
+            "to": "O"
+          },
+          {
+            "from": "pH (25°C)",
+            "relation": "has scaling tendency",
+            "to": "O"
+          },
+          {
+            "from": "Conductivity (25°C)",
+            "relation": "has reference value",
+            "to": "<800 μS/cm"
+          },
+          {
+            "from": "Conductivity (25°C)",
+            "relation": "has corrosion tendency",
+            "to": "O"
+          },
+          {
+            "from": "Conductivity (25°C)",
+            "relation": "has scaling tendency",
+            "to": "O"
+          },
+          {
+            "from": "Chloride Ion Cl⁻",
+            "relation": "has reference value",
+            "to": "<200 mg(Cl⁻)/L"
+          },
+          {
+            "from": "Chloride Ion Cl⁻",
+            "relation": "has corrosion tendency",
+            "to": "O"
+          },
+          {
+            "from": "Sulfate Ion SO₄²⁻",
+            "relation": "has reference value",
+            "to": "<200 mg(SO₄²⁻)/L"
+          },
+          {
+            "from": "Sulfate Ion SO₄²⁻",
+            "relation": "has corrosion tendency",
+            "to": "O"
+          },
+          {
+            "from": "Acid Consumption (pH=4.8)",
+            "relation": "has reference value",
+            "to": "<100 mg(CaCO₃)/L"
+          },
+          {
+            "from": "Acid Consumption (pH=4.8)",
+            "relation": "has scaling tendency",
+            "to": "O"
+          },
+          {
+            "from": "Total Hardness",
+            "relation": "has reference value",
+            "to": "<200 mg(CaCO₃)/L"
+          },
+          {
+            "from": "Total Hardness",
+            "relation": "has scaling tendency",
+            "to": "O"
+          },
+          {
+            "from": "Iron Fe",
+            "relation": "has reference value",
+            "to": "<1.0 mg(Fe)/L"
+          },
+          {
+            "from": "Iron Fe",
+            "relation": "has corrosion tendency",
+            "to": "O"
+          },
+          {
+            "from": "Iron Fe",
+            "relation": "has scaling tendency",
+            "to": "O"
+          },
+          {
+            "from": "Sulfide Ion S²⁻",
+            "relation": "has reference value",
+            "to": "Not detected mg(S²⁻)/L"
+          },
+          {
+            "from": "Sulfide Ion S²⁻",
+            "relation": "has corrosion tendency",
+            "to": "O"
+          },
+          {
+            "from": "Ammonium Ion NH₄⁺",
+            "relation": "has reference value",
+            "to": "<1.0 mg(NH₄⁺)/L"
+          },
+          {
+            "from": "Ammonium Ion NH₄⁺",
+            "relation": "has corrosion tendency",
+            "to": "O"
+          },
+          {
+            "from": "Silica SiO₂",
+            "relation": "has reference value",
+            "to": "<50 mg(SiO₂)/L"
+          },
+          {
+            "from": "Silica SiO₂",
+            "relation": "has scaling tendency",
+            "to": "O"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "water_quality_standards",
+          "cooling_system_maintenance",
+          "corrosion_prevention",
+          "scaling_prevention"
+        ],
+        "ocr_text_if_useful": "附录D冷却水水质\n冷却水水质\n项目 基准值 倾向\n腐蚀 结垢\n基准项\n酸碱度 PH (25°C) 6.5~8.0 O O\n导电率 (25°C) μS/cm <800 O O\n氯离子 CL⁻ mg(CL⁻)/L <200 O\n硫酸根离子 SO₄²⁻ mg(SO₄²⁻)/L <200 O\n酸消耗量(PH=4.8) mg(CaCO₃)/L <100 O\n全硬度 mg(CaCO₃)/L <200 O\n参考项目\n铁 Fe mg(Fe)/L <1.0 O O\n硫离子 S²⁻ mg(S²⁻)/L 不得检出 O\n铵离子 NH₄⁺ mg(NH₄⁺)/L <1.0 O\n氧化硅 SiO₂ mg(SiO₂)/L <50 O\n注: O表示腐蚀或结垢倾向的有关因素。",
+        "uncertainty_notes": "The table is in Chinese; translations are approximate. The 'O' symbol is defined in the note as indicating factors related to corrosion or scaling tendency. No visual diagrams or wiring are present.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page displays a table titled 'Appendix D Cooling Water Quality' with parameters, reference values, and indicators for corrosion and scaling tendencies. It includes both baseline and reference items for water quality metrics.\",\n  \"visual_entities\": [\n    {\"type\": \"table\", \"label\": \"Cooling Water Quality Table\"},\n    {\"type\": \"header\", \"label\": \"Appendix D Cooling Water Quality\"},\n    {\"type\": \"column\", \"label\": \"Item\"},\n    {\"type\": \"column\", \"label\": \"Reference Value\"},\n    {\"type\": \"column\", \"label\": \"Tendency (Corrosion)\"},\n    {\"type\": \"column\", \"label\": \"Tendency (Scaling)\"},\n    {\"type\": \"row\", \"label\": \"pH (25°C)\"},\n    {\"type\": \"row\", \"label\": \"Conductivity (25°C)\"},\n    {\"type\": \"row\", \"label\": \"Chloride Ion Cl⁻\"},\n    {\"type\": \"row\", \"label\": \"Sulfate Ion SO₄²⁻\"},\n    {\"type\": \"row\", \"label\": \"Acid Consumption (pH=4.8)\"},\n    {\"type\": \"row\", \"label\": \"Total Hardness\"},\n    {\"type\": \"row\", \"label\": \"Iron Fe\"},\n    {\"type\": \"row\", \"label\": \"Sulfide Ion S²⁻\"},\n    {\"type\": \"row\", \"label\": \"Ammonium Ion NH₄⁺\"},\n    {\"type\": \"row\", \"label\": \"Silica SiO₂\"},\n    {\"type\": \"note\", \"label\": \"Note: O indicates factors related to corrosion or scaling tendency.\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"pH (25°C)\", \"relation\": \"has reference value\", \"to\": \"6.5-8.0\"},\n    {\"from\": \"pH (25°C)\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"pH (25°C)\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Conductivity (25°C)\", \"relation\": \"has reference value\", \"to\": \"<800 μS/cm\"},\n    {\"from\": \"Conductivity (25°C)\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Conductivity (25°C)\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Chloride Ion Cl⁻\", \"relation\": \"has reference value\", \"to\": \"<200 mg(Cl⁻)/L\"},\n    {\"from\": \"Chloride Ion Cl⁻\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Sulfate Ion SO₄²⁻\", \"relation\": \"has reference value\", \"to\": \"<200 mg(SO₄²⁻)/L\"},\n    {\"from\": \"Sulfate Ion SO₄²⁻\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Acid Consumption (pH=4.8)\", \"relation\": \"has reference value\", \"to\": \"<100 mg(CaCO₃)/L\"},\n    {\"from\": \"Acid Consumption (pH=4.8)\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Total Hardness\", \"relation\": \"has reference value\", \"to\": \"<200 mg(CaCO₃)/L\"},\n    {\"from\": \"Total Hardness\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Iron Fe\", \"relation\": \"has reference value\", \"to\": \"<1.0 mg(Fe)/L\"},\n    {\"from\": \"Iron Fe\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Iron Fe\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Sulfide Ion S²⁻\", \"relation\": \"has reference value\", \"to\": \"Not detected mg(S²⁻)/L\"},\n    {\"from\": \"Sulfide Ion S²⁻\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Ammonium Ion NH₄⁺\", \"relation\": \"has reference value\", \"to\": \"<1.0 mg(NH₄⁺)/L\"},\n    {\"from\": \"Ammonium Ion NH₄⁺\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Silica SiO₂\", \"relation\": \"has reference value\", \"to\": \"<50 mg(SiO₂)/L\"},\n    {\"from\": \"Silica SiO₂\", \"relation\": \"has scaling tendency\", \"to\": \"O\"}\n  ],\n  \"useful_for_knowledge_types\": [\"water_quality_standards\", \"cooling_system_maintenance\", \"corrosion_prevention\", \"scaling_prevention\"],\n  \"ocr_text_if_useful\": \"附录D冷却水水质\\n冷却水水质\\n项目 基准值 倾向\\n腐蚀 结垢\\n基准项\\n酸碱度 PH (25°C) 6.5~8.0 O O\\n导电率 (25°C) μS/cm <800 O O\\n氯离子 CL⁻ mg(CL⁻)/L <200 O\\n硫酸根离子 SO₄²⁻ mg(SO₄²⁻)/L <200 O\\n酸消耗量(PH=4.8) mg(CaCO₃)/L <100 O\\n全硬度 mg(CaCO₃)/L <200 O\\n参考项目\\n铁 Fe mg(Fe)/L <1.0 O O\\n硫离子 S²⁻ mg(S²⁻)/L 不得检出 O\\n铵离子 NH₄⁺ mg(NH₄⁺)/L <1.0 O\\n氧化硅 SiO₂ mg(SiO₂)/L <50 O\\n注: O表示腐蚀或结垢倾向的有关因素。\",\n  \"uncertainty_notes\": \"The table is in Chinese; translations are approximate. The 'O' symbol is defined in the note as indicating factors related to corrosion or scaling tendency. No visual diagrams or wiring are present.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 1386,
+        "prompt_tokens": 1517,
+        "total_tokens": 2903,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1320
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

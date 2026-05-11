@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文档入库 - KnowFabric Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: { base: '13px', xs: '12px', sm: '14px', tiny: '11px' },
+          fontFamily: {
+            sans:['Inter', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono:['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans h-screen flex flex-col overflow-hidden text-base">
+
+  <!-- 顶部导航 -->
+  <header class="bg-slate-900 text-white h-12 flex items-center px-4 shrink-0 justify-between">
+    <div class="flex items-center gap-4">
+      <div class="font-semibold text-sm tracking-wide">KnowFabric <span class="text-slate-400 font-normal">Admin</span></div>
+      <nav class="flex gap-6 ml-8 text-sm">
+        <a href="#" class="text-white font-medium border-b-2 border-indigo-500 pb-[14px] translate-y-[7px]">文档入库</a>
+        <a href="#" class="text-slate-300 hover:text-white">文档库</a>
+        <a href="#" class="text-slate-300 hover:text-white">知识对象审阅</a>
+        <a href="#" class="text-slate-300 hover:text-white">标准浏览器</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3 text-xs">
+      <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">操作员: OP-772</span>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <div class="flex flex-1 overflow-hidden p-6 gap-6 max-w-7xl mx-auto w-full">
+    
+    <!-- 左侧：文件预览与上传区 -->
+    <div class="w-1/2 flex flex-col gap-4">
+      <h2 class="text-sm font-semibold text-slate-800">源文件预览</h2>
+      <div class="flex-1 bg-slate-200 border border-slate-300 rounded-lg flex flex-col items-center justify-center relative overflow-hidden shadow-inner">
+        <!-- 模拟 PDF 预览 -->
+        <div class="w-3/4 h-5/6 bg-white shadow-md flex flex-col p-6">
+          <div class="text-2xl font-bold text-slate-800 mb-2">TRANE</div>
+          <div class="text-sm text-slate-600 mb-8">Installation, Operation, and Maintenance</div>
+          <div class="text-xl font-semibold text-slate-900 mt-auto">CVGF Water-Cooled Centrifugal Chillers</div>
+          <div class="text-xs text-slate-500 mt-4">400 to 1000 Tons</div>
+        </div>
+        <!-- 悬浮的文件信息 -->
+        <div class="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur text-white p-3 rounded flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">📄</span>
+            <div>
+              <div class="text-xs font-mono truncate w-64">trane_cvgf_400_1000_chiller_manual.pdf</div>
+              <div class="text-tiny text-slate-300">4.2 MB • 142 页</div>
+            </div>
+          </div>
+          <button class="text-tiny bg-slate-700 hover:bg-slate-600 px-2 py-1 rounded">重新上传</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧：LLM 提取与人工确认表单 -->
+    <div class="w-1/2 flex flex-col">
+      <div class="flex justify-between items-end mb-4">
+        <div>
+          <h2 class="text-sm font-semibold text-slate-800">权威元数据确认</h2>
+          <p class="text-xs text-slate-500 mt-1">系统已通过大模型自动提取以下信息，请核对并确认。</p>
+        </div>
+        <button class="text-xs bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1.5 rounded hover:bg-indigo-100 font-medium flex items-center gap-1 transition-colors">
+          ✨ 一键接受全部建议
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto pr-2 flex flex-col gap-3">
+        
+        <!-- 字段 1: 权威层级 (已确认状态) -->
+        <div class="bg-white border border-emerald-500 rounded-md p-3 shadow-sm relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500"></div>
+          <div class="flex justify-between items-start mb-2 pl-2">
+            <label class="text-xs font-semibold text-slate-700">权威层级 <span class="text-rose-500">*</span></label>
+            <span class="text-emerald-600 text-tiny font-medium flex items-center gap-1">✓ 已确认</span>
+          </div>
+          <div class="flex items-center gap-3 pl-2">
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded text-xs font-medium bg-slate-100 text-slate-700 border border-slate-300">
+              🏭 厂商手册
+            </span>
+            <button class="text-xs text-slate-400 hover:text-indigo-600 underline">修改</button>
+          </div>
+        </div>
+
+        <!-- 字段 2: 发布机构 (待确认状态) -->
+        <div class="bg-white border border-purple-200 rounded-md p-3 shadow-sm hover:border-purple-300 transition-colors">
+          <div class="flex justify-between items-start mb-2">
+            <label class="text-xs font-semibold text-slate-700">发布机构</label>
+            <span class="text-purple-600 text-tiny font-medium flex items-center gap-1">✨ 置信度 98%</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="text" value="Trane" class="flex-1 border border-slate-300 rounded px-2 py-1.5 text-xs focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none text-slate-900 font-medium bg-purple-50/30">
+            <button class="bg-white border border-slate-300 text-slate-700 px-3 py-1.5 rounded text-xs hover:bg-slate-50 font-medium">确认</button>
+          </div>
+        </div>
+
+        <!-- 字段 3: 关联设备品牌 (待确认状态) -->
+        <div class="bg-white border border-purple-200 rounded-md p-3 shadow-sm hover:border-purple-300 transition-colors">
+          <div class="flex justify-between items-start mb-2">
+            <label class="text-xs font-semibold text-slate-700">关联设备品牌</label>
+            <span class="text-purple-600 text-tiny font-medium flex items-center gap-1">✨ 置信度 95%</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="text" value="Trane CVGF" class="flex-1 border border-slate-300 rounded px-2 py-1.5 text-xs focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none text-slate-900 font-medium bg-purple-50/30">
+            <button class="bg-white border border-slate-300 text-slate-700 px-3 py-1.5 rounded text-xs hover:bg-slate-50 font-medium">确认</button>
+          </div>
+        </div>
+
+        <!-- 字段 4: 标准号 (待确认状态 - 为空) -->
+        <div class="bg-white border border-purple-200 rounded-md p-3 shadow-sm hover:border-purple-300 transition-colors">
+          <div class="flex justify-between items-start mb-2">
+            <label class="text-xs font-semibold text-slate-700">标准号</label>
+            <span class="text-purple-600 text-tiny font-medium flex items-center gap-1">✨ 置信度 90%</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="text" placeholder="无 (非标准类文档)" class="flex-1 border border-slate-300 rounded px-2 py-1.5 text-xs focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none text-slate-500 bg-purple-50/30">
+            <button class="bg-white border border-slate-300 text-slate-700 px-3 py-1.5 rounded text-xs hover:bg-slate-50 font-medium">确认为空</button>
+          </div>
+        </div>
+
+        <!-- 字段 5: 传播受限开关 (高亮) -->
+        <div class="bg-slate-100 border border-slate-200 rounded-md p-4 mt-2 flex justify-between items-center">
+          <div>
+            <div class="text-xs font-semibold text-slate-800 flex items-center gap-1">
+              传播受限 (Redistribution Restricted) <span class="text-rose-500">*</span>
+            </div>
+            <div class="text-tiny text-slate-500 mt-1">开启后，下游系统将无法获取此文档的原文字符串，仅提供引文。</div>
+          </div>
+          <!-- Toggle Switch (Off state for OEM manual) -->
+          <button class="w-10 h-5 bg-slate-300 rounded-full relative transition-colors focus:outline-none">
+            <div class="w-4 h-4 bg-white rounded-full absolute left-0.5 top-0.5 shadow-sm transition-transform"></div>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- 底部操作区 -->
+      <div class="pt-4 mt-4 border-t border-slate-200 flex justify-between items-center shrink-0">
+        <div class="text-xs text-slate-500">
+          进度: <span class="font-medium text-slate-800">1/4</span> 字段已确认
+        </div>
+        <div class="flex gap-3">
+          <button class="px-4 py-2 bg-white border border-slate-300 text-slate-700 rounded hover:bg-slate-50 text-sm font-medium">取消</button>
+          <!-- 按钮处于半激活状态，因为还有字段未确认，但权威层级已确认所以允许强制提交 -->
+          <button class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-sm font-medium shadow-sm flex items-center gap-2">
+            确认并入库
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

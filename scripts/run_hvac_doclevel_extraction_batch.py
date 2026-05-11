@@ -5,9 +5,11 @@ from __future__ import annotations
 
 import argparse
 import copy
+import contextlib
 import http.client
 import json
 import re
+import signal
 import sys
 import time
 from collections import Counter
@@ -21,7 +23,12 @@ from pydantic import BaseModel, Field
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from packages.compiler.equipment_matcher import build_equipment_profiles, match_equipment_class, normalize_text
-from packages.compiler.llm_compiler import OpenAICompatibleBackend, _request_json_completion
+from packages.compiler.llm_compiler import (
+    OpenAICompatibleBackend,
+    _request_json_completion,
+    repair_json_response_with_backend,
+    response_content_text,
+)
 from packages.compiler.rule_compiler import stable_candidate_id
 from packages.core.config import settings
 from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
@@ -73,6 +80,30 @@ class HvacJudgeVerdict(BaseModel):
 
 class HvacJudgeResponse(BaseModel):
     verdicts: list[HvacJudgeVerdict] = Field(default_factory=list)
+
+
+@contextlib.contextmanager
+def wall_clock_timeout(seconds: int, *, label: str) -> None:
+    """Abort one long-running backend call after a hard wall-clock deadline."""
+
+    if seconds <= 0:
+        yield
+        return
+
+    def _raise_timeout(signum, frame):  # noqa: ANN001, ARG001
+        raise TimeoutError(f"{label} exceeded wall-clock timeout of {seconds} seconds")
+
+    previous_handler = signal.getsignal(signal.SIGALRM)
+    previous_timer = signal.setitimer(signal.ITIMER_REAL, 0)
+    signal.signal(signal.SIGALRM, _raise_timeout)
+    signal.setitimer(signal.ITIMER_REAL, seconds)
+    try:
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous_handler)
+        if previous_timer != (0.0, 0.0):
+            signal.setitimer(signal.ITIMER_REAL, *previous_timer)
 
 
 def make_run_id() -> str:
@@ -137,7 +168,8 @@ def build_extract_messages(item: SourceItem, doc: Document, equipment: dict[str,
         "manual. Treat chunks only as evidence anchors. Return fewer high-confidence items rather than noisy coverage. "
         "Every evidence_quote MUST be a verbatim contiguous substring from the manual. Do not invent facts. "
         "Keep evidence_quote short: one exact label, one fault display line, one table row, or one complete sentence. "
-        "Do not copy multi-paragraph troubleshooting blocks unless the whole block appears exactly and is necessary. "
+        "Do not copy full tables, multi-row tables, or multi-paragraph troubleshooting blocks. Keep evidence_quote "
+        "under 240 characters. If a table contains useful data, extract one row or one short cell group at a time. "
         f"Allowed knowledge_type values: {', '.join(allowed_types)}. "
         "Use fault_code for explicit codes and meanings; parameter_spec for configurable setpoints, limits, modes, "
         "defaults, and ranges; performance_spec for design/rated capacities and operating limits; maintenance_procedure "
@@ -145,7 +177,8 @@ def build_extract_messages(item: SourceItem, doc: Document, equipment: dict[str,
         "for installation/application constraints; operational_sequence for control behavior. "
         "Do not extract marketing claims, UI navigation instructions, pure product naming rules, isolated terminal labels, "
         "or text that cannot stand as a useful knowledge object. Return strict compact JSON only. Keep title, summary, "
-        "and evidence_quote short. Do not include Markdown, comments, or literal line breaks inside JSON string values."
+        "and evidence_quote short. Do not include Markdown, comments, raw newline characters, or literal line breaks "
+        "inside JSON string values; escape any unavoidable newline as \\n."
     )
     user = (
         f"Publisher/brand guess: {item.brand}\n"
@@ -158,7 +191,9 @@ def build_extract_messages(item: SourceItem, doc: Document, equipment: dict[str,
         '{"candidates":[{"knowledge_type":"parameter_spec","title":"...","canonical_key_hint":null,'
         '"summary":"...","structured_payload":{"parameter_name":"..."},"evidence_quote":"exact source quote",'
         '"page_hint":1,"confidence":0.9}],"skipped_reason":null}\n'
-        "Return one-line minified JSON when possible."
+        "Return one-line minified JSON when possible. Stop after the target max candidates exactly. "
+        "Prefer 8-20 strong candidates over broad coverage. Do not continue past the target. "
+        "Do not output partial JSON."
     )
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
 
@@ -305,10 +340,27 @@ def request_json_completion_with_retry(
     attempts: int = 3,
 ) -> dict[str, Any]:
     last_error: Exception | None = None
+    last_attempt_raw: dict[str, Any] = {}
+
+    def _record(value: dict[str, Any]) -> None:
+        last_attempt_raw.clear()
+        last_attempt_raw.update(value)
+        if recorder is not None:
+            recorder(value)
+
     for attempt in range(1, attempts + 1):
         try:
-            return _request_json_completion(messages, backend, response_format=response_format, recorder=recorder)
+            with wall_clock_timeout(backend.timeout_seconds, label=f"{backend.name} JSON request"):
+                return _request_json_completion(messages, backend, response_format=response_format, recorder=_record)
         except (RuntimeError, json.JSONDecodeError, http.client.RemoteDisconnected, TimeoutError) as exc:
+            if last_attempt_raw.get("response"):
+                content = response_content_text(last_attempt_raw["response"])
+                if content and len(content) <= 20000:
+                    try:
+                        with wall_clock_timeout(90, label=f"{backend.name} JSON repair request"):
+                            return repair_json_response_with_backend(content, backend, recorder=_record)
+                    except Exception:
+                        pass
             last_error = exc
             if attempt == attempts:
                 break
@@ -439,6 +491,8 @@ def backend_result(args, backend_name: str, item: SourceItem, rows, equipment, o
             backend_dir,
         )
     except Exception as exc:
+        if raw:
+            write_json(backend_dir / "raw_extract_response.json", raw)
         write_json(backend_dir / "error.json", {"error": str(exc), "error_type": type(exc).__name__})
         print(f"failed backend={backend.name} task={item.row_index}: {type(exc).__name__}: {exc}", flush=True)
         return {"backend": backend.name, "model": backend.model, "status": "failed", "error": str(exc)}
@@ -657,7 +711,7 @@ def run_item(args: argparse.Namespace, item: SourceItem, batch_dir: Path) -> dic
 
 def build_task_summary(item, doc_id, rows, equipment, alternatives, processing, results, task_dir) -> dict[str, Any]:
     payload = {
-        "status": "completed",
+        "status": task_status_from_backend_results(results),
         "row_index": item.row_index,
         "file_name": item.path.name,
         "source_path": str(item.path),
@@ -674,6 +728,15 @@ def build_task_summary(item, doc_id, rows, equipment, alternatives, processing, 
     return payload
 
 
+def task_status_from_backend_results(results: list[dict[str, Any]]) -> str:
+    statuses = {str(result.get("status") or "") for result in results}
+    if statuses & {"ok", "ok_existing"}:
+        return "completed"
+    if statuses and statuses <= {"skipped_missing_api_key"}:
+        return "skipped"
+    return "failed"
+
+
 def slugify(value: str) -> str:
     return re.sub(r"[^a-zA-Z0-9\u4e00-\u9fff]+", "_", value).strip("_").lower()[:96] or "doc"
 
@@ -688,7 +751,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--backends", default="deepseek-parameter-spec,mimo-v2.5-pro")
     parser.add_argument("--judge-backend", default="", help="Optional second backend to model-review anchored candidates")
     parser.add_argument("--knowledge-types", default=",".join(SUPPORTED_TYPES))
-    parser.add_argument("--target-candidates", type=int, default=80)
+    parser.add_argument("--target-candidates", type=int, default=10)
     parser.add_argument("--default-trust-level", default="L3")
     parser.add_argument("--resume-dir", help="Existing batch run directory to resume")
     parser.add_argument("--force", action="store_true", help="Re-run tasks/backends even if output already exists")

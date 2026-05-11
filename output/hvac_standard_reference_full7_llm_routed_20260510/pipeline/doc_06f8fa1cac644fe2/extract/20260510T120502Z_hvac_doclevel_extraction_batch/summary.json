@@ -1,0 +1,108 @@
+{
+  "run_id": "20260510T120502Z_hvac_doclevel_extraction_batch",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_06f8fa1cac644fe2/extract/20260510T120502Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "completed",
+      "row_index": 1,
+      "file_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_06f8fa1cac644fe2/subset/auto_doc_06f8fa1cac644fe2.pdf",
+      "doc_id": "doc_e2ac1a5624684089",
+      "chunks": 11,
+      "manual_tokens_estimated": 2453,
+      "equipment_class_id": "valve",
+      "equipment_alternatives": [
+        {
+          "equipment_class_id": "controller",
+          "equipment_class_key": "hvac:controller",
+          "confidence": 0.638,
+          "matched_aliases": [
+            "Controller",
+            "controller"
+          ]
+        },
+        {
+          "equipment_class_id": "sensor",
+          "equipment_class_key": "hvac:sensor",
+          "confidence": 0.527,
+          "matched_aliases": [
+            "Sensor",
+            "sensor"
+          ]
+        },
+        {
+          "equipment_class_id": "pump",
+          "equipment_class_key": "hvac:pump",
+          "confidence": 0.471,
+          "matched_aliases": [
+            "Pump",
+            "pump"
+          ]
+        }
+      ],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 4,
+          "chunks_after": 11,
+          "parse_result": {
+            "job_id": "job_db612d91ce0c4bee",
+            "doc_id": "doc_e2ac1a5624684089",
+            "pages_created": 4,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_b1286cdd91464805",
+            "doc_id": "doc_e2ac1a5624684089",
+            "chunks_created": 11,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-parameter-spec",
+          "model": "deepseek-v4-flash",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 15,
+          "anchor_passed": 15,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 10,
+          "judge_rejected": 5,
+          "judge_acceptance_rate": 66.7,
+          "judge_rejection_breakdown": {
+            "weak_evidence": 4,
+            "ui_behavior": 1
+          },
+          "review_candidates": 10,
+          "by_type": {
+            "parameter_spec": 2,
+            "application_guidance": 6,
+            "performance_spec": 2
+          },
+          "usage": {
+            "prompt_tokens": 2863,
+            "completion_tokens": 1722,
+            "total_tokens": 4585
+          },
+          "judge_usage": {
+            "prompt_tokens": 6003,
+            "completion_tokens": 988,
+            "total_tokens": 6991
+          },
+          "extract_cost_rmb": 0.006446,
+          "judge_cost_rmb": 0.023937,
+          "cost_rmb": 0.030383,
+          "elapsed_seconds": 29.172,
+          "judge_elapsed_seconds": 33.581,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_06f8fa1cac644fe2/extract/20260510T120502Z_hvac_doclevel_extraction_batch/0001_auto_doc_06f8fa1cac644fe2/deepseek-parameter-spec"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_06f8fa1cac644fe2/extract/20260510T120502Z_hvac_doclevel_extraction_batch/0001_auto_doc_06f8fa1cac644fe2"
+    }
+  ]
+}

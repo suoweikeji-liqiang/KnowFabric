@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>权威分类审阅 - KnowFabric Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: { base: '13px', xs: '12px', sm: '14px', tiny: '11px' },
+          fontFamily: {
+            sans:['Inter', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans h-screen flex flex-col overflow-hidden text-base">
+
+  <!-- 顶部导航 -->
+  <header class="bg-slate-900 text-white h-12 flex items-center px-4 shrink-0 justify-between">
+    <div class="flex items-center gap-4">
+      <div class="font-semibold text-sm tracking-wide">KnowFabric <span class="text-slate-400 font-normal">Admin</span></div>
+      <nav class="flex gap-6 ml-8 text-sm">
+        <a href="#" class="text-slate-300 hover:text-white">文档入库</a>
+        <a href="#" class="text-slate-300 hover:text-white">文档库</a>
+        <a href="#" class="text-slate-300 hover:text-white">知识对象审阅</a>
+        <a href="#" class="text-white font-medium border-b-2 border-indigo-500 pb-[14px] translate-y-[7px]">权威分类审阅</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3 text-xs">
+      <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">操作员: OP-772</span>
+    </div>
+  </header>
+
+  <!-- 队列进度栏 -->
+  <div class="bg-white border-b border-slate-200 h-12 flex items-center px-4 shrink-0 gap-6 shadow-sm z-10">
+    <div class="flex flex-col w-64">
+      <div class="flex justify-between text-xs font-medium mb-1">
+        <span class="text-slate-700">审阅队列进度</span>
+        <span class="text-indigo-600">4 / 12 已审</span>
+      </div>
+      <div class="w-full bg-slate-200 rounded-full h-1.5">
+        <div class="bg-indigo-600 h-1.5 rounded-full" style="width: 33%"></div>
+      </div>
+    </div>
+    <div class="w-px h-6 bg-slate-300"></div>
+    <div class="text-xs text-slate-500">
+      当前任务: 校验大模型自动提取的文档权威元数据。
+    </div>
+  </div>
+
+  <!-- 主内容区 -->
+  <div class="flex flex-1 overflow-hidden">
+    
+    <!-- 左侧：待审队列 -->
+    <div class="w-72 bg-white border-r border-slate-200 flex flex-col shrink-0">
+      <div class="overflow-y-auto flex-1 py-2">
+        <!-- 已审项 -->
+        <div class="px-3 py-2 border-b border-slate-100 flex flex-col gap-1 opacity-60">
+          <div class="flex justify-between items-start">
+            <span class="font-medium truncate pr-2 text-slate-500 line-through">ashrae_901_2022...</span>
+            <span class="text-emerald-600 text-tiny font-bold shrink-0">✓</span>
+          </div>
+        </div>
+        
+        <!-- 当前审阅项 (Active) -->
+        <div class="px-3 py-2 border-b border-slate-200 bg-indigo-50 border-l-4 border-l-indigo-600 cursor-pointer flex flex-col gap-1">
+          <div class="flex justify-between items-start">
+            <span class="font-semibold text-indigo-900 truncate pr-2" title="internal_chiller_commissioning_playbook_v3.md">internal_chiller_commissioning_playbook_v3.md</span>
+          </div>
+          <div class="flex items-center gap-2 text-tiny mt-1">
+            <span class="bg-purple-100 text-purple-700 px-1 rounded border border-purple-200">✨ 待核查</span>
+          </div>
+        </div>
+
+        <!-- 待审项 -->
+        <div class="px-3 py-2 border-b border-slate-100 hover:bg-slate-50 cursor-pointer flex flex-col gap-1">
+          <div class="flex justify-between items-start">
+            <span class="font-medium truncate pr-2" title="iec_61800_3_2017_emc.pdf">iec_61800_3_2017_emc.pdf</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧：双栏核查区 -->
+    <div class="flex-1 bg-slate-50 flex p-4 gap-4 overflow-hidden">
+      
+      <!-- 文档预览 (左半边) -->
+      <div class="w-1/2 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col overflow-hidden">
+        <div class="p-2 border-b border-slate-200 bg-slate-100 text-xs font-medium text-slate-700 flex justify-between items-center">
+          <span>文档预览 (第 1 页)</span>
+          <button class="text-indigo-600 hover:underline">在新标签页打开 ↗</button>
+        </div>
+        <div class="flex-1 bg-slate-200 p-4 overflow-y-auto flex justify-center">
+          <!-- 模拟文档首页 -->
+          <div class="w-full max-w-sm bg-white shadow-md p-6 flex flex-col">
+            <div class="text-center text-lg font-bold text-slate-800 mb-6 border-b pb-2">公司内部机房调试规程</div>
+            <div class="text-sm text-slate-600 mb-2">版本: V3.0</div>
+            <div class="text-sm text-slate-600 mb-8">日期: 2024-02-15</div>
+            <div class="text-xs text-slate-800 leading-relaxed">
+              1. 目的<br>
+              本规程旨在规范各项目现场冷水机组的调试步骤，确保设备运行参数符合公司节能标准...<br><br>
+              2. 适用范围<br>
+              适用于所有采用离心式冷水机组的新建及改造项目...
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 元数据核查表单 (右半边) -->
+      <div class="w-1/2 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col overflow-hidden">
+        <div class="p-3 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
+          <span class="text-sm font-semibold text-slate-800">大模型提取建议</span>
+          <span class="text-xs text-slate-500">请确认或修正以下字段</span>
+        </div>
+        
+        <div class="p-4 flex-1 overflow-y-auto flex flex-col gap-4">
+          
+          <!-- 字段 1: 权威层级 (模拟正在被修正的状态) -->
+          <div class="border border-indigo-300 rounded-md p-3 bg-indigo-50/30 shadow-sm ring-1 ring-indigo-500/20">
+            <div class="flex justify-between items-start mb-2">
+              <label class="text-xs font-semibold text-slate-800">权威层级</label>
+              <span class="text-purple-600 text-tiny font-medium">✨ 置信度 75%</span>
+            </div>
+            
+            <!-- 原建议值 (被划掉) -->
+            <div class="flex items-center gap-2 mb-2 opacity-50">
+              <span class="line-through text-xs text-slate-500">原建议: 🏭 厂商手册</span>
+            </div>
+            
+            <!-- 修正输入区 -->
+            <div class="flex flex-col gap-2">
+              <select class="w-full border border-indigo-400 rounded px-2 py-1.5 text-xs focus:border-indigo-600 outline-none text-slate-900 bg-white">
+                <option>🛡️ 行业标准</option>
+                <option>🏭 厂商手册</option>
+                <option selected>📋 内部规程</option>
+                <option>🎯 现场实测</option>
+              </select>
+              <input type="text" placeholder="必须填写修正理由 (例如: 这是公司内部SOP，非OEM手册)" class="w-full border border-rose-300 rounded px-2 py-1.5 text-xs focus:border-rose-500 outline-none bg-rose-50 placeholder-rose-400 text-rose-900">
+            </div>
+          </div>
+
+          <!-- 字段 2: 发布机构 (待确认) -->
+          <div class="border border-slate-200 rounded-md p-3 hover:border-slate-300 transition-colors">
+            <div class="flex justify-between items-start mb-2">
+              <label class="text-xs font-semibold text-slate-700">发布机构</label>
+              <span class="text-purple-600 text-tiny font-medium">✨ 置信度 92%</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-900">公司内部</span>
+              <div class="flex gap-2">
+                <button class="text-xs text-slate-500 hover:text-indigo-600 underline">修正</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 字段 3: 传播受限 (待确认) -->
+          <div class="border border-slate-200 rounded-md p-3 hover:border-slate-300 transition-colors">
+            <div class="flex justify-between items-start mb-2">
+              <label class="text-xs font-semibold text-slate-700">传播受限状态</label>
+              <span class="text-purple-600 text-tiny font-medium">✨ 置信度 88%</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-900 flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> 允许自由分发 (非受限)
+              </span>
+              <div class="flex gap-2">
+                <button class="text-xs text-slate-500 hover:text-indigo-600 underline">修正</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 底部操作栏 -->
+        <div class="p-3 border-t border-slate-200 bg-slate-50 flex justify-end gap-3 shrink-0">
+          <button class="px-4 py-1.5 bg-white border border-slate-300 text-slate-700 rounded hover:bg-slate-100 text-xs font-medium">跳过</button>
+          <button class="px-6 py-1.5 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-xs font-medium shadow-sm flex items-center gap-2">
+            保存并进入下一份 →
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

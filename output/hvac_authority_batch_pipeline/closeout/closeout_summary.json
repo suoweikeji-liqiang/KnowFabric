@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-05-09T14:48:11.090744Z",
+  "starter_manifest": "/Users/asteroida/work/KnowFabric/workspace/hvac_source_inventory/20260507T083207Z/starter_batch_manifest.csv",
+  "oem_docs_total": 80,
+  "oem_docs_completed": 76,
+  "oem_docs_with_fail_history": 20,
+  "oem_docs_recovered_after_failure": 20,
+  "oem_docs_still_unresolved": 4,
+  "suspicious_equipment_matches": 44,
+  "low_judge_acceptance_docs": 9,
+  "fault_code_reference_hold_docs": 6,
+  "standard_reference_hold_docs": 7,
+  "artifacts": {
+    "oem_processing_summary_csv": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/closeout/oem_processing_summary.csv",
+    "oem_recovered_after_failure_csv": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/closeout/oem_recovered_after_failure.csv",
+    "oem_suspicious_equipment_matches_csv": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/closeout/oem_suspicious_equipment_matches.csv",
+    "oem_low_judge_acceptance_csv": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/closeout/oem_low_judge_acceptance.csv",
+    "fault_code_reference_hold_manifest": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/manual_subsets/fault_code_reference_hold.csv",
+    "standard_reference_hold_manifest": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/manual_subsets/standard_reference_hold.csv"
+  }
+}

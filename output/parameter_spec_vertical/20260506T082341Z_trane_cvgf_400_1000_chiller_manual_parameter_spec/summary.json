@@ -1,0 +1,66 @@
+{
+  "run_id": "20260506T082341Z_trane_cvgf_400_1000_chiller_manual_parameter_spec",
+  "manual": "trane_cvgf_400_1000_chiller_manual.pdf",
+  "manual_chunks": 84,
+  "manual_tokens_estimated": 20568,
+  "equipment_class_key": "hvac:centrifugal_chiller",
+  "ontology_version": "0.2.0",
+  "extract_backend": "deepseek-parameter-spec",
+  "extract_model": "deepseek-v4-flash",
+  "judge_backend": "deepseek-v4-pro-judge",
+  "judge_model": "deepseek-v4-pro",
+  "extract_usage": {
+    "prompt_tokens": 31848,
+    "completion_tokens": 5631,
+    "total_tokens": 37479
+  },
+  "judge_usage": {
+    "prompt_tokens": 19133,
+    "completion_tokens": 15276,
+    "total_tokens": 34409
+  },
+  "total_cost_rmb": 0.19311299999999998,
+  "budget_status": "within",
+  "extraction_calls": 1,
+  "raw_candidates": 53,
+  "anchor_rejected": 11,
+  "anchor_passed": 42,
+  "l4_pre_judge": 4,
+  "l3_pre_judge": 38,
+  "judge_calls": 42,
+  "judge_accepted": 29,
+  "judge_rejected": 8,
+  "judge_acceptance_rate": 69.04761904761905,
+  "judge_rejection_rate": 30.95238095238095,
+  "judge_rejection_breakdown": {
+    "other": 6,
+    "algorithm_internal": 2
+  },
+  "final_verified": 29,
+  "l4_final": 5,
+  "l3_final": 24,
+  "rule_candidates": 0,
+  "overlap": 0,
+  "llm_only": 29,
+  "rule_only": 0,
+  "gates": {
+    "G1": {
+      "status": "FAIL",
+      "value": 79.24528301886792
+    },
+    "G2": {
+      "status": "PASS",
+      "value": 69.04761904761905
+    },
+    "G3": {
+      "status": "PASS",
+      "value": 5
+    },
+    "G4": {
+      "status": "FAIL",
+      "value": 78.60082208400127
+    }
+  },
+  "output_dir": "output/parameter_spec_vertical/20260506T082341Z_trane_cvgf_400_1000_chiller_manual_parameter_spec",
+  "report_path": "output/parameter_spec_vertical/20260506T082341Z_trane_cvgf_400_1000_chiller_manual_parameter_spec/REPORT.md"
+}

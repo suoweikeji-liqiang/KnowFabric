@@ -1,0 +1,449 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_2f59dc0134f56b24",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_059995b8e7d54e69",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:air_face_velocity_range",
+      "structured_payload_candidate": {
+        "parameter_name": "air_face_velocity",
+        "title": "Air Face Velocity Range",
+        "summary": "Typical air face velocity range for dehumidifying coils."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice can then\nbe made based on system perform ance and economic requirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard  410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units  using different combinations of coils, are\nusually rated within the following parameters:\nEntering air dry-bulb temperature: 65 to 100°F\nEntering air wet-bulb temperature: 60 to 85°F (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 200 to 800 fpmEvaporator refrigerant saturation te mperature: 30 to 55°F at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 6°F or higher)\nEntering chilled-water temperature: 35 to 65°FWater velocity: 1 to 8 fpsFor ethylene glycol solution: 1 to  6 fps, 0 to 90°F entering dry-\nbulb temperature, 60 to 80°F entering wet-bulb temperature,\n10 to 60% aqueous glycol concentration by weight\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_059995b8e7d54e69"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a specific rated air face velocity range (200-800 fpm) directly from AHRI Standard 410 evidence."
+    },
+    {
+      "candidate_id": "cand_d26383d24828d325",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_059995b8e7d54e69",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:chilled_water_temperature_range",
+      "structured_payload_candidate": {
+        "parameter_name": "entering_chilled_water_temperature",
+        "title": "Chilled-Water Temperature Range",
+        "summary": "Entering chilled-water temperature range for coil rating."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice can then\nbe made based on system perform ance and economic requirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard  410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units  using different combinations of coils, are\nusually rated within the following parameters:\nEntering air dry-bulb temperature: 65 to 100°F\nEntering air wet-bulb temperature: 60 to 85°F (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 200 to 800 fpmEvaporator refrigerant saturation te mperature: 30 to 55°F at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 6°F or higher)\nEntering chilled-water temperature: 35 to 65°FWater velocity: 1 to 8 fpsFor ethylene glycol solution: 1 to  6 fps, 0 to 90°F entering dry-\nbulb temperature, 60 to 80°F entering wet-bulb temperature,\n10 to 60% aqueous glycol concentration by weight\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_059995b8e7d54e69"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a specific rated entering chilled-water temperature range (35-65°F) directly from evidence."
+    },
+    {
+      "candidate_id": "cand_2570894b3d8e5b4c",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_059995b8e7d54e69",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:water_velocity_range",
+      "structured_payload_candidate": {
+        "parameter_name": "water_velocity",
+        "title": "Water Velocity Range",
+        "summary": "Water velocity range for coil rating."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice can then\nbe made based on system perform ance and economic requirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard  410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units  using different combinations of coils, are\nusually rated within the following parameters:\nEntering air dry-bulb temperature: 65 to 100°F\nEntering air wet-bulb temperature: 60 to 85°F (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 200 to 800 fpmEvaporator refrigerant saturation te mperature: 30 to 55°F at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 6°F or higher)\nEntering chilled-water temperature: 35 to 65°FWater velocity: 1 to 8 fpsFor ethylene glycol solution: 1 to  6 fps, 0 to 90°F entering dry-\nbulb temperature, 60 to 80°F entering wet-bulb temperature,\n10 to 60% aqueous glycol concentration by weight\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_059995b8e7d54e69"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a specific water velocity range (1-8 fps) for coil rating from evidence."
+    },
+    {
+      "candidate_id": "cand_ff47f364f5bcbbd0",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_5d4376a602bd4a2e",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:comfort_coil_face_velocity",
+      "structured_payload_candidate": {
+        "parameter_name": "comfort_coil_face_velocity",
+        "title": "Comfort Coil Face Velocity",
+        "summary": "Recommended air face velocity range for comfort dehumidifying coils."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "For\ninformation on calculating a dehumidi fying coil’s sensible heat ratio,\nsee the section on Performance of Dehumidifying Coils, or Appen-\ndix D of Cooling and Heating Load Calculation Principles  (Peder-\nsen et al. 1998). For a given coil surface design and arrangement, therequired sensible heat ratio may be satisfied by wide variations in and\ncombinations of air face velocity, in-tube temperature, flow rate,entering air temperature, coil de pth, etc., although the variations\nmay be self limiting. The maximum coil air face velocity should be\nlimited to a value that prevents water carryover into the air ductwork.\nDehumidifying coils for comfort applications are frequently selectedin the range of 400 to 500 fpm air face velocity.\nOperating ratings of dehumidifyi ng coils for factory-assembled,\nself-contained air conditi oners are generally de termined in conjunc-\ntion with laboratory testing for the system capacity of the completeunit assembly.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5d4376a602bd4a2e"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a specific recommended comfort coil face velocity range (400-500 fpm) from operational guidance evidence."
+    },
+    {
+      "candidate_id": "cand_62a684538053a389",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_e356dbbbcfff4838",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:standard_rating_point_for_unitary_equipment",
+      "structured_payload_candidate": {
+        "parameter_name": "standard_rating_point",
+        "title": "Standard Rating Point for Unitary Equipment",
+        "summary": "Standard airflow rating point for unitary equipment."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "For example, a standard rating point has been\n33.4 cfm per 1000 Btu/h (or 400 cfm per ton of refrigeration effect),\nnot to exceed 37.5 cfm per 100 Btu/ h for unitary equipment. Refrig-\nerant (e.g., R-22) duty would be 6 to 10°F superheat for an appro-\npriate balance at 45°F saturated su ction. For water coils, circuitry\nwould operate at 4 fps, 42°F inlet water, 12°F rise (or 2 gpm per ton\nof refrigeration effect). The stan dard ratings at 80°F db and 67°F wb\nare representative of the entering air conditions encountered in\nmany comfort operations.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_e356dbbbcfff4838"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a standard rating airflow (33.4 cfm/1000 Btu/h or 400 cfm/ton) from evidence, a clear performance spec."
+    },
+    {
+      "candidate_id": "cand_e50c68c20f123f9e",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_059995b8e7d54e69",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:cooling_tower:performance_spec:evaporator_refrigerant_saturation_temperature",
+      "structured_payload_candidate": {
+        "parameter_name": "evaporator_saturation_temperature",
+        "title": "Evaporator Refrigerant Saturation Temperature",
+        "summary": "Evaporator refrigerant saturation temperature range for coil rating."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice can then\nbe made based on system perform ance and economic requirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard  410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units  using different combinations of coils, are\nusually rated within the following parameters:\nEntering air dry-bulb temperature: 65 to 100°F\nEntering air wet-bulb temperature: 60 to 85°F (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 200 to 800 fpmEvaporator refrigerant saturation te mperature: 30 to 55°F at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 6°F or higher)\nEntering chilled-water temperature: 35 to 65°FWater velocity: 1 to 8 fpsFor ethylene glycol solution: 1 to  6 fps, 0 to 90°F entering dry-\nbulb temperature, 60 to 80°F entering wet-bulb temperature,\n10 to 60% aqueous glycol concentration by weight\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_059995b8e7d54e69"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a specific evaporator refrigerant saturation temperature range (30-55°F) from evidence."
+    },
+    {
+      "candidate_id": "cand_0f4dc11eafcef2f6",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_cc6e06fe7e844aa5",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:sill_grille_deflection_recommendation",
+      "structured_payload_candidate": {
+        "parameter_name": "sill_grille_deflection",
+        "title": "Sill Grille Deflection Recommendation",
+        "summary": "Deflection angle recommendation for linear bar grilles in sill applications based on distance from wall."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "S upply outlet selections for heat-\ning and cooling applica tions from the same device should be care-\nfully examined for use in both applications.\nSill. Linear bar grilles are commonly used in sill applications. The\ngrille should be installed with the supply air jet directed vertically\naway from the occupied space. When the device is mounted 12 in. or\nless from the wall, a device with 0° deflection is suitable. If the\ndevice is installed more than 12 in. from the vertical surface, a linear\nbar grille with a fixed 15 to 30° deflection is recommended. This\ndevice should be installed with the jet directed toward the wall.These grilles can be available with  doors, removable cores, or other\nmeans of access to mechanical equipment that may be installed in the\nsill enclosure. The presence of window draperies or blinds and the\neffect of an impinging airstream must be considered in the selection.\nFloor.  Linear bar grilles are often us ed for floor applications.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc6e06fe7e844aa5",
+        "chunk_418b8ce5c41a4ad3"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides specific deflection angle recommendations for sill grilles based on distance from wall, directly from evidence."
+    },
+    {
+      "candidate_id": "cand_5083aa34e5641bb5",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_ceefeec83d614cd9",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:htw_generator_minimum_water_flow",
+      "structured_payload_candidate": {
+        "parameter_name": "htw_minimum_water_flow",
+        "title": "HTW Generator Minimum Water Flow",
+        "summary": "HTW generators require a minimum water flow at all times to prevent tube failure."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "On/off burner control is genera lly not used in steam-pressurized\ncycles because the system loses pressurization during the off cycle,which can cause flashing and cavitation at the HTW pumps.\nAll generators should have separate  safety controls to shut down\nthe combustion apparatus when the system pressure or water tem-\nperature is high. HT W generators require a minimum water flow at\nall times to prevent tube failure. Means should be provided to mea-sure the flow and to stop combus tion if the flow falls below the\nminimum value recommended by th e generator manufacturer. For\ninert-gas-pressurized cycles, a lo w-pressure safety control should\nbe included to shut down the comb ustion system if pressurization is\nlost.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ceefeec83d614cd9"
+      ],
+      "source_page_nos": [
+        4
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence explicitly states HTW generators require minimum water flow to prevent tube failure, a clear operational requirement."
+    },
+    {
+      "candidate_id": "cand_e07adf4d40842a26",
+      "domain_id": "hvac",
+      "doc_id": "doc_ba91945372ad4cbf",
+      "doc_name": "auto_hvac_systems_equipment_v2.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_1159dbc9a34e4358",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:cooling_tower:application_guidance:closed_hydronic_system_definition",
+      "structured_payload_candidate": {
+        "parameter_name": "closed_system_definition",
+        "title": "Closed Hydronic System Definition",
+        "summary": "Definition of a closed water system with no more than one point of interface with a compressible gas."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "A closed water system  is defined as one\nwith no more than one point of interface with a compressible gas or\nsurface, and that will not create sy stem flow by cha nges in elevation.\nThis definition is fundamental to understanding the hydraulic\ndynamics of these systems. Earlie r literature referred to a system\nwith an open or vented expansion tank as an “open” system, but thisis actually a closed system; the atmospheric interface of the tanksimply establishes the system pressure.\nAn open system , on the other hand, has more than one such\ninterface. For example, a cooling tower system has at least twopoints of interface: the tower basi n and the discharge pipe or nozzles\nentering the tower. One major difference in hydraulics between\nopen and closed system s is that some hydraulic characteristics of\nopen systems cannot occur in closed  systems.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "cooling_tower",
+        "equipment_class_key": "hvac:cooling_tower",
+        "label": "Cooling Tower",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Cooling Tower",
+          "cooling tower"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1159dbc9a34e4358"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides a definition of a closed hydronic system with operational relevance for system behavior, directly from evidence."
+    }
+  ]
+}

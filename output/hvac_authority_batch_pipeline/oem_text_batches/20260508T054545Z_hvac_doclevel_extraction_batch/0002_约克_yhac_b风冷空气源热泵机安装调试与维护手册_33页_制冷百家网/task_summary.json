@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【约克】YHAC-B风冷空气源热泵机安装调试与维护手册（33页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YHAC-B风冷空气源热泵机安装调试与维护手册（33页）-制冷百家网.pdf",
+  "doc_id": "doc_f41c2e1c77e049fa",
+  "chunks": 35,
+  "manual_tokens_estimated": 3045,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 33,
+      "chunks_after": 35,
+      "parse_result": {
+        "job_id": "job_44ca54562d2542b3",
+        "doc_id": "doc_f41c2e1c77e049fa",
+        "pages_created": 33,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_35842360a7e1401b",
+        "doc_id": "doc_f41c2e1c77e049fa",
+        "chunks_created": 35,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 10,
+      "anchor_passed": 10,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 9,
+      "judge_rejected": 1,
+      "judge_acceptance_rate": 90.0,
+      "judge_rejection_breakdown": {
+        "part_name": 1
+      },
+      "review_candidates": 9,
+      "by_type": {
+        "performance_spec": 1,
+        "parameter_spec": 3,
+        "maintenance_procedure": 1,
+        "application_guidance": 1,
+        "fault_code": 2,
+        "operational_sequence": 1
+      },
+      "usage": {
+        "prompt_tokens": 4052,
+        "completion_tokens": 1591,
+        "total_tokens": 5643
+      },
+      "judge_usage": {
+        "prompt_tokens": 3240,
+        "completion_tokens": 643,
+        "total_tokens": 3883
+      },
+      "extract_cost_rmb": 0.021702,
+      "judge_cost_rmb": 0.013578,
+      "cost_rmb": 0.03528,
+      "elapsed_seconds": 45.503,
+      "judge_elapsed_seconds": 18.847,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T054545Z_hvac_doclevel_extraction_batch/0002_约克_yhac_b风冷空气源热泵机安装调试与维护手册_33页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T054545Z_hvac_doclevel_extraction_batch/0002_约克_yhac_b风冷空气源热泵机安装调试与维护手册_33页_制冷百家网"
+}

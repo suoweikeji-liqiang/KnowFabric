@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-09T15:33:33.328702+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_b781786e2cb74c74__controller.json",
+      "doc_id": "doc_b781786e2cb74c74",
+      "doc_name": "【大金】空调故障代码一览表（2012版本）制冷百家网.pdf",
+      "equipment_class_id": "controller",
+      "equipment_class_key": "hvac:controller",
+      "candidate_count": 15
+    }
+  ]
+}

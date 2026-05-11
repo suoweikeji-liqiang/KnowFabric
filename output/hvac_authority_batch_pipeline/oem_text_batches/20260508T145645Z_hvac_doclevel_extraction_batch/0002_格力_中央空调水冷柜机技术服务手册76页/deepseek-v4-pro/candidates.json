@@ -1,0 +1,301 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_4e66fd4d0dd9ca75",
+      "domain_id": "hvac",
+      "doc_id": "doc_cf05c84bb4544d7d",
+      "doc_name": "【格力】中央空调水冷柜机技术服务手册76页-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_9e94a9a7437a4bd8",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:l_d_25_nominal_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "25",
+        "unit": "kW",
+        "model": "L(D)25",
+        "title": "L(D)25 nominal cooling capacity",
+        "summary": "L(D)25 model has a nominal cooling capacity of 25 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1  产品篇\n1 产品种类\n系列 机型 能力(kW) 外形图\nL(D)25 25\nL(D)32 32\nL(D)40 40\nL(D)32S 32\nL(D)40S 40\nL(D)49S 49\nL(D)65S 65\nL(D)80S 80\nL(D)98S 98\nL(D)116S 116\nL(D)130S 130\nL(D)145S 145\nL(D)160S 160 A\n系\n列\nL(D)196S 196\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9e94a9a7437a4bd8"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Clear operational parameter spec from evidence table."
+    },
+    {
+      "candidate_id": "cand_a97ecacd4007555c",
+      "domain_id": "hvac",
+      "doc_id": "doc_cf05c84bb4544d7d",
+      "doc_name": "【格力】中央空调水冷柜机技术服务手册76页-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_9e94a9a7437a4bd8",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:l_d_32s_nominal_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "32",
+        "unit": "kW",
+        "model": "L(D)32S",
+        "title": "L(D)32S nominal cooling capacity",
+        "summary": "L(D)32S model has a nominal cooling capacity of 32 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1  产品篇\n1 产品种类\n系列 机型 能力(kW) 外形图\nL(D)25 25\nL(D)32 32\nL(D)40 40\nL(D)32S 32\nL(D)40S 40\nL(D)49S 49\nL(D)65S 65\nL(D)80S 80\nL(D)98S 98\nL(D)116S 116\nL(D)130S 130\nL(D)145S 145\nL(D)160S 160 A\n系\n列\nL(D)196S 196\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9e94a9a7437a4bd8"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Clear operational parameter spec from evidence table."
+    },
+    {
+      "candidate_id": "cand_04a136f4f034ae32",
+      "domain_id": "hvac",
+      "doc_id": "doc_cf05c84bb4544d7d",
+      "doc_name": "【格力】中央空调水冷柜机技术服务手册76页-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_9e94a9a7437a4bd8",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:l_d_40_nominal_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "40",
+        "unit": "kW",
+        "model": "L(D)40",
+        "title": "L(D)40 nominal cooling capacity",
+        "summary": "L(D)40 model has a nominal cooling capacity of 40 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1  产品篇\n1 产品种类\n系列 机型 能力(kW) 外形图\nL(D)25 25\nL(D)32 32\nL(D)40 40\nL(D)32S 32\nL(D)40S 40\nL(D)49S 49\nL(D)65S 65\nL(D)80S 80\nL(D)98S 98\nL(D)116S 116\nL(D)130S 130\nL(D)145S 145\nL(D)160S 160 A\n系\n列\nL(D)196S 196\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9e94a9a7437a4bd8"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Clear operational parameter spec from evidence table."
+    },
+    {
+      "candidate_id": "cand_0930cb418c1aff71",
+      "domain_id": "hvac",
+      "doc_id": "doc_cf05c84bb4544d7d",
+      "doc_name": "【格力】中央空调水冷柜机技术服务手册76页-.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_b7dcad017e444785",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:l_d_25_rated_power_cooling",
+      "structured_payload_candidate": {
+        "parameter_name": "rated_power_cooling",
+        "value": "7.3",
+        "unit": "kW",
+        "model": "L(D)25",
+        "title": "L(D)25 rated power (cooling)",
+        "summary": "L(D)25 rated power for cooling is 7.3 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "4  4 产品技术参数表\nA系列性能参数表\n注：a. 本机组执行国家标准GB/T17758-1999；\nb. 以上参数为名义工况下测得；\nc. 其它非标准机外静压参数机型可按非标产品定制\nd. 具体参数以机组铭牌为准；\ne. 制热时的额定功率为其制热量与风机功率之和;\nf.以上电源线选型针对单冷机型。 种类 项目 型号\n单位 L(D)25 L(D)32S  L(D)32 L(D)40S  L(D)40 L(D)49S L(D)65S\n制冷量 kW 25 32 40 48.8 65.2\n可选制热量 kW 9-12 12-18 12-18 18-30 18-30\n风量 m3/h 4500 6000 7000 7000 11000\n机外静压 Pa - 120 - 150 - 180 180\n控制温度 ℃ 16～30 ±2\n噪声 dB(A) ≤62 ≤65 ≤67 ≤69 ≤70\n电源  380V  3N-50Hz 机组\n特性\n额定功率(制冷) kW 7.3 8.1 7.9 10.5 9.1 13.3 17.6\n型式  进口涡旋压缩机 压缩机\n数量 台 1 1 1 2 2\n型式  壳管式（高效换热管）\n水流量 m3/h 6.3 8 10 12 16 冷凝器\n接管规格 英寸 2 2 2 2 2-1/2\n型式  双向直缝铝片套铜管  蒸发器\n片距 mm 1.8\n工质  R22\n节流方式  膨胀阀 制冷\n系统\n工质充注量 kg 5 6.5 7.5 2 ×4.5 2×5\n风机型式及驱动  皮带轮驱动/直接驱动（前驱动）\n风机电机功率 m3/h 0.75 1.5 2.2 2.2 4 通风\n系统\n过滤网  初效尼龙过滤网\n控制器  微电脑控制\n宽 mm 1210 1430 1400 1432 1400 1500 1500\n深 mm 488 600 470 594 470 680 680 外型\n尺寸\n高 mm 1850 1750 1970 1750 1970 2100 2100\n净重 kg 310 260 280 320 340 400 530\n推荐电源线 mm2×根 4×5 6×5 6 ×5 10×5 16×5\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_b7dcad017e444785"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted rated power for cooling from parameter table."
+    },
+    {
+      "candidate_id": "cand_979b92b98faec1f5",
+      "domain_id": "hvac",
+      "doc_id": "doc_cf05c84bb4544d7d",
+      "doc_name": "【格力】中央空调水冷柜机技术服务手册76页-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_27b2173dbc4343dc",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:l_d_80s_rated_power_cooling",
+      "structured_payload_candidate": {
+        "parameter_name": "rated_power_cooling",
+        "value": "19.7",
+        "unit": "kW",
+        "model": "L(D)80S",
+        "title": "L(D)80S rated power (cooling)",
+        "summary": "L(D)80S rated power for cooling is 19.7 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5  续表:\n种类 项目 型号\n单位   L(D)80S L(D)98S L(D)116S  L(D)130S  L(D)145S L(D)160S  L(D)196S\n制冷量 kW 80 97.8 115.2 130.4 145.2 163.5 195.6\n可选制热量 kW 24-36 24-36 30-45 30-45 30-45 45-60 45-60\n风量 m3/h 14000 16000 18500 21000 24000 27000 32000\n机外静压 Pa 180 180 200 200 200 200 200\n控制温度 ℃ 16～30 ±2\n噪声 dB(A)  ≤71 ≤72 ≤74 ≤74 ≤76 ≤76 ≤78\n电源  380V  3N-50Hz 机组\n特性\n额定功率（制冷） kW 19.7 26.7 29.7 34.5 39.9 46.2 55.7\n型式  进口涡旋压缩机 压缩机\n数量 台 2 2 3 3 3 4 4\n型式  壳管式（高效换热管）\n水流量 m3/h 20 22 28 32 36 40 48 冷凝器\n接管规英寸 2-1/2 2-1/2 2-1/2 3 3 3 3\n型式  双向直缝铝片套铜管  蒸发器\n片距 mm 1.8\n工质  R22\n节流方式  膨胀阀 制冷\n系统\n工质充注量 kg 2×6.5 2×8 3×6 3×7 3×7 2×14 2×14\n风机型式及驱动方 皮带轮驱动/直接驱动（前驱动）\n风机电机功率 m3/h 4 5.5 7.5 7.5 11 11 11 通风\n系统\n过滤网  初效尼龙过滤网\n控制器  微电脑控制\n宽 mm 1817 2017 2360 2360 2360 2617 2617\n深 mm 1178 1178 1180 1180 1180 1178 1178 外型\n尺寸\n高 mm 1773 1850 1850 1850 1850 1950 1950\n净重 kg 650 750 930 1000 1310 1420 1580\n推荐电源线 mm2×\n根 25×3+\n16×2 35×3+\n16×2 35×3+\n16×2 50×3+\n25×2 50×3+\n25×2 50×3+\n25×2 70×3+\n35×2\n注：a. 本机组执行国家标准GB/T17758-1999；\nb. 以上参数为名义工况下测得；\nc.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_27b2173dbc4343dc"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Value found in parameter table on page 7."
+    },
+    {
+      "candidate_id": "cand_5e14669d058b28c0",
+      "domain_id": "hvac",
+      "doc_id": "doc_cf05c84bb4544d7d",
+      "doc_name": "【格力】中央空调水冷柜机技术服务手册76页-.pdf",
+      "page_no": 8,
+      "chunk_id": "chunk_d5ffd39efb3e453d",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:l_d_28_b_n1_rated_power_cooling",
+      "structured_payload_candidate": {
+        "parameter_name": "rated_power_cooling",
+        "value": "7.6",
+        "unit": "kW",
+        "model": "L(D)28/B-N1",
+        "title": "L(D)28/B-N1 rated power (cooling)",
+        "summary": "L(D)28/B-N1 rated power for cooling is 7.6 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "6  B系列性能参数表\n种类 项目 型号\n单位 L(D)28/B-N1  L(D)32S/B-N1\nL(D)32/B-N1  L(D)49S/B-N1\nL(D)49/B-N1  L(D)65S/B-N1  L(D)80S/B-N1\n制冷量 kW 28 32 48.8 65.2 80\n可选制热量 kW 9-12 12-18 18-30 18-30 24-36\n风量 m3/h 5000 6000/5000 8000 11000 14000\n机外静压 Pa － 75/- 75/- 100 100\n室内噪声 dB(A)  ≤62 ≤69/64 ≤70/70 ≤72 ≤71\n电源 － 380V  3N ～50Hz\n控制温度 ℃ 16～30 ±2 机\n组\n特\n性\n额定功率（制冷） kW 7.6 9.1/8.6 13.9/13.2 18.6 21.1\n型式 － 进口全封闭涡旋压缩 机\n压缩机\n数量 台 1 1 2 2 2\n形式 － 套管式（高效换热管）\n水流量 m3/h 6.1 7 10.7 14.3 17.2\n水阻力 kPa 15 15 20 22 25 冷凝器\n接管规格 英寸 2 2 2 2 2-1/2\n形式 － 翅片式\n蒸发器\n片距 mm 1.8\n节流方式 － 节流毛细管\n工质名称 － R22 制\n冷\n系\n统\n工质充注量 kg 3.7 4.08/2.5 2 ×3.1 2×3.3 2×4.6\n风机型式/驱动方式 － 离心风机/皮带驱动\n风机电机功率 kW 0.75 1.5/0.9 2.2/1.5 3.0 4.0 通风\n系统\n过滤网 － 初效尼龙过滤网\n控  制  器 － 微电脑控制器\n宽 mm 1400 1440/1400 1900/1900 1900 1817\n深 mm 475 600/475 600/600 600 1178 外形\n尺寸\n高 mm 1970 1776/1970 1776/2050 1776 1773\n净重 kg 220 220/230 430/450 460 650\n推荐电源线 mm2×根 6×5 6×5 10×5 16×5 25×3+16 ×2\n注：a. 本机组执行国家标准GB/T17758-1999；\nb. 以上参数为名义工况下测得；\nc. 其它非标准机外静压参数机型可按非标产品定制\nd. 具体参数以机组铭牌为准；\ne.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d5ffd39efb3e453d"
+      ],
+      "source_page_nos": [
+        8
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Value found in B series parameter table on page 8."
+    }
+  ]
+}

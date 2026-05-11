@@ -1,0 +1,75 @@
+{
+  "page": 97,
+  "response": {
+    "id": "78f45be5ec3c43558b759b808e1ff4a4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page displays contact information for Shanghai Hezhong-Carrier Air-Conditioning Equip. Co., Ltd., including company name, address, postal code, telephone, and fax numbers. It also includes a website reference at the bottom.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Company Name (Chinese)\"},\n    {\"type\": \"text_block\", \"label\": \"Company Name (English)\"},\n    {\"type\": \"text_block\", \"label\": \"Address (Chinese)\"},\n    {\"type\": \"text_block\", \"label\": \"Address (English)\"},\n    {\"type\": \"text_block\", \"label\": \"Telephone Number\"},\n    {\"type\": \"text_block\", \"label\": \"Fax Number\"},\n    {\"type\": \"text_block\", \"label\": \"Website Reference\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"manufacturer_contact\", \"company_information\"],\n  \"ocr_text_if_useful\": \"上海合众－开利空调设备有限公司\\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\\n地址：上海市双阳支路24号 邮编：200090\\nADD: No.24 Shuang Yang Zhi Road. P.C.: 200090, Shanghai, China.\\n电话Tel: 86-21-65661188\\n传真Fax: 86-21-65695404\\n制冷百家网整理：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page contains only text; no diagrams or technical specifications are visible. The website reference at the bottom appears to be a watermark or source attribution, not part of the original manual content.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778207813,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 403,
+      "prompt_tokens": 2381,
+      "total_tokens": 2784,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2184
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "text_scan",
+    "summary": "This page displays contact information for Shanghai Hezhong-Carrier Air-Conditioning Equip. Co., Ltd., including company name, address, postal code, telephone, and fax numbers. It also includes a website reference at the bottom.",
+    "visual_entities": [
+      {
+        "type": "text_block",
+        "label": "Company Name (Chinese)"
+      },
+      {
+        "type": "text_block",
+        "label": "Company Name (English)"
+      },
+      {
+        "type": "text_block",
+        "label": "Address (Chinese)"
+      },
+      {
+        "type": "text_block",
+        "label": "Address (English)"
+      },
+      {
+        "type": "text_block",
+        "label": "Telephone Number"
+      },
+      {
+        "type": "text_block",
+        "label": "Fax Number"
+      },
+      {
+        "type": "text_block",
+        "label": "Website Reference"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "manufacturer_contact",
+      "company_information"
+    ],
+    "ocr_text_if_useful": "上海合众－开利空调设备有限公司\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\n地址：上海市双阳支路24号 邮编：200090\nADD: No.24 Shuang Yang Zhi Road. P.C.: 200090, Shanghai, China.\n电话Tel: 86-21-65661188\n传真Fax: 86-21-65695404\n制冷百家网整理：www.zhilengbj.cn",
+    "uncertainty_notes": "The page contains only text; no diagrams or technical specifications are visible. The website reference at the bottom appears to be a watermark or source attribution, not part of the original manual content.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page displays contact information for Shanghai Hezhong-Carrier Air-Conditioning Equip. Co., Ltd., including company name, address, postal code, telephone, and fax numbers. It also includes a website reference at the bottom.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Company Name (Chinese)\"},\n    {\"type\": \"text_block\", \"label\": \"Company Name (English)\"},\n    {\"type\": \"text_block\", \"label\": \"Address (Chinese)\"},\n    {\"type\": \"text_block\", \"label\": \"Address (English)\"},\n    {\"type\": \"text_block\", \"label\": \"Telephone Number\"},\n    {\"type\": \"text_block\", \"label\": \"Fax Number\"},\n    {\"type\": \"text_block\", \"label\": \"Website Reference\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"manufacturer_contact\", \"company_information\"],\n  \"ocr_text_if_useful\": \"上海合众－开利空调设备有限公司\\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\\n地址：上海市双阳支路24号 邮编：200090\\nADD: No.24 Shuang Yang Zhi Road. P.C.: 200090, Shanghai, China.\\n电话Tel: 86-21-65661188\\n传真Fax: 86-21-65695404\\n制冷百家网整理：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page contains only text; no diagrams or technical specifications are visible. The website reference at the bottom appears to be a watermark or source attribution, not part of the original manual content.\",\n  \"confidence\": 0.95\n}"
+}

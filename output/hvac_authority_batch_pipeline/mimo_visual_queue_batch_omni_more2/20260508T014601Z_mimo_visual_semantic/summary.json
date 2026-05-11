@@ -1,0 +1,217 @@
+{
+  "run_id": "20260508T014601Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YEAS+螺杆式空气源热泵控制系统和电气维修手册（69页）-制冷百家网.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 7.465,
+      "parsed": {
+        "page_type": "other",
+        "summary": "This is the cover page of a YORK YEAS screw-type air-source heat pump unit installation, operation, and maintenance manual. It features the company logo, manual title, form number, a photograph of the unit, and a safety warning about refrigerant pressure.",
+        "visual_entities": [
+          {
+            "type": "logo",
+            "label": "YORK logo"
+          },
+          {
+            "type": "text_block",
+            "label": "Manual title and form number"
+          },
+          {
+            "type": "photograph",
+            "label": "YEAS heat pump unit"
+          },
+          {
+            "type": "text_block",
+            "label": "Safety warning"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "equipment_identification",
+          "manual_documentation",
+          "safety_warnings"
+        ],
+        "ocr_text_if_useful": "YORK A JOHNSON CONTROLS COMPANY YEAS 螺杆式空气源热泵机组 安装、操作和维护手册 替代：无 FORM NO.: AP1203-IOM02 (0606) 机组型号 YEAS (设计序列号B) 警告 系统内充注了一定压力的制冷剂 对系统进行维护时，如果操作程序不正确，可能严重损伤系统，所有维护工作必须由约克维修技术人员按照约克的安装操作维护手册来进行。",
+        "uncertainty_notes": "The page is a cover page, not a technical diagram or table. The relationships between visual entities are primarily layout-based (e.g., logo above title) and not functional or technical connections suitable for the 'visual_relationships' field.",
+        "confidence": 1.0
+      },
+      "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a YORK YEAS screw-type air-source heat pump unit installation, operation, and maintenance manual. It features the company logo, manual title, form number, a photograph of the unit, and a safety warning about refrigerant pressure.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and form number\"},\n    {\"type\": \"photograph\", \"label\": \"YEAS heat pump unit\"},\n    {\"type\": \"text_block\", \"label\": \"Safety warning\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\", \"safety_warnings\"],\n  \"ocr_text_if_useful\": \"YORK A JOHNSON CONTROLS COMPANY YEAS 螺杆式空气源热泵机组 安装、操作和维护手册 替代：无 FORM NO.: AP1203-IOM02 (0606) 机组型号 YEAS (设计序列号B) 警告 系统内充注了一定压力的制冷剂 对系统进行维护时，如果操作程序不正确，可能严重损伤系统，所有维护工作必须由约克维修技术人员按照约克的安装操作维护手册来进行。\",\n  \"uncertainty_notes\": \"The page is a cover page, not a technical diagram or table. The relationships between visual entities are primarily layout-based (e.g., logo above title) and not functional or technical connections suitable for the 'visual_relationships' field.\",\n  \"confidence\": 1.0\n}",
+      "usage": {
+        "completion_tokens": 361,
+        "prompt_tokens": 2437,
+        "total_tokens": 2798,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 35,
+      "status": "ok",
+      "elapsed_seconds": 10.958,
+      "parsed": {
+        "page_type": "parameter_table",
+        "summary": "This page from a manual for a screw-type air source heat pump (YEAS series) details parameter settings and control logic for the compressor and fans. It includes two parameter setting interfaces (界面-7 and 界面-8) with tables of setpoints and ranges, along with explanatory text on control conditions for oil heating, pressure, temperature, and current.",
+        "visual_entities": [
+          {
+            "type": "table",
+            "label": "参数设置界面-7"
+          },
+          {
+            "type": "table",
+            "label": "参数设置界面-8"
+          },
+          {
+            "type": "table",
+            "label": "排气压力与风机启停逻辑表"
+          },
+          {
+            "type": "text_block",
+            "label": "参数设置的范围 (界面-7)"
+          },
+          {
+            "type": "text_block",
+            "label": "参数说明 (界面-7)"
+          },
+          {
+            "type": "text_block",
+            "label": "参数设置的范围 (界面-8)"
+          },
+          {
+            "type": "text_block",
+            "label": "参数说明 (界面-8)"
+          },
+          {
+            "type": "header",
+            "label": "控制中心"
+          },
+          {
+            "type": "header",
+            "label": "螺杆式空气源热泵YEAS系列"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "排气压力",
+            "relation": "triggers action on",
+            "to": "1# 风机"
+          },
+          {
+            "from": "排气压力",
+            "relation": "triggers action on",
+            "to": "2# 风机"
+          },
+          {
+            "from": "压缩机电流",
+            "relation": "triggers action on",
+            "to": "压缩机卸载"
+          },
+          {
+            "from": "吸气压力",
+            "relation": "triggers action on",
+            "to": "压缩机卸载"
+          },
+          {
+            "from": "吸气压力",
+            "relation": "triggers action on",
+            "to": "压缩机关机"
+          },
+          {
+            "from": "排气压力",
+            "relation": "triggers action on",
+            "to": "压缩机关机"
+          },
+          {
+            "from": "回油温度",
+            "relation": "triggers action on",
+            "to": "压缩机关机"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "parameter_setting",
+          "control_logic",
+          "safety_protection",
+          "operational_ranges"
+        ],
+        "ocr_text_if_useful": "参数设置界面-7\n1# 风机启动压力设定 1350Kpa\n2# 风机启动压力设定 1650Kpa\n排气压力过高卸载 2500Kpa\n排气压力过高保护 2700Kpa\n油冷开启回油温度 75.0 ℃\n油冷关闭回油温度 95.0 ℃\n回油过高报警温度 110.0 ℃\n\n参数设置界面-8\n压缩机卸载电流比 95%\n制冷低压卸载保护 350Kpa\n制冷低压过低保护 250Kpa\n制热低压卸载保护 150Kpa\n制热低压过低保护 100Kpa\n制冷出水温度过低 2.0 ℃\n制热出水温度过高 55.0 ℃",
+        "uncertainty_notes": "The exact model or full system context is not visible. Some relationships are inferred from control logic descriptions (e.g., '当排气压力≥...设定值时，压缩机关机') but the visual evidence is the text stating the condition, not a direct diagrammatic link.",
+        "confidence": 0.9
+      },
+      "raw_text": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page from a manual for a screw-type air source heat pump (YEAS series) details parameter settings and control logic for the compressor and fans. It includes two parameter setting interfaces (界面-7 and 界面-8) with tables of setpoints and ranges, along with explanatory text on control conditions for oil heating, pressure, temperature, and current.\",\n  \"visual_entities\": [\n    {\"type\": \"table\", \"label\": \"参数设置界面-7\"},\n    {\"type\": \"table\", \"label\": \"参数设置界面-8\"},\n    {\"type\": \"table\", \"label\": \"排气压力与风机启停逻辑表\"},\n    {\"type\": \"text_block\", \"label\": \"参数设置的范围 (界面-7)\"},\n    {\"type\": \"text_block\", \"label\": \"参数说明 (界面-7)\"},\n    {\"type\": \"text_block\", \"label\": \"参数设置的范围 (界面-8)\"},\n    {\"type\": \"text_block\", \"label\": \"参数说明 (界面-8)\"},\n    {\"type\": \"header\", \"label\": \"控制中心\"},\n    {\"type\": \"header\", \"label\": \"螺杆式空气源热泵YEAS系列\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"排气压力\", \"relation\": \"triggers action on\", \"to\": \"1# 风机\"},\n    {\"from\": \"排气压力\", \"relation\": \"triggers action on\", \"to\": \"2# 风机\"},\n    {\"from\": \"压缩机电流\", \"relation\": \"triggers action on\", \"to\": \"压缩机卸载\"},\n    {\"from\": \"吸气压力\", \"relation\": \"triggers action on\", \"to\": \"压缩机卸载\"},\n    {\"from\": \"吸气压力\", \"relation\": \"triggers action on\", \"to\": \"压缩机关机\"},\n    {\"from\": \"排气压力\", \"relation\": \"triggers action on\", \"to\": \"压缩机关机\"},\n    {\"from\": \"回油温度\", \"relation\": \"triggers action on\", \"to\": \"压缩机关机\"}\n  ],\n  \"useful_for_knowledge_types\": [\"parameter_setting\", \"control_logic\", \"safety_protection\", \"operational_ranges\"],\n  \"ocr_text_if_useful\": \"参数设置界面-7\\n1# 风机启动压力设定 1350Kpa\\n2# 风机启动压力设定 1650Kpa\\n排气压力过高卸载 2500Kpa\\n排气压力过高保护 2700Kpa\\n油冷开启回油温度 75.0 ℃\\n油冷关闭回油温度 95.0 ℃\\n回油过高报警温度 110.0 ℃\\n\\n参数设置界面-8\\n压缩机卸载电流比 95%\\n制冷低压卸载保护 350Kpa\\n制冷低压过低保护 250Kpa\\n制热低压卸载保护 150Kpa\\n制热低压过低保护 100Kpa\\n制冷出水温度过低 2.0 ℃\\n制热出水温度过高 55.0 ℃\",\n  \"uncertainty_notes\": \"The exact model or full system context is not visible. Some relationships are inferred from control logic descriptions (e.g., '当排气压力≥...设定值时，压缩机关机') but the visual evidence is the text stating the condition, not a direct diagrammatic link.\",\n  \"confidence\": 0.9\n}",
+      "usage": {
+        "completion_tokens": 778,
+        "prompt_tokens": 2437,
+        "total_tokens": 3215,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 69,
+      "status": "ok",
+      "elapsed_seconds": 7.924,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This page is a contact information directory for YORK (a Johnson Controls company) service stations across China, listing addresses, postal codes, and phone numbers for various cities. It includes a header with the YORK logo, a form number, and a disclaimer about design changes and translation accuracy.",
+        "visual_entities": [
+          {
+            "type": "logo",
+            "label": "YORK logo"
+          },
+          {
+            "type": "text_block",
+            "label": "header disclaimer"
+          },
+          {
+            "type": "text_block",
+            "label": "form number"
+          },
+          {
+            "type": "text_block",
+            "label": "service station list"
+          },
+          {
+            "type": "text_block",
+            "label": "contact details"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "contact_information",
+          "service_locations",
+          "company_documentation"
+        ],
+        "ocr_text_if_useful": "约克公司保留变更产品设计恕不预先通知的权利\n本译文如有错误之处，请以英文版为准。\nYORK®\nA JOHNSON CONTROLS COMPANY\nFORM NO.: AP1203-IOM02(0606)\nSupersedes: 无\n上海维修站 上海市西康路1390号 邮政编码: 200060 电话: (86-21) 6276 6509\n无锡维修站 无锡市长江路32号 邮政编码: 214028 电话: (86-510) 8522 6743/6476\n... [full list of service stations and contact details] ...",
+        "uncertainty_notes": "The page contains a watermark 'www.duomianshou.net' and a footer '制冷百家网: www.zhilengbj.cn', which are not part of the original manual content but overlaid on the image.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page is a contact information directory for YORK (a Johnson Controls company) service stations across China, listing addresses, postal codes, and phone numbers for various cities. It includes a header with the YORK logo, a form number, and a disclaimer about design changes and translation accuracy.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"header disclaimer\"},\n    {\"type\": \"text_block\", \"label\": \"form number\"},\n    {\"type\": \"text_block\", \"label\": \"service station list\"},\n    {\"type\": \"text_block\", \"label\": \"contact details\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"contact_information\", \"service_locations\", \"company_documentation\"],\n  \"ocr_text_if_useful\": \"约克公司保留变更产品设计恕不预先通知的权利\\n本译文如有错误之处，请以英文版为准。\\nYORK®\\nA JOHNSON CONTROLS COMPANY\\nFORM NO.: AP1203-IOM02(0606)\\nSupersedes: 无\\n上海维修站 上海市西康路1390号 邮政编码: 200060 电话: (86-21) 6276 6509\\n无锡维修站 无锡市长江路32号 邮政编码: 214028 电话: (86-510) 8522 6743/6476\\n... [full list of service stations and contact details] ...\",\n  \"uncertainty_notes\": \"The page contains a watermark 'www.duomianshou.net' and a footer '制冷百家网: www.zhilengbj.cn', which are not part of the original manual content but overlaid on the image.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 435,
+        "prompt_tokens": 2437,
+        "total_tokens": 2872,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

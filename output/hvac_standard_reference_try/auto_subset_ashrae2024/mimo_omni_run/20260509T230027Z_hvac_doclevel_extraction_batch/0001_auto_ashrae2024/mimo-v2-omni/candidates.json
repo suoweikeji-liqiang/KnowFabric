@@ -1,0 +1,487 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_3be15a31257c359a",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_31ff5848e9064109",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:minimum_valve_authority_to_avoid",
+      "structured_payload_candidate": {
+        "parameter_name": "valve_authority_minimum",
+        "title": "Minimum Valve Authority to Avoid",
+        "summary": "Valve authority less than 30% should be avoided as it causes a flow characteristic shift, making an equal-percentage valve appear more linear."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "13.16 2024 ASHRAE Handbook—HV AC Systems and Equipment (SI)\nures 25 and 26). Typically, authorities in the range of 30 to 50% (for\npiping systems with 2: 1 branch-to-riser pressure drop ratios) are\nadequate for HV AC coil applications, with higher t coils requiring\nless valve authority. Authorities less than 30% should be avoided\nbecause they lead to a flow characteristic shift that makes the equal-percentage valve appear to be more linear in nature (Figures 27 and\n28). For the three-way valve shown in Figure 23, the full-open pres-\nsure drop should be from C to D.  The pressure drop in the bypass\nbalancing valve in the three-way valv e circuit should be set to equal\nthat in the coil (load), Chapter 47 discusses valve authority in threeway modulating applications.\nControl valves should be sized on the basis of the required valve\ncoefficient C\nv for the required pressure drop and flow. For more\ninformation, see the section on Control Valve Sizing under Auto-\nmatic Valves in Chapter 47.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_31ff5848e9064109"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Directly supported by evidence from page containing valve authority discussion, specifying minimum 30% to avoid flow characteristic shift."
+    },
+    {
+      "candidate_id": "cand_82be96182b15f715",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_31ff5848e9064109",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:control_valve_sizing_basis",
+      "structured_payload_candidate": {
+        "parameter_name": "control_valve_sizing",
+        "title": "Control Valve Sizing Basis",
+        "summary": "Control valves should be sized based on the required valve coefficient Cv for the required pressure drop and flow."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "13.16 2024 ASHRAE Handbook—HV AC Systems and Equipment (SI)\nures 25 and 26). Typically, authorities in the range of 30 to 50% (for\npiping systems with 2: 1 branch-to-riser pressure drop ratios) are\nadequate for HV AC coil applications, with higher t coils requiring\nless valve authority. Authorities less than 30% should be avoided\nbecause they lead to a flow characteristic shift that makes the equal-percentage valve appear to be more linear in nature (Figures 27 and\n28). For the three-way valve shown in Figure 23, the full-open pres-\nsure drop should be from C to D.  The pressure drop in the bypass\nbalancing valve in the three-way valv e circuit should be set to equal\nthat in the coil (load), Chapter 47 discusses valve authority in threeway modulating applications.\nControl valves should be sized on the basis of the required valve\ncoefficient C\nv for the required pressure drop and flow. For more\ninformation, see the section on Control Valve Sizing under Auto-\nmatic Valves in Chapter 47.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_31ff5848e9064109"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence explicitly states control valves should be sized based on required Cv for pressure drop and flow."
+    },
+    {
+      "candidate_id": "cand_6f2c72f5308f8357",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:valve:performance_spec:coil_entering_air_temperature_rating_range",
+      "structured_payload_candidate": {
+        "parameter_name": "coil_entering_air_temp",
+        "title": "Coil Entering Air Temperature Rating Range",
+        "summary": "Dry-surface and dehumidifying coils are rated with entering air dry-bulb temperatures from 18 to 38°C and wet-bulb temperatures from 15 to 30°C."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence includes entering air dry-bulb and wet-bulb temperature ranges as per AHRI Standard 410, directly supporting the claim."
+    },
+    {
+      "candidate_id": "cand_e8e040112ae1ed29",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:valve:performance_spec:coil_air_face_velocity_rating_range",
+      "structured_payload_candidate": {
+        "parameter_name": "coil_air_face_velocity",
+        "title": "Coil Air Face Velocity Rating Range",
+        "summary": "Coils are rated for air face velocities between 1 and 4 m/s, with dehumidifying coils for comfort applications often selected in the 2.0 to 2.5 m/s range."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence provides air face velocity range 1 to 4 m/s; dehumidifying coil typical range added from domain knowledge but primary range is supported."
+    },
+    {
+      "candidate_id": "cand_683c145b3f1f9960",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:valve:performance_spec:chilled_water_temperature_rating_range",
+      "structured_payload_candidate": {
+        "parameter_name": "chilled_water_temp",
+        "title": "Chilled-Water Temperature Rating Range",
+        "summary": "Entering chilled-water temperature for coil ratings ranges from 1.5 to 18°C."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence directly states entering chilled-water temperature range 1.5 to 18°C."
+    },
+    {
+      "candidate_id": "cand_ba949fe8ca8c29f8",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:valve:performance_spec:water_velocity_rating_range_for_coils",
+      "structured_payload_candidate": {
+        "parameter_name": "water_velocity",
+        "title": "Water Velocity Rating Range for Coils",
+        "summary": "Water velocity for coil ratings ranges from 0.3 to 2.4 m/s, and for ethylene glycol solution from 0.3 to 1.8 m/s."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence includes water velocity range 0.3 to 2.4 m/s and glycol solution range 0.3 to 1.8 m/s."
+    },
+    {
+      "candidate_id": "cand_a08976d9d9460807",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_31ff5848e9064109",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:valve:application_guidance:valve_authority_for_three_way_valve_circuit",
+      "structured_payload_candidate": {
+        "parameter_name": "three_way_valve_authority",
+        "title": "Valve Authority for Three-Way Valve Circuit",
+        "summary": "For a three-way valve circuit, the pressure drop in the bypass balancing valve should be set to equal that in the coil (load)."
+      },
+      "confidence_score": 0.85,
+      "review_status": "candidate",
+      "evidence_text": "13.16 2024 ASHRAE Handbook—HV AC Systems and Equipment (SI)\nures 25 and 26). Typically, authorities in the range of 30 to 50% (for\npiping systems with 2: 1 branch-to-riser pressure drop ratios) are\nadequate for HV AC coil applications, with higher t coils requiring\nless valve authority. Authorities less than 30% should be avoided\nbecause they lead to a flow characteristic shift that makes the equal-percentage valve appear to be more linear in nature (Figures 27 and\n28). For the three-way valve shown in Figure 23, the full-open pres-\nsure drop should be from C to D.  The pressure drop in the bypass\nbalancing valve in the three-way valv e circuit should be set to equal\nthat in the coil (load), Chapter 47 discusses valve authority in threeway modulating applications.\nControl valves should be sized on the basis of the required valve\ncoefficient C\nv for the required pressure drop and flow. For more\ninformation, see the section on Control Valve Sizing under Auto-\nmatic Valves in Chapter 47.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_31ff5848e9064109"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence states pressure drop in bypass balancing valve should equal coil (load) for three-way valve circuit."
+    },
+    {
+      "candidate_id": "cand_6b1ee3e8d8a5079e",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_687a3b0cb99d4fcd",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:coil_freezing_prevention_threshold",
+      "structured_payload_candidate": {
+        "parameter_name": "coil_freezing_threshold",
+        "title": "Coil Freezing Prevention Threshold",
+        "summary": "Freezing of dehumidifying coil surfaces occurs when the refrigerant evaporating temperature at the coil outlet is below –4 to –2°C saturated."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "In ho t, humid climates, the light-load\ncondition has a higher proportion of moisture and a correspond-\ningly lower proportion of sensible  heat. The result is higher dew\npoints in the conditioned spaces during light-load  conditions un-\nless a special means for controlling inside dew points (e.g., reheator dual path) is used.\nFin surface freezing at light lo ads should be avoided. Freezing\noccurs when a dehumidification coil’s surface temperature fallsbelow 0°C. Freezing does not occur with standard coils for comfort\ninstallations unless the refrigerant evaporating temperature at the\ncoil outlet is below –4 to –2°C satu rated; the exact value depends on\nthe design of the coil, its opera ting dew point, and the amount of\nloading. With coil and condensing units to balance at low tempera-\ntures at peak loads (not a custom ary design choice), freezing may\noccur when load suddenly decreases.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_687a3b0cb99d4fcd"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence directly states freezing occurs when refrigerant evaporating temperature below –4 to –2°C saturated."
+    },
+    {
+      "candidate_id": "cand_27814598b0f514a3",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_ab447107a4fa465e",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:valve:performance_spec:hydrophilic_coil_pressure_drop_reduction",
+      "structured_payload_candidate": {
+        "parameter_name": "hydrophilic_coil_pressure_drop",
+        "title": "Hydrophilic Coil Pressure Drop Reduction",
+        "summary": "Hydrophilic aluminum fin surface coatings can reduce air pressure drop across a new coil by as much as 30% compared to an untreated coil."
+      },
+      "confidence_score": 0.85,
+      "review_status": "candidate",
+      "evidence_text": "Therefore, final selection involves\neconomic balancing of the initial co st of the coil against the operat-\ning costs of the coil geometry co mbinations available to adequately\nmeet the performa nce requirements.\nThe aluminum fin surfaces of new dehumidifying coils tend to in-\nhibit condensate sheeting action until they have aged for a year. Hy-\ndrophilic aluminum fin surface coatings reduce water droplet surface\ntension, producing a more evenly dispersed wetted surface action at\ninitial start-up. Manufacturers have tried different methods of apply-\ning such coatings, including dippi ng the coil into a tank, coating the\nfin stock material, or subjecting the material to a chemical etchingprocess. Tests have s hown as much as a 30% reduction in air pressure\ndrop across a hydrophilic coil as opposed a new untreated coil..",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_ab447107a4fa465e"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence states up to 30% reduction in air pressure drop for hydrophilic coil compared to untreated coil."
+    },
+    {
+      "candidate_id": "cand_80c5a9e07d14d054",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_461013893d384292",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "hvac:valve:operational_sequence:variable_speed_pump_control_stability",
+      "structured_payload_candidate": {
+        "parameter_name": "variable_speed_pump_stability",
+        "title": "Variable-Speed Pump Control Stability",
+        "summary": "Variable-speed circulating pumps can provide stable control of coil discharge temperature, with stability on the order of ±0.28 K."
+      },
+      "confidence_score": 0.8,
+      "review_status": "candidate",
+      "evidence_text": "However, the basic differences in control are\n• With the two-way valve configur ation (Figure 29A), the distribu-\ntion system sees variab le flow and constant t, whereas with both\nthree-way configurations, the distribution system  sees constant\nflow and variable t.\n• Configuration B differs from C in  that the pressure required\nthrough the three-way valve in Figure 29B is provided by the load\npump, whereas in Figure 29C it is provided by the distribution\npump(s).\nAlternatives to Control Valves\nUse of variable-frequency drives  has greatly increased because\nadvances in technology and decrea ses in cost have made these\ndrives an attractive alternative to using control valves for heat trans-\nfer control (Figure 30).\nGreen (1994) tested the control st ability of variable-speed circu-\nlating pumps compared to control valves. Stability of the controlleddischarge temperature of  the coil was on the order of ±0.28 K.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_461013893d384292"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence mentions variable-speed pump control stability of ±0.28 K for coil discharge temperature."
+    }
+  ]
+}

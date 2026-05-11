@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-08T13:53:15.320892+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_8d7dfa5b1b7c445c__screw_chiller.json",
+      "doc_id": "doc_8d7dfa5b1b7c445c",
+      "doc_name": "【麦克维尔】WMD单螺杆安装维护手册（63页）-.pdf",
+      "equipment_class_id": "screw_chiller",
+      "equipment_class_key": "hvac:screw_chiller",
+      "candidate_count": 19
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-07T08:52:15.237567+00:00",
+  "source_generation_mode": "chunk_backfill_review_candidate",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {
+    "doc_id": "doc_310a78e42c9b4312",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_310a78e42c9b4312__chiller.json",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "candidate_count": 2
+    }
+  ]
+}

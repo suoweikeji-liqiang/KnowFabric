@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-08T00:17:36.461528+00:00",
+  "pack_dir": "output/hvac_authority_batch_pipeline/20260507T225915Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260508T001525Z_hvac_doclevel_extraction_batch/0002_国祥_模块机控制器规格书/deepseek-v4-pro/review_packs",
+  "output_dir": "output/hvac_authority_batch_pipeline/20260507T225915Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260508T001525Z_hvac_doclevel_extraction_batch/0002_国祥_模块机控制器规格书/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 9,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_1d0231208a244288__chilled_water_pump.json",
+      "source_path": "output/hvac_authority_batch_pipeline/20260507T225915Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260508T001525Z_hvac_doclevel_extraction_batch/0002_国祥_模块机控制器规格书/deepseek-v4-pro/review_packs/hvac__doc_1d0231208a244288__chilled_water_pump.json",
+      "status": "bootstrapped",
+      "entries_updated": 9,
+      "output_path": "output/hvac_authority_batch_pipeline/20260507T225915Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260508T001525Z_hvac_doclevel_extraction_batch/0002_国祥_模块机控制器规格书/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_1d0231208a244288__chilled_water_pump.json"
+    }
+  ]
+}

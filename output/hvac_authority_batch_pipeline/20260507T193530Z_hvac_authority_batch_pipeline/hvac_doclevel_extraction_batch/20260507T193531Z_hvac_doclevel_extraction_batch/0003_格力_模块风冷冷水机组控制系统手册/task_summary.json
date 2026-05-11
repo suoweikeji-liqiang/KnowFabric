@@ -1,0 +1,54 @@
+{
+  "status": "failed",
+  "row_index": 3,
+  "file_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/02、格力/技术手册/【格力】模块风冷冷水机组控制系统手册-.pdf",
+  "doc_id": "doc_37109bd2df4547e4",
+  "chunks": 19,
+  "manual_tokens_estimated": 5007,
+  "equipment_class_id": "chiller",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "air_cooled_modular_heat_pump",
+      "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+      "confidence": 0.383,
+      "matched_aliases": [
+        "模块机"
+      ]
+    },
+    {
+      "equipment_class_id": "modular_chiller",
+      "equipment_class_key": "hvac:modular_chiller",
+      "confidence": 0.383,
+      "matched_aliases": [
+        "模块机"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 18,
+      "chunks_before": 19,
+      "pages_after": 18,
+      "chunks_after": 19,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "failed",
+      "error": "LLM JSON request failed after 3 attempts: Unterminated string starting at: line 124 column 23 (char 4102)"
+    }
+  ],
+  "task_dir": "output/hvac_authority_batch_pipeline/20260507T193530Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T193531Z_hvac_doclevel_extraction_batch/0003_格力_模块风冷冷水机组控制系统手册"
+}

@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+  "doc_id": "doc_7bde83276c474c9d",
+  "chunks": 69,
+  "manual_tokens_estimated": 15441,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 58,
+      "chunks_after": 69,
+      "parse_result": {
+        "job_id": "job_3939e84f64274cbc",
+        "doc_id": "doc_7bde83276c474c9d",
+        "pages_created": 58,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_c55865a3d2114a88",
+        "doc_id": "doc_7bde83276c474c9d",
+        "chunks_created": 69,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 19,
+      "judge_rejected": 21,
+      "judge_acceptance_rate": 47.5,
+      "judge_rejection_breakdown": {
+        "other": 21
+      },
+      "review_candidates": 19,
+      "by_type": {
+        "parameter_spec": 19
+      },
+      "usage": {
+        "prompt_tokens": 54950,
+        "completion_tokens": 6222,
+        "total_tokens": 61172
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 952,
+        "total_tokens": 2232
+      },
+      "extract_cost_rmb": 0.202182,
+      "judge_cost_rmb": 0.009552,
+      "cost_rmb": 0.211734,
+      "elapsed_seconds": 180.333,
+      "judge_elapsed_seconds": 137.345,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0002_约克_ycae_模块式风冷热泵机组安装_操作和维护手册_58页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0002_约克_ycae_模块式风冷热泵机组安装_操作和维护手册_58页_制冷百家网"
+}

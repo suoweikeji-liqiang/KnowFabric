@@ -1,0 +1,189 @@
+{
+  "page": 25,
+  "response": {
+    "id": "5b6b5846269c49b8954d104b5d142ff6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page is a product specification sheet for an HVAC communication gateway (SC-BGWNA-B), detailing supported data link layer options, device address binding, networking options, and character sets. It includes checkboxes for various protocols and standards, with some options selected (e.g., BACnet IP, ANSI X3.4).\",\n  \"visual_entities\": [\n    {\"type\": \"document\", \"label\": \"Product Specification Sheet\"},\n    {\"type\": \"section\", \"label\": \"Data Link Layer Options\"},\n    {\"type\": \"checkbox\", \"label\": \"BACnet IP (Annex J)\"},\n    {\"type\": \"checkbox\", \"label\": \"BACnet IP (Annex J), Foreign Device\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 8802-3, Ethernet (Clause 7)\"},\n    {\"type\": \"checkbox\", \"label\": \"ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)\"},\n    {\"type\": \"checkbox\", \"label\": \"ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"MS/TP master (Clause 9), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"MS/TP slave (Clause 9), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"Point-To-Point, EIA 232 (Clause 10), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"Point-To-Point, modem (Clause 10), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"LonTalk (Clause 11), medium\"},\n    {\"type\": \"checkbox\", \"label\": \"Other\"},\n    {\"type\": \"section\", \"label\": \"Device Address Binding\"},\n    {\"type\": \"question\", \"label\": \"Is static device binding supported?\"},\n    {\"type\": \"checkbox\", \"label\": \"Yes\"},\n    {\"type\": \"checkbox\", \"label\": \"No\"},\n    {\"type\": \"section\", \"label\": \"Networking Options\"},\n    {\"type\": \"checkbox\", \"label\": \"Router, Clause 6 - List all routing configurations\"},\n    {\"type\": \"checkbox\", \"label\": \"Annex H, BACnet Tunneling Router over IP\"},\n    {\"type\": \"checkbox\", \"label\": \"BACnet/IP Broadcast Management Device (BBMD)\"},\n    {\"type\": \"question\", \"label\": \"Does the BBMD support registrations by Foreign Device?\"},\n    {\"type\": \"section\", \"label\": \"Character Sets Supported\"},\n    {\"type\": \"note\", \"label\": \"Indicating support for multiple character sets does not imply that they can all be supported simultaneously.\"},\n    {\"type\": \"checkbox\", \"label\": \"ANSI X3.4\"},\n    {\"type\": \"checkbox\", \"label\": \"IBM / Microsoft DBCS\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 8859-1\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 10646 (UCS-2)\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 10646 (UCS-4)\"},\n    {\"type\": \"checkbox\", \"label\": \"JIS C 6226\"},\n    {\"type\": \"text_field\", \"label\": \"If this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"BACnet IP (Annex J)\", \"relation\": \"is selected in\", \"to\": \"Data Link Layer Options\"},\n    {\"from\": \"ANSI X3.4\", \"relation\": \"is selected in\", \"to\": \"Character Sets Supported\"},\n    {\"from\": \"No\", \"relation\": \"is selected for\", \"to\": \"Is static device binding supported?\"}\n  ],\n  \"useful_for_knowledge_types\": [\"protocol_support\", \"network_configuration\", \"gateway_specifications\", \"communication_standards\"],\n  \"ocr_text_if_useful\": \"SC-BGWNA-B 产品规格书 版本 2.0\\n资料编号: ISTZ09029 修订版 A 2010年6月1日\\nData Link Layer Options:\\n■ BACnet IP, (Annex J)\\n□ BACnet IP, (Annex J), Foreign Device\\n□ ISO 8802-3, Ethernet (Clause 7)\\n□ ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)\\n□ ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s) ________\\n□ MS/TP master (Clause 9), baud rate(s): ________\\n□ MS/TP slave (Clause 9), baud rate(s): ________\\n□ Point-To-Point, EIA 232 (Clause 10), baud rate(s): ________\\n□ Point-To-Point, modem, (Clause 10), baud rate(s): ________\\n□ LonTalk, (Clause 11), medium: ________\\n□ Other: ________\\nDevice Address Binding:\\nIs static device binding supported? (This is currently necessary for two-way communication with MS/TP slaves and certain other devices.) □ Yes ■ No\\nNetworking Options:\\n□ Router, Clause 6 - List all routing configurations, e.g., ARCNET-Ethernet-MS/TP, etc.\\n□ Annex H, BACnet Tunneling Router over IP\\n□ BACnet/IP Broadcast Management Device (BBMD)\\nDoes the BBMD support registrations by Foreign Device?\\nCharacter Sets Supported:\\nIndicating support for multiple character sets does not imply that they can all be supported simultaneously.\\n■ ANSI X3.4 □ IBM / Microsoft DBCS □ ISO 8859-1\\n□ ISO 10646 (UCS-2) □ ISO 10646 (UCS-4) □ JIS C 6226\\nIf this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:\\n________________________________________________________\\n________________________________________________________\\n________________________________________________________\\n25\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The exact purpose of the gateway (e.g., non-BACnet support) is not filled in, so relationships involving that field are uncertain. Some checkboxes are empty, indicating unsupported options, but the visual evidence only confirms selections, not rejections.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204660,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1480,
+      "prompt_tokens": 2437,
+      "total_tokens": 3917,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "parameter_table",
+    "summary": "This page is a product specification sheet for an HVAC communication gateway (SC-BGWNA-B), detailing supported data link layer options, device address binding, networking options, and character sets. It includes checkboxes for various protocols and standards, with some options selected (e.g., BACnet IP, ANSI X3.4).",
+    "visual_entities": [
+      {
+        "type": "document",
+        "label": "Product Specification Sheet"
+      },
+      {
+        "type": "section",
+        "label": "Data Link Layer Options"
+      },
+      {
+        "type": "checkbox",
+        "label": "BACnet IP (Annex J)"
+      },
+      {
+        "type": "checkbox",
+        "label": "BACnet IP (Annex J), Foreign Device"
+      },
+      {
+        "type": "checkbox",
+        "label": "ISO 8802-3, Ethernet (Clause 7)"
+      },
+      {
+        "type": "checkbox",
+        "label": "ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)"
+      },
+      {
+        "type": "checkbox",
+        "label": "ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s)"
+      },
+      {
+        "type": "checkbox",
+        "label": "MS/TP master (Clause 9), baud rate(s)"
+      },
+      {
+        "type": "checkbox",
+        "label": "MS/TP slave (Clause 9), baud rate(s)"
+      },
+      {
+        "type": "checkbox",
+        "label": "Point-To-Point, EIA 232 (Clause 10), baud rate(s)"
+      },
+      {
+        "type": "checkbox",
+        "label": "Point-To-Point, modem (Clause 10), baud rate(s)"
+      },
+      {
+        "type": "checkbox",
+        "label": "LonTalk (Clause 11), medium"
+      },
+      {
+        "type": "checkbox",
+        "label": "Other"
+      },
+      {
+        "type": "section",
+        "label": "Device Address Binding"
+      },
+      {
+        "type": "question",
+        "label": "Is static device binding supported?"
+      },
+      {
+        "type": "checkbox",
+        "label": "Yes"
+      },
+      {
+        "type": "checkbox",
+        "label": "No"
+      },
+      {
+        "type": "section",
+        "label": "Networking Options"
+      },
+      {
+        "type": "checkbox",
+        "label": "Router, Clause 6 - List all routing configurations"
+      },
+      {
+        "type": "checkbox",
+        "label": "Annex H, BACnet Tunneling Router over IP"
+      },
+      {
+        "type": "checkbox",
+        "label": "BACnet/IP Broadcast Management Device (BBMD)"
+      },
+      {
+        "type": "question",
+        "label": "Does the BBMD support registrations by Foreign Device?"
+      },
+      {
+        "type": "section",
+        "label": "Character Sets Supported"
+      },
+      {
+        "type": "note",
+        "label": "Indicating support for multiple character sets does not imply that they can all be supported simultaneously."
+      },
+      {
+        "type": "checkbox",
+        "label": "ANSI X3.4"
+      },
+      {
+        "type": "checkbox",
+        "label": "IBM / Microsoft DBCS"
+      },
+      {
+        "type": "checkbox",
+        "label": "ISO 8859-1"
+      },
+      {
+        "type": "checkbox",
+        "label": "ISO 10646 (UCS-2)"
+      },
+      {
+        "type": "checkbox",
+        "label": "ISO 10646 (UCS-4)"
+      },
+      {
+        "type": "checkbox",
+        "label": "JIS C 6226"
+      },
+      {
+        "type": "text_field",
+        "label": "If this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "BACnet IP (Annex J)",
+        "relation": "is selected in",
+        "to": "Data Link Layer Options"
+      },
+      {
+        "from": "ANSI X3.4",
+        "relation": "is selected in",
+        "to": "Character Sets Supported"
+      },
+      {
+        "from": "No",
+        "relation": "is selected for",
+        "to": "Is static device binding supported?"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "protocol_support",
+      "network_configuration",
+      "gateway_specifications",
+      "communication_standards"
+    ],
+    "ocr_text_if_useful": "SC-BGWNA-B 产品规格书 版本 2.0\n资料编号: ISTZ09029 修订版 A 2010年6月1日\nData Link Layer Options:\n■ BACnet IP, (Annex J)\n□ BACnet IP, (Annex J), Foreign Device\n□ ISO 8802-3, Ethernet (Clause 7)\n□ ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)\n□ ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s) ________\n□ MS/TP master (Clause 9), baud rate(s): ________\n□ MS/TP slave (Clause 9), baud rate(s): ________\n□ Point-To-Point, EIA 232 (Clause 10), baud rate(s): ________\n□ Point-To-Point, modem, (Clause 10), baud rate(s): ________\n□ LonTalk, (Clause 11), medium: ________\n□ Other: ________\nDevice Address Binding:\nIs static device binding supported? (This is currently necessary for two-way communication with MS/TP slaves and certain other devices.) □ Yes ■ No\nNetworking Options:\n□ Router, Clause 6 - List all routing configurations, e.g., ARCNET-Ethernet-MS/TP, etc.\n□ Annex H, BACnet Tunneling Router over IP\n□ BACnet/IP Broadcast Management Device (BBMD)\nDoes the BBMD support registrations by Foreign Device?\nCharacter Sets Supported:\nIndicating support for multiple character sets does not imply that they can all be supported simultaneously.\n■ ANSI X3.4 □ IBM / Microsoft DBCS □ ISO 8859-1\n□ ISO 10646 (UCS-2) □ ISO 10646 (UCS-4) □ JIS C 6226\nIf this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:\n________________________________________________________\n________________________________________________________\n________________________________________________________\n25\n制冷百家网: www.zhilengbj.cn",
+    "uncertainty_notes": "The exact purpose of the gateway (e.g., non-BACnet support) is not filled in, so relationships involving that field are uncertain. Some checkboxes are empty, indicating unsupported options, but the visual evidence only confirms selections, not rejections.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page is a product specification sheet for an HVAC communication gateway (SC-BGWNA-B), detailing supported data link layer options, device address binding, networking options, and character sets. It includes checkboxes for various protocols and standards, with some options selected (e.g., BACnet IP, ANSI X3.4).\",\n  \"visual_entities\": [\n    {\"type\": \"document\", \"label\": \"Product Specification Sheet\"},\n    {\"type\": \"section\", \"label\": \"Data Link Layer Options\"},\n    {\"type\": \"checkbox\", \"label\": \"BACnet IP (Annex J)\"},\n    {\"type\": \"checkbox\", \"label\": \"BACnet IP (Annex J), Foreign Device\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 8802-3, Ethernet (Clause 7)\"},\n    {\"type\": \"checkbox\", \"label\": \"ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)\"},\n    {\"type\": \"checkbox\", \"label\": \"ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"MS/TP master (Clause 9), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"MS/TP slave (Clause 9), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"Point-To-Point, EIA 232 (Clause 10), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"Point-To-Point, modem (Clause 10), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"LonTalk (Clause 11), medium\"},\n    {\"type\": \"checkbox\", \"label\": \"Other\"},\n    {\"type\": \"section\", \"label\": \"Device Address Binding\"},\n    {\"type\": \"question\", \"label\": \"Is static device binding supported?\"},\n    {\"type\": \"checkbox\", \"label\": \"Yes\"},\n    {\"type\": \"checkbox\", \"label\": \"No\"},\n    {\"type\": \"section\", \"label\": \"Networking Options\"},\n    {\"type\": \"checkbox\", \"label\": \"Router, Clause 6 - List all routing configurations\"},\n    {\"type\": \"checkbox\", \"label\": \"Annex H, BACnet Tunneling Router over IP\"},\n    {\"type\": \"checkbox\", \"label\": \"BACnet/IP Broadcast Management Device (BBMD)\"},\n    {\"type\": \"question\", \"label\": \"Does the BBMD support registrations by Foreign Device?\"},\n    {\"type\": \"section\", \"label\": \"Character Sets Supported\"},\n    {\"type\": \"note\", \"label\": \"Indicating support for multiple character sets does not imply that they can all be supported simultaneously.\"},\n    {\"type\": \"checkbox\", \"label\": \"ANSI X3.4\"},\n    {\"type\": \"checkbox\", \"label\": \"IBM / Microsoft DBCS\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 8859-1\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 10646 (UCS-2)\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 10646 (UCS-4)\"},\n    {\"type\": \"checkbox\", \"label\": \"JIS C 6226\"},\n    {\"type\": \"text_field\", \"label\": \"If this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"BACnet IP (Annex J)\", \"relation\": \"is selected in\", \"to\": \"Data Link Layer Options\"},\n    {\"from\": \"ANSI X3.4\", \"relation\": \"is selected in\", \"to\": \"Character Sets Supported\"},\n    {\"from\": \"No\", \"relation\": \"is selected for\", \"to\": \"Is static device binding supported?\"}\n  ],\n  \"useful_for_knowledge_types\": [\"protocol_support\", \"network_configuration\", \"gateway_specifications\", \"communication_standards\"],\n  \"ocr_text_if_useful\": \"SC-BGWNA-B 产品规格书 版本 2.0\\n资料编号: ISTZ09029 修订版 A 2010年6月1日\\nData Link Layer Options:\\n■ BACnet IP, (Annex J)\\n□ BACnet IP, (Annex J), Foreign Device\\n□ ISO 8802-3, Ethernet (Clause 7)\\n□ ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)\\n□ ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s) ________\\n□ MS/TP master (Clause 9), baud rate(s): ________\\n□ MS/TP slave (Clause 9), baud rate(s): ________\\n□ Point-To-Point, EIA 232 (Clause 10), baud rate(s): ________\\n□ Point-To-Point, modem, (Clause 10), baud rate(s): ________\\n□ LonTalk, (Clause 11), medium: ________\\n□ Other: ________\\nDevice Address Binding:\\nIs static device binding supported? (This is currently necessary for two-way communication with MS/TP slaves and certain other devices.) □ Yes ■ No\\nNetworking Options:\\n□ Router, Clause 6 - List all routing configurations, e.g., ARCNET-Ethernet-MS/TP, etc.\\n□ Annex H, BACnet Tunneling Router over IP\\n□ BACnet/IP Broadcast Management Device (BBMD)\\nDoes the BBMD support registrations by Foreign Device?\\nCharacter Sets Supported:\\nIndicating support for multiple character sets does not imply that they can all be supported simultaneously.\\n■ ANSI X3.4 □ IBM / Microsoft DBCS □ ISO 8859-1\\n□ ISO 10646 (UCS-2) □ ISO 10646 (UCS-4) □ JIS C 6226\\nIf this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:\\n________________________________________________________\\n________________________________________________________\\n________________________________________________________\\n25\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The exact purpose of the gateway (e.g., non-BACnet support) is not filled in, so relationships involving that field are uncertain. Some checkboxes are empty, indicating unsupported options, but the visual evidence only confirms selections, not rejections.\",\n  \"confidence\": 0.95\n}"
+}

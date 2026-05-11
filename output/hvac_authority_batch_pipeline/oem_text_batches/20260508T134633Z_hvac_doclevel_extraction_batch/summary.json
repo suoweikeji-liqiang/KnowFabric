@@ -1,0 +1,347 @@
+{
+  "run_id": "20260508T134633Z_hvac_doclevel_extraction_batch",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "completed",
+      "row_index": 1,
+      "file_name": "【麦克维尔】WMD单螺杆安装维护手册（63页）-.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】WMD单螺杆安装维护手册（63页）-.pdf",
+      "doc_id": "doc_8d7dfa5b1b7c445c",
+      "chunks": 75,
+      "manual_tokens_estimated": 16084,
+      "equipment_class_id": "screw_chiller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "existing",
+        "processing": {
+          "pages_before": 63,
+          "chunks_before": 75,
+          "pages_after": 63,
+          "chunks_after": 75,
+          "parse_result": {
+            "status": "skipped_existing_pages",
+            "pages_created": 0
+          },
+          "chunk_result": {
+            "status": "skipped_existing_chunks",
+            "chunks_created": 0
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 39,
+          "anchor_rejected": 1,
+          "anchor_match_rate": 97.5,
+          "judge_accepted": 19,
+          "judge_rejected": 20,
+          "judge_acceptance_rate": 48.7,
+          "judge_rejection_breakdown": {
+            "other": 20
+          },
+          "review_candidates": 19,
+          "by_type": {
+            "parameter_spec": 19
+          },
+          "usage": {
+            "prompt_tokens": 22486,
+            "completion_tokens": 6045,
+            "total_tokens": 28531
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1192,
+            "total_tokens": 2472
+          },
+          "extract_cost_rmb": 0.103728,
+          "judge_cost_rmb": 0.010992,
+          "cost_rmb": 0.11472,
+          "elapsed_seconds": 176.328,
+          "judge_elapsed_seconds": 225.73,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0001_麦克维尔_wmd单螺杆安装维护手册_63页/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0001_麦克维尔_wmd单螺杆安装维护手册_63页"
+    },
+    {
+      "status": "completed",
+      "row_index": 2,
+      "file_name": "【麦克维尔】MS型半封闭单螺杆式压缩机维护手册（64页）-.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MS型半封闭单螺杆式压缩机维护手册（64页）-.pdf",
+      "doc_id": "doc_c763de73db0b45f5",
+      "chunks": 65,
+      "manual_tokens_estimated": 10511,
+      "equipment_class_id": "screw_chiller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "existing",
+        "processing": {
+          "pages_before": 64,
+          "chunks_before": 65,
+          "pages_after": 64,
+          "chunks_after": 65,
+          "parse_result": {
+            "status": "skipped_existing_pages",
+            "pages_created": 0
+          },
+          "chunk_result": {
+            "status": "skipped_existing_chunks",
+            "chunks_created": 0
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 36,
+          "anchor_rejected": 4,
+          "anchor_match_rate": 90.0,
+          "judge_accepted": 17,
+          "judge_rejected": 19,
+          "judge_acceptance_rate": 47.2,
+          "judge_rejection_breakdown": {
+            "duplicate": 2,
+            "other": 17
+          },
+          "review_candidates": 17,
+          "by_type": {
+            "parameter_spec": 16,
+            "operational_sequence": 1
+          },
+          "usage": {
+            "prompt_tokens": 18531,
+            "completion_tokens": 5777,
+            "total_tokens": 24308
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1155,
+            "total_tokens": 2435
+          },
+          "extract_cost_rmb": 0.090255,
+          "judge_cost_rmb": 0.01077,
+          "cost_rmb": 0.101025,
+          "elapsed_seconds": 1073.729,
+          "judge_elapsed_seconds": 141.291,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0002_麦克维尔_ms型半封闭单螺杆式压缩机维护手册_64页/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0002_麦克维尔_ms型半封闭单螺杆式压缩机维护手册_64页"
+    },
+    {
+      "status": "completed",
+      "row_index": 3,
+      "file_name": "【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/02、格力/技术手册/【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "doc_id": "doc_265123720fc94c35",
+      "chunks": 67,
+      "manual_tokens_estimated": 13194,
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_alternatives": [
+        {
+          "equipment_class_id": "chiller",
+          "equipment_class_key": "hvac:chiller",
+          "confidence": 0.471,
+          "matched_aliases": [
+            "冷水机组"
+          ]
+        },
+        {
+          "equipment_class_id": "air_cooled_modular_heat_pump",
+          "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+          "confidence": 0.383,
+          "matched_aliases": [
+            "模块机"
+          ]
+        },
+        {
+          "equipment_class_id": "modular_chiller",
+          "equipment_class_key": "hvac:modular_chiller",
+          "confidence": 0.383,
+          "matched_aliases": [
+            "模块机"
+          ]
+        }
+      ],
+      "processing": {
+        "import_status": "existing",
+        "processing": {
+          "pages_before": 67,
+          "chunks_before": 67,
+          "pages_after": 67,
+          "chunks_after": 67,
+          "parse_result": {
+            "status": "skipped_existing_pages",
+            "pages_created": 0
+          },
+          "chunk_result": {
+            "status": "skipped_existing_chunks",
+            "chunks_created": 0
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 40,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 8,
+          "judge_rejected": 32,
+          "judge_acceptance_rate": 20.0,
+          "judge_rejection_breakdown": {
+            "weak_evidence": 9,
+            "other": 23
+          },
+          "review_candidates": 8,
+          "by_type": {
+            "parameter_spec": 8
+          },
+          "usage": {
+            "prompt_tokens": 20973,
+            "completion_tokens": 6347,
+            "total_tokens": 27320
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1192,
+            "total_tokens": 2472
+          },
+          "extract_cost_rmb": 0.101001,
+          "judge_cost_rmb": 0.010992,
+          "cost_rmb": 0.111993,
+          "elapsed_seconds": 185.728,
+          "judge_elapsed_seconds": 149.014,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0003_格力_模块式风冷冷_热_水机组技术手册_67页/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0003_格力_模块式风冷冷_热_水机组技术手册_67页"
+    },
+    {
+      "status": "failed",
+      "row_index": 4,
+      "file_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/02、格力/技术手册/【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "doc_id": "doc_99fc08961aa540f4",
+      "chunks": 71,
+      "manual_tokens_estimated": 17580,
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 69,
+          "chunks_after": 71,
+          "parse_result": {
+            "job_id": "job_3fb3b5ff56a343e7",
+            "doc_id": "doc_99fc08961aa540f4",
+            "pages_created": 69,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_fab3c738b4754628",
+            "doc_id": "doc_99fc08961aa540f4",
+            "chunks_created": 71,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "failed",
+          "error": "LLM JSON request failed after 3 attempts: Expecting ',' delimiter: line 116 column 6 (char 4314)"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0004_格力_c系列离心式冷水机组技术手册_69页"
+    },
+    {
+      "status": "completed",
+      "row_index": 5,
+      "file_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/02、格力/技术手册/【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "chunks": 71,
+      "manual_tokens_estimated": 17580,
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 69,
+          "chunks_after": 71,
+          "parse_result": {
+            "job_id": "job_b5c3620dc49e4910",
+            "doc_id": "doc_dcf25b0eb7fc4c75",
+            "pages_created": 69,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_9f283a85d29a4c23",
+            "doc_id": "doc_dcf25b0eb7fc4c75",
+            "chunks_created": 71,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 39,
+          "anchor_passed": 39,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 19,
+          "judge_rejected": 20,
+          "judge_acceptance_rate": 48.7,
+          "judge_rejection_breakdown": {
+            "other": 20
+          },
+          "review_candidates": 19,
+          "by_type": {
+            "parameter_spec": 19
+          },
+          "usage": {
+            "prompt_tokens": 25712,
+            "completion_tokens": 6085,
+            "total_tokens": 31797
+          },
+          "judge_usage": {
+            "prompt_tokens": 1279,
+            "completion_tokens": 954,
+            "total_tokens": 2233
+          },
+          "extract_cost_rmb": 0.113646,
+          "judge_cost_rmb": 0.009561,
+          "cost_rmb": 0.123207,
+          "elapsed_seconds": 180.337,
+          "judge_elapsed_seconds": 67.13,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0005_格力_c系列离心式冷水机组技术服务手册_69页/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0005_格力_c系列离心式冷水机组技术服务手册_69页"
+    }
+  ]
+}

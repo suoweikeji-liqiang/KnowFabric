@@ -1,0 +1,15 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-09T15:14:49.347525+00:00",
+  "pack_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0005_美的_mdv4_多联机故障代码及维修流程图手册_25页_制冷百家网/deepseek-v4-pro/review_packs",
+  "output_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0005_美的_mdv4_多联机故障代码及维修流程图手册_25页_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 0,
+  "total_entries_updated": 0,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 0,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": []
+}

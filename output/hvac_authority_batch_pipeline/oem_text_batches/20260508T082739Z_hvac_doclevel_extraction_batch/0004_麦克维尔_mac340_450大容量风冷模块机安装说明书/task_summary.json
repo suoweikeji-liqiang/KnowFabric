@@ -1,0 +1,90 @@
+{
+  "status": "completed",
+  "row_index": 4,
+  "file_name": "【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MAC340-450大容量风冷模块机安装说明书-.pdf",
+  "doc_id": "doc_0706ecb530b24b82",
+  "chunks": 59,
+  "manual_tokens_estimated": 19175,
+  "equipment_class_id": "chiller",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "air_cooled_modular_heat_pump",
+      "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+      "confidence": 0.439,
+      "matched_aliases": [
+        "模块机",
+        "风冷模块机"
+      ]
+    },
+    {
+      "equipment_class_id": "modular_chiller",
+      "equipment_class_key": "hvac:modular_chiller",
+      "confidence": 0.383,
+      "matched_aliases": [
+        "模块机"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 46,
+      "chunks_after": 59,
+      "parse_result": {
+        "job_id": "job_7758fb4f1f084429",
+        "doc_id": "doc_0706ecb530b24b82",
+        "pages_created": 46,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_e0df5883b8b74a2f",
+        "doc_id": "doc_0706ecb530b24b82",
+        "chunks_created": 59,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 41,
+      "anchor_passed": 41,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 19,
+      "judge_rejected": 22,
+      "judge_acceptance_rate": 46.3,
+      "judge_rejection_breakdown": {
+        "other": 22
+      },
+      "review_candidates": 19,
+      "by_type": {
+        "parameter_spec": 17,
+        "performance_spec": 2
+      },
+      "usage": {
+        "prompt_tokens": 27718,
+        "completion_tokens": 6011,
+        "total_tokens": 33729
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1198,
+        "total_tokens": 2478
+      },
+      "extract_cost_rmb": 0.11922,
+      "judge_cost_rmb": 0.011028,
+      "cost_rmb": 0.130248,
+      "elapsed_seconds": 200.94,
+      "judge_elapsed_seconds": 82.09,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T082739Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mac340_450大容量风冷模块机安装说明书/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T082739Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mac340_450大容量风冷模块机安装说明书"
+}

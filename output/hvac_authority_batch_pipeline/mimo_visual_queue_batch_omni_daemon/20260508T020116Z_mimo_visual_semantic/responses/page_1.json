@@ -1,0 +1,88 @@
+{
+  "page": 1,
+  "response": {
+    "id": "e9fe194b6eb947f388f75b4d4578847c",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"equipment_structure\",\n  \"summary\": \"This is the cover page of a Johnson Controls RWF II screw compressor unit manual. It features a photograph of the equipment, the manufacturer's logo, manual title, model range (100-1080), and a note about the manual's contents and the importance of reading it before installation.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Johnson Controls logo\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and header information\"},\n    {\"type\": \"equipment_photo\", \"label\": \"RWF II screw compressor unit\"},\n    {\"type\": \"text_block\", \"label\": \"Model range text\"},\n    {\"type\": \"text_block\", \"label\": \"Warning and instruction text\"},\n    {\"type\": \"text_block\", \"label\": \"Website URL\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Johnson Controls logo\", \"relation\": \"is part of\", \"to\": \"Manual title and header information\"},\n    {\"from\": \"Model range text\", \"relation\": \"describes\", \"to\": \"RWF II screw compressor unit\"},\n    {\"from\": \"Warning and instruction text\", \"relation\": \"refers to\", \"to\": \"RWF II screw compressor unit\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\", \"manufacturer_information\"],\n  \"ocr_text_if_useful\": \"Johnson Controls\\n安装 运行 维护手册\\n替代：无\\n编号：6RP-B03C-RPA-ZH(DEC 2010)\\nRWF II 螺杆式压缩机组\\n所有制冷剂\\nRWF II\\n螺杆式压缩机组\\n所有制冷剂\\n型号\\n100 - 1080\\n本手册包含吊装、装配、启动及维护等方面的指导。安装之前必须通读本手册，否则会导致误操作并损坏机组。\\n请登录www.johnsoncontrols.com以获取最新版本\\n多面手维修网\\n制冷百家网：www.zhilengbj.cn\\nwww.duomianshou.net\",\n  \"uncertainty_notes\": \"The specific components within the equipment photo (e.g., compressor, motor, vessel) are not labeled, so relationships are inferred from the overall context. The watermark text is not part of the original manual content.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778205685,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 517,
+      "prompt_tokens": 2437,
+      "total_tokens": 2954,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "equipment_structure",
+    "summary": "This is the cover page of a Johnson Controls RWF II screw compressor unit manual. It features a photograph of the equipment, the manufacturer's logo, manual title, model range (100-1080), and a note about the manual's contents and the importance of reading it before installation.",
+    "visual_entities": [
+      {
+        "type": "logo",
+        "label": "Johnson Controls logo"
+      },
+      {
+        "type": "text_block",
+        "label": "Manual title and header information"
+      },
+      {
+        "type": "equipment_photo",
+        "label": "RWF II screw compressor unit"
+      },
+      {
+        "type": "text_block",
+        "label": "Model range text"
+      },
+      {
+        "type": "text_block",
+        "label": "Warning and instruction text"
+      },
+      {
+        "type": "text_block",
+        "label": "Website URL"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "Johnson Controls logo",
+        "relation": "is part of",
+        "to": "Manual title and header information"
+      },
+      {
+        "from": "Model range text",
+        "relation": "describes",
+        "to": "RWF II screw compressor unit"
+      },
+      {
+        "from": "Warning and instruction text",
+        "relation": "refers to",
+        "to": "RWF II screw compressor unit"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "equipment_identification",
+      "manual_documentation",
+      "manufacturer_information"
+    ],
+    "ocr_text_if_useful": "Johnson Controls\n安装 运行 维护手册\n替代：无\n编号：6RP-B03C-RPA-ZH(DEC 2010)\nRWF II 螺杆式压缩机组\n所有制冷剂\nRWF II\n螺杆式压缩机组\n所有制冷剂\n型号\n100 - 1080\n本手册包含吊装、装配、启动及维护等方面的指导。安装之前必须通读本手册，否则会导致误操作并损坏机组。\n请登录www.johnsoncontrols.com以获取最新版本\n多面手维修网\n制冷百家网：www.zhilengbj.cn\nwww.duomianshou.net",
+    "uncertainty_notes": "The specific components within the equipment photo (e.g., compressor, motor, vessel) are not labeled, so relationships are inferred from the overall context. The watermark text is not part of the original manual content.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"equipment_structure\",\n  \"summary\": \"This is the cover page of a Johnson Controls RWF II screw compressor unit manual. It features a photograph of the equipment, the manufacturer's logo, manual title, model range (100-1080), and a note about the manual's contents and the importance of reading it before installation.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Johnson Controls logo\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and header information\"},\n    {\"type\": \"equipment_photo\", \"label\": \"RWF II screw compressor unit\"},\n    {\"type\": \"text_block\", \"label\": \"Model range text\"},\n    {\"type\": \"text_block\", \"label\": \"Warning and instruction text\"},\n    {\"type\": \"text_block\", \"label\": \"Website URL\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Johnson Controls logo\", \"relation\": \"is part of\", \"to\": \"Manual title and header information\"},\n    {\"from\": \"Model range text\", \"relation\": \"describes\", \"to\": \"RWF II screw compressor unit\"},\n    {\"from\": \"Warning and instruction text\", \"relation\": \"refers to\", \"to\": \"RWF II screw compressor unit\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\", \"manufacturer_information\"],\n  \"ocr_text_if_useful\": \"Johnson Controls\\n安装 运行 维护手册\\n替代：无\\n编号：6RP-B03C-RPA-ZH(DEC 2010)\\nRWF II 螺杆式压缩机组\\n所有制冷剂\\nRWF II\\n螺杆式压缩机组\\n所有制冷剂\\n型号\\n100 - 1080\\n本手册包含吊装、装配、启动及维护等方面的指导。安装之前必须通读本手册，否则会导致误操作并损坏机组。\\n请登录www.johnsoncontrols.com以获取最新版本\\n多面手维修网\\n制冷百家网：www.zhilengbj.cn\\nwww.duomianshou.net\",\n  \"uncertainty_notes\": \"The specific components within the equipment photo (e.g., compressor, motor, vessel) are not labeled, so relationships are inferred from the overall context. The watermark text is not part of the original manual content.\",\n  \"confidence\": 0.95\n}"
+}

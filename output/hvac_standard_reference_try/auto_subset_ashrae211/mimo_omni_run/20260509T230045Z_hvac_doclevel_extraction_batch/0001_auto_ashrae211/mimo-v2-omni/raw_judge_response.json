@@ -1,0 +1,52 @@
+{
+  "request": {
+    "model": "deepseek-v4-pro",
+    "temperature": 1.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a senior HVAC knowledge-base reviewer. Validate extracted knowledge objects from one equipment manual. Accept only useful, grounded, reviewable operational knowledge supported by the evidence. Reject marketing claims, UI-only navigation, isolated terminal labels, pure part names, duplicate/noisy items, generic prose with no operational value, or items whose evidence does not support the structured payload. Supported knowledge_type values: fault_code, parameter_spec, performance_spec, maintenance_procedure, application_guidance, operational_sequence, fault_diagnostic_rule, diagnostic_step, symptom. Reply with strict JSON only."
+      },
+      {
+        "role": "user",
+        "content": "Manual filename: auto_ashrae211.pdf\nEquipment class: controller\n\nReview every candidate below. Preserve candidate_id exactly.\nAllowed category_if_not values: null, marketing, ui_behavior, terminal_label, part_name, duplicate, unsupported_type, weak_evidence, other.\n\n{\"candidates\": [{\"candidate_id\": \"cand_915f7f0677bb5d9f\", \"knowledge_type\": \"application_guidance\", \"title\": \"Energy Audit Planning Tools\", \"summary\": \"ASHRAE provides free templates for planning energy audits.\", \"structured_payload\": {\"tool_type\": \"templates\", \"title\": \"Energy Audit Planning Tools\", \"summary\": \"ASHRAE provides free templates for planning energy audits.\"}, \"evidence\": \"Planning the Audit\\nTOOLS FOR THE\\nENERGY AUDIT\\nFree Templates\", \"source_pages\": [4], \"trust_level\": \"L3\"}, {\"candidate_id\": \"cand_9ad7ea492516a2b5\", \"knowledge_type\": \"operational_sequence\", \"title\": \"Audit Conduct Sequence\", \"summary\": \"The audit process includes a preliminary walkthrough, safety meeting, equipment checks, data collection, interviews, and documentation.\", \"structured_payload\": {\"sequence_steps\": \"Preliminary Walkthrough, SAFETY toolbox meeting, Equipment Checks, Data Collection, Interviews, Documentation\", \"title\": \"Audit Conduct Sequence\", \"summary\": \"The audit process includes a preliminary walkthrough, safety meeting, equipment checks, data collection, interviews, and documentation.\"}, \"evidence\": \"Conducting the Audit\\n•Site Visits\\n•Stick to your\\nplan… unless\\nreality hits you in\\nthe face!\\nPreliminary\\nWalkthroughSAFETY\\ntoolbox\\nmeeting\\nEquipment\\nChecks\\nData\\nCollection\\nInterviews\\nDocumentation\", \"source_pages\": [5], \"trust_level\": \"L3\"}, {\"candidate_id\": \"cand_cbb78835b425b098\", \"knowledge_type\": \"application_guidance\", \"title\": \"Audit Data Analysis Tools\", \"summary\": \"Data analysis for audits utilizes RETScreen, Excel, and ASHRAE forms.\", \"structured_payload\": {\"analysis_tools\": \"RETScreen, Excel, ASHRAE Forms\", \"title\": \"Audit Data Analysis Tools\", \"summary\": \"Data analysis for audits utilizes RETScreen, Excel, and ASHRAE forms.\"}, \"evidence\": \"Conducting the Audit\\n•Data Analysis –RETScreen +\\nExcel + ASHRAE Forms\\nLet’s go with Live Example!\", \"source_pages\": [6], \"trust_level\": \"L3\"}]}\n\nReturn JSON shape: {\"verdicts\":[{\"candidate_id\":\"...\",\"is_valid_hvac_knowledge\":true,\"reason\":\"short reason\",\"category_if_not\":null}]}"
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 1200
+  },
+  "response": {
+    "id": "343113e1-329d-4d73-be28-b32bef863c1a",
+    "object": "chat.completion",
+    "created": 1778367650,
+    "model": "deepseek-v4-pro",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_915f7f0677bb5d9f\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Generic mention of free templates; no operational HVAC-specific content that can be reviewed.\",\n      \"category_if_not\": \"weak_evidence\"\n    },\n    {\n      \"candidate_id\": \"cand_9ad7ea492516a2b5\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Generic audit sequence (walkthrough, safety, interviews) not HVAC-specific operational knowledge.\",\n      \"category_if_not\": \"weak_evidence\"\n    },\n    {\n      \"candidate_id\": \"cand_cbb78835b425b098\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Lists general analysis tools (RETScreen, Excel) for audits, not controller-specific or reviewable operational guidance.\",\n      \"category_if_not\": \"weak_evidence\"\n    }\n  ]\n}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 758,
+      "completion_tokens": 223,
+      "total_tokens": 981,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 630
+    },
+    "system_fingerprint": "fp_9954b31ca7_prod0820_fp8_kvcache_20260402"
+  },
+  "elapsed_seconds": 8.148
+}

@@ -1,0 +1,63 @@
+{
+  "doc_id": "doc_c019162f43d44d06",
+  "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+  "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE 211能源审计最佳实践.pdf",
+  "selected_pages": [
+    5,
+    6,
+    9,
+    11,
+    12
+  ],
+  "selected_page_count": 5,
+  "knowledge_types_filter": [
+    "application_guidance",
+    "parameter_spec",
+    "operational_sequence"
+  ],
+  "min_confidence": "high",
+  "equipment_scope_id": "chiller",
+  "subset_pdf": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_c019162f43d44d06/subset/auto_doc_c019162f43d44d06.pdf",
+  "manifest_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_c019162f43d44d06/subset/manifest.csv",
+  "sections": [
+    {
+      "section_title": "Planning the Audit",
+      "page_start": 5,
+      "page_end": 6,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Planning the Audit Planning the Audit",
+      "section_source": "unknown",
+      "score": 16
+    },
+    {
+      "section_title": "Planning the Audit TOOLS FOR THE ENERGY AUDIT Free Templates",
+      "page_start": 9,
+      "page_end": 9,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Planning the Audit TOOLS FOR THE ENERGY AUDIT Free Templates",
+      "section_source": "unknown",
+      "score": 14
+    },
+    {
+      "section_title": "Conducting the Audit",
+      "page_start": 11,
+      "page_end": 12,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Conducting the Audit •Site Visits •Stick to your plan… unless reality hits you in the face! Preliminary WalkthroughSAFETY toolbox meeting Equipment Checks Data Collection Interviews Documentation Conducting the Audit •Da",
+      "section_source": "unknown",
+      "score": 16
+    }
+  ]
+}

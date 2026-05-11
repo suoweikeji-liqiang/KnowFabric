@@ -1,0 +1,24 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-07T08:52:00.856037+00:00",
+  "source_generation_mode": "chunk_backfill_review_candidate",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {
+    "doc_id": "doc_37109bd2df4547e4",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_37109bd2df4547e4__chiller.json",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "candidate_count": 12
+    }
+  ]
+}

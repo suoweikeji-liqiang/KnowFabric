@@ -25,6 +25,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from packages.compiler.llm_compiler import (  # noqa: E402
     OpenAICompatibleBackend,
     _request_json_completion,
+    repair_json_response_with_backend,
+    response_content_text,
 )
 from packages.compiler.rule_compiler import stable_candidate_id  # noqa: E402
 from packages.db.models import ContentChunk, Document, DocumentPage  # noqa: E402
@@ -68,6 +70,13 @@ class Guideline36Candidate(BaseModel):
     def _coerce_configurable_values(cls, value):
         if value is None:
             return []
+        return value
+
+    @field_validator("title", "section_id", "summary", "evidence_quote", mode="before")
+    @classmethod
+    def _coerce_required_text(cls, value):
+        if value is None:
+            return ""
         return value
 
 
@@ -375,15 +384,29 @@ def request_json_completion_with_retry(
     attempts: int = 3,
 ) -> dict[str, Any]:
     last_error: Exception | None = None
+    last_attempt_raw: dict[str, Any] = {}
+
+    def _record(value: dict[str, Any]) -> None:
+        last_attempt_raw.clear()
+        last_attempt_raw.update(value)
+        recorder(value)
+
     for attempt in range(1, attempts + 1):
         try:
             return _request_json_completion(
                 messages,
                 backend,
                 response_format=response_format,
-                recorder=recorder,
+                recorder=_record,
             )
         except (RuntimeError, http.client.IncompleteRead, TimeoutError, OSError) as exc:
+            if last_attempt_raw.get("response"):
+                content = response_content_text(last_attempt_raw["response"])
+                if content and len(content) <= 20000:
+                    try:
+                        return repair_json_response_with_backend(content, backend, recorder=_record)
+                    except Exception:
+                        pass
             last_error = exc
             if not _is_retryable_llm_error(exc) or attempt == attempts:
                 raise
@@ -467,21 +490,57 @@ def anchor_candidates(
         quote = entry.get("evidence_quote") or ""
         matches = find_matches(quote, chunk_index)
         entry_for_anchor = entry
+        match_mode = "single_chunk"
+        if not matches:
+            entry_for_anchor, matches = repair_anchor_across_adjacent_chunks(entry, chunks)
+            match_mode = str(entry_for_anchor.get("_anchor_match_mode") or match_mode)
         if not matches or is_weak_section_only_quote(entry, quote):
             entry_for_anchor, matches = repair_anchor_with_section_line(entry, chunks)
+            match_mode = str(entry_for_anchor.get("_anchor_match_mode") or match_mode)
         if not matches:
             rejected.append({**entry, "rejection_reason": "evidence_quote not verbatim in any chunk"})
             continue
         updated = copy.deepcopy(entry_for_anchor)
+        updated.pop("_anchor_match_mode", None)
         updated["source_chunk_ids"] = [chunk.chunk_id for chunk in matches]
         updated["chunk_id"] = matches[0].chunk_id
         updated["page_no"] = matches[0].page_no
         updated["source_page_nos"] = sorted({chunk.page_no for chunk in matches})
         updated["evidence_text"] = updated["evidence_quote"]
-        updated["trust_level"] = "L4" if len(matches) >= 2 else "L3"
-        updated["verification_reason"] = f"cross-source corroboration: {len(matches)} chunks" if len(matches) >= 2 else "single chunk verbatim evidence_quote match"
+        is_cross_source = len(matches) >= 2 and match_mode != "cross_chunk_span"
+        updated["trust_level"] = "L4" if is_cross_source else "L3"
+        updated["verification_reason"] = verification_reason(match_mode, len(matches), is_cross_source)
         anchored.append(updated)
     return anchored, rejected
+
+
+def repair_anchor_across_adjacent_chunks(
+    entry: dict[str, Any],
+    chunks: list[ContentChunk],
+) -> tuple[dict[str, Any], list[ContentChunk]]:
+    quote = compact_anchor_text(str(entry.get("evidence_quote") or ""))
+    if not quote:
+        return entry, []
+    for index, chunk in enumerate(chunks[:-1]):
+        next_chunk = chunks[index + 1]
+        if chunk.page_no != next_chunk.page_no:
+            continue
+        combined = compact_anchor_text(" ".join([chunk.cleaned_text or chunk.text_excerpt or "", next_chunk.cleaned_text or next_chunk.text_excerpt or ""]))
+        if quote in combined:
+            repaired = copy.deepcopy(entry)
+            repaired["_anchor_match_mode"] = "cross_chunk_span"
+            return repaired, [chunk, next_chunk]
+    return entry, []
+
+
+def verification_reason(match_mode: str, match_count: int, is_cross_source: bool) -> str:
+    if is_cross_source:
+        return f"cross-source corroboration: {match_count} chunks"
+    if match_mode == "cross_chunk_span":
+        return f"verbatim evidence_quote spans {match_count} adjacent chunks"
+    if match_mode == "section_line_repair":
+        return "repaired to verbatim section line evidence"
+    return "single chunk verbatim evidence_quote match"
 
 
 def repair_anchor_with_section_line(
@@ -495,7 +554,7 @@ def repair_anchor_with_section_line(
     for chunk_position, chunk in enumerate(chunks):
         lines = (chunk.cleaned_text or chunk.text_excerpt or "").splitlines()
         for index, line in enumerate(lines):
-            if compact_section not in compact_anchor_text(line):
+            if not section_line_matches(line, section_id, compact_section):
                 continue
             evidence = line.strip()
             if len(evidence) < len(section_id) + 5:
@@ -507,8 +566,17 @@ def repair_anchor_with_section_line(
             repaired = copy.deepcopy(entry)
             repaired["evidence_quote"] = evidence
             repaired["anchor_repair_reason"] = "evidence_quote replaced with verbatim section heading line"
+            repaired["_anchor_match_mode"] = "section_line_repair"
             return repaired, [chunk]
     return entry, []
+
+
+def section_line_matches(line: str, section_id: str, compact_section: str) -> bool:
+    pattern = rf"(^|\s){re.escape(section_id)}(\s|$|[.)\]:-])"
+    if re.search(pattern, line.strip(), flags=re.IGNORECASE):
+        return True
+    compact_line = compact_anchor_text(line)
+    return compact_line == compact_section
 
 
 def first_nonempty_line(lines: list[str]) -> str:

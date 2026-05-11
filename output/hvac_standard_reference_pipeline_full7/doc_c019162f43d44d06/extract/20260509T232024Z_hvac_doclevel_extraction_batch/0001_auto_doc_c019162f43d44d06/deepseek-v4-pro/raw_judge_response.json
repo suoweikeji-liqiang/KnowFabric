@@ -1,0 +1,52 @@
+{
+  "request": {
+    "model": "deepseek-v4-pro",
+    "temperature": 1.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a senior HVAC knowledge-base reviewer. Validate extracted knowledge objects from one equipment manual. Accept only useful, grounded, reviewable operational knowledge supported by the evidence. Reject marketing claims, UI-only navigation, isolated terminal labels, pure part names, duplicate/noisy items, generic prose with no operational value, or items whose evidence does not support the structured payload. Supported knowledge_type values: fault_code, parameter_spec, performance_spec, maintenance_procedure, application_guidance, operational_sequence, fault_diagnostic_rule, diagnostic_step, symptom. Reply with strict JSON only."
+      },
+      {
+        "role": "user",
+        "content": "Manual filename: auto_ashrae211.pdf\nEquipment class: controller\n\nReview every candidate below. Preserve candidate_id exactly.\nAllowed category_if_not values: null, marketing, ui_behavior, terminal_label, part_name, duplicate, unsupported_type, weak_evidence, other.\n\n{\"candidates\": [{\"candidate_id\": \"cand_012a3a5c5b5fb6c4\", \"knowledge_type\": \"application_guidance\", \"title\": \"Safety toolbox meeting before site walkthrough\", \"summary\": \"Conduct a safety toolbox meeting prior to the preliminary walkthrough during site visits.\", \"structured_payload\": {\"title\": \"Safety toolbox meeting before site walkthrough\", \"summary\": \"Conduct a safety toolbox meeting prior to the preliminary walkthrough during site visits.\"}, \"evidence\": \"Conducting the Audit\\n•Site Visits\\n•Stick to your\\nplan… unless\\nreality hits you in\\nthe face!\\nPreliminary\\nWalkthroughSAFETY\\ntoolbox\\nmeeting\\nEquipment\\nChecks\\nData\\nCollection\\nInterviews\\nDocumentation\", \"source_pages\": [5], \"trust_level\": \"L3\"}, {\"candidate_id\": \"cand_7904f564123371b8\", \"knowledge_type\": \"application_guidance\", \"title\": \"Stick to audit plan unless reality intervenes\", \"summary\": \"Follow the audit plan during site visits, but be prepared to adapt if unexpected conditions arise.\", \"structured_payload\": {\"title\": \"Stick to audit plan unless reality intervenes\", \"summary\": \"Follow the audit plan during site visits, but be prepared to adapt if unexpected conditions arise.\"}, \"evidence\": \"Conducting the Audit\\n•Site Visits\\n•Stick to your\\nplan… unless\\nreality hits you in\\nthe face!\\nPreliminary\\nWalkthroughSAFETY\\ntoolbox\\nmeeting\\nEquipment\\nChecks\\nData\\nCollection\\nInterviews\\nDocumentation\", \"source_pages\": [5], \"trust_level\": \"L3\"}, {\"candidate_id\": \"cand_202bcc017f538255\", \"knowledge_type\": \"application_guidance\", \"title\": \"Data analysis tools for energy audits\", \"summary\": \"Use RETScreen, Excel, and ASHRAE forms for data analysis in energy audits.\", \"structured_payload\": {\"title\": \"Data analysis tools for energy audits\", \"summary\": \"Use RETScreen, Excel, and ASHRAE forms for data analysis in energy audits.\"}, \"evidence\": \"Conducting the Audit\\n•Data Analysis –RETScreen +\\nExcel + ASHRAE Forms\\nLet’s go with Live Example!\", \"source_pages\": [6], \"trust_level\": \"L3\"}]}\n\nReturn JSON shape: {\"verdicts\":[{\"candidate_id\":\"...\",\"is_valid_hvac_knowledge\":true,\"reason\":\"short reason\",\"category_if_not\":null}]}"
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 1200
+  },
+  "response": {
+    "id": "e221242e-daee-445a-bce5-d4ad8cee2cf8",
+    "object": "chat.completion",
+    "created": 1778368836,
+    "model": "deepseek-v4-pro",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"verdicts\": [{\"candidate_id\": \"cand_012a3a5c5b5fb6c4\", \"is_valid_hvac_knowledge\": false, \"reason\": \"This is general safety guidance (toolbox meeting) not specific to HVAC equipment operation, control, or maintenance. It is not actionable operational knowledge for a controller.\", \"category_if_not\": \"other\"}, {\"candidate_id\": \"cand_7904f564123371b8\", \"is_valid_hvac_knowledge\": false, \"reason\": \"This is generic project management advice (adapting plan) not specific HVAC operational knowledge. It lacks concrete, reviewable technical content for a controller.\", \"category_if_not\": \"other\"}, {\"candidate_id\": \"cand_202bcc017f538255\", \"is_valid_hvac_knowledge\": false, \"reason\": \"This mentions data analysis tools but offers no operational HVAC knowledge, parameters, or procedures specific to a controller. It is generic tool suggestion, not grounded controller guidance.\", \"category_if_not\": \"other\"}]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 775,
+      "completion_tokens": 228,
+      "total_tokens": 1003,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 647
+    },
+    "system_fingerprint": "fp_9954b31ca7_prod0820_fp8_kvcache_20260402"
+  },
+  "elapsed_seconds": 8.18
+}

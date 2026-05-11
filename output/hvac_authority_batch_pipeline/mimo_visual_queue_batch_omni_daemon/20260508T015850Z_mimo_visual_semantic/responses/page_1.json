@@ -1,0 +1,75 @@
+{
+  "page": 1,
+  "response": {
+    "id": "f51def1ed053440c968b183ed631a3ed",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of an installation and operation manual for a TICA brand modular air-cooled chiller (heat pump). The page displays the manual title in both English and Chinese, the equipment type, and the manufacturer's logo.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"INSTALLATION & OPERATION MANUAL\"},\n    {\"type\": \"text\", \"label\": \"MODULAR AIR-COOLED CHILLER (HEAT PUMP)\"},\n    {\"type\": \"text\", \"label\": \"安装操作手册\"},\n    {\"type\": \"text\", \"label\": \"模块化风冷式冷（热）水机组-D\"},\n    {\"type\": \"logo\", \"label\": \"TICA\"},\n    {\"type\": \"text\", \"label\": \"天加中央空调\"},\n    {\"type\": \"text\", \"label\": \"制冷百家网: www.zh lengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\"],\n  \"ocr_text_if_useful\": \"INSTALLATION & OPERATION MANUAL\\n安装操作手册\\nMODULAR AIR-COOLED CHILLER (HEAT PUMP)\\n模块化风冷式冷（热）水机组-D\\nTICA\\n天加中央空调\\n制冷百家网: www.zh lengbj.cn\",\n  \"uncertainty_notes\": \"The image is a cover page, not a technical diagram or data sheet. No specific technical relationships or component connections are visible. The watermark at the bottom is from a third-party website.\",\n  \"confidence\": 1.0\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778205540,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 348,
+      "prompt_tokens": 1561,
+      "total_tokens": 1909,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 1536,
+        "image_tokens": 1364
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "other",
+    "summary": "This is the cover page of an installation and operation manual for a TICA brand modular air-cooled chiller (heat pump). The page displays the manual title in both English and Chinese, the equipment type, and the manufacturer's logo.",
+    "visual_entities": [
+      {
+        "type": "text",
+        "label": "INSTALLATION & OPERATION MANUAL"
+      },
+      {
+        "type": "text",
+        "label": "MODULAR AIR-COOLED CHILLER (HEAT PUMP)"
+      },
+      {
+        "type": "text",
+        "label": "安装操作手册"
+      },
+      {
+        "type": "text",
+        "label": "模块化风冷式冷（热）水机组-D"
+      },
+      {
+        "type": "logo",
+        "label": "TICA"
+      },
+      {
+        "type": "text",
+        "label": "天加中央空调"
+      },
+      {
+        "type": "text",
+        "label": "制冷百家网: www.zh lengbj.cn"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "equipment_identification",
+      "manual_documentation"
+    ],
+    "ocr_text_if_useful": "INSTALLATION & OPERATION MANUAL\n安装操作手册\nMODULAR AIR-COOLED CHILLER (HEAT PUMP)\n模块化风冷式冷（热）水机组-D\nTICA\n天加中央空调\n制冷百家网: www.zh lengbj.cn",
+    "uncertainty_notes": "The image is a cover page, not a technical diagram or data sheet. No specific technical relationships or component connections are visible. The watermark at the bottom is from a third-party website.",
+    "confidence": 1.0
+  },
+  "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of an installation and operation manual for a TICA brand modular air-cooled chiller (heat pump). The page displays the manual title in both English and Chinese, the equipment type, and the manufacturer's logo.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"INSTALLATION & OPERATION MANUAL\"},\n    {\"type\": \"text\", \"label\": \"MODULAR AIR-COOLED CHILLER (HEAT PUMP)\"},\n    {\"type\": \"text\", \"label\": \"安装操作手册\"},\n    {\"type\": \"text\", \"label\": \"模块化风冷式冷（热）水机组-D\"},\n    {\"type\": \"logo\", \"label\": \"TICA\"},\n    {\"type\": \"text\", \"label\": \"天加中央空调\"},\n    {\"type\": \"text\", \"label\": \"制冷百家网: www.zh lengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\"],\n  \"ocr_text_if_useful\": \"INSTALLATION & OPERATION MANUAL\\n安装操作手册\\nMODULAR AIR-COOLED CHILLER (HEAT PUMP)\\n模块化风冷式冷（热）水机组-D\\nTICA\\n天加中央空调\\n制冷百家网: www.zh lengbj.cn\",\n  \"uncertainty_notes\": \"The image is a cover page, not a technical diagram or data sheet. No specific technical relationships or component connections are visible. The watermark at the bottom is from a third-party website.\",\n  \"confidence\": 1.0\n}"
+}

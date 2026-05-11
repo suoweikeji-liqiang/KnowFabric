@@ -1,0 +1,97 @@
+{
+  "status": "completed",
+  "row_index": 4,
+  "file_name": "【美的】水冷柜机 水环热泵技术手册（72页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】水冷柜机 水环热泵技术手册（72页）-制冷百家网.pdf",
+  "doc_id": "doc_7d9550955ab94718",
+  "chunks": 74,
+  "manual_tokens_estimated": 18641,
+  "equipment_class_id": "centrifugal_chiller",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "冷水机组"
+      ]
+    },
+    {
+      "equipment_class_id": "cooling_tower",
+      "equipment_class_key": "hvac:cooling_tower",
+      "confidence": 0.443,
+      "matched_aliases": [
+        "冷却塔"
+      ]
+    },
+    {
+      "equipment_class_id": "air_cooled_modular_heat_pump",
+      "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+      "confidence": 0.439,
+      "matched_aliases": [
+        "模块机",
+        "风冷模块机"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 72,
+      "chunks_after": 74,
+      "parse_result": {
+        "job_id": "job_4fec1deef0134c7e",
+        "doc_id": "doc_7d9550955ab94718",
+        "pages_created": 72,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_1d6bdb50ffc14dc9",
+        "doc_id": "doc_7d9550955ab94718",
+        "chunks_created": 74,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 19,
+      "judge_rejected": 21,
+      "judge_acceptance_rate": 47.5,
+      "judge_rejection_breakdown": {
+        "other": 21
+      },
+      "review_candidates": 19,
+      "by_type": {
+        "parameter_spec": 19
+      },
+      "usage": {
+        "prompt_tokens": 33506,
+        "completion_tokens": 5878,
+        "total_tokens": 39384
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1191,
+        "total_tokens": 2471
+      },
+      "extract_cost_rmb": 0.135786,
+      "judge_cost_rmb": 0.010986,
+      "cost_rmb": 0.146772,
+      "elapsed_seconds": 177.857,
+      "judge_elapsed_seconds": 144.463,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T143040Z_hvac_doclevel_extraction_batch/0004_美的_水冷柜机_水环热泵技术手册_72页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T143040Z_hvac_doclevel_extraction_batch/0004_美的_水冷柜机_水环热泵技术手册_72页_制冷百家网"
+}

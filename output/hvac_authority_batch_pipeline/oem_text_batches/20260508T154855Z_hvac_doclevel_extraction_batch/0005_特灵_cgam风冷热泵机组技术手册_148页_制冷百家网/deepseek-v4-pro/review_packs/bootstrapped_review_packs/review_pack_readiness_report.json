@@ -1,0 +1,19 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-08T16:15:53.008312+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T154855Z_hvac_doclevel_extraction_batch/0005_特灵_cgam风冷热泵机组技术手册_148页_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 0,
+  "summary": {
+    "ready": 0,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": []
+}

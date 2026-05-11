@@ -1,7 +1,9 @@
-# KnowFabric Admin Web UI Design Brief (for Claude)
+# KnowFabric Admin Web UI Design Brief (for AI design assistant)
 
-> **目的**：本文档供 Claude 一次性读完、获得设计 KnowFabric admin web UI 所需的全部上下文。
-> **使用方式**：作为附件上传给 Claude，配合本仓库 `docs/29_admin-web-ui-design-prompt.md` 的提示词使用。
+> **目的**：本文档供 AI 设计助手（Claude / Gemini / 其他长 context LLM）一次性读完、获得设计 KnowFabric admin web UI 所需的全部上下文。
+> **使用方式**：作为附件上传给 AI，配合相应的 prompt 文件使用：
+> - Claude.ai → `docs/29_admin-web-ui-design-prompt.md`
+> - Google AI Studio (Gemini) → `docs/29_admin-web-ui-design-prompt-gemini.md`
 > **日期**：2026-05-01
 > **设计目标**：重新设计 KnowFabric admin web，使其具备权威分层（authority hierarchy）感知能力，让人工录入与审阅高效易用。
 

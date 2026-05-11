@@ -1,0 +1,52 @@
+{
+  "request": {
+    "model": "deepseek-v4-pro",
+    "temperature": 1.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You repair malformed JSON. Return one valid JSON object only. Do not add commentary. Do not invent or remove fields unless required to make the JSON valid. Preserve the original meaning as closely as possible."
+      },
+      {
+        "role": "user",
+        "content": "Repair the following malformed JSON object. Return valid JSON only.\n\n{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_00cff829208d28eb\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Specifies operational temperature and pressure range for sensors, useful for maintenance.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_e08294fe340c1591\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Provides expansion valve capacity parameters for YMAC10, relevant for part selection and servicing.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_207cedd54096bee4\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC15, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ce43aa32c881dce5\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC18, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_d2c6080c75932de4\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC23, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_5d83f8d4e90dbbd2\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC30, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_5d977c7f6a49ab5e\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC40/45, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_5105cd64a7475ff1\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Abstract parameter number with no context; only range and default, no operational meaning.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_1d48fb450bdeb6a1\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:02 only range and default, no description of what it controls.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_9891af80e8cca1ea\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:03 lacks operational context.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_3327801b8a5a2a9b\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:04 without meaning.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_ea4791ad85ee914d\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:05 no operational description.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_a24bd0b30446ca35\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:06 range only.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_50ffe848218196d9\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:07 range only.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_d3a2f76fb63d6bda\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:08 range and default, no context.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_3251fdd8f986d7a4\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:09 range only.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_fc95d7f6f168f31b\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:10 range only.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_45c66aa55895af03\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:11 range and default, no meaning.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_4b2cf6ac9bb07a42\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:12 range and default, no meaning.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_c3c"
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 1200
+  },
+  "response": {
+    "id": "14e0a920-2a63-4214-bde0-dd66902df38d",
+    "object": "chat.completion",
+    "created": 1778231253,
+    "model": "deepseek-v4-pro",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_00cff829208d28eb\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Specifies operational temperature and pressure range for sensors, useful for maintenance.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_e08294fe340c1591\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Provides expansion valve capacity parameters for YMAC10, relevant for part selection and servicing.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_207cedd54096bee4\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC15, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ce43aa32c881dce5\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC18, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_d2c6080c75932de4\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC23, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_5d83f8d4e90dbbd2\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC30, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_5d977c7f6a49ab5e\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion valve capacity for YMAC40/45, valid parameter specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_5105cd64a7475ff1\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Abstract parameter number with no context; only range and default, no operational meaning.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_1d48fb450bdeb6a1\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:02 only range and default, no description of what it controls.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_9891af80e8cca1ea\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:03 lacks operational context.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_3327801b8a5a2a9b\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:04 without meaning.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_ea4791ad85ee914d\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:05 no operational description.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_a24bd0b30446ca35\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:06 range only.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_50ffe848218196d9\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:07 range only.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_d3a2f76fb63d6bda\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:08 range and default, no context.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_3251fdd8f986d7a4\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:09 range only.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_fc95d7f6f168f31b\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:10 range only.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_45c66aa55895af03\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:11 range and default, no meaning.\",\n      \"category_if_not\": \"terminal_label\"\n    },\n    {\n      \"candidate_id\": \"cand_4b2cf6ac9bb07a42\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Parameter No:12 range and default, no meaning.\",\n      \"category_if_not\": \"terminal_label\"\n    }\n  ]\n}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1280,
+      "completion_tokens": 1189,
+      "total_tokens": 2469,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1280
+    },
+    "system_fingerprint": "fp_9954b31ca7_prod0820_fp8_kvcache_20260402"
+  },
+  "elapsed_seconds": 72.554
+}

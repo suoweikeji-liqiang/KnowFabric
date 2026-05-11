@@ -1,0 +1,72 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【特灵】奥迪斯风管机空调安装操作维护手册（39页）.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/05、特灵中央空调/特灵/【特灵】奥迪斯风管机空调安装操作维护手册（39页）.pdf",
+  "doc_id": "doc_3de7a62a022d4179",
+  "chunks": 42,
+  "manual_tokens_estimated": 9501,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 39,
+      "chunks_after": 42,
+      "parse_result": {
+        "job_id": "job_16d5a4d04f2b4a8c",
+        "doc_id": "doc_3de7a62a022d4179",
+        "pages_created": 39,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_2bf502b54f29459e",
+        "doc_id": "doc_3de7a62a022d4179",
+        "chunks_created": 42,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 41,
+      "anchor_passed": 41,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 17,
+      "judge_rejected": 24,
+      "judge_acceptance_rate": 41.5,
+      "judge_rejection_breakdown": {
+        "weak_evidence": 1,
+        "other": 23
+      },
+      "review_candidates": 17,
+      "by_type": {
+        "parameter_spec": 17
+      },
+      "usage": {
+        "prompt_tokens": 16576,
+        "completion_tokens": 7577,
+        "total_tokens": 24153
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1178,
+        "total_tokens": 2458
+      },
+      "extract_cost_rmb": 0.09519,
+      "judge_cost_rmb": 0.010908,
+      "cost_rmb": 0.106098,
+      "elapsed_seconds": 217.91,
+      "judge_elapsed_seconds": 103.314,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T073530Z_hvac_doclevel_extraction_batch/0002_特灵_奥迪斯风管机空调安装操作维护手册_39页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T073530Z_hvac_doclevel_extraction_batch/0002_特灵_奥迪斯风管机空调安装操作维护手册_39页"
+}

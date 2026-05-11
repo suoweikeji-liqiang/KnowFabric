@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "row_index": 4,
+  "file_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+  "doc_id": "doc_e7b2857068c943d7",
+  "chunks": 60,
+  "manual_tokens_estimated": 13666,
+  "equipment_class_id": "pump",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 60,
+      "chunks_after": 60,
+      "parse_result": {
+        "job_id": "job_894a91848cd447bb",
+        "doc_id": "doc_e7b2857068c943d7",
+        "pages_created": 60,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_8adf2125193545b0",
+        "doc_id": "doc_e7b2857068c943d7",
+        "chunks_created": 60,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 59,
+      "anchor_passed": 57,
+      "anchor_rejected": 2,
+      "anchor_match_rate": 96.6,
+      "judge_accepted": 19,
+      "judge_rejected": 38,
+      "judge_acceptance_rate": 33.3,
+      "judge_rejection_breakdown": {
+        "other": 38
+      },
+      "review_candidates": 19,
+      "by_type": {
+        "parameter_spec": 7,
+        "fault_code": 9,
+        "operational_sequence": 3
+      },
+      "usage": {
+        "prompt_tokens": 24354,
+        "completion_tokens": 12306,
+        "total_tokens": 36660
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1187,
+        "total_tokens": 2467
+      },
+      "extract_cost_rmb": 0.146898,
+      "judge_cost_rmb": 0.010962,
+      "cost_rmb": 0.15786,
+      "elapsed_seconds": 365.068,
+      "judge_elapsed_seconds": 231.159,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T124021Z_hvac_doclevel_extraction_batch/0004_美的_空气能热泵热水机安装使用维修手册_二_60页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T124021Z_hvac_doclevel_extraction_batch/0004_美的_空气能热泵热水机安装使用维修手册_二_60页_制冷百家网"
+}

@@ -1,0 +1,269 @@
+{
+  "run_id": "20260508T014014Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】65C风冷模块机安装维修手册（37页）-制冷百家网.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 5.422,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This is the cover page of an HVAC manual. It displays the title '65C 风冷模块机组安装维修手册' (65C Air-Cooled Modular Unit Installation and Maintenance Manual) and a website URL at the bottom.",
+        "visual_entities": [
+          {
+            "type": "text",
+            "label": "65C 风冷模块机组安装维修手册"
+          },
+          {
+            "type": "text",
+            "label": "制冷百家网：www.zhilengbj.cn"
+          },
+          {
+            "type": "page_number",
+            "label": "1"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "manual_identification",
+          "document_metadata"
+        ],
+        "ocr_text_if_useful": "65C 风冷模块机组安装维修手册\n1\n制冷百家网：www.zhilengbj.cn",
+        "uncertainty_notes": "The page is a simple cover with no technical diagrams, tables, or specific component details. No visual relationships between HVAC components are present.",
+        "confidence": 1.0
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is the cover page of an HVAC manual. It displays the title '65C 风冷模块机组安装维修手册' (65C Air-Cooled Modular Unit Installation and Maintenance Manual) and a website URL at the bottom.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"65C 风冷模块机组安装维修手册\"},\n    {\"type\": \"text\", \"label\": \"制冷百家网：www.zhilengbj.cn\"},\n    {\"type\": \"page_number\", \"label\": \"1\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"manual_identification\", \"document_metadata\"],\n  \"ocr_text_if_useful\": \"65C 风冷模块机组安装维修手册\\n1\\n制冷百家网：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page is a simple cover with no technical diagrams, tables, or specific component details. No visual relationships between HVAC components are present.\",\n  \"confidence\": 1.0\n}",
+      "usage": {
+        "completion_tokens": 238,
+        "prompt_tokens": 2437,
+        "total_tokens": 2675,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 19,
+      "status": "ok",
+      "elapsed_seconds": 11.217,
+      "parsed": {
+        "page_type": "wiring_diagram",
+        "summary": "This page contains a wiring diagram for an HVAC control system, specifically showing connections to a mainboard, along with a list of symbol definitions for various temperature sensors, pressure switches, and current measurements. The diagram includes components like compressors, fans, and sensors, with labeled terminals and connections.",
+        "visual_entities": [
+          {
+            "type": "component",
+            "label": "mainboard"
+          },
+          {
+            "type": "component",
+            "label": "compressor"
+          },
+          {
+            "type": "component",
+            "label": "fan"
+          },
+          {
+            "type": "sensor",
+            "label": "temperature sensor"
+          },
+          {
+            "type": "switch",
+            "label": "pressure switch"
+          },
+          {
+            "type": "terminal",
+            "label": "terminal block"
+          },
+          {
+            "type": "wire",
+            "label": "connection wire"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "temperature sensor",
+            "relation": "connected to",
+            "to": "mainboard"
+          },
+          {
+            "from": "pressure switch",
+            "relation": "connected to",
+            "to": "mainboard"
+          },
+          {
+            "from": "compressor",
+            "relation": "connected to",
+            "to": "mainboard"
+          },
+          {
+            "from": "fan",
+            "relation": "connected to",
+            "to": "mainboard"
+          },
+          {
+            "from": "terminal block",
+            "relation": "connected to",
+            "to": "mainboard"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "wiring connections",
+          "component identification",
+          "control system layout",
+          "sensor integration"
+        ],
+        "ocr_text_if_useful": "第七部分：控制原理相关符号定义\n一、符号定义\n1. 出水温度——T_o;\n2. 回水温度——T_r;\n3. 室外环境温度——T_e;\n4. A系统压缩机1排气温度——T_a1;\n5. A系统压缩机2排气温度——T_a2;\n6. B系统压缩机1排气温度——T_b1;\n7. B系统压缩机2排气温度——T_b2;\n8. A系统盘管入口温度——T_a3;\n9. B系统盘管入口温度——T_b3;\n10. A系统盘管出口温度——T_a4;\n11. B系统盘管出口温度——T_b4;\n12. A系统水换冷媒入口温度——T_a5;\n13. B系统水换冷媒入口温度——T_b5;\n14. A系统水换冷媒出口温度——T_a6;\n15. B系统水换冷媒出口温度——T_b6;\n16. A系统吸气温度——T_a7;\n17. B系统吸气温度——T_b7;\n18. A系统高压保护开关信号——HP1;\n19. A系统低压保护开关信号——LP1;\n20. B系统高压保护开关信号——HP2;\n21. B系统低压保护开关信号——LP2;\n22. A系统压缩机1三相交流输入电流(三相中采一相) ——IAC1;",
+        "uncertainty_notes": "The wiring diagram is complex with many connections; some specific terminal labels or wire colors are not clearly legible. The exact spatial layout of components beyond the mainboard is inferred from typical HVAC diagrams.",
+        "confidence": 0.85
+      },
+      "raw_text": "{\n  \"page_type\": \"wiring_diagram\",\n  \"summary\": \"This page contains a wiring diagram for an HVAC control system, specifically showing connections to a mainboard, along with a list of symbol definitions for various temperature sensors, pressure switches, and current measurements. The diagram includes components like compressors, fans, and sensors, with labeled terminals and connections.\",\n  \"visual_entities\": [\n    {\"type\": \"component\", \"label\": \"mainboard\"},\n    {\"type\": \"component\", \"label\": \"compressor\"},\n    {\"type\": \"component\", \"label\": \"fan\"},\n    {\"type\": \"sensor\", \"label\": \"temperature sensor\"},\n    {\"type\": \"switch\", \"label\": \"pressure switch\"},\n    {\"type\": \"terminal\", \"label\": \"terminal block\"},\n    {\"type\": \"wire\", \"label\": \"connection wire\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"temperature sensor\", \"relation\": \"connected to\", \"to\": \"mainboard\"},\n    {\"from\": \"pressure switch\", \"relation\": \"connected to\", \"to\": \"mainboard\"},\n    {\"from\": \"compressor\", \"relation\": \"connected to\", \"to\": \"mainboard\"},\n    {\"from\": \"fan\", \"relation\": \"connected to\", \"to\": \"mainboard\"},\n    {\"from\": \"terminal block\", \"relation\": \"connected to\", \"to\": \"mainboard\"}\n  ],\n  \"useful_for_knowledge_types\": [\"wiring connections\", \"component identification\", \"control system layout\", \"sensor integration\"],\n  \"ocr_text_if_useful\": \"第七部分：控制原理相关符号定义\\n一、符号定义\\n1. 出水温度——T_o;\\n2. 回水温度——T_r;\\n3. 室外环境温度——T_e;\\n4. A系统压缩机1排气温度——T_a1;\\n5. A系统压缩机2排气温度——T_a2;\\n6. B系统压缩机1排气温度——T_b1;\\n7. B系统压缩机2排气温度——T_b2;\\n8. A系统盘管入口温度——T_a3;\\n9. B系统盘管入口温度——T_b3;\\n10. A系统盘管出口温度——T_a4;\\n11. B系统盘管出口温度——T_b4;\\n12. A系统水换冷媒入口温度——T_a5;\\n13. B系统水换冷媒入口温度——T_b5;\\n14. A系统水换冷媒出口温度——T_a6;\\n15. B系统水换冷媒出口温度——T_b6;\\n16. A系统吸气温度——T_a7;\\n17. B系统吸气温度——T_b7;\\n18. A系统高压保护开关信号——HP1;\\n19. A系统低压保护开关信号——LP1;\\n20. B系统高压保护开关信号——HP2;\\n21. B系统低压保护开关信号——LP2;\\n22. A系统压缩机1三相交流输入电流(三相中采一相) ——IAC1;\",\n  \"uncertainty_notes\": \"The wiring diagram is complex with many connections; some specific terminal labels or wire colors are not clearly legible. The exact spatial layout of components beyond the mainboard is inferred from typical HVAC diagrams.\",\n  \"confidence\": 0.85\n}",
+      "usage": {
+        "completion_tokens": 737,
+        "prompt_tokens": 2437,
+        "total_tokens": 3174,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 37,
+      "status": "ok",
+      "elapsed_seconds": 24.344,
+      "parsed": {
+        "page_type": "fault_table",
+        "summary": "This page lists HVAC fault codes (E58-E76) with their descriptions, judgment conditions, fault handling, and recovery procedures. It includes a note about severe protection faults (E22, E23, E24, E39, E52, E53, E54, E69) that require manual reset if they occur 3 times within 30 minutes. The page is dated 2016-5-17 and has a footer with a website URL.",
+        "visual_entities": [
+          {
+            "type": "fault_code",
+            "label": "E58"
+          },
+          {
+            "type": "fault_code",
+            "label": "E59"
+          },
+          {
+            "type": "fault_code",
+            "label": "E60"
+          },
+          {
+            "type": "fault_code",
+            "label": "E61"
+          },
+          {
+            "type": "fault_code",
+            "label": "E62"
+          },
+          {
+            "type": "fault_code",
+            "label": "E69"
+          },
+          {
+            "type": "fault_code",
+            "label": "E70"
+          },
+          {
+            "type": "fault_code",
+            "label": "E76"
+          },
+          {
+            "type": "text_block",
+            "label": "Note about severe protection faults"
+          },
+          {
+            "type": "date",
+            "label": "2016-5-17"
+          },
+          {
+            "type": "page_number",
+            "label": "3"
+          },
+          {
+            "type": "website_url",
+            "label": "www.zhilengbj.cn"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "E58",
+            "relation": "describes fault for",
+            "to": "B system water heat exchanger outlet temperature sensor"
+          },
+          {
+            "from": "E59",
+            "relation": "describes fault for",
+            "to": "B system suction temperature sensor"
+          },
+          {
+            "from": "E60",
+            "relation": "describes fault for",
+            "to": "B system coil (inlet) temperature sensor"
+          },
+          {
+            "from": "E61",
+            "relation": "describes fault for",
+            "to": "Compressor 3 exhaust temperature"
+          },
+          {
+            "from": "E62",
+            "relation": "describes fault for",
+            "to": "B system coil (outlet) temperature sensor"
+          },
+          {
+            "from": "E69",
+            "relation": "describes fault for",
+            "to": "Compressor 4 overcurrent protection"
+          },
+          {
+            "from": "E70",
+            "relation": "describes fault for",
+            "to": "Compressor 4 exhaust temperature sensor"
+          },
+          {
+            "from": "E76",
+            "relation": "describes fault for",
+            "to": "Compressor 4 exhaust temperature"
+          },
+          {
+            "from": "Note",
+            "relation": "lists severe faults including",
+            "to": "E69"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "fault_diagnosis",
+          "troubleshooting",
+          "HVAC_system_maintenance",
+          "error_code_reference"
+        ],
+        "ocr_text_if_useful": "E58 B系统水换冷媒出口端温度传感器开路或短路\n判断条件: B系统水换冷媒出口端温度传感器开路或短路;\n故障处理: 停B系统压缩机;\n故障恢复: 更换传感器正常后, 自动恢复。\nE59 B系统吸气温度传感器开路或短路\n判断条件: B系统吸气温度传感器开路或短路;\n故障处理: 停B系统压缩机;\n故障恢复: 更换传感器正常后, 自动恢复。\nE60 B系统盘管(入口)温度传感器开路或短路;\n判断条件: B系统盘管(入口)温度传感器开路或短路 ;\n故障处理: 停B系统压机;\n故障恢复: 更换传感器正常后, 自动恢复;\nE61 压机3排气温度过高\n判断条件: 压机3排气温度>115℃;\n故障处理: 停B系统压机;\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\nE62 B系统盘管(出口)温度传感器温度过高\n判断条件: B系统盘管(出口)传感器温度>66℃;\n故障处理: 停B系统压机;\n故障恢复: B系统盘管(出口)传感器温度<55℃恢复。\nE69 压机4过电流保护\n判断条件: IAC4>17.5A;\n故障处理: 停B系统压机;\n故障恢复: 自恢复;\nE70 压机4排气温度传感器开路或短路\n判断条件: 压机4排气温度传感器开路或短路;\n故障处理: 停B系统压机;\n故障恢复: 更换传感器正常后, 自动恢复;\nE76 压机4排气温度过高\n判断条件: 压机4排气温度>115℃;\n故障处理: 停B系统压机;\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\n注: 上述故障中E22、E23、E24、E39、E52、E53、E54、E69为严重保护故障,\n如果这些故障在30min内累计达到3次, 则对应系统按不可自动恢复故障处理, 必\n须断电排除故障后恢复。\n2016-5-17\n3\n制冷百家网: www.zhilengbj.cn",
+        "uncertainty_notes": "The visual relationships are inferred from the text descriptions; the page is purely textual with no diagrams. The note lists severe faults, but only E69 is visible on this page; others (E22, E23, E24, E39, E52, E53, E54) are referenced but not detailed here.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"fault_table\",\n  \"summary\": \"This page lists HVAC fault codes (E58-E76) with their descriptions, judgment conditions, fault handling, and recovery procedures. It includes a note about severe protection faults (E22, E23, E24, E39, E52, E53, E54, E69) that require manual reset if they occur 3 times within 30 minutes. The page is dated 2016-5-17 and has a footer with a website URL.\",\n  \"visual_entities\": [\n    {\"type\": \"fault_code\", \"label\": \"E58\"},\n    {\"type\": \"fault_code\", \"label\": \"E59\"},\n    {\"type\": \"fault_code\", \"label\": \"E60\"},\n    {\"type\": \"fault_code\", \"label\": \"E61\"},\n    {\"type\": \"fault_code\", \"label\": \"E62\"},\n    {\"type\": \"fault_code\", \"label\": \"E69\"},\n    {\"type\": \"fault_code\", \"label\": \"E70\"},\n    {\"type\": \"fault_code\", \"label\": \"E76\"},\n    {\"type\": \"text_block\", \"label\": \"Note about severe protection faults\"},\n    {\"type\": \"date\", \"label\": \"2016-5-17\"},\n    {\"type\": \"page_number\", \"label\": \"3\"},\n    {\"type\": \"website_url\", \"label\": \"www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"E58\", \"relation\": \"describes fault for\", \"to\": \"B system water heat exchanger outlet temperature sensor\"},\n    {\"from\": \"E59\", \"relation\": \"describes fault for\", \"to\": \"B system suction temperature sensor\"},\n    {\"from\": \"E60\", \"relation\": \"describes fault for\", \"to\": \"B system coil (inlet) temperature sensor\"},\n    {\"from\": \"E61\", \"relation\": \"describes fault for\", \"to\": \"Compressor 3 exhaust temperature\"},\n    {\"from\": \"E62\", \"relation\": \"describes fault for\", \"to\": \"B system coil (outlet) temperature sensor\"},\n    {\"from\": \"E69\", \"relation\": \"describes fault for\", \"to\": \"Compressor 4 overcurrent protection\"},\n    {\"from\": \"E70\", \"relation\": \"describes fault for\", \"to\": \"Compressor 4 exhaust temperature sensor\"},\n    {\"from\": \"E76\", \"relation\": \"describes fault for\", \"to\": \"Compressor 4 exhaust temperature\"},\n    {\"from\": \"Note\", \"relation\": \"lists severe faults including\", \"to\": \"E69\"}\n  ],\n  \"useful_for_knowledge_types\": [\"fault_diagnosis\", \"troubleshooting\", \"HVAC_system_maintenance\", \"error_code_reference\"],\n  \"ocr_text_if_useful\": \"E58 B系统水换冷媒出口端温度传感器开路或短路\\n判断条件: B系统水换冷媒出口端温度传感器开路或短路;\\n故障处理: 停B系统压缩机;\\n故障恢复: 更换传感器正常后, 自动恢复。\\nE59 B系统吸气温度传感器开路或短路\\n判断条件: B系统吸气温度传感器开路或短路;\\n故障处理: 停B系统压缩机;\\n故障恢复: 更换传感器正常后, 自动恢复。\\nE60 B系统盘管(入口)温度传感器开路或短路;\\n判断条件: B系统盘管(入口)温度传感器开路或短路 ;\\n故障处理: 停B系统压机;\\n故障恢复: 更换传感器正常后, 自动恢复;\\nE61 压机3排气温度过高\\n判断条件: 压机3排气温度>115℃;\\n故障处理: 停B系统压机;\\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\\nE62 B系统盘管(出口)温度传感器温度过高\\n判断条件: B系统盘管(出口)传感器温度>66℃;\\n故障处理: 停B系统压机;\\n故障恢复: B系统盘管(出口)传感器温度<55℃恢复。\\nE69 压机4过电流保护\\n判断条件: IAC4>17.5A;\\n故障处理: 停B系统压机;\\n故障恢复: 自恢复;\\nE70 压机4排气温度传感器开路或短路\\n判断条件: 压机4排气温度传感器开路或短路;\\n故障处理: 停B系统压机;\\n故障恢复: 更换传感器正常后, 自动恢复;\\nE76 压机4排气温度过高\\n判断条件: 压机4排气温度>115℃;\\n故障处理: 停B系统压机;\\n故障恢复: 更换温传恢复或排气温度<90℃恢复;\\n注: 上述故障中E22、E23、E24、E39、E52、E53、E54、E69为严重保护故障,\\n如果这些故障在30min内累计达到3次, 则对应系统按不可自动恢复故障处理, 必\\n须断电排除故障后恢复。\\n2016-5-17\\n3\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The visual relationships are inferred from the text descriptions; the page is purely textual with no diagrams. The note lists severe faults, but only E69 is visible on this page; others (E22, E23, E24, E39, E52, E53, E54) are referenced but not detailed here.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 1315,
+        "prompt_tokens": 2437,
+        "total_tokens": 3752,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

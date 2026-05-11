@@ -1,0 +1,50 @@
+{
+  "request": {
+    "model": "mimo-v2-omni",
+    "temperature": 0.2,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a senior HVAC knowledge engineer. Extract high-value, reviewable knowledge objects from one OEM manual. Treat chunks only as evidence anchors. Return fewer high-confidence items rather than noisy coverage. Every evidence_quote MUST be a verbatim contiguous substring from the manual. Do not invent facts. Keep evidence_quote short: one exact label, one fault display line, one table row, or one complete sentence. Do not copy full tables, multi-row tables, or multi-paragraph troubleshooting blocks. Keep evidence_quote under 240 characters. If a table contains useful data, extract one row or one short cell group at a time. Allowed knowledge_type values: application_guidance, operational_sequence, parameter_spec, performance_spec, maintenance_procedure. Use fault_code for explicit codes and meanings; parameter_spec for configurable setpoints, limits, modes, defaults, and ranges; performance_spec for design/rated capacities and operating limits; maintenance_procedure for service actions; diagnostic_step or fault_diagnostic_rule for troubleshooting logic; application_guidance for installation/application constraints; operational_sequence for control behavior. Do not extract marketing claims, UI navigation instructions, pure product naming rules, isolated terminal labels, or text that cannot stand as a useful knowledge object. Return strict compact JSON only. Keep title, summary, and evidence_quote short. Do not include Markdown, comments, raw newline characters, or literal line breaks inside JSON string values; escape any unavoidable newline as \\n."
+      },
+      {
+        "role": "user",
+        "content": "Publisher/brand guess: ASHRAE\nDocument kind: standard_handbook_subset\nEquipment class: controller\nManual filename: auto_ashrae211.pdf\nTarget max candidates: 15\n\nManual content with anchors:\n[[page=1 chunk_id=chunk_f5259efb8f604329]]\n\nBest Practices for Energy Audits Using\nASHRAE 211 -2018 and RETScreen\nSession F3: Energy Auditing\nJavier Ojeda, P.Eng, CEM, REP, PMP, MBA\n\n[[page=2 chunk_id=chunk_a173182dd21e49ea]]\n\nPlanning the Audit\n\n[[page=3 chunk_id=chunk_5104ef466e8f4bc9]]\n\nPlanning the Audit\n\n[[page=4 chunk_id=chunk_6b2fc2ecd17b4324]]\n\nPlanning the Audit\nTOOLS FOR THE\nENERGY AUDIT\nFree Templates\n\n[[page=5 chunk_id=chunk_a7c34e5930d9425f]]\n\nConducting the Audit\n•Site Visits\n•Stick to your\nplan… unless\nreality hits you in\nthe face!\nPreliminary\nWalkthroughSAFETY\ntoolbox\nmeeting\nEquipment\nChecks\nData\nCollection\nInterviews\nDocumentation\n\n[[page=6 chunk_id=chunk_1cf58a6bd3394f4b]]\n\nConducting the Audit\n•Data Analysis –RETScreen +\nExcel + ASHRAE Forms\nLet’s go with Live Example!\n\nReturn JSON shape:\n{\"candidates\":[{\"knowledge_type\":\"parameter_spec\",\"title\":\"...\",\"canonical_key_hint\":null,\"summary\":\"...\",\"structured_payload\":{\"parameter_name\":\"...\"},\"evidence_quote\":\"exact source quote\",\"page_hint\":1,\"confidence\":0.9}],\"skipped_reason\":null}\nReturn one-line minified JSON when possible. Stop after the target max candidates exactly. Prefer 8-20 strong candidates over broad coverage. Do not continue past the target. Do not output partial JSON."
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "top_p": 0.95,
+    "max_completion_tokens": 4096
+  },
+  "response": {
+    "id": "ee16fb6613b54c0aa7fbd98b922910bc",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"candidates\": [\n    {\n      \"knowledge_type\": \"application_guidance\",\n      \"title\": \"Energy Audit Planning Tools\",\n      \"canonical_key_hint\": null,\n      \"summary\": \"ASHRAE provides free templates for planning energy audits.\",\n      \"structured_payload\": {\n        \"tool_type\": \"templates\"\n      },\n      \"evidence_quote\": \"TOOLS FOR THE ENERGY AUDIT Free Templates\",\n      \"page_hint\": 4,\n      \"confidence\": 0.85\n    },\n    {\n      \"knowledge_type\": \"operational_sequence\",\n      \"title\": \"Audit Conduct Sequence\",\n      \"canonical_key_hint\": null,\n      \"summary\": \"The audit process includes a preliminary walkthrough, safety meeting, equipment checks, data collection, interviews, and documentation.\",\n      \"structured_payload\": {\n        \"sequence_steps\": \"Preliminary Walkthrough, SAFETY toolbox meeting, Equipment Checks, Data Collection, Interviews, Documentation\"\n      },\n      \"evidence_quote\": \"Preliminary Walkthrough SAFETY toolbox meeting Equipment Checks Data Collection Interviews Documentation\",\n      \"page_hint\": 5,\n      \"confidence\": 0.9\n    },\n    {\n      \"knowledge_type\": \"application_guidance\",\n      \"title\": \"Audit Data Analysis Tools\",\n      \"canonical_key_hint\": null,\n      \"summary\": \"Data analysis for audits utilizes RETScreen, Excel, and ASHRAE forms.\",\n      \"structured_payload\": {\n        \"analysis_tools\": \"RETScreen, Excel, ASHRAE Forms\"\n      },\n      \"evidence_quote\": \"Data Analysis –RETScreen + Excel + ASHRAE Forms\",\n      \"page_hint\": 6,\n      \"confidence\": 0.85\n    }\n  ],\n  \"skipped_reason\": \"The provided manual content is a presentation slide deck outline for an ASHRAE 211 standard training session, not a detailed technical manual. It contains high-level procedural guidance and tool references but lacks specific, extractable technical parameters, fault codes, maintenance procedures, or detailed specifications required for the target knowledge types. The extracted items are the most substantive objects available from the given chunks.\"\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778367649,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 444,
+      "prompt_tokens": 756,
+      "total_tokens": 1200,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      }
+    }
+  },
+  "elapsed_seconds": 5.11
+}

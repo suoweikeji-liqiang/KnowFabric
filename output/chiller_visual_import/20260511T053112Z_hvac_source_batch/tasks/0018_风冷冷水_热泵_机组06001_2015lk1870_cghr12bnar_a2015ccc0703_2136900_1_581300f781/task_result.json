@@ -1,0 +1,38 @@
+{
+  "row_index": 18,
+  "path": "/Volumes/TSD302/pan/a00238/05、特灵中央空调/样本手册/小机-水机/AquaKool/测试报告/风冷冷水(热泵)机组06001-2015LK1870--CGHR12BNAR--A2015CCC0703-2136900 (1).pdf",
+  "file_name": "风冷冷水(热泵)机组06001-2015LK1870--CGHR12BNAR--A2015CCC0703-2136900 (1).pdf",
+  "batch_group": "chiller_visual",
+  "priority": "P1_visual",
+  "brand": "Trane",
+  "authority_level": "oem_manual",
+  "document_kind": "product_catalog_or_brochure",
+  "equipment_scope": "air_cooled_chiller_heat_pump",
+  "page_count": "85",
+  "text_quality": "low_or_no_text",
+  "recommended_mode": "visual_page_level",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/chiller_visual_import/20260511T053112Z_hvac_source_batch/tasks/0018_风冷冷水_热泵_机组06001_2015lk1870_cghr12bnar_a2015ccc0703_2136900_1_581300f781",
+  "status": "chunked",
+  "doc_id": "doc_9650969ce6cb4585",
+  "import_status": "imported",
+  "processing": {
+    "pages_before": 0,
+    "chunks_before": 0,
+    "pages_after": 85,
+    "chunks_after": 0,
+    "parse_result": {
+      "job_id": "job_4544980abc824a69",
+      "doc_id": "doc_9650969ce6cb4585",
+      "pages_created": 85,
+      "status": "success"
+    },
+    "chunk_result": {
+      "job_id": "job_7e5285fdb7aa40b1",
+      "doc_id": "doc_9650969ce6cb4585",
+      "chunks_created": 0,
+      "status": "success"
+    }
+  },
+  "review_bundle": null
+}

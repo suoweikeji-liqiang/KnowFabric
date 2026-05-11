@@ -1,0 +1,1423 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T14:54:45.414183+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_3d2fd0b7b24e4949",
+  "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+  "equipment_class": {
+    "equipment_class_id": "controller",
+    "equipment_class_key": "hvac:controller",
+    "label": "Controller",
+    "supported_knowledge_anchors": [
+      "parameter_spec",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 19,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_02bb26d43f3936c9",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_cooling_capacity",
+        "value": "8",
+        "unit": "kW",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit nominal cooling capacity",
+        "summary": "KVR-80W/D522B nominal cooling capacity is 8 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Nominal cooling capacity from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_cooling_capacity for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_cooling_capacity derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_cooling_capacity",
+        "structured_payload": {
+          "parameter_name": "nominal_cooling_capacity",
+          "value": "8",
+          "unit": "kW",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit nominal cooling capacity",
+          "summary": "KVR-80W/D522B nominal cooling capacity is 8 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a06e686bca929277",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_heating_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_heating_capacity",
+        "value": "9.5",
+        "unit": "kW",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit nominal heating capacity",
+        "summary": "KVR-80W/D522B nominal heating capacity is 9.5 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Nominal heating capacity from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_heating_capacity for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_heating_capacity derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_heating_capacity",
+        "structured_payload": {
+          "parameter_name": "nominal_heating_capacity",
+          "value": "9.5",
+          "unit": "kW",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit nominal heating capacity",
+          "summary": "KVR-80W/D522B nominal heating capacity is 9.5 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_adbce4f0e67ee75b",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_power_supply",
+      "structured_payload_candidate": {
+        "parameter_name": "power_supply",
+        "value": "1PH, 220V~, 50Hz",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit power supply",
+        "summary": "KVR-80W/D522B power supply is 1PH, 220V~, 50Hz"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Power supply specification from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_power_supply for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_power_supply derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_power_supply",
+        "structured_payload": {
+          "parameter_name": "power_supply",
+          "value": "1PH, 220V~, 50Hz",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit power supply",
+          "summary": "KVR-80W/D522B power supply is 1PH, 220V~, 50Hz"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c7bb40fa8a35de1a",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_cooling_current",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_operating_current",
+        "value": "13.5",
+        "unit": "A",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit cooling operating current",
+        "summary": "KVR-80W/D522B cooling operating current is 13.5 A"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Cooling operating current from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_cooling_current for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_cooling_current derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_cooling_current",
+        "structured_payload": {
+          "parameter_name": "cooling_operating_current",
+          "value": "13.5",
+          "unit": "A",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit cooling operating current",
+          "summary": "KVR-80W/D522B cooling operating current is 13.5 A"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c081000020c81cd8",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_cooling_power",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_power_consumption",
+        "value": "2.85",
+        "unit": "kW",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit cooling power consumption",
+        "summary": "KVR-80W/D522B cooling power consumption is 2.85 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Cooling power consumption from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_cooling_power for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_cooling_power derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_cooling_power",
+        "structured_payload": {
+          "parameter_name": "cooling_power_consumption",
+          "value": "2.85",
+          "unit": "kW",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit cooling power consumption",
+          "summary": "KVR-80W/D522B cooling power consumption is 2.85 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9a81f06dfaad28cd",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_max_cooling_power_current",
+      "structured_payload_candidate": {
+        "parameter_name": "max_cooling_power_current",
+        "value": "3.4/16",
+        "unit": "kW/A",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit maximum cooling power/current",
+        "summary": "KVR-80W/D522B maximum cooling power/current is 3.4 kW / 16 A"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Maximum cooling power/current from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_max_cooling_power_current for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_max_cooling_power_current derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_max_cooling_power_current",
+        "structured_payload": {
+          "parameter_name": "max_cooling_power_current",
+          "value": "3.4/16",
+          "unit": "kW/A",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit maximum cooling power/current",
+          "summary": "KVR-80W/D522B maximum cooling power/current is 3.4 kW / 16 A"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6603d1fb60de35df",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_heating_current",
+      "structured_payload_candidate": {
+        "parameter_name": "heating_operating_current",
+        "value": "13.4",
+        "unit": "A",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit heating operating current",
+        "summary": "KVR-80W/D522B heating operating current is 13.4 A"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Heating operating current from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_heating_current for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_heating_current derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_heating_current",
+        "structured_payload": {
+          "parameter_name": "heating_operating_current",
+          "value": "13.4",
+          "unit": "A",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit heating operating current",
+          "summary": "KVR-80W/D522B heating operating current is 13.4 A"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_835892491eb8a9f6",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_heating_power",
+      "structured_payload_candidate": {
+        "parameter_name": "heating_power_consumption",
+        "value": "2.85",
+        "unit": "kW",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit heating power consumption",
+        "summary": "KVR-80W/D522B heating power consumption is 2.85 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Heating power consumption from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_heating_power for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_heating_power derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_heating_power",
+        "structured_payload": {
+          "parameter_name": "heating_power_consumption",
+          "value": "2.85",
+          "unit": "kW",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit heating power consumption",
+          "summary": "KVR-80W/D522B heating power consumption is 2.85 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_4b3ff50b875b46fe",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_max_heating_power_current",
+      "structured_payload_candidate": {
+        "parameter_name": "max_heating_power_current",
+        "value": "3.3/15",
+        "unit": "kW/A",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit maximum heating power/current",
+        "summary": "KVR-80W/D522B maximum heating power/current is 3.3 kW / 15 A"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Maximum heating power/current from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_max_heating_power_current for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_max_heating_power_current derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_max_heating_power_current",
+        "structured_payload": {
+          "parameter_name": "max_heating_power_current",
+          "value": "3.3/15",
+          "unit": "kW/A",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit maximum heating power/current",
+          "summary": "KVR-80W/D522B maximum heating power/current is 3.3 kW / 15 A"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_829613769dfba4d5",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_fan_motor_output",
+      "structured_payload_candidate": {
+        "parameter_name": "outdoor_fan_motor_output",
+        "value": "0.06*1",
+        "unit": "kW",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit fan motor output",
+        "summary": "KVR-80W/D522B outdoor fan motor output is 0.06 kW x 1"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Outdoor fan motor output from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_fan_motor_output for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_fan_motor_output derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_fan_motor_output",
+        "structured_payload": {
+          "parameter_name": "outdoor_fan_motor_output",
+          "value": "0.06*1",
+          "unit": "kW",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit fan motor output",
+          "summary": "KVR-80W/D522B outdoor fan motor output is 0.06 kW x 1"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_047da850d8273d0c",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_dimensions",
+      "structured_payload_candidate": {
+        "parameter_name": "dimensions",
+        "value": "960*380*830",
+        "unit": "mm",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit dimensions",
+        "summary": "KVR-80W/D522B dimensions are 960*380*830 mm"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Dimensions from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_dimensions for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_dimensions derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_dimensions",
+        "structured_payload": {
+          "parameter_name": "dimensions",
+          "value": "960*380*830",
+          "unit": "mm",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit dimensions",
+          "summary": "KVR-80W/D522B dimensions are 960*380*830 mm"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_08cef2f2b80cc699",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_weight",
+      "structured_payload_candidate": {
+        "parameter_name": "weight",
+        "value": "74",
+        "unit": "kg",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit weight",
+        "summary": "KVR-80W/D522B weight is 74 kg"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Weight from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_weight for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_weight derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_weight",
+        "structured_payload": {
+          "parameter_name": "weight",
+          "value": "74",
+          "unit": "kg",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit weight",
+          "summary": "KVR-80W/D522B weight is 74 kg"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5de2f8738d35d2ec",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_compressor_type",
+      "structured_payload_candidate": {
+        "parameter_name": "compressor_type",
+        "value": "双转子式",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit compressor type",
+        "summary": "KVR-80W/D522B compressor type is twin rotary"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Compressor type from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_compressor_type for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_compressor_type derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_compressor_type",
+        "structured_payload": {
+          "parameter_name": "compressor_type",
+          "value": "双转子式",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit compressor type",
+          "summary": "KVR-80W/D522B compressor type is twin rotary"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_19a5de0b16901bca",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_refrigerant_charge",
+      "structured_payload_candidate": {
+        "parameter_name": "refrigerant_charge",
+        "value": "2.4",
+        "unit": "kg",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit refrigerant charge",
+        "summary": "KVR-80W/D522B R410A refrigerant charge is 2.4 kg"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Refrigerant charge from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_refrigerant_charge for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_refrigerant_charge derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_refrigerant_charge",
+        "structured_payload": {
+          "parameter_name": "refrigerant_charge",
+          "value": "2.4",
+          "unit": "kg",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit refrigerant charge",
+          "summary": "KVR-80W/D522B R410A refrigerant charge is 2.4 kg"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d74550f3605c6dbb",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_80w_d522b_noise_level",
+      "structured_payload_candidate": {
+        "parameter_name": "noise_level",
+        "value": "56",
+        "unit": "dB(A)",
+        "model": "KVR-80W/D522B",
+        "title": "Outdoor unit noise level",
+        "summary": "KVR-80W/D522B noise level is 56 dB(A)"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Noise level from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_80w_d522b_noise_level for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_80w_d522b_noise_level derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_80w_d522b_noise_level",
+        "structured_payload": {
+          "parameter_name": "noise_level",
+          "value": "56",
+          "unit": "dB(A)",
+          "model": "KVR-80W/D522B",
+          "title": "Outdoor unit noise level",
+          "summary": "KVR-80W/D522B noise level is 56 dB(A)"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d04798b0b0726728",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_d_22n_522b_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_cooling_capacity",
+        "value": "2.2",
+        "unit": "kW",
+        "model": "KVR(d)-22N/522B",
+        "title": "Indoor unit KVR(d)-22N/522B nominal cooling capacity",
+        "summary": "KVR(d)-22N/522B nominal cooling capacity is 2.2 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Indoor unit nominal cooling capacity from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_d_22n_522b_cooling_capacity for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_d_22n_522b_cooling_capacity derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_d_22n_522b_cooling_capacity",
+        "structured_payload": {
+          "parameter_name": "nominal_cooling_capacity",
+          "value": "2.2",
+          "unit": "kW",
+          "model": "KVR(d)-22N/522B",
+          "title": "Indoor unit KVR(d)-22N/522B nominal cooling capacity",
+          "summary": "KVR(d)-22N/522B nominal cooling capacity is 2.2 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_03f8250e6d98fc5b",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_d_22n_522b_heating_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_heating_capacity",
+        "value": "2.5",
+        "unit": "kW",
+        "model": "KVR(d)-22N/522B",
+        "title": "Indoor unit KVR(d)-22N/522B nominal heating capacity",
+        "summary": "KVR(d)-22N/522B nominal heating capacity is 2.5 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Indoor unit nominal heating capacity from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_d_22n_522b_heating_capacity for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_d_22n_522b_heating_capacity derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_d_22n_522b_heating_capacity",
+        "structured_payload": {
+          "parameter_name": "nominal_heating_capacity",
+          "value": "2.5",
+          "unit": "kW",
+          "model": "KVR(d)-22N/522B",
+          "title": "Indoor unit KVR(d)-22N/522B nominal heating capacity",
+          "summary": "KVR(d)-22N/522B nominal heating capacity is 2.5 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1e2c8df1fea9b8b3",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_d_22n_522b_electric_heater",
+      "structured_payload_candidate": {
+        "parameter_name": "electric_heater_capacity_current",
+        "value": "0.8/3.6",
+        "unit": "kW/A",
+        "model": "KVR(d)-22N/522B",
+        "title": "Indoor unit KVR(d)-22N/522B electric heater capacity/current",
+        "summary": "KVR(d)-22N/522B electric heater capacity is 0.8 kW, current 3.6 A"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Electric heater capacity and current from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_d_22n_522b_electric_heater for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_d_22n_522b_electric_heater derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_d_22n_522b_electric_heater",
+        "structured_payload": {
+          "parameter_name": "electric_heater_capacity_current",
+          "value": "0.8/3.6",
+          "unit": "kW/A",
+          "model": "KVR(d)-22N/522B",
+          "title": "Indoor unit KVR(d)-22N/522B electric heater capacity/current",
+          "summary": "KVR(d)-22N/522B electric heater capacity is 0.8 kW, current 3.6 A"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_eae49651c2bf14f0",
+      "domain_id": "hvac",
+      "doc_id": "doc_3d2fd0b7b24e4949",
+      "doc_name": "（制冷百家）海尔KVR家庭中央空调R410A直流变频系列资料-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_61a79a56bc794404",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:kvr_d_22n_522b_operating_current",
+      "structured_payload_candidate": {
+        "parameter_name": "operating_current",
+        "value": "0.15",
+        "unit": "A",
+        "model": "KVR(d)-22N/522B",
+        "title": "Indoor unit KVR(d)-22N/522B operating current",
+        "summary": "KVR(d)-22N/522B operating current is 0.15 A"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_61a79a56bc794404",
+        "chunk_008bfe256a4c41eb"
+      ],
+      "source_page_nos": [
+        9,
+        13
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operating current from performance table, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:controller:parameter_spec:kvr_d_22n_522b_operating_current for Controller",
+        "summary": "Draft review summary for parameter spec hvac:controller:parameter_spec:kvr_d_22n_522b_operating_current derived from chunk chunk_61a79a56bc794404 on page 9 for Controller.",
+        "canonical_key": "hvac:controller:parameter_spec:kvr_d_22n_522b_operating_current",
+        "structured_payload": {
+          "parameter_name": "operating_current",
+          "value": "0.15",
+          "unit": "A",
+          "model": "KVR(d)-22N/522B",
+          "title": "Indoor unit KVR(d)-22N/522B operating current",
+          "summary": "KVR(d)-22N/522B operating current is 0.15 A"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "商用空调\n93、性能参数\n（1）室外机\n相当马力 3 5 7\n型号 KVR-80W/D522B KVR-150W/D532B KVR-180W/D532B\n名义制冷能力（KW） 8 15 18\n名义制热能力（KW） 9.5 17 20\n电源 1PH，220V~，50Hz 3N~，380V，50Hz\n电\n器\n特\n性制\n冷运转电流(A) 13.5 8.6 12\n消耗功率（KW） 2.85 5.3 6.9\n最大运转功率/电流（kW/A） 3.4/16 6.2/10 7.3/13\n制\n热运转电流(A) 13.4 8.6 11\n消耗功率（KW） 2.85 5.3 6.5\n最大运转功率/电流（kW/A） 3.3/15 5.8/9.6 6.7/12\n室外风机输出功率（KW） 0.06*1 0.075*2 0.13*2\n外形尺寸(mm) 960*380*830 960*380*1250\n重量(Kg) 74 120 130\n外形颜色 乳白色\n压缩机型式 双转子式 涡旋式\n冷媒封入量 R410A(Kg) 2.4 4.4 5.0\n噪音值（dB(A)） 56 59 60\n（2）室内机\nA、 低静压风管机\n相当马力 0.8 1.0 1.25 1.5\n型号 KVR(d)-22N/522B KVR(d)-28N/522B KVR(d)-36N/522B KVR(d)-40N/522B\n名义制冷能力（KW） 2.2 2.8 3.6 4.0\n名义制热能力（KW） 2.5 3.2 4.0 4.5\n电热能力（KW）/电流（A） 0.8/3.6 0.8/3.6 1.0/4.6 1.8/8.2\n电\n器\n特\n性电源 单相，220V，50Hz\n运转电流(A) 0.15 0.15 0.25 0.27\n消耗功率（KW） 0.03 0.03 0.045 0.05\n风\n机\n特风扇类别及数量 离心×1 离心×1 离心×1 离心×2\n电机输出功率（KW） 0.012 0.012 0.02 0.025\n标准风量(m3/h) 400 400 500 850\nR6Q·v~[¶QlO\u0017S÷\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-08T14:54:45.420862+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 19
+  }
+}

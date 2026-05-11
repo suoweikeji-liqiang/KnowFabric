@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "row_index": 10,
+  "file_name": "（制冷百家）海尔商用故障代码手册-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/（制冷百家）海尔商用故障代码手册-制冷百家网.pdf",
+  "doc_id": "doc_804afd33494f4815",
+  "chunks": 111,
+  "manual_tokens_estimated": 44511,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 111,
+      "chunks_before": 111,
+      "pages_after": 111,
+      "chunks_after": 111,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "failed",
+      "error": "LLM JSON request failed after 3 attempts: LLM compile returned empty content"
+    }
+  ],
+  "task_dir": "output/hvac_authority_batch_pipeline/20260507T153658Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T173624Z_hvac_doclevel_extraction_batch/0010_制冷百家_海尔商用故障代码手册_制冷百家网"
+}

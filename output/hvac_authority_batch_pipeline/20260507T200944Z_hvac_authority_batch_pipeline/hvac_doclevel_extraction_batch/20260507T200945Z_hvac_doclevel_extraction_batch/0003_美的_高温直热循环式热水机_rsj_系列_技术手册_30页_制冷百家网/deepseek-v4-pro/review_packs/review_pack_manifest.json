@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-07T20:13:16.465640+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_75f1a9bd6d484aa6__pump.json",
+      "doc_id": "doc_75f1a9bd6d484aa6",
+      "doc_name": "【美的】高温直热循环式热水机 RSJ 系列 技术手册（30页）-制冷百家网.pdf",
+      "equipment_class_id": "pump",
+      "equipment_class_key": "hvac:pump",
+      "candidate_count": 10
+    }
+  ]
+}

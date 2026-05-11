@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "row_index": 3,
+  "file_name": "【特灵】Coolman风冷热泵式冷水机组安装维修手册.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/05、特灵中央空调/特灵/【特灵】Coolman风冷热泵式冷水机组安装维修手册.pdf",
+  "doc_id": "doc_79a82f2fa930405b",
+  "chunks": 72,
+  "manual_tokens_estimated": 8580,
+  "equipment_class_id": "chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 71,
+      "chunks_after": 72,
+      "parse_result": {
+        "job_id": "job_850473d9c7704b20",
+        "doc_id": "doc_79a82f2fa930405b",
+        "pages_created": 71,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_857a1ed5839d48cd",
+        "doc_id": "doc_79a82f2fa930405b",
+        "chunks_created": 72,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 0,
+      "anchor_rejected": 40,
+      "anchor_match_rate": 0.0,
+      "judge_accepted": 0,
+      "judge_rejected": 0,
+      "judge_acceptance_rate": 100.0,
+      "judge_rejection_breakdown": {},
+      "review_candidates": 0,
+      "by_type": {},
+      "usage": {
+        "prompt_tokens": 31177,
+        "completion_tokens": 7456,
+        "total_tokens": 38633
+      },
+      "judge_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "extract_cost_rmb": 0.138267,
+      "judge_cost_rmb": 0.0,
+      "cost_rmb": 0.138267,
+      "elapsed_seconds": 222.041,
+      "judge_elapsed_seconds": null,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T143040Z_hvac_doclevel_extraction_batch/0003_特灵_coolman风冷热泵式冷水机组安装维修手册/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T143040Z_hvac_doclevel_extraction_batch/0003_特灵_coolman风冷热泵式冷水机组安装维修手册"
+}

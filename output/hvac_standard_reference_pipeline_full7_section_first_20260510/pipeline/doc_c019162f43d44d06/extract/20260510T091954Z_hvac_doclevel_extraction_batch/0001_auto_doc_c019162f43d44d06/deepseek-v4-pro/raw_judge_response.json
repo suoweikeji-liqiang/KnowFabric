@@ -1,0 +1,52 @@
+{
+  "request": {
+    "model": "deepseek-v4-pro",
+    "temperature": 1.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a senior HVAC knowledge-base reviewer. Validate extracted knowledge objects from one equipment manual. Accept only useful, grounded, reviewable operational knowledge supported by the evidence. Reject marketing claims, UI-only navigation, isolated terminal labels, pure part names, duplicate/noisy items, generic prose with no operational value, or items whose evidence does not support the structured payload. Supported knowledge_type values: fault_code, parameter_spec, performance_spec, maintenance_procedure, application_guidance, operational_sequence, fault_diagnostic_rule, diagnostic_step, symptom. Reply with strict JSON only."
+      },
+      {
+        "role": "user",
+        "content": "Manual filename: auto_doc_c019162f43d44d06.pdf\nEquipment class: chiller\n\nReview every candidate below. Preserve candidate_id exactly.\nAllowed category_if_not values: null, marketing, ui_behavior, terminal_label, part_name, duplicate, unsupported_type, weak_evidence, other.\n\n{\"candidates\": [{\"candidate_id\": \"cand_81dfbc48764c0bdd\", \"knowledge_type\": \"application_guidance\", \"title\": \"Energy Audit Planning\", \"summary\": \"The manual emphasizes the importance of planning an energy audit, including site visits, safety meetings, equipment checks, data collection, interviews, and documentation.\", \"structured_payload\": {\"title\": \"Energy Audit Planning\", \"summary\": \"The manual emphasizes the importance of planning an energy audit, including site visits, safety meetings, equipment checks, data collection, interviews, and documentation.\"}, \"evidence\": \"Planning the Audit\", \"source_pages\": [1, 2, 3], \"trust_level\": \"L4\"}, {\"candidate_id\": \"cand_0e93e170c9c80adb\", \"knowledge_type\": \"application_guidance\", \"title\": \"Audit Tools\", \"summary\": \"Free templates are available as tools for the energy audit.\", \"structured_payload\": {\"title\": \"Audit Tools\", \"summary\": \"Free templates are available as tools for the energy audit.\"}, \"evidence\": \"Planning the Audit\\nTOOLS FOR THE\\nENERGY AUDIT\\nFree Templates\", \"source_pages\": [3], \"trust_level\": \"L3\"}, {\"candidate_id\": \"cand_56bcabd246b293dc\", \"knowledge_type\": \"application_guidance\", \"title\": \"Audit Conduct Steps\", \"summary\": \"Conducting the audit involves site visits, sticking to the plan, preliminary walkthrough, safety toolbox meeting, equipment checks, data collection, interviews, and documentation.\", \"structured_payload\": {\"title\": \"Audit Conduct Steps\", \"summary\": \"Conducting the audit involves site visits, sticking to the plan, preliminary walkthrough, safety toolbox meeting, equipment checks, data collection, interviews, and documentation.\"}, \"evidence\": \"Conducting the Audit\\n•Site Visits\\n•Stick to your\\nplan… unless\\nreality hits you in\\nthe face!\\nPreliminary\\nWalkthroughSAFETY\\ntoolbox\\nmeeting\\nEquipment\\nChecks\\nData\\nCollection\\nInterviews\\nDocumentation\", \"source_pages\": [4], \"trust_level\": \"L3\"}, {\"candidate_id\": \"cand_53e55401895be04d\", \"knowledge_type\": \"application_guidance\", \"title\": \"Data Analysis Tools\", \"summary\": \"Data analysis for the audit uses RETScreen, Excel, and ASHRAE Forms.\", \"structured_payload\": {\"title\": \"Data Analysis Tools\", \"summary\": \"Data analysis for the audit uses RETScreen, Excel, and ASHRAE Forms.\"}, \"evidence\": \"Conducting the Audit\\n•Data Analysis –RETScreen +\\nExcel + ASHRAE Forms\\nLet’s go with Live Example!\", \"source_pages\": [5], \"trust_level\": \"L3\"}]}\n\nReturn JSON shape: {\"verdicts\":[{\"candidate_id\":\"...\",\"is_valid_hvac_knowledge\":true,\"reason\":\"short reason\",\"category_if_not\":null}]}"
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 1200
+  },
+  "response": {
+    "id": "a7f369cc-d245-4e4c-a86f-9298837af8d7",
+    "object": "chat.completion",
+    "created": 1778404810,
+    "model": "deepseek-v4-pro",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_81dfbc48764c0bdd\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Generic energy audit planning steps, not equipment-specific operational knowledge.\",\n      \"category_if_not\": \"weak_evidence\"\n    },\n    {\n      \"candidate_id\": \"cand_0e93e170c9c80adb\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Mentions free templates as audit tools; marketing-adjacent, no operational HVAC value.\",\n      \"category_if_not\": \"marketing\"\n    },\n    {\n      \"candidate_id\": \"cand_56bcabd246b293dc\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Generic audit conduct steps, not specific to chiller operation or maintenance.\",\n      \"category_if_not\": \"weak_evidence\"\n    },\n    {\n      \"candidate_id\": \"cand_53e55401895be04d\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Lists software tools for data analysis, no actionable chiller knowledge.\",\n      \"category_if_not\": \"weak_evidence\"\n    }\n  ]\n}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 874,
+      "completion_tokens": 274,
+      "total_tokens": 1148,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 746
+    },
+    "system_fingerprint": "fp_9954b31ca7_prod0820_fp8_kvcache_20260402"
+  },
+  "elapsed_seconds": 9.663
+}

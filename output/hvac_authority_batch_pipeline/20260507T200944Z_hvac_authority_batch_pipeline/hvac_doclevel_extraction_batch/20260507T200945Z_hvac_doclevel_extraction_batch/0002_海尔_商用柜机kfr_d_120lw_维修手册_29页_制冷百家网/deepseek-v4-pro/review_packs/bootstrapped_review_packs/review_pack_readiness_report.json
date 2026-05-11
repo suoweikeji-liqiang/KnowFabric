@@ -1,0 +1,34 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-07T20:12:16.679198+00:00",
+  "pack_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0002_海尔_商用柜机kfr_d_120lw_维修手册_29页_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 0,
+    "blocked_pending": 1,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_73f432de87fa4968__controller.json",
+      "pack_path": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0002_海尔_商用柜机kfr_d_120lw_维修手册_29页_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_73f432de87fa4968__controller.json",
+      "doc_id": "doc_73f432de87fa4968",
+      "doc_name": "【海尔】商用柜机KFR(d)-120LW】维修手册（29页）-制冷百家网.pdf",
+      "equipment_class_id": "controller",
+      "equipment_class_key": "hvac:controller",
+      "candidate_count": 9,
+      "accepted_count": 0,
+      "rejected_count": 0,
+      "pending_count": 9,
+      "status": "blocked_pending",
+      "blocker": "pending_review_decisions"
+    }
+  ]
+}

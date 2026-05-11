@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-10T12:16:37.613410+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_a5d70e8fe23a4fbb__condenser_water_pump.json",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "doc_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "equipment_class_id": "condenser_water_pump",
+      "equipment_class_key": "hvac:condenser_water_pump",
+      "candidate_count": 9
+    }
+  ]
+}

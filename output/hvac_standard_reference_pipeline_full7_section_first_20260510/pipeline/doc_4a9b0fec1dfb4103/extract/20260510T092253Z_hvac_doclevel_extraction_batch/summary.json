@@ -1,0 +1,78 @@
+{
+  "run_id": "20260510T092253Z_hvac_doclevel_extraction_batch",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_4a9b0fec1dfb4103/extract/20260510T092253Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "completed",
+      "row_index": 1,
+      "file_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_4a9b0fec1dfb4103/subset/auto_doc_4a9b0fec1dfb4103.pdf",
+      "doc_id": "doc_ac8efac40ca64744",
+      "chunks": 26,
+      "manual_tokens_estimated": 5685,
+      "equipment_class_id": "chiller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 3,
+          "chunks_after": 26,
+          "parse_result": {
+            "job_id": "job_223ec95e74c549e1",
+            "doc_id": "doc_ac8efac40ca64744",
+            "pages_created": 3,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_726f21f868a54cb6",
+            "doc_id": "doc_ac8efac40ca64744",
+            "chunks_created": 26,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "mimo-v2-omni",
+          "model": "mimo-v2-omni",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 12,
+          "anchor_passed": 12,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 5,
+          "judge_rejected": 7,
+          "judge_acceptance_rate": 41.7,
+          "judge_rejection_breakdown": {
+            "weak_evidence": 7
+          },
+          "review_candidates": 5,
+          "by_type": {
+            "parameter_spec": 3,
+            "performance_spec": 2
+          },
+          "usage": {
+            "prompt_tokens": 6079,
+            "completion_tokens": 1495,
+            "total_tokens": 7574
+          },
+          "judge_usage": {
+            "prompt_tokens": 4966,
+            "completion_tokens": 829,
+            "total_tokens": 5795
+          },
+          "extract_cost_rmb": 0.0,
+          "judge_cost_rmb": 0.019872,
+          "cost_rmb": 0.019872,
+          "elapsed_seconds": 12.048,
+          "judge_elapsed_seconds": 27.334,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_4a9b0fec1dfb4103/extract/20260510T092253Z_hvac_doclevel_extraction_batch/0001_auto_doc_4a9b0fec1dfb4103/mimo-v2-omni"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_4a9b0fec1dfb4103/extract/20260510T092253Z_hvac_doclevel_extraction_batch/0001_auto_doc_4a9b0fec1dfb4103"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "【麦克维尔】AWS风冷机组操作维修手册-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】AWS风冷机组操作维修手册-.pdf",
+  "doc_id": "doc_d098d6214b36477c",
+  "chunks": 214,
+  "manual_tokens_estimated": 43006,
+  "equipment_class_id": "chilled_water_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "controller",
+      "equipment_class_key": "hvac:controller",
+      "confidence": 0.638,
+      "matched_aliases": [
+        "Controller",
+        "controller"
+      ]
+    },
+    {
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "confidence": 0.554,
+      "matched_aliases": [
+        "Chiller",
+        "chiller"
+      ]
+    },
+    {
+      "equipment_class_id": "sensor",
+      "equipment_class_key": "hvac:sensor",
+      "confidence": 0.527,
+      "matched_aliases": [
+        "Sensor",
+        "sensor"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 84,
+      "chunks_before": 214,
+      "pages_after": 84,
+      "chunks_after": 214,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 6,
+      "judge_rejected": 34,
+      "judge_acceptance_rate": 15.0,
+      "judge_rejection_breakdown": {
+        "weak_evidence": 10,
+        "other": 24
+      },
+      "review_candidates": 6,
+      "by_type": {
+        "parameter_spec": 6
+      },
+      "usage": {
+        "prompt_tokens": 47694,
+        "completion_tokens": 5877,
+        "total_tokens": 53571
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1185,
+        "total_tokens": 2465
+      },
+      "extract_cost_rmb": 0.178344,
+      "judge_cost_rmb": 0.01095,
+      "cost_rmb": 0.189294,
+      "elapsed_seconds": 168.938,
+      "judge_elapsed_seconds": 222.021,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T154855Z_hvac_doclevel_extraction_batch/0001_麦克维尔_aws风冷机组操作维修手册/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T154855Z_hvac_doclevel_extraction_batch/0001_麦克维尔_aws风冷机组操作维修手册"
+}

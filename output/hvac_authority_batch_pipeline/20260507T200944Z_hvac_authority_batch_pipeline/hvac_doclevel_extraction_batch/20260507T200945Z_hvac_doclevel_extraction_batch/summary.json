@@ -1,0 +1,249 @@
+{
+  "run_id": "20260507T200945Z_hvac_doclevel_extraction_batch",
+  "output_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "completed",
+      "row_index": 1,
+      "file_name": "【海尔】LSQ系列风冷涡旋机组维修手册（32页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】LSQ系列风冷涡旋机组维修手册（32页）-制冷百家网.pdf",
+      "doc_id": "doc_890a1463187b4da4",
+      "chunks": 31,
+      "manual_tokens_estimated": 7506,
+      "equipment_class_id": "chiller",
+      "equipment_alternatives": [
+        {
+          "equipment_class_id": "air_cooled_modular_heat_pump",
+          "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+          "confidence": 0.383,
+          "matched_aliases": [
+            "模块机"
+          ]
+        },
+        {
+          "equipment_class_id": "modular_chiller",
+          "equipment_class_key": "hvac:modular_chiller",
+          "confidence": 0.383,
+          "matched_aliases": [
+            "模块机"
+          ]
+        }
+      ],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 28,
+          "chunks_after": 31,
+          "parse_result": {
+            "job_id": "job_9d7678f9c80e4c99",
+            "doc_id": "doc_890a1463187b4da4",
+            "pages_created": 28,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_02d520f6a5b14264",
+            "doc_id": "doc_890a1463187b4da4",
+            "chunks_created": 31,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 10,
+          "anchor_passed": 10,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 10,
+          "judge_rejected": 0,
+          "judge_acceptance_rate": 100.0,
+          "judge_rejection_breakdown": {},
+          "review_candidates": 10,
+          "by_type": {
+            "parameter_spec": 1,
+            "fault_code": 9
+          },
+          "usage": {
+            "prompt_tokens": 12923,
+            "completion_tokens": 2341,
+            "total_tokens": 15264
+          },
+          "judge_usage": {
+            "prompt_tokens": 8053,
+            "completion_tokens": 703,
+            "total_tokens": 8756
+          },
+          "extract_cost_rmb": 0.052815,
+          "judge_cost_rmb": 0.028377,
+          "cost_rmb": 0.081192,
+          "elapsed_seconds": 65.378,
+          "judge_elapsed_seconds": 18.195,
+          "output_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0001_海尔_lsq系列风冷涡旋机组维修手册_32页_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0001_海尔_lsq系列风冷涡旋机组维修手册_32页_制冷百家网"
+    },
+    {
+      "status": "completed",
+      "row_index": 2,
+      "file_name": "【海尔】商用柜机KFR(d)-120LW】维修手册（29页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】商用柜机KFR(d)-120LW】维修手册（29页）-制冷百家网.pdf",
+      "doc_id": "doc_73f432de87fa4968",
+      "chunks": 31,
+      "manual_tokens_estimated": 8762,
+      "equipment_class_id": "controller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 29,
+          "chunks_after": 31,
+          "parse_result": {
+            "job_id": "job_1ecf6651119343b3",
+            "doc_id": "doc_73f432de87fa4968",
+            "pages_created": 29,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_9abf25af24a24334",
+            "doc_id": "doc_73f432de87fa4968",
+            "chunks_created": 31,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 10,
+          "anchor_passed": 9,
+          "anchor_rejected": 1,
+          "anchor_match_rate": 90.0,
+          "judge_accepted": 9,
+          "judge_rejected": 0,
+          "judge_acceptance_rate": 100.0,
+          "judge_rejection_breakdown": {},
+          "review_candidates": 9,
+          "by_type": {
+            "fault_code": 9
+          },
+          "usage": {
+            "prompt_tokens": 15397,
+            "completion_tokens": 1703,
+            "total_tokens": 17100
+          },
+          "judge_usage": {
+            "prompt_tokens": 4733,
+            "completion_tokens": 566,
+            "total_tokens": 5299
+          },
+          "extract_cost_rmb": 0.056409,
+          "judge_cost_rmb": 0.017595,
+          "cost_rmb": 0.074004,
+          "elapsed_seconds": 48.994,
+          "judge_elapsed_seconds": 18.084,
+          "output_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0002_海尔_商用柜机kfr_d_120lw_维修手册_29页_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0002_海尔_商用柜机kfr_d_120lw_维修手册_29页_制冷百家网"
+    },
+    {
+      "status": "completed",
+      "row_index": 3,
+      "file_name": "【美的】高温直热循环式热水机 RSJ 系列 技术手册（30页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】高温直热循环式热水机 RSJ 系列 技术手册（30页）-制冷百家网.pdf",
+      "doc_id": "doc_75f1a9bd6d484aa6",
+      "chunks": 31,
+      "manual_tokens_estimated": 5868,
+      "equipment_class_id": "pump",
+      "equipment_alternatives": [
+        {
+          "equipment_class_id": "air_cooled_modular_heat_pump",
+          "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+          "confidence": 0.383,
+          "matched_aliases": [
+            "模块机"
+          ]
+        },
+        {
+          "equipment_class_id": "modular_chiller",
+          "equipment_class_key": "hvac:modular_chiller",
+          "confidence": 0.383,
+          "matched_aliases": [
+            "模块机"
+          ]
+        }
+      ],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 30,
+          "chunks_after": 31,
+          "parse_result": {
+            "job_id": "job_38a3adffd2674ef1",
+            "doc_id": "doc_75f1a9bd6d484aa6",
+            "pages_created": 30,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_6cf0cd5f290545b5",
+            "doc_id": "doc_75f1a9bd6d484aa6",
+            "chunks_created": 31,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 10,
+          "anchor_passed": 10,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 10,
+          "judge_rejected": 0,
+          "judge_acceptance_rate": 100.0,
+          "judge_rejection_breakdown": {},
+          "review_candidates": 10,
+          "by_type": {
+            "parameter_spec": 2,
+            "fault_code": 8
+          },
+          "usage": {
+            "prompt_tokens": 10709,
+            "completion_tokens": 1314,
+            "total_tokens": 12023
+          },
+          "judge_usage": {
+            "prompt_tokens": 7215,
+            "completion_tokens": 673,
+            "total_tokens": 7888
+          },
+          "extract_cost_rmb": 0.040011,
+          "judge_cost_rmb": 0.025683,
+          "cost_rmb": 0.065694,
+          "elapsed_seconds": 39.226,
+          "judge_elapsed_seconds": 20.086,
+          "output_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0003_美的_高温直热循环式热水机_rsj_系列_技术手册_30页_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0003_美的_高温直热循环式热水机_rsj_系列_技术手册_30页_制冷百家网"
+    }
+  ]
+}

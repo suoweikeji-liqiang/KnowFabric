@@ -1,0 +1,342 @@
+{
+  "run_id": "20260507T200558Z_hvac_authority_batch_pipeline",
+  "generated_at": "2026-05-07T20:09:23.692960+00:00",
+  "execute": true,
+  "manifest": "workspace/hvac_source_inventory/20260507T083207Z/starter_batch_manifest.csv",
+  "output_dir": "output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline",
+  "lane_counts": {
+    "g36_standard": 0,
+    "standard_reference_hold": 7,
+    "oem_text": 3,
+    "oem_fault_reference_hold": 6,
+    "visual_queue": 10
+  },
+  "lanes": {
+    "g36_standard": [],
+    "standard_reference_hold": [
+      {
+        "row_index": 2,
+        "file_name": "ASHRAE手册2019.pdf",
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册2019.pdf",
+        "batch_group": "A_standard_authority_first",
+        "brand": "ASHRAE",
+        "document_kind": "standard_handbook",
+        "page_count": "",
+        "text_quality": "unknown",
+        "recommended_mode": "doc_level_or_section_context"
+      },
+      {
+        "row_index": 3,
+        "file_name": "ASHRAE 211能源审计最佳实践.pdf",
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE 211能源审计最佳实践.pdf",
+        "batch_group": "A_standard_authority_first",
+        "brand": "ASHRAE",
+        "document_kind": "standard_handbook",
+        "page_count": "19",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_or_section_context"
+      },
+      {
+        "row_index": 4,
+        "file_name": "空调 系统 设计 手册 Ashrae 特别 出版物.pdf",
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/空调 系统 设计 手册 Ashrae 特别 出版物.pdf",
+        "batch_group": "A_standard_authority_first",
+        "brand": "ASHRAE",
+        "document_kind": "standard_handbook",
+        "page_count": "401",
+        "text_quality": "good_text",
+        "recommended_mode": "section_context_or_chapter_batch"
+      },
+      {
+        "row_index": 5,
+        "file_name": "ASHRAE绿色建筑指南.pdf",
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE绿色建筑指南.pdf",
+        "batch_group": "A_standard_authority_first",
+        "brand": "ASHRAE",
+        "document_kind": "standard_handbook",
+        "page_count": "494",
+        "text_quality": "good_text",
+        "recommended_mode": "section_context_or_chapter_batch"
+      },
+      {
+        "row_index": 6,
+        "file_name": "ASHRAE手册 - HVAC系统和设备篇.pdf",
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册 - HVAC系统和设备篇.pdf",
+        "batch_group": "A_standard_authority_first",
+        "brand": "ASHRAE",
+        "document_kind": "standard_handbook",
+        "page_count": "986",
+        "text_quality": "good_text",
+        "recommended_mode": "section_context_or_chapter_batch"
+      },
+      {
+        "row_index": 7,
+        "file_name": "ASHRAE手册2024.pdf",
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册2024.pdf",
+        "batch_group": "A_standard_authority_first",
+        "brand": "ASHRAE",
+        "document_kind": "standard_handbook",
+        "page_count": "1006",
+        "text_quality": "good_text",
+        "recommended_mode": "section_context_or_chapter_batch"
+      },
+      {
+        "row_index": 8,
+        "file_name": "ASHRAE手册 - 基础理论篇.pdf",
+        "path": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册 - 基础理论篇.pdf",
+        "batch_group": "A_standard_authority_first",
+        "brand": "ASHRAE",
+        "document_kind": "standard_handbook",
+        "page_count": "1014",
+        "text_quality": "good_text",
+        "recommended_mode": "section_context_or_chapter_batch"
+      }
+    ],
+    "oem_text": [
+      {
+        "row_index": 17,
+        "file_name": "【开利】30AQ开利风冷式热泵机组（28页）-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/03、开利中央空调/技术手册/【开利】30AQ开利风冷式热泵机组（28页）-制冷百家网.pdf",
+        "batch_group": "B_oem_manual_text_first",
+        "brand": "Carrier",
+        "document_kind": "operation_installation_manual",
+        "page_count": "28",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_single_call"
+      },
+      {
+        "row_index": 18,
+        "file_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/03、开利中央空调/技术手册/【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+        "batch_group": "B_oem_manual_text_first",
+        "brand": "Carrier",
+        "document_kind": "service_manual",
+        "page_count": "28",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_single_call"
+      },
+      {
+        "row_index": 19,
+        "file_name": "【海尔】LSQWRF130C-318C风冷涡旋机组维修手册（28页）-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】LSQWRF130C-318C风冷涡旋机组维修手册（28页）-制冷百家网.pdf",
+        "batch_group": "B_oem_manual_text_first",
+        "brand": "Haier",
+        "document_kind": "service_manual",
+        "page_count": "28",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_single_call"
+      }
+    ],
+    "oem_fault_reference_hold": [
+      {
+        "row_index": 9,
+        "file_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+        "batch_group": "B_oem_manual_text_first",
+        "brand": "McQuay/Daikin",
+        "document_kind": "fault_code_reference",
+        "page_count": "31",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_single_call"
+      },
+      {
+        "row_index": 10,
+        "file_name": "（制冷百家）海尔商用故障代码手册-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/（制冷百家）海尔商用故障代码手册-制冷百家网.pdf",
+        "batch_group": "B_oem_manual_text_first",
+        "brand": "Haier",
+        "document_kind": "fault_code_reference",
+        "page_count": "111",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_single_call"
+      },
+      {
+        "row_index": 84,
+        "file_name": "【日立】日立商用中央空调-故障代码表.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/12、日立空调/技术手册/【日立】日立商用中央空调-故障代码表.pdf",
+        "batch_group": "B_oem_manual_text_first",
+        "brand": "Hitachi",
+        "document_kind": "fault_code_reference",
+        "page_count": "2",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_single_call"
+      },
+      {
+        "row_index": 85,
+        "file_name": "【麦克维尔】MAC机组_《故障代码及处理方法》手册-.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MAC机组_《故障代码及处理方法》手册-.pdf",
+        "batch_group": "B_oem_manual_text_first",
+        "brand": "McQuay/Daikin",
+        "document_kind": "fault_code_reference",
+        "page_count": "2",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_single_call"
+      },
+      {
+        "row_index": 86,
+        "file_name": "【美的】MDV4+多联机故障代码及维修流程图手册（25页）-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】MDV4+多联机故障代码及维修流程图手册（25页）-制冷百家网.pdf",
+        "batch_group": "B_oem_manual_text_first",
+        "brand": "Midea",
+        "document_kind": "fault_code_reference",
+        "page_count": "25",
+        "text_quality": "partial_text",
+        "recommended_mode": "doc_level_single_call"
+      },
+      {
+        "row_index": 87,
+        "file_name": "【大金】空调故障代码一览表（2012版本）制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/01、大金中央空调/技术、维修手册/【大金】空调故障代码一览表（2012版本）制冷百家网.pdf",
+        "batch_group": "B_oem_manual_text_first",
+        "brand": "Daikin",
+        "document_kind": "service_manual",
+        "page_count": "1",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_single_call"
+      }
+    ],
+    "visual_queue": [
+      {
+        "row_index": 92,
+        "file_name": "大金 VRV 根据故障代码（排除故障方法）.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/01、大金中央空调/培训/大金 VRV 根据故障代码（排除故障方法）.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "Daikin",
+        "document_kind": "fault_code_reference",
+        "page_count": "9",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      },
+      {
+        "row_index": 93,
+        "file_name": "【海尔】风冷冷水机组调试维护手册-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】风冷冷水机组调试维护手册-制冷百家网.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "Haier",
+        "document_kind": "technical_manual",
+        "page_count": "16",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      },
+      {
+        "row_index": 94,
+        "file_name": "【顿汉布什】WCFX-R-螺杆式冷水机组操作说明书.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/18、顿汉布什/【顿汉布什】WCFX-R-螺杆式冷水机组操作说明书.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "Dunham-Bush",
+        "document_kind": "operation_installation_manual",
+        "page_count": "18",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      },
+      {
+        "row_index": 95,
+        "file_name": "【海尔】磁悬浮变频离心机组手册-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】磁悬浮变频离心机组手册-制冷百家网.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "Haier",
+        "document_kind": "technical_manual",
+        "page_count": "20",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      },
+      {
+        "row_index": 96,
+        "file_name": "【海尔】风冷模块式冷热水机组培训手册（32页）-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】风冷模块式冷热水机组培训手册（32页）-制冷百家网.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "Haier",
+        "document_kind": "technical_manual",
+        "page_count": "32",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      },
+      {
+        "row_index": 97,
+        "file_name": "【天加 】模块化风冷式冷(热)水机组D-安装操作手册.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/13、天加中央空调/【天加 】模块化风冷式冷(热)水机组D-安装操作手册.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "TICA",
+        "document_kind": "operation_installation_manual",
+        "page_count": "35",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      },
+      {
+        "row_index": 98,
+        "file_name": "【海尔】65C风冷模块机安装维修手册（37页）-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】65C风冷模块机安装维修手册（37页）-制冷百家网.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "Haier",
+        "document_kind": "service_manual",
+        "page_count": "37",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      },
+      {
+        "row_index": 99,
+        "file_name": "【约克】YBWC约克水冷螺杆式冷水机组安装操作维护手册（42页）-制冷百家网.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YBWC约克水冷螺杆式冷水机组安装操作维护手册（42页）-制冷百家网.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "York/JCI",
+        "document_kind": "operation_installation_manual",
+        "page_count": "42",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      },
+      {
+        "row_index": 100,
+        "file_name": "【日立】水冷低温螺杆式冷水机组手册.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/12、日立空调/技术手册/【日立】水冷低温螺杆式冷水机组手册.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "Hitachi",
+        "document_kind": "technical_manual",
+        "page_count": "45",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      },
+      {
+        "row_index": 101,
+        "file_name": "【三菱重工】新超级链接系统控制器技术手册（50页）.pdf",
+        "path": "/Volumes/TSD302/pan/a00238/07、三菱重工/技术手册/【三菱重工】新超级链接系统控制器技术手册（50页）.pdf",
+        "batch_group": "C_ocr_multimodal_hold",
+        "brand": "Mitsubishi Heavy Industries",
+        "document_kind": "controller_manual",
+        "page_count": "50",
+        "text_quality": "low_or_no_text",
+        "recommended_mode": "ocr_or_multimodal_first"
+      }
+    ]
+  },
+  "results": [
+    {
+      "name": "oem_text_doclevel",
+      "command": [
+        "/Users/asteroida/work/KnowFabric/venv/bin/python",
+        "scripts/run_hvac_doclevel_extraction_batch.py",
+        "--manifest",
+        "output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline/oem_text_manifest.csv",
+        "--groups",
+        "B_oem_manual_text_first",
+        "--output-dir",
+        "output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch",
+        "--limit",
+        "3",
+        "--execute",
+        "--backends",
+        "deepseek-v4-pro",
+        "--judge-backend",
+        "deepseek-v4-pro-judge",
+        "--target-candidates",
+        "10",
+        "--backend-timeout-seconds",
+        "600"
+      ],
+      "status": "passed",
+      "returncode": 0,
+      "elapsed_seconds": 205.296,
+      "stdout_tail": "start task=1 file=【开利】30AQ开利风冷式热泵机组（28页）-制冷百家网.pdf\nstart backend=deepseek-v4-pro task=1 pages=28 chunks=28 timeout=600s\ndone backend=deepseek-v4-pro task=1 raw=10 anchored=10 final=9\ndone task=1\nstart task=2 file=【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf\nstart backend=deepseek-v4-pro task=2 pages=28 chunks=28 timeout=600s\ndone backend=deepseek-v4-pro task=2 raw=10 anchored=10 final=9\ndone task=2\nstart task=3 file=【海尔】LSQWRF130C-318C风冷涡旋机组维修手册（28页）-制冷百家网.pdf\nstart backend=deepseek-v4-pro task=3 pages=28 chunks=31 timeout=600s\ndone backend=deepseek-v4-pro task=3 raw=10 anchored=10 final=10\ndone task=3\ndoclevel batch tasks=3 report=output/hvac_authority_batch_pipeline/20260507T200558Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200558Z_hvac_doclevel_extraction_batch/REPORT.md\n",
+      "stderr_tail": "Advanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\nAdvanced encoding /UniGB-UTF16-H not implemented yet\n"
+    }
+  ]
+}

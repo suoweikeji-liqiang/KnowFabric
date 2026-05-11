@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "row_index": 4,
+  "file_name": "【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/02、格力/技术手册/【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf",
+  "doc_id": "doc_98015153b0e642eb",
+  "chunks": 95,
+  "manual_tokens_estimated": 24604,
+  "equipment_class_id": "screw_chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 88,
+      "chunks_after": 95,
+      "parse_result": {
+        "job_id": "job_6d3cd7391f6b4dd8",
+        "doc_id": "doc_98015153b0e642eb",
+        "pages_created": 88,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_d141a08ced1c4ad0",
+        "doc_id": "doc_98015153b0e642eb",
+        "chunks_created": 95,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 41,
+      "anchor_passed": 41,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 19,
+      "judge_rejected": 22,
+      "judge_acceptance_rate": 46.3,
+      "judge_rejection_breakdown": {
+        "other": 22
+      },
+      "review_candidates": 19,
+      "by_type": {
+        "parameter_spec": 19
+      },
+      "usage": {
+        "prompt_tokens": 40519,
+        "completion_tokens": 8883,
+        "total_tokens": 49402
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1193,
+        "total_tokens": 2473
+      },
+      "extract_cost_rmb": 0.174855,
+      "judge_cost_rmb": 0.010998,
+      "cost_rmb": 0.185853,
+      "elapsed_seconds": 258.381,
+      "judge_elapsed_seconds": 70.145,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T152651Z_hvac_doclevel_extraction_batch/0004_格力_lhd_系列水冷冷水螺杆机组技术服务手册_88页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T152651Z_hvac_doclevel_extraction_batch/0004_格力_lhd_系列水冷冷水螺杆机组技术服务手册_88页"
+}

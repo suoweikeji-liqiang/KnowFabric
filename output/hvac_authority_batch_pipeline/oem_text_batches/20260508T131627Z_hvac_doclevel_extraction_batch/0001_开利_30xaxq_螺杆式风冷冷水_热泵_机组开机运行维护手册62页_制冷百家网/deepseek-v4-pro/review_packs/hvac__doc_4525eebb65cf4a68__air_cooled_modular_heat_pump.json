@@ -1,0 +1,1561 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T13:20:58.401618+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_4525eebb65cf4a68",
+  "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+  "equipment_class": {
+    "equipment_class_id": "air_cooled_modular_heat_pump",
+    "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+    "label": "Air Cooled Modular Heat Pump",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "symptom",
+      "diagnostic_step"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 19,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_1ded8d6434e56988",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_624bb2c93b1240db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_cooling_capacity",
+        "value": "461",
+        "unit": "kW",
+        "model": "30XA 452G",
+        "title": "30XA 452G nominal cooling capacity",
+        "summary": "Nominal cooling capacity of 30XA 452G is 461 kW under standard conditions."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_624bb2c93b1240db"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; nominal cooling capacity extracted from data table with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_cooling_capacity",
+        "structured_payload": {
+          "parameter_name": "nominal_cooling_capacity",
+          "value": "461",
+          "unit": "kW",
+          "model": "30XA 452G",
+          "title": "30XA 452G nominal cooling capacity",
+          "summary": "Nominal cooling capacity of 30XA 452G is 461 kW under standard conditions."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6cd89c8110ba46e3",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_624bb2c93b1240db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:compressor_input_power",
+      "structured_payload_candidate": {
+        "parameter_name": "compressor_input_power",
+        "value": "129.8",
+        "unit": "kW",
+        "model": "30XA 452G",
+        "title": "30XA 452G compressor input power",
+        "summary": "Compressor input power of 30XA 452G is 129.8 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_624bb2c93b1240db"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; compressor input power extracted from data table with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:compressor_input_power",
+        "structured_payload": {
+          "parameter_name": "compressor_input_power",
+          "value": "129.8",
+          "unit": "kW",
+          "model": "30XA 452G",
+          "title": "30XA 452G compressor input power",
+          "summary": "Compressor input power of 30XA 452G is 129.8 kW."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_48379133fe73aa63",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_624bb2c93b1240db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:refrigerant_charge_circuit_a",
+      "structured_payload_candidate": {
+        "parameter_name": "refrigerant_charge_circuit_A",
+        "value": "85",
+        "unit": "kg",
+        "model": "30XA 452G",
+        "title": "30XA 452G refrigerant charge circuit A",
+        "summary": "Refrigerant charge for circuit A of 30XA 452G is 85 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_624bb2c93b1240db"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; refrigerant charge circuit A extracted from data table with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:refrigerant_charge_circuit_a",
+        "structured_payload": {
+          "parameter_name": "refrigerant_charge_circuit_A",
+          "value": "85",
+          "unit": "kg",
+          "model": "30XA 452G",
+          "title": "30XA 452G refrigerant charge circuit A",
+          "summary": "Refrigerant charge for circuit A of 30XA 452G is 85 kg."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0d672ebdd398f912",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_624bb2c93b1240db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:refrigerant_charge_circuit_b",
+      "structured_payload_candidate": {
+        "parameter_name": "refrigerant_charge_circuit_B",
+        "value": "56",
+        "unit": "kg",
+        "model": "30XA 452G",
+        "title": "30XA 452G refrigerant charge circuit B",
+        "summary": "Refrigerant charge for circuit B of 30XA 452G is 56 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_624bb2c93b1240db"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; refrigerant charge circuit B extracted from data table with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:refrigerant_charge_circuit_b",
+        "structured_payload": {
+          "parameter_name": "refrigerant_charge_circuit_B",
+          "value": "56",
+          "unit": "kg",
+          "model": "30XA 452G",
+          "title": "30XA 452G refrigerant charge circuit B",
+          "summary": "Refrigerant charge for circuit B of 30XA 452G is 56 kg."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_ea8c7d1735133018",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_624bb2c93b1240db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:capacity_control_range",
+      "structured_payload_candidate": {
+        "parameter_name": "capacity_control_range",
+        "value": "15~100",
+        "unit": "%",
+        "model": "30XA 452G",
+        "title": "30XA 452G capacity control range",
+        "summary": "Capacity control range of 30XA 452G is 15~100%."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_624bb2c93b1240db"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; capacity control range extracted from data table with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:capacity_control_range",
+        "structured_payload": {
+          "parameter_name": "capacity_control_range",
+          "value": "15~100",
+          "unit": "%",
+          "model": "30XA 452G",
+          "title": "30XA 452G capacity control range",
+          "summary": "Capacity control range of 30XA 452G is 15~100%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_8d7a60d4493769f3",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_624bb2c93b1240db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:evaporator_water_volume",
+      "structured_payload_candidate": {
+        "parameter_name": "evaporator_water_volume",
+        "value": "70",
+        "unit": "l",
+        "model": "30XA 452G",
+        "title": "30XA 452G evaporator water volume",
+        "summary": "Evaporator water volume of 30XA 452G is 70 liters."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_624bb2c93b1240db",
+        "chunk_ae96e6889dba4d09"
+      ],
+      "source_page_nos": [
+        23,
+        25
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; evaporator water volume extracted from data table with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:evaporator_water_volume",
+        "structured_payload": {
+          "parameter_name": "evaporator_water_volume",
+          "value": "70",
+          "unit": "l",
+          "model": "30XA 452G",
+          "title": "30XA 452G evaporator water volume",
+          "summary": "Evaporator water volume of 30XA 452G is 70 liters."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5306ffc8f66a9778",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_624bb2c93b1240db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:maximum_water_side_pressure",
+      "structured_payload_candidate": {
+        "parameter_name": "maximum_water_side_pressure",
+        "value": "1000",
+        "unit": "kPa",
+        "model": "30XA 452G",
+        "title": "30XA 452G maximum water side pressure",
+        "summary": "Maximum water side pressure of 30XA 452G is 1000 kPa."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_624bb2c93b1240db",
+        "chunk_ae96e6889dba4d09"
+      ],
+      "source_page_nos": [
+        23,
+        25
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; maximum water side pressure extracted from data table with evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:maximum_water_side_pressure",
+        "structured_payload": {
+          "parameter_name": "maximum_water_side_pressure",
+          "value": "1000",
+          "unit": "kPa",
+          "model": "30XA 452G",
+          "title": "30XA 452G maximum water side pressure",
+          "summary": "Maximum water side pressure of 30XA 452G is 1000 kPa."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_570e00b4cb36cb74",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_624bb2c93b1240db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:sound_level",
+      "structured_payload_candidate": {
+        "parameter_name": "sound_level",
+        "value": "80",
+        "unit": "dB(A)",
+        "model": "30XA 452G",
+        "title": "30XA 452G sound level",
+        "summary": "Sound level of 30XA 452G is 80 dB(A) at 1 m distance and 1.5 m height."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_624bb2c93b1240db"
+      ],
+      "source_page_nos": [
+        23
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; sound level extracted from data table with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:sound_level",
+        "structured_payload": {
+          "parameter_name": "sound_level",
+          "value": "80",
+          "unit": "dB(A)",
+          "model": "30XA 452G",
+          "title": "30XA 452G sound level",
+          "summary": "Sound level of 30XA 452G is 80 dB(A) at 1 m distance and 1.5 m height."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_23ce04bb9329941e",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_cooling_capacity",
+        "value": "317",
+        "unit": "kW",
+        "model": "30XQ 320",
+        "title": "30XQ 320 nominal cooling capacity",
+        "summary": "Nominal cooling capacity of 30XQ 320 is 317 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; nominal cooling capacity for 30XQ 320 extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_cooling_capacity",
+        "structured_payload": {
+          "parameter_name": "nominal_cooling_capacity",
+          "value": "317",
+          "unit": "kW",
+          "model": "30XQ 320",
+          "title": "30XQ 320 nominal cooling capacity",
+          "summary": "Nominal cooling capacity of 30XQ 320 is 317 kW."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fa80a748a9b20cad",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_heating_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_heating_capacity",
+        "value": "317",
+        "unit": "kW",
+        "model": "30XQ 320",
+        "title": "30XQ 320 nominal heating capacity",
+        "summary": "Nominal heating capacity of 30XQ 320 is 317 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; nominal heating capacity for 30XQ 320 extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_heating_capacity",
+        "structured_payload": {
+          "parameter_name": "nominal_heating_capacity",
+          "value": "317",
+          "unit": "kW",
+          "model": "30XQ 320",
+          "title": "30XQ 320 nominal heating capacity",
+          "summary": "Nominal heating capacity of 30XQ 320 is 317 kW."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f9a92fd4d949ccc4",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:cooling_cop",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_COP",
+        "value": "3.2",
+        "unit": "",
+        "model": "30XQ 320",
+        "title": "30XQ 320 cooling COP",
+        "summary": "Cooling coefficient of performance of 30XQ 320 is 3.2."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; cooling COP extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:cooling_cop",
+        "structured_payload": {
+          "parameter_name": "cooling_COP",
+          "value": "3.2",
+          "unit": "",
+          "model": "30XQ 320",
+          "title": "30XQ 320 cooling COP",
+          "summary": "Cooling coefficient of performance of 30XQ 320 is 3.2."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5a64864b743d5e2c",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:heating_cop",
+      "structured_payload_candidate": {
+        "parameter_name": "heating_COP",
+        "value": "3.2",
+        "unit": "",
+        "model": "30XQ 320",
+        "title": "30XQ 320 heating COP",
+        "summary": "Heating coefficient of performance of 30XQ 320 is 3.2."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; heating COP extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:heating_cop",
+        "structured_payload": {
+          "parameter_name": "heating_COP",
+          "value": "3.2",
+          "unit": "",
+          "model": "30XQ 320",
+          "title": "30XQ 320 heating COP",
+          "summary": "Heating coefficient of performance of 30XQ 320 is 3.2."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_be42d46992ce036a",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:refrigerant_charge_circuit_a",
+      "structured_payload_candidate": {
+        "parameter_name": "refrigerant_charge_circuit_A",
+        "value": "115",
+        "unit": "kg",
+        "model": "30XQ 320",
+        "title": "30XQ 320 refrigerant charge circuit A",
+        "summary": "Refrigerant charge for circuit A of 30XQ 320 is 115 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; refrigerant charge circuit A for 30XQ 320 extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:refrigerant_charge_circuit_a",
+        "structured_payload": {
+          "parameter_name": "refrigerant_charge_circuit_A",
+          "value": "115",
+          "unit": "kg",
+          "model": "30XQ 320",
+          "title": "30XQ 320 refrigerant charge circuit A",
+          "summary": "Refrigerant charge for circuit A of 30XQ 320 is 115 kg."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9c85d9619875dc29",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:oil_charge_circuit_a",
+      "structured_payload_candidate": {
+        "parameter_name": "oil_charge_circuit_A",
+        "value": "23.5",
+        "unit": "kg",
+        "model": "30XQ 320",
+        "title": "30XQ 320 oil charge circuit A",
+        "summary": "Oil charge for circuit A of 30XQ 320 is 23.5 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; oil charge circuit A for 30XQ 320 extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:oil_charge_circuit_a",
+        "structured_payload": {
+          "parameter_name": "oil_charge_circuit_A",
+          "value": "23.5",
+          "unit": "kg",
+          "model": "30XQ 320",
+          "title": "30XQ 320 oil charge circuit A",
+          "summary": "Oil charge for circuit A of 30XQ 320 is 23.5 kg."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_3823129273ac3072",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:capacity_control_range",
+      "structured_payload_candidate": {
+        "parameter_name": "capacity_control_range",
+        "value": "30%～100%",
+        "unit": "",
+        "model": "30XQ 320",
+        "title": "30XQ 320 capacity control range",
+        "summary": "Capacity control range of 30XQ 320 is 30%～100%."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; capacity control range for 30XQ 320 extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:capacity_control_range",
+        "structured_payload": {
+          "parameter_name": "capacity_control_range",
+          "value": "30%～100%",
+          "unit": "",
+          "model": "30XQ 320",
+          "title": "30XQ 320 capacity control range",
+          "summary": "Capacity control range of 30XQ 320 is 30%～100%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_71d2b41a94e3e7b2",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:evaporator_water_volume",
+      "structured_payload_candidate": {
+        "parameter_name": "evaporator_water_volume",
+        "value": "70",
+        "unit": "l",
+        "model": "30XQ 320",
+        "title": "30XQ 320 evaporator water volume",
+        "summary": "Evaporator water volume of 30XQ 320 is 70 liters."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; evaporator water volume for 30XQ 320 extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:evaporator_water_volume",
+        "structured_payload": {
+          "parameter_name": "evaporator_water_volume",
+          "value": "70",
+          "unit": "l",
+          "model": "30XQ 320",
+          "title": "30XQ 320 evaporator water volume",
+          "summary": "Evaporator water volume of 30XQ 320 is 70 liters."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_949729b6740b7f82",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_water_flow_rate_cooling",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_water_flow_rate_cooling",
+        "value": "15.1",
+        "unit": "l/s",
+        "model": "30XQ 320",
+        "title": "30XQ 320 nominal water flow rate cooling",
+        "summary": "Nominal water flow rate for cooling of 30XQ 320 is 15.1 l/s."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; nominal water flow rate cooling for 30XQ 320 extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_water_flow_rate_cooling",
+        "structured_payload": {
+          "parameter_name": "nominal_water_flow_rate_cooling",
+          "value": "15.1",
+          "unit": "l/s",
+          "model": "30XQ 320",
+          "title": "30XQ 320 nominal water flow rate cooling",
+          "summary": "Nominal water flow rate for cooling of 30XQ 320 is 15.1 l/s."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_b86fe14431dfa97f",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_4b8be36da54b4331",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_water_pressure_drop_cooling",
+      "structured_payload_candidate": {
+        "parameter_name": "nominal_water_pressure_drop_cooling",
+        "value": "21.0",
+        "unit": "kPa",
+        "model": "30XQ 320",
+        "title": "30XQ 320 nominal water pressure drop cooling",
+        "summary": "Nominal water pressure drop for cooling of 30XQ 320 is 21.0 kPa."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4b8be36da54b4331"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; nominal water pressure drop cooling for 30XQ 320 extracted from data table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:nominal_water_pressure_drop_cooling",
+        "structured_payload": {
+          "parameter_name": "nominal_water_pressure_drop_cooling",
+          "value": "21.0",
+          "unit": "kPa",
+          "model": "30XQ 320",
+          "title": "30XQ 320 nominal water pressure drop cooling",
+          "summary": "Nominal water pressure drop for cooling of 30XQ 320 is 21.0 kPa."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 开机运行维护手册\n23\n4.1.2 30XQ\n名义制冷工况：蒸发器进/ 出水温度：12/7℃；室外空气干球温度 35℃\n名义制热工况：冷凝器进/ 出水温度：40/45 ℃；室外空气干球温度 7℃，湿球温度 6℃\n名义制冷量 kW 317 - 633 - 950 - 1266\n机组输入功率 kW 99.0 - 197.8 - 296.8 - 395.6\n制冷性能系数 3.2 - 3.2 - 3.2 - 3.2\n名义制热量 kW 317 - 634 - 951 - 1268\n机组输入功率 kW 98.2 - 196.0 - 294.2 - 392.0\n制热性能系数 3.2 - 3.2 - 3.2 - 3.2\n类型\n充注量，回路A kg 115 - 115 - 115 - 115充注量，回路B kg - - 115 - 115 - 115\n充注量，回路C kg - - - - 115 - 115\n充注量，回路D kg - - - - - - 115\n类型\n充注量，回路A kg 23.5 - 23.5 - 23.5 - 23.5充注量，回路B kg - 23.5 - 23.5 - 23.5充注量，回路C kg - - - 23.5 - 23.5\n充注量，回路D kg - - - - - 23.5\n类型\n数量，回路A 1 - 1 - 1 - 1\n数量，回路B - 1 - 1 - 1\n数量，回路C - 1 - 1\n数量，回路D - - - 1\n% 30%～100% - 15%～100% - 10%～100% - 8%～100%\n类型\n铜管排数 44 - 44 - 44 - 44\n翅片间距 mm 1.4 - 1.4 - 1.4 - 1.4\n迎风面积 m2 13 - 26 - 39 - 52\n类型数量 台 6 - 12 - 18 - 24\n总风量 l/s 27660 - 54168 - 81828 - 108336\n风机功率 kW/台 1.5 - 1.5 - 1.5 - 1.5\n制冷剂回路数 1 - 2 - 3 - 4\n水容量 l 70 - 119 - 189 - 238\n名义水流量（制冷） l/s 15.1 - 30.2 - 45.3 - 60.4\n名义水压降（制冷） kPa 21.0 - 32.0 - 37.5 - 32.0\n名义水流量（制热） l/s 15.1 - 30.3 - 45.4 - 60.6\n名义水压降（制热） kPa 21.0 - 32.2 - 37.5 - 32.2\n水侧最大工作压力 kPa 1000 - 1000 - 1000 - 1000\n进/出水管公称通径 in 6 - 6 - 6 - 6+6\n进/出水管外径 mm 168 - 168 - 168 - 168+168\n机组重量 kg 3953 - 7486 - 11403 - 14972运行重量 kg 4023 - 7605 - 11592 - 15210\ndB(A) 73 - 75 - 77 - 7830XQ320\n压缩机半封闭双螺杆压缩机\nProdialog-Plus微电脑控制系统能量调节范围制冷剂\n油30XQ960 30XQ560\n铜管铝翅片\n运转噪音控制系统\n翅片\n盘管\n重量水热\n交换器第四代“飞鸟TM”低噪声轴流风扇\n风机30XQ1280\nHFC-134a\nCARRIER MATERIAL SPEC PP 47-32制冷\n制热机组型号 30XQ1200 30XQ640 30XQ880\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5306ffc8f66a9778",
+      "domain_id": "hvac",
+      "doc_id": "doc_4525eebb65cf4a68",
+      "doc_name": "【开利】30XAXQ 螺杆式风冷冷水(热泵)机组开机运行维护手册62页-制冷百家网.pdf",
+      "page_no": 23,
+      "chunk_id": "chunk_624bb2c93b1240db",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:parameter_spec:maximum_water_side_pressure",
+      "structured_payload_candidate": {
+        "parameter_name": "maximum_water_side_pressure",
+        "value": "1000",
+        "unit": "kPa",
+        "model": "30XA 452G",
+        "title": "30XA 452G maximum water side pressure without hydraulic module",
+        "summary": "Maximum water side pressure without hydraulic module for 30XA 452G is 1000 kPa."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_624bb2c93b1240db",
+        "chunk_ae96e6889dba4d09"
+      ],
+      "source_page_nos": [
+        23,
+        25
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Valid parameter spec; maximum water side pressure extracted from data table with evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:parameter_spec:maximum_water_side_pressure",
+        "structured_payload": {
+          "parameter_name": "maximum_water_side_pressure",
+          "value": "1000",
+          "unit": "kPa",
+          "model": "30XA 452G",
+          "title": "30XA 452G maximum water side pressure without hydraulic module",
+          "summary": "Maximum water side pressure without hydraulic module for 30XA 452G is 1000 kPa."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "30XA/XQ 机组技术和电气参数\n4.1 30XA/XQ 技术参数——标准机组***\n4.1.1 30XA\n30XA 452G 502G 602G 702G 852G 1002G 1202G 1352G 1502G\n名义制冷量* kW 461 513 632 687 851 1008 1272 1480 1551\n压缩机输入功率* kW 129.8 141.3 175.3 188.8 238.8 288.2 362.5 435.4 432.3\n运行重量** kg 4900 5470 6480 6640 7870 8870 11300 12060 8950/4460\n制冷剂\n充注量，回路A kg 85 102 102 100 130 140 112 112 140\n充注量，回路B kg 56 56 88 95 95 129 92 98 129\n充注量，回路C kg ------ 1 2 0 1 1 7 1 3 0\n压缩机数量，回路A 台 1 11111111\n数量，回路B 台 1 11111111\n数量，回路C 台 ------111\n机组冷量调节范围 %\n15~100 15~100 15~100 15~100 15~100 15~100 10~100 10~100 10~100\n控制系统冷凝器 风机类型\n风机数量 8 9 11 12 14 16 20 20 24\n总风量 l/s 36112 40626 49654 54168 63196 72224 90280 90280 108336\n风机转速 rpm 950 950 950 950 950 950 950 950 950\n蒸发器\n水容量 l 70 77 79 94 119 140 182 224 240\n最高水侧压力**** kPa 1000 1000 1000 1000 1000 1000 1000 1000 1000\n噪音标准***** dB(A) 80 77 79 77 78 79 80 81 80\n*   名义工况：蒸发器进/出口温度=12℃/7℃。 室外温度35℃。 水侧污垢系数=0.000018\n**  重量值作为参考。制冷剂充注量也在机组铭牌上标识。\n**** 最高水侧压力不带水力模块\n*****噪音参数为离机组1米远，1.5米高处的数值\n注意：机组型号 1502由两个模块组成。第四代\"飞鸟TM\"低噪声轴流风扇\n满液式热交换器R-134a\n06T半封闭双 螺杆压缩机,50 r/s\nPro-Dialog  Plus 微电脑控制系统\n铜管铝翅片盘管\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

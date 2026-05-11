@@ -1,0 +1,61 @@
+{
+  "doc_id": "doc_2a7ec347e5f44d9e",
+  "doc_name": "ASHRAE手册 - 基础理论篇.pdf",
+  "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册 - 基础理论篇.pdf",
+  "selected_pages": [
+    6,
+    57,
+    145
+  ],
+  "selected_page_count": 3,
+  "knowledge_types_filter": [
+    "application_guidance",
+    "parameter_spec",
+    "operational_sequence"
+  ],
+  "min_confidence": "high",
+  "equipment_scope_id": "chiller",
+  "subset_pdf": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_2a7ec347e5f44d9e/subset/auto_doc_2a7ec347e5f44d9e.pdf",
+  "manifest_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_2a7ec347e5f44d9e/subset/manifest.csv",
+  "sections": [
+    {
+      "section_title": "Also added are content on PEX pipe, plus expande d applications. Chapter 24, Airflow Around Buildin",
+      "page_start": 6,
+      "page_end": 6,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Also added are content on PEX pipe, plus expande d applications. Chapter 24, Airflow Around Buildings, has new content on flow patterns around building groups and isolated buildings, environ- mental impacts, pollu tant ",
+      "section_source": "unknown",
+      "score": 15
+    },
+    {
+      "section_title": "20 Temporal Increase in Velocity Following Sudden Application of Pressure AB p L f2D",
+      "page_start": 57,
+      "page_end": 57,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "20 Temporal Increase in Velocity Following Sudden Application of Pressure AB p L f2D----------------- p L------2D f------- ==p d ------V2 2------+ p d ------ 12 k k1 –-----------p2 2-----p1 1-----–",
+      "section_source": "unknown",
+      "score": 15
+    },
+    {
+      "section_title": "7.8 2017 ASHRAE Handbook—Fundamentals (SI) ducted application. Th ese are “inherent” curves, where p",
+      "page_start": 145,
+      "page_end": 145,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "7.8 2017 ASHRAE Handbook—Fundamentals (SI) ducted application. Th ese are “inherent” curves, where pressure drop across a damper is held constant as the damper rotates (so it has 100% authority). In real applicati ons, t",
+      "section_source": "unknown",
+      "score": 15
+    }
+  ]
+}

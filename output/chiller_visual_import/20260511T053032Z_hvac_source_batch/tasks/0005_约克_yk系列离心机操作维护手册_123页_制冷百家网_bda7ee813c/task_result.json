@@ -1,0 +1,17 @@
+{
+  "row_index": 5,
+  "path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YK系列离心机操作维护手册（123页）-制冷百家网.pdf",
+  "file_name": "【约克】YK系列离心机操作维护手册（123页）-制冷百家网.pdf",
+  "batch_group": "chiller_visual",
+  "priority": "P1_visual",
+  "brand": "York/JCI",
+  "authority_level": "oem_manual",
+  "document_kind": "technical_manual",
+  "equipment_scope": "centrifugal_chiller",
+  "page_count": "123",
+  "text_quality": "low_or_no_text",
+  "recommended_mode": "visual_page_level",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/chiller_visual_import/20260511T053032Z_hvac_source_batch/tasks/0005_约克_yk系列离心机操作维护手册_123页_制冷百家网_bda7ee813c",
+  "status": "planned"
+}

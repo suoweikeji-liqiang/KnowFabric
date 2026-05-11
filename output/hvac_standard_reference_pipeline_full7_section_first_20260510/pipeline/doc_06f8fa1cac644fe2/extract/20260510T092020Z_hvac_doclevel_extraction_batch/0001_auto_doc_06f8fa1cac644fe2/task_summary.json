@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "auto_doc_06f8fa1cac644fe2.pdf",
+  "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_06f8fa1cac644fe2/subset/auto_doc_06f8fa1cac644fe2.pdf",
+  "doc_id": "doc_77c445eca71546f6",
+  "chunks": 10,
+  "manual_tokens_estimated": 1823,
+  "equipment_class_id": "chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 3,
+      "chunks_after": 10,
+      "parse_result": {
+        "job_id": "job_77eba7fbbd4243ad",
+        "doc_id": "doc_77c445eca71546f6",
+        "pages_created": 3,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_7118bbbb54d544e6",
+        "doc_id": "doc_77c445eca71546f6",
+        "chunks_created": 10,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-parameter-spec",
+      "model": "deepseek-v4-flash",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 15,
+      "anchor_passed": 15,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 13,
+      "judge_rejected": 2,
+      "judge_acceptance_rate": 86.7,
+      "judge_rejection_breakdown": {
+        "weak_evidence": 2
+      },
+      "review_candidates": 13,
+      "by_type": {
+        "parameter_spec": 2,
+        "application_guidance": 10,
+        "maintenance_procedure": 1
+      },
+      "usage": {
+        "prompt_tokens": 2242,
+        "completion_tokens": 1817,
+        "total_tokens": 4059
+      },
+      "judge_usage": {
+        "prompt_tokens": 5340,
+        "completion_tokens": 1070,
+        "total_tokens": 6410
+      },
+      "extract_cost_rmb": 0.006005,
+      "judge_cost_rmb": 0.02244,
+      "cost_rmb": 0.028445,
+      "elapsed_seconds": 27.346,
+      "judge_elapsed_seconds": 35.495,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_06f8fa1cac644fe2/extract/20260510T092020Z_hvac_doclevel_extraction_batch/0001_auto_doc_06f8fa1cac644fe2/deepseek-parameter-spec"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_06f8fa1cac644fe2/extract/20260510T092020Z_hvac_doclevel_extraction_batch/0001_auto_doc_06f8fa1cac644fe2"
+}

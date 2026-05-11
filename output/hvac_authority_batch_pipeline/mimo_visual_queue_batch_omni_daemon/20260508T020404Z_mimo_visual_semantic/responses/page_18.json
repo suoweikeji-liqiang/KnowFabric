@@ -1,0 +1,173 @@
+{
+  "page": 18,
+  "response": {
+    "id": "95c96a71f8d54b37a3f2cc8f2c76e229",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"wiring_diagram\",\n  \"summary\": \"This page shows the electrical wiring diagram for a TICA TCA20X CH/FH heat pump host (three-wire simple controller). It includes a main controller board layout, connection terminals, external component wiring, and configuration tables for DIP switches and model settings. The diagram is intended for installation and troubleshooting, showing connections between the controller, compressors, fans, sensors, and power supply.\",\n  \"visual_entities\": [\n    {\"type\": \"controller_board\", \"label\": \"Main Controller Board (TCA20X)\"},\n    {\"type\": \"terminal_block\", \"label\": \"Terminal Block (OUT1-OUT12, IN1-IN4, etc.)\"},\n    {\"type\": \"power_supply\", \"label\": \"AC 220V Power Input\"},\n    {\"type\": \"compressor\", \"label\": \"Compressor (CM)\"},\n    {\"type\": \"fan_motor\", \"label\": \"Fan Motor (FM)\"},\n    {\"type\": \"solenoid_valve\", \"label\": \"Four-Way Valve (RVR)\"},\n    {\"type\": \"heater\", \"label\": \"Crankcase Heater (CCH)\"},\n    {\"type\": \"sensor\", \"label\": \"Temperature Sensors (TH1-TH4)\"},\n    {\"type\": \"dip_switch\", \"label\": \"DIP Switch (S1)\"},\n    {\"type\": \"jumper\", \"label\": \"Jumper (JP1, JP2)\"},\n    {\"type\": \"connector\", \"label\": \"Communication Connector (A, B)\"},\n    {\"type\": \"fuse\", \"label\": \"Fuse (FU)\"},\n    {\"type\": \"contactor\", \"label\": \"AC Contactor (KM1, KM2)\"},\n    {\"type\": \"overload_protector\", \"label\": \"Phase Sequence Protector (DT)\"},\n    {\"type\": \"table\", \"label\": \"Model Setting Table\"},\n    {\"type\": \"table\", \"label\": \"DIP Switch Setting Table\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Main Controller Board\", \"relation\": \"connects to\", \"to\": \"Terminal Block\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Compressor\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Fan Motor\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Solenoid Valve\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Heater\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Sensors\"},\n    {\"from\": \"AC 220V Power Input\", \"relation\": \"supplies power to\", \"to\": \"Main Controller Board\"},\n    {\"from\": \"Fuse\", \"relation\": \"protects\", \"to\": \"Power Circuit\"},\n    {\"from\": \"Contactor\", \"relation\": \"controls\", \"to\": \"Compressor\"},\n    {\"from\": \"Contactor\", \"relation\": \"controls\", \"to\": \"Fan Motor\"},\n    {\"from\": \"DIP Switch\", \"relation\": \"configures\", \"to\": \"Controller Settings\"},\n    {\"from\": \"Jumper\", \"relation\": \"selects mode for\", \"to\": \"Controller\"}\n  ],\n  \"useful_for_knowledge_types\": [\"wiring_installation\", \"troubleshooting\", \"component_identification\", \"configuration_settings\"],\n  \"ocr_text_if_useful\": \"1、TCA20X CH/FH 热泵型主机电气原理图（三线简易型控制器）\\n注：\\n1、通讯线不能与强电线缆混扎，A/B不能接错；\\n2、排气温度保护根据机组配置而定，以实际为准；\\n3、接线开关可以外接风盘温控器，具体参见安装说明书；\\n4、—— ——现场连接；\\n5、—— ——工厂连接；\\n6、S1拨码开关设定；\\n7、低压开关控制制冷部分，接线时注意区分线控数与数值对应。\\n型号说明：\\n符号 说明 符号 说明\\nKM1-4 交流接触器 FU 电源保险管\\nHP 高压开关 RVR 四通阀\\nFR1-2 热继电器 DT 相序保护器\\nUCPH* 电加热接触开关 CCH 电加热器\\nFM 风机电机 POWER 电源指示\\nCC 压缩机\\n低压开关设定：\\n开关用 FR1\\n开关用 FR2\\n开关用 TCA20XCH 16/21 19/24\\n开关用 0.3~0.4 0.05~0.15\\n开关用 21.6A 21.6A\\n跳线开关设定：\\nJP1 JP2\\n常开 → 制冷\\n常闭 → 制热\\n拨码开关设定：\\nS1拨码设定：\\nMODE 1 2 3 4\\nS1 COND1ON OFF OFF OFF OFF\\nS1 COND2ON OFF OFF OFF ON\\nS1 COND3ON OFF OFF ON OFF\\nS1 COND4ON OFF OFF ON ON\\nS1 COND5ON OFF ON OFF OFF\\nS1 COND6ON OFF ON OFF ON\\nS1 COND7ON OFF ON ON OFF\\nS1 COND8ON OFF ON ON ON\\nS1 COND9ON ON OFF OFF OFF\\nS1 COND10ON ON OFF OFF ON\\nS1 COND11ON ON OFF ON OFF\\nS1 COND12ON ON OFF ON ON\\nS1 COND13ON ON ON OFF OFF\\nS1 COND14ON ON ON OFF ON\\nS1 COND15ON ON ON ON OFF\\nS1 COND16ON ON ON ON ON\",\n  \"uncertainty_notes\": \"Some component labels are partially obscured or small; relationships are based on typical wiring conventions and visible lines, but exact pin mappings may require closer inspection. The diagram includes both Chinese and English labels, with some abbreviations (e.g., CCH, RVR) that are defined in the symbol table.\",\n  \"confidence\": 0.9\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778207733,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1369,
+      "prompt_tokens": 1693,
+      "total_tokens": 3062,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "image_tokens": 1496
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "wiring_diagram",
+    "summary": "This page shows the electrical wiring diagram for a TICA TCA20X CH/FH heat pump host (three-wire simple controller). It includes a main controller board layout, connection terminals, external component wiring, and configuration tables for DIP switches and model settings. The diagram is intended for installation and troubleshooting, showing connections between the controller, compressors, fans, sensors, and power supply.",
+    "visual_entities": [
+      {
+        "type": "controller_board",
+        "label": "Main Controller Board (TCA20X)"
+      },
+      {
+        "type": "terminal_block",
+        "label": "Terminal Block (OUT1-OUT12, IN1-IN4, etc.)"
+      },
+      {
+        "type": "power_supply",
+        "label": "AC 220V Power Input"
+      },
+      {
+        "type": "compressor",
+        "label": "Compressor (CM)"
+      },
+      {
+        "type": "fan_motor",
+        "label": "Fan Motor (FM)"
+      },
+      {
+        "type": "solenoid_valve",
+        "label": "Four-Way Valve (RVR)"
+      },
+      {
+        "type": "heater",
+        "label": "Crankcase Heater (CCH)"
+      },
+      {
+        "type": "sensor",
+        "label": "Temperature Sensors (TH1-TH4)"
+      },
+      {
+        "type": "dip_switch",
+        "label": "DIP Switch (S1)"
+      },
+      {
+        "type": "jumper",
+        "label": "Jumper (JP1, JP2)"
+      },
+      {
+        "type": "connector",
+        "label": "Communication Connector (A, B)"
+      },
+      {
+        "type": "fuse",
+        "label": "Fuse (FU)"
+      },
+      {
+        "type": "contactor",
+        "label": "AC Contactor (KM1, KM2)"
+      },
+      {
+        "type": "overload_protector",
+        "label": "Phase Sequence Protector (DT)"
+      },
+      {
+        "type": "table",
+        "label": "Model Setting Table"
+      },
+      {
+        "type": "table",
+        "label": "DIP Switch Setting Table"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "Main Controller Board",
+        "relation": "connects to",
+        "to": "Terminal Block"
+      },
+      {
+        "from": "Terminal Block",
+        "relation": "connects to",
+        "to": "Compressor"
+      },
+      {
+        "from": "Terminal Block",
+        "relation": "connects to",
+        "to": "Fan Motor"
+      },
+      {
+        "from": "Terminal Block",
+        "relation": "connects to",
+        "to": "Solenoid Valve"
+      },
+      {
+        "from": "Terminal Block",
+        "relation": "connects to",
+        "to": "Heater"
+      },
+      {
+        "from": "Terminal Block",
+        "relation": "connects to",
+        "to": "Sensors"
+      },
+      {
+        "from": "AC 220V Power Input",
+        "relation": "supplies power to",
+        "to": "Main Controller Board"
+      },
+      {
+        "from": "Fuse",
+        "relation": "protects",
+        "to": "Power Circuit"
+      },
+      {
+        "from": "Contactor",
+        "relation": "controls",
+        "to": "Compressor"
+      },
+      {
+        "from": "Contactor",
+        "relation": "controls",
+        "to": "Fan Motor"
+      },
+      {
+        "from": "DIP Switch",
+        "relation": "configures",
+        "to": "Controller Settings"
+      },
+      {
+        "from": "Jumper",
+        "relation": "selects mode for",
+        "to": "Controller"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "wiring_installation",
+      "troubleshooting",
+      "component_identification",
+      "configuration_settings"
+    ],
+    "ocr_text_if_useful": "1、TCA20X CH/FH 热泵型主机电气原理图（三线简易型控制器）\n注：\n1、通讯线不能与强电线缆混扎，A/B不能接错；\n2、排气温度保护根据机组配置而定，以实际为准；\n3、接线开关可以外接风盘温控器，具体参见安装说明书；\n4、—— ——现场连接；\n5、—— ——工厂连接；\n6、S1拨码开关设定；\n7、低压开关控制制冷部分，接线时注意区分线控数与数值对应。\n型号说明：\n符号 说明 符号 说明\nKM1-4 交流接触器 FU 电源保险管\nHP 高压开关 RVR 四通阀\nFR1-2 热继电器 DT 相序保护器\nUCPH* 电加热接触开关 CCH 电加热器\nFM 风机电机 POWER 电源指示\nCC 压缩机\n低压开关设定：\n开关用 FR1\n开关用 FR2\n开关用 TCA20XCH 16/21 19/24\n开关用 0.3~0.4 0.05~0.15\n开关用 21.6A 21.6A\n跳线开关设定：\nJP1 JP2\n常开 → 制冷\n常闭 → 制热\n拨码开关设定：\nS1拨码设定：\nMODE 1 2 3 4\nS1 COND1ON OFF OFF OFF OFF\nS1 COND2ON OFF OFF OFF ON\nS1 COND3ON OFF OFF ON OFF\nS1 COND4ON OFF OFF ON ON\nS1 COND5ON OFF ON OFF OFF\nS1 COND6ON OFF ON OFF ON\nS1 COND7ON OFF ON ON OFF\nS1 COND8ON OFF ON ON ON\nS1 COND9ON ON OFF OFF OFF\nS1 COND10ON ON OFF OFF ON\nS1 COND11ON ON OFF ON OFF\nS1 COND12ON ON OFF ON ON\nS1 COND13ON ON ON OFF OFF\nS1 COND14ON ON ON OFF ON\nS1 COND15ON ON ON ON OFF\nS1 COND16ON ON ON ON ON",
+    "uncertainty_notes": "Some component labels are partially obscured or small; relationships are based on typical wiring conventions and visible lines, but exact pin mappings may require closer inspection. The diagram includes both Chinese and English labels, with some abbreviations (e.g., CCH, RVR) that are defined in the symbol table.",
+    "confidence": 0.9
+  },
+  "raw_text": "{\n  \"page_type\": \"wiring_diagram\",\n  \"summary\": \"This page shows the electrical wiring diagram for a TICA TCA20X CH/FH heat pump host (three-wire simple controller). It includes a main controller board layout, connection terminals, external component wiring, and configuration tables for DIP switches and model settings. The diagram is intended for installation and troubleshooting, showing connections between the controller, compressors, fans, sensors, and power supply.\",\n  \"visual_entities\": [\n    {\"type\": \"controller_board\", \"label\": \"Main Controller Board (TCA20X)\"},\n    {\"type\": \"terminal_block\", \"label\": \"Terminal Block (OUT1-OUT12, IN1-IN4, etc.)\"},\n    {\"type\": \"power_supply\", \"label\": \"AC 220V Power Input\"},\n    {\"type\": \"compressor\", \"label\": \"Compressor (CM)\"},\n    {\"type\": \"fan_motor\", \"label\": \"Fan Motor (FM)\"},\n    {\"type\": \"solenoid_valve\", \"label\": \"Four-Way Valve (RVR)\"},\n    {\"type\": \"heater\", \"label\": \"Crankcase Heater (CCH)\"},\n    {\"type\": \"sensor\", \"label\": \"Temperature Sensors (TH1-TH4)\"},\n    {\"type\": \"dip_switch\", \"label\": \"DIP Switch (S1)\"},\n    {\"type\": \"jumper\", \"label\": \"Jumper (JP1, JP2)\"},\n    {\"type\": \"connector\", \"label\": \"Communication Connector (A, B)\"},\n    {\"type\": \"fuse\", \"label\": \"Fuse (FU)\"},\n    {\"type\": \"contactor\", \"label\": \"AC Contactor (KM1, KM2)\"},\n    {\"type\": \"overload_protector\", \"label\": \"Phase Sequence Protector (DT)\"},\n    {\"type\": \"table\", \"label\": \"Model Setting Table\"},\n    {\"type\": \"table\", \"label\": \"DIP Switch Setting Table\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Main Controller Board\", \"relation\": \"connects to\", \"to\": \"Terminal Block\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Compressor\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Fan Motor\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Solenoid Valve\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Heater\"},\n    {\"from\": \"Terminal Block\", \"relation\": \"connects to\", \"to\": \"Sensors\"},\n    {\"from\": \"AC 220V Power Input\", \"relation\": \"supplies power to\", \"to\": \"Main Controller Board\"},\n    {\"from\": \"Fuse\", \"relation\": \"protects\", \"to\": \"Power Circuit\"},\n    {\"from\": \"Contactor\", \"relation\": \"controls\", \"to\": \"Compressor\"},\n    {\"from\": \"Contactor\", \"relation\": \"controls\", \"to\": \"Fan Motor\"},\n    {\"from\": \"DIP Switch\", \"relation\": \"configures\", \"to\": \"Controller Settings\"},\n    {\"from\": \"Jumper\", \"relation\": \"selects mode for\", \"to\": \"Controller\"}\n  ],\n  \"useful_for_knowledge_types\": [\"wiring_installation\", \"troubleshooting\", \"component_identification\", \"configuration_settings\"],\n  \"ocr_text_if_useful\": \"1、TCA20X CH/FH 热泵型主机电气原理图（三线简易型控制器）\\n注：\\n1、通讯线不能与强电线缆混扎，A/B不能接错；\\n2、排气温度保护根据机组配置而定，以实际为准；\\n3、接线开关可以外接风盘温控器，具体参见安装说明书；\\n4、—— ——现场连接；\\n5、—— ——工厂连接；\\n6、S1拨码开关设定；\\n7、低压开关控制制冷部分，接线时注意区分线控数与数值对应。\\n型号说明：\\n符号 说明 符号 说明\\nKM1-4 交流接触器 FU 电源保险管\\nHP 高压开关 RVR 四通阀\\nFR1-2 热继电器 DT 相序保护器\\nUCPH* 电加热接触开关 CCH 电加热器\\nFM 风机电机 POWER 电源指示\\nCC 压缩机\\n低压开关设定：\\n开关用 FR1\\n开关用 FR2\\n开关用 TCA20XCH 16/21 19/24\\n开关用 0.3~0.4 0.05~0.15\\n开关用 21.6A 21.6A\\n跳线开关设定：\\nJP1 JP2\\n常开 → 制冷\\n常闭 → 制热\\n拨码开关设定：\\nS1拨码设定：\\nMODE 1 2 3 4\\nS1 COND1ON OFF OFF OFF OFF\\nS1 COND2ON OFF OFF OFF ON\\nS1 COND3ON OFF OFF ON OFF\\nS1 COND4ON OFF OFF ON ON\\nS1 COND5ON OFF ON OFF OFF\\nS1 COND6ON OFF ON OFF ON\\nS1 COND7ON OFF ON ON OFF\\nS1 COND8ON OFF ON ON ON\\nS1 COND9ON ON OFF OFF OFF\\nS1 COND10ON ON OFF OFF ON\\nS1 COND11ON ON OFF ON OFF\\nS1 COND12ON ON OFF ON ON\\nS1 COND13ON ON ON OFF OFF\\nS1 COND14ON ON ON OFF ON\\nS1 COND15ON ON ON ON OFF\\nS1 COND16ON ON ON ON ON\",\n  \"uncertainty_notes\": \"Some component labels are partially obscured or small; relationships are based on typical wiring conventions and visible lines, but exact pin mappings may require closer inspection. The diagram includes both Chinese and English labels, with some abbreviations (e.g., CCH, RVR) that are defined in the symbol table.\",\n  \"confidence\": 0.9\n}"
+}

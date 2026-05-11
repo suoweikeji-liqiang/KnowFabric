@@ -1,0 +1,30 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-07T08:51:58.225678+00:00",
+  "pack_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0011_格力_中央空调_mb_系列模块式风冷冷_热_水机组手册_bc189981af/review_bundle/review_packs",
+  "output_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0011_格力_中央空调_mb_系列模块式风冷冷_热_水机组手册_bc189981af/review_bundle/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 2,
+  "total_entries_updated": 4,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 2,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_4e2320e9f928474e__air_cooled_modular_heat_pump.json",
+      "source_path": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0011_格力_中央空调_mb_系列模块式风冷冷_热_水机组手册_bc189981af/review_bundle/review_packs/hvac__doc_4e2320e9f928474e__air_cooled_modular_heat_pump.json",
+      "status": "bootstrapped",
+      "entries_updated": 1,
+      "output_path": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0011_格力_中央空调_mb_系列模块式风冷冷_热_水机组手册_bc189981af/review_bundle/review_packs/bootstrapped_review_packs/hvac__doc_4e2320e9f928474e__air_cooled_modular_heat_pump.json"
+    },
+    {
+      "pack_file": "hvac__doc_4e2320e9f928474e__chiller.json",
+      "source_path": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0011_格力_中央空调_mb_系列模块式风冷冷_热_水机组手册_bc189981af/review_bundle/review_packs/hvac__doc_4e2320e9f928474e__chiller.json",
+      "status": "bootstrapped",
+      "entries_updated": 3,
+      "output_path": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0011_格力_中央空调_mb_系列模块式风冷冷_热_水机组手册_bc189981af/review_bundle/review_packs/bootstrapped_review_packs/hvac__doc_4e2320e9f928474e__chiller.json"
+    }
+  ]
+}

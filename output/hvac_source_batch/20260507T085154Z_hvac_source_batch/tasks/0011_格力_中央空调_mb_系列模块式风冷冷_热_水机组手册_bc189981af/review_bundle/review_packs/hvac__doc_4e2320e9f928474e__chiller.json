@@ -1,0 +1,344 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-07T08:51:58.223744+00:00",
+  "source_generation_mode": "chunk_backfill_review_candidate",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_4e2320e9f928474e",
+  "doc_name": "【格力】中央空调 MB 系列模块式风冷冷（热）水机组手册-.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chiller",
+    "equipment_class_key": "hvac:chiller",
+    "label": "Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "operational_sequence",
+      "fault_diagnostic_rule"
+    ]
+  },
+  "filters_applied": {
+    "doc_id": "doc_4e2320e9f928474e",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 3,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_02d1d30ff084289d",
+      "domain_id": "hvac",
+      "doc_id": "doc_4e2320e9f928474e",
+      "doc_name": "【格力】中央空调 MB 系列模块式风冷冷（热）水机组手册-.pdf",
+      "page_id": "page_b84759525dc2410a",
+      "page_no": 1,
+      "chunk_id": "chunk_4d25023e502c436a",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "格力 MB 系列模块式风冷冷（热）水机组手册\n一、产品概述\n1、产品特点\n模块式风冷冷（热）水机组广泛应用于新建和改建的大小工业与民用建筑空调工程，如宾馆、公寓、\n酒店、\n餐厅、办公大楼、购物商场、影剧院、体育馆、厂房及医院等。对噪音和周围环境有较高要求、不\n便安装冷却塔的工程，模块式风冷冷（热）水机组更是您理想的选择。\nMB(N)系列模块式风冷冷（热）水机组可组合多个单元模块，各单元模块的结构形",
+      "evidence_text": "格力 MB 系列模块式风冷冷（热）水机组手册 一、产品概述 1、产品特点 模块式风冷冷（热）水机组广泛应用于新建和改建的大小工业与民用建筑空调工程，如宾馆、公寓、 酒店、 餐厅、办公大楼、购物商场、影剧院、体育馆、厂房及医院等。对噪音和周围环境有较高要求、不 便安装冷却塔的工程，模块式风冷冷（热）水机组更是您理想的选择。 MB(N)系列模块式风冷冷（热）水机组可组合多个单元模块，各单元模块的结构形式、性能可以相同， 也可以不同，每...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "performance_mb_1_mb_n",
+      "structured_payload_candidate": {
+        "parameter_name": "mb_1_mb_n",
+        "parameter_category": "performance"
+      },
+      "confidence_score": 0.798,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [
+          {
+            "equipment_class_id": "cooling_tower",
+            "equipment_class_key": "hvac:cooling_tower",
+            "confidence": 0.443,
+            "matched_aliases": [
+              "冷却塔"
+            ]
+          },
+          {
+            "equipment_class_id": "air_cooled_modular_heat_pump",
+            "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+            "confidence": 0.383,
+            "matched_aliases": [
+              "模块机"
+            ]
+          },
+          {
+            "equipment_class_id": "modular_chiller",
+            "equipment_class_key": "hvac:modular_chiller",
+            "confidence": 0.383,
+            "matched_aliases": [
+              "模块机"
+            ]
+          }
+        ],
+        "knowledge_signal": {
+          "matched_category": "performance",
+          "detection_method": "performance_context"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "performance context markers and value-with-unit parsing matched"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "performance_mb_1_mb_n",
+        "structured_payload": {
+          "parameter_name": "mb_1_mb_n",
+          "parameter_category": "performance"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "格力 MB 系列模块式风冷冷（热）水机组手册 一、产品概述 1、产品特点 模块式风冷冷（热）水机组广泛应用于新建和改建的大小工业与民用建筑空调工程，如宾馆、公寓、 酒店、 餐厅、办公大楼、购物商场、影剧院、体育馆、厂房及医院等。对噪音和周围环境有较高要求、不 便安装冷却塔的工程，模块式风冷冷（热）水机组更是您理想的选择。 MB(N)系列模块式风冷冷（热）水机组可组合多个单元模块，各单元模块的结构形式、性能可以相同， 也可以不同，每...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_4346452554caa31c",
+      "domain_id": "hvac",
+      "doc_id": "doc_4e2320e9f928474e",
+      "doc_name": "【格力】中央空调 MB 系列模块式风冷冷（热）水机组手册-.pdf",
+      "page_id": "page_5d290600a3e649ce",
+      "page_no": 3,
+      "chunk_id": "chunk_97e4c6dcdad34566",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "2、产品命名规则\nLS QW R F 65 M / B\n1 2 3 4 5 6  7\n序号 代号描述 可选项\n1 机组代号 LS- 冷水机组\n2 压缩机类型 QW- 全封闭涡 旋式压缩机\n缺省-单冷机组\n3 机组功能代号\nR-表示热泵机组\n4 冷凝器冷却方式 F- 表示风冷型\n5 额定制冷量 额定制冷量= 数字（ kW）\n6 组合方式 M- 表示模块式\nB-B系列机组、工质为 R22，\n7 设计代",
+      "evidence_text": "2、产品命名规则 LS QW R F 65 M / B 1 2 3 4 5 6 7 序号 代号描述 可选项 1 机组代号 LS- 冷水机组 2 压缩机类型 QW- 全封闭涡 旋式压缩机 缺省-单冷机组 3 机组功能代号 R-表示热泵机组 4 冷凝器冷却方式 F- 表示风冷型 5 额定制冷量 额定制冷量= 数字（ kW） 6 组合方式 M- 表示模块式 B-B系列机组、工质为 R22， 7 设计代号 N-新工质机组、工质为 R407...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "capacity_2_ls_qw_r_f_65",
+      "structured_payload_candidate": {
+        "parameter_name": "2_ls_qw_r_f_65",
+        "parameter_category": "capacity"
+      },
+      "confidence_score": 0.798,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_category": "capacity",
+          "detection_method": "performance_context"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "performance context markers and value-with-unit parsing matched"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "capacity_2_ls_qw_r_f_65",
+        "structured_payload": {
+          "parameter_name": "2_ls_qw_r_f_65",
+          "parameter_category": "capacity"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "2、产品命名规则 LS QW R F 65 M / B 1 2 3 4 5 6 7 序号 代号描述 可选项 1 机组代号 LS- 冷水机组 2 压缩机类型 QW- 全封闭涡 旋式压缩机 缺省-单冷机组 3 机组功能代号 R-表示热泵机组 4 冷凝器冷却方式 F- 表示风冷型 5 额定制冷量 额定制冷量= 数字（ kW） 6 组合方式 M- 表示模块式 B-B系列机组、工质为 R22， 7 设计代号 N-新工质机组、工质为 R407...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_639c2670ebdd053b",
+      "domain_id": "hvac",
+      "doc_id": "doc_4e2320e9f928474e",
+      "doc_name": "【格力】中央空调 MB 系列模块式风冷冷（热）水机组手册-.pdf",
+      "page_id": "page_b84759525dc2410a",
+      "page_no": 1,
+      "chunk_id": "chunk_4d25023e502c436a",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "格力 MB 系列模块式风冷冷（热）水机组手册\n一、产品概述\n1、产品特点\n模块式风冷冷（热）水机组广泛应用于新建和改建的大小工业与民用建筑空调工程，如宾馆、公寓、\n酒店、\n餐厅、办公大楼、购物商场、影剧院、体育馆、厂房及医院等。对噪音和周围环境有较高要求、不\n便安装冷却塔的工程，模块式风冷冷（热）水机组更是您理想的选择。\nMB(N)系列模块式风冷冷（热）水机组可组合多个单元模块，各单元模块的结构形",
+      "evidence_text": "格力 MB 系列模块式风冷冷（热）水机组手册 一、产品概述 1、产品特点 模块式风冷冷（热）水机组广泛应用于新建和改建的大小工业与民用建筑空调工程，如宾馆、公寓、 酒店、 餐厅、办公大楼、购物商场、影剧院、体育馆、厂房及医院等。对噪音和周围环境有较高要求、不 便安装冷却塔的工程，模块式风冷冷（热）水机组更是您理想的选择。 MB(N)系列模块式风冷冷（热）水机组可组合多个单元模块，各单元模块的结构形式、性能可以相同， 也可以不同，每...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "application_mb_1_mb_n",
+      "structured_payload_candidate": {
+        "application_type": "application",
+        "guidance": "格力 MB 系列模块式风冷冷（热）水机组手册\n一、产品概述\n1、产品特点\n模块式风冷冷（热）水机组广泛应用于新建和改建的大小工业与民用建筑空调工程，如宾馆、公寓、\n酒店、\n餐厅、办公大楼、购物商场、影剧院、体育馆、厂房及医院等。对噪音和周围环境有较高要求、不\n便安装冷却塔的工程，模块式风冷冷（热）水机组更是您理想的选择。\nMB(N)系列模块式风冷冷（热）水机组可组合多个单元模块，各单元模块的结构形"
+      },
+      "confidence_score": 0.758,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [
+          {
+            "equipment_class_id": "cooling_tower",
+            "equipment_class_key": "hvac:cooling_tower",
+            "confidence": 0.443,
+            "matched_aliases": [
+              "冷却塔"
+            ]
+          },
+          {
+            "equipment_class_id": "air_cooled_modular_heat_pump",
+            "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+            "confidence": 0.383,
+            "matched_aliases": [
+              "模块机"
+            ]
+          },
+          {
+            "equipment_class_id": "modular_chiller",
+            "equipment_class_key": "hvac:modular_chiller",
+            "confidence": 0.383,
+            "matched_aliases": [
+              "模块机"
+            ]
+          }
+        ],
+        "knowledge_signal": {
+          "matched_application_type": "application",
+          "detection_method": "application_context"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "application domain markers matched"
+      },
+      "health_findings": [
+        {
+          "code": "weak_evidence",
+          "severity": "medium",
+          "message": "Candidate relies on limited confidence or a short evidence span."
+        },
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "application_mb_1_mb_n",
+        "structured_payload": {
+          "application_type": "application",
+          "guidance": "格力 MB 系列模块式风冷冷（热）水机组手册\n一、产品概述\n1、产品特点\n模块式风冷冷（热）水机组广泛应用于新建和改建的大小工业与民用建筑空调工程，如宾馆、公寓、\n酒店、\n餐厅、办公大楼、购物商场、影剧院、体育馆、厂房及医院等。对噪音和周围环境有较高要求、不\n便安装冷却塔的工程，模块式风冷冷（热）水机组更是您理想的选择。\nMB(N)系列模块式风冷冷（热）水机组可组合多个单元模块，各单元模块的结构形"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "格力 MB 系列模块式风冷冷（热）水机组手册 一、产品概述 1、产品特点 模块式风冷冷（热）水机组广泛应用于新建和改建的大小工业与民用建筑空调工程，如宾馆、公寓、 酒店、 餐厅、办公大楼、购物商场、影剧院、体育馆、厂房及医院等。对噪音和周围环境有较高要求、不 便安装冷却塔的工程，模块式风冷冷（热）水机组更是您理想的选择。 MB(N)系列模块式风冷冷（热）水机组可组合多个单元模块，各单元模块的结构形式、性能可以相同， 也可以不同，每...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

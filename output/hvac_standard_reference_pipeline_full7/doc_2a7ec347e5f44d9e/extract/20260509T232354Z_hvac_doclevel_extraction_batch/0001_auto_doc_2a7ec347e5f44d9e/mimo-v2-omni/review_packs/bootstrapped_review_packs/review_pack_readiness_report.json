@@ -1,0 +1,34 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-09T23:24:42.471717+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_2a7ec347e5f44d9e/extract/20260509T232354Z_hvac_doclevel_extraction_batch/0001_auto_doc_2a7ec347e5f44d9e/mimo-v2-omni/review_packs/bootstrapped_review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 0,
+    "blocked_pending": 1,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_03856f9397e94a3b__controller.json",
+      "pack_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_2a7ec347e5f44d9e/extract/20260509T232354Z_hvac_doclevel_extraction_batch/0001_auto_doc_2a7ec347e5f44d9e/mimo-v2-omni/review_packs/bootstrapped_review_packs/hvac__doc_03856f9397e94a3b__controller.json",
+      "doc_id": "doc_03856f9397e94a3b",
+      "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "equipment_class_id": "controller",
+      "equipment_class_key": "hvac:controller",
+      "candidate_count": 9,
+      "accepted_count": 0,
+      "rejected_count": 0,
+      "pending_count": 9,
+      "status": "blocked_pending",
+      "blocker": "pending_review_decisions"
+    }
+  ]
+}

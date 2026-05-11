@@ -1,0 +1,108 @@
+{
+  "run_id": "20260510T121600Z_hvac_doclevel_extraction_batch",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_4a9b0fec1dfb4103/extract/20260510T121600Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "completed",
+      "row_index": 1,
+      "file_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_4a9b0fec1dfb4103/subset/auto_doc_4a9b0fec1dfb4103.pdf",
+      "doc_id": "doc_a5d70e8fe23a4fbb",
+      "chunks": 100,
+      "manual_tokens_estimated": 21784,
+      "equipment_class_id": "condenser_water_pump",
+      "equipment_alternatives": [
+        {
+          "equipment_class_id": "cooling_tower",
+          "equipment_class_key": "hvac:cooling_tower",
+          "confidence": 0.721,
+          "matched_aliases": [
+            "Cooling Tower",
+            "cooling tower"
+          ]
+        },
+        {
+          "equipment_class_id": "valve",
+          "equipment_class_key": "hvac:valve",
+          "confidence": 0.661,
+          "matched_aliases": [
+            "Valve",
+            "control valve",
+            "valve"
+          ]
+        },
+        {
+          "equipment_class_id": "chiller",
+          "equipment_class_key": "hvac:chiller",
+          "confidence": 0.554,
+          "matched_aliases": [
+            "Chiller",
+            "chiller"
+          ]
+        }
+      ],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 14,
+          "chunks_after": 100,
+          "parse_result": {
+            "job_id": "job_94c08e33b51d4f58",
+            "doc_id": "doc_a5d70e8fe23a4fbb",
+            "pages_created": 14,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_f17cd2a39eb04505",
+            "doc_id": "doc_a5d70e8fe23a4fbb",
+            "chunks_created": 100,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "mimo-v2-omni",
+          "model": "mimo-v2-omni",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 10,
+          "anchor_passed": 10,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 9,
+          "judge_rejected": 1,
+          "judge_acceptance_rate": 90.0,
+          "judge_rejection_breakdown": {
+            "weak_evidence": 1
+          },
+          "review_candidates": 9,
+          "by_type": {
+            "application_guidance": 6,
+            "parameter_spec": 2,
+            "maintenance_procedure": 1
+          },
+          "usage": {
+            "prompt_tokens": 21860,
+            "completion_tokens": 1223,
+            "total_tokens": 23083
+          },
+          "judge_usage": {
+            "prompt_tokens": 3695,
+            "completion_tokens": 699,
+            "total_tokens": 4394
+          },
+          "extract_cost_rmb": 0.0,
+          "judge_cost_rmb": 0.015279,
+          "cost_rmb": 0.015279,
+          "elapsed_seconds": 11.893,
+          "judge_elapsed_seconds": 24.261,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_4a9b0fec1dfb4103/extract/20260510T121600Z_hvac_doclevel_extraction_batch/0001_auto_doc_4a9b0fec1dfb4103/mimo-v2-omni"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_4a9b0fec1dfb4103/extract/20260510T121600Z_hvac_doclevel_extraction_batch/0001_auto_doc_4a9b0fec1dfb4103"
+    }
+  ]
+}

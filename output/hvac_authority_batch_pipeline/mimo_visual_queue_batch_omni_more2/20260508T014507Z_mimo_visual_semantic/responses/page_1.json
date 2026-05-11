@@ -1,0 +1,106 @@
+{
+  "page": 1,
+  "response": {
+    "id": "989b87c24bdb4f59bf6f5a179a5c5129",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"equipment_structure\",\n  \"summary\": \"This is the cover page of a YORK YEWS water-cooled screw chiller installation, operation, and maintenance manual. It features a photograph of the chiller unit, model range YEWS100-YEWS200, and a safety warning about pressurized refrigerant.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and model information\"},\n    {\"type\": \"equipment_image\", \"label\": \"YEWS water-cooled screw chiller unit\"},\n    {\"type\": \"control_panel\", \"label\": \"Chiller control panel with display\"},\n    {\"type\": \"compressor\", \"label\": \"Screw compressor assembly\"},\n    {\"type\": \"vessel\", \"label\": \"Evaporator/condenser shell\"},\n    {\"type\": \"piping\", \"label\": \"Refrigerant and water piping\"},\n    {\"type\": \"warning_box\", \"label\": \"Safety warning about pressurized refrigerant\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"YORK logo\", \"relation\": \"is part of\", \"to\": \"Manual title and model information\"},\n    {\"from\": \"control_panel\", \"relation\": \"is mounted on\", \"to\": \"equipment_image\"},\n    {\"from\": \"compressor\", \"relation\": \"is connected to\", \"to\": \"vessel\"},\n    {\"from\": \"piping\", \"relation\": \"connects\", \"to\": \"compressor\"},\n    {\"from\": \"piping\", \"relation\": \"connects\", \"to\": \"vessel\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"safety_procedures\", \"manual_navigation\"],\n  \"ocr_text_if_useful\": \"YORK YEWS水冷螺杆式冷水机组\\n安装、操作和维护手册\\n替代:0704\\nSC-E08.10M-WX (0405)\\nYEWS100 ~ YEWS200\\n警告\\n系统内充注了一定压力的制冷剂\\n对系统进行维护时，如果操作程序不正确，可能严重损伤系统，所有维护工作必须由约克维修技术人员按照约克的安装，操作维护手册来进行。\",\n  \"uncertainty_notes\": \"The specific functions of the visible piping and vessel components cannot be determined from this image alone. The exact model within the YEWS100-YEWS200 range is not specified.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204716,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 556,
+      "prompt_tokens": 2437,
+      "total_tokens": 2993,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "equipment_structure",
+    "summary": "This is the cover page of a YORK YEWS water-cooled screw chiller installation, operation, and maintenance manual. It features a photograph of the chiller unit, model range YEWS100-YEWS200, and a safety warning about pressurized refrigerant.",
+    "visual_entities": [
+      {
+        "type": "logo",
+        "label": "YORK logo"
+      },
+      {
+        "type": "text_block",
+        "label": "Manual title and model information"
+      },
+      {
+        "type": "equipment_image",
+        "label": "YEWS water-cooled screw chiller unit"
+      },
+      {
+        "type": "control_panel",
+        "label": "Chiller control panel with display"
+      },
+      {
+        "type": "compressor",
+        "label": "Screw compressor assembly"
+      },
+      {
+        "type": "vessel",
+        "label": "Evaporator/condenser shell"
+      },
+      {
+        "type": "piping",
+        "label": "Refrigerant and water piping"
+      },
+      {
+        "type": "warning_box",
+        "label": "Safety warning about pressurized refrigerant"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "YORK logo",
+        "relation": "is part of",
+        "to": "Manual title and model information"
+      },
+      {
+        "from": "control_panel",
+        "relation": "is mounted on",
+        "to": "equipment_image"
+      },
+      {
+        "from": "compressor",
+        "relation": "is connected to",
+        "to": "vessel"
+      },
+      {
+        "from": "piping",
+        "relation": "connects",
+        "to": "compressor"
+      },
+      {
+        "from": "piping",
+        "relation": "connects",
+        "to": "vessel"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "equipment_identification",
+      "safety_procedures",
+      "manual_navigation"
+    ],
+    "ocr_text_if_useful": "YORK YEWS水冷螺杆式冷水机组\n安装、操作和维护手册\n替代:0704\nSC-E08.10M-WX (0405)\nYEWS100 ~ YEWS200\n警告\n系统内充注了一定压力的制冷剂\n对系统进行维护时，如果操作程序不正确，可能严重损伤系统，所有维护工作必须由约克维修技术人员按照约克的安装，操作维护手册来进行。",
+    "uncertainty_notes": "The specific functions of the visible piping and vessel components cannot be determined from this image alone. The exact model within the YEWS100-YEWS200 range is not specified.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"equipment_structure\",\n  \"summary\": \"This is the cover page of a YORK YEWS water-cooled screw chiller installation, operation, and maintenance manual. It features a photograph of the chiller unit, model range YEWS100-YEWS200, and a safety warning about pressurized refrigerant.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and model information\"},\n    {\"type\": \"equipment_image\", \"label\": \"YEWS water-cooled screw chiller unit\"},\n    {\"type\": \"control_panel\", \"label\": \"Chiller control panel with display\"},\n    {\"type\": \"compressor\", \"label\": \"Screw compressor assembly\"},\n    {\"type\": \"vessel\", \"label\": \"Evaporator/condenser shell\"},\n    {\"type\": \"piping\", \"label\": \"Refrigerant and water piping\"},\n    {\"type\": \"warning_box\", \"label\": \"Safety warning about pressurized refrigerant\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"YORK logo\", \"relation\": \"is part of\", \"to\": \"Manual title and model information\"},\n    {\"from\": \"control_panel\", \"relation\": \"is mounted on\", \"to\": \"equipment_image\"},\n    {\"from\": \"compressor\", \"relation\": \"is connected to\", \"to\": \"vessel\"},\n    {\"from\": \"piping\", \"relation\": \"connects\", \"to\": \"compressor\"},\n    {\"from\": \"piping\", \"relation\": \"connects\", \"to\": \"vessel\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"safety_procedures\", \"manual_navigation\"],\n  \"ocr_text_if_useful\": \"YORK YEWS水冷螺杆式冷水机组\\n安装、操作和维护手册\\n替代:0704\\nSC-E08.10M-WX (0405)\\nYEWS100 ~ YEWS200\\n警告\\n系统内充注了一定压力的制冷剂\\n对系统进行维护时，如果操作程序不正确，可能严重损伤系统，所有维护工作必须由约克维修技术人员按照约克的安装，操作维护手册来进行。\",\n  \"uncertainty_notes\": \"The specific functions of the visible piping and vessel components cannot be determined from this image alone. The exact model within the YEWS100-YEWS200 range is not specified.\",\n  \"confidence\": 0.95\n}"
+}

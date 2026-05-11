@@ -1,0 +1,406 @@
+{
+  "run_id": "20260508T111006Z_hvac_doclevel_extraction_batch",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "completed",
+      "row_index": 1,
+      "file_name": "【美的】C系列干式螺杆冷水机组技术手册（44页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】C系列干式螺杆冷水机组技术手册（44页）-制冷百家网.pdf",
+      "doc_id": "doc_33e129a572b44906",
+      "chunks": 44,
+      "manual_tokens_estimated": 11582,
+      "equipment_class_id": "screw_chiller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "existing",
+        "processing": {
+          "pages_before": 44,
+          "chunks_before": 44,
+          "pages_after": 44,
+          "chunks_after": 44,
+          "parse_result": {
+            "status": "skipped_existing_pages",
+            "pages_created": 0
+          },
+          "chunk_result": {
+            "status": "skipped_existing_chunks",
+            "chunks_created": 0
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 39,
+          "anchor_passed": 39,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 20,
+          "judge_rejected": 19,
+          "judge_acceptance_rate": 51.3,
+          "judge_rejection_breakdown": {
+            "other": 19
+          },
+          "review_candidates": 20,
+          "by_type": {
+            "parameter_spec": 20
+          },
+          "usage": {
+            "prompt_tokens": 20338,
+            "completion_tokens": 6470,
+            "total_tokens": 26808
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1185,
+            "total_tokens": 2465
+          },
+          "extract_cost_rmb": 0.099834,
+          "judge_cost_rmb": 0.01095,
+          "cost_rmb": 0.110784,
+          "elapsed_seconds": 187.059,
+          "judge_elapsed_seconds": 147.632,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0001_美的_c系列干式螺杆冷水机组技术手册_44页_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0001_美的_c系列干式螺杆冷水机组技术手册_44页_制冷百家网"
+    },
+    {
+      "status": "completed",
+      "row_index": 2,
+      "file_name": "【日立】RCU螺杆冷冻机组安装维护技术手册（48页）.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/12、日立空调/技术手册/【日立】RCU螺杆冷冻机组安装维护技术手册（48页）.pdf",
+      "doc_id": "doc_eb64ace12cb94a9a",
+      "chunks": 50,
+      "manual_tokens_estimated": 9989,
+      "equipment_class_id": "screw_chiller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "existing",
+        "processing": {
+          "pages_before": 48,
+          "chunks_before": 50,
+          "pages_after": 48,
+          "chunks_after": 50,
+          "parse_result": {
+            "status": "skipped_existing_pages",
+            "pages_created": 0
+          },
+          "chunk_result": {
+            "status": "skipped_existing_chunks",
+            "chunks_created": 0
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 43,
+          "anchor_passed": 42,
+          "anchor_rejected": 1,
+          "anchor_match_rate": 97.7,
+          "judge_accepted": 31,
+          "judge_rejected": 11,
+          "judge_acceptance_rate": 73.8,
+          "judge_rejection_breakdown": {
+            "part_name": 2,
+            "weak_evidence": 4,
+            "other": 5
+          },
+          "review_candidates": 31,
+          "by_type": {
+            "parameter_spec": 31
+          },
+          "usage": {
+            "prompt_tokens": 26326,
+            "completion_tokens": 15435,
+            "total_tokens": 41761
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1188,
+            "total_tokens": 2468
+          },
+          "extract_cost_rmb": 0.171588,
+          "judge_cost_rmb": 0.010968,
+          "cost_rmb": 0.182556,
+          "elapsed_seconds": 451.261,
+          "judge_elapsed_seconds": 227.941,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0002_日立_rcu螺杆冷冻机组安装维护技术手册_48页/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0002_日立_rcu螺杆冷冻机组安装维护技术手册_48页"
+    },
+    {
+      "status": "completed",
+      "row_index": 3,
+      "file_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "chunks": 53,
+      "manual_tokens_estimated": 13316,
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_alternatives": [
+        {
+          "equipment_class_id": "chilled_water_pump",
+          "equipment_class_key": "hvac:chilled_water_pump",
+          "confidence": 0.471,
+          "matched_aliases": [
+            "冷冻水泵"
+          ]
+        },
+        {
+          "equipment_class_id": "chiller",
+          "equipment_class_key": "hvac:chiller",
+          "confidence": 0.471,
+          "matched_aliases": [
+            "冷水机组"
+          ]
+        },
+        {
+          "equipment_class_id": "pump",
+          "equipment_class_key": "hvac:pump",
+          "confidence": 0.471,
+          "matched_aliases": [
+            "Pump",
+            "pump"
+          ]
+        }
+      ],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 52,
+          "chunks_after": 53,
+          "parse_result": {
+            "job_id": "job_d41a694bc63f4853",
+            "doc_id": "doc_7c4fca116fd3420a",
+            "pages_created": 52,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_b16daea4c6ea4831",
+            "doc_id": "doc_7c4fca116fd3420a",
+            "chunks_created": 53,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 39,
+          "anchor_rejected": 1,
+          "anchor_match_rate": 97.5,
+          "judge_accepted": 19,
+          "judge_rejected": 20,
+          "judge_acceptance_rate": 48.7,
+          "judge_rejection_breakdown": {
+            "other": 20
+          },
+          "review_candidates": 19,
+          "by_type": {
+            "parameter_spec": 19
+          },
+          "usage": {
+            "prompt_tokens": 22944,
+            "completion_tokens": 6197,
+            "total_tokens": 29141
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1197,
+            "total_tokens": 2477
+          },
+          "extract_cost_rmb": 0.106014,
+          "judge_cost_rmb": 0.011022,
+          "cost_rmb": 0.117036,
+          "elapsed_seconds": 183.44,
+          "judge_elapsed_seconds": 73.506,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0003_麦克维尔_pe_ws_系列进口离心机组操作维护手册_49页/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0003_麦克维尔_pe_ws_系列进口离心机组操作维护手册_49页"
+    },
+    {
+      "status": "completed",
+      "row_index": 4,
+      "file_name": "【麦克维尔】MCOSKILL 控制器安装手册 适用MHS、MCS机组（54页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MCOSKILL 控制器安装手册 适用MHS、MCS机组（54页）-制冷百家网.pdf",
+      "doc_id": "doc_a2d51d35aa45418b",
+      "chunks": 54,
+      "manual_tokens_estimated": 7452,
+      "equipment_class_id": "controller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 54,
+          "chunks_after": 54,
+          "parse_result": {
+            "job_id": "job_1340dcf2e91f40b2",
+            "doc_id": "doc_a2d51d35aa45418b",
+            "pages_created": 54,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_08575c114f4d4896",
+            "doc_id": "doc_a2d51d35aa45418b",
+            "chunks_created": 54,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 40,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 18,
+          "judge_rejected": 22,
+          "judge_acceptance_rate": 45.0,
+          "judge_rejection_breakdown": {
+            "other": 22
+          },
+          "review_candidates": 18,
+          "by_type": {
+            "parameter_spec": 18
+          },
+          "usage": {
+            "prompt_tokens": 12724,
+            "completion_tokens": 5911,
+            "total_tokens": 18635
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1168,
+            "total_tokens": 2448
+          },
+          "extract_cost_rmb": 0.073638,
+          "judge_cost_rmb": 0.010848,
+          "cost_rmb": 0.084486,
+          "elapsed_seconds": 176.115,
+          "judge_elapsed_seconds": 71.427,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mcoskill_控制器安装手册_适用mhs_mcs机组_54页_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mcoskill_控制器安装手册_适用mhs_mcs机组_54页_制冷百家网"
+    },
+    {
+      "status": "completed",
+      "row_index": 5,
+      "file_name": "【特灵】HWWD水源热泵安装操作维护手册（56页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/05、特灵中央空调/特灵/【特灵】HWWD水源热泵安装操作维护手册（56页）-制冷百家网.pdf",
+      "doc_id": "doc_eed8b188951944fe",
+      "chunks": 59,
+      "manual_tokens_estimated": 14652,
+      "equipment_class_id": "pump",
+      "equipment_alternatives": [
+        {
+          "equipment_class_id": "cooling_tower",
+          "equipment_class_key": "hvac:cooling_tower",
+          "confidence": 0.443,
+          "matched_aliases": [
+            "冷却塔"
+          ]
+        },
+        {
+          "equipment_class_id": "boiler",
+          "equipment_class_key": "hvac:boiler",
+          "confidence": 0.386,
+          "matched_aliases": [
+            "锅炉"
+          ]
+        },
+        {
+          "equipment_class_id": "air_cooled_modular_heat_pump",
+          "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+          "confidence": 0.383,
+          "matched_aliases": [
+            "模块机"
+          ]
+        }
+      ],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 56,
+          "chunks_after": 59,
+          "parse_result": {
+            "job_id": "job_fa5f2f01f29b4fa7",
+            "doc_id": "doc_eed8b188951944fe",
+            "pages_created": 56,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_5c5beb66909d4929",
+            "doc_id": "doc_eed8b188951944fe",
+            "chunks_created": 59,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 40,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 18,
+          "judge_rejected": 22,
+          "judge_acceptance_rate": 45.0,
+          "judge_rejection_breakdown": {
+            "other": 22
+          },
+          "review_candidates": 18,
+          "by_type": {
+            "parameter_spec": 18
+          },
+          "usage": {
+            "prompt_tokens": 27686,
+            "completion_tokens": 6334,
+            "total_tokens": 34020
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1197,
+            "total_tokens": 2477
+          },
+          "extract_cost_rmb": 0.121062,
+          "judge_cost_rmb": 0.011022,
+          "cost_rmb": 0.132084,
+          "elapsed_seconds": 1081.666,
+          "judge_elapsed_seconds": 215.752,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0005_特灵_hwwd水源热泵安装操作维护手册_56页_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0005_特灵_hwwd水源热泵安装操作维护手册_56页_制冷百家网"
+    }
+  ]
+}

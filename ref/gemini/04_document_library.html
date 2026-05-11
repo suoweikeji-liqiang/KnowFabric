@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文档库 - KnowFabric Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: { base: '13px', xs: '12px', sm: '14px', tiny: '11px' },
+          fontFamily: {
+            sans:['Inter', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans h-screen flex flex-col overflow-hidden text-base">
+
+  <!-- 顶部导航 -->
+  <header class="bg-slate-900 text-white h-12 flex items-center px-4 shrink-0 justify-between z-20 relative">
+    <div class="flex items-center gap-4">
+      <div class="font-semibold text-sm tracking-wide">KnowFabric <span class="text-slate-400 font-normal">Admin</span></div>
+      <nav class="flex gap-6 ml-8 text-sm">
+        <a href="#" class="text-slate-300 hover:text-white">文档入库</a>
+        <a href="#" class="text-white font-medium border-b-2 border-indigo-500 pb-[14px] translate-y-[7px]">文档库</a>
+        <a href="#" class="text-slate-300 hover:text-white">知识对象审阅</a>
+        <a href="#" class="text-slate-300 hover:text-white">标准浏览器</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3 text-xs">
+      <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">操作员: OP-772</span>
+    </div>
+  </header>
+
+  <!-- 批量操作栏 (当有选中项时显示) -->
+  <div class="bg-indigo-50 border-b border-indigo-200 h-12 flex items-center px-6 shrink-0 justify-between shadow-sm z-10">
+    <div class="flex items-center gap-3">
+      <span class="text-indigo-700 font-semibold text-sm">已选择 2 个文档</span>
+      <button class="text-xs text-indigo-600 hover:underline">取消选择</button>
+    </div>
+    <div class="flex items-center gap-2">
+      <select class="bg-white border border-indigo-300 rounded px-2 py-1.5 text-xs outline-none focus:border-indigo-500 text-slate-700">
+        <option>修改权威层级为...</option>
+        <option>行业标准</option>
+        <option>厂商手册</option>
+        <option>内部规程</option>
+      </select>
+      <button class="bg-indigo-600 text-white px-3 py-1.5 rounded text-xs font-medium hover:bg-indigo-700 shadow-sm">批量应用</button>
+      <div class="w-px h-4 bg-indigo-200 mx-1"></div>
+      <button class="bg-white border border-slate-300 text-slate-700 px-3 py-1.5 rounded text-xs font-medium hover:bg-slate-50">批量删除</button>
+    </div>
+  </div>
+
+  <!-- 主内容区 -->
+  <div class="flex flex-1 overflow-hidden">
+    
+    <!-- 左侧：主文档网格 -->
+    <div class="flex-1 overflow-y-auto p-6 flex flex-col gap-8">
+      
+      <!-- 分组 1: 行业标准 -->
+      <section>
+        <div class="flex items-center gap-2 mb-3 border-b border-slate-200 pb-2">
+          <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-700 border border-blue-200">
+            🛡️ 行业标准
+          </span>
+          <span class="text-slate-400 text-xs font-medium">2 份文档</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <!-- 卡片 1 (选中状态) -->
+          <div class="bg-white border-2 border-indigo-500 rounded-lg p-3 shadow-sm relative flex flex-col gap-2">
+            <input type="checkbox" class="absolute top-3 left-3 w-4 h-4 accent-indigo-600 cursor-pointer" checked>
+            <div class="pl-6 flex justify-between items-start">
+              <div class="font-mono text-xs text-slate-800 font-semibold truncate w-48" title="ashrae_901_2022_excerpt_section_6_5.pdf">ashrae_901_2022_excerpt_section_6_5.pdf</div>
+              <span class="text-rose-600 text-tiny font-medium shrink-0" title="传播受限">© 受限</span>
+            </div>
+            <div class="pl-6 text-xs text-slate-500">发布机构: <span class="text-slate-700 font-medium">ASHRAE</span></div>
+            <div class="pl-6 text-xs text-slate-500">标准号: <span class="text-slate-700 font-medium">ASHRAE 90.1-2022</span></div>
+            <div class="mt-auto pl-6 pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-tiny text-slate-400">关联知识对象</span>
+              <span class="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded text-tiny font-mono font-medium">128 KO</span>
+            </div>
+          </div>
+
+          <!-- 卡片 2 (选中状态) -->
+          <div class="bg-white border-2 border-indigo-500 rounded-lg p-3 shadow-sm relative flex flex-col gap-2">
+            <input type="checkbox" class="absolute top-3 left-3 w-4 h-4 accent-indigo-600 cursor-pointer" checked>
+            <div class="pl-6 flex justify-between items-start">
+              <div class="font-mono text-xs text-slate-800 font-semibold truncate w-48" title="iec_61800_3_2017_emc.pdf">iec_61800_3_2017_emc.pdf</div>
+              <span class="text-rose-600 text-tiny font-medium shrink-0" title="传播受限">© 受限</span>
+            </div>
+            <div class="pl-6 text-xs text-slate-500">发布机构: <span class="text-slate-700 font-medium">IEC</span></div>
+            <div class="pl-6 text-xs text-slate-500">标准号: <span class="text-slate-700 font-medium">IEC 61800-3:2017</span></div>
+            <div class="mt-auto pl-6 pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-tiny text-slate-400">关联知识对象</span>
+              <span class="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded text-tiny font-mono font-medium">45 KO</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 分组 2: 厂商手册 -->
+      <section>
+        <div class="flex items-center gap-2 mb-3 border-b border-slate-200 pb-2">
+          <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 border border-slate-300">
+            🏭 厂商手册
+          </span>
+          <span class="text-slate-400 text-xs font-medium">1 份文档</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <!-- 卡片 3 (未选中) -->
+          <div class="bg-white border border-slate-200 rounded-lg p-3 shadow-sm hover:border-slate-300 relative flex flex-col gap-2 transition-colors">
+            <input type="checkbox" class="absolute top-3 left-3 w-4 h-4 accent-indigo-600 cursor-pointer opacity-50 hover:opacity-100">
+            <div class="pl-6 flex justify-between items-start">
+              <div class="font-mono text-xs text-slate-800 font-semibold truncate w-48" title="trane_cvgf_400_1000_chiller_manual.pdf">trane_cvgf_400_1000_chiller_manual.pdf</div>
+            </div>
+            <div class="pl-6 text-xs text-slate-500">发布机构: <span class="text-slate-700 font-medium">Trane</span></div>
+            <div class="pl-6 text-xs text-slate-500">标准号: <span class="text-slate-400">—</span></div>
+            <div class="mt-auto pl-6 pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-tiny text-slate-400">关联知识对象</span>
+              <span class="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded text-tiny font-mono font-medium">312 KO</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 分组 3: 现场实测 -->
+      <section>
+        <div class="flex items-center gap-2 mb-3 border-b border-slate-200 pb-2">
+          <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-medium bg-orange-500 text-white shadow-sm">
+            🎯 现场实测
+          </span>
+          <span class="text-slate-400 text-xs font-medium">1 份文档</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <!-- 卡片 4 (未选中) -->
+          <div class="bg-white border border-orange-200 rounded-lg p-3 shadow-sm hover:border-orange-300 relative flex flex-col gap-2 transition-colors">
+            <input type="checkbox" class="absolute top-3 left-3 w-4 h-4 accent-indigo-600 cursor-pointer opacity-50 hover:opacity-100">
+            <div class="pl-6 flex justify-between items-start">
+              <div class="font-mono text-xs text-slate-800 font-semibold truncate w-48" title="project_PRJ_2024_087_field_log.json">project_PRJ_2024_087_field_log.json</div>
+            </div>
+            <div class="pl-6 text-xs text-slate-500">发布机构: <span class="text-slate-700 font-medium">公司内部</span></div>
+            <div class="pl-6 text-xs text-slate-500">标准号: <span class="text-slate-400">—</span></div>
+            <div class="mt-auto pl-6 pt-2 border-t border-orange-50 flex justify-between items-center">
+              <span class="text-tiny text-slate-400">关联知识对象</span>
+              <span class="bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded text-tiny font-mono font-medium">14 KO</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧：过滤面板 -->
+    <div class="w-64 bg-white border-l border-slate-200 flex flex-col shrink-0">
+      <div class="p-4 border-b border-slate-200">
+        <h3 class="font-semibold text-slate-800 text-sm">筛选文档</h3>
+      </div>
+      <div class="p-4 flex flex-col gap-6 overflow-y-auto">
+        
+        <!-- 搜索 -->
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-1.5">搜索文件名或发布机构</label>
+          <input type="text" placeholder="例如: Trane, ASHRAE..." class="w-full border border-slate-300 rounded px-2 py-1.5 text-xs focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+        </div>
+
+        <!-- 权威层级多选 -->
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-2">权威层级</label>
+          <div class="flex flex-col gap-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="accent-indigo-600" checked>
+              <span class="text-xs text-slate-600">行业标准 (2)</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="accent-indigo-600" checked>
+              <span class="text-xs text-slate-600">监管法规 (0)</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="accent-indigo-600" checked>
+              <span class="text-xs text-slate-600">厂商手册 (1)</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="accent-indigo-600" checked>
+              <span class="text-xs text-slate-600">内部规程 (1)</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="accent-indigo-600" checked>
+              <span class="text-xs text-slate-600">现场实测 (1)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 传播受限过滤 -->
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-2">权限状态</label>
+          <div class="flex flex-col gap-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="redist" class="accent-indigo-600" checked>
+              <span class="text-xs text-slate-600">全部</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="redist" class="accent-indigo-600">
+              <span class="text-xs text-slate-600">仅显示传播受限 (©)</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="redist" class="accent-indigo-600">
+              <span class="text-xs text-slate-600">仅显示可自由分发</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

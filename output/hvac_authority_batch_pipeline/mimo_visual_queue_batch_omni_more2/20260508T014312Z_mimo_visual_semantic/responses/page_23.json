@@ -1,0 +1,107 @@
+{
+  "page": 23,
+  "response": {
+    "id": "1dc697d8e82f418aaf776aeacd8a19a5",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"wiring_diagram\",\n  \"summary\": \"This page provides electrical wiring instructions and diagrams for HVAC control systems, focusing on pump and cooling tower interlock connections. It includes textual steps for main power wiring, control power connections, and two sets of wiring diagrams (A and B) for pump operation and pump/cooling tower interlock circuits, along with a legend for component symbols.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Electrical wiring instructions\"},\n    {\"type\": \"text_block\", \"label\": \"Control wiring connection section\"},\n    {\"type\": \"diagram\", \"label\": \"Pump operation circuit diagram A\"},\n    {\"type\": \"diagram\", \"label\": \"Pump operation circuit diagram B\"},\n    {\"type\": \"diagram\", \"label\": \"Pump and cooling tower interlock circuit diagram A\"},\n    {\"type\": \"diagram\", \"label\": \"Pump and cooling tower interlock circuit diagram B\"},\n    {\"type\": \"table\", \"label\": \"Component symbol legend table\"},\n    {\"type\": \"note\", \"label\": \"Wiring notes and warnings\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Pump operation circuit diagram A\", \"relation\": \"shows connections for\", \"to\": \"Combined operation switch\"},\n    {\"from\": \"Pump operation circuit diagram B\", \"relation\": \"shows connections for\", \"to\": \"Remote push button switch\"},\n    {\"from\": \"Pump and cooling tower interlock circuit diagram A\", \"relation\": \"shows connections for\", \"to\": \"Electromagnetic switch interlock\"},\n    {\"from\": \"Pump and cooling tower interlock circuit diagram B\", \"relation\": \"shows connections for\", \"to\": \"Water flow switch interlock\"},\n    {\"from\": \"Component symbol legend table\", \"relation\": \"defines symbols used in\", \"to\": \"All wiring diagrams\"}\n  ],\n  \"useful_for_knowledge_types\": [\"wiring_procedures\", \"component_identification\", \"interlock_logic\", \"safety_precautions\"],\n  \"ocr_text_if_useful\": \"电气配线\\n工具和仪表——一套电工工具和万用表\\n检查项目——在保证遵守国际和地方标准的情况下，根据本资料中的“电气数据”，对电气元件(主要电源开关、保险丝、电线连接导管和电线接头)选择范围作核实。在设备维修期间，要注意把电源打在“关”的位置。防止电源被意外地接通。\\n主电源接线步骤——在任何电气安装工作之前应确定安装位置没有被供电。\\n1、在适当的位置安装供电源开关。\\n2、安装主电源线孔胶垫。\\n3、通过电线连接孔把主电源线、电源中线和接地线接到机组电气箱内，并将接线接到相应的接线座及地线座上。\\n4、根据下图指示把引线紧固在R、S、T和Mp的接线螺栓上。\\n控制电源——连接机组接头与水泵，水泵与冷却塔之起动装置间的联锁(据下图指示)\\n控制线路连接\\n1、水泵工作线路\\n水泵供电\\n2、水泵和冷水塔联锁线路\\n注意：\\n1、根据操作要求选择A或B及上图指示连接线路。\\nA：用于电磁开关连锁方式。\\nB：用于水流开关连锁方式。\\n记号 名称\\n* CPUE 冷冻水电磁开关\\n* CPUC 冷却水电磁开关\\n* CPUT 冷却塔电磁开关\\n* AR 连锁用辅助继电器\\n* ARp 运转确认用辅助继电器\\n* FE 冷冻水泵流量开关\\n* CE 冷却水泵流量开关\\n* PBSp2 水泵控制开/关按钮\\n* CS 现场接线确认开关\",\n  \"uncertainty_notes\": \"The diagrams are schematic and do not show physical spatial relationships. Some component labels (e.g., ARp1, PBSp1) are partially obscured or small, but their definitions are clear in the legend. The exact physical layout of the electrical box or terminals is not depicted.\",\n  \"confidence\": 0.9\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204616,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 904,
+      "prompt_tokens": 2661,
+      "total_tokens": 3565,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2464
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "wiring_diagram",
+    "summary": "This page provides electrical wiring instructions and diagrams for HVAC control systems, focusing on pump and cooling tower interlock connections. It includes textual steps for main power wiring, control power connections, and two sets of wiring diagrams (A and B) for pump operation and pump/cooling tower interlock circuits, along with a legend for component symbols.",
+    "visual_entities": [
+      {
+        "type": "text_block",
+        "label": "Electrical wiring instructions"
+      },
+      {
+        "type": "text_block",
+        "label": "Control wiring connection section"
+      },
+      {
+        "type": "diagram",
+        "label": "Pump operation circuit diagram A"
+      },
+      {
+        "type": "diagram",
+        "label": "Pump operation circuit diagram B"
+      },
+      {
+        "type": "diagram",
+        "label": "Pump and cooling tower interlock circuit diagram A"
+      },
+      {
+        "type": "diagram",
+        "label": "Pump and cooling tower interlock circuit diagram B"
+      },
+      {
+        "type": "table",
+        "label": "Component symbol legend table"
+      },
+      {
+        "type": "note",
+        "label": "Wiring notes and warnings"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "Pump operation circuit diagram A",
+        "relation": "shows connections for",
+        "to": "Combined operation switch"
+      },
+      {
+        "from": "Pump operation circuit diagram B",
+        "relation": "shows connections for",
+        "to": "Remote push button switch"
+      },
+      {
+        "from": "Pump and cooling tower interlock circuit diagram A",
+        "relation": "shows connections for",
+        "to": "Electromagnetic switch interlock"
+      },
+      {
+        "from": "Pump and cooling tower interlock circuit diagram B",
+        "relation": "shows connections for",
+        "to": "Water flow switch interlock"
+      },
+      {
+        "from": "Component symbol legend table",
+        "relation": "defines symbols used in",
+        "to": "All wiring diagrams"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "wiring_procedures",
+      "component_identification",
+      "interlock_logic",
+      "safety_precautions"
+    ],
+    "ocr_text_if_useful": "电气配线\n工具和仪表——一套电工工具和万用表\n检查项目——在保证遵守国际和地方标准的情况下，根据本资料中的“电气数据”，对电气元件(主要电源开关、保险丝、电线连接导管和电线接头)选择范围作核实。在设备维修期间，要注意把电源打在“关”的位置。防止电源被意外地接通。\n主电源接线步骤——在任何电气安装工作之前应确定安装位置没有被供电。\n1、在适当的位置安装供电源开关。\n2、安装主电源线孔胶垫。\n3、通过电线连接孔把主电源线、电源中线和接地线接到机组电气箱内，并将接线接到相应的接线座及地线座上。\n4、根据下图指示把引线紧固在R、S、T和Mp的接线螺栓上。\n控制电源——连接机组接头与水泵，水泵与冷却塔之起动装置间的联锁(据下图指示)\n控制线路连接\n1、水泵工作线路\n水泵供电\n2、水泵和冷水塔联锁线路\n注意：\n1、根据操作要求选择A或B及上图指示连接线路。\nA：用于电磁开关连锁方式。\nB：用于水流开关连锁方式。\n记号 名称\n* CPUE 冷冻水电磁开关\n* CPUC 冷却水电磁开关\n* CPUT 冷却塔电磁开关\n* AR 连锁用辅助继电器\n* ARp 运转确认用辅助继电器\n* FE 冷冻水泵流量开关\n* CE 冷却水泵流量开关\n* PBSp2 水泵控制开/关按钮\n* CS 现场接线确认开关",
+    "uncertainty_notes": "The diagrams are schematic and do not show physical spatial relationships. Some component labels (e.g., ARp1, PBSp1) are partially obscured or small, but their definitions are clear in the legend. The exact physical layout of the electrical box or terminals is not depicted.",
+    "confidence": 0.9
+  },
+  "raw_text": "{\n  \"page_type\": \"wiring_diagram\",\n  \"summary\": \"This page provides electrical wiring instructions and diagrams for HVAC control systems, focusing on pump and cooling tower interlock connections. It includes textual steps for main power wiring, control power connections, and two sets of wiring diagrams (A and B) for pump operation and pump/cooling tower interlock circuits, along with a legend for component symbols.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Electrical wiring instructions\"},\n    {\"type\": \"text_block\", \"label\": \"Control wiring connection section\"},\n    {\"type\": \"diagram\", \"label\": \"Pump operation circuit diagram A\"},\n    {\"type\": \"diagram\", \"label\": \"Pump operation circuit diagram B\"},\n    {\"type\": \"diagram\", \"label\": \"Pump and cooling tower interlock circuit diagram A\"},\n    {\"type\": \"diagram\", \"label\": \"Pump and cooling tower interlock circuit diagram B\"},\n    {\"type\": \"table\", \"label\": \"Component symbol legend table\"},\n    {\"type\": \"note\", \"label\": \"Wiring notes and warnings\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Pump operation circuit diagram A\", \"relation\": \"shows connections for\", \"to\": \"Combined operation switch\"},\n    {\"from\": \"Pump operation circuit diagram B\", \"relation\": \"shows connections for\", \"to\": \"Remote push button switch\"},\n    {\"from\": \"Pump and cooling tower interlock circuit diagram A\", \"relation\": \"shows connections for\", \"to\": \"Electromagnetic switch interlock\"},\n    {\"from\": \"Pump and cooling tower interlock circuit diagram B\", \"relation\": \"shows connections for\", \"to\": \"Water flow switch interlock\"},\n    {\"from\": \"Component symbol legend table\", \"relation\": \"defines symbols used in\", \"to\": \"All wiring diagrams\"}\n  ],\n  \"useful_for_knowledge_types\": [\"wiring_procedures\", \"component_identification\", \"interlock_logic\", \"safety_precautions\"],\n  \"ocr_text_if_useful\": \"电气配线\\n工具和仪表——一套电工工具和万用表\\n检查项目——在保证遵守国际和地方标准的情况下，根据本资料中的“电气数据”，对电气元件(主要电源开关、保险丝、电线连接导管和电线接头)选择范围作核实。在设备维修期间，要注意把电源打在“关”的位置。防止电源被意外地接通。\\n主电源接线步骤——在任何电气安装工作之前应确定安装位置没有被供电。\\n1、在适当的位置安装供电源开关。\\n2、安装主电源线孔胶垫。\\n3、通过电线连接孔把主电源线、电源中线和接地线接到机组电气箱内，并将接线接到相应的接线座及地线座上。\\n4、根据下图指示把引线紧固在R、S、T和Mp的接线螺栓上。\\n控制电源——连接机组接头与水泵，水泵与冷却塔之起动装置间的联锁(据下图指示)\\n控制线路连接\\n1、水泵工作线路\\n水泵供电\\n2、水泵和冷水塔联锁线路\\n注意：\\n1、根据操作要求选择A或B及上图指示连接线路。\\nA：用于电磁开关连锁方式。\\nB：用于水流开关连锁方式。\\n记号 名称\\n* CPUE 冷冻水电磁开关\\n* CPUC 冷却水电磁开关\\n* CPUT 冷却塔电磁开关\\n* AR 连锁用辅助继电器\\n* ARp 运转确认用辅助继电器\\n* FE 冷冻水泵流量开关\\n* CE 冷却水泵流量开关\\n* PBSp2 水泵控制开/关按钮\\n* CS 现场接线确认开关\",\n  \"uncertainty_notes\": \"The diagrams are schematic and do not show physical spatial relationships. Some component labels (e.g., ARp1, PBSp1) are partially obscured or small, but their definitions are clear in the legend. The exact physical layout of the electrical box or terminals is not depicted.\",\n  \"confidence\": 0.9\n}"
+}

@@ -1,0 +1,718 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-07T20:08:07.112173+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_310a78e42c9b4312",
+  "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chiller",
+    "equipment_class_key": "hvac:chiller",
+    "label": "Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "operational_sequence",
+      "fault_diagnostic_rule"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 9,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_57fd33e8316aa396",
+      "domain_id": "hvac",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_58eeb0c36ff24fdd",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:compressor_configuration",
+      "structured_payload_candidate": {
+        "parameter_name": "Compressor Model Numbers",
+        "title": "Compressor Model Numbers per Circuit",
+        "summary": "Lists compressor model numbers for each circuit in 30AQA080, 100, 120 units."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "630AQA NO  NO (Kg)\n1 1 06E6299 A 2\n25 0802 2 06E6299 B 2\n25\n1 1 06E6299 A 4\n26\n2 2 06EF275 B 2\n25 100\n3 3 06EF275 C 2\n24\n1 1 06E6299 A 4\n26\n2 2 06EF299 B 2\n29 120\n3 3 06EF299 C 2\n29\n3----\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "Chiller",
+          "chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_58eeb0c36ff24fdd"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides specific compressor model numbers per circuit for troubleshooting or maintenance, supported by evidence showing model numbers and their assignment.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:compressor_configuration for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:compressor_configuration derived from chunk chunk_58eeb0c36ff24fdd on page 6 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:compressor_configuration",
+        "structured_payload": {
+          "parameter_name": "Compressor Model Numbers",
+          "title": "Compressor Model Numbers per Circuit",
+          "summary": "Lists compressor model numbers for each circuit in 30AQA080, 100, 120 units."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "630AQA NO  NO (Kg)\n1 1 06E6299 A 2\n25 0802 2 06E6299 B 2\n25\n1 1 06E6299 A 4\n26\n2 2 06EF275 B 2\n25 100\n3 3 06EF275 C 2\n24\n1 1 06E6299 A 4\n26\n2 2 06EF299 B 2\n29 120\n3 3 06EF299 C 2\n29\n3----\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1c3a50fe77f6857e",
+      "domain_id": "hvac",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_1680e6ad93c84439",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:minimum_water_flow",
+      "structured_payload_candidate": {
+        "parameter_name": "Minimum Water Flow Rate",
+        "title": "Minimum Water Flow Rates",
+        "summary": "Minimum water flow rates for 30AQA060~120 models in L/s."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "Chiller",
+          "chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1680e6ad93c84439"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies minimum water flow rates in L/s, a critical operational parameter for chiller performance and protection, clearly extracted from the table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:minimum_water_flow for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:minimum_water_flow derived from chunk chunk_1680e6ad93c84439 on page 5 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:minimum_water_flow",
+        "structured_payload": {
+          "parameter_name": "Minimum Water Flow Rate",
+          "title": "Minimum Water Flow Rates",
+          "summary": "Minimum water flow rates for 30AQA060~120 models in L/s."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_de8e9a03c8363d4f",
+      "domain_id": "hvac",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_1680e6ad93c84439",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:max_pressure",
+      "structured_payload_candidate": {
+        "parameter_name": "Maximum Operating Pressure",
+        "title": "Maximum Operating Pressure",
+        "summary": "Maximum operating pressure for water side is 2.75 MPa and for refrigerant side is 0.98 MPa."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "Chiller",
+          "chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1680e6ad93c84439"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "States maximum operating pressures for water and refrigerant sides, a key safety and design parameter, with direct evidence in the form of 2.75MPa and 0.98MPa.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:max_pressure for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:max_pressure derived from chunk chunk_1680e6ad93c84439 on page 5 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:max_pressure",
+        "structured_payload": {
+          "parameter_name": "Maximum Operating Pressure",
+          "title": "Maximum Operating Pressure",
+          "summary": "Maximum operating pressure for water side is 2.75 MPa and for refrigerant side is 0.98 MPa."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_4cf6bcf0c171f4b4",
+      "domain_id": "hvac",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_1680e6ad93c84439",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:water_connection_size",
+      "structured_payload_candidate": {
+        "parameter_name": "Water Connection Size",
+        "title": "Water Connections Sizes",
+        "summary": "Water inlet/outlet connection sizes for 30AQA060~120: 3\", 4\", 4\", 5\" FPT."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "Chiller",
+          "chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1680e6ad93c84439"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Lists water connection sizes, which is essential installation information, supported by evidence showing sizes for each model.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:water_connection_size for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:water_connection_size derived from chunk chunk_1680e6ad93c84439 on page 5 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:water_connection_size",
+        "structured_payload": {
+          "parameter_name": "Water Connection Size",
+          "title": "Water Connections Sizes",
+          "summary": "Water inlet/outlet connection sizes for 30AQA060~120: 3\", 4\", 4\", 5\" FPT."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_72ddfa643f047f2c",
+      "domain_id": "hvac",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_1680e6ad93c84439",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:dimensions",
+      "structured_payload_candidate": {
+        "parameter_name": "Dimensions",
+        "title": "Unit Dimensions",
+        "summary": "Length, width, height dimensions in mm for 30AQA060~120."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "Chiller",
+          "chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1680e6ad93c84439"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides unit dimensions, necessary for installation and space planning, with numerical evidence in mm.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:dimensions for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:dimensions derived from chunk chunk_1680e6ad93c84439 on page 5 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:dimensions",
+        "structured_payload": {
+          "parameter_name": "Dimensions",
+          "title": "Unit Dimensions",
+          "summary": "Length, width, height dimensions in mm for 30AQA060~120."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_bbbde25d7ecf3cca",
+      "domain_id": "hvac",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_1680e6ad93c84439",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:fan_motor_power",
+      "structured_payload_candidate": {
+        "parameter_name": "Fan Motor Power",
+        "title": "Fan Motor Power",
+        "summary": "Fan motor power ratings: 6x0.75 kW and 4x0.55 kW for different models."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "Chiller",
+          "chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1680e6ad93c84439"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies fan motor power ratings, an electrical and performance parameter, with clear evidence of 0.75 kW and 0.55 kW fan counts.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:fan_motor_power for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:fan_motor_power derived from chunk chunk_1680e6ad93c84439 on page 5 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:fan_motor_power",
+        "structured_payload": {
+          "parameter_name": "Fan Motor Power",
+          "title": "Fan Motor Power",
+          "summary": "Fan motor power ratings: 6x0.75 kW and 4x0.55 kW for different models."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_7cdc23f6055f0e4d",
+      "domain_id": "hvac",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_1680e6ad93c84439",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:capacity_steps",
+      "structured_payload_candidate": {
+        "parameter_name": "Cooling Capacity Steps",
+        "title": "Cooling Capacity Steps",
+        "summary": "Cooling capacity step percentages for 30AQA060~120: 100-83-50-33-0, etc."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "Chiller",
+          "chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1680e6ad93c84439"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Describes cooling capacity step percentages, which is an operational characteristic for staging, clearly shown in the evidence as sequences like 100-83-50-33-0.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:capacity_steps for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:capacity_steps derived from chunk chunk_1680e6ad93c84439 on page 5 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:capacity_steps",
+        "structured_payload": {
+          "parameter_name": "Cooling Capacity Steps",
+          "title": "Cooling Capacity Steps",
+          "summary": "Cooling capacity step percentages for 30AQA060~120: 100-83-50-33-0, etc."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f830f02799f5fb8e",
+      "domain_id": "hvac",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_1680e6ad93c84439",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:refrigerant_charge",
+      "structured_payload_candidate": {
+        "parameter_name": "Refrigerant Charge",
+        "title": "Refrigerant Charge per Circuit",
+        "summary": "Refrigerant charge per circuit: 3x1.69 kg for all models."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "Chiller",
+          "chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1680e6ad93c84439"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Indicates refrigerant charge per circuit, a maintenance and charging parameter, with evidence of 3x1.69 kg.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:refrigerant_charge for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:refrigerant_charge derived from chunk chunk_1680e6ad93c84439 on page 5 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:refrigerant_charge",
+        "structured_payload": {
+          "parameter_name": "Refrigerant Charge",
+          "title": "Refrigerant Charge per Circuit",
+          "summary": "Refrigerant charge per circuit: 3x1.69 kg for all models."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_37bb78aadd63b0ac",
+      "domain_id": "hvac",
+      "doc_id": "doc_310a78e42c9b4312",
+      "doc_name": "【开利】中央空调30AQ风冷式热泵机组安装维修手册（28页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_1680e6ad93c84439",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:water_volume",
+      "structured_payload_candidate": {
+        "parameter_name": "Water Volume",
+        "title": "Water Volume in Heat Exchanger",
+        "summary": "Water volume in liters for 30AQA060~120: 54, 74, 107, 116 L."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "Chiller",
+          "chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1680e6ad93c84439"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "States water volume in heat exchanger, useful for system volume calculations and freeze protection, with evidence of liter values for each model.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:chiller:parameter_spec:water_volume for Chiller",
+        "summary": "Draft review summary for parameter spec hvac:chiller:parameter_spec:water_volume derived from chunk chunk_1680e6ad93c84439 on page 5 for Chiller.",
+        "canonical_key": "hvac:chiller:parameter_spec:water_volume",
+        "structured_payload": {
+          "parameter_name": "Water Volume",
+          "title": "Water Volume in Heat Exchanger",
+          "summary": "Water volume in liters for 30AQA060~120: 54, 74, 107, 116 L."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "51----\n060 080 100 120\n2590 2970 4200 4500\nR-22\n2 2 3 3\n18+18 25+25 26+25+24 26+29+29\n--- 2---06E2275 2---06E6299 2---06EF275 2----06EF299\n- - 1---06E6299 1----06E6299\nXL---\nL\n/\n%\n9 9 9 9\n100-83-50-33-0 100-83-67-33-0 100-87-57-30-0 100-89-56-33-0\n----- 3---1.69 3---1.69 3---1.69 3---1.69\n7.829 10.6 13.8 15.8\n-----\nin\n6---30 6---30 4---30 6---30\n4---24 4---24\nL/S\n19667 22000 26300 32670\n----\nkW\n6---0.75 6---0.75 4---0.75 6---0.75\n4---0.55 4---0.55\n1 1 1\nL\n54 74 107 116\nL/s\n5---15 7---15 8.75---18.8 11.3---22.5\n2.75MPa\n0.98MPa\n3“ 4 “ 4 ” 5 “\nFPT\n1/2” 1/2 ” 1/2 ” 1/2 ”\nFPT\n3/4“ 1/2 ” 1/2 ” 1/2 ”\nmm\n3000 3580 4700 5200\nmm\n1800 2000 2000 2000\nmm\n2250 2340 2340 2340\n9 9 9 9 9 9\n67-33-0 100-87-57-30-67-33-0 100-87-57-30-\n3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69 3---1.69\n10.6 13.8 15.8 10.6 13.8 15.8\n6---30 6---30 4---30 6---30 6---30 6---30 4---30 6---30\n1966719667\n6---0.75 6---0.75 4---0.75 6---0.75 6---0.75 6---0.75 4---0.75 6---0.75\nLL\nL/s\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-07T20:08:07.115428+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 9
+  }
+}

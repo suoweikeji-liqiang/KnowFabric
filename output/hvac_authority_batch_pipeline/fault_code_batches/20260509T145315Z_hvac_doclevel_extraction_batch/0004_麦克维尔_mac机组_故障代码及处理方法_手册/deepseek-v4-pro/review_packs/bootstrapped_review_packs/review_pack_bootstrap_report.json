@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-09T15:12:53.384849+00:00",
+  "pack_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mac机组_故障代码及处理方法_手册/deepseek-v4-pro/review_packs",
+  "output_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mac机组_故障代码及处理方法_手册/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 15,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_eda7ec666fff4128__pump.json",
+      "source_path": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mac机组_故障代码及处理方法_手册/deepseek-v4-pro/review_packs/hvac__doc_eda7ec666fff4128__pump.json",
+      "status": "bootstrapped",
+      "entries_updated": 15,
+      "output_path": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mac机组_故障代码及处理方法_手册/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_eda7ec666fff4128__pump.json"
+    }
+  ]
+}

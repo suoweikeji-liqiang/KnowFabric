@@ -1,0 +1,80 @@
+{
+  "run_id": "20260510T094549Z_hvac_doclevel_extraction_batch",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_llm_routed_manual_extract_20260510/green/20260510T094549Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "completed",
+      "row_index": 1,
+      "file_name": "routed_green.pdf",
+      "source_path": "/tmp/kf_manual_retry_green/subset/routed_green.pdf",
+      "doc_id": "doc_790874148a59483d",
+      "chunks": 34,
+      "manual_tokens_estimated": 6724,
+      "equipment_class_id": "controller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 9,
+          "chunks_after": 34,
+          "parse_result": {
+            "job_id": "job_dc4f62bcdbdd4b85",
+            "doc_id": "doc_790874148a59483d",
+            "pages_created": 9,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_0842081d5a6a4d4f",
+            "doc_id": "doc_790874148a59483d",
+            "chunks_created": 34,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "mimo-v2-omni",
+          "model": "mimo-v2-omni",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 10,
+          "anchor_passed": 10,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 8,
+          "judge_rejected": 2,
+          "judge_acceptance_rate": 80.0,
+          "judge_rejection_breakdown": {
+            "weak_evidence": 2
+          },
+          "review_candidates": 8,
+          "by_type": {
+            "application_guidance": 3,
+            "performance_spec": 2,
+            "parameter_spec": 2,
+            "maintenance_procedure": 1
+          },
+          "usage": {
+            "prompt_tokens": 12916,
+            "completion_tokens": 1225,
+            "total_tokens": 14141
+          },
+          "judge_usage": {
+            "prompt_tokens": 5526,
+            "completion_tokens": 676,
+            "total_tokens": 6202
+          },
+          "extract_cost_rmb": 0.0,
+          "judge_cost_rmb": 0.020634,
+          "cost_rmb": 0.020634,
+          "elapsed_seconds": 10.134,
+          "judge_elapsed_seconds": 23.345,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_llm_routed_manual_extract_20260510/green/20260510T094549Z_hvac_doclevel_extraction_batch/0001_routed_green/mimo-v2-omni"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_llm_routed_manual_extract_20260510/green/20260510T094549Z_hvac_doclevel_extraction_batch/0001_routed_green"
+    }
+  ]
+}

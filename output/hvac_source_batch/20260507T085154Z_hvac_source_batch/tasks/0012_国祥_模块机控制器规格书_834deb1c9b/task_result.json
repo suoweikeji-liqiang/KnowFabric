@@ -1,0 +1,57 @@
+{
+  "row_index": 12,
+  "path": "/Volumes/TSD302/pan/a00238/21、国祥/【国祥】模块机控制器规格书.pdf",
+  "file_name": "【国祥】模块机控制器规格书.pdf",
+  "batch_group": "B_oem_manual_text_first",
+  "priority": "P1_batch_extract",
+  "brand": "Kingair",
+  "authority_level": "oem_manual_or_vendor_doc",
+  "document_kind": "controller_manual",
+  "equipment_scope": "air_cooled_chiller_heat_pump,controller",
+  "page_count": "17",
+  "text_quality": "good_text",
+  "recommended_mode": "doc_level_single_call",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0012_国祥_模块机控制器规格书_834deb1c9b",
+  "status": "prepared",
+  "doc_id": "doc_1d0231208a244288",
+  "import_status": "imported",
+  "processing": {
+    "pages_before": 0,
+    "chunks_before": 0,
+    "pages_after": 17,
+    "chunks_after": 19,
+    "parse_result": {
+      "job_id": "job_1b8e3eb63472424b",
+      "doc_id": "doc_1d0231208a244288",
+      "pages_created": 17,
+      "status": "success"
+    },
+    "chunk_result": {
+      "job_id": "job_a0365ab751344e70",
+      "doc_id": "doc_1d0231208a244288",
+      "chunks_created": 19,
+      "status": "success"
+    }
+  },
+  "review_bundle": {
+    "prepare_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0012_国祥_模块机控制器规格书_834deb1c9b/review_bundle/prepare_manifest.json",
+    "candidate_entries": 100,
+    "review_packs": 1,
+    "ready_packs": 0,
+    "compiler": {
+      "enable_llm": false,
+      "backend_name": null,
+      "backend_model": null,
+      "enabled_types": []
+    },
+    "health": {
+      "total_findings": 101,
+      "by_code": {
+        "anchor_uncertainty": 100,
+        "coverage_gap": 1
+      },
+      "review_packs": 1
+    }
+  }
+}

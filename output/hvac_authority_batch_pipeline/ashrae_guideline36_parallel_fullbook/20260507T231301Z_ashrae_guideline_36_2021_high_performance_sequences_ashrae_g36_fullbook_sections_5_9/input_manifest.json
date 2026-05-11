@@ -1,0 +1,11 @@
+{
+  "input_mode": "section_context",
+  "source_text_chars": 115451,
+  "source_text_sha1": "c41afb3a176fba3ceda6546015c22f98908a31fd",
+  "source_tokens_estimated": 28862,
+  "focus_text_chars": 6923,
+  "focus_text_sha1": "a19fa68063a6a43c9a5587c2af402b64cf3c16e3",
+  "focus_tokens_estimated": 1730,
+  "total_tokens_estimated": 30592,
+  "note": "ASHRAE source text is intentionally not persisted; only hash/size metadata is stored."
+}

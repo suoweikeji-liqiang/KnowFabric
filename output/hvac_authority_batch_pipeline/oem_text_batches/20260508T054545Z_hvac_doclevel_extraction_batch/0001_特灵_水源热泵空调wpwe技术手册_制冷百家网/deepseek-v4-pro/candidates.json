@@ -1,0 +1,569 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_e5195d85ea8dd06d",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_9ffb16198ee3425b",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:se1",
+      "structured_payload_candidate": {
+        "code": "SE1",
+        "type": "A",
+        "description": "使用侧回水温度短/开路",
+        "action": "关闭所有外设",
+        "title": "使用侧回水温度传感器故障 (单压缩机)",
+        "summary": "使用侧回水温度传感器短路或开路，关闭所有外设。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n单压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短 /开路 A SE1关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短 /开路 A SL1关闭所有外设\n3 TH3 水源侧回水温度短 /开路 A SE1关闭所有外设\n4 TH4 水源侧出水温度短 /开路 A SL1关闭所有外设\n\u0018 D-IN4 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n\u0018 D-IN\u0018 OV-COMP1 压缩机 1过载 C C1 只是关闭压缩机 1\n\u0018 D-IN\u0018 HP1 压缩机 1高压报警 C H1 只是关闭压缩机 1\n\u0018 D-IN\u0018 LP1 压缩机 1低压报警 C L1 只是关闭压缩机 1\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11  /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、 水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位 \u0018\n13 水源侧制冷时进水温度太低 \u0018\u0018自动复位 \u0018\n14 水源侧制热时进水温度太高 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时进水温度太低 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时出水温度太低 \u0018\u0018自动复位 \u0018\n注\n在线控器上 “S”看起来为“\u0018”\n当此故障出现时， 关闭所有外设。 当水温恢复到正常时， 故障自复位， 但机器仍处于关机状态。1.\n\u0018.\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9ffb16198ee3425b"
+      ],
+      "source_page_nos": [
+        17
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code SE1 (使用侧回水温度传感器故障) extracted from single-compressor table, with defined code, type, description, and action. Evidence supports the structured data."
+    },
+    {
+      "candidate_id": "cand_79784902f92c9d38",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_9ffb16198ee3425b",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:sl1",
+      "structured_payload_candidate": {
+        "code": "SL1",
+        "type": "A",
+        "description": "水源侧出水温度短/开路",
+        "action": "关闭所有外设",
+        "title": "水源侧出水温度传感器故障 (单压缩机)",
+        "summary": "水源侧出水温度传感器短路或开路，关闭所有外设。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n单压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短 /开路 A SE1关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短 /开路 A SL1关闭所有外设\n3 TH3 水源侧回水温度短 /开路 A SE1关闭所有外设\n4 TH4 水源侧出水温度短 /开路 A SL1关闭所有外设\n\u0018 D-IN4 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n\u0018 D-IN\u0018 OV-COMP1 压缩机 1过载 C C1 只是关闭压缩机 1\n\u0018 D-IN\u0018 HP1 压缩机 1高压报警 C H1 只是关闭压缩机 1\n\u0018 D-IN\u0018 LP1 压缩机 1低压报警 C L1 只是关闭压缩机 1\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11  /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、 水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位 \u0018\n13 水源侧制冷时进水温度太低 \u0018\u0018自动复位 \u0018\n14 水源侧制热时进水温度太高 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时进水温度太低 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时出水温度太低 \u0018\u0018自动复位 \u0018\n注\n在线控器上 “S”看起来为“\u0018”\n当此故障出现时， 关闭所有外设。 当水温恢复到正常时， 故障自复位， 但机器仍处于关机状态。1.\n\u0018.\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9ffb16198ee3425b"
+      ],
+      "source_page_nos": [
+        17
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code SL1 (水源侧出水温度传感器故障) for single-compressor system, with clear evidence in the table."
+    },
+    {
+      "candidate_id": "cand_7e39fcd7cb7d931e",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_9ffb16198ee3425b",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:op",
+      "structured_payload_candidate": {
+        "code": "OP",
+        "type": "B",
+        "description": "使用侧水泵过载",
+        "action": "关闭所有外设",
+        "title": "使用侧水泵过载 (单压缩机)",
+        "summary": "使用侧水泵过载，关闭所有外设。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n单压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短 /开路 A SE1关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短 /开路 A SL1关闭所有外设\n3 TH3 水源侧回水温度短 /开路 A SE1关闭所有外设\n4 TH4 水源侧出水温度短 /开路 A SL1关闭所有外设\n\u0018 D-IN4 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n\u0018 D-IN\u0018 OV-COMP1 压缩机 1过载 C C1 只是关闭压缩机 1\n\u0018 D-IN\u0018 HP1 压缩机 1高压报警 C H1 只是关闭压缩机 1\n\u0018 D-IN\u0018 LP1 压缩机 1低压报警 C L1 只是关闭压缩机 1\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11  /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、 水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位 \u0018\n13 水源侧制冷时进水温度太低 \u0018\u0018自动复位 \u0018\n14 水源侧制热时进水温度太高 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时进水温度太低 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时出水温度太低 \u0018\u0018自动复位 \u0018\n注\n在线控器上 “S”看起来为“\u0018”\n当此故障出现时， 关闭所有外设。 当水温恢复到正常时， 故障自复位， 但机器仍处于关机状态。1.\n\u0018.\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9ffb16198ee3425b",
+        "chunk_7b676fba9e504919"
+      ],
+      "source_page_nos": [
+        17,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code OP (使用侧水泵过载) with clear evidence from the manual. Valid operational knowledge."
+    },
+    {
+      "candidate_id": "cand_ca290fb84da03909",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_9ffb16198ee3425b",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:c1",
+      "structured_payload_candidate": {
+        "code": "C1",
+        "type": "C",
+        "description": "压缩机1过载",
+        "action": "只是关闭压缩机1",
+        "title": "压缩机1过载 (单压缩机)",
+        "summary": "压缩机1过载，仅关闭压缩机1。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n单压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短 /开路 A SE1关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短 /开路 A SL1关闭所有外设\n3 TH3 水源侧回水温度短 /开路 A SE1关闭所有外设\n4 TH4 水源侧出水温度短 /开路 A SL1关闭所有外设\n\u0018 D-IN4 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n\u0018 D-IN\u0018 OV-COMP1 压缩机 1过载 C C1 只是关闭压缩机 1\n\u0018 D-IN\u0018 HP1 压缩机 1高压报警 C H1 只是关闭压缩机 1\n\u0018 D-IN\u0018 LP1 压缩机 1低压报警 C L1 只是关闭压缩机 1\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11  /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、 水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位 \u0018\n13 水源侧制冷时进水温度太低 \u0018\u0018自动复位 \u0018\n14 水源侧制热时进水温度太高 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时进水温度太低 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时出水温度太低 \u0018\u0018自动复位 \u0018\n注\n在线控器上 “S”看起来为“\u0018”\n当此故障出现时， 关闭所有外设。 当水温恢复到正常时， 故障自复位， 但机器仍处于关机状态。1.\n\u0018.\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9ffb16198ee3425b",
+        "chunk_7b676fba9e504919"
+      ],
+      "source_page_nos": [
+        17,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code C1 (压缩机1过载) supported by the single-compressor fault table."
+    },
+    {
+      "candidate_id": "cand_01b192f0dd7675d9",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_9ffb16198ee3425b",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:h1",
+      "structured_payload_candidate": {
+        "code": "H1",
+        "type": "C",
+        "description": "压缩机1高压报警",
+        "action": "只是关闭压缩机1",
+        "title": "压缩机1高压报警 (单压缩机)",
+        "summary": "压缩机1高压报警，仅关闭压缩机1。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n单压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短 /开路 A SE1关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短 /开路 A SL1关闭所有外设\n3 TH3 水源侧回水温度短 /开路 A SE1关闭所有外设\n4 TH4 水源侧出水温度短 /开路 A SL1关闭所有外设\n\u0018 D-IN4 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n\u0018 D-IN\u0018 OV-COMP1 压缩机 1过载 C C1 只是关闭压缩机 1\n\u0018 D-IN\u0018 HP1 压缩机 1高压报警 C H1 只是关闭压缩机 1\n\u0018 D-IN\u0018 LP1 压缩机 1低压报警 C L1 只是关闭压缩机 1\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11  /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、 水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位 \u0018\n13 水源侧制冷时进水温度太低 \u0018\u0018自动复位 \u0018\n14 水源侧制热时进水温度太高 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时进水温度太低 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时出水温度太低 \u0018\u0018自动复位 \u0018\n注\n在线控器上 “S”看起来为“\u0018”\n当此故障出现时， 关闭所有外设。 当水温恢复到正常时， 故障自复位， 但机器仍处于关机状态。1.\n\u0018.\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9ffb16198ee3425b",
+        "chunk_7b676fba9e504919"
+      ],
+      "source_page_nos": [
+        17,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code H1 (压缩机1高压报警) clearly supported by evidence."
+    },
+    {
+      "candidate_id": "cand_e6a66787611039ca",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_9ffb16198ee3425b",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:l1",
+      "structured_payload_candidate": {
+        "code": "L1",
+        "type": "C",
+        "description": "压缩机1低压报警",
+        "action": "只是关闭压缩机1",
+        "title": "压缩机1低压报警 (单压缩机)",
+        "summary": "压缩机1低压报警，仅关闭压缩机1。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n单压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短 /开路 A SE1关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短 /开路 A SL1关闭所有外设\n3 TH3 水源侧回水温度短 /开路 A SE1关闭所有外设\n4 TH4 水源侧出水温度短 /开路 A SL1关闭所有外设\n\u0018 D-IN4 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n\u0018 D-IN\u0018 OV-COMP1 压缩机 1过载 C C1 只是关闭压缩机 1\n\u0018 D-IN\u0018 HP1 压缩机 1高压报警 C H1 只是关闭压缩机 1\n\u0018 D-IN\u0018 LP1 压缩机 1低压报警 C L1 只是关闭压缩机 1\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11  /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、 水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位 \u0018\n13 水源侧制冷时进水温度太低 \u0018\u0018自动复位 \u0018\n14 水源侧制热时进水温度太高 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时进水温度太低 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时出水温度太低 \u0018\u0018自动复位 \u0018\n注\n在线控器上 “S”看起来为“\u0018”\n当此故障出现时， 关闭所有外设。 当水温恢复到正常时， 故障自复位， 但机器仍处于关机状态。1.\n\u0018.\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9ffb16198ee3425b",
+        "chunk_7b676fba9e504919"
+      ],
+      "source_page_nos": [
+        17,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code L1 (压缩机1低压报警) shown in the single-compressor fault list."
+    },
+    {
+      "candidate_id": "cand_09340355ef7eea85",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_9ffb16198ee3425b",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:fl",
+      "structured_payload_candidate": {
+        "code": "FL",
+        "type": "D",
+        "description": "使用侧水流量不足",
+        "action": "关闭所有外设",
+        "title": "使用侧水流量不足 (单压缩机)",
+        "summary": "使用侧水流量不足，关闭所有外设。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n单压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短 /开路 A SE1关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短 /开路 A SL1关闭所有外设\n3 TH3 水源侧回水温度短 /开路 A SE1关闭所有外设\n4 TH4 水源侧出水温度短 /开路 A SL1关闭所有外设\n\u0018 D-IN4 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n\u0018 D-IN\u0018 OV-COMP1 压缩机 1过载 C C1 只是关闭压缩机 1\n\u0018 D-IN\u0018 HP1 压缩机 1高压报警 C H1 只是关闭压缩机 1\n\u0018 D-IN\u0018 LP1 压缩机 1低压报警 C L1 只是关闭压缩机 1\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11  /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、 水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位 \u0018\n13 水源侧制冷时进水温度太低 \u0018\u0018自动复位 \u0018\n14 水源侧制热时进水温度太高 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时进水温度太低 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时出水温度太低 \u0018\u0018自动复位 \u0018\n注\n在线控器上 “S”看起来为“\u0018”\n当此故障出现时， 关闭所有外设。 当水温恢复到正常时， 故障自复位， 但机器仍处于关机状态。1.\n\u0018.\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9ffb16198ee3425b",
+        "chunk_7b676fba9e504919"
+      ],
+      "source_page_nos": [
+        17,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code FL for 使用侧水流量不足, clearly mentioned in the single-compressor table. This is the original; duplicates will be rejected."
+    },
+    {
+      "candidate_id": "cand_56eaba76dcc16774",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_9ffb16198ee3425b",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e3",
+      "structured_payload_candidate": {
+        "code": "E3",
+        "type": "D",
+        "description": "使用侧制冷出水温度太低",
+        "action": "关压缩机、水泵",
+        "title": "使用侧制冷出水温度太低 (单压缩机)",
+        "summary": "使用侧制冷出水温度太低，关闭压缩机和水泵。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n单压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短 /开路 A SE1关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短 /开路 A SL1关闭所有外设\n3 TH3 水源侧回水温度短 /开路 A SE1关闭所有外设\n4 TH4 水源侧出水温度短 /开路 A SL1关闭所有外设\n\u0018 D-IN4 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n\u0018 D-IN\u0018 OV-COMP1 压缩机 1过载 C C1 只是关闭压缩机 1\n\u0018 D-IN\u0018 HP1 压缩机 1高压报警 C H1 只是关闭压缩机 1\n\u0018 D-IN\u0018 LP1 压缩机 1低压报警 C L1 只是关闭压缩机 1\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11  /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、 水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位 \u0018\n13 水源侧制冷时进水温度太低 \u0018\u0018自动复位 \u0018\n14 水源侧制热时进水温度太高 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时进水温度太低 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时出水温度太低 \u0018\u0018自动复位 \u0018\n注\n在线控器上 “S”看起来为“\u0018”\n当此故障出现时， 关闭所有外设。 当水温恢复到正常时， 故障自复位， 但机器仍处于关机状态。1.\n\u0018.\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9ffb16198ee3425b"
+      ],
+      "source_page_nos": [
+        17
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code E3 (使用侧制冷出水温度太低) supported by evidence, though detail limited; still operational fault code."
+    },
+    {
+      "candidate_id": "cand_68994775fcdcf082",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 18,
+      "chunk_id": "chunk_7b676fba9e504919",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:se",
+      "structured_payload_candidate": {
+        "code": "SE",
+        "type": "A",
+        "description": "使用侧回水温度短/开路",
+        "action": "关闭所有外设",
+        "title": "使用侧回水温度传感器故障 (双压缩机)",
+        "summary": "使用侧回水温度传感器短路或开路，关闭所有外设。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n双压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短/开路 A SE 关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短/开路 A SL 关闭所有外设\n4 TH4 水源侧回水温度短/开路 A SL 关闭所有外设\n\u0018 TH\u0018 水源侧出水温度1短/开路 A S\u0018 关闭所有外设\n\u0018 TH\u0018 水源侧出水温度\u0018短/开路 A S3 关闭所有外设\n\u0018 D-IN3 OVHT/HP\u0018 压缩机\u0018高压报警 E H\u0018 只是关闭压缩机\u0018\n\u0018 D-IN\u0018 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11 D-IN\u0018 OV-COMP1 压缩机1过载 C C1 只是关闭压缩机1\n1\u0018 D-IN\u0018 OV-COMP\u0018 压缩机\u0018过载 E C\u0018 只是关闭压缩机\u0018\n13 D-IN10 HP1 压缩机1高压报警 C H1 只是关闭压缩机1\n14 D-IN11 LP1 压缩机1低压报警 C L1 只是关闭压缩机1\n1\u0018 D-IN4 FREZ/LP\u0018 压缩机\u0018低压报警 E L\u0018 只是关闭压缩机\u0018\n1\u0018 /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位\n1\u0018 水源侧制冷时进水温度太低 \u0018\u0018自动复位\n1\u0018 水源侧制热时进水温度太高 \u0018\u0018自动复位\n\u00180 水源侧制热时进水温度太低 \u0018\u0018自动复位\n\u00181 水源侧制热时出水温度太低 \u0018\u0018自动复位\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7b676fba9e504919"
+      ],
+      "source_page_nos": [
+        18
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code SE for 使用侧回水温度传感器故障 in dual-compressor table, matches evidence."
+    },
+    {
+      "candidate_id": "cand_b2757af990dd158e",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 18,
+      "chunk_id": "chunk_7b676fba9e504919",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:sl",
+      "structured_payload_candidate": {
+        "code": "SL",
+        "type": "A",
+        "description": "水源侧回水温度短/开路",
+        "action": "关闭所有外设",
+        "title": "水源侧回水温度传感器故障 (双压缩机)",
+        "summary": "水源侧回水温度传感器短路或开路，关闭所有外设。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n双压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短/开路 A SE 关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短/开路 A SL 关闭所有外设\n4 TH4 水源侧回水温度短/开路 A SL 关闭所有外设\n\u0018 TH\u0018 水源侧出水温度1短/开路 A S\u0018 关闭所有外设\n\u0018 TH\u0018 水源侧出水温度\u0018短/开路 A S3 关闭所有外设\n\u0018 D-IN3 OVHT/HP\u0018 压缩机\u0018高压报警 E H\u0018 只是关闭压缩机\u0018\n\u0018 D-IN\u0018 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11 D-IN\u0018 OV-COMP1 压缩机1过载 C C1 只是关闭压缩机1\n1\u0018 D-IN\u0018 OV-COMP\u0018 压缩机\u0018过载 E C\u0018 只是关闭压缩机\u0018\n13 D-IN10 HP1 压缩机1高压报警 C H1 只是关闭压缩机1\n14 D-IN11 LP1 压缩机1低压报警 C L1 只是关闭压缩机1\n1\u0018 D-IN4 FREZ/LP\u0018 压缩机\u0018低压报警 E L\u0018 只是关闭压缩机\u0018\n1\u0018 /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位\n1\u0018 水源侧制冷时进水温度太低 \u0018\u0018自动复位\n1\u0018 水源侧制热时进水温度太高 \u0018\u0018自动复位\n\u00180 水源侧制热时进水温度太低 \u0018\u0018自动复位\n\u00181 水源侧制热时出水温度太低 \u0018\u0018自动复位\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7b676fba9e504919"
+      ],
+      "source_page_nos": [
+        18
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code SL for 水源侧回水温度传感器故障 in dual-compressor system, per evidence."
+    },
+    {
+      "candidate_id": "cand_09340355ef7eea85",
+      "domain_id": "hvac",
+      "doc_id": "doc_1034242278c9473a",
+      "doc_name": "【特灵】水源热泵空调wpwe技术手册-制冷百家网.pdf",
+      "page_no": 17,
+      "chunk_id": "chunk_9ffb16198ee3425b",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:fl",
+      "structured_payload_candidate": {
+        "code": "FL",
+        "type": "D",
+        "description": "使用侧水流量不足",
+        "action": "关闭所有外设",
+        "title": "使用侧水流量不足 (双压缩机)",
+        "summary": "使用侧水流量不足，关闭所有外设。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "故障代码\n单压缩机系统\n序号 输入端口 端口描述 故 障 描 述 类型 代 码 故 障 处 理\n1 TH1 使用侧回水温度短 /开路 A SE1关闭所有外设\n\u0018 TH\u0018 使用侧出水温度短 /开路 A SL1关闭所有外设\n3 TH3 水源侧回水温度短 /开路 A SE1关闭所有外设\n4 TH4 水源侧出水温度短 /开路 A SL1关闭所有外设\n\u0018 D-IN4 FLOW1 水源侧水流量不足 D FL 关闭所有外设\n\u0018 D-IN\u0018 OV-PUMP 使用侧水泵过载 B OP 关闭所有外设\n\u0018 D-IN\u0018 OV-COMP1 压缩机 1过载 C C1 只是关闭压缩机 1\n\u0018 D-IN\u0018 HP1 压缩机 1高压报警 C H1 只是关闭压缩机 1\n\u0018 D-IN\u0018 LP1 压缩机 1低压报警 C L1 只是关闭压缩机 1\n10 D-IN\u0018 FLOW\u0018 使用侧水流量不足 D FL 关闭所有外设\n11  /  /  / 使用侧制冷出水温度太低 D E3 关压缩机、 水泵\n1\u0018 水源侧制冷时进水温度太高 \u0018\u0018自动复位 \u0018\n13 水源侧制冷时进水温度太低 \u0018\u0018自动复位 \u0018\n14 水源侧制热时进水温度太高 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时进水温度太低 \u0018\u0018自动复位 \u0018\n1\u0018 水源侧制热时出水温度太低 \u0018\u0018自动复位 \u0018\n注\n在线控器上 “S”看起来为“\u0018”\n当此故障出现时， 关闭所有外设。 当水温恢复到正常时， 故障自复位， 但机器仍处于关机状态。1.\n\u0018.\n1\u0018\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 0.638,
+        "matched_aliases": [
+          "Controller",
+          "controller"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9ffb16198ee3425b",
+        "chunk_7b676fba9e504919"
+      ],
+      "source_page_nos": [
+        17,
+        18
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code FL for 使用侧水流量不足, clearly mentioned in the single-compressor table. This is the original; duplicates will be rejected."
+    }
+  ]
+}

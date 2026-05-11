@@ -1,0 +1,75 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【天加 】风冷净化空调机组安装操作手册.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/13、天加中央空调/【天加 】风冷净化空调机组安装操作手册.pdf",
+  "doc_id": "doc_a8258f8764a54269",
+  "chunks": 27,
+  "manual_tokens_estimated": 7379,
+  "equipment_class_id": "chilled_water_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "冷水机组"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 21,
+      "chunks_before": 27,
+      "pages_after": 21,
+      "chunks_after": 27,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 10,
+      "anchor_passed": 10,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 10,
+      "judge_rejected": 0,
+      "judge_acceptance_rate": 100.0,
+      "judge_rejection_breakdown": {},
+      "review_candidates": 10,
+      "by_type": {
+        "parameter_spec": 8,
+        "fault_code": 2
+      },
+      "usage": {
+        "prompt_tokens": 12591,
+        "completion_tokens": 1577,
+        "total_tokens": 14168
+      },
+      "judge_usage": {
+        "prompt_tokens": 11908,
+        "completion_tokens": 653,
+        "total_tokens": 12561
+      },
+      "extract_cost_rmb": 0.047235,
+      "judge_cost_rmb": 0.039642,
+      "cost_rmb": 0.086877,
+      "elapsed_seconds": 63.437,
+      "judge_elapsed_seconds": 19.387,
+      "output_dir": "output/hvac_authority_batch_pipeline/20260507T200220Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200220Z_hvac_doclevel_extraction_batch/0002_天加_风冷净化空调机组安装操作手册/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "output/hvac_authority_batch_pipeline/20260507T200220Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200220Z_hvac_doclevel_extraction_batch/0002_天加_风冷净化空调机组安装操作手册"
+}

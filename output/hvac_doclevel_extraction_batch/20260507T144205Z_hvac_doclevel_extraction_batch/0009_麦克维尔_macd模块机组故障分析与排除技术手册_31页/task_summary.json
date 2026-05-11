@@ -1,0 +1,46 @@
+{
+  "status": "completed",
+  "row_index": 9,
+  "file_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+  "doc_id": "doc_e312bbfa86684629",
+  "chunks": 31,
+  "manual_tokens_estimated": 4978,
+  "equipment_class_id": "air_cooled_modular_heat_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "modular_chiller",
+      "equipment_class_key": "hvac:modular_chiller",
+      "confidence": 0.383,
+      "matched_aliases": [
+        "模块机"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 31,
+      "chunks_before": 31,
+      "pages_after": 31,
+      "chunks_after": 31,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-parameter-spec",
+      "model": "deepseek-v4-flash",
+      "status": "failed",
+      "error": "Remote end closed connection without response"
+    }
+  ],
+  "task_dir": "output/hvac_doclevel_extraction_batch/20260507T144205Z_hvac_doclevel_extraction_batch/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页"
+}

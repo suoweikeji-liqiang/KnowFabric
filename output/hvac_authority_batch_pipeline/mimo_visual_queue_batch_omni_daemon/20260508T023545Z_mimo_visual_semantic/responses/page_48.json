@@ -1,0 +1,108 @@
+{
+  "page": 48,
+  "response": {
+    "id": "a2066d8e41c14247923ba94deb33caaa",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"equipment_structure\",\n  \"summary\": \"This page displays technical drawings and specifications for HVAC equipment models PFS380.2-490.2C-B and PFS370.3-510.3, including dimensional diagrams, a parameter table, and descriptive text about features like heat recovery, variable flow, and packaging options.\",\n  \"visual_entities\": [\n    {\"type\": \"diagram\", \"label\": \"PFS380.2-490.2C-B dimensional drawing\"},\n    {\"type\": \"diagram\", \"label\": \"PFS370.3-510.3 dimensional drawing\"},\n    {\"type\": \"table\", \"label\": \"Parameter table for PFS380.2-490.2C-B and PFS430.2-490.2C-B\"},\n    {\"type\": \"text_block\", \"label\": \"Feature descriptions (e.g., heat recovery, variable flow)\"},\n    {\"type\": \"text_block\", \"label\": \"Ordering scope and options\"},\n    {\"type\": \"label\", \"label\": \"Dimensional annotations (e.g., A, B, C, D)\"},\n    {\"type\": \"label\", \"label\": \"Component labels (a, b, c, etc.)\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"PFS380.2-490.2C-B dimensional drawing\", \"relation\": \"includes\", \"to\": \"Dimensional annotations\"},\n    {\"from\": \"PFS370.3-510.3 dimensional drawing\", \"relation\": \"includes\", \"to\": \"Dimensional annotations\"},\n    {\"from\": \"Parameter table\", \"relation\": \"lists\", \"to\": \"PFS380.2-405.2C-B\"},\n    {\"from\": \"Parameter table\", \"relation\": \"lists\", \"to\": \"PFS430.2-490.2C-B\"},\n    {\"from\": \"Component labels\", \"relation\": \"identify\", \"to\": \"PFS380.2-490.2C-B dimensional drawing\"},\n    {\"from\": \"Component labels\", \"relation\": \"identify\", \"to\": \"PFS370.3-510.3 dimensional drawing\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_specifications\", \"dimensional_data\", \"feature_options\", \"ordering_information\"],\n  \"ocr_text_if_useful\": \"PFS380.2-490.2C-B, PFS370.3-510.3, 单位: mm, 机组型号, A, B, C, D, 说明, a 冷凝器出水管, b 冷凝器进水管, c 蒸发器进水管, d 蒸发器出水管, e 机组起吊孔, f 地脚孔, g 电机动力线进线孔\",\n  \"uncertainty_notes\": \"Some text in the descriptive sections is small and may not be fully legible; relationships between specific components and their labels are inferred from standard diagram conventions.\",\n  \"confidence\": 0.85\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778207771,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 694,
+      "prompt_tokens": 1517,
+      "total_tokens": 2211,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 1320
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "equipment_structure",
+    "summary": "This page displays technical drawings and specifications for HVAC equipment models PFS380.2-490.2C-B and PFS370.3-510.3, including dimensional diagrams, a parameter table, and descriptive text about features like heat recovery, variable flow, and packaging options.",
+    "visual_entities": [
+      {
+        "type": "diagram",
+        "label": "PFS380.2-490.2C-B dimensional drawing"
+      },
+      {
+        "type": "diagram",
+        "label": "PFS370.3-510.3 dimensional drawing"
+      },
+      {
+        "type": "table",
+        "label": "Parameter table for PFS380.2-490.2C-B and PFS430.2-490.2C-B"
+      },
+      {
+        "type": "text_block",
+        "label": "Feature descriptions (e.g., heat recovery, variable flow)"
+      },
+      {
+        "type": "text_block",
+        "label": "Ordering scope and options"
+      },
+      {
+        "type": "label",
+        "label": "Dimensional annotations (e.g., A, B, C, D)"
+      },
+      {
+        "type": "label",
+        "label": "Component labels (a, b, c, etc.)"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "PFS380.2-490.2C-B dimensional drawing",
+        "relation": "includes",
+        "to": "Dimensional annotations"
+      },
+      {
+        "from": "PFS370.3-510.3 dimensional drawing",
+        "relation": "includes",
+        "to": "Dimensional annotations"
+      },
+      {
+        "from": "Parameter table",
+        "relation": "lists",
+        "to": "PFS380.2-405.2C-B"
+      },
+      {
+        "from": "Parameter table",
+        "relation": "lists",
+        "to": "PFS430.2-490.2C-B"
+      },
+      {
+        "from": "Component labels",
+        "relation": "identify",
+        "to": "PFS380.2-490.2C-B dimensional drawing"
+      },
+      {
+        "from": "Component labels",
+        "relation": "identify",
+        "to": "PFS370.3-510.3 dimensional drawing"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "equipment_specifications",
+      "dimensional_data",
+      "feature_options",
+      "ordering_information"
+    ],
+    "ocr_text_if_useful": "PFS380.2-490.2C-B, PFS370.3-510.3, 单位: mm, 机组型号, A, B, C, D, 说明, a 冷凝器出水管, b 冷凝器进水管, c 蒸发器进水管, d 蒸发器出水管, e 机组起吊孔, f 地脚孔, g 电机动力线进线孔",
+    "uncertainty_notes": "Some text in the descriptive sections is small and may not be fully legible; relationships between specific components and their labels are inferred from standard diagram conventions.",
+    "confidence": 0.85
+  },
+  "raw_text": "{\n  \"page_type\": \"equipment_structure\",\n  \"summary\": \"This page displays technical drawings and specifications for HVAC equipment models PFS380.2-490.2C-B and PFS370.3-510.3, including dimensional diagrams, a parameter table, and descriptive text about features like heat recovery, variable flow, and packaging options.\",\n  \"visual_entities\": [\n    {\"type\": \"diagram\", \"label\": \"PFS380.2-490.2C-B dimensional drawing\"},\n    {\"type\": \"diagram\", \"label\": \"PFS370.3-510.3 dimensional drawing\"},\n    {\"type\": \"table\", \"label\": \"Parameter table for PFS380.2-490.2C-B and PFS430.2-490.2C-B\"},\n    {\"type\": \"text_block\", \"label\": \"Feature descriptions (e.g., heat recovery, variable flow)\"},\n    {\"type\": \"text_block\", \"label\": \"Ordering scope and options\"},\n    {\"type\": \"label\", \"label\": \"Dimensional annotations (e.g., A, B, C, D)\"},\n    {\"type\": \"label\", \"label\": \"Component labels (a, b, c, etc.)\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"PFS380.2-490.2C-B dimensional drawing\", \"relation\": \"includes\", \"to\": \"Dimensional annotations\"},\n    {\"from\": \"PFS370.3-510.3 dimensional drawing\", \"relation\": \"includes\", \"to\": \"Dimensional annotations\"},\n    {\"from\": \"Parameter table\", \"relation\": \"lists\", \"to\": \"PFS380.2-405.2C-B\"},\n    {\"from\": \"Parameter table\", \"relation\": \"lists\", \"to\": \"PFS430.2-490.2C-B\"},\n    {\"from\": \"Component labels\", \"relation\": \"identify\", \"to\": \"PFS380.2-490.2C-B dimensional drawing\"},\n    {\"from\": \"Component labels\", \"relation\": \"identify\", \"to\": \"PFS370.3-510.3 dimensional drawing\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_specifications\", \"dimensional_data\", \"feature_options\", \"ordering_information\"],\n  \"ocr_text_if_useful\": \"PFS380.2-490.2C-B, PFS370.3-510.3, 单位: mm, 机组型号, A, B, C, D, 说明, a 冷凝器出水管, b 冷凝器进水管, c 蒸发器进水管, d 蒸发器出水管, e 机组起吊孔, f 地脚孔, g 电机动力线进线孔\",\n  \"uncertainty_notes\": \"Some text in the descriptive sections is small and may not be fully legible; relationships between specific components and their labels are inferred from standard diagram conventions.\",\n  \"confidence\": 0.85\n}"
+}

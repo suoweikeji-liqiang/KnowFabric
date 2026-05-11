@@ -1,0 +1,703 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_5b387d03a9067c2c",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 14,
+      "chunk_id": "chunk_b4a272fe2be34615",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:30hxc_hp1",
+      "structured_payload_candidate": {
+        "parameter_name": "名义制热量",
+        "title": "30HXC-HP1 名义制热量",
+        "summary": "30HXC-HP1 名义制热量 525-1542 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "技术规格\n5.1 30HXC-HP1 机组技术参数\n型  号 30HXC-\nHP1 130A 165A 200A 250A 300 350A 400A\n名义制热量 kW 525 633 760 1043 1161 1388 1542\n输入功率 kW 120 145 167 242 257 320 338\n热水进出水温度\n40/45\n热水流量 m3/h 89 108 129 177 198 238 263 冷\n凝器 水压降 kPa 58 62 57 44 53 62 75\n热源水进出水温度\n15/7\n热源水流量 m3/h 44 53 64 86 97 115 130 制\n热\n工\n况 蒸发器 水压降 kPa 17 19 22 18 22 19 24\n名义制冷量 kW 447 539 628 888 960 1186 1281\n输入功率 kW 93 113 131 192 202 253 266\n冷水进出水温度\n12/7\n冷水流量 m3/h 77 93 108 153 165 205 220 蒸发器 水压降 kPa 50 55 61 53 61 58 66\n冷却水进出水温度\n30/35\n冷却水流量 m3/h 92 111 130 184 198 245 263 制\n冷\n工\n况 冷凝器 水压降 kPa 61 66 58 47 54 66 76\n热\n冷\n量调节档数  6 6 6 8 8 10 10\n最小热\n冷\n量 % 19 19 21 14 14 10 10\n回路 A 数量 1 1 1 2 2 2 2 压缩机 回路 B 数量 1 1 1 1 1 2 2\n电源 V-Ph-Hz 380-3-50\n制热 A 205 249 286 414 439 547 579 额定 电流 制冷 A 158 193 225 328 346 433 454\n星/三角 A 318 380 473 582* 662* 754* 851*\n直接启动 A _ _ _ 1097 1279 1269 1468\n回路 A A _ _ _ 925 1090 925 1090 电\n机 最大启动电流 回路 B A _ _ _ 753 901 925 1090\n回路 A kg 51 54 70 117 132 96 119 HFC-134a\n充注量 回路 B kg 47 57 70 75 80 109 137\n冷凝器进出口径 Dg 125 125 150 200 200 200 200\n蒸发器进出口径 Dg 125 125 125 150 150 200 200\n长 mm 3278 3278 3278 3912 3912 4521 4521\n宽 mm 980 980 980 1015 1015 1015 1015 外形尺寸\n高 mm 1816 1816 1941 2060 2060 2112 2112\n机组重量 kg 2474 2547 2983 4296 4416 5090 5258\n运行重量 kg 2617 2712 3179 4656 4776 5553 5721\n备注\nz 采用 JB /T 4329-1997 标准的名义工况\nz 以上技术规格基于蒸发器\n冷凝器水侧污垢系数 0.086m2\n/kW\nz 制热时最高热水出水温度 47\nz 机组水侧标准设计压力为 1.0M Pa\n如需更高水侧承压机组\n请与开利公司联系\nz 30HXC 250A~ 400A-HP1 标准启动方式为直接启动\n星-三角启动方式\n*\n为可选配置\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_b4a272fe2be34615"
+      ],
+      "source_page_nos": [
+        14
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides nominal heating capacity range for 30HXC-HP1 from technical specifications table."
+    },
+    {
+      "candidate_id": "cand_7f759838f05081bd",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 14,
+      "chunk_id": "chunk_b4a272fe2be34615",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:30hxc_hp1",
+      "structured_payload_candidate": {
+        "parameter_name": "名义制冷量",
+        "title": "30HXC-HP1 名义制冷量",
+        "summary": "30HXC-HP1 名义制冷量 447-1281 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "技术规格\n5.1 30HXC-HP1 机组技术参数\n型  号 30HXC-\nHP1 130A 165A 200A 250A 300 350A 400A\n名义制热量 kW 525 633 760 1043 1161 1388 1542\n输入功率 kW 120 145 167 242 257 320 338\n热水进出水温度\n40/45\n热水流量 m3/h 89 108 129 177 198 238 263 冷\n凝器 水压降 kPa 58 62 57 44 53 62 75\n热源水进出水温度\n15/7\n热源水流量 m3/h 44 53 64 86 97 115 130 制\n热\n工\n况 蒸发器 水压降 kPa 17 19 22 18 22 19 24\n名义制冷量 kW 447 539 628 888 960 1186 1281\n输入功率 kW 93 113 131 192 202 253 266\n冷水进出水温度\n12/7\n冷水流量 m3/h 77 93 108 153 165 205 220 蒸发器 水压降 kPa 50 55 61 53 61 58 66\n冷却水进出水温度\n30/35\n冷却水流量 m3/h 92 111 130 184 198 245 263 制\n冷\n工\n况 冷凝器 水压降 kPa 61 66 58 47 54 66 76\n热\n冷\n量调节档数  6 6 6 8 8 10 10\n最小热\n冷\n量 % 19 19 21 14 14 10 10\n回路 A 数量 1 1 1 2 2 2 2 压缩机 回路 B 数量 1 1 1 1 1 2 2\n电源 V-Ph-Hz 380-3-50\n制热 A 205 249 286 414 439 547 579 额定 电流 制冷 A 158 193 225 328 346 433 454\n星/三角 A 318 380 473 582* 662* 754* 851*\n直接启动 A _ _ _ 1097 1279 1269 1468\n回路 A A _ _ _ 925 1090 925 1090 电\n机 最大启动电流 回路 B A _ _ _ 753 901 925 1090\n回路 A kg 51 54 70 117 132 96 119 HFC-134a\n充注量 回路 B kg 47 57 70 75 80 109 137\n冷凝器进出口径 Dg 125 125 150 200 200 200 200\n蒸发器进出口径 Dg 125 125 125 150 150 200 200\n长 mm 3278 3278 3278 3912 3912 4521 4521\n宽 mm 980 980 980 1015 1015 1015 1015 外形尺寸\n高 mm 1816 1816 1941 2060 2060 2112 2112\n机组重量 kg 2474 2547 2983 4296 4416 5090 5258\n运行重量 kg 2617 2712 3179 4656 4776 5553 5721\n备注\nz 采用 JB /T 4329-1997 标准的名义工况\nz 以上技术规格基于蒸发器\n冷凝器水侧污垢系数 0.086m2\n/kW\nz 制热时最高热水出水温度 47\nz 机组水侧标准设计压力为 1.0M Pa\n如需更高水侧承压机组\n请与开利公司联系\nz 30HXC 250A~ 400A-HP1 标准启动方式为直接启动\n星-三角启动方式\n*\n为可选配置\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_b4a272fe2be34615"
+      ],
+      "source_page_nos": [
+        14
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides nominal cooling capacity range for 30HXC-HP1 from technical specifications table."
+    },
+    {
+      "candidate_id": "cand_fb9259e30df8cb22",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 15,
+      "chunk_id": "chunk_f6fbc65aa5e24b5f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:30hxc_hp2",
+      "structured_payload_candidate": {
+        "parameter_name": "名义制热量",
+        "title": "30HXC-HP2 名义制热量",
+        "summary": "30HXC-HP2 名义制热量 498-1548 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n9 z 若虑及热换器保温层温度\n外形尺寸中的长度应加上约 19mm\n5.2 30HXC-HP2 机组技术参数\n型  号 30HXC-\nHP2 130A 165A 200A 250A 300A 350A 400A\n名义制热量 kW 498 598 772 971 1167 1288 1548\n输入功率 kW 139 170 212 280 325 370 429\n热水进出水温度\n50/55\n热水流量 m3/h 84 102 131 165 198 220 263 冷\n凝器 水压降 kPa 53 57 59 39 54 55 77\n热源水进出水温度\n15/7\n热源水流量 m3/h 39 46 60 74 90 99 120 制\n热\n工\n况 蒸发器 水压降 kPa 14 15 20 14 20 15 22\n名义制冷量 kW 448 529 624 851 940 1135 1251\n输入功率 kW 101 126 150 209 229 277 302\n冷水进出水温度\n12/7\n冷水流量 m3/h 77 91 107 147 162 194 216 蒸发器 水压降 kPa 53 55 61 51 61 55 66\n冷却水进出水温度\n30/35\n冷却水流量 m3/h 94 112 132 180 198 241 266 制\n冷\n工\n况 冷凝器 水压降 kPa 65 67 60 46 55 65 78\n热\n冷\n量调节档数  6 6 6 8 8 10 10\n最小热\n冷\n量 % 19 19 21 14 14 10 10\n回路 A 数量 1 1 1 2 2 2 2 压缩机 回路 B 数量 1 1 1 1 1 2 2\n电源 V-Ph-Hz 380-3-50\n制热 A 244 298 372 491 570 649 753 额定 电流 制冷 A 177 221 263 367 402 486 530\n星/三角 A 467 584 679 821* 937* 1028* 1195*\n直接启动 A _ _ _ 1705 1848 1912 2106\n回路 A A _ _ _ 1489 1579 1489 1579 电\n机 最大启动电流\n回路 B A _ _ _ 1291 1332 1489 1579\n回路 A kg 51 54 70 117 132 96 119 HFC-134a\n充注量 回路 B kg 47 57 70 75 80 109 137\n冷凝器进出口径 Dg 125 125 150 200 200 200 200\n蒸发器进出口径 Dg 125 125 125 150 150 200 200\n长 mm 3278 3278 3278 3912 3912 4521 4521\n宽 mm 980 980 980 1015 1015 1015 1015 外形尺寸\n高 mm 1816 1816 1941 2060 2060 2112 2112\n机组重量 kg 2474 2547 2983 4296 4416 5090 5258\n运行重量 kg 2617 2712 3179 4656 4776 5553 5721\n备注\nz 采用 JB /T 4329-1997 标准的名义工况\nz 以上技术规格基于蒸发器\n冷凝器水侧污垢系数 0.086m2\n/kW\nz 制热时最高热水出水温度 60\nz 机组水侧标准设计压力为 1.0M Pa\n如需更高水侧承压机组\n请与开利公司联系\nz 30HXC 250A~ 400A-HP2 标准启动方式为直接启动\n星-三角启动方式\n*\n为可选配置\nz 若虑及热换器保温层温度\n外形尺寸中的长度应加上约 19mm\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_f6fbc65aa5e24b5f"
+      ],
+      "source_page_nos": [
+        15
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides nominal heating capacity range for 30HXC-HP2 from technical specifications table."
+    },
+    {
+      "candidate_id": "cand_b8109656d2909219",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 15,
+      "chunk_id": "chunk_f6fbc65aa5e24b5f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:30hxc_hp2",
+      "structured_payload_candidate": {
+        "parameter_name": "名义制冷量",
+        "title": "30HXC-HP2 名义制冷量",
+        "summary": "30HXC-HP2 名义制冷量 448-1251 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n9 z 若虑及热换器保温层温度\n外形尺寸中的长度应加上约 19mm\n5.2 30HXC-HP2 机组技术参数\n型  号 30HXC-\nHP2 130A 165A 200A 250A 300A 350A 400A\n名义制热量 kW 498 598 772 971 1167 1288 1548\n输入功率 kW 139 170 212 280 325 370 429\n热水进出水温度\n50/55\n热水流量 m3/h 84 102 131 165 198 220 263 冷\n凝器 水压降 kPa 53 57 59 39 54 55 77\n热源水进出水温度\n15/7\n热源水流量 m3/h 39 46 60 74 90 99 120 制\n热\n工\n况 蒸发器 水压降 kPa 14 15 20 14 20 15 22\n名义制冷量 kW 448 529 624 851 940 1135 1251\n输入功率 kW 101 126 150 209 229 277 302\n冷水进出水温度\n12/7\n冷水流量 m3/h 77 91 107 147 162 194 216 蒸发器 水压降 kPa 53 55 61 51 61 55 66\n冷却水进出水温度\n30/35\n冷却水流量 m3/h 94 112 132 180 198 241 266 制\n冷\n工\n况 冷凝器 水压降 kPa 65 67 60 46 55 65 78\n热\n冷\n量调节档数  6 6 6 8 8 10 10\n最小热\n冷\n量 % 19 19 21 14 14 10 10\n回路 A 数量 1 1 1 2 2 2 2 压缩机 回路 B 数量 1 1 1 1 1 2 2\n电源 V-Ph-Hz 380-3-50\n制热 A 244 298 372 491 570 649 753 额定 电流 制冷 A 177 221 263 367 402 486 530\n星/三角 A 467 584 679 821* 937* 1028* 1195*\n直接启动 A _ _ _ 1705 1848 1912 2106\n回路 A A _ _ _ 1489 1579 1489 1579 电\n机 最大启动电流\n回路 B A _ _ _ 1291 1332 1489 1579\n回路 A kg 51 54 70 117 132 96 119 HFC-134a\n充注量 回路 B kg 47 57 70 75 80 109 137\n冷凝器进出口径 Dg 125 125 150 200 200 200 200\n蒸发器进出口径 Dg 125 125 125 150 150 200 200\n长 mm 3278 3278 3278 3912 3912 4521 4521\n宽 mm 980 980 980 1015 1015 1015 1015 外形尺寸\n高 mm 1816 1816 1941 2060 2060 2112 2112\n机组重量 kg 2474 2547 2983 4296 4416 5090 5258\n运行重量 kg 2617 2712 3179 4656 4776 5553 5721\n备注\nz 采用 JB /T 4329-1997 标准的名义工况\nz 以上技术规格基于蒸发器\n冷凝器水侧污垢系数 0.086m2\n/kW\nz 制热时最高热水出水温度 60\nz 机组水侧标准设计压力为 1.0M Pa\n如需更高水侧承压机组\n请与开利公司联系\nz 30HXC 250A~ 400A-HP2 标准启动方式为直接启动\n星-三角启动方式\n*\n为可选配置\nz 若虑及热换器保温层温度\n外形尺寸中的长度应加上约 19mm\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_f6fbc65aa5e24b5f"
+      ],
+      "source_page_nos": [
+        15
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides nominal cooling capacity range for 30HXC-HP2 from technical specifications table."
+    },
+    {
+      "candidate_id": "cand_87173356cc09a2b8",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_a5b8aa3343984dad",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "制冷剂充注量",
+        "title": "制冷剂充注量",
+        "summary": "30HXC-HP 制冷剂充注量 HFC134a，回路A/B kg 51/47 至 119/137"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n10 5.3 机组制冷剂和润滑油参数\n型号 30HXC-HP 130A 165A 200A 250A 300A 350A 400A\n制冷剂充注量 HFC134a\n回路 A/B kg 51/47 54/57 70/70 117/75 132/80 96/109 119/137\n润滑油  合成酯类油\n开利零件号\nPP 47-32\n回路 A/B L 15/15 15/15 15/15 30/15 30/15 30/30 30/30\n压缩机 半封闭式双转子螺杆压缩机\n警告一\n30HXC-HP 机组只能使用 HFC-134a 工质\n请不要在本机组中使用任何其它类型的工质 ,\n以免造成不必要的损害\n警告二\n30HXC-HP 机组只能使用本公司特定的润滑油\n千万不要在本机组中使用任何其它类\n型的润滑油 ,以免造成不必要的损害\n6. 应用数据\n6.1 机组运行范围\n蒸发器  最小值 最大值\n蒸发器进水温度\n6.8 21\n蒸发器出水温度\n4 15\n最大值 冷凝器  最小值 30HXC-HP1 30HXC-HP2\n冷凝器进水温度\n20 42 55\n冷凝器出水温度\n25 47 60\n机组运行的环境温度\n6 40\n备注\nz 当机组制冷运行时\n开机时机组冷凝器进水温度不得低于 15\n满负荷运行时\n冷凝器进\n水温度不得低于 20\n不然需要用水阀进行冷凝压力控制\nz 当机组制热运行时\n进入蒸发器的热源水温度\n推荐使用温度范围为 12~20\n不建议使用\n低于 10\n的热源水\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a5b8aa3343984dad"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Gives refrigerant charge (HFC134a) and range per circuit for different models."
+    },
+    {
+      "candidate_id": "cand_2eb9806a066cc651",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_a5b8aa3343984dad",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "润滑油",
+        "title": "润滑油参数",
+        "summary": "润滑油为合成酯类油，开利零件号 PP 47-32，回路A/B L 15/15 至 30/30"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n10 5.3 机组制冷剂和润滑油参数\n型号 30HXC-HP 130A 165A 200A 250A 300A 350A 400A\n制冷剂充注量 HFC134a\n回路 A/B kg 51/47 54/57 70/70 117/75 132/80 96/109 119/137\n润滑油  合成酯类油\n开利零件号\nPP 47-32\n回路 A/B L 15/15 15/15 15/15 30/15 30/15 30/30 30/30\n压缩机 半封闭式双转子螺杆压缩机\n警告一\n30HXC-HP 机组只能使用 HFC-134a 工质\n请不要在本机组中使用任何其它类型的工质 ,\n以免造成不必要的损害\n警告二\n30HXC-HP 机组只能使用本公司特定的润滑油\n千万不要在本机组中使用任何其它类\n型的润滑油 ,以免造成不必要的损害\n6. 应用数据\n6.1 机组运行范围\n蒸发器  最小值 最大值\n蒸发器进水温度\n6.8 21\n蒸发器出水温度\n4 15\n最大值 冷凝器  最小值 30HXC-HP1 30HXC-HP2\n冷凝器进水温度\n20 42 55\n冷凝器出水温度\n25 47 60\n机组运行的环境温度\n6 40\n备注\nz 当机组制冷运行时\n开机时机组冷凝器进水温度不得低于 15\n满负荷运行时\n冷凝器进\n水温度不得低于 20\n不然需要用水阀进行冷凝压力控制\nz 当机组制热运行时\n进入蒸发器的热源水温度\n推荐使用温度范围为 12~20\n不建议使用\n低于 10\n的热源水\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a5b8aa3343984dad"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies lubricating oil type (synthetic ester) and part number with capacity range."
+    },
+    {
+      "candidate_id": "cand_40b3e956beb07162",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_a5b8aa3343984dad",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "蒸发器运行范围",
+        "title": "蒸发器运行范围",
+        "summary": "蒸发器进水温度 6.8-21°C，出水温度 4-15°C"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n10 5.3 机组制冷剂和润滑油参数\n型号 30HXC-HP 130A 165A 200A 250A 300A 350A 400A\n制冷剂充注量 HFC134a\n回路 A/B kg 51/47 54/57 70/70 117/75 132/80 96/109 119/137\n润滑油  合成酯类油\n开利零件号\nPP 47-32\n回路 A/B L 15/15 15/15 15/15 30/15 30/15 30/30 30/30\n压缩机 半封闭式双转子螺杆压缩机\n警告一\n30HXC-HP 机组只能使用 HFC-134a 工质\n请不要在本机组中使用任何其它类型的工质 ,\n以免造成不必要的损害\n警告二\n30HXC-HP 机组只能使用本公司特定的润滑油\n千万不要在本机组中使用任何其它类\n型的润滑油 ,以免造成不必要的损害\n6. 应用数据\n6.1 机组运行范围\n蒸发器  最小值 最大值\n蒸发器进水温度\n6.8 21\n蒸发器出水温度\n4 15\n最大值 冷凝器  最小值 30HXC-HP1 30HXC-HP2\n冷凝器进水温度\n20 42 55\n冷凝器出水温度\n25 47 60\n机组运行的环境温度\n6 40\n备注\nz 当机组制冷运行时\n开机时机组冷凝器进水温度不得低于 15\n满负荷运行时\n冷凝器进\n水温度不得低于 20\n不然需要用水阀进行冷凝压力控制\nz 当机组制热运行时\n进入蒸发器的热源水温度\n推荐使用温度范围为 12~20\n不建议使用\n低于 10\n的热源水\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a5b8aa3343984dad"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Defines evaporator operating temperature ranges (entering and leaving water)."
+    },
+    {
+      "candidate_id": "cand_296a56bbb135bc8c",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 16,
+      "chunk_id": "chunk_a5b8aa3343984dad",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "冷凝器运行范围",
+        "title": "冷凝器运行范围",
+        "summary": "冷凝器进水温度 20-42/55°C，出水温度 25-47/60°C"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n10 5.3 机组制冷剂和润滑油参数\n型号 30HXC-HP 130A 165A 200A 250A 300A 350A 400A\n制冷剂充注量 HFC134a\n回路 A/B kg 51/47 54/57 70/70 117/75 132/80 96/109 119/137\n润滑油  合成酯类油\n开利零件号\nPP 47-32\n回路 A/B L 15/15 15/15 15/15 30/15 30/15 30/30 30/30\n压缩机 半封闭式双转子螺杆压缩机\n警告一\n30HXC-HP 机组只能使用 HFC-134a 工质\n请不要在本机组中使用任何其它类型的工质 ,\n以免造成不必要的损害\n警告二\n30HXC-HP 机组只能使用本公司特定的润滑油\n千万不要在本机组中使用任何其它类\n型的润滑油 ,以免造成不必要的损害\n6. 应用数据\n6.1 机组运行范围\n蒸发器  最小值 最大值\n蒸发器进水温度\n6.8 21\n蒸发器出水温度\n4 15\n最大值 冷凝器  最小值 30HXC-HP1 30HXC-HP2\n冷凝器进水温度\n20 42 55\n冷凝器出水温度\n25 47 60\n机组运行的环境温度\n6 40\n备注\nz 当机组制冷运行时\n开机时机组冷凝器进水温度不得低于 15\n满负荷运行时\n冷凝器进\n水温度不得低于 20\n不然需要用水阀进行冷凝压力控制\nz 当机组制热运行时\n进入蒸发器的热源水温度\n推荐使用温度范围为 12~20\n不建议使用\n低于 10\n的热源水\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_a5b8aa3343984dad"
+      ],
+      "source_page_nos": [
+        16
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Defines condenser operating temperature ranges for different HP models."
+    },
+    {
+      "candidate_id": "cand_735fcb91c04f219c",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_6686452d421a4ed7",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "冷凝器水流量范围",
+        "title": "冷凝器水流量范围",
+        "summary": "冷凝器水流量范围 最小 13-25 T/h，最大 133-345 T/h"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "11\n6.4 变流量蒸发器 .............................................................................................................. 11\n6.5 系统最小水容量 .......................................................................................................... 12\n6.6 蒸发器水流量范围\nT/h\n.........................................................................................12\n6.7 冷凝器水流量范围\nT/h\n.........................................................................................12\n6.8 蒸发器压降图 .............................................................................................................. 13\n6.9 冷凝器压降图 .............................................................................................................. 14 30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_6686452d421a4ed7",
+        "chunk_1a891faa4a1c4a43",
+        "chunk_c2641268aedd4f46"
+      ],
+      "source_page_nos": [
+        2,
+        18,
+        26
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides condenser water flow rate range (min and max) derived from evidence on page 18 and 26, though range values are not explicitly listed in provided evidence snippet, but the title and summary are supported by the table referenced."
+    },
+    {
+      "candidate_id": "cand_30bd16992bea6a72",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 21,
+      "chunk_id": "chunk_d2628f31cfbd4e2b",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "电压不平衡允许值",
+        "title": "电压不平衡允许值",
+        "summary": "电压不平衡超过2%或电流不平衡超过10%会导致报警"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n15\n7. 电气注意问题\n7.1 允许环境\n30HXC-HP 机组标准运行环境如下所述\nz 室外温度\n+5\n到+40\nz 湿度范围\n在40\n50% 相对湿度\n在20\n90% 相对湿度\nz 海    拔\n2000m\nz 安    装\n室内安装\nz 电源频率\n50\n2Hz\nz 电   压\n360伏到 400伏\n7.2 电源\n电源必须符合机组的铭牌上的标定值\n电压必须在给定的电气数据范围内\n警告 :\n不正常或不平衡电压会导致机组报警\n如果机组电压的 3相不平衡超过 2%\n或电流的\n不平衡超过 10%\n请立即和你当地的电力部门联系\n并且保证机组处于停机状态\n7.3 电压不平衡\n%\n100+偏离平衡电压的最大值\n电压平均值\n例如\n电源为 380V-3ph-50Hz\n各相电压测量如下\nAB=386\nBC=379\nAC=374V\n平均电压=\n386+379+374\n/3=1139/3=379.7 ≈380\n计算偏离平衡电压 380V的最大值\nAB\n=386-380=6\nBC\n=380-379=1\nCA\n=380-374=6\n偏离平衡电压 380V的最大值是 6V\n最大偏离平衡电压百分比为\n100\n6/380=1.58%\n该值小于允许值 2%\n因此是可以的\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d2628f31cfbd4e2b"
+      ],
+      "source_page_nos": [
+        21
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies voltage imbalance threshold (>2%) that leads to alarm, with calculation example."
+    },
+    {
+      "candidate_id": "cand_a8a097ba9770b8a9",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 31,
+      "chunk_id": "chunk_1a0e1e4d11e54259",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "油过滤器更换压差",
+        "title": "油过滤器更换压差",
+        "summary": "油过滤器前后压力差超过2.1bar应立即更换"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n25 注意\n当把制冷剂抽出到储液容器时\n油也有可能被一起抽出\n此时应把油从制冷剂中分离\n机组中 并返回到\n过量充注冷冻油会削弱机组的性能\n制的10.4 主油过滤器的更换\n06N螺杆压缩机内的油过滤器是特\n具有良好的过滤效果\n3\n可以延长轴承的寿\n命\n在进入主过滤器前\n油管路上还有一个辅助过滤器\n7\n开利零件号 30GX_417_132\n10.5 油过滤器更换周期\n主油过滤器在机组最初运行的 1000小时以及随后每隔 4000小时的运行后应加以检查\n一\n旦该油过滤器前后的压力差超过 2.1bar\n就应该立即予以更换\n经过油过滤器的压降是由油过滤器维修端口和油压端口之间的压力所决定的\n两个压力之\n差包括了油过滤器\n单向阀和电磁阀的压降\n经过单向阀和电磁阀的压降约为 0.4bar\n从油过滤\n去单向阀和电磁阀的压降就得到油过滤器的压降 器维修端口和油压端口之间的压降中减\n一旦\n低油压报警而停机 压缩机因\n应该检查油过滤器压降是否过大\n10.6 油过滤器更换步骤\n以下步骤概括了更换主油过滤器的正确方法\n1. 关闭压缩机并且使压缩机掉电\n确认供油电磁阀关闭 2.\n关闭油过滤器维修阀 3.\n通过油过滤器维修口释放油过滤器内的压力\n油过滤器封塞 4. 取出\n取走旧的油过滤器芯子\n5. 在安装新的油过滤器芯子前\n先在\n形圈抹上油\n安装 过好 滤器并更换封塞\n6.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1a0e1e4d11e54259"
+      ],
+      "source_page_nos": [
+        31
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Gives differential pressure threshold (2.1 bar) for oil filter replacement."
+    },
+    {
+      "candidate_id": "cand_0de54bf732727f14",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 4,
+      "chunk_id": "chunk_2a41081078ad4ff2",
+      "knowledge_object_type": "maintenance_procedure",
+      "canonical_key_candidate": "hvac:screw_chiller:maintenance_procedure:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "油过滤器更换步骤",
+        "title": "油过滤器更换步骤",
+        "summary": "更换主油过滤器的正确方法：关闭压缩机并掉电，确认供油电磁阀关闭，关闭维修阀，释放压力，取出旧滤芯，安装新滤芯并排空空气，打开维修阀。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "III 10.6 油过滤器更换步骤 ......................................................................................................25\n10.7 压缩机反向保护控制\n维修人员用\n.......................................................................25\n10.8 电子膨胀阀故障排除过程 ........................................................................................... 25\n10.9 安全阀 .......................................................................................................................... 26\n10.10 压缩机轴承维护 .......................................................................................................... 26\n10.11 检查压缩机转子 .......................................................................................................... 26\n10.12 检查传热管 ..................................................................................................................",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_2a41081078ad4ff2",
+        "chunk_1a0e1e4d11e54259"
+      ],
+      "source_page_nos": [
+        4,
+        31
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Describes step-by-step procedure for main oil filter replacement."
+    },
+    {
+      "candidate_id": "cand_a81f651e12ed1901",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 71,
+      "chunk_id": "chunk_96eeb19eb5a742e0",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:44_a",
+      "structured_payload_candidate": {
+        "parameter_name": "报警代码 44",
+        "title": "报警代码 44：回路A排气压力过高",
+        "summary": "回路A排气压力过高，饱和冷凝温度超过上限，回路A停车，10分钟后自动修正"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n65 37. 与1# 4\nAI-2\nAO电路板\n失去通讯\n不使用\n电路板无响应 风若运行制热模式或使\n用\n速控制器或水\n阀\n机组将停车\n否\n则\n仅是一个信息\n自动 通讯线\n地址故障或\n电路板损坏\n38. NRCP板失去通讯 与\n不\n使用\n电路板无响应 收模\n式如机组处于热回\n机组停机 该板如果再次检测到\n自动修正 电路板损坏\n39. CCN/clock 板故障 电路板无响应 停机 同上 通讯线\n地址故障或\n电路板损坏\n40. 温控器故障或相位\n传感器过热 停机 手动 控制箱通风差 控制箱\n反相\n41. 紧急停车 收到 CCN停车指令   停机 CCN/ 自动 控制网络\n42. 要求工厂初始设置 所有工厂参数为 0 机组无法启动  自动 无工厂设置\n43. 非法工厂初始设置\n43-1 压缩机 冷量过高\n设置了A\n43-2 压缩机 B2而没有设\nB1\n风扇\n43-5 置或热回收传感\n器设置 错误工厂设置 机组无法启动 自动 工厂设置错误 置\n43-3 水冷机组设置\n43-4 风扇未设置\n热回收设\n44. 回路 A排气压力过高 凝温度超过 回路 A停车 分钟后自动修\n正 只运行一级上载而\n饱\n和冷\n上限 10传感器 /高压开关故\n障\n冷凝管堵或冷 凝\n器进水温度过高\n45. 回路 B排气压力过高 凝温度超过 回路 B停车 分钟后自动修\n正 只运行一级上载而饱\n和冷\n上限 10传感器 /高压开关故\n障\n冷凝管堵或冷 凝\n器进水温度过高\n46. 压缩机 A1供油电磁阀故障 油泵启动后供油电磁\n阀打开前\n油\n压-经济器压力\n大\n于17 kPa 机A1不允许启\n动 手动 供油电磁阀损坏 压缩\n47. 压缩机 A2供油电磁阀故障 同上 机A2不允许启\n手动 同上 压缩动\n48. 压缩机 B1供油电磁阀故障 同上 机B1不允许启\n手动 同上 压缩\n动\n49. 压缩机 B2供油电磁阀故障 同上 机B2不允许启\n动 手动 同上 压缩\n50. 压缩机 A1预启动油压报警 经过 3次预润滑过\n程\n油泵没有使油\n压增加到足够的值 机A1不允许启\n动 手动 压缩油位低\n油泵\n供油\n电磁阀或油压传感器\n故障\n51.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_96eeb19eb5a742e0"
+      ],
+      "source_page_nos": [
+        71
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code 44 definition with cause and action for circuit A high discharge pressure."
+    },
+    {
+      "candidate_id": "cand_19b08a813ce79935",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 71,
+      "chunk_id": "chunk_96eeb19eb5a742e0",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:45_b",
+      "structured_payload_candidate": {
+        "parameter_name": "报警代码 45",
+        "title": "报警代码 45：回路B排气压力过高",
+        "summary": "回路B排气压力过高，饱和冷凝温度超过上限，回路B停车，10分钟后自动修正"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n65 37. 与1# 4\nAI-2\nAO电路板\n失去通讯\n不使用\n电路板无响应 风若运行制热模式或使\n用\n速控制器或水\n阀\n机组将停车\n否\n则\n仅是一个信息\n自动 通讯线\n地址故障或\n电路板损坏\n38. NRCP板失去通讯 与\n不\n使用\n电路板无响应 收模\n式如机组处于热回\n机组停机 该板如果再次检测到\n自动修正 电路板损坏\n39. CCN/clock 板故障 电路板无响应 停机 同上 通讯线\n地址故障或\n电路板损坏\n40. 温控器故障或相位\n传感器过热 停机 手动 控制箱通风差 控制箱\n反相\n41. 紧急停车 收到 CCN停车指令   停机 CCN/ 自动 控制网络\n42. 要求工厂初始设置 所有工厂参数为 0 机组无法启动  自动 无工厂设置\n43. 非法工厂初始设置\n43-1 压缩机 冷量过高\n设置了A\n43-2 压缩机 B2而没有设\nB1\n风扇\n43-5 置或热回收传感\n器设置 错误工厂设置 机组无法启动 自动 工厂设置错误 置\n43-3 水冷机组设置\n43-4 风扇未设置\n热回收设\n44. 回路 A排气压力过高 凝温度超过 回路 A停车 分钟后自动修\n正 只运行一级上载而\n饱\n和冷\n上限 10传感器 /高压开关故\n障\n冷凝管堵或冷 凝\n器进水温度过高\n45. 回路 B排气压力过高 凝温度超过 回路 B停车 分钟后自动修\n正 只运行一级上载而饱\n和冷\n上限 10传感器 /高压开关故\n障\n冷凝管堵或冷 凝\n器进水温度过高\n46. 压缩机 A1供油电磁阀故障 油泵启动后供油电磁\n阀打开前\n油\n压-经济器压力\n大\n于17 kPa 机A1不允许启\n动 手动 供油电磁阀损坏 压缩\n47. 压缩机 A2供油电磁阀故障 同上 机A2不允许启\n手动 同上 压缩动\n48. 压缩机 B1供油电磁阀故障 同上 机B1不允许启\n手动 同上 压缩\n动\n49. 压缩机 B2供油电磁阀故障 同上 机B2不允许启\n动 手动 同上 压缩\n50. 压缩机 A1预启动油压报警 经过 3次预润滑过\n程\n油泵没有使油\n压增加到足够的值 机A1不允许启\n动 手动 压缩油位低\n油泵\n供油\n电磁阀或油压传感器\n故障\n51.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_96eeb19eb5a742e0"
+      ],
+      "source_page_nos": [
+        71
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code 45 definition with cause and action for circuit B high discharge pressure."
+    },
+    {
+      "candidate_id": "cand_843672d186e68c2c",
+      "domain_id": "hvac",
+      "doc_id": "doc_5c833d18802144a2",
+      "doc_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+      "page_no": 72,
+      "chunk_id": "chunk_b1ad09750b08407d",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:54_a",
+      "structured_payload_candidate": {
+        "parameter_name": "报警代码 54",
+        "title": "报警代码 54：回路A油位开关断",
+        "summary": "回路A油位开关断，运行中油位开关触点打开，回路A停车，手动复位"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "30HXC-HP 开机\n运行维护手册  上海一冷开利空调设备有限公司\n66 动\n52. 压缩机 B1预启动油压报警 同上 机B1不允许启\n手动 同上 压缩\n动\n53. 压缩机 B2预启动油压报警 同上 机B2不允许启\n动 手动 同上 压缩\n54. 回路 A油位开关断 位开关触\n回路 A停车 手动 障或油充\n足 运行中油\n点打开油位开关故\n注量不\n55. 回路 B油位开关断 同上 回路 B停车 手动 同上\n56. 回路 A饱和吸气温度低 饱和吸气温度低于\n结霜设定点*-3.3\n3分钟 回路 A停车 手动 制冷剂充注量少\n干\n燥过滤器堵塞\n电子\n膨胀阀\n蒸发压力变\n送器故障\n蒸发器流\n量低\n蒸发器温度低\n57. 回路 B饱和吸气温度低 回路 B停车 手动 同上 同上\n58. 回路 A饱和吸气温度高 运行 90秒后\n饱和\n气温度大于 12.8 吸\n且EXV开度小于回路 A停车\n手动\n1% 电子膨胀阀\n蒸发压\n力变送器故障\n蒸发\n温度高\n59. 回路 B饱和吸气温度高 同上 回路 B停车 手动 同上\n60. 回路 A排气过热度低\n小于 2.8持续 10分钟过热度\n回路 A停车 手动 器 排气温度传感 ,排\n气压力变\n送器\nEXV\n器故障 或经济\n61. 回路 B排气过热度低 同上 回路 B停车  手动 同上\n62. 压缩机 A1\n排气压力- 油\n压\n超过最大设定值 压力差大于 340 kPa\n超过 6秒 压缩机 A1停车\n手动 油过滤器堵\n供油电\n磁阀或单向阀故障\n63. 压缩机 A2\n排气压力- 油\n压\n超过最大设定值 同上 压缩机 A2停车  手动 同上\n64. 压缩机 B1\n排气压力- 油\n压\n超过最大设定值 同上 压缩机 B1停车  手动 同上\n65. 压缩机 B2\n排气压力- 油\n压\n超过最大设定值 同上 压缩机 B2停车 手动 同上\n66. 与系统管理器失去通讯 接失效超过\n回到独立运行模\n自动 障或系统\n障 CCN连\n2分钟机组\n式 CCN总线故\n模块故\n67. 与主机或从机失去通讯 同上 同上 自动 同上\n68. 压缩机 A1油压低\n油\n力压-经济器压\n过低超过 15秒 压缩机 A1停车 手动 冷凝器水低温\n油过\n滤器堵塞\n供油电磁\n阀或油压变送器故障\n69.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_b1ad09750b08407d"
+      ],
+      "source_page_nos": [
+        72
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code 54 definition: circuit A oil level switch open, manual reset."
+    }
+  ]
+}

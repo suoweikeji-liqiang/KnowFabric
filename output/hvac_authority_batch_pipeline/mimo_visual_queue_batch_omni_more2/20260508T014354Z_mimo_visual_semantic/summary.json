@@ -1,0 +1,321 @@
+{
+  "run_id": "20260508T014354Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/07、三菱重工/技术手册/【三菱重工】新超级链接系统控制器技术手册（50页）.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 7.845,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This is the cover page of a product specification document for a BACnet gateway (model SC-BGWNA-B) from Mitsubishi Heavy Industries. It includes the document title, version, date, and company information.",
+        "visual_entities": [
+          {
+            "type": "document_title",
+            "label": "SC-BGWNA-B 产品规格书 版本 2.0"
+          },
+          {
+            "type": "product_name",
+            "label": "BACnet 网关"
+          },
+          {
+            "type": "product_model",
+            "label": "SC-BGWNA-B"
+          },
+          {
+            "type": "drawing_number",
+            "label": "PSZ006A017GA"
+          },
+          {
+            "type": "version_box",
+            "label": "版本 2.0"
+          },
+          {
+            "type": "date",
+            "label": "2010年6月1日"
+          },
+          {
+            "type": "company_name",
+            "label": "三菱重工业株式会社"
+          },
+          {
+            "type": "department",
+            "label": "冷热事业总部"
+          },
+          {
+            "type": "stamp",
+            "label": "戴梅 2011-8-26"
+          },
+          {
+            "type": "stamp",
+            "label": "前原 2011-8-26"
+          },
+          {
+            "type": "watermark",
+            "label": "制冷百家网: www.zhilengbj.cn"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "product_identification",
+          "document_control",
+          "manufacturer_info"
+        ],
+        "ocr_text_if_useful": "SC-BGWNA-B 产品规格书 版本 2.0\n资料编号: ISTZ09029 修订版 A 2010年6月1日\n新超级链接系统对应\n附带计费功能\nBACnet 网关\n产品规格书\n(BACnet: 楼宇自动化与控制网络)\n产品型号: SC-BGWNA-B\n产品图纸号: PSZ006A017GA\n版本 2.0\n2010年6月1日\n三菱重工业株式会社\n冷热事业总部",
+        "uncertainty_notes": "The stamps contain handwritten dates and names which are partially legible. The watermark is not part of the original document.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is the cover page of a product specification document for a BACnet gateway (model SC-BGWNA-B) from Mitsubishi Heavy Industries. It includes the document title, version, date, and company information.\",\n  \"visual_entities\": [\n    {\"type\": \"document_title\", \"label\": \"SC-BGWNA-B 产品规格书 版本 2.0\"},\n    {\"type\": \"product_name\", \"label\": \"BACnet 网关\"},\n    {\"type\": \"product_model\", \"label\": \"SC-BGWNA-B\"},\n    {\"type\": \"drawing_number\", \"label\": \"PSZ006A017GA\"},\n    {\"type\": \"version_box\", \"label\": \"版本 2.0\"},\n    {\"type\": \"date\", \"label\": \"2010年6月1日\"},\n    {\"type\": \"company_name\", \"label\": \"三菱重工业株式会社\"},\n    {\"type\": \"department\", \"label\": \"冷热事业总部\"},\n    {\"type\": \"stamp\", \"label\": \"戴梅 2011-8-26\"},\n    {\"type\": \"stamp\", \"label\": \"前原 2011-8-26\"},\n    {\"type\": \"watermark\", \"label\": \"制冷百家网: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_identification\", \"document_control\", \"manufacturer_info\"],\n  \"ocr_text_if_useful\": \"SC-BGWNA-B 产品规格书 版本 2.0\\n资料编号: ISTZ09029 修订版 A 2010年6月1日\\n新超级链接系统对应\\n附带计费功能\\nBACnet 网关\\n产品规格书\\n(BACnet: 楼宇自动化与控制网络)\\n产品型号: SC-BGWNA-B\\n产品图纸号: PSZ006A017GA\\n版本 2.0\\n2010年6月1日\\n三菱重工业株式会社\\n冷热事业总部\",\n  \"uncertainty_notes\": \"The stamps contain handwritten dates and names which are partially legible. The watermark is not part of the original document.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 515,
+        "prompt_tokens": 2437,
+        "total_tokens": 2952,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 25,
+      "status": "ok",
+      "elapsed_seconds": 17.075,
+      "parsed": {
+        "page_type": "parameter_table",
+        "summary": "This page is a product specification sheet for an HVAC communication gateway (SC-BGWNA-B), detailing supported data link layer options, device address binding, networking options, and character sets. It includes checkboxes for various protocols and standards, with some options selected (e.g., BACnet IP, ANSI X3.4).",
+        "visual_entities": [
+          {
+            "type": "document",
+            "label": "Product Specification Sheet"
+          },
+          {
+            "type": "section",
+            "label": "Data Link Layer Options"
+          },
+          {
+            "type": "checkbox",
+            "label": "BACnet IP (Annex J)"
+          },
+          {
+            "type": "checkbox",
+            "label": "BACnet IP (Annex J), Foreign Device"
+          },
+          {
+            "type": "checkbox",
+            "label": "ISO 8802-3, Ethernet (Clause 7)"
+          },
+          {
+            "type": "checkbox",
+            "label": "ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)"
+          },
+          {
+            "type": "checkbox",
+            "label": "ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s)"
+          },
+          {
+            "type": "checkbox",
+            "label": "MS/TP master (Clause 9), baud rate(s)"
+          },
+          {
+            "type": "checkbox",
+            "label": "MS/TP slave (Clause 9), baud rate(s)"
+          },
+          {
+            "type": "checkbox",
+            "label": "Point-To-Point, EIA 232 (Clause 10), baud rate(s)"
+          },
+          {
+            "type": "checkbox",
+            "label": "Point-To-Point, modem (Clause 10), baud rate(s)"
+          },
+          {
+            "type": "checkbox",
+            "label": "LonTalk (Clause 11), medium"
+          },
+          {
+            "type": "checkbox",
+            "label": "Other"
+          },
+          {
+            "type": "section",
+            "label": "Device Address Binding"
+          },
+          {
+            "type": "question",
+            "label": "Is static device binding supported?"
+          },
+          {
+            "type": "checkbox",
+            "label": "Yes"
+          },
+          {
+            "type": "checkbox",
+            "label": "No"
+          },
+          {
+            "type": "section",
+            "label": "Networking Options"
+          },
+          {
+            "type": "checkbox",
+            "label": "Router, Clause 6 - List all routing configurations"
+          },
+          {
+            "type": "checkbox",
+            "label": "Annex H, BACnet Tunneling Router over IP"
+          },
+          {
+            "type": "checkbox",
+            "label": "BACnet/IP Broadcast Management Device (BBMD)"
+          },
+          {
+            "type": "question",
+            "label": "Does the BBMD support registrations by Foreign Device?"
+          },
+          {
+            "type": "section",
+            "label": "Character Sets Supported"
+          },
+          {
+            "type": "note",
+            "label": "Indicating support for multiple character sets does not imply that they can all be supported simultaneously."
+          },
+          {
+            "type": "checkbox",
+            "label": "ANSI X3.4"
+          },
+          {
+            "type": "checkbox",
+            "label": "IBM / Microsoft DBCS"
+          },
+          {
+            "type": "checkbox",
+            "label": "ISO 8859-1"
+          },
+          {
+            "type": "checkbox",
+            "label": "ISO 10646 (UCS-2)"
+          },
+          {
+            "type": "checkbox",
+            "label": "ISO 10646 (UCS-4)"
+          },
+          {
+            "type": "checkbox",
+            "label": "JIS C 6226"
+          },
+          {
+            "type": "text_field",
+            "label": "If this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "BACnet IP (Annex J)",
+            "relation": "is selected in",
+            "to": "Data Link Layer Options"
+          },
+          {
+            "from": "ANSI X3.4",
+            "relation": "is selected in",
+            "to": "Character Sets Supported"
+          },
+          {
+            "from": "No",
+            "relation": "is selected for",
+            "to": "Is static device binding supported?"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "protocol_support",
+          "network_configuration",
+          "gateway_specifications",
+          "communication_standards"
+        ],
+        "ocr_text_if_useful": "SC-BGWNA-B 产品规格书 版本 2.0\n资料编号: ISTZ09029 修订版 A 2010年6月1日\nData Link Layer Options:\n■ BACnet IP, (Annex J)\n□ BACnet IP, (Annex J), Foreign Device\n□ ISO 8802-3, Ethernet (Clause 7)\n□ ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)\n□ ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s) ________\n□ MS/TP master (Clause 9), baud rate(s): ________\n□ MS/TP slave (Clause 9), baud rate(s): ________\n□ Point-To-Point, EIA 232 (Clause 10), baud rate(s): ________\n□ Point-To-Point, modem, (Clause 10), baud rate(s): ________\n□ LonTalk, (Clause 11), medium: ________\n□ Other: ________\nDevice Address Binding:\nIs static device binding supported? (This is currently necessary for two-way communication with MS/TP slaves and certain other devices.) □ Yes ■ No\nNetworking Options:\n□ Router, Clause 6 - List all routing configurations, e.g., ARCNET-Ethernet-MS/TP, etc.\n□ Annex H, BACnet Tunneling Router over IP\n□ BACnet/IP Broadcast Management Device (BBMD)\nDoes the BBMD support registrations by Foreign Device?\nCharacter Sets Supported:\nIndicating support for multiple character sets does not imply that they can all be supported simultaneously.\n■ ANSI X3.4 □ IBM / Microsoft DBCS □ ISO 8859-1\n□ ISO 10646 (UCS-2) □ ISO 10646 (UCS-4) □ JIS C 6226\nIf this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:\n________________________________________________________\n________________________________________________________\n________________________________________________________\n25\n制冷百家网: www.zhilengbj.cn",
+        "uncertainty_notes": "The exact purpose of the gateway (e.g., non-BACnet support) is not filled in, so relationships involving that field are uncertain. Some checkboxes are empty, indicating unsupported options, but the visual evidence only confirms selections, not rejections.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page is a product specification sheet for an HVAC communication gateway (SC-BGWNA-B), detailing supported data link layer options, device address binding, networking options, and character sets. It includes checkboxes for various protocols and standards, with some options selected (e.g., BACnet IP, ANSI X3.4).\",\n  \"visual_entities\": [\n    {\"type\": \"document\", \"label\": \"Product Specification Sheet\"},\n    {\"type\": \"section\", \"label\": \"Data Link Layer Options\"},\n    {\"type\": \"checkbox\", \"label\": \"BACnet IP (Annex J)\"},\n    {\"type\": \"checkbox\", \"label\": \"BACnet IP (Annex J), Foreign Device\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 8802-3, Ethernet (Clause 7)\"},\n    {\"type\": \"checkbox\", \"label\": \"ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)\"},\n    {\"type\": \"checkbox\", \"label\": \"ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"MS/TP master (Clause 9), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"MS/TP slave (Clause 9), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"Point-To-Point, EIA 232 (Clause 10), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"Point-To-Point, modem (Clause 10), baud rate(s)\"},\n    {\"type\": \"checkbox\", \"label\": \"LonTalk (Clause 11), medium\"},\n    {\"type\": \"checkbox\", \"label\": \"Other\"},\n    {\"type\": \"section\", \"label\": \"Device Address Binding\"},\n    {\"type\": \"question\", \"label\": \"Is static device binding supported?\"},\n    {\"type\": \"checkbox\", \"label\": \"Yes\"},\n    {\"type\": \"checkbox\", \"label\": \"No\"},\n    {\"type\": \"section\", \"label\": \"Networking Options\"},\n    {\"type\": \"checkbox\", \"label\": \"Router, Clause 6 - List all routing configurations\"},\n    {\"type\": \"checkbox\", \"label\": \"Annex H, BACnet Tunneling Router over IP\"},\n    {\"type\": \"checkbox\", \"label\": \"BACnet/IP Broadcast Management Device (BBMD)\"},\n    {\"type\": \"question\", \"label\": \"Does the BBMD support registrations by Foreign Device?\"},\n    {\"type\": \"section\", \"label\": \"Character Sets Supported\"},\n    {\"type\": \"note\", \"label\": \"Indicating support for multiple character sets does not imply that they can all be supported simultaneously.\"},\n    {\"type\": \"checkbox\", \"label\": \"ANSI X3.4\"},\n    {\"type\": \"checkbox\", \"label\": \"IBM / Microsoft DBCS\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 8859-1\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 10646 (UCS-2)\"},\n    {\"type\": \"checkbox\", \"label\": \"ISO 10646 (UCS-4)\"},\n    {\"type\": \"checkbox\", \"label\": \"JIS C 6226\"},\n    {\"type\": \"text_field\", \"label\": \"If this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"BACnet IP (Annex J)\", \"relation\": \"is selected in\", \"to\": \"Data Link Layer Options\"},\n    {\"from\": \"ANSI X3.4\", \"relation\": \"is selected in\", \"to\": \"Character Sets Supported\"},\n    {\"from\": \"No\", \"relation\": \"is selected for\", \"to\": \"Is static device binding supported?\"}\n  ],\n  \"useful_for_knowledge_types\": [\"protocol_support\", \"network_configuration\", \"gateway_specifications\", \"communication_standards\"],\n  \"ocr_text_if_useful\": \"SC-BGWNA-B 产品规格书 版本 2.0\\n资料编号: ISTZ09029 修订版 A 2010年6月1日\\nData Link Layer Options:\\n■ BACnet IP, (Annex J)\\n□ BACnet IP, (Annex J), Foreign Device\\n□ ISO 8802-3, Ethernet (Clause 7)\\n□ ANSI/ATA 878.1, 2.5 Mb, ARCNET (Clause 8)\\n□ ANSI/ATA 878.1, EIA-485 ARCNET (Clause 8), baud rate(s) ________\\n□ MS/TP master (Clause 9), baud rate(s): ________\\n□ MS/TP slave (Clause 9), baud rate(s): ________\\n□ Point-To-Point, EIA 232 (Clause 10), baud rate(s): ________\\n□ Point-To-Point, modem, (Clause 10), baud rate(s): ________\\n□ LonTalk, (Clause 11), medium: ________\\n□ Other: ________\\nDevice Address Binding:\\nIs static device binding supported? (This is currently necessary for two-way communication with MS/TP slaves and certain other devices.) □ Yes ■ No\\nNetworking Options:\\n□ Router, Clause 6 - List all routing configurations, e.g., ARCNET-Ethernet-MS/TP, etc.\\n□ Annex H, BACnet Tunneling Router over IP\\n□ BACnet/IP Broadcast Management Device (BBMD)\\nDoes the BBMD support registrations by Foreign Device?\\nCharacter Sets Supported:\\nIndicating support for multiple character sets does not imply that they can all be supported simultaneously.\\n■ ANSI X3.4 □ IBM / Microsoft DBCS □ ISO 8859-1\\n□ ISO 10646 (UCS-2) □ ISO 10646 (UCS-4) □ JIS C 6226\\nIf this product is a communication gateway, describe the types of non-BACnet equipment/networks(s) that the gateway supports:\\n________________________________________________________\\n________________________________________________________\\n________________________________________________________\\n25\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The exact purpose of the gateway (e.g., non-BACnet support) is not filled in, so relationships involving that field are uncertain. Some checkboxes are empty, indicating unsupported options, but the visual evidence only confirms selections, not rejections.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 1480,
+        "prompt_tokens": 2437,
+        "total_tokens": 3917,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 50,
+      "status": "ok",
+      "elapsed_seconds": 8.392,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This page is a text-based specification sheet for the SC-BGWNA-B product, describing a function that indicates the total non-allocated power consumption of the entire gateway as a cumulative object. It specifies the value range (0 to 999999), unit (0.1 kWh), rollover behavior (resets to 0 after exceeding 999999), and update intervals (every 1, 4, 8, 12, or 24 hours starting from midnight).",
+        "visual_entities": [
+          {
+            "type": "document_header",
+            "label": "SC-BGWNA-B 产品规格书 版本 2.0"
+          },
+          {
+            "type": "document_identifier",
+            "label": "资料编号: ISTZ09029 修订版 A"
+          },
+          {
+            "type": "document_date",
+            "label": "2010年6月1日"
+          },
+          {
+            "type": "paragraph",
+            "label": "Power consumption function description"
+          },
+          {
+            "type": "paragraph",
+            "label": "Update interval description"
+          },
+          {
+            "type": "page_number",
+            "label": "50"
+          },
+          {
+            "type": "website_footer",
+            "label": "制冷百家网: www.zhilengbj.cn"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "product_specifications",
+          "energy_monitoring_parameters",
+          "gateway_functionality"
+        ],
+        "ocr_text_if_useful": "SC-BGWNA-B 产品规格书 版本 2.0\n资料编号: ISTZ09029 修订版 A 2010年6月1日\n该功能指示了作为累计对象的整个网关的非分配电力总功耗量。功耗量值的范围为 0 到999999。该值的单位是 0.1kwh。如果该值超过 999999，那么它将返回 0 并继续从 0 开始算起。\n在进行计算时，也就是从凌晨 0:00 开始，每 1 小时、4 小时、8 小时、12 小时或 24 小时对该值进行更新（请参考 2.4）。\n以上\n50\n制冷百家网: www.zhilengbj.cn",
+        "uncertainty_notes": "The text references '2.4' for update interval details, but that section is not visible on this page. The exact context of 'non-allocated power consumption' (非分配电力总功耗量) within the broader system is not visually defined here.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page is a text-based specification sheet for the SC-BGWNA-B product, describing a function that indicates the total non-allocated power consumption of the entire gateway as a cumulative object. It specifies the value range (0 to 999999), unit (0.1 kWh), rollover behavior (resets to 0 after exceeding 999999), and update intervals (every 1, 4, 8, 12, or 24 hours starting from midnight).\",\n  \"visual_entities\": [\n    {\"type\": \"document_header\", \"label\": \"SC-BGWNA-B 产品规格书 版本 2.0\"},\n    {\"type\": \"document_identifier\", \"label\": \"资料编号: ISTZ09029 修订版 A\"},\n    {\"type\": \"document_date\", \"label\": \"2010年6月1日\"},\n    {\"type\": \"paragraph\", \"label\": \"Power consumption function description\"},\n    {\"type\": \"paragraph\", \"label\": \"Update interval description\"},\n    {\"type\": \"page_number\", \"label\": \"50\"},\n    {\"type\": \"website_footer\", \"label\": \"制冷百家网: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_specifications\", \"energy_monitoring_parameters\", \"gateway_functionality\"],\n  \"ocr_text_if_useful\": \"SC-BGWNA-B 产品规格书 版本 2.0\\n资料编号: ISTZ09029 修订版 A 2010年6月1日\\n该功能指示了作为累计对象的整个网关的非分配电力总功耗量。功耗量值的范围为 0 到999999。该值的单位是 0.1kwh。如果该值超过 999999，那么它将返回 0 并继续从 0 开始算起。\\n在进行计算时，也就是从凌晨 0:00 开始，每 1 小时、4 小时、8 小时、12 小时或 24 小时对该值进行更新（请参考 2.4）。\\n以上\\n50\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The text references '2.4' for update interval details, but that section is not visible on this page. The exact context of 'non-allocated power consumption' (非分配电力总功耗量) within the broader system is not visually defined here.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 588,
+        "prompt_tokens": 2437,
+        "total_tokens": 3025,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

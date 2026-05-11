@@ -1,0 +1,75 @@
+{
+  "page": 1,
+  "response": {
+    "id": "769d0a464e9841ff9848a1240be95110",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is the cover page of a chiller unit commissioning and maintenance manual for an air-cooled module, published by Qingdao Haier Air Conditioning Electronics Co., Ltd. in October 2003. It includes the manual title, subtitle, company name, date, and a website watermark.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"Header text line\"},\n    {\"type\": \"text\", \"label\": \"Main title\"},\n    {\"type\": \"text\", \"label\": \"Subtitle\"},\n    {\"type\": \"text\", \"label\": \"Company name\"},\n    {\"type\": \"text\", \"label\": \"Date\"},\n    {\"type\": \"text\", \"label\": \"Page number\"},\n    {\"type\": \"text\", \"label\": \"Website watermark\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"manual_identification\", \"document_metadata\"],\n  \"ocr_text_if_useful\": \"青岛海尔空调电子有限公司 风冷模块调试手册 第1次修订时间: 03.10.20 共15页 第1页\\n冷水机组调试维护手册\\n(风冷模块)\\n青岛海尔空调电子有限公司\\n2003年10月\\n1\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The header text includes a revision date '03.10.20' which may be interpreted as October 20, 2003, or March 10, 2020, depending on date format convention. The primary date at the bottom is clearly October 2003.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778203768,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 376,
+      "prompt_tokens": 2437,
+      "total_tokens": 2813,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "text_scan",
+    "summary": "This is the cover page of a chiller unit commissioning and maintenance manual for an air-cooled module, published by Qingdao Haier Air Conditioning Electronics Co., Ltd. in October 2003. It includes the manual title, subtitle, company name, date, and a website watermark.",
+    "visual_entities": [
+      {
+        "type": "text",
+        "label": "Header text line"
+      },
+      {
+        "type": "text",
+        "label": "Main title"
+      },
+      {
+        "type": "text",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "label": "Company name"
+      },
+      {
+        "type": "text",
+        "label": "Date"
+      },
+      {
+        "type": "text",
+        "label": "Page number"
+      },
+      {
+        "type": "text",
+        "label": "Website watermark"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "manual_identification",
+      "document_metadata"
+    ],
+    "ocr_text_if_useful": "青岛海尔空调电子有限公司 风冷模块调试手册 第1次修订时间: 03.10.20 共15页 第1页\n冷水机组调试维护手册\n(风冷模块)\n青岛海尔空调电子有限公司\n2003年10月\n1\n制冷百家网: www.zhilengbj.cn",
+    "uncertainty_notes": "The header text includes a revision date '03.10.20' which may be interpreted as October 20, 2003, or March 10, 2020, depending on date format convention. The primary date at the bottom is clearly October 2003.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is the cover page of a chiller unit commissioning and maintenance manual for an air-cooled module, published by Qingdao Haier Air Conditioning Electronics Co., Ltd. in October 2003. It includes the manual title, subtitle, company name, date, and a website watermark.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"Header text line\"},\n    {\"type\": \"text\", \"label\": \"Main title\"},\n    {\"type\": \"text\", \"label\": \"Subtitle\"},\n    {\"type\": \"text\", \"label\": \"Company name\"},\n    {\"type\": \"text\", \"label\": \"Date\"},\n    {\"type\": \"text\", \"label\": \"Page number\"},\n    {\"type\": \"text\", \"label\": \"Website watermark\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"manual_identification\", \"document_metadata\"],\n  \"ocr_text_if_useful\": \"青岛海尔空调电子有限公司 风冷模块调试手册 第1次修订时间: 03.10.20 共15页 第1页\\n冷水机组调试维护手册\\n(风冷模块)\\n青岛海尔空调电子有限公司\\n2003年10月\\n1\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The header text includes a revision date '03.10.20' which may be interpreted as October 20, 2003, or March 10, 2020, depending on date format convention. The primary date at the bottom is clearly October 2003.\",\n  \"confidence\": 0.95\n}"
+}

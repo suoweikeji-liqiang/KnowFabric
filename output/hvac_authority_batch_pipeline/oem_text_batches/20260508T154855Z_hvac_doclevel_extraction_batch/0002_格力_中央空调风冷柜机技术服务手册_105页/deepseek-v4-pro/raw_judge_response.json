@@ -1,0 +1,52 @@
+{
+  "request": {
+    "model": "deepseek-v4-pro",
+    "temperature": 1.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You repair malformed JSON. Return one valid JSON object only. Do not add commentary. Do not invent or remove fields unless required to make the JSON valid. Preserve the original meaning as closely as possible."
+      },
+      {
+        "role": "user",
+        "content": "Repair the following malformed JSON object. Return valid JSON only.\n\n{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_2d3a772dea2dbeac\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Cooling capacity parameter for RF26W/A-N5 extracted from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ba43f318959cdd73\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Heating capacity parameter for RF26W/A-N5 extracted from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_39cb855beeb66014\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Power supply specification for RF26W/A-N5 extracted from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_017abf51900e7fe1\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Compressor type and quantity for RF26W/A-N5 from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_726cdd87064df98b\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Refrigerant type for RF26W/A-N5 extracted from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_5a4d75941a5067ad\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion device type for RF26W/A-N5 from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_dc82a6c089b616ae\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Indoor unit dimensions for RF26W/A-N5 from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_e8b9fd99136d01a3\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Outdoor unit dimensions for RF26W/A-N5 from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_337aeae109cdaf9a\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E1 fault code for compressor high pressure protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_97c306f497578d70\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E2 fault code for system anti-freeze protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_0cc2c44ea0eebe3c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E3 fault code for compressor low pressure protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_7e6a3514af4688d3\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E4 fault code for compressor discharge temperature protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_2df50a9417319f3c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E5 fault code for compressor overload protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f734acceb20fcd47\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F0 fault code for indoor ambient sensor fault from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_619288989d8da887\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F1 fault code for evaporator 1 sensor fault from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_808a2bbee0f121b9\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F2 fault code for condenser 1 sensor fault from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f22f87c854884306\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F3 fault code for outdoor ambient sensor fault from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_35f8ef6605a57e3c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F5 fault code for discharge temperature sensor 1 fault from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_24a5bc7829b987f1\",\n      \"is_valid_hvac_knowledge\":"
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 1200
+  },
+  "response": {
+    "id": "724312a6-764d-4857-ae6f-b72fa2980375",
+    "object": "chat.completion",
+    "created": 1778256060,
+    "model": "deepseek-v4-pro",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_2d3a772dea2dbeac\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Cooling capacity parameter for RF26W/A-N5 extracted from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ba43f318959cdd73\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Heating capacity parameter for RF26W/A-N5 extracted from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_39cb855beeb66014\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Power supply specification for RF26W/A-N5 extracted from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_017abf51900e7fe1\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Compressor type and quantity for RF26W/A-N5 from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_726cdd87064df98b\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Refrigerant type for RF26W/A-N5 extracted from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_5a4d75941a5067ad\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion device type for RF26W/A-N5 from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_dc82a6c089b616ae\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Indoor unit dimensions for RF26W/A-N5 from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_e8b9fd99136d01a3\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Outdoor unit dimensions for RF26W/A-N5 from technical specifications table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_337aeae109cdaf9a\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E1 fault code for compressor high pressure protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_97c306f497578d70\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E2 fault code for system anti-freeze protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_0cc2c44ea0eebe3c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E3 fault code for compressor low pressure protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_7e6a3514af4688d3\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E4 fault code for compressor discharge temperature protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_2df50a9417319f3c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"E5 fault code for compressor overload protection from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f734acceb20fcd47\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F0 fault code for indoor ambient sensor fault from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_619288989d8da887\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F1 fault code for evaporator 1 sensor fault from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_808a2bbee0f121b9\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F2 fault code for condenser 1 sensor fault from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f22f87c854884306\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F3 fault code for outdoor ambient sensor fault from fault code table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_35f8ef6605a57e3c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"F5 fault code for discharge temperature sensor 1 fault from fault code table.\",\n      \"category_if_not\": null\n    }\n  ]\n}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1280,
+      "completion_tokens": 1170,
+      "total_tokens": 2450,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1280
+    },
+    "system_fingerprint": "fp_9954b31ca7_prod0820_fp8_kvcache_20260402"
+  },
+  "elapsed_seconds": 215.851
+}

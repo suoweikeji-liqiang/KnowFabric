@@ -1,0 +1,126 @@
+{
+  "page": 51,
+  "response": {
+    "id": "6e1d2f0791334232bf1e6c25a0e20d1d",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"controller_screen\",\n  \"summary\": \"This page describes the 'History Record Interface' of a YK E-type centrifugal chiller's color image display control center. It includes a screenshot of the interface and text explaining its functions, such as viewing fault history, printing reports, and navigating to sub-screens. The interface allows users to browse fault conditions, view detailed records, and access trend data.\",\n  \"visual_entities\": [\n    {\"type\": \"screenshot\", \"label\": \"History Record Interface\"},\n    {\"type\": \"button\", \"label\": \"Print History Record\"},\n    {\"type\": \"button\", \"label\": \"Print All History Records\"},\n    {\"type\": \"button\", \"label\": \"Main Interface\"},\n    {\"type\": \"button\", \"label\": \"View Detailed Record\"},\n    {\"type\": \"button\", \"label\": \"Trend\"},\n    {\"type\": \"window\", \"label\": \"Last Normal Shutdown\"},\n    {\"type\": \"window\", \"label\": \"Last Fault During Operation\"},\n    {\"type\": \"window\", \"label\": \"Top 10 Faults\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Print History Record\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Print All History Records\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Main Interface\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"View Detailed Record\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Trend\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"displays\", \"to\": \"Last Normal Shutdown\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"displays\", \"to\": \"Last Fault During Operation\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"displays\", \"to\": \"Top 10 Faults\"}\n  ],\n  \"useful_for_knowledge_types\": [\"user_interface\", \"fault_history\", \"navigation\", \"reporting\"],\n  \"ocr_text_if_useful\": \"彩色图像显示控制中心（续） YK E型离心式冷水机组\\n历史记录界面\\n图 28 - 历史记录界面\\n概述\\n用户可以通过该界面浏览机组出现故障的情况。如果需要观察停机时系统运行状况的更全面的报告，可以切换到子界面：详细历史记录。\\n用户可以使用选择故障记录键以选择所需观察的历史记录。这时使用观察详细记录键可以切换到一个子界面，在这个子界面中包含了在停机时冷水机组运行参数值。另外，打印历史记录键可以用来打印一份停机时运行参数值的报告。\\n只读显示\\n上一次正常停机\\n这个窗口显示上一次正常停机的日期、时间和描述。正常停机可以规定为：\\n—就地(控制中心上的摇臂式开关控制)\\n—远程(数字、模拟或 ISN)\\n上一次运行时的故障\\n这个窗口显示上一次在系统运行时发生的紧急停机或正常停机的日期、时间和描述。\\n前十次故障\\n这个窗口显示按照时间顺序排列的(最近的排在最前面)前十次在系统运行或停机时发生的紧急停机或正常停机的日期、时间和描述。\\n可编程\\n打印历史记录\\n要求访问级别：观察\\n这个键可以打印出一个报告，列出用户选择的停机记录下冷水机组参数的状态。\\n打印所有历史记录\\n要求访问级别：观察\\n这个键可以打印出一个报告，列出所有存储在系统中的停机时的冷水机组参数。\\n导航\\n主界面\\n要求访问级别：观察\\n直接返回主界面。\\n观察详细记录\\n要求访问级别：观察\\n切换到包含了有关用户选择的停机记录中冷水机组参数的子界面。\\n趋势\\n要求访问级别：观察\\n切换到一个子界面，在这个界面中，用户可以观察所选机组的趋势数据。\",\n  \"uncertainty_notes\": \"The screenshot is low-resolution, making specific text on the interface unreadable. The visual entities are inferred from the surrounding text descriptions rather than directly readable from the image. Relationships are based on the described functions, not explicit visual connections in the screenshot.\",\n  \"confidence\": 0.8\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204705,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 943,
+      "prompt_tokens": 2493,
+      "total_tokens": 3436,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2296
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "controller_screen",
+    "summary": "This page describes the 'History Record Interface' of a YK E-type centrifugal chiller's color image display control center. It includes a screenshot of the interface and text explaining its functions, such as viewing fault history, printing reports, and navigating to sub-screens. The interface allows users to browse fault conditions, view detailed records, and access trend data.",
+    "visual_entities": [
+      {
+        "type": "screenshot",
+        "label": "History Record Interface"
+      },
+      {
+        "type": "button",
+        "label": "Print History Record"
+      },
+      {
+        "type": "button",
+        "label": "Print All History Records"
+      },
+      {
+        "type": "button",
+        "label": "Main Interface"
+      },
+      {
+        "type": "button",
+        "label": "View Detailed Record"
+      },
+      {
+        "type": "button",
+        "label": "Trend"
+      },
+      {
+        "type": "window",
+        "label": "Last Normal Shutdown"
+      },
+      {
+        "type": "window",
+        "label": "Last Fault During Operation"
+      },
+      {
+        "type": "window",
+        "label": "Top 10 Faults"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "History Record Interface",
+        "relation": "contains",
+        "to": "Print History Record"
+      },
+      {
+        "from": "History Record Interface",
+        "relation": "contains",
+        "to": "Print All History Records"
+      },
+      {
+        "from": "History Record Interface",
+        "relation": "contains",
+        "to": "Main Interface"
+      },
+      {
+        "from": "History Record Interface",
+        "relation": "contains",
+        "to": "View Detailed Record"
+      },
+      {
+        "from": "History Record Interface",
+        "relation": "contains",
+        "to": "Trend"
+      },
+      {
+        "from": "History Record Interface",
+        "relation": "displays",
+        "to": "Last Normal Shutdown"
+      },
+      {
+        "from": "History Record Interface",
+        "relation": "displays",
+        "to": "Last Fault During Operation"
+      },
+      {
+        "from": "History Record Interface",
+        "relation": "displays",
+        "to": "Top 10 Faults"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "user_interface",
+      "fault_history",
+      "navigation",
+      "reporting"
+    ],
+    "ocr_text_if_useful": "彩色图像显示控制中心（续） YK E型离心式冷水机组\n历史记录界面\n图 28 - 历史记录界面\n概述\n用户可以通过该界面浏览机组出现故障的情况。如果需要观察停机时系统运行状况的更全面的报告，可以切换到子界面：详细历史记录。\n用户可以使用选择故障记录键以选择所需观察的历史记录。这时使用观察详细记录键可以切换到一个子界面，在这个子界面中包含了在停机时冷水机组运行参数值。另外，打印历史记录键可以用来打印一份停机时运行参数值的报告。\n只读显示\n上一次正常停机\n这个窗口显示上一次正常停机的日期、时间和描述。正常停机可以规定为：\n—就地(控制中心上的摇臂式开关控制)\n—远程(数字、模拟或 ISN)\n上一次运行时的故障\n这个窗口显示上一次在系统运行时发生的紧急停机或正常停机的日期、时间和描述。\n前十次故障\n这个窗口显示按照时间顺序排列的(最近的排在最前面)前十次在系统运行或停机时发生的紧急停机或正常停机的日期、时间和描述。\n可编程\n打印历史记录\n要求访问级别：观察\n这个键可以打印出一个报告，列出用户选择的停机记录下冷水机组参数的状态。\n打印所有历史记录\n要求访问级别：观察\n这个键可以打印出一个报告，列出所有存储在系统中的停机时的冷水机组参数。\n导航\n主界面\n要求访问级别：观察\n直接返回主界面。\n观察详细记录\n要求访问级别：观察\n切换到包含了有关用户选择的停机记录中冷水机组参数的子界面。\n趋势\n要求访问级别：观察\n切换到一个子界面，在这个界面中，用户可以观察所选机组的趋势数据。",
+    "uncertainty_notes": "The screenshot is low-resolution, making specific text on the interface unreadable. The visual entities are inferred from the surrounding text descriptions rather than directly readable from the image. Relationships are based on the described functions, not explicit visual connections in the screenshot.",
+    "confidence": 0.8
+  },
+  "raw_text": "{\n  \"page_type\": \"controller_screen\",\n  \"summary\": \"This page describes the 'History Record Interface' of a YK E-type centrifugal chiller's color image display control center. It includes a screenshot of the interface and text explaining its functions, such as viewing fault history, printing reports, and navigating to sub-screens. The interface allows users to browse fault conditions, view detailed records, and access trend data.\",\n  \"visual_entities\": [\n    {\"type\": \"screenshot\", \"label\": \"History Record Interface\"},\n    {\"type\": \"button\", \"label\": \"Print History Record\"},\n    {\"type\": \"button\", \"label\": \"Print All History Records\"},\n    {\"type\": \"button\", \"label\": \"Main Interface\"},\n    {\"type\": \"button\", \"label\": \"View Detailed Record\"},\n    {\"type\": \"button\", \"label\": \"Trend\"},\n    {\"type\": \"window\", \"label\": \"Last Normal Shutdown\"},\n    {\"type\": \"window\", \"label\": \"Last Fault During Operation\"},\n    {\"type\": \"window\", \"label\": \"Top 10 Faults\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Print History Record\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Print All History Records\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Main Interface\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"View Detailed Record\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Trend\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"displays\", \"to\": \"Last Normal Shutdown\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"displays\", \"to\": \"Last Fault During Operation\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"displays\", \"to\": \"Top 10 Faults\"}\n  ],\n  \"useful_for_knowledge_types\": [\"user_interface\", \"fault_history\", \"navigation\", \"reporting\"],\n  \"ocr_text_if_useful\": \"彩色图像显示控制中心（续） YK E型离心式冷水机组\\n历史记录界面\\n图 28 - 历史记录界面\\n概述\\n用户可以通过该界面浏览机组出现故障的情况。如果需要观察停机时系统运行状况的更全面的报告，可以切换到子界面：详细历史记录。\\n用户可以使用选择故障记录键以选择所需观察的历史记录。这时使用观察详细记录键可以切换到一个子界面，在这个子界面中包含了在停机时冷水机组运行参数值。另外，打印历史记录键可以用来打印一份停机时运行参数值的报告。\\n只读显示\\n上一次正常停机\\n这个窗口显示上一次正常停机的日期、时间和描述。正常停机可以规定为：\\n—就地(控制中心上的摇臂式开关控制)\\n—远程(数字、模拟或 ISN)\\n上一次运行时的故障\\n这个窗口显示上一次在系统运行时发生的紧急停机或正常停机的日期、时间和描述。\\n前十次故障\\n这个窗口显示按照时间顺序排列的(最近的排在最前面)前十次在系统运行或停机时发生的紧急停机或正常停机的日期、时间和描述。\\n可编程\\n打印历史记录\\n要求访问级别：观察\\n这个键可以打印出一个报告，列出用户选择的停机记录下冷水机组参数的状态。\\n打印所有历史记录\\n要求访问级别：观察\\n这个键可以打印出一个报告，列出所有存储在系统中的停机时的冷水机组参数。\\n导航\\n主界面\\n要求访问级别：观察\\n直接返回主界面。\\n观察详细记录\\n要求访问级别：观察\\n切换到包含了有关用户选择的停机记录中冷水机组参数的子界面。\\n趋势\\n要求访问级别：观察\\n切换到一个子界面，在这个界面中，用户可以观察所选机组的趋势数据。\",\n  \"uncertainty_notes\": \"The screenshot is low-resolution, making specific text on the interface unreadable. The visual entities are inferred from the surrounding text descriptions rather than directly readable from the image. Relationships are based on the described functions, not explicit visual connections in the screenshot.\",\n  \"confidence\": 0.8\n}"
+}

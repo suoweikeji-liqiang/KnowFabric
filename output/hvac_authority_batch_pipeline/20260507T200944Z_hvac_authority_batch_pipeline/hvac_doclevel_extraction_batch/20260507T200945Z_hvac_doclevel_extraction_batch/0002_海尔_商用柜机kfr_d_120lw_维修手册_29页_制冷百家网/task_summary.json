@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【海尔】商用柜机KFR(d)-120LW】维修手册（29页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】商用柜机KFR(d)-120LW】维修手册（29页）-制冷百家网.pdf",
+  "doc_id": "doc_73f432de87fa4968",
+  "chunks": 31,
+  "manual_tokens_estimated": 8762,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 29,
+      "chunks_after": 31,
+      "parse_result": {
+        "job_id": "job_1ecf6651119343b3",
+        "doc_id": "doc_73f432de87fa4968",
+        "pages_created": 29,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_9abf25af24a24334",
+        "doc_id": "doc_73f432de87fa4968",
+        "chunks_created": 31,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 10,
+      "anchor_passed": 9,
+      "anchor_rejected": 1,
+      "anchor_match_rate": 90.0,
+      "judge_accepted": 9,
+      "judge_rejected": 0,
+      "judge_acceptance_rate": 100.0,
+      "judge_rejection_breakdown": {},
+      "review_candidates": 9,
+      "by_type": {
+        "fault_code": 9
+      },
+      "usage": {
+        "prompt_tokens": 15397,
+        "completion_tokens": 1703,
+        "total_tokens": 17100
+      },
+      "judge_usage": {
+        "prompt_tokens": 4733,
+        "completion_tokens": 566,
+        "total_tokens": 5299
+      },
+      "extract_cost_rmb": 0.056409,
+      "judge_cost_rmb": 0.017595,
+      "cost_rmb": 0.074004,
+      "elapsed_seconds": 48.994,
+      "judge_elapsed_seconds": 18.084,
+      "output_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0002_海尔_商用柜机kfr_d_120lw_维修手册_29页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "output/hvac_authority_batch_pipeline/20260507T200944Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200945Z_hvac_doclevel_extraction_batch/0002_海尔_商用柜机kfr_d_120lw_维修手册_29页_制冷百家网"
+}

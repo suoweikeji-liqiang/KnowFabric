@@ -1,0 +1,22 @@
+{
+  "artifact_mode": "chunk_backfill_review_pipeline_export",
+  "generated_at": "2026-05-07T08:51:57.836445+00:00",
+  "domain_id": "hvac",
+  "filters_applied": {
+    "doc_id": "doc_804afd33494f4815",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "paths": {
+    "candidates": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0010_制冷百家_海尔商用故障代码手册_制冷百家网_951fa388da/review_bundle/candidates.json",
+    "review_pack_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0010_制冷百家_海尔商用故障代码手册_制冷百家网_951fa388da/review_bundle/review_packs",
+    "review_pack_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0010_制冷百家_海尔商用故障代码手册_制冷百家网_951fa388da/review_bundle/review_packs/review_pack_manifest.json",
+    "stats": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0010_制冷百家_海尔商用故障代码手册_制冷百家网_951fa388da/review_bundle/review_pipeline_stats.json"
+  },
+  "counts": {
+    "candidate_entries": 0,
+    "review_packs": 0,
+    "documents": 1
+  }
+}

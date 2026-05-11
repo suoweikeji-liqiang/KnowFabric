@@ -1,0 +1,359 @@
+{
+  "mode": "ashrae_g36_parallel_section_context_focus_sections",
+  "generated_at": "2026-05-07T17:36:24.607323+00:00",
+  "doc_id": "doc_4bbd3703c4f84be4",
+  "workers": 2,
+  "dry_run": false,
+  "section_count": 22,
+  "passed": 18,
+  "failed": 4,
+  "total_verified": 356,
+  "total_l4": 141,
+  "results": [
+    {
+      "section": "5.1",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 755.842,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~28860\nextracting section_context tokens~28860\nfull-book extraction returned 36 candidates\nfocus filtered candidates 36 -> 36 for 5.1\nanchoring 36 raw candidates\nweak_evidence_rejected=8 judge_input=25\nbatch judging 25 candidates\nsummary raw=36 anchor_passed=33 verified=17 L4=0 cost=¥0.2570 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T154934Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_1/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 36,
+        "anchor_passed": 33,
+        "verified": 17,
+        "L4": 0,
+        "cost": 0.257,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T154934Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_1/REPORT.md"
+      }
+    },
+    {
+      "section": "5.2",
+      "status": "fail",
+      "returncode": 2,
+      "elapsed_seconds": 639.985,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~32783\nextracting section_context tokens~32783\nfull-book extraction returned 22 candidates\nfocus filtered candidates 22 -> 22 for 5.2\nanchoring 22 raw candidates\nweak_evidence_rejected=1 judge_input=15\nbatch judging 15 candidates\nsummary raw=22 anchor_passed=16 verified=15 L4=2 cost=¥0.2443 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T154738Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_2/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 22,
+        "anchor_passed": 16,
+        "verified": 15,
+        "L4": 2,
+        "cost": 0.2443,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T154738Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_2/REPORT.md"
+      }
+    },
+    {
+      "section": "5.3",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 600.976,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~31900\nextracting section_context tokens~31900\nfull-book extraction returned 25 candidates\nfocus filtered candidates 25 -> 25 for 5.3\nanchoring 25 raw candidates\nweak_evidence_rejected=3 judge_input=21\nbatch judging 21 candidates\nsummary raw=25 anchor_passed=24 verified=21 L4=0 cost=¥0.2329 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T155739Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_3/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 25,
+        "anchor_passed": 24,
+        "verified": 21,
+        "L4": 0,
+        "cost": 0.2329,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T155739Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_3/REPORT.md"
+      }
+    },
+    {
+      "section": "5.4",
+      "status": "fail",
+      "returncode": 2,
+      "elapsed_seconds": 1504.232,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~29697\nextracting section_context tokens~29697\nLLM transient error (The read operation timed out); retrying 2/3\nfull-book extraction returned 9 candidates\nfocus filtered candidates 9 -> 9 for 5.4\nanchoring 9 raw candidates\nweak_evidence_rejected=2 judge_input=7\nbatch judging 7 candidates\nsummary raw=9 anchor_passed=9 verified=7 L4=0 cost=¥0.1584 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T161438Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_4/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 9,
+        "anchor_passed": 9,
+        "verified": 7,
+        "L4": 0,
+        "cost": 0.1584,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T161438Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_4/REPORT.md"
+      }
+    },
+    {
+      "section": "5.5",
+      "status": "fail",
+      "returncode": 2,
+      "elapsed_seconds": 1660.892,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~30098\nextracting section_context tokens~30098\nLLM transient error (The read operation timed out); retrying 2/3\nfull-book extraction returned 16 candidates\nfocus filtered candidates 16 -> 16 for 5.5\nanchoring 16 raw candidates\nweak_evidence_rejected=2 judge_input=14\nbatch judging 14 candidates\nsummary raw=16 anchor_passed=16 verified=13 L4=5 cost=¥0.1977 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T162520Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_5/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 16,
+        "anchor_passed": 16,
+        "verified": 13,
+        "L4": 5,
+        "cost": 0.1977,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T162520Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_5/REPORT.md"
+      }
+    },
+    {
+      "section": "5.6",
+      "status": "fail",
+      "returncode": 1,
+      "elapsed_seconds": 379.842,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~31182\nextracting section_context tokens~31182\n",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/Users/asteroida/work/KnowFabric/scripts/run_ashrae_g36_full_book.py\", line 781, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/Users/asteroida/work/KnowFabric/scripts/run_ashrae_g36_full_book.py\", line 770, in main\n    summary = run(build_parser().parse_args(argv))\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/asteroida/work/KnowFabric/scripts/run_ashrae_g36_full_book.py\", line 715, in run\n    extracted = extract_full_book(\n                ^^^^^^^^^^^^^^^^^^\n  File \"/Users/asteroida/work/KnowFabric/scripts/run_ashrae_g36_full_book.py\", line 194, in extract_full_book\n    parsed = Guideline36ExtractionResponse.model_validate(response)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/asteroida/work/KnowFabric/venv/lib/python3.11/site-packages/pydantic/main.py\", line 503, in model_validate\n    return cls.__pydantic_validator__.validate_python(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npydantic_core._pydantic_core.ValidationError: 9 validation errors for Guideline36ExtractionResponse\ncandidates.8.summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/string_type\ncandidates.9.summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/string_type\ncandidates.10.summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/string_type\ncandidates.11.summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/string_type\ncandidates.12.summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/string_type\ncandidates.13.summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/string_type\ncandidates.14.summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/string_type\ncandidates.15.summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/string_type\ncandidates.16.summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.5/v/string_type\n",
+      "summary": null
+    },
+    {
+      "section": "5.7",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 399.867,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~30696\nextracting section_context tokens~30696\nfull-book extraction returned 20 candidates\nfocus filtered candidates 20 -> 20 for 5.7\nanchoring 20 raw candidates\nweak_evidence_rejected=3 judge_input=17\nbatch judging 17 candidates\nsummary raw=20 anchor_passed=20 verified=17 L4=12 cost=¥0.1873 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T162738Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_7/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 20,
+        "anchor_passed": 20,
+        "verified": 17,
+        "L4": 12,
+        "cost": 0.1873,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T162738Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_7/REPORT.md"
+      }
+    },
+    {
+      "section": "5.8",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 645.646,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~31717\nextracting section_context tokens~31717\nfull-book extraction returned 33 candidates\nfocus filtered candidates 33 -> 33 for 5.8\nanchoring 33 raw candidates\nweak_evidence_rejected=7 judge_input=26\nbatch judging 26 candidates\nsummary raw=33 anchor_passed=33 verified=22 L4=9 cost=¥0.2469 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T163605Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_8/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 33,
+        "anchor_passed": 33,
+        "verified": 22,
+        "L4": 9,
+        "cost": 0.2469,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T163605Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_8/REPORT.md"
+      }
+    },
+    {
+      "section": "5.9",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 418.723,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~30592\nextracting section_context tokens~30592\nfull-book extraction returned 14 candidates\nfocus filtered candidates 14 -> 14 for 5.9\nanchoring 14 raw candidates\nweak_evidence_rejected=7 judge_input=7\nbatch judging 7 candidates\nsummary raw=14 anchor_passed=14 verified=7 L4=6 cost=¥0.1862 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T163436Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_9/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 14,
+        "anchor_passed": 14,
+        "verified": 7,
+        "L4": 6,
+        "cost": 0.1862,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T163436Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_9/REPORT.md"
+      }
+    },
+    {
+      "section": "5.10",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 490.311,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~31091\nextracting section_context tokens~31091\nfull-book extraction returned 20 candidates\nfocus filtered candidates 20 -> 20 for 5.10\nanchoring 20 raw candidates\nweak_evidence_rejected=1 judge_input=19\nbatch judging 19 candidates\nsummary raw=20 anchor_passed=20 verified=16 L4=14 cost=¥0.2071 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T164247Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_10/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 20,
+        "anchor_passed": 20,
+        "verified": 16,
+        "L4": 14,
+        "cost": 0.2071,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T164247Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_10/REPORT.md"
+      }
+    },
+    {
+      "section": "5.11",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 490.755,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~31283\nextracting section_context tokens~31283\nfull-book extraction returned 19 candidates\nfocus filtered candidates 19 -> 19 for 5.11\nanchoring 19 raw candidates\nweak_evidence_rejected=1 judge_input=18\nbatch judging 18 candidates\nsummary raw=19 anchor_passed=19 verified=15 L4=8 cost=¥0.2086 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T164416Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_11/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 19,
+        "anchor_passed": 19,
+        "verified": 15,
+        "L4": 8,
+        "cost": 0.2086,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T164416Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_11/REPORT.md"
+      }
+    },
+    {
+      "section": "5.12",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 660.616,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~30856\nextracting section_context tokens~30856\nfull-book extraction returned 32 candidates\nfocus filtered candidates 32 -> 32 for 5.12\nanchoring 32 raw candidates\nweak_evidence_rejected=0 judge_input=32\nbatch judging 32 candidates\nsummary raw=32 anchor_passed=32 verified=32 L4=27 cost=¥0.2502 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T165347Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_12/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 32,
+        "anchor_passed": 32,
+        "verified": 32,
+        "L4": 27,
+        "cost": 0.2502,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T165347Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_12/REPORT.md"
+      }
+    },
+    {
+      "section": "5.13",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 364.641,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~30364\nextracting section_context tokens~30364\nfull-book extraction returned 16 candidates\nfocus filtered candidates 16 -> 16 for 5.13\nanchoring 16 raw candidates\nweak_evidence_rejected=0 judge_input=14\nbatch judging 14 candidates\nsummary raw=16 anchor_passed=14 verified=14 L4=9 cost=¥0.1775 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T165021Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_13/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 16,
+        "anchor_passed": 14,
+        "verified": 14,
+        "L4": 9,
+        "cost": 0.1775,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T165021Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_13/REPORT.md"
+      }
+    },
+    {
+      "section": "5.14",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 542.987,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~30684\nextracting section_context tokens~30684\nfull-book extraction returned 14 candidates\nfocus filtered candidates 14 -> 14 for 5.14\nanchoring 14 raw candidates\nweak_evidence_rejected=1 judge_input=13\nbatch judging 13 candidates\nsummary raw=14 anchor_passed=14 verified=11 L4=8 cost=¥0.2179 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T165924Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_14/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 14,
+        "anchor_passed": 14,
+        "verified": 11,
+        "L4": 8,
+        "cost": 0.2179,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T165924Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_14/REPORT.md"
+      }
+    },
+    {
+      "section": "5.15",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 81.87,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~50655\nextracting section_context tokens~50655\nfull-book extraction returned 1 candidates\nfocus filtered candidates 1 -> 1 for 5.15\nanchoring 1 raw candidates\nweak_evidence_rejected=0 judge_input=1\nbatch judging 1 candidates\nsummary raw=1 anchor_passed=1 verified=1 L4=0 cost=¥0.1767 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T165509Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_15/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 1,
+        "anchor_passed": 1,
+        "verified": 1,
+        "L4": 0,
+        "cost": 0.1767,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T165509Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_15/REPORT.md"
+      }
+    },
+    {
+      "section": "5.16",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 723.201,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~50503\nextracting section_context tokens~50503\nfull-book extraction returned 40 candidates\nfocus filtered candidates 40 -> 40 for 5.16\nanchoring 40 raw candidates\nweak_evidence_rejected=6 judge_input=34\nbatch judging 34 candidates\nsummary raw=40 anchor_passed=40 verified=34 L4=7 cost=¥0.3681 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T170712Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_16/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 40,
+        "anchor_passed": 40,
+        "verified": 34,
+        "L4": 7,
+        "cost": 0.3681,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T170712Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_16/REPORT.md"
+      }
+    },
+    {
+      "section": "5.17",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 589.197,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~31746\nextracting section_context tokens~31746\nfull-book extraction returned 25 candidates\nfocus filtered candidates 25 -> 25 for 5.17\nanchoring 25 raw candidates\nweak_evidence_rejected=2 judge_input=23\nbatch judging 23 candidates\nsummary raw=25 anchor_passed=25 verified=22 L4=8 cost=¥0.2320 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T170913Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_17/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 25,
+        "anchor_passed": 25,
+        "verified": 22,
+        "L4": 8,
+        "cost": 0.232,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T170913Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_17/REPORT.md"
+      }
+    },
+    {
+      "section": "5.18",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 820.046,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~39665\nextracting section_context tokens~39665\nfull-book extraction returned 40 candidates\nfocus filtered candidates 40 -> 40 for 5.18\nanchoring 40 raw candidates\nweak_evidence_rejected=1 judge_input=39\nbatch judging 39 candidates\nsummary raw=40 anchor_passed=40 verified=36 L4=13 cost=¥0.3195 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T172052Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_18/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 40,
+        "anchor_passed": 40,
+        "verified": 36,
+        "L4": 13,
+        "cost": 0.3195,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T172052Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_18/REPORT.md"
+      }
+    },
+    {
+      "section": "5.19",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 180.478,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~29190\nextracting section_context tokens~29190\nfull-book extraction returned 5 candidates\nfocus filtered candidates 5 -> 5 for 5.19\nanchoring 5 raw candidates\nweak_evidence_rejected=0 judge_input=5\nbatch judging 5 candidates\nsummary raw=5 anchor_passed=5 verified=5 L4=0 cost=¥0.1299 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T171213Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_19/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 5,
+        "anchor_passed": 5,
+        "verified": 5,
+        "L4": 0,
+        "cost": 0.1299,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T171213Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_19/REPORT.md"
+      }
+    },
+    {
+      "section": "5.20",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 1014.045,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~73298\nextracting section_context tokens~73298\nfull-book extraction returned 40 candidates\nfocus filtered candidates 40 -> 40 for 5.20\nanchoring 40 raw candidates\nweak_evidence_rejected=3 judge_input=30\nbatch judging 30 candidates\nsummary raw=40 anchor_passed=33 verified=30 L4=6 cost=¥0.4559 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T172907Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_20/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 40,
+        "anchor_passed": 33,
+        "verified": 30,
+        "L4": 6,
+        "cost": 0.4559,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T172907Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_20/REPORT.md"
+      }
+    },
+    {
+      "section": "5.21",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 777.406,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~47600\nextracting section_context tokens~47600\nfull-book extraction returned 43 candidates\nfocus filtered candidates 43 -> 43 for 5.21\nanchoring 43 raw candidates\nweak_evidence_rejected=3 judge_input=35\nbatch judging 35 candidates\nsummary raw=43 anchor_passed=38 verified=28 L4=1 cost=¥0.3276 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T173350Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_21/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 43,
+        "anchor_passed": 38,
+        "verified": 28,
+        "L4": 1,
+        "cost": 0.3276,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T173350Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_21/REPORT.md"
+      }
+    },
+    {
+      "section": "5.22",
+      "status": "pass",
+      "returncode": 0,
+      "elapsed_seconds": 436.529,
+      "stdout_tail": "manual chunks=923 input_mode=section_context tokens~33054\nextracting section_context tokens~33054\nfull-book extraction returned 31 candidates\nfocus filtered candidates 31 -> 31 for 5.22\nanchoring 31 raw candidates\nweak_evidence_rejected=0 judge_input=28\nbatch judging 28 candidates\nsummary raw=31 anchor_passed=28 verified=28 L4=13 cost=¥0.2275 report=output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T173624Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_22/REPORT.md\n",
+      "stderr_tail": "",
+      "summary": {
+        "raw": 31,
+        "anchor_passed": 28,
+        "verified": 28,
+        "L4": 13,
+        "cost": 0.2275,
+        "report": "output/hvac_authority_batch_pipeline/ashrae_guideline36_parallel_fullbook/20260507T173624Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_22/REPORT.md"
+      }
+    }
+  ]
+}

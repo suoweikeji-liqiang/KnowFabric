@@ -1,0 +1,1004 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_96a755a81fcca3d1",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_88d85f1cf08546eb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae36rc_rated_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "Rated Cooling Capacity",
+        "value": "36.1 kW",
+        "unit": "kW",
+        "model": "YCAE36RC",
+        "title": "YCAE36RC Cooling Capacity",
+        "summary": "YCAE36RC module has a rated cooling capacity of 36.1 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "»ú×é½éÉÜ             YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é°²×°¡¢ ²Ù×÷ºÍÎ¬»¤ÊÖ²á\n2»ú×é¼ò½é:\nÔ¼¿Ë YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±Ã»ú×é ÎªÉÏ´µÊ½ÖÐÑë¿Õµ÷¹¤³ÌµÄ¼¯ÖÐÊ½¿ÕÆø´¦ÀíÉè±¸»òÄ©¶Ë×°ÖÃÌá¹©\nÀä¶³Ë®/ÈÈË®¡£»ú×éÎªÄ£¿éÊ½, ÓÐYCAE36RC ºÍYCAE61RC Á½¸öÄ£¿é, Ã¿¸öÄ£¿éÓÐ 3¼¶»ò 2¼¶ÄÜÁ¦µ÷½Ú, Ã¿\n¸öÄ£¿é¿ÉÒÔµ¥¶ÀÔËÐÐºÍ°²×°; Ò²¿É¶à¸öÄ£¿éÒ»ÆðÆ´×°ºÍÔËÐÐ, Ä£¿é¿ÉÒÔÏàÍ¬Ò²¿ÉÒÔ²»Í¬, ×î¶àÔÊÐí 8¸öÄ£¿é\nÒ»ÆðÆ´×°¡£»ú×é·ÅÓÚÊÒÍâ£¨ÎÝ¶¥»òµØÃæ£©°²×°¡£Ã¿¸öÄ£¿é°üÀ¨ÎÐÐýÊ½Ñ¹Ëõ»ú¡¢·çÀäÊ½ÀäÄýÆ÷¡¢¿Ç¹ÜÊ½Õô\n·¢Æ÷ÒÔ¼°Î¢µçÄÔ¿ØÖÆÖÐÐÄµÈ¡£\n±í1.1 Ä£¿éÐÔÄÜÊý¾Ý±í:\nÊäÈë¹¦ÂÊ ÀäÄýÆ÷ Õô·¢Æ÷ Ä£¿éÍâÐÎ³ß´ç ÖØÁ¿\nÑ¹Ëõ»ú\nÑ¹Ëõ»ú ÖÆÀäÁ¿ ÖÆÈÈÁ¿\nÊýÁ¿ ÖÆÀä ÖÆÈÈ ·ç»ú ÈÝÁ¿¿Ø\nÖÆ¼¶Êý ·ç»úÊýÁ¿ ·çÁ¿ Ë®Ñ¹½µ ½ø/³öË®¹Ü ³¤ Éî ¸ß ÔËÊäÖØÁ¿ ÔËÐÐÖØÁ¿ ÐÍºÅ\nkW kW ÐÍÊ½\nÌ¨ kW kW kW % ÐÍÊ½\nÌ¨Á¢·½Ã×\n/H ÐÍÊ½\nKpa mm Ë®¹ÜÁ¬½Ó·½Ê½ mm mm mm Kg Kg\nYCAE 36\nRC 36.1 40.5 ÎÐÐý 3 11.36 12.56 0.37*20¡¢33%¡¢\n66%¡¢100%V28000*2¿Ç¹Ü 17 114 ¿¨¹¿ 160010001900 700 750\nYCAE 61\nRC 60 65.7 ÎÐÐý 2 17.5 19.2 0.75*20¡¢ 50\n%\n¡¢100% V213000*\n2 ¿Ç¹Ü 35 114 ¿¨¹¿ 200010001900 900 980\nÄ£¿éÐÍºÅËµÃ÷:\nYC A E 36 R C\nÔ¼¿ËÀäË®»ú×é\n·çÀäÊ½\nÎÐÐýÊ½Ñ¹Ëõ»ú\nÃûÒåÖÆÀäÁ¿ KW\nS  µ¥ÀäÏµÁÐ\nR  ÈÈ±ÃÏµÁÐ\nÖÆÀä¼Á R22\n±¾ÊÖ²á YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±ÃÄ£¿é°üº¬ÒÔÏÂÐÍºÅ£º\nYCAE 36 RC   YCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_88d85f1cf08546eb"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted from performance data table; rated cooling capacity is a grounded parameter specification."
+    },
+    {
+      "candidate_id": "cand_8cb714d093e5eed6",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_88d85f1cf08546eb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae61rc_rated_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "Rated Cooling Capacity",
+        "value": "60 kW",
+        "unit": "kW",
+        "model": "YCAE61RC",
+        "title": "YCAE61RC Cooling Capacity",
+        "summary": "YCAE61RC module has a rated cooling capacity of 60 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "»ú×é½éÉÜ             YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é°²×°¡¢ ²Ù×÷ºÍÎ¬»¤ÊÖ²á\n2»ú×é¼ò½é:\nÔ¼¿Ë YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±Ã»ú×é ÎªÉÏ´µÊ½ÖÐÑë¿Õµ÷¹¤³ÌµÄ¼¯ÖÐÊ½¿ÕÆø´¦ÀíÉè±¸»òÄ©¶Ë×°ÖÃÌá¹©\nÀä¶³Ë®/ÈÈË®¡£»ú×éÎªÄ£¿éÊ½, ÓÐYCAE36RC ºÍYCAE61RC Á½¸öÄ£¿é, Ã¿¸öÄ£¿éÓÐ 3¼¶»ò 2¼¶ÄÜÁ¦µ÷½Ú, Ã¿\n¸öÄ£¿é¿ÉÒÔµ¥¶ÀÔËÐÐºÍ°²×°; Ò²¿É¶à¸öÄ£¿éÒ»ÆðÆ´×°ºÍÔËÐÐ, Ä£¿é¿ÉÒÔÏàÍ¬Ò²¿ÉÒÔ²»Í¬, ×î¶àÔÊÐí 8¸öÄ£¿é\nÒ»ÆðÆ´×°¡£»ú×é·ÅÓÚÊÒÍâ£¨ÎÝ¶¥»òµØÃæ£©°²×°¡£Ã¿¸öÄ£¿é°üÀ¨ÎÐÐýÊ½Ñ¹Ëõ»ú¡¢·çÀäÊ½ÀäÄýÆ÷¡¢¿Ç¹ÜÊ½Õô\n·¢Æ÷ÒÔ¼°Î¢µçÄÔ¿ØÖÆÖÐÐÄµÈ¡£\n±í1.1 Ä£¿éÐÔÄÜÊý¾Ý±í:\nÊäÈë¹¦ÂÊ ÀäÄýÆ÷ Õô·¢Æ÷ Ä£¿éÍâÐÎ³ß´ç ÖØÁ¿\nÑ¹Ëõ»ú\nÑ¹Ëõ»ú ÖÆÀäÁ¿ ÖÆÈÈÁ¿\nÊýÁ¿ ÖÆÀä ÖÆÈÈ ·ç»ú ÈÝÁ¿¿Ø\nÖÆ¼¶Êý ·ç»úÊýÁ¿ ·çÁ¿ Ë®Ñ¹½µ ½ø/³öË®¹Ü ³¤ Éî ¸ß ÔËÊäÖØÁ¿ ÔËÐÐÖØÁ¿ ÐÍºÅ\nkW kW ÐÍÊ½\nÌ¨ kW kW kW % ÐÍÊ½\nÌ¨Á¢·½Ã×\n/H ÐÍÊ½\nKpa mm Ë®¹ÜÁ¬½Ó·½Ê½ mm mm mm Kg Kg\nYCAE 36\nRC 36.1 40.5 ÎÐÐý 3 11.36 12.56 0.37*20¡¢33%¡¢\n66%¡¢100%V28000*2¿Ç¹Ü 17 114 ¿¨¹¿ 160010001900 700 750\nYCAE 61\nRC 60 65.7 ÎÐÐý 2 17.5 19.2 0.75*20¡¢ 50\n%\n¡¢100% V213000*\n2 ¿Ç¹Ü 35 114 ¿¨¹¿ 200010001900 900 980\nÄ£¿éÐÍºÅËµÃ÷:\nYC A E 36 R C\nÔ¼¿ËÀäË®»ú×é\n·çÀäÊ½\nÎÐÐýÊ½Ñ¹Ëõ»ú\nÃûÒåÖÆÀäÁ¿ KW\nS  µ¥ÀäÏµÁÐ\nR  ÈÈ±ÃÏµÁÐ\nÖÆÀä¼Á R22\n±¾ÊÖ²á YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±ÃÄ£¿é°üº¬ÒÔÏÂÐÍºÅ£º\nYCAE 36 RC   YCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_88d85f1cf08546eb"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted from performance data table; rated cooling capacity is a grounded parameter specification."
+    },
+    {
+      "candidate_id": "cand_dab1f24e66ab6fd7",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_88d85f1cf08546eb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae36rc_rated_heating_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "Rated Heating Capacity",
+        "value": "40.5 kW",
+        "unit": "kW",
+        "model": "YCAE36RC",
+        "title": "YCAE36RC Heating Capacity",
+        "summary": "YCAE36RC module has a rated heating capacity of 40.5 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "»ú×é½éÉÜ             YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é°²×°¡¢ ²Ù×÷ºÍÎ¬»¤ÊÖ²á\n2»ú×é¼ò½é:\nÔ¼¿Ë YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±Ã»ú×é ÎªÉÏ´µÊ½ÖÐÑë¿Õµ÷¹¤³ÌµÄ¼¯ÖÐÊ½¿ÕÆø´¦ÀíÉè±¸»òÄ©¶Ë×°ÖÃÌá¹©\nÀä¶³Ë®/ÈÈË®¡£»ú×éÎªÄ£¿éÊ½, ÓÐYCAE36RC ºÍYCAE61RC Á½¸öÄ£¿é, Ã¿¸öÄ£¿éÓÐ 3¼¶»ò 2¼¶ÄÜÁ¦µ÷½Ú, Ã¿\n¸öÄ£¿é¿ÉÒÔµ¥¶ÀÔËÐÐºÍ°²×°; Ò²¿É¶à¸öÄ£¿éÒ»ÆðÆ´×°ºÍÔËÐÐ, Ä£¿é¿ÉÒÔÏàÍ¬Ò²¿ÉÒÔ²»Í¬, ×î¶àÔÊÐí 8¸öÄ£¿é\nÒ»ÆðÆ´×°¡£»ú×é·ÅÓÚÊÒÍâ£¨ÎÝ¶¥»òµØÃæ£©°²×°¡£Ã¿¸öÄ£¿é°üÀ¨ÎÐÐýÊ½Ñ¹Ëõ»ú¡¢·çÀäÊ½ÀäÄýÆ÷¡¢¿Ç¹ÜÊ½Õô\n·¢Æ÷ÒÔ¼°Î¢µçÄÔ¿ØÖÆÖÐÐÄµÈ¡£\n±í1.1 Ä£¿éÐÔÄÜÊý¾Ý±í:\nÊäÈë¹¦ÂÊ ÀäÄýÆ÷ Õô·¢Æ÷ Ä£¿éÍâÐÎ³ß´ç ÖØÁ¿\nÑ¹Ëõ»ú\nÑ¹Ëõ»ú ÖÆÀäÁ¿ ÖÆÈÈÁ¿\nÊýÁ¿ ÖÆÀä ÖÆÈÈ ·ç»ú ÈÝÁ¿¿Ø\nÖÆ¼¶Êý ·ç»úÊýÁ¿ ·çÁ¿ Ë®Ñ¹½µ ½ø/³öË®¹Ü ³¤ Éî ¸ß ÔËÊäÖØÁ¿ ÔËÐÐÖØÁ¿ ÐÍºÅ\nkW kW ÐÍÊ½\nÌ¨ kW kW kW % ÐÍÊ½\nÌ¨Á¢·½Ã×\n/H ÐÍÊ½\nKpa mm Ë®¹ÜÁ¬½Ó·½Ê½ mm mm mm Kg Kg\nYCAE 36\nRC 36.1 40.5 ÎÐÐý 3 11.36 12.56 0.37*20¡¢33%¡¢\n66%¡¢100%V28000*2¿Ç¹Ü 17 114 ¿¨¹¿ 160010001900 700 750\nYCAE 61\nRC 60 65.7 ÎÐÐý 2 17.5 19.2 0.75*20¡¢ 50\n%\n¡¢100% V213000*\n2 ¿Ç¹Ü 35 114 ¿¨¹¿ 200010001900 900 980\nÄ£¿éÐÍºÅËµÃ÷:\nYC A E 36 R C\nÔ¼¿ËÀäË®»ú×é\n·çÀäÊ½\nÎÐÐýÊ½Ñ¹Ëõ»ú\nÃûÒåÖÆÀäÁ¿ KW\nS  µ¥ÀäÏµÁÐ\nR  ÈÈ±ÃÏµÁÐ\nÖÆÀä¼Á R22\n±¾ÊÖ²á YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±ÃÄ£¿é°üº¬ÒÔÏÂÐÍºÅ£º\nYCAE 36 RC   YCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_88d85f1cf08546eb"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted from performance data table; rated heating capacity is a grounded parameter specification."
+    },
+    {
+      "candidate_id": "cand_77777b463e78c9c8",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_88d85f1cf08546eb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae61rc_rated_heating_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "Rated Heating Capacity",
+        "value": "65.7 kW",
+        "unit": "kW",
+        "model": "YCAE61RC",
+        "title": "YCAE61RC Heating Capacity",
+        "summary": "YCAE61RC module has a rated heating capacity of 65.7 kW."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "»ú×é½éÉÜ             YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é°²×°¡¢ ²Ù×÷ºÍÎ¬»¤ÊÖ²á\n2»ú×é¼ò½é:\nÔ¼¿Ë YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±Ã»ú×é ÎªÉÏ´µÊ½ÖÐÑë¿Õµ÷¹¤³ÌµÄ¼¯ÖÐÊ½¿ÕÆø´¦ÀíÉè±¸»òÄ©¶Ë×°ÖÃÌá¹©\nÀä¶³Ë®/ÈÈË®¡£»ú×éÎªÄ£¿éÊ½, ÓÐYCAE36RC ºÍYCAE61RC Á½¸öÄ£¿é, Ã¿¸öÄ£¿éÓÐ 3¼¶»ò 2¼¶ÄÜÁ¦µ÷½Ú, Ã¿\n¸öÄ£¿é¿ÉÒÔµ¥¶ÀÔËÐÐºÍ°²×°; Ò²¿É¶à¸öÄ£¿éÒ»ÆðÆ´×°ºÍÔËÐÐ, Ä£¿é¿ÉÒÔÏàÍ¬Ò²¿ÉÒÔ²»Í¬, ×î¶àÔÊÐí 8¸öÄ£¿é\nÒ»ÆðÆ´×°¡£»ú×é·ÅÓÚÊÒÍâ£¨ÎÝ¶¥»òµØÃæ£©°²×°¡£Ã¿¸öÄ£¿é°üÀ¨ÎÐÐýÊ½Ñ¹Ëõ»ú¡¢·çÀäÊ½ÀäÄýÆ÷¡¢¿Ç¹ÜÊ½Õô\n·¢Æ÷ÒÔ¼°Î¢µçÄÔ¿ØÖÆÖÐÐÄµÈ¡£\n±í1.1 Ä£¿éÐÔÄÜÊý¾Ý±í:\nÊäÈë¹¦ÂÊ ÀäÄýÆ÷ Õô·¢Æ÷ Ä£¿éÍâÐÎ³ß´ç ÖØÁ¿\nÑ¹Ëõ»ú\nÑ¹Ëõ»ú ÖÆÀäÁ¿ ÖÆÈÈÁ¿\nÊýÁ¿ ÖÆÀä ÖÆÈÈ ·ç»ú ÈÝÁ¿¿Ø\nÖÆ¼¶Êý ·ç»úÊýÁ¿ ·çÁ¿ Ë®Ñ¹½µ ½ø/³öË®¹Ü ³¤ Éî ¸ß ÔËÊäÖØÁ¿ ÔËÐÐÖØÁ¿ ÐÍºÅ\nkW kW ÐÍÊ½\nÌ¨ kW kW kW % ÐÍÊ½\nÌ¨Á¢·½Ã×\n/H ÐÍÊ½\nKpa mm Ë®¹ÜÁ¬½Ó·½Ê½ mm mm mm Kg Kg\nYCAE 36\nRC 36.1 40.5 ÎÐÐý 3 11.36 12.56 0.37*20¡¢33%¡¢\n66%¡¢100%V28000*2¿Ç¹Ü 17 114 ¿¨¹¿ 160010001900 700 750\nYCAE 61\nRC 60 65.7 ÎÐÐý 2 17.5 19.2 0.75*20¡¢ 50\n%\n¡¢100% V213000*\n2 ¿Ç¹Ü 35 114 ¿¨¹¿ 200010001900 900 980\nÄ£¿éÐÍºÅËµÃ÷:\nYC A E 36 R C\nÔ¼¿ËÀäË®»ú×é\n·çÀäÊ½\nÎÐÐýÊ½Ñ¹Ëõ»ú\nÃûÒåÖÆÀäÁ¿ KW\nS  µ¥ÀäÏµÁÐ\nR  ÈÈ±ÃÏµÁÐ\nÖÆÀä¼Á R22\n±¾ÊÖ²á YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±ÃÄ£¿é°üº¬ÒÔÏÂÐÍºÅ£º\nYCAE 36 RC   YCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_88d85f1cf08546eb"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted from performance data table; rated heating capacity is a grounded parameter specification."
+    },
+    {
+      "candidate_id": "cand_2378af946ad2bbb0",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_88d85f1cf08546eb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae36rc_number_of_compressors",
+      "structured_payload_candidate": {
+        "parameter_name": "Number of Compressors",
+        "value": "3",
+        "model": "YCAE36RC",
+        "title": "YCAE36RC Compressor Quantity",
+        "summary": "YCAE36RC module contains 3 scroll compressors."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "»ú×é½éÉÜ             YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é°²×°¡¢ ²Ù×÷ºÍÎ¬»¤ÊÖ²á\n2»ú×é¼ò½é:\nÔ¼¿Ë YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±Ã»ú×é ÎªÉÏ´µÊ½ÖÐÑë¿Õµ÷¹¤³ÌµÄ¼¯ÖÐÊ½¿ÕÆø´¦ÀíÉè±¸»òÄ©¶Ë×°ÖÃÌá¹©\nÀä¶³Ë®/ÈÈË®¡£»ú×éÎªÄ£¿éÊ½, ÓÐYCAE36RC ºÍYCAE61RC Á½¸öÄ£¿é, Ã¿¸öÄ£¿éÓÐ 3¼¶»ò 2¼¶ÄÜÁ¦µ÷½Ú, Ã¿\n¸öÄ£¿é¿ÉÒÔµ¥¶ÀÔËÐÐºÍ°²×°; Ò²¿É¶à¸öÄ£¿éÒ»ÆðÆ´×°ºÍÔËÐÐ, Ä£¿é¿ÉÒÔÏàÍ¬Ò²¿ÉÒÔ²»Í¬, ×î¶àÔÊÐí 8¸öÄ£¿é\nÒ»ÆðÆ´×°¡£»ú×é·ÅÓÚÊÒÍâ£¨ÎÝ¶¥»òµØÃæ£©°²×°¡£Ã¿¸öÄ£¿é°üÀ¨ÎÐÐýÊ½Ñ¹Ëõ»ú¡¢·çÀäÊ½ÀäÄýÆ÷¡¢¿Ç¹ÜÊ½Õô\n·¢Æ÷ÒÔ¼°Î¢µçÄÔ¿ØÖÆÖÐÐÄµÈ¡£\n±í1.1 Ä£¿éÐÔÄÜÊý¾Ý±í:\nÊäÈë¹¦ÂÊ ÀäÄýÆ÷ Õô·¢Æ÷ Ä£¿éÍâÐÎ³ß´ç ÖØÁ¿\nÑ¹Ëõ»ú\nÑ¹Ëõ»ú ÖÆÀäÁ¿ ÖÆÈÈÁ¿\nÊýÁ¿ ÖÆÀä ÖÆÈÈ ·ç»ú ÈÝÁ¿¿Ø\nÖÆ¼¶Êý ·ç»úÊýÁ¿ ·çÁ¿ Ë®Ñ¹½µ ½ø/³öË®¹Ü ³¤ Éî ¸ß ÔËÊäÖØÁ¿ ÔËÐÐÖØÁ¿ ÐÍºÅ\nkW kW ÐÍÊ½\nÌ¨ kW kW kW % ÐÍÊ½\nÌ¨Á¢·½Ã×\n/H ÐÍÊ½\nKpa mm Ë®¹ÜÁ¬½Ó·½Ê½ mm mm mm Kg Kg\nYCAE 36\nRC 36.1 40.5 ÎÐÐý 3 11.36 12.56 0.37*20¡¢33%¡¢\n66%¡¢100%V28000*2¿Ç¹Ü 17 114 ¿¨¹¿ 160010001900 700 750\nYCAE 61\nRC 60 65.7 ÎÐÐý 2 17.5 19.2 0.75*20¡¢ 50\n%\n¡¢100% V213000*\n2 ¿Ç¹Ü 35 114 ¿¨¹¿ 200010001900 900 980\nÄ£¿éÐÍºÅËµÃ÷:\nYC A E 36 R C\nÔ¼¿ËÀäË®»ú×é\n·çÀäÊ½\nÎÐÐýÊ½Ñ¹Ëõ»ú\nÃûÒåÖÆÀäÁ¿ KW\nS  µ¥ÀäÏµÁÐ\nR  ÈÈ±ÃÏµÁÐ\nÖÆÀä¼Á R22\n±¾ÊÖ²á YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±ÃÄ£¿é°üº¬ÒÔÏÂÐÍºÅ£º\nYCAE 36 RC   YCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_88d85f1cf08546eb"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Compressor quantity is a grounded equipment parameter supported by the table."
+    },
+    {
+      "candidate_id": "cand_2eb06126f3b31ff7",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_88d85f1cf08546eb",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae61rc_number_of_compressors",
+      "structured_payload_candidate": {
+        "parameter_name": "Number of Compressors",
+        "value": "2",
+        "model": "YCAE61RC",
+        "title": "YCAE61RC Compressor Quantity",
+        "summary": "YCAE61RC module contains 2 scroll compressors."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "»ú×é½éÉÜ             YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é°²×°¡¢ ²Ù×÷ºÍÎ¬»¤ÊÖ²á\n2»ú×é¼ò½é:\nÔ¼¿Ë YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±Ã»ú×é ÎªÉÏ´µÊ½ÖÐÑë¿Õµ÷¹¤³ÌµÄ¼¯ÖÐÊ½¿ÕÆø´¦ÀíÉè±¸»òÄ©¶Ë×°ÖÃÌá¹©\nÀä¶³Ë®/ÈÈË®¡£»ú×éÎªÄ£¿éÊ½, ÓÐYCAE36RC ºÍYCAE61RC Á½¸öÄ£¿é, Ã¿¸öÄ£¿éÓÐ 3¼¶»ò 2¼¶ÄÜÁ¦µ÷½Ú, Ã¿\n¸öÄ£¿é¿ÉÒÔµ¥¶ÀÔËÐÐºÍ°²×°; Ò²¿É¶à¸öÄ£¿éÒ»ÆðÆ´×°ºÍÔËÐÐ, Ä£¿é¿ÉÒÔÏàÍ¬Ò²¿ÉÒÔ²»Í¬, ×î¶àÔÊÐí 8¸öÄ£¿é\nÒ»ÆðÆ´×°¡£»ú×é·ÅÓÚÊÒÍâ£¨ÎÝ¶¥»òµØÃæ£©°²×°¡£Ã¿¸öÄ£¿é°üÀ¨ÎÐÐýÊ½Ñ¹Ëõ»ú¡¢·çÀäÊ½ÀäÄýÆ÷¡¢¿Ç¹ÜÊ½Õô\n·¢Æ÷ÒÔ¼°Î¢µçÄÔ¿ØÖÆÖÐÐÄµÈ¡£\n±í1.1 Ä£¿éÐÔÄÜÊý¾Ý±í:\nÊäÈë¹¦ÂÊ ÀäÄýÆ÷ Õô·¢Æ÷ Ä£¿éÍâÐÎ³ß´ç ÖØÁ¿\nÑ¹Ëõ»ú\nÑ¹Ëõ»ú ÖÆÀäÁ¿ ÖÆÈÈÁ¿\nÊýÁ¿ ÖÆÀä ÖÆÈÈ ·ç»ú ÈÝÁ¿¿Ø\nÖÆ¼¶Êý ·ç»úÊýÁ¿ ·çÁ¿ Ë®Ñ¹½µ ½ø/³öË®¹Ü ³¤ Éî ¸ß ÔËÊäÖØÁ¿ ÔËÐÐÖØÁ¿ ÐÍºÅ\nkW kW ÐÍÊ½\nÌ¨ kW kW kW % ÐÍÊ½\nÌ¨Á¢·½Ã×\n/H ÐÍÊ½\nKpa mm Ë®¹ÜÁ¬½Ó·½Ê½ mm mm mm Kg Kg\nYCAE 36\nRC 36.1 40.5 ÎÐÐý 3 11.36 12.56 0.37*20¡¢33%¡¢\n66%¡¢100%V28000*2¿Ç¹Ü 17 114 ¿¨¹¿ 160010001900 700 750\nYCAE 61\nRC 60 65.7 ÎÐÐý 2 17.5 19.2 0.75*20¡¢ 50\n%\n¡¢100% V213000*\n2 ¿Ç¹Ü 35 114 ¿¨¹¿ 200010001900 900 980\nÄ£¿éÐÍºÅËµÃ÷:\nYC A E 36 R C\nÔ¼¿ËÀäË®»ú×é\n·çÀäÊ½\nÎÐÐýÊ½Ñ¹Ëõ»ú\nÃûÒåÖÆÀäÁ¿ KW\nS  µ¥ÀäÏµÁÐ\nR  ÈÈ±ÃÏµÁÐ\nÖÆÀä¼Á R22\n±¾ÊÖ²á YCAEÄ£¿é·çÀäÊ½ÀäË®/ ÈÈ±ÃÄ£¿é°üº¬ÒÔÏÂÐÍºÅ£º\nYCAE 36 RC   YCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_88d85f1cf08546eb"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Compressor quantity is a grounded equipment parameter supported by the table."
+    },
+    {
+      "candidate_id": "cand_8e3594640998eb4f",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae36rc_capacity_control_steps",
+      "structured_payload_candidate": {
+        "parameter_name": "Capacity Control Steps",
+        "value": "33%, 66%, 100%",
+        "model": "YCAE36RC",
+        "title": "YCAE36RC Capacity Control Steps",
+        "summary": "YCAE36RC has 3 capacity control steps: 33%, 66%, 100%."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_87dbdc945c9d4b0e",
+        "chunk_6df26b86af744fbe"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        25,
+        41
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Capacity control steps are operational parameter specs supported by evidence."
+    },
+    {
+      "candidate_id": "cand_f49958eab2cc27c2",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae61rc_capacity_control_steps",
+      "structured_payload_candidate": {
+        "parameter_name": "Capacity Control Steps",
+        "value": "50%, 100%",
+        "model": "YCAE61RC",
+        "title": "YCAE61RC Capacity Control Steps",
+        "summary": "YCAE61RC has 2 capacity control steps: 50%, 100%."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_d6c527094c134dc5",
+        "chunk_8c572a84590f433c",
+        "chunk_8f2b06e3a079422e"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        20,
+        27,
+        42
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Capacity control steps are operational parameter specs supported by evidence."
+    },
+    {
+      "candidate_id": "cand_f0903f3fd7170f18",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae36rc_evaporator_water_pressure_drop",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporator Water Pressure Drop",
+        "value": "17 kPa",
+        "unit": "kPa",
+        "model": "YCAE36RC",
+        "title": "YCAE36RC Evaporator Water Pressure Drop",
+        "summary": "YCAE36RC evaporator water pressure drop is 17 kPa."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_87dbdc945c9d4b0e",
+        "chunk_6df26b86af744fbe"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        25,
+        41
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evaporator water pressure drop is a grounded equipment parameter from the specification table."
+    },
+    {
+      "candidate_id": "cand_7cef3857fc1ff00a",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae61rc_evaporator_water_pressure_drop",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporator Water Pressure Drop",
+        "value": "35 kPa",
+        "unit": "kPa",
+        "model": "YCAE61RC",
+        "title": "YCAE61RC Evaporator Water Pressure Drop",
+        "summary": "YCAE61RC evaporator water pressure drop is 35 kPa."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_d6c527094c134dc5",
+        "chunk_8c572a84590f433c",
+        "chunk_8f2b06e3a079422e"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        20,
+        27,
+        42
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evaporator water pressure drop is a grounded equipment parameter from the specification table."
+    },
+    {
+      "candidate_id": "cand_f697ec7ecdccf9a7",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae36rc_water_connection_size",
+      "structured_payload_candidate": {
+        "parameter_name": "Water Connection Size",
+        "value": "114 mm",
+        "unit": "mm",
+        "model": "YCAE36RC",
+        "title": "YCAE36RC Water Connection Size",
+        "summary": "YCAE36RC water connection size is 114 mm (clamp connection)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_87dbdc945c9d4b0e",
+        "chunk_6df26b86af744fbe"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        25,
+        41
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Water connection size is a physical equipment parameter supported by evidence."
+    },
+    {
+      "candidate_id": "cand_5564b9dd70e42413",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae61rc_water_connection_size",
+      "structured_payload_candidate": {
+        "parameter_name": "Water Connection Size",
+        "value": "114 mm",
+        "unit": "mm",
+        "model": "YCAE61RC",
+        "title": "YCAE61RC Water Connection Size",
+        "summary": "YCAE61RC water connection size is 114 mm (clamp connection)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_d6c527094c134dc5",
+        "chunk_8c572a84590f433c",
+        "chunk_8f2b06e3a079422e"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        20,
+        27,
+        42
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Water connection size is a physical equipment parameter supported by evidence."
+    },
+    {
+      "candidate_id": "cand_1de92b3d024946f7",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae36rc_dimensions_lxwxh",
+      "structured_payload_candidate": {
+        "parameter_name": "Dimensions",
+        "value": "1600x1000x1900 mm",
+        "unit": "mm",
+        "model": "YCAE36RC",
+        "title": "YCAE36RC Dimensions",
+        "summary": "YCAE36RC dimensions: length 1600 mm, width 1000 mm, height 1900 mm."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_87dbdc945c9d4b0e",
+        "chunk_6df26b86af744fbe"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        25,
+        41
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Dimensions are a physical equipment parameter supported by evidence."
+    },
+    {
+      "candidate_id": "cand_775f2a8495c6b23f",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae61rc_dimensions_lxwxh",
+      "structured_payload_candidate": {
+        "parameter_name": "Dimensions",
+        "value": "2000x1000x1900 mm",
+        "unit": "mm",
+        "model": "YCAE61RC",
+        "title": "YCAE61RC Dimensions",
+        "summary": "YCAE61RC dimensions: length 2000 mm, width 1000 mm, height 1900 mm."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_d6c527094c134dc5",
+        "chunk_8c572a84590f433c",
+        "chunk_8f2b06e3a079422e"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        20,
+        27,
+        42
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Dimensions are a physical equipment parameter supported by evidence."
+    },
+    {
+      "candidate_id": "cand_942643ca248dd47c",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae36rc_transport_weight",
+      "structured_payload_candidate": {
+        "parameter_name": "Transport Weight",
+        "value": "700 kg",
+        "unit": "kg",
+        "model": "YCAE36RC",
+        "title": "YCAE36RC Transport Weight",
+        "summary": "YCAE36RC transport weight is 700 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_87dbdc945c9d4b0e",
+        "chunk_6df26b86af744fbe"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        25,
+        41
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Transport weight is a grounded equipment parameter from the specification table."
+    },
+    {
+      "candidate_id": "cand_2dda65ccd29282a0",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae61rc_transport_weight",
+      "structured_payload_candidate": {
+        "parameter_name": "Transport Weight",
+        "value": "900 kg",
+        "unit": "kg",
+        "model": "YCAE61RC",
+        "title": "YCAE61RC Transport Weight",
+        "summary": "YCAE61RC transport weight is 900 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_d6c527094c134dc5",
+        "chunk_8c572a84590f433c",
+        "chunk_8f2b06e3a079422e"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        20,
+        27,
+        42
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Transport weight is a grounded equipment parameter from the specification table."
+    },
+    {
+      "candidate_id": "cand_e1b6ae5f558ae0ee",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae36rc_operating_weight",
+      "structured_payload_candidate": {
+        "parameter_name": "Operating Weight",
+        "value": "750 kg",
+        "unit": "kg",
+        "model": "YCAE36RC",
+        "title": "YCAE36RC Operating Weight",
+        "summary": "YCAE36RC operating weight is 750 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_87dbdc945c9d4b0e",
+        "chunk_6df26b86af744fbe"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        25,
+        41
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operating weight is a grounded equipment parameter from the specification table."
+    },
+    {
+      "candidate_id": "cand_ecb14ece3577c601",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_607b2ca170084eec",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:ycae61rc_operating_weight",
+      "structured_payload_candidate": {
+        "parameter_name": "Operating Weight",
+        "value": "980 kg",
+        "unit": "kg",
+        "model": "YCAE61RC",
+        "title": "YCAE61RC Operating Weight",
+        "summary": "YCAE61RC operating weight is 980 kg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é\n°²×°¡¢²Ù×÷ºÍÎ¬»¤ÊÖ²á FORM NO.: YCAE-00IOM £¨YGF£©0205\nYCAE 36 RC\nYCAE 61 RC\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_607b2ca170084eec",
+        "chunk_88d85f1cf08546eb",
+        "chunk_535fef45dd144547",
+        "chunk_d6c527094c134dc5",
+        "chunk_8c572a84590f433c",
+        "chunk_8f2b06e3a079422e"
+      ],
+      "source_page_nos": [
+        1,
+        5,
+        6,
+        20,
+        27,
+        42
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operating weight is a grounded equipment parameter from the specification table."
+    },
+    {
+      "candidate_id": "cand_7b5080263b33b69a",
+      "domain_id": "hvac",
+      "doc_id": "doc_7bde83276c474c9d",
+      "doc_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_535fef45dd144547",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:supply_voltage_range",
+      "structured_payload_candidate": {
+        "parameter_name": "Supply Voltage",
+        "value": "380V AC-3N-50Hz",
+        "min": "342V",
+        "max": "418V",
+        "title": "Supply Voltage Range",
+        "summary": "Standard supply voltage is 380V AC-3N-50Hz; minimum allowable 342V, maximum 418V."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "»ú×é½éÉÜ             YCAEÄ£¿éÊ½·çÀäÈÈ±Ã»ú×é°²×°¡¢ ²Ù×÷ºÍÎ¬»¤ÊÖ²á\n3ÔËÐÐÏÞÖÆ\nµçÑ¹·¶Î§:\n¹©µçµçÔ´±ê×¼Îª 380V AC-3N-50HZ £¬×îµÍÔÊÐíµçÑ¹Îª 342V£¬×î¸ßÔÊÐíµçÑ¹Îª 418V¡£\nÔËÐÐ»·¾³ÎÂ¶È:\n»ú×éÔËÐÐ»·¾³ÎÂ¶È·¶Î§Îª:\nÖÆÀäÄ£Ê½£º15~46¡æ           ÖÆÈÈÄ£Ê½£º-10 ¡æ~21¡æ\nË®ÎÂ¿ØÖÆ·¶Î§:\n»ú×é¿ÉÑ¡ÔñÈëË®ÎÂ¶È¿ØÖÆ»ò³öË®ÎÂ¶È¿ØÖÆÄ£Ê½, Æä·¶Î§ÈçÏÂ:\n³öË®ÎÂ¶È¿ØÖÆ¡ª¡ªÖÆÀä£º×îµÍ 3¡æ£¬×î¸ß 15¡æ£»ÖÆÈÈ£º×îµÍ 40¡æ£¬×î¸ß 50¡æ\nÈëË®ÎÂ¶È¿ØÖÆ¡ª¡ªÖÆÀä£º×îµÍ 8¡æ£¬×î¸ß 21¡æ£»ÖÆÈÈ£º×îµÍ 35¡æ£¬×î¸ß 44¡æ\n(¡î Èç¹ûÓÃ»§ÐèÒª»ú×éµÄ³öË®ÎÂ¶ÈÔÚµÍÓÚÒÔÉÏ×îµÍÉè¶¨ÖµµÄÌõ¼þÏÂÔËÐÐ£¬ÇëÎñ±ØÏò¾­ÏúÉÌÌá³öÒªÇó£¬²¢²É\nÈ¡ÁË±ØÒªµÄ±£ÕÏ´ëÊ©ºó·½¿ÉÊ¹ÓÃ)\nÖ÷ÒªÁã²¿¼þËµÃ÷:\nÑ¹Ëõ»ú:\n²ÉÓÃ COPELAND ÈáÐÔÎÐÐýÊ½Ñ¹Ëõ»ú£¬Ã¿¸öÄ£¿éÓÐÁ½¸öÏµÍ³£¬¿ÉÌá¹©¶à¼¶ÈÝÁ¿µ÷½Ú£¬Ñ¹Ëõ»úÄÚÖÃÓÐ\n¹ýÈÈ±£»¤¡£ÎªÁË±ÜÃâÑ¹Ëõ»úÔÚ¸ÕÆô¶¯Ê±Òº»÷µÄÏÖÏó£¬ÔÚÃ¿Ì¨Ñ¹Ëõ»úµÄµ×²¿°²×°ÓÐºÏÊÊ¹¦ÂÊµÄÓÍÎÂ¼ÓÈÈ´ø£¬ÆäºÍ¿ØÖÆÁ¬Ëø£¬ÔÚ½ÓÍ¨µçÔ´´ý»úµÄÇé¿öÏÂ¸øÑ¹Ëõ»ú¼ÓÈÈ¡£\nÕô·¢Æ÷:\n²ÉÓÃ¸ßÐ§¿Ç¹Ü»»ÈÈÆ÷, Æä¶ÔË®ÖÊµÄÒªÇóÃ»ÓÐ°å»»µÄÑÏ¸ñ, ÄÜÓÐÐ§µÄ½â¾ö»»ÈÈÆ÷µÄ¶³ÁÑÎÊÌâ; »»ÈÈÆ÷µÄ¹Ü³Ì\n×ßÀäÃ½(YCAE36RC µÄ½«Æä·ÖÎª¶ÀÁ¢µÄÁ½¸öÏµÍ³,YCAE61RC µÄÎªÒ»¸öÀäÃ½ÏµÍ³), ¿Ç³Ì×ßË®, Í¨¹ýÄÚÖÃµÄÕÛÁ÷\n°åÀ´¸Ä±äË®µÄÁ÷Ïò, ´Ó¶ø¼ÓÇ¿»»ÈÈ.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_535fef45dd144547"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supply voltage range with min/max limits is a critical operational parameter supported by the manual."
+    }
+  ]
+}

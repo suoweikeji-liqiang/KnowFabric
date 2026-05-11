@@ -15,13 +15,14 @@ from scripts.run_hvac_source_batch import load_manifest
 
 def test_plan_lanes_routes_authority_sources(tmp_path: Path) -> None:
     items = load_manifest(write_manifest(tmp_path))
-    args = build_parser().parse_args(["--manifest", str(tmp_path / "manifest.csv")])
+    args = build_parser().parse_args(["--manifest", str(tmp_path / "manifest.csv"), "--oem-limit", "1"])
 
     lanes = plan_lanes(items, args)
 
     assert [item.path.name for item in lanes["g36_standard"]] == ["HVAC系统高性能运行序列指南.pdf"]
     assert [item.path.name for item in lanes["standard_reference_hold"]] == ["ASHRAE手册2024.pdf"]
     assert [item.path.name for item in lanes["oem_text"]] == ["trane_manual.pdf"]
+    assert [item.path.name for item in lanes["oem_fault_reference_hold"]] == ["fault_code_manual.pdf"]
     assert [item.path.name for item in lanes["visual_queue"]] == ["scan_manual.pdf"]
     assert is_g36_item(lanes["g36_standard"][0])
 
@@ -50,6 +51,7 @@ def test_run_pipeline_dry_run_writes_report_and_visual_queue(tmp_path: Path) -> 
         "g36_standard": 1,
         "standard_reference_hold": 1,
         "oem_text": 1,
+        "oem_fault_reference_hold": 1,
         "visual_queue": 1,
     }
     assert (run_dir / "REPORT.md").exists()
@@ -59,11 +61,22 @@ def test_run_pipeline_dry_run_writes_report_and_visual_queue(tmp_path: Path) -> 
     assert "run_ashrae_g36_parallel_sections.py" in " ".join(saved["results"][0]["command"])
 
 
+def test_plan_lanes_supports_oem_offset(tmp_path: Path) -> None:
+    items = load_manifest(write_manifest(tmp_path))
+    args = build_parser().parse_args(["--manifest", str(tmp_path / "manifest.csv"), "--oem-offset", "1", "--oem-limit", "1"])
+
+    lanes = plan_lanes(items, args)
+
+    assert [item.path.name for item in lanes["oem_text"]] == ["carrier_manual.pdf"]
+
+
 def write_manifest(tmp_path: Path) -> Path:
     rows = [
         row(tmp_path, "A_standard_authority_first", "ASHRAE", "standard_guideline_control_sequences", "good_text", "section_context_or_chapter_batch", "HVAC系统高性能运行序列指南.pdf"),
         row(tmp_path, "A_standard_authority_first", "ASHRAE", "standard_handbook", "good_text", "doc_level_or_section_context", "ASHRAE手册2024.pdf"),
+        row(tmp_path, "B_oem_manual_text_first", "Trane", "fault_code_reference", "good_text", "doc_level_single_call", "fault_code_manual.pdf"),
         row(tmp_path, "B_oem_manual_text_first", "Trane", "operation_manual", "good_text", "doc_level_single_call", "trane_manual.pdf"),
+        row(tmp_path, "B_oem_manual_text_first", "Carrier", "operation_manual", "good_text", "doc_level_single_call", "carrier_manual.pdf"),
         row(tmp_path, "C_ocr_multimodal_hold", "Carrier", "technical_manual", "low_or_no_text", "ocr_or_multimodal_first", "scan_manual.pdf"),
     ]
     for item in rows:

@@ -1,0 +1,58 @@
+{
+  "row_index": 17,
+  "path": "/Volumes/TSD302/pan/a00238/03、开利中央空调/技术手册/【开利】30AQ开利风冷式热泵机组（28页）-制冷百家网.pdf",
+  "file_name": "【开利】30AQ开利风冷式热泵机组（28页）-制冷百家网.pdf",
+  "batch_group": "B_oem_manual_text_first",
+  "priority": "P1_batch_extract",
+  "brand": "Carrier",
+  "authority_level": "oem_manual_or_vendor_doc",
+  "document_kind": "operation_installation_manual",
+  "equipment_scope": "air_cooled_chiller_heat_pump",
+  "page_count": "28",
+  "text_quality": "good_text",
+  "recommended_mode": "doc_level_single_call",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0017_开利_30aq开利风冷式热泵机组_28页_制冷百家网_8f5f6a4975",
+  "status": "prepared",
+  "doc_id": "doc_53c93cd27c09452f",
+  "import_status": "imported",
+  "processing": {
+    "pages_before": 0,
+    "chunks_before": 0,
+    "pages_after": 28,
+    "chunks_after": 28,
+    "parse_result": {
+      "job_id": "job_aa83c0d576c04724",
+      "doc_id": "doc_53c93cd27c09452f",
+      "pages_created": 28,
+      "status": "success"
+    },
+    "chunk_result": {
+      "job_id": "job_648a4ac7194740f1",
+      "doc_id": "doc_53c93cd27c09452f",
+      "chunks_created": 28,
+      "status": "success"
+    }
+  },
+  "review_bundle": {
+    "prepare_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0017_开利_30aq开利风冷式热泵机组_28页_制冷百家网_8f5f6a4975/review_bundle/prepare_manifest.json",
+    "candidate_entries": 2,
+    "review_packs": 1,
+    "ready_packs": 0,
+    "compiler": {
+      "enable_llm": false,
+      "backend_name": null,
+      "backend_model": null,
+      "enabled_types": []
+    },
+    "health": {
+      "total_findings": 5,
+      "by_code": {
+        "weak_evidence": 2,
+        "anchor_uncertainty": 2,
+        "coverage_gap": 1
+      },
+      "review_packs": 1
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "page": 18,
+  "response": {
+    "id": "4dce59c140b94e85bd830a26003af1ac",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page displays a table titled 'Appendix D Cooling Water Quality' with parameters, reference values, and indicators for corrosion and scaling tendencies. It includes both baseline and reference items for water quality metrics.\",\n  \"visual_entities\": [\n    {\"type\": \"table\", \"label\": \"Cooling Water Quality Table\"},\n    {\"type\": \"header\", \"label\": \"Appendix D Cooling Water Quality\"},\n    {\"type\": \"column\", \"label\": \"Item\"},\n    {\"type\": \"column\", \"label\": \"Reference Value\"},\n    {\"type\": \"column\", \"label\": \"Tendency (Corrosion)\"},\n    {\"type\": \"column\", \"label\": \"Tendency (Scaling)\"},\n    {\"type\": \"row\", \"label\": \"pH (25°C)\"},\n    {\"type\": \"row\", \"label\": \"Conductivity (25°C)\"},\n    {\"type\": \"row\", \"label\": \"Chloride Ion Cl⁻\"},\n    {\"type\": \"row\", \"label\": \"Sulfate Ion SO₄²⁻\"},\n    {\"type\": \"row\", \"label\": \"Acid Consumption (pH=4.8)\"},\n    {\"type\": \"row\", \"label\": \"Total Hardness\"},\n    {\"type\": \"row\", \"label\": \"Iron Fe\"},\n    {\"type\": \"row\", \"label\": \"Sulfide Ion S²⁻\"},\n    {\"type\": \"row\", \"label\": \"Ammonium Ion NH₄⁺\"},\n    {\"type\": \"row\", \"label\": \"Silica SiO₂\"},\n    {\"type\": \"note\", \"label\": \"Note: O indicates factors related to corrosion or scaling tendency.\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"pH (25°C)\", \"relation\": \"has reference value\", \"to\": \"6.5-8.0\"},\n    {\"from\": \"pH (25°C)\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"pH (25°C)\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Conductivity (25°C)\", \"relation\": \"has reference value\", \"to\": \"<800 μS/cm\"},\n    {\"from\": \"Conductivity (25°C)\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Conductivity (25°C)\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Chloride Ion Cl⁻\", \"relation\": \"has reference value\", \"to\": \"<200 mg(Cl⁻)/L\"},\n    {\"from\": \"Chloride Ion Cl⁻\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Sulfate Ion SO₄²⁻\", \"relation\": \"has reference value\", \"to\": \"<200 mg(SO₄²⁻)/L\"},\n    {\"from\": \"Sulfate Ion SO₄²⁻\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Acid Consumption (pH=4.8)\", \"relation\": \"has reference value\", \"to\": \"<100 mg(CaCO₃)/L\"},\n    {\"from\": \"Acid Consumption (pH=4.8)\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Total Hardness\", \"relation\": \"has reference value\", \"to\": \"<200 mg(CaCO₃)/L\"},\n    {\"from\": \"Total Hardness\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Iron Fe\", \"relation\": \"has reference value\", \"to\": \"<1.0 mg(Fe)/L\"},\n    {\"from\": \"Iron Fe\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Iron Fe\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Sulfide Ion S²⁻\", \"relation\": \"has reference value\", \"to\": \"Not detected mg(S²⁻)/L\"},\n    {\"from\": \"Sulfide Ion S²⁻\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Ammonium Ion NH₄⁺\", \"relation\": \"has reference value\", \"to\": \"<1.0 mg(NH₄⁺)/L\"},\n    {\"from\": \"Ammonium Ion NH₄⁺\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Silica SiO₂\", \"relation\": \"has reference value\", \"to\": \"<50 mg(SiO₂)/L\"},\n    {\"from\": \"Silica SiO₂\", \"relation\": \"has scaling tendency\", \"to\": \"O\"}\n  ],\n  \"useful_for_knowledge_types\": [\"water_quality_standards\", \"cooling_system_maintenance\", \"corrosion_prevention\", \"scaling_prevention\"],\n  \"ocr_text_if_useful\": \"附录D冷却水水质\\n冷却水水质\\n项目 基准值 倾向\\n腐蚀 结垢\\n基准项\\n酸碱度 PH (25°C) 6.5~8.0 O O\\n导电率 (25°C) μS/cm <800 O O\\n氯离子 CL⁻ mg(CL⁻)/L <200 O\\n硫酸根离子 SO₄²⁻ mg(SO₄²⁻)/L <200 O\\n酸消耗量(PH=4.8) mg(CaCO₃)/L <100 O\\n全硬度 mg(CaCO₃)/L <200 O\\n参考项目\\n铁 Fe mg(Fe)/L <1.0 O O\\n硫离子 S²⁻ mg(S²⁻)/L 不得检出 O\\n铵离子 NH₄⁺ mg(NH₄⁺)/L <1.0 O\\n氧化硅 SiO₂ mg(SiO₂)/L <50 O\\n注: O表示腐蚀或结垢倾向的有关因素。\",\n  \"uncertainty_notes\": \"The table is in Chinese; translations are approximate. The 'O' symbol is defined in the note as indicating factors related to corrosion or scaling tendency. No visual diagrams or wiring are present.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778203837,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1386,
+      "prompt_tokens": 1517,
+      "total_tokens": 2903,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 1320
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "parameter_table",
+    "summary": "This page displays a table titled 'Appendix D Cooling Water Quality' with parameters, reference values, and indicators for corrosion and scaling tendencies. It includes both baseline and reference items for water quality metrics.",
+    "visual_entities": [
+      {
+        "type": "table",
+        "label": "Cooling Water Quality Table"
+      },
+      {
+        "type": "header",
+        "label": "Appendix D Cooling Water Quality"
+      },
+      {
+        "type": "column",
+        "label": "Item"
+      },
+      {
+        "type": "column",
+        "label": "Reference Value"
+      },
+      {
+        "type": "column",
+        "label": "Tendency (Corrosion)"
+      },
+      {
+        "type": "column",
+        "label": "Tendency (Scaling)"
+      },
+      {
+        "type": "row",
+        "label": "pH (25°C)"
+      },
+      {
+        "type": "row",
+        "label": "Conductivity (25°C)"
+      },
+      {
+        "type": "row",
+        "label": "Chloride Ion Cl⁻"
+      },
+      {
+        "type": "row",
+        "label": "Sulfate Ion SO₄²⁻"
+      },
+      {
+        "type": "row",
+        "label": "Acid Consumption (pH=4.8)"
+      },
+      {
+        "type": "row",
+        "label": "Total Hardness"
+      },
+      {
+        "type": "row",
+        "label": "Iron Fe"
+      },
+      {
+        "type": "row",
+        "label": "Sulfide Ion S²⁻"
+      },
+      {
+        "type": "row",
+        "label": "Ammonium Ion NH₄⁺"
+      },
+      {
+        "type": "row",
+        "label": "Silica SiO₂"
+      },
+      {
+        "type": "note",
+        "label": "Note: O indicates factors related to corrosion or scaling tendency."
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "pH (25°C)",
+        "relation": "has reference value",
+        "to": "6.5-8.0"
+      },
+      {
+        "from": "pH (25°C)",
+        "relation": "has corrosion tendency",
+        "to": "O"
+      },
+      {
+        "from": "pH (25°C)",
+        "relation": "has scaling tendency",
+        "to": "O"
+      },
+      {
+        "from": "Conductivity (25°C)",
+        "relation": "has reference value",
+        "to": "<800 μS/cm"
+      },
+      {
+        "from": "Conductivity (25°C)",
+        "relation": "has corrosion tendency",
+        "to": "O"
+      },
+      {
+        "from": "Conductivity (25°C)",
+        "relation": "has scaling tendency",
+        "to": "O"
+      },
+      {
+        "from": "Chloride Ion Cl⁻",
+        "relation": "has reference value",
+        "to": "<200 mg(Cl⁻)/L"
+      },
+      {
+        "from": "Chloride Ion Cl⁻",
+        "relation": "has corrosion tendency",
+        "to": "O"
+      },
+      {
+        "from": "Sulfate Ion SO₄²⁻",
+        "relation": "has reference value",
+        "to": "<200 mg(SO₄²⁻)/L"
+      },
+      {
+        "from": "Sulfate Ion SO₄²⁻",
+        "relation": "has corrosion tendency",
+        "to": "O"
+      },
+      {
+        "from": "Acid Consumption (pH=4.8)",
+        "relation": "has reference value",
+        "to": "<100 mg(CaCO₃)/L"
+      },
+      {
+        "from": "Acid Consumption (pH=4.8)",
+        "relation": "has scaling tendency",
+        "to": "O"
+      },
+      {
+        "from": "Total Hardness",
+        "relation": "has reference value",
+        "to": "<200 mg(CaCO₃)/L"
+      },
+      {
+        "from": "Total Hardness",
+        "relation": "has scaling tendency",
+        "to": "O"
+      },
+      {
+        "from": "Iron Fe",
+        "relation": "has reference value",
+        "to": "<1.0 mg(Fe)/L"
+      },
+      {
+        "from": "Iron Fe",
+        "relation": "has corrosion tendency",
+        "to": "O"
+      },
+      {
+        "from": "Iron Fe",
+        "relation": "has scaling tendency",
+        "to": "O"
+      },
+      {
+        "from": "Sulfide Ion S²⁻",
+        "relation": "has reference value",
+        "to": "Not detected mg(S²⁻)/L"
+      },
+      {
+        "from": "Sulfide Ion S²⁻",
+        "relation": "has corrosion tendency",
+        "to": "O"
+      },
+      {
+        "from": "Ammonium Ion NH₄⁺",
+        "relation": "has reference value",
+        "to": "<1.0 mg(NH₄⁺)/L"
+      },
+      {
+        "from": "Ammonium Ion NH₄⁺",
+        "relation": "has corrosion tendency",
+        "to": "O"
+      },
+      {
+        "from": "Silica SiO₂",
+        "relation": "has reference value",
+        "to": "<50 mg(SiO₂)/L"
+      },
+      {
+        "from": "Silica SiO₂",
+        "relation": "has scaling tendency",
+        "to": "O"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "water_quality_standards",
+      "cooling_system_maintenance",
+      "corrosion_prevention",
+      "scaling_prevention"
+    ],
+    "ocr_text_if_useful": "附录D冷却水水质\n冷却水水质\n项目 基准值 倾向\n腐蚀 结垢\n基准项\n酸碱度 PH (25°C) 6.5~8.0 O O\n导电率 (25°C) μS/cm <800 O O\n氯离子 CL⁻ mg(CL⁻)/L <200 O\n硫酸根离子 SO₄²⁻ mg(SO₄²⁻)/L <200 O\n酸消耗量(PH=4.8) mg(CaCO₃)/L <100 O\n全硬度 mg(CaCO₃)/L <200 O\n参考项目\n铁 Fe mg(Fe)/L <1.0 O O\n硫离子 S²⁻ mg(S²⁻)/L 不得检出 O\n铵离子 NH₄⁺ mg(NH₄⁺)/L <1.0 O\n氧化硅 SiO₂ mg(SiO₂)/L <50 O\n注: O表示腐蚀或结垢倾向的有关因素。",
+    "uncertainty_notes": "The table is in Chinese; translations are approximate. The 'O' symbol is defined in the note as indicating factors related to corrosion or scaling tendency. No visual diagrams or wiring are present.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page displays a table titled 'Appendix D Cooling Water Quality' with parameters, reference values, and indicators for corrosion and scaling tendencies. It includes both baseline and reference items for water quality metrics.\",\n  \"visual_entities\": [\n    {\"type\": \"table\", \"label\": \"Cooling Water Quality Table\"},\n    {\"type\": \"header\", \"label\": \"Appendix D Cooling Water Quality\"},\n    {\"type\": \"column\", \"label\": \"Item\"},\n    {\"type\": \"column\", \"label\": \"Reference Value\"},\n    {\"type\": \"column\", \"label\": \"Tendency (Corrosion)\"},\n    {\"type\": \"column\", \"label\": \"Tendency (Scaling)\"},\n    {\"type\": \"row\", \"label\": \"pH (25°C)\"},\n    {\"type\": \"row\", \"label\": \"Conductivity (25°C)\"},\n    {\"type\": \"row\", \"label\": \"Chloride Ion Cl⁻\"},\n    {\"type\": \"row\", \"label\": \"Sulfate Ion SO₄²⁻\"},\n    {\"type\": \"row\", \"label\": \"Acid Consumption (pH=4.8)\"},\n    {\"type\": \"row\", \"label\": \"Total Hardness\"},\n    {\"type\": \"row\", \"label\": \"Iron Fe\"},\n    {\"type\": \"row\", \"label\": \"Sulfide Ion S²⁻\"},\n    {\"type\": \"row\", \"label\": \"Ammonium Ion NH₄⁺\"},\n    {\"type\": \"row\", \"label\": \"Silica SiO₂\"},\n    {\"type\": \"note\", \"label\": \"Note: O indicates factors related to corrosion or scaling tendency.\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"pH (25°C)\", \"relation\": \"has reference value\", \"to\": \"6.5-8.0\"},\n    {\"from\": \"pH (25°C)\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"pH (25°C)\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Conductivity (25°C)\", \"relation\": \"has reference value\", \"to\": \"<800 μS/cm\"},\n    {\"from\": \"Conductivity (25°C)\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Conductivity (25°C)\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Chloride Ion Cl⁻\", \"relation\": \"has reference value\", \"to\": \"<200 mg(Cl⁻)/L\"},\n    {\"from\": \"Chloride Ion Cl⁻\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Sulfate Ion SO₄²⁻\", \"relation\": \"has reference value\", \"to\": \"<200 mg(SO₄²⁻)/L\"},\n    {\"from\": \"Sulfate Ion SO₄²⁻\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Acid Consumption (pH=4.8)\", \"relation\": \"has reference value\", \"to\": \"<100 mg(CaCO₃)/L\"},\n    {\"from\": \"Acid Consumption (pH=4.8)\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Total Hardness\", \"relation\": \"has reference value\", \"to\": \"<200 mg(CaCO₃)/L\"},\n    {\"from\": \"Total Hardness\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Iron Fe\", \"relation\": \"has reference value\", \"to\": \"<1.0 mg(Fe)/L\"},\n    {\"from\": \"Iron Fe\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Iron Fe\", \"relation\": \"has scaling tendency\", \"to\": \"O\"},\n    {\"from\": \"Sulfide Ion S²⁻\", \"relation\": \"has reference value\", \"to\": \"Not detected mg(S²⁻)/L\"},\n    {\"from\": \"Sulfide Ion S²⁻\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Ammonium Ion NH₄⁺\", \"relation\": \"has reference value\", \"to\": \"<1.0 mg(NH₄⁺)/L\"},\n    {\"from\": \"Ammonium Ion NH₄⁺\", \"relation\": \"has corrosion tendency\", \"to\": \"O\"},\n    {\"from\": \"Silica SiO₂\", \"relation\": \"has reference value\", \"to\": \"<50 mg(SiO₂)/L\"},\n    {\"from\": \"Silica SiO₂\", \"relation\": \"has scaling tendency\", \"to\": \"O\"}\n  ],\n  \"useful_for_knowledge_types\": [\"water_quality_standards\", \"cooling_system_maintenance\", \"corrosion_prevention\", \"scaling_prevention\"],\n  \"ocr_text_if_useful\": \"附录D冷却水水质\\n冷却水水质\\n项目 基准值 倾向\\n腐蚀 结垢\\n基准项\\n酸碱度 PH (25°C) 6.5~8.0 O O\\n导电率 (25°C) μS/cm <800 O O\\n氯离子 CL⁻ mg(CL⁻)/L <200 O\\n硫酸根离子 SO₄²⁻ mg(SO₄²⁻)/L <200 O\\n酸消耗量(PH=4.8) mg(CaCO₃)/L <100 O\\n全硬度 mg(CaCO₃)/L <200 O\\n参考项目\\n铁 Fe mg(Fe)/L <1.0 O O\\n硫离子 S²⁻ mg(S²⁻)/L 不得检出 O\\n铵离子 NH₄⁺ mg(NH₄⁺)/L <1.0 O\\n氧化硅 SiO₂ mg(SiO₂)/L <50 O\\n注: O表示腐蚀或结垢倾向的有关因素。\",\n  \"uncertainty_notes\": \"The table is in Chinese; translations are approximate. The 'O' symbol is defined in the note as indicating factors related to corrosion or scaling tendency. No visual diagrams or wiring are present.\",\n  \"confidence\": 0.95\n}"
+}

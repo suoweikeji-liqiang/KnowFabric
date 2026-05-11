@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识对象审阅 - KnowFabric Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: { base: '13px', xs: '12px', sm: '14px', tiny: '11px' },
+          fontFamily: {
+            sans:['Inter', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans h-screen flex flex-col overflow-hidden text-base">
+
+  <!-- 顶部导航 -->
+  <header class="bg-slate-900 text-white h-12 flex items-center px-4 shrink-0 justify-between">
+    <div class="flex items-center gap-4">
+      <div class="font-semibold text-sm tracking-wide">KnowFabric <span class="text-slate-400 font-normal">Admin</span></div>
+      <nav class="flex gap-6 ml-8 text-sm">
+        <a href="#" class="text-slate-300 hover:text-white">文档入库</a>
+        <a href="#" class="text-slate-300 hover:text-white">文档库</a>
+        <a href="#" class="text-white font-medium border-b-2 border-indigo-500 pb-[14px] translate-y-[7px]">知识对象审阅</a>
+        <a href="#" class="text-slate-300 hover:text-white">标准浏览器</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3 text-xs">
+      <span class="bg-slate-800 px-2 py-1 rounded text-slate-300">操作员: OP-772</span>
+    </div>
+  </header>
+
+  <!-- 全局过滤栏 -->
+  <div class="bg-white border-b border-slate-200 h-10 flex items-center px-4 shrink-0 gap-4 text-xs">
+    <span class="text-slate-500 font-medium">视图过滤:</span>
+    <label class="flex items-center gap-1.5 cursor-pointer hover:text-indigo-600">
+      <input type="checkbox" class="accent-indigo-600" checked> 仅显示实质冲突
+    </label>
+    <div class="w-px h-4 bg-slate-300 mx-1"></div>
+    <label class="flex items-center gap-1.5 cursor-pointer hover:text-indigo-600">
+      <input type="checkbox" class="accent-indigo-600"> 仅 L4 信任等级
+    </label>
+    <div class="w-px h-4 bg-slate-300 mx-1"></div>
+    <select class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs outline-none focus:border-indigo-500">
+      <option>所有支撑源</option>
+      <option>包含行业标准</option>
+      <option>包含现场实测</option>
+    </select>
+    <div class="ml-auto text-slate-500">待审阅: 142 条</div>
+  </div>
+
+  <!-- 主内容区 -->
+  <div class="flex flex-1 overflow-hidden">
+    
+    <!-- 左侧：KO 列表 -->
+    <div class="w-80 bg-white border-r border-slate-200 flex flex-col shrink-0">
+      <div class="overflow-y-auto flex-1 py-2">
+        <!-- 列表项 1 -->
+        <div class="px-3 py-2 border-b border-slate-100 hover:bg-slate-50 cursor-pointer flex flex-col gap-1">
+          <div class="flex justify-between items-start">
+            <span class="font-medium truncate pr-2">外部冷冻水设定值</span>
+            <span class="text-indigo-600 text-tiny font-mono font-bold tracking-tighter shrink-0">📶 L4</span>
+          </div>
+          <div class="flex items-center gap-2 text-tiny">
+            <span class="text-slate-500 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> 单一来源</span>
+            <span class="text-slate-400">参数规范</span>
+          </div>
+        </div>
+
+        <!-- 列表项 2 (选中 & 冲突) -->
+        <div class="px-3 py-2 border-b border-slate-200 bg-indigo-50 border-l-4 border-l-rose-500 cursor-pointer flex flex-col gap-1">
+          <div class="flex justify-between items-start">
+            <span class="font-semibold text-indigo-900 truncate pr-2">Chilled Water Reset Maximum</span>
+            <span class="text-indigo-600 text-tiny font-mono font-bold tracking-tighter shrink-0">📶 L4</span>
+          </div>
+          <div class="flex items-center gap-2 text-tiny">
+            <span class="text-rose-600 font-medium flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span> 实质冲突</span>
+            <span class="text-slate-500">参数规范</span>
+          </div>
+        </div>
+
+        <!-- 列表项 3 -->
+        <div class="px-3 py-2 border-b border-slate-100 hover:bg-slate-50 cursor-pointer flex flex-col gap-1">
+          <div class="flex justify-between items-start">
+            <span class="font-medium truncate pr-2">冷却塔风机频率下限</span>
+            <span class="text-indigo-500 text-tiny font-mono font-bold tracking-tighter shrink-0">📶 L3</span>
+          </div>
+          <div class="flex items-center gap-2 text-tiny">
+            <span class="text-emerald-600 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 多源一致</span>
+            <span class="text-slate-400">参数规范</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧：详情面板 -->
+    <div class="flex-1 bg-slate-50 overflow-y-auto p-6">
+      <div class="max-w-4xl mx-auto flex flex-col gap-4">
+        
+        <!-- 标题区 -->
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs font-mono text-slate-500">ko_imagined_conflict_example</span>
+              <span class="bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded text-tiny font-mono">参数规范</span>
+            </div>
+            <h1 class="text-lg font-semibold text-slate-900">Chilled Water Reset Maximum</h1>
+          </div>
+          <div class="flex gap-2">
+            <button class="px-3 py-1.5 bg-white border border-slate-300 text-slate-700 rounded hover:bg-slate-50 text-xs font-medium">拒绝</button>
+            <button class="px-3 py-1.5 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-xs font-medium shadow-sm">仲裁冲突</button>
+          </div>
+        </div>
+
+        <!-- 冲突警示框 -->
+        <div class="bg-rose-50 border border-rose-200 rounded-md p-3 flex gap-3 items-start">
+          <div class="text-rose-500 mt-0.5">🚨</div>
+          <div>
+            <h3 class="text-rose-800 font-semibold text-sm mb-1">实质冲突</h3>
+            <p class="text-rose-700 text-xs leading-relaxed">ASHRAE 90.1-2022 规定最大重置 10°F；Trane CVGF 手册写 12°F；运维实测建议 10°F 更稳定。此知识对象无法静默合并，需人工指定权威方或保留分歧。</p>
+          </div>
+        </div>
+
+        <!-- 权威层级卡片 -->
+        <div class="mt-2">
+          <h2 class="text-sm font-semibold text-slate-800 mb-3 flex items-center gap-2">
+            支撑源与权威层级
+            <span class="bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded-full text-tiny">3 个数据源</span>
+          </h2>
+          
+          <div class="grid grid-cols-3 gap-4">
+            <!-- 源 1: 行业标准 -->
+            <div class="bg-white border border-slate-200 rounded-md shadow-sm flex flex-col">
+              <div class="p-2.5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50 rounded-t-md">
+                <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-tiny font-medium bg-blue-100 text-blue-700 border border-blue-200">
+                  🛡️ 行业标准
+                </span>
+                <span class="text-rose-600 text-tiny font-medium" title="传播受限">© 传播受限</span>
+              </div>
+              <div class="p-3 flex flex-col gap-2 flex-1">
+                <div class="text-xs text-slate-500 font-medium">ASHRAE</div>
+                <div class="text-sm font-medium text-slate-900 leading-tight">ASHRAE 90.1-2022 §6.5.3.2</div>
+                <div class="mt-auto pt-2 border-t border-slate-100">
+                  <div class="text-tiny text-slate-400 mb-0.5">数值摘要</div>
+                  <div class="font-mono text-xs text-slate-800 bg-slate-100 px-1.5 py-1 rounded inline-block">10°F</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 源 2: 厂商手册 -->
+            <div class="bg-white border border-slate-200 rounded-md shadow-sm flex flex-col">
+              <div class="p-2.5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50 rounded-t-md">
+                <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-tiny font-medium bg-slate-100 text-slate-700 border border-slate-300">
+                  🏭 厂商手册
+                </span>
+              </div>
+              <div class="p-3 flex flex-col gap-2 flex-1">
+                <div class="text-xs text-slate-500 font-medium">Trane</div>
+                <div class="text-sm font-medium text-slate-900 leading-tight">Trane CVGF 操作手册 p.29</div>
+                <div class="mt-auto pt-2 border-t border-slate-100">
+                  <div class="text-tiny text-slate-400 mb-0.5">数值摘要</div>
+                  <div class="font-mono text-xs text-slate-800 bg-slate-100 px-1.5 py-1 rounded inline-block">12°F</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 源 3: 现场实测 -->
+            <div class="bg-white border border-orange-300 rounded-md shadow-sm flex flex-col ring-1 ring-orange-500/20">
+              <div class="p-2.5 border-b border-orange-100 flex justify-between items-center bg-orange-50 rounded-t-md">
+                <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-tiny font-medium bg-orange-500 text-white shadow-sm">
+                  🎯 现场实测
+                </span>
+              </div>
+              <div class="p-3 flex flex-col gap-2 flex-1">
+                <div class="text-xs text-slate-500 font-medium">operator's fleet</div>
+                <div class="text-sm font-medium text-slate-900 leading-tight">23 项目实测 2024Q4-2025Q1</div>
+                <div class="mt-auto pt-2 border-t border-slate-100">
+                  <div class="text-tiny text-slate-400 mb-0.5">数值摘要</div>
+                  <div class="font-mono text-xs text-orange-700 bg-orange-100 px-1.5 py-1 rounded inline-block font-semibold">10°F 推荐</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 结构化数据预览 -->
+        <div class="mt-4 bg-white border border-slate-200 rounded-md shadow-sm">
+          <div class="px-3 py-2 border-b border-slate-200 bg-slate-50 font-medium text-xs text-slate-700 flex justify-between">
+            <span>结构化数据草稿</span>
+          </div>
+          <div class="p-3 font-mono text-xs text-slate-600 whitespace-pre overflow-x-auto leading-relaxed">
+{
+  "parameter_name": "Chilled Water Reset Maximum",
+  "value": <span class="bg-rose-100 text-rose-700 px-1 rounded">"CONFLICT_PENDING"</span>,
+  "unit": "°F",
+  "applicability": {
+    "domain_id": "hvac",
+    "equipment_class": "brick:Centrifugal_Chiller"
+  }
+}</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

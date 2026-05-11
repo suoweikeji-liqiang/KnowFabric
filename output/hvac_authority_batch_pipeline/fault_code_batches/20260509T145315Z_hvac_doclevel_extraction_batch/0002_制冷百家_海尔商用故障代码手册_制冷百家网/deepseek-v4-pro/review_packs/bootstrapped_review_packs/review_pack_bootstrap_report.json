@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-09T15:04:29.701920+00:00",
+  "pack_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0002_制冷百家_海尔商用故障代码手册_制冷百家网/deepseek-v4-pro/review_packs",
+  "output_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0002_制冷百家_海尔商用故障代码手册_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 19,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_804afd33494f4815__controller.json",
+      "source_path": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0002_制冷百家_海尔商用故障代码手册_制冷百家网/deepseek-v4-pro/review_packs/hvac__doc_804afd33494f4815__controller.json",
+      "status": "bootstrapped",
+      "entries_updated": 19,
+      "output_path": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0002_制冷百家_海尔商用故障代码手册_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_804afd33494f4815__controller.json"
+    }
+  ]
+}

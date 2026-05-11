@@ -1,0 +1,307 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_a310d5c55ab6a30c",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_76d3f745c6ed40dc",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:air_face_velocity",
+      "structured_payload_candidate": {
+        "parameter_name": "air_face_velocity",
+        "value_range": "2.0 to 2.5 m/s",
+        "unit": "m/s",
+        "title": "Typical Air Face Velocity for Dehumidifying Coils",
+        "summary": "Dehumidifying coils for comfort applications are frequently selected in the range of 2.0 to 2.5 m/s air face velocity."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "For\ninformation on calculating a dehumidi fying coil’s sensible heat ratio,\nsee the section on Performance of Dehumidifying Coils, or Appen-dix D of Cooling and Heating Load Calculation Principles  (Peder-\nsen et al. 1998). For a given coil surface design and arrangement, therequired sensible heat ratio may be  satisfied by wide variations in\nand combinations of air face velocity, in-tube temperature, flow rate,entering air temperature, coil depth, etc., although the variationsmay be self limiting. The maximum coil air face velocity should belimited to a value that prevents water carryover into the air ductwork.Dehumidifying coils for comfort applications are frequently selectedin the range of 2.0 to 2.5 m/s air face velocity.\nOperating ratings of dehumidifyi ng coils for factory-assembled,\nself-contained air conditioners are generally determined in conjunc-\ntion with laboratory testing for the system capacity of the complete\nunit assembly.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_76d3f745c6ed40dc"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence directly states typical air face velocity range for dehumidifying coils."
+    },
+    {
+      "candidate_id": "cand_f290d04f677b71eb",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_19f1437e995c4983",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:standard_rating_point",
+      "structured_payload_candidate": {
+        "parameter_name": "standard_rating_point",
+        "value": "54 L/s per kW, max 60 L/s per kW",
+        "unit": "L/s per kW",
+        "title": "Standard Rating Point for Unitary Equipment",
+        "summary": "A standard rating point has been 54 L/s per kilowatt of refrigeration effect, not to exceed 60 L/s per kilowatt for unitary equipment."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "For example, a standard rating point has been\n54 L/s per kilowatt of refrigeration effect, not to exceed 60 L/s perkilowatt for unitary equipment. Re frigerant (e.g., R-22) duty would\nbe 3 to 6 K superheat for an appr opriate balance at 7°C saturated\nsuction. For water coil s, circuitry would operate at 1.2 m/s, 5.5°C\ninlet water, 6.7 K rise (or 36 mL /s per kilowatt of refrigeration\neffect). The standard ratings at 26.7°C db and 19.5°C wb are repre-\nsentative of the entering air conditions encountered in many com-\nfort operations.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_19f1437e995c4983"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence explicitly provides standard rating point for unitary equipment."
+    },
+    {
+      "candidate_id": "cand_de01dbd65c138caa",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_19f1437e995c4983",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:refrigerant_superheat",
+      "structured_payload_candidate": {
+        "parameter_name": "refrigerant_superheat",
+        "value_range": "3 to 6 K",
+        "unit": "K",
+        "title": "Refrigerant Superheat for Unitary Equipment Balance",
+        "summary": "Refrigerant duty would be 3 to 6 K superheat for an appropriate balance at 7°C saturated suction."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "For example, a standard rating point has been\n54 L/s per kilowatt of refrigeration effect, not to exceed 60 L/s perkilowatt for unitary equipment. Re frigerant (e.g., R-22) duty would\nbe 3 to 6 K superheat for an appr opriate balance at 7°C saturated\nsuction. For water coil s, circuitry would operate at 1.2 m/s, 5.5°C\ninlet water, 6.7 K rise (or 36 mL /s per kilowatt of refrigeration\neffect). The standard ratings at 26.7°C db and 19.5°C wb are repre-\nsentative of the entering air conditions encountered in many com-\nfort operations.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_19f1437e995c4983"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence specifies refrigerant superheat range for balance at 7°C saturated suction."
+    },
+    {
+      "candidate_id": "cand_5a001e7481abbab1",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_19f1437e995c4983",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:water_coil_standard_conditions",
+      "structured_payload_candidate": {
+        "parameter_name": "water_coil_standard_conditions",
+        "velocity": "1.2 m/s",
+        "inlet_water_temperature": "5.5°C",
+        "temperature_rise": "6.7 K",
+        "flow_rate": "36 mL/s per kW",
+        "title": "Water Coil Circuitry Standard Conditions",
+        "summary": "For water coils, circuitry would operate at 1.2 m/s, 5.5°C inlet water, 6.7 K rise (or 36 mL/s per kilowatt of refrigeration effect)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "For example, a standard rating point has been\n54 L/s per kilowatt of refrigeration effect, not to exceed 60 L/s perkilowatt for unitary equipment. Re frigerant (e.g., R-22) duty would\nbe 3 to 6 K superheat for an appr opriate balance at 7°C saturated\nsuction. For water coil s, circuitry would operate at 1.2 m/s, 5.5°C\ninlet water, 6.7 K rise (or 36 mL /s per kilowatt of refrigeration\neffect). The standard ratings at 26.7°C db and 19.5°C wb are repre-\nsentative of the entering air conditions encountered in many com-\nfort operations.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_19f1437e995c4983"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence gives water coil standard conditions (velocity, temperature, rise, flow)."
+    },
+    {
+      "candidate_id": "cand_b7d13b88bf46d31c",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_687a3b0cb99d4fcd",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:valve:performance_spec:coil_freezing_condition",
+      "structured_payload_candidate": {
+        "parameter_name": "coil_freezing_condition",
+        "temperature_range": "below –4 to –2°C saturated",
+        "title": "Freezing Condition for Dehumidification Coils",
+        "summary": "Freezing does not occur with standard coils for comfort installations unless the refrigerant evaporating temperature at the coil outlet is below –4 to –2°C saturated."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "In ho t, humid climates, the light-load\ncondition has a higher proportion of moisture and a correspond-\ningly lower proportion of sensible  heat. The result is higher dew\npoints in the conditioned spaces during light-load  conditions un-\nless a special means for controlling inside dew points (e.g., reheator dual path) is used.\nFin surface freezing at light lo ads should be avoided. Freezing\noccurs when a dehumidification coil’s surface temperature fallsbelow 0°C. Freezing does not occur with standard coils for comfort\ninstallations unless the refrigerant evaporating temperature at the\ncoil outlet is below –4 to –2°C satu rated; the exact value depends on\nthe design of the coil, its opera ting dew point, and the amount of\nloading. With coil and condensing units to balance at low tempera-\ntures at peak loads (not a custom ary design choice), freezing may\noccur when load suddenly decreases.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_687a3b0cb99d4fcd"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence describes coil freezing condition with specific saturated temperature range."
+    },
+    {
+      "candidate_id": "cand_7d2212edd5e80fac",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_ab447107a4fa465e",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:valve:performance_spec:hydrophilic_coating_effect",
+      "structured_payload_candidate": {
+        "parameter_name": "hydrophilic_coating_effect",
+        "reduction": "up to 30%",
+        "title": "Airflow Resistance Reduction with Hydrophilic Coating",
+        "summary": "Tests have shown as much as a 30% reduction in air pressure drop across a hydrophilic coil as opposed to a new untreated coil."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Therefore, final selection involves\neconomic balancing of the initial co st of the coil against the operat-\ning costs of the coil geometry co mbinations available to adequately\nmeet the performa nce requirements.\nThe aluminum fin surfaces of new dehumidifying coils tend to in-\nhibit condensate sheeting action until they have aged for a year. Hy-\ndrophilic aluminum fin surface coatings reduce water droplet surface\ntension, producing a more evenly dispersed wetted surface action at\ninitial start-up. Manufacturers have tried different methods of apply-\ning such coatings, including dippi ng the coil into a tank, coating the\nfin stock material, or subjecting the material to a chemical etchingprocess. Tests have s hown as much as a 30% reduction in air pressure\ndrop across a hydrophilic coil as opposed a new untreated coil..",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ab447107a4fa465e"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence mentions up to 30% reduction in air pressure drop due to hydrophilic coating."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "status": "completed",
+  "row_index": 3,
+  "file_name": "【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/03、开利中央空调/技术手册/【开利】30HXC-HP开机 运行维护手册79页-制冷百家网.pdf",
+  "doc_id": "doc_5c833d18802144a2",
+  "chunks": 107,
+  "manual_tokens_estimated": 31799,
+  "equipment_class_id": "screw_chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 79,
+      "chunks_after": 107,
+      "parse_result": {
+        "job_id": "job_2b0f6fccc77f4dce",
+        "doc_id": "doc_5c833d18802144a2",
+        "pages_created": 79,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_d4f6b69684d34575",
+        "doc_id": "doc_5c833d18802144a2",
+        "chunks_created": 107,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 15,
+      "judge_rejected": 25,
+      "judge_acceptance_rate": 37.5,
+      "judge_rejection_breakdown": {
+        "duplicate": 2,
+        "other": 23
+      },
+      "review_candidates": 15,
+      "by_type": {
+        "parameter_spec": 11,
+        "maintenance_procedure": 1,
+        "fault_code": 3
+      },
+      "usage": {
+        "prompt_tokens": 45899,
+        "completion_tokens": 5971,
+        "total_tokens": 51870
+      },
+      "judge_usage": {
+        "prompt_tokens": 1279,
+        "completion_tokens": 1092,
+        "total_tokens": 2371
+      },
+      "extract_cost_rmb": 0.173523,
+      "judge_cost_rmb": 0.010389,
+      "cost_rmb": 0.183912,
+      "elapsed_seconds": 175.077,
+      "judge_elapsed_seconds": 222.405,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T145645Z_hvac_doclevel_extraction_batch/0003_开利_30hxc_hp开机_运行维护手册79页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T145645Z_hvac_doclevel_extraction_batch/0003_开利_30hxc_hp开机_运行维护手册79页_制冷百家网"
+}

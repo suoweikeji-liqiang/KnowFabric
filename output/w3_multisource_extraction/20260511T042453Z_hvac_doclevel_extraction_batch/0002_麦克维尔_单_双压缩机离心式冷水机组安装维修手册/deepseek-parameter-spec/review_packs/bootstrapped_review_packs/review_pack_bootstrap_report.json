@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-11T04:25:33.065951+00:00",
+  "pack_dir": "output/w3_multisource_extraction/20260511T042453Z_hvac_doclevel_extraction_batch/0002_麦克维尔_单_双压缩机离心式冷水机组安装维修手册/deepseek-parameter-spec/review_packs",
+  "output_dir": "output/w3_multisource_extraction/20260511T042453Z_hvac_doclevel_extraction_batch/0002_麦克维尔_单_双压缩机离心式冷水机组安装维修手册/deepseek-parameter-spec/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 10,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_36640e9f378f4667__centrifugal_chiller.json",
+      "source_path": "output/w3_multisource_extraction/20260511T042453Z_hvac_doclevel_extraction_batch/0002_麦克维尔_单_双压缩机离心式冷水机组安装维修手册/deepseek-parameter-spec/review_packs/hvac__doc_36640e9f378f4667__centrifugal_chiller.json",
+      "status": "bootstrapped",
+      "entries_updated": 10,
+      "output_path": "output/w3_multisource_extraction/20260511T042453Z_hvac_doclevel_extraction_batch/0002_麦克维尔_单_双压缩机离心式冷水机组安装维修手册/deepseek-parameter-spec/review_packs/bootstrapped_review_packs/hvac__doc_36640e9f378f4667__centrifugal_chiller.json"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "auto_ashrae211.pdf",
+  "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_ashrae211/auto_ashrae211.pdf",
+  "doc_id": "doc_58f6c629bc6a494a",
+  "chunks": 6,
+  "manual_tokens_estimated": 199,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 6,
+      "chunks_after": 6,
+      "parse_result": {
+        "job_id": "job_1bb10f1e3379471f",
+        "doc_id": "doc_58f6c629bc6a494a",
+        "pages_created": 6,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_9794eea2784940c3",
+        "doc_id": "doc_58f6c629bc6a494a",
+        "chunks_created": 6,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "mimo-v2-omni",
+      "model": "mimo-v2-omni",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 3,
+      "anchor_passed": 3,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 0,
+      "judge_rejected": 3,
+      "judge_acceptance_rate": 0.0,
+      "judge_rejection_breakdown": {
+        "weak_evidence": 3
+      },
+      "review_candidates": 0,
+      "by_type": {},
+      "usage": {
+        "prompt_tokens": 756,
+        "completion_tokens": 444,
+        "total_tokens": 1200
+      },
+      "judge_usage": {
+        "prompt_tokens": 758,
+        "completion_tokens": 223,
+        "total_tokens": 981
+      },
+      "extract_cost_rmb": 0.0,
+      "judge_cost_rmb": 0.003612,
+      "cost_rmb": 0.003612,
+      "elapsed_seconds": 5.11,
+      "judge_elapsed_seconds": 8.148,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_ashrae211/mimo_omni_run/20260509T230045Z_hvac_doclevel_extraction_batch/0001_auto_ashrae211/mimo-v2-omni"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_ashrae211/mimo_omni_run/20260509T230045Z_hvac_doclevel_extraction_batch/0001_auto_ashrae211"
+}

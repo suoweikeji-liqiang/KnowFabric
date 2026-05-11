@@ -1,0 +1,111 @@
+{
+  "page": 1,
+  "response": {
+    "id": "d8ac82e6c3cc4d2b85be4794cfa28bb6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"fault_table\",\n  \"summary\": \"This page is a Daikin VRV fault code guide. It visually categorizes fault codes into indoor unit, outdoor unit, and system faults, and provides detailed troubleshooting for code A3 (condensate water level abnormal).\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Title: 大金 VRV 根据故障代码（排除故障方法）\"},\n    {\"type\": \"diagram\", \"label\": \"Fault code categorization diagram\"},\n    {\"type\": \"text_block\", \"label\": \"Section: 1.1室内机常见故障\"},\n    {\"type\": \"table\", \"label\": \"Troubleshooting table for fault code A3\"},\n    {\"type\": \"text_block\", \"label\": \"Footer: DAIKIN SERVICE CENTER OF SHANGHAI\"},\n    {\"type\": \"logo\", \"label\": \"DAIKIN logo\"},\n    {\"type\": \"logo\", \"label\": \"coolling.net logo\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Fault code categorization diagram\", \"relation\": \"contains\", \"to\": \"室内机常见故障\"},\n    {\"from\": \"室内机常见故障\", \"relation\": \"lists\", \"to\": \"A3, A5, A6, C4\"},\n    {\"from\": \"Fault code categorization diagram\", \"relation\": \"contains\", \"to\": \"室外机常见故障\"},\n    {\"from\": \"室外机常见故障\", \"relation\": \"lists\", \"to\": \"E3, E5, F3, L5\"},\n    {\"from\": \"Fault code categorization diagram\", \"relation\": \"contains\", \"to\": \"系统常见故障\"},\n    {\"from\": \"系统常见故障\", \"relation\": \"lists\", \"to\": \"U1, U2, U4, U7\"},\n    {\"from\": \"Troubleshooting table for fault code A3\", \"relation\": \"details\", \"to\": \"A3\"}\n  ],\n  \"useful_for_knowledge_types\": [\"fault_diagnosis\", \"troubleshooting_procedures\", \"component_identification\"],\n  \"ocr_text_if_useful\": \"大金 VRV 根据故障代码（排除故障方法）\\n故障代码说明\\n室内机常见故障\\nA3 A5 A6 C4\\n室外机常见故障\\nE3 E5 F3 L5\\n系统常见故障\\nU1 U2 U4 U7\\nDAIKIN SERVICE CENTER OF SHANGHAI\\n1.1室内机常见故障\\n故障代码：A3（冷凝水位异常）\\n判断条件：非水位上升时，浮子开关处于关闭\\n原因对策：\\n排水配管堵塞 ——疏通管道（用户）\\n排水管施工错误 ——改善安装（安装）\\n排水泵不良 ——更换部品（维修）\\n浮子开关不良 ——更换部品（维修）\\n室内机电路板不良 ——更换部品（维修）\\n短路连接端不良 ——设定确认（维修）\\n注：没有提升泵时应将X15A短接\\nDAIKIN SERVICE CENTER OF SHANGHAI\",\n  \"uncertainty_notes\": \"The exact meaning of some Chinese terms (e.g., '短路连接端不良') may require domain-specific translation. The visual layout clearly shows categorization, but the full context of all fault codes is not detailed on this page.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778203736,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 753,
+      "prompt_tokens": 2437,
+      "total_tokens": 3190,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "fault_table",
+    "summary": "This page is a Daikin VRV fault code guide. It visually categorizes fault codes into indoor unit, outdoor unit, and system faults, and provides detailed troubleshooting for code A3 (condensate water level abnormal).",
+    "visual_entities": [
+      {
+        "type": "text_block",
+        "label": "Title: 大金 VRV 根据故障代码（排除故障方法）"
+      },
+      {
+        "type": "diagram",
+        "label": "Fault code categorization diagram"
+      },
+      {
+        "type": "text_block",
+        "label": "Section: 1.1室内机常见故障"
+      },
+      {
+        "type": "table",
+        "label": "Troubleshooting table for fault code A3"
+      },
+      {
+        "type": "text_block",
+        "label": "Footer: DAIKIN SERVICE CENTER OF SHANGHAI"
+      },
+      {
+        "type": "logo",
+        "label": "DAIKIN logo"
+      },
+      {
+        "type": "logo",
+        "label": "coolling.net logo"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "Fault code categorization diagram",
+        "relation": "contains",
+        "to": "室内机常见故障"
+      },
+      {
+        "from": "室内机常见故障",
+        "relation": "lists",
+        "to": "A3, A5, A6, C4"
+      },
+      {
+        "from": "Fault code categorization diagram",
+        "relation": "contains",
+        "to": "室外机常见故障"
+      },
+      {
+        "from": "室外机常见故障",
+        "relation": "lists",
+        "to": "E3, E5, F3, L5"
+      },
+      {
+        "from": "Fault code categorization diagram",
+        "relation": "contains",
+        "to": "系统常见故障"
+      },
+      {
+        "from": "系统常见故障",
+        "relation": "lists",
+        "to": "U1, U2, U4, U7"
+      },
+      {
+        "from": "Troubleshooting table for fault code A3",
+        "relation": "details",
+        "to": "A3"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "fault_diagnosis",
+      "troubleshooting_procedures",
+      "component_identification"
+    ],
+    "ocr_text_if_useful": "大金 VRV 根据故障代码（排除故障方法）\n故障代码说明\n室内机常见故障\nA3 A5 A6 C4\n室外机常见故障\nE3 E5 F3 L5\n系统常见故障\nU1 U2 U4 U7\nDAIKIN SERVICE CENTER OF SHANGHAI\n1.1室内机常见故障\n故障代码：A3（冷凝水位异常）\n判断条件：非水位上升时，浮子开关处于关闭\n原因对策：\n排水配管堵塞 ——疏通管道（用户）\n排水管施工错误 ——改善安装（安装）\n排水泵不良 ——更换部品（维修）\n浮子开关不良 ——更换部品（维修）\n室内机电路板不良 ——更换部品（维修）\n短路连接端不良 ——设定确认（维修）\n注：没有提升泵时应将X15A短接\nDAIKIN SERVICE CENTER OF SHANGHAI",
+    "uncertainty_notes": "The exact meaning of some Chinese terms (e.g., '短路连接端不良') may require domain-specific translation. The visual layout clearly shows categorization, but the full context of all fault codes is not detailed on this page.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"fault_table\",\n  \"summary\": \"This page is a Daikin VRV fault code guide. It visually categorizes fault codes into indoor unit, outdoor unit, and system faults, and provides detailed troubleshooting for code A3 (condensate water level abnormal).\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Title: 大金 VRV 根据故障代码（排除故障方法）\"},\n    {\"type\": \"diagram\", \"label\": \"Fault code categorization diagram\"},\n    {\"type\": \"text_block\", \"label\": \"Section: 1.1室内机常见故障\"},\n    {\"type\": \"table\", \"label\": \"Troubleshooting table for fault code A3\"},\n    {\"type\": \"text_block\", \"label\": \"Footer: DAIKIN SERVICE CENTER OF SHANGHAI\"},\n    {\"type\": \"logo\", \"label\": \"DAIKIN logo\"},\n    {\"type\": \"logo\", \"label\": \"coolling.net logo\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Fault code categorization diagram\", \"relation\": \"contains\", \"to\": \"室内机常见故障\"},\n    {\"from\": \"室内机常见故障\", \"relation\": \"lists\", \"to\": \"A3, A5, A6, C4\"},\n    {\"from\": \"Fault code categorization diagram\", \"relation\": \"contains\", \"to\": \"室外机常见故障\"},\n    {\"from\": \"室外机常见故障\", \"relation\": \"lists\", \"to\": \"E3, E5, F3, L5\"},\n    {\"from\": \"Fault code categorization diagram\", \"relation\": \"contains\", \"to\": \"系统常见故障\"},\n    {\"from\": \"系统常见故障\", \"relation\": \"lists\", \"to\": \"U1, U2, U4, U7\"},\n    {\"from\": \"Troubleshooting table for fault code A3\", \"relation\": \"details\", \"to\": \"A3\"}\n  ],\n  \"useful_for_knowledge_types\": [\"fault_diagnosis\", \"troubleshooting_procedures\", \"component_identification\"],\n  \"ocr_text_if_useful\": \"大金 VRV 根据故障代码（排除故障方法）\\n故障代码说明\\n室内机常见故障\\nA3 A5 A6 C4\\n室外机常见故障\\nE3 E5 F3 L5\\n系统常见故障\\nU1 U2 U4 U7\\nDAIKIN SERVICE CENTER OF SHANGHAI\\n1.1室内机常见故障\\n故障代码：A3（冷凝水位异常）\\n判断条件：非水位上升时，浮子开关处于关闭\\n原因对策：\\n排水配管堵塞 ——疏通管道（用户）\\n排水管施工错误 ——改善安装（安装）\\n排水泵不良 ——更换部品（维修）\\n浮子开关不良 ——更换部品（维修）\\n室内机电路板不良 ——更换部品（维修）\\n短路连接端不良 ——设定确认（维修）\\n注：没有提升泵时应将X15A短接\\nDAIKIN SERVICE CENTER OF SHANGHAI\",\n  \"uncertainty_notes\": \"The exact meaning of some Chinese terms (e.g., '短路连接端不良') may require domain-specific translation. The visual layout clearly shows categorization, but the full context of all fault codes is not detailed on this page.\",\n  \"confidence\": 0.95\n}"
+}

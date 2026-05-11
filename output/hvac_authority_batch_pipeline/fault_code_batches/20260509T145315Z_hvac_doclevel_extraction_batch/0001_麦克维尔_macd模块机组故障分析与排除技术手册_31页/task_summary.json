@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+  "doc_id": "doc_e312bbfa86684629",
+  "chunks": 31,
+  "manual_tokens_estimated": 4978,
+  "equipment_class_id": "air_cooled_modular_heat_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "modular_chiller",
+      "equipment_class_key": "hvac:modular_chiller",
+      "confidence": 0.383,
+      "matched_aliases": [
+        "模块机"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 31,
+      "chunks_before": 31,
+      "pages_after": 31,
+      "chunks_after": 31,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 30,
+      "anchor_passed": 30,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 18,
+      "judge_rejected": 12,
+      "judge_acceptance_rate": 60.0,
+      "judge_rejection_breakdown": {
+        "other": 12
+      },
+      "review_candidates": 18,
+      "by_type": {
+        "fault_code": 18
+      },
+      "usage": {
+        "prompt_tokens": 8276,
+        "completion_tokens": 4935,
+        "total_tokens": 13211
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1186,
+        "total_tokens": 2466
+      },
+      "extract_cost_rmb": 0.054438,
+      "judge_cost_rmb": 0.010956,
+      "cost_rmb": 0.065394,
+      "elapsed_seconds": 155.318,
+      "judge_elapsed_seconds": 77.362,
+      "output_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0001_麦克维尔_macd模块机组故障分析与排除技术手册_31页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0001_麦克维尔_macd模块机组故障分析与排除技术手册_31页"
+}

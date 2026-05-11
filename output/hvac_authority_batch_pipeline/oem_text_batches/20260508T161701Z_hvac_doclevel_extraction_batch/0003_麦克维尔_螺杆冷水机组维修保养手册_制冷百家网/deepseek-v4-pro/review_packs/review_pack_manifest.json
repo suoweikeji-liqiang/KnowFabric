@@ -1,0 +1,19 @@
+{
+  "review_mode": "chunk_backfill_review_pack_manifest",
+  "generated_at": "2026-05-08T16:32:41.868568+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "total_packs": 1,
+  "packs": [
+    {
+      "file_name": "hvac__doc_0c7b3998a63c499c__screw_chiller.json",
+      "doc_id": "doc_0c7b3998a63c499c",
+      "doc_name": "【麦克维尔】螺杆冷水机组维修保养手册-制冷百家网.pdf",
+      "equipment_class_id": "screw_chiller",
+      "equipment_class_key": "hvac:screw_chiller",
+      "candidate_count": 19
+    }
+  ]
+}

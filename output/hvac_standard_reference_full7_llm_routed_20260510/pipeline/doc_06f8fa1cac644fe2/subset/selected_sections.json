@@ -1,0 +1,86 @@
+{
+  "doc_id": "doc_06f8fa1cac644fe2",
+  "doc_name": "空调 系统 设计 手册 Ashrae 特别 出版物.pdf",
+  "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/空调 系统 设计 手册 Ashrae 特别 出版物.pdf",
+  "selected_pages": [
+    17,
+    60,
+    105,
+    263
+  ],
+  "selected_page_count": 4,
+  "knowledge_types_filter": [
+    "application_guidance",
+    "parameter_spec",
+    "operational_sequence"
+  ],
+  "min_confidence": "high",
+  "equipment_scope_id": "general_hvac",
+  "subset_pdf": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_06f8fa1cac644fe2/subset/auto_doc_06f8fa1cac644fe2.pdf",
+  "manifest_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_full7_llm_routed_20260510/pipeline/doc_06f8fa1cac644fe2/subset/manifest.csv",
+  "sections": [
+    {
+      "section_title": "14⏐ THE DESIGN PROCESS",
+      "page_start": 17,
+      "page_end": 17,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [
+        "parameter_spec",
+        "performance_spec",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "14⏐ THE DESIGN PROCESS The information that should be contained in the HV AC&R sys- tem program includes  design outdoor dry-bulb and wet-bulb temperatures (absolute and coincident);  heating and cooling degree-days/hours;  design wind velocity (and direction) for winter and summer;  applicable zoning, building, me",
+      "section_source": "page_heading",
+      "score": 35
+    },
+    {
+      "section_title": "58⏐ OCCUPANT COMFORT AND HEALTH",
+      "page_start": 60,
+      "page_end": 60,
+      "chunk_count": 3,
+      "candidate_knowledge_types": [
+        "parameter_spec",
+        "performance_spec",
+        "maintenance_procedure",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "58⏐ OCCUPANT COMFORT AND HEALTH tions, bed depth requirements, and maintenance procedures should be thoughtfully evaluated in light of the need for such a system. Air washers (see Section 5.2.3) are also effective in reducing SO2 and other acid-forming gases. But such scrubbers need contin- uous maintenance to keep the",
+      "section_source": "page_heading",
+      "score": 33
+    },
+    {
+      "section_title": "104⏐ COMPONENTS",
+      "page_start": 105,
+      "page_end": 105,
+      "chunk_count": 3,
+      "candidate_knowledge_types": [
+        "parameter_spec",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "104⏐ COMPONENTS constant pressure drop. The quick-opening characteristic is usually applied where a process requires essentially ON/OFF operation. For example, a preheat coil in an outdoo r air duct may be operated by a quick-opening valve, the controller of which has a sensor in the out- door air. A linear valve gives",
+      "section_source": "page_heading",
+      "score": 33
+    },
+    {
+      "section_title": "264⏐ HVAC&R C ONTROLS",
+      "page_start": 263,
+      "page_end": 263,
+      "chunk_count": 3,
+      "candidate_knowledge_types": [
+        "parameter_spec",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "264⏐ HVAC&R C ONTROLS where the velocities are higher than in the ductwork. A very accurate pressure transducer is required with whatever scheme is selected. Another flow-measuring technique uses hot-wire anemome- ters. If this approach is employ ed, appropriate air guides must be provided so that the anemometers measu",
+      "section_source": "page_heading",
+      "score": 34
+    }
+  ]
+}

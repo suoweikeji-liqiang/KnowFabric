@@ -1,0 +1,19 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-10T09:21:54.813849+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_38a89d59e8394e2d/extract/20260510T092124Z_hvac_doclevel_extraction_batch/0001_auto_doc_38a89d59e8394e2d/mimo-v2-omni/review_packs/bootstrapped_review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 0,
+  "summary": {
+    "ready": 0,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": []
+}

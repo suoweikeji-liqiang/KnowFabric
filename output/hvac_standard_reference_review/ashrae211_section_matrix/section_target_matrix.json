@@ -1,0 +1,168 @@
+{
+  "doc_id": "doc_c019162f43d44d06",
+  "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+  "sections": [
+    {
+      "section_title": "Best Practices for Energy Audits Using ASHRAE 211 -2018 and RETScreen Session F3",
+      "page_start": 1,
+      "page_end": 1,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Best Practices for Energy Audits Using ASHRAE 211 -2018 and RETScreen Session F3: Energy Auditing Javier Ojeda, P.Eng, CEM, REP, PMP, MBA"
+    },
+    {
+      "section_title": "Agenda 1.Introduction",
+      "page_start": 2,
+      "page_end": 2,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Agenda 1.Introduction •What’s ASHRAE 211 -2018 •What’s RETSCreen 2.Planning the Audit •Audit Scope and Objectives •Info that you will need •Preliminary Energy Use Analysis •Tools •Team3.Conducting the Audit •Site Visits "
+    },
+    {
+      "section_title": "Introduction",
+      "page_start": 3,
+      "page_end": 4,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Introduction •The ASHRAE 211 -2018 Standard •A complement to the PCBEA •Brings order into chaos of Energy Audits •Establishes energy audit levels 1, 2, 3 •Establishes Preliminary Energy Use Analysis Methods •Establishes "
+    },
+    {
+      "section_title": "Planning the Audit",
+      "page_start": 5,
+      "page_end": 6,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Planning the Audit Planning the Audit"
+    },
+    {
+      "section_title": "Planning the Audit Preliminary Energy Use Analysis",
+      "page_start": 7,
+      "page_end": 8,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Planning the Audit Preliminary Energy Use Analysis: •Baseline overview of building's energy performance •Early Stage Benchmarking •Data Sources: utility bills, schedules (min. 1 calendar year) •Key Metrics: •EUI •ECI •In"
+    },
+    {
+      "section_title": "Planning the Audit TOOLS FOR THE ENERGY AUDIT Free Templates",
+      "page_start": 9,
+      "page_end": 9,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Planning the Audit TOOLS FOR THE ENERGY AUDIT Free Templates"
+    },
+    {
+      "section_title": "Planning the Audit The Audit Team",
+      "page_start": 10,
+      "page_end": 10,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Planning the Audit The Audit Team •I’ll depend on how deep are you going in the energy audit, and what are the goals from it•Basic Team –Level 1: •The energy auditor (solo), level 1 and probably level 2 depending on the "
+    },
+    {
+      "section_title": "Conducting the Audit",
+      "page_start": 11,
+      "page_end": 12,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Conducting the Audit •Site Visits •Stick to your plan… unless reality hits you in the face! Preliminary WalkthroughSAFETY toolbox meeting Equipment Checks Data Collection Interviews Documentation Conducting the Audit •Da"
+    },
+    {
+      "section_title": "Conducting the Audit –Report Structure 1. Executive Summary",
+      "page_start": 13,
+      "page_end": 13,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "medium",
+      "sample_text": "Conducting the Audit –Report Structure 1. Executive Summary • Brief background and summary of scope • EEM (Energy Efficiency Measures) summary table • Summary of benchmarking results 2. Background Information • Contact i"
+    },
+    {
+      "section_title": "Supporting Information",
+      "page_start": 13,
+      "page_end": 13,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "Supporting Information • Analysis • Measured data or monitoring results • Manufacturers’ information or “cut sheets” • Plans and sketches • Additional information or specifications Let’s go with Live Example!."
+    },
+    {
+      "section_title": "After the Audit",
+      "page_start": 14,
+      "page_end": 16,
+      "chunk_count": 3,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "After the Audit •RETScreen Energy Modeling Let’s go with Live Example! After the Audit •Model Calibration •Is the process that allows us to compare the energy consumption calculated by the model, with the real energy con"
+    },
+    {
+      "section_title": "Final Report Let’s go with Live Example!",
+      "page_start": 17,
+      "page_end": 17,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "Final Report Let’s go with Live Example!"
+    },
+    {
+      "section_title": "Conclusion",
+      "page_start": 18,
+      "page_end": 18,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Conclusion •Energy audits are in certain way, unique, even when following a Standard like ASHRAE 211 -2018 •Standards and Best practices help to guideline and streamline the audit process, but most importantly: THEY HELP"
+    },
+    {
+      "section_title": "Javier Ojeda P.Eng, MBA, PMP, CEM, REP Owner, Principal Engineer HYSOVENT Sustainable Engineering Ph",
+      "page_start": 19,
+      "page_end": 19,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "parameter_spec"
+      ],
+      "confidence": "high",
+      "sample_text": "Javier Ojeda P.Eng, MBA, PMP, CEM, REP Owner, Principal Engineer HYSOVENT Sustainable Engineering Phone: +1-902-2106828 email: javier@hysovent.com Hysovent Limited 103-287 Lacewood Drive, Suite 121, Halifax, NS, B3M3Y7 C"
+    }
+  ],
+  "candidate_type_counts": {
+    "application_guidance": 11,
+    "performance_spec": 5,
+    "operational_sequence": 1,
+    "parameter_spec": 1
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "request": {
+    "model": "deepseek-v4-pro",
+    "temperature": 1.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You repair malformed JSON. Return one valid JSON object only. Do not add commentary. Do not invent or remove fields unless required to make the JSON valid. Preserve the original meaning as closely as possible."
+      },
+      {
+        "role": "user",
+        "content": "Repair the following malformed JSON object. Return valid JSON only.\n\n{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_66ec72b9236ad7ff\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Design discharge pressure of 350 psig is a specific operational limit with clear evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ddd8251452b8fc93\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Oil heater power rating is a factual specification supported by the manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_6dc8c424d7dbe49d\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Specific oil temperature range for R-717 with external cooling is provided in the evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_fc0f0cc6e7578bd1\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Specific oil temperature range for R-22 with liquid injection cooling is stated in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ac4ac4a171eb2004\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Minimum clearance of 36 inches for service access is explicitly recommended in the manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_b30ae7c696f145a6\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Foundation thickness of at least 6 inches reinforced concrete is specified in the evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_bef1dee593629e48\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Cold start valve spring pressure of 30 PSI for high stage is a clear operational parameter.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_541913208ac72737\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Cold start valve spring pressure of 15 PSI for multi-stage is mentioned in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_e1b56a9f16e6cb2c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Suction check valve spring pressure of 40 PSI for high stage is specified in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_45a33ba769af17a7\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Suction check valve spring pressure of 15 PSI for booster stage is given in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_dd01890a119b0be6\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Oil pump end clearance specification of 0.003 inches for various models is directly from manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_d73aebe50b8de09c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"PE-4 voltage at atmospheric pressure range is given for sensor testing.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_649d5a915b7aa3a4\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"PE-1,2,3 voltage at atmospheric pressure is a calibration specification from the manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_e9b8accff7214082\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Slide valve potentiometer resistance value is a specific adjustment parameter.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_4b30221b984db5b5\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Motor mounting bolt torque of 250 ft-lb is a clear assembly specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_63edbfce5398406f\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Compressor mounting bolt torque of 250 ft-lb is explicitly stated in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_b6a47fbecfe281ad\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Oil level sight glass position is an operational guidance for oil charging.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_7e5ac5512ae4cafd\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Thermosiphon liquid height requirement is a necessary installation parameter.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_7"
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 1200
+  },
+  "response": {
+    "id": "057e3d08-2484-49ab-b2cb-f1620dcfb9fd",
+    "object": "chat.completion",
+    "created": 1778235694,
+    "model": "deepseek-v4-pro",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_66ec72b9236ad7ff\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Design discharge pressure of 350 psig is a specific operational limit with clear evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ddd8251452b8fc93\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Oil heater power rating is a factual specification supported by the manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_6dc8c424d7dbe49d\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Specific oil temperature range for R-717 with external cooling is provided in the evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_fc0f0cc6e7578bd1\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Specific oil temperature range for R-22 with liquid injection cooling is stated in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ac4ac4a171eb2004\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Minimum clearance of 36 inches for service access is explicitly recommended in the manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_b30ae7c696f145a6\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Foundation thickness of at least 6 inches reinforced concrete is specified in the evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_bef1dee593629e48\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Cold start valve spring pressure of 30 PSI for high stage is a clear operational parameter.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_541913208ac72737\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Cold start valve spring pressure of 15 PSI for multi-stage is mentioned in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_e1b56a9f16e6cb2c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Suction check valve spring pressure of 40 PSI for high stage is specified in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_45a33ba769af17a7\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Suction check valve spring pressure of 15 PSI for booster stage is given in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_dd01890a119b0be6\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Oil pump end clearance specification of 0.003 inches for various models is directly from manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_d73aebe50b8de09c\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"PE-4 voltage at atmospheric pressure range is given for sensor testing.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_649d5a915b7aa3a4\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"PE-1,2,3 voltage at atmospheric pressure is a calibration specification from the manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_e9b8accff7214082\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Slide valve potentiometer resistance value is a specific adjustment parameter.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_4b30221b984db5b5\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Motor mounting bolt torque of 250 ft-lb is a clear assembly specification.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_63edbfce5398406f\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Compressor mounting bolt torque of 250 ft-lb is explicitly stated in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_b6a47fbecfe281ad\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Oil level sight glass position is an operational guidance for oil charging.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_7e5ac5512ae4cafd\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Thermosiphon liquid height requirement is a necessary installation parameter.\",\n      \"category_if_not\": null\n    }\n  ]\n}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1280,
+      "completion_tokens": 1190,
+      "total_tokens": 2470,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1280
+    },
+    "system_fingerprint": "fp_9954b31ca7_prod0820_fp8_kvcache_20260402"
+  },
+  "elapsed_seconds": 83.5
+}

@@ -1,0 +1,81 @@
+{
+  "review_pack_manifest": {
+    "review_mode": "chunk_backfill_review_pack_manifest",
+    "generated_at": "2026-05-09T15:09:40.530639+00:00",
+    "source_generation_mode": "llm_doclevel_batch",
+    "source_review_mode": "chunk_backfill_review_scaffold",
+    "domain_id": "hvac",
+    "filters_applied": {},
+    "total_packs": 1,
+    "packs": [
+      {
+        "file_name": "hvac__doc_dfc98be7b26b4590__controller.json",
+        "doc_id": "doc_dfc98be7b26b4590",
+        "doc_name": "【日立】日立商用中央空调-故障代码表.pdf",
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "candidate_count": 20
+      }
+    ]
+  },
+  "bootstrap": {
+    "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+    "generated_at": "2026-05-09T15:09:40.535436+00:00",
+    "pack_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0003_日立_日立商用中央空调_故障代码表/deepseek-v4-pro/review_packs",
+    "output_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0003_日立_日立商用中央空调_故障代码表/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+    "total_pack_files": 1,
+    "total_entries_updated": 20,
+    "target_decisions": null,
+    "summary": {
+      "bootstrapped": 1,
+      "unchanged": 0,
+      "failed": 0
+    },
+    "results": [
+      {
+        "pack_file": "hvac__doc_dfc98be7b26b4590__controller.json",
+        "source_path": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0003_日立_日立商用中央空调_故障代码表/deepseek-v4-pro/review_packs/hvac__doc_dfc98be7b26b4590__controller.json",
+        "status": "bootstrapped",
+        "entries_updated": 20,
+        "output_path": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0003_日立_日立商用中央空调_故障代码表/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_dfc98be7b26b4590__controller.json"
+      }
+    ],
+    "report_path": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0003_日立_日立商用中央空调_故障代码表/deepseek-v4-pro/review_packs/bootstrapped_review_packs/review_pack_bootstrap_report.json"
+  },
+  "readiness": {
+    "readiness_mode": "chunk_backfill_review_pack_readiness",
+    "generated_at": "2026-05-09T15:09:40.537642+00:00",
+    "pack_dir": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0003_日立_日立商用中央空调_故障代码表/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+    "ignored_files": [
+      "review_pack_manifest.json",
+      "review_pack_apply_report.json",
+      "review_pack_readiness_report.json",
+      "review_pack_bootstrap_report.json"
+    ],
+    "total_pack_files": 1,
+    "summary": {
+      "ready": 0,
+      "blocked_pending": 1,
+      "blocked_no_accepted": 0,
+      "blocked_invalid": 0
+    },
+    "results": [
+      {
+        "pack_file": "hvac__doc_dfc98be7b26b4590__controller.json",
+        "pack_path": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0003_日立_日立商用中央空调_故障代码表/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_dfc98be7b26b4590__controller.json",
+        "doc_id": "doc_dfc98be7b26b4590",
+        "doc_name": "【日立】日立商用中央空调-故障代码表.pdf",
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "candidate_count": 20,
+        "accepted_count": 0,
+        "rejected_count": 0,
+        "pending_count": 20,
+        "status": "blocked_pending",
+        "blocker": "pending_review_decisions"
+      }
+    ],
+    "report_path": "output/hvac_authority_batch_pipeline/fault_code_batches/20260509T145315Z_hvac_doclevel_extraction_batch/0003_日立_日立商用中央空调_故障代码表/deepseek-v4-pro/review_packs/bootstrapped_review_packs/review_pack_readiness_report.json"
+  },
+  "judge_enabled": true
+}

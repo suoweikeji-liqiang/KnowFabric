@@ -1,0 +1,53 @@
+{
+  "request": {
+    "model": "deepseek-v4-pro",
+    "temperature": 0.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a senior HVAC knowledge engineer. Extract high-value, reviewable knowledge objects from one OEM manual. Treat chunks only as evidence anchors. Return fewer high-confidence items rather than noisy coverage. Every evidence_quote MUST be a verbatim contiguous substring from the manual. Do not invent facts. Keep evidence_quote short: one exact label, one fault display line, one table row, or one complete sentence. Do not copy full tables, multi-row tables, or multi-paragraph troubleshooting blocks. Keep evidence_quote under 240 characters. If a table contains useful data, extract one row or one short cell group at a time. Allowed knowledge_type values: application_guidance, operational_sequence, parameter_spec, performance_spec, maintenance_procedure. Use fault_code for explicit codes and meanings; parameter_spec for configurable setpoints, limits, modes, defaults, and ranges; performance_spec for design/rated capacities and operating limits; maintenance_procedure for service actions; diagnostic_step or fault_diagnostic_rule for troubleshooting logic; application_guidance for installation/application constraints; operational_sequence for control behavior. Do not extract marketing claims, UI navigation instructions, pure product naming rules, isolated terminal labels, or text that cannot stand as a useful knowledge object. Return strict compact JSON only. Keep title, summary, and evidence_quote short. Do not include Markdown, comments, raw newline characters, or literal line breaks inside JSON string values; escape any unavoidable newline as \\n."
+      },
+      {
+        "role": "user",
+        "content": "Publisher/brand guess: ASHRAE\nDocument kind: standard_handbook_subset\nEquipment class: chiller\nManual filename: auto_doc_c019162f43d44d06.pdf\nTarget max candidates: 15\n\nManual content with anchors:\n[[page=1 chunk_id=chunk_813d2cd9878c41de]]\n\nPlanning the Audit\n\n[[page=2 chunk_id=chunk_6cf0c7b30d98439d]]\n\nPlanning the Audit\n\n[[page=3 chunk_id=chunk_a82dd53c474040a1]]\n\nPlanning the Audit\nTOOLS FOR THE\nENERGY AUDIT\nFree Templates\n\n[[page=4 chunk_id=chunk_2d4a89d600ae43ff]]\n\nConducting the Audit\n•Site Visits\n•Stick to your\nplan… unless\nreality hits you in\nthe face!\nPreliminary\nWalkthroughSAFETY\ntoolbox\nmeeting\nEquipment\nChecks\nData\nCollection\nInterviews\nDocumentation\n\n[[page=5 chunk_id=chunk_21722802efaa415d]]\n\nConducting the Audit\n•Data Analysis –RETScreen +\nExcel + ASHRAE Forms\nLet’s go with Live Example!\n\nReturn JSON shape:\n{\"candidates\":[{\"knowledge_type\":\"parameter_spec\",\"title\":\"...\",\"canonical_key_hint\":null,\"summary\":\"...\",\"structured_payload\":{\"parameter_name\":\"...\"},\"evidence_quote\":\"exact source quote\",\"page_hint\":1,\"confidence\":0.9}],\"skipped_reason\":null}\nReturn one-line minified JSON when possible. Stop after the target max candidates exactly. Prefer 8-20 strong candidates over broad coverage. Do not continue past the target. Do not output partial JSON."
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    },
+    "top_p": 1.0,
+    "max_tokens": 120000
+  },
+  "response": {
+    "id": "09db76fc-f667-487e-99c2-81580b687ae5",
+    "object": "chat.completion",
+    "created": 1778404794,
+    "model": "deepseek-v4-pro",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"candidates\": [\n    {\n      \"knowledge_type\": \"application_guidance\",\n      \"title\": \"Energy Audit Planning\",\n      \"canonical_key_hint\": null,\n      \"summary\": \"The manual emphasizes the importance of planning an energy audit, including site visits, safety meetings, equipment checks, data collection, interviews, and documentation.\",\n      \"structured_payload\": {},\n      \"evidence_quote\": \"Planning the Audit\",\n      \"page_hint\": 1,\n      \"confidence\": 0.9\n    },\n    {\n      \"knowledge_type\": \"application_guidance\",\n      \"title\": \"Audit Tools\",\n      \"canonical_key_hint\": null,\n      \"summary\": \"Free templates are available as tools for the energy audit.\",\n      \"structured_payload\": {},\n      \"evidence_quote\": \"TOOLS FOR THE ENERGY AUDIT Free Templates\",\n      \"page_hint\": 3,\n      \"confidence\": 0.9\n    },\n    {\n      \"knowledge_type\": \"application_guidance\",\n      \"title\": \"Audit Conduct Steps\",\n      \"canonical_key_hint\": null,\n      \"summary\": \"Conducting the audit involves site visits, sticking to the plan, preliminary walkthrough, safety toolbox meeting, equipment checks, data collection, interviews, and documentation.\",\n      \"structured_payload\": {},\n      \"evidence_quote\": \"Conducting the Audit •Site Visits •Stick to your plan… unless reality hits you in the face! Preliminary WalkthroughSAFETY toolbox meeting Equipment Checks Data Collection Interviews Documentation\",\n      \"page_hint\": 4,\n      \"confidence\": 0.9\n    },\n    {\n      \"knowledge_type\": \"application_guidance\",\n      \"title\": \"Data Analysis Tools\",\n      \"canonical_key_hint\": null,\n      \"summary\": \"Data analysis for the audit uses RETScreen, Excel, and ASHRAE Forms.\",\n      \"structured_payload\": {},\n      \"evidence_quote\": \"Data Analysis –RETScreen + Excel + ASHRAE Forms\",\n      \"page_hint\": 5,\n      \"confidence\": 0.9\n    }\n  ],\n  \"skipped_reason\": null\n}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 716,
+      "completion_tokens": 467,
+      "total_tokens": 1183,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 460
+    },
+    "system_fingerprint": "fp_9954b31ca7_prod0820_fp8_kvcache_20260402"
+  },
+  "elapsed_seconds": 16.419
+}

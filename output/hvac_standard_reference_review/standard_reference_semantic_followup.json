@@ -1,0 +1,75 @@
+{
+  "report_mode": "standard_reference_semantic_followup",
+  "source_batch": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_batch/20260509T153925Z_hvac_source_batch/batch_summary.json",
+  "items": [
+    {
+      "file_name": "ASHRAE手册2019.pdf",
+      "doc_id": "doc_ashrae2019_retry_available",
+      "status": "chunked_via_retry",
+      "pages_after": null,
+      "chunks_after": null,
+      "recommended_next_step": "standard_specific_extractor_or_section_selection_required",
+      "note": "AES-encrypted PDF now parseable after installing cryptography; retry batch succeeded at output/hvac_standard_reference_retry/20260509T155102Z_hvac_source_batch"
+    },
+    {
+      "file_name": "ASHRAE 211能源审计最佳实践.pdf",
+      "doc_id": "doc_c019162f43d44d06",
+      "status": "chunked",
+      "pages_after": 19,
+      "chunks_after": 20,
+      "recommended_next_step": "standard_specific_extractor_or_section_selection_required",
+      "note": "generic chunk-backfill candidate export returned 0 candidates on ASHRAE 211; do not use OEM/generic candidate path directly"
+    },
+    {
+      "file_name": "空调 系统 设计 手册 Ashrae 特别 出版物.pdf",
+      "doc_id": "doc_06f8fa1cac644fe2",
+      "status": "chunked",
+      "pages_after": 401,
+      "chunks_after": 931,
+      "recommended_next_step": "standard_specific_extractor_or_section_selection_required",
+      "note": "generic chunk-backfill candidate export returned 0 candidates on ASHRAE 211; do not use OEM/generic candidate path directly"
+    },
+    {
+      "file_name": "ASHRAE绿色建筑指南.pdf",
+      "doc_id": "doc_38a89d59e8394e2d",
+      "status": "chunked",
+      "pages_after": 494,
+      "chunks_after": 2160,
+      "recommended_next_step": "standard_specific_extractor_or_section_selection_required",
+      "note": "generic chunk-backfill candidate export returned 0 candidates on ASHRAE 211; do not use OEM/generic candidate path directly"
+    },
+    {
+      "file_name": "ASHRAE手册 - HVAC系统和设备篇.pdf",
+      "doc_id": "doc_a5de4244eeda4637",
+      "status": "chunked",
+      "pages_after": 986,
+      "chunks_after": 6642,
+      "recommended_next_step": "standard_specific_extractor_or_section_selection_required",
+      "note": "generic chunk-backfill candidate export returned 0 candidates on ASHRAE 211; do not use OEM/generic candidate path directly"
+    },
+    {
+      "file_name": "ASHRAE手册2024.pdf",
+      "doc_id": "doc_4a9b0fec1dfb4103",
+      "status": "chunked",
+      "pages_after": 1006,
+      "chunks_after": 6546,
+      "recommended_next_step": "standard_specific_extractor_or_section_selection_required",
+      "note": "generic chunk-backfill candidate export returned 0 candidates on ASHRAE 211; do not use OEM/generic candidate path directly"
+    },
+    {
+      "file_name": "ASHRAE手册 - 基础理论篇.pdf",
+      "doc_id": "doc_2a7ec347e5f44d9e",
+      "status": "chunked",
+      "pages_after": 1014,
+      "chunks_after": 6391,
+      "recommended_next_step": "standard_specific_extractor_or_section_selection_required",
+      "note": "generic chunk-backfill candidate export returned 0 candidates on ASHRAE 211; do not use OEM/generic candidate path directly"
+    }
+  ],
+  "validated_generic_candidate_export": {
+    "doc_id": "doc_c019162f43d44d06",
+    "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_review/ashrae211",
+    "candidate_count": 0,
+    "conclusion": "generic chunk-backfill candidate export is not sufficient for standard references; standard-specific extraction path is required"
+  }
+}

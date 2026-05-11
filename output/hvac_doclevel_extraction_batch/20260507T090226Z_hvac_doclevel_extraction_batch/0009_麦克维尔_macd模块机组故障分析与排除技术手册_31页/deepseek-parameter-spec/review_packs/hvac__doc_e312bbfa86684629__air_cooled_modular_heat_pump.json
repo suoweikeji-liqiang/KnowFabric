@@ -1,0 +1,339 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-07T09:04:15.833117+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_e312bbfa86684629",
+  "doc_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+  "equipment_class": {
+    "equipment_class_id": "air_cooled_modular_heat_pump",
+    "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+    "label": "Air Cooled Modular Heat Pump",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "symptom",
+      "diagnostic_step"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 4,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_d2ee66d141dc5885",
+      "domain_id": "hvac",
+      "doc_id": "doc_e312bbfa86684629",
+      "doc_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+      "page_no": 20,
+      "chunk_id": "chunk_c6d9453d38914c1d",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:fault_code:er25",
+      "structured_payload_candidate": {
+        "fault_code": "ER25",
+        "display": "ER25",
+        "description": "出水温度过低",
+        "title": "出水温度过低 ER25",
+        "summary": "线控器显示25，主机数码管显示ER25，表示出水温度过低。故障确定条件为出水温度连续3s（双系统5秒）低于设置制冷防冻温度。可能原因包括回水温度设置过低、水流量偏小以至水温差大。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "20                      4、机组出现 3次风机过载\n故障检修\n注意：在进行维修之前务必关闭电源开关，否则可能导致人身和设备安全事故\n是\n检查方法见本章第 10节\n否\n是\n检查方法见本章第 9节\n否\n是\n检查方法见本章第 6节\n否\n是\n检查方法见本章第 5节\n12、出水温度过低\n线控器显示            25\n主机数码管显示        ER25\n适用机型              MAC080D/DR ，MAC100D/DR ，MAC120D/DR ，MAC150D/DR\nMAC180D/DR ，MAC210DM/DS ，MAC230DM/DS\nMAC210DRM/DRS ，MAC230DRM/DRS\n故障检测方法          根据出水温度传感器的温度来检测异常情况\n故障确定条件          出水温度连续 3s（双系统 5秒）低于设置制冷防冻温度\n可能原因              1、回水温度设置过低\n2、水流量偏小以至水温差大\n机组出现 3次\n低压报警\n机组出现 3次\n高压报警\n机组出现３次\n排气温度过高\n机组出现 3次\n风机过载\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_c6d9453d38914c1d"
+      ],
+      "source_page_nos": [
+        20
+      ],
+      "trust_level": "L3",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:fault_code:er25",
+        "structured_payload": {
+          "fault_code": "ER25",
+          "display": "ER25",
+          "description": "出水温度过低",
+          "title": "出水温度过低 ER25",
+          "summary": "线控器显示25，主机数码管显示ER25，表示出水温度过低。故障确定条件为出水温度连续3s（双系统5秒）低于设置制冷防冻温度。可能原因包括回水温度设置过低、水流量偏小以至水温差大。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "20                      4、机组出现 3次风机过载\n故障检修\n注意：在进行维修之前务必关闭电源开关，否则可能导致人身和设备安全事故\n是\n检查方法见本章第 10节\n否\n是\n检查方法见本章第 9节\n否\n是\n检查方法见本章第 6节\n否\n是\n检查方法见本章第 5节\n12、出水温度过低\n线控器显示            25\n主机数码管显示        ER25\n适用机型              MAC080D/DR ，MAC100D/DR ，MAC120D/DR ，MAC150D/DR\nMAC180D/DR ，MAC210DM/DS ，MAC230DM/DS\nMAC210DRM/DRS ，MAC230DRM/DRS\n故障检测方法          根据出水温度传感器的温度来检测异常情况\n故障确定条件          出水温度连续 3s（双系统 5秒）低于设置制冷防冻温度\n可能原因              1、回水温度设置过低\n2、水流量偏小以至水温差大\n机组出现 3次\n低压报警\n机组出现 3次\n高压报警\n机组出现３次\n排气温度过高\n机组出现 3次\n风机过载\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_b46b732f866b7f19",
+      "domain_id": "hvac",
+      "doc_id": "doc_e312bbfa86684629",
+      "doc_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+      "page_no": 22,
+      "chunk_id": "chunk_fd681827c8de40e9",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:fault_code:er27",
+      "structured_payload_candidate": {
+        "fault_code": "ER27",
+        "display": "ER27",
+        "description": "环境温度过高过低",
+        "title": "环境温度过高过低 ER27",
+        "summary": "线控器显示27，主机数码管显示ER27，表示环境温度过高过低。故障确定条件参考第四章13.14。可能原因包括温度传感器坏、环境温度确实过高或过低。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "22 4、过电流继电器保护数值设置不当\n故障检修\n注意：在进行维修之前务必关闭电源开关，否则可能导致人身和设备安全事故\n是\n将水系统电加热过载输入短接\n否\n是\n更换水系统电加热器\n更换过电流继电器\n根据电加热器功率重新设置\n14、环境温度过高过低\n线控器显示            27\n主机数码管显示        ER27\n适用机型              MAC080D/DR ，MAC100D /DR，MAC120D/DR ，MAC150D/DR\nMAC180D/DR ，MAC210DM/DS ，MAC230DM/DS\nMAC210DRM/DRS ，MAC230DRM/DRS\n故障检测方法          根据环境温度传感器的温度来检测异常情况\n故障确定条件          参考第四章 13.14\n可能原因              1、温度传感器坏\n2、环境温度确实 过高或过低\n不是电加热机\n型？\n电加热丝短路\n过电流继电器\n损坏\n过载保护值设\n置偏小\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_fd681827c8de40e9"
+      ],
+      "source_page_nos": [
+        22
+      ],
+      "trust_level": "L3",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:fault_code:er27",
+        "structured_payload": {
+          "fault_code": "ER27",
+          "display": "ER27",
+          "description": "环境温度过高过低",
+          "title": "环境温度过高过低 ER27",
+          "summary": "线控器显示27，主机数码管显示ER27，表示环境温度过高过低。故障确定条件参考第四章13.14。可能原因包括温度传感器坏、环境温度确实过高或过低。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "22 4、过电流继电器保护数值设置不当\n故障检修\n注意：在进行维修之前务必关闭电源开关，否则可能导致人身和设备安全事故\n是\n将水系统电加热过载输入短接\n否\n是\n更换水系统电加热器\n更换过电流继电器\n根据电加热器功率重新设置\n14、环境温度过高过低\n线控器显示            27\n主机数码管显示        ER27\n适用机型              MAC080D/DR ，MAC100D /DR，MAC120D/DR ，MAC150D/DR\nMAC180D/DR ，MAC210DM/DS ，MAC230DM/DS\nMAC210DRM/DRS ，MAC230DRM/DRS\n故障检测方法          根据环境温度传感器的温度来检测异常情况\n故障确定条件          参考第四章 13.14\n可能原因              1、温度传感器坏\n2、环境温度确实 过高或过低\n不是电加热机\n型？\n电加热丝短路\n过电流继电器\n损坏\n过载保护值设\n置偏小\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5c6ed5a312de30bd",
+      "domain_id": "hvac",
+      "doc_id": "doc_e312bbfa86684629",
+      "doc_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+      "page_no": 27,
+      "chunk_id": "chunk_657cf3348dfb4a24",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:fault_code:er32_er34",
+      "structured_payload_candidate": {
+        "fault_code": "ER32/ER34",
+        "display": "ER32/ER34",
+        "description": "回气温度过高",
+        "title": "回气温度过高 ER32/ER34",
+        "summary": "单系统显示ER32，双系统显示ER32（1#系统）、ER34（2#系统），表示回气温度过高。故障确定条件为回气温度大于40℃持续10S。可能原因包括四通阀滑块卡在中间、四通阀线圈动作有误、排气温度高至使压缩机空转保护。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "27\n18、回气温度过高\n线控器显示          单系统显示： 32；双系统显示： 32（1#系统） 、 34（2#系统）\n主机数码管显示      单系统显示： ER32；双系统显示： ER32（1#系统） 、 ER34（2#系统）\n适用机型              MAC080D/DR ，MAC100D/DR ，MAC120D/DR ，MAC150D/DR\nMAC180D/DR ，MAC210DM/DS ，MAC23 0DM/DS\nMAC210DRM/DRS ，MAC230DRM/DRS\n故障检测方法          根据回气温度传感器的温度来检测异常情况\n故障确定条件          回气温度大于 40℃持续 10S\n可能原因              1、四通阀滑块卡在中间\n2、 四通阀线圈动作有误\n3、 排气温度高至使压缩机空转保护\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_657cf3348dfb4a24"
+      ],
+      "source_page_nos": [
+        27
+      ],
+      "trust_level": "L3",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:fault_code:er32_er34",
+        "structured_payload": {
+          "fault_code": "ER32/ER34",
+          "display": "ER32/ER34",
+          "description": "回气温度过高",
+          "title": "回气温度过高 ER32/ER34",
+          "summary": "单系统显示ER32，双系统显示ER32（1#系统）、ER34（2#系统），表示回气温度过高。故障确定条件为回气温度大于40℃持续10S。可能原因包括四通阀滑块卡在中间、四通阀线圈动作有误、排气温度高至使压缩机空转保护。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "27\n18、回气温度过高\n线控器显示          单系统显示： 32；双系统显示： 32（1#系统） 、 34（2#系统）\n主机数码管显示      单系统显示： ER32；双系统显示： ER32（1#系统） 、 ER34（2#系统）\n适用机型              MAC080D/DR ，MAC100D/DR ，MAC120D/DR ，MAC150D/DR\nMAC180D/DR ，MAC210DM/DS ，MAC23 0DM/DS\nMAC210DRM/DRS ，MAC230DRM/DRS\n故障检测方法          根据回气温度传感器的温度来检测异常情况\n故障确定条件          回气温度大于 40℃持续 10S\n可能原因              1、四通阀滑块卡在中间\n2、 四通阀线圈动作有误\n3、 排气温度高至使压缩机空转保护\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6eb20a8c95d9cad2",
+      "domain_id": "hvac",
+      "doc_id": "doc_e312bbfa86684629",
+      "doc_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+      "page_no": 28,
+      "chunk_id": "chunk_46d931bf34924520",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:air_cooled_modular_heat_pump:fault_code:er38_er39",
+      "structured_payload_candidate": {
+        "fault_code": "ER38/ER39",
+        "display": "ER38/ER39",
+        "description": "制冷剂泄漏（双系统）",
+        "title": "制冷剂泄漏 ER38/ER39（双系统）",
+        "summary": "线控器显示38、39，主机数码管显示ER38、ER39，表示制冷剂泄漏（仅双系统）。故障确定条件为制冷/制热开机时，低压低于1.8 bar（R410A为3.6 bar）。可能原因包括低压传感器故障、系统制冷剂充注量不够。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "28\n故障检修\n注意：在进行维修之前务必关闭电源开关，否则可能导致人身和设备安全事故\n是\n重新开机并轻敲四通阀两侧，\n若无效果则更换\n否\n否\n更换线圈\n是\n是\n参见本章第 6节排气温度过高保护\n19、制冷剂泄漏（只双系统有此故障代码）\n线控器显示            38、39\n主机数码管显示        ER38、ER39\n适用机型              MAC210DM/DS ，MAC230DM/DS\nMAC210DRM/DRS ，MAC230DRM/DRS\n故障检测方法\n故障确定条件          制冷/制热开机时，当低压低于 1.8(R410A 为3.6bar)bar\n可能原因              1、低压传感器故障\n2、系统制冷剂充注量不够\n故障检修     四通阀滑块卡\n在中间\n四通阀线 圈动\n作有误\n排气温度高至\n使压缩机空转\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_46d931bf34924520"
+      ],
+      "source_page_nos": [
+        28
+      ],
+      "trust_level": "L3",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:air_cooled_modular_heat_pump:fault_code:er38_er39",
+        "structured_payload": {
+          "fault_code": "ER38/ER39",
+          "display": "ER38/ER39",
+          "description": "制冷剂泄漏（双系统）",
+          "title": "制冷剂泄漏 ER38/ER39（双系统）",
+          "summary": "线控器显示38、39，主机数码管显示ER38、ER39，表示制冷剂泄漏（仅双系统）。故障确定条件为制冷/制热开机时，低压低于1.8 bar（R410A为3.6 bar）。可能原因包括低压传感器故障、系统制冷剂充注量不够。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "28\n故障检修\n注意：在进行维修之前务必关闭电源开关，否则可能导致人身和设备安全事故\n是\n重新开机并轻敲四通阀两侧，\n若无效果则更换\n否\n否\n更换线圈\n是\n是\n参见本章第 6节排气温度过高保护\n19、制冷剂泄漏（只双系统有此故障代码）\n线控器显示            38、39\n主机数码管显示        ER38、ER39\n适用机型              MAC210DM/DS ，MAC230DM/DS\nMAC210DRM/DRS ，MAC230DRM/DRS\n故障检测方法\n故障确定条件          制冷/制热开机时，当低压低于 1.8(R410A 为3.6bar)bar\n可能原因              1、低压传感器故障\n2、系统制冷剂充注量不够\n故障检修     四通阀滑块卡\n在中间\n四通阀线 圈动\n作有误\n排气温度高至\n使压缩机空转\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

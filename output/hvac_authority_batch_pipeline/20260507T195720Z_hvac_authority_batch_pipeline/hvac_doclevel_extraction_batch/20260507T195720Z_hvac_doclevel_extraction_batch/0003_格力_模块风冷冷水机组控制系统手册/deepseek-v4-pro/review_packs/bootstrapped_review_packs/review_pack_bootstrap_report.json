@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-07T20:00:36.129844+00:00",
+  "pack_dir": "output/hvac_authority_batch_pipeline/20260507T195720Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T195720Z_hvac_doclevel_extraction_batch/0003_格力_模块风冷冷水机组控制系统手册/deepseek-v4-pro/review_packs",
+  "output_dir": "output/hvac_authority_batch_pipeline/20260507T195720Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T195720Z_hvac_doclevel_extraction_batch/0003_格力_模块风冷冷水机组控制系统手册/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 10,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_37109bd2df4547e4__chiller.json",
+      "source_path": "output/hvac_authority_batch_pipeline/20260507T195720Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T195720Z_hvac_doclevel_extraction_batch/0003_格力_模块风冷冷水机组控制系统手册/deepseek-v4-pro/review_packs/hvac__doc_37109bd2df4547e4__chiller.json",
+      "status": "bootstrapped",
+      "entries_updated": 10,
+      "output_path": "output/hvac_authority_batch_pipeline/20260507T195720Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T195720Z_hvac_doclevel_extraction_batch/0003_格力_模块风冷冷水机组控制系统手册/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_37109bd2df4547e4__chiller.json"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【海尔】满液式水冷螺杆机组维修手册(82页)-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】满液式水冷螺杆机组维修手册(82页)-制冷百家网.pdf",
+  "doc_id": "doc_af52e9d4d7a046c6",
+  "chunks": 84,
+  "manual_tokens_estimated": 18911,
+  "equipment_class_id": "screw_chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 82,
+      "chunks_after": 84,
+      "parse_result": {
+        "job_id": "job_ea5e09d9b771460a",
+        "doc_id": "doc_af52e9d4d7a046c6",
+        "pages_created": 82,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_b6f1e41eb7e94edb",
+        "doc_id": "doc_af52e9d4d7a046c6",
+        "chunks_created": 84,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 41,
+      "anchor_passed": 41,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 18,
+      "judge_rejected": 23,
+      "judge_acceptance_rate": 43.9,
+      "judge_rejection_breakdown": {
+        "other": 23
+      },
+      "review_candidates": 18,
+      "by_type": {
+        "parameter_spec": 18
+      },
+      "usage": {
+        "prompt_tokens": 36942,
+        "completion_tokens": 6154,
+        "total_tokens": 43096
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1197,
+        "total_tokens": 2477
+      },
+      "extract_cost_rmb": 0.14775,
+      "judge_cost_rmb": 0.011022,
+      "cost_rmb": 0.158772,
+      "elapsed_seconds": 178.244,
+      "judge_elapsed_seconds": 70.007,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T152651Z_hvac_doclevel_extraction_batch/0002_海尔_满液式水冷螺杆机组维修手册_82页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T152651Z_hvac_doclevel_extraction_batch/0002_海尔_满液式水冷螺杆机组维修手册_82页_制冷百家网"
+}

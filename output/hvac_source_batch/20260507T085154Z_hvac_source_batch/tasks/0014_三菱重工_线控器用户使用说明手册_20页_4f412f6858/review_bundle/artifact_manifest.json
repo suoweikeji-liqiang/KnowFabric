@@ -1,0 +1,22 @@
+{
+  "artifact_mode": "chunk_backfill_review_pipeline_export",
+  "generated_at": "2026-05-07T08:52:04.377536+00:00",
+  "domain_id": "hvac",
+  "filters_applied": {
+    "doc_id": "doc_c3b1d28767304e3a",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "paths": {
+    "candidates": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0014_三菱重工_线控器用户使用说明手册_20页_4f412f6858/review_bundle/candidates.json",
+    "review_pack_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0014_三菱重工_线控器用户使用说明手册_20页_4f412f6858/review_bundle/review_packs",
+    "review_pack_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0014_三菱重工_线控器用户使用说明手册_20页_4f412f6858/review_bundle/review_packs/review_pack_manifest.json",
+    "stats": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0014_三菱重工_线控器用户使用说明手册_20页_4f412f6858/review_bundle/review_pipeline_stats.json"
+  },
+  "counts": {
+    "candidate_entries": 0,
+    "review_packs": 0,
+    "documents": 1
+  }
+}

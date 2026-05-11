@@ -1,0 +1,219 @@
+{
+  "analysis_mode": "standard_subset_validation",
+  "generated_at": "2026-05-09T23:30:41.595602+00:00",
+  "source_pipeline_summary": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/standard_subset_pipeline_summary.json",
+  "summary": {
+    "documents": 7,
+    "pass": 0,
+    "flag": 5,
+    "fail": 2,
+    "finding_codes": {
+      "no_publishable_knowledge": 1,
+      "low_judge_acceptance": 2,
+      "equipment_anchor_suspect": 7,
+      "weak_evidence_present": 6,
+      "medium_judge_acceptance": 1
+    }
+  },
+  "results": [
+    {
+      "doc_id": "doc_58f6c629bc6a494a",
+      "file_name": "auto_doc_c019162f43d44d06.pdf",
+      "equipment_class_id": "controller",
+      "accepted": 0,
+      "rejected": 3,
+      "judge_acceptance_rate": 0.0,
+      "knowledge_types": {},
+      "status": "fail",
+      "findings": [
+        {
+          "code": "no_publishable_knowledge",
+          "severity": "high",
+          "message": "No candidates survived judge review for this selected page subset."
+        },
+        {
+          "code": "low_judge_acceptance",
+          "severity": "high",
+          "message": "Judge acceptance rate is very low; selected pages likely contain weak evidence or wrong page type."
+        },
+        {
+          "code": "equipment_anchor_suspect",
+          "severity": "medium",
+          "message": "Automatic equipment anchor may not reflect the standard document's real semantic scope."
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_c019162f43d44d06/extract/20260509T232024Z_hvac_doclevel_extraction_batch/0001_auto_doc_c019162f43d44d06"
+    },
+    {
+      "doc_id": "doc_06f0ec2be1b94fa6",
+      "file_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "equipment_class_id": "cooling_tower",
+      "accepted": 13,
+      "rejected": 2,
+      "judge_acceptance_rate": 86.7,
+      "knowledge_types": {
+        "application_guidance": 7,
+        "parameter_spec": 2,
+        "maintenance_procedure": 2,
+        "performance_spec": 1,
+        "operational_sequence": 1
+      },
+      "status": "flag",
+      "findings": [
+        {
+          "code": "equipment_anchor_suspect",
+          "severity": "medium",
+          "message": "Automatic equipment anchor may not reflect the standard document's real semantic scope."
+        },
+        {
+          "code": "weak_evidence_present",
+          "severity": "medium",
+          "message": "Some candidates were rejected for weak evidence; page selection rules may still need refinement."
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_06f8fa1cac644fe2/extract/20260509T232044Z_hvac_doclevel_extraction_batch/0001_auto_doc_06f8fa1cac644fe2"
+    },
+    {
+      "doc_id": "doc_c8f845618e3241e4",
+      "file_name": "auto_doc_38a89d59e8394e2d.pdf",
+      "equipment_class_id": "controller",
+      "accepted": 7,
+      "rejected": 1,
+      "judge_acceptance_rate": 87.5,
+      "knowledge_types": {
+        "parameter_spec": 2,
+        "operational_sequence": 1,
+        "application_guidance": 3,
+        "performance_spec": 1
+      },
+      "status": "flag",
+      "findings": [
+        {
+          "code": "equipment_anchor_suspect",
+          "severity": "medium",
+          "message": "Automatic equipment anchor may not reflect the standard document's real semantic scope."
+        },
+        {
+          "code": "weak_evidence_present",
+          "severity": "medium",
+          "message": "Some candidates were rejected for weak evidence; page selection rules may still need refinement."
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_38a89d59e8394e2d/extract/20260509T232143Z_hvac_doclevel_extraction_batch/0001_auto_doc_38a89d59e8394e2d"
+    },
+    {
+      "doc_id": "doc_ba91945372ad4cbf",
+      "file_name": "auto_doc_a5de4244eeda4637.pdf",
+      "equipment_class_id": "cooling_tower",
+      "accepted": 2,
+      "rejected": 13,
+      "judge_acceptance_rate": 13.3,
+      "knowledge_types": {
+        "application_guidance": 2
+      },
+      "status": "fail",
+      "findings": [
+        {
+          "code": "low_judge_acceptance",
+          "severity": "high",
+          "message": "Judge acceptance rate is very low; selected pages likely contain weak evidence or wrong page type."
+        },
+        {
+          "code": "equipment_anchor_suspect",
+          "severity": "medium",
+          "message": "Automatic equipment anchor may not reflect the standard document's real semantic scope."
+        },
+        {
+          "code": "weak_evidence_present",
+          "severity": "medium",
+          "message": "Some candidates were rejected for weak evidence; page selection rules may still need refinement."
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_a5de4244eeda4637/extract/20260509T232218Z_hvac_doclevel_extraction_batch/0001_auto_doc_a5de4244eeda4637"
+    },
+    {
+      "doc_id": "doc_39d12963b83649eb",
+      "file_name": "auto_doc_4a9b0fec1dfb4103.pdf",
+      "equipment_class_id": "valve",
+      "accepted": 9,
+      "rejected": 6,
+      "judge_acceptance_rate": 60.0,
+      "knowledge_types": {
+        "parameter_spec": 6,
+        "performance_spec": 1,
+        "application_guidance": 2
+      },
+      "status": "flag",
+      "findings": [
+        {
+          "code": "equipment_anchor_suspect",
+          "severity": "medium",
+          "message": "Automatic equipment anchor may not reflect the standard document's real semantic scope."
+        },
+        {
+          "code": "weak_evidence_present",
+          "severity": "medium",
+          "message": "Some candidates were rejected for weak evidence; page selection rules may still need refinement."
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_4a9b0fec1dfb4103/extract/20260509T232306Z_hvac_doclevel_extraction_batch/0001_auto_doc_4a9b0fec1dfb4103"
+    },
+    {
+      "doc_id": "doc_03856f9397e94a3b",
+      "file_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "equipment_class_id": "controller",
+      "accepted": 9,
+      "rejected": 6,
+      "judge_acceptance_rate": 60.0,
+      "knowledge_types": {
+        "application_guidance": 5,
+        "performance_spec": 3,
+        "parameter_spec": 1
+      },
+      "status": "flag",
+      "findings": [
+        {
+          "code": "equipment_anchor_suspect",
+          "severity": "medium",
+          "message": "Automatic equipment anchor may not reflect the standard document's real semantic scope."
+        },
+        {
+          "code": "weak_evidence_present",
+          "severity": "medium",
+          "message": "Some candidates were rejected for weak evidence; page selection rules may still need refinement."
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_2a7ec347e5f44d9e/extract/20260509T232354Z_hvac_doclevel_extraction_batch/0001_auto_doc_2a7ec347e5f44d9e"
+    },
+    {
+      "doc_id": "doc_09193d9f0adc49fe",
+      "file_name": "auto_doc_90583657120442bb.pdf",
+      "equipment_class_id": "cooling_tower",
+      "accepted": 3,
+      "rejected": 9,
+      "judge_acceptance_rate": 25.0,
+      "knowledge_types": {
+        "application_guidance": 3
+      },
+      "status": "flag",
+      "findings": [
+        {
+          "code": "medium_judge_acceptance",
+          "severity": "medium",
+          "message": "Judge acceptance rate is moderate; selected subset may still contain noisy or weak-evidence pages."
+        },
+        {
+          "code": "equipment_anchor_suspect",
+          "severity": "medium",
+          "message": "Automatic equipment anchor may not reflect the standard document's real semantic scope."
+        },
+        {
+          "code": "weak_evidence_present",
+          "severity": "medium",
+          "message": "Some candidates were rejected for weak evidence; page selection rules may still need refinement."
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7/doc_90583657120442bb/extract/20260509T232452Z_hvac_doclevel_extraction_batch/0001_auto_doc_90583657120442bb"
+    }
+  ]
+}

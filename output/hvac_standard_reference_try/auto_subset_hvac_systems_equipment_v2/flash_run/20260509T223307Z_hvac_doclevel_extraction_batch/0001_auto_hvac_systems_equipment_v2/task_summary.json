@@ -1,0 +1,97 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "auto_hvac_systems_equipment_v2.pdf",
+  "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_hvac_systems_equipment_v2/auto_hvac_systems_equipment_v2.pdf",
+  "doc_id": "doc_ba91945372ad4cbf",
+  "chunks": 47,
+  "manual_tokens_estimated": 10040,
+  "equipment_class_id": "cooling_tower",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "valve",
+      "equipment_class_key": "hvac:valve",
+      "confidence": 0.661,
+      "matched_aliases": [
+        "Valve",
+        "control valve",
+        "valve"
+      ]
+    },
+    {
+      "equipment_class_id": "controller",
+      "equipment_class_key": "hvac:controller",
+      "confidence": 0.638,
+      "matched_aliases": [
+        "Controller",
+        "controller"
+      ]
+    },
+    {
+      "equipment_class_id": "boiler",
+      "equipment_class_key": "hvac:boiler",
+      "confidence": 0.497,
+      "matched_aliases": [
+        "Boiler"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 6,
+      "chunks_before": 47,
+      "pages_after": 6,
+      "chunks_after": 47,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-parameter-spec",
+      "model": "deepseek-v4-flash",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 15,
+      "anchor_passed": 15,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 10,
+      "judge_rejected": 5,
+      "judge_acceptance_rate": 66.7,
+      "judge_rejection_breakdown": {
+        "weak_evidence": 5
+      },
+      "review_candidates": 10,
+      "by_type": {
+        "parameter_spec": 1,
+        "performance_spec": 6,
+        "application_guidance": 3
+      },
+      "usage": {
+        "prompt_tokens": 10462,
+        "completion_tokens": 2135,
+        "total_tokens": 12597
+      },
+      "judge_usage": {
+        "prompt_tokens": 5703,
+        "completion_tokens": 1165,
+        "total_tokens": 6868
+      },
+      "extract_cost_rmb": 0.015056,
+      "judge_cost_rmb": 0.024099,
+      "cost_rmb": 0.039155,
+      "elapsed_seconds": 27.171,
+      "judge_elapsed_seconds": 37.838,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_hvac_systems_equipment_v2/flash_run/20260509T223307Z_hvac_doclevel_extraction_batch/0001_auto_hvac_systems_equipment_v2/deepseek-parameter-spec"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/auto_subset_hvac_systems_equipment_v2/flash_run/20260509T223307Z_hvac_doclevel_extraction_batch/0001_auto_hvac_systems_equipment_v2"
+}

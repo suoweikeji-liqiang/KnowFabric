@@ -1,0 +1,76 @@
+{
+  "page": 1,
+  "response": {
+    "id": "7f2df15fd414447dae6c1bc17bd307e4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a technical manual for Mitsubishi Heavy Industries ETW series centrifugal high-temperature water source heat pumps. It displays the company logo, product series name, manual title, and contact information for various offices and distributors.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Mitsubishi Heavy Industries logo\"},\n    {\"type\": \"text\", \"label\": \"ETW series\"},\n    {\"type\": \"text\", \"label\": \"Centrifugal high-temperature water source heat pump\"},\n    {\"type\": \"text\", \"label\": \"Technical Manual\"},\n    {\"type\": \"text\", \"label\": \"Company contact information\"},\n    {\"type\": \"text\", \"label\": \"Distributor information\"},\n    {\"type\": \"text\", \"label\": \"Website URL\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_identification\", \"manufacturer_information\", \"manual_metadata\"],\n  \"ocr_text_if_useful\": \"三菱重工\\n科技创想人类未来\\nwww.mhi-ac.com\\nETW离心式高温水源热泵 技术手册\\nETW系列\\n离心式高温水源热泵\\n技术手册\\n三菱重工空调系统（上海）有限公司\\n地址：上海市长宁区延安西路2299号上海世贸商城7G03-2906室\\n电话：021-62763030 传真：021-58777330\\n三菱重工空调系统（上海）有限公司销售中心\\n地址：上海市长宁区延安西路2299号上海世贸商城7G03-2906室\\n电话：021-62768811 传真：021-58777330\\n北京事务所\\n地址：北京市朝阳区望京东路乙12号楼望京国际研发园0-1602室\\n电话：010-84701151 传真：010-84701152\\n天津事务所\\n地址：天津市北辰区北辰道与姚江路交口北辰大厦1号楼1701室\\n电话：022-26839914 传真：022-26839914\\n武汉事务所\\n地址：武汉市江汉区常青路与发展大道634号新世界中心汇豪邸1901室\\n电话：027-85615015 传真：027-85615016\\n济南事务所\\n地址：济南市经十路1号中润世纪广场3-3-101室\\n电话：0531-88559130 传真：0531-88559130\\n南京事务所\\n地址：南京市中山南路21号D座605室\\n电话：025-52876532 传真：025-52876532\\n杭州事务所\\n地址：杭州市庆春路136号广利大厦1008室\\n电话：0571-87795130 传真：0571-87799730\\n成都事务所\\n地址：成都市二环路南四段48号天丰综合楼1F\\n电话：028-85062130 传真：028-85062130\\n广州事务所\\n地址：广州市东风中路318号嘉业大厦26楼2603室\\n电话：020-83630718 传真：020-83630718\\n深圳事务所\\n地址：深圳市福田区车公庙泰然九路海松大厦2009室\\n电话：0755-88313530 传真：0755-88313510\\n三菱重工产品经销商：\\n本手册刊登内容最终解释权归三菱重工空调系统（上海）有限公司所有。\\n如有内容变更，恕不另行通知，请以最新样本为准。\\nMHIA21005-14A\",\n  \"uncertainty_notes\": \"The page is a cover page, not a technical diagram or data sheet. No specific technical relationships or component connections are visually depicted.\",\n  \"confidence\": 1.0\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778205599,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1003,
+      "prompt_tokens": 1473,
+      "total_tokens": 2476,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 1276
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "other",
+    "summary": "This is the cover page of a technical manual for Mitsubishi Heavy Industries ETW series centrifugal high-temperature water source heat pumps. It displays the company logo, product series name, manual title, and contact information for various offices and distributors.",
+    "visual_entities": [
+      {
+        "type": "logo",
+        "label": "Mitsubishi Heavy Industries logo"
+      },
+      {
+        "type": "text",
+        "label": "ETW series"
+      },
+      {
+        "type": "text",
+        "label": "Centrifugal high-temperature water source heat pump"
+      },
+      {
+        "type": "text",
+        "label": "Technical Manual"
+      },
+      {
+        "type": "text",
+        "label": "Company contact information"
+      },
+      {
+        "type": "text",
+        "label": "Distributor information"
+      },
+      {
+        "type": "text",
+        "label": "Website URL"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "product_identification",
+      "manufacturer_information",
+      "manual_metadata"
+    ],
+    "ocr_text_if_useful": "三菱重工\n科技创想人类未来\nwww.mhi-ac.com\nETW离心式高温水源热泵 技术手册\nETW系列\n离心式高温水源热泵\n技术手册\n三菱重工空调系统（上海）有限公司\n地址：上海市长宁区延安西路2299号上海世贸商城7G03-2906室\n电话：021-62763030 传真：021-58777330\n三菱重工空调系统（上海）有限公司销售中心\n地址：上海市长宁区延安西路2299号上海世贸商城7G03-2906室\n电话：021-62768811 传真：021-58777330\n北京事务所\n地址：北京市朝阳区望京东路乙12号楼望京国际研发园0-1602室\n电话：010-84701151 传真：010-84701152\n天津事务所\n地址：天津市北辰区北辰道与姚江路交口北辰大厦1号楼1701室\n电话：022-26839914 传真：022-26839914\n武汉事务所\n地址：武汉市江汉区常青路与发展大道634号新世界中心汇豪邸1901室\n电话：027-85615015 传真：027-85615016\n济南事务所\n地址：济南市经十路1号中润世纪广场3-3-101室\n电话：0531-88559130 传真：0531-88559130\n南京事务所\n地址：南京市中山南路21号D座605室\n电话：025-52876532 传真：025-52876532\n杭州事务所\n地址：杭州市庆春路136号广利大厦1008室\n电话：0571-87795130 传真：0571-87799730\n成都事务所\n地址：成都市二环路南四段48号天丰综合楼1F\n电话：028-85062130 传真：028-85062130\n广州事务所\n地址：广州市东风中路318号嘉业大厦26楼2603室\n电话：020-83630718 传真：020-83630718\n深圳事务所\n地址：深圳市福田区车公庙泰然九路海松大厦2009室\n电话：0755-88313530 传真：0755-88313510\n三菱重工产品经销商：\n本手册刊登内容最终解释权归三菱重工空调系统（上海）有限公司所有。\n如有内容变更，恕不另行通知，请以最新样本为准。\nMHIA21005-14A",
+    "uncertainty_notes": "The page is a cover page, not a technical diagram or data sheet. No specific technical relationships or component connections are visually depicted.",
+    "confidence": 1.0
+  },
+  "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a technical manual for Mitsubishi Heavy Industries ETW series centrifugal high-temperature water source heat pumps. It displays the company logo, product series name, manual title, and contact information for various offices and distributors.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Mitsubishi Heavy Industries logo\"},\n    {\"type\": \"text\", \"label\": \"ETW series\"},\n    {\"type\": \"text\", \"label\": \"Centrifugal high-temperature water source heat pump\"},\n    {\"type\": \"text\", \"label\": \"Technical Manual\"},\n    {\"type\": \"text\", \"label\": \"Company contact information\"},\n    {\"type\": \"text\", \"label\": \"Distributor information\"},\n    {\"type\": \"text\", \"label\": \"Website URL\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_identification\", \"manufacturer_information\", \"manual_metadata\"],\n  \"ocr_text_if_useful\": \"三菱重工\\n科技创想人类未来\\nwww.mhi-ac.com\\nETW离心式高温水源热泵 技术手册\\nETW系列\\n离心式高温水源热泵\\n技术手册\\n三菱重工空调系统（上海）有限公司\\n地址：上海市长宁区延安西路2299号上海世贸商城7G03-2906室\\n电话：021-62763030 传真：021-58777330\\n三菱重工空调系统（上海）有限公司销售中心\\n地址：上海市长宁区延安西路2299号上海世贸商城7G03-2906室\\n电话：021-62768811 传真：021-58777330\\n北京事务所\\n地址：北京市朝阳区望京东路乙12号楼望京国际研发园0-1602室\\n电话：010-84701151 传真：010-84701152\\n天津事务所\\n地址：天津市北辰区北辰道与姚江路交口北辰大厦1号楼1701室\\n电话：022-26839914 传真：022-26839914\\n武汉事务所\\n地址：武汉市江汉区常青路与发展大道634号新世界中心汇豪邸1901室\\n电话：027-85615015 传真：027-85615016\\n济南事务所\\n地址：济南市经十路1号中润世纪广场3-3-101室\\n电话：0531-88559130 传真：0531-88559130\\n南京事务所\\n地址：南京市中山南路21号D座605室\\n电话：025-52876532 传真：025-52876532\\n杭州事务所\\n地址：杭州市庆春路136号广利大厦1008室\\n电话：0571-87795130 传真：0571-87799730\\n成都事务所\\n地址：成都市二环路南四段48号天丰综合楼1F\\n电话：028-85062130 传真：028-85062130\\n广州事务所\\n地址：广州市东风中路318号嘉业大厦26楼2603室\\n电话：020-83630718 传真：020-83630718\\n深圳事务所\\n地址：深圳市福田区车公庙泰然九路海松大厦2009室\\n电话：0755-88313530 传真：0755-88313510\\n三菱重工产品经销商：\\n本手册刊登内容最终解释权归三菱重工空调系统（上海）有限公司所有。\\n如有内容变更，恕不另行通知，请以最新样本为准。\\nMHIA21005-14A\",\n  \"uncertainty_notes\": \"The page is a cover page, not a technical diagram or data sheet. No specific technical relationships or component connections are visually depicted.\",\n  \"confidence\": 1.0\n}"
+}

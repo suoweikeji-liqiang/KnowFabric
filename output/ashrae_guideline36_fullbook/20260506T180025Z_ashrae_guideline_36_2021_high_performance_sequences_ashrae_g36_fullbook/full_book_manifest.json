@@ -1,0 +1,6 @@
+{
+  "text_chars": 786472,
+  "text_sha1": "adf4223e407e27e23aadc410e0d7b2f8c70b3900",
+  "tokens_estimated": 196618,
+  "note": "Full ASHRAE text is intentionally not persisted; only hash/size metadata is stored."
+}

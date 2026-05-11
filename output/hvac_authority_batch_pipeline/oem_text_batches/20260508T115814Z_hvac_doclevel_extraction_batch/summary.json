@@ -1,0 +1,298 @@
+{
+  "run_id": "20260508T115814Z_hvac_doclevel_extraction_batch",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch",
+  "tasks": [
+    {
+      "status": "failed",
+      "row_index": 1,
+      "file_name": "【约克】RWB-Ⅱ螺杆压缩机机组安装操作维护手册（56页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】RWB-Ⅱ螺杆压缩机机组安装操作维护手册（56页）-制冷百家网.pdf",
+      "doc_id": "doc_76368357a4ef4f41",
+      "chunks": 95,
+      "manual_tokens_estimated": 46050,
+      "equipment_class_id": "screw_chiller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 56,
+          "chunks_after": 95,
+          "parse_result": {
+            "job_id": "job_1d0c4b508903476d",
+            "doc_id": "doc_76368357a4ef4f41",
+            "pages_created": 56,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_0cda2b70835b40cc",
+            "doc_id": "doc_76368357a4ef4f41",
+            "chunks_created": 95,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "failed",
+          "error": "LLM JSON request failed after 3 attempts: Expecting ',' delimiter: line 104 column 6 (char 4166)"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0001_约克_rwb_螺杆压缩机机组安装操作维护手册_56页_制冷百家网"
+    },
+    {
+      "status": "completed",
+      "row_index": 2,
+      "file_name": "【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YCAE  模块式风冷热泵机组安装、操作和维护手册（58页）-制冷百家网.pdf",
+      "doc_id": "doc_7bde83276c474c9d",
+      "chunks": 69,
+      "manual_tokens_estimated": 15441,
+      "equipment_class_id": "controller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 58,
+          "chunks_after": 69,
+          "parse_result": {
+            "job_id": "job_3939e84f64274cbc",
+            "doc_id": "doc_7bde83276c474c9d",
+            "pages_created": 58,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_c55865a3d2114a88",
+            "doc_id": "doc_7bde83276c474c9d",
+            "chunks_created": 69,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 40,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 19,
+          "judge_rejected": 21,
+          "judge_acceptance_rate": 47.5,
+          "judge_rejection_breakdown": {
+            "other": 21
+          },
+          "review_candidates": 19,
+          "by_type": {
+            "parameter_spec": 19
+          },
+          "usage": {
+            "prompt_tokens": 54950,
+            "completion_tokens": 6222,
+            "total_tokens": 61172
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 952,
+            "total_tokens": 2232
+          },
+          "extract_cost_rmb": 0.202182,
+          "judge_cost_rmb": 0.009552,
+          "cost_rmb": 0.211734,
+          "elapsed_seconds": 180.333,
+          "judge_elapsed_seconds": 137.345,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0002_约克_ycae_模块式风冷热泵机组安装_操作和维护手册_58页_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0002_约克_ycae_模块式风冷热泵机组安装_操作和维护手册_58页_制冷百家网"
+    },
+    {
+      "status": "completed",
+      "row_index": 3,
+      "file_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "doc_id": "doc_135f95a308ca4e18",
+      "chunks": 58,
+      "manual_tokens_estimated": 10597,
+      "equipment_class_id": "controller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 58,
+          "chunks_after": 58,
+          "parse_result": {
+            "job_id": "job_a82051cf0c0c4566",
+            "doc_id": "doc_135f95a308ca4e18",
+            "pages_created": 58,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_812fbea25c814769",
+            "doc_id": "doc_135f95a308ca4e18",
+            "chunks_created": 58,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 40,
+          "anchor_rejected": 0,
+          "anchor_match_rate": 100.0,
+          "judge_accepted": 17,
+          "judge_rejected": 23,
+          "judge_acceptance_rate": 42.5,
+          "judge_rejection_breakdown": {
+            "other": 23
+          },
+          "review_candidates": 17,
+          "by_type": {
+            "parameter_spec": 3,
+            "fault_code": 14
+          },
+          "usage": {
+            "prompt_tokens": 17874,
+            "completion_tokens": 6244,
+            "total_tokens": 24118
+          },
+          "judge_usage": {
+            "prompt_tokens": 1280,
+            "completion_tokens": 1197,
+            "total_tokens": 2477
+          },
+          "extract_cost_rmb": 0.091086,
+          "judge_cost_rmb": 0.011022,
+          "cost_rmb": 0.102108,
+          "elapsed_seconds": 178.374,
+          "judge_elapsed_seconds": 223.256,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0003_美的_商用空气能热泵热水机使用手册_58页_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0003_美的_商用空气能热泵热水机使用手册_58页_制冷百家网"
+    },
+    {
+      "status": "completed",
+      "row_index": 4,
+      "file_name": "【约克】YCAE-B模块式风冷涡旋（59页）（08年后生产的适用）-制冷百家网.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YCAE-B模块式风冷涡旋（59页）（08年后生产的适用）-制冷百家网.pdf",
+      "doc_id": "doc_9ec60c2c62844c85",
+      "chunks": 59,
+      "manual_tokens_estimated": 3988,
+      "equipment_class_id": "controller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 59,
+          "chunks_after": 59,
+          "parse_result": {
+            "job_id": "job_39db56ca419d40a1",
+            "doc_id": "doc_9ec60c2c62844c85",
+            "pages_created": 59,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_8515d4b0744c4a30",
+            "doc_id": "doc_9ec60c2c62844c85",
+            "chunks_created": 59,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "ok",
+          "judge_enabled": true,
+          "raw_candidates": 40,
+          "anchor_passed": 0,
+          "anchor_rejected": 40,
+          "anchor_match_rate": 0.0,
+          "judge_accepted": 0,
+          "judge_rejected": 0,
+          "judge_acceptance_rate": 100.0,
+          "judge_rejection_breakdown": {},
+          "review_candidates": 0,
+          "by_type": {},
+          "usage": {
+            "prompt_tokens": 34720,
+            "completion_tokens": 4819,
+            "total_tokens": 39539
+          },
+          "judge_usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          },
+          "extract_cost_rmb": 0.133074,
+          "judge_cost_rmb": 0.0,
+          "cost_rmb": 0.133074,
+          "elapsed_seconds": 136.982,
+          "judge_elapsed_seconds": null,
+          "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0004_约克_ycae_b模块式风冷涡旋_59页_08年后生产的适用_制冷百家网/deepseek-v4-pro"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0004_约克_ycae_b模块式风冷涡旋_59页_08年后生产的适用_制冷百家网"
+    },
+    {
+      "status": "failed",
+      "row_index": 5,
+      "file_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "source_path": "/Volumes/TSD302/pan/a00238/07、三菱重工/技术手册/【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+      "doc_id": "doc_576787c42cc64301",
+      "chunks": 63,
+      "manual_tokens_estimated": 11493,
+      "equipment_class_id": "controller",
+      "equipment_alternatives": [],
+      "processing": {
+        "import_status": "imported",
+        "processing": {
+          "pages_before": 0,
+          "chunks_before": 0,
+          "pages_after": 60,
+          "chunks_after": 63,
+          "parse_result": {
+            "job_id": "job_74105bb87f9345d1",
+            "doc_id": "doc_576787c42cc64301",
+            "pages_created": 60,
+            "status": "success"
+          },
+          "chunk_result": {
+            "job_id": "job_e261d13c974d4a40",
+            "doc_id": "doc_576787c42cc64301",
+            "chunks_created": 63,
+            "status": "success"
+          }
+        }
+      },
+      "backend_results": [
+        {
+          "backend": "deepseek-v4-pro",
+          "model": "deepseek-v4-pro",
+          "status": "failed",
+          "error": "LLM JSON request failed after 3 attempts: Expecting ',' delimiter: line 92 column 6 (char 2896)"
+        }
+      ],
+      "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0005_三菱重工_eco_touch_触摸线控器使用手册_60页"
+    }
+  ]
+}

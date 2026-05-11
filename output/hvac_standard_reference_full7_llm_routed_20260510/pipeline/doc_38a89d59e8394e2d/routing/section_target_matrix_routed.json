@@ -1,0 +1,1152 @@
+{
+  "doc_id": "doc_38a89d59e8394e2d",
+  "doc_name": "ASHRAE绿色建筑指南.pdf",
+  "segmentation_strategy": "page_heading",
+  "source_pdf": "/Users/asteroida/work/KnowFabric/storage/documents/doc_38a89d59e8394e2d/ASHRAE绿色建筑指南.pdf",
+  "sections": [
+    {
+      "section_title": "pages_1",
+      "page_start": 1,
+      "page_end": 5,
+      "chunk_count": 16,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "AS H R AE G re e n G u i d e D e s i g n , C o n s tru c ti o n , a n d O p e ra ti o n o f S u s ta i n a b l e B u i l d i n g s S i xth E d i t i o n • Com pletely r evised by ex per ien ced in d u str y pr ofession a ls • U pd a ted in for m a tion on bu ild in g d eca r bon iza tion a n d zer o en er g y em ission",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Front matter, no technical content",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "C O N TE N TS",
+      "page_start": 6,
+      "page_end": 15,
+      "chunk_count": 33,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "C O N TE N TS v P re fa c e to th e S i xth E d i ti o n xi W h o S h o u l d U s e A S H R A E G re e n G u i d e xi i i H o w t o U s e AS H R A E G re e n G u i d e xi i i H i s to ri c a l B a c kg ro u n d o n A S H R A E G re e n G u i d e xi v Ac kn o wl e d g m e n ts xv S e c ti o n 1 : B a s i c s C h a p te ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Table of contents, no extractable knowledge",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "A CKN OWLEDGMEN TS",
+      "page_start": 16,
+      "page_end": 19,
+      "chunk_count": 6,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "A CKN OWLEDGMEN TS xv T he f o l l o wi ng i ndi vi dual s s e rve d as c o e di to rs o n thi s e di ti o n o f A S H R A E Green Gu id e , p ro vi de d wri tte n mate ri al s and e di to ri al c o nte nt, and f o rme d the S e nio r Edi to ri al Gro up o f the AS HRAE T C 2 . 8 Green Gu id e s ub c o mmi tte e f o r ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Acknowledgments, no technical content",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "I N TR O D U C TI O N",
+      "page_start": 20,
+      "page_end": 31,
+      "chunk_count": 57,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "3 I N TR O D U C TI O N T he re i s a gro wi ng aware ne s s ab o ut the i mp ac t o f the b ui l t e nvi ro nme nt o n the e nvi ro nme nt aro und us and o n the human o c c up ants o f b ui l di ngs . T he us e o f s us - tai nab l e e ngi ne e ri ng c o nc e p ts has e vo l ve d qui te rap i dl y i n re c e nt ye ar",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Introduction, general overview",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "5 C H AP TE R TW O",
+      "page_start": 32,
+      "page_end": 32,
+      "chunk_count": 4,
+      "candidate_knowledge_types": [
+        "performance_spec"
+      ],
+      "confidence": "medium",
+      "sample_text": "1 5 C H AP TE R TW O G RE E N R ATI N G S Y S TE MS , S TAN D AR D S , AN D O TH E R G U I D AN C E As the gre e n b ui l di ng i ndus try c o nti nue s to e xp and i n de p th and b re adth, the re s o urc e s to e nc o urage o r re qui re gre e n b ui l di ng c o nti nue to gro w al s o . T he re are thre e ge ne ral",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "performance_spec"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Chapter 2 intro, green rating systems overview",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "C E R TI F I C ATI O N",
+      "page_start": 33,
+      "page_end": 36,
+      "chunk_count": 17,
+      "candidate_knowledge_types": [
+        "performance_spec"
+      ],
+      "confidence": "medium",
+      "sample_text": "1 6  C h a p te r 2 : G re e n R a ti n g S ys t e m s , S t a n d a rd s , a n d O t h e r G u i d a n c e VO LU N TAR Y G R E E N B U I LD I N G R ATI N G S YS TE MS AN D  C E R TI F I C ATI O N Vo l untary gre e n b ui ldi ng rating s ys te ms s e t f o rth s p e c i f ic c ri te ria the n as s e s s and c e rti ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "performance_spec"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Voluntary green building rating systems, general info",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "“ P HI US +. ”",
+      "page_start": 37,
+      "page_end": 37,
+      "chunk_count": 5,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "2 0  C h a p te r 2 : G re e n R a ti n g S ys t e m s , S t a n d a rd s , a n d O t h e r G u i d a n c e p lianc e . I n the Unite d S tate s , the s tandard is s up p o rte d b y the No rth Ame ri c an P as - s ive Ho us e Ne two rk (NAP HN) . I t is wo rth no ti ng that the re is a s e p arate o rganizati o n c ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Passive House standard mention, no actionable detail",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "LE E D",
+      "page_start": 38,
+      "page_end": 41,
+      "chunk_count": 24,
+      "candidate_knowledge_types": [
+        "performance_spec"
+      ],
+      "confidence": "medium",
+      "sample_text": "AS H R AE G R E E N G U I D E   2 1 LE E D T he rating me tho d mo s t c o mmo nly us e d i n the Uni te d S tate s is the L e ade rs hip in Ene rgy and Enviro nme ntal D e s i gn (L EE D ) p ro gram, c re ate d b y the U. S . Gre e n B uil ding C o unc i l (US GB C ) . US GB C s tarte d o f f e ring thi s s ys te m",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "performance_spec"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "LEED description, general reference",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "S I TE S",
+      "page_start": 42,
+      "page_end": 58,
+      "chunk_count": 75,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "AS H R AE G R E E N G U I D E   2 5 i o rs and ri s ks . Eac h s trate gy i s al l o c ate d p o i nts b as e d o n i ts i mp ac t o n o c c up ant he al th, whi c h me ans that s trate gi e s wi th s tro nge r i mp ac ts re c e i ve mo re p o i nts . T he re are thre e ti e rs o f c e rti f i c ati o n, i nc l udi ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Site strategies, general sustainability",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "NG B ank",
+      "page_start": 59,
+      "page_end": 74,
+      "chunk_count": 76,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "42  C h a p t e r 3 : P ro j e c t S t ra t e g i e s a n d E a rl y D e s i g n We s t B e nd M utual I ns uranc e • 1 6 % i nc re as e i n c l ai ms p ro c e s s e s NG B ank • 1 5 % dro p i n ab s e nte e i s m Ve ri f o ne • 5 % i nc re as e i n p ro duc ti vi ty • 4 0 % dro p i n ab s e nte e i s m S i mi l ar r",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Project strategies, early design, general",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "G A : A S H RA E",
+      "page_start": 75,
+      "page_end": 79,
+      "chunk_count": 22,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "5 8  C h a p t e r 3 : P ro j e c t S t ra t e g i e s a n d E a rl y D e s i g n A S H RA E . 2 0 1 9 . A N S I /A S H RA E /I E S S ta nda rd 9 0 . 1 - 2 0 1 9 , En e rgy Sta n da rd f o r B u i ldin gs Ex c e p t L o w - R i s e R e s ide n ti a l B u i ldi n gs . P e a c h tre e C o rn e rs , G A : A S H RA E C F",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Reference list, no extractable knowledge",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "O VE RVI E W",
+      "page_start": 80,
+      "page_end": 120,
+      "chunk_count": 212,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "6 3 O VE RVI E W T he arc hi te c t’ s ro l e i n the de s i gn p ro c e s s has e vo l ve d o ve r the l as t f e w c e ntu- ri e s f ro m the “ mas te r b ui l de r” who to o k f ul l re s p o ns i b i l i ty f o r the b ui l di ng ’ s de s i gn and c o ns truc ti o n to the l e ad o f an i nte grate d de s i gn te a",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Overview of architect's role, general",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "C O N",
+      "page_start": 121,
+      "page_end": 146,
+      "chunk_count": 108,
+      "candidate_knowledge_types": [
+        "maintenance_procedure"
+      ],
+      "confidence": "medium",
+      "sample_text": "1 0 4  C h a p t e r 6 : C o n c e p t u a l E n g i n e e ri n g D e s i g n —L o a d D e t e rm i n a t i o n C O N • Temper atur e contr ol should be mon itor ed caref ully. The potential exists f or the build ing environment to be too cool f or the occupants’ comf or t d ur ing the ear ly hours of the occupied pe",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "maintenance_procedure"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Conceptual engineering design, load determination, includes maintenance considerations",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "C O N S",
+      "page_start": 147,
+      "page_end": 150,
+      "chunk_count": 14,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "1 3 0  C h a p t e r 7 : S u s t a i n a b l e S i te s C O N S • If no t de s i gne d p ro p e rl y, s tandi ng wate r o r i nc re as e d e ro s i o n c an o c c ur (O klaho ma F arm to S c ho o l 2 0 1 3 ) . T he s e i s s ue s s ho ul d b e avo i dab l e b y f o l l o wi ng gui de l i ne s p ro vi de d b y l o c a",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Section covers sustainable sites and erosion control, not HVAC equipment or design.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "SOU RCES OF FU RTH ER I N FO RMATI ON",
+      "page_start": 151,
+      "page_end": 151,
+      "chunk_count": 3,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "1 3 4  C h a p t e r 7 : S u s t a i n a b l e S i te s SOU RCES OF FU RTH ER I N FO RMATI ON The City of Lond on. 2008 . Gr eater London Author ity, Design f or Lon- d on, Lond on Climate Change Par tner ship. Livin g Roof s an d W al l s— T echn ical Repor t : S uppor t in g Lon d on Pl an Pol icy . Lon- d on: Gr e",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Section is a list of further information sources, not technical content.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "I N TR O D U C TI O N",
+      "page_start": 152,
+      "page_end": 203,
+      "chunk_count": 261,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "1 3 5 I N TR O D U C TI O N T he p ri mary f unc tio ns o f an o c c up i e d b ui l di ng are to p ro vi de s he l te r f ro m nat- ural e l e me nts and as he al thy an i ndo o r e nvi ro nme nt as p o s s i b l e f o r the o c c up ants . I ndo o r e nvi ro nme ntal qual i ty (I EQ ) i s the o ve ral l c o ndi ti o ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Section introduces indoor environmental quality, general sustainability topic.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "P R O",
+      "page_start": 204,
+      "page_end": 204,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "A S H R A E G R E E N G U I D E  1 8 7 VRF s ys te ms are b e s t s ui te d to b ui l di ngs wi th di ve rs e zo ni ng e s p e c i al l y b ui l di ngs re qui ri ng i ndi vi dual c o ntro l , s uc h as o f f i c e b ui l di ngs , re s i de nti al , s c ho o l s , o r ho te l s . P R O • A s i ngl e c o nde ns i ng un",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section discusses VRF systems, pros and cons, application guidance.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "C O N",
+      "page_start": 205,
+      "page_end": 209,
+      "chunk_count": 20,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "1 8 8 | C h a p t e r 9 : E n e rg y U s e C o n v e rs i o n a n d D i s t ri b u ti o n S ys te m s C O N • Indo o r units in VRF s ys te ms g e ne ral ly do no t have high late nt c ap ac iti e s and are no t s ui tab l e f o r ap p li c atio ns re quiring a high p e rc e ntage o f o utdo o r air. • T he e xte rnal ",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section continues VRF system discussion, limitations and applications.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "(D O AS s )",
+      "page_start": 210,
+      "page_end": 210,
+      "chunk_count": 4,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "AS H R AE G R E E N G U I D E   1 9 3 D e d i c a te d O u td o o r Ai r S ys te m s (D O AS s ) G E N E R AL D E S C R I P TI O N AS HRAE S tandard 6 2 . 1 de s c ri b e s i n de tail the ve nti latio n re quire d to p ro vide a he althy indo o r e nvi ro nme nt as it p e rtai ns to I AQ . T radi tio nall y, de s i",
+      "section_source": "page_heading",
+      "llm_section_topic": "air_distribution",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "application_guidance",
+        "parameter_spec"
+      ],
+      "llm_equipment_anchor": "ahu",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section covers Dedicated Outdoor Air Systems (DOAS), design and ventilation requirements.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "P R O",
+      "page_start": 211,
+      "page_end": 222,
+      "chunk_count": 41,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "1 9 4 | C h a p t e r 9 : E n e rg y U s e C o n v e rs i o n a n d D i s t ri b u ti o n S ys te m s P R O • A D O AS e ns ure s c o mp l i anc e wi th AS HRAE 6 2 . 1 f o r p ro p e r mul ti p l e s p ac e ve nti l ati o n and ade quate I AQ . • It re duc e s a b ui l di ng’ s e ne rgy us e whe n c o mp are d to mi x",
+      "section_source": "page_heading",
+      "llm_section_topic": "air_distribution",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "ahu",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section continues DOAS pros, energy savings, IAQ compliance.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "C O N",
+      "page_start": 223,
+      "page_end": 225,
+      "chunk_count": 10,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "2 0 6 | C h a p t e r 9 : E n e rg y U s e C o n v e rs i o n a n d D i s t ri b u ti o n S ys te m s o ve rall f ue l util izatio n rate s , i nc l us i ve o f the p o we r ge ne ratio n p ro c e s s . • T he y re mo ve o r re duc e e mis s io ns o f C O 2 and o the r c o mb us - ti o n b y- p ro duc ts as s o c i ate",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section discusses fuel utilization and emissions reduction, general HVAC topic.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "P R O",
+      "page_start": 226,
+      "page_end": 227,
+      "chunk_count": 7,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "AS H R AE G R E E N G U I D E  2 0 9 P R O • Lo we rs e ne rgy c o s ts . • Inc re as i ng the rmal e f f i c ie nc y l o we rs C O 2 e mi s s i o ns . C O N • Additi o nal mate ri al and e quip me nt c o s ts . • C o rro s i o n and c o nde ns atio n c an add to mainte nanc e c o s ts . • Lo w s p e c if ic he at o ",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section covers thermal efficiency and CO2 emissions, pros and cons.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "C O N",
+      "page_start": 228,
+      "page_end": 239,
+      "chunk_count": 40,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "AS H R AE G R E E N G U I D E  2 1 1 C O N • O nl y avai l ab l e i n s mal l s i ze s . • Al l s p ac e he ati ng p i p i ng has to b e de s i gne d f o r p o tab l e wate r. • No f e rro us me tal s o r l e ad- b as e d s o l de r c an b e us e d. • Al l c o mp o ne nts mus t b e ab l e to wi ths tand p re vai l i ",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section discusses limitations of certain heating systems, material constraints.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "P R O",
+      "page_start": 240,
+      "page_end": 241,
+      "chunk_count": 6,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "AS H R AE G R E E N G U I D E  2 2 3 • In l o c ati o ns whe re di s tri c t s te am i s avai l ab l e at a re as o nab l e p ri c e (e . g. , Ne w Yo rk C i ty) . P R O • Re duc e s e l e c tri c c harge s . • Al l o ws f ue l f l e xi b i l i ty, s i nc e natural gas , No . 2 f ue l o i l , p ro p ane , o r was te ",
+      "section_source": "page_heading",
+      "llm_section_topic": "boiler",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "boiler",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section mentions district steam and fuel flexibility, boiler-related.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "GE N E RAL D E SCRI P TI O N",
+      "page_start": 242,
+      "page_end": 243,
+      "chunk_count": 8,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "AS H R AE G R E E N G U I D E   22 5 Desic c a n t Cool in g a n d D eh u m id ific a tion GE N E RAL D E SCRI P TI O N Ther e are two basic types of open-cycle desiccant process: solid and liq uid desiccant. Each of these pr ocesses has several f orms, and these should be investigated to deter mine the most appropr",
+      "section_source": "page_heading",
+      "llm_section_topic": "desiccant_system",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Desiccant cooling and dehumidification general description",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "P RO",
+      "page_start": 244,
+      "page_end": 252,
+      "chunk_count": 34,
+      "candidate_knowledge_types": [
+        "parameter_spec",
+        "maintenance_procedure",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "AS H R AE G R E E N G U I D E  2 2 7 P RO • Desiccant equipment tends to be ver y durable. • Of ten this is the most economical means to dehumidif y below a 40° F (4 . 3 ° C ) d ew point. • It eliminates cond ensate in the airstream, in tur n, limiting the oppor- tunity f or mold growth. CO N • Desiccant usually must",
+      "section_source": "page_heading",
+      "llm_section_topic": "desiccant_system",
+      "llm_knowledge_goal": "equipment_operational",
+      "llm_allowed_knowledge_types": [
+        "parameter_spec",
+        "maintenance_procedure",
+        "application_guidance",
+        "operational_sequence"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Pros and cons of desiccant equipment, includes operational and maintenance info",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "C O N",
+      "page_start": 253,
+      "page_end": 268,
+      "chunk_count": 77,
+      "candidate_knowledge_types": [
+        "performance_spec"
+      ],
+      "confidence": "medium",
+      "sample_text": "2 3 6 | C h a p t e r 9 : E n e rg y U s e C o n v e rs i o n a n d D i s t ri b u ti o n S ys te m s C O N • May no t b e as e f f e c tive i f the me c hanic al ro o m i s ve ry we ll ve n- til ate d b ut the lo s t re f ri ge rant wil l b e e mitte d to the atmo s p he re • Highe r up f ro nt f i rs t c o s t f o r ",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "performance_spec"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Energy use conversion and distribution systems, performance specs",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "WI N D",
+      "page_start": 269,
+      "page_end": 279,
+      "chunk_count": 49,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "2 5 2  C h a p t e r 1 0 : E n e rg y S o u rc e s WI N D Us i ng p re vai l i ng b re e ze s and wi nd e ne rgy i s o ne o f the mo s t p ro mi s i ng al te rna- ti ve te c hno l o gi e s to day. Wi nd turb i ne de s i gn and p o we r ge ne rati o n have b e c o me mo re re l i ab l e o ve r the l as t 3 0 ye ars . ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Section covers wind energy, renewable energy source, not HVAC equipment.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "O VE R VI E W",
+      "page_start": 280,
+      "page_end": 307,
+      "chunk_count": 112,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "2 6 3 O VE R VI E W T hi s c hap te r i s i nte nde d to f ami l i ari ze the re ade r wi th the p ro c e s s o f s us tai n- ab le l i g hti ng de s i gn, whi c h i s no t o nl y ab o ut e ne rgy e f f i c i e nc y b ut al s o ab o ut us ing l i g ht (dayl i ght and e l e c tri c ) and l i ghti ng c o ntro l s to i mp",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Section covers sustainable lighting design, not HVAC.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "WATE R- E N E R G Y N E XU S",
+      "page_start": 308,
+      "page_end": 329,
+      "chunk_count": 112,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "A S H R AE G R E E N G U I D E   29 1 WATE R- E N E R G Y N E XU S T he c o nti nue d s e c urity and e c o no mic he al th o f the gl o b al p o p ulatio n de p e nds o n a s us tai nab le s up p l y o f b o th wate r and e ne rgy. T he s e two c riti c al re s o urc e s are ine xtri c ab ly li nke d. A natio n’ s ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Section covers water-energy nexus, general sustainability topic.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "P R O",
+      "page_start": 330,
+      "page_end": 334,
+      "chunk_count": 19,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "AS H R AE G R E E N G U I D E  3 1 3 P R O • A p o i nt- o f - us e de vi c e i s a s i mp l e and di re c t way to p ro vi de s mal l amo unts o f do me s ti c ho t wate r p e r us e . • Lo ng p i p e runs —and, i n s o me c as e s , a c e ntral ho t- wate r he ati ng s o urc e —c an b e avo i de d. • Ene rgy i s s ",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section discusses point-of-use hot water devices, pros and energy savings.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "C O N",
+      "page_start": 335,
+      "page_end": 343,
+      "chunk_count": 36,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "3 1 8  C h a p t e r 1 2 : W a t e r E f fi c i e n c y C O N • C o mp l i c ati o ns ari s e whe n de al i ng wi th di s tri c t c o o l i ng s ys te ms wi th s ate l l i te c hi l l e rs , b e c aus e i t i s p o s s i b l e to p ro duc e c o nde n- s ate i n an AHU whi l e the c hi l l e r and c o o l i ng to we r",
+      "section_source": "page_heading",
+      "llm_section_topic": "chiller",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "chiller",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section mentions district cooling and satellite chillers, condensate issues.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "NOAA. Global Historical Climate Network Daily. ",
+      "page_start": 344,
+      "page_end": 345,
+      "chunk_count": 3,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "A S H R AE G R E E N G U I D E   3 2 7 D i g g i n g D e e p e r is essential to have a risk management plan to both impose r estrictions on demand and source water impor ts. S OU RCES O F FU RTH ER I N FORMATI O N Menne, MJ, et al. 201 2 . An over view of the global historical climatology net- work-daily database. ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Section is a list of further information sources, not technical content.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "2 9 C H A P TE R TH I R TE E N",
+      "page_start": 346,
+      "page_end": 353,
+      "chunk_count": 48,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "3 2 9 C H A P TE R TH I R TE E N S MART B U I LD I N G S Y S TE MS O ur s o c i e ty has e nte re d the age o f B i g D ata and the I nte rne t o f T hi ngs (I o T ) . Us i ng s mart de vi c e s and the e ve r- e xp andi ng wi re l e s s ne two rks , we are i nti mate l y c o nne c te d to the wo rl d i n whi c h we o ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Section introduces smart building systems, IoT, general topic.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "S MAR T H ARD WAR E",
+      "page_start": 354,
+      "page_end": 372,
+      "chunk_count": 104,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "AS H R AE G R E E N G U I D E   33 7 c o s t C O 2 s e ns o r) , e nab l i ng a c he c k o f ac c urac y o f the i np ut data i nto AF D D and i mp ro ve d p e rf o rmanc e and re l i ab i l i ty o f the re s ul ti ng o utp ut f ro m the s e me tho ds . S MAR T H ARD WAR E S mart o p e rati o n o f b ui l di ngs de ",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Section discusses smart hardware, CO2 sensors, AFDD, HVAC-related.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "P E R F O R MA N C E",
+      "page_start": 373,
+      "page_end": 384,
+      "chunk_count": 70,
+      "candidate_knowledge_types": [
+        "performance_spec"
+      ],
+      "confidence": "medium",
+      "sample_text": "3 5 6  C h a p t e r 1 4: R e s i d e n t i a l A p p l i c a t i o n s o f whic h ~ 5 2 % c o me f ro m the re s ide nti al s e c to r (Ke mma e t al . 2 0 1 6 ) . S e ve ral c o untri e s aro und the wo rl d s uc h as the Unite d S tate s , Aus tral ia, B razi l, C hina, and Jap an are imp le me nti ng s i mil ar a",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "performance_spec"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Residential applications, performance specs",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "F U TU R E TR E N D S",
+      "page_start": 385,
+      "page_end": 397,
+      "chunk_count": 64,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "3 6 8  C h a p t e r 1 4: R e s i d e n t i a l A p p l i c a t i o n s F U TU R E TR E N D S As wi th o the r typ e s o f b ui l di ng s , re s i de nti al b ui l di ngs are s e e i ng e ve r- e vo l vi ng mo ve me nts to ward g re e n b ui l di ng . S o me o f the tre nds i n the re s i de nti al s e c to r wi l l ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Section covers future trends in residential green building, not specific HVAC.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "0 b e c aus e i t i s no r",
+      "page_start": 398,
+      "page_end": 403,
+      "chunk_count": 14,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "AS H R AE G R E E N G U I D E  3 8 1 Al tho ugh AC H 5 0 i s a b e tte r me tri c than C F M 5 0 b e c aus e i t i s no r- mal i ze d f o r vo l ume , the vo l ume i s no t the mo s t re l i ab l e no rmal i za- ti o n f ac to r; the l e akage i n a b ui l ding o c c urs di re c tl y o n the e xte ri o r s urf ac e s",
+      "section_source": "page_heading",
+      "llm_section_topic": "unknown",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Scrambled text, no meaningful content.",
+      "llm_route_confidence": "low"
+    },
+    {
+      "section_title": "8 7 C H A P TE R F I F TE E N",
+      "page_start": 404,
+      "page_end": 410,
+      "chunk_count": 30,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "3 8 7 C H A P TE R F I F TE E N E XI S TI N G B U I LD I N G S I N TR O D U C TI O N Ab o ut thre e - quarte rs (7 1 % ) o f the to tal wo rl dwi de b ui l di ng are a that wi l l e xi s t i n the ye ar 2 0 3 0 and o ve r hal f (5 4 % ) i n 2 0 5 0 have al re ady b e e n c o ns truc te d. F o r de ve l o p e d i ndus t",
+      "section_source": "page_heading",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Chapter on existing buildings, discusses audits and retrofits.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "4E l e c t r i c a l p e a k",
+      "page_start": 411,
+      "page_end": 421,
+      "chunk_count": 54,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "3 9 4   C h a p t e r 1 5 : E xi s t i n g B u i l d i n g s 1 4E l e c t r i c a l p e a k s h a vi n g /l o a d s h i ft i n gP ro g ra m B A S / E M C S t o s h e d l o a d s i n re s p o n s e t o s i g n a l s f ro m e l e c tri c u ti l i ty o r t o m a i n ta i n b u i l d i n g d e m a n d b e l o w a p re s",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Discusses electrical peak shaving and load shifting via BAS/EMCS.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "0 5 C H A P TE R S I X TE E N",
+      "page_start": 422,
+      "page_end": 429,
+      "chunk_count": 36,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "4 0 5 C H A P TE R S I X TE E N E ME R G I N G T R E N D S AN D E P I LO G U E I N TR O D U C TI O N T hi s c hap te r hi ghl i ghts ke y are as that are taki ng the f o re f ro nt i n the b ui l di ngs i ndus try and the b ui l t e nvi ro nme nt. O ne i s re l ate d to c l i mate c hange and the p us h to “ de c arb o",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Chapter on emerging trends and climate change.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "1 3 AP P E N D I X",
+      "page_start": 430,
+      "page_end": 430,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "4 1 3 AP P E N D I X B U I LD I N G - T Y P E - S P E C I F I C G RE E N T I P S I N TR O D U C TI O N T he Gre e nT ip s c o ntaine d i n the c hap te rs o f thi s b o o k f o c us o n a s p e c if i c te c h- no lo gy o r de s ign c o nc e p t that c o ul d b e c o ns i de re d f o r a high- p e rf o rmanc e b ui ld-",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Appendix with building-type-specific green tips.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "4  A p p e n d i x",
+      "page_start": 431,
+      "page_end": 432,
+      "chunk_count": 8,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "41 4  A p p e n d i x P e rfo rm i n g Arts S p a c e s G E N E R AL D E S C R I P TI O N P e rf o rmi ng arts s p ac e s i nc l ude danc e s tudi o s , b l ac k b o x the ate rs , re c i tal hal l s , re he ars al hal l s , p rac ti c e ro o ms , p e rf o rmanc e hal l s wi th s tage s and f i xe d s e ati ng, c o n",
+      "section_source": "page_heading",
+      "llm_section_topic": "air_distribution",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Discusses underfloor air distribution (UFAD) for performing arts spaces.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "6  A p p e n d i x",
+      "page_start": 433,
+      "page_end": 434,
+      "chunk_count": 7,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "41 6  A p p e n d i x KE Y E LE ME N TS O F C O S T 1 . I f p ro p e rl y i nte grate d, an unde rf lo o r ai r di s tri b uti o n s ys te m (UF AD ) s ho ul d no t add s i gni f i c ant c ap i tal c o s ts to the p ro j e c t. 2 . He at re c o ve ry s trate gi e s s ho ul d b e as s e s s e d us i ng l i f e - c yc ",
+      "section_source": "page_heading",
+      "llm_section_topic": "air_distribution",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Mentions UFAD and heat recovery strategies.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "8  A p p e n d i x",
+      "page_start": 435,
+      "page_end": 436,
+      "chunk_count": 8,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "41 8  A p p e n d i x e xe c ute s us tai nab l e o p ti o ns , the ti me , c o s t, and re de s i gn wi l l b e mi ni mi ze d. H I G H - P E R F O RM AN C E S TR A TE G I E S T he s ugge s ti o ns p ro vi de d are f o c us e d o n the uni que ne s s o f i np a- ti e nt he al th c are f ac i l i ti e s . T he y do no",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Discusses sustainable options for healthcare facilities.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "0  Ap p e n d i x",
+      "page_start": 437,
+      "page_end": 438,
+      "chunk_count": 10,
+      "candidate_knowledge_types": [
+        "performance_spec"
+      ],
+      "confidence": "medium",
+      "sample_text": "42 0  Ap p e n d i x adds mo re than $ 6 0 0 mil lio n i n dire c t he alth c o s ts and mo re than $ 5 0 0 b i ll i o n in i ndi re c t c o s ts . US ho s p i tals s p e nd 1 % to 3 % o f the i r o p e rating b udge t o n e ne rgy, o r aro und 1 5 % o f ne t o p e rating inc o me (D O E 2 0 0 9 ) . Re duc i ng e ne ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "performance_spec"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Appendix, health costs, general sustainability",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "2  Ap p e n d i x",
+      "page_start": 439,
+      "page_end": 440,
+      "chunk_count": 8,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "42 2  Ap p e n d i x f o r di re c ti o n o n whe n e ne rgy re c o ve ry s ho ul d b e ap p l i e d. T he re f e r- e nc e s p ro vi de a vari e ty o f ways that c an b e do ne . O the r re c o mme n- dati o ns i nc l ude us i ng (1 ) vari ab l e - ai r- vo l ume ( VAV) s ys te ms i n no nc ri ti c al s p ac e s wo ",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Discusses energy recovery and VAV systems.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "4  Ap p e n d i x",
+      "page_start": 441,
+      "page_end": 442,
+      "chunk_count": 7,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "42 4  Ap p e n d i x F GI . 2 0 1 8 b . Gu id elin es f o r Design a n d C o n stru ctio n o f H o sp ita ls . http s : //f gi gui de l i ne s . o rg/gui de l i ne s /2 0 1 8 - f gi - gui de l i ne s /. F GI . 2 0 1 8 c . Gu id elin es f o r Design a n d C o n structio n o f Ou tp a tien t F a cilities. http s : //f ",
+      "section_source": "page_heading",
+      "llm_section_topic": "unknown",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "References to FGI guidelines, not HVAC-specific.",
+      "llm_route_confidence": "low"
+    },
+    {
+      "section_title": "6  Ap p e n d i x",
+      "page_start": 443,
+      "page_end": 444,
+      "chunk_count": 7,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "42 6  Ap p e n d i x f ai l - s af e o p e rati o n and to o p ti mi ze f ul l - l o ad and p art- l o ad e f f i - c i e nc y o f al l e qui p me nt. E n e rg y C o n s i d e ra ti o n s 1 . Re c e n t m o di f i c a ti o n to A S H RA E S ta n da rd 9 0 . 1 m a ke th e us e o f e n e rg y re c o v e ry m o re p re ",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Discusses fail-safe operation, full/part-load efficiency, and energy recovery.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "8  Ap p e n d i x",
+      "page_start": 445,
+      "page_end": 446,
+      "chunk_count": 7,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "42 8  Ap p e n d i x S tu d e n t R e s i d e n c e H a l l s G E N E R AL D E S C R I P TI O N S tude nt re s i de nc e hal l s are made up p ri mari l y o f l i vi ng s p ac e s (e . g. , b e dro o ms , l i vi ng ro o ms , ki tc he n are as , c o mmo n s p ac e s , s tudy s p ac e s , and data/c o mmuni c ati o ns ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Appendix on student residence halls, general description.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "0  Ap p e n d i x",
+      "page_start": 447,
+      "page_end": 448,
+      "chunk_count": 6,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "43 0  Ap p e n d i x A th l e ti c a n d R e c re a ti o n F a c i l i ti e s G E N E R AL D E S C R I P TI O N Athl e ti c and re c re ati o nal s p ac e s i nc l ude natato ri ums , gymnas i - ums , c ardi o ro o ms , we i ght- trai ni ng ro o ms , mul ti p urp o s e ro o ms , c o urts , o f f i c e s , and o the r",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Appendix on athletic and recreation facilities.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "2  Ap p e n d i x",
+      "page_start": 449,
+      "page_end": 450,
+      "chunk_count": 8,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "43 2  Ap p e n d i x C o m m e rc i a l O ffi c e B u i l d i n g s G E N E R AL D E S C R I P TI O N C o mme rc i al o f f i c e b ui l di ngs are made up p ri mari l y o f o f f i c e s p ac e s , me e ti ng ro o ms , and c e ntral c o re f ac i l i ti e s s uc h as to i l e t ro o ms , s to rage s p ac e , and uti",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Appendix on commercial office buildings.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "4  Ap p e n d i x",
+      "page_start": 451,
+      "page_end": 452,
+      "chunk_count": 8,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "43 4  Ap p e n d i x K–1 2 S c h o o l B u i l d i n g s G E N E R AL D E S C R I P TI O N K–1 2 s c ho o l b ui l di ngs are made up p ri mari l y o f c l as s ro o ms , gymnas i ums , l i b rari e s , an audi to ri um, a c e ntral ki tc he n, and di ni ng f ac i l i ti e s . (Al s o s e e Gre e nT i p #5 o n athl e",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Appendix on K-12 school buildings.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "6  Ap p e n d i x",
+      "page_start": 453,
+      "page_end": 454,
+      "chunk_count": 8,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "43 6  Ap p e n d i x D a ta C e n te rs G E N E R AL D E S C R I P TI O N D ata c e nte rs are e ne rgy- i nte ns i ve b ui l di ngs us i ng 2 0 W/f t 2 (2 1 5 W/m 2 ) to gre ate r than 1 0 0 0 W/f t 2 (1 0 7 6 4 W/m 2 ) . T he y s up - p o rt i nf o rmati o n te c hno l o gy ( I T ) s p ac e s , e l e c tro ni c e q",
+      "section_source": "page_heading",
+      "llm_section_topic": "general_hvac_design",
+      "llm_knowledge_goal": "system_design",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Discusses data centers, energy-intensive, mentions IT equipment.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "8  Ap p e n d i x",
+      "page_start": 455,
+      "page_end": 459,
+      "chunk_count": 13,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "43 8  Ap p e n d i x E l e c tro n i c E q u i p m e n t  a n d E n vi ro n m e n ta l R e q u i re m e n ts 1 . I m p l e m e nt s e rv e r v i rtua l i z a ti o n w h e re a p p l i c a b l e . 2 . C o l l a b o ra te w i th I T de p a rtm e nt o n I T E p urc ha s e s . W he n p ru- de nt, s e l e c t th e a p p ",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": true,
+      "llm_route_reason": "Discusses electronic equipment and environmental requirements.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "4 3 R E F E RE N C E S",
+      "page_start": 460,
+      "page_end": 474,
+      "chunk_count": 68,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "4 4 3 R E F E RE N C E S AN D R E S O U RC E S T h ese lis tin gs d o n o t n ecessa rily im p ly en d o rsem en t o r agreem en t b y A S H R A E o r th e a uth o rs with th e in f o rm a tio n co n ta in ed in th e d o cum en ts . B O O KS AN D S O F TWARE P RO G RAMS AC GI H. 1 9 9 9 . Bio a ero so ls: A ss essm en ",
+      "section_source": "page_heading",
+      "llm_section_topic": "unknown",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "References section, no actionable HVAC content.",
+      "llm_route_confidence": "low"
+    },
+    {
+      "section_title": "(B RE EAM ®",
+      "page_start": 475,
+      "page_end": 481,
+      "chunk_count": 21,
+      "candidate_knowledge_types": [
+        "performance_spec"
+      ],
+      "confidence": "medium",
+      "sample_text": "45 8  R e fe re n c e s a n d R e s o u rc e s B ui ldi ngGre e n  www. gre e nb uildingadvis o r. c o m. B uil ding Re s e arc h Es tab lis hme nt Envi ro nme ntal As s e s s me nt Me tho d (B RE EAM ® ) rating p ro gram  www. b re e am. o rg. C alif o rnia D e b t & I nve s tme nt Advi s o ry C o mmis s io n do c",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "performance_spec"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "References and resources, BREEAM mention",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "AN D A C R O N YMS",
+      "page_start": 482,
+      "page_end": 485,
+      "chunk_count": 11,
+      "candidate_knowledge_types": [
+        "parameter_spec"
+      ],
+      "confidence": "medium",
+      "sample_text": "4 6 5 T E RMS , D E F I N I TI O N S , AN D A C R O N YMS  T = c hange o r c hange in te mp e rature T AC = air c o nditio ning ACGIH = Amer ican Conf erence of Gover nmental Industrial Hygienists AHU = ai r- handling unit AIA = Ame ric an Ins titute o f Arc hite c ts ANS I = Ame ric an Natio nal S tandards Ins titute",
+      "section_source": "page_heading",
+      "llm_section_topic": "sustainability_general",
+      "llm_knowledge_goal": "system_topic_reference",
+      "llm_allowed_knowledge_types": [
+        "parameter_spec"
+      ],
+      "llm_equipment_anchor": "general_hvac",
+      "llm_should_extract": false,
+      "llm_route_reason": "Terms, definitions, acronyms, reference only",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "6 9 I N D E X",
+      "page_start": 486,
+      "page_end": 494,
+      "chunk_count": 20,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "4 6 9 I N D E X A ab s o rp ti o n 1 6 5 , 1 7 7 , 1 7 9 , 1 8 1 , 2 0 3 , 2 0 4 , 2 0 5 , 2 0 6 , 2 0 7 , 2 2 2 –2 2 5 , 2 4 0 , 2 4 5 , 2 4 6 ab s o rp ti o n c hi l l e r ( s e e ch iller, a b s o rp - t io n ) ac o us ti c al qual i ty 4 8 ac o us ti c s 1 7 9 , 3 6 5 , 3 9 0 , 4 1 4 , 4 2 2 , 4 2 6 ai r amb i e nt",
+      "section_source": "page_heading",
+      "llm_section_topic": "unknown",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Index, no extractable content.",
+      "llm_route_confidence": "low"
+    }
+  ],
+  "candidate_type_counts": {
+    "performance_spec": 7,
+    "maintenance_procedure": 2,
+    "application_guidance": 2,
+    "parameter_spec": 2,
+    "operational_sequence": 1
+  },
+  "llm_routing": {
+    "generated_at": "2026-05-10T12:07:33.969814+00:00",
+    "backend_name": "deepseek-parameter-spec",
+    "document_route": {
+      "document_family": "cross_domain_sustainability_guide",
+      "document_lane": "sustainability_topic",
+      "default_equipment_anchor": "general_hvac",
+      "should_run_equipment_pipeline": false,
+      "reason": "The document is a comprehensive guide on sustainable building design, construction, and operation, covering green rating systems, standards, and various HVAC topics like desiccant cooling, but it is not a focused equipment manual or design handbook.",
+      "confidence": "high"
+    },
+    "routed_section_count": 59
+  }
+}

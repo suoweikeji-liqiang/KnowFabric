@@ -1,0 +1,11 @@
+row_index,path,brand,document_kind,page_count,text_quality,recommended_mode
+89,/Volumes/TSD302/pan/a00238/21、国祥/【国祥】王牌KCA风冷式双螺杆热泵机组技术手册（28页）.pdf,Kingair,technical_manual,,unknown,doc_level_single_call
+90,/Volumes/TSD302/pan/a00238/21、国祥/【国祥】王牌风冷式双螺杆热泵机组操作说明书（28页）.pdf,Kingair,operation_installation_manual,,unknown,doc_level_single_call
+91,/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MCSMHS大型风冷螺杆冷水热泵机组手册.pdf,McQuay/Daikin,technical_manual,,unknown,doc_level_single_call
+92,/Volumes/TSD302/pan/a00238/01、大金中央空调/培训/大金 VRV 根据故障代码（排除故障方法）.pdf,Daikin,fault_code_reference,9,low_or_no_text,ocr_or_multimodal_first
+93,/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】风冷冷水机组调试维护手册-制冷百家网.pdf,Haier,technical_manual,16,low_or_no_text,ocr_or_multimodal_first
+94,/Volumes/TSD302/pan/a00238/18、顿汉布什/【顿汉布什】WCFX-R-螺杆式冷水机组操作说明书.pdf,Dunham-Bush,operation_installation_manual,18,low_or_no_text,ocr_or_multimodal_first
+95,/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】磁悬浮变频离心机组手册-制冷百家网.pdf,Haier,technical_manual,20,low_or_no_text,ocr_or_multimodal_first
+96,/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】风冷模块式冷热水机组培训手册（32页）-制冷百家网.pdf,Haier,technical_manual,32,low_or_no_text,ocr_or_multimodal_first
+97,/Volumes/TSD302/pan/a00238/13、天加中央空调/【天加 】模块化风冷式冷(热)水机组D-安装操作手册.pdf,TICA,operation_installation_manual,35,low_or_no_text,ocr_or_multimodal_first
+98,/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】65C风冷模块机安装维修手册（37页）-制冷百家网.pdf,Haier,service_manual,37,low_or_no_text,ocr_or_multimodal_first

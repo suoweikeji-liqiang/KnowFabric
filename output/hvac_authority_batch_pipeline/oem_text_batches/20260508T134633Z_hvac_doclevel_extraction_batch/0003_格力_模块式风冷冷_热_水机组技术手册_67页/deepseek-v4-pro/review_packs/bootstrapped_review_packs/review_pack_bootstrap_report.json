@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-08T14:19:05.285612+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0003_格力_模块式风冷冷_热_水机组技术手册_67页/deepseek-v4-pro/review_packs",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0003_格力_模块式风冷冷_热_水机组技术手册_67页/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 8,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_265123720fc94c35__centrifugal_chiller.json",
+      "source_path": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0003_格力_模块式风冷冷_热_水机组技术手册_67页/deepseek-v4-pro/review_packs/hvac__doc_265123720fc94c35__centrifugal_chiller.json",
+      "status": "bootstrapped",
+      "entries_updated": 8,
+      "output_path": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0003_格力_模块式风冷冷_热_水机组技术手册_67页/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_265123720fc94c35__centrifugal_chiller.json"
+    }
+  ]
+}

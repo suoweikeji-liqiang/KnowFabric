@@ -1,0 +1,13 @@
+start task=1 file=【三菱重工】线控器用户使用说明手册（20页）.pdf
+start backend=deepseek-v4-pro task=1 pages=20 chunks=30 timeout=600s
+done backend=deepseek-v4-pro task=1 raw=10 anchored=10 final=6
+done task=1
+start task=2 file=【天加 】风冷净化空调机组安装操作手册.pdf
+start backend=deepseek-v4-pro task=2 pages=21 chunks=27 timeout=600s
+done backend=deepseek-v4-pro task=2 raw=10 anchored=10 final=10
+done task=2
+start task=3 file=【约克】风冷冷水机组YCAC，YMAC，YSAC通用控制器使用手册3.0.pdf
+start backend=deepseek-v4-pro task=3 pages=23 chunks=23 timeout=600s
+done backend=deepseek-v4-pro task=3 raw=10 anchored=9 final=9
+done task=3
+doclevel batch tasks=3 report=output/hvac_authority_batch_pipeline/20260507T200220Z_hvac_authority_batch_pipeline/hvac_doclevel_extraction_batch/20260507T200220Z_hvac_doclevel_extraction_batch/REPORT.md

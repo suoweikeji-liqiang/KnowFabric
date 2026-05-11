@@ -1,0 +1,426 @@
+{
+  "doc_id": "doc_c019162f43d44d06",
+  "doc_name": "ashrae_211_energy_audit_best_practices.pdf",
+  "segmentation_strategy": "pdf_outline",
+  "source_pdf": "/Users/asteroida/work/KnowFabric/storage/documents/doc_c019162f43d44d06/ashrae_211_energy_audit_best_practices.pdf",
+  "sections": [
+    {
+      "section_title": "Slide 1: Best Practices for Energy Audits Using ASHRAE 211-2018 and RETScreen",
+      "page_start": 1,
+      "page_end": 1,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Best Practices for Energy Audits Using ASHRAE 211 -2018 and RETScreen Session F3: Energy Auditing Javier Ojeda, P.Eng, CEM, REP, PMP, MBA",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Title slide introducing the presentation topic.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 2: Agenda",
+      "page_start": 2,
+      "page_end": 2,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Agenda 1.Introduction •What’s ASHRAE 211 -2018 •What’s RETSCreen 2.Planning the Audit •Audit Scope and Objectives •Info that you will need •Preliminary Energy Use Analysis •Tools •Team3.Conducting the Audit •Site Visits •Data Analysis –RETScreen + Excel + ASHRAE Forms •Report Structure 4.After the audit •RETScreen Ener",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Agenda outlining the audit process steps.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "Slide 3: Introduction",
+      "page_start": 3,
+      "page_end": 3,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Introduction •The ASHRAE 211 -2018 Standard •A complement to the PCBEA •Brings order into chaos of Energy Audits •Establishes energy audit levels 1, 2, 3 •Establishes Preliminary Energy Use Analysis Methods •Establishes a minimum performance standard for energy audits This is the PCBEA!",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Introduction to ASHRAE 211 standard and audit levels.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "Slide 4: Introduction",
+      "page_start": 4,
+      "page_end": 4,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "performance_spec"
+      ],
+      "confidence": "low",
+      "sample_text": "Introduction •What’s RETScreen •RETScreen is a free software tool developed by Natural Resources Canada ( NRCan ) to assist in the evaluation of the viability and energy performance of renewable energy and energy efficiency projects. •Project Viability Analysis •Energy Modeling •Performance Analysis •Benchmarking",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Introduction to RETScreen software tool.",
+      "llm_route_confidence": "low"
+    },
+    {
+      "section_title": "Slide 5: Planning the Audit",
+      "page_start": 5,
+      "page_end": 5,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Planning the Audit",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Planning the audit section header.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 6: Planning the Audit",
+      "page_start": 6,
+      "page_end": 6,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Planning the Audit",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Planning the audit section header.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 7: Planning the Audit",
+      "page_start": 7,
+      "page_end": 7,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Planning the Audit Preliminary Energy Use Analysis: •Baseline overview of building's energy performance •Early Stage Benchmarking •Data Sources: utility bills, schedules (min. 1 calendar year) •Key Metrics: •EUI •ECI •Informs depth & focus of main audit",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Preliminary Energy Use Analysis details.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "Slide 8: Planning the Audit",
+      "page_start": 8,
+      "page_end": 8,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Planning the Audit Preliminary Energy Use Analysis: •Baseline overview of building's energy performance •Early Stage Benchmarking •Data Sources: utility bills, schedules (min. 1 calendar year) •Key Metrics: •EUI •ECI •Informs depth & focus of main audit From ASHRAE 211 -2018, page 5 EUI: Energy Use Intensity 𝑡𝑜𝑡𝑎𝑙 𝑒𝑛𝑒𝑟",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Continuation of Preliminary Energy Use Analysis with EUI formula.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "Slide 9: Planning the Audit",
+      "page_start": 9,
+      "page_end": 9,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Planning the Audit TOOLS FOR THE ENERGY AUDIT Free Templates",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Tools for energy audit mentioned.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 10: Planning the Audit",
+      "page_start": 10,
+      "page_end": 10,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Planning the Audit The Audit Team •I’ll depend on how deep are you going in the energy audit, and what are the goals from it•Basic Team –Level 1: •The energy auditor (solo), level 1 and probably level 2 depending on the facility •Opt: Energy Analyst •For a level 2, consider adding: •Surveyor / Drafter (if there are no ",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Audit team composition discussion.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 11: Conducting the Audit",
+      "page_start": 11,
+      "page_end": 11,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Conducting the Audit •Site Visits •Stick to your plan… unless reality hits you in the face! Preliminary WalkthroughSAFETY toolbox meeting Equipment Checks Data Collection Interviews Documentation",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Site visit procedures.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 12: Conducting the Audit",
+      "page_start": 12,
+      "page_end": 12,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "Conducting the Audit •Data Analysis –RETScreen + Excel + ASHRAE Forms Let’s go with Live Example!",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Data analysis using RETScreen and Excel.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 13: Conducting the Audit – Report Structure",
+      "page_start": 13,
+      "page_end": 13,
+      "chunk_count": 2,
+      "candidate_knowledge_types": [
+        "performance_spec",
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "Conducting the Audit –Report Structure 1. Executive Summary • Brief background and summary of scope • EEM (Energy Efficiency Measures) summary table • Summary of benchmarking results 2. Background Information • Contact information for stakeholders • Audit scope, methodology • Description of the site and the building • ",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "reporting_requirement",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Report structure details.",
+      "llm_route_confidence": "high"
+    },
+    {
+      "section_title": "Slide 14: After the Audit",
+      "page_start": 14,
+      "page_end": 14,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "After the Audit •RETScreen Energy Modeling Let’s go with Live Example!",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "After audit RETScreen modeling.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 15: After the Audit",
+      "page_start": 15,
+      "page_end": 15,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "After the Audit •Model Calibration •Is the process that allows us to compare the energy consumption calculated by the model, with the real energy consumption. •Good practice: it should be in the range of ±10% •Schedules are important to know, and be able to correctly put them on the model Let’s go with Live Example! So",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Model calibration discussion.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 16: After the Audit",
+      "page_start": 16,
+      "page_end": 16,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "medium",
+      "sample_text": "After the Audit •EEM’s and their simulation in RETScreen Let’s go with Live Example!",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "EEM simulation in RETScreen.",
+      "llm_route_confidence": "medium"
+    },
+    {
+      "section_title": "Slide 17: Final Report",
+      "page_start": 17,
+      "page_end": 17,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [],
+      "confidence": "none",
+      "sample_text": "Final Report Let’s go with Live Example!",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Final report mention.",
+      "llm_route_confidence": "none"
+    },
+    {
+      "section_title": "Slide 18: Conclusion",
+      "page_start": 18,
+      "page_end": 18,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "low",
+      "sample_text": "Conclusion •Energy audits are in certain way, unique, even when following a Standard like ASHRAE 211 -2018 •Standards and Best practices help to guideline and streamline the audit process, but most importantly: THEY HELP TO PLAN •Use of templates already available help to reduce time, effort, and homogenize as much as ",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "audit_process",
+      "llm_knowledge_goal": "audit_methodology",
+      "llm_allowed_knowledge_types": [
+        "application_guidance"
+      ],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": true,
+      "llm_route_reason": "Conclusion summarizing key points.",
+      "llm_route_confidence": "low"
+    },
+    {
+      "section_title": "Slide 19",
+      "page_start": 19,
+      "page_end": 19,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "parameter_spec"
+      ],
+      "confidence": "low",
+      "sample_text": "Javier Ojeda P.Eng, MBA, PMP, CEM, REP Owner, Principal Engineer HYSOVENT Sustainable Engineering Phone: +1-902-2106828 email: javier@hysovent.com Hysovent Limited 103-287 Lacewood Drive, Suite 121, Halifax, NS, B3M3Y7 Canada www.hysovent.com Photo by Wilhelm Gunkel on Unsplash",
+      "section_source": "pdf_outline",
+      "llm_section_topic": "unknown",
+      "llm_knowledge_goal": "out_of_scope",
+      "llm_allowed_knowledge_types": [],
+      "llm_equipment_anchor": "none",
+      "llm_should_extract": false,
+      "llm_route_reason": "Contact slide with no relevant content.",
+      "llm_route_confidence": "low"
+    }
+  ],
+  "candidate_type_counts": {
+    "application_guidance": 16,
+    "performance_spec": 6,
+    "parameter_spec": 1
+  },
+  "llm_routing": {
+    "generated_at": "2026-05-10T12:00:14.839977+00:00",
+    "backend_name": "deepseek-parameter-spec",
+    "document_route": {
+      "document_family": "methodology_guide",
+      "document_lane": "audit_methodology",
+      "default_equipment_anchor": "general_hvac",
+      "should_run_equipment_pipeline": false,
+      "reason": "Document is a presentation on best practices for energy audits using ASHRAE 211-2018 and RETScreen, focusing on audit methodology and procedures.",
+      "confidence": "high"
+    },
+    "routed_section_count": 19
+  }
+}

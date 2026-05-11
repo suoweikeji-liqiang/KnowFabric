@@ -1,0 +1,820 @@
+{
+  "health_mode": "review_bundle_health_report",
+  "generated_at": "2026-05-07T08:52:06.170997+00:00",
+  "summary": {
+    "total_findings": 89,
+    "by_code": {
+      "anchor_uncertainty": 81,
+      "weak_evidence": 7,
+      "coverage_gap": 1
+    },
+    "review_packs": 1
+  },
+  "findings": [
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_161ee3c41724565c",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_856afc132f561046",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_7a6f3b363321d467",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_5b7d96ada32a37ce",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_dd97589e737ee370",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_8087e08c8549b8ed",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_adcdbb2d208e57c1",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_4359bbcadcbefd2f",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_f2b52af0d7eb70fe",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_8641e477c7e7b97a",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_92c3ec2c0f5eafbd",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_3c6c8eb1c8df1f7c",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_33e629c8ddb5cbf2",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_40cd969b58e8b8e2",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_7559154fe76dfa8d",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_83321268403e75f1",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_42b820b66c3b204c",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_22d39c4d8ef1e4a7",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_4b4cecfec48fe1b6",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_52cc4a9be7270553",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_9835014bd796943b",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_4803bcb19423b93e",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_02f7dc5aeb29462f",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_b9acaa96d2a0bfdd",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_966c911b49d38cee",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_b34d4697f2a1cbbb",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_9f451159f434341e",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_2f49032c5379c3e5",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_d5ff3426c410b564",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_51e753d66225e1fc",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_9d667b69e42ccd92",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_2f20157ba15c28f2",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_0fb25825cd5a9ae3",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_d4a3a04d86295c4b",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_816757a2867ef2a3",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_e24387dd8664beeb",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_621778bd657389e6",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_3432aa5cf7488b53",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_becdcdfb0c60a024",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_57c7d759b16f1a4a",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_bd736270e10d65e1",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_91cb25b1be8fa1b1",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_5063fc977e5668ab",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_552c83a93d167e6a",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_9d5a441bb8cbec53",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_a45c7a7d72f6c079",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_06c8ce377b5475fc",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_231ebe867edd9d2d",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_4a738a711584fc33",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_5960703f5a2fd3ed",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_55bb192433ae5a9d",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_f1c7669125f806ce",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_d1e3ca45d41005e2",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_d10aaf6e4771b54a",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_3c8fc4df33008fac",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_033b94eb9cc02d37",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_67ca0b57bc381ded",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_a4dd5219cdff8fe9",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_9dde4855131677e0",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_faca597ecdce5dee",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_5130e5b5cc52f442",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_1a4bebe8fa809248",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_7997703efa81a395",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_75bd936ff5a0de7d",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_11187867de830424",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_bf951e6bbf872499",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_28ff6c75a9396371",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_255691c6b7593585",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_4189b81a4be8decc",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_08b28176bdf78f54",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_a1c9feb6d9331991",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_955dd7f5f2d3b997",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_782053bd4bb228a4",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_f8e365061487dc7a",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_d8517208e1287030",
+      "code": "weak_evidence",
+      "severity": "medium",
+      "message": "Candidate relies on limited confidence or a short evidence span."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_d8517208e1287030",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_f9991a1a7bbe45bd",
+      "code": "weak_evidence",
+      "severity": "medium",
+      "message": "Candidate relies on limited confidence or a short evidence span."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_f9991a1a7bbe45bd",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_7fdc0f1025871b60",
+      "code": "weak_evidence",
+      "severity": "medium",
+      "message": "Candidate relies on limited confidence or a short evidence span."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_7fdc0f1025871b60",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_e853187e6f8c7493",
+      "code": "weak_evidence",
+      "severity": "medium",
+      "message": "Candidate relies on limited confidence or a short evidence span."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_e853187e6f8c7493",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_1967dc18e72e9005",
+      "code": "weak_evidence",
+      "severity": "medium",
+      "message": "Candidate relies on limited confidence or a short evidence span."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_1967dc18e72e9005",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_fe38f2bfe610f2c4",
+      "code": "weak_evidence",
+      "severity": "medium",
+      "message": "Candidate relies on limited confidence or a short evidence span."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_fe38f2bfe610f2c4",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_d96abe34f02e7c46",
+      "code": "weak_evidence",
+      "severity": "medium",
+      "message": "Candidate relies on limited confidence or a short evidence span."
+    },
+    {
+      "scope": "candidate",
+      "equipment_class_key": "hvac:chiller",
+      "doc_id": "doc_1f7a392bdd7b4e4c",
+      "candidate_id": "cand_d96abe34f02e7c46",
+      "code": "anchor_uncertainty",
+      "severity": "medium",
+      "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+    },
+    {
+      "scope": "equipment_class",
+      "equipment_class_key": "hvac:chiller",
+      "code": "coverage_gap",
+      "severity": "medium",
+      "message": "Supported knowledge anchors are missing from the prepared candidate set.",
+      "missing_knowledge_types": [
+        "fault_diagnostic_rule",
+        "operational_sequence",
+        "parameter_spec",
+        "performance_spec"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,795 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-07T20:00:36.123088+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_37109bd2df4547e4",
+  "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chiller",
+    "equipment_class_key": "hvac:chiller",
+    "label": "Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "operational_sequence",
+      "fault_diagnostic_rule"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 10,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_1625c4f782d79193",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:1",
+      "structured_payload_candidate": {
+        "fault_code": "压缩机高压一",
+        "meaning": "压缩机1高压保护",
+        "title": "压缩机高压一",
+        "summary": "压缩机1高压保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '压缩机一过载' and defines it as '压缩 机l过载 保 护', making it a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:1",
+        "structured_payload": {
+          "fault_code": "压缩机高压一",
+          "meaning": "压缩机1高压保护",
+          "title": "压缩机高压一",
+          "summary": "压缩机1高压保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0cccbe9a73c0d2b2",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:2",
+      "structured_payload_candidate": {
+        "fault_code": "压缩机高压二",
+        "meaning": "压缩机2高压保护",
+        "title": "压缩机高压二",
+        "summary": "压缩机2高压保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '压缩机二过载' and defines it as '压缩 机2过载 倮 护', so it is a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:2",
+        "structured_payload": {
+          "fault_code": "压缩机高压二",
+          "meaning": "压缩机2高压保护",
+          "title": "压缩机高压二",
+          "summary": "压缩机2高压保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1625c4f782d79193",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:1",
+      "structured_payload_candidate": {
+        "fault_code": "压缩机低压一",
+        "meaning": "压缩机1低压保护",
+        "title": "压缩机低压一",
+        "summary": "压缩机1低压保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '压缩机一过载' and defines it as '压缩 机l过载 保 护', making it a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:1",
+        "structured_payload": {
+          "fault_code": "压缩机低压一",
+          "meaning": "压缩机1低压保护",
+          "title": "压缩机低压一",
+          "summary": "压缩机1低压保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0cccbe9a73c0d2b2",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:2",
+      "structured_payload_candidate": {
+        "fault_code": "压缩机低压二",
+        "meaning": "压缩机2低压保护",
+        "title": "压缩机低压二",
+        "summary": "压缩机2低压保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '压缩机二过载' and defines it as '压缩 机2过载 倮 护', so it is a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:2",
+        "structured_payload": {
+          "fault_code": "压缩机低压二",
+          "meaning": "压缩机2低压保护",
+          "title": "压缩机低压二",
+          "summary": "压缩机2低压保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1625c4f782d79193",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:1",
+      "structured_payload_candidate": {
+        "fault_code": "压缩机一过载",
+        "meaning": "压缩机1过载保护",
+        "title": "压缩机一过载",
+        "summary": "压缩机1过载保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '压缩机一过载' and defines it as '压缩 机l过载 保 护', making it a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:1",
+        "structured_payload": {
+          "fault_code": "压缩机一过载",
+          "meaning": "压缩机1过载保护",
+          "title": "压缩机一过载",
+          "summary": "压缩机1过载保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0cccbe9a73c0d2b2",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:2",
+      "structured_payload_candidate": {
+        "fault_code": "压缩机二过载",
+        "meaning": "压缩机2过载保护",
+        "title": "压缩机二过载",
+        "summary": "压缩机2过载保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '压缩机二过载' and defines it as '压缩 机2过载 倮 护', so it is a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:2",
+        "structured_payload": {
+          "fault_code": "压缩机二过载",
+          "meaning": "压缩机2过载保护",
+          "title": "压缩机二过载",
+          "summary": "压缩机2过载保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_14ccec6f7ff35066",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "水流开关",
+        "meaning": "水流开关保护",
+        "title": "水流开关",
+        "summary": "水流开关保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '进水温度传感器' (as '进水温唐器') and defines it as '进水愠度传感 器 倮 护', confirming a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "水流开关",
+          "meaning": "水流开关保护",
+          "title": "水流开关",
+          "summary": "水流开关保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_14ccec6f7ff35066",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "风机一过流",
+        "meaning": "风机一过流保护",
+        "title": "风机一过流",
+        "summary": "风机一过流保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '进水温度传感器' (as '进水温唐器') and defines it as '进水愠度传感 器 倮 护', confirming a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "风机一过流",
+          "meaning": "风机一过流保护",
+          "title": "风机一过流",
+          "summary": "风机一过流保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_14ccec6f7ff35066",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "风机二过流",
+        "meaning": "风机二过流保护",
+        "title": "风机二过流",
+        "summary": "风机二过流保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '进水温度传感器' (as '进水温唐器') and defines it as '进水愠度传感 器 倮 护', confirming a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "风机二过流",
+          "meaning": "风机二过流保护",
+          "title": "风机二过流",
+          "summary": "风机二过流保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_14ccec6f7ff35066",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "进水温度传感器",
+        "meaning": "进水温度传感器保护",
+        "title": "进水温度传感器",
+        "summary": "进水温度传感器保护故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cc65abf187fe4f36"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence lists '进水温度传感器' (as '进水温唐器') and defines it as '进水愠度传感 器 倮 护', confirming a valid fault code.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "进水温度传感器",
+          "meaning": "进水温度传感器保护",
+          "title": "进水温度传感器",
+          "summary": "进水温度传感器保护故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一\n排气高捏ˉ\n通信线爵故障\n时钟芯片故漳\n存储芯片故漳Jk压缩 机1高压 保 护V\n/△压缩 机2高压保 护V\n严压 缩 机1低压保护+/\n严压 缩 机2低压 保 护·/\n/F压缩 机l过载 保 护″\n/l压缩 机2过载 倮 护〃\n严水 流 开 关 保 护V\n严风 机一过 流 保 护V\n/+风机二过 流 保 护 ″ (四风 机 系统使用)\n虍进水愠度传感 器 倮 护’/\n虍出 水 温 度 传 感 器 保 护 〃\n严化 霜温 度 传感 器1保护V\n严化 箱温度传 感 器2保护″\n^系统 蒸 发器 防 冻 温 度传感 器 倮 护 紫/\n^系统 参 考点 温 度 传 感 器 保 护〃\n肛 系 统 蒸 发 器 防 冻/防过 羽1温度 传感 器 保 护 F/\n/+压缩 机l爿肓 气 高温 保 护V\n严压 缩 机2排气高 温 保 护V\n按退芭锼退盅该菜单 亘面,返回上一级菜荤.\n3勿苕洗功铐\n可以对任 一台单元模 块的压缩机 、风和1和 l】逦阀单独进行强趔启停。用户决不 可\n使丿 目这些功能,如要使用必须在调试人员 指寻下迸行,以兔发生事蔹.此功能操作必\n须凭密码迸人,操作方法不列出 .\n33参茁茁宕   !\n用户决不可便用这些功蔓,如妄受目必须在谓试人员 指寻下进行,以免发生事故。此\n功能操作必须凭密码进人,操作要点:选择该菜单并确定 时,屏幕提示输人密码,肖通过\n鼠土、膨下苈挥键 输人正确密码并确定后,正式进人壅墅望筮霁 单;通过/o,±、洵下遴\n嬲 选择要修 改的参数,冉按馏定缱进人修改界面,,TL过 /p,±、疴瓦旌孝键 输入参数值\n后再桉蟊喔箧Ⅱ宄鲎丝邂 JrJ到耋望望筮莱 荤;同样的方法修改其它参数,修政完毕后通过\n向上、洵下逸舞键 选择 壅塾丝荠单中的兹多望堑丝呗,屏幕再次提示是否保存修改 值,\n若要保存则选择“确定”冉按确定簿保存并返回主控菜单 。注意只有适过上面的 退出方\n法才能保存修 改值,其它退出方式均 不保存修改 值。\n10\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

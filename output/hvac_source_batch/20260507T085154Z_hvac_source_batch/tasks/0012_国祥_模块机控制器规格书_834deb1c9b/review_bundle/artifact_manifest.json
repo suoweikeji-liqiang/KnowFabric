@@ -1,0 +1,22 @@
+{
+  "artifact_mode": "chunk_backfill_review_pipeline_export",
+  "generated_at": "2026-05-07T08:52:00.643701+00:00",
+  "domain_id": "hvac",
+  "filters_applied": {
+    "doc_id": "doc_1d0231208a244288",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "paths": {
+    "candidates": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0012_国祥_模块机控制器规格书_834deb1c9b/review_bundle/candidates.json",
+    "review_pack_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0012_国祥_模块机控制器规格书_834deb1c9b/review_bundle/review_packs",
+    "review_pack_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0012_国祥_模块机控制器规格书_834deb1c9b/review_bundle/review_packs/review_pack_manifest.json",
+    "stats": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0012_国祥_模块机控制器规格书_834deb1c9b/review_bundle/review_pipeline_stats.json"
+  },
+  "counts": {
+    "candidate_entries": 100,
+    "review_packs": 1,
+    "documents": 1
+  }
+}

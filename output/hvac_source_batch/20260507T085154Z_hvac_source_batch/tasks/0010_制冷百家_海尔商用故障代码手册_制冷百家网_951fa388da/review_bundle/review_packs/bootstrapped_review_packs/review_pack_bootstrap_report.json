@@ -1,0 +1,15 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-07T08:51:57.836610+00:00",
+  "pack_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0010_制冷百家_海尔商用故障代码手册_制冷百家网_951fa388da/review_bundle/review_packs",
+  "output_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0010_制冷百家_海尔商用故障代码手册_制冷百家网_951fa388da/review_bundle/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 0,
+  "total_entries_updated": 0,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 0,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": []
+}

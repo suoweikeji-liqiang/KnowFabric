@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "row_index": 5,
+  "file_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/02、格力/技术手册/【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+  "doc_id": "doc_dcf25b0eb7fc4c75",
+  "chunks": 71,
+  "manual_tokens_estimated": 17580,
+  "equipment_class_id": "centrifugal_chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 69,
+      "chunks_after": 71,
+      "parse_result": {
+        "job_id": "job_b5c3620dc49e4910",
+        "doc_id": "doc_dcf25b0eb7fc4c75",
+        "pages_created": 69,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_9f283a85d29a4c23",
+        "doc_id": "doc_dcf25b0eb7fc4c75",
+        "chunks_created": 71,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 39,
+      "anchor_passed": 39,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 19,
+      "judge_rejected": 20,
+      "judge_acceptance_rate": 48.7,
+      "judge_rejection_breakdown": {
+        "other": 20
+      },
+      "review_candidates": 19,
+      "by_type": {
+        "parameter_spec": 19
+      },
+      "usage": {
+        "prompt_tokens": 25712,
+        "completion_tokens": 6085,
+        "total_tokens": 31797
+      },
+      "judge_usage": {
+        "prompt_tokens": 1279,
+        "completion_tokens": 954,
+        "total_tokens": 2233
+      },
+      "extract_cost_rmb": 0.113646,
+      "judge_cost_rmb": 0.009561,
+      "cost_rmb": 0.123207,
+      "elapsed_seconds": 180.337,
+      "judge_elapsed_seconds": 67.13,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0005_格力_c系列离心式冷水机组技术服务手册_69页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0005_格力_c系列离心式冷水机组技术服务手册_69页"
+}

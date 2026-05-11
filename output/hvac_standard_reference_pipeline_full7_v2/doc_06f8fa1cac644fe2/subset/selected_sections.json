@@ -1,0 +1,109 @@
+{
+  "doc_id": "doc_06f8fa1cac644fe2",
+  "doc_name": "空调 系统 设计 手册 Ashrae 特别 出版物.pdf",
+  "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/空调 系统 设计 手册 Ashrae 特别 出版物.pdf",
+  "selected_pages": [
+    5,
+    13,
+    26,
+    33,
+    36,
+    99
+  ],
+  "selected_page_count": 6,
+  "knowledge_types_filter": [
+    "application_guidance",
+    "parameter_spec",
+    "operational_sequence"
+  ],
+  "min_confidence": "high",
+  "equipment_scope_id": "chiller",
+  "subset_pdf": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_v2/doc_06f8fa1cac644fe2/subset/auto_doc_06f8fa1cac644fe2.pdf",
+  "manifest_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_v2/doc_06f8fa1cac644fe2/subset/manifest.csv",
+  "sections": [
+    {
+      "section_title": "This ma nual focuses upon applications. The manual has two main parts",
+      "page_start": 5,
+      "page_end": 5,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "This ma nual focuses upon applications. The manual has two main parts: (1) a narrative description of design procedures and criteria orga nized into ten chapters and (2) six appendices with illustrative exam ples present",
+      "score": 15
+    },
+    {
+      "section_title": "10⏐ THE DESIGN PROCESS be benchmarked with a criterion that requires compliance with ANSI/ASHRAE/IES",
+      "page_start": 13,
+      "page_end": 13,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "10⏐ THE DESIGN PROCESS be benchmarked with a criterion that requires compliance with ANSI/ASHRAE/IESNA Standard 90.1, Energy Standard for Build- ings Except Low-Rise Residential Buildings . Design validation involves the",
+      "score": 14
+    },
+    {
+      "section_title": "This may limit system selection options where the resulting appearance is not acceptable to the arch",
+      "page_start": 26,
+      "page_end": 26,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "parameter_spec"
+      ],
+      "confidence": "high",
+      "sample_text": "This may limit system selection options where the resulting appearance is not acceptable to the architect or client. Cooling towers, usually located on the roof, affect the physical appearance of a building. Other ro oft",
+      "score": 14
+    },
+    {
+      "section_title": "Then, the effects of those sources can be controlled by  equipment selection,  air and water distr",
+      "page_start": 33,
+      "page_end": 33,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "Then, the effects of those sources can be controlled by  equipment selection,  air and water distribution system design,  structural/architectural containment,  dissipative absorption along the sound path, and  isol",
+      "score": 15
+    },
+    {
+      "section_title": "HV AC&R equipment loca- tions may influence spatial planning—so that areas requiring a low- noise en",
+      "page_start": 33,
+      "page_end": 33,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "HV AC&R equipment loca- tions may influence spatial planning—so that areas requiring a low- noise environment are not located next to major or noisy equipment. The HV AC engineer should alert other members of the buildin",
+      "score": 14
+    },
+    {
+      "section_title": "Control of this potential problem starts with system selection and entails careful equipment selecti",
+      "page_start": 36,
+      "page_end": 36,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "operational_sequence"
+      ],
+      "confidence": "high",
+      "sample_text": "Control of this potential problem starts with system selection and entails careful equipment selection and sizing to achieve the noise criteria for a given conditioned space. The more moving parts in a terminal, the noi ",
+      "score": 14
+    },
+    {
+      "section_title": "In such applications, they should be located as close as possible to the refrigeration machinery to",
+      "page_start": 99,
+      "page_end": 99,
+      "chunk_count": 1,
+      "candidate_knowledge_types": [
+        "application_guidance"
+      ],
+      "confidence": "high",
+      "sample_text": "In such applications, they should be located as close as possible to the refrigeration machinery to keep the refrigerant lines short. In the winter, the water can often be shut off with the dry coil provid- ing adequate ",
+      "score": 15
+    }
+  ]
+}

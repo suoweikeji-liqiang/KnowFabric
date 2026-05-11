@@ -1,0 +1,23 @@
+{
+  "bootstrap_mode": "chunk_backfill_review_pack_batch_bootstrap",
+  "generated_at": "2026-05-07T08:51:54.443662+00:00",
+  "pack_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页_b93519b55d/review_bundle/review_packs",
+  "output_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页_b93519b55d/review_bundle/review_packs/bootstrapped_review_packs",
+  "total_pack_files": 1,
+  "total_entries_updated": 100,
+  "target_decisions": null,
+  "summary": {
+    "bootstrapped": 1,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json",
+      "source_path": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页_b93519b55d/review_bundle/review_packs/hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json",
+      "status": "bootstrapped",
+      "entries_updated": 100,
+      "output_path": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页_b93519b55d/review_bundle/review_packs/bootstrapped_review_packs/hvac__doc_e312bbfa86684629__air_cooled_modular_heat_pump.json"
+    }
+  ]
+}

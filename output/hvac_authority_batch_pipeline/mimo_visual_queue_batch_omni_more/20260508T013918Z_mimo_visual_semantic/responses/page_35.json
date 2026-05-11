@@ -1,0 +1,67 @@
+{
+  "page": 35,
+  "response": {
+    "id": "6396ede22be542f2aaa3ec4b09531543",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is a mostly blank page with contact information for two HVAC companies (TICA Nanjing and TICA Tianjin) printed vertically on the right side, along with a disclaimer about product changes and a version number. There is also a handwritten note '30/5-2-35' and a watermark at the bottom.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Company contact info (Nanjing)\"},\n    {\"type\": \"text_block\", \"label\": \"Company contact info (Tianjin)\"},\n    {\"type\": \"text_block\", \"label\": \"Disclaimer and version note\"},\n    {\"type\": \"handwritten_note\", \"label\": \"30/5-2-35\"},\n    {\"type\": \"watermark\", \"label\": \"制冷百家网: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"company_contact\", \"document_version\"],\n  \"ocr_text_if_useful\": \"南京天加空调设备有限公司\\nTICA (NANJING) AIR-CONDITIONING CO.,LTD.\\n地址：中国江苏南京经济技术开发区恒业路6号\\n电话：86-25-85326977 传真：86-25-85323095\\nhttp://www.ticachina.com E-mail:tca@ticachina.com\\n邮编：210046\\n\\n天津天加空调设备有限公司\\nTICA (TIANJIN) AIR-CONDITIONING CO.,LTD.\\n地址：中国天津市北辰区华苑产业区祥苑路12号\\n电话：022-83712735 传真：022-83712731\\nhttp://www.ticachina.com E-mail:jp@ticachina.com\\n邮编：300384\\n\\n注：由于天加公司产品会不断改良和创新，因此本资料所载产品型号、规格和参数如有变动，恕不另行通知，敬请注意和谅解。 版号：10-05\",\n  \"uncertainty_notes\": \"The page is largely blank; the primary content is contact information and a disclaimer. The handwritten note's meaning is unclear.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204412,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 519,
+      "prompt_tokens": 1693,
+      "total_tokens": 2212,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 1496
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "text_scan",
+    "summary": "This is a mostly blank page with contact information for two HVAC companies (TICA Nanjing and TICA Tianjin) printed vertically on the right side, along with a disclaimer about product changes and a version number. There is also a handwritten note '30/5-2-35' and a watermark at the bottom.",
+    "visual_entities": [
+      {
+        "type": "text_block",
+        "label": "Company contact info (Nanjing)"
+      },
+      {
+        "type": "text_block",
+        "label": "Company contact info (Tianjin)"
+      },
+      {
+        "type": "text_block",
+        "label": "Disclaimer and version note"
+      },
+      {
+        "type": "handwritten_note",
+        "label": "30/5-2-35"
+      },
+      {
+        "type": "watermark",
+        "label": "制冷百家网: www.zhilengbj.cn"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "company_contact",
+      "document_version"
+    ],
+    "ocr_text_if_useful": "南京天加空调设备有限公司\nTICA (NANJING) AIR-CONDITIONING CO.,LTD.\n地址：中国江苏南京经济技术开发区恒业路6号\n电话：86-25-85326977 传真：86-25-85323095\nhttp://www.ticachina.com E-mail:tca@ticachina.com\n邮编：210046\n\n天津天加空调设备有限公司\nTICA (TIANJIN) AIR-CONDITIONING CO.,LTD.\n地址：中国天津市北辰区华苑产业区祥苑路12号\n电话：022-83712735 传真：022-83712731\nhttp://www.ticachina.com E-mail:jp@ticachina.com\n邮编：300384\n\n注：由于天加公司产品会不断改良和创新，因此本资料所载产品型号、规格和参数如有变动，恕不另行通知，敬请注意和谅解。 版号：10-05",
+    "uncertainty_notes": "The page is largely blank; the primary content is contact information and a disclaimer. The handwritten note's meaning is unclear.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is a mostly blank page with contact information for two HVAC companies (TICA Nanjing and TICA Tianjin) printed vertically on the right side, along with a disclaimer about product changes and a version number. There is also a handwritten note '30/5-2-35' and a watermark at the bottom.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Company contact info (Nanjing)\"},\n    {\"type\": \"text_block\", \"label\": \"Company contact info (Tianjin)\"},\n    {\"type\": \"text_block\", \"label\": \"Disclaimer and version note\"},\n    {\"type\": \"handwritten_note\", \"label\": \"30/5-2-35\"},\n    {\"type\": \"watermark\", \"label\": \"制冷百家网: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"company_contact\", \"document_version\"],\n  \"ocr_text_if_useful\": \"南京天加空调设备有限公司\\nTICA (NANJING) AIR-CONDITIONING CO.,LTD.\\n地址：中国江苏南京经济技术开发区恒业路6号\\n电话：86-25-85326977 传真：86-25-85323095\\nhttp://www.ticachina.com E-mail:tca@ticachina.com\\n邮编：210046\\n\\n天津天加空调设备有限公司\\nTICA (TIANJIN) AIR-CONDITIONING CO.,LTD.\\n地址：中国天津市北辰区华苑产业区祥苑路12号\\n电话：022-83712735 传真：022-83712731\\nhttp://www.ticachina.com E-mail:jp@ticachina.com\\n邮编：300384\\n\\n注：由于天加公司产品会不断改良和创新，因此本资料所载产品型号、规格和参数如有变动，恕不另行通知，敬请注意和谅解。 版号：10-05\",\n  \"uncertainty_notes\": \"The page is largely blank; the primary content is contact information and a disclaimer. The handwritten note's meaning is unclear.\",\n  \"confidence\": 0.95\n}"
+}

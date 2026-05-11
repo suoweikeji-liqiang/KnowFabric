@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "row_index": 4,
+  "file_name": "【约克】YCAB风冷涡旋冷水热泵机组安装操作维护手册（48页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YCAB风冷涡旋冷水热泵机组安装操作维护手册（48页）-制冷百家网.pdf",
+  "doc_id": "doc_d6f783e917924597",
+  "chunks": 48,
+  "manual_tokens_estimated": 3236,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 48,
+      "chunks_after": 48,
+      "parse_result": {
+        "job_id": "job_9b2d8f23fe1d473a",
+        "doc_id": "doc_d6f783e917924597",
+        "pages_created": 48,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_52c0c54809f846f0",
+        "doc_id": "doc_d6f783e917924597",
+        "chunks_created": 48,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 0,
+      "anchor_rejected": 40,
+      "anchor_match_rate": 0.0,
+      "judge_accepted": 0,
+      "judge_rejected": 0,
+      "judge_acceptance_rate": 100.0,
+      "judge_rejection_breakdown": {},
+      "review_candidates": 0,
+      "by_type": {},
+      "usage": {
+        "prompt_tokens": 26873,
+        "completion_tokens": 4251,
+        "total_tokens": 31124
+      },
+      "judge_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "extract_cost_rmb": 0.106125,
+      "judge_cost_rmb": 0.0,
+      "cost_rmb": 0.106125,
+      "elapsed_seconds": 122.711,
+      "judge_elapsed_seconds": null,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T104201Z_hvac_doclevel_extraction_batch/0004_约克_ycab风冷涡旋冷水热泵机组安装操作维护手册_48页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T104201Z_hvac_doclevel_extraction_batch/0004_约克_ycab风冷涡旋冷水热泵机组安装操作维护手册_48页_制冷百家网"
+}

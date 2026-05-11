@@ -1,0 +1,58 @@
+{
+  "row_index": 13,
+  "path": "/Volumes/TSD302/pan/a00238/02、格力/技术手册/【格力】模块风冷冷水机组控制系统手册-.pdf",
+  "file_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+  "batch_group": "B_oem_manual_text_first",
+  "priority": "P1_batch_extract",
+  "brand": "Gree",
+  "authority_level": "oem_manual_or_vendor_doc",
+  "document_kind": "technical_manual",
+  "equipment_scope": "air_cooled_chiller_heat_pump",
+  "page_count": "18",
+  "text_quality": "good_text",
+  "recommended_mode": "doc_level_single_call",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0013_格力_模块风冷冷水机组控制系统手册_2ddc573764",
+  "status": "prepared",
+  "doc_id": "doc_37109bd2df4547e4",
+  "import_status": "imported",
+  "processing": {
+    "pages_before": 0,
+    "chunks_before": 0,
+    "pages_after": 18,
+    "chunks_after": 19,
+    "parse_result": {
+      "job_id": "job_33114b1d73b1414d",
+      "doc_id": "doc_37109bd2df4547e4",
+      "pages_created": 18,
+      "status": "success"
+    },
+    "chunk_result": {
+      "job_id": "job_82f511ecd4a84fb7",
+      "doc_id": "doc_37109bd2df4547e4",
+      "chunks_created": 19,
+      "status": "success"
+    }
+  },
+  "review_bundle": {
+    "prepare_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0013_格力_模块风冷冷水机组控制系统手册_2ddc573764/review_bundle/prepare_manifest.json",
+    "candidate_entries": 12,
+    "review_packs": 1,
+    "ready_packs": 0,
+    "compiler": {
+      "enable_llm": false,
+      "backend_name": null,
+      "backend_model": null,
+      "enabled_types": []
+    },
+    "health": {
+      "total_findings": 17,
+      "by_code": {
+        "anchor_uncertainty": 12,
+        "weak_evidence": 4,
+        "coverage_gap": 1
+      },
+      "review_packs": 1
+    }
+  }
+}

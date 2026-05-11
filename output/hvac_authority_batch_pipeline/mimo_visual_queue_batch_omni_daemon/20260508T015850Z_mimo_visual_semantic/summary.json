@@ -1,0 +1,140 @@
+{
+  "run_id": "20260508T015850Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/13、天加中央空调/【天加 】模块化风冷式冷(热)水机组D-安装操作手册.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 8.898,
+      "parsed": {
+        "page_type": "other",
+        "summary": "This is the cover page of an installation and operation manual for a TICA brand modular air-cooled chiller (heat pump). The page displays the manual title in both English and Chinese, the equipment type, and the manufacturer's logo.",
+        "visual_entities": [
+          {
+            "type": "text",
+            "label": "INSTALLATION & OPERATION MANUAL"
+          },
+          {
+            "type": "text",
+            "label": "MODULAR AIR-COOLED CHILLER (HEAT PUMP)"
+          },
+          {
+            "type": "text",
+            "label": "安装操作手册"
+          },
+          {
+            "type": "text",
+            "label": "模块化风冷式冷（热）水机组-D"
+          },
+          {
+            "type": "logo",
+            "label": "TICA"
+          },
+          {
+            "type": "text",
+            "label": "天加中央空调"
+          },
+          {
+            "type": "text",
+            "label": "制冷百家网: www.zh lengbj.cn"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "equipment_identification",
+          "manual_documentation"
+        ],
+        "ocr_text_if_useful": "INSTALLATION & OPERATION MANUAL\n安装操作手册\nMODULAR AIR-COOLED CHILLER (HEAT PUMP)\n模块化风冷式冷（热）水机组-D\nTICA\n天加中央空调\n制冷百家网: www.zh lengbj.cn",
+        "uncertainty_notes": "The image is a cover page, not a technical diagram or data sheet. No specific technical relationships or component connections are visible. The watermark at the bottom is from a third-party website.",
+        "confidence": 1.0
+      },
+      "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of an installation and operation manual for a TICA brand modular air-cooled chiller (heat pump). The page displays the manual title in both English and Chinese, the equipment type, and the manufacturer's logo.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"INSTALLATION & OPERATION MANUAL\"},\n    {\"type\": \"text\", \"label\": \"MODULAR AIR-COOLED CHILLER (HEAT PUMP)\"},\n    {\"type\": \"text\", \"label\": \"安装操作手册\"},\n    {\"type\": \"text\", \"label\": \"模块化风冷式冷（热）水机组-D\"},\n    {\"type\": \"logo\", \"label\": \"TICA\"},\n    {\"type\": \"text\", \"label\": \"天加中央空调\"},\n    {\"type\": \"text\", \"label\": \"制冷百家网: www.zh lengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\"],\n  \"ocr_text_if_useful\": \"INSTALLATION & OPERATION MANUAL\\n安装操作手册\\nMODULAR AIR-COOLED CHILLER (HEAT PUMP)\\n模块化风冷式冷（热）水机组-D\\nTICA\\n天加中央空调\\n制冷百家网: www.zh lengbj.cn\",\n  \"uncertainty_notes\": \"The image is a cover page, not a technical diagram or data sheet. No specific technical relationships or component connections are visible. The watermark at the bottom is from a third-party website.\",\n  \"confidence\": 1.0\n}",
+      "usage": {
+        "completion_tokens": 348,
+        "prompt_tokens": 1561,
+        "total_tokens": 1909,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1536,
+          "image_tokens": 1364
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 18,
+      "status": "ok_unparsed_json",
+      "elapsed_seconds": 34.439,
+      "parsed": null,
+      "raw_text": "{\n  \"page_type\": \"wiring_diagram\",\n  \"summary\": \"This page is a wiring diagram for a TICA TCA20X CH/FH heat pump unit controller (three-wire simple controller). It shows the electrical connections between the main controller board, various components (compressor, fans, heaters, sensors), and power supply. The diagram includes terminal labels, component symbols, and configuration tables for DIP switches and model settings.\",\n  \"visual_entities\": [\n    {\"type\": \"component\", \"label\": \"Main Controller Board (TCA20X)\"},\n    {\"type\": \"component\", \"label\": \"Compressor (KM1)\"},\n    {\"type\": \"component\", \"label\": \"Condenser Fan 1 (FM1)\"},\n    {\"type\": \"component\", \"label\": \"Condenser Fan 2 (FM2)\"},\n    {\"type\": \"component\", \"label\": \"Electric Heater (CCH)\"},\n    {\"type\": \"component\", \"label\": \"Four-Way Valve (RVR)\"},\n    {\"type\": \"component\", \"label\": \"Power Supply (380V/3N~/50Hz)\"},\n    {\"type\": \"component\", \"label\": \"Fuse (FU)\"},\n    {\"type\": \"component\", \"label\": \"DIP Switch (S1)\"},\n    {\"type\": \"component\", \"label\": \"Terminal Block (L, N, PE)\"},\n    {\"type\": \"component\", \"label\": \"Sensors (TH1, TH2, TH3, TH4, TH5, TH6)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM2)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM4)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM5)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM6)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM7)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM8)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM9)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM10)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM11)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM12)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM13)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM14)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM15)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM16)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM17)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM18)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM19)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM20)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM21)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM22)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM23)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM24)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM25)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM26)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM27)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM28)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM29)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM30)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM31)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM32)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM33)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM34)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM35)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM36)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM37)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM38)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM39)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM40)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM41)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM42)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM43)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM44)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM45)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM46)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM47)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM48)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM49)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM50)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM51)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM52)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM53)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM54)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM55)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM56)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM57)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM58)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM59)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM60)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM61)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM62)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM63)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM64)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM65)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM66)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM67)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM68)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM69)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM70)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM71)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM72)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM73)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM74)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM75)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM76)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM77)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM78)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM79)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM80)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM81)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM82)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM83)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM84)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM85)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM86)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM87)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM88)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM89)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM90)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM91)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM92)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM93)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM94)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM95)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM96)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM97)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM98)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM99)\"},\n    {\"type\": \"component\", \"label\": \"Relay (KM100)\"},\n    {\"type\": \"terminal\", \"label\": \"OUT1\"},\n    {\"type\": \"terminal\", \"label\": \"OUT2\"},\n    {\"type\": \"terminal\", \"label\": \"OUT3\"},\n    {\"type\": \"terminal\", \"label\": \"OUT4\"},\n    {\"type\": \"terminal\", \"label\": \"OUT5\"},\n    {\"type\": \"terminal\", \"label\": \"OUT6\"},\n    {\"type\": \"terminal\", \"label\": \"OUT7\"},\n    {\"type\": \"terminal\", \"label\": \"OUT8\"},\n    {\"type\": \"terminal\", \"label\": \"OUT9\"},\n    {\"type\": \"terminal\", \"label\": \"OUT10\"},\n    {\"type\": \"terminal\", \"label\": \"OUT11\"},\n    {\"type\": \"terminal\", \"label\": \"OUT12\"},\n    {\"type\": \"terminal\", \"label\": \"A-OUT\"},\n    {\"type\": \"terminal\", \"label\": \"12V-OUT\"},\n    {\"type\": \"terminal\", \"label\": \"COM\"},\n    {\"type\": \"terminal\", \"label\": \"L\"},\n    {\"type\": \"terminal\", \"label\": \"N\"},\n    {\"type\": \"terminal\", \"label\": \"PE\"},\n    {\"type\": \"terminal\", \"label\": \"TH1\"},\n    {\"type\": \"terminal\", \"label\": \"TH2\"},\n    {\"type\": \"terminal\", \"label\": \"TH3\"},\n    {\"type\": \"terminal\", \"label\": \"TH4\"},\n    {\"type\": \"terminal\", \"label\": \"TH5\"},\n    {\"type\": \"terminal\", \"label\": \"TH6\"},\n    {\"type\": \"terminal\", \"label\": \"SEC\"},\n    {\"type\": \"terminal\", \"label\": \"WPB\"},\n    {\"type\": \"terminal\", \"label\": \"A\"},\n    {\"type\": \"terminal\", \"label\": \"B\"},\n    {\"type\": \"terminal\", \"label\": \"GND12V\"},\n    {\"type\": \"terminal\", \"label\": \"S1\"},\n    {\"type\": \"terminal\", \"label\": \"JP1\"},\n    {\"type\": \"terminal\", \"label\": \"JP2\"},\n    {\"type\": \"terminal\", \"label\": \"S2\"},\n    {\"type\": \"terminal\", \"label\": \"S3\"},\n    {\"type\": \"terminal\", \"label\": \"S4\"},\n    {\"type\": \"terminal\", \"label\": \"S5\"},\n    {\"type\": \"terminal\", \"label\": \"S6\"},\n    {\"type\": \"terminal\", \"label\": \"S7\"},\n    {\"type\": \"terminal\", \"label\": \"S8\"},\n    {\"type\": \"terminal\", \"label\": \"S9\"},\n    {\"type\": \"terminal\", \"label\": \"S10\"},\n    {\"type\": \"terminal\", \"label\": \"S11\"},\n    {\"type\": \"terminal\", \"label\": \"S12\"},\n    {\"type\": \"terminal\", \"label\": \"S13\"},\n    {\"type\": \"terminal\", \"label\": \"S14\"},\n    {\"type\": \"terminal\", \"label\": \"S15\"},\n    {\"type\": \"terminal\", \"label\": \"S16\"},\n    {\"type\": \"terminal\", \"label\": \"S17\"},\n    {\"type\": \"terminal\", \"label\": \"S18\"},\n    {\"type\": \"terminal\", \"label\": \"S19\"},\n    {\"type\": \"terminal\", \"label\": \"S20\"},\n    {\"type\": \"terminal\", \"label\": \"S21\"},\n    {\"type\": \"terminal\", \"label\": \"S22\"},\n    {\"type\": \"terminal\", \"label\": \"S23\"},\n    {\"type\": \"terminal\", \"label\": \"S24\"},\n    {\"type\": \"terminal\", \"label\": \"S25\"},\n    {\"type\": \"terminal\", \"label\": \"S26\"},\n    {\"type\": \"terminal\", \"label\": \"S27\"},\n    {\"type\": \"terminal\", \"label\": \"S28\"},\n    {\"type\": \"terminal\", \"label\": \"S29\"},\n    {\"type\": \"terminal\", \"label\": \"S30\"},\n    {\"type\": \"terminal\", \"label\": \"S31\"},\n    {\"type\": \"terminal\", \"label\": \"S32\"},\n    {\"type\": \"terminal\", \"label\": \"S33\"},\n    {\"type\": \"terminal\", \"label\": \"S34\"},\n    {\"type\": \"terminal\", \"label\": \"S35\"},\n    {\"type\": \"terminal\", \"label\": \"S36\"},\n    {\"type\": \"terminal\", \"label\": \"S37\"},\n    {\"type\": \"terminal\", \"label\": \"S38\"},\n    {\"type\": \"terminal\", \"label\": \"S39\"},\n    {\"type\": \"terminal\", \"label\": \"S40\"},\n    {\"type\": \"terminal\", \"label\": \"S41\"},\n    {\"type\": \"terminal\", \"label\": \"S42\"},\n    {\"type\": \"terminal\", \"label\": \"S43\"},\n    {\"type\": \"terminal\", \"label\": \"S44\"},\n    {\"type\": \"terminal\", \"label\": \"S45\"},\n    {\"type\": \"terminal\", \"label\": \"S46\"},\n    {\"type\": \"terminal\", \"label\": \"S47\"},\n    {\"type\": \"terminal\", \"label\": \"S48\"},\n    {\"type\": \"terminal\", \"label\": \"S49\"},\n    {\"type\": \"terminal\", \"label\": \"S50\"},\n    {\"type\": \"terminal\", \"label\": \"S51\"},\n    {\"type\": \"terminal\", \"label\": \"S52\"},\n    {\"type\": \"terminal\", \"label\": \"S53\"},\n    {\"type\": \"terminal\", \"label\": \"S54\"},\n    {\"type\": \"terminal\", \"label\": \"S55\"},\n    {\"type\": \"terminal\", \"label\": \"S56\"},\n    {\"type\": \"terminal\", \"label\": \"S57\"},\n    {\"type\": \"terminal\", \"label\": \"S58\"},\n    {\"type\": \"terminal\", \"label\": \"S59\"},\n    {\"type\": \"terminal\", \"label\": \"S60\"},\n    {\"type\": \"terminal\", \"label\": \"S61\"},\n    {\"type\": \"terminal\", \"label\": \"S62\"},\n    {\"type\": \"terminal\", \"label\": \"S63\"},\n    {\"type\": \"terminal\", \"label\": \"S64\"},\n    {\"type\": \"terminal\", \"label\": \"S65\"},\n    {\"type\": \"terminal\", \"label\": \"S66\"},\n    {\"type\": \"terminal\", \"label\": \"S67\"},\n    {\"type\": \"terminal\", \"label\": \"S68\"},\n    {\"type\": \"terminal\", \"label\": \"S69\"},\n    {\"type\": \"terminal\", \"label\": \"S70\"},\n    {\"type\": \"terminal\", \"label\": \"S71\"},\n    {\"type\": \"terminal\", \"label\": \"S72\"},\n    {\"type\": \"terminal\", \"label\": \"S73\"},\n    {\"type\": \"terminal\", \"label\": \"S74\"},\n    {\"type\": \"terminal\", \"label\": \"S75\"},\n    {\"type\": \"terminal\", \"label\": \"S76\"},\n    {\"type\": \"terminal\", \"label\": \"S77\"},\n    {\"type\": \"terminal\", \"label\": \"S78\"},\n    {\"type\": \"terminal\", \"label\": \"S79\"},\n    {\"type\": \"terminal\", \"label\": \"S80\"},\n    {\"type\": \"terminal\", \"label\": \"S81\"},\n    {\"type\": \"terminal\", \"label\": \"S82\"},\n    {\"type\": \"terminal\", \"label\": \"S83\"},\n    {\"type\": \"terminal\", \"label\": \"S84\"},\n    {\"type\": \"terminal\", \"label\": \"S85\"},\n    {\"type\": \"terminal\", \"label\": \"S86\"},\n    {\"type\": \"terminal\", \"label\": \"S87\"},\n    {\"type\": \"terminal\", \"label\": \"S88\"},\n    {\"type\": \"terminal\", \"label\": \"S89\"},\n    {\"type\": \"terminal\", \"label\": \"S90\"},\n    {\"type\": \"terminal\", \"label\": \"S91\"},\n    {\"type\": \"terminal\", \"label\": \"S92\"},\n    {\"type\": \"terminal\", \"label\": \"S93\"},\n    {\"type\": \"terminal\", \"label\": \"S94\"},\n    {\"type\": \"terminal\", \"label\": \"S95\"},\n    {\"type\": \"terminal\", \"label\": \"S96\"},\n    {\"type\": \"terminal\", \"label\": \"S97\"},\n    {\"type\": \"terminal\", \"label\": \"S98\"},\n    {\"type\": \"terminal\", \"label\": \"S99\"},\n    {\"type\": \"terminal\", \"label\": \"S100\"},\n    {\"type\": \"table\", \"label\": \"Model Setting Table\"},\n    {\"type\": \"table\", \"label\": \"DIP Switch Setting Table\"},\n    {\"type\": \"table\", \"label\": \"Component Symbol Table\"},\n    {\"type\": \"table\", \"label\": \"Low Voltage Switch Setting Table\"},\n    {\"type\": \"table\", \"label\": \"Fault Switch Setting Table\"}\n  ],\n  \"visual",
+      "usage": {
+        "completion_tokens": 4096,
+        "prompt_tokens": 1693,
+        "total_tokens": 5789,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1496
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 35,
+      "status": "ok",
+      "elapsed_seconds": 8.707,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This is a mostly blank page with company contact information and a disclaimer printed vertically along the right edge. The page appears to be a back cover or an informational page from an HVAC manual, containing no technical diagrams or specifications.",
+        "visual_entities": [
+          {
+            "type": "text_block",
+            "label": "Company contact information (Nanjing)"
+          },
+          {
+            "type": "text_block",
+            "label": "Company contact information (Tianjin)"
+          },
+          {
+            "type": "text_block",
+            "label": "Disclaimer/notice text"
+          },
+          {
+            "type": "handwritten_note",
+            "label": "Date notation '2015.2.25'"
+          },
+          {
+            "type": "watermark",
+            "label": "Website URL '制冷百家网: www.zhilengbj.cn'"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "company_contact_info",
+          "document_provenance"
+        ],
+        "ocr_text_if_useful": "南京天加空调设备有限公司\nTICA (NANJING) AIR-CONDITIONING CO., LTD.\n地址：中国江苏南京经济技术开发区恒业路6号\n电话：86-25-85326977 传真：86-25-85323095\nhttp://www.ticachina.com E-mail: tica@ticachina.com\n邮编：210046\n\n天津天加空调设备有限公司\nTICA (TIANJIN) AIR-CONDITIONING CO., LTD.\n地址：中国天津市北辰区华苑产业区祥苑路12号\n电话：022-83712735 传真：022-83712731\nhttp://www.ticachina.com E-mail: jp@ticachina.com\n邮编：300384\n\n注：由于天加公司产品会不断改良和创新，因此本资料所载产品型号、规格和参数如有变动，恕不另行通知，敬请注意和谅解。版号：10-05",
+        "uncertainty_notes": "The page is largely blank. The handwritten date '2015.2.25' is faint and may be an annotation. The vertical text is clear but contains no technical HVAC content.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is a mostly blank page with company contact information and a disclaimer printed vertically along the right edge. The page appears to be a back cover or an informational page from an HVAC manual, containing no technical diagrams or specifications.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Company contact information (Nanjing)\"},\n    {\"type\": \"text_block\", \"label\": \"Company contact information (Tianjin)\"},\n    {\"type\": \"text_block\", \"label\": \"Disclaimer/notice text\"},\n    {\"type\": \"handwritten_note\", \"label\": \"Date notation '2015.2.25'\"},\n    {\"type\": \"watermark\", \"label\": \"Website URL '制冷百家网: www.zhilengbj.cn'\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"company_contact_info\", \"document_provenance\"],\n  \"ocr_text_if_useful\": \"南京天加空调设备有限公司\\nTICA (NANJING) AIR-CONDITIONING CO., LTD.\\n地址：中国江苏南京经济技术开发区恒业路6号\\n电话：86-25-85326977 传真：86-25-85323095\\nhttp://www.ticachina.com E-mail: tica@ticachina.com\\n邮编：210046\\n\\n天津天加空调设备有限公司\\nTICA (TIANJIN) AIR-CONDITIONING CO., LTD.\\n地址：中国天津市北辰区华苑产业区祥苑路12号\\n电话：022-83712735 传真：022-83712731\\nhttp://www.ticachina.com E-mail: jp@ticachina.com\\n邮编：300384\\n\\n注：由于天加公司产品会不断改良和创新，因此本资料所载产品型号、规格和参数如有变动，恕不另行通知，敬请注意和谅解。版号：10-05\",\n  \"uncertainty_notes\": \"The page is largely blank. The handwritten date '2015.2.25' is faint and may be an annotation. The vertical text is clear but contains no technical HVAC content.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 521,
+        "prompt_tokens": 1693,
+        "total_tokens": 2214,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1496
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

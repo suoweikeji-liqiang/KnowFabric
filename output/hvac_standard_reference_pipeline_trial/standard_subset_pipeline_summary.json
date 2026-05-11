@@ -1,0 +1,31 @@
+{
+  "pipeline_mode": "standard_subset_extraction",
+  "generated_at": "2026-05-09T23:16:34.098015+00:00",
+  "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_trial",
+  "results": [
+    {
+      "doc_id": "doc_c019162f43d44d06",
+      "file_name": "ASHRAE 211能源审计最佳实践.pdf",
+      "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE 211能源审计最佳实践.pdf",
+      "backend": "deepseek-v4-pro",
+      "subset_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_trial/doc_c019162f43d44d06/subset",
+      "extract_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_trial/doc_c019162f43d44d06/extract"
+    },
+    {
+      "doc_id": "doc_38a89d59e8394e2d",
+      "file_name": "ASHRAE绿色建筑指南.pdf",
+      "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE绿色建筑指南.pdf",
+      "backend": "mimo-v2-omni",
+      "subset_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_trial/doc_38a89d59e8394e2d/subset",
+      "extract_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_trial/doc_38a89d59e8394e2d/extract"
+    },
+    {
+      "doc_id": "doc_a5de4244eeda4637",
+      "file_name": "ASHRAE手册 - HVAC系统和设备篇.pdf",
+      "source_pdf": "/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册 - HVAC系统和设备篇.pdf",
+      "backend": "mimo-v2-omni",
+      "subset_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_trial/doc_a5de4244eeda4637/subset",
+      "extract_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_trial/doc_a5de4244eeda4637/extract"
+    }
+  ]
+}

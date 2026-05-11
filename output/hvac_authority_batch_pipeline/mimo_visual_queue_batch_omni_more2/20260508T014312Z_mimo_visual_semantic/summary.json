@@ -1,0 +1,260 @@
+{
+  "run_id": "20260508T014312Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/12、日立空调/技术手册/【日立】水冷低温螺杆式冷水机组手册.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 10.718,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This is a cover page for Hitachi water-cooled low-temperature screw chiller technical documentation. It displays the product name, brand, standard cooling capacity range, a list of model numbers, a photo of the chiller unit, a close-up of the screw compressor rotors, and descriptive text about the unit's applications and features.",
+        "visual_entities": [
+          {
+            "type": "text_block",
+            "label": "Main Title (Chinese)"
+          },
+          {
+            "type": "text_block",
+            "label": "Brand Name (HITACHI)"
+          },
+          {
+            "type": "text_block",
+            "label": "Standard Cooling Capacity Range"
+          },
+          {
+            "type": "text_block",
+            "label": "Technical Data Section Header"
+          },
+          {
+            "type": "text_block",
+            "label": "Model Number List"
+          },
+          {
+            "type": "image",
+            "label": "Chiller Unit Photo"
+          },
+          {
+            "type": "image",
+            "label": "Screw Compressor Rotors Close-up"
+          },
+          {
+            "type": "text_block",
+            "label": "Descriptive Text Paragraph"
+          },
+          {
+            "type": "text_block",
+            "label": "Website Watermark"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "product_identification",
+          "specifications",
+          "component_visualization",
+          "application_context"
+        ],
+        "ocr_text_if_useful": "日立牌水冷低温螺杆式冷水机组\nHITACHI\n标准制冷量范围\n65kW to 396kW\n56,000kcal/h to 340,500kcal/h\n技术资料 I\n型号: RCU 40SCL\nRCU 50SCL\nRCU 60SCL\nRCU 80SCL\nRCU100SCL\nRCU120SCL\nRCU150SCL\nRCU180SCL\nRCU200SCL\nRCU240SCL\n日立牌水冷低温螺杆式冷水机组，可用于冷冻液出口温度-15～+5℃时，特别适用于冷冻加工\n业、化学工业、冰蓄冷空调、制冰工业等空调产业。该机组使用了最先进的“日立”半封闭\n式螺杆压缩机，其特点是结构简单，减少了如活塞，阀门，油泵及容量控制等机械部件。因\n而使该机种噪音低，振动小，长时间运行可靠性高，安装容易。该种冷水机组由压缩机，冷\n凝器、干式膨胀式蒸发器、热力膨胀阀、及一些控制系统组成，机器的操作非常简单。\n制冷百家网：www.zhilengbj.cn",
+        "uncertainty_notes": "The exact relationship between the listed models and the specific cooling capacities is not visually mapped on this page. The descriptive text mentions components like condenser and evaporator, but they are not individually labeled in the provided images.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is a cover page for Hitachi water-cooled low-temperature screw chiller technical documentation. It displays the product name, brand, standard cooling capacity range, a list of model numbers, a photo of the chiller unit, a close-up of the screw compressor rotors, and descriptive text about the unit's applications and features.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Main Title (Chinese)\"},\n    {\"type\": \"text_block\", \"label\": \"Brand Name (HITACHI)\"},\n    {\"type\": \"text_block\", \"label\": \"Standard Cooling Capacity Range\"},\n    {\"type\": \"text_block\", \"label\": \"Technical Data Section Header\"},\n    {\"type\": \"text_block\", \"label\": \"Model Number List\"},\n    {\"type\": \"image\", \"label\": \"Chiller Unit Photo\"},\n    {\"type\": \"image\", \"label\": \"Screw Compressor Rotors Close-up\"},\n    {\"type\": \"text_block\", \"label\": \"Descriptive Text Paragraph\"},\n    {\"type\": \"text_block\", \"label\": \"Website Watermark\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_identification\", \"specifications\", \"component_visualization\", \"application_context\"],\n  \"ocr_text_if_useful\": \"日立牌水冷低温螺杆式冷水机组\\nHITACHI\\n标准制冷量范围\\n65kW to 396kW\\n56,000kcal/h to 340,500kcal/h\\n技术资料 I\\n型号: RCU 40SCL\\nRCU 50SCL\\nRCU 60SCL\\nRCU 80SCL\\nRCU100SCL\\nRCU120SCL\\nRCU150SCL\\nRCU180SCL\\nRCU200SCL\\nRCU240SCL\\n日立牌水冷低温螺杆式冷水机组，可用于冷冻液出口温度-15～+5℃时，特别适用于冷冻加工\\n业、化学工业、冰蓄冷空调、制冰工业等空调产业。该机组使用了最先进的“日立”半封闭\\n式螺杆压缩机，其特点是结构简单，减少了如活塞，阀门，油泵及容量控制等机械部件。因\\n而使该机种噪音低，振动小，长时间运行可靠性高，安装容易。该种冷水机组由压缩机，冷\\n凝器、干式膨胀式蒸发器、热力膨胀阀、及一些控制系统组成，机器的操作非常简单。\\n制冷百家网：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The exact relationship between the listed models and the specific cooling capacities is not visually mapped on this page. The descriptive text mentions components like condenser and evaporator, but they are not individually labeled in the provided images.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 647,
+        "prompt_tokens": 2661,
+        "total_tokens": 3308,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 2464
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 23,
+      "status": "ok",
+      "elapsed_seconds": 12.333,
+      "parsed": {
+        "page_type": "wiring_diagram",
+        "summary": "This page provides electrical wiring instructions and diagrams for HVAC control systems, focusing on pump and cooling tower interlock connections. It includes textual steps for main power wiring, control power connections, and two sets of wiring diagrams (A and B) for pump operation and pump/cooling tower interlock circuits, along with a legend for component symbols.",
+        "visual_entities": [
+          {
+            "type": "text_block",
+            "label": "Electrical wiring instructions"
+          },
+          {
+            "type": "text_block",
+            "label": "Control wiring connection section"
+          },
+          {
+            "type": "diagram",
+            "label": "Pump operation circuit diagram A"
+          },
+          {
+            "type": "diagram",
+            "label": "Pump operation circuit diagram B"
+          },
+          {
+            "type": "diagram",
+            "label": "Pump and cooling tower interlock circuit diagram A"
+          },
+          {
+            "type": "diagram",
+            "label": "Pump and cooling tower interlock circuit diagram B"
+          },
+          {
+            "type": "table",
+            "label": "Component symbol legend table"
+          },
+          {
+            "type": "note",
+            "label": "Wiring notes and warnings"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "Pump operation circuit diagram A",
+            "relation": "shows connections for",
+            "to": "Combined operation switch"
+          },
+          {
+            "from": "Pump operation circuit diagram B",
+            "relation": "shows connections for",
+            "to": "Remote push button switch"
+          },
+          {
+            "from": "Pump and cooling tower interlock circuit diagram A",
+            "relation": "shows connections for",
+            "to": "Electromagnetic switch interlock"
+          },
+          {
+            "from": "Pump and cooling tower interlock circuit diagram B",
+            "relation": "shows connections for",
+            "to": "Water flow switch interlock"
+          },
+          {
+            "from": "Component symbol legend table",
+            "relation": "defines symbols used in",
+            "to": "All wiring diagrams"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "wiring_procedures",
+          "component_identification",
+          "interlock_logic",
+          "safety_precautions"
+        ],
+        "ocr_text_if_useful": "电气配线\n工具和仪表——一套电工工具和万用表\n检查项目——在保证遵守国际和地方标准的情况下，根据本资料中的“电气数据”，对电气元件(主要电源开关、保险丝、电线连接导管和电线接头)选择范围作核实。在设备维修期间，要注意把电源打在“关”的位置。防止电源被意外地接通。\n主电源接线步骤——在任何电气安装工作之前应确定安装位置没有被供电。\n1、在适当的位置安装供电源开关。\n2、安装主电源线孔胶垫。\n3、通过电线连接孔把主电源线、电源中线和接地线接到机组电气箱内，并将接线接到相应的接线座及地线座上。\n4、根据下图指示把引线紧固在R、S、T和Mp的接线螺栓上。\n控制电源——连接机组接头与水泵，水泵与冷却塔之起动装置间的联锁(据下图指示)\n控制线路连接\n1、水泵工作线路\n水泵供电\n2、水泵和冷水塔联锁线路\n注意：\n1、根据操作要求选择A或B及上图指示连接线路。\nA：用于电磁开关连锁方式。\nB：用于水流开关连锁方式。\n记号 名称\n* CPUE 冷冻水电磁开关\n* CPUC 冷却水电磁开关\n* CPUT 冷却塔电磁开关\n* AR 连锁用辅助继电器\n* ARp 运转确认用辅助继电器\n* FE 冷冻水泵流量开关\n* CE 冷却水泵流量开关\n* PBSp2 水泵控制开/关按钮\n* CS 现场接线确认开关",
+        "uncertainty_notes": "The diagrams are schematic and do not show physical spatial relationships. Some component labels (e.g., ARp1, PBSp1) are partially obscured or small, but their definitions are clear in the legend. The exact physical layout of the electrical box or terminals is not depicted.",
+        "confidence": 0.9
+      },
+      "raw_text": "{\n  \"page_type\": \"wiring_diagram\",\n  \"summary\": \"This page provides electrical wiring instructions and diagrams for HVAC control systems, focusing on pump and cooling tower interlock connections. It includes textual steps for main power wiring, control power connections, and two sets of wiring diagrams (A and B) for pump operation and pump/cooling tower interlock circuits, along with a legend for component symbols.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Electrical wiring instructions\"},\n    {\"type\": \"text_block\", \"label\": \"Control wiring connection section\"},\n    {\"type\": \"diagram\", \"label\": \"Pump operation circuit diagram A\"},\n    {\"type\": \"diagram\", \"label\": \"Pump operation circuit diagram B\"},\n    {\"type\": \"diagram\", \"label\": \"Pump and cooling tower interlock circuit diagram A\"},\n    {\"type\": \"diagram\", \"label\": \"Pump and cooling tower interlock circuit diagram B\"},\n    {\"type\": \"table\", \"label\": \"Component symbol legend table\"},\n    {\"type\": \"note\", \"label\": \"Wiring notes and warnings\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Pump operation circuit diagram A\", \"relation\": \"shows connections for\", \"to\": \"Combined operation switch\"},\n    {\"from\": \"Pump operation circuit diagram B\", \"relation\": \"shows connections for\", \"to\": \"Remote push button switch\"},\n    {\"from\": \"Pump and cooling tower interlock circuit diagram A\", \"relation\": \"shows connections for\", \"to\": \"Electromagnetic switch interlock\"},\n    {\"from\": \"Pump and cooling tower interlock circuit diagram B\", \"relation\": \"shows connections for\", \"to\": \"Water flow switch interlock\"},\n    {\"from\": \"Component symbol legend table\", \"relation\": \"defines symbols used in\", \"to\": \"All wiring diagrams\"}\n  ],\n  \"useful_for_knowledge_types\": [\"wiring_procedures\", \"component_identification\", \"interlock_logic\", \"safety_precautions\"],\n  \"ocr_text_if_useful\": \"电气配线\\n工具和仪表——一套电工工具和万用表\\n检查项目——在保证遵守国际和地方标准的情况下，根据本资料中的“电气数据”，对电气元件(主要电源开关、保险丝、电线连接导管和电线接头)选择范围作核实。在设备维修期间，要注意把电源打在“关”的位置。防止电源被意外地接通。\\n主电源接线步骤——在任何电气安装工作之前应确定安装位置没有被供电。\\n1、在适当的位置安装供电源开关。\\n2、安装主电源线孔胶垫。\\n3、通过电线连接孔把主电源线、电源中线和接地线接到机组电气箱内，并将接线接到相应的接线座及地线座上。\\n4、根据下图指示把引线紧固在R、S、T和Mp的接线螺栓上。\\n控制电源——连接机组接头与水泵，水泵与冷却塔之起动装置间的联锁(据下图指示)\\n控制线路连接\\n1、水泵工作线路\\n水泵供电\\n2、水泵和冷水塔联锁线路\\n注意：\\n1、根据操作要求选择A或B及上图指示连接线路。\\nA：用于电磁开关连锁方式。\\nB：用于水流开关连锁方式。\\n记号 名称\\n* CPUE 冷冻水电磁开关\\n* CPUC 冷却水电磁开关\\n* CPUT 冷却塔电磁开关\\n* AR 连锁用辅助继电器\\n* ARp 运转确认用辅助继电器\\n* FE 冷冻水泵流量开关\\n* CE 冷却水泵流量开关\\n* PBSp2 水泵控制开/关按钮\\n* CS 现场接线确认开关\",\n  \"uncertainty_notes\": \"The diagrams are schematic and do not show physical spatial relationships. Some component labels (e.g., ARp1, PBSp1) are partially obscured or small, but their definitions are clear in the legend. The exact physical layout of the electrical box or terminals is not depicted.\",\n  \"confidence\": 0.9\n}",
+      "usage": {
+        "completion_tokens": 904,
+        "prompt_tokens": 2661,
+        "total_tokens": 3565,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2464
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 45,
+      "status": "ok",
+      "elapsed_seconds": 15.428,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This page is a technical specification sheet for an HVAC chiller unit, detailing components, performance parameters, and maintenance guidelines. It describes the unit as a screw chiller using R22 refrigerant, with sections on refrigeration capacity, refrigerant circuit, compressor, evaporator, condenser, compressor protection, controls, accessories, maintenance, and coolant management.",
+        "visual_entities": [
+          {
+            "type": "text_block",
+            "label": "标题: 标准技术要求"
+          },
+          {
+            "type": "text_block",
+            "label": "机组描述"
+          },
+          {
+            "type": "text_block",
+            "label": "制冷量参数列表"
+          },
+          {
+            "type": "text_block",
+            "label": "冷媒回路描述"
+          },
+          {
+            "type": "text_block",
+            "label": "压缩机描述"
+          },
+          {
+            "type": "text_block",
+            "label": "蒸发器描述"
+          },
+          {
+            "type": "text_block",
+            "label": "冷凝器描述"
+          },
+          {
+            "type": "text_block",
+            "label": "压缩机保护描述"
+          },
+          {
+            "type": "text_block",
+            "label": "控制描述"
+          },
+          {
+            "type": "text_block",
+            "label": "附件描述"
+          },
+          {
+            "type": "text_block",
+            "label": "维修保养标题"
+          },
+          {
+            "type": "text_block",
+            "label": "维修描述"
+          },
+          {
+            "type": "text_block",
+            "label": "冷冻液管理标题"
+          },
+          {
+            "type": "text_block",
+            "label": "冷冻液注意事项列表"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "technical_specifications",
+          "component_descriptions",
+          "maintenance_procedures",
+          "safety_guidelines"
+        ],
+        "ocr_text_if_useful": "机组——机组是采用R22冷媒的螺杆式冷水机组，包括冷媒回路和电器装置，根据客户的要求可提供其他可选购之附件。机组应安装在室内。机组出厂前已充注制冷剂进行测试。此机组参照日本工业标准(JIS标准)生产。\n制冷量——根据以下运行状况，机组之制冷量不小于\n—— kwcal/h\n—— m³/h 冷冻水流量\n—— ℃冷冻液入口温度\n—— ℃冷冻液出口温度\n—— m³/h 冷却水流量\n—— ℃冷却水入水温度\n—— ℃冷却水出水温度\n蒸发器及冷凝器污垢系数不小于\n—— m²·℃/w\n冷媒回路——冷媒回路由日立——半封闭式螺杆压缩机、水冷式冷凝器，干式膨胀蒸发器、热力膨胀阀、冷媒液体管过滤器、易熔塞、止回阀等组成。\n压缩机——压缩机是日立——半封闭式螺杆压缩机、星一三角起动并配备一个可以维修的油分离器。\n蒸发器——蒸发器是壳管式。干式膨胀式，并采用无缝高效传热铜管。蒸发器之冷媒侧及水侧在机组出厂前进行试漏检查，两边端盖容易拆除以便维修。\n冷凝器——冷凝器是壳管式，采用无缝高效传热铜管，出厂前，冷媒侧进行试漏检查，清洁和去掉湿气。\n压缩机保护——每个压缩机保护包括快速反应过电流继电器、排气温感器、高压开关、低压开关、运行计时器和压缩机电机内部温感器，主回路电磁阀，旁通回路电磁阀。\n控制——所有控制器都安装在机组内，除了压缩机保护装置外，蒸发器装有防冻结温感器，控制装置包括运行次序和制冷量控制。\n附件——标准附件有防振胶垫及地脚螺栓。\n维修保养\n维修\n机组装有日立——半封闭螺杆式压缩机，因而需要定期进行维修保养。（请参考“日立半密封螺杆式压缩机——维修手册”）\n冷冻液的管理\n请遵守以下注意事项：\n※ 在日立低温冷水机组上请使用乙二醇系列冷冻液或丙二醇系列冷冻液。\n※ 请注意不要将不同种类的冷冻液混合使用，请一定使用同一厂家，同一品种的冷冻液。\n※ 请遵守冷冻液生产厂家提示的使用和管理方法。\n※ 请向冷冻液生产厂家确认在冷水机组的使用条件下冷冻液是否会产生问题。\n※ 请选用冻结温度比冷冻液的出口温度低10~14℃，且比防结温感器的动作温度低6~10℃的冷冻液。\n※ 对用于稀释冷冻液的清水的水质要求标准，与标准冷水机组相同。\n※ 详细情况请向制冷百家网：www.zhilengbj.cn",
+        "uncertainty_notes": "The page contains blank lines for numerical values in the refrigeration capacity section, indicating these are placeholders for specific data not filled in this template. The relationships between components are described textually but not visually diagrammed.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page is a technical specification sheet for an HVAC chiller unit, detailing components, performance parameters, and maintenance guidelines. It describes the unit as a screw chiller using R22 refrigerant, with sections on refrigeration capacity, refrigerant circuit, compressor, evaporator, condenser, compressor protection, controls, accessories, maintenance, and coolant management.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"标题: 标准技术要求\"},\n    {\"type\": \"text_block\", \"label\": \"机组描述\"},\n    {\"type\": \"text_block\", \"label\": \"制冷量参数列表\"},\n    {\"type\": \"text_block\", \"label\": \"冷媒回路描述\"},\n    {\"type\": \"text_block\", \"label\": \"压缩机描述\"},\n    {\"type\": \"text_block\", \"label\": \"蒸发器描述\"},\n    {\"type\": \"text_block\", \"label\": \"冷凝器描述\"},\n    {\"type\": \"text_block\", \"label\": \"压缩机保护描述\"},\n    {\"type\": \"text_block\", \"label\": \"控制描述\"},\n    {\"type\": \"text_block\", \"label\": \"附件描述\"},\n    {\"type\": \"text_block\", \"label\": \"维修保养标题\"},\n    {\"type\": \"text_block\", \"label\": \"维修描述\"},\n    {\"type\": \"text_block\", \"label\": \"冷冻液管理标题\"},\n    {\"type\": \"text_block\", \"label\": \"冷冻液注意事项列表\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"technical_specifications\", \"component_descriptions\", \"maintenance_procedures\", \"safety_guidelines\"],\n  \"ocr_text_if_useful\": \"机组——机组是采用R22冷媒的螺杆式冷水机组，包括冷媒回路和电器装置，根据客户的要求可提供其他可选购之附件。机组应安装在室内。机组出厂前已充注制冷剂进行测试。此机组参照日本工业标准(JIS标准)生产。\\n制冷量——根据以下运行状况，机组之制冷量不小于\\n—— kwcal/h\\n—— m³/h 冷冻水流量\\n—— ℃冷冻液入口温度\\n—— ℃冷冻液出口温度\\n—— m³/h 冷却水流量\\n—— ℃冷却水入水温度\\n—— ℃冷却水出水温度\\n蒸发器及冷凝器污垢系数不小于\\n—— m²·℃/w\\n冷媒回路——冷媒回路由日立——半封闭式螺杆压缩机、水冷式冷凝器，干式膨胀蒸发器、热力膨胀阀、冷媒液体管过滤器、易熔塞、止回阀等组成。\\n压缩机——压缩机是日立——半封闭式螺杆压缩机、星一三角起动并配备一个可以维修的油分离器。\\n蒸发器——蒸发器是壳管式。干式膨胀式，并采用无缝高效传热铜管。蒸发器之冷媒侧及水侧在机组出厂前进行试漏检查，两边端盖容易拆除以便维修。\\n冷凝器——冷凝器是壳管式，采用无缝高效传热铜管，出厂前，冷媒侧进行试漏检查，清洁和去掉湿气。\\n压缩机保护——每个压缩机保护包括快速反应过电流继电器、排气温感器、高压开关、低压开关、运行计时器和压缩机电机内部温感器，主回路电磁阀，旁通回路电磁阀。\\n控制——所有控制器都安装在机组内，除了压缩机保护装置外，蒸发器装有防冻结温感器，控制装置包括运行次序和制冷量控制。\\n附件——标准附件有防振胶垫及地脚螺栓。\\n维修保养\\n维修\\n机组装有日立——半封闭螺杆式压缩机，因而需要定期进行维修保养。（请参考“日立半密封螺杆式压缩机——维修手册”）\\n冷冻液的管理\\n请遵守以下注意事项：\\n※ 在日立低温冷水机组上请使用乙二醇系列冷冻液或丙二醇系列冷冻液。\\n※ 请注意不要将不同种类的冷冻液混合使用，请一定使用同一厂家，同一品种的冷冻液。\\n※ 请遵守冷冻液生产厂家提示的使用和管理方法。\\n※ 请向冷冻液生产厂家确认在冷水机组的使用条件下冷冻液是否会产生问题。\\n※ 请选用冻结温度比冷冻液的出口温度低10~14℃，且比防结温感器的动作温度低6~10℃的冷冻液。\\n※ 对用于稀释冷冻液的清水的水质要求标准，与标准冷水机组相同。\\n※ 详细情况请向制冷百家网：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page contains blank lines for numerical values in the refrigeration capacity section, indicating these are placeholders for specific data not filled in this template. The relationships between components are described textually but not visually diagrammed.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 1101,
+        "prompt_tokens": 2661,
+        "total_tokens": 3762,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2464
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "【天加 】空调模块机组安装操作手册（22页）.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/13、天加中央空调/【天加 】空调模块机组安装操作手册（22页）.pdf",
+  "doc_id": "doc_0371153090604c09",
+  "chunks": 36,
+  "manual_tokens_estimated": 11919,
+  "equipment_class_id": "air_cooled_modular_heat_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "confidence": 0.554,
+      "matched_aliases": [
+        "Chiller",
+        "chiller",
+        "冷水机组"
+      ]
+    },
+    {
+      "equipment_class_id": "sensor",
+      "equipment_class_key": "hvac:sensor",
+      "confidence": 0.527,
+      "matched_aliases": [
+        "Sensor",
+        "sensor"
+      ]
+    },
+    {
+      "equipment_class_id": "pump",
+      "equipment_class_key": "hvac:pump",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "Pump",
+        "pump"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 35,
+      "chunks_before": 36,
+      "pages_after": 35,
+      "chunks_after": 36,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 39,
+      "anchor_rejected": 1,
+      "anchor_match_rate": 97.5,
+      "judge_accepted": 17,
+      "judge_rejected": 22,
+      "judge_acceptance_rate": 43.6,
+      "judge_rejection_breakdown": {
+        "other": 22
+      },
+      "review_candidates": 17,
+      "by_type": {
+        "parameter_spec": 17
+      },
+      "usage": {
+        "prompt_tokens": 18978,
+        "completion_tokens": 5231,
+        "total_tokens": 24209
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1164,
+        "total_tokens": 2444
+      },
+      "extract_cost_rmb": 0.08832,
+      "judge_cost_rmb": 0.010824,
+      "cost_rmb": 0.099144,
+      "elapsed_seconds": 156.12,
+      "judge_elapsed_seconds": 74.173,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T071326Z_hvac_doclevel_extraction_batch/0001_天加_空调模块机组安装操作手册_22页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T071326Z_hvac_doclevel_extraction_batch/0001_天加_空调模块机组安装操作手册_22页"
+}

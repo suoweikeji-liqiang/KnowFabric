@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "row_index": 1,
+  "file_name": "【麦克维尔】WMD单螺杆安装维护手册（63页）-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】WMD单螺杆安装维护手册（63页）-.pdf",
+  "doc_id": "doc_8d7dfa5b1b7c445c",
+  "chunks": 75,
+  "manual_tokens_estimated": 16084,
+  "equipment_class_id": "screw_chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 63,
+      "chunks_before": 75,
+      "pages_after": 63,
+      "chunks_after": 75,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 39,
+      "anchor_rejected": 1,
+      "anchor_match_rate": 97.5,
+      "judge_accepted": 19,
+      "judge_rejected": 20,
+      "judge_acceptance_rate": 48.7,
+      "judge_rejection_breakdown": {
+        "other": 20
+      },
+      "review_candidates": 19,
+      "by_type": {
+        "parameter_spec": 19
+      },
+      "usage": {
+        "prompt_tokens": 22486,
+        "completion_tokens": 6045,
+        "total_tokens": 28531
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1192,
+        "total_tokens": 2472
+      },
+      "extract_cost_rmb": 0.103728,
+      "judge_cost_rmb": 0.010992,
+      "cost_rmb": 0.11472,
+      "elapsed_seconds": 176.328,
+      "judge_elapsed_seconds": 225.73,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0001_麦克维尔_wmd单螺杆安装维护手册_63页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0001_麦克维尔_wmd单螺杆安装维护手册_63页"
+}

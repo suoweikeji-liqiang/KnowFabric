@@ -1,0 +1,137 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-07T08:51:58.223741+00:00",
+  "source_generation_mode": "chunk_backfill_review_candidate",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_4e2320e9f928474e",
+  "doc_name": "【格力】中央空调 MB 系列模块式风冷冷（热）水机组手册-.pdf",
+  "equipment_class": {
+    "equipment_class_id": "air_cooled_modular_heat_pump",
+    "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+    "label": "Air Cooled Modular Heat Pump",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "symptom",
+      "diagnostic_step"
+    ]
+  },
+  "filters_applied": {
+    "doc_id": "doc_4e2320e9f928474e",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 1,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_26ce77fbcb1d72b7",
+      "domain_id": "hvac",
+      "doc_id": "doc_4e2320e9f928474e",
+      "doc_name": "【格力】中央空调 MB 系列模块式风冷冷（热）水机组手册-.pdf",
+      "page_id": "page_9100659c8f80498d",
+      "page_no": 15,
+      "chunk_id": "chunk_3d448fdb8a974c3d",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "7、机组防震及防噪声\n1) 应采用橡胶减振垫﹑橡胶软接头等，以减低机组的噪音，减弱振动；\n2) 机组安装位置应避免选在窗下和建筑物之间，以防噪声污染，必要时采用隔音措施。\n8、冬季制热运行注意事项 1) 冬季环境气温较低或机组长时间未启用时，\n在开机前应先给机组供电（此时水泵不要启动） ，且\n通电时间不得低于 8 小时；\n2) 在冬天环境温度很低的情况下，夜间停机时会使壳管蒸发器和管道内的水冻结而",
+      "evidence_text": "7、机组防震及防噪声 1) 应采用橡胶减振垫﹑橡胶软接头等，以减低机组的噪音，减弱振动； 2) 机组安装位置应避免选在窗下和建筑物之间，以防噪声污染，必要时采用隔音措施。 8、冬季制热运行注意事项 1) 冬季环境气温较低或机组长时间未启用时， 在开机前应先给机组供电（此时水泵不要启动） ，且 通电时间不得低于 8 小时； 2) 在冬天环境温度很低的情况下，夜间停机时会使壳管蒸发器和管道内的水冻结而损坏设备和管 道， 为防止冻结，在...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "air_cooled_modular_heat_pump",
+        "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+        "label": "Air Cooled Modular Heat Pump",
+        "confidence": 0.383,
+        "matched_aliases": [
+          "模块机"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "symptom",
+          "diagnostic_step"
+        ]
+      },
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "pump_7_1_2_8_1_8",
+      "structured_payload_candidate": {
+        "application_type": "pump",
+        "guidance": "7、机组防震及防噪声\n1) 应采用橡胶减振垫﹑橡胶软接头等，以减低机组的噪音，减弱振动；\n2) 机组安装位置应避免选在窗下和建筑物之间，以防噪声污染，必要时采用隔音措施。\n8、冬季制热运行注意事项 1) 冬季环境气温较低或机组长时间未启用时，\n在开机前应先给机组供电（此时水泵不要启动） ，且\n通电时间不得低于 8 小时；\n2) 在冬天环境温度很低的情况下，夜间停机时会使壳管蒸发器和管道内的水冻结而"
+      },
+      "confidence_score": 0.736,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [
+          {
+            "equipment_class_id": "modular_chiller",
+            "equipment_class_key": "hvac:modular_chiller",
+            "confidence": 0.383,
+            "matched_aliases": [
+              "模块机"
+            ]
+          }
+        ],
+        "knowledge_signal": {
+          "matched_application_type": "pump",
+          "detection_method": "application_context"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "application domain markers matched"
+      },
+      "health_findings": [
+        {
+          "code": "weak_evidence",
+          "severity": "medium",
+          "message": "Candidate relies on limited confidence or a short evidence span."
+        },
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "pump_7_1_2_8_1_8",
+        "structured_payload": {
+          "application_type": "pump",
+          "guidance": "7、机组防震及防噪声\n1) 应采用橡胶减振垫﹑橡胶软接头等，以减低机组的噪音，减弱振动；\n2) 机组安装位置应避免选在窗下和建筑物之间，以防噪声污染，必要时采用隔音措施。\n8、冬季制热运行注意事项 1) 冬季环境气温较低或机组长时间未启用时，\n在开机前应先给机组供电（此时水泵不要启动） ，且\n通电时间不得低于 8 小时；\n2) 在冬天环境温度很低的情况下，夜间停机时会使壳管蒸发器和管道内的水冻结而"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "7、机组防震及防噪声 1) 应采用橡胶减振垫﹑橡胶软接头等，以减低机组的噪音，减弱振动； 2) 机组安装位置应避免选在窗下和建筑物之间，以防噪声污染，必要时采用隔音措施。 8、冬季制热运行注意事项 1) 冬季环境气温较低或机组长时间未启用时， 在开机前应先给机组供电（此时水泵不要启动） ，且 通电时间不得低于 8 小时； 2) 在冬天环境温度很低的情况下，夜间停机时会使壳管蒸发器和管道内的水冻结而损坏设备和管 道， 为防止冻结，在...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

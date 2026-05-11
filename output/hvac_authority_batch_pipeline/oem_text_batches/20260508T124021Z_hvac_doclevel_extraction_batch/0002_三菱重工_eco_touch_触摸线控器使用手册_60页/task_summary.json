@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/07、三菱重工/技术手册/【三菱重工】eco-touch 触摸线控器使用手册（60页）.pdf",
+  "doc_id": "doc_576787c42cc64301",
+  "chunks": 63,
+  "manual_tokens_estimated": 11493,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 60,
+      "chunks_before": 63,
+      "pages_after": 60,
+      "chunks_after": 63,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 20,
+      "judge_rejected": 20,
+      "judge_acceptance_rate": 50.0,
+      "judge_rejection_breakdown": {
+        "other": 20
+      },
+      "review_candidates": 20,
+      "by_type": {
+        "parameter_spec": 20
+      },
+      "usage": {
+        "prompt_tokens": 18248,
+        "completion_tokens": 6162,
+        "total_tokens": 24410
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1192,
+        "total_tokens": 2472
+      },
+      "extract_cost_rmb": 0.091716,
+      "judge_cost_rmb": 0.010992,
+      "cost_rmb": 0.102708,
+      "elapsed_seconds": 180.917,
+      "judge_elapsed_seconds": 71.753,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T124021Z_hvac_doclevel_extraction_batch/0002_三菱重工_eco_touch_触摸线控器使用手册_60页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T124021Z_hvac_doclevel_extraction_batch/0002_三菱重工_eco_touch_触摸线控器使用手册_60页"
+}

@@ -1,0 +1,1292 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T08:26:42.196259+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_9582a2d2585d4d95",
+  "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+  "equipment_class": {
+    "equipment_class_id": "screw_chiller",
+    "equipment_class_key": "hvac:screw_chiller",
+    "label": "Screw Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 16,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_abb38ef5d6c79865",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 26,
+      "chunk_id": "chunk_32a87718b6c4428c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "制冷控制温度",
+        "range": "5~20℃",
+        "default": "7℃",
+        "title": "制冷模式水温设置范围及默认值",
+        "summary": "制冷模式下以蒸发器出水温度为控制温度，设置范围5~20℃，默认7℃。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第24页， 共43页\n这两个画面是为操作工提供的参数设置画面，用来设置机组在制冷和制热模式运行时\n各\n自的控制温度，温差设置是用来控制机组启动 /停机所使用的。\n/circle6 运行温度设置：在制冷模式下以蒸发器的出水温度作为机组的控制温度，在制热模式\n下\n以冷凝器的出水温度作为机组的控制温度，在此可对制冷 /制热模式下的控制水温分\n别\n进行设定。机组在开启以后，在制冷模式下，当水温高于设置温度时，机组加载；\n当水温低于设置温度的时候机组减载。制冷模式所允许的水温设置范围为： 5~20℃，\n出\n厂默认设定值为 7℃；在制热模式下，当水温 低于设置温度时，机组加载；当水温\n高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_32a87718b6c4428c",
+        "chunk_8d13f7d0e66a474e"
+      ],
+      "source_page_nos": [
+        26,
+        31
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a specific operational parameter (cooling control temperature) with range and default, directly supported by the manual. Useful for configuration.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "制冷控制温度",
+          "range": "5~20℃",
+          "default": "7℃",
+          "title": "制冷模式水温设置范围及默认值",
+          "summary": "制冷模式下以蒸发器出水温度为控制温度，设置范围5~20℃，默认7℃。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第24页， 共43页\n这两个画面是为操作工提供的参数设置画面，用来设置机组在制冷和制热模式运行时\n各\n自的控制温度，温差设置是用来控制机组启动 /停机所使用的。\n/circle6 运行温度设置：在制冷模式下以蒸发器的出水温度作为机组的控制温度，在制热模式\n下\n以冷凝器的出水温度作为机组的控制温度，在此可对制冷 /制热模式下的控制水温分\n别\n进行设定。机组在开启以后，在制冷模式下，当水温高于设置温度时，机组加载；\n当水温低于设置温度的时候机组减载。制冷模式所允许的水温设置范围为： 5~20℃，\n出\n厂默认设定值为 7℃；在制热模式下，当水温 低于设置温度时，机组加载；当水温\n高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_8aa87ba8aa993f09",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 26,
+      "chunk_id": "chunk_32a87718b6c4428c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "制热控制温度",
+        "range": "35~55℃",
+        "default": "45℃",
+        "title": "制热模式水温设置范围及默认值",
+        "summary": "制热模式下以冷凝器出水温度为控制温度，设置范围35~55℃，默认45℃。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第24页， 共43页\n这两个画面是为操作工提供的参数设置画面，用来设置机组在制冷和制热模式运行时\n各\n自的控制温度，温差设置是用来控制机组启动 /停机所使用的。\n/circle6 运行温度设置：在制冷模式下以蒸发器的出水温度作为机组的控制温度，在制热模式\n下\n以冷凝器的出水温度作为机组的控制温度，在此可对制冷 /制热模式下的控制水温分\n别\n进行设定。机组在开启以后，在制冷模式下，当水温高于设置温度时，机组加载；\n当水温低于设置温度的时候机组减载。制冷模式所允许的水温设置范围为： 5~20℃，\n出\n厂默认设定值为 7℃；在制热模式下，当水温 低于设置温度时，机组加载；当水温\n高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_32a87718b6c4428c",
+        "chunk_4e925e71b9054094"
+      ],
+      "source_page_nos": [
+        26,
+        32
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a specific operational parameter (heating control temperature) with range and default, directly supported by the manual. Useful for configuration.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "制热控制温度",
+          "range": "35~55℃",
+          "default": "45℃",
+          "title": "制热模式水温设置范围及默认值",
+          "summary": "制热模式下以冷凝器出水温度为控制温度，设置范围35~55℃，默认45℃。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第24页， 共43页\n这两个画面是为操作工提供的参数设置画面，用来设置机组在制冷和制热模式运行时\n各\n自的控制温度，温差设置是用来控制机组启动 /停机所使用的。\n/circle6 运行温度设置：在制冷模式下以蒸发器的出水温度作为机组的控制温度，在制热模式\n下\n以冷凝器的出水温度作为机组的控制温度，在此可对制冷 /制热模式下的控制水温分\n别\n进行设定。机组在开启以后，在制冷模式下，当水温高于设置温度时，机组加载；\n当水温低于设置温度的时候机组减载。制冷模式所允许的水温设置范围为： 5~20℃，\n出\n厂默认设定值为 7℃；在制热模式下，当水温 低于设置温度时，机组加载；当水温\n高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_aedfb3829d837bb5",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 26,
+      "chunk_id": "chunk_32a87718b6c4428c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "运行温差",
+        "range": "0.5~3℃",
+        "default": "1.5℃",
+        "title": "运行温差设置范围及默认值",
+        "summary": "运行温差设置范围0.5~3℃，默认1.5℃，用于控制机组启停。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第24页， 共43页\n这两个画面是为操作工提供的参数设置画面，用来设置机组在制冷和制热模式运行时\n各\n自的控制温度，温差设置是用来控制机组启动 /停机所使用的。\n/circle6 运行温度设置：在制冷模式下以蒸发器的出水温度作为机组的控制温度，在制热模式\n下\n以冷凝器的出水温度作为机组的控制温度，在此可对制冷 /制热模式下的控制水温分\n别\n进行设定。机组在开启以后，在制冷模式下，当水温高于设置温度时，机组加载；\n当水温低于设置温度的时候机组减载。制冷模式所允许的水温设置范围为： 5~20℃，\n出\n厂默认设定值为 7℃；在制热模式下，当水温 低于设置温度时，机组加载；当水温\n高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_32a87718b6c4428c",
+        "chunk_4e925e71b9054094"
+      ],
+      "source_page_nos": [
+        26,
+        32
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a specific operational parameter (operating temperature differential) with range and default, directly supported by the manual. Useful for configuration.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "运行温差",
+          "range": "0.5~3℃",
+          "default": "1.5℃",
+          "title": "运行温差设置范围及默认值",
+          "summary": "运行温差设置范围0.5~3℃，默认1.5℃，用于控制机组启停。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第24页， 共43页\n这两个画面是为操作工提供的参数设置画面，用来设置机组在制冷和制热模式运行时\n各\n自的控制温度，温差设置是用来控制机组启动 /停机所使用的。\n/circle6 运行温度设置：在制冷模式下以蒸发器的出水温度作为机组的控制温度，在制热模式\n下\n以冷凝器的出水温度作为机组的控制温度，在此可对制冷 /制热模式下的控制水温分\n别\n进行设定。机组在开启以后，在制冷模式下，当水温高于设置温度时，机组加载；\n当水温低于设置温度的时候机组减载。制冷模式所允许的水温设置范围为： 5~20℃，\n出\n厂默认设定值为 7℃；在制热模式下，当水温 低于设置温度时，机组加载；当水温\n高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fb90db341e749275",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 32,
+      "chunk_id": "chunk_4e925e71b9054094",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:pid",
+      "structured_payload_candidate": {
+        "parameter_name": "温度控制PID",
+        "P_default": 25,
+        "I_default": 2.0,
+        "D_default": 0,
+        "title": "温度控制PID参数默认值",
+        "summary": "温度控制PID参数：P默认25，I默认2.0，D默认0。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第30页， 共43页 高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\n/circle6 温度控制 PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增\n加\n了温度控制 P、I、D设置。这些参数的设置，需要工程师根据现场机组的运行情况\n进\n行调整。 P的设置范围为： 5~600，出厂默认设定为 25；I的设置范围为： 0.5~10，\n出\n厂默认设定为 2.0；D的设置范围为： 0~10，出厂默认设定为 0，如果没有特殊需要，\nD的值一般设置为 0，否则易造成系统的不稳定。\n2\n) 运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各个系统和制冷 个系统和制冷个系统和制冷个系统和制冷 /制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）\n/circle6 运行过热度：是满液式水机组必须要设置的参数，这个参数是针对用户操作工程师开\n放\n的，在系统调整的时候，可根据蒸发器内液体蒸发的具体状况，设置过热度参数。\n过热度的设置范围为： 15~35℃，出厂默认设定值为 20℃。\n/circle6 过热度PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增加\n了\n过热度控制 P、I、D设置，需要工程师根据现场机组的运行情况进行调整。 P的设\n置\n范围为5~600，出厂默认设定为 35；I的设置范围 0.5~10，出厂默认设定为 1.8；D\n的设置范围为 0~10，出厂默认值设定为 0，一般如果没有特殊需要， D的值一般设置\n为0。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4e925e71b9054094"
+      ],
+      "source_page_nos": [
+        32
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts default PID parameters for temperature control, which are typical operational tuning parameters, supported by the evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:pid",
+        "structured_payload": {
+          "parameter_name": "温度控制PID",
+          "P_default": 25,
+          "I_default": 2.0,
+          "D_default": 0,
+          "title": "温度控制PID参数默认值",
+          "summary": "温度控制PID参数：P默认25，I默认2.0，D默认0。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第30页， 共43页 高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\n/circle6 温度控制 PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增\n加\n了温度控制 P、I、D设置。这些参数的设置，需要工程师根据现场机组的运行情况\n进\n行调整。 P的设置范围为： 5~600，出厂默认设定为 25；I的设置范围为： 0.5~10，\n出\n厂默认设定为 2.0；D的设置范围为： 0~10，出厂默认设定为 0，如果没有特殊需要，\nD的值一般设置为 0，否则易造成系统的不稳定。\n2\n) 运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各个系统和制冷 个系统和制冷个系统和制冷个系统和制冷 /制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）\n/circle6 运行过热度：是满液式水机组必须要设置的参数，这个参数是针对用户操作工程师开\n放\n的，在系统调整的时候，可根据蒸发器内液体蒸发的具体状况，设置过热度参数。\n过热度的设置范围为： 15~35℃，出厂默认设定值为 20℃。\n/circle6 过热度PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增加\n了\n过热度控制 P、I、D设置，需要工程师根据现场机组的运行情况进行调整。 P的设\n置\n范围为5~600，出厂默认设定为 35；I的设置范围 0.5~10，出厂默认设定为 1.8；D\n的设置范围为 0~10，出厂默认值设定为 0，一般如果没有特殊需要， D的值一般设置\n为0。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_af0c52cc850ab198",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 32,
+      "chunk_id": "chunk_4e925e71b9054094",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "运行过热度",
+        "range": "15~35℃",
+        "default": "20℃",
+        "title": "运行过热度设置范围及默认值",
+        "summary": "运行过热度设置范围15~35℃，默认20℃。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第30页， 共43页 高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\n/circle6 温度控制 PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增\n加\n了温度控制 P、I、D设置。这些参数的设置，需要工程师根据现场机组的运行情况\n进\n行调整。 P的设置范围为： 5~600，出厂默认设定为 25；I的设置范围为： 0.5~10，\n出\n厂默认设定为 2.0；D的设置范围为： 0~10，出厂默认设定为 0，如果没有特殊需要，\nD的值一般设置为 0，否则易造成系统的不稳定。\n2\n) 运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各个系统和制冷 个系统和制冷个系统和制冷个系统和制冷 /制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）\n/circle6 运行过热度：是满液式水机组必须要设置的参数，这个参数是针对用户操作工程师开\n放\n的，在系统调整的时候，可根据蒸发器内液体蒸发的具体状况，设置过热度参数。\n过热度的设置范围为： 15~35℃，出厂默认设定值为 20℃。\n/circle6 过热度PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增加\n了\n过热度控制 P、I、D设置，需要工程师根据现场机组的运行情况进行调整。 P的设\n置\n范围为5~600，出厂默认设定为 35；I的设置范围 0.5~10，出厂默认设定为 1.8；D\n的设置范围为 0~10，出厂默认值设定为 0，一般如果没有特殊需要， D的值一般设置\n为0。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4e925e71b9054094"
+      ],
+      "source_page_nos": [
+        32
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a specific operational parameter (operating superheat) with range and default, directly supported by the manual. Useful for configuration.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "运行过热度",
+          "range": "15~35℃",
+          "default": "20℃",
+          "title": "运行过热度设置范围及默认值",
+          "summary": "运行过热度设置范围15~35℃，默认20℃。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第30页， 共43页 高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\n/circle6 温度控制 PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增\n加\n了温度控制 P、I、D设置。这些参数的设置，需要工程师根据现场机组的运行情况\n进\n行调整。 P的设置范围为： 5~600，出厂默认设定为 25；I的设置范围为： 0.5~10，\n出\n厂默认设定为 2.0；D的设置范围为： 0~10，出厂默认设定为 0，如果没有特殊需要，\nD的值一般设置为 0，否则易造成系统的不稳定。\n2\n) 运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各个系统和制冷 个系统和制冷个系统和制冷个系统和制冷 /制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）\n/circle6 运行过热度：是满液式水机组必须要设置的参数，这个参数是针对用户操作工程师开\n放\n的，在系统调整的时候，可根据蒸发器内液体蒸发的具体状况，设置过热度参数。\n过热度的设置范围为： 15~35℃，出厂默认设定值为 20℃。\n/circle6 过热度PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增加\n了\n过热度控制 P、I、D设置，需要工程师根据现场机组的运行情况进行调整。 P的设\n置\n范围为5~600，出厂默认设定为 35；I的设置范围 0.5~10，出厂默认设定为 1.8；D\n的设置范围为 0~10，出厂默认值设定为 0，一般如果没有特殊需要， D的值一般设置\n为0。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0da82871aed533a5",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 32,
+      "chunk_id": "chunk_4e925e71b9054094",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:pid",
+      "structured_payload_candidate": {
+        "parameter_name": "过热度PID",
+        "P_default": 35,
+        "I_default": 1.8,
+        "D_default": 0,
+        "title": "过热度PID参数默认值",
+        "summary": "过热度PID参数：P默认35，I默认1.8，D默认0。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第30页， 共43页 高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\n/circle6 温度控制 PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增\n加\n了温度控制 P、I、D设置。这些参数的设置，需要工程师根据现场机组的运行情况\n进\n行调整。 P的设置范围为： 5~600，出厂默认设定为 25；I的设置范围为： 0.5~10，\n出\n厂默认设定为 2.0；D的设置范围为： 0~10，出厂默认设定为 0，如果没有特殊需要，\nD的值一般设置为 0，否则易造成系统的不稳定。\n2\n) 运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各个系统和制冷 个系统和制冷个系统和制冷个系统和制冷 /制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）\n/circle6 运行过热度：是满液式水机组必须要设置的参数，这个参数是针对用户操作工程师开\n放\n的，在系统调整的时候，可根据蒸发器内液体蒸发的具体状况，设置过热度参数。\n过热度的设置范围为： 15~35℃，出厂默认设定值为 20℃。\n/circle6 过热度PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增加\n了\n过热度控制 P、I、D设置，需要工程师根据现场机组的运行情况进行调整。 P的设\n置\n范围为5~600，出厂默认设定为 35；I的设置范围 0.5~10，出厂默认设定为 1.8；D\n的设置范围为 0~10，出厂默认值设定为 0，一般如果没有特殊需要， D的值一般设置\n为0。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_4e925e71b9054094"
+      ],
+      "source_page_nos": [
+        32
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts default PID parameters for superheat control, typical operational tuning parameters, supported by the evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:pid",
+        "structured_payload": {
+          "parameter_name": "过热度PID",
+          "P_default": 35,
+          "I_default": 1.8,
+          "D_default": 0,
+          "title": "过热度PID参数默认值",
+          "summary": "过热度PID参数：P默认35，I默认1.8，D默认0。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "满液式水源螺杆热泵机组  （用户手册）    V1.0\n第30页， 共43页 高于设置温度的时候机组减载。制热模式所允许的水温设置范围为： 35~55℃，出厂默\n认\n设定值为 45℃。\n/circle6 运行温差设置：当机组接收到开机指令以后，在制冷模式下，若蒸发器出水温度≥制\n冷\n温度设置 +运行温差设置，则机组自动启动，当机组启动以后，可通过温度的自适应\n控\n制算法进行加减载控制；当蒸发器出水温度≤制冷温度设置 -运行温差设置，则机组\n减\n载，当机组运行在最低负荷时候，停止机组；在制热模式下，若冷凝器出水温度≤\n制热温度设置 -运行温差设置，则机组自动启动，当机组启动以后，会通过温度的自适\n应\n控制算法进行加减载控制；当冷凝器出水温度≥制热温度设置 +运行温差设置，则机\n组\n减载，当机组运行在最低负荷时候，停止机组。运行温差设置不能够设置太小，温\n差太小，会造成机组的频繁启停，增加设备的损耗和能源的浪费，一般在允许的范围\n内，尽量设置比较大的运行温差。制冷 /制热模式所允许的设置范围一般在 0.5~3℃。\n出\n厂默认设定值为 1.5℃。\n/circle6 温度控制 PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增\n加\n了温度控制 P、I、D设置。这些参数的设置，需要工程师根据现场机组的运行情况\n进\n行调整。 P的设置范围为： 5~600，出厂默认设定为 25；I的设置范围为： 0.5~10，\n出\n厂默认设定为 2.0；D的设置范围为： 0~10，出厂默认设定为 0，如果没有特殊需要，\nD的值一般设置为 0，否则易造成系统的不稳定。\n2\n) 运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各运行过热度设置（针对机组的各个系统和制冷 个系统和制冷个系统和制冷个系统和制冷 /制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）制热模式需要单独进行设置）\n/circle6 运行过热度：是满液式水机组必须要设置的参数，这个参数是针对用户操作工程师开\n放\n的，在系统调整的时候，可根据蒸发器内液体蒸发的具体状况，设置过热度参数。\n过热度的设置范围为： 15~35℃，出厂默认设定值为 20℃。\n/circle6 过热度PID：为了使得系统运行在更加合理的状态，对于用户的操作工程师级别增加\n了\n过热度控制 P、I、D设置，需要工程师根据现场机组的运行情况进行调整。 P的设\n置\n范围为5~600，出厂默认设定为 35；I的设置范围 0.5~10，出厂默认设定为 1.8；D\n的设置范围为 0~10，出厂默认值设定为 0，一般如果没有特殊需要， D的值一般设置\n为0。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c63e0e29e5421d30",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "高压保护",
+        "causes": [
+          "冷却水未循环或水位太低",
+          "冷却水出水温度过高",
+          "冷凝器结垢",
+          "系统内有不凝性气体"
+        ],
+        "title": "高压保护触发条件",
+        "summary": "高压保护可能由冷却水未循环、冷却水出水温度过高、冷凝器结垢或不凝性气体引起。"
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a fault code (high pressure protection) with potential causes, directly supported by the manual's safety device table. Useful for diagnostics.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "高压保护",
+          "causes": [
+            "冷却水未循环或水位太低",
+            "冷却水出水温度过高",
+            "冷凝器结垢",
+            "系统内有不凝性气体"
+          ],
+          "title": "高压保护触发条件",
+          "summary": "高压保护可能由冷却水未循环、冷却水出水温度过高、冷凝器结垢或不凝性气体引起。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f2e5cffccc9e303a",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "低压保护",
+        "causes": [
+          "膨胀阀因故障而关闭",
+          "冷凝器出口截止阀关闭",
+          "冷冻水流量不足",
+          "蒸发器结垢"
+        ],
+        "title": "低压保护触发条件",
+        "summary": "低压保护可能由膨胀阀关闭、冷凝器出口截止阀关闭、冷冻水流量不足或蒸发器结垢引起。"
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a fault code (low pressure protection) with potential causes, directly supported by the manual's safety device table. Useful for diagnostics.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "低压保护",
+          "causes": [
+            "膨胀阀因故障而关闭",
+            "冷凝器出口截止阀关闭",
+            "冷冻水流量不足",
+            "蒸发器结垢"
+          ],
+          "title": "低压保护触发条件",
+          "summary": "低压保护可能由膨胀阀关闭、冷凝器出口截止阀关闭、冷冻水流量不足或蒸发器结垢引起。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_afc4cc89ffa68928",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "排气温度保护",
+        "causes": [
+          "由于机组泄漏使制冷剂偏少",
+          "压缩机冷却管路电磁阀因故障而关闭",
+          "冷凝器出口截止阀关闭"
+        ],
+        "title": "排气温度保护触发条件",
+        "summary": "排气温度保护可能由制冷剂偏少、压缩机冷却管路电磁阀关闭或冷凝器出口截止阀关闭引起。"
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a fault code (discharge temperature protection) with potential causes, directly supported by the manual's safety device table. Useful for diagnostics.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "排气温度保护",
+          "causes": [
+            "由于机组泄漏使制冷剂偏少",
+            "压缩机冷却管路电磁阀因故障而关闭",
+            "冷凝器出口截止阀关闭"
+          ],
+          "title": "排气温度保护触发条件",
+          "summary": "排气温度保护可能由制冷剂偏少、压缩机冷却管路电磁阀关闭或冷凝器出口截止阀关闭引起。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d4368d1e2dae8510",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "防冻保护",
+        "causes": [
+          "冷冻水水温太低",
+          "设定温度值太低"
+        ],
+        "title": "防冻保护触发条件",
+        "summary": "防冻保护可能由冷冻水水温太低或设定温度值太低引起。"
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a fault code (freeze protection) with potential causes, directly supported by the manual. Useful for diagnostics.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "防冻保护",
+          "causes": [
+            "冷冻水水温太低",
+            "设定温度值太低"
+          ],
+          "title": "防冻保护触发条件",
+          "summary": "防冻保护可能由冷冻水水温太低或设定温度值太低引起。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_3354aad1de4e4725",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "电机过热保护",
+        "causes": [
+          "与高压保护相同"
+        ],
+        "title": "电机过热保护触发条件",
+        "summary": "电机过热保护与高压保护原因相同。"
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a fault code (motor overheat protection), referencing common causes with high pressure protection. Supported by the manual.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "电机过热保护",
+          "causes": [
+            "与高压保护相同"
+          ],
+          "title": "电机过热保护触发条件",
+          "summary": "电机过热保护与高压保护原因相同。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d68b52985d3bf16a",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "反相保护器",
+        "causes": [
+          "电源接线错误"
+        ],
+        "title": "反相保护器触发条件",
+        "summary": "反相保护器因电源接线错误触发。"
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a fault code (phase reversal protector) with a clear cause, directly supported by the manual.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "反相保护器",
+          "causes": [
+            "电源接线错误"
+          ],
+          "title": "反相保护器触发条件",
+          "summary": "反相保护器因电源接线错误触发。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_62f0f77b947ffc90",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "过电流继电器",
+        "causes": [
+          "与高压保护相同"
+        ],
+        "title": "过电流继电器触发条件",
+        "summary": "过电流继电器与高压保护原因相同。"
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a fault code (overcurrent relay) with common causes, supported by the manual.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "过电流继电器",
+          "causes": [
+            "与高压保护相同"
+          ],
+          "title": "过电流继电器触发条件",
+          "summary": "过电流继电器与高压保护原因相同。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fdebeff29165c84f",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:screw_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "安全阀",
+        "causes": [
+          "工质系统超压"
+        ],
+        "title": "安全阀触发条件",
+        "summary": "安全阀因工质系统超压触发。"
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts a fault code (safety valve) with a clear cause, directly supported by the manual.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "安全阀",
+          "causes": [
+            "工质系统超压"
+          ],
+          "title": "安全阀触发条件",
+          "summary": "安全阀因工质系统超压触发。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_8e57bb48608175b5",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "排气压力",
+        "R22_range": "1.1-2.3MPa",
+        "R134a_range": "0.6-1.8MPa",
+        "title": "排气压力正常范围",
+        "summary": "R22系统排气压力1.1-2.3MPa，R134a系统0.6-1.8MPa。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts normal operating range for discharge pressure for R22 and R134a, directly from the manual's check table. Useful performance spec.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "排气压力",
+          "R22_range": "1.1-2.3MPa",
+          "R134a_range": "0.6-1.8MPa",
+          "title": "排气压力正常范围",
+          "summary": "R22系统排气压力1.1-2.3MPa，R134a系统0.6-1.8MPa。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_8b833a8bd53c9ab7",
+      "domain_id": "hvac",
+      "doc_id": "doc_9582a2d2585d4d95",
+      "doc_name": "【天加 】满液式水源螺杆热泵机组(用户手册)（46页）.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_7ab92701d6dd4278",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:screw_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "吸气压力",
+        "R22_range": "0.3-0.6MPa",
+        "R134a_range": "0.1-0.3MPa",
+        "title": "吸气压力正常范围",
+        "summary": "R22系统吸气压力0.3-0.6MPa，R134a系统0.1-0.3MPa。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "screw_chiller",
+        "equipment_class_key": "hvac:screw_chiller",
+        "label": "Screw Chiller",
+        "confidence": 0.721,
+        "matched_aliases": [
+          "Screw Chiller",
+          "screw chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_7ab92701d6dd4278"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracts normal operating range for suction pressure for R22 and R134a, directly from the manual. Useful performance spec.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:screw_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "吸气压力",
+          "R22_range": "0.3-0.6MPa",
+          "R134a_range": "0.1-0.3MPa",
+          "title": "吸气压力正常范围",
+          "summary": "R22系统吸气压力0.3-0.6MPa，R134a系统0.1-0.3MPa。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "第10页， 共43页\n表一表一 表一表一:安全装置检查项安全装置检查项安全装置检查项安全装置检查项\n检查项目检查项目 检查项目检查项目 项目项目 项目项目 检查方法检查方法 检查方法检查方法 控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）控制要求（R22/ R134a）\n1.排气压力 检查高压显示值（排气） 1.1-2.3MPa/ 0.6-1.8MPa\n2.吸气压力 检查高压显示值（吸气） 0.3-0.6MPa/ 0.1-0.3MPa\n3.排气过热度 检查排气过热度显示值 15-35℃/ 12-25℃\n4.电源 用电压表监测 不超过额定电压的±10%\n5.冷却水出口温度 检查温度计 20-55℃\n6.冷冻水出口温度 检查温度计 4-16℃\n7.振动和噪音 触摸、听 无异常振动和噪音\n8.环境温度（室温） 检查温度计 ≤40℃\n1.主回路接头 扳手 所有接头牢固，无松动\n2.接触器接头 自测 无严重电蚀现象，触头表面平整\n1.冷媒注入量 检查冷媒管路液体流动情况 无气泡\n2.润滑油注入量 检查油位计 3/4以上油位每季每月日常\n表二表二 表二表二:安全装置安全装置 安全装置安全装置\n安全装置 结果\n1.冷却水未循环或水位太低\n2.冷却水出水温度过高\n3.冷凝器结垢  高压保护\n4.系统内有不凝性气体\n1.冷冻水水温太低\n防冻保护\n2.设定温度值太低\n1.由于机组泄漏使制冷剂偏少\n2.压缩机冷却管路电磁阀因故障而关闭  排气温度保护\n3.冷凝器出口截止阀关闭\n电机过热保护 (压缩机电机保护 ) 1.与高压保护相同\n1.膨胀阀因故障而关闭\n2.冷凝器出口截止阀关闭\n3.冷冻水流量不足  低压保护\n4.蒸发器结垢\n反相保护器 1.电源接线错误\n过电流继电器 (压缩机电动机 ) 1.与高压保护相同\n安全阀 1.工质系统超压\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

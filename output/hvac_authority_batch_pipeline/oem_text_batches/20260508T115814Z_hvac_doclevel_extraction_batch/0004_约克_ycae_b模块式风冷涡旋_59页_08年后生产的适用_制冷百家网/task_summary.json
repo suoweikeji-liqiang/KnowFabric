@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "row_index": 4,
+  "file_name": "【约克】YCAE-B模块式风冷涡旋（59页）（08年后生产的适用）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】YCAE-B模块式风冷涡旋（59页）（08年后生产的适用）-制冷百家网.pdf",
+  "doc_id": "doc_9ec60c2c62844c85",
+  "chunks": 59,
+  "manual_tokens_estimated": 3988,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 59,
+      "chunks_after": 59,
+      "parse_result": {
+        "job_id": "job_39db56ca419d40a1",
+        "doc_id": "doc_9ec60c2c62844c85",
+        "pages_created": 59,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_8515d4b0744c4a30",
+        "doc_id": "doc_9ec60c2c62844c85",
+        "chunks_created": 59,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 0,
+      "anchor_rejected": 40,
+      "anchor_match_rate": 0.0,
+      "judge_accepted": 0,
+      "judge_rejected": 0,
+      "judge_acceptance_rate": 100.0,
+      "judge_rejection_breakdown": {},
+      "review_candidates": 0,
+      "by_type": {},
+      "usage": {
+        "prompt_tokens": 34720,
+        "completion_tokens": 4819,
+        "total_tokens": 39539
+      },
+      "judge_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "extract_cost_rmb": 0.133074,
+      "judge_cost_rmb": 0.0,
+      "cost_rmb": 0.133074,
+      "elapsed_seconds": 136.982,
+      "judge_elapsed_seconds": null,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0004_约克_ycae_b模块式风冷涡旋_59页_08年后生产的适用_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T115814Z_hvac_doclevel_extraction_batch/0004_约克_ycae_b模块式风冷涡旋_59页_08年后生产的适用_制冷百家网"
+}

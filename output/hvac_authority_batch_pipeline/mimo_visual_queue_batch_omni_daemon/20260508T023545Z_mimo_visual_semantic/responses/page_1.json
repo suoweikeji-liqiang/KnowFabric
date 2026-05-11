@@ -1,0 +1,84 @@
+{
+  "page": 1,
+  "response": {
+    "id": "30788dae68eb4f03811f0e0d6af2b1b7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is a promotional or cover page for a McQuay Centrifugal Water Cooled Chiller (model series WSC/WCC/WDC). It features the product name, a photograph of the chiller unit, branding, contact information for Chinese branches, and marketing imagery. It is not a technical diagram or data sheet.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"WSC/WCC/WDC\"},\n    {\"type\": \"text\", \"label\": \"McQuay Centrifugal Water Cooled Chiller\"},\n    {\"type\": \"image\", \"label\": \"Chiller unit photograph\"},\n    {\"type\": \"logo\", \"label\": \"McQuay Air Conditioning logo\"},\n    {\"type\": \"text\", \"label\": \"www.mcquay.com.cn\"},\n    {\"type\": \"text\", \"label\": \"McQuay China branch structure contact details\"},\n    {\"type\": \"image\", \"label\": \"Marketing photos (buildings, water, people, technician)\"},\n    {\"type\": \"text\", \"label\": \"Engineered for flexibility and performance.™\"},\n    {\"type\": \"logo\", \"label\": \"Certification marks (e.g., ISO, CNAS)\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_identification\", \"branding\", \"contact_information\"],\n  \"ocr_text_if_useful\": \"WSC/WCC/WDC 全球制冷剂的最佳选择: R134a WSC-WCC-WDC 079~158(1054.8kW~9141.6kW) 麦克维尔—离心式冷水机组 McQuay Centrifugal Water Cooled Chiller www.mcquay.com.cn 麦克维尔中国分支结构 麦克维尔中央空凋有限公司 地址: 上海市闸北区共和新路 1868号1号楼9楼 电话: (021) 3387 0088 传真: (021) 3387 0218 深圳麦克维尔空调有限公司 地址: 深圳市龙岗区平湖街道 芳坑路10号 电话: (0755) 2845 6472 传真: (0755) 2845 6469 麦克维尔空调制冷（武汉）有限公司 地址: 武汉经济技术开发区 东城大道33号 电话: (027) 5940 8688 传真: (027) 5940 8664 麦克维尔空调制冷（苏州）有限公司 地址: 江苏省苏州市工业园区 长阳街116号 电话: (0512) 8918 0188 传真: (0512) 8918 0189 McQuay Air Conditioning 全国统一服务热线: 9510 5363 欢迎访问麦克维尔网站: www.mcquay.com.cn 机型、参数、性能因产品的改良而有所改变，恕不另行通知。具体参数以产品铭牌为准。PM-WSC/WCC/WDC-C009 CH1305-5000-A © 版权所有\",\n  \"uncertainty_notes\": \"The page type is classified as 'other' because it is primarily promotional material, not a technical manual page with diagrams or tables. The specific model range and refrigerant (R134a) are visible, but no technical relationships (e.g., wiring, schematics) are present.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778207757,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 829,
+      "prompt_tokens": 1517,
+      "total_tokens": 2346,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 1320
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "other",
+    "summary": "This is a promotional or cover page for a McQuay Centrifugal Water Cooled Chiller (model series WSC/WCC/WDC). It features the product name, a photograph of the chiller unit, branding, contact information for Chinese branches, and marketing imagery. It is not a technical diagram or data sheet.",
+    "visual_entities": [
+      {
+        "type": "text",
+        "label": "WSC/WCC/WDC"
+      },
+      {
+        "type": "text",
+        "label": "McQuay Centrifugal Water Cooled Chiller"
+      },
+      {
+        "type": "image",
+        "label": "Chiller unit photograph"
+      },
+      {
+        "type": "logo",
+        "label": "McQuay Air Conditioning logo"
+      },
+      {
+        "type": "text",
+        "label": "www.mcquay.com.cn"
+      },
+      {
+        "type": "text",
+        "label": "McQuay China branch structure contact details"
+      },
+      {
+        "type": "image",
+        "label": "Marketing photos (buildings, water, people, technician)"
+      },
+      {
+        "type": "text",
+        "label": "Engineered for flexibility and performance.™"
+      },
+      {
+        "type": "logo",
+        "label": "Certification marks (e.g., ISO, CNAS)"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "product_identification",
+      "branding",
+      "contact_information"
+    ],
+    "ocr_text_if_useful": "WSC/WCC/WDC 全球制冷剂的最佳选择: R134a WSC-WCC-WDC 079~158(1054.8kW~9141.6kW) 麦克维尔—离心式冷水机组 McQuay Centrifugal Water Cooled Chiller www.mcquay.com.cn 麦克维尔中国分支结构 麦克维尔中央空凋有限公司 地址: 上海市闸北区共和新路 1868号1号楼9楼 电话: (021) 3387 0088 传真: (021) 3387 0218 深圳麦克维尔空调有限公司 地址: 深圳市龙岗区平湖街道 芳坑路10号 电话: (0755) 2845 6472 传真: (0755) 2845 6469 麦克维尔空调制冷（武汉）有限公司 地址: 武汉经济技术开发区 东城大道33号 电话: (027) 5940 8688 传真: (027) 5940 8664 麦克维尔空调制冷（苏州）有限公司 地址: 江苏省苏州市工业园区 长阳街116号 电话: (0512) 8918 0188 传真: (0512) 8918 0189 McQuay Air Conditioning 全国统一服务热线: 9510 5363 欢迎访问麦克维尔网站: www.mcquay.com.cn 机型、参数、性能因产品的改良而有所改变，恕不另行通知。具体参数以产品铭牌为准。PM-WSC/WCC/WDC-C009 CH1305-5000-A © 版权所有",
+    "uncertainty_notes": "The page type is classified as 'other' because it is primarily promotional material, not a technical manual page with diagrams or tables. The specific model range and refrigerant (R134a) are visible, but no technical relationships (e.g., wiring, schematics) are present.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is a promotional or cover page for a McQuay Centrifugal Water Cooled Chiller (model series WSC/WCC/WDC). It features the product name, a photograph of the chiller unit, branding, contact information for Chinese branches, and marketing imagery. It is not a technical diagram or data sheet.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"WSC/WCC/WDC\"},\n    {\"type\": \"text\", \"label\": \"McQuay Centrifugal Water Cooled Chiller\"},\n    {\"type\": \"image\", \"label\": \"Chiller unit photograph\"},\n    {\"type\": \"logo\", \"label\": \"McQuay Air Conditioning logo\"},\n    {\"type\": \"text\", \"label\": \"www.mcquay.com.cn\"},\n    {\"type\": \"text\", \"label\": \"McQuay China branch structure contact details\"},\n    {\"type\": \"image\", \"label\": \"Marketing photos (buildings, water, people, technician)\"},\n    {\"type\": \"text\", \"label\": \"Engineered for flexibility and performance.™\"},\n    {\"type\": \"logo\", \"label\": \"Certification marks (e.g., ISO, CNAS)\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_identification\", \"branding\", \"contact_information\"],\n  \"ocr_text_if_useful\": \"WSC/WCC/WDC 全球制冷剂的最佳选择: R134a WSC-WCC-WDC 079~158(1054.8kW~9141.6kW) 麦克维尔—离心式冷水机组 McQuay Centrifugal Water Cooled Chiller www.mcquay.com.cn 麦克维尔中国分支结构 麦克维尔中央空凋有限公司 地址: 上海市闸北区共和新路 1868号1号楼9楼 电话: (021) 3387 0088 传真: (021) 3387 0218 深圳麦克维尔空调有限公司 地址: 深圳市龙岗区平湖街道 芳坑路10号 电话: (0755) 2845 6472 传真: (0755) 2845 6469 麦克维尔空调制冷（武汉）有限公司 地址: 武汉经济技术开发区 东城大道33号 电话: (027) 5940 8688 传真: (027) 5940 8664 麦克维尔空调制冷（苏州）有限公司 地址: 江苏省苏州市工业园区 长阳街116号 电话: (0512) 8918 0188 传真: (0512) 8918 0189 McQuay Air Conditioning 全国统一服务热线: 9510 5363 欢迎访问麦克维尔网站: www.mcquay.com.cn 机型、参数、性能因产品的改良而有所改变，恕不另行通知。具体参数以产品铭牌为准。PM-WSC/WCC/WDC-C009 CH1305-5000-A © 版权所有\",\n  \"uncertainty_notes\": \"The page type is classified as 'other' because it is primarily promotional material, not a technical manual page with diagrams or tables. The specific model range and refrigerant (R134a) are visible, but no technical relationships (e.g., wiring, schematics) are present.\",\n  \"confidence\": 0.95\n}"
+}

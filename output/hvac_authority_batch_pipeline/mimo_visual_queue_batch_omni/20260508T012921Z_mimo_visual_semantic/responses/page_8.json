@@ -1,0 +1,190 @@
+{
+  "page": 8,
+  "response": {
+    "id": "62205d14910c421099bfabfc5ed13248",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page from an HVAC manual provides installation and electrical system instructions for a modular air-cooled system. It includes text sections on expansion tank placement, main power distribution, grounding, voltage checks, and wiring requirements, along with a wiring diagram showing connections between a hand controller, main unit, and auxiliary units.\",\n  \"visual_entities\": [\n    {\"type\": \"text_section\", \"label\": \"Expansion tank installation instructions\"},\n    {\"type\": \"text_section\", \"label\": \"Electrical system section\"},\n    {\"type\": \"text_section\", \"label\": \"Main power distribution instructions\"},\n    {\"type\": \"text_section\", \"label\": \"Grounding measures\"},\n    {\"type\": \"text_section\", \"label\": \"Voltage check instructions\"},\n    {\"type\": \"text_section\", \"label\": \"Wiring requirements (red text)\"},\n    {\"type\": \"diagram\", \"label\": \"Wiring diagram for hand controller and units\"},\n    {\"type\": \"component\", \"label\": \"Hand controller (手操器)\"},\n    {\"type\": \"component\", \"label\": \"Main unit (主机)\"},\n    {\"type\": \"component\", \"label\": \"Auxiliary unit 1 (辅机1)\"},\n    {\"type\": \"component\", \"label\": \"Auxiliary unit N (辅机N)\"},\n    {\"type\": \"terminal\", \"label\": \"GND\"},\n    {\"type\": \"terminal\", \"label\": \"12V\"},\n    {\"type\": \"terminal\", \"label\": \"A\"},\n    {\"type\": \"terminal\", \"label\": \"B\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Hand controller\", \"relation\": \"connects to\", \"to\": \"Main unit\"},\n    {\"from\": \"Main unit\", \"relation\": \"connects to\", \"to\": \"Auxiliary unit 1\"},\n    {\"from\": \"Auxiliary unit 1\", \"relation\": \"connects to\", \"to\": \"Auxiliary unit N\"},\n    {\"from\": \"Hand controller\", \"relation\": \"has terminal\", \"to\": \"GND\"},\n    {\"from\": \"Hand controller\", \"relation\": \"has terminal\", \"to\": \"12V\"},\n    {\"from\": \"Hand controller\", \"relation\": \"has terminal\", \"to\": \"A\"},\n    {\"from\": \"Hand controller\", \"relation\": \"has terminal\", \"to\": \"B\"},\n    {\"from\": \"Main unit\", \"relation\": \"has terminal\", \"to\": \"GND\"},\n    {\"from\": \"Main unit\", \"relation\": \"has terminal\", \"to\": \"A\"},\n    {\"from\": \"Main unit\", \"relation\": \"has terminal\", \"to\": \"B\"},\n    {\"from\": \"Auxiliary unit 1\", \"relation\": \"has terminal\", \"to\": \"GND\"},\n    {\"from\": \"Auxiliary unit 1\", \"relation\": \"has terminal\", \"to\": \"A\"},\n    {\"from\": \"Auxiliary unit 1\", \"relation\": \"has terminal\", \"to\": \"B\"},\n    {\"from\": \"Auxiliary unit N\", \"relation\": \"has terminal\", \"to\": \"GND\"},\n    {\"from\": \"Auxiliary unit N\", \"relation\": \"has terminal\", \"to\": \"A\"},\n    {\"from\": \"Auxiliary unit N\", \"relation\": \"has terminal\", \"to\": \"B\"}\n  ],\n  \"useful_for_knowledge_types\": [\"installation_procedures\", \"electrical_wiring\", \"system_configuration\", \"safety_requirements\"],\n  \"ocr_text_if_useful\": \"青岛海尔空调电子有限公司 风冷模块调试手册 第1次修订时间: 03.10.20 共15页 第8页\\n(7)膨胀水箱应安装在高于系统最高处1~1.5米处;水箱容量约为整个系统容量的1/10;排气阀应安装在系统最高处与膨胀水箱之间;冷冻水管路和膨胀水箱应作保温处理。\\n三.电系统\\n1.主电源配电\\n每个模块都要从配电柜相应的空气开关引进主电源(参考电缆线5×16mm²),各模块相序一致。不得从主机或任意模块并联出电源。\\n2.接地措施\\n检查机组是否可靠接地。\\n3.检查主电源三相电压是否平衡,且电压为380V±5%。\\n先用万用表交流档对三相电进行测试,记录相间电压,相零电压;标记出零线,地线.防止接线时相零错接。\\n4.电源必须位三相五线制,禁止零地合一,零地合一易烧毁电脑板.如安装过程出现零地合一,先调整电源,调整到位后,再进行接线。\\n二. 机组手操器、信号线连接\\n手操器 主机 辅机1 辅机N\\nGND 12V A B GND A B GND A B\\n8\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The diagram shows connections but does not specify the exact wiring protocol (e.g., RS-485). The text mentions 'signal line connection' but details are visual only. The red text emphasizes critical warnings, but the exact consequences of 'zero-ground merger' are described textually, not visually.\",\n  \"confidence\": 0.9\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778203783,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1162,
+      "prompt_tokens": 2437,
+      "total_tokens": 3599,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "text_scan",
+    "summary": "This page from an HVAC manual provides installation and electrical system instructions for a modular air-cooled system. It includes text sections on expansion tank placement, main power distribution, grounding, voltage checks, and wiring requirements, along with a wiring diagram showing connections between a hand controller, main unit, and auxiliary units.",
+    "visual_entities": [
+      {
+        "type": "text_section",
+        "label": "Expansion tank installation instructions"
+      },
+      {
+        "type": "text_section",
+        "label": "Electrical system section"
+      },
+      {
+        "type": "text_section",
+        "label": "Main power distribution instructions"
+      },
+      {
+        "type": "text_section",
+        "label": "Grounding measures"
+      },
+      {
+        "type": "text_section",
+        "label": "Voltage check instructions"
+      },
+      {
+        "type": "text_section",
+        "label": "Wiring requirements (red text)"
+      },
+      {
+        "type": "diagram",
+        "label": "Wiring diagram for hand controller and units"
+      },
+      {
+        "type": "component",
+        "label": "Hand controller (手操器)"
+      },
+      {
+        "type": "component",
+        "label": "Main unit (主机)"
+      },
+      {
+        "type": "component",
+        "label": "Auxiliary unit 1 (辅机1)"
+      },
+      {
+        "type": "component",
+        "label": "Auxiliary unit N (辅机N)"
+      },
+      {
+        "type": "terminal",
+        "label": "GND"
+      },
+      {
+        "type": "terminal",
+        "label": "12V"
+      },
+      {
+        "type": "terminal",
+        "label": "A"
+      },
+      {
+        "type": "terminal",
+        "label": "B"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "Hand controller",
+        "relation": "connects to",
+        "to": "Main unit"
+      },
+      {
+        "from": "Main unit",
+        "relation": "connects to",
+        "to": "Auxiliary unit 1"
+      },
+      {
+        "from": "Auxiliary unit 1",
+        "relation": "connects to",
+        "to": "Auxiliary unit N"
+      },
+      {
+        "from": "Hand controller",
+        "relation": "has terminal",
+        "to": "GND"
+      },
+      {
+        "from": "Hand controller",
+        "relation": "has terminal",
+        "to": "12V"
+      },
+      {
+        "from": "Hand controller",
+        "relation": "has terminal",
+        "to": "A"
+      },
+      {
+        "from": "Hand controller",
+        "relation": "has terminal",
+        "to": "B"
+      },
+      {
+        "from": "Main unit",
+        "relation": "has terminal",
+        "to": "GND"
+      },
+      {
+        "from": "Main unit",
+        "relation": "has terminal",
+        "to": "A"
+      },
+      {
+        "from": "Main unit",
+        "relation": "has terminal",
+        "to": "B"
+      },
+      {
+        "from": "Auxiliary unit 1",
+        "relation": "has terminal",
+        "to": "GND"
+      },
+      {
+        "from": "Auxiliary unit 1",
+        "relation": "has terminal",
+        "to": "A"
+      },
+      {
+        "from": "Auxiliary unit 1",
+        "relation": "has terminal",
+        "to": "B"
+      },
+      {
+        "from": "Auxiliary unit N",
+        "relation": "has terminal",
+        "to": "GND"
+      },
+      {
+        "from": "Auxiliary unit N",
+        "relation": "has terminal",
+        "to": "A"
+      },
+      {
+        "from": "Auxiliary unit N",
+        "relation": "has terminal",
+        "to": "B"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "installation_procedures",
+      "electrical_wiring",
+      "system_configuration",
+      "safety_requirements"
+    ],
+    "ocr_text_if_useful": "青岛海尔空调电子有限公司 风冷模块调试手册 第1次修订时间: 03.10.20 共15页 第8页\n(7)膨胀水箱应安装在高于系统最高处1~1.5米处;水箱容量约为整个系统容量的1/10;排气阀应安装在系统最高处与膨胀水箱之间;冷冻水管路和膨胀水箱应作保温处理。\n三.电系统\n1.主电源配电\n每个模块都要从配电柜相应的空气开关引进主电源(参考电缆线5×16mm²),各模块相序一致。不得从主机或任意模块并联出电源。\n2.接地措施\n检查机组是否可靠接地。\n3.检查主电源三相电压是否平衡,且电压为380V±5%。\n先用万用表交流档对三相电进行测试,记录相间电压,相零电压;标记出零线,地线.防止接线时相零错接。\n4.电源必须位三相五线制,禁止零地合一,零地合一易烧毁电脑板.如安装过程出现零地合一,先调整电源,调整到位后,再进行接线。\n二. 机组手操器、信号线连接\n手操器 主机 辅机1 辅机N\nGND 12V A B GND A B GND A B\n8\n制冷百家网: www.zhilengbj.cn",
+    "uncertainty_notes": "The diagram shows connections but does not specify the exact wiring protocol (e.g., RS-485). The text mentions 'signal line connection' but details are visual only. The red text emphasizes critical warnings, but the exact consequences of 'zero-ground merger' are described textually, not visually.",
+    "confidence": 0.9
+  },
+  "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page from an HVAC manual provides installation and electrical system instructions for a modular air-cooled system. It includes text sections on expansion tank placement, main power distribution, grounding, voltage checks, and wiring requirements, along with a wiring diagram showing connections between a hand controller, main unit, and auxiliary units.\",\n  \"visual_entities\": [\n    {\"type\": \"text_section\", \"label\": \"Expansion tank installation instructions\"},\n    {\"type\": \"text_section\", \"label\": \"Electrical system section\"},\n    {\"type\": \"text_section\", \"label\": \"Main power distribution instructions\"},\n    {\"type\": \"text_section\", \"label\": \"Grounding measures\"},\n    {\"type\": \"text_section\", \"label\": \"Voltage check instructions\"},\n    {\"type\": \"text_section\", \"label\": \"Wiring requirements (red text)\"},\n    {\"type\": \"diagram\", \"label\": \"Wiring diagram for hand controller and units\"},\n    {\"type\": \"component\", \"label\": \"Hand controller (手操器)\"},\n    {\"type\": \"component\", \"label\": \"Main unit (主机)\"},\n    {\"type\": \"component\", \"label\": \"Auxiliary unit 1 (辅机1)\"},\n    {\"type\": \"component\", \"label\": \"Auxiliary unit N (辅机N)\"},\n    {\"type\": \"terminal\", \"label\": \"GND\"},\n    {\"type\": \"terminal\", \"label\": \"12V\"},\n    {\"type\": \"terminal\", \"label\": \"A\"},\n    {\"type\": \"terminal\", \"label\": \"B\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Hand controller\", \"relation\": \"connects to\", \"to\": \"Main unit\"},\n    {\"from\": \"Main unit\", \"relation\": \"connects to\", \"to\": \"Auxiliary unit 1\"},\n    {\"from\": \"Auxiliary unit 1\", \"relation\": \"connects to\", \"to\": \"Auxiliary unit N\"},\n    {\"from\": \"Hand controller\", \"relation\": \"has terminal\", \"to\": \"GND\"},\n    {\"from\": \"Hand controller\", \"relation\": \"has terminal\", \"to\": \"12V\"},\n    {\"from\": \"Hand controller\", \"relation\": \"has terminal\", \"to\": \"A\"},\n    {\"from\": \"Hand controller\", \"relation\": \"has terminal\", \"to\": \"B\"},\n    {\"from\": \"Main unit\", \"relation\": \"has terminal\", \"to\": \"GND\"},\n    {\"from\": \"Main unit\", \"relation\": \"has terminal\", \"to\": \"A\"},\n    {\"from\": \"Main unit\", \"relation\": \"has terminal\", \"to\": \"B\"},\n    {\"from\": \"Auxiliary unit 1\", \"relation\": \"has terminal\", \"to\": \"GND\"},\n    {\"from\": \"Auxiliary unit 1\", \"relation\": \"has terminal\", \"to\": \"A\"},\n    {\"from\": \"Auxiliary unit 1\", \"relation\": \"has terminal\", \"to\": \"B\"},\n    {\"from\": \"Auxiliary unit N\", \"relation\": \"has terminal\", \"to\": \"GND\"},\n    {\"from\": \"Auxiliary unit N\", \"relation\": \"has terminal\", \"to\": \"A\"},\n    {\"from\": \"Auxiliary unit N\", \"relation\": \"has terminal\", \"to\": \"B\"}\n  ],\n  \"useful_for_knowledge_types\": [\"installation_procedures\", \"electrical_wiring\", \"system_configuration\", \"safety_requirements\"],\n  \"ocr_text_if_useful\": \"青岛海尔空调电子有限公司 风冷模块调试手册 第1次修订时间: 03.10.20 共15页 第8页\\n(7)膨胀水箱应安装在高于系统最高处1~1.5米处;水箱容量约为整个系统容量的1/10;排气阀应安装在系统最高处与膨胀水箱之间;冷冻水管路和膨胀水箱应作保温处理。\\n三.电系统\\n1.主电源配电\\n每个模块都要从配电柜相应的空气开关引进主电源(参考电缆线5×16mm²),各模块相序一致。不得从主机或任意模块并联出电源。\\n2.接地措施\\n检查机组是否可靠接地。\\n3.检查主电源三相电压是否平衡,且电压为380V±5%。\\n先用万用表交流档对三相电进行测试,记录相间电压,相零电压;标记出零线,地线.防止接线时相零错接。\\n4.电源必须位三相五线制,禁止零地合一,零地合一易烧毁电脑板.如安装过程出现零地合一,先调整电源,调整到位后,再进行接线。\\n二. 机组手操器、信号线连接\\n手操器 主机 辅机1 辅机N\\nGND 12V A B GND A B GND A B\\n8\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The diagram shows connections but does not specify the exact wiring protocol (e.g., RS-485). The text mentions 'signal line connection' but details are visual only. The red text emphasizes critical warnings, but the exact consequences of 'zero-ground merger' are described textually, not visually.\",\n  \"confidence\": 0.9\n}"
+}

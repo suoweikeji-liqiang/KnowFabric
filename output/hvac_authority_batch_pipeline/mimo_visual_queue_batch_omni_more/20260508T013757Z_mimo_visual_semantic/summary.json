@@ -1,0 +1,317 @@
+{
+  "run_id": "20260508T013757Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】磁悬浮变频离心机组手册-制冷百家网.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 10.675,
+      "parsed": {
+        "page_type": "other",
+        "summary": "This is a promotional cover page for a Haier Oil-Free Centrifugal Chiller. It features the product name in both Chinese and English, the Haier brand logo, an image of the chiller unit, and a background image of a modern building interior. It includes company contact information and a QR code.",
+        "visual_entities": [
+          {
+            "type": "logo",
+            "label": "Haier logo"
+          },
+          {
+            "type": "text",
+            "label": "Product title (Chinese)"
+          },
+          {
+            "type": "text",
+            "label": "Product title (English)"
+          },
+          {
+            "type": "image",
+            "label": "Chiller unit"
+          },
+          {
+            "type": "image",
+            "label": "Modern building interior"
+          },
+          {
+            "type": "text",
+            "label": "Company name and address"
+          },
+          {
+            "type": "text",
+            "label": "Contact phone number"
+          },
+          {
+            "type": "text",
+            "label": "Website URL"
+          },
+          {
+            "type": "text",
+            "label": "Service hotline"
+          },
+          {
+            "type": "text",
+            "label": "Service website URL"
+          },
+          {
+            "type": "QR code",
+            "label": "QR code"
+          },
+          {
+            "type": "text",
+            "label": "Slogan (Chinese)"
+          },
+          {
+            "type": "text",
+            "label": "Document code"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "product_identification",
+          "branding",
+          "marketing_material"
+        ],
+        "ocr_text_if_useful": "Haier\n海尔磁悬浮变频离心机\nHAIER OIL-FREE CENTRIFUGAL CHILLER\nHaier\n青岛海尔空调电子有限公司\n地址：青岛经济技术开发区海尔开发区工业园\n电话：4006 999 999\n网址：www.haier.com\nSYYB-HRCXFZYKT15BA001302\n设计总览：林毅、书鹏。版权所有保留所有权利。未经许可，不得以任何方式复制、转载或摘录本书任何内容，否则将追究法律责任。\n青岛海尔空调电子有限公司\n服务热线：4006999999\n服务体验网址：http://service.haier.com\n你的生活智慧\n我的智慧生活\n制冷百家网：www.zhilengbai.cn",
+        "uncertainty_notes": "The page is a cover/promotional material, not a technical manual page with diagrams or parameters. The relationship between the chiller image and the building image is thematic (application context) but not a direct technical connection.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is a promotional cover page for a Haier Oil-Free Centrifugal Chiller. It features the product name in both Chinese and English, the Haier brand logo, an image of the chiller unit, and a background image of a modern building interior. It includes company contact information and a QR code.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Haier logo\"},\n    {\"type\": \"text\", \"label\": \"Product title (Chinese)\"},\n    {\"type\": \"text\", \"label\": \"Product title (English)\"},\n    {\"type\": \"image\", \"label\": \"Chiller unit\"},\n    {\"type\": \"image\", \"label\": \"Modern building interior\"},\n    {\"type\": \"text\", \"label\": \"Company name and address\"},\n    {\"type\": \"text\", \"label\": \"Contact phone number\"},\n    {\"type\": \"text\", \"label\": \"Website URL\"},\n    {\"type\": \"text\", \"label\": \"Service hotline\"},\n    {\"type\": \"text\", \"label\": \"Service website URL\"},\n    {\"type\": \"QR code\", \"label\": \"QR code\"},\n    {\"type\": \"text\", \"label\": \"Slogan (Chinese)\"},\n    {\"type\": \"text\", \"label\": \"Document code\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_identification\", \"branding\", \"marketing_material\"],\n  \"ocr_text_if_useful\": \"Haier\\n海尔磁悬浮变频离心机\\nHAIER OIL-FREE CENTRIFUGAL CHILLER\\nHaier\\n青岛海尔空调电子有限公司\\n地址：青岛经济技术开发区海尔开发区工业园\\n电话：4006 999 999\\n网址：www.haier.com\\nSYYB-HRCXFZYKT15BA001302\\n设计总览：林毅、书鹏。版权所有保留所有权利。未经许可，不得以任何方式复制、转载或摘录本书任何内容，否则将追究法律责任。\\n青岛海尔空调电子有限公司\\n服务热线：4006999999\\n服务体验网址：http://service.haier.com\\n你的生活智慧\\n我的智慧生活\\n制冷百家网：www.zhilengbai.cn\",\n  \"uncertainty_notes\": \"The page is a cover/promotional material, not a technical manual page with diagrams or parameters. The relationship between the chiller image and the building image is thematic (application context) but not a direct technical connection.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 557,
+        "prompt_tokens": 1517,
+        "total_tokens": 2074,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1320
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 10,
+      "status": "ok",
+      "elapsed_seconds": 11.215,
+      "parsed": {
+        "page_type": "parameter_table",
+        "summary": "This page presents energy saving analysis and performance specifications for modular oil-free centrifugal chillers, including technical comparisons, operational graphs, and detailed parameter tables for different models.",
+        "visual_entities": [
+          {
+            "type": "table",
+            "label": "磁悬浮和普通螺杆机(Haier)技术参数对比"
+          },
+          {
+            "type": "graph",
+            "label": "夏季某制冷日空调运行图"
+          },
+          {
+            "type": "table",
+            "label": "模块化磁悬浮离心机组性能参数表"
+          },
+          {
+            "type": "text_block",
+            "label": "年运行费用分析"
+          },
+          {
+            "type": "text_block",
+            "label": "运行费用计算"
+          },
+          {
+            "type": "image",
+            "label": "制冷剂充注量示意图"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "磁悬浮和普通螺杆机(Haier)技术参数对比",
+            "relation": "compares",
+            "to": "模块化磁悬浮离心机组性能参数表"
+          },
+          {
+            "from": "夏季某制冷日空调运行图",
+            "relation": "illustrates",
+            "to": "年运行费用分析"
+          },
+          {
+            "from": "运行费用计算",
+            "relation": "calculates",
+            "to": "年运行费用分析"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "HVAC system specifications",
+          "energy efficiency analysis",
+          "chiller performance data",
+          "operational cost calculation"
+        ],
+        "ocr_text_if_useful": "型号LSBLX*/R(BP)-R 100 125 150 180 200 名义制冷量 kW 352 438 528 630 700 名义输入功率 kW 68.3 85 101.6 120 133 COP kW/kW 5.15 5.15 5.20 5.25 5.25 启动电流 A 2 2 2 2 2 最大运行电流 A 125 145 180 210 245 最大输入功率 kW 74.0 85.9 106.6 124.4 145.1 供电电源形式 / 3N~380V,50Hz 蒸发器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 61 75 91 105 120 水阻力 kPa 72 75 80 80 85 冷凝器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 75 95 115 135 150 水阻力 kPa 31 42 45 55 60 接管方式 / 卡箍式 外形尺寸 长 mm 1770 1770 1770 1770 1770 宽 mm 880 880 880 880 880 高 mm 1800 1800 1800 1800 1800 制冷剂充注量 kg 32 38 56 68 85 运输重量 kg 960 1040 1300 1430 1640 运行重量 kg 1050 1130 1430 1570 1850",
+        "uncertainty_notes": "Some text in the technical comparison table is small and may not be fully legible. The graph's exact data points are not clearly labeled. The relationship between the graph and the cost analysis is inferred from context.",
+        "confidence": 0.85
+      },
+      "raw_text": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page presents energy saving analysis and performance specifications for modular oil-free centrifugal chillers, including technical comparisons, operational graphs, and detailed parameter tables for different models.\",\n  \"visual_entities\": [\n    {\"type\": \"table\", \"label\": \"磁悬浮和普通螺杆机(Haier)技术参数对比\"},\n    {\"type\": \"graph\", \"label\": \"夏季某制冷日空调运行图\"},\n    {\"type\": \"table\", \"label\": \"模块化磁悬浮离心机组性能参数表\"},\n    {\"type\": \"text_block\", \"label\": \"年运行费用分析\"},\n    {\"type\": \"text_block\", \"label\": \"运行费用计算\"},\n    {\"type\": \"image\", \"label\": \"制冷剂充注量示意图\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"磁悬浮和普通螺杆机(Haier)技术参数对比\", \"relation\": \"compares\", \"to\": \"模块化磁悬浮离心机组性能参数表\"},\n    {\"from\": \"夏季某制冷日空调运行图\", \"relation\": \"illustrates\", \"to\": \"年运行费用分析\"},\n    {\"from\": \"运行费用计算\", \"relation\": \"calculates\", \"to\": \"年运行费用分析\"}\n  ],\n  \"useful_for_knowledge_types\": [\"HVAC system specifications\", \"energy efficiency analysis\", \"chiller performance data\", \"operational cost calculation\"],\n  \"ocr_text_if_useful\": \"型号LSBLX*/R(BP)-R 100 125 150 180 200 名义制冷量 kW 352 438 528 630 700 名义输入功率 kW 68.3 85 101.6 120 133 COP kW/kW 5.15 5.15 5.20 5.25 5.25 启动电流 A 2 2 2 2 2 最大运行电流 A 125 145 180 210 245 最大输入功率 kW 74.0 85.9 106.6 124.4 145.1 供电电源形式 / 3N~380V,50Hz 蒸发器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 61 75 91 105 120 水阻力 kPa 72 75 80 80 85 冷凝器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 75 95 115 135 150 水阻力 kPa 31 42 45 55 60 接管方式 / 卡箍式 外形尺寸 长 mm 1770 1770 1770 1770 1770 宽 mm 880 880 880 880 880 高 mm 1800 1800 1800 1800 1800 制冷剂充注量 kg 32 38 56 68 85 运输重量 kg 960 1040 1300 1430 1640 运行重量 kg 1050 1130 1430 1570 1850\",\n  \"uncertainty_notes\": \"Some text in the technical comparison table is small and may not be fully legible. The graph's exact data points are not clearly labeled. The relationship between the graph and the cost analysis is inferred from context.\",\n  \"confidence\": 0.85\n}",
+      "usage": {
+        "completion_tokens": 931,
+        "prompt_tokens": 1517,
+        "total_tokens": 2448,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1320
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 20,
+      "status": "ok",
+      "elapsed_seconds": 14.422,
+      "parsed": {
+        "page_type": "other",
+        "summary": "This is a promotional brochure page for Haier Central Air Conditioning, highlighting the company's 22-year history, product range, and service guarantees. It features text descriptions, product illustrations, and images representing service stages.",
+        "visual_entities": [
+          {
+            "type": "text_block",
+            "label": "Main Title: Haier Central Air Conditioning Professional Leading"
+          },
+          {
+            "type": "text_block",
+            "label": "22 Years Anniversary"
+          },
+          {
+            "type": "illustration",
+            "label": "Air conditioning unit illustrations (ceiling cassette, duct, floor-standing)"
+          },
+          {
+            "type": "text_block",
+            "label": "Company introduction text"
+          },
+          {
+            "type": "text_block",
+            "label": "Five-stage Full Standard Service description"
+          },
+          {
+            "type": "image",
+            "label": "Procurement stage image (warehouse)"
+          },
+          {
+            "type": "image",
+            "label": "Design stage image (drafting)"
+          },
+          {
+            "type": "image",
+            "label": "Installation stage image (measuring)"
+          },
+          {
+            "type": "image",
+            "label": "Supervision stage image (tablet)"
+          },
+          {
+            "type": "image",
+            "label": "Maintenance stage image (technician)"
+          },
+          {
+            "type": "text_block",
+            "label": "Four Major Professional Guarantees section"
+          },
+          {
+            "type": "image",
+            "label": "Technical support images (buildings, labs)"
+          },
+          {
+            "type": "image",
+            "label": "Production images (factory, workers)"
+          },
+          {
+            "type": "circular_diagram",
+            "label": "22-year guarantee wheel (Technical, Production, Solution, Service)"
+          },
+          {
+            "type": "text_block",
+            "label": "Professional Installation and Service text"
+          },
+          {
+            "type": "image",
+            "label": "Service team images (people, van)"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "22 Years Anniversary",
+            "relation": "is associated with",
+            "to": "Four Major Professional Guarantees section"
+          },
+          {
+            "from": "Five-stage Full Standard Service description",
+            "relation": "lists stages including",
+            "to": "Procurement stage image"
+          },
+          {
+            "from": "Five-stage Full Standard Service description",
+            "relation": "lists stages including",
+            "to": "Design stage image"
+          },
+          {
+            "from": "Five-stage Full Standard Service description",
+            "relation": "lists stages including",
+            "to": "Installation stage image"
+          },
+          {
+            "from": "Five-stage Full Standard Service description",
+            "relation": "lists stages including",
+            "to": "Supervision stage image"
+          },
+          {
+            "from": "Five-stage Full Standard Service description",
+            "relation": "lists stages including",
+            "to": "Maintenance stage image"
+          },
+          {
+            "from": "Four Major Professional Guarantees section",
+            "relation": "includes",
+            "to": "Technical support images"
+          },
+          {
+            "from": "Four Major Professional Guarantees section",
+            "relation": "includes",
+            "to": "Production images"
+          },
+          {
+            "from": "Four Major Professional Guarantees section",
+            "relation": "includes",
+            "to": "circular_diagram"
+          },
+          {
+            "from": "circular_diagram",
+            "relation": "lists guarantee types",
+            "to": "Professional Installation and Service text"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "company_background",
+          "service_process",
+          "product_range",
+          "marketing_material"
+        ],
+        "ocr_text_if_useful": "海尔中央空调专业打造领先\nHAIER CENTRAL AIR CONDITIONING PROFESSIONAL LEADING\n22年\n专业技术保障 / 专业生产保障\n专业方案保障 / 专业服务保障\n五段全程标准服务\n五段标准 · 全程无忧\n海尔中央空调，为了提供超乎消费者需求的产品与服务，不断突破创新。“五段全程标准”服务，集结5大专家，从采购、设计、安装、监理、维保五个环节，提供“售前、售中、售后”三位一体的服务模式，为全球用户提供极致贴心服务。“五段全程标准”服务，再次提升行业服务新要求，构筑服务新标准！\n4大专业保障 打造行业领先\n依托于集团专业技术资源支持，海尔中央空调拥有行业领先的专业技术\n海尔中央空调致力于成为全球领先的中央空调整体解决方案服务商\n在强大的研发、生产实力推动下，海尔中央空调拥有行业领先的产品类型，并以此提供小到7㎡、大到10万㎡的舒适空间解决方案\n海尔中央空调拥有世界领先的制造水平，是目前国内规模最大、品种最多、技术水平最高的商用及家庭中央空调生产基地\n专业安装：海尔中央空调金牌服务网络500家、上百家战略安装商、专业监理40家。\n专业服务：通过“采购、设计、安装、监理、维保”五大环节的全程标准服务。",
+        "uncertainty_notes": "The page is promotional, not technical. Relationships are inferred from layout and text grouping, not explicit wiring or schematic connections. Some text is small and may have minor OCR errors.",
+        "confidence": 0.9
+      },
+      "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is a promotional brochure page for Haier Central Air Conditioning, highlighting the company's 22-year history, product range, and service guarantees. It features text descriptions, product illustrations, and images representing service stages.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Main Title: Haier Central Air Conditioning Professional Leading\"},\n    {\"type\": \"text_block\", \"label\": \"22 Years Anniversary\"},\n    {\"type\": \"illustration\", \"label\": \"Air conditioning unit illustrations (ceiling cassette, duct, floor-standing)\"},\n    {\"type\": \"text_block\", \"label\": \"Company introduction text\"},\n    {\"type\": \"text_block\", \"label\": \"Five-stage Full Standard Service description\"},\n    {\"type\": \"image\", \"label\": \"Procurement stage image (warehouse)\"},\n    {\"type\": \"image\", \"label\": \"Design stage image (drafting)\"},\n    {\"type\": \"image\", \"label\": \"Installation stage image (measuring)\"},\n    {\"type\": \"image\", \"label\": \"Supervision stage image (tablet)\"},\n    {\"type\": \"image\", \"label\": \"Maintenance stage image (technician)\"},\n    {\"type\": \"text_block\", \"label\": \"Four Major Professional Guarantees section\"},\n    {\"type\": \"image\", \"label\": \"Technical support images (buildings, labs)\"},\n    {\"type\": \"image\", \"label\": \"Production images (factory, workers)\"},\n    {\"type\": \"circular_diagram\", \"label\": \"22-year guarantee wheel (Technical, Production, Solution, Service)\"},\n    {\"type\": \"text_block\", \"label\": \"Professional Installation and Service text\"},\n    {\"type\": \"image\", \"label\": \"Service team images (people, van)\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"22 Years Anniversary\", \"relation\": \"is associated with\", \"to\": \"Four Major Professional Guarantees section\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Procurement stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Design stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Installation stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Supervision stage image\"},\n    {\"from\": \"Five-stage Full Standard Service description\", \"relation\": \"lists stages including\", \"to\": \"Maintenance stage image\"},\n    {\"from\": \"Four Major Professional Guarantees section\", \"relation\": \"includes\", \"to\": \"Technical support images\"},\n    {\"from\": \"Four Major Professional Guarantees section\", \"relation\": \"includes\", \"to\": \"Production images\"},\n    {\"from\": \"Four Major Professional Guarantees section\", \"relation\": \"includes\", \"to\": \"circular_diagram\"},\n    {\"from\": \"circular_diagram\", \"relation\": \"lists guarantee types\", \"to\": \"Professional Installation and Service text\"}\n  ],\n  \"useful_for_knowledge_types\": [\"company_background\", \"service_process\", \"product_range\", \"marketing_material\"],\n  \"ocr_text_if_useful\": \"海尔中央空调专业打造领先\\nHAIER CENTRAL AIR CONDITIONING PROFESSIONAL LEADING\\n22年\\n专业技术保障 / 专业生产保障\\n专业方案保障 / 专业服务保障\\n五段全程标准服务\\n五段标准 · 全程无忧\\n海尔中央空调，为了提供超乎消费者需求的产品与服务，不断突破创新。“五段全程标准”服务，集结5大专家，从采购、设计、安装、监理、维保五个环节，提供“售前、售中、售后”三位一体的服务模式，为全球用户提供极致贴心服务。“五段全程标准”服务，再次提升行业服务新要求，构筑服务新标准！\\n4大专业保障 打造行业领先\\n依托于集团专业技术资源支持，海尔中央空调拥有行业领先的专业技术\\n海尔中央空调致力于成为全球领先的中央空调整体解决方案服务商\\n在强大的研发、生产实力推动下，海尔中央空调拥有行业领先的产品类型，并以此提供小到7㎡、大到10万㎡的舒适空间解决方案\\n海尔中央空调拥有世界领先的制造水平，是目前国内规模最大、品种最多、技术水平最高的商用及家庭中央空调生产基地\\n专业安装：海尔中央空调金牌服务网络500家、上百家战略安装商、专业监理40家。\\n专业服务：通过“采购、设计、安装、监理、维保”五大环节的全程标准服务。\",\n  \"uncertainty_notes\": \"The page is promotional, not technical. Relationships are inferred from layout and text grouping, not explicit wiring or schematic connections. Some text is small and may have minor OCR errors.\",\n  \"confidence\": 0.9\n}",
+      "usage": {
+        "completion_tokens": 1044,
+        "prompt_tokens": 1517,
+        "total_tokens": 2561,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 1320
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

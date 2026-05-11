@@ -1,0 +1,37 @@
+{
+  "status": "failed",
+  "row_index": 1,
+  "file_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/02、格力/技术手册/【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+  "doc_id": "doc_99fc08961aa540f4",
+  "chunks": 71,
+  "manual_tokens_estimated": 17580,
+  "equipment_class_id": "centrifugal_chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 69,
+      "chunks_before": 71,
+      "pages_after": 69,
+      "chunks_after": 71,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "failed",
+      "error": "LLM JSON request failed after 3 attempts: Expecting ',' delimiter: line 122 column 6 (char 4170)"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T143040Z_hvac_doclevel_extraction_batch/0001_格力_c系列离心式冷水机组技术手册_69页"
+}

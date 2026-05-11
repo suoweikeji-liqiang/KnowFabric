@@ -1,0 +1,238 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-09T22:35:26.748355+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_c8f845618e3241e4",
+  "doc_name": "auto_green_guide.pdf",
+  "equipment_class": {
+    "equipment_class_id": "controller",
+    "equipment_class_key": "hvac:controller",
+    "label": "Controller",
+    "supported_knowledge_anchors": [
+      "parameter_spec",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 3,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_fe38ffc76764edaf",
+      "domain_id": "hvac",
+      "doc_id": "doc_c8f845618e3241e4",
+      "doc_name": "auto_green_guide.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_2f0805b6ae0447e9",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:dynamic_glazing_visible_light_transmittance_levels",
+      "structured_payload_candidate": {
+        "parameter_name": "Visible Light Transmittance (Tvis)",
+        "values": "4%, 20%, 40%, 60%",
+        "title": "Dynamic Glazing Visible Light Transmittance Levels",
+        "summary": "Electrochromic dynamic glazing typically offers four tint darkness levels corresponding to 4%, 20%, 40%, and 60% visible light transmittance (Tvis)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "AS H R AE  G R E E N G U I D E   1 1 3\nD yn a m i c  G l a zi n g\nG E N E R AL D E S C R I P TI O N\nDynamic ar chitectural glazing uses electrochromic technology to\ndar k en the interior of  a piece of  glass,  enabling a thin coating to change\nf r om clear to tinted when small electr ical voltage is applied.  A demon-\nstr ation of  this technology is eyeglasses that darken when one goes out-\ndoors.  Dynamic glass f or architectural applications can tr ansf or m into\nf our  dark ness levels d epend ing on the season,  being dar ker  in summer\nto keep solar gain out and minimize glare .  In ad dition,  because the\nglazing becomes d ark er  in the summer when exposed  to sun,  its use\nwill generally minimize r adiation heat tr ansf er and help impr ove ther -\nmal comf ort in the space, .  Typically,  the tint corr espond s to 4%,  20%,\n40%,  and  60% visible light transmittance T\nvis  d epending on manuf ac-\nturers.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2.5-pro",
+        "model": "mimo-v2.5-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_2f0805b6ae0447e9",
+        "chunk_c385084fbfd64439",
+        "chunk_c9ab930697794d9b"
+      ],
+      "source_page_nos": [
+        1,
+        4
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Clearly specifies tint levels (4%, 20%, 40%, 60% Tvis) from the document, providing operational performance data for dynamic glazing control.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:dynamic_glazing_visible_light_transmittance_levels",
+        "structured_payload": {
+          "parameter_name": "Visible Light Transmittance (Tvis)",
+          "values": "4%, 20%, 40%, 60%",
+          "title": "Dynamic Glazing Visible Light Transmittance Levels",
+          "summary": "Electrochromic dynamic glazing typically offers four tint darkness levels corresponding to 4%, 20%, 40%, and 60% visible light transmittance (Tvis)."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "AS H R AE  G R E E N G U I D E   1 1 3\nD yn a m i c  G l a zi n g\nG E N E R AL D E S C R I P TI O N\nDynamic ar chitectural glazing uses electrochromic technology to\ndar k en the interior of  a piece of  glass,  enabling a thin coating to change\nf r om clear to tinted when small electr ical voltage is applied.  A demon-\nstr ation of  this technology is eyeglasses that darken when one goes out-\ndoors.  Dynamic glass f or architectural applications can tr ansf or m into\nf our  dark ness levels d epend ing on the season,  being dar ker  in summer\nto keep solar gain out and minimize glare .  In ad dition,  because the\nglazing becomes d ark er  in the summer when exposed  to sun,  its use\nwill generally minimize r adiation heat tr ansf er and help impr ove ther -\nmal comf ort in the space, .  Typically,  the tint corr espond s to 4%,  20%,\n40%,  and  60% visible light transmittance T\nvis  d epending on manuf ac-\nturers.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_bd0e4420eabb5cfa",
+      "domain_id": "hvac",
+      "doc_id": "doc_c8f845618e3241e4",
+      "doc_name": "auto_green_guide.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_c385084fbfd64439",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:controller:application_guidance:dynamic_glazing_control_methods",
+      "structured_payload_candidate": {
+        "control_method": "Manual switch or BMS automatic control",
+        "title": "Dynamic Glazing Control Methods",
+        "summary": "Dynamic glazing can be controlled manually through a switch or linked into an automatic building management system (BMS)."
+      },
+      "confidence_score": 0.92,
+      "review_status": "candidate",
+      "evidence_text": "Dynamical glazing promotes a reduced  carbon f ootprint,  helps\nachieve LEED cer tif ications,  and  red uces ener gy costs by r ed ucing\nsolar  heat gain (i. e. ,  the amount of  heat that enter s a glass structur e nat -\nurally f rom the sun).  The dynamic glazing is usually contr olled  by a\nlow voltage cur rent and can be contr olled either manually through a\nswitch or  linked into an automatic building management system\n(B MS ).\nAP P LI C AB I LI TY\nDynamic glazing is usually the most f easible on large glazing\nf acad es not do not f ace nor th.  It wor ks well on east and west or ienta-\ntions since these ar e dif f icult to horizontally shade.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2.5-pro",
+        "model": "mimo-v2.5-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_c385084fbfd64439"
+      ],
+      "source_page_nos": [
+        1
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted from the manual, states that dynamic glazing can be controlled manually or via BMS, which is operational application guidance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:application_guidance:dynamic_glazing_control_methods",
+        "structured_payload": {
+          "control_method": "Manual switch or BMS automatic control",
+          "title": "Dynamic Glazing Control Methods",
+          "summary": "Dynamic glazing can be controlled manually through a switch or linked into an automatic building management system (BMS)."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Dynamical glazing promotes a reduced  carbon f ootprint,  helps\nachieve LEED cer tif ications,  and  red uces ener gy costs by r ed ucing\nsolar  heat gain (i. e. ,  the amount of  heat that enter s a glass structur e nat -\nurally f rom the sun).  The dynamic glazing is usually contr olled  by a\nlow voltage cur rent and can be contr olled either manually through a\nswitch or  linked into an automatic building management system\n(B MS ).\nAP P LI C AB I LI TY\nDynamic glazing is usually the most f easible on large glazing\nf acad es not do not f ace nor th.  It wor ks well on east and west or ienta-\ntions since these ar e dif f icult to horizontally shade.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a9a2a9448d3cb819",
+      "domain_id": "hvac",
+      "doc_id": "doc_c8f845618e3241e4",
+      "doc_name": "auto_green_guide.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_9a4969f7fe634936",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:controller:application_guidance:active_desiccant_dehumidification_dew_point_threshold",
+      "structured_payload_candidate": {
+        "application_criterion": "Dew point threshold",
+        "value": "40°F (4.3°C) or below",
+        "title": "Active Desiccant Dehumidification Dew Point Threshold",
+        "summary": "Applications requiring a dew point at or below 40°F (4.3°C) may be candidates for active desiccant dehumidification."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "Cooling is accomplished\nwith cooling coils,  and the source of  this cooling af f ects the operating\neconomics of  the system.\nWH EN /WH ERE I T’ S  AP P LI CABLE\nIn gener al,  applications that require a d ew point at or below 40° F\n(4. 3 ° C)  may be cand idates f or  active desiccant dehumidif ication.\nExamples of  such candid ates include f acilities han dling hygroscopic\nmaterials;  f ilm drying;  the manuf acturing of  cand y,  chocolate,  or  chew-\ning gum;  the manuf acturing of  drugs and ch emicals;  the manuf acturing\nof  plastic mater ials;  pack aging of  moisture-sensitive products;  and the\nmanuf acturing of  electr onics.  S upermar k ets of ten use desiccant dehu-\nmid if ication to avoid condensation on r ef rigerated  casework.  And\nwhen ther e is a need f or  a lower d ew point and a convenient source of\nlow-gr ad e heat f or reactivation is available,  rotar y desiccant dehumidi-\nf ier s can be especially economical.\n©  2 0 2 3  AS H RAE  ( w w w . a s h ra e .",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2.5-pro",
+        "model": "mimo-v2.5-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9a4969f7fe634936"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Directly from the text, specifies a dew point threshold of 40°F for active desiccant dehumidification, useful for system sizing and selection.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:application_guidance:active_desiccant_dehumidification_dew_point_threshold",
+        "structured_payload": {
+          "application_criterion": "Dew point threshold",
+          "value": "40°F (4.3°C) or below",
+          "title": "Active Desiccant Dehumidification Dew Point Threshold",
+          "summary": "Applications requiring a dew point at or below 40°F (4.3°C) may be candidates for active desiccant dehumidification."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Cooling is accomplished\nwith cooling coils,  and the source of  this cooling af f ects the operating\neconomics of  the system.\nWH EN /WH ERE I T’ S  AP P LI CABLE\nIn gener al,  applications that require a d ew point at or below 40° F\n(4. 3 ° C)  may be cand idates f or  active desiccant dehumidif ication.\nExamples of  such candid ates include f acilities han dling hygroscopic\nmaterials;  f ilm drying;  the manuf acturing of  cand y,  chocolate,  or  chew-\ning gum;  the manuf acturing of  drugs and ch emicals;  the manuf acturing\nof  plastic mater ials;  pack aging of  moisture-sensitive products;  and the\nmanuf acturing of  electr onics.  S upermar k ets of ten use desiccant dehu-\nmid if ication to avoid condensation on r ef rigerated  casework.  And\nwhen ther e is a need f or  a lower d ew point and a convenient source of\nlow-gr ad e heat f or reactivation is available,  rotar y desiccant dehumidi-\nf ier s can be especially economical.\n©  2 0 2 3  AS H RAE  ( w w w . a s h ra e .",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

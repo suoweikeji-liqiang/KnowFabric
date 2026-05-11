@@ -1,0 +1,1736 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T13:05:04.036167+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_e7b2857068c943d7",
+  "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+  "equipment_class": {
+    "equipment_class_id": "pump",
+    "equipment_class_key": "hvac:pump",
+    "label": "Pump",
+    "supported_knowledge_anchors": [
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 19,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_a9ef88fa4d00d5e9",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_fd1157cc954d4926",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:pump:parameter_spec:outlet_water_temperature_setpoint",
+      "structured_payload_candidate": {
+        "parameter_name": "outlet_water_temperature",
+        "default_value": "56°C",
+        "range": "48°C to 60°C",
+        "title": "Default and adjustable outlet water temperature",
+        "summary": "Default outlet water temperature is 56°C, adjustable from 48°C to 60°C."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n4第一章、机组安装\n一、整体式热水机组外观及组成\n① 出风口 ⑤ 出水口\n② 固定脚 ⑥ 进水口\n③ 电源入线口 ⑦ 排水口\n④ 管网回水口\n二、机组参数                表1.2.1\n型号 RSJ-72/300 RSJ-72/300X RSJ-72/400 RSJ-72/400X RSJ-72/400H RSJ-72/400XH\n电源 220V～ 50Hz\n运行控制 可手动、自动开关机，故障报警等\n出水\n温度 默认 56℃，48℃～60℃可调\n水侧换热器 套管换热器\n进水管管径 DN15 DN20  DN15 DN20 DN20 DN20\n出水管管径 DN15 DN20 DN15 DN20 DN20 DN20\n回水管管径 / DN20  / DN20 / DN20\n长×宽×高 900×530×1230 mm  900×530×1430 mm\n净质量 127 kg 135 kg 134 kg 142 kg 148 kg 150 kg\n水箱满水总\n质量 277 kg 285 kg 354 kg 362 kg 368 kg 370 kg\n图1.1.1 表1.1.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_fd1157cc954d4926"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operational parameter spec with default and adjustable range, supported by table in evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:pump:parameter_spec:outlet_water_temperature_setpoint for Pump",
+        "summary": "Draft review summary for parameter spec hvac:pump:parameter_spec:outlet_water_temperature_setpoint derived from chunk chunk_fd1157cc954d4926 on page 5 for Pump.",
+        "canonical_key": "hvac:pump:parameter_spec:outlet_water_temperature_setpoint",
+        "structured_payload": {
+          "parameter_name": "outlet_water_temperature",
+          "default_value": "56°C",
+          "range": "48°C to 60°C",
+          "title": "Default and adjustable outlet water temperature",
+          "summary": "Default outlet water temperature is 56°C, adjustable from 48°C to 60°C."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n4第一章、机组安装\n一、整体式热水机组外观及组成\n① 出风口 ⑤ 出水口\n② 固定脚 ⑥ 进水口\n③ 电源入线口 ⑦ 排水口\n④ 管网回水口\n二、机组参数                表1.2.1\n型号 RSJ-72/300 RSJ-72/300X RSJ-72/400 RSJ-72/400X RSJ-72/400H RSJ-72/400XH\n电源 220V～ 50Hz\n运行控制 可手动、自动开关机，故障报警等\n出水\n温度 默认 56℃，48℃～60℃可调\n水侧换热器 套管换热器\n进水管管径 DN15 DN20  DN15 DN20 DN20 DN20\n出水管管径 DN15 DN20 DN15 DN20 DN20 DN20\n回水管管径 / DN20  / DN20 / DN20\n长×宽×高 900×530×1230 mm  900×530×1430 mm\n净质量 127 kg 135 kg 134 kg 142 kg 148 kg 150 kg\n水箱满水总\n质量 277 kg 285 kg 354 kg 362 kg 368 kg 370 kg\n图1.1.1 表1.1.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1cdffa3317935399",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_fd1157cc954d4926",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:pump:parameter_spec:power_supply",
+      "structured_payload_candidate": {
+        "parameter_name": "power_supply",
+        "value": "220V～50Hz",
+        "title": "Power supply specification for RSJ-72 series",
+        "summary": "Power supply is 220V～50Hz for RSJ-72/300, RSJ-72/300X, RSJ-72/400, RSJ-72/400X, RSJ-72/400H, RSJ-72/400XH."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n4第一章、机组安装\n一、整体式热水机组外观及组成\n① 出风口 ⑤ 出水口\n② 固定脚 ⑥ 进水口\n③ 电源入线口 ⑦ 排水口\n④ 管网回水口\n二、机组参数                表1.2.1\n型号 RSJ-72/300 RSJ-72/300X RSJ-72/400 RSJ-72/400X RSJ-72/400H RSJ-72/400XH\n电源 220V～ 50Hz\n运行控制 可手动、自动开关机，故障报警等\n出水\n温度 默认 56℃，48℃～60℃可调\n水侧换热器 套管换热器\n进水管管径 DN15 DN20  DN15 DN20 DN20 DN20\n出水管管径 DN15 DN20 DN15 DN20 DN20 DN20\n回水管管径 / DN20  / DN20 / DN20\n长×宽×高 900×530×1230 mm  900×530×1430 mm\n净质量 127 kg 135 kg 134 kg 142 kg 148 kg 150 kg\n水箱满水总\n质量 277 kg 285 kg 354 kg 362 kg 368 kg 370 kg\n图1.1.1 表1.1.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_fd1157cc954d4926",
+        "chunk_43a237c55a7e435d",
+        "chunk_1bb0289bf5ff4324"
+      ],
+      "source_page_nos": [
+        5,
+        23,
+        24
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Power supply specification supported by multiple pages.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:pump:parameter_spec:power_supply for Pump",
+        "summary": "Draft review summary for parameter spec hvac:pump:parameter_spec:power_supply derived from chunk chunk_fd1157cc954d4926 on page 5 for Pump.",
+        "canonical_key": "hvac:pump:parameter_spec:power_supply",
+        "structured_payload": {
+          "parameter_name": "power_supply",
+          "value": "220V～50Hz",
+          "title": "Power supply specification for RSJ-72 series",
+          "summary": "Power supply is 220V～50Hz for RSJ-72/300, RSJ-72/300X, RSJ-72/400, RSJ-72/400X, RSJ-72/400H, RSJ-72/400XH."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n4第一章、机组安装\n一、整体式热水机组外观及组成\n① 出风口 ⑤ 出水口\n② 固定脚 ⑥ 进水口\n③ 电源入线口 ⑦ 排水口\n④ 管网回水口\n二、机组参数                表1.2.1\n型号 RSJ-72/300 RSJ-72/300X RSJ-72/400 RSJ-72/400X RSJ-72/400H RSJ-72/400XH\n电源 220V～ 50Hz\n运行控制 可手动、自动开关机，故障报警等\n出水\n温度 默认 56℃，48℃～60℃可调\n水侧换热器 套管换热器\n进水管管径 DN15 DN20  DN15 DN20 DN20 DN20\n出水管管径 DN15 DN20 DN15 DN20 DN20 DN20\n回水管管径 / DN20  / DN20 / DN20\n长×宽×高 900×530×1230 mm  900×530×1430 mm\n净质量 127 kg 135 kg 134 kg 142 kg 148 kg 150 kg\n水箱满水总\n质量 277 kg 285 kg 354 kg 362 kg 368 kg 370 kg\n图1.1.1 表1.1.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d5ea81ee5cb22f1a",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 8,
+      "chunk_id": "chunk_70c36e8726014873",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:pump:parameter_spec:max_head",
+      "structured_payload_candidate": {
+        "parameter_name": "max_head",
+        "value": "4m (low-head), 8m (high-head)",
+        "title": "Maximum height difference for water supply",
+        "summary": "Maximum height difference H between highest faucet and unit is 4m for low-head models and 8m for high-head models."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n7\n此种安装的工程，只需选择流量开关控制：只需把机组上的压力控制开关连接线\n拔出即可\n4. 图 1.6.1、图 1.6.2 中最高用水龙头与主机的落差 H 最大值如下表\n机 型 落差 H (m) 备注\nRSJ-72/300、RSJ-72/400、RSJ-72/300X、RSJ-72/400X 4 低扬程\nRSJ-72/400H、RSJ-72/400XH 8 高扬程\n5. 当进热泵主机的自来水压不足0.15MPa时， 请在进水管上增加一进水增压泵，使进水压力不低于 0.15MPa。\n6. 图 1.6.1、 图 1.6.2 中自来水管上必须安装进水过滤器 （过滤器为标配附件） 。\n第二章、电气接线\n注意事项： z 热水机应使用专用电源，电源电压符合额定电压。\nz 热水机供电电路必须具有接地线，电源地线要与外部接地线可靠连接，且外部接地线是有效的。\nz 配线施工必须由专业安装技术员按照电路图进行。\nz 按照国家有关电器设备技术标准的要求，设置好漏电保护装置。\nz 电源线和信号线布置应整齐、合理，强电线与弱电线分开，不能互相干扰，同时不与连接管和阀体接触。 图1.6.3\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_70c36e8726014873"
+      ],
+      "source_page_nos": [
+        8
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Max height difference for water supply, model-specific, from installation table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:pump:parameter_spec:max_head for Pump",
+        "summary": "Draft review summary for parameter spec hvac:pump:parameter_spec:max_head derived from chunk chunk_70c36e8726014873 on page 8 for Pump.",
+        "canonical_key": "hvac:pump:parameter_spec:max_head",
+        "structured_payload": {
+          "parameter_name": "max_head",
+          "value": "4m (low-head), 8m (high-head)",
+          "title": "Maximum height difference for water supply",
+          "summary": "Maximum height difference H between highest faucet and unit is 4m for low-head models and 8m for high-head models."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n7\n此种安装的工程，只需选择流量开关控制：只需把机组上的压力控制开关连接线\n拔出即可\n4. 图 1.6.1、图 1.6.2 中最高用水龙头与主机的落差 H 最大值如下表\n机 型 落差 H (m) 备注\nRSJ-72/300、RSJ-72/400、RSJ-72/300X、RSJ-72/400X 4 低扬程\nRSJ-72/400H、RSJ-72/400XH 8 高扬程\n5. 当进热泵主机的自来水压不足0.15MPa时， 请在进水管上增加一进水增压泵，使进水压力不低于 0.15MPa。\n6. 图 1.6.1、 图 1.6.2 中自来水管上必须安装进水过滤器 （过滤器为标配附件） 。\n第二章、电气接线\n注意事项： z 热水机应使用专用电源，电源电压符合额定电压。\nz 热水机供电电路必须具有接地线，电源地线要与外部接地线可靠连接，且外部接地线是有效的。\nz 配线施工必须由专业安装技术员按照电路图进行。\nz 按照国家有关电器设备技术标准的要求，设置好漏电保护装置。\nz 电源线和信号线布置应整齐、合理，强电线与弱电线分开，不能互相干扰，同时不与连接管和阀体接触。 图1.6.3\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_bf8724c3f7edb4f3",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 8,
+      "chunk_id": "chunk_70c36e8726014873",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:pump:parameter_spec:min_inlet_pressure",
+      "structured_payload_candidate": {
+        "parameter_name": "min_inlet_pressure",
+        "value": "0.15 MPa",
+        "title": "Minimum inlet water pressure",
+        "summary": "Inlet water pressure to the heat pump must be at least 0.15 MPa; otherwise, a booster pump is required."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n7\n此种安装的工程，只需选择流量开关控制：只需把机组上的压力控制开关连接线\n拔出即可\n4. 图 1.6.1、图 1.6.2 中最高用水龙头与主机的落差 H 最大值如下表\n机 型 落差 H (m) 备注\nRSJ-72/300、RSJ-72/400、RSJ-72/300X、RSJ-72/400X 4 低扬程\nRSJ-72/400H、RSJ-72/400XH 8 高扬程\n5. 当进热泵主机的自来水压不足0.15MPa时， 请在进水管上增加一进水增压泵，使进水压力不低于 0.15MPa。\n6. 图 1.6.1、 图 1.6.2 中自来水管上必须安装进水过滤器 （过滤器为标配附件） 。\n第二章、电气接线\n注意事项： z 热水机应使用专用电源，电源电压符合额定电压。\nz 热水机供电电路必须具有接地线，电源地线要与外部接地线可靠连接，且外部接地线是有效的。\nz 配线施工必须由专业安装技术员按照电路图进行。\nz 按照国家有关电器设备技术标准的要求，设置好漏电保护装置。\nz 电源线和信号线布置应整齐、合理，强电线与弱电线分开，不能互相干扰，同时不与连接管和阀体接触。 图1.6.3\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_70c36e8726014873"
+      ],
+      "source_page_nos": [
+        8
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Minimum inlet water pressure with booster pump requirement, operational parameter.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:pump:parameter_spec:min_inlet_pressure for Pump",
+        "summary": "Draft review summary for parameter spec hvac:pump:parameter_spec:min_inlet_pressure derived from chunk chunk_70c36e8726014873 on page 8 for Pump.",
+        "canonical_key": "hvac:pump:parameter_spec:min_inlet_pressure",
+        "structured_payload": {
+          "parameter_name": "min_inlet_pressure",
+          "value": "0.15 MPa",
+          "title": "Minimum inlet water pressure",
+          "summary": "Inlet water pressure to the heat pump must be at least 0.15 MPa; otherwise, a booster pump is required."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n7\n此种安装的工程，只需选择流量开关控制：只需把机组上的压力控制开关连接线\n拔出即可\n4. 图 1.6.1、图 1.6.2 中最高用水龙头与主机的落差 H 最大值如下表\n机 型 落差 H (m) 备注\nRSJ-72/300、RSJ-72/400、RSJ-72/300X、RSJ-72/400X 4 低扬程\nRSJ-72/400H、RSJ-72/400XH 8 高扬程\n5. 当进热泵主机的自来水压不足0.15MPa时， 请在进水管上增加一进水增压泵，使进水压力不低于 0.15MPa。\n6. 图 1.6.1、 图 1.6.2 中自来水管上必须安装进水过滤器 （过滤器为标配附件） 。\n第二章、电气接线\n注意事项： z 热水机应使用专用电源，电源电压符合额定电压。\nz 热水机供电电路必须具有接地线，电源地线要与外部接地线可靠连接，且外部接地线是有效的。\nz 配线施工必须由专业安装技术员按照电路图进行。\nz 按照国家有关电器设备技术标准的要求，设置好漏电保护装置。\nz 电源线和信号线布置应整齐、合理，强电线与弱电线分开，不能互相干扰，同时不与连接管和阀体接触。 图1.6.3\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_a271dc90c0768292",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_9bb936b2461d4668",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:pump:parameter_spec:electrical_protection",
+      "structured_payload_candidate": {
+        "parameter_name": "manual_switch_and_fuse",
+        "value": "Manual switch: 30A, Fuse: 25A",
+        "title": "Manual switch and fuse capacity for 2 HP",
+        "summary": "For a total of 2 HP, manual switch rating is 30A and fuse rating is 25A."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n8z 本机不配电源线，选配时请参照规定的电源规格，不允许两根电线驳接。信\n号线必须使用屏蔽线。\nz 所有接线施工完成后，经仔细检查无误才可接通电源。\n一、合计马力手动开关及保险丝容量    表2.1.1\n合计马力数 手动开关（A） 保险丝（A）\n2 30 25\n二、电源配线\n1. 电源个别供给时（不使用电源设备）  表 2.2.1\n最细的电线线径（mm）\n（金属管合成树脂管配线） 手动开关（A） 项目\n机型 电源 尺寸\n（连续长度≤30m）接地线 容量 保险丝 漏电保护器\nRSJ-72/300\nRSJ-72/300X\nRSJ-72/400\nRSJ-72/400X\nRSJ-72/400H\nRSJ-72/400XH 220V～\n50Hz 2.5 2.5 30 25 30mA\n0.1 sec以下\n注：表中的配线线径及连续长度表示电压下降幅度在 2%以内的情况，\n当配线连续长度超过表中的值时，请遵循有关规定选定电线线径。\n2. 使用电源设备的情况\n3. 线控器连接线\n表2.2.2 注：尽管机组本身电控盒\n内带有漏电保护器，但是为了安全起见，仍要求\n机器外部电源盒处必须按左图要求配置漏电保护\n图2.2.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9bb936b2461d4668"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Manual switch and fuse capacity for 2 HP, from electrical table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:pump:parameter_spec:electrical_protection for Pump",
+        "summary": "Draft review summary for parameter spec hvac:pump:parameter_spec:electrical_protection derived from chunk chunk_9bb936b2461d4668 on page 9 for Pump.",
+        "canonical_key": "hvac:pump:parameter_spec:electrical_protection",
+        "structured_payload": {
+          "parameter_name": "manual_switch_and_fuse",
+          "value": "Manual switch: 30A, Fuse: 25A",
+          "title": "Manual switch and fuse capacity for 2 HP",
+          "summary": "For a total of 2 HP, manual switch rating is 30A and fuse rating is 25A."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n8z 本机不配电源线，选配时请参照规定的电源规格，不允许两根电线驳接。信\n号线必须使用屏蔽线。\nz 所有接线施工完成后，经仔细检查无误才可接通电源。\n一、合计马力手动开关及保险丝容量    表2.1.1\n合计马力数 手动开关（A） 保险丝（A）\n2 30 25\n二、电源配线\n1. 电源个别供给时（不使用电源设备）  表 2.2.1\n最细的电线线径（mm）\n（金属管合成树脂管配线） 手动开关（A） 项目\n机型 电源 尺寸\n（连续长度≤30m）接地线 容量 保险丝 漏电保护器\nRSJ-72/300\nRSJ-72/300X\nRSJ-72/400\nRSJ-72/400X\nRSJ-72/400H\nRSJ-72/400XH 220V～\n50Hz 2.5 2.5 30 25 30mA\n0.1 sec以下\n注：表中的配线线径及连续长度表示电压下降幅度在 2%以内的情况，\n当配线连续长度超过表中的值时，请遵循有关规定选定电线线径。\n2. 使用电源设备的情况\n3. 线控器连接线\n表2.2.2 注：尽管机组本身电控盒\n内带有漏电保护器，但是为了安全起见，仍要求\n机器外部电源盒处必须按左图要求配置漏电保护\n图2.2.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_00faf19dd8bcc560",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_9bb936b2461d4668",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:pump:parameter_spec:power_wiring",
+      "structured_payload_candidate": {
+        "parameter_name": "power_wiring",
+        "value": "Wire: 2.5 mm², Manual switch: 30A, Fuse: 25A, Leakage protector: 30mA/0.1s",
+        "title": "Minimum wire size and protection for RSJ-72 series",
+        "summary": "Minimum wire size is 2.5 mm² for both line and ground, with 30A manual switch, 25A fuse, and 30mA/0.1s leakage protector."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n8z 本机不配电源线，选配时请参照规定的电源规格，不允许两根电线驳接。信\n号线必须使用屏蔽线。\nz 所有接线施工完成后，经仔细检查无误才可接通电源。\n一、合计马力手动开关及保险丝容量    表2.1.1\n合计马力数 手动开关（A） 保险丝（A）\n2 30 25\n二、电源配线\n1. 电源个别供给时（不使用电源设备）  表 2.2.1\n最细的电线线径（mm）\n（金属管合成树脂管配线） 手动开关（A） 项目\n机型 电源 尺寸\n（连续长度≤30m）接地线 容量 保险丝 漏电保护器\nRSJ-72/300\nRSJ-72/300X\nRSJ-72/400\nRSJ-72/400X\nRSJ-72/400H\nRSJ-72/400XH 220V～\n50Hz 2.5 2.5 30 25 30mA\n0.1 sec以下\n注：表中的配线线径及连续长度表示电压下降幅度在 2%以内的情况，\n当配线连续长度超过表中的值时，请遵循有关规定选定电线线径。\n2. 使用电源设备的情况\n3. 线控器连接线\n表2.2.2 注：尽管机组本身电控盒\n内带有漏电保护器，但是为了安全起见，仍要求\n机器外部电源盒处必须按左图要求配置漏电保护\n图2.2.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_9bb936b2461d4668"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Minimum wire size and protection for RSJ-72 series, from electrical table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:pump:parameter_spec:power_wiring for Pump",
+        "summary": "Draft review summary for parameter spec hvac:pump:parameter_spec:power_wiring derived from chunk chunk_9bb936b2461d4668 on page 9 for Pump.",
+        "canonical_key": "hvac:pump:parameter_spec:power_wiring",
+        "structured_payload": {
+          "parameter_name": "power_wiring",
+          "value": "Wire: 2.5 mm², Manual switch: 30A, Fuse: 25A, Leakage protector: 30mA/0.1s",
+          "title": "Minimum wire size and protection for RSJ-72 series",
+          "summary": "Minimum wire size is 2.5 mm² for both line and ground, with 30A manual switch, 25A fuse, and 30mA/0.1s leakage protector."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n8z 本机不配电源线，选配时请参照规定的电源规格，不允许两根电线驳接。信\n号线必须使用屏蔽线。\nz 所有接线施工完成后，经仔细检查无误才可接通电源。\n一、合计马力手动开关及保险丝容量    表2.1.1\n合计马力数 手动开关（A） 保险丝（A）\n2 30 25\n二、电源配线\n1. 电源个别供给时（不使用电源设备）  表 2.2.1\n最细的电线线径（mm）\n（金属管合成树脂管配线） 手动开关（A） 项目\n机型 电源 尺寸\n（连续长度≤30m）接地线 容量 保险丝 漏电保护器\nRSJ-72/300\nRSJ-72/300X\nRSJ-72/400\nRSJ-72/400X\nRSJ-72/400H\nRSJ-72/400XH 220V～\n50Hz 2.5 2.5 30 25 30mA\n0.1 sec以下\n注：表中的配线线径及连续长度表示电压下降幅度在 2%以内的情况，\n当配线连续长度超过表中的值时，请遵循有关规定选定电线线径。\n2. 使用电源设备的情况\n3. 线控器连接线\n表2.2.2 注：尽管机组本身电控盒\n内带有漏电保护器，但是为了安全起见，仍要求\n机器外部电源盒处必须按左图要求配置漏电保护\n图2.2.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_7bde7662583262b2",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 10,
+      "chunk_id": "chunk_c1430a5ef5414fda",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:pump:parameter_spec:controller_wiring",
+      "structured_payload_candidate": {
+        "parameter_name": "controller_wiring",
+        "value": "Power: 2-core 1.0 mm² (≤50m), Communication: 3-core shielded 1.0 mm² (≤50m)",
+        "title": "Wired controller connection specifications",
+        "summary": "Wired controller power wire: 2-core 1.0 mm² (max 50m); communication wire: 3-core shielded 1.0 mm² (max 50m)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n9名 称 条 数 尺 寸\n线控器电源连接线 2 芯 1.0mm2（长度≤50m）\n通讯线（带屏蔽线） 3 芯 1.0mm2（长度≤50m）\n三、电气连线简图\n图 2.3.2\n四、管网循环的选择\n1. 两种管网循环方式：\n方式 1：水流控制式        该功能出厂时已被屏蔽， 用户若需使用此功能，需请专业安装人员设置\n（把电控板上的红色拨码开关拨到 ON 的位置） 。 在该模式下， 用户打开水龙头后，机组先放水 5~20 秒，接着停水等待 3~4 分钟即可出热水。特别提示：使用该功能时，只允许有一个水龙头在使用；如果机组制热水的方式为循环式制热水（即\n管网强制循环接口\nRSJ-72/300X\nRSJ-72/400X\nRSJ-72/400XH有\n电源、地线220V～50Hz图2.3.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_c1430a5ef5414fda"
+      ],
+      "source_page_nos": [
+        10
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Wired controller connection specifications, from table with wire sizes and lengths.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:pump:parameter_spec:controller_wiring for Pump",
+        "summary": "Draft review summary for parameter spec hvac:pump:parameter_spec:controller_wiring derived from chunk chunk_c1430a5ef5414fda on page 10 for Pump.",
+        "canonical_key": "hvac:pump:parameter_spec:controller_wiring",
+        "structured_payload": {
+          "parameter_name": "controller_wiring",
+          "value": "Power: 2-core 1.0 mm² (≤50m), Communication: 3-core shielded 1.0 mm² (≤50m)",
+          "title": "Wired controller connection specifications",
+          "summary": "Wired controller power wire: 2-core 1.0 mm² (max 50m); communication wire: 3-core shielded 1.0 mm² (max 50m)."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n9名 称 条 数 尺 寸\n线控器电源连接线 2 芯 1.0mm2（长度≤50m）\n通讯线（带屏蔽线） 3 芯 1.0mm2（长度≤50m）\n三、电气连线简图\n图 2.3.2\n四、管网循环的选择\n1. 两种管网循环方式：\n方式 1：水流控制式        该功能出厂时已被屏蔽， 用户若需使用此功能，需请专业安装人员设置\n（把电控板上的红色拨码开关拨到 ON 的位置） 。 在该模式下， 用户打开水龙头后，机组先放水 5~20 秒，接着停水等待 3~4 分钟即可出热水。特别提示：使用该功能时，只允许有一个水龙头在使用；如果机组制热水的方式为循环式制热水（即\n管网强制循环接口\nRSJ-72/300X\nRSJ-72/400X\nRSJ-72/400XH有\n电源、地线220V～50Hz图2.3.1\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_868e9ed966a17674",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_71192b99d9be479d",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:pump:fault_code:e0",
+      "structured_payload_candidate": {
+        "fault_code": "E0",
+        "description": "进水压力小于0.15MPa",
+        "causes": [
+          "自来水水压不足",
+          "进水阀门未打开",
+          "机组外部进水管或过滤器堵塞",
+          "水压开关故障"
+        ],
+        "solutions": [
+          "增加冷水增压水泵",
+          "打开阀门",
+          "清洗管道或过滤器滤网",
+          "更换水压开关"
+        ],
+        "title": "E0: Water inlet pressure fault",
+        "summary": "E0 indicates inlet water pressure is below 0.15 MPa. Causes include low water supply, closed valve, clogged filter, or faulty pressure switch."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_71192b99d9be479d",
+        "chunk_11fb3e5fe57f48fb",
+        "chunk_d8daf282777d4e14",
+        "chunk_c2094555db254d56",
+        "chunk_ff3c144d91c24dc8",
+        "chunk_b2c0c62a1d1a41cc",
+        "chunk_5b8d9285c89142f7"
+      ],
+      "source_page_nos": [
+        12,
+        13,
+        18,
+        35,
+        51,
+        52,
+        59
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code E0 with causes and solutions, multiple evidence pages.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Fault Code hvac:pump:fault_code:e0 for Pump",
+        "summary": "Draft review summary for fault code hvac:pump:fault_code:e0 derived from chunk chunk_71192b99d9be479d on page 12 for Pump.",
+        "canonical_key": "hvac:pump:fault_code:e0",
+        "structured_payload": {
+          "fault_code": "E0",
+          "description": "进水压力小于0.15MPa",
+          "causes": [
+            "自来水水压不足",
+            "进水阀门未打开",
+            "机组外部进水管或过滤器堵塞",
+            "水压开关故障"
+          ],
+          "solutions": [
+            "增加冷水增压水泵",
+            "打开阀门",
+            "清洗管道或过滤器滤网",
+            "更换水压开关"
+          ],
+          "title": "E0: Water inlet pressure fault",
+          "summary": "E0 indicates inlet water pressure is below 0.15 MPa. Causes include low water supply, closed valve, clogged filter, or faulty pressure switch."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f6246fd74c001c4f",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 18,
+      "chunk_id": "chunk_d8daf282777d4e14",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:pump:fault_code:e2",
+      "structured_payload_candidate": {
+        "fault_code": "E2",
+        "description": "通讯故障",
+        "causes": [
+          "主机与线控器A、B、P、Q、E 线正确连接",
+          "电磁干扰，通讯线未用屏蔽线"
+        ],
+        "solutions": [
+          "正确连接",
+          "通讯线改用屏蔽线"
+        ],
+        "title": "E2: Communication fault",
+        "summary": "E2 indicates communication fault between main unit and wired controller. Check wiring or use shielded cable."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n17二、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵\n进水阀门未打开 打开阀门\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网 E0 进水压力小于\n0.15MPa 水压开关故障（实测高于0.15MPa） 更换水压开关\n主机与线控器通讯故障 主机与线控器A、B、P、Q、E 线正确连接\nE2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间Twater接口松脱 插好接口\nE3 出水温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T5 接口松脱 插好接口 E4 水箱内水温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T3 接口松脱 插好接口 E5 冷凝器管温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T4 接口松脱 插好接口 E6 室外环境温度传感器故障 传感器损坏 更换传感器\n屏蔽电阻与主板 T6 接口松脱 插好接口 E7 T6 温度传感器故障 屏蔽电阻损坏 更换屏蔽电阻\n机组内部过滤器脏赌，流径板换水量不够。 清理脏物（并安装过滤器）\n进水电磁阀动作不良，没有水流径板换。 （完全没水出水箱） 检查进水电磁阀 SV4\n直热式\n温水阀没有打开 检查温水阀，开压缩机的同时，用手触摸此阀，正常时会明显感觉到在动作 。\nP1 系统高压保护\n循环式 水泵没有启动 检查内置水泵\n电压偏小 解决电压问题 P2 压缩机电流保护（超过 18A） 压缩机堵转 检查压缩机\n三、无代码故障\n故障描述 原因分析 解决方案\n管网回水阀 SV5 阀体泄漏（打开水箱顶盖可看到有水灌入水箱中） 更换 SV5 阀体\n出水压力开关或水流开关问题，此种情况下两个开关信号应为断开信号。 更换压力开关或水流开关主机没有进入循环水状态且末端没有用水的情况下， 水泵一直不停 用水管道有泄漏 检查用水管道并修复\n用水管道有微漏，频繁泄压 检查用水管道并修复\n机组内部没有装补偿毛细管组件（前期机型） 在机组外部安装补偿毛细管组件\n没用水时， 水泵频繁启停\n管网回水电磁阀泄漏 更换电磁阀\n出水压力开关或水流开关问题，用水时水压开关或水流开关会信号会闭合。 更换压力开关或水流开关\n用水时， 水泵不启动 检测到水箱水位低于最下一格 正常\n水箱漫水\n不补水 水位开关故障 检查水位开关并修复\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d8daf282777d4e14",
+        "chunk_fef93e3d973a4fc6",
+        "chunk_c2094555db254d56",
+        "chunk_d0abb17f63f249af"
+      ],
+      "source_page_nos": [
+        18,
+        31,
+        35,
+        60
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code E2 communication fault, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Fault Code hvac:pump:fault_code:e2 for Pump",
+        "summary": "Draft review summary for fault code hvac:pump:fault_code:e2 derived from chunk chunk_d8daf282777d4e14 on page 18 for Pump.",
+        "canonical_key": "hvac:pump:fault_code:e2",
+        "structured_payload": {
+          "fault_code": "E2",
+          "description": "通讯故障",
+          "causes": [
+            "主机与线控器A、B、P、Q、E 线正确连接",
+            "电磁干扰，通讯线未用屏蔽线"
+          ],
+          "solutions": [
+            "正确连接",
+            "通讯线改用屏蔽线"
+          ],
+          "title": "E2: Communication fault",
+          "summary": "E2 indicates communication fault between main unit and wired controller. Check wiring or use shielded cable."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n17二、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵\n进水阀门未打开 打开阀门\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网 E0 进水压力小于\n0.15MPa 水压开关故障（实测高于0.15MPa） 更换水压开关\n主机与线控器通讯故障 主机与线控器A、B、P、Q、E 线正确连接\nE2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间Twater接口松脱 插好接口\nE3 出水温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T5 接口松脱 插好接口 E4 水箱内水温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T3 接口松脱 插好接口 E5 冷凝器管温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T4 接口松脱 插好接口 E6 室外环境温度传感器故障 传感器损坏 更换传感器\n屏蔽电阻与主板 T6 接口松脱 插好接口 E7 T6 温度传感器故障 屏蔽电阻损坏 更换屏蔽电阻\n机组内部过滤器脏赌，流径板换水量不够。 清理脏物（并安装过滤器）\n进水电磁阀动作不良，没有水流径板换。 （完全没水出水箱） 检查进水电磁阀 SV4\n直热式\n温水阀没有打开 检查温水阀，开压缩机的同时，用手触摸此阀，正常时会明显感觉到在动作 。\nP1 系统高压保护\n循环式 水泵没有启动 检查内置水泵\n电压偏小 解决电压问题 P2 压缩机电流保护（超过 18A） 压缩机堵转 检查压缩机\n三、无代码故障\n故障描述 原因分析 解决方案\n管网回水阀 SV5 阀体泄漏（打开水箱顶盖可看到有水灌入水箱中） 更换 SV5 阀体\n出水压力开关或水流开关问题，此种情况下两个开关信号应为断开信号。 更换压力开关或水流开关主机没有进入循环水状态且末端没有用水的情况下， 水泵一直不停 用水管道有泄漏 检查用水管道并修复\n用水管道有微漏，频繁泄压 检查用水管道并修复\n机组内部没有装补偿毛细管组件（前期机型） 在机组外部安装补偿毛细管组件\n没用水时， 水泵频繁启停\n管网回水电磁阀泄漏 更换电磁阀\n出水压力开关或水流开关问题，用水时水压开关或水流开关会信号会闭合。 更换压力开关或水流开关\n用水时， 水泵不启动 检测到水箱水位低于最下一格 正常\n水箱漫水\n不补水 水位开关故障 检查水位开关并修复\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_10d154fc54a20483",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_71192b99d9be479d",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:pump:fault_code:e3",
+      "structured_payload_candidate": {
+        "fault_code": "E3",
+        "description": "出水温度传感器故障",
+        "causes": [
+          "传感器与主板之间Twater接口松脱",
+          "传感器损坏"
+        ],
+        "solutions": [
+          "插好接口",
+          "更换传感器"
+        ],
+        "title": "E3: Outlet water temperature sensor fault",
+        "summary": "E3 indicates outlet water temperature sensor fault. Check connection or replace sensor."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_71192b99d9be479d",
+        "chunk_11fb3e5fe57f48fb",
+        "chunk_d8daf282777d4e14",
+        "chunk_c2094555db254d56",
+        "chunk_096f950d2c74462d",
+        "chunk_2085f725be6e46ad",
+        "chunk_ff3c144d91c24dc8",
+        "chunk_b2c0c62a1d1a41cc",
+        "chunk_d0abb17f63f249af"
+      ],
+      "source_page_nos": [
+        12,
+        13,
+        18,
+        35,
+        42,
+        50,
+        51,
+        52,
+        60
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code E3 outlet water temperature sensor, supported.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Fault Code hvac:pump:fault_code:e3 for Pump",
+        "summary": "Draft review summary for fault code hvac:pump:fault_code:e3 derived from chunk chunk_71192b99d9be479d on page 12 for Pump.",
+        "canonical_key": "hvac:pump:fault_code:e3",
+        "structured_payload": {
+          "fault_code": "E3",
+          "description": "出水温度传感器故障",
+          "causes": [
+            "传感器与主板之间Twater接口松脱",
+            "传感器损坏"
+          ],
+          "solutions": [
+            "插好接口",
+            "更换传感器"
+          ],
+          "title": "E3: Outlet water temperature sensor fault",
+          "summary": "E3 indicates outlet water temperature sensor fault. Check connection or replace sensor."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_838c02a87e61aca8",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_71192b99d9be479d",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:pump:fault_code:e4",
+      "structured_payload_candidate": {
+        "fault_code": "E4",
+        "description": "水箱内水温传感器故障",
+        "causes": [
+          "传感器与主板之间 T5 接口松脱",
+          "传感器损坏"
+        ],
+        "solutions": [
+          "插好接口",
+          "更换传感器"
+        ],
+        "title": "E4: Tank water temperature sensor fault",
+        "summary": "E4 indicates tank water temperature sensor fault. Check connection or replace sensor."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_71192b99d9be479d",
+        "chunk_11fb3e5fe57f48fb",
+        "chunk_d8daf282777d4e14",
+        "chunk_c2094555db254d56",
+        "chunk_ff3c144d91c24dc8",
+        "chunk_b2c0c62a1d1a41cc",
+        "chunk_d0abb17f63f249af"
+      ],
+      "source_page_nos": [
+        12,
+        13,
+        18,
+        35,
+        51,
+        52,
+        60
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code E4 tank water temperature sensor, supported.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Fault Code hvac:pump:fault_code:e4 for Pump",
+        "summary": "Draft review summary for fault code hvac:pump:fault_code:e4 derived from chunk chunk_71192b99d9be479d on page 12 for Pump.",
+        "canonical_key": "hvac:pump:fault_code:e4",
+        "structured_payload": {
+          "fault_code": "E4",
+          "description": "水箱内水温传感器故障",
+          "causes": [
+            "传感器与主板之间 T5 接口松脱",
+            "传感器损坏"
+          ],
+          "solutions": [
+            "插好接口",
+            "更换传感器"
+          ],
+          "title": "E4: Tank water temperature sensor fault",
+          "summary": "E4 indicates tank water temperature sensor fault. Check connection or replace sensor."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_04361e8349939f11",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 18,
+      "chunk_id": "chunk_d8daf282777d4e14",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:pump:fault_code:e5",
+      "structured_payload_candidate": {
+        "fault_code": "E5",
+        "description": "冷凝器管温传感器故障",
+        "causes": [
+          "传感器与主板之间 T3 接口松脱",
+          "传感器损坏"
+        ],
+        "solutions": [
+          "插好接口",
+          "更换传感器"
+        ],
+        "title": "E5: Condenser pipe temperature sensor fault",
+        "summary": "E5 indicates condenser pipe temperature sensor fault. Check connection or replace sensor."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n17二、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵\n进水阀门未打开 打开阀门\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网 E0 进水压力小于\n0.15MPa 水压开关故障（实测高于0.15MPa） 更换水压开关\n主机与线控器通讯故障 主机与线控器A、B、P、Q、E 线正确连接\nE2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间Twater接口松脱 插好接口\nE3 出水温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T5 接口松脱 插好接口 E4 水箱内水温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T3 接口松脱 插好接口 E5 冷凝器管温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T4 接口松脱 插好接口 E6 室外环境温度传感器故障 传感器损坏 更换传感器\n屏蔽电阻与主板 T6 接口松脱 插好接口 E7 T6 温度传感器故障 屏蔽电阻损坏 更换屏蔽电阻\n机组内部过滤器脏赌，流径板换水量不够。 清理脏物（并安装过滤器）\n进水电磁阀动作不良，没有水流径板换。 （完全没水出水箱） 检查进水电磁阀 SV4\n直热式\n温水阀没有打开 检查温水阀，开压缩机的同时，用手触摸此阀，正常时会明显感觉到在动作 。\nP1 系统高压保护\n循环式 水泵没有启动 检查内置水泵\n电压偏小 解决电压问题 P2 压缩机电流保护（超过 18A） 压缩机堵转 检查压缩机\n三、无代码故障\n故障描述 原因分析 解决方案\n管网回水阀 SV5 阀体泄漏（打开水箱顶盖可看到有水灌入水箱中） 更换 SV5 阀体\n出水压力开关或水流开关问题，此种情况下两个开关信号应为断开信号。 更换压力开关或水流开关主机没有进入循环水状态且末端没有用水的情况下， 水泵一直不停 用水管道有泄漏 检查用水管道并修复\n用水管道有微漏，频繁泄压 检查用水管道并修复\n机组内部没有装补偿毛细管组件（前期机型） 在机组外部安装补偿毛细管组件\n没用水时， 水泵频繁启停\n管网回水电磁阀泄漏 更换电磁阀\n出水压力开关或水流开关问题，用水时水压开关或水流开关会信号会闭合。 更换压力开关或水流开关\n用水时， 水泵不启动 检测到水箱水位低于最下一格 正常\n水箱漫水\n不补水 水位开关故障 检查水位开关并修复\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d8daf282777d4e14",
+        "chunk_c2094555db254d56",
+        "chunk_d0abb17f63f249af"
+      ],
+      "source_page_nos": [
+        18,
+        35,
+        60
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code E5 condenser pipe temperature sensor, supported.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Fault Code hvac:pump:fault_code:e5 for Pump",
+        "summary": "Draft review summary for fault code hvac:pump:fault_code:e5 derived from chunk chunk_d8daf282777d4e14 on page 18 for Pump.",
+        "canonical_key": "hvac:pump:fault_code:e5",
+        "structured_payload": {
+          "fault_code": "E5",
+          "description": "冷凝器管温传感器故障",
+          "causes": [
+            "传感器与主板之间 T3 接口松脱",
+            "传感器损坏"
+          ],
+          "solutions": [
+            "插好接口",
+            "更换传感器"
+          ],
+          "title": "E5: Condenser pipe temperature sensor fault",
+          "summary": "E5 indicates condenser pipe temperature sensor fault. Check connection or replace sensor."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n17二、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵\n进水阀门未打开 打开阀门\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网 E0 进水压力小于\n0.15MPa 水压开关故障（实测高于0.15MPa） 更换水压开关\n主机与线控器通讯故障 主机与线控器A、B、P、Q、E 线正确连接\nE2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间Twater接口松脱 插好接口\nE3 出水温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T5 接口松脱 插好接口 E4 水箱内水温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T3 接口松脱 插好接口 E5 冷凝器管温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T4 接口松脱 插好接口 E6 室外环境温度传感器故障 传感器损坏 更换传感器\n屏蔽电阻与主板 T6 接口松脱 插好接口 E7 T6 温度传感器故障 屏蔽电阻损坏 更换屏蔽电阻\n机组内部过滤器脏赌，流径板换水量不够。 清理脏物（并安装过滤器）\n进水电磁阀动作不良，没有水流径板换。 （完全没水出水箱） 检查进水电磁阀 SV4\n直热式\n温水阀没有打开 检查温水阀，开压缩机的同时，用手触摸此阀，正常时会明显感觉到在动作 。\nP1 系统高压保护\n循环式 水泵没有启动 检查内置水泵\n电压偏小 解决电压问题 P2 压缩机电流保护（超过 18A） 压缩机堵转 检查压缩机\n三、无代码故障\n故障描述 原因分析 解决方案\n管网回水阀 SV5 阀体泄漏（打开水箱顶盖可看到有水灌入水箱中） 更换 SV5 阀体\n出水压力开关或水流开关问题，此种情况下两个开关信号应为断开信号。 更换压力开关或水流开关主机没有进入循环水状态且末端没有用水的情况下， 水泵一直不停 用水管道有泄漏 检查用水管道并修复\n用水管道有微漏，频繁泄压 检查用水管道并修复\n机组内部没有装补偿毛细管组件（前期机型） 在机组外部安装补偿毛细管组件\n没用水时， 水泵频繁启停\n管网回水电磁阀泄漏 更换电磁阀\n出水压力开关或水流开关问题，用水时水压开关或水流开关会信号会闭合。 更换压力开关或水流开关\n用水时， 水泵不启动 检测到水箱水位低于最下一格 正常\n水箱漫水\n不补水 水位开关故障 检查水位开关并修复\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_20a503e01caedc88",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 18,
+      "chunk_id": "chunk_d8daf282777d4e14",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:pump:fault_code:e6",
+      "structured_payload_candidate": {
+        "fault_code": "E6",
+        "description": "室外环境温度传感器故障",
+        "causes": [
+          "传感器与主板之间 T4 接口松脱",
+          "传感器损坏"
+        ],
+        "solutions": [
+          "插好接口",
+          "更换传感器"
+        ],
+        "title": "E6: Outdoor ambient temperature sensor fault",
+        "summary": "E6 indicates outdoor ambient temperature sensor fault. Check connection or replace sensor."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n17二、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵\n进水阀门未打开 打开阀门\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网 E0 进水压力小于\n0.15MPa 水压开关故障（实测高于0.15MPa） 更换水压开关\n主机与线控器通讯故障 主机与线控器A、B、P、Q、E 线正确连接\nE2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间Twater接口松脱 插好接口\nE3 出水温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T5 接口松脱 插好接口 E4 水箱内水温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T3 接口松脱 插好接口 E5 冷凝器管温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T4 接口松脱 插好接口 E6 室外环境温度传感器故障 传感器损坏 更换传感器\n屏蔽电阻与主板 T6 接口松脱 插好接口 E7 T6 温度传感器故障 屏蔽电阻损坏 更换屏蔽电阻\n机组内部过滤器脏赌，流径板换水量不够。 清理脏物（并安装过滤器）\n进水电磁阀动作不良，没有水流径板换。 （完全没水出水箱） 检查进水电磁阀 SV4\n直热式\n温水阀没有打开 检查温水阀，开压缩机的同时，用手触摸此阀，正常时会明显感觉到在动作 。\nP1 系统高压保护\n循环式 水泵没有启动 检查内置水泵\n电压偏小 解决电压问题 P2 压缩机电流保护（超过 18A） 压缩机堵转 检查压缩机\n三、无代码故障\n故障描述 原因分析 解决方案\n管网回水阀 SV5 阀体泄漏（打开水箱顶盖可看到有水灌入水箱中） 更换 SV5 阀体\n出水压力开关或水流开关问题，此种情况下两个开关信号应为断开信号。 更换压力开关或水流开关主机没有进入循环水状态且末端没有用水的情况下， 水泵一直不停 用水管道有泄漏 检查用水管道并修复\n用水管道有微漏，频繁泄压 检查用水管道并修复\n机组内部没有装补偿毛细管组件（前期机型） 在机组外部安装补偿毛细管组件\n没用水时， 水泵频繁启停\n管网回水电磁阀泄漏 更换电磁阀\n出水压力开关或水流开关问题，用水时水压开关或水流开关会信号会闭合。 更换压力开关或水流开关\n用水时， 水泵不启动 检测到水箱水位低于最下一格 正常\n水箱漫水\n不补水 水位开关故障 检查水位开关并修复\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d8daf282777d4e14",
+        "chunk_c2094555db254d56",
+        "chunk_d0abb17f63f249af"
+      ],
+      "source_page_nos": [
+        18,
+        35,
+        60
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code E6 outdoor ambient temperature sensor, supported.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Fault Code hvac:pump:fault_code:e6 for Pump",
+        "summary": "Draft review summary for fault code hvac:pump:fault_code:e6 derived from chunk chunk_d8daf282777d4e14 on page 18 for Pump.",
+        "canonical_key": "hvac:pump:fault_code:e6",
+        "structured_payload": {
+          "fault_code": "E6",
+          "description": "室外环境温度传感器故障",
+          "causes": [
+            "传感器与主板之间 T4 接口松脱",
+            "传感器损坏"
+          ],
+          "solutions": [
+            "插好接口",
+            "更换传感器"
+          ],
+          "title": "E6: Outdoor ambient temperature sensor fault",
+          "summary": "E6 indicates outdoor ambient temperature sensor fault. Check connection or replace sensor."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n17二、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵\n进水阀门未打开 打开阀门\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网 E0 进水压力小于\n0.15MPa 水压开关故障（实测高于0.15MPa） 更换水压开关\n主机与线控器通讯故障 主机与线控器A、B、P、Q、E 线正确连接\nE2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间Twater接口松脱 插好接口\nE3 出水温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T5 接口松脱 插好接口 E4 水箱内水温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T3 接口松脱 插好接口 E5 冷凝器管温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T4 接口松脱 插好接口 E6 室外环境温度传感器故障 传感器损坏 更换传感器\n屏蔽电阻与主板 T6 接口松脱 插好接口 E7 T6 温度传感器故障 屏蔽电阻损坏 更换屏蔽电阻\n机组内部过滤器脏赌，流径板换水量不够。 清理脏物（并安装过滤器）\n进水电磁阀动作不良，没有水流径板换。 （完全没水出水箱） 检查进水电磁阀 SV4\n直热式\n温水阀没有打开 检查温水阀，开压缩机的同时，用手触摸此阀，正常时会明显感觉到在动作 。\nP1 系统高压保护\n循环式 水泵没有启动 检查内置水泵\n电压偏小 解决电压问题 P2 压缩机电流保护（超过 18A） 压缩机堵转 检查压缩机\n三、无代码故障\n故障描述 原因分析 解决方案\n管网回水阀 SV5 阀体泄漏（打开水箱顶盖可看到有水灌入水箱中） 更换 SV5 阀体\n出水压力开关或水流开关问题，此种情况下两个开关信号应为断开信号。 更换压力开关或水流开关主机没有进入循环水状态且末端没有用水的情况下， 水泵一直不停 用水管道有泄漏 检查用水管道并修复\n用水管道有微漏，频繁泄压 检查用水管道并修复\n机组内部没有装补偿毛细管组件（前期机型） 在机组外部安装补偿毛细管组件\n没用水时， 水泵频繁启停\n管网回水电磁阀泄漏 更换电磁阀\n出水压力开关或水流开关问题，用水时水压开关或水流开关会信号会闭合。 更换压力开关或水流开关\n用水时， 水泵不启动 检测到水箱水位低于最下一格 正常\n水箱漫水\n不补水 水位开关故障 检查水位开关并修复\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_bee77d0000d236d8",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_71192b99d9be479d",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:pump:fault_code:e7",
+      "structured_payload_candidate": {
+        "fault_code": "E7",
+        "description": "T6 温度传感器故障",
+        "causes": [
+          "屏蔽电阻与主板 T6 接口松脱",
+          "屏蔽电阻损坏"
+        ],
+        "solutions": [
+          "插好接口",
+          "更换屏蔽电阻"
+        ],
+        "title": "E7: T6 temperature sensor fault",
+        "summary": "E7 indicates T6 temperature sensor fault. Check connection or replace shielding resistor."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_71192b99d9be479d",
+        "chunk_11fb3e5fe57f48fb",
+        "chunk_d8daf282777d4e14",
+        "chunk_74dd1804e6ca493a",
+        "chunk_c2094555db254d56"
+      ],
+      "source_page_nos": [
+        12,
+        13,
+        18,
+        25,
+        35
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code E7 T6 temperature sensor, supported.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Fault Code hvac:pump:fault_code:e7 for Pump",
+        "summary": "Draft review summary for fault code hvac:pump:fault_code:e7 derived from chunk chunk_71192b99d9be479d on page 12 for Pump.",
+        "canonical_key": "hvac:pump:fault_code:e7",
+        "structured_payload": {
+          "fault_code": "E7",
+          "description": "T6 温度传感器故障",
+          "causes": [
+            "屏蔽电阻与主板 T6 接口松脱",
+            "屏蔽电阻损坏"
+          ],
+          "solutions": [
+            "插好接口",
+            "更换屏蔽电阻"
+          ],
+          "title": "E7: T6 temperature sensor fault",
+          "summary": "E7 indicates T6 temperature sensor fault. Check connection or replace shielding resistor."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_550c298c1a04db01",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_71192b99d9be479d",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:pump:fault_code:p1",
+      "structured_payload_candidate": {
+        "fault_code": "P1",
+        "description": "系统高压保护",
+        "causes": [
+          "直热式: 机组内部过滤器脏赌，进水电磁阀动作不良，温水阀没有打开",
+          "循环式: 水泵没有启动"
+        ],
+        "solutions": [
+          "清理脏物，检查进水电磁阀SV4，检查温水阀",
+          "检查内置水泵"
+        ],
+        "title": "P1: System high pressure protection",
+        "summary": "P1 indicates system high pressure. In direct heating mode, check filter, water inlet valve, or warm water valve. In circulation mode, check pump."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_71192b99d9be479d",
+        "chunk_11fb3e5fe57f48fb",
+        "chunk_d8daf282777d4e14",
+        "chunk_74dd1804e6ca493a",
+        "chunk_c2094555db254d56",
+        "chunk_096f950d2c74462d",
+        "chunk_e9526ca02cbb4019",
+        "chunk_ff3c144d91c24dc8",
+        "chunk_b2c0c62a1d1a41cc",
+        "chunk_23ebaa83e92e48f3",
+        "chunk_d0abb17f63f249af"
+      ],
+      "source_page_nos": [
+        12,
+        13,
+        18,
+        25,
+        35,
+        42,
+        45,
+        51,
+        52,
+        53,
+        60
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code P1 system high pressure, detailed causes and solutions.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Fault Code hvac:pump:fault_code:p1 for Pump",
+        "summary": "Draft review summary for fault code hvac:pump:fault_code:p1 derived from chunk chunk_71192b99d9be479d on page 12 for Pump.",
+        "canonical_key": "hvac:pump:fault_code:p1",
+        "structured_payload": {
+          "fault_code": "P1",
+          "description": "系统高压保护",
+          "causes": [
+            "直热式: 机组内部过滤器脏赌，进水电磁阀动作不良，温水阀没有打开",
+            "循环式: 水泵没有启动"
+          ],
+          "solutions": [
+            "清理脏物，检查进水电磁阀SV4，检查温水阀",
+            "检查内置水泵"
+          ],
+          "title": "P1: System high pressure protection",
+          "summary": "P1 indicates system high pressure. In direct heating mode, check filter, water inlet valve, or warm water valve. In circulation mode, check pump."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n11五、机组内部接线原理图\nRSJ-72/300X、RSJ-72/400X、RSJ-72/400H、RSJ-72/400XH 内部接线原理图\nXP8XS8\nT4T3白 白\nW_PRO\n红XP9 XS9\n黑白\n棕\n绿\n风机室外温度\n传感器\n点检\n白\nCN27红CN15\nCN20\nCN33\nCN7\n白\nCN8\n红\nCN9\n黄FAN_H FAN_LCN25  红\nCN26\n白POWERTRANS IN红CN12   CN11\n红\n黄/绿黑\n红\n蓝\nT_WATER出水温度\n传感器\n化霜阀四通阀蓝\n变压器\n主控板黑\n进水水压检测\nI>I>CT1CT2\n请使用屏蔽线\n连接（E)端N\n1N\n2H_PRO黄\n高压\n保护\n电源\n220V   50H低风        高风\n冷凝器温度\n传感器\nCN65\nCT2CN41\nT6\n防冻结温度传感器\n风机\n电容\n4-WAY\nSV1\n~ZCOMP.F\n蓝R 白S C\n黄/绿红\n压缩机\n蓝 白\n压机\n电容RY9RY8\n黄\nQP( E )灰黑\nXT2POWER1\nCN17\n白\nXT3XT1\n与线控器电源接口连接红黑\nN\n增压水泵CT1红\n绕三圈NCN16\nT5水箱温度\n传感器\nCN64\n4-WAYSV2 HEAT\n黄 N\nPUMP\nSV4SV3\nHEAT加热带SV1SV3 SV4 SV5\n电磁阀电磁阀棕棕\n蓝蓝 棕CN34\n黑短接线组短接\n短接线组短接\n白\n黑CN80白出水水压检测，\n任意连接一个接口。温水阀\nForce四段水位开关\nBA黑黑与水泵水流开关连接\n黄\n水流开关XP10XS10\n黑蓝 黑棕\n棕\nSV5 电磁阀L\n黄S5\n拨码选择\nS5 强制管网循环方式选择\n12\n开启方式二 屏蔽方式二\n注:强制管网循环方式说明\n针对RSJ-72/400XH机型  （RSJ-72/400H机型无此功能）方式一：按键式强制循环，由客户将按键\n(推荐门铃类开关，如选择其他类开关，\n则需在3秒内满足开关的开，断周期一次。)接入主控板相关接口即可，客户根据实际情\n况选择管网循环加热管路冷水。\n方式二：水流检测式强制循环，如果机组测试到某种水流信号，则管网循环加\n热管路冷水。\n其中，方式一为机组默认方式，方式二由拨码开关设定开启或屏蔽。方式二具体使\n用方法请参考机组使用说明书。XP11 XS11\n门铃类开关\n强制管网循环加热开关，客户选配，\n即强制管网循环方式二。出厂时该\n接口短接，详见铭牌右部分备注。EEV\nCN81\nRSJ-72/400H机型无虚线框内器件及功能\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_3c8eb4023c21b062",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 18,
+      "chunk_id": "chunk_d8daf282777d4e14",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:pump:fault_code:p2",
+      "structured_payload_candidate": {
+        "fault_code": "P2",
+        "description": "压缩机电流保护（超过 18A）",
+        "causes": [
+          "电压偏小",
+          "压缩机堵转"
+        ],
+        "solutions": [
+          "解决电压问题",
+          "检查压缩机"
+        ],
+        "title": "P2: Compressor current protection (over 18A)",
+        "summary": "P2 indicates compressor current exceeded 18A. Check voltage or compressor for locked rotor."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n17二、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵\n进水阀门未打开 打开阀门\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网 E0 进水压力小于\n0.15MPa 水压开关故障（实测高于0.15MPa） 更换水压开关\n主机与线控器通讯故障 主机与线控器A、B、P、Q、E 线正确连接\nE2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间Twater接口松脱 插好接口\nE3 出水温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T5 接口松脱 插好接口 E4 水箱内水温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T3 接口松脱 插好接口 E5 冷凝器管温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T4 接口松脱 插好接口 E6 室外环境温度传感器故障 传感器损坏 更换传感器\n屏蔽电阻与主板 T6 接口松脱 插好接口 E7 T6 温度传感器故障 屏蔽电阻损坏 更换屏蔽电阻\n机组内部过滤器脏赌，流径板换水量不够。 清理脏物（并安装过滤器）\n进水电磁阀动作不良，没有水流径板换。 （完全没水出水箱） 检查进水电磁阀 SV4\n直热式\n温水阀没有打开 检查温水阀，开压缩机的同时，用手触摸此阀，正常时会明显感觉到在动作 。\nP1 系统高压保护\n循环式 水泵没有启动 检查内置水泵\n电压偏小 解决电压问题 P2 压缩机电流保护（超过 18A） 压缩机堵转 检查压缩机\n三、无代码故障\n故障描述 原因分析 解决方案\n管网回水阀 SV5 阀体泄漏（打开水箱顶盖可看到有水灌入水箱中） 更换 SV5 阀体\n出水压力开关或水流开关问题，此种情况下两个开关信号应为断开信号。 更换压力开关或水流开关主机没有进入循环水状态且末端没有用水的情况下， 水泵一直不停 用水管道有泄漏 检查用水管道并修复\n用水管道有微漏，频繁泄压 检查用水管道并修复\n机组内部没有装补偿毛细管组件（前期机型） 在机组外部安装补偿毛细管组件\n没用水时， 水泵频繁启停\n管网回水电磁阀泄漏 更换电磁阀\n出水压力开关或水流开关问题，用水时水压开关或水流开关会信号会闭合。 更换压力开关或水流开关\n用水时， 水泵不启动 检测到水箱水位低于最下一格 正常\n水箱漫水\n不补水 水位开关故障 检查水位开关并修复\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_d8daf282777d4e14",
+        "chunk_43a237c55a7e435d",
+        "chunk_9e1ec570f8654bc6",
+        "chunk_096f950d2c74462d",
+        "chunk_e9526ca02cbb4019",
+        "chunk_ff3c144d91c24dc8",
+        "chunk_b2c0c62a1d1a41cc",
+        "chunk_23ebaa83e92e48f3",
+        "chunk_d0abb17f63f249af"
+      ],
+      "source_page_nos": [
+        18,
+        23,
+        36,
+        42,
+        45,
+        51,
+        52,
+        53,
+        60
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code P2 compressor current protection, supported.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Fault Code hvac:pump:fault_code:p2 for Pump",
+        "summary": "Draft review summary for fault code hvac:pump:fault_code:p2 derived from chunk chunk_d8daf282777d4e14 on page 18 for Pump.",
+        "canonical_key": "hvac:pump:fault_code:p2",
+        "structured_payload": {
+          "fault_code": "P2",
+          "description": "压缩机电流保护（超过 18A）",
+          "causes": [
+            "电压偏小",
+            "压缩机堵转"
+          ],
+          "solutions": [
+            "解决电压问题",
+            "检查压缩机"
+          ],
+          "title": "P2: Compressor current protection (over 18A)",
+          "summary": "P2 indicates compressor current exceeded 18A. Check voltage or compressor for locked rotor."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n17二、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵\n进水阀门未打开 打开阀门\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网 E0 进水压力小于\n0.15MPa 水压开关故障（实测高于0.15MPa） 更换水压开关\n主机与线控器通讯故障 主机与线控器A、B、P、Q、E 线正确连接\nE2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间Twater接口松脱 插好接口\nE3 出水温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T5 接口松脱 插好接口 E4 水箱内水温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T3 接口松脱 插好接口 E5 冷凝器管温传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T4 接口松脱 插好接口 E6 室外环境温度传感器故障 传感器损坏 更换传感器\n屏蔽电阻与主板 T6 接口松脱 插好接口 E7 T6 温度传感器故障 屏蔽电阻损坏 更换屏蔽电阻\n机组内部过滤器脏赌，流径板换水量不够。 清理脏物（并安装过滤器）\n进水电磁阀动作不良，没有水流径板换。 （完全没水出水箱） 检查进水电磁阀 SV4\n直热式\n温水阀没有打开 检查温水阀，开压缩机的同时，用手触摸此阀，正常时会明显感觉到在动作 。\nP1 系统高压保护\n循环式 水泵没有启动 检查内置水泵\n电压偏小 解决电压问题 P2 压缩机电流保护（超过 18A） 压缩机堵转 检查压缩机\n三、无代码故障\n故障描述 原因分析 解决方案\n管网回水阀 SV5 阀体泄漏（打开水箱顶盖可看到有水灌入水箱中） 更换 SV5 阀体\n出水压力开关或水流开关问题，此种情况下两个开关信号应为断开信号。 更换压力开关或水流开关主机没有进入循环水状态且末端没有用水的情况下， 水泵一直不停 用水管道有泄漏 检查用水管道并修复\n用水管道有微漏，频繁泄压 检查用水管道并修复\n机组内部没有装补偿毛细管组件（前期机型） 在机组外部安装补偿毛细管组件\n没用水时， 水泵频繁启停\n管网回水电磁阀泄漏 更换电磁阀\n出水压力开关或水流开关问题，用水时水压开关或水流开关会信号会闭合。 更换压力开关或水流开关\n用水时， 水泵不启动 检测到水箱水位低于最下一格 正常\n水箱漫水\n不补水 水位开关故障 检查水位开关并修复\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_db93507a65d12b9e",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 15,
+      "chunk_id": "chunk_6c611af3178e4e0e",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "hvac:pump:operational_sequence:circulation_heating_sequence",
+      "structured_payload_candidate": {
+        "mode": "循环式制热水",
+        "components": {
+          "compressor": "ON",
+          "4-way valve": "ON",
+          "SV1": "OFF",
+          "EEV": "置零关闭",
+          "SV3": "OFF",
+          "SV4": "ON",
+          "SV5": "OFF",
+          "pump": "ON"
+        },
+        "title": "Component operation during circulation heating mode",
+        "summary": "In circulation heating mode, compressor and 4-way valve are ON, SV1 OFF, EEV set to zero, SV3 OFF, SV4 ON, SV5 OFF, pump ON."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n146. 机组运行时各部件动作如下：\n压缩机 四通阀 化霜电磁阀SV1 温水阀EEV循环电磁阀 （或\n电动球阀）SV3进水电磁\n阀 SV4 管网循环阀SV5（带\n管网回水机型才有）内置水泵 进水水\n压检测\nT4≤10 OFF\n10<T4≤32 ON 直热式制热水 ON OFF\nT4>32 OFF 根据出水温度和设定温度调\n节 OFF ON OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 检测\n循环式制热水 ON OFF T4≤10 OFF 置零关闭 ON OFF OFF ON\n化霜过程中 ON ON ON 保持当前\n开度 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停）\n防冻结 ON OFF OFF 置零关闭 ON OFF OFF ON\n待机 OFF OFF OFF 置零关闭 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 不检测\n管网回水（带管网回水机型\n才有） 保持原\n状态 保持原\n状态 保持原状态 保持原状\n态 保持原状态 保持原状\n态 ON ON 保持原\n状态\nz 直热式制热水进入条件：主机检测到水位 S低于第 2个浮子（从上往下）持续 5秒。\nz 循环式制热水进入条件：主机检测到水位 S高于浮子 2（从上往下）持续 5秒，且水箱温度≤48℃（设定温度≥52℃）或水箱温度≤\n45℃（设定温度＜52℃） 。\nz 管网回水进入条件：满足管网回水方式 1条件或回水方式 2条件。\nz 水泵供热水开启关闭条件：出水压力信号闭合和水流开关信号闭合满足一个就开启水泵；出水压力信号断开和水流开关信号同时满足\n就关闭水泵。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_6c611af3178e4e0e"
+      ],
+      "source_page_nos": [
+        15
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operational sequence for circulation heating mode, from component operation table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Operational Sequence hvac:pump:operational_sequence:circulation_heating_sequence for Pump",
+        "summary": "Draft review summary for operational_sequence hvac:pump:operational_sequence:circulation_heating_sequence derived from chunk chunk_6c611af3178e4e0e on page 15 for Pump.",
+        "canonical_key": "hvac:pump:operational_sequence:circulation_heating_sequence",
+        "structured_payload": {
+          "mode": "循环式制热水",
+          "components": {
+            "compressor": "ON",
+            "4-way valve": "ON",
+            "SV1": "OFF",
+            "EEV": "置零关闭",
+            "SV3": "OFF",
+            "SV4": "ON",
+            "SV5": "OFF",
+            "pump": "ON"
+          },
+          "title": "Component operation during circulation heating mode",
+          "summary": "In circulation heating mode, compressor and 4-way valve are ON, SV1 OFF, EEV set to zero, SV3 OFF, SV4 ON, SV5 OFF, pump ON."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n146. 机组运行时各部件动作如下：\n压缩机 四通阀 化霜电磁阀SV1 温水阀EEV循环电磁阀 （或\n电动球阀）SV3进水电磁\n阀 SV4 管网循环阀SV5（带\n管网回水机型才有）内置水泵 进水水\n压检测\nT4≤10 OFF\n10<T4≤32 ON 直热式制热水 ON OFF\nT4>32 OFF 根据出水温度和设定温度调\n节 OFF ON OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 检测\n循环式制热水 ON OFF T4≤10 OFF 置零关闭 ON OFF OFF ON\n化霜过程中 ON ON ON 保持当前\n开度 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停）\n防冻结 ON OFF OFF 置零关闭 ON OFF OFF ON\n待机 OFF OFF OFF 置零关闭 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 不检测\n管网回水（带管网回水机型\n才有） 保持原\n状态 保持原\n状态 保持原状态 保持原状\n态 保持原状态 保持原状\n态 ON ON 保持原\n状态\nz 直热式制热水进入条件：主机检测到水位 S低于第 2个浮子（从上往下）持续 5秒。\nz 循环式制热水进入条件：主机检测到水位 S高于浮子 2（从上往下）持续 5秒，且水箱温度≤48℃（设定温度≥52℃）或水箱温度≤\n45℃（设定温度＜52℃） 。\nz 管网回水进入条件：满足管网回水方式 1条件或回水方式 2条件。\nz 水泵供热水开启关闭条件：出水压力信号闭合和水流开关信号闭合满足一个就开启水泵；出水压力信号断开和水流开关信号同时满足\n就关闭水泵。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_46be735330ff65f0",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 15,
+      "chunk_id": "chunk_6c611af3178e4e0e",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "hvac:pump:operational_sequence:defrost_sequence",
+      "structured_payload_candidate": {
+        "mode": "化霜过程中",
+        "components": {
+          "compressor": "ON",
+          "4-way valve": "ON",
+          "SV1": "ON",
+          "EEV": "保持当前开度",
+          "SV3": "OFF",
+          "SV4": "OFF",
+          "SV5": "OFF",
+          "pump": "由出水压力、水流开关控制"
+        },
+        "title": "Component operation during defrost",
+        "summary": "During defrost, compressor and 4-way valve are ON, SV1 ON, EEV holds current opening, SV3 OFF, SV4 OFF, SV5 OFF, pump controlled by pressure/flow."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n146. 机组运行时各部件动作如下：\n压缩机 四通阀 化霜电磁阀SV1 温水阀EEV循环电磁阀 （或\n电动球阀）SV3进水电磁\n阀 SV4 管网循环阀SV5（带\n管网回水机型才有）内置水泵 进水水\n压检测\nT4≤10 OFF\n10<T4≤32 ON 直热式制热水 ON OFF\nT4>32 OFF 根据出水温度和设定温度调\n节 OFF ON OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 检测\n循环式制热水 ON OFF T4≤10 OFF 置零关闭 ON OFF OFF ON\n化霜过程中 ON ON ON 保持当前\n开度 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停）\n防冻结 ON OFF OFF 置零关闭 ON OFF OFF ON\n待机 OFF OFF OFF 置零关闭 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 不检测\n管网回水（带管网回水机型\n才有） 保持原\n状态 保持原\n状态 保持原状态 保持原状\n态 保持原状态 保持原状\n态 ON ON 保持原\n状态\nz 直热式制热水进入条件：主机检测到水位 S低于第 2个浮子（从上往下）持续 5秒。\nz 循环式制热水进入条件：主机检测到水位 S高于浮子 2（从上往下）持续 5秒，且水箱温度≤48℃（设定温度≥52℃）或水箱温度≤\n45℃（设定温度＜52℃） 。\nz 管网回水进入条件：满足管网回水方式 1条件或回水方式 2条件。\nz 水泵供热水开启关闭条件：出水压力信号闭合和水流开关信号闭合满足一个就开启水泵；出水压力信号断开和水流开关信号同时满足\n就关闭水泵。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_6c611af3178e4e0e"
+      ],
+      "source_page_nos": [
+        15
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operational sequence for defrost mode, from component operation table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Operational Sequence hvac:pump:operational_sequence:defrost_sequence for Pump",
+        "summary": "Draft review summary for operational_sequence hvac:pump:operational_sequence:defrost_sequence derived from chunk chunk_6c611af3178e4e0e on page 15 for Pump.",
+        "canonical_key": "hvac:pump:operational_sequence:defrost_sequence",
+        "structured_payload": {
+          "mode": "化霜过程中",
+          "components": {
+            "compressor": "ON",
+            "4-way valve": "ON",
+            "SV1": "ON",
+            "EEV": "保持当前开度",
+            "SV3": "OFF",
+            "SV4": "OFF",
+            "SV5": "OFF",
+            "pump": "由出水压力、水流开关控制"
+          },
+          "title": "Component operation during defrost",
+          "summary": "During defrost, compressor and 4-way valve are ON, SV1 ON, EEV holds current opening, SV3 OFF, SV4 OFF, SV5 OFF, pump controlled by pressure/flow."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n146. 机组运行时各部件动作如下：\n压缩机 四通阀 化霜电磁阀SV1 温水阀EEV循环电磁阀 （或\n电动球阀）SV3进水电磁\n阀 SV4 管网循环阀SV5（带\n管网回水机型才有）内置水泵 进水水\n压检测\nT4≤10 OFF\n10<T4≤32 ON 直热式制热水 ON OFF\nT4>32 OFF 根据出水温度和设定温度调\n节 OFF ON OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 检测\n循环式制热水 ON OFF T4≤10 OFF 置零关闭 ON OFF OFF ON\n化霜过程中 ON ON ON 保持当前\n开度 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停）\n防冻结 ON OFF OFF 置零关闭 ON OFF OFF ON\n待机 OFF OFF OFF 置零关闭 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 不检测\n管网回水（带管网回水机型\n才有） 保持原\n状态 保持原\n状态 保持原状态 保持原状\n态 保持原状态 保持原状\n态 ON ON 保持原\n状态\nz 直热式制热水进入条件：主机检测到水位 S低于第 2个浮子（从上往下）持续 5秒。\nz 循环式制热水进入条件：主机检测到水位 S高于浮子 2（从上往下）持续 5秒，且水箱温度≤48℃（设定温度≥52℃）或水箱温度≤\n45℃（设定温度＜52℃） 。\nz 管网回水进入条件：满足管网回水方式 1条件或回水方式 2条件。\nz 水泵供热水开启关闭条件：出水压力信号闭合和水流开关信号闭合满足一个就开启水泵；出水压力信号断开和水流开关信号同时满足\n就关闭水泵。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f3a4d57d02d4b887",
+      "domain_id": "hvac",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "page_no": 15,
+      "chunk_id": "chunk_6c611af3178e4e0e",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "hvac:pump:operational_sequence:standby_sequence",
+      "structured_payload_candidate": {
+        "mode": "待机",
+        "components": {
+          "compressor": "OFF",
+          "4-way valve": "OFF",
+          "SV1": "OFF",
+          "EEV": "置零关闭",
+          "SV3": "OFF",
+          "SV4": "OFF",
+          "SV5": "OFF",
+          "pump": "由出水压力、水流开关控制"
+        },
+        "title": "Component operation during standby",
+        "summary": "In standby, compressor and 4-way valve are OFF, SV1 OFF, EEV set to zero, SV3 OFF, SV4 OFF, SV5 OFF, pump controlled by pressure/flow."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n146. 机组运行时各部件动作如下：\n压缩机 四通阀 化霜电磁阀SV1 温水阀EEV循环电磁阀 （或\n电动球阀）SV3进水电磁\n阀 SV4 管网循环阀SV5（带\n管网回水机型才有）内置水泵 进水水\n压检测\nT4≤10 OFF\n10<T4≤32 ON 直热式制热水 ON OFF\nT4>32 OFF 根据出水温度和设定温度调\n节 OFF ON OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 检测\n循环式制热水 ON OFF T4≤10 OFF 置零关闭 ON OFF OFF ON\n化霜过程中 ON ON ON 保持当前\n开度 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停）\n防冻结 ON OFF OFF 置零关闭 ON OFF OFF ON\n待机 OFF OFF OFF 置零关闭 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 不检测\n管网回水（带管网回水机型\n才有） 保持原\n状态 保持原\n状态 保持原状态 保持原状\n态 保持原状态 保持原状\n态 ON ON 保持原\n状态\nz 直热式制热水进入条件：主机检测到水位 S低于第 2个浮子（从上往下）持续 5秒。\nz 循环式制热水进入条件：主机检测到水位 S高于浮子 2（从上往下）持续 5秒，且水箱温度≤48℃（设定温度≥52℃）或水箱温度≤\n45℃（设定温度＜52℃） 。\nz 管网回水进入条件：满足管网回水方式 1条件或回水方式 2条件。\nz 水泵供热水开启关闭条件：出水压力信号闭合和水流开关信号闭合满足一个就开启水泵；出水压力信号断开和水流开关信号同时满足\n就关闭水泵。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "pump",
+        "equipment_class_key": "hvac:pump",
+        "label": "Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "Pump",
+          "pump"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_6c611af3178e4e0e"
+      ],
+      "source_page_nos": [
+        15
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Operational sequence for standby mode, from component operation table.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Operational Sequence hvac:pump:operational_sequence:standby_sequence for Pump",
+        "summary": "Draft review summary for operational_sequence hvac:pump:operational_sequence:standby_sequence derived from chunk chunk_6c611af3178e4e0e on page 15 for Pump.",
+        "canonical_key": "hvac:pump:operational_sequence:standby_sequence",
+        "structured_payload": {
+          "mode": "待机",
+          "components": {
+            "compressor": "OFF",
+            "4-way valve": "OFF",
+            "SV1": "OFF",
+            "EEV": "置零关闭",
+            "SV3": "OFF",
+            "SV4": "OFF",
+            "SV5": "OFF",
+            "pump": "由出水压力、水流开关控制"
+          },
+          "title": "Component operation during standby",
+          "summary": "In standby, compressor and 4-way valve are OFF, SV1 OFF, EEV set to zero, SV3 OFF, SV4 OFF, SV5 OFF, pump controlled by pressure/flow."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册（二）\n146. 机组运行时各部件动作如下：\n压缩机 四通阀 化霜电磁阀SV1 温水阀EEV循环电磁阀 （或\n电动球阀）SV3进水电磁\n阀 SV4 管网循环阀SV5（带\n管网回水机型才有）内置水泵 进水水\n压检测\nT4≤10 OFF\n10<T4≤32 ON 直热式制热水 ON OFF\nT4>32 OFF 根据出水温度和设定温度调\n节 OFF ON OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 检测\n循环式制热水 ON OFF T4≤10 OFF 置零关闭 ON OFF OFF ON\n化霜过程中 ON ON ON 保持当前\n开度 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停）\n防冻结 ON OFF OFF 置零关闭 ON OFF OFF ON\n待机 OFF OFF OFF 置零关闭 OFF OFF OFF 由出水压力、水流开关控制（低于最\n低水位强制停） 不检测\n管网回水（带管网回水机型\n才有） 保持原\n状态 保持原\n状态 保持原状态 保持原状\n态 保持原状态 保持原状\n态 ON ON 保持原\n状态\nz 直热式制热水进入条件：主机检测到水位 S低于第 2个浮子（从上往下）持续 5秒。\nz 循环式制热水进入条件：主机检测到水位 S高于浮子 2（从上往下）持续 5秒，且水箱温度≤48℃（设定温度≥52℃）或水箱温度≤\n45℃（设定温度＜52℃） 。\nz 管网回水进入条件：满足管网回水方式 1条件或回水方式 2条件。\nz 水泵供热水开启关闭条件：出水压力信号闭合和水流开关信号闭合满足一个就开启水泵；出水压力信号断开和水流开关信号同时满足\n就关闭水泵。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-08T13:05:04.043379+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 19
+  }
+}

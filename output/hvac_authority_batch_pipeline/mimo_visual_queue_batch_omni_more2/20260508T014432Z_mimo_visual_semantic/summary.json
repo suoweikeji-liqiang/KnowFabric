@@ -1,0 +1,297 @@
+{
+  "run_id": "20260508T014432Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】R134a YK系列 离心式冷水机组-操作维护手册（51页）-制冷百家网.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 9.306,
+      "parsed": {
+        "page_type": "equipment_structure",
+        "summary": "This is the cover page of a YORK MILLENNIUM centrifugal chiller operation and maintenance manual. It features a photograph of the chiller unit, identifies the model as YK (Design Series E) using R-134a refrigerant, and notes it includes a color image display control center for electromechanical starters, solid-state starters, and variable speed drives. A note states the YK E model has no Y2K issue.",
+        "visual_entities": [
+          {
+            "type": "logo",
+            "label": "YORK logo"
+          },
+          {
+            "type": "text_block",
+            "label": "MILLENNIUM title and Chinese text"
+          },
+          {
+            "type": "text_block",
+            "label": "Manual title and form number"
+          },
+          {
+            "type": "text_block",
+            "label": "Model and refrigerant specification"
+          },
+          {
+            "type": "text_block",
+            "label": "Control center description"
+          },
+          {
+            "type": "equipment_image",
+            "label": "Centrifugal chiller unit"
+          },
+          {
+            "type": "control_panel",
+            "label": "YORK control panel on chiller"
+          },
+          {
+            "type": "text_block",
+            "label": "Y2K note"
+          },
+          {
+            "type": "text_block",
+            "label": "Website footer"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "YORK logo",
+            "relation": "is part of",
+            "to": "Manual header"
+          },
+          {
+            "from": "MILLENNIUM title",
+            "relation": "is part of",
+            "to": "Manual header"
+          },
+          {
+            "from": "Model specification",
+            "relation": "describes",
+            "to": "Centrifugal chiller unit"
+          },
+          {
+            "from": "Control center description",
+            "relation": "applies to",
+            "to": "Centrifugal chiller unit"
+          },
+          {
+            "from": "Control panel",
+            "relation": "is mounted on",
+            "to": "Centrifugal chiller unit"
+          },
+          {
+            "from": "Y2K note",
+            "relation": "refers to",
+            "to": "Centrifugal chiller unit"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "equipment_identification",
+          "model_specification",
+          "manual_documentation"
+        ],
+        "ocr_text_if_useful": "YORK MILLENNIUM 离心式冷水机组 操作 & 维护手册 替代: 无 Form 160.54-O1(1001) 机组型号 YK(设计序号 E) R-134a(单冷型) 配有彩色图像显示控制中心 用于机电启动器、固态启动器 & 变速驱动装置 注: YK E 型冷水机组无千年问题 1 制冷百家网: www.zhilengbj.cn",
+        "uncertainty_notes": "The image is a general equipment photo, not a detailed schematic. Specific internal components or wiring are not visible. The relationship between the control panel and the chiller is visually apparent as mounted, but internal connections are not shown.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"equipment_structure\",\n  \"summary\": \"This is the cover page of a YORK MILLENNIUM centrifugal chiller operation and maintenance manual. It features a photograph of the chiller unit, identifies the model as YK (Design Series E) using R-134a refrigerant, and notes it includes a color image display control center for electromechanical starters, solid-state starters, and variable speed drives. A note states the YK E model has no Y2K issue.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"MILLENNIUM title and Chinese text\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and form number\"},\n    {\"type\": \"text_block\", \"label\": \"Model and refrigerant specification\"},\n    {\"type\": \"text_block\", \"label\": \"Control center description\"},\n    {\"type\": \"equipment_image\", \"label\": \"Centrifugal chiller unit\"},\n    {\"type\": \"control_panel\", \"label\": \"YORK control panel on chiller\"},\n    {\"type\": \"text_block\", \"label\": \"Y2K note\"},\n    {\"type\": \"text_block\", \"label\": \"Website footer\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"YORK logo\", \"relation\": \"is part of\", \"to\": \"Manual header\"},\n    {\"from\": \"MILLENNIUM title\", \"relation\": \"is part of\", \"to\": \"Manual header\"},\n    {\"from\": \"Model specification\", \"relation\": \"describes\", \"to\": \"Centrifugal chiller unit\"},\n    {\"from\": \"Control center description\", \"relation\": \"applies to\", \"to\": \"Centrifugal chiller unit\"},\n    {\"from\": \"Control panel\", \"relation\": \"is mounted on\", \"to\": \"Centrifugal chiller unit\"},\n    {\"from\": \"Y2K note\", \"relation\": \"refers to\", \"to\": \"Centrifugal chiller unit\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"model_specification\", \"manual_documentation\"],\n  \"ocr_text_if_useful\": \"YORK MILLENNIUM 离心式冷水机组 操作 & 维护手册 替代: 无 Form 160.54-O1(1001) 机组型号 YK(设计序号 E) R-134a(单冷型) 配有彩色图像显示控制中心 用于机电启动器、固态启动器 & 变速驱动装置 注: YK E 型冷水机组无千年问题 1 制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The image is a general equipment photo, not a detailed schematic. Specific internal components or wiring are not visible. The relationship between the control panel and the chiller is visually apparent as mounted, but internal connections are not shown.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 659,
+        "prompt_tokens": 2493,
+        "total_tokens": 3152,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2296
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 26,
+      "status": "ok",
+      "elapsed_seconds": 9.775,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This page is a continuation of a manual section titled 'Color Image Display Control Center (Continued)' for a YK E type centrifugal chiller unit. It describes the functions of various control keys and navigation options, including VSD frequency control, guide vane control, and navigation to main or compressor interfaces.",
+        "visual_entities": [
+          {
+            "type": "text_block",
+            "label": "Title: 彩色图像显示控制中心（续） YK E型离心式冷水机组"
+          },
+          {
+            "type": "text_block",
+            "label": "Function: 增加 (Increase) - VSD frequency control manual mode"
+          },
+          {
+            "type": "text_block",
+            "label": "Function: 减小 (Decrease) - VSD frequency control manual mode"
+          },
+          {
+            "type": "text_block",
+            "label": "Function: [导流叶片]打开(手动) (Guide Vane Open Manual)"
+          },
+          {
+            "type": "text_block",
+            "label": "Function: [导流叶片]关闭(手动) (Guide Vane Close Manual)"
+          },
+          {
+            "type": "text_block",
+            "label": "Function: [导流叶片]保持位置(手动) (Guide Vane Hold Position Manual)"
+          },
+          {
+            "type": "text_block",
+            "label": "Function: [导流叶片]打开(自动) (Guide Vane Open Automatic)"
+          },
+          {
+            "type": "text_block",
+            "label": "Navigation: 导航 (Navigation) - 主界面 (Main Interface)"
+          },
+          {
+            "type": "text_block",
+            "label": "Navigation: 压缩机 (Compressor) - 返回压缩机界面"
+          },
+          {
+            "type": "icon",
+            "label": "Snowflake symbol (top left)"
+          },
+          {
+            "type": "page_number",
+            "label": "26"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "control_interface",
+          "operator_instructions",
+          "system_navigation"
+        ],
+        "ocr_text_if_useful": "彩色图像显示控制中心（续） YK E型离心式冷水机组\n增加\n这个键使 VSD 频率控制进入手动模式，以规定的增量增加当前的频率指令值。但频率值不会超出最大允许频率。\n减小\n这个键使 VSD 频率控制进入手动模式，以规定的减少量减小当前的频率指令值。但频率值不会低于 1Hz。\n[导流叶片]打开(手动)\n这个键使导流叶片控制进入手动模式，并向触点发送打开的指令。\n[导流叶片]关闭(手动)\n这个键使导流叶片控制进入手动模式，并向触点发送关闭的指令。\n[导流叶片]保持位置(手动)\n这个键使导流叶片控制进入手动模式，并向触点发送保持位置的指令。\n[导流叶片]打开(自动)\n这个键使导流叶片控制进入自动模式。\n导航\n主界面\n要求访问级别：观察\n直接返回主界面。\n压缩机\n要求访问级别：观察\n返回压缩机界面。\n制冷百家网：www.zhilengbj.cn\n26",
+        "uncertainty_notes": "The page is purely textual with no diagrams or schematics. Relationships between entities are not visually depicted; they are described in text. The 'visual_relationships' field is empty as no connections are shown.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page is a continuation of a manual section titled 'Color Image Display Control Center (Continued)' for a YK E type centrifugal chiller unit. It describes the functions of various control keys and navigation options, including VSD frequency control, guide vane control, and navigation to main or compressor interfaces.\",\n  \"visual_entities\": [\n    {\"type\": \"text_block\", \"label\": \"Title: 彩色图像显示控制中心（续） YK E型离心式冷水机组\"},\n    {\"type\": \"text_block\", \"label\": \"Function: 增加 (Increase) - VSD frequency control manual mode\"},\n    {\"type\": \"text_block\", \"label\": \"Function: 减小 (Decrease) - VSD frequency control manual mode\"},\n    {\"type\": \"text_block\", \"label\": \"Function: [导流叶片]打开(手动) (Guide Vane Open Manual)\"},\n    {\"type\": \"text_block\", \"label\": \"Function: [导流叶片]关闭(手动) (Guide Vane Close Manual)\"},\n    {\"type\": \"text_block\", \"label\": \"Function: [导流叶片]保持位置(手动) (Guide Vane Hold Position Manual)\"},\n    {\"type\": \"text_block\", \"label\": \"Function: [导流叶片]打开(自动) (Guide Vane Open Automatic)\"},\n    {\"type\": \"text_block\", \"label\": \"Navigation: 导航 (Navigation) - 主界面 (Main Interface)\"},\n    {\"type\": \"text_block\", \"label\": \"Navigation: 压缩机 (Compressor) - 返回压缩机界面\"},\n    {\"type\": \"icon\", \"label\": \"Snowflake symbol (top left)\"},\n    {\"type\": \"page_number\", \"label\": \"26\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"control_interface\", \"operator_instructions\", \"system_navigation\"],\n  \"ocr_text_if_useful\": \"彩色图像显示控制中心（续） YK E型离心式冷水机组\\n增加\\n这个键使 VSD 频率控制进入手动模式，以规定的增量增加当前的频率指令值。但频率值不会超出最大允许频率。\\n减小\\n这个键使 VSD 频率控制进入手动模式，以规定的减少量减小当前的频率指令值。但频率值不会低于 1Hz。\\n[导流叶片]打开(手动)\\n这个键使导流叶片控制进入手动模式，并向触点发送打开的指令。\\n[导流叶片]关闭(手动)\\n这个键使导流叶片控制进入手动模式，并向触点发送关闭的指令。\\n[导流叶片]保持位置(手动)\\n这个键使导流叶片控制进入手动模式，并向触点发送保持位置的指令。\\n[导流叶片]打开(自动)\\n这个键使导流叶片控制进入自动模式。\\n导航\\n主界面\\n要求访问级别：观察\\n直接返回主界面。\\n压缩机\\n要求访问级别：观察\\n返回压缩机界面。\\n制冷百家网：www.zhilengbj.cn\\n26\",\n  \"uncertainty_notes\": \"The page is purely textual with no diagrams or schematics. Relationships between entities are not visually depicted; they are described in text. The 'visual_relationships' field is empty as no connections are shown.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 739,
+        "prompt_tokens": 2493,
+        "total_tokens": 3232,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2296
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 51,
+      "status": "ok",
+      "elapsed_seconds": 11.707,
+      "parsed": {
+        "page_type": "controller_screen",
+        "summary": "This page describes the 'History Record Interface' of a YK E-type centrifugal chiller's color image display control center. It includes a screenshot of the interface and text explaining its functions, such as viewing fault history, printing reports, and navigating to sub-screens. The interface allows users to browse fault conditions, view detailed records, and access trend data.",
+        "visual_entities": [
+          {
+            "type": "screenshot",
+            "label": "History Record Interface"
+          },
+          {
+            "type": "button",
+            "label": "Print History Record"
+          },
+          {
+            "type": "button",
+            "label": "Print All History Records"
+          },
+          {
+            "type": "button",
+            "label": "Main Interface"
+          },
+          {
+            "type": "button",
+            "label": "View Detailed Record"
+          },
+          {
+            "type": "button",
+            "label": "Trend"
+          },
+          {
+            "type": "window",
+            "label": "Last Normal Shutdown"
+          },
+          {
+            "type": "window",
+            "label": "Last Fault During Operation"
+          },
+          {
+            "type": "window",
+            "label": "Top 10 Faults"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "History Record Interface",
+            "relation": "contains",
+            "to": "Print History Record"
+          },
+          {
+            "from": "History Record Interface",
+            "relation": "contains",
+            "to": "Print All History Records"
+          },
+          {
+            "from": "History Record Interface",
+            "relation": "contains",
+            "to": "Main Interface"
+          },
+          {
+            "from": "History Record Interface",
+            "relation": "contains",
+            "to": "View Detailed Record"
+          },
+          {
+            "from": "History Record Interface",
+            "relation": "contains",
+            "to": "Trend"
+          },
+          {
+            "from": "History Record Interface",
+            "relation": "displays",
+            "to": "Last Normal Shutdown"
+          },
+          {
+            "from": "History Record Interface",
+            "relation": "displays",
+            "to": "Last Fault During Operation"
+          },
+          {
+            "from": "History Record Interface",
+            "relation": "displays",
+            "to": "Top 10 Faults"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "user_interface",
+          "fault_history",
+          "navigation",
+          "reporting"
+        ],
+        "ocr_text_if_useful": "彩色图像显示控制中心（续） YK E型离心式冷水机组\n历史记录界面\n图 28 - 历史记录界面\n概述\n用户可以通过该界面浏览机组出现故障的情况。如果需要观察停机时系统运行状况的更全面的报告，可以切换到子界面：详细历史记录。\n用户可以使用选择故障记录键以选择所需观察的历史记录。这时使用观察详细记录键可以切换到一个子界面，在这个子界面中包含了在停机时冷水机组运行参数值。另外，打印历史记录键可以用来打印一份停机时运行参数值的报告。\n只读显示\n上一次正常停机\n这个窗口显示上一次正常停机的日期、时间和描述。正常停机可以规定为：\n—就地(控制中心上的摇臂式开关控制)\n—远程(数字、模拟或 ISN)\n上一次运行时的故障\n这个窗口显示上一次在系统运行时发生的紧急停机或正常停机的日期、时间和描述。\n前十次故障\n这个窗口显示按照时间顺序排列的(最近的排在最前面)前十次在系统运行或停机时发生的紧急停机或正常停机的日期、时间和描述。\n可编程\n打印历史记录\n要求访问级别：观察\n这个键可以打印出一个报告，列出用户选择的停机记录下冷水机组参数的状态。\n打印所有历史记录\n要求访问级别：观察\n这个键可以打印出一个报告，列出所有存储在系统中的停机时的冷水机组参数。\n导航\n主界面\n要求访问级别：观察\n直接返回主界面。\n观察详细记录\n要求访问级别：观察\n切换到包含了有关用户选择的停机记录中冷水机组参数的子界面。\n趋势\n要求访问级别：观察\n切换到一个子界面，在这个界面中，用户可以观察所选机组的趋势数据。",
+        "uncertainty_notes": "The screenshot is low-resolution, making specific text on the interface unreadable. The visual entities are inferred from the surrounding text descriptions rather than directly readable from the image. Relationships are based on the described functions, not explicit visual connections in the screenshot.",
+        "confidence": 0.8
+      },
+      "raw_text": "{\n  \"page_type\": \"controller_screen\",\n  \"summary\": \"This page describes the 'History Record Interface' of a YK E-type centrifugal chiller's color image display control center. It includes a screenshot of the interface and text explaining its functions, such as viewing fault history, printing reports, and navigating to sub-screens. The interface allows users to browse fault conditions, view detailed records, and access trend data.\",\n  \"visual_entities\": [\n    {\"type\": \"screenshot\", \"label\": \"History Record Interface\"},\n    {\"type\": \"button\", \"label\": \"Print History Record\"},\n    {\"type\": \"button\", \"label\": \"Print All History Records\"},\n    {\"type\": \"button\", \"label\": \"Main Interface\"},\n    {\"type\": \"button\", \"label\": \"View Detailed Record\"},\n    {\"type\": \"button\", \"label\": \"Trend\"},\n    {\"type\": \"window\", \"label\": \"Last Normal Shutdown\"},\n    {\"type\": \"window\", \"label\": \"Last Fault During Operation\"},\n    {\"type\": \"window\", \"label\": \"Top 10 Faults\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Print History Record\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Print All History Records\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Main Interface\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"View Detailed Record\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"contains\", \"to\": \"Trend\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"displays\", \"to\": \"Last Normal Shutdown\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"displays\", \"to\": \"Last Fault During Operation\"},\n    {\"from\": \"History Record Interface\", \"relation\": \"displays\", \"to\": \"Top 10 Faults\"}\n  ],\n  \"useful_for_knowledge_types\": [\"user_interface\", \"fault_history\", \"navigation\", \"reporting\"],\n  \"ocr_text_if_useful\": \"彩色图像显示控制中心（续） YK E型离心式冷水机组\\n历史记录界面\\n图 28 - 历史记录界面\\n概述\\n用户可以通过该界面浏览机组出现故障的情况。如果需要观察停机时系统运行状况的更全面的报告，可以切换到子界面：详细历史记录。\\n用户可以使用选择故障记录键以选择所需观察的历史记录。这时使用观察详细记录键可以切换到一个子界面，在这个子界面中包含了在停机时冷水机组运行参数值。另外，打印历史记录键可以用来打印一份停机时运行参数值的报告。\\n只读显示\\n上一次正常停机\\n这个窗口显示上一次正常停机的日期、时间和描述。正常停机可以规定为：\\n—就地(控制中心上的摇臂式开关控制)\\n—远程(数字、模拟或 ISN)\\n上一次运行时的故障\\n这个窗口显示上一次在系统运行时发生的紧急停机或正常停机的日期、时间和描述。\\n前十次故障\\n这个窗口显示按照时间顺序排列的(最近的排在最前面)前十次在系统运行或停机时发生的紧急停机或正常停机的日期、时间和描述。\\n可编程\\n打印历史记录\\n要求访问级别：观察\\n这个键可以打印出一个报告，列出用户选择的停机记录下冷水机组参数的状态。\\n打印所有历史记录\\n要求访问级别：观察\\n这个键可以打印出一个报告，列出所有存储在系统中的停机时的冷水机组参数。\\n导航\\n主界面\\n要求访问级别：观察\\n直接返回主界面。\\n观察详细记录\\n要求访问级别：观察\\n切换到包含了有关用户选择的停机记录中冷水机组参数的子界面。\\n趋势\\n要求访问级别：观察\\n切换到一个子界面，在这个界面中，用户可以观察所选机组的趋势数据。\",\n  \"uncertainty_notes\": \"The screenshot is low-resolution, making specific text on the interface unreadable. The visual entities are inferred from the surrounding text descriptions rather than directly readable from the image. Relationships are based on the described functions, not explicit visual connections in the screenshot.\",\n  \"confidence\": 0.8\n}",
+      "usage": {
+        "completion_tokens": 943,
+        "prompt_tokens": 2493,
+        "total_tokens": 3436,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2296
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "row_index": 4,
+  "file_name": "【麦克维尔】MCOSKILL 控制器安装手册 适用MHS、MCS机组（54页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MCOSKILL 控制器安装手册 适用MHS、MCS机组（54页）-制冷百家网.pdf",
+  "doc_id": "doc_a2d51d35aa45418b",
+  "chunks": 54,
+  "manual_tokens_estimated": 7452,
+  "equipment_class_id": "controller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 54,
+      "chunks_after": 54,
+      "parse_result": {
+        "job_id": "job_1340dcf2e91f40b2",
+        "doc_id": "doc_a2d51d35aa45418b",
+        "pages_created": 54,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_08575c114f4d4896",
+        "doc_id": "doc_a2d51d35aa45418b",
+        "chunks_created": 54,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 40,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 18,
+      "judge_rejected": 22,
+      "judge_acceptance_rate": 45.0,
+      "judge_rejection_breakdown": {
+        "other": 22
+      },
+      "review_candidates": 18,
+      "by_type": {
+        "parameter_spec": 18
+      },
+      "usage": {
+        "prompt_tokens": 12724,
+        "completion_tokens": 5911,
+        "total_tokens": 18635
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1168,
+        "total_tokens": 2448
+      },
+      "extract_cost_rmb": 0.073638,
+      "judge_cost_rmb": 0.010848,
+      "cost_rmb": 0.084486,
+      "elapsed_seconds": 176.115,
+      "judge_elapsed_seconds": 71.427,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mcoskill_控制器安装手册_适用mhs_mcs机组_54页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T111006Z_hvac_doclevel_extraction_batch/0004_麦克维尔_mcoskill_控制器安装手册_适用mhs_mcs机组_54页_制冷百家网"
+}

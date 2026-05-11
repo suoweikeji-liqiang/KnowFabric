@@ -1,0 +1,34 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-08T13:05:04.048960+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T124021Z_hvac_doclevel_extraction_batch/0004_美的_空气能热泵热水机安装使用维修手册_二_60页_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 0,
+    "blocked_pending": 1,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_e7b2857068c943d7__pump.json",
+      "pack_path": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T124021Z_hvac_doclevel_extraction_batch/0004_美的_空气能热泵热水机安装使用维修手册_二_60页_制冷百家网/deepseek-v4-pro/review_packs/bootstrapped_review_packs/hvac__doc_e7b2857068c943d7__pump.json",
+      "doc_id": "doc_e7b2857068c943d7",
+      "doc_name": "【美的】空气能热泵热水机安装使用维修手册(二)（60页）-制冷百家网.pdf",
+      "equipment_class_id": "pump",
+      "equipment_class_key": "hvac:pump",
+      "candidate_count": 19,
+      "accepted_count": 0,
+      "rejected_count": 0,
+      "pending_count": 19,
+      "status": "blocked_pending",
+      "blocker": "pending_review_decisions"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-10T09:21:23.762934+00:00",
+  "pack_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_06f8fa1cac644fe2/extract/20260510T092020Z_hvac_doclevel_extraction_batch/0001_auto_doc_06f8fa1cac644fe2/deepseek-parameter-spec/review_packs/bootstrapped_review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 0,
+    "blocked_pending": 1,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_77c445eca71546f6__chiller.json",
+      "pack_path": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_pipeline_full7_section_first_20260510/pipeline/doc_06f8fa1cac644fe2/extract/20260510T092020Z_hvac_doclevel_extraction_batch/0001_auto_doc_06f8fa1cac644fe2/deepseek-parameter-spec/review_packs/bootstrapped_review_packs/hvac__doc_77c445eca71546f6__chiller.json",
+      "doc_id": "doc_77c445eca71546f6",
+      "doc_name": "auto_doc_06f8fa1cac644fe2.pdf",
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "candidate_count": 13,
+      "accepted_count": 0,
+      "rejected_count": 0,
+      "pending_count": 13,
+      "status": "blocked_pending",
+      "blocker": "pending_review_decisions"
+    }
+  ]
+}

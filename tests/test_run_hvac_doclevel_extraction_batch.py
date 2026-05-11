@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from packages.compiler.llm_compiler import OpenAICompatibleBackend
 from packages.db.models import ContentChunk, Document, DocumentPage
 from scripts.llm_backend_config import resolve_local_overrides
-from scripts.run_hvac_doclevel_extraction_batch import anchor_candidates, judge_entries, render_report, task_complete_for_backends
+from scripts.run_hvac_doclevel_extraction_batch import anchor_candidates, judge_entries, render_report, task_complete_for_backends, task_status_from_backend_results
 
 
 def test_anchor_candidates_matches_verbatim_quote_to_chunk() -> None:
@@ -129,6 +129,11 @@ def test_task_complete_requires_all_requested_backends_ok() -> None:
 
     assert not task_complete_for_backends(task, ["deepseek-parameter-spec", "mimo-v2.5-pro"])
     assert task_complete_for_backends(task, ["deepseek-parameter-spec"])
+
+
+def test_task_status_fails_when_all_backends_fail() -> None:
+    assert task_status_from_backend_results([{"backend": "deepseek-v4-pro", "status": "failed"}]) == "failed"
+    assert task_status_from_backend_results([{"backend": "deepseek-v4-pro", "status": "ok"}]) == "completed"
 
 
 def test_task_complete_requires_judge_when_requested() -> None:

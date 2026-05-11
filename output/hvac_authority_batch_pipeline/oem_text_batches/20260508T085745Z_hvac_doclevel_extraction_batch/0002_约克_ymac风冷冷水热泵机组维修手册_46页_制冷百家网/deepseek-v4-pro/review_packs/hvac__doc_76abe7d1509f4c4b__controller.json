@@ -1,0 +1,499 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T09:08:08.478084+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_76abe7d1509f4c4b",
+  "doc_name": "【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+  "equipment_class": {
+    "equipment_class_id": "controller",
+    "equipment_class_key": "hvac:controller",
+    "label": "Controller",
+    "supported_knowledge_anchors": [
+      "parameter_spec",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 7,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_00cff829208d28eb",
+      "domain_id": "hvac",
+      "doc_id": "doc_76abe7d1509f4c4b",
+      "doc_name": "【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+      "page_no": 20,
+      "chunk_id": "chunk_91f6621b918d4b98",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:temperature_sensor_range",
+      "structured_payload_candidate": {
+        "parameter_name": "Temperature Sensor Range",
+        "title": "Temperature Sensor Range",
+        "summary": "Temperature sensors operate from -10°C to 80°C with 1MPa pressure."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "YMAC (0610)\n20ì\në æ\n1 3\n: 1MPa -10 ~80\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_91f6621b918d4b98"
+      ],
+      "source_page_nos": [
+        20
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies operational temperature and pressure range for sensors, useful for maintenance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:temperature_sensor_range",
+        "structured_payload": {
+          "parameter_name": "Temperature Sensor Range",
+          "title": "Temperature Sensor Range",
+          "summary": "Temperature sensors operate from -10°C to 80°C with 1MPa pressure."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "YMAC (0610)\n20ì\në æ\n1 3\n: 1MPa -10 ~80\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_e08294fe340c1591",
+      "domain_id": "hvac",
+      "doc_id": "doc_76abe7d1509f4c4b",
+      "doc_name": "【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+      "page_no": 21,
+      "chunk_id": "chunk_35369d3c26ab46fd",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac10",
+      "structured_payload_candidate": {
+        "parameter_name": "Expansion Valve Capacity",
+        "title": "Expansion Valve Capacity for YMAC10",
+        "summary": "YORK PN 024G00009-005: capacity 2.01 m3/h, 33.5 L/min, 21 l/min at 62.7%."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_35369d3c26ab46fd"
+      ],
+      "source_page_nos": [
+        21
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides expansion valve capacity parameters for YMAC10, relevant for part selection and servicing.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac10",
+        "structured_payload": {
+          "parameter_name": "Expansion Valve Capacity",
+          "title": "Expansion Valve Capacity for YMAC10",
+          "summary": "YORK PN 024G00009-005: capacity 2.01 m3/h, 33.5 L/min, 21 l/min at 62.7%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_207cedd54096bee4",
+      "domain_id": "hvac",
+      "doc_id": "doc_76abe7d1509f4c4b",
+      "doc_name": "【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+      "page_no": 21,
+      "chunk_id": "chunk_35369d3c26ab46fd",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac15",
+      "structured_payload_candidate": {
+        "parameter_name": "Expansion Valve Capacity",
+        "title": "Expansion Valve Capacity for YMAC15",
+        "summary": "YORK PN 024G00009-006: capacity 2.4 m3/h, 40 L/min, 28 l/min at 70.0%."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_35369d3c26ab46fd"
+      ],
+      "source_page_nos": [
+        21
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Expansion valve capacity for YMAC15, valid parameter specification.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac15",
+        "structured_payload": {
+          "parameter_name": "Expansion Valve Capacity",
+          "title": "Expansion Valve Capacity for YMAC15",
+          "summary": "YORK PN 024G00009-006: capacity 2.4 m3/h, 40 L/min, 28 l/min at 70.0%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_ce43aa32c881dce5",
+      "domain_id": "hvac",
+      "doc_id": "doc_76abe7d1509f4c4b",
+      "doc_name": "【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+      "page_no": 21,
+      "chunk_id": "chunk_35369d3c26ab46fd",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac18",
+      "structured_payload_candidate": {
+        "parameter_name": "Expansion Valve Capacity",
+        "title": "Expansion Valve Capacity for YMAC18",
+        "summary": "YORK PN 024G00009-007: capacity 2.6 m3/h, 43.15 L/min, 32 l/min at 74.2%."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_35369d3c26ab46fd"
+      ],
+      "source_page_nos": [
+        21
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Expansion valve capacity for YMAC18, valid parameter specification.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac18",
+        "structured_payload": {
+          "parameter_name": "Expansion Valve Capacity",
+          "title": "Expansion Valve Capacity for YMAC18",
+          "summary": "YORK PN 024G00009-007: capacity 2.6 m3/h, 43.15 L/min, 32 l/min at 74.2%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d2c6080c75932de4",
+      "domain_id": "hvac",
+      "doc_id": "doc_76abe7d1509f4c4b",
+      "doc_name": "【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+      "page_no": 21,
+      "chunk_id": "chunk_35369d3c26ab46fd",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac23",
+      "structured_payload_candidate": {
+        "parameter_name": "Expansion Valve Capacity",
+        "title": "Expansion Valve Capacity for YMAC23",
+        "summary": "YORK PN 024G00009-008: capacity 3.312 m3/h, 55.2 L/min, 43 l/min at 77.9%."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_35369d3c26ab46fd"
+      ],
+      "source_page_nos": [
+        21
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Expansion valve capacity for YMAC23, valid parameter specification.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac23",
+        "structured_payload": {
+          "parameter_name": "Expansion Valve Capacity",
+          "title": "Expansion Valve Capacity for YMAC23",
+          "summary": "YORK PN 024G00009-008: capacity 3.312 m3/h, 55.2 L/min, 43 l/min at 77.9%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5d83f8d4e90dbbd2",
+      "domain_id": "hvac",
+      "doc_id": "doc_76abe7d1509f4c4b",
+      "doc_name": "【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+      "page_no": 21,
+      "chunk_id": "chunk_35369d3c26ab46fd",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac30",
+      "structured_payload_candidate": {
+        "parameter_name": "Expansion Valve Capacity",
+        "title": "Expansion Valve Capacity for YMAC30",
+        "summary": "YORK PN 024G00009-009: capacity 4.68 m3/h, 77.5 L/min, 55 l/min at 71.0%."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_35369d3c26ab46fd"
+      ],
+      "source_page_nos": [
+        21
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Expansion valve capacity for YMAC30, valid parameter specification.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac30",
+        "structured_payload": {
+          "parameter_name": "Expansion Valve Capacity",
+          "title": "Expansion Valve Capacity for YMAC30",
+          "summary": "YORK PN 024G00009-009: capacity 4.68 m3/h, 77.5 L/min, 55 l/min at 71.0%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5d977c7f6a49ab5e",
+      "domain_id": "hvac",
+      "doc_id": "doc_76abe7d1509f4c4b",
+      "doc_name": "【约克】YMAC风冷冷水热泵机组维修手册（46页）-制冷百家网.pdf",
+      "page_no": 21,
+      "chunk_id": "chunk_35369d3c26ab46fd",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac40_45",
+      "structured_payload_candidate": {
+        "parameter_name": "Expansion Valve Capacity",
+        "title": "Expansion Valve Capacity for YMAC40/45",
+        "summary": "YORK PN 024G00009-010: capacity 5.67 m3/h, 94.5 L/min, 71 l/min at 75.1%."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_35369d3c26ab46fd"
+      ],
+      "source_page_nos": [
+        21
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Expansion valve capacity for YMAC40/45, valid parameter specification.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:expansion_valve_capacity_for_ymac40_45",
+        "structured_payload": {
+          "parameter_name": "Expansion Valve Capacity",
+          "title": "Expansion Valve Capacity for YMAC40/45",
+          "summary": "YORK PN 024G00009-010: capacity 5.67 m3/h, 94.5 L/min, 71 l/min at 75.1%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "YMAC (0610)\n21\nYORK PN. YORK (m3/h) (L/min) (l/min)\n024G00009-005  2 2.01 33.5 21 62.7% 5 77.6% RC1-RC1-RC1 1 YMAC10\n024G00009-006  3 2.4 40 28 70.0% 7 87.5% RC1-RC1-RC1 1YMAC15\n024G00009-007  4 2.6 43.15 32 74.2% 7 90.4% RC1 1/2-RC1-RC1 1/21YMAC18\n024G00009-008  5 3.312 55.2 43 77.9% 7 90.6% RC1 1/2-RC1-RC1 1/21YMAC23\n024G00009-009  6 4.68 77.5 55 71.0% 10 83.9% RC1 1/2-RC1-RC1 1/21YMAC30\n024G00009-010 7 5.67 94.5 71 75.1% 10 85.7%\nRC1 1/2-RC1-RC1 1/2 1YMAC40\n100.3    80.7%  YMAC45\n:\n3 (GB3289.14-82)\n100.377.6%77.6%\n7\n74.2%74.2%\n77.9%77.9%\n55\n7171\n(GB3289.14(GB3289.14\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1475 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T11:31:18.367284+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_7c4fca116fd3420a",
+  "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+  "equipment_class": {
+    "equipment_class_id": "centrifugal_chiller",
+    "equipment_class_key": "hvac:centrifugal_chiller",
+    "label": "Centrifugal Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 19,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_42a3532a6f2b906b",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_1a9b6f88c8034185",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:condenser_max_entering_water_temp",
+      "structured_payload_candidate": {
+        "parameter_name": "Condenser Max Entering Water Temp",
+        "value_range": "24°C to 32°C",
+        "unit": "°C",
+        "title": "Condenser entering water temperature range",
+        "summary": "Cooling tower selection based on condenser maximum entering water temperature 24°C to 32°C."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  3\n概述\nMcQuay的PE、WS系列离心式冷水机组在优化的制冷系统匹配的基础上，利\n用先进的自动控制系统，精确的控制机组在运行中的各个环节，使机组始终处在\n最佳的运行状态。在制作工艺上的严格要求以及对引进部件的质量的严格把关。\n使Mcquay离心式冷水机组在运行中具有更加稳定、可靠的性能。每一台冷水机组\n出厂前都要进行严格的结构质量检查和精确的性能测试，保证了机组在出厂后的\n使用、运行中的可靠性。\n根据各地区的环境气候不同，以及客户对各机组的运行状态的要求不同。我\n公司提供了不同系列不同规格的冷水机组，充分满足了客户对机组的选择需求。\nPE系列分为 PEH 系列（含一个压缩机、一个冷凝器和蒸发器） ，PFH 系列\n（含两个并联运行的压缩机、一个蒸发器和冷凝器） 。\nWS系列分为 WSC 系列（含一个压缩机、一个冷凝器和蒸发器） ， WDC系列（含\n两个并联运行的压缩机、一个蒸发器和冷凝器） 。\n标准冷水机组所使用制冷剂为 R134a，属绿色环保制冷剂，正压运行，保证\n了机组系统的纯净度，提高了制冷剂的利用率及机组的运行性能的稳定性。减少了机组的使用尺寸和重量。\n机组基本规格有 PEH/PFH/WSC/WDC 063、079、087、100 和126，冷量范围在\n80到2500冷吨。\n应用\n本手册提供的安装、操作和维护过程适用于标准的 PE，WS系列机组。如果客\n户要对机组的结构安装进行改变，须向 Mcquay 公司进行咨询。\n所有McQuay离心机组在发运前均在厂内试验而且工地初次调试是由 McQuay\n授权的技术服务人员完成，因为调试过程的错误可能会影响到设备的保修。\n正常保修包括那些经过证明是材料缺陷或工厂生产疵品的部件，有关保修的\n具体细节详见随机保修单或本手册结尾部分。\nMcQuayPE 系列离心机组配套设备选用的冷水塔是按冷凝器最大进水温度 24ºC\n—32ºC来选取的，低的进水温度是符合低能耗要求的但应有一个最小限度，最佳\n进水温度和冷却塔风机控制请参考 McQuay产品手册 955应用部分。\n介绍\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1a9b6f88c8034185"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies condenser max entering water temperature range with clear operational significance for cooling tower selection.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:condenser_max_entering_water_temp for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:condenser_max_entering_water_temp derived from chunk chunk_1a9b6f88c8034185 on page 3 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:condenser_max_entering_water_temp",
+        "structured_payload": {
+          "parameter_name": "Condenser Max Entering Water Temp",
+          "value_range": "24°C to 32°C",
+          "unit": "°C",
+          "title": "Condenser entering water temperature range",
+          "summary": "Cooling tower selection based on condenser maximum entering water temperature 24°C to 32°C."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  3\n概述\nMcQuay的PE、WS系列离心式冷水机组在优化的制冷系统匹配的基础上，利\n用先进的自动控制系统，精确的控制机组在运行中的各个环节，使机组始终处在\n最佳的运行状态。在制作工艺上的严格要求以及对引进部件的质量的严格把关。\n使Mcquay离心式冷水机组在运行中具有更加稳定、可靠的性能。每一台冷水机组\n出厂前都要进行严格的结构质量检查和精确的性能测试，保证了机组在出厂后的\n使用、运行中的可靠性。\n根据各地区的环境气候不同，以及客户对各机组的运行状态的要求不同。我\n公司提供了不同系列不同规格的冷水机组，充分满足了客户对机组的选择需求。\nPE系列分为 PEH 系列（含一个压缩机、一个冷凝器和蒸发器） ，PFH 系列\n（含两个并联运行的压缩机、一个蒸发器和冷凝器） 。\nWS系列分为 WSC 系列（含一个压缩机、一个冷凝器和蒸发器） ， WDC系列（含\n两个并联运行的压缩机、一个蒸发器和冷凝器） 。\n标准冷水机组所使用制冷剂为 R134a，属绿色环保制冷剂，正压运行，保证\n了机组系统的纯净度，提高了制冷剂的利用率及机组的运行性能的稳定性。减少了机组的使用尺寸和重量。\n机组基本规格有 PEH/PFH/WSC/WDC 063、079、087、100 和126，冷量范围在\n80到2500冷吨。\n应用\n本手册提供的安装、操作和维护过程适用于标准的 PE，WS系列机组。如果客\n户要对机组的结构安装进行改变，须向 Mcquay 公司进行咨询。\n所有McQuay离心机组在发运前均在厂内试验而且工地初次调试是由 McQuay\n授权的技术服务人员完成，因为调试过程的错误可能会影响到设备的保修。\n正常保修包括那些经过证明是材料缺陷或工厂生产疵品的部件，有关保修的\n具体细节详见随机保修单或本手册结尾部分。\nMcQuayPE 系列离心机组配套设备选用的冷水塔是按冷凝器最大进水温度 24ºC\n—32ºC来选取的，低的进水温度是符合低能耗要求的但应有一个最小限度，最佳\n进水温度和冷却塔风机控制请参考 McQuay产品手册 955应用部分。\n介绍\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_657f7709f1b00c62",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 9,
+      "chunk_id": "chunk_3acf71a123744ff2",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:evap_max_entering_water_temp",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporator Max Entering Water Temp",
+        "value": "43",
+        "unit": "°C",
+        "title": "Evaporator entering water temperature limit",
+        "summary": "Evaporator entering water temperature must not exceed 43°C to avoid safety valve opening and control damage."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  9 机组四脚处的 11/8″的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫\n板的四个角下，减少机组的在运行时的震动。\n水路系统\n● 水泵\n注意：不要使用 3000转/分或者两极电机水泵（对 50HZ电源而言） ，因为这种泵\n常伴有过大的噪音和振动。\n如果采用二极电机水泵，其转速与压缩机电机基本一致，这样可能产生共振。\n如果可能的话， 建议使用 1450转/分（ 对 50HZ电源而言） 或者四极电机水泵， 1750\n转/分（对 60HZ电源而言） 。\n● 蒸发器和冷凝器水路\n所有PEH/PFH和WSC/WDC系列冷水机组的蒸发器和冷凝器都采用卡箍或法兰联\n接，安装者须按系统尺寸要求和容量表的要求提供相应的联接方式。\n注意：如果对水管接头进行施焊，那么接管上的感温包和传感器等应取下，以免\n损坏。\n容器水盖的进出水管上均装有水塞，其作用为连接测压设备（工厂会根据客户\n的需要决定是否安装水压差开关）用于检查进出水水压（确定其流量） 。容器的进\n出水压降及流量参见 McQuay文件955。\n蒸发器水盖上进出水管位置是随容器的设计而确定，请参看图 2和图3；冷凝\n器的进出水管按图纸要求和接管上的标志进行连接。要求处于最冷状态的冷却水进入冷凝器的底部，以加大过冷度，请参看图 2和图3。\n容器水盖的上下部位都安装有水塞，上部水塞为容器内的空气排空（在水泵运\n行时） ，使用方法：缓慢旋动水塞，直到有空气喷射出，如果有水喷出，说明容器中已无空气，\n注意：请不要旋下水塞 ；下部为排水，当机组长时间停机时，要对\n容器的剩余水进行排空，这时可旋下底部水塞进行放水，同时旋开上部水塞，平\n衡容器内压力，有助排空。\n注意：蒸发器的进水温度不得高于 43°C，否则会造成安全阀开启制冷剂跑掉和损\n坏控制元件。\n管道应该进行合适支撑，以减轻连接部分所随承受的压力，蒸发器水路管道应包\n裹保温材料进行保温，各进水处应有 20目的过滤器，同时还应有足够的截止阀，\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3acf71a123744ff2"
+      ],
+      "source_page_nos": [
+        9
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Defines a critical limit for evaporator entering water temperature to prevent safety valve opening and control damage.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:evap_max_entering_water_temp for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:evap_max_entering_water_temp derived from chunk chunk_3acf71a123744ff2 on page 9 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:evap_max_entering_water_temp",
+        "structured_payload": {
+          "parameter_name": "Evaporator Max Entering Water Temp",
+          "value": "43",
+          "unit": "°C",
+          "title": "Evaporator entering water temperature limit",
+          "summary": "Evaporator entering water temperature must not exceed 43°C to avoid safety valve opening and control damage."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  9 机组四脚处的 11/8″的安装孔进行固定，同时应将随机所带的橡胶垫放在机组垫\n板的四个角下，减少机组的在运行时的震动。\n水路系统\n● 水泵\n注意：不要使用 3000转/分或者两极电机水泵（对 50HZ电源而言） ，因为这种泵\n常伴有过大的噪音和振动。\n如果采用二极电机水泵，其转速与压缩机电机基本一致，这样可能产生共振。\n如果可能的话， 建议使用 1450转/分（ 对 50HZ电源而言） 或者四极电机水泵， 1750\n转/分（对 60HZ电源而言） 。\n● 蒸发器和冷凝器水路\n所有PEH/PFH和WSC/WDC系列冷水机组的蒸发器和冷凝器都采用卡箍或法兰联\n接，安装者须按系统尺寸要求和容量表的要求提供相应的联接方式。\n注意：如果对水管接头进行施焊，那么接管上的感温包和传感器等应取下，以免\n损坏。\n容器水盖的进出水管上均装有水塞，其作用为连接测压设备（工厂会根据客户\n的需要决定是否安装水压差开关）用于检查进出水水压（确定其流量） 。容器的进\n出水压降及流量参见 McQuay文件955。\n蒸发器水盖上进出水管位置是随容器的设计而确定，请参看图 2和图3；冷凝\n器的进出水管按图纸要求和接管上的标志进行连接。要求处于最冷状态的冷却水进入冷凝器的底部，以加大过冷度，请参看图 2和图3。\n容器水盖的上下部位都安装有水塞，上部水塞为容器内的空气排空（在水泵运\n行时） ，使用方法：缓慢旋动水塞，直到有空气喷射出，如果有水喷出，说明容器中已无空气，\n注意：请不要旋下水塞 ；下部为排水，当机组长时间停机时，要对\n容器的剩余水进行排空，这时可旋下底部水塞进行放水，同时旋开上部水塞，平\n衡容器内压力，有助排空。\n注意：蒸发器的进水温度不得高于 43°C，否则会造成安全阀开启制冷剂跑掉和损\n坏控制元件。\n管道应该进行合适支撑，以减轻连接部分所随承受的压力，蒸发器水路管道应包\n裹保温材料进行保温，各进水处应有 20目的过滤器，同时还应有足够的截止阀，\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_431e8b1f85ca0b98",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 14,
+      "chunk_id": "chunk_24ae01e6548b4ea3",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_max_entering_water_temp",
+      "structured_payload_candidate": {
+        "parameter_name": "Oil Cooler Max Entering Water Temp",
+        "value": "32",
+        "unit": "°C",
+        "title": "Oil cooler entering water temperature limit",
+        "summary": "Oil cooler entering water temperature must not exceed 32°C."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  14\n在油冷却系统油温的控制上，采用热平衡自动调节阀，它是通过油温的大小自\n动调节管路中的水流量，保证了油温的稳定性。调节是根据压缩机轴承的供油温度（在32°C -43°C 范围之内） ，自动调整油冷却器的水流量，此调节阀是由一\n个装在供油管上的温度传感器来控制的。对于只靠制冷剂来冷却油的冷却器系统机组，则不需要此类热平衡调节阀。\n采用冷冻水作冷却介质时，油冷却器的供油温度应取下限值，不过开机之初，\n温度可能会偏高。\n如果机组没有随机配备油冷却器供水管路的电磁阀，又要求安装该阀，建议\n安装商采用 ASCO型8210B27（麦克维尔零件号 350A484H45）或麦克维尔对其质量\n予以认可的电磁阀。\n切勿将油冷却器的管道与单流程的蒸发器并行组合在一起，以免油冷却水量\n不足。\n注意：油冷却器的进水温度不得超过 32°C。\n● 制冷剂冷却油冷却器\n对于使用 CE046/CE048/CE050 或CE063压缩机的机组，油冷却器利用制冷剂\n作为冷却介质。\n对于用自来水和冷冻水作为冷却介质的油冷均不能满足特殊订单要求时，也\n应用制冷剂作为冷却介质的油冷却器。\n配CE063压缩机的机组，从冷凝器出来的过冷制冷剂通过热力膨胀阀后进入\n油冷却器变为汽液混合态后进入蒸发器，其制冷剂的供给流量由油冷却器供油管\n出口处的温度控制，以保证油温均在 32 -43°C 的范围内。\n配CE046/048/050 压缩机没有装水调节阀，而是通过在制冷剂液管中开一小\n孔分流制冷剂来控制油温。\n安全排空管道\n作为安全措施，每台冷水机组在容器（如蒸发器和冷凝器）上均安装有安全阀，\n以便容器内压力过高时向大气释放，减低容器压力。如果地方法规有要求，那么\n在安全阀上要接一排空管通室外。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_24ae01e6548b4ea3"
+      ],
+      "source_page_nos": [
+        14
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "States maximum allowable oil cooler entering water temperature, a defined operational limit.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_max_entering_water_temp for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_max_entering_water_temp derived from chunk chunk_24ae01e6548b4ea3 on page 14 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_max_entering_water_temp",
+        "structured_payload": {
+          "parameter_name": "Oil Cooler Max Entering Water Temp",
+          "value": "32",
+          "unit": "°C",
+          "title": "Oil cooler entering water temperature limit",
+          "summary": "Oil cooler entering water temperature must not exceed 32°C."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  14\n在油冷却系统油温的控制上，采用热平衡自动调节阀，它是通过油温的大小自\n动调节管路中的水流量，保证了油温的稳定性。调节是根据压缩机轴承的供油温度（在32°C -43°C 范围之内） ，自动调整油冷却器的水流量，此调节阀是由一\n个装在供油管上的温度传感器来控制的。对于只靠制冷剂来冷却油的冷却器系统机组，则不需要此类热平衡调节阀。\n采用冷冻水作冷却介质时，油冷却器的供油温度应取下限值，不过开机之初，\n温度可能会偏高。\n如果机组没有随机配备油冷却器供水管路的电磁阀，又要求安装该阀，建议\n安装商采用 ASCO型8210B27（麦克维尔零件号 350A484H45）或麦克维尔对其质量\n予以认可的电磁阀。\n切勿将油冷却器的管道与单流程的蒸发器并行组合在一起，以免油冷却水量\n不足。\n注意：油冷却器的进水温度不得超过 32°C。\n● 制冷剂冷却油冷却器\n对于使用 CE046/CE048/CE050 或CE063压缩机的机组，油冷却器利用制冷剂\n作为冷却介质。\n对于用自来水和冷冻水作为冷却介质的油冷均不能满足特殊订单要求时，也\n应用制冷剂作为冷却介质的油冷却器。\n配CE063压缩机的机组，从冷凝器出来的过冷制冷剂通过热力膨胀阀后进入\n油冷却器变为汽液混合态后进入蒸发器，其制冷剂的供给流量由油冷却器供油管\n出口处的温度控制，以保证油温均在 32 -43°C 的范围内。\n配CE046/048/050 压缩机没有装水调节阀，而是通过在制冷剂液管中开一小\n孔分流制冷剂来控制油温。\n安全排空管道\n作为安全措施，每台冷水机组在容器（如蒸发器和冷凝器）上均安装有安全阀，\n以便容器内压力过高时向大气释放，减低容器压力。如果地方法规有要求，那么\n在安全阀上要接一排空管通室外。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_64abb48243629cc7",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 14,
+      "chunk_id": "chunk_24ae01e6548b4ea3",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:oil_supply_temp_range",
+      "structured_payload_candidate": {
+        "parameter_name": "Oil Supply Temperature",
+        "value_range": "32°C to 43°C",
+        "unit": "°C",
+        "title": "Oil supply temperature range",
+        "summary": "Oil supply temperature to compressor bearings maintained between 32°C and 43°C."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  14\n在油冷却系统油温的控制上，采用热平衡自动调节阀，它是通过油温的大小自\n动调节管路中的水流量，保证了油温的稳定性。调节是根据压缩机轴承的供油温度（在32°C -43°C 范围之内） ，自动调整油冷却器的水流量，此调节阀是由一\n个装在供油管上的温度传感器来控制的。对于只靠制冷剂来冷却油的冷却器系统机组，则不需要此类热平衡调节阀。\n采用冷冻水作冷却介质时，油冷却器的供油温度应取下限值，不过开机之初，\n温度可能会偏高。\n如果机组没有随机配备油冷却器供水管路的电磁阀，又要求安装该阀，建议\n安装商采用 ASCO型8210B27（麦克维尔零件号 350A484H45）或麦克维尔对其质量\n予以认可的电磁阀。\n切勿将油冷却器的管道与单流程的蒸发器并行组合在一起，以免油冷却水量\n不足。\n注意：油冷却器的进水温度不得超过 32°C。\n● 制冷剂冷却油冷却器\n对于使用 CE046/CE048/CE050 或CE063压缩机的机组，油冷却器利用制冷剂\n作为冷却介质。\n对于用自来水和冷冻水作为冷却介质的油冷均不能满足特殊订单要求时，也\n应用制冷剂作为冷却介质的油冷却器。\n配CE063压缩机的机组，从冷凝器出来的过冷制冷剂通过热力膨胀阀后进入\n油冷却器变为汽液混合态后进入蒸发器，其制冷剂的供给流量由油冷却器供油管\n出口处的温度控制，以保证油温均在 32 -43°C 的范围内。\n配CE046/048/050 压缩机没有装水调节阀，而是通过在制冷剂液管中开一小\n孔分流制冷剂来控制油温。\n安全排空管道\n作为安全措施，每台冷水机组在容器（如蒸发器和冷凝器）上均安装有安全阀，\n以便容器内压力过高时向大气释放，减低容器压力。如果地方法规有要求，那么\n在安全阀上要接一排空管通室外。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_24ae01e6548b4ea3"
+      ],
+      "source_page_nos": [
+        14
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies the required oil supply temperature range for compressor bearing protection.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:oil_supply_temp_range for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:oil_supply_temp_range derived from chunk chunk_24ae01e6548b4ea3 on page 14 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:oil_supply_temp_range",
+        "structured_payload": {
+          "parameter_name": "Oil Supply Temperature",
+          "value_range": "32°C to 43°C",
+          "unit": "°C",
+          "title": "Oil supply temperature range",
+          "summary": "Oil supply temperature to compressor bearings maintained between 32°C and 43°C."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  14\n在油冷却系统油温的控制上，采用热平衡自动调节阀，它是通过油温的大小自\n动调节管路中的水流量，保证了油温的稳定性。调节是根据压缩机轴承的供油温度（在32°C -43°C 范围之内） ，自动调整油冷却器的水流量，此调节阀是由一\n个装在供油管上的温度传感器来控制的。对于只靠制冷剂来冷却油的冷却器系统机组，则不需要此类热平衡调节阀。\n采用冷冻水作冷却介质时，油冷却器的供油温度应取下限值，不过开机之初，\n温度可能会偏高。\n如果机组没有随机配备油冷却器供水管路的电磁阀，又要求安装该阀，建议\n安装商采用 ASCO型8210B27（麦克维尔零件号 350A484H45）或麦克维尔对其质量\n予以认可的电磁阀。\n切勿将油冷却器的管道与单流程的蒸发器并行组合在一起，以免油冷却水量\n不足。\n注意：油冷却器的进水温度不得超过 32°C。\n● 制冷剂冷却油冷却器\n对于使用 CE046/CE048/CE050 或CE063压缩机的机组，油冷却器利用制冷剂\n作为冷却介质。\n对于用自来水和冷冻水作为冷却介质的油冷均不能满足特殊订单要求时，也\n应用制冷剂作为冷却介质的油冷却器。\n配CE063压缩机的机组，从冷凝器出来的过冷制冷剂通过热力膨胀阀后进入\n油冷却器变为汽液混合态后进入蒸发器，其制冷剂的供给流量由油冷却器供油管\n出口处的温度控制，以保证油温均在 32 -43°C 的范围内。\n配CE046/048/050 压缩机没有装水调节阀，而是通过在制冷剂液管中开一小\n孔分流制冷剂来控制油温。\n安全排空管道\n作为安全措施，每台冷水机组在容器（如蒸发器和冷凝器）上均安装有安全阀，\n以便容器内压力过高时向大气释放，减低容器压力。如果地方法规有要求，那么\n在安全阀上要接一排空管通室外。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_411a09e2521a09b6",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 18,
+      "chunk_id": "chunk_93fb2cd8b69641ed",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:max_voltage_unbalance",
+      "structured_payload_candidate": {
+        "parameter_name": "Max Voltage Unbalance",
+        "value": "3",
+        "unit": "%",
+        "title": "Voltage unbalance limit",
+        "summary": "Phase-to-phase voltage unbalance must not exceed 3%."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  18\n图7-2 离心冷水机组基本电路\n导线、保险丝等规格按电气要求执行，标准 NEMA电机启动器要满足 McQuay\n说明书的要求，具体要求参见机组说明材料或者麦克维尔 955号文件。\n切记：电压波动应控制在≤–10% — +10% 范围内，相与相之间的电压不平\n衡值不得超过 3%，否则电机中的温度将急剧升高。例如：当电压不平衡达到 3.5%\n时，电机的温度大约要升高 25%。\n注意： 机组出厂前已充足制冷剂，系统管路间的阀门都已关闭，机组调试时\n或长期停机后再次开机时，这些阀必须开启。\n● 动力线的接线\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_93fb2cd8b69641ed"
+      ],
+      "source_page_nos": [
+        18
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Defines maximum allowable voltage unbalance to prevent motor overheating.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:max_voltage_unbalance for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:max_voltage_unbalance derived from chunk chunk_93fb2cd8b69641ed on page 18 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:max_voltage_unbalance",
+        "structured_payload": {
+          "parameter_name": "Max Voltage Unbalance",
+          "value": "3",
+          "unit": "%",
+          "title": "Voltage unbalance limit",
+          "summary": "Phase-to-phase voltage unbalance must not exceed 3%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  18\n图7-2 离心冷水机组基本电路\n导线、保险丝等规格按电气要求执行，标准 NEMA电机启动器要满足 McQuay\n说明书的要求，具体要求参见机组说明材料或者麦克维尔 955号文件。\n切记：电压波动应控制在≤–10% — +10% 范围内，相与相之间的电压不平\n衡值不得超过 3%，否则电机中的温度将急剧升高。例如：当电压不平衡达到 3.5%\n时，电机的温度大约要升高 25%。\n注意： 机组出厂前已充足制冷剂，系统管路间的阀门都已关闭，机组调试时\n或长期停机后再次开机时，这些阀必须开启。\n● 动力线的接线\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_aff08b882df070bb",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 18,
+      "chunk_id": "chunk_93fb2cd8b69641ed",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:voltage_fluctuation_range",
+      "structured_payload_candidate": {
+        "parameter_name": "Voltage Fluctuation",
+        "value_range": "-10% to +10%",
+        "unit": "%",
+        "title": "Voltage fluctuation range",
+        "summary": "Voltage fluctuation must be within -10% to +10%."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  18\n图7-2 离心冷水机组基本电路\n导线、保险丝等规格按电气要求执行，标准 NEMA电机启动器要满足 McQuay\n说明书的要求，具体要求参见机组说明材料或者麦克维尔 955号文件。\n切记：电压波动应控制在≤–10% — +10% 范围内，相与相之间的电压不平\n衡值不得超过 3%，否则电机中的温度将急剧升高。例如：当电压不平衡达到 3.5%\n时，电机的温度大约要升高 25%。\n注意： 机组出厂前已充足制冷剂，系统管路间的阀门都已关闭，机组调试时\n或长期停机后再次开机时，这些阀必须开启。\n● 动力线的接线\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_93fb2cd8b69641ed"
+      ],
+      "source_page_nos": [
+        18
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies allowable voltage fluctuation range for proper operation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:voltage_fluctuation_range for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:voltage_fluctuation_range derived from chunk chunk_93fb2cd8b69641ed on page 18 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:voltage_fluctuation_range",
+        "structured_payload": {
+          "parameter_name": "Voltage Fluctuation",
+          "value_range": "-10% to +10%",
+          "unit": "%",
+          "title": "Voltage fluctuation range",
+          "summary": "Voltage fluctuation must be within -10% to +10%."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  18\n图7-2 离心冷水机组基本电路\n导线、保险丝等规格按电气要求执行，标准 NEMA电机启动器要满足 McQuay\n说明书的要求，具体要求参见机组说明材料或者麦克维尔 955号文件。\n切记：电压波动应控制在≤–10% — +10% 范围内，相与相之间的电压不平\n衡值不得超过 3%，否则电机中的温度将急剧升高。例如：当电压不平衡达到 3.5%\n时，电机的温度大约要升高 25%。\n注意： 机组出厂前已充足制冷剂，系统管路间的阀门都已关闭，机组调试时\n或长期停机后再次开机时，这些阀必须开启。\n● 动力线的接线\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f889bbbfb4ae4e6b",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 32,
+      "chunk_id": "chunk_74517b698f134edf",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:guide_vane_opening_time",
+      "structured_payload_candidate": {
+        "parameter_name": "Guide Vane Opening Time",
+        "value": "3-5 min (CE063-CE100), 5-8 min (CE063 WS)",
+        "unit": "minutes",
+        "title": "Guide vane opening time factory setting",
+        "summary": "Factory-set guide vane opening time from full close to full open: 3-5 minutes for CE063-CE100, 5-8 minutes for CE063 (WS series)."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  32\n图10-6 WS系列导叶开关位置\n●测量值\n调整能量控制导叶的开关速度可适合系统的要求。调整排油管上的针阀可控\n制排油速度，因而控制“导叶速度” 。针阀是位于压缩机润滑油分配盒中四通电磁\n阀的一部分。\n这些阀一般在工厂设定，从全关到全开需大约 3分钟，从全开到全关需用 1\n分钟（CE126 外） ，速度要慢以避免控制不稳定。\n●导叶速度调整\n流经导叶开启处的排油速度控制了能量控制导叶的开关速度。排油速度可通\n过润滑油盒内电磁阀 SA、SB上的针阀调整。\n用螺丝刀从左边打开润滑油盒上的圆形盖板以便调整。增载时调整上面电磁\n阀SB的针阀以改变导叶开启速度，顺时针减小导叶的开启速度，逆时针增加导叶\n开启速度。\n减载时调整下面电磁阀 SA上的针阀以改变导叶关闭速度顺时针减小导叶的\n关闭速度，逆时针增加关闭速度。\n导叶速度工厂设定随压缩机型号不同而不同\n压缩机型号  开启时间  关闭时间\nCE048-CE050     2-2 1/2 min      3/4-1min\nCE063-CE100        3-5 min        1-2 min\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_74517b698f134edf"
+      ],
+      "source_page_nos": [
+        32
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides factory-set guide vane opening times for different compressor models.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:guide_vane_opening_time for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:guide_vane_opening_time derived from chunk chunk_74517b698f134edf on page 32 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:guide_vane_opening_time",
+        "structured_payload": {
+          "parameter_name": "Guide Vane Opening Time",
+          "value": "3-5 min (CE063-CE100), 5-8 min (CE063 WS)",
+          "unit": "minutes",
+          "title": "Guide vane opening time factory setting",
+          "summary": "Factory-set guide vane opening time from full close to full open: 3-5 minutes for CE063-CE100, 5-8 minutes for CE063 (WS series)."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  32\n图10-6 WS系列导叶开关位置\n●测量值\n调整能量控制导叶的开关速度可适合系统的要求。调整排油管上的针阀可控\n制排油速度，因而控制“导叶速度” 。针阀是位于压缩机润滑油分配盒中四通电磁\n阀的一部分。\n这些阀一般在工厂设定，从全关到全开需大约 3分钟，从全开到全关需用 1\n分钟（CE126 外） ，速度要慢以避免控制不稳定。\n●导叶速度调整\n流经导叶开启处的排油速度控制了能量控制导叶的开关速度。排油速度可通\n过润滑油盒内电磁阀 SA、SB上的针阀调整。\n用螺丝刀从左边打开润滑油盒上的圆形盖板以便调整。增载时调整上面电磁\n阀SB的针阀以改变导叶开启速度，顺时针减小导叶的开启速度，逆时针增加导叶\n开启速度。\n减载时调整下面电磁阀 SA上的针阀以改变导叶关闭速度顺时针减小导叶的\n关闭速度，逆时针增加关闭速度。\n导叶速度工厂设定随压缩机型号不同而不同\n压缩机型号  开启时间  关闭时间\nCE048-CE050     2-2 1/2 min      3/4-1min\nCE063-CE100        3-5 min        1-2 min\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_805d2b2da9844d40",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 32,
+      "chunk_id": "chunk_74517b698f134edf",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:guide_vane_closing_time",
+      "structured_payload_candidate": {
+        "parameter_name": "Guide Vane Closing Time",
+        "value": "1-2 min (CE063-CE100)",
+        "unit": "minutes",
+        "title": "Guide vane closing time factory setting",
+        "summary": "Factory-set guide vane closing time from full open to full close: 1-2 minutes for CE063-CE100."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  32\n图10-6 WS系列导叶开关位置\n●测量值\n调整能量控制导叶的开关速度可适合系统的要求。调整排油管上的针阀可控\n制排油速度，因而控制“导叶速度” 。针阀是位于压缩机润滑油分配盒中四通电磁\n阀的一部分。\n这些阀一般在工厂设定，从全关到全开需大约 3分钟，从全开到全关需用 1\n分钟（CE126 外） ，速度要慢以避免控制不稳定。\n●导叶速度调整\n流经导叶开启处的排油速度控制了能量控制导叶的开关速度。排油速度可通\n过润滑油盒内电磁阀 SA、SB上的针阀调整。\n用螺丝刀从左边打开润滑油盒上的圆形盖板以便调整。增载时调整上面电磁\n阀SB的针阀以改变导叶开启速度，顺时针减小导叶的开启速度，逆时针增加导叶\n开启速度。\n减载时调整下面电磁阀 SA上的针阀以改变导叶关闭速度顺时针减小导叶的\n关闭速度，逆时针增加关闭速度。\n导叶速度工厂设定随压缩机型号不同而不同\n压缩机型号  开启时间  关闭时间\nCE048-CE050     2-2 1/2 min      3/4-1min\nCE063-CE100        3-5 min        1-2 min\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_74517b698f134edf"
+      ],
+      "source_page_nos": [
+        32
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides factory-set guide vane closing times for a compressor range.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:guide_vane_closing_time for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:guide_vane_closing_time derived from chunk chunk_74517b698f134edf on page 32 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:guide_vane_closing_time",
+        "structured_payload": {
+          "parameter_name": "Guide Vane Closing Time",
+          "value": "1-2 min (CE063-CE100)",
+          "unit": "minutes",
+          "title": "Guide vane closing time factory setting",
+          "summary": "Factory-set guide vane closing time from full open to full close: 1-2 minutes for CE063-CE100."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  32\n图10-6 WS系列导叶开关位置\n●测量值\n调整能量控制导叶的开关速度可适合系统的要求。调整排油管上的针阀可控\n制排油速度，因而控制“导叶速度” 。针阀是位于压缩机润滑油分配盒中四通电磁\n阀的一部分。\n这些阀一般在工厂设定，从全关到全开需大约 3分钟，从全开到全关需用 1\n分钟（CE126 外） ，速度要慢以避免控制不稳定。\n●导叶速度调整\n流经导叶开启处的排油速度控制了能量控制导叶的开关速度。排油速度可通\n过润滑油盒内电磁阀 SA、SB上的针阀调整。\n用螺丝刀从左边打开润滑油盒上的圆形盖板以便调整。增载时调整上面电磁\n阀SB的针阀以改变导叶开启速度，顺时针减小导叶的开启速度，逆时针增加导叶\n开启速度。\n减载时调整下面电磁阀 SA上的针阀以改变导叶关闭速度顺时针减小导叶的\n关闭速度，逆时针增加关闭速度。\n导叶速度工厂设定随压缩机型号不同而不同\n压缩机型号  开启时间  关闭时间\nCE048-CE050     2-2 1/2 min      3/4-1min\nCE063-CE100        3-5 min        1-2 min\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_eec92b487e534f7c",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 36,
+      "chunk_id": "chunk_04b1db78f71445b3",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:hot_gas_bypass_setpoint",
+      "structured_payload_candidate": {
+        "parameter_name": "Hot Gas Bypass Setpoint",
+        "value": "40",
+        "unit": "% RLA",
+        "title": "Hot gas bypass setpoint",
+        "summary": "Hot gas bypass setpoint is 40% RLA."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  36\n图 12-3 油泵压缩部件\n油泵的压缩原理为内啮合转子油泵。结构特点：运动部件少，结构简单，体\n积小，压缩效率高，噪音小等。\n热气旁通系统\n标准的PHH和PJH热回收式冷水机组带有热气旁系统，用于当系统负载低于\n预定的压缩机最小能量时，将压缩机排气直接排到蒸发器中， PEH和PFH将作为备\n选项，可用于压缩机能量小于 10%的情况。\nMicrotech 控制屏用额定电流的百分比来指示卸载运行状态，当电流降到设\n定点，热气旁通电磁阀上电，热气旁通开始工作，热气旁通的引入给压缩机提供\n了一个稳定的制冷剂流量以防止制冷剂 在轻载下发生短路循环，同时它也防止了热回收操作过程中喘振。\n热气旁通的设定点为 40%RLA，见 IM616\n注意！\n在长期关机时，油泵停止加热时，油泵的各阀要关闭，当开机前加热\n时，要略打开回气。在长期运行时，要注意油泵内油位的变化，油位不可\n低于视油镜的三分之一。如果低于，要及时加油。油的颜色为无色透明，\n如果油变色或浑浊，则需要 McQuay 技术服务人员来确定是否要更换润滑\n油。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_04b1db78f71445b3"
+      ],
+      "source_page_nos": [
+        36
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies the hot gas bypass setpoint as a percentage of RLA.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:hot_gas_bypass_setpoint for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:hot_gas_bypass_setpoint derived from chunk chunk_04b1db78f71445b3 on page 36 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:hot_gas_bypass_setpoint",
+        "structured_payload": {
+          "parameter_name": "Hot Gas Bypass Setpoint",
+          "value": "40",
+          "unit": "% RLA",
+          "title": "Hot gas bypass setpoint",
+          "summary": "Hot gas bypass setpoint is 40% RLA."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  36\n图 12-3 油泵压缩部件\n油泵的压缩原理为内啮合转子油泵。结构特点：运动部件少，结构简单，体\n积小，压缩效率高，噪音小等。\n热气旁通系统\n标准的PHH和PJH热回收式冷水机组带有热气旁系统，用于当系统负载低于\n预定的压缩机最小能量时，将压缩机排气直接排到蒸发器中， PEH和PFH将作为备\n选项，可用于压缩机能量小于 10%的情况。\nMicrotech 控制屏用额定电流的百分比来指示卸载运行状态，当电流降到设\n定点，热气旁通电磁阀上电，热气旁通开始工作，热气旁通的引入给压缩机提供\n了一个稳定的制冷剂流量以防止制冷剂 在轻载下发生短路循环，同时它也防止了热回收操作过程中喘振。\n热气旁通的设定点为 40%RLA，见 IM616\n注意！\n在长期关机时，油泵停止加热时，油泵的各阀要关闭，当开机前加热\n时，要略打开回气。在长期运行时，要注意油泵内油位的变化，油位不可\n低于视油镜的三分之一。如果低于，要及时加油。油的颜色为无色透明，\n如果油变色或浑浊，则需要 McQuay 技术服务人员来确定是否要更换润滑\n油。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5d9f209636fcb274",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 42,
+      "chunk_id": "chunk_06e5b4e873464d2c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:motor_insulation_resistance_warning",
+      "structured_payload_candidate": {
+        "parameter_name": "Motor Insulation Resistance Warning",
+        "value": "5",
+        "unit": "MΩ",
+        "title": "Motor insulation resistance warning threshold",
+        "summary": "Motor insulation resistance reading of 5 MΩ or less indicates possible insulation failure."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  42 图14 制冷剂 R-134a 热力性质图\n电气系统\n电气系统维修除一般的要求如：保持触点清洁，连接牢固等，还有一些特殊\n要求如下：\n1、必须检查压缩机的当前运行电流，并与铭牌上的额定电流相比较，通常实际电\n流会低一些，因为铭牌上标的是满负荷情况下，同样检查所有的泵和风机马达电\n流值并与铭牌上的标识值相比较。\n2、检查时需确认油加热器正常工作，加热器为插入型，可根据电流表读数检查，\n不论控制屏是否上电，当压缩机不工作时，加热器必须带电，当压缩机起动时，\n加热器掉电。\n3、一个季度至少一次，所有的安全控制（除了压缩机过载）都必须动作一次并检\n查它们的设定值是否正确，随着元件的老化，控制点会发生漂移，必须对这种情\n况进行检测以便对控制器作一些调整或更换，水泵联锁和水流开关必须检查以确保触发时能断开控制回路。\n4、马达起动器触点应每季度检查并保持干净，紧固所有的接线端子。\n5、 压缩机马达对地绝缘电阻半年检查一次并作好记录， 记录指示了绝缘破坏情况。\n如果读数为 5MΩ或以下表明绝缘层可能失效，必须作进一步检查。\n6、离心压缩机的转动方向应以机体上靠近视镜的的箭头方向相一致。如果操作者怀疑电源接线有误（如反相） ，并想进行调整，请找 McQuay服务部。\n注意！不要在电机处于真空环境时测量电阻，否则将造成严重后果\n清洁和维护\n机组发生故障通常是由于系统太脏造成。所以必要的日常维护是不可缺少的。\n系统太脏的原因是：\n1、 空气处理机中的永久性污垢或可清洗过滤器中的污垢清洗， 必须按照使用手册\n中的说明进行清洗；一次性过滤器必须预以更换，清洁频率随机组的具体运行\n情况而定。\n2、 每次对机组进行检查时，应清洗冷冻水系统、油冷却器管道和冷却水系统中的\n过滤器。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_06e5b4e873464d2c"
+      ],
+      "source_page_nos": [
+        42
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Defines a motor insulation resistance warning threshold for maintenance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:motor_insulation_resistance_warning for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:motor_insulation_resistance_warning derived from chunk chunk_06e5b4e873464d2c on page 42 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:motor_insulation_resistance_warning",
+        "structured_payload": {
+          "parameter_name": "Motor Insulation Resistance Warning",
+          "value": "5",
+          "unit": "MΩ",
+          "title": "Motor insulation resistance warning threshold",
+          "summary": "Motor insulation resistance reading of 5 MΩ or less indicates possible insulation failure."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  42 图14 制冷剂 R-134a 热力性质图\n电气系统\n电气系统维修除一般的要求如：保持触点清洁，连接牢固等，还有一些特殊\n要求如下：\n1、必须检查压缩机的当前运行电流，并与铭牌上的额定电流相比较，通常实际电\n流会低一些，因为铭牌上标的是满负荷情况下，同样检查所有的泵和风机马达电\n流值并与铭牌上的标识值相比较。\n2、检查时需确认油加热器正常工作，加热器为插入型，可根据电流表读数检查，\n不论控制屏是否上电，当压缩机不工作时，加热器必须带电，当压缩机起动时，\n加热器掉电。\n3、一个季度至少一次，所有的安全控制（除了压缩机过载）都必须动作一次并检\n查它们的设定值是否正确，随着元件的老化，控制点会发生漂移，必须对这种情\n况进行检测以便对控制器作一些调整或更换，水泵联锁和水流开关必须检查以确保触发时能断开控制回路。\n4、马达起动器触点应每季度检查并保持干净，紧固所有的接线端子。\n5、 压缩机马达对地绝缘电阻半年检查一次并作好记录， 记录指示了绝缘破坏情况。\n如果读数为 5MΩ或以下表明绝缘层可能失效，必须作进一步检查。\n6、离心压缩机的转动方向应以机体上靠近视镜的的箭头方向相一致。如果操作者怀疑电源接线有误（如反相） ，并想进行调整，请找 McQuay服务部。\n注意！不要在电机处于真空环境时测量电阻，否则将造成严重后果\n清洁和维护\n机组发生故障通常是由于系统太脏造成。所以必要的日常维护是不可缺少的。\n系统太脏的原因是：\n1、 空气处理机中的永久性污垢或可清洗过滤器中的污垢清洗， 必须按照使用手册\n中的说明进行清洗；一次性过滤器必须预以更换，清洁频率随机组的具体运行\n情况而定。\n2、 每次对机组进行检查时，应清洗冷冻水系统、油冷却器管道和冷却水系统中的\n过滤器。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9b9500ba22720abc",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 43,
+      "chunk_id": "chunk_b020d9e32e364b7a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:new_motor_insulation_resistance",
+      "structured_payload_candidate": {
+        "parameter_name": "New Motor Insulation Resistance",
+        "value": "100",
+        "unit": "MΩ",
+        "title": "New motor insulation resistance",
+        "summary": "New motor winding insulation resistance to ground is 100 MΩ."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  43  季节维护\n在长时间停机之前和再起动之前，下列的维护必须完成。\n 一年一次的停机\n当机组安装在环境温度低于冰点温度的区域，冷却水和冷冻水须与系统脱开，并\n排空容器中所有的水。最好向冷凝器和蒸发气中吹送干燥的空气有助于机组内水\n分的排空，也可以打开容器水盖，自然蒸发。冷凝器和蒸发器不能自动排水，如\n水留在管道或容器中，在低温下结冰会使管道或容器破裂。\n当然，避免结冰的最可靠的办法是强制水循环，以防止结冰。\n1、 采取措施以防止供水管上的截止阀被不小心打开。\n2、 如果冷却水塔使用，水泵就会暴露于冰点温度下，确定打开水泵的排水塞将水\n排放干净，确保无残留水。\n3、 断开压缩机电路的开关，取下保险丝。 如果变压器需要用于提供控制电压，必\n须保证油加热器的供电。 将手动停止／自动开关（SW1 ）设置到停止位置。为\n防止意外启动的可能，将 MicroTech 控制器左侧的故障继电器取下。\n4、 定期检查容器的腐蚀情况，去锈涂漆。\n5、 对机组使用的冷却塔进行清洗，保证冷凝水的清洁。麦克维尔对于因使用未经\n处理或处理不当的循环水而引起的任何问题概不负责。\n6、 冷凝换热管每年都应拆开端盖进行检查，必要时进行清洗。\n 一年一次的开机\n如果机组的启动柜已经损坏，这时供电会导致危险产生。对机器设备不熟悉的人开机，就会发生开机事故，所以开机时，要对机组进行仔细检查。\n所有电机线圈的接地电阻需要检查，每半年对接地电阻检查值进行详细记录，因\n为电阻值将反映线圈绝缘层的老化情况。 新机组的电机接线与地间的电阻值为 100\nMΩ。\n一旦读数变化很大或平均读数值小于 50 MΩ，在机组启动之前需要打开电机端盖\n检查电机线圈。 当读数小于 5 MΩ时， 将预示电机即将损坏， 电机需要更换和维修。\n在故障发生之前更换电机能够节省时间，同时避免了因电机烧毁而造成系统清洗\n的工作。\n1、 控制回路需要长期通电。如果控制回路断电，油温将会降低，对油加热器进行\n24小时通电，以便使油与制冷剂分离。\n注意：对油进行加热时，应打开油泵顶盖上的回气截止阀，避免油泵压力过高，\n有利于油和制冷剂的分离。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_b020d9e32e364b7a"
+      ],
+      "source_page_nos": [
+        43
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "States new motor insulation resistance value for reference.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:new_motor_insulation_resistance for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:new_motor_insulation_resistance derived from chunk chunk_b020d9e32e364b7a on page 43 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:new_motor_insulation_resistance",
+        "structured_payload": {
+          "parameter_name": "New Motor Insulation Resistance",
+          "value": "100",
+          "unit": "MΩ",
+          "title": "New motor insulation resistance",
+          "summary": "New motor winding insulation resistance to ground is 100 MΩ."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  43  季节维护\n在长时间停机之前和再起动之前，下列的维护必须完成。\n 一年一次的停机\n当机组安装在环境温度低于冰点温度的区域，冷却水和冷冻水须与系统脱开，并\n排空容器中所有的水。最好向冷凝器和蒸发气中吹送干燥的空气有助于机组内水\n分的排空，也可以打开容器水盖，自然蒸发。冷凝器和蒸发器不能自动排水，如\n水留在管道或容器中，在低温下结冰会使管道或容器破裂。\n当然，避免结冰的最可靠的办法是强制水循环，以防止结冰。\n1、 采取措施以防止供水管上的截止阀被不小心打开。\n2、 如果冷却水塔使用，水泵就会暴露于冰点温度下，确定打开水泵的排水塞将水\n排放干净，确保无残留水。\n3、 断开压缩机电路的开关，取下保险丝。 如果变压器需要用于提供控制电压，必\n须保证油加热器的供电。 将手动停止／自动开关（SW1 ）设置到停止位置。为\n防止意外启动的可能，将 MicroTech 控制器左侧的故障继电器取下。\n4、 定期检查容器的腐蚀情况，去锈涂漆。\n5、 对机组使用的冷却塔进行清洗，保证冷凝水的清洁。麦克维尔对于因使用未经\n处理或处理不当的循环水而引起的任何问题概不负责。\n6、 冷凝换热管每年都应拆开端盖进行检查，必要时进行清洗。\n 一年一次的开机\n如果机组的启动柜已经损坏，这时供电会导致危险产生。对机器设备不熟悉的人开机，就会发生开机事故，所以开机时，要对机组进行仔细检查。\n所有电机线圈的接地电阻需要检查，每半年对接地电阻检查值进行详细记录，因\n为电阻值将反映线圈绝缘层的老化情况。 新机组的电机接线与地间的电阻值为 100\nMΩ。\n一旦读数变化很大或平均读数值小于 50 MΩ，在机组启动之前需要打开电机端盖\n检查电机线圈。 当读数小于 5 MΩ时， 将预示电机即将损坏， 电机需要更换和维修。\n在故障发生之前更换电机能够节省时间，同时避免了因电机烧毁而造成系统清洗\n的工作。\n1、 控制回路需要长期通电。如果控制回路断电，油温将会降低，对油加热器进行\n24小时通电，以便使油与制冷剂分离。\n注意：对油进行加热时，应打开油泵顶盖上的回气截止阀，避免油泵压力过高，\n有利于油和制冷剂的分离。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_22351154ffffbddb",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 43,
+      "chunk_id": "chunk_b020d9e32e364b7a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:motor_insulation_resistance_min_startup",
+      "structured_payload_candidate": {
+        "parameter_name": "Motor Insulation Resistance Min Startup",
+        "value": "50",
+        "unit": "MΩ",
+        "title": "Motor insulation resistance minimum before startup",
+        "summary": "If average insulation resistance is less than 50 MΩ, inspect motor windings before startup."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  43  季节维护\n在长时间停机之前和再起动之前，下列的维护必须完成。\n 一年一次的停机\n当机组安装在环境温度低于冰点温度的区域，冷却水和冷冻水须与系统脱开，并\n排空容器中所有的水。最好向冷凝器和蒸发气中吹送干燥的空气有助于机组内水\n分的排空，也可以打开容器水盖，自然蒸发。冷凝器和蒸发器不能自动排水，如\n水留在管道或容器中，在低温下结冰会使管道或容器破裂。\n当然，避免结冰的最可靠的办法是强制水循环，以防止结冰。\n1、 采取措施以防止供水管上的截止阀被不小心打开。\n2、 如果冷却水塔使用，水泵就会暴露于冰点温度下，确定打开水泵的排水塞将水\n排放干净，确保无残留水。\n3、 断开压缩机电路的开关，取下保险丝。 如果变压器需要用于提供控制电压，必\n须保证油加热器的供电。 将手动停止／自动开关（SW1 ）设置到停止位置。为\n防止意外启动的可能，将 MicroTech 控制器左侧的故障继电器取下。\n4、 定期检查容器的腐蚀情况，去锈涂漆。\n5、 对机组使用的冷却塔进行清洗，保证冷凝水的清洁。麦克维尔对于因使用未经\n处理或处理不当的循环水而引起的任何问题概不负责。\n6、 冷凝换热管每年都应拆开端盖进行检查，必要时进行清洗。\n 一年一次的开机\n如果机组的启动柜已经损坏，这时供电会导致危险产生。对机器设备不熟悉的人开机，就会发生开机事故，所以开机时，要对机组进行仔细检查。\n所有电机线圈的接地电阻需要检查，每半年对接地电阻检查值进行详细记录，因\n为电阻值将反映线圈绝缘层的老化情况。 新机组的电机接线与地间的电阻值为 100\nMΩ。\n一旦读数变化很大或平均读数值小于 50 MΩ，在机组启动之前需要打开电机端盖\n检查电机线圈。 当读数小于 5 MΩ时， 将预示电机即将损坏， 电机需要更换和维修。\n在故障发生之前更换电机能够节省时间，同时避免了因电机烧毁而造成系统清洗\n的工作。\n1、 控制回路需要长期通电。如果控制回路断电，油温将会降低，对油加热器进行\n24小时通电，以便使油与制冷剂分离。\n注意：对油进行加热时，应打开油泵顶盖上的回气截止阀，避免油泵压力过高，\n有利于油和制冷剂的分离。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_b020d9e32e364b7a"
+      ],
+      "source_page_nos": [
+        43
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies a minimum insulation resistance before startup to trigger inspection.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:motor_insulation_resistance_min_startup for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:motor_insulation_resistance_min_startup derived from chunk chunk_b020d9e32e364b7a on page 43 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:motor_insulation_resistance_min_startup",
+        "structured_payload": {
+          "parameter_name": "Motor Insulation Resistance Min Startup",
+          "value": "50",
+          "unit": "MΩ",
+          "title": "Motor insulation resistance minimum before startup",
+          "summary": "If average insulation resistance is less than 50 MΩ, inspect motor windings before startup."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  43  季节维护\n在长时间停机之前和再起动之前，下列的维护必须完成。\n 一年一次的停机\n当机组安装在环境温度低于冰点温度的区域，冷却水和冷冻水须与系统脱开，并\n排空容器中所有的水。最好向冷凝器和蒸发气中吹送干燥的空气有助于机组内水\n分的排空，也可以打开容器水盖，自然蒸发。冷凝器和蒸发器不能自动排水，如\n水留在管道或容器中，在低温下结冰会使管道或容器破裂。\n当然，避免结冰的最可靠的办法是强制水循环，以防止结冰。\n1、 采取措施以防止供水管上的截止阀被不小心打开。\n2、 如果冷却水塔使用，水泵就会暴露于冰点温度下，确定打开水泵的排水塞将水\n排放干净，确保无残留水。\n3、 断开压缩机电路的开关，取下保险丝。 如果变压器需要用于提供控制电压，必\n须保证油加热器的供电。 将手动停止／自动开关（SW1 ）设置到停止位置。为\n防止意外启动的可能，将 MicroTech 控制器左侧的故障继电器取下。\n4、 定期检查容器的腐蚀情况，去锈涂漆。\n5、 对机组使用的冷却塔进行清洗，保证冷凝水的清洁。麦克维尔对于因使用未经\n处理或处理不当的循环水而引起的任何问题概不负责。\n6、 冷凝换热管每年都应拆开端盖进行检查，必要时进行清洗。\n 一年一次的开机\n如果机组的启动柜已经损坏，这时供电会导致危险产生。对机器设备不熟悉的人开机，就会发生开机事故，所以开机时，要对机组进行仔细检查。\n所有电机线圈的接地电阻需要检查，每半年对接地电阻检查值进行详细记录，因\n为电阻值将反映线圈绝缘层的老化情况。 新机组的电机接线与地间的电阻值为 100\nMΩ。\n一旦读数变化很大或平均读数值小于 50 MΩ，在机组启动之前需要打开电机端盖\n检查电机线圈。 当读数小于 5 MΩ时， 将预示电机即将损坏， 电机需要更换和维修。\n在故障发生之前更换电机能够节省时间，同时避免了因电机烧毁而造成系统清洗\n的工作。\n1、 控制回路需要长期通电。如果控制回路断电，油温将会降低，对油加热器进行\n24小时通电，以便使油与制冷剂分离。\n注意：对油进行加热时，应打开油泵顶盖上的回气截止阀，避免油泵压力过高，\n有利于油和制冷剂的分离。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6e31002ff64ec701",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 44,
+      "chunk_id": "chunk_1324c7ba4f314a3f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:pumpdown_stop_pressure",
+      "structured_payload_candidate": {
+        "parameter_name": "Pumpdown Stop Pressure",
+        "value": "20",
+        "unit": "PSI",
+        "title": "Pumpdown stop pressure",
+        "summary": "MicroTech stops pumpdown at approximately 20 PSI."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  44 2、 检查并紧固电气接头。\n3、 如果在停机季节冷却塔水泵排水塞曾经拆下，则需要予以更换。\n4、 在主供电开关线路上供水安装保险（如果曾经拆下的话） 。\n5、 连接水管路，开始进行供水，检漏。\n系统检修\n 压力安全阀更换\n目前机组冷凝器都采用双安全阀压力保护。就是在一组安全阀系统中利用两个安\n全阀。一个工作，另一个作为备用。这样就减轻了在更换中的复杂程度。双安全阀主要分为两种。使用方法请参看图 6-1和图6-2。对蒸发器的安全阀而言，则应\n在使蒸发器内无制冷剂的情况下再行更换。\n 抽储（PUMPDOWN）\n如果需要进行抽储，需要谨慎操作以防止冷冻水系统结冰，胀裂管路。在抽储过程中需要确保充足的水量通过蒸发器和冷凝器，同时关闭所有液态管路上的截止阀。在所有截止阀关闭，水流建立以后，启动压缩机。将 MicroTech 设置为手动\n模式，在抽储过程中，导叶必须打开以避免喘振或其他异常情况。在大约 20PSI\n时，MicroTech 停止抽储操作。机组在抽储操作停止之前当有轻微的喘振发生时，\n应立刻关停压缩机。并将制冷剂全部抽储到冷凝器或贮液器中。\n需要使用压力调节阀以建立系统压力时，同样不能超过上面所给出的测试压力。\n当达到测试压力，气体循环将被断开。\n 试压\n如果机组在运输的过程中没有出现故障，通常不需进行试压。可通过检查外部的管路连接处是否有泄漏或是否有部件松动来检查漏点，进行紧固，检查无泄露即\n可。如果机组严重缺少制冷剂而不能开机，则应进行机组的检漏试压，以便确定\n泄漏部位。\n 检漏\n当机组放生泄露并且漏点难于查明时，则需要对机组进行检漏试验。首先向系统充注足够的制冷剂使系统压力达到 10PSI（69kPa） ，然后充注干燥氮气使最大压力注意：\n开机前必须再次检查系统管路和油路上的阀门是否打开，确认全部打开\n后才能启动机组。否则会产生严重后果。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_1324c7ba4f314a3f"
+      ],
+      "source_page_nos": [
+        44
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides the pumpdown stop pressure setting for MicroTech.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:pumpdown_stop_pressure for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:pumpdown_stop_pressure derived from chunk chunk_1324c7ba4f314a3f on page 44 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:pumpdown_stop_pressure",
+        "structured_payload": {
+          "parameter_name": "Pumpdown Stop Pressure",
+          "value": "20",
+          "unit": "PSI",
+          "title": "Pumpdown stop pressure",
+          "summary": "MicroTech stops pumpdown at approximately 20 PSI."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  44 2、 检查并紧固电气接头。\n3、 如果在停机季节冷却塔水泵排水塞曾经拆下，则需要予以更换。\n4、 在主供电开关线路上供水安装保险（如果曾经拆下的话） 。\n5、 连接水管路，开始进行供水，检漏。\n系统检修\n 压力安全阀更换\n目前机组冷凝器都采用双安全阀压力保护。就是在一组安全阀系统中利用两个安\n全阀。一个工作，另一个作为备用。这样就减轻了在更换中的复杂程度。双安全阀主要分为两种。使用方法请参看图 6-1和图6-2。对蒸发器的安全阀而言，则应\n在使蒸发器内无制冷剂的情况下再行更换。\n 抽储（PUMPDOWN）\n如果需要进行抽储，需要谨慎操作以防止冷冻水系统结冰，胀裂管路。在抽储过程中需要确保充足的水量通过蒸发器和冷凝器，同时关闭所有液态管路上的截止阀。在所有截止阀关闭，水流建立以后，启动压缩机。将 MicroTech 设置为手动\n模式，在抽储过程中，导叶必须打开以避免喘振或其他异常情况。在大约 20PSI\n时，MicroTech 停止抽储操作。机组在抽储操作停止之前当有轻微的喘振发生时，\n应立刻关停压缩机。并将制冷剂全部抽储到冷凝器或贮液器中。\n需要使用压力调节阀以建立系统压力时，同样不能超过上面所给出的测试压力。\n当达到测试压力，气体循环将被断开。\n 试压\n如果机组在运输的过程中没有出现故障，通常不需进行试压。可通过检查外部的管路连接处是否有泄漏或是否有部件松动来检查漏点，进行紧固，检查无泄露即\n可。如果机组严重缺少制冷剂而不能开机，则应进行机组的检漏试压，以便确定\n泄漏部位。\n 检漏\n当机组放生泄露并且漏点难于查明时，则需要对机组进行检漏试验。首先向系统充注足够的制冷剂使系统压力达到 10PSI（69kPa） ，然后充注干燥氮气使最大压力注意：\n开机前必须再次检查系统管路和油路上的阀门是否打开，确认全部打开\n后才能启动机组。否则会产生严重后果。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1ae1631a3b62c6b8",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 45,
+      "chunk_id": "chunk_37a5e6447cbf474c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:vacuum_pump_capability",
+      "structured_payload_candidate": {
+        "parameter_name": "Vacuum Pump Capability",
+        "value": "1000",
+        "unit": "microns Hg",
+        "title": "Vacuum pump capability",
+        "summary": "Vacuum pump must be capable of achieving 1000 microns Hg."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  45 为125PSI（860kPa） ，然后用电子检漏仪进行检测，卤素检漏仪不能检测 R-134a。\n在抽出或者注入制冷剂时，系统必须有水流循环。\n注意！切勿使用氧气来升高压力，以免发生爆炸。\n需要使用压力调节阀以建立系统压力时，同样不能超过上面所给出的测试压力。\n当达到测试压力时，应切断供气管路。\n如果在焊缝或钎焊处存在泄漏或需要更换垫圈时，在处理前应泄掉系统的测试压\n力。铜管连接处的需要进行钎焊。\n检修完毕后，需要按照下面的步骤对系统进行抽真空处理。\n 抽真空\n通过检漏，确定没有泄漏点后，需要使用真空泵对机组进行抽真空。真空泵的抽\n空能力要能够达到 1000微米汞柱。\n将水银压力计、电子或其他形式的微米压力表连接到远离真空泵的管路上。如果\n读数低于 1000微米，需要使用电子或其他形式的微米压力表.\n如果真空泵不能获得 1毫米真空度，可以采用 3倍抽空方式。系统第一次抽空到\n大约29英寸汞柱，然后将干燥的氮气充入系统，将系统的压力增加到 0磅。\n然后将系统再一次抽空至大约 29英寸汞柱，这样的操作重复 3次。第一次抽真空\n能够移走 90%不凝性气体，第二次移走第一次抽空剩下不凝性气体的 90%，第三次\n抽空后，系统只剩下 0.1-1%的不凝性气体。\n 制冷剂充注\nPE和WS系列机组出厂前已经完成检漏，并已充注了足量的制冷剂。如因运输过\n程中的损坏而需补充制冷剂 R134a，可在漏点维修或抽空后进行冲注。\na、 将制冷剂储罐与主供液管处的截止阀接头口用连接软管连接， 排空截止阀与储\n罐连接管道中的空气，然后将管路中的阀打开至中间位置，进行冲注。\nb、 在冲注前要开启冷冻水泵和冷却水泵使水流过蒸发器和冷凝器。 （将会需要手\n动关闭冷却水泵启动器。 ）\nc、 如果系统处于真空状态，将制冷剂储罐竖立放置，连接处在储罐上方，然后打\n开储罐充注制冷剂，制冷剂的饱和温度应在冰点温度以上，如果压力平衡，难\n以注入，可稍微对储罐进行加热，有利于继续冲注。\nd、 系统的气体压力大于或等于冰点温度， 将储罐倒置使储罐的温度高于冷凝器温\n度。保持储罐的位置，将阀打开，水泵开启，液态冷媒流入冷凝器中。\ne、 当有75%的制冷剂已充注到冷凝器时，重新连接制冷剂储罐的充注管到蒸发器\n顶端的维修截止阀。排空连接管，将制冷剂储罐竖立放置，连接处在储罐上方，\n将维修阀打开。\n切记：在这一点中充注位置断开，在完成制冷剂充注前要重新检查。这个时候压\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_37a5e6447cbf474c"
+      ],
+      "source_page_nos": [
+        45
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies required vacuum pump capability for evacuation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:vacuum_pump_capability for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:vacuum_pump_capability derived from chunk chunk_37a5e6447cbf474c on page 45 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:vacuum_pump_capability",
+        "structured_payload": {
+          "parameter_name": "Vacuum Pump Capability",
+          "value": "1000",
+          "unit": "microns Hg",
+          "title": "Vacuum pump capability",
+          "summary": "Vacuum pump must be capable of achieving 1000 microns Hg."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  45 为125PSI（860kPa） ，然后用电子检漏仪进行检测，卤素检漏仪不能检测 R-134a。\n在抽出或者注入制冷剂时，系统必须有水流循环。\n注意！切勿使用氧气来升高压力，以免发生爆炸。\n需要使用压力调节阀以建立系统压力时，同样不能超过上面所给出的测试压力。\n当达到测试压力时，应切断供气管路。\n如果在焊缝或钎焊处存在泄漏或需要更换垫圈时，在处理前应泄掉系统的测试压\n力。铜管连接处的需要进行钎焊。\n检修完毕后，需要按照下面的步骤对系统进行抽真空处理。\n 抽真空\n通过检漏，确定没有泄漏点后，需要使用真空泵对机组进行抽真空。真空泵的抽\n空能力要能够达到 1000微米汞柱。\n将水银压力计、电子或其他形式的微米压力表连接到远离真空泵的管路上。如果\n读数低于 1000微米，需要使用电子或其他形式的微米压力表.\n如果真空泵不能获得 1毫米真空度，可以采用 3倍抽空方式。系统第一次抽空到\n大约29英寸汞柱，然后将干燥的氮气充入系统，将系统的压力增加到 0磅。\n然后将系统再一次抽空至大约 29英寸汞柱，这样的操作重复 3次。第一次抽真空\n能够移走 90%不凝性气体，第二次移走第一次抽空剩下不凝性气体的 90%，第三次\n抽空后，系统只剩下 0.1-1%的不凝性气体。\n 制冷剂充注\nPE和WS系列机组出厂前已经完成检漏，并已充注了足量的制冷剂。如因运输过\n程中的损坏而需补充制冷剂 R134a，可在漏点维修或抽空后进行冲注。\na、 将制冷剂储罐与主供液管处的截止阀接头口用连接软管连接， 排空截止阀与储\n罐连接管道中的空气，然后将管路中的阀打开至中间位置，进行冲注。\nb、 在冲注前要开启冷冻水泵和冷却水泵使水流过蒸发器和冷凝器。 （将会需要手\n动关闭冷却水泵启动器。 ）\nc、 如果系统处于真空状态，将制冷剂储罐竖立放置，连接处在储罐上方，然后打\n开储罐充注制冷剂，制冷剂的饱和温度应在冰点温度以上，如果压力平衡，难\n以注入，可稍微对储罐进行加热，有利于继续冲注。\nd、 系统的气体压力大于或等于冰点温度， 将储罐倒置使储罐的温度高于冷凝器温\n度。保持储罐的位置，将阀打开，水泵开启，液态冷媒流入冷凝器中。\ne、 当有75%的制冷剂已充注到冷凝器时，重新连接制冷剂储罐的充注管到蒸发器\n顶端的维修截止阀。排空连接管，将制冷剂储罐竖立放置，连接处在储罐上方，\n将维修阀打开。\n切记：在这一点中充注位置断开，在完成制冷剂充注前要重新检查。这个时候压\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_7823e24b5ea79d01",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_737cd358f62a49d5",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh063",
+      "structured_payload_candidate": {
+        "parameter_name": "Oil Cooler Max Water Flow",
+        "value": "1.48",
+        "unit": "m³/h",
+        "pressure_drop": "5.2 kPa",
+        "title": "Oil cooler water flow and pressure drop for PEH063",
+        "summary": "PEH063 oil cooler max water flow 1.48 m³/h at 30°C inlet, pressure drop 5.2 kPa."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  11 出水两端，这样水泵工作时将其全部压差加在油冷却系统上，这种方法在大多数\n系统中使用。但有一些安装要求油冷却水管跨接在蒸发器的进、出水管上，此时通过蒸发器的水压降大于油冷却器冷却水路的水压降来提供水能，此冷却水路压\n降应包括所有组件和管路中的损失。\n图4-2机组油路冷却流程图（外部水源-自来水）\n如果采用自来水作为水源，水应排入一个开式的排水装置中，以防止因虹吸\n作用将水又吸入油冷却器中，或者排入冷却塔的回水管中。因为是外部水源所以要保证水路的清洁。并且排入冷却塔的回水管口要高于冷却塔的最高水位，如果\n低于水位线时，同样会发生虹吸现象。\n表： 油冷却器最大需水量及其压降\n型    号   进水温度为 30°C时的最大需水量（m 3/h）  ①水压降(KPa)\nPEH063 1.48 5.2\nPEH079 1.82 5.2\nPEH087 1.82 5.2\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_737cd358f62a49d5"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides oil cooler maximum water flow and pressure drop for a specific model.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh063 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh063 derived from chunk chunk_737cd358f62a49d5 on page 11 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh063",
+        "structured_payload": {
+          "parameter_name": "Oil Cooler Max Water Flow",
+          "value": "1.48",
+          "unit": "m³/h",
+          "pressure_drop": "5.2 kPa",
+          "title": "Oil cooler water flow and pressure drop for PEH063",
+          "summary": "PEH063 oil cooler max water flow 1.48 m³/h at 30°C inlet, pressure drop 5.2 kPa."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  11 出水两端，这样水泵工作时将其全部压差加在油冷却系统上，这种方法在大多数\n系统中使用。但有一些安装要求油冷却水管跨接在蒸发器的进、出水管上，此时通过蒸发器的水压降大于油冷却器冷却水路的水压降来提供水能，此冷却水路压\n降应包括所有组件和管路中的损失。\n图4-2机组油路冷却流程图（外部水源-自来水）\n如果采用自来水作为水源，水应排入一个开式的排水装置中，以防止因虹吸\n作用将水又吸入油冷却器中，或者排入冷却塔的回水管中。因为是外部水源所以要保证水路的清洁。并且排入冷却塔的回水管口要高于冷却塔的最高水位，如果\n低于水位线时，同样会发生虹吸现象。\n表： 油冷却器最大需水量及其压降\n型    号   进水温度为 30°C时的最大需水量（m 3/h）  ①水压降(KPa)\nPEH063 1.48 5.2\nPEH079 1.82 5.2\nPEH087 1.82 5.2\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_15c80d62e5ad138a",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_737cd358f62a49d5",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh079",
+      "structured_payload_candidate": {
+        "parameter_name": "Oil Cooler Max Water Flow",
+        "value": "1.82",
+        "unit": "m³/h",
+        "pressure_drop": "5.2 kPa",
+        "title": "Oil cooler water flow and pressure drop for PEH079",
+        "summary": "PEH079 oil cooler max water flow 1.82 m³/h at 30°C inlet, pressure drop 5.2 kPa."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  11 出水两端，这样水泵工作时将其全部压差加在油冷却系统上，这种方法在大多数\n系统中使用。但有一些安装要求油冷却水管跨接在蒸发器的进、出水管上，此时通过蒸发器的水压降大于油冷却器冷却水路的水压降来提供水能，此冷却水路压\n降应包括所有组件和管路中的损失。\n图4-2机组油路冷却流程图（外部水源-自来水）\n如果采用自来水作为水源，水应排入一个开式的排水装置中，以防止因虹吸\n作用将水又吸入油冷却器中，或者排入冷却塔的回水管中。因为是外部水源所以要保证水路的清洁。并且排入冷却塔的回水管口要高于冷却塔的最高水位，如果\n低于水位线时，同样会发生虹吸现象。\n表： 油冷却器最大需水量及其压降\n型    号   进水温度为 30°C时的最大需水量（m 3/h）  ①水压降(KPa)\nPEH063 1.48 5.2\nPEH079 1.82 5.2\nPEH087 1.82 5.2\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_737cd358f62a49d5"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides oil cooler water flow and pressure drop data for PEH079.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh079 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh079 derived from chunk chunk_737cd358f62a49d5 on page 11 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh079",
+        "structured_payload": {
+          "parameter_name": "Oil Cooler Max Water Flow",
+          "value": "1.82",
+          "unit": "m³/h",
+          "pressure_drop": "5.2 kPa",
+          "title": "Oil cooler water flow and pressure drop for PEH079",
+          "summary": "PEH079 oil cooler max water flow 1.82 m³/h at 30°C inlet, pressure drop 5.2 kPa."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  11 出水两端，这样水泵工作时将其全部压差加在油冷却系统上，这种方法在大多数\n系统中使用。但有一些安装要求油冷却水管跨接在蒸发器的进、出水管上，此时通过蒸发器的水压降大于油冷却器冷却水路的水压降来提供水能，此冷却水路压\n降应包括所有组件和管路中的损失。\n图4-2机组油路冷却流程图（外部水源-自来水）\n如果采用自来水作为水源，水应排入一个开式的排水装置中，以防止因虹吸\n作用将水又吸入油冷却器中，或者排入冷却塔的回水管中。因为是外部水源所以要保证水路的清洁。并且排入冷却塔的回水管口要高于冷却塔的最高水位，如果\n低于水位线时，同样会发生虹吸现象。\n表： 油冷却器最大需水量及其压降\n型    号   进水温度为 30°C时的最大需水量（m 3/h）  ①水压降(KPa)\nPEH063 1.48 5.2\nPEH079 1.82 5.2\nPEH087 1.82 5.2\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_87b28f9c8d3b3482",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 11,
+      "chunk_id": "chunk_737cd358f62a49d5",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh087",
+      "structured_payload_candidate": {
+        "parameter_name": "Oil Cooler Max Water Flow",
+        "value": "1.82",
+        "unit": "m³/h",
+        "pressure_drop": "5.2 kPa",
+        "title": "Oil cooler water flow and pressure drop for PEH087",
+        "summary": "PEH087 oil cooler max water flow 1.82 m³/h at 30°C inlet, pressure drop 5.2 kPa."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  11 出水两端，这样水泵工作时将其全部压差加在油冷却系统上，这种方法在大多数\n系统中使用。但有一些安装要求油冷却水管跨接在蒸发器的进、出水管上，此时通过蒸发器的水压降大于油冷却器冷却水路的水压降来提供水能，此冷却水路压\n降应包括所有组件和管路中的损失。\n图4-2机组油路冷却流程图（外部水源-自来水）\n如果采用自来水作为水源，水应排入一个开式的排水装置中，以防止因虹吸\n作用将水又吸入油冷却器中，或者排入冷却塔的回水管中。因为是外部水源所以要保证水路的清洁。并且排入冷却塔的回水管口要高于冷却塔的最高水位，如果\n低于水位线时，同样会发生虹吸现象。\n表： 油冷却器最大需水量及其压降\n型    号   进水温度为 30°C时的最大需水量（m 3/h）  ①水压降(KPa)\nPEH063 1.48 5.2\nPEH079 1.82 5.2\nPEH087 1.82 5.2\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_737cd358f62a49d5"
+      ],
+      "source_page_nos": [
+        11
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides oil cooler water flow and pressure drop data for PEH087.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh087 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh087 derived from chunk chunk_737cd358f62a49d5 on page 11 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh087",
+        "structured_payload": {
+          "parameter_name": "Oil Cooler Max Water Flow",
+          "value": "1.82",
+          "unit": "m³/h",
+          "pressure_drop": "5.2 kPa",
+          "title": "Oil cooler water flow and pressure drop for PEH087",
+          "summary": "PEH087 oil cooler max water flow 1.82 m³/h at 30°C inlet, pressure drop 5.2 kPa."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  11 出水两端，这样水泵工作时将其全部压差加在油冷却系统上，这种方法在大多数\n系统中使用。但有一些安装要求油冷却水管跨接在蒸发器的进、出水管上，此时通过蒸发器的水压降大于油冷却器冷却水路的水压降来提供水能，此冷却水路压\n降应包括所有组件和管路中的损失。\n图4-2机组油路冷却流程图（外部水源-自来水）\n如果采用自来水作为水源，水应排入一个开式的排水装置中，以防止因虹吸\n作用将水又吸入油冷却器中，或者排入冷却塔的回水管中。因为是外部水源所以要保证水路的清洁。并且排入冷却塔的回水管口要高于冷却塔的最高水位，如果\n低于水位线时，同样会发生虹吸现象。\n表： 油冷却器最大需水量及其压降\n型    号   进水温度为 30°C时的最大需水量（m 3/h）  ①水压降(KPa)\nPEH063 1.48 5.2\nPEH079 1.82 5.2\nPEH087 1.82 5.2\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_be8132b2464b7875",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_12cbad1339d54417",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh100",
+      "structured_payload_candidate": {
+        "parameter_name": "Oil Cooler Max Water Flow",
+        "value": "2.73",
+        "unit": "m³/h",
+        "pressure_drop": "5.0 kPa",
+        "title": "Oil cooler water flow and pressure drop for PEH100",
+        "summary": "PEH100 oil cooler max water flow 2.73 m³/h at 30°C inlet, pressure drop 5.0 kPa."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  12 PEH100 2.73 5.0\nPEH126 4.55 10.0\n注：①为通过 1寸过滤器、电磁阀、水量调节阀和油冷却器的水压降。\n图5-1 WS 系列油冷结构\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_12cbad1339d54417"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides oil cooler water flow and pressure drop data for PEH100.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh100 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh100 derived from chunk chunk_12cbad1339d54417 on page 12 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh100",
+        "structured_payload": {
+          "parameter_name": "Oil Cooler Max Water Flow",
+          "value": "2.73",
+          "unit": "m³/h",
+          "pressure_drop": "5.0 kPa",
+          "title": "Oil cooler water flow and pressure drop for PEH100",
+          "summary": "PEH100 oil cooler max water flow 2.73 m³/h at 30°C inlet, pressure drop 5.0 kPa."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  12 PEH100 2.73 5.0\nPEH126 4.55 10.0\n注：①为通过 1寸过滤器、电磁阀、水量调节阀和油冷却器的水压降。\n图5-1 WS 系列油冷结构\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_76708e84e130ea83",
+      "domain_id": "hvac",
+      "doc_id": "doc_7c4fca116fd3420a",
+      "doc_name": "【麦克维尔】PE、WS 系列进口离心机组操作维护手册（49页）-.pdf",
+      "page_no": 12,
+      "chunk_id": "chunk_12cbad1339d54417",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh126",
+      "structured_payload_candidate": {
+        "parameter_name": "Oil Cooler Max Water Flow",
+        "value": "4.55",
+        "unit": "m³/h",
+        "pressure_drop": "10.0 kPa",
+        "title": "Oil cooler water flow and pressure drop for PEH126",
+        "summary": "PEH126 oil cooler max water flow 4.55 m³/h at 30°C inlet, pressure drop 10.0 kPa."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  12 PEH100 2.73 5.0\nPEH126 4.55 10.0\n注：①为通过 1寸过滤器、电磁阀、水量调节阀和油冷却器的水压降。\n图5-1 WS 系列油冷结构\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_12cbad1339d54417"
+      ],
+      "source_page_nos": [
+        12
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides oil cooler water flow and pressure drop data for PEH126.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh126 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh126 derived from chunk chunk_12cbad1339d54417 on page 12 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:oil_cooler_flow_pd_peh126",
+        "structured_payload": {
+          "parameter_name": "Oil Cooler Max Water Flow",
+          "value": "4.55",
+          "unit": "m³/h",
+          "pressure_drop": "10.0 kPa",
+          "title": "Oil cooler water flow and pressure drop for PEH126",
+          "summary": "PEH126 oil cooler max water flow 4.55 m³/h at 30°C inlet, pressure drop 10.0 kPa."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "麦克维尔 进口和国产离心式冷水机组安装、操作和维护手册\n你的冷暖我关怀 ，因为专注、所以专业、因为专业、所以卓越，专门解\n决疑难问题，降低费用，有二手空调主机设备租赁和销售（包调试） 约\n克YORK、开利 Carrier 、特灵中央空调配件销售、维修保养、安装调试\n服务热线 18680288140  12 PEH100 2.73 5.0\nPEH126 4.55 10.0\n注：①为通过 1寸过滤器、电磁阀、水量调节阀和油冷却器的水压降。\n图5-1 WS 系列油冷结构\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-08T11:31:18.374353+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 19
+  }
+}

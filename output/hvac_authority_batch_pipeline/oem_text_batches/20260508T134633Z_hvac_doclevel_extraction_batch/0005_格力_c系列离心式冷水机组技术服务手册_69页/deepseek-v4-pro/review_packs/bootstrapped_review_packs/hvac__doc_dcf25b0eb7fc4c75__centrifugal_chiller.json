@@ -1,0 +1,1459 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T14:30:20.143871+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_dcf25b0eb7fc4c75",
+  "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+  "equipment_class": {
+    "equipment_class_id": "centrifugal_chiller",
+    "equipment_class_key": "hvac:centrifugal_chiller",
+    "label": "Centrifugal Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 19,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_f6954fa3886f68e6",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_5eee3d60be13440a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx2000",
+      "structured_payload_candidate": {
+        "parameter_name": "制冷量",
+        "value": "2000",
+        "unit": "kW",
+        "model": "LSBLX2000",
+        "title": "LSBLX2000 nominal cooling capacity",
+        "summary": "Nominal cooling capacity of LSBLX2000 is 2000 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5eee3d60be13440a"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies nominal cooling capacity of a chiller model, a key operational parameter.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx2000 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx2000 derived from chunk chunk_5eee3d60be13440a on page 3 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx2000",
+        "structured_payload": {
+          "parameter_name": "制冷量",
+          "value": "2000",
+          "unit": "kW",
+          "model": "LSBLX2000",
+          "title": "LSBLX2000 nominal cooling capacity",
+          "summary": "Nominal cooling capacity of LSBLX2000 is 2000 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_2ebb8d80a6f2194e",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_5eee3d60be13440a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx2400",
+      "structured_payload_candidate": {
+        "parameter_name": "制冷量",
+        "value": "2400",
+        "unit": "kW",
+        "model": "LSBLX2400",
+        "title": "LSBLX2400 nominal cooling capacity",
+        "summary": "Nominal cooling capacity of LSBLX2400 is 2400 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5eee3d60be13440a"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies nominal cooling capacity of a chiller model, a key operational parameter.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx2400 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx2400 derived from chunk chunk_5eee3d60be13440a on page 3 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx2400",
+        "structured_payload": {
+          "parameter_name": "制冷量",
+          "value": "2400",
+          "unit": "kW",
+          "model": "LSBLX2400",
+          "title": "LSBLX2400 nominal cooling capacity",
+          "summary": "Nominal cooling capacity of LSBLX2400 is 2400 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_e42eba6f5533479d",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_5eee3d60be13440a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx2800",
+      "structured_payload_candidate": {
+        "parameter_name": "制冷量",
+        "value": "2800",
+        "unit": "kW",
+        "model": "LSBLX2800",
+        "title": "LSBLX2800 nominal cooling capacity",
+        "summary": "Nominal cooling capacity of LSBLX2800 is 2800 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5eee3d60be13440a"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies nominal cooling capacity of a chiller model, a key operational parameter.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx2800 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx2800 derived from chunk chunk_5eee3d60be13440a on page 3 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx2800",
+        "structured_payload": {
+          "parameter_name": "制冷量",
+          "value": "2800",
+          "unit": "kW",
+          "model": "LSBLX2800",
+          "title": "LSBLX2800 nominal cooling capacity",
+          "summary": "Nominal cooling capacity of LSBLX2800 is 2800 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0819a89ee45d7ea0",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_5eee3d60be13440a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx3200",
+      "structured_payload_candidate": {
+        "parameter_name": "制冷量",
+        "value": "3200",
+        "unit": "kW",
+        "model": "LSBLX3200",
+        "title": "LSBLX3200 nominal cooling capacity",
+        "summary": "Nominal cooling capacity of LSBLX3200 is 3200 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5eee3d60be13440a"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies nominal cooling capacity of a chiller model, a key operational parameter.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx3200 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx3200 derived from chunk chunk_5eee3d60be13440a on page 3 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx3200",
+        "structured_payload": {
+          "parameter_name": "制冷量",
+          "value": "3200",
+          "unit": "kW",
+          "model": "LSBLX3200",
+          "title": "LSBLX3200 nominal cooling capacity",
+          "summary": "Nominal cooling capacity of LSBLX3200 is 3200 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_eeb12b12f50b666f",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_5eee3d60be13440a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx3600",
+      "structured_payload_candidate": {
+        "parameter_name": "制冷量",
+        "value": "3600",
+        "unit": "kW",
+        "model": "LSBLX3600",
+        "title": "LSBLX3600 nominal cooling capacity",
+        "summary": "Nominal cooling capacity of LSBLX3600 is 3600 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5eee3d60be13440a"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies nominal cooling capacity of a chiller model, a key operational parameter.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx3600 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx3600 derived from chunk chunk_5eee3d60be13440a on page 3 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx3600",
+        "structured_payload": {
+          "parameter_name": "制冷量",
+          "value": "3600",
+          "unit": "kW",
+          "model": "LSBLX3600",
+          "title": "LSBLX3600 nominal cooling capacity",
+          "summary": "Nominal cooling capacity of LSBLX3600 is 3600 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1c97dd08e77219bb",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_5eee3d60be13440a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx4000",
+      "structured_payload_candidate": {
+        "parameter_name": "制冷量",
+        "value": "4000",
+        "unit": "kW",
+        "model": "LSBLX4000",
+        "title": "LSBLX4000 nominal cooling capacity",
+        "summary": "Nominal cooling capacity of LSBLX4000 is 4000 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_5eee3d60be13440a"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Specifies nominal cooling capacity of a chiller model, a key operational parameter.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx4000 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx4000 derived from chunk chunk_5eee3d60be13440a on page 3 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx4000",
+        "structured_payload": {
+          "parameter_name": "制冷量",
+          "value": "4000",
+          "unit": "kW",
+          "model": "LSBLX4000",
+          "title": "LSBLX4000 nominal cooling capacity",
+          "summary": "Nominal cooling capacity of LSBLX4000 is 4000 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5e6b9f32a8f866c2",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "冷量调节",
+        "value": "10～100%",
+        "unit": "%",
+        "title": "Capacity adjustment range",
+        "summary": "Capacity adjustment range is 10% to 100% for all models"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Defines capacity adjustment range, a critical operational spec.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:candidate for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:candidate derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "冷量调节",
+          "value": "10～100%",
+          "unit": "%",
+          "title": "Capacity adjustment range",
+          "summary": "Capacity adjustment range is 10% to 100% for all models"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_194e248ed1e5d0e1",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx2000",
+      "structured_payload_candidate": {
+        "parameter_name": "电机功率",
+        "value": "383",
+        "unit": "kW",
+        "model": "LSBLX2000",
+        "title": "LSBLX2000 motor power",
+        "summary": "Motor power for LSBLX2000 is 383 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Motor power spec is essential for electrical design and operation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx2000 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx2000 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx2000",
+        "structured_payload": {
+          "parameter_name": "电机功率",
+          "value": "383",
+          "unit": "kW",
+          "model": "LSBLX2000",
+          "title": "LSBLX2000 motor power",
+          "summary": "Motor power for LSBLX2000 is 383 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0d906aaf37e8caa9",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx2400",
+      "structured_payload_candidate": {
+        "parameter_name": "电机功率",
+        "value": "452",
+        "unit": "kW",
+        "model": "LSBLX2400",
+        "title": "LSBLX2400 motor power",
+        "summary": "Motor power for LSBLX2400 is 452 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Motor power spec is essential for electrical design and operation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx2400 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx2400 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx2400",
+        "structured_payload": {
+          "parameter_name": "电机功率",
+          "value": "452",
+          "unit": "kW",
+          "model": "LSBLX2400",
+          "title": "LSBLX2400 motor power",
+          "summary": "Motor power for LSBLX2400 is 452 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_777e408122ef4a6e",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx2800",
+      "structured_payload_candidate": {
+        "parameter_name": "电机功率",
+        "value": "520",
+        "unit": "kW",
+        "model": "LSBLX2800",
+        "title": "LSBLX2800 motor power",
+        "summary": "Motor power for LSBLX2800 is 520 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Motor power spec is essential for electrical design and operation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx2800 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx2800 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx2800",
+        "structured_payload": {
+          "parameter_name": "电机功率",
+          "value": "520",
+          "unit": "kW",
+          "model": "LSBLX2800",
+          "title": "LSBLX2800 motor power",
+          "summary": "Motor power for LSBLX2800 is 520 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_4eec5d680c0aae9f",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx3200",
+      "structured_payload_candidate": {
+        "parameter_name": "电机功率",
+        "value": "590",
+        "unit": "kW",
+        "model": "LSBLX3200",
+        "title": "LSBLX3200 motor power",
+        "summary": "Motor power for LSBLX3200 is 590 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Motor power spec is essential for electrical design and operation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx3200 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx3200 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx3200",
+        "structured_payload": {
+          "parameter_name": "电机功率",
+          "value": "590",
+          "unit": "kW",
+          "model": "LSBLX3200",
+          "title": "LSBLX3200 motor power",
+          "summary": "Motor power for LSBLX3200 is 590 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_2a80ab64f6c6de2f",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx3600",
+      "structured_payload_candidate": {
+        "parameter_name": "电机功率",
+        "value": "665",
+        "unit": "kW",
+        "model": "LSBLX3600",
+        "title": "LSBLX3600 motor power",
+        "summary": "Motor power for LSBLX3600 is 665 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Motor power spec is essential for electrical design and operation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx3600 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx3600 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx3600",
+        "structured_payload": {
+          "parameter_name": "电机功率",
+          "value": "665",
+          "unit": "kW",
+          "model": "LSBLX3600",
+          "title": "LSBLX3600 motor power",
+          "summary": "Motor power for LSBLX3600 is 665 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_97d1b2f7fc47479b",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx4000",
+      "structured_payload_candidate": {
+        "parameter_name": "电机功率",
+        "value": "750",
+        "unit": "kW",
+        "model": "LSBLX4000",
+        "title": "LSBLX4000 motor power",
+        "summary": "Motor power for LSBLX4000 is 750 kW"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Motor power spec is essential for electrical design and operation.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx4000 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx4000 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx4000",
+        "structured_payload": {
+          "parameter_name": "电机功率",
+          "value": "750",
+          "unit": "kW",
+          "model": "LSBLX4000",
+          "title": "LSBLX4000 motor power",
+          "summary": "Motor power for LSBLX4000 is 750 kW"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_332df4c7296a4596",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "制冷剂",
+        "value": "R134a",
+        "title": "Refrigerant type",
+        "summary": "Refrigerant is R134a"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Refrigerant type is a fundamental operating parameter.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:candidate for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:candidate derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "制冷剂",
+          "value": "R134a",
+          "title": "Refrigerant type",
+          "summary": "Refrigerant is R134a"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d1329d08cdee4a2a",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx2000",
+      "structured_payload_candidate": {
+        "parameter_name": "充注量",
+        "value": "750",
+        "unit": "kg",
+        "model": "LSBLX2000",
+        "title": "LSBLX2000 refrigerant charge",
+        "summary": "Refrigerant charge for LSBLX2000 is 750 kg"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Refrigerant charge amount is needed for maintenance and performance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx2000 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx2000 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx2000",
+        "structured_payload": {
+          "parameter_name": "充注量",
+          "value": "750",
+          "unit": "kg",
+          "model": "LSBLX2000",
+          "title": "LSBLX2000 refrigerant charge",
+          "summary": "Refrigerant charge for LSBLX2000 is 750 kg"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c8f856210ecabd39",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx2400",
+      "structured_payload_candidate": {
+        "parameter_name": "充注量",
+        "value": "800",
+        "unit": "kg",
+        "model": "LSBLX2400",
+        "title": "LSBLX2400 refrigerant charge",
+        "summary": "Refrigerant charge for LSBLX2400 is 800 kg"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Refrigerant charge amount is needed for maintenance and performance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx2400 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx2400 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx2400",
+        "structured_payload": {
+          "parameter_name": "充注量",
+          "value": "800",
+          "unit": "kg",
+          "model": "LSBLX2400",
+          "title": "LSBLX2400 refrigerant charge",
+          "summary": "Refrigerant charge for LSBLX2400 is 800 kg"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_7c899904b598fb63",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx2800",
+      "structured_payload_candidate": {
+        "parameter_name": "充注量",
+        "value": "850",
+        "unit": "kg",
+        "model": "LSBLX2800",
+        "title": "LSBLX2800 refrigerant charge",
+        "summary": "Refrigerant charge for LSBLX2800 is 850 kg"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Refrigerant charge amount is needed for maintenance and performance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx2800 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx2800 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx2800",
+        "structured_payload": {
+          "parameter_name": "充注量",
+          "value": "850",
+          "unit": "kg",
+          "model": "LSBLX2800",
+          "title": "LSBLX2800 refrigerant charge",
+          "summary": "Refrigerant charge for LSBLX2800 is 850 kg"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5de9d2206a56bafc",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx3200",
+      "structured_payload_candidate": {
+        "parameter_name": "充注量",
+        "value": "950",
+        "unit": "kg",
+        "model": "LSBLX3200",
+        "title": "LSBLX3200 refrigerant charge",
+        "summary": "Refrigerant charge for LSBLX3200 is 950 kg"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Refrigerant charge amount is needed for maintenance and performance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx3200 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx3200 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx3200",
+        "structured_payload": {
+          "parameter_name": "充注量",
+          "value": "950",
+          "unit": "kg",
+          "model": "LSBLX3200",
+          "title": "LSBLX3200 refrigerant charge",
+          "summary": "Refrigerant charge for LSBLX3200 is 950 kg"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_0aec64c3b631b937",
+      "domain_id": "hvac",
+      "doc_id": "doc_dcf25b0eb7fc4c75",
+      "doc_name": "【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_3924fcc79f0a499a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsblx3600",
+      "structured_payload_candidate": {
+        "parameter_name": "充注量",
+        "value": "1000",
+        "unit": "kg",
+        "model": "LSBLX3600",
+        "title": "LSBLX3600 refrigerant charge",
+        "summary": "Refrigerant charge for LSBLX3600 is 1000 kg"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3924fcc79f0a499a"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Refrigerant charge amount is needed for maintenance and performance.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "Draft Parameter Spec hvac:centrifugal_chiller:parameter_spec:lsblx3600 for Centrifugal Chiller",
+        "summary": "Draft review summary for parameter spec hvac:centrifugal_chiller:parameter_spec:lsblx3600 derived from chunk chunk_3924fcc79f0a499a on page 7 for Centrifugal Chiller.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:lsblx3600",
+        "structured_payload": {
+          "parameter_name": "充注量",
+          "value": "1000",
+          "unit": "kg",
+          "model": "LSBLX3600",
+          "title": "LSBLX3600 refrigerant charge",
+          "summary": "Refrigerant charge for LSBLX3600 is 1000 kg"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-08T14:30:20.149593+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 19
+  }
+}

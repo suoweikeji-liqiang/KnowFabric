@@ -1,0 +1,755 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-10T00:55:16.975013+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_39d12963b83649eb",
+  "doc_name": "auto_ashrae2024.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chiller",
+    "equipment_class_key": "hvac:chiller",
+    "label": "Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "operational_sequence",
+      "fault_diagnostic_rule"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 10,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_18fb418b015dd1c8",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:coil_rating_parameters",
+      "structured_payload_candidate": {
+        "parameter_name": "Entering air dry-bulb temperature range",
+        "title": "Coil Rating Parameters",
+        "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter spec for entering air dry-bulb temperature range explicitly stated as 18 to 38°C per AHRI 410, with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:parameter_spec:coil_rating_parameters",
+        "structured_payload": {
+          "parameter_name": "Entering air dry-bulb temperature range",
+          "title": "Coil Rating Parameters",
+          "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_ee06206f72ff90bc",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:coil_rating_parameters",
+      "structured_payload_candidate": {
+        "parameter_name": "Entering air wet-bulb temperature range",
+        "title": "Coil Rating Parameters",
+        "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter spec for entering air wet-bulb temperature range explicitly stated as 15 to 30°C per AHRI 410, with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:parameter_spec:coil_rating_parameters",
+        "structured_payload": {
+          "parameter_name": "Entering air wet-bulb temperature range",
+          "title": "Coil Rating Parameters",
+          "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_38d27e908ec537b8",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:coil_rating_parameters",
+      "structured_payload_candidate": {
+        "parameter_name": "Air face velocity range",
+        "title": "Coil Rating Parameters",
+        "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter spec for air face velocity range explicitly stated as 1 to 4 m/s per AHRI 410, with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:parameter_spec:coil_rating_parameters",
+        "structured_payload": {
+          "parameter_name": "Air face velocity range",
+          "title": "Coil Rating Parameters",
+          "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_2f5869572cde1146",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:coil_rating_parameters",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporator refrigerant saturation temperature range",
+        "title": "Coil Rating Parameters",
+        "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter spec for evaporator refrigerant saturation temperature range explicitly stated as –1 to 13°C per AHRI 410, with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:parameter_spec:coil_rating_parameters",
+        "structured_payload": {
+          "parameter_name": "Evaporator refrigerant saturation temperature range",
+          "title": "Coil Rating Parameters",
+          "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_00316a5312a2e67c",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:coil_rating_parameters",
+      "structured_payload_candidate": {
+        "parameter_name": "Entering chilled-water temperature range",
+        "title": "Coil Rating Parameters",
+        "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter spec for entering chilled-water temperature range explicitly stated as 1.5 to 18°C per AHRI 410, with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:parameter_spec:coil_rating_parameters",
+        "structured_payload": {
+          "parameter_name": "Entering chilled-water temperature range",
+          "title": "Coil Rating Parameters",
+          "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6ff2ac1a115cb74f",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_8654ca7f16c540c2",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:coil_rating_parameters",
+      "structured_payload_candidate": {
+        "parameter_name": "Water velocity range",
+        "title": "Coil Rating Parameters",
+        "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_8654ca7f16c540c2"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter spec for water velocity range explicitly stated as 0.3 to 2.4 m/s per AHRI 410, with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:parameter_spec:coil_rating_parameters",
+        "structured_payload": {
+          "parameter_name": "Water velocity range",
+          "title": "Coil Rating Parameters",
+          "summary": "Standard rating parameters for extended-surface air-cooling and dehumidifying coils per AHRI Standard 410."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The final choice\ncan then be made based on sy stem performance and economic\nrequirements.\nPerformance and Ratings\nThe long-term performance of an extended-surface air-cooling\nand dehumidifying coil depends on it s correct design to specified\nconditions and material specificat ions, proper matching to other\nsystem components, proper instal lation, and proper maintenance as\nrequired.\nIn accordance with AHRI Standard 410, dry-surface (sensible\ncooling) coils and dehumidifying coils (which both cool and dehu-\nmidify), particularly those for fiel d-assembled coil banks or factory-\nassembled packaged units using different combinations of coils, areusually rated within the following parameters:\nEntering air dry-bulb temperature: 18 to 38°C\nEntering air wet-bulb temperature: 15 to 30°C (if air is not dehu-\nmidified in the application, se lect coils based on sensible heat\ntransfer)\nAir face velocity: 1 to 4 m/sEvaporator refrigerant saturation temperature: –1 to 13°C at coil\nsuction outlet (refrigerant vapor superheat at co il suction out-\nlet is 3 K or higher)\nEntering chilled-water te mperature: 1.5 to 18°C\nWater velocity: 0.3 to 2.4 m/s\nFor ethylene glycol solution: 0.3 to 1.8 m/s, –18 to 32°C entering\ndry-bulb temperature, 15 to 27°C entering wet-bulb tempera-\nture, 10 to 60% aqueous glycol concentration by mass\nThe air-side ratio of sensible to total heat removed by dehumidi-\nfying coils varies in practice from ab out 0.6 to 1.0 (i.e., sensible heat\nis from 60 to 100% of the total, depending on the application).",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_e6afd65224e89062",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_31ff5848e9064109",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:valve_authority_for_hvac_coils",
+      "structured_payload_candidate": {
+        "parameter_name": "Valve authority range",
+        "title": "Valve Authority for HVAC Coils",
+        "summary": "Recommended valve authority range for HVAC coil applications to maintain proper flow characteristic."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "13.16 2024 ASHRAE Handbook—HV AC Systems and Equipment (SI)\nures 25 and 26). Typically, authorities in the range of 30 to 50% (for\npiping systems with 2: 1 branch-to-riser pressure drop ratios) are\nadequate for HV AC coil applications, with higher t coils requiring\nless valve authority. Authorities less than 30% should be avoided\nbecause they lead to a flow characteristic shift that makes the equal-percentage valve appear to be more linear in nature (Figures 27 and\n28). For the three-way valve shown in Figure 23, the full-open pres-\nsure drop should be from C to D.  The pressure drop in the bypass\nbalancing valve in the three-way valv e circuit should be set to equal\nthat in the coil (load), Chapter 47 discusses valve authority in threeway modulating applications.\nControl valves should be sized on the basis of the required valve\ncoefficient C\nv for the required pressure drop and flow. For more\ninformation, see the section on Control Valve Sizing under Auto-\nmatic Valves in Chapter 47.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_31ff5848e9064109"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter spec for valve authority range explicitly stated as 30 to 50% for HVAC coil applications, with clear evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:parameter_spec:valve_authority_for_hvac_coils",
+        "structured_payload": {
+          "parameter_name": "Valve authority range",
+          "title": "Valve Authority for HVAC Coils",
+          "summary": "Recommended valve authority range for HVAC coil applications to maintain proper flow characteristic."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "13.16 2024 ASHRAE Handbook—HV AC Systems and Equipment (SI)\nures 25 and 26). Typically, authorities in the range of 30 to 50% (for\npiping systems with 2: 1 branch-to-riser pressure drop ratios) are\nadequate for HV AC coil applications, with higher t coils requiring\nless valve authority. Authorities less than 30% should be avoided\nbecause they lead to a flow characteristic shift that makes the equal-percentage valve appear to be more linear in nature (Figures 27 and\n28). For the three-way valve shown in Figure 23, the full-open pres-\nsure drop should be from C to D.  The pressure drop in the bypass\nbalancing valve in the three-way valv e circuit should be set to equal\nthat in the coil (load), Chapter 47 discusses valve authority in threeway modulating applications.\nControl valves should be sized on the basis of the required valve\ncoefficient C\nv for the required pressure drop and flow. For more\ninformation, see the section on Control Valve Sizing under Auto-\nmatic Valves in Chapter 47.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_70ecea3cae6ba850",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_a2dad6e9ed02475b",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:chiller:application_guidance:return_air_plenum_temperature_difference",
+      "structured_payload_candidate": {
+        "parameter_name": "Plenum temperature difference",
+        "title": "Return Air Plenum Temperature Difference",
+        "summary": "Typical temperature difference in a return air plenum directly below a roof deck during cooling season."
+      },
+      "confidence_score": 0.85,
+      "review_status": "candidate",
+      "evidence_text": "HVAC System Analysis and Selection 1.9\nconstruction or renovation because most codes prohibit combusti-\nble material in a ceiling return air plenum. Ceiling plenums andraised floors can also be used for supply air displacement systems tominimize horizontal distribution, along with other features dis -\ncussed in Chapter 4.\nSome ceiling plenum applications with lay-in panels do not work\nwell where the stack effect of a high-rise building or high-rise ele -\nvators creates a negative pressure. If the plenum leaks to the low-pressure area, tiles may lift and drop out when the outside door isopened and closed.\nThe air temperature in a return air plenum directly below a roof\ndeck is usually higher by 2 to 3 K during the air-conditioning season\nthan in a ducted return. This can be an advantage to the occupiedspace below because heat gain to the space is reduced.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_a2dad6e9ed02475b"
+      ],
+      "source_page_nos": [
+        2
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Application guidance on typical plenum temperature difference (2-3 K) during cooling season supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:application_guidance:return_air_plenum_temperature_difference",
+        "structured_payload": {
+          "parameter_name": "Plenum temperature difference",
+          "title": "Return Air Plenum Temperature Difference",
+          "summary": "Typical temperature difference in a return air plenum directly below a roof deck during cooling season."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "HVAC System Analysis and Selection 1.9\nconstruction or renovation because most codes prohibit combusti-\nble material in a ceiling return air plenum. Ceiling plenums andraised floors can also be used for supply air displacement systems tominimize horizontal distribution, along with other features dis -\ncussed in Chapter 4.\nSome ceiling plenum applications with lay-in panels do not work\nwell where the stack effect of a high-rise building or high-rise ele -\nvators creates a negative pressure. If the plenum leaks to the low-pressure area, tiles may lift and drop out when the outside door isopened and closed.\nThe air temperature in a return air plenum directly below a roof\ndeck is usually higher by 2 to 3 K during the air-conditioning season\nthan in a ducted return. This can be an advantage to the occupiedspace below because heat gain to the space is reduced.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_2d6675304bd842f5",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_76d3f745c6ed40dc",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:coil_air_face_velocity_for_dehumidification",
+      "structured_payload_candidate": {
+        "parameter_name": "Dehumidifying coil air face velocity",
+        "title": "Coil Air Face Velocity for Dehumidification",
+        "summary": "Typical air face velocity range for selecting dehumidifying coils in comfort applications."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "For\ninformation on calculating a dehumidi fying coil’s sensible heat ratio,\nsee the section on Performance of Dehumidifying Coils, or Appen-dix D of Cooling and Heating Load Calculation Principles  (Peder-\nsen et al. 1998). For a given coil surface design and arrangement, therequired sensible heat ratio may be  satisfied by wide variations in\nand combinations of air face velocity, in-tube temperature, flow rate,entering air temperature, coil depth, etc., although the variationsmay be self limiting. The maximum coil air face velocity should belimited to a value that prevents water carryover into the air ductwork.Dehumidifying coils for comfort applications are frequently selectedin the range of 2.0 to 2.5 m/s air face velocity.\nOperating ratings of dehumidifyi ng coils for factory-assembled,\nself-contained air conditioners are generally determined in conjunc-\ntion with laboratory testing for the system capacity of the complete\nunit assembly.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_76d3f745c6ed40dc"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter spec for dehumidifying coil air face velocity range (2.0 to 2.5 m/s) explicitly stated for comfort applications.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:parameter_spec:coil_air_face_velocity_for_dehumidification",
+        "structured_payload": {
+          "parameter_name": "Dehumidifying coil air face velocity",
+          "title": "Coil Air Face Velocity for Dehumidification",
+          "summary": "Typical air face velocity range for selecting dehumidifying coils in comfort applications."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "For\ninformation on calculating a dehumidi fying coil’s sensible heat ratio,\nsee the section on Performance of Dehumidifying Coils, or Appen-dix D of Cooling and Heating Load Calculation Principles  (Peder-\nsen et al. 1998). For a given coil surface design and arrangement, therequired sensible heat ratio may be  satisfied by wide variations in\nand combinations of air face velocity, in-tube temperature, flow rate,entering air temperature, coil depth, etc., although the variationsmay be self limiting. The maximum coil air face velocity should belimited to a value that prevents water carryover into the air ductwork.Dehumidifying coils for comfort applications are frequently selectedin the range of 2.0 to 2.5 m/s air face velocity.\nOperating ratings of dehumidifyi ng coils for factory-assembled,\nself-contained air conditioners are generally determined in conjunc-\ntion with laboratory testing for the system capacity of the complete\nunit assembly.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c84f5f5dfdb51238",
+      "domain_id": "hvac",
+      "doc_id": "doc_39d12963b83649eb",
+      "doc_name": "auto_ashrae2024.pdf",
+      "page_no": 5,
+      "chunk_id": "chunk_ab447107a4fa465e",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:chiller:parameter_spec:hydrophilic_fin_coating_benefit",
+      "structured_payload_candidate": {
+        "parameter_name": "Air pressure drop reduction",
+        "title": "Hydrophilic Fin Coating Benefit",
+        "summary": "Reported reduction in air pressure drop across a hydrophilic coil compared to a new untreated coil."
+      },
+      "confidence_score": 0.8,
+      "review_status": "candidate",
+      "evidence_text": "Therefore, final selection involves\neconomic balancing of the initial co st of the coil against the operat-\ning costs of the coil geometry co mbinations available to adequately\nmeet the performa nce requirements.\nThe aluminum fin surfaces of new dehumidifying coils tend to in-\nhibit condensate sheeting action until they have aged for a year. Hy-\ndrophilic aluminum fin surface coatings reduce water droplet surface\ntension, producing a more evenly dispersed wetted surface action at\ninitial start-up. Manufacturers have tried different methods of apply-\ning such coatings, including dippi ng the coil into a tank, coating the\nfin stock material, or subjecting the material to a chemical etchingprocess. Tests have s hown as much as a 30% reduction in air pressure\ndrop across a hydrophilic coil as opposed a new untreated coil..",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_ab447107a4fa465e"
+      ],
+      "source_page_nos": [
+        5
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Parameter spec for air pressure drop reduction up to 30% with hydrophilic coating, supported by evidence.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:chiller:parameter_spec:hydrophilic_fin_coating_benefit",
+        "structured_payload": {
+          "parameter_name": "Air pressure drop reduction",
+          "title": "Hydrophilic Fin Coating Benefit",
+          "summary": "Reported reduction in air pressure drop across a hydrophilic coil compared to a new untreated coil."
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Therefore, final selection involves\neconomic balancing of the initial co st of the coil against the operat-\ning costs of the coil geometry co mbinations available to adequately\nmeet the performa nce requirements.\nThe aluminum fin surfaces of new dehumidifying coils tend to in-\nhibit condensate sheeting action until they have aged for a year. Hy-\ndrophilic aluminum fin surface coatings reduce water droplet surface\ntension, producing a more evenly dispersed wetted surface action at\ninitial start-up. Manufacturers have tried different methods of apply-\ning such coatings, including dippi ng the coil into a tank, coating the\nfin stock material, or subjecting the material to a chemical etchingprocess. Tests have s hown as much as a 30% reduction in air pressure\ndrop across a hydrophilic coil as opposed a new untreated coil..",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

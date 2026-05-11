@@ -1,0 +1,99 @@
+{
+  "status": "completed",
+  "row_index": 4,
+  "file_name": "【美的】LSQWRF风冷热泵模块机技术手册（121页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/09、美的/美的技术手册/【美的】LSQWRF风冷热泵模块机技术手册（121页）-制冷百家网.pdf",
+  "doc_id": "doc_6c3f16bd03714515",
+  "chunks": 136,
+  "manual_tokens_estimated": 34619,
+  "equipment_class_id": "centrifugal_chiller",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "valve",
+      "equipment_class_key": "hvac:valve",
+      "confidence": 0.499,
+      "matched_aliases": [
+        "Valve",
+        "valve"
+      ]
+    },
+    {
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "冷水机组"
+      ]
+    },
+    {
+      "equipment_class_id": "pump",
+      "equipment_class_key": "hvac:pump",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "Pump",
+        "pump"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 121,
+      "chunks_after": 136,
+      "parse_result": {
+        "job_id": "job_ca0435bc4e5e4680",
+        "doc_id": "doc_6c3f16bd03714515",
+        "pages_created": 121,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_12629ebcf7db4cab",
+        "doc_id": "doc_6c3f16bd03714515",
+        "chunks_created": 136,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 41,
+      "anchor_passed": 41,
+      "anchor_rejected": 0,
+      "anchor_match_rate": 100.0,
+      "judge_accepted": 17,
+      "judge_rejected": 24,
+      "judge_acceptance_rate": 41.5,
+      "judge_rejection_breakdown": {
+        "other": 24
+      },
+      "review_candidates": 17,
+      "by_type": {
+        "parameter_spec": 8,
+        "fault_code": 9
+      },
+      "usage": {
+        "prompt_tokens": 66810,
+        "completion_tokens": 5693,
+        "total_tokens": 72503
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1197,
+        "total_tokens": 2477
+      },
+      "extract_cost_rmb": 0.234588,
+      "judge_cost_rmb": 0.011022,
+      "cost_rmb": 0.24561,
+      "elapsed_seconds": 142.613,
+      "judge_elapsed_seconds": 74.555,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T154855Z_hvac_doclevel_extraction_batch/0004_美的_lsqwrf风冷热泵模块机技术手册_121页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T154855Z_hvac_doclevel_extraction_batch/0004_美的_lsqwrf风冷热泵模块机技术手册_121页_制冷百家网"
+}

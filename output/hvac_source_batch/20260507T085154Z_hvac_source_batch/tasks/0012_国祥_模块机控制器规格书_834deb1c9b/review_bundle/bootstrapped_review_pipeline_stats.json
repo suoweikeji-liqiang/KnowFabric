@@ -1,0 +1,75 @@
+{
+  "stats_mode": "chunk_backfill_review_pipeline_stats",
+  "candidate_source": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0012_国祥_模块机控制器规格书_834deb1c9b/review_bundle/candidates.json",
+  "pack_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0012_国祥_模块机控制器规格书_834deb1c9b/review_bundle/review_packs/bootstrapped_review_packs",
+  "readiness_report_path": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0012_国祥_模块机控制器规格书_834deb1c9b/review_bundle/review_packs/bootstrapped_review_packs/review_pack_readiness_report.json",
+  "apply_report_path": null,
+  "overall": {
+    "scanned_chunks": 19,
+    "matched_chunks": 10,
+    "candidate_entries": 100,
+    "candidate_hit_rate": 0.526,
+    "review_packs_total": 1,
+    "review_packs_ready_to_apply": 0,
+    "review_packs_pending": 1,
+    "review_packs_rejected_only": 0,
+    "readiness_status_counts": {
+      "ready": 0,
+      "blocked_pending": 1,
+      "blocked_no_accepted": 0,
+      "blocked_invalid": 0
+    },
+    "apply_status_counts": {
+      "applied": 0,
+      "skipped_pending": 0,
+      "skipped_no_accepted": 0,
+      "failed": 0
+    }
+  },
+  "documents": [
+    {
+      "doc_id": "doc_1d0231208a244288",
+      "doc_name": "【国祥】模块机控制器规格书.pdf",
+      "scanned_chunks": 19,
+      "matched_chunks": 10,
+      "candidate_entries": 100,
+      "candidate_hit_rate": 0.526,
+      "review_decisions": {
+        "accepted": 0,
+        "rejected": 0,
+        "pending": 100
+      },
+      "packs_total": 1,
+      "packs_ready_to_apply": 0,
+      "readiness_status_counts": {
+        "ready": 0,
+        "blocked_pending": 1,
+        "blocked_no_accepted": 0,
+        "blocked_invalid": 0
+      },
+      "apply_status_counts": {
+        "applied": 0,
+        "skipped_pending": 0,
+        "skipped_no_accepted": 0,
+        "failed": 0
+      }
+    }
+  ],
+  "review_packs": [
+    {
+      "pack_file": "hvac__doc_1d0231208a244288__air_cooled_modular_heat_pump.json",
+      "doc_id": "doc_1d0231208a244288",
+      "doc_name": "【国祥】模块机控制器规格书.pdf",
+      "equipment_class_id": "air_cooled_modular_heat_pump",
+      "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+      "candidate_count": 100,
+      "accepted_count": 0,
+      "rejected_count": 0,
+      "pending_count": 100,
+      "ready_to_apply": false,
+      "readiness_status": "blocked_pending",
+      "readiness_blocker": "pending_review_decisions",
+      "apply_status": null
+    }
+  ]
+}

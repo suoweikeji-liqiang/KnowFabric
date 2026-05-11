@@ -1,0 +1,91 @@
+{
+  "page": 1,
+  "response": {
+    "id": "aeda18da4e9d4acb8d5b60efcdcc6ecf",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a Carrier 19XR series hermetic centrifugal liquid chiller manual, titled 'Start-up, Operation, and Maintenance Instructions' in both Chinese and English. It features a photograph of the chiller unit and a line drawing overlay, along with manufacturer information.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Carrier logo\"},\n    {\"type\": \"text_block\", \"label\": \"19XR series title\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title (Chinese and English)\"},\n    {\"type\": \"photograph\", \"label\": \"Chiller unit photograph\"},\n    {\"type\": \"line_drawing\", \"label\": \"Chiller line drawing overlay\"},\n    {\"type\": \"badge\", \"label\": \"HFC-134a badge\"},\n    {\"type\": \"text_block\", \"label\": \"Manufacturer name (Chinese and English)\"},\n    {\"type\": \"text_block\", \"label\": \"Website watermark\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Chiller unit photograph\", \"relation\": \"overlaid with\", \"to\": \"Chiller line drawing overlay\"},\n    {\"from\": \"HFC-134a badge\", \"relation\": \"positioned on\", \"to\": \"Chiller line drawing overlay\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\", \"manufacturer_information\"],\n  \"ocr_text_if_useful\": \"Carrier\\n19XR 系列高效封闭型离心式冷水机组\\nHermetic Centrifugal Liquid Chillers\\n开机、运行和维护说明书\\nStart-up, Operation, and Maintenance Instructions\\nEvergreen\\n上海合众一开利空调设备有限公司\\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\\n制冷百家网整理：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The specific components within the chiller photograph and line drawing are not labeled or detailed enough for precise identification. The relationship between the photograph and drawing is visual overlay, not a functional connection.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778207789,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 468,
+      "prompt_tokens": 2437,
+      "total_tokens": 2905,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "other",
+    "summary": "This is the cover page of a Carrier 19XR series hermetic centrifugal liquid chiller manual, titled 'Start-up, Operation, and Maintenance Instructions' in both Chinese and English. It features a photograph of the chiller unit and a line drawing overlay, along with manufacturer information.",
+    "visual_entities": [
+      {
+        "type": "logo",
+        "label": "Carrier logo"
+      },
+      {
+        "type": "text_block",
+        "label": "19XR series title"
+      },
+      {
+        "type": "text_block",
+        "label": "Manual title (Chinese and English)"
+      },
+      {
+        "type": "photograph",
+        "label": "Chiller unit photograph"
+      },
+      {
+        "type": "line_drawing",
+        "label": "Chiller line drawing overlay"
+      },
+      {
+        "type": "badge",
+        "label": "HFC-134a badge"
+      },
+      {
+        "type": "text_block",
+        "label": "Manufacturer name (Chinese and English)"
+      },
+      {
+        "type": "text_block",
+        "label": "Website watermark"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "Chiller unit photograph",
+        "relation": "overlaid with",
+        "to": "Chiller line drawing overlay"
+      },
+      {
+        "from": "HFC-134a badge",
+        "relation": "positioned on",
+        "to": "Chiller line drawing overlay"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "equipment_identification",
+      "manual_documentation",
+      "manufacturer_information"
+    ],
+    "ocr_text_if_useful": "Carrier\n19XR 系列高效封闭型离心式冷水机组\nHermetic Centrifugal Liquid Chillers\n开机、运行和维护说明书\nStart-up, Operation, and Maintenance Instructions\nEvergreen\n上海合众一开利空调设备有限公司\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\n制冷百家网整理：www.zhilengbj.cn",
+    "uncertainty_notes": "The specific components within the chiller photograph and line drawing are not labeled or detailed enough for precise identification. The relationship between the photograph and drawing is visual overlay, not a functional connection.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a Carrier 19XR series hermetic centrifugal liquid chiller manual, titled 'Start-up, Operation, and Maintenance Instructions' in both Chinese and English. It features a photograph of the chiller unit and a line drawing overlay, along with manufacturer information.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"Carrier logo\"},\n    {\"type\": \"text_block\", \"label\": \"19XR series title\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title (Chinese and English)\"},\n    {\"type\": \"photograph\", \"label\": \"Chiller unit photograph\"},\n    {\"type\": \"line_drawing\", \"label\": \"Chiller line drawing overlay\"},\n    {\"type\": \"badge\", \"label\": \"HFC-134a badge\"},\n    {\"type\": \"text_block\", \"label\": \"Manufacturer name (Chinese and English)\"},\n    {\"type\": \"text_block\", \"label\": \"Website watermark\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"Chiller unit photograph\", \"relation\": \"overlaid with\", \"to\": \"Chiller line drawing overlay\"},\n    {\"from\": \"HFC-134a badge\", \"relation\": \"positioned on\", \"to\": \"Chiller line drawing overlay\"}\n  ],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\", \"manufacturer_information\"],\n  \"ocr_text_if_useful\": \"Carrier\\n19XR 系列高效封闭型离心式冷水机组\\nHermetic Centrifugal Liquid Chillers\\n开机、运行和维护说明书\\nStart-up, Operation, and Maintenance Instructions\\nEvergreen\\n上海合众一开利空调设备有限公司\\nSHANGHAI HEZHONG-CARRIER AIR-CONDITIONING EQUIP. CO., LTD.\\n制冷百家网整理：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The specific components within the chiller photograph and line drawing are not labeled or detailed enough for precise identification. The relationship between the photograph and drawing is visual overlay, not a functional connection.\",\n  \"confidence\": 0.95\n}"
+}

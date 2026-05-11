@@ -1,0 +1,1074 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-07T08:52:00.855484+00:00",
+  "source_generation_mode": "chunk_backfill_review_candidate",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_37109bd2df4547e4",
+  "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chiller",
+    "equipment_class_key": "hvac:chiller",
+    "label": "Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "application_guidance",
+      "maintenance_procedure",
+      "performance_spec",
+      "operational_sequence",
+      "fault_diagnostic_rule"
+    ]
+  },
+  "filters_applied": {
+    "doc_id": "doc_37109bd2df4547e4",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 12,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_8c78b2fb35f6aa41",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_f4bb00fa9d434b10",
+      "page_no": 3,
+      "chunk_id": "chunk_a0387ffdabf749b8",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "模块武风冷冷 (热)水机组控+l系统指南\n●系统简介\n∷          模 块 式 风 冷 冷(热)水机 纽o,控制系统,是由一个主模 块 控 制 器 和 最 多 七 个 子模 块 控\n⒈        犁 贾 霁 淫 罾 卩组 成,机组在主模块 控 制 器 的 统 一控 制 下,实现 智 能 化 控 制 与 管理,具有 以\n1 高 可 靠性的硬 件 资 源,倮证控制 系 统 长 期 可 靠地",
+      "evidence_text": "模块武风冷冷 (热)水机组控+l系统指南 ●系统简介 ∷ 模 块 式 风 冷 冷(热)水机 纽o,控制系统,是由一个主模 块 控 制 器 和 最 多 七 个 子模 块 控 ⒈ 犁 贾 霁 淫 罾 卩组 成,机组在主模块 控 制 器 的 统 一控 制 下,实现 智 能 化 控 制 与 管理,具有 以 1 高 可 靠性的硬 件 资 源,倮证控制 系 统 长 期 可 靠地 正常运行 ; 2 模块 化 组 态 形 式,适应不 同用 户 多...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "R6Q",
+      "structured_payload_candidate": {
+        "fault_code": "R6Q"
+      },
+      "confidence_score": 0.858,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_token": "R6Q",
+          "detection_method": "fault_regex"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "fault code regex matched in fault context"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "R6Q",
+        "structured_payload": {
+          "fault_code": "R6Q"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "模块武风冷冷 (热)水机组控+l系统指南 ●系统简介 ∷ 模 块 式 风 冷 冷(热)水机 纽o,控制系统,是由一个主模 块 控 制 器 和 最 多 七 个 子模 块 控 ⒈ 犁 贾 霁 淫 罾 卩组 成,机组在主模块 控 制 器 的 统 一控 制 下,实现 智 能 化 控 制 与 管理,具有 以 1 高 可 靠性的硬 件 资 源,倮证控制 系 统 长 期 可 靠地 正常运行 ; 2 模块 化 组 态 形 式,适应不 同用 户 多...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9e3a923453af7409",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_80ede774fac244d2",
+      "page_no": 5,
+      "chunk_id": "chunk_2f950459b2084e3a",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "模块式风冷冷 〈热)水机组控制系统指南\n。N 主模 块      °N子模 块1      °N子摸 块2\n1234 1234 1234\n子 模 块 3\n0N子 模 块4\n0N子 模 块5\n0N\n1234 1234 1  2  3  4\n子模 块6 子摸块7\n注:地址开 关 中〃\n■”表示 拨 位 开 关 的 实 际 位置。\n警告:地址开关的设定必须 在机组断电情况下进 行,机组通电情况下严禁投动",
+      "evidence_text": "模块式风冷冷 〈热)水机组控制系统指南 。N 主模 块 °N子模 块1 °N子摸 块2 1234 1234 1234 子 模 块 3 0N子 模 块4 0N子 模 块5 0N 1234 1234 1 2 3 4 子模 块6 子摸块7 注:地址开 关 中〃 ■”表示 拨 位 开 关 的 实 际 位置。 警告:地址开关的设定必须 在机组断电情况下进 行,机组通电情况下严禁投动 地址开 关。 2、 逐一合上电 源 控匍 柜中 总开 关 ...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "R6Q",
+      "structured_payload_candidate": {
+        "fault_code": "R6Q"
+      },
+      "confidence_score": 0.858,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_token": "R6Q",
+          "detection_method": "fault_regex"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "fault code regex matched in fault context"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "R6Q",
+        "structured_payload": {
+          "fault_code": "R6Q"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "模块式风冷冷 〈热)水机组控制系统指南 。N 主模 块 °N子模 块1 °N子摸 块2 1234 1234 1234 子 模 块 3 0N子 模 块4 0N子 模 块5 0N 1234 1234 1 2 3 4 子模 块6 子摸块7 注:地址开 关 中〃 ■”表示 拨 位 开 关 的 实 际 位置。 警告:地址开关的设定必须 在机组断电情况下进 行,机组通电情况下严禁投动 地址开 关。 2、 逐一合上电 源 控匍 柜中 总开 关 ...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_49715b73d952b691",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_80ede774fac244d2",
+      "page_no": 5,
+      "chunk_id": "chunk_2f950459b2084e3a",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "模块式风冷冷 〈热)水机组控制系统指南\n。N 主模 块      °N子模 块1      °N子摸 块2\n1234 1234 1234\n子 模 块 3\n0N子 模 块4\n0N子 模 块5\n0N\n1234 1234 1  2  3  4\n子模 块6 子摸块7\n注:地址开 关 中〃\n■”表示 拨 位 开 关 的 实 际 位置。\n警告:地址开关的设定必须 在机组断电情况下进 行,机组通电情况下严禁投动",
+      "evidence_text": "模块式风冷冷 〈热)水机组控制系统指南 。N 主模 块 °N子模 块1 °N子摸 块2 1234 1234 1234 子 模 块 3 0N子 模 块4 0N子 模 块5 0N 1234 1234 1 2 3 4 子模 块6 子摸块7 注:地址开 关 中〃 ■”表示 拨 位 开 关 的 实 际 位置。 警告:地址开关的设定必须 在机组断电情况下进 行,机组通电情况下严禁投动 地址开 关。 2、 逐一合上电 源 控匍 柜中 总开 关 ...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "1234",
+      "structured_payload_candidate": {
+        "fault_code": "1234"
+      },
+      "confidence_score": 0.858,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_token": "1234",
+          "detection_method": "fault_regex"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "fault code regex matched in fault context"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "1234",
+        "structured_payload": {
+          "fault_code": "1234"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "模块式风冷冷 〈热)水机组控制系统指南 。N 主模 块 °N子模 块1 °N子摸 块2 1234 1234 1234 子 模 块 3 0N子 模 块4 0N子 模 块5 0N 1234 1234 1 2 3 4 子模 块6 子摸块7 注:地址开 关 中〃 ■”表示 拨 位 开 关 的 实 际 位置。 警告:地址开关的设定必须 在机组断电情况下进 行,机组通电情况下严禁投动 地址开 关。 2、 逐一合上电 源 控匍 柜中 总开 关 ...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_192a567b814e6232",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_5a1c1229eeed4f00",
+      "page_no": 6,
+      "chunk_id": "chunk_d72af2faa4f84b6d",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "丨\n摸块式风冷拎(热〉水机组控制系统指南\n●机组开、关机\n日常的 机组开、关 机 有 手 动 和自 动 两 种 模 式 ,机组自 动 开 关 机 设 定 参 见“显示\n板 设 置 操 作”说 明 中自 动开 关 机部 分,控制 器上的鲴 于手 动 开、关 机。电控\n箱 门上的 急 停 开 关 用 在 机组维 修、调 试或紧急情 况下 的关机,平时一般 不 使用。\n已 经 长 时 阃 切断 扭纽电 ",
+      "evidence_text": "丨 摸块式风冷拎(热〉水机组控制系统指南 ●机组开、关机 日常的 机组开、关 机 有 手 动 和自 动 两 种 模 式 ,机组自 动 开 关 机 设 定 参 见“显示 板 设 置 操 作”说 明 中自 动开 关 机部 分,控制 器上的鲴 于手 动 开、关 机。电控 箱 门上的 急 停 开 关 用 在 机组维 修、调 试或紧急情 况下 的关机,平时一般 不 使用。 已 经 长 时 阃 切断 扭纽电 源 后 开 机或 首 次 开 机`...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "R6Q",
+      "structured_payload_candidate": {
+        "fault_code": "R6Q"
+      },
+      "confidence_score": 0.858,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_token": "R6Q",
+          "detection_method": "fault_regex"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "fault code regex matched in fault context"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "R6Q",
+        "structured_payload": {
+          "fault_code": "R6Q"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "丨 摸块式风冷拎(热〉水机组控制系统指南 ●机组开、关机 日常的 机组开、关 机 有 手 动 和自 动 两 种 模 式 ,机组自 动 开 关 机 设 定 参 见“显示 板 设 置 操 作”说 明 中自 动开 关 机部 分,控制 器上的鲴 于手 动 开、关 机。电控 箱 门上的 急 停 开 关 用 在 机组维 修、调 试或紧急情 况下 的关机,平时一般 不 使用。 已 经 长 时 阃 切断 扭纽电 源 后 开 机或 首 次 开 机`...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_620e9567e084c185",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_54c9c2fb035446a6",
+      "page_no": 7,
+      "chunk_id": "chunk_89b101a07ef241d5",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "模块式风冷冷(热)水机组控剞系统指南\n●显示板 概述\n1~8个模 块 联 网 控 制 时 都 只 配 置一个显示 板,用于 显示 控制 菜 单、接 收并显示 主板 控\n制 器发 来 的 各 种 参 数、进行 可 调 参 数 的 设置,并把设置好 的 各种 参 数 传 送给 主板 控制器。\n●显示 板控 制面板\n1 兹 畅 :簸,,显示 板电 源 接通时 该 指示 灯 亮;否则 时 火 .\n2 砌 ",
+      "evidence_text": "模块式风冷冷(热)水机组控剞系统指南 ●显示板 概述 1~8个模 块 联 网 控 制 时 都 只 配 置一个显示 板,用于 显示 控制 菜 单、接 收并显示 主板 控 制 器发 来 的 各 种 参 数、进行 可 调 参 数 的 设置,并把设置好 的 各种 参 数 传 送给 主板 控制器。 ●显示 板控 制面板 1 兹 畅 :簸,,显示 板电 源 接通时 该 指示 灯 亮;否则 时 火 . 2 砌 示 〃〔 觳 〕 ,显示 板开 机...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "R6Q",
+      "structured_payload_candidate": {
+        "fault_code": "R6Q"
+      },
+      "confidence_score": 0.858,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_token": "R6Q",
+          "detection_method": "fault_regex"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "fault code regex matched in fault context"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "R6Q",
+        "structured_payload": {
+          "fault_code": "R6Q"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "模块式风冷冷(热)水机组控剞系统指南 ●显示板 概述 1~8个模 块 联 网 控 制 时 都 只 配 置一个显示 板,用于 显示 控制 菜 单、接 收并显示 主板 控 制 器发 来 的 各 种 参 数、进行 可 调 参 数 的 设置,并把设置好 的 各种 参 数 传 送给 主板 控制器。 ●显示 板控 制面板 1 兹 畅 :簸,,显示 板电 源 接通时 该 指示 灯 亮;否则 时 火 . 2 砌 示 〃〔 觳 〕 ,显示 板开 机...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_dd735ab28a55d842",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_54c9c2fb035446a6",
+      "page_no": 7,
+      "chunk_id": "chunk_89b101a07ef241d5",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "模块式风冷冷(热)水机组控剞系统指南\n●显示板 概述\n1~8个模 块 联 网 控 制 时 都 只 配 置一个显示 板,用于 显示 控制 菜 单、接 收并显示 主板 控\n制 器发 来 的 各 种 参 数、进行 可 调 参 数 的 设置,并把设置好 的 各种 参 数 传 送给 主板 控制器。\n●显示 板控 制面板\n1 兹 畅 :簸,,显示 板电 源 接通时 该 指示 灯 亮;否则 时 火 .\n2 砌 ",
+      "evidence_text": "模块式风冷冷(热)水机组控剞系统指南 ●显示板 概述 1~8个模 块 联 网 控 制 时 都 只 配 置一个显示 板,用于 显示 控制 菜 单、接 收并显示 主板 控 制 器发 来 的 各 种 参 数、进行 可 调 参 数 的 设置,并把设置好 的 各种 参 数 传 送给 主板 控制器。 ●显示 板控 制面板 1 兹 畅 :簸,,显示 板电 源 接通时 该 指示 灯 亮;否则 时 火 . 2 砌 示 〃〔 觳 〕 ,显示 板开 机...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "10",
+      "structured_payload_candidate": {
+        "fault_code": "10"
+      },
+      "confidence_score": 0.858,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_token": "10",
+          "detection_method": "fault_regex"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "fault code regex matched in fault context"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "10",
+        "structured_payload": {
+          "fault_code": "10"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "模块式风冷冷(热)水机组控剞系统指南 ●显示板 概述 1~8个模 块 联 网 控 制 时 都 只 配 置一个显示 板,用于 显示 控制 菜 单、接 收并显示 主板 控 制 器发 来 的 各 种 参 数、进行 可 调 参 数 的 设置,并把设置好 的 各种 参 数 传 送给 主板 控制器。 ●显示 板控 制面板 1 兹 畅 :簸,,显示 板电 源 接通时 该 指示 灯 亮;否则 时 火 . 2 砌 示 〃〔 觳 〕 ,显示 板开 机...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_007d51f6302207a7",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_541bb5a00fa34873",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "chunk_index": 1,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上 一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下: 压缩机高压一 压缩机高压二 压缩机低压一 压缩机低压= 压缩机一过载 压缩机=过搴 水流开关 风机一过滇 风机二过滇 进水温唐器 出水温感器 化霜温感器一 化霜温屠器二 防冻温感器 参考点温軎罨 防冻/防过紊捏度 排气高涅一 排气高捏ˉ 通信线爵故障 时钟芯...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "R6Q",
+      "structured_payload_candidate": {
+        "fault_code": "R6Q"
+      },
+      "confidence_score": 0.858,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_token": "R6Q",
+          "detection_method": "fault_regex"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "fault code regex matched in fault context"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "R6Q",
+        "structured_payload": {
+          "fault_code": "R6Q"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上 一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下: 压缩机高压一 压缩机高压二 压缩机低压一 压缩机低压= 压缩机一过载 压缩机=过搴 水流开关 风机一过滇 风机二过滇 进水温唐器 出水温感器 化霜温感器一 化霜温屠器二 防冻温感器 参考点温軎罨 防冻/防过紊捏度 排气高涅一 排气高捏ˉ 通信线爵故障 时钟芯...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_34cf5b6e14da545d",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_541bb5a00fa34873",
+      "page_no": 12,
+      "chunk_id": "chunk_cc65abf187fe4f36",
+      "chunk_index": 1,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上\n一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下:\n压缩机高压一\n压缩机高压二\n压缩机低压一\n压缩机低压=\n压缩机一过载\n压缩机=过搴\n水流开关\n风机一过滇\n风机二过滇\n进水温唐器\n出水温感器\n化霜温感器一\n化霜温屠器二\n防冻温感器\n参考点温軎罨\n防冻/防过紊捏度\n排气高涅一",
+      "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上 一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下: 压缩机高压一 压缩机高压二 压缩机低压一 压缩机低压= 压缩机一过载 压缩机=过搴 水流开关 风机一过滇 风机二过滇 进水温唐器 出水温感器 化霜温感器一 化霜温屠器二 防冻温感器 参考点温軎罨 防冻/防过紊捏度 排气高涅一 排气高捏ˉ 通信线爵故障 时钟芯...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "10",
+      "structured_payload_candidate": {
+        "fault_code": "10"
+      },
+      "confidence_score": 0.858,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_token": "10",
+          "detection_method": "fault_regex"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "fault code regex matched in fault context"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "10",
+        "structured_payload": {
+          "fault_code": "10"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "“屁0αZ冖为可能出现的 故 障 类 型,若当 前 有 多 个 故 障 同F,存在,则在上 一次 和 当 前 故 障中 交 蕾 出 现 。可能出现的 故 障 类 型 如 下: 压缩机高压一 压缩机高压二 压缩机低压一 压缩机低压= 压缩机一过载 压缩机=过搴 水流开关 风机一过滇 风机二过滇 进水温唐器 出水温感器 化霜温感器一 化霜温屠器二 防冻温感器 参考点温軎罨 防冻/防过紊捏度 排气高涅一 排气高捏ˉ 通信线爵故障 时钟芯...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_959533a84138bb27",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_aa83b50524324b65",
+      "page_no": 4,
+      "chunk_id": "chunk_9521bb82b1564386",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "7\n'\n模块式风冷冷 〈热)水机组控制系统指南\n●机组接线\n动 力 线 的 连 接 :本机组 在动 力 线 的 连 接 上要 求 相 序 必 须一致。\n联 网 控制 线的 连 接:将两端 都 带 插 头的 四 芯 联 网 通 讯 线(机组随 机 附件)依次 插人主、\n子 控 制 器 的 X2、X3插口,每个 模 块机组 控制器 河就可实 现 相互 通信,每个控 制器的 信 息\n`\n就 可通 过 主",
+      "evidence_text": "7 ' 模块式风冷冷 〈热)水机组控制系统指南 ●机组接线 动 力 线 的 连 接 :本机组 在动 力 线 的 连 接 上要 求 相 序 必 须一致。 联 网 控制 线的 连 接:将两端 都 带 插 头的 四 芯 联 网 通 讯 线(机组随 机 附件)依次 插人主、 子 控 制 器 的 X2、X3插口,每个 模 块机组 控制器 河就可实 现 相互 通信,每个控 制器的 信 息 ` 就 可通 过 主模 块 的显示 板进行 操 作 和...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "application_7_x2_x3",
+      "structured_payload_candidate": {
+        "application_type": "application",
+        "guidance": "7\n'\n模块式风冷冷 〈热)水机组控制系统指南\n●机组接线\n动 力 线 的 连 接 :本机组 在动 力 线 的 连 接 上要 求 相 序 必 须一致。\n联 网 控制 线的 连 接:将两端 都 带 插 头的 四 芯 联 网 通 讯 线(机组随 机 附件)依次 插人主、\n子 控 制 器 的 X2、X3插口,每个 模 块机组 控制器 河就可实 现 相互 通信,每个控 制器的 信 息\n`\n就 可通 过 主"
+      },
+      "confidence_score": 0.758,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [
+          {
+            "equipment_class_id": "air_cooled_modular_heat_pump",
+            "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+            "confidence": 0.383,
+            "matched_aliases": [
+              "模块机"
+            ]
+          },
+          {
+            "equipment_class_id": "modular_chiller",
+            "equipment_class_key": "hvac:modular_chiller",
+            "confidence": 0.383,
+            "matched_aliases": [
+              "模块机"
+            ]
+          }
+        ],
+        "knowledge_signal": {
+          "matched_application_type": "application",
+          "detection_method": "application_context"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "application domain markers matched"
+      },
+      "health_findings": [
+        {
+          "code": "weak_evidence",
+          "severity": "medium",
+          "message": "Candidate relies on limited confidence or a short evidence span."
+        },
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "application_7_x2_x3",
+        "structured_payload": {
+          "application_type": "application",
+          "guidance": "7\n'\n模块式风冷冷 〈热)水机组控制系统指南\n●机组接线\n动 力 线 的 连 接 :本机组 在动 力 线 的 连 接 上要 求 相 序 必 须一致。\n联 网 控制 线的 连 接:将两端 都 带 插 头的 四 芯 联 网 通 讯 线(机组随 机 附件)依次 插人主、\n子 控 制 器 的 X2、X3插口,每个 模 块机组 控制器 河就可实 现 相互 通信,每个控 制器的 信 息\n`\n就 可通 过 主"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "7 ' 模块式风冷冷 〈热)水机组控制系统指南 ●机组接线 动 力 线 的 连 接 :本机组 在动 力 线 的 连 接 上要 求 相 序 必 须一致。 联 网 控制 线的 连 接:将两端 都 带 插 头的 四 芯 联 网 通 讯 线(机组随 机 附件)依次 插人主、 子 控 制 器 的 X2、X3插口,每个 模 块机组 控制器 河就可实 现 相互 通信,每个控 制器的 信 息 ` 就 可通 过 主模 块 的显示 板进行 操 作 和...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fc907a599152a701",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_03b2184e7e0e4702",
+      "page_no": 8,
+      "chunk_id": "chunk_8624cbe0ee924386",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "'ι\n'\n模块式风泠冷(热〉水机组控制系统指更\n●显示板操作说明\n1 机组的开/关\n非 调 试状 态 下机组的 开夫机,。l以通 过 手 动 模 式,也可 通过 定 时 模 式 手动 模 式优 先\n于 定时模式.在调 试 状态下,手动和 定 时 摸 式均 无 效 .\n●手 动 模式:\nD、手 动开 机;在弭玺 关 机 状 态 下`按左 凵 幽红L屋使机组 启 动,此时 机组 运行指 示\n灯 亮,压",
+      "evidence_text": "'ι ' 模块式风泠冷(热〉水机组控制系统指更 ●显示板操作说明 1 机组的开/关 非 调 试状 态 下机组的 开夫机,。l以通 过 手 动 模 式,也可 通过 定 时 模 式 手动 模 式优 先 于 定时模式.在调 试 状态下,手动和 定 时 摸 式均 无 效 . ●手 动 模式: D、手 动开 机;在弭玺 关 机 状 态 下`按左 凵 幽红L屋使机组 启 动,此时 机组 运行指 示 灯 亮,压缩 机延时 启动≡,手动 开 机过...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "application_1_l_d_l",
+      "structured_payload_candidate": {
+        "application_type": "application",
+        "guidance": "'ι\n'\n模块式风泠冷(热〉水机组控制系统指更\n●显示板操作说明\n1 机组的开/关\n非 调 试状 态 下机组的 开夫机,。l以通 过 手 动 模 式,也可 通过 定 时 模 式 手动 模 式优 先\n于 定时模式.在调 试 状态下,手动和 定 时 摸 式均 无 效 .\n●手 动 模式:\nD、手 动开 机;在弭玺 关 机 状 态 下`按左 凵 幽红L屋使机组 启 动,此时 机组 运行指 示\n灯 亮,压"
+      },
+      "confidence_score": 0.758,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_application_type": "application",
+          "detection_method": "application_context"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "application domain markers matched"
+      },
+      "health_findings": [
+        {
+          "code": "weak_evidence",
+          "severity": "medium",
+          "message": "Candidate relies on limited confidence or a short evidence span."
+        },
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "application_1_l_d_l",
+        "structured_payload": {
+          "application_type": "application",
+          "guidance": "'ι\n'\n模块式风泠冷(热〉水机组控制系统指更\n●显示板操作说明\n1 机组的开/关\n非 调 试状 态 下机组的 开夫机,。l以通 过 手 动 模 式,也可 通过 定 时 模 式 手动 模 式优 先\n于 定时模式.在调 试 状态下,手动和 定 时 摸 式均 无 效 .\n●手 动 模式:\nD、手 动开 机;在弭玺 关 机 状 态 下`按左 凵 幽红L屋使机组 启 动,此时 机组 运行指 示\n灯 亮,压"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "'ι ' 模块式风泠冷(热〉水机组控制系统指更 ●显示板操作说明 1 机组的开/关 非 调 试状 态 下机组的 开夫机,。l以通 过 手 动 模 式,也可 通过 定 时 模 式 手动 模 式优 先 于 定时模式.在调 试 状态下,手动和 定 时 摸 式均 无 效 . ●手 动 模式: D、手 动开 机;在弭玺 关 机 状 态 下`按左 凵 幽红L屋使机组 启 动,此时 机组 运行指 示 灯 亮,压缩 机延时 启动≡,手动 开 机过...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_8771435c1245a875",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_4700ac8a8a1244a4",
+      "page_no": 11,
+      "chunk_id": "chunk_77dcfb18b81642f8",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "-\n刁′:模块式风冷令 (热)水机组控制系统抬南\n3⒓1 藏 度 查 瞢\n用 于 查看 各温度 点 的 温 度.选择壅 壅 望 萱 按 嬷 宕 邂 进 入 .屏幕 显示 如 下 图 第一页 所\n出 水温 麽       巫Ⅸ ℃ ▲\n进榀度       -℃\n防 冻洧 赌【防 过 热 温 度 】 巫X℃\n参 考 点龃       XX X℃  V\n第一页\n化 霜温度一XX X℃     ▲\n化 霜",
+      "evidence_text": "- 刁′:模块式风冷令 (热)水机组控制系统抬南 3⒓1 藏 度 查 瞢 用 于 查看 各温度 点 的 温 度.选择壅 壅 望 萱 按 嬷 宕 邂 进 入 .屏幕 显示 如 下 图 第一页 所 出 水温 麽 巫Ⅸ ℃ ▲ 进榀度 -℃ 防 冻洧 赌【防 过 热 温 度 】 巫X℃ 参 考 点龃 XX X℃ V 第一页 化 霜温度一XX X℃ ▲ 化 霜温度=XX X℃ V 第二页 通 过鼠上、″脚 在上面 两 页 中 切 换.按遽...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "application_3_1_x_xx_x_v",
+      "structured_payload_candidate": {
+        "application_type": "application",
+        "guidance": "-\n刁′:模块式风冷令 (热)水机组控制系统抬南\n3⒓1 藏 度 查 瞢\n用 于 查看 各温度 点 的 温 度.选择壅 壅 望 萱 按 嬷 宕 邂 进 入 .屏幕 显示 如 下 图 第一页 所\n出 水温 麽       巫Ⅸ ℃ ▲\n进榀度       -℃\n防 冻洧 赌【防 过 热 温 度 】 巫X℃\n参 考 点龃       XX X℃  V\n第一页\n化 霜温度一XX X℃     ▲\n化 霜"
+      },
+      "confidence_score": 0.758,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [
+          {
+            "equipment_class_id": "air_cooled_modular_heat_pump",
+            "equipment_class_key": "hvac:air_cooled_modular_heat_pump",
+            "confidence": 0.383,
+            "matched_aliases": [
+              "模块机"
+            ]
+          },
+          {
+            "equipment_class_id": "modular_chiller",
+            "equipment_class_key": "hvac:modular_chiller",
+            "confidence": 0.383,
+            "matched_aliases": [
+              "模块机"
+            ]
+          }
+        ],
+        "knowledge_signal": {
+          "matched_application_type": "application",
+          "detection_method": "application_context"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "application domain markers matched"
+      },
+      "health_findings": [
+        {
+          "code": "weak_evidence",
+          "severity": "medium",
+          "message": "Candidate relies on limited confidence or a short evidence span."
+        },
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "application_3_1_x_xx_x_v",
+        "structured_payload": {
+          "application_type": "application",
+          "guidance": "-\n刁′:模块式风冷令 (热)水机组控制系统抬南\n3⒓1 藏 度 查 瞢\n用 于 查看 各温度 点 的 温 度.选择壅 壅 望 萱 按 嬷 宕 邂 进 入 .屏幕 显示 如 下 图 第一页 所\n出 水温 麽       巫Ⅸ ℃ ▲\n进榀度       -℃\n防 冻洧 赌【防 过 热 温 度 】 巫X℃\n参 考 点龃       XX X℃  V\n第一页\n化 霜温度一XX X℃     ▲\n化 霜"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "- 刁′:模块式风冷令 (热)水机组控制系统抬南 3⒓1 藏 度 查 瞢 用 于 查看 各温度 点 的 温 度.选择壅 壅 望 萱 按 嬷 宕 邂 进 入 .屏幕 显示 如 下 图 第一页 所 出 水温 麽 巫Ⅸ ℃ ▲ 进榀度 -℃ 防 冻洧 赌【防 过 热 温 度 】 巫X℃ 参 考 点龃 XX X℃ V 第一页 化 霜温度一XX X℃ ▲ 化 霜温度=XX X℃ V 第二页 通 过鼠上、″脚 在上面 两 页 中 切 换.按遽...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fd034acec64346b2",
+      "domain_id": "hvac",
+      "doc_id": "doc_37109bd2df4547e4",
+      "doc_name": "【格力】模块风冷冷水机组控制系统手册-.pdf",
+      "page_id": "page_356b7a7f287a4309",
+      "page_no": 15,
+      "chunk_id": "chunk_5a7754b8ebbc427d",
+      "chunk_index": 0,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "X\n模块式风冷泠(热〉水觇组控制系统指南\n附图一 主摸块与子模块 乏阃的联网方法利接线示薏图\n「~~~~~~~~。\nL_______.\n铡眦\nL~ˉˉˉˉˉˉˉˉˉ J\n;眢鞫 犭翦论g嚣骜鏖 甘 錾 卺鬲鏊 鼙 群罟 笙Ⅻ 酃)跚硐蛳阴⒋ 勰跚 趾 酥\n-3435 ,鳓 氵墩 吐擅腑\n3用1裉四 锶硝眵g知即耔 院(4×10m耐~35m潴)黝贞 浅 引 线凄:叼蚨 翅 大接 纺皈TB1的L1,⒓",
+      "evidence_text": "X 模块式风冷泠(热〉水觇组控制系统指南 附图一 主摸块与子模块 乏阃的联网方法利接线示薏图 「~~~~~~~~。 L_______. 铡眦 L~ˉˉˉˉˉˉˉˉˉ J ;眢鞫 犭翦论g嚣骜鏖 甘 錾 卺鬲鏊 鼙 群罟 笙Ⅻ 酃)跚硐蛳阴⒋ 勰跚 趾 酥 -3435 ,鳓 氵墩 吐擅腑 3用1裉四 锶硝眵g知即耔 院(4×10m耐~35m潴)黝贞 浅 引 线凄:叼蚨 翅 大接 纺皈TB1的L1,⒓阝N,蜘 所示: 4阍雁芯 软 导...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chiller",
+        "equipment_class_key": "hvac:chiller",
+        "label": "Chiller",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "application_guidance",
+          "maintenance_procedure",
+          "performance_spec",
+          "operational_sequence",
+          "fault_diagnostic_rule"
+        ]
+      },
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "application_x_l_l_j_g_3435",
+      "structured_payload_candidate": {
+        "application_type": "application",
+        "guidance": "X\n模块式风冷泠(热〉水觇组控制系统指南\n附图一 主摸块与子模块 乏阃的联网方法利接线示薏图\n「~~~~~~~~。\nL_______.\n铡眦\nL~ˉˉˉˉˉˉˉˉˉ J\n;眢鞫 犭翦论g嚣骜鏖 甘 錾 卺鬲鏊 鼙 群罟 笙Ⅻ 酃)跚硐蛳阴⒋ 勰跚 趾 酥\n-3435 ,鳓 氵墩 吐擅腑\n3用1裉四 锶硝眵g知即耔 院(4×10m耐~35m潴)黝贞 浅 引 线凄:叼蚨 翅 大接 纺皈TB1的L1,⒓"
+      },
+      "confidence_score": 0.758,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [],
+        "knowledge_signal": {
+          "matched_application_type": "application",
+          "detection_method": "application_context"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "application domain markers matched"
+      },
+      "health_findings": [
+        {
+          "code": "weak_evidence",
+          "severity": "medium",
+          "message": "Candidate relies on limited confidence or a short evidence span."
+        },
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "application_x_l_l_j_g_3435",
+        "structured_payload": {
+          "application_type": "application",
+          "guidance": "X\n模块式风冷泠(热〉水觇组控制系统指南\n附图一 主摸块与子模块 乏阃的联网方法利接线示薏图\n「~~~~~~~~。\nL_______.\n铡眦\nL~ˉˉˉˉˉˉˉˉˉ J\n;眢鞫 犭翦论g嚣骜鏖 甘 錾 卺鬲鏊 鼙 群罟 笙Ⅻ 酃)跚硐蛳阴⒋ 勰跚 趾 酥\n-3435 ,鳓 氵墩 吐擅腑\n3用1裉四 锶硝眵g知即耔 院(4×10m耐~35m潴)黝贞 浅 引 线凄:叼蚨 翅 大接 纺皈TB1的L1,⒓"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "X 模块式风冷泠(热〉水觇组控制系统指南 附图一 主摸块与子模块 乏阃的联网方法利接线示薏图 「~~~~~~~~。 L_______. 铡眦 L~ˉˉˉˉˉˉˉˉˉ J ;眢鞫 犭翦论g嚣骜鏖 甘 錾 卺鬲鏊 鼙 群罟 笙Ⅻ 酃)跚硐蛳阴⒋ 勰跚 趾 酥 -3435 ,鳓 氵墩 吐擅腑 3用1裉四 锶硝眵g知即耔 院(4×10m耐~35m潴)黝贞 浅 引 线凄:叼蚨 翅 大接 纺皈TB1的L1,⒓阝N,蜘 所示: 4阍雁芯 软 导...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

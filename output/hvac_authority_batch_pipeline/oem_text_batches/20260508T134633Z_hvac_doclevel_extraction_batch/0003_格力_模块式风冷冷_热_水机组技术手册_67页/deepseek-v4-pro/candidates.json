@@ -1,0 +1,439 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_862fa657b6d36593",
+      "domain_id": "hvac",
+      "doc_id": "doc_265123720fc94c35",
+      "doc_name": "【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_cdff6c6657a44085",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsqw_r_f40m_b_n_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "40",
+        "unit": "kW",
+        "model": "LSQW(R)F40M/B(N)",
+        "title": "LSQW(R)F40M/B(N) nominal cooling capacity",
+        "summary": "Nominal cooling capacity is 40 kW for model LSQW(R)F40M/B(N)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "14、产品技术参数表\n机组名义工况性能参数表\nLSQW(R)FM/B LSQW(R)FM/N\n型号\n40 65 80 130 40 65 80 130\n制冷量 kW 40 65 80 130 40 65 80 130\n制热量(热泵 ) kW 42 70 85 140 42 70 85 140\n机组制冷功率 kW 13.1 20.3 26 40.5 13.7 22.3 27.3 43.9\n机组制热功率（热泵） kW 13.0 20.0 25.0 40.0 13.0 22.0 26.8 43.0\n噪声 dB(A)  64 67 68 69 64 67 68 69\n电源 380V  3N- 50HZ\n运转控制 微电脑全自动控制，运行状态显示，异常状态报警\n安全装置 高低压开关，防冻结开关，过流保护开关，相序保护器，压缩机过热 保\n护装置，软件延时启动压缩机保护\n压缩机形式 全封闭涡旋式柔性压缩机\n制冷剂 R22 R407C\n充注量 kg 6.3×2 10× 2 12.7×2 20× 2 6.3×2 10× 2 12.7×2 20× 2\n水量 m3/h 6.9 11.2 13.7 22.3 6.9 11.2 13.7 22.3\n水阻力损失 kPa 6 10 15 17.5 6 10 15 17.5\n水侧换热器 高效壳管式换热器\n最高承压 MPa  1 水\n路\n系\n统\n进出水管径 mm DN50 DN65 DN65 DN80  DN50 DN65 DN65 DN80\n空气侧换热器 高效翅片盘管式 空\n气\n系\n统 风机额定功率 W 300× 2 1150×2 1150×2 750× 4 300× 2 1150×2 1150×2 750× 4\n宽 mm 1810 2110 2110 2410 1810 2110 2110 2410\n深 mm 1000 1100 1100 1900 1000 1100 1100 1900 外\n形\n尺\n寸 高 mm 1740 2140 2140 2240 1740 2140 2140 2240\n机组总重量 kg 600 1000 1100 1800 600 1000 1100 1800\n机组总重量（热泵） kg 620 1050 1150 1860 620 1050 1150 1860\n用户选配  辅助电加热（热泵） kW 15 15 30 30 15 15 30 30\n说明：1、机组以 GB/T18430.1-2001 进行设计，制造，检验；\n2、具体机组参数请以铭牌参数为准；\n3、单冷机无制热项参数；\n4、如有特殊要求，请另行联系。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cdff6c6657a44085"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Extracted nominal cooling capacity from performance table, with clear value, unit, model, and source."
+    },
+    {
+      "candidate_id": "cand_eddfcadc0cf6ad29",
+      "domain_id": "hvac",
+      "doc_id": "doc_265123720fc94c35",
+      "doc_name": "【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_ae09eaa6b40d4ba7",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsqw_r_f65m_b_n_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "65",
+        "unit": "kW",
+        "model": "LSQW(R)F65M/B(N)",
+        "title": "LSQW(R)F65M/B(N) nominal cooling capacity",
+        "summary": "Nominal cooling capacity is 65 kW for model LSQW(R)F65M/B(N)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1一、产品篇\n1、产品种类\n型号 制冷量 图片\nLSQW（R）F40M/B\nLSQW（R）F40M/N 40kW\nLSQW（R）F65M/B\nLSQW（R）F65M/N 65kW\nLSQW（R）F80M/B\nLSQW（R）F80M/N 80kW\nLSQW（R）F130M/B\nLSQW（R）F130M/N  130kW\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ae09eaa6b40d4ba7",
+        "chunk_a2b9d981d4184533",
+        "chunk_96b49ae82f6f4cd6",
+        "chunk_ddfcb2d115f64164",
+        "chunk_4825f734b2bc4df0"
+      ],
+      "source_page_nos": [
+        3,
+        7,
+        8,
+        15,
+        16
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Cooling capacity parameter from product specification; evidence shows model and 65 kW directly in table."
+    },
+    {
+      "candidate_id": "cand_91ea97e1cad94061",
+      "domain_id": "hvac",
+      "doc_id": "doc_265123720fc94c35",
+      "doc_name": "【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_ae09eaa6b40d4ba7",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsqw_r_f80m_b_n_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "80",
+        "unit": "kW",
+        "model": "LSQW(R)F80M/B(N)",
+        "title": "LSQW(R)F80M/B(N) nominal cooling capacity",
+        "summary": "Nominal cooling capacity is 80 kW for model LSQW(R)F80M/B(N)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1一、产品篇\n1、产品种类\n型号 制冷量 图片\nLSQW（R）F40M/B\nLSQW（R）F40M/N 40kW\nLSQW（R）F65M/B\nLSQW（R）F65M/N 65kW\nLSQW（R）F80M/B\nLSQW（R）F80M/N 80kW\nLSQW（R）F130M/B\nLSQW（R）F130M/N  130kW\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ae09eaa6b40d4ba7",
+        "chunk_a2b9d981d4184533",
+        "chunk_96b49ae82f6f4cd6",
+        "chunk_ddfcb2d115f64164",
+        "chunk_4825f734b2bc4df0"
+      ],
+      "source_page_nos": [
+        3,
+        7,
+        8,
+        15,
+        16
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Cooling capacity 80 kW for LSQW(R)F80M/B(N) found in product table."
+    },
+    {
+      "candidate_id": "cand_e9d91eee180990bc",
+      "domain_id": "hvac",
+      "doc_id": "doc_265123720fc94c35",
+      "doc_name": "【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_ae09eaa6b40d4ba7",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsqw_r_f130m_b_n_cooling_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_capacity",
+        "value": "130",
+        "unit": "kW",
+        "model": "LSQW(R)F130M/B(N)",
+        "title": "LSQW(R)F130M/B(N) nominal cooling capacity",
+        "summary": "Nominal cooling capacity is 130 kW for model LSQW(R)F130M/B(N)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1一、产品篇\n1、产品种类\n型号 制冷量 图片\nLSQW（R）F40M/B\nLSQW（R）F40M/N 40kW\nLSQW（R）F65M/B\nLSQW（R）F65M/N 65kW\nLSQW（R）F80M/B\nLSQW（R）F80M/N 80kW\nLSQW（R）F130M/B\nLSQW（R）F130M/N  130kW\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_ae09eaa6b40d4ba7",
+        "chunk_a2b9d981d4184533",
+        "chunk_96b49ae82f6f4cd6",
+        "chunk_ddfcb2d115f64164",
+        "chunk_4825f734b2bc4df0"
+      ],
+      "source_page_nos": [
+        3,
+        7,
+        8,
+        15,
+        16
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Cooling capacity 130 kW for LSQW(R)F130M/B(N) from product data."
+    },
+    {
+      "candidate_id": "cand_232244de414b268c",
+      "domain_id": "hvac",
+      "doc_id": "doc_265123720fc94c35",
+      "doc_name": "【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_cdff6c6657a44085",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsqw_r_f40m_b_n_heating_capacity",
+      "structured_payload_candidate": {
+        "parameter_name": "heating_capacity",
+        "value": "42",
+        "unit": "kW",
+        "model": "LSQWRF40M/B(N)",
+        "title": "LSQW(R)F40M/B(N) heating capacity",
+        "summary": "Heating capacity is 42 kW for heat pump model LSQWRF40M/B(N)."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "14、产品技术参数表\n机组名义工况性能参数表\nLSQW(R)FM/B LSQW(R)FM/N\n型号\n40 65 80 130 40 65 80 130\n制冷量 kW 40 65 80 130 40 65 80 130\n制热量(热泵 ) kW 42 70 85 140 42 70 85 140\n机组制冷功率 kW 13.1 20.3 26 40.5 13.7 22.3 27.3 43.9\n机组制热功率（热泵） kW 13.0 20.0 25.0 40.0 13.0 22.0 26.8 43.0\n噪声 dB(A)  64 67 68 69 64 67 68 69\n电源 380V  3N- 50HZ\n运转控制 微电脑全自动控制，运行状态显示，异常状态报警\n安全装置 高低压开关，防冻结开关，过流保护开关，相序保护器，压缩机过热 保\n护装置，软件延时启动压缩机保护\n压缩机形式 全封闭涡旋式柔性压缩机\n制冷剂 R22 R407C\n充注量 kg 6.3×2 10× 2 12.7×2 20× 2 6.3×2 10× 2 12.7×2 20× 2\n水量 m3/h 6.9 11.2 13.7 22.3 6.9 11.2 13.7 22.3\n水阻力损失 kPa 6 10 15 17.5 6 10 15 17.5\n水侧换热器 高效壳管式换热器\n最高承压 MPa  1 水\n路\n系\n统\n进出水管径 mm DN50 DN65 DN65 DN80  DN50 DN65 DN65 DN80\n空气侧换热器 高效翅片盘管式 空\n气\n系\n统 风机额定功率 W 300× 2 1150×2 1150×2 750× 4 300× 2 1150×2 1150×2 750× 4\n宽 mm 1810 2110 2110 2410 1810 2110 2110 2410\n深 mm 1000 1100 1100 1900 1000 1100 1100 1900 外\n形\n尺\n寸 高 mm 1740 2140 2140 2240 1740 2140 2140 2240\n机组总重量 kg 600 1000 1100 1800 600 1000 1100 1800\n机组总重量（热泵） kg 620 1050 1150 1860 620 1050 1150 1860\n用户选配  辅助电加热（热泵） kW 15 15 30 30 15 15 30 30\n说明：1、机组以 GB/T18430.1-2001 进行设计，制造，检验；\n2、具体机组参数请以铭牌参数为准；\n3、单冷机无制热项参数；\n4、如有特殊要求，请另行联系。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cdff6c6657a44085"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Heating capacity 42 kW for heat pump model, from nominal performance table."
+    },
+    {
+      "candidate_id": "cand_7d88ed8cdb28ffd0",
+      "domain_id": "hvac",
+      "doc_id": "doc_265123720fc94c35",
+      "doc_name": "【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_cdff6c6657a44085",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsqw_r_f40m_b_cooling_power",
+      "structured_payload_candidate": {
+        "parameter_name": "cooling_power_input",
+        "value": "13.1",
+        "unit": "kW",
+        "model": "LSQW(R)F40M/B",
+        "title": "LSQW(R)F40M/B cooling power input",
+        "summary": "Cooling power input is 13.1 kW for LSQW(R)F40M/B."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "14、产品技术参数表\n机组名义工况性能参数表\nLSQW(R)FM/B LSQW(R)FM/N\n型号\n40 65 80 130 40 65 80 130\n制冷量 kW 40 65 80 130 40 65 80 130\n制热量(热泵 ) kW 42 70 85 140 42 70 85 140\n机组制冷功率 kW 13.1 20.3 26 40.5 13.7 22.3 27.3 43.9\n机组制热功率（热泵） kW 13.0 20.0 25.0 40.0 13.0 22.0 26.8 43.0\n噪声 dB(A)  64 67 68 69 64 67 68 69\n电源 380V  3N- 50HZ\n运转控制 微电脑全自动控制，运行状态显示，异常状态报警\n安全装置 高低压开关，防冻结开关，过流保护开关，相序保护器，压缩机过热 保\n护装置，软件延时启动压缩机保护\n压缩机形式 全封闭涡旋式柔性压缩机\n制冷剂 R22 R407C\n充注量 kg 6.3×2 10× 2 12.7×2 20× 2 6.3×2 10× 2 12.7×2 20× 2\n水量 m3/h 6.9 11.2 13.7 22.3 6.9 11.2 13.7 22.3\n水阻力损失 kPa 6 10 15 17.5 6 10 15 17.5\n水侧换热器 高效壳管式换热器\n最高承压 MPa  1 水\n路\n系\n统\n进出水管径 mm DN50 DN65 DN65 DN80  DN50 DN65 DN65 DN80\n空气侧换热器 高效翅片盘管式 空\n气\n系\n统 风机额定功率 W 300× 2 1150×2 1150×2 750× 4 300× 2 1150×2 1150×2 750× 4\n宽 mm 1810 2110 2110 2410 1810 2110 2110 2410\n深 mm 1000 1100 1100 1900 1000 1100 1100 1900 外\n形\n尺\n寸 高 mm 1740 2140 2140 2240 1740 2140 2140 2240\n机组总重量 kg 600 1000 1100 1800 600 1000 1100 1800\n机组总重量（热泵） kg 620 1050 1150 1860 620 1050 1150 1860\n用户选配  辅助电加热（热泵） kW 15 15 30 30 15 15 30 30\n说明：1、机组以 GB/T18430.1-2001 进行设计，制造，检验；\n2、具体机组参数请以铭牌参数为准；\n3、单冷机无制热项参数；\n4、如有特殊要求，请另行联系。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cdff6c6657a44085"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Cooling power input 13.1 kW for LSQW(R)F40M/B directly from table on page 6."
+    },
+    {
+      "candidate_id": "cand_d816b4a3ab71b2ce",
+      "domain_id": "hvac",
+      "doc_id": "doc_265123720fc94c35",
+      "doc_name": "【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_cdff6c6657a44085",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsqw_r_f40m_b_heating_power",
+      "structured_payload_candidate": {
+        "parameter_name": "heating_power_input",
+        "value": "13.0",
+        "unit": "kW",
+        "model": "LSQWRF40M/B",
+        "title": "LSQW(R)F40M/B heating power input",
+        "summary": "Heating power input is 13.0 kW for LSQWRF40M/B."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "14、产品技术参数表\n机组名义工况性能参数表\nLSQW(R)FM/B LSQW(R)FM/N\n型号\n40 65 80 130 40 65 80 130\n制冷量 kW 40 65 80 130 40 65 80 130\n制热量(热泵 ) kW 42 70 85 140 42 70 85 140\n机组制冷功率 kW 13.1 20.3 26 40.5 13.7 22.3 27.3 43.9\n机组制热功率（热泵） kW 13.0 20.0 25.0 40.0 13.0 22.0 26.8 43.0\n噪声 dB(A)  64 67 68 69 64 67 68 69\n电源 380V  3N- 50HZ\n运转控制 微电脑全自动控制，运行状态显示，异常状态报警\n安全装置 高低压开关，防冻结开关，过流保护开关，相序保护器，压缩机过热 保\n护装置，软件延时启动压缩机保护\n压缩机形式 全封闭涡旋式柔性压缩机\n制冷剂 R22 R407C\n充注量 kg 6.3×2 10× 2 12.7×2 20× 2 6.3×2 10× 2 12.7×2 20× 2\n水量 m3/h 6.9 11.2 13.7 22.3 6.9 11.2 13.7 22.3\n水阻力损失 kPa 6 10 15 17.5 6 10 15 17.5\n水侧换热器 高效壳管式换热器\n最高承压 MPa  1 水\n路\n系\n统\n进出水管径 mm DN50 DN65 DN65 DN80  DN50 DN65 DN65 DN80\n空气侧换热器 高效翅片盘管式 空\n气\n系\n统 风机额定功率 W 300× 2 1150×2 1150×2 750× 4 300× 2 1150×2 1150×2 750× 4\n宽 mm 1810 2110 2110 2410 1810 2110 2110 2410\n深 mm 1000 1100 1100 1900 1000 1100 1100 1900 外\n形\n尺\n寸 高 mm 1740 2140 2140 2240 1740 2140 2140 2240\n机组总重量 kg 600 1000 1100 1800 600 1000 1100 1800\n机组总重量（热泵） kg 620 1050 1150 1860 620 1050 1150 1860\n用户选配  辅助电加热（热泵） kW 15 15 30 30 15 15 30 30\n说明：1、机组以 GB/T18430.1-2001 进行设计，制造，检验；\n2、具体机组参数请以铭牌参数为准；\n3、单冷机无制热项参数；\n4、如有特殊要求，请另行联系。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cdff6c6657a44085"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Heating power input 13.0 kW for LSQWRF40M/B from table on page 6."
+    },
+    {
+      "candidate_id": "cand_90a8631a96142d7a",
+      "domain_id": "hvac",
+      "doc_id": "doc_265123720fc94c35",
+      "doc_name": "【格力】模块式风冷冷(热)水机组技术手册（67页）-.pdf",
+      "page_no": 6,
+      "chunk_id": "chunk_cdff6c6657a44085",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:lsqw_r_f40m_b_noise",
+      "structured_payload_candidate": {
+        "parameter_name": "noise_level",
+        "value": "64",
+        "unit": "dB(A)",
+        "model": "LSQW(R)F40M/B",
+        "title": "LSQW(R)F40M/B noise level",
+        "summary": "Noise level is 64 dB(A) for LSQW(R)F40M/B."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "14、产品技术参数表\n机组名义工况性能参数表\nLSQW(R)FM/B LSQW(R)FM/N\n型号\n40 65 80 130 40 65 80 130\n制冷量 kW 40 65 80 130 40 65 80 130\n制热量(热泵 ) kW 42 70 85 140 42 70 85 140\n机组制冷功率 kW 13.1 20.3 26 40.5 13.7 22.3 27.3 43.9\n机组制热功率（热泵） kW 13.0 20.0 25.0 40.0 13.0 22.0 26.8 43.0\n噪声 dB(A)  64 67 68 69 64 67 68 69\n电源 380V  3N- 50HZ\n运转控制 微电脑全自动控制，运行状态显示，异常状态报警\n安全装置 高低压开关，防冻结开关，过流保护开关，相序保护器，压缩机过热 保\n护装置，软件延时启动压缩机保护\n压缩机形式 全封闭涡旋式柔性压缩机\n制冷剂 R22 R407C\n充注量 kg 6.3×2 10× 2 12.7×2 20× 2 6.3×2 10× 2 12.7×2 20× 2\n水量 m3/h 6.9 11.2 13.7 22.3 6.9 11.2 13.7 22.3\n水阻力损失 kPa 6 10 15 17.5 6 10 15 17.5\n水侧换热器 高效壳管式换热器\n最高承压 MPa  1 水\n路\n系\n统\n进出水管径 mm DN50 DN65 DN65 DN80  DN50 DN65 DN65 DN80\n空气侧换热器 高效翅片盘管式 空\n气\n系\n统 风机额定功率 W 300× 2 1150×2 1150×2 750× 4 300× 2 1150×2 1150×2 750× 4\n宽 mm 1810 2110 2110 2410 1810 2110 2110 2410\n深 mm 1000 1100 1100 1900 1000 1100 1100 1900 外\n形\n尺\n寸 高 mm 1740 2140 2140 2240 1740 2140 2140 2240\n机组总重量 kg 600 1000 1100 1800 600 1000 1100 1800\n机组总重量（热泵） kg 620 1050 1150 1860 620 1050 1150 1860\n用户选配  辅助电加热（热泵） kW 15 15 30 30 15 15 30 30\n说明：1、机组以 GB/T18430.1-2001 进行设计，制造，检验；\n2、具体机组参数请以铭牌参数为准；\n3、单冷机无制热项参数；\n4、如有特殊要求，请另行联系。\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.554,
+        "matched_aliases": [
+          "离心式冷水机组"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_cdff6c6657a44085"
+      ],
+      "source_page_nos": [
+        6
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Noise level 64 dB(A) for LSQW(R)F40M/B from performance table."
+    }
+  ]
+}

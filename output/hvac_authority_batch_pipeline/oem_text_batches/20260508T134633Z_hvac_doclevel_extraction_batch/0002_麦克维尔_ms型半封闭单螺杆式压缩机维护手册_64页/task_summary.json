@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【麦克维尔】MS型半封闭单螺杆式压缩机维护手册（64页）-.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MS型半封闭单螺杆式压缩机维护手册（64页）-.pdf",
+  "doc_id": "doc_c763de73db0b45f5",
+  "chunks": 65,
+  "manual_tokens_estimated": 10511,
+  "equipment_class_id": "screw_chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 64,
+      "chunks_before": 65,
+      "pages_after": 64,
+      "chunks_after": 65,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 36,
+      "anchor_rejected": 4,
+      "anchor_match_rate": 90.0,
+      "judge_accepted": 17,
+      "judge_rejected": 19,
+      "judge_acceptance_rate": 47.2,
+      "judge_rejection_breakdown": {
+        "duplicate": 2,
+        "other": 17
+      },
+      "review_candidates": 17,
+      "by_type": {
+        "parameter_spec": 16,
+        "operational_sequence": 1
+      },
+      "usage": {
+        "prompt_tokens": 18531,
+        "completion_tokens": 5777,
+        "total_tokens": 24308
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1155,
+        "total_tokens": 2435
+      },
+      "extract_cost_rmb": 0.090255,
+      "judge_cost_rmb": 0.01077,
+      "cost_rmb": 0.101025,
+      "elapsed_seconds": 1073.729,
+      "judge_elapsed_seconds": 141.291,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0002_麦克维尔_ms型半封闭单螺杆式压缩机维护手册_64页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T134633Z_hvac_doclevel_extraction_batch/0002_麦克维尔_ms型半封闭单螺杆式压缩机维护手册_64页"
+}

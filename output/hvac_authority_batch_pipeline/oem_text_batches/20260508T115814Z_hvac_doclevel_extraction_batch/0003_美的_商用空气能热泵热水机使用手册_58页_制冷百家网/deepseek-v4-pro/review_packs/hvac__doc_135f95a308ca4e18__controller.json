@@ -1,0 +1,1215 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-08T12:16:16.301518+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_135f95a308ca4e18",
+  "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+  "equipment_class": {
+    "equipment_class_id": "controller",
+    "equipment_class_key": "hvac:controller",
+    "label": "Controller",
+    "supported_knowledge_anchors": [
+      "parameter_spec",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 17,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_b007a705b0cc52c2",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 27,
+      "chunk_id": "chunk_c62039057f6d430c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "出水温度设定",
+        "range": "40～60℃",
+        "default": "56℃",
+        "title": "出水温度设定范围",
+        "summary": "出水温度设定范围40～60℃，默认56℃"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n27z 用来设定出水温度，按压水温设定\n键后才能通过增加，减少按键设\n定。\nz 出水温度设定范围：40～60℃，默认值为 56℃\n4、水位设定\nz 用来设定水箱补水水位，按压水位设定\n键后才能通过增加，减少按\n键设定。\nz 水位设定范围： 50%，75%，100%，水位显示如下：水位水位水位\n5、循环水温设定\nz 用来设定水箱保温进入温度条件，按压循环水温设定\n键后才能通过增\n加，减少按键设定。\nz 循环保温开启温度设定范围：30～48℃，默认值为 45℃\n三、开机运行\n运行参数设置好以后，就可以开机运行了。\n按下线控器开关键，左边指示灯亮，同时液晶屏显示运行状态。\n5水位运行\n模式时钟\n在线机组数\n开关键\n运行状态指示\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_c62039057f6d430c"
+      ],
+      "source_page_nos": [
+        27
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported parameter_spec: 出水温度设定范围40～60℃, default 56℃, clearly stated in manual page 27.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "出水温度设定",
+          "range": "40～60℃",
+          "default": "56℃",
+          "title": "出水温度设定范围",
+          "summary": "出水温度设定范围40～60℃，默认56℃"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n27z 用来设定出水温度，按压水温设定\n键后才能通过增加，减少按键设\n定。\nz 出水温度设定范围：40～60℃，默认值为 56℃\n4、水位设定\nz 用来设定水箱补水水位，按压水位设定\n键后才能通过增加，减少按\n键设定。\nz 水位设定范围： 50%，75%，100%，水位显示如下：水位水位水位\n5、循环水温设定\nz 用来设定水箱保温进入温度条件，按压循环水温设定\n键后才能通过增\n加，减少按键设定。\nz 循环保温开启温度设定范围：30～48℃，默认值为 45℃\n三、开机运行\n运行参数设置好以后，就可以开机运行了。\n按下线控器开关键，左边指示灯亮，同时液晶屏显示运行状态。\n5水位运行\n模式时钟\n在线机组数\n开关键\n运行状态指示\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_b1c956f670b64fb3",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 27,
+      "chunk_id": "chunk_c62039057f6d430c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "循环水温设定",
+        "range": "30～48℃",
+        "default": "45℃",
+        "title": "循环保温开启温度设定范围",
+        "summary": "循环保温开启温度设定范围30～48℃，默认45℃"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n27z 用来设定出水温度，按压水温设定\n键后才能通过增加，减少按键设\n定。\nz 出水温度设定范围：40～60℃，默认值为 56℃\n4、水位设定\nz 用来设定水箱补水水位，按压水位设定\n键后才能通过增加，减少按\n键设定。\nz 水位设定范围： 50%，75%，100%，水位显示如下：水位水位水位\n5、循环水温设定\nz 用来设定水箱保温进入温度条件，按压循环水温设定\n键后才能通过增\n加，减少按键设定。\nz 循环保温开启温度设定范围：30～48℃，默认值为 45℃\n三、开机运行\n运行参数设置好以后，就可以开机运行了。\n按下线控器开关键，左边指示灯亮，同时液晶屏显示运行状态。\n5水位运行\n模式时钟\n在线机组数\n开关键\n运行状态指示\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_c62039057f6d430c"
+      ],
+      "source_page_nos": [
+        27
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported parameter_spec: 循环保温开启温度设定范围30～48℃, default 45℃, from page 27.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "循环水温设定",
+          "range": "30～48℃",
+          "default": "45℃",
+          "title": "循环保温开启温度设定范围",
+          "summary": "循环保温开启温度设定范围30～48℃，默认45℃"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n27z 用来设定出水温度，按压水温设定\n键后才能通过增加，减少按键设\n定。\nz 出水温度设定范围：40～60℃，默认值为 56℃\n4、水位设定\nz 用来设定水箱补水水位，按压水位设定\n键后才能通过增加，减少按\n键设定。\nz 水位设定范围： 50%，75%，100%，水位显示如下：水位水位水位\n5、循环水温设定\nz 用来设定水箱保温进入温度条件，按压循环水温设定\n键后才能通过增\n加，减少按键设定。\nz 循环保温开启温度设定范围：30～48℃，默认值为 45℃\n三、开机运行\n运行参数设置好以后，就可以开机运行了。\n按下线控器开关键，左边指示灯亮，同时液晶屏显示运行状态。\n5水位运行\n模式时钟\n在线机组数\n开关键\n运行状态指示\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_db0e77e4c2a766f0",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 27,
+      "chunk_id": "chunk_c62039057f6d430c",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:controller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "水位设定",
+        "range": "50%，75%，100%",
+        "title": "水位设定范围",
+        "summary": "水位设定范围50%，75%，100%"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n27z 用来设定出水温度，按压水温设定\n键后才能通过增加，减少按键设\n定。\nz 出水温度设定范围：40～60℃，默认值为 56℃\n4、水位设定\nz 用来设定水箱补水水位，按压水位设定\n键后才能通过增加，减少按\n键设定。\nz 水位设定范围： 50%，75%，100%，水位显示如下：水位水位水位\n5、循环水温设定\nz 用来设定水箱保温进入温度条件，按压循环水温设定\n键后才能通过增\n加，减少按键设定。\nz 循环保温开启温度设定范围：30～48℃，默认值为 45℃\n三、开机运行\n运行参数设置好以后，就可以开机运行了。\n按下线控器开关键，左边指示灯亮，同时液晶屏显示运行状态。\n5水位运行\n模式时钟\n在线机组数\n开关键\n运行状态指示\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_c62039057f6d430c"
+      ],
+      "source_page_nos": [
+        27
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported parameter_spec: 水位设定范围 50%, 75%, 100%, from page 27.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "水位设定",
+          "range": "50%，75%，100%",
+          "title": "水位设定范围",
+          "summary": "水位设定范围50%，75%，100%"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n27z 用来设定出水温度，按压水温设定\n键后才能通过增加，减少按键设\n定。\nz 出水温度设定范围：40～60℃，默认值为 56℃\n4、水位设定\nz 用来设定水箱补水水位，按压水位设定\n键后才能通过增加，减少按\n键设定。\nz 水位设定范围： 50%，75%，100%，水位显示如下：水位水位水位\n5、循环水温设定\nz 用来设定水箱保温进入温度条件，按压循环水温设定\n键后才能通过增\n加，减少按键设定。\nz 循环保温开启温度设定范围：30～48℃，默认值为 45℃\n三、开机运行\n运行参数设置好以后，就可以开机运行了。\n按下线控器开关键，左边指示灯亮，同时液晶屏显示运行状态。\n5水位运行\n模式时钟\n在线机组数\n开关键\n运行状态指示\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1a0b24c0ade4e5b5",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e0",
+      "structured_payload_candidate": {
+        "code": "E0",
+        "description": "水流检测故障（进水压力小于0.15MPa）",
+        "title": "E0 水流检测故障",
+        "summary": "进水压力小于0.15MPa触发E0故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8"
+      ],
+      "source_page_nos": [
+        35
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: E0 水流检测故障 with trigger condition (进水压力<0.15MPa), from page 35.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:e0",
+        "structured_payload": {
+          "code": "E0",
+          "description": "水流检测故障（进水压力小于0.15MPa）",
+          "title": "E0 水流检测故障",
+          "summary": "进水压力小于0.15MPa触发E0故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6d726c060e47d04d",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e1",
+      "structured_payload_candidate": {
+        "code": "E1",
+        "description": "电源相序故障",
+        "title": "E1 电源相序故障",
+        "summary": "电源相序错误或某相未接牢"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8"
+      ],
+      "source_page_nos": [
+        35
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: E1 电源相序故障, from page 35.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:e1",
+        "structured_payload": {
+          "code": "E1",
+          "description": "电源相序故障",
+          "title": "E1 电源相序故障",
+          "summary": "电源相序错误或某相未接牢"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5c1a52764361ac22",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e2",
+      "structured_payload_candidate": {
+        "code": "E2",
+        "description": "通讯故障",
+        "title": "E2 通讯故障",
+        "summary": "主机与线控器或从机通讯故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8",
+        "chunk_327031efaa764220"
+      ],
+      "source_page_nos": [
+        35,
+        57
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: E2 通讯故障, from pages 35 and 57.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:e2",
+        "structured_payload": {
+          "code": "E2",
+          "description": "通讯故障",
+          "title": "E2 通讯故障",
+          "summary": "主机与线控器或从机通讯故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_81b81d0418f62c96",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e3",
+      "structured_payload_candidate": {
+        "code": "E3",
+        "description": "出水温度传感器故障",
+        "title": "E3 出水温度传感器故障",
+        "summary": "出水温度传感器故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8"
+      ],
+      "source_page_nos": [
+        35
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: E3 出水温度传感器故障, from page 35.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:e3",
+        "structured_payload": {
+          "code": "E3",
+          "description": "出水温度传感器故障",
+          "title": "E3 出水温度传感器故障",
+          "summary": "出水温度传感器故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d723c93775b8c069",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e4",
+      "structured_payload_candidate": {
+        "code": "E4",
+        "description": "水箱内水温传感器故障（仍然能开启机器，但只能开启直热式）",
+        "title": "E4 水箱内水温传感器故障",
+        "summary": "水箱内水温传感器故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8"
+      ],
+      "source_page_nos": [
+        35
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: E4 水箱内水温传感器故障, from page 35.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:e4",
+        "structured_payload": {
+          "code": "E4",
+          "description": "水箱内水温传感器故障（仍然能开启机器，但只能开启直热式）",
+          "title": "E4 水箱内水温传感器故障",
+          "summary": "水箱内水温传感器故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_71466ff55f74168a",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e5",
+      "structured_payload_candidate": {
+        "code": "E5",
+        "description": "冷凝器管温传感器故障",
+        "title": "E5 冷凝器管温传感器故障",
+        "summary": "冷凝器管温传感器故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8",
+        "chunk_327031efaa764220"
+      ],
+      "source_page_nos": [
+        35,
+        57
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: E5 冷凝器管温传感器故障, from pages 35 and 57.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:e5",
+        "structured_payload": {
+          "code": "E5",
+          "description": "冷凝器管温传感器故障",
+          "title": "E5 冷凝器管温传感器故障",
+          "summary": "冷凝器管温传感器故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_488e2e09c22c4ae9",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e6",
+      "structured_payload_candidate": {
+        "code": "E6",
+        "description": "室外环境温度传感器故障",
+        "title": "E6 室外环境温度传感器故障",
+        "summary": "室外环境温度传感器故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8",
+        "chunk_327031efaa764220"
+      ],
+      "source_page_nos": [
+        35,
+        57
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: E6 室外环境温度传感器故障, from pages 35 and 57.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:e6",
+        "structured_payload": {
+          "code": "E6",
+          "description": "室外环境温度传感器故障",
+          "title": "E6 室外环境温度传感器故障",
+          "summary": "室外环境温度传感器故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f25ce1a8d7514a66",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e7",
+      "structured_payload_candidate": {
+        "code": "E7",
+        "description": "电加热管温度传感器故障",
+        "title": "E7 电加热管温度传感器故障",
+        "summary": "电加热管温度传感器故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8"
+      ],
+      "source_page_nos": [
+        35
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: E7 电加热管温度传感器故障, from page 35.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:e7",
+        "structured_payload": {
+          "code": "E7",
+          "description": "电加热管温度传感器故障",
+          "title": "E7 电加热管温度传感器故障",
+          "summary": "电加热管温度传感器故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_3d3158270a4ad7e0",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:e8",
+      "structured_payload_candidate": {
+        "code": "E8",
+        "description": "循环水流保护",
+        "title": "E8 循环水流保护",
+        "summary": "循环水流检测故障"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8"
+      ],
+      "source_page_nos": [
+        35
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: E8 循环水流保护, from page 35.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:e8",
+        "structured_payload": {
+          "code": "E8",
+          "description": "循环水流保护",
+          "title": "E8 循环水流保护",
+          "summary": "循环水流检测故障"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_cd8fc0710c05d949",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:p0",
+      "structured_payload_candidate": {
+        "code": "P0",
+        "description": "系统低压保护",
+        "title": "P0 系统低压保护",
+        "summary": "系统低压保护，可能冷媒漏"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8"
+      ],
+      "source_page_nos": [
+        35
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: P0 系统低压保护, from page 35.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:p0",
+        "structured_payload": {
+          "code": "P0",
+          "description": "系统低压保护",
+          "title": "P0 系统低压保护",
+          "summary": "系统低压保护，可能冷媒漏"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d5036ee5e36a9e21",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 35,
+      "chunk_id": "chunk_3b63d06a70494ac8",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:p1",
+      "structured_payload_candidate": {
+        "code": "P1",
+        "description": "系统高压保护",
+        "title": "P1 系统高压保护",
+        "summary": "系统高压保护"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_3b63d06a70494ac8",
+        "chunk_327031efaa764220"
+      ],
+      "source_page_nos": [
+        35,
+        57
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: P1 系统高压保护, from pages 35 and 57.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:p1",
+        "structured_payload": {
+          "code": "P1",
+          "description": "系统高压保护",
+          "title": "P1 系统高压保护",
+          "summary": "系统高压保护"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、使用、维修手册\n35六、故障代码原因分析及解决方案\n代码 代码说明 原因分析 解决方案\n自来水水压不足 增加冷水增压水泵（扬程 30m以上）\n水泵扬程不足 更换大扬程水泵（扬程 30m以上）\n水泵没有启动 检查水泵电源，接触器\n进水阀门未打开 打开阀门 E0 水流检测故障（进水压力\n小于 0.15MPa）\n机组外部进水管或过滤器堵塞 清洗管道或过滤器滤网\n机组三相电源线接反 断电后对调其中两根电源线\nE1 电源相序故障\n其中一相或两相线没接牢 断电后接牢电源线\n主机与线控器通讯故障 主机与线控器 A、B、P、Q、E线正确连接\n从机与主机之间通讯故障，从机报故障 从机与主机之间 P、Q、E线正确连接， 不连接 A、\nB线。 E2 通讯故障\n电磁干扰，通讯线未用屏蔽线 通讯线改用屏蔽线\n传感器与主板之间 Twater接口松\n脱 插好接口\nE3 出水温度传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T5接口松脱 插好接口\nE4 水箱内水温传感器故障（仍然能开启机器，但只\n能开启直热式） 传感器损坏 更换传感器\n传感器与主板之间 T3接口松脱 插好接口\nE5 冷凝器管温传感器故障\n传感器损坏 更换传感器\n传感器与主板之间 T4接口松脱 插好接口\nE6 室外环境温度传感器故障 传感器损坏 更换传感器\n传感器与主板之间 T6接口松脱 插好接口\nE7 电加热管温度传感器故障（RSJ-770/S-820 、\nRSJ-380/S-820 ） 传感器损坏 更换传感器\n屏蔽电阻与主板 T6接口松脱  插好接口\nE7 电加热管温度传感器故障（RSJ-200/S-540V 、\nRSJ-100-540V ） 屏蔽电阻损坏 更换屏蔽电阻\nE8 循环水流保护 循环水流检测故障 检查循环水管路\n室外风机未开启 检查风机电机 P0 系统低压保护 冷媒漏 查找漏点，补焊，抽空，重注冷媒\n机组内部过滤器脏赌，流径板换水量不够。 人为给进水电磁阀、旁通电磁阀上电，从出水管反冲有压力的水，从进水口冲出脏物来\n冷水增压泵扬程不够 选用大扬程水泵（扬程 30m以上）\n进水电磁阀动作不良，没有水流径板换。 检查进水电磁阀\n旁通电磁阀动作不良，流径板换水量不够。 检查旁通电磁阀 直热\n式\n温水阀坏 检查温水阀动作情况\n循环水泵流量选用不足 RSJ-770/S-820 流量要求≥12m3/h；\nRSJ-380/S-820 流量要求≥6m3/h；\nRSJ-200/S-540V 流量要求≥4m3/h；\nRSJ-100-540V 流量要求≥2.5m3/h；\n循环管过滤器脏堵 清洗过滤网 P1 系统高压保护\n循环\n式\n靶流开关短接了，但循环水\n泵没有开启 检查循环水泵接触是否吸合、水泵自带流量开关是否屏蔽，水泵是否正常。\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_212c4d73cfe4496c",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 36,
+      "chunk_id": "chunk_eff9008124894494",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:p2",
+      "structured_payload_candidate": {
+        "code": "P2",
+        "description": "系统2电流保护",
+        "title": "P2 系统2电流保护",
+        "summary": "系统2电流保护"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、 使用、 维修手册 （一）\n36化霜电磁阀未打开 检查化霜电磁阀 化\n霜\n时 四通换向阀未换向 检查四通换向阀\nP2 系统 2电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP3 系统 1电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP8、P9 出水温度过高保护 水流不足， 出水温度高过 70℃且持\n续一分钟 同系统高压保护\nPb 防冻结保护 冬天防止板换冻裂 正常保护，无需处理\n机组出现故障、保护时，线控器指示红灯闪烁，同时线控器及主机控制板数码管会显示\n代码。从机的代码在线控器上需要通过点检到该台对应的地址，前翻后翻才能查看到。\n七、无代码故障\n故障描述 原因分析 解决方法\n漏电开关输入端与输出端不相等。\n1.检查零线是否从漏电开关输出端接出。零线不可以绕过漏电开关接入机组。  1.零线从漏电开关输出端接出。\n漏电开关跳，无法合闸\n2.同一用电设备的火线与零线接入了不同的漏电开关输出端。 2.同一用电设备的火线与零线从同一漏电开关输出端接出。\n1.线控器A、 B 电源线主机、 从机都接上了。 1.拆除从机A、B电源线。 线控器屏幕反复初始化，水位显示四格与 0\n格之间不停跳动 2.主从机地址码拨错（或者没有调整，每\n台机组出厂时拨向0，默认为主机） 。 2.主机电控板上S1拨码开关指针拨向0，从机依次拨向1，2，3…。\n水位连接线接反 对调水位连接线\n水位显示不正确\n水位开关组件浮子卡住或故障 调整水位浮子或更换水位开关\n八、主板点检顺序\n电辅热开启温度水位高度\n水位设置 循环温度设置出水温度设置\n最后一次故障保护代码走水电子膨胀阀开度 压缩机电流2压缩机电流1 出水温度 水箱显示温度 冷凝器温度室外温度 在线台数 风速显示 运行模式 正常显示\nTDRⅠ温度\n正常显示：主机显示水箱温度，从机显示出水温度。\n运转模式显示：待机：8 ，运行：2 ；\n风机风挡：高风挡：2 ，低风挡：1 ；\n水箱温度：仅对主机有效，从机显示自身板换出水温度 出水温度：出水温度 T1的基础上加 3度\n水位高度：0 ：低于 S4，1：在 S4与S3之间，2：在 S3与S2之间，3：在 S2与S1之间\n4 ：高于 S1\n当机组没有发生故障时，上一次故障代码显示“--” ；\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_eff9008124894494"
+      ],
+      "source_page_nos": [
+        36
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: P2 系统2电流保护, from page 36.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:p2",
+        "structured_payload": {
+          "code": "P2",
+          "description": "系统2电流保护",
+          "title": "P2 系统2电流保护",
+          "summary": "系统2电流保护"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、 使用、 维修手册 （一）\n36化霜电磁阀未打开 检查化霜电磁阀 化\n霜\n时 四通换向阀未换向 检查四通换向阀\nP2 系统 2电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP3 系统 1电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP8、P9 出水温度过高保护 水流不足， 出水温度高过 70℃且持\n续一分钟 同系统高压保护\nPb 防冻结保护 冬天防止板换冻裂 正常保护，无需处理\n机组出现故障、保护时，线控器指示红灯闪烁，同时线控器及主机控制板数码管会显示\n代码。从机的代码在线控器上需要通过点检到该台对应的地址，前翻后翻才能查看到。\n七、无代码故障\n故障描述 原因分析 解决方法\n漏电开关输入端与输出端不相等。\n1.检查零线是否从漏电开关输出端接出。零线不可以绕过漏电开关接入机组。  1.零线从漏电开关输出端接出。\n漏电开关跳，无法合闸\n2.同一用电设备的火线与零线接入了不同的漏电开关输出端。 2.同一用电设备的火线与零线从同一漏电开关输出端接出。\n1.线控器A、 B 电源线主机、 从机都接上了。 1.拆除从机A、B电源线。 线控器屏幕反复初始化，水位显示四格与 0\n格之间不停跳动 2.主从机地址码拨错（或者没有调整，每\n台机组出厂时拨向0，默认为主机） 。 2.主机电控板上S1拨码开关指针拨向0，从机依次拨向1，2，3…。\n水位连接线接反 对调水位连接线\n水位显示不正确\n水位开关组件浮子卡住或故障 调整水位浮子或更换水位开关\n八、主板点检顺序\n电辅热开启温度水位高度\n水位设置 循环温度设置出水温度设置\n最后一次故障保护代码走水电子膨胀阀开度 压缩机电流2压缩机电流1 出水温度 水箱显示温度 冷凝器温度室外温度 在线台数 风速显示 运行模式 正常显示\nTDRⅠ温度\n正常显示：主机显示水箱温度，从机显示出水温度。\n运转模式显示：待机：8 ，运行：2 ；\n风机风挡：高风挡：2 ，低风挡：1 ；\n水箱温度：仅对主机有效，从机显示自身板换出水温度 出水温度：出水温度 T1的基础上加 3度\n水位高度：0 ：低于 S4，1：在 S4与S3之间，2：在 S3与S2之间，3：在 S2与S1之间\n4 ：高于 S1\n当机组没有发生故障时，上一次故障代码显示“--” ；\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_036551397839811d",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 36,
+      "chunk_id": "chunk_eff9008124894494",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:p3",
+      "structured_payload_candidate": {
+        "code": "P3",
+        "description": "系统1电流保护",
+        "title": "P3 系统1电流保护",
+        "summary": "系统1电流保护"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、 使用、 维修手册 （一）\n36化霜电磁阀未打开 检查化霜电磁阀 化\n霜\n时 四通换向阀未换向 检查四通换向阀\nP2 系统 2电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP3 系统 1电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP8、P9 出水温度过高保护 水流不足， 出水温度高过 70℃且持\n续一分钟 同系统高压保护\nPb 防冻结保护 冬天防止板换冻裂 正常保护，无需处理\n机组出现故障、保护时，线控器指示红灯闪烁，同时线控器及主机控制板数码管会显示\n代码。从机的代码在线控器上需要通过点检到该台对应的地址，前翻后翻才能查看到。\n七、无代码故障\n故障描述 原因分析 解决方法\n漏电开关输入端与输出端不相等。\n1.检查零线是否从漏电开关输出端接出。零线不可以绕过漏电开关接入机组。  1.零线从漏电开关输出端接出。\n漏电开关跳，无法合闸\n2.同一用电设备的火线与零线接入了不同的漏电开关输出端。 2.同一用电设备的火线与零线从同一漏电开关输出端接出。\n1.线控器A、 B 电源线主机、 从机都接上了。 1.拆除从机A、B电源线。 线控器屏幕反复初始化，水位显示四格与 0\n格之间不停跳动 2.主从机地址码拨错（或者没有调整，每\n台机组出厂时拨向0，默认为主机） 。 2.主机电控板上S1拨码开关指针拨向0，从机依次拨向1，2，3…。\n水位连接线接反 对调水位连接线\n水位显示不正确\n水位开关组件浮子卡住或故障 调整水位浮子或更换水位开关\n八、主板点检顺序\n电辅热开启温度水位高度\n水位设置 循环温度设置出水温度设置\n最后一次故障保护代码走水电子膨胀阀开度 压缩机电流2压缩机电流1 出水温度 水箱显示温度 冷凝器温度室外温度 在线台数 风速显示 运行模式 正常显示\nTDRⅠ温度\n正常显示：主机显示水箱温度，从机显示出水温度。\n运转模式显示：待机：8 ，运行：2 ；\n风机风挡：高风挡：2 ，低风挡：1 ；\n水箱温度：仅对主机有效，从机显示自身板换出水温度 出水温度：出水温度 T1的基础上加 3度\n水位高度：0 ：低于 S4，1：在 S4与S3之间，2：在 S3与S2之间，3：在 S2与S1之间\n4 ：高于 S1\n当机组没有发生故障时，上一次故障代码显示“--” ；\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_eff9008124894494"
+      ],
+      "source_page_nos": [
+        36
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: P3 系统1电流保护, from page 36.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:p3",
+        "structured_payload": {
+          "code": "P3",
+          "description": "系统1电流保护",
+          "title": "P3 系统1电流保护",
+          "summary": "系统1电流保护"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、 使用、 维修手册 （一）\n36化霜电磁阀未打开 检查化霜电磁阀 化\n霜\n时 四通换向阀未换向 检查四通换向阀\nP2 系统 2电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP3 系统 1电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP8、P9 出水温度过高保护 水流不足， 出水温度高过 70℃且持\n续一分钟 同系统高压保护\nPb 防冻结保护 冬天防止板换冻裂 正常保护，无需处理\n机组出现故障、保护时，线控器指示红灯闪烁，同时线控器及主机控制板数码管会显示\n代码。从机的代码在线控器上需要通过点检到该台对应的地址，前翻后翻才能查看到。\n七、无代码故障\n故障描述 原因分析 解决方法\n漏电开关输入端与输出端不相等。\n1.检查零线是否从漏电开关输出端接出。零线不可以绕过漏电开关接入机组。  1.零线从漏电开关输出端接出。\n漏电开关跳，无法合闸\n2.同一用电设备的火线与零线接入了不同的漏电开关输出端。 2.同一用电设备的火线与零线从同一漏电开关输出端接出。\n1.线控器A、 B 电源线主机、 从机都接上了。 1.拆除从机A、B电源线。 线控器屏幕反复初始化，水位显示四格与 0\n格之间不停跳动 2.主从机地址码拨错（或者没有调整，每\n台机组出厂时拨向0，默认为主机） 。 2.主机电控板上S1拨码开关指针拨向0，从机依次拨向1，2，3…。\n水位连接线接反 对调水位连接线\n水位显示不正确\n水位开关组件浮子卡住或故障 调整水位浮子或更换水位开关\n八、主板点检顺序\n电辅热开启温度水位高度\n水位设置 循环温度设置出水温度设置\n最后一次故障保护代码走水电子膨胀阀开度 压缩机电流2压缩机电流1 出水温度 水箱显示温度 冷凝器温度室外温度 在线台数 风速显示 运行模式 正常显示\nTDRⅠ温度\n正常显示：主机显示水箱温度，从机显示出水温度。\n运转模式显示：待机：8 ，运行：2 ；\n风机风挡：高风挡：2 ，低风挡：1 ；\n水箱温度：仅对主机有效，从机显示自身板换出水温度 出水温度：出水温度 T1的基础上加 3度\n水位高度：0 ：低于 S4，1：在 S4与S3之间，2：在 S3与S2之间，3：在 S2与S1之间\n4 ：高于 S1\n当机组没有发生故障时，上一次故障代码显示“--” ；\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_3efc1640354c9a42",
+      "domain_id": "hvac",
+      "doc_id": "doc_135f95a308ca4e18",
+      "doc_name": "【美的】商用空气能热泵热水机使用手册（58页）-制冷百家网.pdf",
+      "page_no": 36,
+      "chunk_id": "chunk_eff9008124894494",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:controller:fault_code:p8",
+      "structured_payload_candidate": {
+        "code": "P8、P9",
+        "description": "出水温度过高保护",
+        "title": "P8、P9 出水温度过高保护",
+        "summary": "出水温度高过70℃持续一分钟保护"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "美的空气能热泵热水机安装、 使用、 维修手册 （一）\n36化霜电磁阀未打开 检查化霜电磁阀 化\n霜\n时 四通换向阀未换向 检查四通换向阀\nP2 系统 2电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP3 系统 1电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP8、P9 出水温度过高保护 水流不足， 出水温度高过 70℃且持\n续一分钟 同系统高压保护\nPb 防冻结保护 冬天防止板换冻裂 正常保护，无需处理\n机组出现故障、保护时，线控器指示红灯闪烁，同时线控器及主机控制板数码管会显示\n代码。从机的代码在线控器上需要通过点检到该台对应的地址，前翻后翻才能查看到。\n七、无代码故障\n故障描述 原因分析 解决方法\n漏电开关输入端与输出端不相等。\n1.检查零线是否从漏电开关输出端接出。零线不可以绕过漏电开关接入机组。  1.零线从漏电开关输出端接出。\n漏电开关跳，无法合闸\n2.同一用电设备的火线与零线接入了不同的漏电开关输出端。 2.同一用电设备的火线与零线从同一漏电开关输出端接出。\n1.线控器A、 B 电源线主机、 从机都接上了。 1.拆除从机A、B电源线。 线控器屏幕反复初始化，水位显示四格与 0\n格之间不停跳动 2.主从机地址码拨错（或者没有调整，每\n台机组出厂时拨向0，默认为主机） 。 2.主机电控板上S1拨码开关指针拨向0，从机依次拨向1，2，3…。\n水位连接线接反 对调水位连接线\n水位显示不正确\n水位开关组件浮子卡住或故障 调整水位浮子或更换水位开关\n八、主板点检顺序\n电辅热开启温度水位高度\n水位设置 循环温度设置出水温度设置\n最后一次故障保护代码走水电子膨胀阀开度 压缩机电流2压缩机电流1 出水温度 水箱显示温度 冷凝器温度室外温度 在线台数 风速显示 运行模式 正常显示\nTDRⅠ温度\n正常显示：主机显示水箱温度，从机显示出水温度。\n运转模式显示：待机：8 ，运行：2 ；\n风机风挡：高风挡：2 ，低风挡：1 ；\n水箱温度：仅对主机有效，从机显示自身板换出水温度 出水温度：出水温度 T1的基础上加 3度\n水位高度：0 ：低于 S4，1：在 S4与S3之间，2：在 S3与S2之间，3：在 S2与S1之间\n4 ：高于 S1\n当机组没有发生故障时，上一次故障代码显示“--” ；\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "controller",
+        "equipment_class_key": "hvac:controller",
+        "label": "Controller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-v4-pro",
+        "model": "deepseek-v4-pro"
+      },
+      "source_chunk_ids": [
+        "chunk_eff9008124894494"
+      ],
+      "source_page_nos": [
+        36
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported fault_code: P8、P9 出水温度过高保护, from page 36.",
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "hvac:controller:fault_code:p8",
+        "structured_payload": {
+          "code": "P8、P9",
+          "description": "出水温度过高保护",
+          "title": "P8、P9 出水温度过高保护",
+          "summary": "出水温度高过70℃持续一分钟保护"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "美的空气能热泵热水机安装、 使用、 维修手册 （一）\n36化霜电磁阀未打开 检查化霜电磁阀 化\n霜\n时 四通换向阀未换向 检查四通换向阀\nP2 系统 2电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP3 系统 1电流保护 系统高压保护前压缩机电流保护 同系统高压保护\nP8、P9 出水温度过高保护 水流不足， 出水温度高过 70℃且持\n续一分钟 同系统高压保护\nPb 防冻结保护 冬天防止板换冻裂 正常保护，无需处理\n机组出现故障、保护时，线控器指示红灯闪烁，同时线控器及主机控制板数码管会显示\n代码。从机的代码在线控器上需要通过点检到该台对应的地址，前翻后翻才能查看到。\n七、无代码故障\n故障描述 原因分析 解决方法\n漏电开关输入端与输出端不相等。\n1.检查零线是否从漏电开关输出端接出。零线不可以绕过漏电开关接入机组。  1.零线从漏电开关输出端接出。\n漏电开关跳，无法合闸\n2.同一用电设备的火线与零线接入了不同的漏电开关输出端。 2.同一用电设备的火线与零线从同一漏电开关输出端接出。\n1.线控器A、 B 电源线主机、 从机都接上了。 1.拆除从机A、B电源线。 线控器屏幕反复初始化，水位显示四格与 0\n格之间不停跳动 2.主从机地址码拨错（或者没有调整，每\n台机组出厂时拨向0，默认为主机） 。 2.主机电控板上S1拨码开关指针拨向0，从机依次拨向1，2，3…。\n水位连接线接反 对调水位连接线\n水位显示不正确\n水位开关组件浮子卡住或故障 调整水位浮子或更换水位开关\n八、主板点检顺序\n电辅热开启温度水位高度\n水位设置 循环温度设置出水温度设置\n最后一次故障保护代码走水电子膨胀阀开度 压缩机电流2压缩机电流1 出水温度 水箱显示温度 冷凝器温度室外温度 在线台数 风速显示 运行模式 正常显示\nTDRⅠ温度\n正常显示：主机显示水箱温度，从机显示出水温度。\n运转模式显示：待机：8 ，运行：2 ；\n风机风挡：高风挡：2 ，低风挡：1 ；\n水箱温度：仅对主机有效，从机显示自身板换出水温度 出水温度：出水温度 T1的基础上加 3度\n水位高度：0 ：低于 S4，1：在 S4与S3之间，2：在 S3与S2之间，3：在 S2与S1之间\n4 ：高于 S1\n当机组没有发生故障时，上一次故障代码显示“--” ；\nR6Q·v~[¶Qÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

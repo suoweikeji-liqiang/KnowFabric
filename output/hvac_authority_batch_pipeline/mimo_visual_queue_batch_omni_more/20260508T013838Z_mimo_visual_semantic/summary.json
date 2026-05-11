@@ -1,0 +1,439 @@
+{
+  "run_id": "20260508T013838Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/08、海尔中央空调/海尔技术手册/【海尔】风冷模块式冷热水机组培训手册（32页）-制冷百家网.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "ok",
+      "elapsed_seconds": 12.904,
+      "parsed": {
+        "page_type": "text_scan",
+        "summary": "This is the cover page of a training manual for an air-cooled modular chiller/heater unit. It includes the title, a cartoon illustration, fields for document control (compilation, review, approval), the company name, and a date.",
+        "visual_entities": [
+          {
+            "type": "text",
+            "label": "风冷模块式冷热水机组"
+          },
+          {
+            "type": "text",
+            "label": "培训资料"
+          },
+          {
+            "type": "illustration",
+            "label": "cartoon of two children"
+          },
+          {
+            "type": "text",
+            "label": "编制:"
+          },
+          {
+            "type": "text",
+            "label": "审核:"
+          },
+          {
+            "type": "text",
+            "label": "会签:"
+          },
+          {
+            "type": "text",
+            "label": "批准:"
+          },
+          {
+            "type": "text",
+            "label": "青岛海尔空调电子有限公司"
+          },
+          {
+            "type": "text",
+            "label": "2006.02"
+          },
+          {
+            "type": "text",
+            "label": "1"
+          },
+          {
+            "type": "text",
+            "label": "制冷百家网：www.zhilengbj.cn"
+          }
+        ],
+        "visual_relationships": [],
+        "useful_for_knowledge_types": [
+          "document_metadata",
+          "manual_identification"
+        ],
+        "ocr_text_if_useful": "风冷模块式冷热水机组\n培训资料\n编制: _______________\n审核: _______________\n会签: _______________\n批准: _______________\n青岛海尔空调电子有限公司\n2006.02\n1\n制冷百家网：www.zhilengbj.cn",
+        "uncertainty_notes": "The page is a cover page with no technical HVAC content. The cartoon is decorative and not related to the equipment. The company name '青岛海尔空调电子有限公司' is partially obscured by a watermark but is legible.",
+        "confidence": 0.95
+      },
+      "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This is the cover page of a training manual for an air-cooled modular chiller/heater unit. It includes the title, a cartoon illustration, fields for document control (compilation, review, approval), the company name, and a date.\",\n  \"visual_entities\": [\n    {\"type\": \"text\", \"label\": \"风冷模块式冷热水机组\"},\n    {\"type\": \"text\", \"label\": \"培训资料\"},\n    {\"type\": \"illustration\", \"label\": \"cartoon of two children\"},\n    {\"type\": \"text\", \"label\": \"编制:\"},\n    {\"type\": \"text\", \"label\": \"审核:\"},\n    {\"type\": \"text\", \"label\": \"会签:\"},\n    {\"type\": \"text\", \"label\": \"批准:\"},\n    {\"type\": \"text\", \"label\": \"青岛海尔空调电子有限公司\"},\n    {\"type\": \"text\", \"label\": \"2006.02\"},\n    {\"type\": \"text\", \"label\": \"1\"},\n    {\"type\": \"text\", \"label\": \"制冷百家网：www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"document_metadata\", \"manual_identification\"],\n  \"ocr_text_if_useful\": \"风冷模块式冷热水机组\\n培训资料\\n编制: _______________\\n审核: _______________\\n会签: _______________\\n批准: _______________\\n青岛海尔空调电子有限公司\\n2006.02\\n1\\n制冷百家网：www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The page is a cover page with no technical HVAC content. The cartoon is decorative and not related to the equipment. The company name '青岛海尔空调电子有限公司' is partially obscured by a watermark but is legible.\",\n  \"confidence\": 0.95\n}",
+      "usage": {
+        "completion_tokens": 412,
+        "prompt_tokens": 2437,
+        "total_tokens": 2849,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 16,
+      "status": "ok",
+      "elapsed_seconds": 12.215,
+      "parsed": {
+        "page_type": "controller_screen",
+        "summary": "This page shows the LCD display layout of a centralized management handheld controller (DFS-200M). It labels various display segments and icons with letters (A-T) for identification, including temperature, time, status indicators, and mode symbols. The text notes that all symbols are shown for explanation and may not appear simultaneously in actual use.",
+        "visual_entities": [
+          {
+            "type": "display_segment",
+            "label": "A (Date/Time)"
+          },
+          {
+            "type": "display_segment",
+            "label": "B (Module Number)"
+          },
+          {
+            "type": "icon",
+            "label": "C (Snowflake/Cooling)"
+          },
+          {
+            "type": "icon",
+            "label": "D (Sun/Heating)"
+          },
+          {
+            "type": "icon",
+            "label": "E (AUTO Mode)"
+          },
+          {
+            "type": "icon",
+            "label": "T (Recycle/Defrost)"
+          },
+          {
+            "type": "display_segment",
+            "label": "S (Unit Number)"
+          },
+          {
+            "type": "display_segment",
+            "label": "R (Temperature Value)"
+          },
+          {
+            "type": "display_segment",
+            "label": "Q (Temperature Unit)"
+          },
+          {
+            "type": "display_segment",
+            "label": "P (Set Temperature)"
+          },
+          {
+            "type": "display_segment",
+            "label": "O (Time Value)"
+          },
+          {
+            "type": "display_segment",
+            "label": "N (Time Setting)"
+          },
+          {
+            "type": "display_segment",
+            "label": "M (Fan/Operation)"
+          },
+          {
+            "type": "icon",
+            "label": "L (Clock/Timer)"
+          },
+          {
+            "type": "icon",
+            "label": "K (Communication)"
+          },
+          {
+            "type": "icon",
+            "label": "J (Alarm)"
+          },
+          {
+            "type": "icon",
+            "label": "I (Service)"
+          },
+          {
+            "type": "icon",
+            "label": "F (Alarm)"
+          },
+          {
+            "type": "icon",
+            "label": "G (Service)"
+          },
+          {
+            "type": "icon",
+            "label": "H (Defrost)"
+          },
+          {
+            "type": "text",
+            "label": "WATER SET"
+          },
+          {
+            "type": "text",
+            "label": "TEMP SETTING"
+          },
+          {
+            "type": "text",
+            "label": "TIME SETTING"
+          },
+          {
+            "type": "text",
+            "label": "COMMUNICATING"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "A",
+            "relation": "displays",
+            "to": "Date/Time"
+          },
+          {
+            "from": "B",
+            "relation": "displays",
+            "to": "Module Number"
+          },
+          {
+            "from": "S",
+            "relation": "displays",
+            "to": "Unit Number"
+          },
+          {
+            "from": "R",
+            "relation": "displays",
+            "to": "Temperature Value"
+          },
+          {
+            "from": "Q",
+            "relation": "indicates",
+            "to": "Temperature Unit"
+          },
+          {
+            "from": "P",
+            "relation": "shows",
+            "to": "Set Temperature"
+          },
+          {
+            "from": "O",
+            "relation": "displays",
+            "to": "Time Value"
+          },
+          {
+            "from": "N",
+            "relation": "indicates",
+            "to": "Time Setting"
+          },
+          {
+            "from": "M",
+            "relation": "shows",
+            "to": "Fan/Operation Status"
+          },
+          {
+            "from": "L",
+            "relation": "represents",
+            "to": "Clock/Timer Function"
+          },
+          {
+            "from": "K",
+            "relation": "indicates",
+            "to": "Communication Status"
+          },
+          {
+            "from": "J",
+            "relation": "shows",
+            "to": "Alarm Status"
+          },
+          {
+            "from": "I",
+            "relation": "indicates",
+            "to": "Service Mode"
+          },
+          {
+            "from": "F",
+            "relation": "shows",
+            "to": "Alarm"
+          },
+          {
+            "from": "G",
+            "relation": "indicates",
+            "to": "Service"
+          },
+          {
+            "from": "H",
+            "relation": "represents",
+            "to": "Defrost Status"
+          },
+          {
+            "from": "C",
+            "relation": "indicates",
+            "to": "Cooling Mode"
+          },
+          {
+            "from": "D",
+            "relation": "indicates",
+            "to": "Heating Mode"
+          },
+          {
+            "from": "E",
+            "relation": "shows",
+            "to": "AUTO Mode"
+          },
+          {
+            "from": "T",
+            "relation": "represents",
+            "to": "Defrost/Recycle"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "controller_interface",
+          "display_symbols",
+          "hvac_status_indicators",
+          "user_interface_design"
+        ],
+        "ocr_text_if_useful": "集中管理手操器（DFS-200M）\n(13) “功能3” 键 备用\n(14) “除霜” 键\n当前模块地址下，用以进行强制除霜的操作\n手操器液晶显示屏部份\n为方便说明，本页内将显示符号全部列出，此现象一般不会在实际情况中出现。",
+        "uncertainty_notes": "The exact functional mapping of some icons (e.g., F, G, H, I, J) to specific system states is inferred from common HVAC symbols but not explicitly defined in the visible text. The relationship between the labeled segments and actual system parameters is based on typical controller layouts.",
+        "confidence": 0.85
+      },
+      "raw_text": "{\n  \"page_type\": \"controller_screen\",\n  \"summary\": \"This page shows the LCD display layout of a centralized management handheld controller (DFS-200M). It labels various display segments and icons with letters (A-T) for identification, including temperature, time, status indicators, and mode symbols. The text notes that all symbols are shown for explanation and may not appear simultaneously in actual use.\",\n  \"visual_entities\": [\n    {\"type\": \"display_segment\", \"label\": \"A (Date/Time)\"},\n    {\"type\": \"display_segment\", \"label\": \"B (Module Number)\"},\n    {\"type\": \"icon\", \"label\": \"C (Snowflake/Cooling)\"},\n    {\"type\": \"icon\", \"label\": \"D (Sun/Heating)\"},\n    {\"type\": \"icon\", \"label\": \"E (AUTO Mode)\"},\n    {\"type\": \"icon\", \"label\": \"T (Recycle/Defrost)\"},\n    {\"type\": \"display_segment\", \"label\": \"S (Unit Number)\"},\n    {\"type\": \"display_segment\", \"label\": \"R (Temperature Value)\"},\n    {\"type\": \"display_segment\", \"label\": \"Q (Temperature Unit)\"},\n    {\"type\": \"display_segment\", \"label\": \"P (Set Temperature)\"},\n    {\"type\": \"display_segment\", \"label\": \"O (Time Value)\"},\n    {\"type\": \"display_segment\", \"label\": \"N (Time Setting)\"},\n    {\"type\": \"display_segment\", \"label\": \"M (Fan/Operation)\"},\n    {\"type\": \"icon\", \"label\": \"L (Clock/Timer)\"},\n    {\"type\": \"icon\", \"label\": \"K (Communication)\"},\n    {\"type\": \"icon\", \"label\": \"J (Alarm)\"},\n    {\"type\": \"icon\", \"label\": \"I (Service)\"},\n    {\"type\": \"icon\", \"label\": \"F (Alarm)\"},\n    {\"type\": \"icon\", \"label\": \"G (Service)\"},\n    {\"type\": \"icon\", \"label\": \"H (Defrost)\"},\n    {\"type\": \"text\", \"label\": \"WATER SET\"},\n    {\"type\": \"text\", \"label\": \"TEMP SETTING\"},\n    {\"type\": \"text\", \"label\": \"TIME SETTING\"},\n    {\"type\": \"text\", \"label\": \"COMMUNICATING\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"A\", \"relation\": \"displays\", \"to\": \"Date/Time\"},\n    {\"from\": \"B\", \"relation\": \"displays\", \"to\": \"Module Number\"},\n    {\"from\": \"S\", \"relation\": \"displays\", \"to\": \"Unit Number\"},\n    {\"from\": \"R\", \"relation\": \"displays\", \"to\": \"Temperature Value\"},\n    {\"from\": \"Q\", \"relation\": \"indicates\", \"to\": \"Temperature Unit\"},\n    {\"from\": \"P\", \"relation\": \"shows\", \"to\": \"Set Temperature\"},\n    {\"from\": \"O\", \"relation\": \"displays\", \"to\": \"Time Value\"},\n    {\"from\": \"N\", \"relation\": \"indicates\", \"to\": \"Time Setting\"},\n    {\"from\": \"M\", \"relation\": \"shows\", \"to\": \"Fan/Operation Status\"},\n    {\"from\": \"L\", \"relation\": \"represents\", \"to\": \"Clock/Timer Function\"},\n    {\"from\": \"K\", \"relation\": \"indicates\", \"to\": \"Communication Status\"},\n    {\"from\": \"J\", \"relation\": \"shows\", \"to\": \"Alarm Status\"},\n    {\"from\": \"I\", \"relation\": \"indicates\", \"to\": \"Service Mode\"},\n    {\"from\": \"F\", \"relation\": \"shows\", \"to\": \"Alarm\"},\n    {\"from\": \"G\", \"relation\": \"indicates\", \"to\": \"Service\"},\n    {\"from\": \"H\", \"relation\": \"represents\", \"to\": \"Defrost Status\"},\n    {\"from\": \"C\", \"relation\": \"indicates\", \"to\": \"Cooling Mode\"},\n    {\"from\": \"D\", \"relation\": \"indicates\", \"to\": \"Heating Mode\"},\n    {\"from\": \"E\", \"relation\": \"shows\", \"to\": \"AUTO Mode\"},\n    {\"from\": \"T\", \"relation\": \"represents\", \"to\": \"Defrost/Recycle\"}\n  ],\n  \"useful_for_knowledge_types\": [\"controller_interface\", \"display_symbols\", \"hvac_status_indicators\", \"user_interface_design\"],\n  \"ocr_text_if_useful\": \"集中管理手操器（DFS-200M）\\n(13) “功能3” 键 备用\\n(14) “除霜” 键\\n当前模块地址下，用以进行强制除霜的操作\\n手操器液晶显示屏部份\\n为方便说明，本页内将显示符号全部列出，此现象一般不会在实际情况中出现。\",\n  \"uncertainty_notes\": \"The exact functional mapping of some icons (e.g., F, G, H, I, J) to specific system states is inferred from common HVAC symbols but not explicitly defined in the visible text. The relationship between the labeled segments and actual system parameters is based on typical controller layouts.\",\n  \"confidence\": 0.85\n}",
+      "usage": {
+        "completion_tokens": 1116,
+        "prompt_tokens": 2437,
+        "total_tokens": 3553,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    },
+    {
+      "page": 32,
+      "status": "ok",
+      "elapsed_seconds": 10.166,
+      "parsed": {
+        "page_type": "wiring_diagram",
+        "summary": "This page shows a wiring diagram for connecting multiple I/O boards and multiple hand controllers in an HVAC system. It illustrates the physical connections between I/O boards (labeled 1, 2, and 16) and hand controllers (labeled 1 and 4) using colored wires (red, yellow, green, black). The diagram includes terminal blocks and notes on address settings and wiring practices.",
+        "visual_entities": [
+          {
+            "type": "component",
+            "label": "I/O board (1)"
+          },
+          {
+            "type": "component",
+            "label": "I/O board (2)"
+          },
+          {
+            "type": "component",
+            "label": "I/O board (16)"
+          },
+          {
+            "type": "component",
+            "label": "Hand controller (1)"
+          },
+          {
+            "type": "component",
+            "label": "Hand controller (4)"
+          },
+          {
+            "type": "terminal_block",
+            "label": "Switch input terminal block"
+          },
+          {
+            "type": "terminal_block",
+            "label": "Analog input terminal block"
+          },
+          {
+            "type": "wire",
+            "label": "Red wire"
+          },
+          {
+            "type": "wire",
+            "label": "Yellow wire"
+          },
+          {
+            "type": "wire",
+            "label": "Green wire"
+          },
+          {
+            "type": "wire",
+            "label": "Black wire"
+          },
+          {
+            "type": "text_block",
+            "label": "Notes section"
+          }
+        ],
+        "visual_relationships": [
+          {
+            "from": "I/O board (1)",
+            "relation": "connected to",
+            "to": "Hand controller (1)"
+          },
+          {
+            "from": "I/O board (2)",
+            "relation": "connected to",
+            "to": "Hand controller (4)"
+          },
+          {
+            "from": "I/O board (1)",
+            "relation": "has terminal block",
+            "to": "Switch input terminal block"
+          },
+          {
+            "from": "I/O board (1)",
+            "relation": "has terminal block",
+            "to": "Analog input terminal block"
+          },
+          {
+            "from": "Red wire",
+            "relation": "connects",
+            "to": "I/O board (1) and Hand controller (1)"
+          },
+          {
+            "from": "Yellow wire",
+            "relation": "connects",
+            "to": "I/O board (1) and Hand controller (1)"
+          },
+          {
+            "from": "Green wire",
+            "relation": "connects",
+            "to": "I/O board (1) and Hand controller (1)"
+          },
+          {
+            "from": "Black wire",
+            "relation": "connects",
+            "to": "I/O board (1) and Hand controller (1)"
+          }
+        ],
+        "useful_for_knowledge_types": [
+          "wiring_configuration",
+          "component_connection",
+          "system_integration",
+          "troubleshooting"
+        ],
+        "ocr_text_if_useful": "（三）多模块及多手操器方式连接示意图:\n说明:\n1、若您配置多块I/O板时，请参考I/O板地址设定表，依次设置各块板的地址，并按如图所示将通讯线依次级连。\n2、同理若需多个集中控制器，则也要设置地址，并按如图所示将电源及通讯线依次级连。\n3、通讯线之间建议用屏蔽双绞线。",
+        "uncertainty_notes": "The exact function of each wire color (red, yellow, green, black) is not explicitly labeled in the diagram, so their specific signals (e.g., power, data) are inferred from typical wiring conventions. The relationship between I/O board (16) and hand controllers is not directly shown, as it appears to be part of a daisy-chain but the connection to a specific hand controller is not visually explicit.",
+        "confidence": 0.85
+      },
+      "raw_text": "{\n  \"page_type\": \"wiring_diagram\",\n  \"summary\": \"This page shows a wiring diagram for connecting multiple I/O boards and multiple hand controllers in an HVAC system. It illustrates the physical connections between I/O boards (labeled 1, 2, and 16) and hand controllers (labeled 1 and 4) using colored wires (red, yellow, green, black). The diagram includes terminal blocks and notes on address settings and wiring practices.\",\n  \"visual_entities\": [\n    {\"type\": \"component\", \"label\": \"I/O board (1)\"},\n    {\"type\": \"component\", \"label\": \"I/O board (2)\"},\n    {\"type\": \"component\", \"label\": \"I/O board (16)\"},\n    {\"type\": \"component\", \"label\": \"Hand controller (1)\"},\n    {\"type\": \"component\", \"label\": \"Hand controller (4)\"},\n    {\"type\": \"terminal_block\", \"label\": \"Switch input terminal block\"},\n    {\"type\": \"terminal_block\", \"label\": \"Analog input terminal block\"},\n    {\"type\": \"wire\", \"label\": \"Red wire\"},\n    {\"type\": \"wire\", \"label\": \"Yellow wire\"},\n    {\"type\": \"wire\", \"label\": \"Green wire\"},\n    {\"type\": \"wire\", \"label\": \"Black wire\"},\n    {\"type\": \"text_block\", \"label\": \"Notes section\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"I/O board (1)\", \"relation\": \"connected to\", \"to\": \"Hand controller (1)\"},\n    {\"from\": \"I/O board (2)\", \"relation\": \"connected to\", \"to\": \"Hand controller (4)\"},\n    {\"from\": \"I/O board (1)\", \"relation\": \"has terminal block\", \"to\": \"Switch input terminal block\"},\n    {\"from\": \"I/O board (1)\", \"relation\": \"has terminal block\", \"to\": \"Analog input terminal block\"},\n    {\"from\": \"Red wire\", \"relation\": \"connects\", \"to\": \"I/O board (1) and Hand controller (1)\"},\n    {\"from\": \"Yellow wire\", \"relation\": \"connects\", \"to\": \"I/O board (1) and Hand controller (1)\"},\n    {\"from\": \"Green wire\", \"relation\": \"connects\", \"to\": \"I/O board (1) and Hand controller (1)\"},\n    {\"from\": \"Black wire\", \"relation\": \"connects\", \"to\": \"I/O board (1) and Hand controller (1)\"}\n  ],\n  \"useful_for_knowledge_types\": [\"wiring_configuration\", \"component_connection\", \"system_integration\", \"troubleshooting\"],\n  \"ocr_text_if_useful\": \"（三）多模块及多手操器方式连接示意图:\\n说明:\\n1、若您配置多块I/O板时，请参考I/O板地址设定表，依次设置各块板的地址，并按如图所示将通讯线依次级连。\\n2、同理若需多个集中控制器，则也要设置地址，并按如图所示将电源及通讯线依次级连。\\n3、通讯线之间建议用屏蔽双绞线。\",\n  \"uncertainty_notes\": \"The exact function of each wire color (red, yellow, green, black) is not explicitly labeled in the diagram, so their specific signals (e.g., power, data) are inferred from typical wiring conventions. The relationship between I/O board (16) and hand controllers is not directly shown, as it appears to be part of a daisy-chain but the connection to a specific hand controller is not visually explicit.\",\n  \"confidence\": 0.85\n}",
+      "usage": {
+        "completion_tokens": 780,
+        "prompt_tokens": 2437,
+        "total_tokens": 3217,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "image_tokens": 2240
+        }
+      },
+      "error_message": null
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "page": 10,
+  "response": {
+    "id": "cf60d0695d2340e9a487206a7b1e1787",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page presents energy saving analysis and performance specifications for modular oil-free centrifugal chillers, including technical comparisons, operational graphs, and detailed parameter tables for different models.\",\n  \"visual_entities\": [\n    {\"type\": \"table\", \"label\": \"磁悬浮和普通螺杆机(Haier)技术参数对比\"},\n    {\"type\": \"graph\", \"label\": \"夏季某制冷日空调运行图\"},\n    {\"type\": \"table\", \"label\": \"模块化磁悬浮离心机组性能参数表\"},\n    {\"type\": \"text_block\", \"label\": \"年运行费用分析\"},\n    {\"type\": \"text_block\", \"label\": \"运行费用计算\"},\n    {\"type\": \"image\", \"label\": \"制冷剂充注量示意图\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"磁悬浮和普通螺杆机(Haier)技术参数对比\", \"relation\": \"compares\", \"to\": \"模块化磁悬浮离心机组性能参数表\"},\n    {\"from\": \"夏季某制冷日空调运行图\", \"relation\": \"illustrates\", \"to\": \"年运行费用分析\"},\n    {\"from\": \"运行费用计算\", \"relation\": \"calculates\", \"to\": \"年运行费用分析\"}\n  ],\n  \"useful_for_knowledge_types\": [\"HVAC system specifications\", \"energy efficiency analysis\", \"chiller performance data\", \"operational cost calculation\"],\n  \"ocr_text_if_useful\": \"型号LSBLX*/R(BP)-R 100 125 150 180 200 名义制冷量 kW 352 438 528 630 700 名义输入功率 kW 68.3 85 101.6 120 133 COP kW/kW 5.15 5.15 5.20 5.25 5.25 启动电流 A 2 2 2 2 2 最大运行电流 A 125 145 180 210 245 最大输入功率 kW 74.0 85.9 106.6 124.4 145.1 供电电源形式 / 3N~380V,50Hz 蒸发器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 61 75 91 105 120 水阻力 kPa 72 75 80 80 85 冷凝器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 75 95 115 135 150 水阻力 kPa 31 42 45 55 60 接管方式 / 卡箍式 外形尺寸 长 mm 1770 1770 1770 1770 1770 宽 mm 880 880 880 880 880 高 mm 1800 1800 1800 1800 1800 制冷剂充注量 kg 32 38 56 68 85 运输重量 kg 960 1040 1300 1430 1640 运行重量 kg 1050 1130 1430 1570 1850\",\n  \"uncertainty_notes\": \"Some text in the technical comparison table is small and may not be fully legible. The graph's exact data points are not clearly labeled. The relationship between the graph and the cost analysis is inferred from context.\",\n  \"confidence\": 0.85\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204301,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 931,
+      "prompt_tokens": 1517,
+      "total_tokens": 2448,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 1320
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "parameter_table",
+    "summary": "This page presents energy saving analysis and performance specifications for modular oil-free centrifugal chillers, including technical comparisons, operational graphs, and detailed parameter tables for different models.",
+    "visual_entities": [
+      {
+        "type": "table",
+        "label": "磁悬浮和普通螺杆机(Haier)技术参数对比"
+      },
+      {
+        "type": "graph",
+        "label": "夏季某制冷日空调运行图"
+      },
+      {
+        "type": "table",
+        "label": "模块化磁悬浮离心机组性能参数表"
+      },
+      {
+        "type": "text_block",
+        "label": "年运行费用分析"
+      },
+      {
+        "type": "text_block",
+        "label": "运行费用计算"
+      },
+      {
+        "type": "image",
+        "label": "制冷剂充注量示意图"
+      }
+    ],
+    "visual_relationships": [
+      {
+        "from": "磁悬浮和普通螺杆机(Haier)技术参数对比",
+        "relation": "compares",
+        "to": "模块化磁悬浮离心机组性能参数表"
+      },
+      {
+        "from": "夏季某制冷日空调运行图",
+        "relation": "illustrates",
+        "to": "年运行费用分析"
+      },
+      {
+        "from": "运行费用计算",
+        "relation": "calculates",
+        "to": "年运行费用分析"
+      }
+    ],
+    "useful_for_knowledge_types": [
+      "HVAC system specifications",
+      "energy efficiency analysis",
+      "chiller performance data",
+      "operational cost calculation"
+    ],
+    "ocr_text_if_useful": "型号LSBLX*/R(BP)-R 100 125 150 180 200 名义制冷量 kW 352 438 528 630 700 名义输入功率 kW 68.3 85 101.6 120 133 COP kW/kW 5.15 5.15 5.20 5.25 5.25 启动电流 A 2 2 2 2 2 最大运行电流 A 125 145 180 210 245 最大输入功率 kW 74.0 85.9 106.6 124.4 145.1 供电电源形式 / 3N~380V,50Hz 蒸发器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 61 75 91 105 120 水阻力 kPa 72 75 80 80 85 冷凝器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 75 95 115 135 150 水阻力 kPa 31 42 45 55 60 接管方式 / 卡箍式 外形尺寸 长 mm 1770 1770 1770 1770 1770 宽 mm 880 880 880 880 880 高 mm 1800 1800 1800 1800 1800 制冷剂充注量 kg 32 38 56 68 85 运输重量 kg 960 1040 1300 1430 1640 运行重量 kg 1050 1130 1430 1570 1850",
+    "uncertainty_notes": "Some text in the technical comparison table is small and may not be fully legible. The graph's exact data points are not clearly labeled. The relationship between the graph and the cost analysis is inferred from context.",
+    "confidence": 0.85
+  },
+  "raw_text": "{\n  \"page_type\": \"parameter_table\",\n  \"summary\": \"This page presents energy saving analysis and performance specifications for modular oil-free centrifugal chillers, including technical comparisons, operational graphs, and detailed parameter tables for different models.\",\n  \"visual_entities\": [\n    {\"type\": \"table\", \"label\": \"磁悬浮和普通螺杆机(Haier)技术参数对比\"},\n    {\"type\": \"graph\", \"label\": \"夏季某制冷日空调运行图\"},\n    {\"type\": \"table\", \"label\": \"模块化磁悬浮离心机组性能参数表\"},\n    {\"type\": \"text_block\", \"label\": \"年运行费用分析\"},\n    {\"type\": \"text_block\", \"label\": \"运行费用计算\"},\n    {\"type\": \"image\", \"label\": \"制冷剂充注量示意图\"}\n  ],\n  \"visual_relationships\": [\n    {\"from\": \"磁悬浮和普通螺杆机(Haier)技术参数对比\", \"relation\": \"compares\", \"to\": \"模块化磁悬浮离心机组性能参数表\"},\n    {\"from\": \"夏季某制冷日空调运行图\", \"relation\": \"illustrates\", \"to\": \"年运行费用分析\"},\n    {\"from\": \"运行费用计算\", \"relation\": \"calculates\", \"to\": \"年运行费用分析\"}\n  ],\n  \"useful_for_knowledge_types\": [\"HVAC system specifications\", \"energy efficiency analysis\", \"chiller performance data\", \"operational cost calculation\"],\n  \"ocr_text_if_useful\": \"型号LSBLX*/R(BP)-R 100 125 150 180 200 名义制冷量 kW 352 438 528 630 700 名义输入功率 kW 68.3 85 101.6 120 133 COP kW/kW 5.15 5.15 5.20 5.25 5.25 启动电流 A 2 2 2 2 2 最大运行电流 A 125 145 180 210 245 最大输入功率 kW 74.0 85.9 106.6 124.4 145.1 供电电源形式 / 3N~380V,50Hz 蒸发器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 61 75 91 105 120 水阻力 kPa 72 75 80 80 85 冷凝器 型式 / 板式换热器 进出水管径 DN 100 100 100 100 100 水流量 m³/h 75 95 115 135 150 水阻力 kPa 31 42 45 55 60 接管方式 / 卡箍式 外形尺寸 长 mm 1770 1770 1770 1770 1770 宽 mm 880 880 880 880 880 高 mm 1800 1800 1800 1800 1800 制冷剂充注量 kg 32 38 56 68 85 运输重量 kg 960 1040 1300 1430 1640 运行重量 kg 1050 1130 1430 1570 1850\",\n  \"uncertainty_notes\": \"Some text in the technical comparison table is small and may not be fully legible. The graph's exact data points are not clearly labeled. The relationship between the graph and the cost analysis is inferred from context.\",\n  \"confidence\": 0.85\n}"
+}

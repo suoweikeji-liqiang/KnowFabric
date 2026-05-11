@@ -1,0 +1,68 @@
+{
+  "page": 1,
+  "response": {
+    "id": "5b2c0741a3b04a31b0b557dc61a658d7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a YORK YBWC water-cooled screw chiller installation, operation, and maintenance manual. It features the YORK logo, the manual title, model range (YBWC80SC50A to YBWC240SC50A), a photograph of the chiller unit, and a safety warning about pressurized refrigerant.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and version info\"},\n    {\"type\": \"text_block\", \"label\": \"Model range text\"},\n    {\"type\": \"equipment_image\", \"label\": \"YBWC water-cooled screw chiller unit\"},\n    {\"type\": \"warning_box\", \"label\": \"Safety warning about pressurized refrigerant\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\", \"safety_warnings\"],\n  \"ocr_text_if_useful\": \"YORK\\nYBWC水冷螺杆式冷水机组\\n安装、操作和维护手册\\n替代版本:0405\\nSC-E21.IOM-WX(0905)\\nYBWC80SC50A~YBWC240SC50A\\n警告\\n系统内充注了一定压力的制冷剂\\n对系统进行维护时，如果操作程序不正确，可能严重损伤系统，所有维护工作必须由约克维修技术人员按照约克的安装、操作维护手册来进行。\",\n  \"uncertainty_notes\": \"The page is a cover page, not a technical diagram or table. No specific component relationships or wiring details are visible.\",\n  \"confidence\": 1.0\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204466,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 390,
+      "prompt_tokens": 2437,
+      "total_tokens": 2827,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "other",
+    "summary": "This is the cover page of a YORK YBWC water-cooled screw chiller installation, operation, and maintenance manual. It features the YORK logo, the manual title, model range (YBWC80SC50A to YBWC240SC50A), a photograph of the chiller unit, and a safety warning about pressurized refrigerant.",
+    "visual_entities": [
+      {
+        "type": "logo",
+        "label": "YORK logo"
+      },
+      {
+        "type": "text_block",
+        "label": "Manual title and version info"
+      },
+      {
+        "type": "text_block",
+        "label": "Model range text"
+      },
+      {
+        "type": "equipment_image",
+        "label": "YBWC water-cooled screw chiller unit"
+      },
+      {
+        "type": "warning_box",
+        "label": "Safety warning about pressurized refrigerant"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "equipment_identification",
+      "manual_documentation",
+      "safety_warnings"
+    ],
+    "ocr_text_if_useful": "YORK\nYBWC水冷螺杆式冷水机组\n安装、操作和维护手册\n替代版本:0405\nSC-E21.IOM-WX(0905)\nYBWC80SC50A~YBWC240SC50A\n警告\n系统内充注了一定压力的制冷剂\n对系统进行维护时，如果操作程序不正确，可能严重损伤系统，所有维护工作必须由约克维修技术人员按照约克的安装、操作维护手册来进行。",
+    "uncertainty_notes": "The page is a cover page, not a technical diagram or table. No specific component relationships or wiring details are visible.",
+    "confidence": 1.0
+  },
+  "raw_text": "{\n  \"page_type\": \"other\",\n  \"summary\": \"This is the cover page of a YORK YBWC water-cooled screw chiller installation, operation, and maintenance manual. It features the YORK logo, the manual title, model range (YBWC80SC50A to YBWC240SC50A), a photograph of the chiller unit, and a safety warning about pressurized refrigerant.\",\n  \"visual_entities\": [\n    {\"type\": \"logo\", \"label\": \"YORK logo\"},\n    {\"type\": \"text_block\", \"label\": \"Manual title and version info\"},\n    {\"type\": \"text_block\", \"label\": \"Model range text\"},\n    {\"type\": \"equipment_image\", \"label\": \"YBWC water-cooled screw chiller unit\"},\n    {\"type\": \"warning_box\", \"label\": \"Safety warning about pressurized refrigerant\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"equipment_identification\", \"manual_documentation\", \"safety_warnings\"],\n  \"ocr_text_if_useful\": \"YORK\\nYBWC水冷螺杆式冷水机组\\n安装、操作和维护手册\\n替代版本:0405\\nSC-E21.IOM-WX(0905)\\nYBWC80SC50A~YBWC240SC50A\\n警告\\n系统内充注了一定压力的制冷剂\\n对系统进行维护时，如果操作程序不正确，可能严重损伤系统，所有维护工作必须由约克维修技术人员按照约克的安装、操作维护手册来进行。\",\n  \"uncertainty_notes\": \"The page is a cover page, not a technical diagram or table. No specific component relationships or wiring details are visible.\",\n  \"confidence\": 1.0\n}"
+}

@@ -1,0 +1,76 @@
+{
+  "page": 50,
+  "response": {
+    "id": "52dd38ff10124864af0a4c5420376434",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page is a text-based specification sheet for the SC-BGWNA-B product, describing a function that indicates the total non-allocated power consumption of the entire gateway as a cumulative object. It specifies the value range (0 to 999999), unit (0.1 kWh), rollover behavior (resets to 0 after exceeding 999999), and update intervals (every 1, 4, 8, 12, or 24 hours starting from midnight).\",\n  \"visual_entities\": [\n    {\"type\": \"document_header\", \"label\": \"SC-BGWNA-B 产品规格书 版本 2.0\"},\n    {\"type\": \"document_identifier\", \"label\": \"资料编号: ISTZ09029 修订版 A\"},\n    {\"type\": \"document_date\", \"label\": \"2010年6月1日\"},\n    {\"type\": \"paragraph\", \"label\": \"Power consumption function description\"},\n    {\"type\": \"paragraph\", \"label\": \"Update interval description\"},\n    {\"type\": \"page_number\", \"label\": \"50\"},\n    {\"type\": \"website_footer\", \"label\": \"制冷百家网: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_specifications\", \"energy_monitoring_parameters\", \"gateway_functionality\"],\n  \"ocr_text_if_useful\": \"SC-BGWNA-B 产品规格书 版本 2.0\\n资料编号: ISTZ09029 修订版 A 2010年6月1日\\n该功能指示了作为累计对象的整个网关的非分配电力总功耗量。功耗量值的范围为 0 到999999。该值的单位是 0.1kwh。如果该值超过 999999，那么它将返回 0 并继续从 0 开始算起。\\n在进行计算时，也就是从凌晨 0:00 开始，每 1 小时、4 小时、8 小时、12 小时或 24 小时对该值进行更新（请参考 2.4）。\\n以上\\n50\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The text references '2.4' for update interval details, but that section is not visible on this page. The exact context of 'non-allocated power consumption' (非分配电力总功耗量) within the broader system is not visually defined here.\",\n  \"confidence\": 0.95\n}",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1778204670,
+    "model": "mimo-v2-omni",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 588,
+      "prompt_tokens": 2437,
+      "total_tokens": 3025,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "image_tokens": 2240
+      }
+    }
+  },
+  "parsed": {
+    "page_type": "text_scan",
+    "summary": "This page is a text-based specification sheet for the SC-BGWNA-B product, describing a function that indicates the total non-allocated power consumption of the entire gateway as a cumulative object. It specifies the value range (0 to 999999), unit (0.1 kWh), rollover behavior (resets to 0 after exceeding 999999), and update intervals (every 1, 4, 8, 12, or 24 hours starting from midnight).",
+    "visual_entities": [
+      {
+        "type": "document_header",
+        "label": "SC-BGWNA-B 产品规格书 版本 2.0"
+      },
+      {
+        "type": "document_identifier",
+        "label": "资料编号: ISTZ09029 修订版 A"
+      },
+      {
+        "type": "document_date",
+        "label": "2010年6月1日"
+      },
+      {
+        "type": "paragraph",
+        "label": "Power consumption function description"
+      },
+      {
+        "type": "paragraph",
+        "label": "Update interval description"
+      },
+      {
+        "type": "page_number",
+        "label": "50"
+      },
+      {
+        "type": "website_footer",
+        "label": "制冷百家网: www.zhilengbj.cn"
+      }
+    ],
+    "visual_relationships": [],
+    "useful_for_knowledge_types": [
+      "product_specifications",
+      "energy_monitoring_parameters",
+      "gateway_functionality"
+    ],
+    "ocr_text_if_useful": "SC-BGWNA-B 产品规格书 版本 2.0\n资料编号: ISTZ09029 修订版 A 2010年6月1日\n该功能指示了作为累计对象的整个网关的非分配电力总功耗量。功耗量值的范围为 0 到999999。该值的单位是 0.1kwh。如果该值超过 999999，那么它将返回 0 并继续从 0 开始算起。\n在进行计算时，也就是从凌晨 0:00 开始，每 1 小时、4 小时、8 小时、12 小时或 24 小时对该值进行更新（请参考 2.4）。\n以上\n50\n制冷百家网: www.zhilengbj.cn",
+    "uncertainty_notes": "The text references '2.4' for update interval details, but that section is not visible on this page. The exact context of 'non-allocated power consumption' (非分配电力总功耗量) within the broader system is not visually defined here.",
+    "confidence": 0.95
+  },
+  "raw_text": "{\n  \"page_type\": \"text_scan\",\n  \"summary\": \"This page is a text-based specification sheet for the SC-BGWNA-B product, describing a function that indicates the total non-allocated power consumption of the entire gateway as a cumulative object. It specifies the value range (0 to 999999), unit (0.1 kWh), rollover behavior (resets to 0 after exceeding 999999), and update intervals (every 1, 4, 8, 12, or 24 hours starting from midnight).\",\n  \"visual_entities\": [\n    {\"type\": \"document_header\", \"label\": \"SC-BGWNA-B 产品规格书 版本 2.0\"},\n    {\"type\": \"document_identifier\", \"label\": \"资料编号: ISTZ09029 修订版 A\"},\n    {\"type\": \"document_date\", \"label\": \"2010年6月1日\"},\n    {\"type\": \"paragraph\", \"label\": \"Power consumption function description\"},\n    {\"type\": \"paragraph\", \"label\": \"Update interval description\"},\n    {\"type\": \"page_number\", \"label\": \"50\"},\n    {\"type\": \"website_footer\", \"label\": \"制冷百家网: www.zhilengbj.cn\"}\n  ],\n  \"visual_relationships\": [],\n  \"useful_for_knowledge_types\": [\"product_specifications\", \"energy_monitoring_parameters\", \"gateway_functionality\"],\n  \"ocr_text_if_useful\": \"SC-BGWNA-B 产品规格书 版本 2.0\\n资料编号: ISTZ09029 修订版 A 2010年6月1日\\n该功能指示了作为累计对象的整个网关的非分配电力总功耗量。功耗量值的范围为 0 到999999。该值的单位是 0.1kwh。如果该值超过 999999，那么它将返回 0 并继续从 0 开始算起。\\n在进行计算时，也就是从凌晨 0:00 开始，每 1 小时、4 小时、8 小时、12 小时或 24 小时对该值进行更新（请参考 2.4）。\\n以上\\n50\\n制冷百家网: www.zhilengbj.cn\",\n  \"uncertainty_notes\": \"The text references '2.4' for update interval details, but that section is not visible on this page. The exact context of 'non-allocated power consumption' (非分配电力总功耗量) within the broader system is not visually defined here.\",\n  \"confidence\": 0.95\n}"
+}

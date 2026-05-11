@@ -1,0 +1,52 @@
+{
+  "request": {
+    "model": "deepseek-v4-pro",
+    "temperature": 1.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You repair malformed JSON. Return one valid JSON object only. Do not add commentary. Do not invent or remove fields unless required to make the JSON valid. Preserve the original meaning as closely as possible."
+      },
+      {
+        "role": "user",
+        "content": "Repair the following malformed JSON object. Return valid JSON only.\n\n{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_86e885ab15f7a2c0\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Supported by evidence: technical parameter table listing nominal cooling capacity 193 kW for model 30RB192.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f388a87a14b4b4c6\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Supported by evidence: parameter table shows 753 kW for 30RB802.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_89e4233fe34de989\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Evidence shows refrigerant charge for circuit A is 13 kg for model 192.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_4d4f5775855e0b09\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Compressor quantity for circuit A: 1 for 30RB192 per table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_2db463d99146a44f\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Minimum capacity step 33% for 30RB192 from parameter table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_178a832af1387033\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Evaporator water volume 110 liters for 30RB192 in technical data.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_a4c2b61974fa8bcb\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Nominal water flow 9 l/s for 30RB192 from evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_81c7bd46bfea2773\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Nominal water pressure drop 21 kPa for 30RB192, directly from table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_67d7d96d2ba4d440\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Max water side pressure without hydraulic module 1000 kPa, same value for all models in the row.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_2214f004c2ce23d8\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Evidence pages do not contain the value 91 kPa; they only show cover/homepage, not the technical parameter table. The number is not visible in provided evidence.\",\n      \"category_if_not\": \"weak_evidence\"\n    },\n    {\n      \"candidate_id\": \"cand_b3c7c4886f6af266\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Evidence pages do not show the value 176 kPa; the provided evidence is only cover/homepage, not the technical data.\",\n      \"category_if_not\": \"weak_evidence\"\n    },\n    {\n      \"candidate_id\": \"cand_ad4e222bbc2f36f0\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion tank capacity 50 liters for 30RB192 shown in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_9d2c3659a97dc3d8\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Max water side pressure with hydraulic module 400 kPa, row shows same value for all models.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_78687e711f3b1e95\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Water connection outer diameter without hydraulic module 114.3 mm for 30RB192 in table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_742efa1f7f13736a\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Unit power input 70.6 kW for 30RB192 in electrical data table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_7c0127461ef485ec\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Maximum operating current circuit A+B 160.5 A for 30RB192 in electrical data.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_7643aa07d124d4a9\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Maximum starting current circuit A+B 268 A for 30RB192 in electrical data.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_9b0"
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 1200
+  },
+  "response": {
+    "id": "321c74ca-d7bd-4204-9a21-ade36ce001fd",
+    "object": "chat.completion",
+    "created": 1778227745,
+    "model": "deepseek-v4-pro",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_86e885ab15f7a2c0\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Supported by evidence: technical parameter table listing nominal cooling capacity 193 kW for model 30RB192.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f388a87a14b4b4c6\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Supported by evidence: parameter table shows 753 kW for 30RB802.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_89e4233fe34de989\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Evidence shows refrigerant charge for circuit A is 13 kg for model 192.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_4d4f5775855e0b09\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Compressor quantity for circuit A: 1 for 30RB192 per table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_2db463d99146a44f\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Minimum capacity step 33% for 30RB192 from parameter table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_178a832af1387033\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Evaporator water volume 110 liters for 30RB192 in technical data.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_a4c2b61974fa8bcb\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Nominal water flow 9 l/s for 30RB192 from evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_81c7bd46bfea2773\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Nominal water pressure drop 21 kPa for 30RB192, directly from table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_67d7d96d2ba4d440\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Max water side pressure without hydraulic module 1000 kPa, same value for all models in the row.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_2214f004c2ce23d8\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Evidence pages do not contain the value 91 kPa; they only show cover/homepage, not the technical parameter table. The number is not visible in provided evidence.\",\n      \"category_if_not\": \"weak_evidence\"\n    },\n    {\n      \"candidate_id\": \"cand_b3c7c4886f6af266\",\n      \"is_valid_hvac_knowledge\": false,\n      \"reason\": \"Evidence pages do not show the value 176 kPa; the provided evidence is only cover/homepage, not the technical data.\",\n      \"category_if_not\": \"weak_evidence\"\n    },\n    {\n      \"candidate_id\": \"cand_ad4e222bbc2f36f0\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Expansion tank capacity 50 liters for 30RB192 shown in evidence.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_9d2c3659a97dc3d8\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Max water side pressure with hydraulic module 400 kPa, row shows same value for all models.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_78687e711f3b1e95\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Water connection outer diameter without hydraulic module 114.3 mm for 30RB192 in table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_742efa1f7f13736a\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Unit power input 70.6 kW for 30RB192 in electrical data table.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_7c0127461ef485ec\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Maximum operating current circuit A+B 160.5 A for 30RB192 in electrical data.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_7643aa07d124d4a9\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Maximum starting current circuit A+B 268 A for 30RB192 in electrical data.\",\n      \"category_if_not\": null\n    }\n  ]\n}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1280,
+      "completion_tokens": 1188,
+      "total_tokens": 2468,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1280
+    },
+    "system_fingerprint": "fp_9954b31ca7_prod0820_fp8_kvcache_20260402"
+  },
+  "elapsed_seconds": 145.979
+}

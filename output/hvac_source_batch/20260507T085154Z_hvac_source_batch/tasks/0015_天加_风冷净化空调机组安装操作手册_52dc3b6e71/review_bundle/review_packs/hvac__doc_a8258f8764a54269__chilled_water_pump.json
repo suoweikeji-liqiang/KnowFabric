@@ -1,0 +1,124 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-07T08:52:05.749589+00:00",
+  "source_generation_mode": "chunk_backfill_review_candidate",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "domain_id": "hvac",
+  "doc_id": "doc_a8258f8764a54269",
+  "doc_name": "【天加 】风冷净化空调机组安装操作手册.pdf",
+  "equipment_class": {
+    "equipment_class_id": "chilled_water_pump",
+    "equipment_class_key": "hvac:chilled_water_pump",
+    "label": "Chilled Water Pump",
+    "supported_knowledge_anchors": [
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {
+    "doc_id": "doc_a8258f8764a54269",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "review_metadata": {
+    "default_trust_level": "L3",
+    "candidate_count": 1,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_8c4e69218804def6",
+      "domain_id": "hvac",
+      "doc_id": "doc_a8258f8764a54269",
+      "doc_name": "【天加 】风冷净化空调机组安装操作手册.pdf",
+      "page_id": "page_83e5f60d236645e6",
+      "page_no": 2,
+      "chunk_id": "chunk_bb30ccdd4d82418f",
+      "chunk_index": 1,
+      "chunk_type": "paragraph",
+      "page_type": "text",
+      "text_excerpt": "特点简介\n● 不漏风,杜绝冷桥:\n天加净化空气处理机组箱体内部的所有金属都通过聚氨酯发泡 和特别设计的橡胶密封条与外面的\n金属隔绝, 杜绝一般空气处理机组内部到处粘贴的保温条,于是就能简洁的杜绝冷桥。\n● 牢固的结构设计：\n天加净化空气处理机组有一个铝合金外框架和一个暗藏的方钢内框架，铝合金外框架通过榫头结构\n和螺栓螺母紧固形成抗扭性强的刚体，不过最终的刚度则是来自暗藏的方钢框架。\n● 箱体内部平",
+      "evidence_text": "特点简介 ● 不漏风,杜绝冷桥: 天加净化空气处理机组箱体内部的所有金属都通过聚氨酯发泡 和特别设计的橡胶密封条与外面的 金属隔绝, 杜绝一般空气处理机组内部到处粘贴的保温条,于是就能简洁的杜绝冷桥。 ● 牢固的结构设计： 天加净化空气处理机组有一个铝合金外框架和一个暗藏的方钢内框架，铝合金外框架通过榫头结构 和螺栓螺母紧固形成抗扭性强的刚体，不过最终的刚度则是来自暗藏的方钢框架。 ● 箱体内部平整： 天加净化空气处理机组不但内部...",
+      "equipment_class_candidate": {
+        "equipment_class_id": "chilled_water_pump",
+        "equipment_class_key": "hvac:chilled_water_pump",
+        "label": "Chilled Water Pump",
+        "confidence": 0.471,
+        "matched_aliases": [
+          "冷冻水泵"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "performance_candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "candidate",
+        "parameter_category": "performance"
+      },
+      "confidence_score": 0.798,
+      "review_status": "candidate",
+      "match_metadata": {
+        "equipment_selection_method": "alias_match",
+        "alternative_equipment_class_candidates": [
+          {
+            "equipment_class_id": "chiller",
+            "equipment_class_key": "hvac:chiller",
+            "confidence": 0.471,
+            "matched_aliases": [
+              "冷水机组"
+            ]
+          }
+        ],
+        "knowledge_signal": {
+          "matched_category": "performance",
+          "detection_method": "performance_context"
+        }
+      },
+      "compile_metadata": {
+        "method": "rule_compiler",
+        "version": "2026-04-10",
+        "source_span_ids": [],
+        "rationale": "performance context markers and value-with-unit parsing matched"
+      },
+      "health_findings": [
+        {
+          "code": "anchor_uncertainty",
+          "severity": "medium",
+          "message": "Equipment-class anchoring is ambiguous or has close alternatives."
+        }
+      ],
+      "review_decision": "pending",
+      "review_notes": "",
+      "curation": {
+        "title": "",
+        "summary": "",
+        "canonical_key": "performance_candidate",
+        "structured_payload": {
+          "parameter_name": "candidate",
+          "parameter_category": "performance"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "特点简介 ● 不漏风,杜绝冷桥: 天加净化空气处理机组箱体内部的所有金属都通过聚氨酯发泡 和特别设计的橡胶密封条与外面的 金属隔绝, 杜绝一般空气处理机组内部到处粘贴的保温条,于是就能简洁的杜绝冷桥。 ● 牢固的结构设计： 天加净化空气处理机组有一个铝合金外框架和一个暗藏的方钢内框架，铝合金外框架通过榫头结构 和螺栓螺母紧固形成抗扭性强的刚体，不过最终的刚度则是来自暗藏的方钢框架。 ● 箱体内部平整： 天加净化空气处理机组不但内部...",
+        "evidence_role": "primary"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "request": {
+    "model": "deepseek-v4-pro",
+    "temperature": 1.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You repair malformed JSON. Return one valid JSON object only. Do not add commentary. Do not invent or remove fields unless required to make the JSON valid. Preserve the original meaning as closely as possible."
+      },
+      {
+        "role": "user",
+        "content": "Repair the following malformed JSON object. Return valid JSON only.\n\n{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_8cf5206b9a816b04\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ccb024665c9e478a\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f1af622c5d470ae3\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ea4f2e9193dded44\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_681fcc286fb856b6\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_4bf20cd3fe9912ac\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_bbf47cc6f06c9636\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_8bc9bf4c938d7f39\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_d8a205fee52e9abd\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_be0672e8e6b0a80a\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ca867af534bf50ec\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_d8f7a9208c4b11bd\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_0df8e0d88ed23541\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_442f78a0ec0e0ae5\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_b624d48e478aee35\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_fb559fe5dc084c35\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f5224ec287ab8e52\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_2a54ab7de68124ea\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_27652ab49b11b8c3\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_93d58469eb359b94\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_76fec4ec888ef10e\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand"
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 1200
+  },
+  "response": {
+    "id": "8d8c879d-3a52-4354-9678-06622f5b7f69",
+    "object": "chat.completion",
+    "created": 1778229922,
+    "model": "deepseek-v4-pro",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"verdicts\": [\n    {\n      \"candidate_id\": \"cand_8cf5206b9a816b04\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ccb024665c9e478a\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f1af622c5d470ae3\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ea4f2e9193dded44\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_681fcc286fb856b6\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_4bf20cd3fe9912ac\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_bbf47cc6f06c9636\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_8bc9bf4c938d7f39\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_d8a205fee52e9abd\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_be0672e8e6b0a80a\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_ca867af534bf50ec\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_d8f7a9208c4b11bd\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_0df8e0d88ed23541\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_442f78a0ec0e0ae5\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_b624d48e478aee35\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_fb559fe5dc084c35\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_f5224ec287ab8e52\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_2a54ab7de68124ea\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_27652ab49b11b8c3\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_93d58469eb359b94\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    },\n    {\n      \"candidate_id\": \"cand_76fec4ec888ef10e\",\n      \"is_valid_hvac_knowledge\": true,\n      \"reason\": \"Clear parameter spec from equipment manual.\",\n      \"category_if_not\": null\n    }\n  ]\n}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1280,
+      "completion_tokens": 1192,
+      "total_tokens": 2472,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1280
+    },
+    "system_fingerprint": "fp_9954b31ca7_prod0820_fp8_kvcache_20260402"
+  },
+  "elapsed_seconds": 162.515
+}

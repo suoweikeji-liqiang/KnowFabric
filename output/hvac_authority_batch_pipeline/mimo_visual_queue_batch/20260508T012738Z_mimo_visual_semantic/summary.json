@@ -1,0 +1,33 @@
+{
+  "run_id": "20260508T012738Z_mimo_visual_semantic",
+  "pdf": "/Volumes/TSD302/pan/a00238/01、大金中央空调/培训/大金 VRV 根据故障代码（排除故障方法）.pdf",
+  "results": [
+    {
+      "page": 1,
+      "status": "failed",
+      "elapsed_seconds": 2.619,
+      "parsed": null,
+      "raw_text": "",
+      "usage": {},
+      "error_message": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "page": 5,
+      "status": "failed",
+      "elapsed_seconds": 2.822,
+      "parsed": null,
+      "raw_text": "",
+      "usage": {},
+      "error_message": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "page": 9,
+      "status": "failed",
+      "elapsed_seconds": 2.753,
+      "parsed": null,
+      "raw_text": "",
+      "usage": {},
+      "error_message": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}

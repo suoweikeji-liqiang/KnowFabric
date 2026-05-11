@@ -1,0 +1,53 @@
+{
+  "row_index": 9,
+  "path": "/Volumes/TSD302/pan/a00238/06、麦克维尔/技术手册/【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+  "file_name": "【麦克维尔】MACD模块机组故障分析与排除技术手册（31页）-.pdf",
+  "batch_group": "B_oem_manual_text_first",
+  "priority": "P1_batch_extract",
+  "brand": "McQuay/Daikin",
+  "authority_level": "oem_manual_or_vendor_doc",
+  "document_kind": "fault_code_reference",
+  "equipment_scope": "controller,fault_code",
+  "page_count": "31",
+  "text_quality": "good_text",
+  "recommended_mode": "doc_level_single_call",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页_b93519b55d",
+  "status": "prepared",
+  "doc_id": "doc_e312bbfa86684629",
+  "import_status": "existing",
+  "processing": {
+    "pages_before": 31,
+    "chunks_before": 31,
+    "pages_after": 31,
+    "chunks_after": 31,
+    "parse_result": {
+      "status": "skipped_existing_pages",
+      "pages_created": 0
+    },
+    "chunk_result": {
+      "status": "skipped_existing_chunks",
+      "chunks_created": 0
+    }
+  },
+  "review_bundle": {
+    "prepare_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0009_麦克维尔_macd模块机组故障分析与排除技术手册_31页_b93519b55d/review_bundle/prepare_manifest.json",
+    "candidate_entries": 100,
+    "review_packs": 1,
+    "ready_packs": 0,
+    "compiler": {
+      "enable_llm": false,
+      "backend_name": null,
+      "backend_model": null,
+      "enabled_types": []
+    },
+    "health": {
+      "total_findings": 101,
+      "by_code": {
+        "anchor_uncertainty": 100,
+        "coverage_gap": 1
+      },
+      "review_packs": 1
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "artifact_mode": "chunk_backfill_review_pipeline_export",
+  "generated_at": "2026-05-07T08:52:10.736644+00:00",
+  "domain_id": "hvac",
+  "filters_applied": {
+    "doc_id": "doc_53c93cd27c09452f",
+    "chunk_id": null,
+    "equipment_class_id": null,
+    "limit": 100
+  },
+  "paths": {
+    "candidates": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0017_开利_30aq开利风冷式热泵机组_28页_制冷百家网_8f5f6a4975/review_bundle/candidates.json",
+    "review_pack_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0017_开利_30aq开利风冷式热泵机组_28页_制冷百家网_8f5f6a4975/review_bundle/review_packs",
+    "review_pack_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0017_开利_30aq开利风冷式热泵机组_28页_制冷百家网_8f5f6a4975/review_bundle/review_packs/review_pack_manifest.json",
+    "stats": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0017_开利_30aq开利风冷式热泵机组_28页_制冷百家网_8f5f6a4975/review_bundle/review_pipeline_stats.json"
+  },
+  "counts": {
+    "candidate_entries": 2,
+    "review_packs": 1,
+    "documents": 1
+  }
+}

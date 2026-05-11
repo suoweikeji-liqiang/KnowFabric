@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "row_index": 2,
+  "file_name": "【约克】RWF螺杆压缩机组100-480安装、操作、维护手册（47页）-制冷百家网.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/04、约克中央空调/约克技术手册/【约克】RWF螺杆压缩机组100-480安装、操作、维护手册（47页）-制冷百家网.pdf",
+  "doc_id": "doc_020eb9eaaa8f47ec",
+  "chunks": 71,
+  "manual_tokens_estimated": 21277,
+  "equipment_class_id": "screw_chiller",
+  "equipment_alternatives": [],
+  "processing": {
+    "import_status": "existing",
+    "processing": {
+      "pages_before": 47,
+      "chunks_before": 71,
+      "pages_after": 47,
+      "chunks_after": 71,
+      "parse_result": {
+        "status": "skipped_existing_pages",
+        "pages_created": 0
+      },
+      "chunk_result": {
+        "status": "skipped_existing_chunks",
+        "chunks_created": 0
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 171,
+      "anchor_passed": 151,
+      "anchor_rejected": 20,
+      "anchor_match_rate": 88.3,
+      "judge_accepted": 18,
+      "judge_rejected": 133,
+      "judge_acceptance_rate": 11.9,
+      "judge_rejection_breakdown": {
+        "other": 133
+      },
+      "review_candidates": 18,
+      "by_type": {
+        "parameter_spec": 18
+      },
+      "usage": {
+        "prompt_tokens": 29365,
+        "completion_tokens": 31549,
+        "total_tokens": 60914
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1190,
+        "total_tokens": 2470
+      },
+      "extract_cost_rmb": 0.277389,
+      "judge_cost_rmb": 0.01098,
+      "cost_rmb": 0.288369,
+      "elapsed_seconds": 891.412,
+      "judge_elapsed_seconds": 83.5,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T095554Z_hvac_doclevel_extraction_batch/0002_约克_rwf螺杆压缩机组100_480安装_操作_维护手册_47页_制冷百家网/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T095554Z_hvac_doclevel_extraction_batch/0002_约克_rwf螺杆压缩机组100_480安装_操作_维护手册_47页_制冷百家网"
+}

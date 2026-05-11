@@ -1,0 +1,54 @@
+{
+  "row_index": 14,
+  "path": "/Volumes/TSD302/pan/a00238/07、三菱重工/技术手册/【三菱重工】线控器用户使用说明手册（20页）.pdf",
+  "file_name": "【三菱重工】线控器用户使用说明手册（20页）.pdf",
+  "batch_group": "B_oem_manual_text_first",
+  "priority": "P1_batch_extract",
+  "brand": "Mitsubishi Heavy Industries",
+  "authority_level": "oem_manual_or_vendor_doc",
+  "document_kind": "controller_manual",
+  "equipment_scope": "controller",
+  "page_count": "20",
+  "text_quality": "good_text",
+  "recommended_mode": "doc_level_single_call",
+  "planned_action": "oem_text_review_bundle_prepare",
+  "task_dir": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0014_三菱重工_线控器用户使用说明手册_20页_4f412f6858",
+  "status": "prepared",
+  "doc_id": "doc_c3b1d28767304e3a",
+  "import_status": "imported",
+  "processing": {
+    "pages_before": 0,
+    "chunks_before": 0,
+    "pages_after": 20,
+    "chunks_after": 30,
+    "parse_result": {
+      "job_id": "job_a94b380262234efe",
+      "doc_id": "doc_c3b1d28767304e3a",
+      "pages_created": 20,
+      "status": "success"
+    },
+    "chunk_result": {
+      "job_id": "job_858084d5ee8b45e2",
+      "doc_id": "doc_c3b1d28767304e3a",
+      "chunks_created": 30,
+      "status": "success"
+    }
+  },
+  "review_bundle": {
+    "prepare_manifest": "output/hvac_source_batch/20260507T085154Z_hvac_source_batch/tasks/0014_三菱重工_线控器用户使用说明手册_20页_4f412f6858/review_bundle/prepare_manifest.json",
+    "candidate_entries": 0,
+    "review_packs": 0,
+    "ready_packs": 0,
+    "compiler": {
+      "enable_llm": false,
+      "backend_name": null,
+      "backend_model": null,
+      "enabled_types": []
+    },
+    "health": {
+      "total_findings": 0,
+      "by_code": {},
+      "review_packs": 0
+    }
+  }
+}

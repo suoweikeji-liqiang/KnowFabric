@@ -1,0 +1,210 @@
+{
+  "generation_mode": "llm_doclevel_batch",
+  "domain_id": "hvac",
+  "filters_applied": {},
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_4aa9d84136bfe387",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1caf73455c447f0",
+      "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_662e0da854564e64",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:valve:application_guidance:valve_type_selection",
+      "structured_payload_candidate": {
+        "parameter_name": "valve_application",
+        "title": "Valve Type Selection",
+        "summary": "Double-seated (balanced) valves are used where fluid pressure is too high for single-seated valves to close or modulate properly, but not for tight shutoff."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Fundamentals of Control 7.5\nto both outlets. Three-wa y diverting valves are more expensive and\nhave more complex applications, a nd generally are not used in typ-\nical HVAC systems.\nA two-way  globe valve  may be either single or double seated. A\nsingle-seated valve (Figure 9A ) is designed for tight shutoff.\nAppropriate disk materials for various pressures and media are\nused. A double-seated  or balanced valve  (Figure 9B ) is designed\nso that the media pressure acting ag ainst the valve disk is essentially\nbalanced, reducing the ac tuator force required.  It is widely used\nwhere fluid pressure is too high to allow a single-seated valve to\nclose or to modulate properly. It is  not usually used where tight shut-\noff is required.\nA butterfly valve  consists of a heavy ri ng enclosing a disk that\nrotates on an axis at or near its center and is similar to a round single-\nblade damper. In principle, the disk seats against a ring machined\nwithin the body or a resilient liner in the b ody.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_662e0da854564e64"
+      ],
+      "source_page_nos": [
+        1
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Clear application guidance on valve selection based on fluid pressure, supported by manual text."
+    },
+    {
+      "candidate_id": "cand_000530efeadc8160",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1caf73455c447f0",
+      "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_3026cd1d0e354d70",
+      "knowledge_object_type": "application_guidance",
+      "canonical_key_candidate": "hvac:valve:application_guidance:butterfly_valve_application",
+      "structured_payload_candidate": {
+        "parameter_name": "valve_application",
+        "title": "Butterfly Valve Application",
+        "summary": "Two butterfly valves can be configured (one normally open, one normally closed) to function like a three-way valve for mixing or diverting."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Two butterfly\nvalves can be used together to act like a three-way valve for mixing\nor diverting. In this arrangement , one valve is set up as normally\nopen and the other is normally closed. In a pplications with pipe\nsizes 100 mm and above, butterfly valves are either two posit ion or\nmodulating, and they are less expensive than globe-style valves\n(see Chapter 47 of the 2016 ASHRAE Handbook—H VAC Systems\nand Equipment  for information on globe valves).\nA ball valve  consists of a ball with a hole drilled through it, rotat-\ning in a valve body. Ball valves  are increasingly popular because of\ntheir low cost and high close-off ra tings. Features that provide flow\ncharacteristics similar to or better than globe valves are available.\nPressure-independent valves  are control valves with integral\npressure regulators.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_3026cd1d0e354d70"
+      ],
+      "source_page_nos": [
+        1
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Provides operational configuration guidance for butterfly valves in mixing/diverting, supported by evidence."
+    },
+    {
+      "candidate_id": "cand_dbccb15a3085eb1b",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1caf73455c447f0",
+      "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "page_no": 1,
+      "chunk_id": "chunk_f450ce8130864cac",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:steam_valve_pressure_drop_limit",
+      "structured_payload_candidate": {
+        "parameter_name": "steam_valve_pressure_drop",
+        "title": "Steam Valve Pressure Drop Limit",
+        "summary": "Maximum pressure drop for steam valves is a function of operating pressure and cannot be exceeded."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "Higher pressure drops for control devices\nare obtained by using sm aller sizes, with a po ssible increase in size\nof other equipment in the system. Sizing control valv es is discussed\nin Chapter 47 of the 2016 ASHRAE Handbook—HVAC Systems and\nEquipment .\nSteam Valves . Steam-to-water and steam-to-air heat exchangers\nare typically controlled by regul ating steam flow using a two-way\nthrottling valve. One-pipe steam systems require a line-size, two-\nposition valve for proper condensate drainage and steam flow; two-\npipe steam systems can be contro lled by two-position or modulating\n(throttling) valves. Maximum pressu re drop for steam valves is a\nfunction of operating pressure  and cannot be exceeded.Fig. 8 Typical Three-Way Mixing and Diverting Globe Valves\nFig. 9 Typical Single- and Double-Seated Two-Way\nGlobe Valves\nFig. 10 Typical Flow Characteristics of Valves\nLicensed for single user. © 2017 ASHRAE, Inc.This file is licensed to John Murray (John9@gmail.com).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_f450ce8130864cac"
+      ],
+      "source_page_nos": [
+        1
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Supported by evidence stating max pressure drop is a function of operating pressure and cannot be exceeded."
+    },
+    {
+      "candidate_id": "cand_de1296f30b0d3d7b",
+      "domain_id": "hvac",
+      "doc_id": "doc_b1caf73455c447f0",
+      "doc_name": "auto_doc_2a7ec347e5f44d9e.pdf",
+      "page_no": 2,
+      "chunk_id": "chunk_6bd403c42d6644c3",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:valve:parameter_spec:controller_tuning_ziegler_nichols_closed_loop_method",
+      "structured_payload_candidate": {
+        "parameter_name": "tuning_parameters",
+        "title": "Controller Tuning: Ziegler-Nichols (Closed-Loop) Method",
+        "summary": "Formulas for calculating proportional band (PB), integral time (Ti), and derivative time (Td) based on ultimate gain (PBu) and ultimate period (Tu) for P, PI, and PID controllers."
+      },
+      "confidence_score": 0.9,
+      "review_status": "candidate",
+      "evidence_text": "7.20 2017 ASHRAE Handbook—Fundamentals (SI)\n5. Record the proportional band as PBu and the period of oscilla-\ntions as Tu.\n6. Use the recorded proportional band and oscillation period to cal-\nculate controller settings as follows:\nProportional only:\nPB = 1.8(PBu) percent (4)\nProportional plus integral (PI):\nPB = 2.22(PBu) percent (5)\nTi = 0.83 Tu minute per repeat (6)\nProportional plus integral plus derivative (PID):\nPB = 1.67(PBu) percent (7)\nTi = 0.50 Tu minute per repeat (8)\nTd = 0.125 Tu minute (9)\nFirst-Order-plus-Dead-Time (Open-Loop) Method.  The open-\nloop method introduces a step change  in input into the opened con-\ntrol loop. A graphical technique is used to estimate the process\ntransfer function parameters. Pr oportional and integral terms are\ncalculated from the estimated proc ess parameters using a series of\nequations.\nThe value of the process variable must be recorded over time, and\nthe dead time and time constant must be determined from it.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "valve",
+        "equipment_class_key": "hvac:valve",
+        "label": "Valve",
+        "confidence": 0.661,
+        "matched_aliases": [
+          "Valve",
+          "control valve",
+          "valve"
+        ],
+        "supported_knowledge_anchors": [
+          "parameter_spec",
+          "maintenance_procedure"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "mimo-v2-omni",
+        "model": "mimo-v2-omni"
+      },
+      "source_chunk_ids": [
+        "chunk_6bd403c42d6644c3",
+        "chunk_bb2238a73d7d45bf",
+        "chunk_b7ae8af445b2401c",
+        "chunk_0bb58622a648455b",
+        "chunk_3a16fc43829c4d2c",
+        "chunk_d40e7ef7635d425e",
+        "chunk_860221d8726049c7",
+        "chunk_2be829f95ef347b1",
+        "chunk_57bb9fa37530400b"
+      ],
+      "source_page_nos": [
+        2,
+        3,
+        4,
+        7
+      ],
+      "trust_level": "L4",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evidence provides specific tuning formulas for Ziegler-Nichols method, matching summary."
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "status": "completed",
+  "row_index": 5,
+  "file_name": "【日立】风冷热泵H系列螺杆机组手册（49页）.pdf",
+  "source_path": "/Volumes/TSD302/pan/a00238/12、日立空调/技术手册/【日立】风冷热泵H系列螺杆机组手册（49页）.pdf",
+  "doc_id": "doc_af83f5144dc645da",
+  "chunks": 60,
+  "manual_tokens_estimated": 16213,
+  "equipment_class_id": "chilled_water_pump",
+  "equipment_alternatives": [
+    {
+      "equipment_class_id": "chiller",
+      "equipment_class_key": "hvac:chiller",
+      "confidence": 0.471,
+      "matched_aliases": [
+        "冷水机组"
+      ]
+    },
+    {
+      "equipment_class_id": "cooling_tower",
+      "equipment_class_key": "hvac:cooling_tower",
+      "confidence": 0.443,
+      "matched_aliases": [
+        "冷却塔"
+      ]
+    },
+    {
+      "equipment_class_id": "boiler",
+      "equipment_class_key": "hvac:boiler",
+      "confidence": 0.386,
+      "matched_aliases": [
+        "锅炉"
+      ]
+    }
+  ],
+  "processing": {
+    "import_status": "imported",
+    "processing": {
+      "pages_before": 0,
+      "chunks_before": 0,
+      "pages_after": 49,
+      "chunks_after": 60,
+      "parse_result": {
+        "job_id": "job_329fae498af74218",
+        "doc_id": "doc_af83f5144dc645da",
+        "pages_created": 49,
+        "status": "success"
+      },
+      "chunk_result": {
+        "job_id": "job_a62724aaa35f4c08",
+        "doc_id": "doc_af83f5144dc645da",
+        "chunks_created": 60,
+        "status": "success"
+      }
+    }
+  },
+  "backend_results": [
+    {
+      "backend": "deepseek-v4-pro",
+      "model": "deepseek-v4-pro",
+      "status": "ok",
+      "judge_enabled": true,
+      "raw_candidates": 40,
+      "anchor_passed": 38,
+      "anchor_rejected": 2,
+      "anchor_match_rate": 95.0,
+      "judge_accepted": 18,
+      "judge_rejected": 20,
+      "judge_acceptance_rate": 47.4,
+      "judge_rejection_breakdown": {
+        "weak_evidence": 1,
+        "other": 19
+      },
+      "review_candidates": 18,
+      "by_type": {
+        "parameter_spec": 18
+      },
+      "usage": {
+        "prompt_tokens": 28435,
+        "completion_tokens": 4914,
+        "total_tokens": 33349
+      },
+      "judge_usage": {
+        "prompt_tokens": 1280,
+        "completion_tokens": 1171,
+        "total_tokens": 2451
+      },
+      "extract_cost_rmb": 0.114789,
+      "judge_cost_rmb": 0.010866,
+      "cost_rmb": 0.125655,
+      "elapsed_seconds": 140.975,
+      "judge_elapsed_seconds": 215.392,
+      "output_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T104201Z_hvac_doclevel_extraction_batch/0005_日立_风冷热泵h系列螺杆机组手册_49页/deepseek-v4-pro"
+    }
+  ],
+  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T104201Z_hvac_doclevel_extraction_batch/0005_日立_风冷热泵h系列螺杆机组手册_49页"
+}

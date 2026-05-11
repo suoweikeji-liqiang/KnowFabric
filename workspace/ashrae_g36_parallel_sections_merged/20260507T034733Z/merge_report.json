@@ -1,0 +1,865 @@
+{
+  "mode": "ashrae_g36_parallel_section_merge",
+  "generated_at": "2026-05-07T03:47:33.768281+00:00",
+  "source_summary_path": "workspace/ashrae_g36_parallel_sections/20260507T021337Z/parallel_sections_summary.json",
+  "raw_candidate_count": 476,
+  "exact_deduped_candidate_count": 476,
+  "exact_duplicate_count": 0,
+  "fuzzy_duplicate_group_count": 13,
+  "fuzzy_review_duplicate_count": 15,
+  "trust_breakdown": {
+    "L3": 295,
+    "L4": 181
+  },
+  "type_breakdown": {
+    "parameter_spec": 13,
+    "operational_sequence": 308,
+    "fault_diagnostic_rule": 139,
+    "application_guidance": 16
+  },
+  "section_stats": [
+    {
+      "section": "5.1",
+      "verified": 33,
+      "l4": 0,
+      "raw": 47,
+      "anchor_passed": 47,
+      "elapsed_seconds": 312.105,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T021849Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_1/REPORT.md"
+    },
+    {
+      "section": "5.2",
+      "verified": 10,
+      "l4": 2,
+      "raw": 18,
+      "anchor_passed": 18,
+      "elapsed_seconds": 175.518,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T021632Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_2/REPORT.md"
+    },
+    {
+      "section": "5.3",
+      "verified": 16,
+      "l4": 0,
+      "raw": 23,
+      "anchor_passed": 21,
+      "elapsed_seconds": 160.896,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T021913Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_3/REPORT.md"
+    },
+    {
+      "section": "5.4",
+      "verified": 4,
+      "l4": 0,
+      "raw": 8,
+      "anchor_passed": 8,
+      "elapsed_seconds": 61.645,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T021950Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_4/REPORT.md"
+    },
+    {
+      "section": "5.5",
+      "verified": 12,
+      "l4": 6,
+      "raw": 14,
+      "anchor_passed": 14,
+      "elapsed_seconds": 138.442,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T022132Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_5/REPORT.md"
+    },
+    {
+      "section": "5.6",
+      "verified": 16,
+      "l4": 12,
+      "raw": 19,
+      "anchor_passed": 19,
+      "elapsed_seconds": 164.871,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T022235Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_6/REPORT.md"
+    },
+    {
+      "section": "5.7",
+      "verified": 20,
+      "l4": 10,
+      "raw": 33,
+      "anchor_passed": 33,
+      "elapsed_seconds": 208.061,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T022500Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_7/REPORT.md"
+    },
+    {
+      "section": "5.8",
+      "verified": 31,
+      "l4": 24,
+      "raw": 49,
+      "anchor_passed": 49,
+      "elapsed_seconds": 270.099,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T022705Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_8/REPORT.md"
+    },
+    {
+      "section": "5.9",
+      "verified": 10,
+      "l4": 10,
+      "raw": 14,
+      "anchor_passed": 14,
+      "elapsed_seconds": 101.689,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T022641Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_9/REPORT.md"
+    },
+    {
+      "section": "5.10",
+      "verified": 25,
+      "l4": 13,
+      "raw": 40,
+      "anchor_passed": 40,
+      "elapsed_seconds": 220.184,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T023021Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_10/REPORT.md"
+    },
+    {
+      "section": "5.11",
+      "verified": 7,
+      "l4": 6,
+      "raw": 12,
+      "anchor_passed": 12,
+      "elapsed_seconds": 131.051,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T022916Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_11/REPORT.md"
+    },
+    {
+      "section": "5.12",
+      "verified": 28,
+      "l4": 24,
+      "raw": 36,
+      "anchor_passed": 36,
+      "elapsed_seconds": 212.612,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T023249Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_12/REPORT.md"
+    },
+    {
+      "section": "5.13",
+      "verified": 8,
+      "l4": 6,
+      "raw": 12,
+      "anchor_passed": 12,
+      "elapsed_seconds": 93.836,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T023155Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_13/REPORT.md"
+    },
+    {
+      "section": "5.14",
+      "verified": 20,
+      "l4": 18,
+      "raw": 25,
+      "anchor_passed": 25,
+      "elapsed_seconds": 159.997,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T023435Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_14/REPORT.md"
+    },
+    {
+      "section": "5.15",
+      "verified": 1,
+      "l4": 0,
+      "raw": 1,
+      "anchor_passed": 1,
+      "elapsed_seconds": 292.345,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T023741Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_15/REPORT.md"
+    },
+    {
+      "section": "5.16",
+      "verified": 36,
+      "l4": 6,
+      "raw": 69,
+      "anchor_passed": 69,
+      "elapsed_seconds": 625.161,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T024500Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_16/REPORT.md"
+    },
+    {
+      "section": "5.17",
+      "verified": 17,
+      "l4": 7,
+      "raw": 19,
+      "anchor_passed": 19,
+      "elapsed_seconds": 139.348,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T024001Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_17/REPORT.md"
+    },
+    {
+      "section": "5.18",
+      "verified": 32,
+      "l4": 11,
+      "raw": 51,
+      "anchor_passed": 51,
+      "elapsed_seconds": 394.14,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T024635Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_18/REPORT.md"
+    },
+    {
+      "section": "5.19",
+      "verified": 4,
+      "l4": 0,
+      "raw": 5,
+      "anchor_passed": 5,
+      "elapsed_seconds": 52.059,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T024553Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_19/REPORT.md"
+    },
+    {
+      "section": "5.20",
+      "verified": 53,
+      "l4": 7,
+      "raw": 74,
+      "anchor_passed": 74,
+      "elapsed_seconds": 579.695,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T025532Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_20/REPORT.md"
+    },
+    {
+      "section": "5.21",
+      "verified": 65,
+      "l4": 9,
+      "raw": 92,
+      "anchor_passed": 87,
+      "elapsed_seconds": 784.638,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T025939Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_21/REPORT.md"
+    },
+    {
+      "section": "5.22",
+      "verified": 28,
+      "l4": 10,
+      "raw": 32,
+      "anchor_passed": 32,
+      "elapsed_seconds": 248.154,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T025940Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_22/REPORT.md"
+    }
+  ],
+  "low_output_sections": [
+    {
+      "section": "5.4",
+      "verified": 4,
+      "l4": 0,
+      "raw": 8,
+      "anchor_passed": 8,
+      "elapsed_seconds": 61.645,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T021950Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_4/REPORT.md"
+    },
+    {
+      "section": "5.15",
+      "verified": 1,
+      "l4": 0,
+      "raw": 1,
+      "anchor_passed": 1,
+      "elapsed_seconds": 292.345,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T023741Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_15/REPORT.md"
+    },
+    {
+      "section": "5.19",
+      "verified": 4,
+      "l4": 0,
+      "raw": 5,
+      "anchor_passed": 5,
+      "elapsed_seconds": 52.059,
+      "report": "output/ashrae_guideline36_parallel_fullbook/20260507T024553Z_ashrae_guideline_36_2021_high_performance_sequences_ashrae_g36_fullbook_sections_5_19/REPORT.md"
+    }
+  ],
+  "fuzzy_duplicate_groups": [
+    {
+      "keep": {
+        "knowledge_object_id": "cand_4cdd157164597a91",
+        "equipment_class_id": "Dual-duct VAV terminal unit",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_12_5_1:temperature_control_deadband_mode",
+        "title": "Temperature Control - Deadband Mode",
+        "section_id": "5.12.5.1",
+        "trust_level": "L4",
+        "evidence_count": 3,
+        "page_nos": [
+          101,
+          105,
+          109
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_5da3794a387de4c4",
+          "equipment_class_id": "Dual-duct VAV terminal unit",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_12_5_1:temperature_control_heating_mode",
+          "title": "Temperature Control - Heating Mode",
+          "section_id": "5.12.5.1",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            102
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_4cdd157164597a91",
+          "right": "cand_5da3794a387de4c4",
+          "reason": "title_similarity=0.86"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_63563262be2a8b3b",
+        "equipment_class_id": "Dual-duct VAV terminal unit",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_14_8_1:cooling_sat_reset_requests_moderate_deviation",
+        "title": "Cooling SAT Reset Requests - Moderate Deviation",
+        "section_id": "5.14.8.1",
+        "trust_level": "L4",
+        "evidence_count": 10,
+        "page_nos": [
+          75,
+          78,
+          83,
+          87,
+          90,
+          94,
+          99,
+          103,
+          107,
+          110
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_f84d155b6b4e41f3",
+          "equipment_class_id": "Dual-duct VAV terminal unit",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_14_8_1:cooling_sat_reset_requests_high_deviation",
+          "title": "Cooling SAT Reset Requests - High Deviation",
+          "section_id": "5.14.8.1",
+          "trust_level": "L4",
+          "evidence_count": 10,
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            90,
+            94,
+            99,
+            103,
+            107,
+            110
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_63563262be2a8b3b",
+          "right": "cand_f84d155b6b4e41f3",
+          "reason": "title_similarity=0.86"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_40a491036f46f706",
+        "equipment_class_id": "Dual-duct VAV terminal unit",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_14_8_1:cooling_sat_reset_requests_high_loop_signal",
+        "title": "Cooling SAT Reset Requests - High Loop Signal",
+        "section_id": "5.14.8.1",
+        "trust_level": "L4",
+        "evidence_count": 10,
+        "page_nos": [
+          75,
+          78,
+          83,
+          87,
+          90,
+          94,
+          99,
+          103,
+          107,
+          110
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_1c216fa9cf7fc85a",
+          "equipment_class_id": "Dual-duct VAV terminal unit",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_14_8_1:cooling_sat_reset_requests_low_loop_signal",
+          "title": "Cooling SAT Reset Requests - Low Loop Signal",
+          "section_id": "5.14.8.1",
+          "trust_level": "L4",
+          "evidence_count": 10,
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            90,
+            94,
+            99,
+            103,
+            107,
+            110
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_1c216fa9cf7fc85a",
+          "right": "cand_40a491036f46f706",
+          "reason": "title_similarity=0.92"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_ef0455d42ff6fbbc",
+        "equipment_class_id": "Dual-duct VAV terminal unit",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_14_8_2:cold_duct_static_pressure_reset_requests_low_damper_position",
+        "title": "Cold-Duct Static Pressure Reset Requests - Low Damper Position",
+        "section_id": "5.14.8.2",
+        "trust_level": "L4",
+        "evidence_count": 14,
+        "page_nos": [
+          75,
+          78,
+          83,
+          87,
+          91,
+          95,
+          99,
+          100,
+          103,
+          107,
+          110,
+          111
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_69fb4aeda01a9ee5",
+          "equipment_class_id": "Dual-duct VAV terminal unit",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_14_8_2:cold_duct_static_pressure_reset_requests_high_demand",
+          "title": "Cold-Duct Static Pressure Reset Requests - High Demand",
+          "section_id": "5.14.8.2",
+          "trust_level": "L4",
+          "evidence_count": 12,
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            91,
+            94,
+            99,
+            100,
+            103,
+            107,
+            110
+          ]
+        },
+        {
+          "knowledge_object_id": "cand_e3ac1dddb9c81bd2",
+          "equipment_class_id": "Dual-duct VAV terminal unit",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_14_8_2:cold_duct_static_pressure_reset_requests_moderate_demand",
+          "title": "Cold-Duct Static Pressure Reset Requests - Moderate Demand",
+          "section_id": "5.14.8.2",
+          "trust_level": "L4",
+          "evidence_count": 12,
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            91,
+            95,
+            99,
+            100,
+            103,
+            107,
+            110
+          ]
+        },
+        {
+          "knowledge_object_id": "cand_fc9e770b748c5207",
+          "equipment_class_id": "Dual-duct VAV terminal unit",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_14_8_2:cold_duct_static_pressure_reset_requests_high_damper_position",
+          "title": "Cold-Duct Static Pressure Reset Requests - High Damper Position",
+          "section_id": "5.14.8.2",
+          "trust_level": "L4",
+          "evidence_count": 13,
+          "page_nos": [
+            75,
+            78,
+            83,
+            87,
+            91,
+            95,
+            99,
+            100,
+            103,
+            107,
+            110,
+            111
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_69fb4aeda01a9ee5",
+          "right": "cand_e3ac1dddb9c81bd2",
+          "reason": "title_similarity=0.89"
+        },
+        {
+          "left": "cand_69fb4aeda01a9ee5",
+          "right": "cand_fc9e770b748c5207",
+          "reason": "title_similarity=0.87"
+        },
+        {
+          "left": "cand_ef0455d42ff6fbbc",
+          "right": "cand_fc9e770b748c5207",
+          "reason": "title_similarity=0.94"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_4aaa07ef0a5c93fd",
+        "equipment_class_id": "Dual-duct VAV terminal unit",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_14_8_3:heating_sat_reset_requests_moderate_deviation",
+        "title": "Heating SAT Reset Requests - Moderate Deviation",
+        "section_id": "5.14.8.3",
+        "trust_level": "L4",
+        "evidence_count": 4,
+        "page_nos": [
+          100,
+          103,
+          107,
+          110
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_8cf8d764ab1b1dc9",
+          "equipment_class_id": "Dual-duct VAV terminal unit",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_14_8_3:heating_sat_reset_requests_high_deviation",
+          "title": "Heating SAT Reset Requests - High Deviation",
+          "section_id": "5.14.8.3",
+          "trust_level": "L4",
+          "evidence_count": 4,
+          "page_nos": [
+            100,
+            103,
+            107,
+            110
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_4aaa07ef0a5c93fd",
+          "right": "cand_8cf8d764ab1b1dc9",
+          "reason": "title_similarity=0.86"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_9cfd755a38f8828c",
+        "equipment_class_id": "Dual-duct VAV terminal unit",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_14_8_3:heating_sat_reset_requests_high_loop_signal",
+        "title": "Heating SAT Reset Requests - High Loop Signal",
+        "section_id": "5.14.8.3",
+        "trust_level": "L4",
+        "evidence_count": 4,
+        "page_nos": [
+          100,
+          103,
+          107,
+          110
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_e4259b92fff0cc5c",
+          "equipment_class_id": "Dual-duct VAV terminal unit",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_14_8_3:heating_sat_reset_requests_low_loop_signal",
+          "title": "Heating SAT Reset Requests - Low Loop Signal",
+          "section_id": "5.14.8.3",
+          "trust_level": "L4",
+          "evidence_count": 4,
+          "page_nos": [
+            100,
+            103,
+            107,
+            110
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_9cfd755a38f8828c",
+          "right": "cand_e4259b92fff0cc5c",
+          "reason": "title_similarity=0.92"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_5ecc8f7566cfeb46",
+        "equipment_class_id": "Dual-duct VAV terminal unit",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_14_8_4:hot_duct_static_pressure_reset_requests_moderate_demand",
+        "title": "Hot-Duct Static Pressure Reset Requests - Moderate Demand",
+        "section_id": "5.14.8.4",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          110
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_44f4ad9107aa607d",
+          "equipment_class_id": "Dual-duct VAV terminal unit",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_14_8_4:hot_duct_static_pressure_reset_requests_high_demand",
+          "title": "Hot-Duct Static Pressure Reset Requests - High Demand",
+          "section_id": "5.14.8.4",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            110
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_44f4ad9107aa607d",
+          "right": "cand_5ecc8f7566cfeb46",
+          "reason": "title_similarity=0.89"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_e1a23a16f34e176b",
+        "equipment_class_id": "Primary-Secondary Chiller Plant without WSE",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:stage_up_efficiency_condition_primary_secondary_without_wse",
+        "title": "Stage Up Efficiency Condition (Primary-Secondary without WSE)",
+        "section_id": "5.20.4.15",
+        "trust_level": "L4",
+        "evidence_count": 4,
+        "page_nos": [
+          182,
+          183,
+          184,
+          185
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_6a49938ede3dc102",
+          "equipment_class_id": "Primary-Secondary Chiller Plant without WSE",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_4_15:stage_up_failsafe_condition_primary_secondary_without_wse",
+          "title": "Stage Up Failsafe Condition (Primary-Secondary without WSE)",
+          "section_id": "5.20.4.15",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            185
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_6a49938ede3dc102",
+          "right": "cand_e1a23a16f34e176b",
+          "reason": "title_similarity=0.86"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_881555a59c71b92c",
+        "equipment_class_id": "SZVAV AHU with OA flow measurement station",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_18_6_3:minimum_oa_control_loop_with_flow_station",
+        "title": "Minimum OA Control Loop with Flow Station",
+        "section_id": "5.18.6.3",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          158
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_b510ec8ca1ccbf4a",
+          "equipment_class_id": "SZVAV AHU with OA flow measurement station",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_18_6_3:minimum_oa_flow_control_with_flow_station",
+          "title": "Minimum OA Flow Control with Flow Station",
+          "section_id": "5.18.6.3",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            158
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_881555a59c71b92c",
+          "right": "cand_b510ec8ca1ccbf4a",
+          "reason": "title_similarity=0.88"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_b764773be33403fa",
+        "equipment_class_id": "SZVAV AHU with actuated relief dampers and building pressure sensor",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_18_8_1:relief_damper_modulation_for_direct_building_pressure_control",
+        "title": "Relief Damper Modulation for Direct Building Pressure Control",
+        "section_id": "5.18.8.1",
+        "trust_level": "L4",
+        "evidence_count": 2,
+        "page_nos": [
+          128,
+          159
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_26daaaeb93b0b3ae",
+          "equipment_class_id": "SZVAV AHU with actuated relief dampers and building pressure sensor",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_18_8_1:relief_damper_enable_for_direct_building_pressure_control",
+          "title": "Relief Damper Enable for Direct Building Pressure Control",
+          "section_id": "5.18.8.1",
+          "trust_level": "L4",
+          "evidence_count": 2,
+          "page_nos": [
+            128,
+            159
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_26daaaeb93b0b3ae",
+          "right": "cand_b764773be33403fa",
+          "reason": "title_similarity=0.88"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_9cf283057a1a73be",
+        "equipment_class_id": "Series fan-powered terminal unit, variable-volume fan",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_10_5_1:cooling_zone_state_primary_airflow_setpoint_mapping",
+        "title": "Cooling Zone State - Primary Airflow Setpoint Mapping",
+        "section_id": "5.10.5.1",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          92
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_71fe5493dc7e420a",
+          "equipment_class_id": "Series fan-powered terminal unit, variable-volume fan",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_10_5_1:cooling_zone_state_series_fan_airflow_setpoint_mapping",
+          "title": "Cooling Zone State - Series Fan Airflow Setpoint Mapping",
+          "section_id": "5.10.5.1",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            92
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_71fe5493dc7e420a",
+          "right": "cand_9cf283057a1a73be",
+          "reason": "title_similarity=0.90"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_40a37b6eff9935d4",
+        "equipment_class_id": "Series fan-powered terminal unit, variable-volume fan",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_10_5_2:deadband_zone_state_primary_airflow_setpoint",
+        "title": "Deadband Zone State - Primary Airflow Setpoint",
+        "section_id": "5.10.5.2",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          81
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_de12d4ec726ea0be",
+          "equipment_class_id": "Series fan-powered terminal unit, variable-volume fan",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_10_5_2:deadband_zone_state_series_fan_airflow_setpoint",
+          "title": "Deadband Zone State - Series Fan Airflow Setpoint",
+          "section_id": "5.10.5.2",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            93
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_40a37b6eff9935d4",
+          "right": "cand_de12d4ec726ea0be",
+          "reason": "title_similarity=0.88"
+        }
+      ]
+    },
+    {
+      "keep": {
+        "knowledge_object_id": "cand_c31ee5f25bcfe85b",
+        "equipment_class_id": "Waterside Economizer",
+        "knowledge_object_type": "operational_sequence",
+        "canonical_key": "ashrae:g36:operational_sequence:5_20_3_3:phxlwt_tuning_increase_m",
+        "title": "PHXLWT Tuning - Increase m",
+        "section_id": "5.20.3.3",
+        "trust_level": "L3",
+        "evidence_count": 1,
+        "page_nos": [
+          176
+        ]
+      },
+      "duplicates": [
+        {
+          "knowledge_object_id": "cand_5b187e627e1a6a71",
+          "equipment_class_id": "Waterside Economizer",
+          "knowledge_object_type": "operational_sequence",
+          "canonical_key": "ashrae:g36:operational_sequence:5_20_3_3:phxlwt_tuning_decrease_m",
+          "title": "PHXLWT Tuning - Decrease m",
+          "section_id": "5.20.3.3",
+          "trust_level": "L3",
+          "evidence_count": 1,
+          "page_nos": [
+            176
+          ]
+        }
+      ],
+      "pair_reasons": [
+        {
+          "left": "cand_5b187e627e1a6a71",
+          "right": "cand_c31ee5f25bcfe85b",
+          "reason": "title_similarity=0.92"
+        }
+      ]
+    }
+  ]
+}
