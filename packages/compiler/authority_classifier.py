@@ -27,7 +27,9 @@ OEM_BRANDS = {
     "honeywell", "johnson controls", "lg", "samsung", "mitsubishi",
     "hitachi", "toshiba", "panasonic", "schneider", "danfoss", "emerson",
     "特灵", "约克", "开利", "大金",
-    "麦克维尔", "三菱", "日立",
+    "麦克维尔", "三菱", "日立", "格力",
+    "美的", "海尔", "天加", "顿汉布什",
+    "国祥",
 }
 
 STANDARD_KEYWORDS = [
@@ -163,4 +165,13 @@ def classify_document(doc: Document, backend_name: str | None = None) -> dict[st
     result = classify_by_rules(doc)
     if result is not None and result["authority_level"] is not None:
         return result
-    return classify_with_llm(doc, backend_name=backend_name)
+    try:
+        return classify_with_llm(doc, backend_name=backend_name)
+    except RuntimeError:
+        return {
+            "authority_level": "unspecified",
+            "publisher": None,
+            "standard_id": None,
+            "vendor_brand": None,
+            "vendor_model_family": None,
+        }
