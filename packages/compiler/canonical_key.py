@@ -369,6 +369,30 @@ def _apply_terminology(
     return resolved, remaining
 
 
+def _cluster_recursive(
+    names: list[str],
+    embeddings: list[list[float]],
+    *,
+    threshold: float = 0.78,
+    max_size: int = 15,
+) -> list[list[str]]:
+    """K3: Recursive clustering — tighten threshold on oversized clusters."""
+    from packages.compiler.clustering import cluster_by_cosine
+    clusters = cluster_by_cosine(names, embeddings, threshold=threshold)
+    result = []
+    for cluster in clusters:
+        if len(cluster) <= max_size:
+            result.append(cluster)
+        elif threshold < 0.95:
+            indices = [names.index(n) for n in cluster if n in names]
+            sub_names = [names[i] for i in indices]
+            sub_embs = [embeddings[i] for i in indices]
+            result.extend(_cluster_recursive(sub_names, sub_embs, threshold=threshold + 0.05, max_size=max_size))
+        else:
+            result.append(cluster)  # cap reached, accept large cluster
+    return result
+
+
 def _llm_refine_cluster(
     cluster_names: list[str],
     *,
@@ -386,13 +410,27 @@ def _llm_refine_cluster(
 
     type_prefix = _knowledge_type_prefix(knowledge_object_type)
     system = (
-        f"You are normalizing {knowledge_object_type} names within a {equipment_class_id} domain. "
-        f"Given a small set of candidate names that an embedding model judged similar, decide: "
-        f"1. Which names refer to the EXACT same concept (same physical quantity, same facet)? "
-        f"2. Which names are DIFFERENT facets of a related concept (e.g. setpoint vs limit vs alarm)? "
-        f"Return strict JSON: "
-        f'{{"groups": [{{"canonical_key": "slug_name", "member_names": [...], "rationale": "..."}}]}} '
-        f"— split into separate groups when facets differ."
+        f"You are normalizing {knowledge_object_type} names within a "
+        f"{equipment_class_id} domain. The input names may be in different "
+        f"languages (English / Chinese) or use different naming conventions "
+        f"(e.g. 'X Setpoint' / 'X Setting' / 'Active X' / 'External X' / 'X 设定' / 'X 范围')."
+        f"\n\nYour task: group names by PHYSICAL QUANTITY, not by surface form."
+        f"\n\nRULES:"
+        f"\n1. Cross-language translations of the same physical quantity = SAME group"
+        f"   (e.g. 'Oil Pressure Differential' + '油压差' → same group)"
+        f"\n2. Different naming conventions for the same physical quantity = SAME group"
+        f"   (e.g. 'Front Panel Chilled Water Setpoint' + 'External Chilled Water Setpoint' + "
+        f"'冷冻水出水温度' → same group; the Front Panel/External distinction is a SOURCE "
+        f"of value, not a different physical quantity)"
+        f"\n3. Different physical quantities = DIFFERENT groups"
+        f"   (e.g. 'Chilled Water Setpoint' vs 'Safety Valve Pressure' → different groups)"
+        f"\n4. Different FACETS of same quantity (setpoint vs limit vs alarm threshold) "
+        f"   = DIFFERENT groups, but keep them similarly named to preserve relationship"
+        f"   (e.g. 'Chilled Water Setpoint' vs 'Chilled Water Maximum' → different groups)"
+        f"\n\nReturn strict JSON:"
+        f' {{"groups": [{{"canonical_key": "snake_case_slug", "member_names": [...], '
+        f'"rationale": "..."}}, ...]}}'
+        f"\n\nEvery input name must appear in exactly one group."
     )
     user = json.dumps({"candidate_names": cluster_names}, ensure_ascii=False)
     messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
@@ -442,8 +480,8 @@ def _group_via_embedding(
     embeddings = embed_batch(remaining)
 
     # 3. Clustering
-    from packages.compiler.clustering import cluster_by_cosine
-    clusters = cluster_by_cosine(remaining, embeddings, threshold=0.85)
+    from packages.compiler.clustering import cluster_by_cosine as _cluster_cosine
+    clusters = _cluster_cosine(remaining, embeddings, threshold=0.78)
 
     # 4. Per-cluster resolution
     domain_slug = _slugify_part(domain_id)
@@ -457,7 +495,7 @@ def _group_via_embedding(
             ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
             mapping[n] = ck
             _register([n], ck)
-        elif len(cluster_names) <= 50:
+        elif len(cluster_names) <= 100:
             sub_groups = _llm_refine_cluster(
                 cluster_names,
                 domain_id=domain_id,
@@ -474,12 +512,18 @@ def _group_via_embedding(
                     mapping[n] = sg_ck
                 _register(sg.get("member_names", []), sg_ck)
         else:
-            # Oversize cluster (rare): mechanical split
-            for n in cluster_names:
-                slug = _slugify_part(n) or _hashed_slug(n)
-                ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
-                mapping[n] = ck
-                _register([n], ck)
+            # K3: Oversize cluster (>100) → force LLM split directly
+            sub_groups = _llm_refine_cluster(
+                cluster_names, domain_id=domain_id, equipment_class_id=equipment_class_id,
+                knowledge_object_type=knowledge_object_type, backend_name=backend_name,
+            )
+            for sg in sub_groups:
+                sg_ck = sg.get("canonical_key", _slugify_part(cluster_names[0]))
+                if ":" not in sg_ck:
+                    sg_ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{sg_ck}"
+                for n in sg.get("member_names", []):
+                    mapping[n] = sg_ck
+                _register(sg.get("member_names", []), sg_ck)
 
     HASH_CACHE[_hash_inputs(cleaned, knowledge_object_type)] = mapping
     return mapping
