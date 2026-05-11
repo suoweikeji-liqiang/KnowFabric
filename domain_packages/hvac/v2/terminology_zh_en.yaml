@@ -1,7 +1,3 @@
-# HVAC Chiller Parameter Terminology — Chinese-English Mapping
-# 36 concept groups, 45 parameter names
-# Auto-generated + manually verified — operator must confirm
-
 terms:
   chilled_water_setpoint:
   - Chilled Water Setpoint
@@ -76,6 +72,7 @@ terms:
   - 容量控制软载时间
   restart_inhibit_time:
   - 重启抑制时间设定
+  - Restart inhibit time
   filter_time:
   - 滤波器时间
   hot_gas_bypass_start_current:
@@ -84,3 +81,21 @@ terms:
   - 最大压差设定值
   minimum_pressure_differential_setpoint:
   - 最小压差设定值
+  chilled_water_leaving_temperature_minimum:
+  - External chilled water setpoint min
+  - Minimum chilled water leaving temperature
+  - 最低冷冻水出水温度
+  chilled_water_entering_temperature_maximum:
+  - Maximum chilled water entering temperature
+  - 冷冻水最高进水温度
+  oil_temperature_control:
+  - Oil supply temperature
+  - Oil temperature control range
+  - Oil tank heater control temperature
+  - Minimum oil temperature for start
+  oil_pressure_differential:
+  - Oil pressure differential
+  - Oil pressure differential max
+  current_limit_minimum:
+  - External current limit setpoint min
+  - Minimum current limit setpoint
