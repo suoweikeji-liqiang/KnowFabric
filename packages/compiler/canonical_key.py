@@ -46,14 +46,22 @@ def _hash_inputs(names: list[str], knowledge_object_type: str = "") -> str:
 
 
 def _lookup_registry(names: list[str], type_prefix: str) -> str | None:
-    """Check if any input name is already registered under a canonical_key with the expected type prefix."""
+    """Check if any input name is already registered under a canonical_key with the expected type prefix.
+
+    Prefers semantic keys over auto-generated hashed keys (key_* pattern).
+    """
     registry = _load_registry()
     keys = registry.get("canonical_keys", {})
+    matches: list[str] = []
     for name in names:
         for existing_key, aliases in keys.items():
             if name in aliases and f":{type_prefix}:" in existing_key:
-                return existing_key
-    return None
+                matches.append(existing_key)
+    if not matches:
+        return None
+    # Prefer non-hashed (semantic) keys
+    semantic = [k for k in matches if not k.split(":")[-1].startswith("key_")]
+    return semantic[0] if semantic else matches[0]
 
 
 def _build_prompt(
@@ -141,9 +149,20 @@ def _llm_normalize(
 
 
 def _register(names: list[str], canonical_key: str) -> None:
-    """Append new entries to the registry. Never overwrites existing keys."""
+    """Append new entries to the registry, removing names from any other keys.
+
+    A name can only belong to one canonical_key at a time.
+    """
     registry = _load_registry()
     keys = registry.setdefault("canonical_keys", {})
+    # Remove these names from any other keys they were previously registered under
+    for existing_key, aliases in list(keys.items()):
+        if existing_key == canonical_key:
+            continue
+        keys[existing_key] = [a for a in aliases if a not in names]
+        if not keys[existing_key]:
+            del keys[existing_key]
+    # Add to the target key
     existing = keys.setdefault(canonical_key, [])
     for name in names:
         if name not in existing:
@@ -178,10 +197,13 @@ def resolve_canonical_key(
     if input_hash in HASH_CACHE:
         return HASH_CACHE[input_hash]
 
-    # 2. Registry lookup
+    # 2. Registry lookup — if any names are already registered, reuse that key
+    #    and register any new names under it too
     type_prefix = _knowledge_type_prefix(knowledge_object_type)
     registered = _lookup_registry(cleaned, type_prefix)
     if registered is not None:
+        # Register any new names under the existing key
+        _register(cleaned, registered)
         HASH_CACHE[input_hash] = registered
         return registered
 
