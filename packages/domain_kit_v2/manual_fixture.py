@@ -163,6 +163,11 @@ def _build_knowledge_row(
         "package_version": package_version,
         "ontology_version": ontology_version,
         "curated_against_ontology_version": entry.get("curated_against_ontology_version"),
+        "authority_summary_json": entry.get("authority_summary_json"),
+        "consensus_state": entry.get("consensus_state", "single_source"),
+        "conflict_summary": entry.get("conflict_summary"),
+        "highest_authority_level": entry.get("highest_authority_level"),
+        "deviation_justification_json": entry.get("deviation_justification_json"),
     }
 
 
@@ -176,6 +181,8 @@ def _build_evidence_row(entry: dict[str, Any], evidence_ref: dict[str, Any], chu
         "page_no": chunk_context["page_no"],
         "evidence_text": evidence_ref["evidence"]["evidence_text"],
         "evidence_role": evidence_ref["evidence"]["evidence_role"],
+        "authority_role": evidence_ref["evidence"].get("authority_role"),
+        "evidence_citation": evidence_ref["evidence"].get("evidence_citation"),
         "confidence_score": entry["confidence_score"],
     }
 
