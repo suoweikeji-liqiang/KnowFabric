@@ -11,6 +11,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from packages.compiler.canonical_key import group_and_normalize, resolve_single_name
+from packages.compiler.llm_compiler import _hashed_slug, _slugify_part
 
 AUTHORITY_RANK = {
     "field_observation": 6,
@@ -127,13 +128,43 @@ def _normalize_pressure(value_str: str) -> float | None:
     return num
 
 
+FACET_KEYWORDS = [
+    ("setpoint", ["setpoint", "set point", "set-point", "default", "设定", "设置"]),
+    ("limit",    ["limit", "cutout", "max", "min", "maximum", "minimum", "限制", "最高", "最低"]),
+    ("alarm",    ["alarm", "warning", "trip", "shutdown", "报警", "保护"]),
+    ("range",    ["range", "between", "from", "范围"]),
+]
+MERGER_MAX_GROUP_CANDIDATES = 5
+
+
+def _detect_facets(layers: list[dict]) -> set[str]:
+    facets = set()
+    for layer in layers:
+        vs = (layer.get("value_summary") or "").lower()
+        for facet, keywords in FACET_KEYWORDS:
+            if any(kw in vs for kw in keywords):
+                facets.add(facet)
+                break
+        title = (layer.get("citation") or "").lower()
+        for facet, keywords in FACET_KEYWORDS:
+            if any(kw in title for kw in keywords):
+                facets.add(facet)
+                break
+    return facets
+
+
 def _compute_consensus_state(layers: list[dict[str, Any]]) -> tuple[str, str | None]:
     """Determine consensus_state by comparing value_summary across layers.
 
-    R3: empty-value handling — all-empty → single_value_unknown, not conflict.
+    R3: empty-value handling. E3: multi-facet detection.
     """
     if len(layers) <= 1:
         return "single_source", None
+
+    # E3: multi-facet detection — same concept different facets, not conflict
+    facets = _detect_facets(layers)
+    if len(facets) >= 2:
+        return "multi_facet", f"covers facets: {sorted(facets)}"
 
     values = [layer.get("value_summary") for layer in layers]
     non_empty = [v for v in values if not _is_empty(v)]
@@ -233,6 +264,20 @@ def merge_candidates(
     groups: dict[str, list[dict[str, Any]]] = {}
     for c, ck in zip(candidates, canonical_keys):
         groups.setdefault(ck, []).append(c)
+
+    # E3 defensive sanity: force-split pathological groups
+    pathological_keys = [k for k, v in groups.items() if len(v) > MERGER_MAX_GROUP_CANDIDATES]
+    if pathological_keys:
+        for c, ck in zip(candidates, canonical_keys):
+            if ck in pathological_keys:
+                payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
+                fallback_name = payload.get("parameter_name") or c.get("title", "unknown")
+                slug = _slugify_part(fallback_name) or _hashed_slug(fallback_name)
+                idx = candidates.index(c)
+                canonical_keys[idx] = slug
+        groups = {}
+        for c, ck in zip(candidates, canonical_keys):
+            groups.setdefault(ck, []).append(c)
 
     # Step 2: Build merged KOs
     merged = []

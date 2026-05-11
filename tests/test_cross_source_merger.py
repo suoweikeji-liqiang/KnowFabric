@@ -189,6 +189,51 @@ def test_empty_value_short_circuit():
     assert _values_agree("44F", "") is True
     assert _values_agree(None, "some value") is True
     assert _values_agree("none", "N/A") is True
+
+
+def test_multi_facet_detection():
+    """E3: same concept different facets → multi_facet, not conflict."""
+    from packages.compiler.cross_source_merger import _compute_consensus_state
+    layers = [
+        {"value_summary": "Setpoint: 44F", "citation": "Trane CVGF p.29"},
+        {"value_summary": "Limit: 38F (cutout)", "citation": "Carrier 19XR p.37"},
+    ]
+    state, summary = _compute_consensus_state(layers)
+    assert state == "multi_facet", f"Expected multi_facet, got {state}"
+    assert "setpoint" in (summary or "").lower()
+
+
+def test_merger_sanity_pathological_split():
+    """E3: defensive sanity forces split of oversized groups."""
+    from packages.compiler.cross_source_merger import merge_candidates, MERGER_MAX_GROUP_CANDIDATES
+    from unittest.mock import patch
+
+    candidates = []
+    for i in range(MERGER_MAX_GROUP_CANDIDATES + 2):  # 7 candidates
+        candidates.append({
+            "title": f"unrelated_param_{i}",
+            "structured_payload": {"parameter_name": f"unrelated_param_{i}"},
+            "confidence_score": 0.85, "trust_level": "L3",
+            "authority_level": "oem_manual", "publisher": "Test",
+            "evidence": [{"chunk_id": "c1", "doc_id": "d1", "page_no": 1,
+                "evidence_text": "test", "evidence_role": "primary"}],
+        })
+
+    # Mock group_and_normalize to return all-in-one bad key
+    bad_key = "bad_merge_key"
+    name_map = {c["title"]: bad_key for c in candidates}
+    with patch("packages.compiler.cross_source_merger.group_and_normalize", return_value=name_map):
+        result = merge_candidates(
+            candidates, domain_id="hvac",
+            equipment_class_id="centrifugal_chiller",
+            ontology_class_key="hvac:centrifugal_chiller",
+            knowledge_object_type="parameter_spec",
+        )
+
+    # Sanity check should split them into multiple KOs
+    unique_keys = {ko["canonical_key"] for ko in result}
+    assert len(unique_keys) >= MERGER_MAX_GROUP_CANDIDATES, \
+        f"Expected ≥{MERGER_MAX_GROUP_CANDIDATES} unique keys after split, got {len(unique_keys)}"
     assert _values_agree(0, 0) is True
 
 
