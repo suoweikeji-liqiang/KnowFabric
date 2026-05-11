@@ -128,3 +128,4 @@ Five tables: `document`, `document_page`, `content_chunk`, `processing_job`, `pr
 - Domain-specific logic goes in `domain_packages/`, never hardcoded in core modules
 - Structured JSON logging with required fields: `timestamp`, `level`, `job_id`, `stage`, `doc_id`, `message`
 - Governance docs in `docs/` are binding contracts — read `docs/00_repo-charter.md` and `docs/01_system-boundaries.md` before making architectural changes
+- **Any merger / DB bulk write operation MUST be preceded by pg_dump backup**: `pg_dump knowfabric > /tmp/<task_name>_pre_<date>.sql`. This covers: apply review packs, rebuild canonical_keys, bulk migrations, any script modifying ≥10 knowledge_object rows. Backup files retained ≥7 days. (docs/38 §8 E5)
