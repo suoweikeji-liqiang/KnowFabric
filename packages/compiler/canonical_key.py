@@ -32,6 +32,7 @@ CANONICAL_KEY_TASK = "canonical_key_normalization"
 CONCEPT_GROUP_TASK = "concept_group_and_normalize"
 BATCH_SIZE = 30  # E2: max names per LLM call
 MAX_GROUP_SIZE = 10  # E2: sanity — no single concept should have >10 true synonyms
+EMBEDDING_RECLUSTER_MAX_SIZE = 8  # Rich-state guard: keep regroup layers below super-KO size
 
 
 def _load_registry() -> dict[str, Any]:
@@ -393,6 +394,82 @@ def _cluster_recursive(
     return result
 
 
+def _tighten_oversize_embedding_clusters(
+    names: list[str],
+    embeddings: list[list[float]],
+    clusters: list[list[str]],
+    *,
+    threshold: float,
+) -> list[list[str]]:
+    """Re-cluster oversized embedding clusters with stricter thresholds.
+
+    N3 trusts embedding clusters directly, so E2's LLM sanity check does not run.
+    Rich-state regroup can therefore inherit single-linkage mega-clusters. Keep
+    normal small clusters intact and only tighten clusters that exceed sanity size.
+    """
+    refined: list[list[str]] = []
+    index_by_name = {name: i for i, name in enumerate(names)}
+    for cluster in clusters:
+        if len(cluster) <= MAX_GROUP_SIZE:
+            refined.append(cluster)
+            continue
+
+        indices = [index_by_name[n] for n in cluster if n in index_by_name]
+        sub_names = [names[i] for i in indices]
+        sub_embs = [embeddings[i] for i in indices]
+        tightened = _cluster_recursive(
+            sub_names,
+            sub_embs,
+            threshold=min(threshold + 0.05, 0.95),
+            max_size=EMBEDDING_RECLUSTER_MAX_SIZE,
+        )
+        for sub_cluster in tightened:
+            if len(sub_cluster) > MAX_GROUP_SIZE:
+                refined.extend([[n] for n in sub_cluster])
+            else:
+                refined.append(sub_cluster)
+    return refined
+
+
+def _dump_embedding_cluster_trace(
+    names: list[str],
+    clusters: list[list[str]],
+    *,
+    threshold: float,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    raw_clusters: list[list[str]] | None = None,
+) -> None:
+    if os.environ.get("KNOWFABRIC_DUMP_CLUSTER_TRACE") != "1":
+        return
+
+    from datetime import datetime as _dt, timezone as _tz
+
+    run_id = _dt.now(_tz.utc).strftime("%Y%m%dT%H%M%SZ")
+    out_dir = Path(f"output/diagnostic/{run_id}")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "stage": "embedding_cluster_trace",
+        "equipment_class_id": equipment_class_id,
+        "knowledge_object_type": knowledge_object_type,
+        "threshold": threshold,
+        "input_count": len(names),
+        "input_names": names,
+        "raw_cluster_count": len(raw_clusters or clusters),
+        "raw_clusters": [
+            {"size": len(cluster), "members": cluster}
+            for cluster in sorted(raw_clusters or clusters, key=len, reverse=True)
+        ],
+        "cluster_count": len(clusters),
+        "clusters": [
+            {"size": len(cluster), "members": cluster}
+            for cluster in sorted(clusters, key=len, reverse=True)
+        ],
+    }
+    with open(out_dir / "embedding_cluster_trace.json", "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, ensure_ascii=False, indent=2)
+
+
 def _dump_refinement_trace(cluster_names: list[str], groups: list[dict], llm_response: dict) -> None:
     """N3: dump what LLM refinement did to each cluster."""
     import json as _json, os as _os
@@ -495,7 +572,22 @@ def _group_via_embedding(
 
     # 2. Clustering
     from packages.compiler.clustering import cluster_by_cosine
-    clusters = cluster_by_cosine(cleaned, embeddings, threshold=0.78)
+    threshold = 0.78
+    raw_clusters = cluster_by_cosine(cleaned, embeddings, threshold=threshold)
+    clusters = _tighten_oversize_embedding_clusters(
+        cleaned,
+        embeddings,
+        raw_clusters,
+        threshold=threshold,
+    )
+    _dump_embedding_cluster_trace(
+        cleaned,
+        clusters,
+        threshold=threshold,
+        equipment_class_id=equipment_class_id,
+        knowledge_object_type=knowledge_object_type,
+        raw_clusters=raw_clusters,
+    )
 
     # 3. Terminology YAML as naming hint (not grouping)
     terminology = _load_terminology()

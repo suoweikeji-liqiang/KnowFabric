@@ -10,8 +10,10 @@ from packages.compiler.canonical_key import (
     _apply_terminology,
     _group_via_embedding,
     _save_registry,
+    _tighten_oversize_embedding_clusters,
     group_and_normalize,
     HASH_CACHE,
+    MAX_GROUP_SIZE,
     USE_EMBEDDING_FIRST,
 )
 
@@ -63,6 +65,32 @@ def test_group_via_embedding_merges_cross_lingual():
 
 def test_embedding_first_is_default():
     assert USE_EMBEDDING_FIRST is True, "KNOWFABRIC_USE_EMBEDDING_FIRST must default to 1"
+
+
+def test_oversize_embedding_cluster_is_tightened(monkeypatch):
+    names = [f"param_{i}" for i in range(MAX_GROUP_SIZE + 1)]
+    embeddings = [[1.0, 0.0] for _ in names]
+    calls = {}
+
+    def fake_recursive(sub_names, sub_embs, *, threshold, max_size):
+        calls["threshold"] = threshold
+        calls["max_size"] = max_size
+        return [sub_names[:6], sub_names[6:]]
+
+    monkeypatch.setattr(
+        "packages.compiler.canonical_key._cluster_recursive",
+        fake_recursive,
+    )
+    refined = _tighten_oversize_embedding_clusters(
+        names,
+        embeddings,
+        [names],
+        threshold=0.78,
+    )
+
+    assert round(calls["threshold"], 2) == 0.83
+    assert calls["max_size"] == 8
+    assert [len(cluster) for cluster in refined] == [6, 5]
 
 
 def test_group_and_normalize_dispatches_to_embedding(monkeypatch):

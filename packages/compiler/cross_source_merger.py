@@ -421,6 +421,66 @@ def _ko_to_candidate(ko_row, session=None) -> dict[str, Any]:
     }
 
 
+def _looks_like_parameter_name(text: str) -> bool:
+    import re
+
+    cleaned = str(text or "").strip()
+    if len(cleaned) < 2:
+        return False
+    if re.search(r"[\u4e00-\u9fff]{2,}", cleaned):
+        return True
+    if re.search(r"[A-Za-z].*[A-Za-z]", cleaned):
+        return True
+    return False
+
+
+def _source_name_from_evidence(evidence_text: str, fallback: str) -> str:
+    cleaned = str(evidence_text or "").strip()
+    if not cleaned:
+        return fallback
+
+    first_line = cleaned.splitlines()[0].strip()
+    if _looks_like_parameter_name(first_line):
+        return first_line[:120]
+    return fallback
+
+
+def _ko_to_candidates(ko_row, session=None) -> list[dict[str, Any]]:
+    base = _ko_to_candidate(ko_row, session=session)
+    payload = dict(base.get("structured_payload") or {})
+    fallback_name = str(payload.get("parameter_name") or ko_row.title or "").strip()
+    evidence_rows = list(base.get("evidence") or [])
+    if not evidence_rows:
+        return [base]
+
+    authority = ko_row.authority_summary_json or {}
+    layers = authority.get("layers", []) if isinstance(authority, dict) else []
+    layer_by_doc = {
+        str(layer.get("doc_id")): layer
+        for layer in layers
+        if isinstance(layer, dict) and layer.get("doc_id")
+    }
+
+    expanded: list[dict[str, Any]] = []
+    for ev in evidence_rows:
+        layer = layer_by_doc.get(str(ev.get("doc_id") or ""), {})
+        ev_payload = dict(payload)
+        ev_payload["parameter_name"] = _source_name_from_evidence(
+            ev.get("evidence_text", ""),
+            fallback_name,
+        )
+        expanded.append({
+            **base,
+            "title": ev_payload["parameter_name"] or base.get("title"),
+            "structured_payload": ev_payload,
+            "authority_level": layer.get("authority_level", base.get("authority_level")),
+            "publisher": layer.get("publisher", base.get("publisher")),
+            "citation": layer.get("citation", base.get("citation")),
+            "evidence": [ev],
+        })
+    return expanded
+
+
 def merge_with_existing(
     session: Any,
     new_candidates: list[dict[str, Any]],
@@ -451,11 +511,13 @@ def merge_with_existing(
     existing_candidates = []
     existing_by_name: dict[str, str] = {}  # parameter_name → knowledge_object_id
     for ko in existing_kos:
-        existing_candidates.append(_ko_to_candidate(ko, session=session))
-        payload = ko.structured_payload_json or {}
-        name = payload.get("parameter_name") or ko.title or ""
-        if name:
-            existing_by_name[str(name).strip()] = ko.knowledge_object_id
+        ko_candidates = _ko_to_candidates(ko, session=session)
+        existing_candidates.extend(ko_candidates)
+        for cand in ko_candidates:
+            payload = cand.get("structured_payload") or {}
+            name = payload.get("parameter_name") or cand.get("title") or ""
+            if name:
+                existing_by_name[str(name).strip()] = ko.knowledge_object_id
 
     # L1 diagnostic: dump what reaches the merger
     _dump_merger_input(existing_candidates, new_candidates, equipment_class_id, knowledge_object_type)
