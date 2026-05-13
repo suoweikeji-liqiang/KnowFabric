@@ -237,6 +237,14 @@ def _seed_authority_fixture(session_factory: sessionmaker) -> None:
                     },
                     "consensus_state": "single_source",
                     "highest_authority_level": "industry_standard",
+                    "deviation_justification_json": {
+                        "authority_arbitration": {
+                            "recommended_value": "44F",
+                            "recommended_authority_level": "industry_standard",
+                            "arbitration_reason": "Single source, no conflict to arbitrate",
+                            "arbitration_rule_applied": None,
+                        }
+                    },
                 },
                 {
                     "knowledge_object_id": "ko_trane_setpoint",
@@ -265,6 +273,7 @@ def _seed_authority_fixture(session_factory: sessionmaker) -> None:
                     },
                     "consensus_state": "single_source",
                     "highest_authority_level": "oem_manual",
+                    "deviation_justification_json": None,
                 },
             ],
         )
@@ -326,6 +335,7 @@ def test_redistribution_gating_paraphrases_restricted_evidence() -> None:
         assert ashrae_item is not None, "ASHRAE KO should be in results"
         assert ashrae_item["consensus_state"] == "single_source"
         assert ashrae_item["highest_authority_level"] == "industry_standard"
+        assert ashrae_item["deviation_justification"]["authority_arbitration"]["recommended_value"] == "44F"
         assert ashrae_item["redistribution_restricted"] is True
 
         ashrae_evidence = ashrae_item["evidence"][0]

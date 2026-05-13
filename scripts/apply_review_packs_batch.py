@@ -15,6 +15,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from scripts.backfill_manual_knowledge_from_chunks import backfill_manual_fixture_from_chunks
 from scripts.build_manual_fixture_from_review_candidates import build_manual_fixture_from_review_candidate_file
+from packages.db.session import SessionLocal
+from packages.review.applier import apply_with_merger
 
 PACK_MANIFEST_FILE = "review_pack_manifest.json"
 APPLY_REPORT_FILE = "review_pack_apply_report.json"
@@ -85,15 +87,12 @@ def _apply_one_pack(pack_path: Path, fixture_root: Path, *,
         elif inspection["accepted_count"] == 0:
             result["status"] = "skipped_no_accepted"
         elif use_merger:
-            # Task E: route through merge_with_existing
             fixture = build_manual_fixture_from_review_candidate_file(pack_path)
             entries = fixture.get("manual_entries", [])
             accepted = [e for e in entries if e.get("review_status") == "published" or e.get("review_decision") == "accepted"]
             if not accepted:
                 accepted = entries  # all entries if no filter matches
 
-            from packages.review.applier import apply_with_merger
-            from packages.db.session import SessionLocal
             db = SessionLocal()
             try:
                 ec_id = fixture.get("equipment_class_id", "")
@@ -111,16 +110,9 @@ def _apply_one_pack(pack_path: Path, fixture_root: Path, *,
                 result["equipment_class_key"] = ock
                 result["knowledge_object_count"] = stats["new_merged"] + stats["updated_existing"]
                 result["merger_stats"] = stats
-            except Exception:
+            except Exception as exc:
                 db.rollback()
-                # Fallback: direct INSERT for envs where v2 models aren't registered (test DBs, etc.)
-                fixture_path = _fixture_path(fixture_root, pack_path)
-                fixture_path.write_text(json.dumps(fixture, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-                equipment_class_key, knowledge_count = backfill_manual_fixture_from_chunks(fixture_path)
-                result["status"] = "applied"
-                result["equipment_class_key"] = equipment_class_key
-                result["knowledge_object_count"] = knowledge_count
-                result["fixture_path"] = str(fixture_path)
+                raise RuntimeError(f"merger apply failed for {pack_path.name}: {exc}") from exc
             finally:
                 db.close()
         else:
@@ -167,7 +159,7 @@ def apply_review_pack_paths(
         "fixtures_output_dir": str(fixture_root),
         "total_pack_files": len(pack_paths),
         "summary": {
-            "applied": summary.get("applied", 0),
+            "applied": summary.get("applied", 0) + summary.get("applied_merger", 0),
             "skipped_pending": summary.get("skipped_pending", 0),
             "skipped_no_accepted": summary.get("skipped_no_accepted", 0),
             "failed": summary.get("failed", 0),

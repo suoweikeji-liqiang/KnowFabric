@@ -74,6 +74,7 @@ class SemanticKnowledgeObject(SemanticBaseModel):
     highest_authority_level: str | None = None
     authority_layers: list[dict[str, Any]] = Field(default_factory=list)
     conflict_summary: str | None = None
+    deviation_justification: dict[str, Any] = Field(default_factory=dict)
     redistribution_restricted: bool = False
     evidence: list[EvidenceCitation] = Field(min_length=1)
 

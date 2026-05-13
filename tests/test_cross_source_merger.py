@@ -161,6 +161,31 @@ def test_authority_rank_assignment():
     assert result[0]["consensus_state"] == "agreed"
 
 
+def test_material_conflict_includes_authority_arbitration_result():
+    candidates = [
+        _make_candidate("CHWS Setpoint", value="44F", doc_id="doc_ashrae", chunk_id="chunk_ashrae",
+                         authority_level="industry_standard", publisher="ASHRAE",
+                         citation="ASHRAE G36 §5.22"),
+        _make_candidate("CHWS Setpoint", value="50F", doc_id="doc_trane", chunk_id="chunk_trane",
+                         authority_level="oem_manual", publisher="Trane",
+                         citation="Trane Manual p.29"),
+    ]
+
+    result = merge_candidates(
+        candidates,
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        ontology_class_key="hvac:centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+    )
+
+    arbitration = result[0]["deviation_justification_json"]["authority_arbitration"]
+    assert result[0]["consensus_state"] == "material_conflict"
+    assert arbitration["recommended_value"] == "44F"
+    assert arbitration["recommended_authority_level"] == "industry_standard"
+    assert arbitration["arbitration_rule_applied"] == "rule_3_standard_over_oem"
+
+
 def test_value_agree_helpers():
     assert _values_agree("44F", "44F") is True
     assert _values_agree("44.0F", "44F") is True   # numeric: both 44.0
