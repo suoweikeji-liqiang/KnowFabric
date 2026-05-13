@@ -6,9 +6,9 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
-from packages.compiler.contracts import CompilerAuditPacket, CompilerRun, SourceManifestEntry
+from packages.compiler.contracts import CompilerAuditPacket, CompilerRun, LLMAuditRecord, SourceManifestEntry
 
 AUDIT_SCHEMA_VERSION = "2026-05-13"
 
@@ -148,3 +148,50 @@ def write_compiler_audit_packet(path: str | Path, packet: CompilerAuditPacket) -
     payload = packet.model_dump(mode="json")
     target.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return target
+
+
+def _redact_secrets(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {
+            key: "***REDACTED***" if key.lower() in {"api_key", "authorization"} else _redact_secrets(item)
+            for key, item in value.items()
+        }
+    if isinstance(value, list):
+        return [_redact_secrets(item) for item in value]
+    return value
+
+
+def build_llm_audit_recorder(
+    *,
+    output_root: str | Path,
+    compiler_run_id: str,
+    call_site: str,
+    backend_name: str | None = None,
+    model: str | None = None,
+    date_label: str | None = None,
+    metadata: dict[str, Any] | None = None,
+) -> Callable[[dict[str, Any]], Path]:
+    """Build a JSONL recorder for replayable LLM request/response audits."""
+
+    active_date = date_label or datetime.now(timezone.utc).strftime("%Y%m%d")
+    target = Path(output_root) / "llm_audit" / active_date / f"{compiler_run_id}.jsonl"
+
+    def record(payload: dict[str, Any]) -> Path:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        row = LLMAuditRecord(
+            audit_schema_version=AUDIT_SCHEMA_VERSION,
+            compiler_run_id=compiler_run_id,
+            call_site=call_site,
+            recorded_at=utc_now_iso(),
+            backend_name=backend_name,
+            model=model,
+            request=_redact_secrets(payload.get("request") or {}),
+            response=_redact_secrets(payload.get("response")),
+            error=str(payload["error"]) if payload.get("error") else None,
+            metadata=metadata or {},
+        )
+        with target.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(row.model_dump(mode="json"), ensure_ascii=False) + "\n")
+        return target
+
+    return record

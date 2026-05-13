@@ -82,6 +82,21 @@ class CompilerAuditPacket(BaseModel):
     audit_flags: list[str] = Field(default_factory=list)
 
 
+class LLMAuditRecord(BaseModel):
+    """Replayable audit record for one LLM request/response pair."""
+
+    audit_schema_version: str
+    compiler_run_id: str
+    call_site: str
+    recorded_at: str
+    backend_name: str | None = None
+    model: str | None = None
+    request: dict[str, Any]
+    response: dict[str, Any] | None = None
+    error: str | None = None
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
 def build_compile_metadata(
     method: str,
     *,

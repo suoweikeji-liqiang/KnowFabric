@@ -10,7 +10,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from packages.compiler.llm_compiler import OpenAICompatibleBackend
 from packages.db.models import ContentChunk, Document, DocumentPage
 from scripts.llm_backend_config import resolve_local_overrides
-from scripts.run_hvac_doclevel_extraction_batch import anchor_candidates, judge_entries, render_report, task_complete_for_backends, task_status_from_backend_results
+from scripts.run_hvac_doclevel_extraction_batch import (
+    SourceItem,
+    anchor_candidates,
+    build_backend_llm_audit_recorder,
+    judge_entries,
+    render_report,
+    task_complete_for_backends,
+    task_status_from_backend_results,
+)
 
 
 def test_anchor_candidates_matches_verbatim_quote_to_chunk() -> None:
@@ -180,6 +188,41 @@ def test_judge_entries_splits_accepted_and_rejected(monkeypatch) -> None:
     assert [row["candidate_id"] for row in rejected] == ["cand_bad"]
     assert rejected[0]["judge_category"] == "terminal_label"
     assert raw["response"]["usage"]["prompt_tokens"] == 10
+
+
+def test_doclevel_backend_llm_recorder_writes_under_run_dir(tmp_path: Path) -> None:
+    task_dir = tmp_path / "20260513T010101Z_hvac_doclevel_extraction_batch/0001_manual"
+    task_dir.mkdir(parents=True)
+    item = SourceItem(
+        row_index=1,
+        path=Path("/tmp/manual.pdf"),
+        batch_group="B_oem_manual_text_first",
+        priority="high",
+        brand="Trane",
+        authority_level="oem_manual",
+        document_kind="manual",
+        equipment_scope="centrifugal_chiller",
+        page_count="10",
+        text_quality="text",
+        recommended_mode="text",
+        raw={},
+    )
+    backend = OpenAICompatibleBackend(name="extract", api_base_url="https://example.test/v1", model="model", api_key="key")
+
+    recorder, path = build_backend_llm_audit_recorder(
+        task_dir,
+        item,
+        backend,
+        call_site="hvac_doclevel_extract",
+        date_label="20260513",
+    )
+    recorder({"request": {"authorization": "Bearer secret"}, "response": {"usage": {"prompt_tokens": 1}}})
+
+    assert path == task_dir.parent / "llm_audit/20260513/20260513T010101Z_hvac_doclevel_extraction_batch.jsonl"
+    row = path.read_text(encoding="utf-8")
+    assert "hvac_doclevel_extract" in row
+    assert "manual.pdf" in row
+    assert "secret" not in row
 
 
 def _judge_entry(candidate_id: str, ko_type: str, title: str) -> dict:

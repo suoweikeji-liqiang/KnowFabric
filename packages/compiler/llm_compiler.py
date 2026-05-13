@@ -254,17 +254,14 @@ def compile_llm_candidates(
     context_window: ChunkContextWindow,
     backend: OpenAICompatibleBackend | None = None,
     enabled_types: tuple[str, ...] | list[str] | None = None,
+    request_recorder: Callable[[dict[str, Any]], None] | None = None,
 ) -> list[dict[str, Any]]:
     """Compile optional LLM draft candidates for hard knowledge types."""
 
     active_backend = backend or default_backend()
     if not llm_compilation_enabled(active_backend):
         return []
-    type_allowlist = tuple(enabled_types) if enabled_types is not None else default_enabled_llm_types()
-    allowed_types = sorted(
-        set(equipment_match["knowledge_anchors"]).intersection(LLM_HARD_TYPES).intersection(type_allowlist)
-    )
-    allowed_types = _context_allowed_types(allowed_types, chunk=chunk, page=page)
+    allowed_types = _allowed_llm_types(equipment_match, enabled_types, chunk=chunk, page=page)
     if not allowed_types:
         return []
 
@@ -278,13 +275,45 @@ def compile_llm_candidates(
         allowed_types=allowed_types,
     )
     try:
-        response_payload = _request_json_completion(prompt, active_backend)
+        response_payload = _request_compile_candidates(prompt, active_backend, request_recorder)
     except Exception:
         return []
     candidates = response_payload.get("candidates")
     if not isinstance(candidates, list):
         return []
+    return _normalize_llm_response_candidates(
+        candidates,
+        allowed_types=allowed_types,
+        domain_id=domain_id,
+        equipment_match=equipment_match,
+        chunk=chunk,
+        context_window=context_window,
+        active_backend=active_backend,
+    )
 
+
+def _allowed_llm_types(
+    equipment_match: dict[str, Any],
+    enabled_types: tuple[str, ...] | list[str] | None,
+    *,
+    chunk: ContentChunk,
+    page: DocumentPage,
+) -> list[str]:
+    type_allowlist = tuple(enabled_types) if enabled_types is not None else default_enabled_llm_types()
+    allowed = set(equipment_match["knowledge_anchors"]).intersection(LLM_HARD_TYPES).intersection(type_allowlist)
+    return _context_allowed_types(sorted(allowed), chunk=chunk, page=page)
+
+
+def _normalize_llm_response_candidates(
+    candidates: list[Any],
+    *,
+    allowed_types: list[str],
+    domain_id: str,
+    equipment_match: dict[str, Any],
+    chunk: ContentChunk,
+    context_window: ChunkContextWindow,
+    active_backend: OpenAICompatibleBackend,
+) -> list[dict[str, Any]]:
     normalized = []
     for item in candidates:
         if not isinstance(item, dict):
@@ -303,17 +332,13 @@ def compile_llm_candidates(
             knowledge_object_type=knowledge_type,
             fallback_text=chunk.text_excerpt or chunk.cleaned_text,
         )
-        try:
-            confidence_score = float(item.get("confidence_score", 0.72))
-        except (TypeError, ValueError):
-            confidence_score = 0.72
         rationale = str(item.get("rationale") or "llm draft from constrained chunk window").strip()
         normalized.append(
             {
                 "knowledge_object_type": knowledge_type,
                 "canonical_key_candidate": canonical_key_candidate,
                 "structured_payload_candidate": structured_payload_candidate,
-                "confidence_score": round(max(0.0, min(confidence_score, 0.95)), 3),
+                "confidence_score": _candidate_confidence(item),
                 "knowledge_signal": {
                     "detection_method": "llm_compile",
                     "allowed_types": allowed_types,
@@ -328,6 +353,24 @@ def compile_llm_candidates(
             }
         )
     return normalized
+
+
+def _candidate_confidence(item: dict[str, Any]) -> float:
+    try:
+        confidence_score = float(item.get("confidence_score", 0.72))
+    except (TypeError, ValueError):
+        confidence_score = 0.72
+    return round(max(0.0, min(confidence_score, 0.95)), 3)
+
+
+def _request_compile_candidates(
+    prompt: list[dict[str, str]],
+    backend: OpenAICompatibleBackend,
+    request_recorder: Callable[[dict[str, Any]], None] | None,
+) -> dict[str, Any]:
+    if request_recorder is None:
+        return _request_json_completion(prompt, backend)
+    return _request_json_completion(prompt, backend, recorder=request_recorder)
 
 
 def compile_document_parameter_specs(

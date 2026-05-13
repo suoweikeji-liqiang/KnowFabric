@@ -29,6 +29,7 @@ from packages.compiler.llm_compiler import (
     repair_json_response_with_backend,
     response_content_text,
 )
+from packages.compiler.audit import build_llm_audit_recorder
 from packages.compiler.rule_compiler import stable_candidate_id
 from packages.core.config import settings
 from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
@@ -319,6 +320,43 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text("".join(json.dumps(row, ensure_ascii=False, default=str) + "\n" for row in rows), encoding="utf-8")
 
 
+def build_backend_llm_audit_recorder(
+    task_dir: Path,
+    item: SourceItem,
+    backend: OpenAICompatibleBackend,
+    *,
+    call_site: str,
+    date_label: str | None = None,
+):
+    run_dir = task_dir.parent
+    run_id = run_dir.name
+    active_date = date_label or datetime.now(timezone.utc).strftime("%Y%m%d")
+    recorder = build_llm_audit_recorder(
+        output_root=run_dir,
+        compiler_run_id=run_id,
+        call_site=call_site,
+        backend_name=backend.name,
+        model=backend.model,
+        date_label=active_date,
+        metadata={
+            "row_index": item.row_index,
+            "source_path": str(item.path),
+            "brand": item.brand,
+            "authority_level": item.authority_level,
+            "document_kind": item.document_kind,
+            "equipment_scope": item.equipment_scope,
+        },
+    )
+    return recorder, run_dir / "llm_audit" / active_date / f"{run_id}.jsonl"
+
+
+def capture_recorder_path(recorder, paths: list[str]):
+    def _record(payload: dict[str, Any]) -> None:
+        paths.append(str(recorder(payload)))
+
+    return _record
+
+
 def usage(raw: dict[str, Any]) -> dict[str, int]:
     item = raw.get("response", {}).get("usage", {})
     prompt = int(item.get("prompt_tokens") or 0)
@@ -427,12 +465,24 @@ def judge_entries(entries: list[dict[str, Any]], backend: OpenAICompatibleBacken
     return accepted, rejected, raw
 
 
-def extract_one(backend: OpenAICompatibleBackend, item: SourceItem, rows: list[tuple[ContentChunk, DocumentPage, Document]], equipment: dict[str, Any], args: argparse.Namespace) -> tuple[list[HvacDocCandidate], dict[str, Any]]:
+def extract_one(
+    backend: OpenAICompatibleBackend,
+    item: SourceItem,
+    rows: list[tuple[ContentChunk, DocumentPage, Document]],
+    equipment: dict[str, Any],
+    args: argparse.Namespace,
+    request_recorder=None,
+) -> tuple[list[HvacDocCandidate], dict[str, Any]]:
     raw: dict[str, Any] = {}
     text = assemble_doc_text(rows)
     messages = build_extract_messages(item, rows[0][2], equipment, text, args.knowledge_types, args.target_candidates)
     started = time.monotonic()
-    payload = request_json_completion_with_retry(messages, backend, recorder=lambda value: raw.update(value))
+    def record(value: dict[str, Any]) -> None:
+        raw.update(value)
+        if request_recorder is not None:
+            request_recorder(value)
+
+    payload = request_json_completion_with_retry(messages, backend, recorder=record)
     raw["elapsed_seconds"] = round(time.monotonic() - started, 3)
     return HvacDocExtractionResponse.model_validate(payload).candidates, raw
 
@@ -458,44 +508,68 @@ def backend_result(args, backend_name: str, item: SourceItem, rows, equipment, o
     if not args.force and (backend_dir / "candidates.json").exists():
         print(f"skip existing backend={backend.name} task={item.row_index}", flush=True)
         return summarize_existing_backend(backend, pricing, backend_dir)
+    raw_holder: dict[str, Any] = {}
     try:
-        print(
-            f"start backend={backend.name} task={item.row_index} pages={len({row[1].page_no for row in rows})} "
-            f"chunks={len(rows)} timeout={backend.timeout_seconds}s",
-            flush=True,
-        )
-        candidates, raw = extract_one(backend, item, rows, equipment, args)
-        raw_dicts = [candidate.model_dump() for candidate in candidates]
-        anchored, rejected = anchor_candidates(raw_dicts, rows)
-        entries = [candidate_entry(row, rows[0][2], equipment, backend, ontology_version) for row in anchored]
-        accepted, judge_rejected, raw_judge, judge_cost = run_judge_if_requested(args, entries, rows[0][2], equipment)
-        final_entries = accepted if args.judge_backend else entries
-        write_backend_outputs(backend_dir, final_entries, raw_dicts, rejected, judge_rejected, raw, raw_judge, args)
-        print(
-            f"done backend={backend.name} task={item.row_index} raw={len(raw_dicts)} "
-            f"anchored={len(anchored)} final={len(final_entries)}",
-            flush=True,
-        )
-        return summarize_backend(
-            backend,
-            pricing,
-            raw,
-            raw_judge,
-            judge_cost,
-            bool(args.judge_backend),
-            raw_dicts,
-            anchored,
-            rejected,
-            judge_rejected,
-            final_entries,
-            backend_dir,
+        return execute_backend_result(
+            args, item, rows, equipment, ontology_version, output_dir, backend_dir, backend, pricing, raw_holder
         )
     except Exception as exc:
+        raw = raw_holder.get("raw", {})
         if raw:
             write_json(backend_dir / "raw_extract_response.json", raw)
         write_json(backend_dir / "error.json", {"error": str(exc), "error_type": type(exc).__name__})
         print(f"failed backend={backend.name} task={item.row_index}: {type(exc).__name__}: {exc}", flush=True)
         return {"backend": backend.name, "model": backend.model, "status": "failed", "error": str(exc)}
+
+
+def execute_backend_result(
+    args, item, rows, equipment, ontology_version, output_dir, backend_dir, backend, pricing, raw_holder
+) -> dict[str, Any]:
+    audit_paths: list[str] = []
+    recorder, audit_path = build_backend_llm_audit_recorder(
+        output_dir, item, backend, call_site="hvac_doclevel_extract"
+    )
+    print_backend_start(backend, item, rows)
+    candidates, raw = extract_one(
+        backend,
+        item,
+        rows,
+        equipment,
+        args,
+        request_recorder=capture_recorder_path(recorder, audit_paths),
+    )
+    raw_holder["raw"] = raw
+    raw_dicts = [candidate.model_dump() for candidate in candidates]
+    anchored, rejected = anchor_candidates(raw_dicts, rows)
+    entries = [candidate_entry(row, rows[0][2], equipment, backend, ontology_version) for row in anchored]
+    accepted, judge_rejected, raw_judge, judge_cost = run_judge_if_requested(args, entries, rows[0][2], equipment)
+    final_entries = accepted if args.judge_backend else entries
+    write_backend_outputs(backend_dir, final_entries, raw_dicts, rejected, judge_rejected, raw, raw_judge, args)
+    print_backend_done(backend, item, raw_dicts, anchored, final_entries)
+    summary = summarize_backend(
+        backend, pricing, raw, raw_judge, judge_cost, bool(args.judge_backend),
+        raw_dicts, anchored, rejected, judge_rejected, final_entries, backend_dir,
+    )
+    if audit_paths:
+        summary["llm_audit_path"] = str(audit_path)
+    return summary
+
+
+def print_backend_start(backend, item: SourceItem, rows) -> None:
+    pages = len({row[1].page_no for row in rows})
+    print(
+        f"start backend={backend.name} task={item.row_index} pages={pages} "
+        f"chunks={len(rows)} timeout={backend.timeout_seconds}s",
+        flush=True,
+    )
+
+
+def print_backend_done(backend, item: SourceItem, raw_dicts, anchored, final_entries) -> None:
+    print(
+        f"done backend={backend.name} task={item.row_index} raw={len(raw_dicts)} "
+        f"anchored={len(anchored)} final={len(final_entries)}",
+        flush=True,
+    )
 
 
 def run_judge_if_requested(args, entries, doc, equipment) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any], float]:

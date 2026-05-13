@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from packages.compiler.audit import (
     build_compiler_audit_packet,
     build_compiler_run,
+    build_llm_audit_recorder,
     build_review_pack_source_manifest_entry,
 )
 
@@ -63,3 +64,27 @@ def test_compiler_audit_packet_preserves_run_inputs_and_failure_flags(tmp_path: 
     assert packet.integrity_checks["source_manifest_count"] == 1
     assert packet.integrity_checks["failed_result_count"] == 1
     assert "has_failed_results" in packet.audit_flags
+
+
+def test_llm_audit_recorder_writes_replayable_jsonl(tmp_path: Path) -> None:
+    recorder = build_llm_audit_recorder(
+        output_root=tmp_path,
+        compiler_run_id="run_llm_audit",
+        call_site="document_parameter_spec",
+        backend_name="local",
+        model="qwen-test",
+        date_label="20260513",
+    )
+
+    path = recorder({
+        "request": {"model": "qwen-test", "messages": [{"role": "user", "content": "extract"}]},
+        "response": {"choices": [{"message": {"content": "{}"}}]},
+    })
+
+    assert path == tmp_path / "llm_audit/20260513/run_llm_audit.jsonl"
+    row = json.loads(path.read_text(encoding="utf-8"))
+    assert row["compiler_run_id"] == "run_llm_audit"
+    assert row["call_site"] == "document_parameter_spec"
+    assert row["backend_name"] == "local"
+    assert row["model"] == "qwen-test"
+    assert row["request"]["messages"][0]["content"] == "extract"
