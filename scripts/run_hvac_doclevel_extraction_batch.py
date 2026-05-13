@@ -29,7 +29,8 @@ from packages.compiler.llm_compiler import (
     repair_json_response_with_backend,
     response_content_text,
 )
-from packages.compiler.audit import build_llm_audit_recorder
+from packages.compiler.audit import build_compiler_run, build_file_source_manifest_entry, build_llm_audit_recorder
+from packages.compiler.contracts import SourceManifestEntry
 from packages.compiler.rule_compiler import stable_candidate_id
 from packages.core.config import settings
 from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
@@ -720,16 +721,89 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         for task in tasks
         if not args.force and task_complete_for_backends(task, args.backends, args.judge_backend)
     }
-    summary = {"run_id": batch_dir.name, "output_dir": str(batch_dir), "tasks": tasks}
+    summary = build_run_summary(batch_dir=batch_dir, items=items, tasks=tasks, parameters=batch_parameters(args))
     write_batch_summary(batch_dir, summary)
     for item in items:
         if item.row_index in completed_indexes:
             print(f"skip completed task={item.row_index}", flush=True)
             continue
         tasks = replace_task(tasks, run_item(args, item, batch_dir))
-        summary = {"run_id": batch_dir.name, "output_dir": str(batch_dir), "tasks": tasks}
+        summary = build_run_summary(batch_dir=batch_dir, items=items, tasks=tasks, parameters=batch_parameters(args))
         write_batch_summary(batch_dir, summary)
     return summary
+
+
+def batch_parameters(args: argparse.Namespace) -> dict[str, Any]:
+    return {
+        "backends": list(args.backends),
+        "judge_backend": args.judge_backend,
+        "groups": sorted(args.groups),
+        "limit": args.limit,
+        "knowledge_types": list(args.knowledge_types),
+        "target_candidates": args.target_candidates,
+        "execute": bool(args.execute),
+    }
+
+
+def build_run_summary(
+    *,
+    batch_dir: Path,
+    items: list[SourceItem],
+    tasks: list[dict[str, Any]],
+    parameters: dict[str, Any],
+) -> dict[str, Any]:
+    source_manifest = build_source_manifest(items)
+    run = build_compiler_run(
+        compiler_run_id=batch_dir.name,
+        pipeline="hvac_doclevel_extraction_batch",
+        domain_id="hvac",
+        parameters=parameters,
+        source_manifest=source_manifest,
+    )
+    return {
+        "run_id": batch_dir.name,
+        "output_dir": str(batch_dir),
+        "compiler_run": run.model_dump(mode="json", exclude={"source_manifest"}),
+        "source_manifest": [entry.model_dump(mode="json") for entry in source_manifest],
+        "tasks": tasks,
+    }
+
+
+def build_source_manifest(items: list[SourceItem]) -> list:
+    return [build_source_manifest_entry(item) for item in items]
+
+
+def build_source_manifest_entry(item: SourceItem):
+    if not item.path.exists():
+        return SourceManifestEntry(
+            source_id=item.path.stem,
+            source_type="document",
+            path=str(item.path),
+            content_sha256="",
+            domain_id="hvac",
+            authority_levels=[item.authority_level] if item.authority_level else [],
+            metadata={**source_item_metadata(item), "manifest_error": "source file not found"},
+        )
+    return build_file_source_manifest_entry(
+        item.path,
+        source_type="document",
+        domain_id="hvac",
+        authority_levels=[item.authority_level] if item.authority_level else [],
+        metadata=source_item_metadata(item),
+    )
+
+
+def source_item_metadata(item: SourceItem) -> dict[str, Any]:
+    return {
+        "row_index": item.row_index,
+        "brand": item.brand,
+        "batch_group": item.batch_group,
+        "priority": item.priority,
+        "document_kind": item.document_kind,
+        "equipment_scope": item.equipment_scope,
+        "text_quality": item.text_quality,
+        "recommended_mode": item.recommended_mode,
+    }
 
 
 def load_existing_task_summaries(batch_dir: Path) -> list[dict[str, Any]]:

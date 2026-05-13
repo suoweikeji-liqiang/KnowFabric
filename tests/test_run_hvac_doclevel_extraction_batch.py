@@ -14,6 +14,7 @@ from scripts.run_hvac_doclevel_extraction_batch import (
     SourceItem,
     anchor_candidates,
     build_backend_llm_audit_recorder,
+    build_run_summary,
     judge_entries,
     render_report,
     task_complete_for_backends,
@@ -223,6 +224,71 @@ def test_doclevel_backend_llm_recorder_writes_under_run_dir(tmp_path: Path) -> N
     assert "hvac_doclevel_extract" in row
     assert "manual.pdf" in row
     assert "secret" not in row
+
+
+def test_doclevel_summary_includes_compiler_run_and_source_manifest(tmp_path: Path) -> None:
+    source_path = tmp_path / "manual.pdf"
+    source_path.write_bytes(b"%PDF-1.4 source")
+    item = SourceItem(
+        row_index=1,
+        path=source_path,
+        batch_group="B_oem_manual_text_first",
+        priority="high",
+        brand="Trane",
+        authority_level="oem_manual",
+        document_kind="manual",
+        equipment_scope="centrifugal_chiller",
+        page_count="10",
+        text_quality="text",
+        recommended_mode="text",
+        raw={},
+    )
+    batch_dir = tmp_path / "20260513T010101Z_hvac_doclevel_extraction_batch"
+
+    summary = build_run_summary(
+        batch_dir=batch_dir,
+        items=[item],
+        tasks=[],
+        parameters={"backends": ["extract"], "judge_backend": ""},
+    )
+
+    assert summary["compiler_run"]["compiler_run_id"] == batch_dir.name
+    assert summary["compiler_run"]["pipeline"] == "hvac_doclevel_extraction_batch"
+    assert summary["compiler_run"]["parameters"]["backends"] == ["extract"]
+    assert summary["source_manifest"][0]["source_type"] == "document"
+    assert summary["source_manifest"][0]["domain_id"] == "hvac"
+    assert summary["source_manifest"][0]["authority_levels"] == ["oem_manual"]
+    assert summary["source_manifest"][0]["metadata"]["brand"] == "Trane"
+    assert len(summary["source_manifest"][0]["content_sha256"]) == 64
+
+
+def test_doclevel_summary_records_missing_source_without_crashing(tmp_path: Path) -> None:
+    item = SourceItem(
+        row_index=1,
+        path=tmp_path / "missing.pdf",
+        batch_group="B_oem_manual_text_first",
+        priority="high",
+        brand="Trane",
+        authority_level="oem_manual",
+        document_kind="manual",
+        equipment_scope="centrifugal_chiller",
+        page_count="10",
+        text_quality="text",
+        recommended_mode="text",
+        raw={},
+    )
+
+    summary = build_run_summary(
+        batch_dir=tmp_path / "run_missing",
+        items=[item],
+        tasks=[],
+        parameters={"backends": ["extract"]},
+    )
+
+    source = summary["source_manifest"][0]
+    assert source["source_id"] == "missing"
+    assert source["content_sha256"] == ""
+    assert "source file not found" in source["metadata"]["manifest_error"]
 
 
 def _judge_entry(candidate_id: str, ko_type: str, title: str) -> dict:

@@ -80,6 +80,9 @@ def build_file_source_manifest_entry(
     source_path: str | Path,
     *,
     source_type: str = "derived_artifact",
+    domain_id: str | None = None,
+    authority_levels: list[str] | None = None,
+    is_redistributable: bool | None = None,
     metadata: dict[str, Any] | None = None,
 ) -> SourceManifestEntry:
     path = Path(source_path)
@@ -88,6 +91,9 @@ def build_file_source_manifest_entry(
         source_type=source_type,
         path=str(path),
         content_sha256=sha256_file(path),
+        domain_id=domain_id,
+        authority_levels=authority_levels or [],
+        is_redistributable=is_redistributable,
         metadata=metadata or {},
     )
 
