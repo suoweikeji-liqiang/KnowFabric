@@ -28,6 +28,7 @@ from packages.domain_kit_v2.projection import (
     build_ontology_mapping_rows,
 )
 from scripts.apply_review_packs_batch import apply_review_packs_in_directory
+from scripts.apply_review_packs_batch import apply_review_pack_paths
 from scripts.build_review_packs_from_candidates import write_review_packs_from_candidate_file
 from scripts.generate_chunk_backfill_candidates import generate_chunk_backfill_candidates
 
@@ -282,6 +283,74 @@ def test_apply_review_packs_counts_successful_merger_apply(monkeypatch) -> None:
         assert report["summary"]["failed"] == 0
 
 
+def test_apply_review_packs_writes_compiler_run_audit_packet(monkeypatch) -> None:
+    """Batch apply reports must preserve compiler run and source manifest audit data."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_fixture_chunks(session_factory, HVAC_FIXTURE)
+    monkeypatch.setattr("scripts.build_manual_fixture_from_review_candidates.SessionLocal", session_factory)
+    monkeypatch.setattr("scripts.apply_review_packs_batch.SessionLocal", session_factory)
+
+    def successful_merger(**_kwargs):
+        return {
+            "new_merged": 1,
+            "updated_existing": 0,
+            "material_conflicts": 0,
+            "groups_processed": 1,
+        }
+
+    monkeypatch.setattr("scripts.apply_review_packs_batch.apply_with_merger", successful_merger)
+
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        pack_dir = _build_pack_dir(monkeypatch, session_factory, tmp_dir)
+        aux_pack = pack_dir / "hvac__doc_aux_module_faults__air_cooled_modular_heat_pump.json"
+        aux_payload = _load_pack(aux_pack)
+        for entry in aux_payload["candidate_entries"]:
+            entry["review_decision"] = "accepted" if entry["canonical_key_candidate"] == "E22" else "rejected"
+        _save_pack(aux_pack, aux_payload)
+
+        report = apply_review_packs_in_directory(
+            pack_dir,
+            compiler_run_id="run_test_batch",
+            merger_backend="local-test",
+        )
+
+        assert report["compiler_run"]["compiler_run_id"] == "run_test_batch"
+        assert report["compiler_run"]["pipeline"] == "review_pack_batch_apply"
+        assert report["compiler_run"]["llm_backend"] == "local-test"
+        assert report["compiler_run"]["parameters"]["use_merger"] is True
+        assert len(report["source_manifest"]) == report["total_pack_files"]
+        assert all(len(source["content_sha256"]) == 64 for source in report["source_manifest"])
+
+        audit_path = Path(report["compiler_audit_packet_path"])
+        assert audit_path.exists()
+        packet = json.loads(audit_path.read_text(encoding="utf-8"))
+        assert packet["compiler_run"]["compiler_run_id"] == "run_test_batch"
+        assert packet["integrity_checks"]["result_count"] == report["total_pack_files"]
+        assert packet["integrity_checks"]["source_manifest_count"] == report["total_pack_files"]
+
+
+def test_apply_review_pack_paths_keeps_audit_when_pack_json_is_invalid(tmp_path: Path) -> None:
+    """Malformed inputs should be recorded in audit and returned as failed results."""
+
+    bad_pack = tmp_path / "bad_pack.json"
+    bad_pack.write_text("{bad json", encoding="utf-8")
+
+    report = apply_review_pack_paths(
+        [bad_pack],
+        source_label=str(tmp_path),
+        fixtures_output_dir=tmp_path / "fixtures",
+        compiler_run_id="run_bad_pack",
+    )
+
+    assert report["summary"]["failed"] == 1
+    assert report["results"][0]["status"] == "failed"
+    assert report["source_manifest"][0]["source_id"] == "bad_pack"
+    assert report["source_manifest"][0]["metadata"]["manifest_error"]
+    assert Path(report["compiler_audit_packet_path"]).exists()
+
+
 if __name__ == "__main__":
     class _MonkeyPatch:
         def __init__(self) -> None:
@@ -300,7 +369,7 @@ if __name__ == "__main__":
                 setattr(module, attr_name, original)
 
     monkeypatch = _MonkeyPatch()
-    test_apply_review_packs_in_directory_applies_reviewed_and_skips_pending(monkeypatch)
+    test_apply_review_packs_in_directory_can_run_explicit_direct_mode(monkeypatch)
     monkeypatch.undo()
     monkeypatch = _MonkeyPatch()
     test_apply_review_packs_in_directory_skips_rejected_only_pack(monkeypatch)
@@ -310,5 +379,8 @@ if __name__ == "__main__":
     monkeypatch.undo()
     monkeypatch = _MonkeyPatch()
     test_apply_review_packs_counts_successful_merger_apply(monkeypatch)
+    monkeypatch.undo()
+    monkeypatch = _MonkeyPatch()
+    test_apply_review_packs_writes_compiler_run_audit_packet(monkeypatch)
     monkeypatch.undo()
     print("Review pack batch apply checks passed")

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
@@ -39,6 +39,47 @@ class DocumentExtractionResponse(BaseModel):
 
 
 ExtractionResponse = DocumentExtractionResponse
+
+
+class SourceManifestEntry(BaseModel):
+    """Immutable source input recorded for one compiler run."""
+
+    source_id: str
+    source_type: Literal["review_pack", "manual_fixture", "document", "derived_artifact"]
+    path: str
+    content_sha256: str
+    domain_id: str | None = None
+    doc_ids: list[str] = Field(default_factory=list)
+    authority_levels: list[str] = Field(default_factory=list)
+    is_redistributable: bool | None = None
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class CompilerRun(BaseModel):
+    """Run-level provenance for a knowledge compilation operation."""
+
+    compiler_run_id: str
+    pipeline: str
+    started_at: str
+    finished_at: str | None = None
+    domain_id: str | None = None
+    package_version: str | None = None
+    ontology_version: str | None = None
+    llm_backend: str | None = None
+    parameters: dict[str, Any] = Field(default_factory=dict)
+    source_manifest: list[SourceManifestEntry] = Field(default_factory=list)
+
+
+class CompilerAuditPacket(BaseModel):
+    """Portable audit packet for replaying and reviewing one compiler run."""
+
+    audit_schema_version: str
+    compiler_run: CompilerRun
+    source_manifest: list[SourceManifestEntry]
+    summary: dict[str, Any]
+    results: list[dict[str, Any]]
+    integrity_checks: dict[str, Any]
+    audit_flags: list[str] = Field(default_factory=list)
 
 
 def build_compile_metadata(
