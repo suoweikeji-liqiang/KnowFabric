@@ -192,6 +192,27 @@ def test_judge_entries_splits_accepted_and_rejected(monkeypatch) -> None:
     assert raw["response"]["usage"]["prompt_tokens"] == 10
 
 
+def test_judge_entries_rejects_incomplete_verdict_without_failing(monkeypatch) -> None:
+    def fake_request(messages, backend, response_format=None, recorder=None):
+        payload = {"response": {"usage": {"prompt_tokens": 8, "completion_tokens": 2}}}
+        if recorder:
+            recorder(payload)
+        return {"verdicts": [{"candidate_id": "cand_incomplete"}]}
+
+    monkeypatch.setattr("scripts.run_hvac_doclevel_extraction_batch._request_json_completion", fake_request)
+    backend = OpenAICompatibleBackend(name="judge", api_base_url="https://example.test/v1", model="judge-model", api_key="key")
+    doc = Document(doc_id="doc_1", file_name="manual.pdf", source_domain="hvac", file_hash="hash", storage_path="/tmp/manual.pdf")
+    equipment = {"equipment_class_id": "chiller"}
+
+    accepted, rejected, raw = judge_entries([_judge_entry("cand_incomplete", "parameter_spec", "X1")], backend, doc, equipment)
+
+    assert accepted == []
+    assert rejected[0]["candidate_id"] == "cand_incomplete"
+    assert rejected[0]["judge_category"] == "malformed_judge_verdict"
+    assert "omitted required fields" in rejected[0]["judge_reason"]
+    assert raw["response"]["usage"]["prompt_tokens"] == 8
+
+
 def test_doclevel_backend_llm_recorder_writes_under_run_dir(tmp_path: Path) -> None:
     task_dir = tmp_path / "20260513T010101Z_hvac_doclevel_extraction_batch/0001_manual"
     task_dir.mkdir(parents=True)
@@ -296,11 +317,20 @@ def test_doclevel_candidate_payload_includes_compiler_run() -> None:
     payload = build_candidate_file_payload(
         entries=[],
         backend_dir=Path("/tmp/run_001/0001_manual/extract"),
+        source_manifest=[
+            {
+                "source_id": "manual",
+                "source_type": "document",
+                "path": "/tmp/manual.pdf",
+                "content_sha256": "a" * 64,
+            }
+        ],
     )
 
     assert payload["generation_mode"] == "llm_doclevel_batch"
     assert payload["compiler_run"]["compiler_run_id"] == "run_001"
     assert payload["compiler_run"]["pipeline"] == "hvac_doclevel_extraction_batch"
+    assert payload["source_manifest"][0]["content_sha256"] == "a" * 64
 
 
 def _judge_entry(candidate_id: str, ko_type: str, title: str) -> dict:

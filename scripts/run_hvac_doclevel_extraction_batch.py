@@ -55,6 +55,7 @@ SUPPORTED_TYPES = (
     "diagnostic_step",
     "symptom",
 )
+MALFORMED_JUDGE_VERDICT_REASON = "Judge verdict omitted required fields."
 
 
 class HvacDocCandidate(BaseModel):
@@ -75,8 +76,8 @@ class HvacDocExtractionResponse(BaseModel):
 
 class HvacJudgeVerdict(BaseModel):
     candidate_id: str
-    is_valid_hvac_knowledge: bool
-    reason: str
+    is_valid_hvac_knowledge: bool = False
+    reason: str = MALFORMED_JUDGE_VERDICT_REASON
     category_if_not: str | None = None
 
 
@@ -461,9 +462,17 @@ def judge_entries(entries: list[dict[str, Any]], backend: OpenAICompatibleBacken
             accepted.append({**entry, "judge_verdict": "accepted", "judge_reason": verdict.reason})
         else:
             reason = verdict.reason if verdict else "Judge response omitted candidate_id."
-            category = verdict.category_if_not if verdict else "other"
+            category = rejected_judge_category(verdict)
             rejected.append({**entry, "judge_verdict": "rejected_by_judge", "judge_reason": reason, "judge_category": category})
     return accepted, rejected, raw
+
+
+def rejected_judge_category(verdict: HvacJudgeVerdict | None) -> str:
+    if not verdict:
+        return "other"
+    if verdict.reason == MALFORMED_JUDGE_VERDICT_REASON and not verdict.category_if_not:
+        return "malformed_judge_verdict"
+    return verdict.category_if_not or "other"
 
 
 def extract_one(
@@ -545,7 +554,8 @@ def execute_backend_result(
     entries = [candidate_entry(row, rows[0][2], equipment, backend, ontology_version) for row in anchored]
     accepted, judge_rejected, raw_judge, judge_cost = run_judge_if_requested(args, entries, rows[0][2], equipment)
     final_entries = accepted if args.judge_backend else entries
-    write_backend_outputs(backend_dir, final_entries, raw_dicts, rejected, judge_rejected, raw, raw_judge, args)
+    source_manifest = [build_source_manifest_entry(item).model_dump(mode="json")]
+    write_backend_outputs(backend_dir, final_entries, raw_dicts, rejected, judge_rejected, raw, raw_judge, args, source_manifest)
     print_backend_done(backend, item, raw_dicts, anchored, final_entries)
     summary = summarize_backend(
         backend, pricing, raw, raw_judge, judge_cost, bool(args.judge_backend),
@@ -587,12 +597,22 @@ def run_judge_if_requested(args, entries, doc, equipment) -> tuple[list[dict[str
     return accepted, rejected, raw, cost_rmb(raw, judge_pricing)
 
 
-def write_backend_outputs(output_dir: Path, entries, raw_candidates, anchor_rejected, judge_rejected, raw_response, raw_judge, args) -> None:
+def write_backend_outputs(
+    output_dir: Path,
+    entries,
+    raw_candidates,
+    anchor_rejected,
+    judge_rejected,
+    raw_response,
+    raw_judge,
+    args,
+    source_manifest,
+) -> None:
     stale_error = output_dir / "error.json"
     if stale_error.exists():
         stale_error.unlink()
     candidate_path = output_dir / "candidates.json"
-    write_json(candidate_path, build_candidate_file_payload(entries=entries, backend_dir=output_dir))
+    write_json(candidate_path, build_candidate_file_payload(entries=entries, backend_dir=output_dir, source_manifest=source_manifest))
     write_jsonl(output_dir / "candidates_raw.jsonl", raw_candidates)
     write_jsonl(output_dir / "candidates_anchor_rejected.jsonl", anchor_rejected)
     write_jsonl(output_dir / "candidates_judge_rejected.jsonl", judge_rejected)
@@ -609,7 +629,12 @@ def write_backend_outputs(output_dir: Path, entries, raw_candidates, anchor_reje
     )
 
 
-def build_candidate_file_payload(*, entries: list[dict[str, Any]], backend_dir: Path) -> dict[str, Any]:
+def build_candidate_file_payload(
+    *,
+    entries: list[dict[str, Any]],
+    backend_dir: Path,
+    source_manifest: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     run_id = backend_dir.parent.parent.name
     run = build_compiler_run(
         compiler_run_id=run_id,
@@ -623,6 +648,7 @@ def build_candidate_file_payload(*, entries: list[dict[str, Any]], backend_dir: 
         "domain_id": "hvac",
         "filters_applied": {},
         "compiler_run": run.model_dump(mode="json", exclude={"source_manifest"}),
+        "source_manifest": source_manifest or [],
         "candidate_entries": entries,
     }
 
