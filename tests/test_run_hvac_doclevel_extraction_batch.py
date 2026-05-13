@@ -14,6 +14,7 @@ from scripts.run_hvac_doclevel_extraction_batch import (
     SourceItem,
     anchor_candidates,
     build_backend_llm_audit_recorder,
+    build_candidate_file_payload,
     build_run_summary,
     judge_entries,
     render_report,
@@ -289,6 +290,17 @@ def test_doclevel_summary_records_missing_source_without_crashing(tmp_path: Path
     assert source["source_id"] == "missing"
     assert source["content_sha256"] == ""
     assert "source file not found" in source["metadata"]["manifest_error"]
+
+
+def test_doclevel_candidate_payload_includes_compiler_run() -> None:
+    payload = build_candidate_file_payload(
+        entries=[],
+        backend_dir=Path("/tmp/run_001/0001_manual/extract"),
+    )
+
+    assert payload["generation_mode"] == "llm_doclevel_batch"
+    assert payload["compiler_run"]["compiler_run_id"] == "run_001"
+    assert payload["compiler_run"]["pipeline"] == "hvac_doclevel_extraction_batch"
 
 
 def _judge_entry(candidate_id: str, ko_type: str, title: str) -> dict:

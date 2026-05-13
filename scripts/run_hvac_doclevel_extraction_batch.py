@@ -592,7 +592,7 @@ def write_backend_outputs(output_dir: Path, entries, raw_candidates, anchor_reje
     if stale_error.exists():
         stale_error.unlink()
     candidate_path = output_dir / "candidates.json"
-    write_json(candidate_path, {"generation_mode": "llm_doclevel_batch", "domain_id": "hvac", "filters_applied": {}, "candidate_entries": entries})
+    write_json(candidate_path, build_candidate_file_payload(entries=entries, backend_dir=output_dir))
     write_jsonl(output_dir / "candidates_raw.jsonl", raw_candidates)
     write_jsonl(output_dir / "candidates_anchor_rejected.jsonl", anchor_rejected)
     write_jsonl(output_dir / "candidates_judge_rejected.jsonl", judge_rejected)
@@ -607,6 +607,24 @@ def write_backend_outputs(output_dir: Path, entries, raw_candidates, anchor_reje
         output_dir / "review_bundle_summary.json",
         {"review_pack_manifest": manifest, "bootstrap": bootstrap, "readiness": readiness, "judge_enabled": bool(args.judge_backend)},
     )
+
+
+def build_candidate_file_payload(*, entries: list[dict[str, Any]], backend_dir: Path) -> dict[str, Any]:
+    run_id = backend_dir.parent.parent.name
+    run = build_compiler_run(
+        compiler_run_id=run_id,
+        pipeline="hvac_doclevel_extraction_batch",
+        domain_id="hvac",
+        parameters={"backend": backend_dir.name},
+        source_manifest=[],
+    )
+    return {
+        "generation_mode": "llm_doclevel_batch",
+        "domain_id": "hvac",
+        "filters_applied": {},
+        "compiler_run": run.model_dump(mode="json", exclude={"source_manifest"}),
+        "candidate_entries": entries,
+    }
 
 
 def summarize_backend(backend, pricing, raw, raw_judge, judge_cost, judge_enabled, raw_candidates, anchored, rejected, judge_rejected, entries, output_dir: Path) -> dict[str, Any]:

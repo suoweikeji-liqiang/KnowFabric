@@ -145,6 +145,41 @@ def test_write_review_packs_from_candidate_file_writes_manifest_and_files(monkey
         assert (output_dir / pack_files[1]).exists()
 
 
+def test_review_pack_preserves_upstream_compiler_run(monkeypatch) -> None:
+    """Review packs should carry the compiler run that produced their candidates."""
+
+    session_factory = _build_session_factory()
+    _seed_ontology(session_factory)
+    _seed_fixture_chunks(session_factory, HVAC_FIXTURE)
+
+    payload = _candidate_payload(monkeypatch, session_factory)
+    payload["compiler_run"] = {
+        "compiler_run_id": "run_doclevel_001",
+        "pipeline": "hvac_doclevel_extraction_batch",
+    }
+    payload["source_manifest"] = [
+        {
+            "source_id": "manual",
+            "source_type": "document",
+            "path": "/tmp/manual.pdf",
+            "content_sha256": "a" * 64,
+        }
+    ]
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        candidate_path = Path(tmp_dir) / "candidates.json"
+        output_dir = Path(tmp_dir) / "packs"
+        candidate_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        manifest = write_review_packs_from_candidate_file(candidate_path, output_dir, default_trust_level="L2")
+        pack_path = output_dir / manifest["packs"][0]["file_name"]
+        pack = json.loads(pack_path.read_text(encoding="utf-8"))
+
+    assert manifest["upstream_compiler_run"]["compiler_run_id"] == "run_doclevel_001"
+    assert manifest["packs"][0]["upstream_compiler_run_id"] == "run_doclevel_001"
+    assert pack["upstream_compiler_run"]["compiler_run_id"] == "run_doclevel_001"
+    assert pack["upstream_source_manifest"][0]["content_sha256"] == "a" * 64
+
+
 def test_review_pack_can_flow_into_existing_backfill(monkeypatch) -> None:
     """One accepted review pack should feed the reviewed-fixture and backfill path."""
 

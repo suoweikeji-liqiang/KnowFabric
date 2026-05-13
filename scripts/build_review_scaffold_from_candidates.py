@@ -58,6 +58,8 @@ def build_review_scaffold_from_candidates(
         "review_mode": "chunk_backfill_review_scaffold",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source_generation_mode": payload.get("generation_mode"),
+        "upstream_compiler_run": payload.get("compiler_run"),
+        "upstream_source_manifest": payload.get("source_manifest", []),
         "domain_id": payload.get("domain_id"),
         "filters_applied": payload.get("filters_applied", {}),
         "review_metadata": {

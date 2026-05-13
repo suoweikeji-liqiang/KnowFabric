@@ -72,8 +72,19 @@ def build_review_pack_source_manifest_entry(
         metadata={
             "review_mode": payload.get("review_mode"),
             "candidate_count": len(payload.get("candidate_entries") or []),
+            **_upstream_compiler_run_metadata(payload),
         },
     )
+
+
+def _upstream_compiler_run_metadata(payload: dict[str, Any]) -> dict[str, Any]:
+    run = payload.get("upstream_compiler_run")
+    if not isinstance(run, dict):
+        return {}
+    return {
+        "upstream_compiler_run_id": run.get("compiler_run_id"),
+        "upstream_pipeline": run.get("pipeline"),
+    }
 
 
 def build_file_source_manifest_entry(

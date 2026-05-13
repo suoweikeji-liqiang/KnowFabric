@@ -36,6 +36,25 @@ def test_review_pack_source_manifest_records_hash_and_doc_ids(tmp_path: Path) ->
     assert entry.path.endswith("hvac__doc_a__chiller.json")
 
 
+def test_review_pack_source_manifest_records_upstream_compiler_run(tmp_path: Path) -> None:
+    pack_path = tmp_path / "pack.json"
+    payload = {
+        "review_mode": "chunk_backfill_review_pack",
+        "domain_id": "hvac",
+        "upstream_compiler_run": {
+            "compiler_run_id": "run_doclevel_001",
+            "pipeline": "hvac_doclevel_extraction_batch",
+        },
+        "candidate_entries": [],
+    }
+    pack_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    entry = build_review_pack_source_manifest_entry(pack_path, payload)
+
+    assert entry.metadata["upstream_compiler_run_id"] == "run_doclevel_001"
+    assert entry.metadata["upstream_pipeline"] == "hvac_doclevel_extraction_batch"
+
+
 def test_compiler_audit_packet_preserves_run_inputs_and_failure_flags(tmp_path: Path) -> None:
     pack_path = tmp_path / "pack.json"
     payload = {
