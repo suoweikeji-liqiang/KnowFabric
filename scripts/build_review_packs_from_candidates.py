@@ -43,6 +43,7 @@ def build_review_packs_from_scaffold(scaffold: dict[str, Any]) -> list[dict[str,
     """Split one scaffold payload into smaller doc/equipment review packs."""
 
     packs = []
+    upstream_run = scaffold.get("upstream_compiler_run")
     for (_, _, _), entries in sorted(_group_entries(scaffold).items()):
         first = entries[0]
         pack = {
@@ -50,6 +51,8 @@ def build_review_packs_from_scaffold(scaffold: dict[str, Any]) -> list[dict[str,
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "source_generation_mode": scaffold.get("source_generation_mode"),
             "source_review_mode": scaffold.get("review_mode"),
+            "upstream_compiler_run": upstream_run,
+            "upstream_source_manifest": scaffold.get("upstream_source_manifest", []),
             "domain_id": first["domain_id"],
             "doc_id": first["doc_id"],
             "doc_name": first["doc_name"],
@@ -89,41 +92,59 @@ def write_review_packs_from_candidate_file(
 
     manifest_entries = []
     for pack in packs:
-        file_name = _pack_filename(
-            pack["domain_id"],
-            pack["doc_id"],
-            pack["equipment_class"]["equipment_class_id"],
-        )
-        (destination / file_name).write_text(
-            json.dumps(pack, ensure_ascii=False, indent=2) + "\n",
-            encoding="utf-8",
-        )
-        manifest_entries.append(
-            {
-                "file_name": file_name,
-                "doc_id": pack["doc_id"],
-                "doc_name": pack["doc_name"],
-                "equipment_class_id": pack["equipment_class"]["equipment_class_id"],
-                "equipment_class_key": pack["equipment_class"]["equipment_class_key"],
-                "candidate_count": len(pack["candidate_entries"]),
-            }
-        )
+        file_name = write_review_pack_file(destination, pack)
+        manifest_entries.append(pack_manifest_entry(pack, file_name))
 
-    manifest = {
-        "review_mode": "chunk_backfill_review_pack_manifest",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "source_generation_mode": scaffold.get("source_generation_mode"),
-        "source_review_mode": scaffold.get("review_mode"),
-        "domain_id": scaffold.get("domain_id"),
-        "filters_applied": scaffold.get("filters_applied", {}),
-        "total_packs": len(manifest_entries),
-        "packs": manifest_entries,
-    }
+    manifest = build_pack_manifest(scaffold, manifest_entries)
     (destination / "review_pack_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
     return manifest
+
+
+def write_review_pack_file(destination: Path, pack: dict[str, Any]) -> str:
+    file_name = _pack_filename(
+        pack["domain_id"],
+        pack["doc_id"],
+        pack["equipment_class"]["equipment_class_id"],
+    )
+    (destination / file_name).write_text(
+        json.dumps(pack, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return file_name
+
+
+def pack_manifest_entry(pack: dict[str, Any], file_name: str) -> dict[str, Any]:
+    return {
+        "file_name": file_name,
+        "doc_id": pack["doc_id"],
+        "doc_name": pack["doc_name"],
+        "equipment_class_id": pack["equipment_class"]["equipment_class_id"],
+        "equipment_class_key": pack["equipment_class"]["equipment_class_key"],
+        "upstream_compiler_run_id": _compiler_run_id(pack.get("upstream_compiler_run")),
+        "candidate_count": len(pack["candidate_entries"]),
+    }
+
+
+def build_pack_manifest(scaffold: dict[str, Any], manifest_entries: list[dict[str, Any]]) -> dict[str, Any]:
+    return {
+        "review_mode": "chunk_backfill_review_pack_manifest",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source_generation_mode": scaffold.get("source_generation_mode"),
+        "source_review_mode": scaffold.get("review_mode"),
+        "upstream_compiler_run": scaffold.get("upstream_compiler_run"),
+        "upstream_source_manifest": scaffold.get("upstream_source_manifest", []),
+        "domain_id": scaffold.get("domain_id"),
+        "filters_applied": scaffold.get("filters_applied", {}),
+        "total_packs": len(manifest_entries),
+        "packs": manifest_entries,
+    }
+
+
+def _compiler_run_id(run: dict[str, Any] | None) -> str | None:
+    return run.get("compiler_run_id") if isinstance(run, dict) else None
 
 
 def _build_arg_parser() -> argparse.ArgumentParser:

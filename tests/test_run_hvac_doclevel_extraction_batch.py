@@ -10,7 +10,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from packages.compiler.llm_compiler import OpenAICompatibleBackend
 from packages.db.models import ContentChunk, Document, DocumentPage
 from scripts.llm_backend_config import resolve_local_overrides
-from scripts.run_hvac_doclevel_extraction_batch import anchor_candidates, judge_entries, render_report, task_complete_for_backends, task_status_from_backend_results
+from scripts.run_hvac_doclevel_extraction_batch import (
+    SourceItem,
+    anchor_candidates,
+    build_backend_llm_audit_recorder,
+    build_candidate_file_payload,
+    build_run_summary,
+    judge_entries,
+    render_report,
+    task_complete_for_backends,
+    task_status_from_backend_results,
+)
 
 
 def test_anchor_candidates_matches_verbatim_quote_to_chunk() -> None:
@@ -180,6 +190,147 @@ def test_judge_entries_splits_accepted_and_rejected(monkeypatch) -> None:
     assert [row["candidate_id"] for row in rejected] == ["cand_bad"]
     assert rejected[0]["judge_category"] == "terminal_label"
     assert raw["response"]["usage"]["prompt_tokens"] == 10
+
+
+def test_judge_entries_rejects_incomplete_verdict_without_failing(monkeypatch) -> None:
+    def fake_request(messages, backend, response_format=None, recorder=None):
+        payload = {"response": {"usage": {"prompt_tokens": 8, "completion_tokens": 2}}}
+        if recorder:
+            recorder(payload)
+        return {"verdicts": [{"candidate_id": "cand_incomplete"}]}
+
+    monkeypatch.setattr("scripts.run_hvac_doclevel_extraction_batch._request_json_completion", fake_request)
+    backend = OpenAICompatibleBackend(name="judge", api_base_url="https://example.test/v1", model="judge-model", api_key="key")
+    doc = Document(doc_id="doc_1", file_name="manual.pdf", source_domain="hvac", file_hash="hash", storage_path="/tmp/manual.pdf")
+    equipment = {"equipment_class_id": "chiller"}
+
+    accepted, rejected, raw = judge_entries([_judge_entry("cand_incomplete", "parameter_spec", "X1")], backend, doc, equipment)
+
+    assert accepted == []
+    assert rejected[0]["candidate_id"] == "cand_incomplete"
+    assert rejected[0]["judge_category"] == "malformed_judge_verdict"
+    assert "omitted required fields" in rejected[0]["judge_reason"]
+    assert raw["response"]["usage"]["prompt_tokens"] == 8
+
+
+def test_doclevel_backend_llm_recorder_writes_under_run_dir(tmp_path: Path) -> None:
+    task_dir = tmp_path / "20260513T010101Z_hvac_doclevel_extraction_batch/0001_manual"
+    task_dir.mkdir(parents=True)
+    item = SourceItem(
+        row_index=1,
+        path=Path("/tmp/manual.pdf"),
+        batch_group="B_oem_manual_text_first",
+        priority="high",
+        brand="Trane",
+        authority_level="oem_manual",
+        document_kind="manual",
+        equipment_scope="centrifugal_chiller",
+        page_count="10",
+        text_quality="text",
+        recommended_mode="text",
+        raw={},
+    )
+    backend = OpenAICompatibleBackend(name="extract", api_base_url="https://example.test/v1", model="model", api_key="key")
+
+    recorder, path = build_backend_llm_audit_recorder(
+        task_dir,
+        item,
+        backend,
+        call_site="hvac_doclevel_extract",
+        date_label="20260513",
+    )
+    recorder({"request": {"authorization": "Bearer secret"}, "response": {"usage": {"prompt_tokens": 1}}})
+
+    assert path == task_dir.parent / "llm_audit/20260513/20260513T010101Z_hvac_doclevel_extraction_batch.jsonl"
+    row = path.read_text(encoding="utf-8")
+    assert "hvac_doclevel_extract" in row
+    assert "manual.pdf" in row
+    assert "secret" not in row
+
+
+def test_doclevel_summary_includes_compiler_run_and_source_manifest(tmp_path: Path) -> None:
+    source_path = tmp_path / "manual.pdf"
+    source_path.write_bytes(b"%PDF-1.4 source")
+    item = SourceItem(
+        row_index=1,
+        path=source_path,
+        batch_group="B_oem_manual_text_first",
+        priority="high",
+        brand="Trane",
+        authority_level="oem_manual",
+        document_kind="manual",
+        equipment_scope="centrifugal_chiller",
+        page_count="10",
+        text_quality="text",
+        recommended_mode="text",
+        raw={},
+    )
+    batch_dir = tmp_path / "20260513T010101Z_hvac_doclevel_extraction_batch"
+
+    summary = build_run_summary(
+        batch_dir=batch_dir,
+        items=[item],
+        tasks=[],
+        parameters={"backends": ["extract"], "judge_backend": ""},
+    )
+
+    assert summary["compiler_run"]["compiler_run_id"] == batch_dir.name
+    assert summary["compiler_run"]["pipeline"] == "hvac_doclevel_extraction_batch"
+    assert summary["compiler_run"]["parameters"]["backends"] == ["extract"]
+    assert summary["source_manifest"][0]["source_type"] == "document"
+    assert summary["source_manifest"][0]["domain_id"] == "hvac"
+    assert summary["source_manifest"][0]["authority_levels"] == ["oem_manual"]
+    assert summary["source_manifest"][0]["metadata"]["brand"] == "Trane"
+    assert len(summary["source_manifest"][0]["content_sha256"]) == 64
+
+
+def test_doclevel_summary_records_missing_source_without_crashing(tmp_path: Path) -> None:
+    item = SourceItem(
+        row_index=1,
+        path=tmp_path / "missing.pdf",
+        batch_group="B_oem_manual_text_first",
+        priority="high",
+        brand="Trane",
+        authority_level="oem_manual",
+        document_kind="manual",
+        equipment_scope="centrifugal_chiller",
+        page_count="10",
+        text_quality="text",
+        recommended_mode="text",
+        raw={},
+    )
+
+    summary = build_run_summary(
+        batch_dir=tmp_path / "run_missing",
+        items=[item],
+        tasks=[],
+        parameters={"backends": ["extract"]},
+    )
+
+    source = summary["source_manifest"][0]
+    assert source["source_id"] == "missing"
+    assert source["content_sha256"] == ""
+    assert "source file not found" in source["metadata"]["manifest_error"]
+
+
+def test_doclevel_candidate_payload_includes_compiler_run() -> None:
+    payload = build_candidate_file_payload(
+        entries=[],
+        backend_dir=Path("/tmp/run_001/0001_manual/extract"),
+        source_manifest=[
+            {
+                "source_id": "manual",
+                "source_type": "document",
+                "path": "/tmp/manual.pdf",
+                "content_sha256": "a" * 64,
+            }
+        ],
+    )
+
+    assert payload["generation_mode"] == "llm_doclevel_batch"
+    assert payload["compiler_run"]["compiler_run_id"] == "run_001"
+    assert payload["compiler_run"]["pipeline"] == "hvac_doclevel_extraction_batch"
+    assert payload["source_manifest"][0]["content_sha256"] == "a" * 64
 
 
 def _judge_entry(candidate_id: str, ko_type: str, title: str) -> dict:

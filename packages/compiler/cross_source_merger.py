@@ -10,6 +10,7 @@ import hashlib
 from datetime import datetime, timezone
 from typing import Any
 
+from packages.compiler.authority_arbitration import arbitrate
 from packages.compiler.canonical_key import group_and_normalize, resolve_single_name
 from packages.compiler.llm_compiler import _hashed_slug, _slugify_part
 
@@ -344,6 +345,9 @@ def merge_candidates(
         summary_text = group[0].get("summary", "")
 
         authority_summary = {"layers": layers}
+        deviation_justification = {
+            "authority_arbitration": arbitrate(layers),
+        }
         first_payload = group[0].get("structured_payload") or group[0].get("structured_payload_candidate") or {}
 
         # Collect all source names for N1 name-based matching
@@ -373,6 +377,7 @@ def merge_candidates(
             "consensus_state": consensus_state,
             "conflict_summary": conflict_summary,
             "highest_authority_level": highest_authority_level,
+            "deviation_justification_json": deviation_justification,
             "package_version": package_version,
             "ontology_version": ontology_version,
             "evidence_rows": evidence_rows,

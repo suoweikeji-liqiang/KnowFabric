@@ -446,6 +446,7 @@ class SemanticRetrievalService:
                     "highest_authority_level": item.highest_authority_level,
                     "authority_layers": authority_layers,
                     "conflict_summary": item.conflict_summary,
+                    "deviation_justification": item.deviation_justification_json or {},
                     "redistribution_restricted": any_restricted,
                     "evidence": evidence,
                     "visual_evidence": visual_evidence_map.get(item.knowledge_object_id, []),

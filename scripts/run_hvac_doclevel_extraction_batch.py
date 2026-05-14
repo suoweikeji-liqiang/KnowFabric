@@ -29,6 +29,8 @@ from packages.compiler.llm_compiler import (
     repair_json_response_with_backend,
     response_content_text,
 )
+from packages.compiler.audit import build_compiler_run, build_file_source_manifest_entry, build_llm_audit_recorder
+from packages.compiler.contracts import SourceManifestEntry
 from packages.compiler.rule_compiler import stable_candidate_id
 from packages.core.config import settings
 from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
@@ -53,6 +55,7 @@ SUPPORTED_TYPES = (
     "diagnostic_step",
     "symptom",
 )
+MALFORMED_JUDGE_VERDICT_REASON = "Judge verdict omitted required fields."
 
 
 class HvacDocCandidate(BaseModel):
@@ -73,8 +76,8 @@ class HvacDocExtractionResponse(BaseModel):
 
 class HvacJudgeVerdict(BaseModel):
     candidate_id: str
-    is_valid_hvac_knowledge: bool
-    reason: str
+    is_valid_hvac_knowledge: bool = False
+    reason: str = MALFORMED_JUDGE_VERDICT_REASON
     category_if_not: str | None = None
 
 
@@ -319,6 +322,43 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text("".join(json.dumps(row, ensure_ascii=False, default=str) + "\n" for row in rows), encoding="utf-8")
 
 
+def build_backend_llm_audit_recorder(
+    task_dir: Path,
+    item: SourceItem,
+    backend: OpenAICompatibleBackend,
+    *,
+    call_site: str,
+    date_label: str | None = None,
+):
+    run_dir = task_dir.parent
+    run_id = run_dir.name
+    active_date = date_label or datetime.now(timezone.utc).strftime("%Y%m%d")
+    recorder = build_llm_audit_recorder(
+        output_root=run_dir,
+        compiler_run_id=run_id,
+        call_site=call_site,
+        backend_name=backend.name,
+        model=backend.model,
+        date_label=active_date,
+        metadata={
+            "row_index": item.row_index,
+            "source_path": str(item.path),
+            "brand": item.brand,
+            "authority_level": item.authority_level,
+            "document_kind": item.document_kind,
+            "equipment_scope": item.equipment_scope,
+        },
+    )
+    return recorder, run_dir / "llm_audit" / active_date / f"{run_id}.jsonl"
+
+
+def capture_recorder_path(recorder, paths: list[str]):
+    def _record(payload: dict[str, Any]) -> None:
+        paths.append(str(recorder(payload)))
+
+    return _record
+
+
 def usage(raw: dict[str, Any]) -> dict[str, int]:
     item = raw.get("response", {}).get("usage", {})
     prompt = int(item.get("prompt_tokens") or 0)
@@ -422,17 +462,37 @@ def judge_entries(entries: list[dict[str, Any]], backend: OpenAICompatibleBacken
             accepted.append({**entry, "judge_verdict": "accepted", "judge_reason": verdict.reason})
         else:
             reason = verdict.reason if verdict else "Judge response omitted candidate_id."
-            category = verdict.category_if_not if verdict else "other"
+            category = rejected_judge_category(verdict)
             rejected.append({**entry, "judge_verdict": "rejected_by_judge", "judge_reason": reason, "judge_category": category})
     return accepted, rejected, raw
 
 
-def extract_one(backend: OpenAICompatibleBackend, item: SourceItem, rows: list[tuple[ContentChunk, DocumentPage, Document]], equipment: dict[str, Any], args: argparse.Namespace) -> tuple[list[HvacDocCandidate], dict[str, Any]]:
+def rejected_judge_category(verdict: HvacJudgeVerdict | None) -> str:
+    if not verdict:
+        return "other"
+    if verdict.reason == MALFORMED_JUDGE_VERDICT_REASON and not verdict.category_if_not:
+        return "malformed_judge_verdict"
+    return verdict.category_if_not or "other"
+
+
+def extract_one(
+    backend: OpenAICompatibleBackend,
+    item: SourceItem,
+    rows: list[tuple[ContentChunk, DocumentPage, Document]],
+    equipment: dict[str, Any],
+    args: argparse.Namespace,
+    request_recorder=None,
+) -> tuple[list[HvacDocCandidate], dict[str, Any]]:
     raw: dict[str, Any] = {}
     text = assemble_doc_text(rows)
     messages = build_extract_messages(item, rows[0][2], equipment, text, args.knowledge_types, args.target_candidates)
     started = time.monotonic()
-    payload = request_json_completion_with_retry(messages, backend, recorder=lambda value: raw.update(value))
+    def record(value: dict[str, Any]) -> None:
+        raw.update(value)
+        if request_recorder is not None:
+            request_recorder(value)
+
+    payload = request_json_completion_with_retry(messages, backend, recorder=record)
     raw["elapsed_seconds"] = round(time.monotonic() - started, 3)
     return HvacDocExtractionResponse.model_validate(payload).candidates, raw
 
@@ -458,44 +518,69 @@ def backend_result(args, backend_name: str, item: SourceItem, rows, equipment, o
     if not args.force and (backend_dir / "candidates.json").exists():
         print(f"skip existing backend={backend.name} task={item.row_index}", flush=True)
         return summarize_existing_backend(backend, pricing, backend_dir)
+    raw_holder: dict[str, Any] = {}
     try:
-        print(
-            f"start backend={backend.name} task={item.row_index} pages={len({row[1].page_no for row in rows})} "
-            f"chunks={len(rows)} timeout={backend.timeout_seconds}s",
-            flush=True,
-        )
-        candidates, raw = extract_one(backend, item, rows, equipment, args)
-        raw_dicts = [candidate.model_dump() for candidate in candidates]
-        anchored, rejected = anchor_candidates(raw_dicts, rows)
-        entries = [candidate_entry(row, rows[0][2], equipment, backend, ontology_version) for row in anchored]
-        accepted, judge_rejected, raw_judge, judge_cost = run_judge_if_requested(args, entries, rows[0][2], equipment)
-        final_entries = accepted if args.judge_backend else entries
-        write_backend_outputs(backend_dir, final_entries, raw_dicts, rejected, judge_rejected, raw, raw_judge, args)
-        print(
-            f"done backend={backend.name} task={item.row_index} raw={len(raw_dicts)} "
-            f"anchored={len(anchored)} final={len(final_entries)}",
-            flush=True,
-        )
-        return summarize_backend(
-            backend,
-            pricing,
-            raw,
-            raw_judge,
-            judge_cost,
-            bool(args.judge_backend),
-            raw_dicts,
-            anchored,
-            rejected,
-            judge_rejected,
-            final_entries,
-            backend_dir,
+        return execute_backend_result(
+            args, item, rows, equipment, ontology_version, output_dir, backend_dir, backend, pricing, raw_holder
         )
     except Exception as exc:
+        raw = raw_holder.get("raw", {})
         if raw:
             write_json(backend_dir / "raw_extract_response.json", raw)
         write_json(backend_dir / "error.json", {"error": str(exc), "error_type": type(exc).__name__})
         print(f"failed backend={backend.name} task={item.row_index}: {type(exc).__name__}: {exc}", flush=True)
         return {"backend": backend.name, "model": backend.model, "status": "failed", "error": str(exc)}
+
+
+def execute_backend_result(
+    args, item, rows, equipment, ontology_version, output_dir, backend_dir, backend, pricing, raw_holder
+) -> dict[str, Any]:
+    audit_paths: list[str] = []
+    recorder, audit_path = build_backend_llm_audit_recorder(
+        output_dir, item, backend, call_site="hvac_doclevel_extract"
+    )
+    print_backend_start(backend, item, rows)
+    candidates, raw = extract_one(
+        backend,
+        item,
+        rows,
+        equipment,
+        args,
+        request_recorder=capture_recorder_path(recorder, audit_paths),
+    )
+    raw_holder["raw"] = raw
+    raw_dicts = [candidate.model_dump() for candidate in candidates]
+    anchored, rejected = anchor_candidates(raw_dicts, rows)
+    entries = [candidate_entry(row, rows[0][2], equipment, backend, ontology_version) for row in anchored]
+    accepted, judge_rejected, raw_judge, judge_cost = run_judge_if_requested(args, entries, rows[0][2], equipment)
+    final_entries = accepted if args.judge_backend else entries
+    source_manifest = [build_source_manifest_entry(item).model_dump(mode="json")]
+    write_backend_outputs(backend_dir, final_entries, raw_dicts, rejected, judge_rejected, raw, raw_judge, args, source_manifest)
+    print_backend_done(backend, item, raw_dicts, anchored, final_entries)
+    summary = summarize_backend(
+        backend, pricing, raw, raw_judge, judge_cost, bool(args.judge_backend),
+        raw_dicts, anchored, rejected, judge_rejected, final_entries, backend_dir,
+    )
+    if audit_paths:
+        summary["llm_audit_path"] = str(audit_path)
+    return summary
+
+
+def print_backend_start(backend, item: SourceItem, rows) -> None:
+    pages = len({row[1].page_no for row in rows})
+    print(
+        f"start backend={backend.name} task={item.row_index} pages={pages} "
+        f"chunks={len(rows)} timeout={backend.timeout_seconds}s",
+        flush=True,
+    )
+
+
+def print_backend_done(backend, item: SourceItem, raw_dicts, anchored, final_entries) -> None:
+    print(
+        f"done backend={backend.name} task={item.row_index} raw={len(raw_dicts)} "
+        f"anchored={len(anchored)} final={len(final_entries)}",
+        flush=True,
+    )
 
 
 def run_judge_if_requested(args, entries, doc, equipment) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any], float]:
@@ -512,12 +597,22 @@ def run_judge_if_requested(args, entries, doc, equipment) -> tuple[list[dict[str
     return accepted, rejected, raw, cost_rmb(raw, judge_pricing)
 
 
-def write_backend_outputs(output_dir: Path, entries, raw_candidates, anchor_rejected, judge_rejected, raw_response, raw_judge, args) -> None:
+def write_backend_outputs(
+    output_dir: Path,
+    entries,
+    raw_candidates,
+    anchor_rejected,
+    judge_rejected,
+    raw_response,
+    raw_judge,
+    args,
+    source_manifest,
+) -> None:
     stale_error = output_dir / "error.json"
     if stale_error.exists():
         stale_error.unlink()
     candidate_path = output_dir / "candidates.json"
-    write_json(candidate_path, {"generation_mode": "llm_doclevel_batch", "domain_id": "hvac", "filters_applied": {}, "candidate_entries": entries})
+    write_json(candidate_path, build_candidate_file_payload(entries=entries, backend_dir=output_dir, source_manifest=source_manifest))
     write_jsonl(output_dir / "candidates_raw.jsonl", raw_candidates)
     write_jsonl(output_dir / "candidates_anchor_rejected.jsonl", anchor_rejected)
     write_jsonl(output_dir / "candidates_judge_rejected.jsonl", judge_rejected)
@@ -532,6 +627,30 @@ def write_backend_outputs(output_dir: Path, entries, raw_candidates, anchor_reje
         output_dir / "review_bundle_summary.json",
         {"review_pack_manifest": manifest, "bootstrap": bootstrap, "readiness": readiness, "judge_enabled": bool(args.judge_backend)},
     )
+
+
+def build_candidate_file_payload(
+    *,
+    entries: list[dict[str, Any]],
+    backend_dir: Path,
+    source_manifest: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    run_id = backend_dir.parent.parent.name
+    run = build_compiler_run(
+        compiler_run_id=run_id,
+        pipeline="hvac_doclevel_extraction_batch",
+        domain_id="hvac",
+        parameters={"backend": backend_dir.name},
+        source_manifest=[],
+    )
+    return {
+        "generation_mode": "llm_doclevel_batch",
+        "domain_id": "hvac",
+        "filters_applied": {},
+        "compiler_run": run.model_dump(mode="json", exclude={"source_manifest"}),
+        "source_manifest": source_manifest or [],
+        "candidate_entries": entries,
+    }
 
 
 def summarize_backend(backend, pricing, raw, raw_judge, judge_cost, judge_enabled, raw_candidates, anchored, rejected, judge_rejected, entries, output_dir: Path) -> dict[str, Any]:
@@ -646,16 +765,89 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         for task in tasks
         if not args.force and task_complete_for_backends(task, args.backends, args.judge_backend)
     }
-    summary = {"run_id": batch_dir.name, "output_dir": str(batch_dir), "tasks": tasks}
+    summary = build_run_summary(batch_dir=batch_dir, items=items, tasks=tasks, parameters=batch_parameters(args))
     write_batch_summary(batch_dir, summary)
     for item in items:
         if item.row_index in completed_indexes:
             print(f"skip completed task={item.row_index}", flush=True)
             continue
         tasks = replace_task(tasks, run_item(args, item, batch_dir))
-        summary = {"run_id": batch_dir.name, "output_dir": str(batch_dir), "tasks": tasks}
+        summary = build_run_summary(batch_dir=batch_dir, items=items, tasks=tasks, parameters=batch_parameters(args))
         write_batch_summary(batch_dir, summary)
     return summary
+
+
+def batch_parameters(args: argparse.Namespace) -> dict[str, Any]:
+    return {
+        "backends": list(args.backends),
+        "judge_backend": args.judge_backend,
+        "groups": sorted(args.groups),
+        "limit": args.limit,
+        "knowledge_types": list(args.knowledge_types),
+        "target_candidates": args.target_candidates,
+        "execute": bool(args.execute),
+    }
+
+
+def build_run_summary(
+    *,
+    batch_dir: Path,
+    items: list[SourceItem],
+    tasks: list[dict[str, Any]],
+    parameters: dict[str, Any],
+) -> dict[str, Any]:
+    source_manifest = build_source_manifest(items)
+    run = build_compiler_run(
+        compiler_run_id=batch_dir.name,
+        pipeline="hvac_doclevel_extraction_batch",
+        domain_id="hvac",
+        parameters=parameters,
+        source_manifest=source_manifest,
+    )
+    return {
+        "run_id": batch_dir.name,
+        "output_dir": str(batch_dir),
+        "compiler_run": run.model_dump(mode="json", exclude={"source_manifest"}),
+        "source_manifest": [entry.model_dump(mode="json") for entry in source_manifest],
+        "tasks": tasks,
+    }
+
+
+def build_source_manifest(items: list[SourceItem]) -> list:
+    return [build_source_manifest_entry(item) for item in items]
+
+
+def build_source_manifest_entry(item: SourceItem):
+    if not item.path.exists():
+        return SourceManifestEntry(
+            source_id=item.path.stem,
+            source_type="document",
+            path=str(item.path),
+            content_sha256="",
+            domain_id="hvac",
+            authority_levels=[item.authority_level] if item.authority_level else [],
+            metadata={**source_item_metadata(item), "manifest_error": "source file not found"},
+        )
+    return build_file_source_manifest_entry(
+        item.path,
+        source_type="document",
+        domain_id="hvac",
+        authority_levels=[item.authority_level] if item.authority_level else [],
+        metadata=source_item_metadata(item),
+    )
+
+
+def source_item_metadata(item: SourceItem) -> dict[str, Any]:
+    return {
+        "row_index": item.row_index,
+        "brand": item.brand,
+        "batch_group": item.batch_group,
+        "priority": item.priority,
+        "document_kind": item.document_kind,
+        "equipment_scope": item.equipment_scope,
+        "text_quality": item.text_quality,
+        "recommended_mode": item.recommended_mode,
+    }
 
 
 def load_existing_task_summaries(batch_dir: Path) -> list[dict[str, Any]]:

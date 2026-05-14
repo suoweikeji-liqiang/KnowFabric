@@ -368,6 +368,58 @@ def test_compile_llm_candidates_allows_application_guidance_on_guidance_context(
     assert payload[0]["canonical_key_candidate"] == "hvac:ahu:application:zone_group_operation"
 
 
+def test_compile_llm_candidates_forwards_request_recorder(monkeypatch) -> None:
+    chunk, page, document = _sample_spec_chunk()
+    records = []
+
+    def fake_request(_messages, _backend, *, recorder=None):
+        if recorder is not None:
+            recorder({"request": {"model": "gemma-local"}, "response": {"choices": []}})
+        return {
+            "candidates": [
+                {
+                    "knowledge_object_type": "parameter_spec",
+                    "canonical_key_candidate": "Chilled Water Leaving Temperature Setpoint",
+                    "structured_payload_candidate": {"parameter_name": "chilled water leaving temperature setpoint"},
+                    "confidence_score": 0.88,
+                    "rationale": "parameter visible in evidence",
+                }
+            ]
+        }
+
+    monkeypatch.setattr("packages.compiler.llm_compiler._request_json_completion", fake_request)
+
+    payload = compile_llm_candidates(
+        domain_id="hvac",
+        chunk=chunk,
+        page=page,
+        document=document,
+        equipment_match={
+            "equipment_class_id": "ahu",
+            "equipment_class_key": "hvac:ahu",
+            "label": "AHU",
+            "knowledge_anchors": ["parameter_spec"],
+        },
+        context_window=ChunkContextWindow(chunk_ids=["chunk_ahu_spec_1"], combined_text=chunk.cleaned_text),
+        backend=type(
+            "Backend",
+            (),
+            {
+                "name": "gemma-local",
+                "model": "gemma-local",
+                "api_base_url": "http://127.0.0.1:7999/v1",
+                "api_key": "4496",
+                "timeout_seconds": 30,
+            },
+        )(),
+        enabled_types=("parameter_spec",),
+        request_recorder=records.append,
+    )
+
+    assert len(payload) == 1
+    assert records == [{"request": {"model": "gemma-local"}, "response": {"choices": []}}]
+
+
 def test_document_parameter_spec_prompt_includes_round3_positive_and_negative_examples() -> None:
     messages = _build_document_parameter_spec_prompt(
         domain_id="hvac",
