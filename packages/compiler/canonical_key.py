@@ -649,6 +649,13 @@ def _group_via_embedding(
         threshold=threshold,
     )
     clusters = _split_clusters_by_facet(tightened_clusters, facet_hints or {})
+    clusters = _recluster_compatible_facet_clusters(
+        clusters,
+        cleaned,
+        embeddings,
+        facet_hints or {},
+        threshold=threshold,
+    )
     _dump_embedding_cluster_trace(
         cleaned,
         clusters,
@@ -798,6 +805,53 @@ def _split_by_subtype(cluster: list[str], facet_hints: dict[str, Any]) -> list[l
         else:
             return [cluster]
     return list(by_subtype.values())
+
+
+def _recluster_compatible_facet_clusters(
+    clusters: list[list[str]],
+    names: list[str],
+    embeddings: list[list[float]],
+    facet_hints: dict[str, Any],
+    *,
+    threshold: float,
+) -> list[list[str]]:
+    """Reconnect split fragments that have the same known facet/subtype."""
+
+    index_by_name = {name: idx for idx, name in enumerate(names)}
+    grouped: dict[tuple[str, str | None], list[str]] = {}
+    passthrough: list[list[str]] = []
+    for cluster in clusters:
+        keys = {_facet_group_key(name, facet_hints) for name in cluster}
+        keys.discard(None)
+        if len(keys) == 1:
+            key = next(iter(keys))
+            if all(_facet_group_key(name, facet_hints) == key for name in cluster):
+                grouped.setdefault(key, []).extend(cluster)
+                continue
+        passthrough.append(cluster)
+
+    reclustered: list[list[str]] = []
+    from packages.compiler.clustering import cluster_by_cosine
+    for names_in_group in grouped.values():
+        deduped = list(dict.fromkeys(names_in_group))
+        if len(deduped) <= 1:
+            reclustered.append(deduped)
+            continue
+        indices = [index_by_name[name] for name in deduped]
+        sub_embeddings = [embeddings[idx] for idx in indices]
+        reclustered.extend(cluster_by_cosine(deduped, sub_embeddings, threshold=threshold))
+    return passthrough + reclustered
+
+
+def _facet_group_key(name: str, facet_hints: dict[str, Any]) -> tuple[str, str] | None:
+    hint = facet_hints.get(name)
+    subtype = _facet_subtype(hint)
+    if subtype:
+        return "subtype", subtype
+    quantity = _facet_quantity(hint)
+    if not quantity:
+        return None
+    return "quantity", quantity
 
 
 USE_EMBEDDING_FIRST = os.environ.get("KNOWFABRIC_USE_EMBEDDING_FIRST", "1") == "1"

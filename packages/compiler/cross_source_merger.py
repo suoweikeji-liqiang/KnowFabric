@@ -230,6 +230,21 @@ def _candidate_source_name(candidate: dict[str, Any]) -> str:
     return str(payload.get("parameter_name") or candidate.get("title") or candidate.get("summary", "")).strip()
 
 
+def _build_contextual_name(payload: dict[str, Any]) -> str:
+    """Build embedding text from the raw parameter name plus compact context."""
+
+    name = str(payload.get("parameter_name") or payload.get("title") or "").strip()
+    summary = str(payload.get("summary") or "").strip()[:120]
+    value_parts = []
+    for key in ("value", "default_value", "range_min", "range_max", "unit"):
+        value = payload.get(key)
+        if not _is_empty(value):
+            value_parts.append(f"{key}={value}")
+
+    parts = [part for part in (name, summary, " ".join(value_parts)) if part]
+    return "。".join(parts)
+
+
 def _candidate_doc_id(candidate: dict[str, Any]) -> str:
     evidence = candidate.get("evidence") or []
     if evidence:
@@ -304,6 +319,56 @@ def _split_same_document_name_conflicts(
     return refined
 
 
+def _prefer_raw_canonical_key(
+    group: list[dict[str, Any]],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> str:
+    raw_keys = [
+        resolve_single_name(
+            _candidate_source_name(candidate),
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+        )
+        for candidate in group
+        if _candidate_source_name(candidate)
+    ]
+    if not raw_keys:
+        return resolve_single_name(
+            group[0].get("title", "unknown"),
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+        )
+    semantic_keys = [
+        key for key in raw_keys
+        if not key.rsplit(":", 1)[-1].startswith("key_")
+    ]
+    return semantic_keys[0] if semantic_keys else raw_keys[0]
+
+
+def _rename_groups_with_raw_canonical_keys(
+    groups: dict[str, list[dict[str, Any]]],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> dict[str, list[dict[str, Any]]]:
+    renamed: dict[str, list[dict[str, Any]]] = {}
+    for group in groups.values():
+        canonical_key = _prefer_raw_canonical_key(
+            group,
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+        )
+        renamed.setdefault(canonical_key, []).extend(group)
+    return renamed
+
+
 def merge_candidates(
     candidates: list[dict[str, Any]],
     *,
@@ -327,12 +392,19 @@ def merge_candidates(
     """
     # Step 1: Normalize canonical keys and group
     names_by_candidate = []
+    raw_names_by_candidate = []
     facet_hints: dict[str, tuple[str | None, str | None]] = {}
     for c in candidates:
         payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
-        name = payload.get("parameter_name") or c.get("title") or c.get("summary", "")
-        names_by_candidate.append(name)
-        facet_hints[str(name)] = detect_facet_v2(str(name), payload if isinstance(payload, dict) else {})
+        raw_payload = payload if isinstance(payload, dict) else {}
+        name = raw_payload.get("parameter_name") or c.get("title") or c.get("summary", "")
+        context_payload = dict(raw_payload)
+        context_payload.setdefault("title", c.get("title"))
+        context_payload.setdefault("summary", c.get("summary"))
+        contextual_name = _build_contextual_name(context_payload)
+        names_by_candidate.append(contextual_name)
+        raw_names_by_candidate.append(name)
+        facet_hints[contextual_name] = detect_facet_v2(str(name), raw_payload)
 
     # Phase 1: LLM-assisted cross-lingual grouping (T1 plumbing fix, docs/35 §T1)
     canonical_map: dict[str, str] = {}
@@ -350,11 +422,11 @@ def merge_candidates(
 
     # Phase 2: mechanical fallback for any names LLM didn't cover
     canonical_keys = []
-    for name in names_by_candidate:
-        key = canonical_map.get(name)
+    for name, raw_name in zip(names_by_candidate, raw_names_by_candidate):
+        key = canonical_map.get(name) or canonical_map.get(raw_name)
         if not key:
             key = resolve_single_name(
-                name,
+                raw_name,
                 domain_id=domain_id,
                 equipment_class_id=equipment_class_id,
                 knowledge_object_type=knowledge_object_type,
@@ -364,6 +436,12 @@ def merge_candidates(
     groups: dict[str, list[dict[str, Any]]] = {}
     for c, ck in zip(candidates, canonical_keys):
         groups.setdefault(ck, []).append(c)
+    groups = _rename_groups_with_raw_canonical_keys(
+        groups,
+        domain_id=domain_id,
+        equipment_class_id=equipment_class_id,
+        knowledge_object_type=knowledge_object_type,
+    )
     if protect_single_source_distinct_names:
         groups = _split_same_document_name_conflicts(groups)
 
@@ -373,16 +451,17 @@ def merge_candidates(
     if _os.environ.get("KNOWFABRIC_USE_EMBEDDING_FIRST", "1") != "1":
         pathological_keys = [k for k, v in groups.items() if len(v) > MERGER_MAX_GROUP_CANDIDATES]
         if pathological_keys:
-            for c, ck in zip(candidates, canonical_keys):
+            split_groups: dict[str, list[dict[str, Any]]] = {}
+            for ck, group in groups.items():
                 if ck in pathological_keys:
-                    payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
-                    fallback_name = payload.get("parameter_name") or c.get("title", "unknown")
-                    slug = _slugify_part(fallback_name) or _hashed_slug(fallback_name)
-                    idx = candidates.index(c)
-                    canonical_keys[idx] = slug
-            groups = {}
-            for c, ck in zip(candidates, canonical_keys):
-                groups.setdefault(ck, []).append(c)
+                    for c in group:
+                        payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
+                        fallback_name = payload.get("parameter_name") or c.get("title", "unknown")
+                        slug = _slugify_part(fallback_name) or _hashed_slug(fallback_name)
+                        split_groups[f"{ck}_{slug}"] = [c]
+                else:
+                    split_groups[ck] = group
+            groups = split_groups
             if protect_single_source_distinct_names:
                 groups = _split_same_document_name_conflicts(groups)
 
@@ -659,6 +738,7 @@ def merge_with_existing(
     stats = {"new_merged": 0, "updated_existing": 0, "merged_existing": 0, "material_conflicts": 0}
 
     removed_ko_ids: set[str] = set()
+    assigned_ko_ids: set[str] = set()
     for ko_dict in merged:
         canonical_key = ko_dict["canonical_key"]
         evidence_rows = ko_dict.pop("evidence_rows", [])
@@ -672,7 +752,11 @@ def merge_with_existing(
         for name in member_names:
             if name in existing_by_name:
                 matched_ids.add(existing_by_name[name])
-        matched_ids -= removed_ko_ids
+        matched_ids = _available_matched_ids(
+            matched_ids,
+            removed_ko_ids=removed_ko_ids,
+            assigned_ko_ids=assigned_ko_ids,
+        )
 
         if len(matched_ids) >= 2:
             # N1: multiple old KOs merge into one → keep earliest, migrate others
@@ -696,6 +780,16 @@ def merge_with_existing(
                 domain_id, equipment_class_id, knowledge_object_type, canonical_key
             )
             stats["new_merged"] += 1
+        assigned_ko_ids.add(ko_dict["knowledge_object_id"])
+
+        decision = {
+            "canonical_key": canonical_key,
+            "knowledge_object_id": ko_dict["knowledge_object_id"],
+            "member_names": sorted(member_names),
+            "matched_ids": sorted(matched_ids),
+            "layers": _summarize_layers(ko_dict.get("authority_summary_json", {}).get("layers", [])),
+            "evidence_rows": _summarize_evidence_rows(evidence_rows),
+        }
 
         if ko_dict["consensus_state"] == "material_conflict":
             ko_dict["review_status"] = "conflict_review_required"
@@ -730,9 +824,11 @@ def merge_with_existing(
                 {"src": ck_conflict.knowledge_object_id}
             )
             removed_ko_ids.add(ck_conflict.knowledge_object_id)
+            decision["canonical_key_conflict_deleted"] = ck_conflict.knowledge_object_id
 
         session.merge(KnowledgeObjectV2(**ko_dict))
         session.flush()
+        _dump_upsert_trace(decision)
 
         session.query(KnowledgeObjectEvidenceV2).filter(
             KnowledgeObjectEvidenceV2.knowledge_object_id == ko_dict["knowledge_object_id"]
@@ -760,6 +856,55 @@ def merge_with_existing(
 
     session.commit()
     return stats
+
+
+def _available_matched_ids(
+    matched_ids: set[str],
+    *,
+    removed_ko_ids: set[str],
+    assigned_ko_ids: set[str],
+) -> set[str]:
+    """Return existing KO ids that are still safe to update in this upsert pass."""
+
+    return matched_ids - removed_ko_ids - assigned_ko_ids
+
+
+def _summarize_layers(layers: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "publisher": layer.get("publisher"),
+            "source_name": layer.get("source_name"),
+            "doc_id": layer.get("doc_id"),
+            "chunk_id": layer.get("chunk_id"),
+            "value_summary": layer.get("value_summary"),
+        }
+        for layer in layers
+    ]
+
+
+def _summarize_evidence_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "doc_id": row.get("doc_id"),
+            "chunk_id": row.get("chunk_id"),
+            "evidence_role": row.get("evidence_role"),
+        }
+        for row in rows
+    ]
+
+
+def _dump_upsert_trace(decision: dict[str, Any]) -> None:
+    import json as _json
+    import os as _os
+    from pathlib import Path as _Path
+
+    trace_dir = _os.environ.get("KNOWFABRIC_UPSERT_TRACE_DIR")
+    if not trace_dir:
+        return
+    out_dir = _Path(trace_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    with open(out_dir / "upsert_trace.jsonl", "a", encoding="utf-8") as fh:
+        fh.write(_json.dumps(decision, ensure_ascii=False) + "\n")
 
 
 def _dump_merger_input(

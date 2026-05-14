@@ -6,6 +6,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from packages.compiler.cross_source_merger import (
+    _available_matched_ids,
+    _build_contextual_name,
     _coerce_numeric,
     _compute_consensus_state,
     _values_agree,
@@ -319,6 +321,132 @@ def test_merge_candidates_splits_distinct_same_document_parameter_names(monkeypa
     }
     assert merged_names == set(names)
     assert all(len(ko["authority_summary_json"]["layers"]) == 1 for ko in merged)
+
+
+def test_build_contextual_name_includes_summary_and_value_fields():
+    payload = {
+        "parameter_name": "供油温度范围",
+        "summary": "用于润滑油供油温度控制的范围。" * 10,
+        "range_min": "35",
+        "range_max": "50",
+        "unit": "℃",
+    }
+
+    contextual = _build_contextual_name(payload)
+
+    assert contextual.startswith("供油温度范围。")
+    assert "用于润滑油供油温度控制的范围" in contextual
+    assert "range_min=35" in contextual
+    assert "range_max=50" in contextual
+    assert "unit=℃" in contextual
+    assert len(contextual.split("。")[1]) <= 120
+
+
+def test_merge_candidates_uses_contextual_names_without_changing_facet_source(monkeypatch):
+    captured = {}
+    facet_calls = []
+
+    def fake_group_and_normalize(names, **kwargs):
+        captured["names"] = list(names)
+        captured["facet_hints"] = dict(kwargs["facet_hints"])
+        return {name: f"hvac:centrifugal_chiller:parameter:key_{idx}" for idx, name in enumerate(names)}
+
+    def fake_detect_facet(name, payload):
+        facet_calls.append((name, payload))
+        return "temperature", "oil_temperature"
+
+    monkeypatch.setattr(
+        "packages.compiler.cross_source_merger.group_and_normalize",
+        fake_group_and_normalize,
+    )
+    monkeypatch.setattr(
+        "packages.compiler.cross_source_merger.detect_facet_v2",
+        fake_detect_facet,
+    )
+
+    candidate = _make_candidate("fallback title", value=None)
+    candidate["summary"] = "candidate summary should be available to embedding"
+    candidate["structured_payload"] = {
+        "parameter_name": "供油温度范围",
+        "range_min": "35",
+        "range_max": "50",
+        "unit": "℃",
+    }
+
+    merge_candidates(
+        [candidate],
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        ontology_class_key="hvac:centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+    )
+
+    assert captured["names"] == [
+        "供油温度范围。candidate summary should be available to embedding。"
+        "range_min=35 range_max=50 unit=℃"
+    ]
+    assert facet_calls == [
+        (
+            "供油温度范围",
+            {
+                "parameter_name": "供油温度范围",
+                "range_min": "35",
+                "range_max": "50",
+                "unit": "℃",
+            },
+        )
+    ]
+    assert captured["facet_hints"] == {
+        captured["names"][0]: ("temperature", "oil_temperature")
+    }
+
+
+def test_contextual_embedding_does_not_make_value_based_canonical_key(monkeypatch):
+    def fake_group_and_normalize(names, **_kwargs):
+        return {
+            name: "hvac:centrifugal_chiller:parameter:35_50"
+            for name in names
+        }
+
+    monkeypatch.setattr(
+        "packages.compiler.cross_source_merger.group_and_normalize",
+        fake_group_and_normalize,
+    )
+    candidate = _make_candidate("供油温度范围", value=None)
+    candidate["structured_payload"] = {
+        "parameter_name": "供油温度范围",
+        "range_min": "35",
+        "range_max": "50",
+        "unit": "℃",
+    }
+
+    merged = merge_candidates(
+        [candidate],
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        ontology_class_key="hvac:centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+    )
+
+    assert merged[0]["canonical_key"].endswith(":supply_oil_temperature_range")
+
+
+def test_upsert_matching_does_not_reuse_existing_ko_id_across_split_groups():
+    """One old KO split into two output groups must not be overwritten twice."""
+
+    first_group = _available_matched_ids(
+        {"ko_existing"},
+        removed_ko_ids=set(),
+        assigned_ko_ids=set(),
+    )
+    second_group = _available_matched_ids(
+        {"ko_existing"},
+        removed_ko_ids=set(),
+        assigned_ko_ids=first_group,
+    )
+
+    assert first_group == {"ko_existing"}
+    assert second_group == set()
 
 
 def test_consensus_state_scoring():

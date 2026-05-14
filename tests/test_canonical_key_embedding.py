@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from packages.compiler.canonical_key import (
     _apply_terminology,
     _group_via_embedding,
+    _recluster_compatible_facet_clusters,
     _save_registry,
     _tighten_oversize_embedding_clusters,
     group_and_normalize,
@@ -116,6 +117,64 @@ def test_embedding_cluster_splits_by_brick_reference_subtype():
         )
 
     assert mapping["油温控制设定值"] != mapping["Cooling Water Inlet Temperature"]
+
+
+def test_embedding_reclusters_same_brick_subtype_after_contaminant_split():
+    """Facet split should reconnect same-subtype names blocked by a contaminant."""
+
+    _clear()
+    names = ["低油温起动抑制设定", "油冷/变频器冷却最低进水温度", "供油温度范围"]
+    fake_embs = [
+        [1.0, 0.0, 0.0],
+        [0.85, 0.526782687642637, 0.0],
+        [0.85, -0.526782687642637, 0.0],
+    ]
+    facet_hints = {
+        "低油温起动抑制设定": ("temperature", "oil_temperature"),
+        "油冷/变频器冷却最低进水温度": (
+            "temperature",
+            "cooling_water_inlet_temperature",
+        ),
+        "供油温度范围": ("temperature", "oil_temperature"),
+    }
+
+    with patch("packages.compiler.embedding_client.embed_batch", return_value=fake_embs):
+        mapping = _group_via_embedding(
+            names,
+            domain_id="hvac",
+            equipment_class_id="centrifugal_chiller",
+            knowledge_object_type="parameter_spec",
+            facet_hints=facet_hints,
+        )
+
+    assert mapping["低油温起动抑制设定"] == mapping["供油温度范围"]
+    assert mapping["低油温起动抑制设定"] != mapping["油冷/变频器冷却最低进水温度"]
+
+
+def test_embedding_reclusters_same_brick_subtype_when_quantity_is_missing():
+    """Brick subtype is enough to reconnect when a persisted layer lost unit text."""
+
+    names = ["低油温起动抑制设定", "油箱温度控制", "供油温度范围"]
+    fake_embs = [
+        [1.0, 0.0, 0.0],
+        [0.85, 0.526782687642637, 0.0],
+        [0.85, 0.2633913438213185, 0.456205944057],
+    ]
+    facet_hints = {
+        "低油温起动抑制设定": ("temperature", "oil_temperature"),
+        "油箱温度控制": ("temperature", "oil_temperature"),
+        "供油温度范围": (None, "oil_temperature"),
+    }
+
+    clusters = _recluster_compatible_facet_clusters(
+        [["低油温起动抑制设定", "油箱温度控制"], ["供油温度范围"]],
+        names,
+        fake_embs,
+        facet_hints,
+        threshold=0.78,
+    )
+
+    assert [set(cluster) for cluster in clusters] == [set(names)]
 
 
 def test_embedding_first_is_default():

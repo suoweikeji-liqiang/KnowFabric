@@ -41,6 +41,54 @@ X4 unit-based facet split
 Y1 detector reads summary/evidence text units
 ```
 
+## 2026-05-14 BB/CC: Contextual Embedding + Upsert Preservation
+
+BB isolated the publisher-loss bug to merger upsert behavior, then fixed two
+production edge cases:
+
+```text
+1. A split regroup pass could reuse the same existing KO id twice, causing a
+   later Trane-only group to overwrite a previously written Gree+Trane group.
+2. After Brick subtype splitting, compatible same-subtype fragments needed a
+   second complete-linkage pass so a contaminant could not permanently block a
+   valid oil-temperature merge.
+```
+
+CC changed embedding input from bare `parameter_name` to compact contextual text
+(`parameter_name + summary + value/default/range/unit`) while keeping final
+canonical keys based on raw source names. The 13-pair BGE-M3 4-bit check did not
+justify threshold changes:
+
+```text
+name-only POS-NEG gap = 0.0791
+contextual POS-NEG gap = 0.0827
+delta = +0.0037
+decision = keep threshold unchanged
+```
+
+Final clean-slate validation with contextual embedding:
+
+```text
+run_dir = output/diagnostic/20260514T184500Z_bb4_full_validation_contextual_rawkeys
+oracle = PASS
+total_chiller_ko = 29
+cross_publisher_ko = 5
+cross_publisher_with_gree_trane = 1
+max_layers = 6
+garbage_oil_temp_pressure_mix = 0
+parameter_spec_pname_numeric_or_placeholder = 0
+```
+
+Cross-publisher KOs:
+
+```text
+hvac:centrifugal_chiller:parameter:active_current_limit_setpoint | 6 | {McQuay,Trane} | material_conflict
+hvac:centrifugal_chiller:parameter:bas_chilled_water_setpoint | 6 | {AHRI,McQuay,Trane} | material_conflict
+hvac:centrifugal_chiller:parameter:current_limit_soft_load_time | 6 | {McQuay,Trane} | material_conflict
+hvac:centrifugal_chiller:parameter:supply_oil_temperature_range | 5 | {Gree,McQuay,Trane} | material_conflict
+hvac:centrifugal_chiller:parameter:oil_cooler_max_inlet_temperature | 3 | {AHRI,McQuay} | partial_conflict
+```
+
 ## 1) Oracle output
 
 Command:
