@@ -13,6 +13,7 @@ from typing import Any
 from packages.compiler.authority_arbitration import arbitrate
 from packages.compiler.canonical_key import group_and_normalize, resolve_single_name
 from packages.compiler.llm_compiler import _hashed_slug, _slugify_part
+from packages.compiler.unit_facet_detector import detect_unit_facet
 
 AUTHORITY_RANK = {
     "field_observation": 6,
@@ -129,12 +130,6 @@ def _normalize_pressure(value_str: str) -> float | None:
     return num
 
 
-FACET_KEYWORDS = [
-    ("setpoint", ["setpoint", "set point", "set-point", "default", "设定", "设置"]),
-    ("limit",    ["limit", "cutout", "max", "min", "maximum", "minimum", "限制", "最高", "最低"]),
-    ("alarm",    ["alarm", "warning", "trip", "shutdown", "报警", "保护"]),
-    ("range",    ["range", "between", "from", "范围"]),
-]
 MERGER_MAX_GROUP_CANDIDATES = 5  # E3: only for LLM path. Embedding path handles grouping via clustering.
 
 
@@ -180,34 +175,13 @@ def _dedupe_and_migrate_evidence(session: Any, *, target_id: str, src_id: str) -
     )
 
 
-def _detect_facets(layers: list[dict]) -> set[str]:
-    facets = set()
-    for layer in layers:
-        vs = (layer.get("value_summary") or "").lower()
-        for facet, keywords in FACET_KEYWORDS:
-            if any(kw in vs for kw in keywords):
-                facets.add(facet)
-                break
-        title = (layer.get("citation") or "").lower()
-        for facet, keywords in FACET_KEYWORDS:
-            if any(kw in title for kw in keywords):
-                facets.add(facet)
-                break
-    return facets
-
-
 def _compute_consensus_state(layers: list[dict[str, Any]]) -> tuple[str, str | None]:
     """Determine consensus_state by comparing value_summary across layers.
 
-    R3: empty-value handling. E3: multi-facet detection.
+    R3: empty-value handling.
     """
     if len(layers) <= 1:
         return "single_source", None
-
-    # E3: multi-facet detection — same concept different facets, not conflict
-    facets = _detect_facets(layers)
-    if len(facets) >= 2:
-        return "multi_facet", f"covers facets: {sorted(facets)}"
 
     values = [layer.get("value_summary") for layer in layers]
     non_empty = [v for v in values if not _is_empty(v)]
@@ -251,6 +225,85 @@ def _extract_value_summary(candidate: dict[str, Any]) -> str | None:
     return candidate.get("title") or candidate.get("summary")
 
 
+def _candidate_source_name(candidate: dict[str, Any]) -> str:
+    payload = candidate.get("structured_payload") or candidate.get("structured_payload_candidate") or {}
+    return str(payload.get("parameter_name") or candidate.get("title") or candidate.get("summary", "")).strip()
+
+
+def _candidate_doc_id(candidate: dict[str, Any]) -> str:
+    evidence = candidate.get("evidence") or []
+    if evidence:
+        return str(evidence[0].get("doc_id") or "")
+    return str(candidate.get("doc_id") or "")
+
+
+SOURCE_NAME_CONFLICT_QUALIFIERS = [
+    ("quantity", [
+        "温度", "油温", "temperature",
+        "压力", "压差", "pressure", "differential",
+        "电流", "current",
+        "容量", "制冷量", "capacity",
+        "时间", "time",
+    ]),
+    ("bound", [
+        "最大", "最小", "最高", "最低", "maximum", "minimum", "max", "min",
+        "启动", "起动", "运行", "start", "stop",
+    ]),
+    ("reference", [
+        "供油", "油箱", "润滑油", "oil tank", "supply oil", "lubricating oil",
+        "蒸发器", "冷凝器", "evaporator", "condenser",
+        "水侧", "制冷剂侧", "water side", "refrigerant side",
+        "front panel", "external", "active", "bas", "tracer",
+    ]),
+]
+
+
+def _has_conflicting_source_names(names: set[str]) -> bool:
+    if len(names) <= 1:
+        return False
+    for _, patterns in SOURCE_NAME_CONFLICT_QUALIFIERS:
+        qualifiers = {
+            pattern
+            for name in names
+            for pattern in patterns
+            if pattern in name.lower()
+        }
+        if len(qualifiers) > 1:
+            return True
+    return False
+
+
+def _split_same_document_name_conflicts(
+    groups: dict[str, list[dict[str, Any]]],
+) -> dict[str, list[dict[str, Any]]]:
+    """Split groups that collapse distinct named parameters from one document."""
+
+    refined: dict[str, list[dict[str, Any]]] = {}
+    for canonical_key, group in groups.items():
+        names_by_doc: dict[str, set[str]] = {}
+        for candidate in group:
+            doc_id = _candidate_doc_id(candidate)
+            name = _candidate_source_name(candidate)
+            if doc_id and name:
+                names_by_doc.setdefault(doc_id, set()).add(name)
+
+        has_same_doc_conflict = (
+            len(names_by_doc) == 1
+            and any(_has_conflicting_source_names(names) for names in names_by_doc.values())
+        )
+        if not has_same_doc_conflict:
+            refined[canonical_key] = group
+            continue
+
+        by_name: dict[str, list[dict[str, Any]]] = {}
+        for candidate in group:
+            by_name.setdefault(_candidate_source_name(candidate) or "unknown", []).append(candidate)
+        for name, name_group in by_name.items():
+            suffix = _slugify_part(name) or _hashed_slug(name)
+            refined[f"{canonical_key}_{suffix}"] = name_group
+    return refined
+
+
 def merge_candidates(
     candidates: list[dict[str, Any]],
     *,
@@ -261,6 +314,7 @@ def merge_candidates(
     package_version: str = "2.0.0-alpha",
     ontology_version: str = "2.0.0-alpha",
     backend_name: str | None = None,
+    protect_single_source_distinct_names: bool = True,
 ) -> list[dict[str, Any]]:
     """Merge a list of verified candidates into authority-layered knowledge objects.
 
@@ -273,10 +327,12 @@ def merge_candidates(
     """
     # Step 1: Normalize canonical keys and group
     names_by_candidate = []
+    facet_hints: dict[str, str | None] = {}
     for c in candidates:
         payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
         name = payload.get("parameter_name") or c.get("title") or c.get("summary", "")
         names_by_candidate.append(name)
+        facet_hints[str(name)] = detect_unit_facet(str(name), payload if isinstance(payload, dict) else {})
 
     # Phase 1: LLM-assisted cross-lingual grouping (T1 plumbing fix, docs/35 §T1)
     canonical_map: dict[str, str] = {}
@@ -287,6 +343,7 @@ def merge_candidates(
             equipment_class_id=equipment_class_id,
             knowledge_object_type=knowledge_object_type,
             backend_name=backend_name,
+            facet_hints=facet_hints,
         )
     except Exception:
         canonical_map = {}
@@ -307,6 +364,8 @@ def merge_candidates(
     groups: dict[str, list[dict[str, Any]]] = {}
     for c, ck in zip(candidates, canonical_keys):
         groups.setdefault(ck, []).append(c)
+    if protect_single_source_distinct_names:
+        groups = _split_same_document_name_conflicts(groups)
 
     # E3 defensive sanity: force-split pathological groups (LLM path only)
     # Embedding-first path handles grouping via clustering — trust it.
@@ -324,6 +383,8 @@ def merge_candidates(
             groups = {}
             for c, ck in zip(candidates, canonical_keys):
                 groups.setdefault(ck, []).append(c)
+            if protect_single_source_distinct_names:
+                groups = _split_same_document_name_conflicts(groups)
 
     # Step 2: Build merged KOs
     merged = []
@@ -344,13 +405,18 @@ def merge_candidates(
                 or cand.get("doc_id")
                 or ""
             )
+            primary_layer_chunk_id = cand_evidence[0].get("chunk_id", "") if cand_evidence else ""
+            cand_payload = cand.get("structured_payload") or cand.get("structured_payload_candidate") or {}
             layer = {
                 "authority_level": authority_level,
                 "publisher": cand.get("publisher"),
                 "citation": cand.get("citation") or cand.get("evidence_citation"),
+                "source_name": _candidate_source_name(cand),
+                "structured_payload": cand_payload,
                 "value_summary": _extract_value_summary(cand),
                 "evidence_role": "primary" if is_primary else "corroborating",
                 "doc_id": doc_id,
+                "chunk_id": primary_layer_chunk_id,
             }
             layers.append(layer)
 
@@ -395,8 +461,7 @@ def merge_candidates(
         # Collect all source names for N1 name-based matching
         source_names = []
         for cand in group:
-            payload = cand.get("structured_payload") or cand.get("structured_payload_candidate") or {}
-            name = payload.get("parameter_name") or cand.get("title", "")
+            name = _candidate_source_name(cand)
             if name:
                 source_names.append(str(name).strip())
 
@@ -502,6 +567,11 @@ def _ko_to_candidates(ko_row, session=None) -> list[dict[str, Any]]:
 
     authority = ko_row.authority_summary_json or {}
     layers = authority.get("layers", []) if isinstance(authority, dict) else []
+    layer_by_chunk = {
+        str(layer.get("chunk_id")): layer
+        for layer in layers
+        if isinstance(layer, dict) and layer.get("chunk_id")
+    }
     layer_by_doc = {
         str(layer.get("doc_id")): layer
         for layer in layers
@@ -510,9 +580,13 @@ def _ko_to_candidates(ko_row, session=None) -> list[dict[str, Any]]:
 
     expanded: list[dict[str, Any]] = []
     for ev in evidence_rows:
-        layer = layer_by_doc.get(str(ev.get("doc_id") or ""), {})
-        ev_payload = dict(payload)
-        layer_name = str(layer.get("value_summary") or "").strip()
+        layer = (
+            layer_by_chunk.get(str(ev.get("chunk_id") or ""))
+            or layer_by_doc.get(str(ev.get("doc_id") or ""), {})
+        )
+        layer_payload = layer.get("structured_payload")
+        ev_payload = dict(layer_payload if isinstance(layer_payload, dict) else payload)
+        layer_name = str(layer.get("source_name") or "").strip()
         ev_payload["parameter_name"] = layer_name if _looks_like_parameter_name(layer_name) else fallback_name
         expanded.append({
             **base,
@@ -563,6 +637,7 @@ def merge_with_existing(
             name = payload.get("parameter_name") or cand.get("title") or ""
             if name:
                 existing_by_name[str(name).strip()] = ko.knowledge_object_id
+    protect_single_source_distinct_names = not existing_candidates
 
     # L1 diagnostic: dump what reaches the merger
     _dump_merger_input(existing_candidates, new_candidates, equipment_class_id, knowledge_object_type)
@@ -578,10 +653,12 @@ def merge_with_existing(
         package_version=package_version,
         ontology_version=ontology_version,
         backend_name=backend_name,
+        protect_single_source_distinct_names=protect_single_source_distinct_names,
     )
 
     stats = {"new_merged": 0, "updated_existing": 0, "merged_existing": 0, "material_conflicts": 0}
 
+    removed_ko_ids: set[str] = set()
     for ko_dict in merged:
         canonical_key = ko_dict["canonical_key"]
         evidence_rows = ko_dict.pop("evidence_rows", [])
@@ -595,6 +672,7 @@ def merge_with_existing(
         for name in member_names:
             if name in existing_by_name:
                 matched_ids.add(existing_by_name[name])
+        matched_ids -= removed_ko_ids
 
         if len(matched_ids) >= 2:
             # N1: multiple old KOs merge into one → keep earliest, migrate others
@@ -606,6 +684,7 @@ def merge_with_existing(
                     __import__('sqlalchemy').text("DELETE FROM knowledge_object WHERE knowledge_object_id = :src"),
                     {"src": src_id}
                 )
+                removed_ko_ids.add(src_id)
             stats["merged_existing"] += 1
         elif len(matched_ids) == 1:
             # N1: single match → update existing KO
@@ -623,6 +702,9 @@ def merge_with_existing(
             stats["material_conflicts"] += 1
 
         # Preserve primary_chunk_id if missing
+        if ko_dict["knowledge_object_id"] in removed_ko_ids:
+            continue
+
         if not ko_dict.get("primary_chunk_id"):
             existing = session.query(KnowledgeObjectV2).filter(
                 KnowledgeObjectV2.knowledge_object_id == ko_dict["knowledge_object_id"]
@@ -647,6 +729,7 @@ def merge_with_existing(
                 __import__('sqlalchemy').text("DELETE FROM knowledge_object WHERE knowledge_object_id = :src"),
                 {"src": ck_conflict.knowledge_object_id}
             )
+            removed_ko_ids.add(ck_conflict.knowledge_object_id)
 
         session.merge(KnowledgeObjectV2(**ko_dict))
         session.flush()

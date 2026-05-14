@@ -63,6 +63,32 @@ def test_group_via_embedding_merges_cross_lingual():
     assert ck1 != ck3, f"Different cluster should have different key"
 
 
+def test_embedding_cluster_splits_by_unit_facet():
+    """High-similarity names with incompatible unit facets must split."""
+
+    _clear()
+    names = ["油压差范围（运行）", "供油温度范围"]
+    fake_embs = [
+        [1.0, 0.0, 0.0],
+        [0.95, 0.1, 0.0],
+    ]
+    facet_hints = {
+        "油压差范围（运行）": "pressure_differential",
+        "供油温度范围": "temperature",
+    }
+
+    with patch("packages.compiler.embedding_client.embed_batch", return_value=fake_embs):
+        mapping = _group_via_embedding(
+            names,
+            domain_id="hvac",
+            equipment_class_id="centrifugal_chiller",
+            knowledge_object_type="parameter_spec",
+            facet_hints=facet_hints,
+        )
+
+    assert mapping["油压差范围（运行）"] != mapping["供油温度范围"]
+
+
 def test_embedding_first_is_default():
     assert USE_EMBEDDING_FIRST is True, "KNOWFABRIC_USE_EMBEDDING_FIRST must default to 1"
 

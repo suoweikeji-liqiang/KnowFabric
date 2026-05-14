@@ -527,3 +527,551 @@ venv/bin/python -m pytest tests -q
 bash scripts/check-all
 All quality gates passed
 ```
+
+## 9) 2026-05-14 U1/U2 apply pollution fix attempt
+
+### Bugs confirmed and fixed
+
+U1 root cause:
+
+- The source review pack for Trane `30 psipsid` had the correct concept name: `structured_payload_candidate.parameter_name = 最大压差设定值`.
+- The DB pollution came from regroup expansion, not the review pack.
+- `_ko_to_candidates()` used layer `value_summary` as `parameter_name`; later it also matched layers only by `doc_id`, so multiple layers from one manual could inherit the wrong source name.
+- Fixed by storing `source_name`, `chunk_id`, and per-layer `structured_payload` in `authority_summary_json.layers`, then expanding existing KOs by `chunk_id` first.
+
+U2 root cause:
+
+- Gree review pack contained all 17 accepted entries, including the 4 reviewed `parameter_spec` entries.
+- The 4 Gree parameter candidates reached merger input, so this was not review-pack parsing or review_status filtering.
+- Empty-DB first apply over-grouped distinct same-document parameter names into one KO.
+- Fixed with a first-apply guard that splits same-document groups when source names contain conflicting qualifiers such as temperature vs pressure or start vs running.
+
+### Final U3 rerun
+
+Run ID:
+
+```text
+20260514T084500Z_u3_chiller_fix_rerun6
+```
+
+Artifacts:
+
+```text
+output/diagnostic/20260514T084500Z_u3_chiller_fix_rerun6/apply_counts.tsv
+output/diagnostic/20260514T084500Z_u3_chiller_fix_rerun6/cross_publisher_kos.txt
+output/diagnostic/20260514T084500Z_u3_chiller_fix_rerun6/metrics.tsv
+output/diagnostic/20260514T084500Z_u3_chiller_fix_rerun6/u3_final_grouping_trace.jsonl
+```
+
+Apply evolution:
+
+```text
+Gree apply                         -> total chiller KO = 16
+AHRI apply                         -> total chiller KO = 15
+Trane apply                        -> total chiller KO = 33
+McQuay WSC/WDC/HSC/HDC apply       -> total chiller KO = 34
+McQuay single/double apply         -> total chiller KO = 31
+After regroup                      -> total chiller KO = 30
+```
+
+Final metrics:
+
+```text
+total_chiller_ko = 30
+cross_publisher_ko = 1
+gree_other_ko = 1
+max_layers = 5
+parameter_spec_pname_numeric_or_placeholder = 0
+```
+
+Outcome:
+
+- `parameter_name` pollution was fixed: value/default/placeholder count went from 9 to `0`.
+- Gree reviewed parameter candidates no longer disappear in the empty-DB first apply path.
+- The run still did **not** meet the requested cross-publisher hard metric: required `>= 3`, actual `1`.
+- The remaining cross-publisher KO is a mixed oil-temperature / oil-pressure / pressure-differential group and is marked `material_conflict`.
+
+No oracle changes, threshold tuning, YAML name-pair additions, or LLM re-extraction were performed.
+
+## 10) 2026-05-14 V1-V4 complete-linkage quality verification
+
+### V1 implementation
+
+Changed `packages/compiler/clustering.py` so `cluster_by_cosine()` now accepts:
+
+```text
+linkage="complete"  # default
+linkage="single"    # old behavior, explicit only
+```
+
+Complete-linkage only unions two clusters when every pair in the merged cluster
+has cosine similarity above the existing `0.78` threshold. No threshold changes
+were made.
+
+Regression test added:
+
+```text
+tests/test_clustering.py::test_complete_linkage_blocks_semantic_chain_merge
+```
+
+The test uses a three-node chain with A-B = 0.85, B-C = 0.85, A-C = 0.60 and
+verifies:
+
+```text
+single-linkage   -> [A, B, C]
+complete-linkage -> [A, B], [C]
+```
+
+### V2 oracle regression
+
+Command:
+
+```text
+rm -rf /tmp/knowfabric_embedding_cache
+OMLX_API_KEY=<redacted> venv/bin/python scripts/verify_cross_publisher_merge.py --skip-precheck
+```
+
+Result after the clustering change and stale-KO merge protection:
+
+```text
+RESULT: PASS - Cross-publisher merge plumbing verified end-to-end.
+```
+
+Backup before DB-writing oracle runs:
+
+```text
+/tmp/v2_pre_oracle_20260514T055326Z.sql
+/tmp/v2_post_changes_pre_oracle_20260514T055617Z.sql
+```
+
+### V3 clean-slate rerun
+
+Run ID:
+
+```text
+20260514T091500Z_v3_complete_linkage_cleanslate_retry
+```
+
+Artifacts:
+
+```text
+output/diagnostic/20260514T091500Z_v3_complete_linkage_cleanslate_retry/apply_counts.tsv
+output/diagnostic/20260514T091500Z_v3_complete_linkage_cleanslate_retry/cross_publisher_quality.txt
+output/diagnostic/20260514T091500Z_v3_complete_linkage_cleanslate_retry/embedding_cluster_trace.json
+output/diagnostic/20260514T091500Z_v3_complete_linkage_cleanslate_retry/oil_cluster_pairwise_cosines.tsv
+output/diagnostic/20260514T091500Z_v3_complete_linkage_cleanslate_retry/metrics.tsv
+```
+
+Clean-slate apply evolution:
+
+```text
+Gree apply                         -> total chiller KO = 15
+AHRI apply                         -> total chiller KO = 16
+Trane apply                        -> total chiller KO = 28
+McQuay WSC/WDC/HSC/HDC apply       -> total chiller KO = 25
+McQuay single/double apply         -> total chiller KO = 25
+After regroup                      -> total chiller KO = 23
+```
+
+Regroup stats:
+
+```text
+{'new_merged': 0, 'updated_existing': 12, 'merged_existing': 2, 'material_conflicts': 4}
+```
+
+### V4 quality result
+
+Final metrics:
+
+```text
+total_chiller_ko = 23
+cross_publisher_ko = 2
+max_layers = 4
+parameter_spec_pname_numeric_or_placeholder = 0
+garbage_oil_temp_pressure_mix = 1
+```
+
+Cross-publisher KOs after regroup:
+
+```text
+hvac:centrifugal_chiller:parameter:front_panel_chilled_water_setpoint
+  n = 4
+  pubs = {McQuay, Trane}
+  consensus_state = multi_facet
+  source_names = {冷冻水最高进水温度, Chilled Water Reset, Front Panel Chilled Water Setpoint}
+
+hvac:centrifugal_chiller:parameter:supply_oil_temperature_range
+  n = 4
+  pubs = {Gree, McQuay, Trane}
+  consensus_state = material_conflict
+  source_names = {供油温度范围, 油压差范围（运行）, 油箱温度控制, 润滑油温度控制设定范围}
+```
+
+Outcome:
+
+- Oracle regression passed.
+- `parameter_name` value/default/placeholder pollution stayed fixed: count = `0`.
+- `max_layers <= 5` passed: actual = `4`.
+- V4 did **not** pass because `total_chiller_ko` is `23` rather than `>= 30`.
+- V4 did **not** pass because the oil temperature / oil pressure mixed cross-publisher KO still exists.
+
+The diagnostic trace shows complete-linkage is active, but the oil cluster is
+still internally pairwise above the unchanged threshold:
+
+```text
+油箱温度控制 - 油压差范围（运行）             0.8336
+油箱温度控制 - 润滑油温度控制设定范围       0.8846
+油箱温度控制 - 供油温度范围                 0.8619
+油压差范围（运行） - 润滑油温度控制设定范围 0.8371
+油压差范围（运行） - 供油温度范围           0.8574
+润滑油温度控制设定范围 - 供油温度范围       0.8811
+```
+
+This means the remaining garbage merge is not a single-linkage chain failure in
+this production clean-slate run: all six pairwise similarities inside the oil
+cluster are already above `0.78`, so complete-linkage cannot split it without a
+separate policy change. No threshold tuning, YAML hardcoding, LLM re-extraction,
+single-link fallback, or oracle script changes were performed.
+
+## 11) 2026-05-14 X1-X4 unit-based facet detection
+
+### X1 implementation
+
+Removed the string-enumeration facet design from `cross_source_merger.py`:
+
+```text
+FACET_KEYWORDS removed
+_detect_facets removed
+```
+
+Added unit-based physical facet detection:
+
+```text
+packages/compiler/unit_facet_detector.py
+```
+
+Detection order:
+
+```text
+1. structured_payload.unit
+2. units embedded in value/default_value/range_min/range_max/value_summary/name text
+3. generic pressure-differential markers: 压差, 差压, differential pressure, pressure differential, psid, ΔP
+4. None when no physical unit/facet is known
+```
+
+The detector covers physical unit families only: temperature, pressure,
+pressure_differential, current, voltage, frequency, flow, power, ratio, and
+time. It does not enumerate concrete parameter names such as oil temperature or
+chilled-water temperature.
+
+### X2 clustering integration
+
+`group_and_normalize()` now accepts:
+
+```text
+facet_hints: dict[str, str | None] | None
+```
+
+`merge_candidates()` builds those hints from each candidate structured payload
+before calling `group_and_normalize()`.
+
+Embedding clustering still runs first. After cosine clustering and oversize
+tightening, any multi-member cluster with two or more known incompatible unit
+facets is split by facet before canonical keys are assigned. Unknown facets do
+not split a cluster by themselves.
+
+The in-memory hash cache now includes `facet_hints` so a same-name batch cannot
+reuse a grouping computed without the unit constraints.
+
+### X3 tests
+
+Added:
+
+```text
+tests/test_unit_facet_detector.py
+tests/test_canonical_key_embedding.py::test_embedding_cluster_splits_by_unit_facet
+```
+
+Updated the old keyword-facet consensus test so keyword labels no longer
+override value disagreement.
+
+Targeted verification:
+
+```text
+venv/bin/python -m pytest \
+  tests/test_unit_facet_detector.py \
+  tests/test_canonical_key_embedding.py \
+  tests/test_canonical_key_batching.py \
+  tests/test_cross_source_merger.py \
+  tests/test_cross_source_merger_crosslingual.py \
+  tests/test_cross_source_merger_regroup.py \
+  tests/test_clustering.py -q
+
+45 passed
+```
+
+### X4 oracle and clean-slate result
+
+Oracle command:
+
+```text
+rm -rf /tmp/knowfabric_embedding_cache
+OMLX_API_KEY=<redacted> venv/bin/python scripts/verify_cross_publisher_merge.py --skip-precheck
+```
+
+Oracle result:
+
+```text
+RESULT: PASS - Cross-publisher merge plumbing verified end-to-end.
+```
+
+Backup before oracle:
+
+```text
+/tmp/x4_pre_oracle_20260514T062410Z.sql
+```
+
+Clean-slate run ID:
+
+```text
+20260514T143000Z_x4_unit_facet_cleanslate
+```
+
+Artifacts:
+
+```text
+output/diagnostic/20260514T143000Z_x4_unit_facet_cleanslate/apply_counts.tsv
+output/diagnostic/20260514T143000Z_x4_unit_facet_cleanslate/cross_publisher_quality.txt
+output/diagnostic/20260514T143000Z_x4_unit_facet_cleanslate/oil_temperature_pressure_kos.txt
+output/diagnostic/20260514T143000Z_x4_unit_facet_cleanslate/metrics.tsv
+```
+
+Clean-slate apply evolution:
+
+```text
+Gree apply                         -> total chiller KO = 15
+AHRI apply                         -> total chiller KO = 16
+Trane apply                        -> total chiller KO = 33
+McQuay WSC/WDC/HSC/HDC apply       -> total chiller KO = 35
+McQuay single/double apply         -> total chiller KO = 34
+After regroup                      -> total chiller KO = 30
+```
+
+Regroup stats:
+
+```text
+{'new_merged': 0, 'updated_existing': 18, 'merged_existing': 4, 'material_conflicts': 5}
+```
+
+Final metrics:
+
+```text
+total_chiller_ko = 30
+cross_publisher_ko = 0
+max_layers = 3
+garbage_oil_temp_pressure_mix = 0
+parameter_spec_pname_numeric_or_placeholder = 0
+```
+
+Outcome:
+
+- Oracle regression passed.
+- The previous oil temperature / oil pressure garbage cross-publisher KO no longer appears.
+- Total chiller KO count is `30`, satisfying the `>= 23` non-overmerge guard.
+- `max_layers` is `3`.
+- Cross-publisher count is `0`; this is acceptable under the quality-first X4 criteria because the bad merge was eliminated without threshold tuning, YAML aliases, LLM re-extraction, or oracle changes.
+
+Backlog for the next round only:
+
+```text
+Tier 2 Brick Schema tag mapping:
+domain_packages/hvac/v2/brick_facet_map.yaml
+Brick tag -> bilingual quantity/reference-point hints
+```
+
+## 12) 2026-05-14 Y1-Y3 same-facet regression trace
+
+### Y1 trace instrumentation
+
+Added optional grouping trace controlled by:
+
+```text
+KNOWFABRIC_GROUPING_TRACE_DIR=<dir>
+```
+
+Trace file:
+
+```text
+<dir>/grouping_trace.jsonl
+```
+
+Each `_group_via_embedding()` call records:
+
+```text
+input_names
+facet_hints
+raw_clusters
+tightened_clusters
+facet_split_clusters
+final mapping
+pairwise cosine values
+```
+
+The trace is diagnostic-only and does not affect grouping unless the env var is
+set.
+
+### Y1 root cause
+
+Clean-slate trace run:
+
+```text
+output/diagnostic/20260514T150000Z_y1_trace/
+```
+
+Root cause found:
+
+- Gree structured payloads did not use `unit`, `range_min`, `range_max`, or `default_value`.
+- Their units were embedded only in `structured_payload.summary`, for example:
+
+```text
+供油温度范围: 正常运行供油温度应稳定在35～50℃。
+油压差范围（运行）: 正常运行供油压力比油箱压力高150～250kPa。
+油箱温度控制: 停机时油箱温度保持在48～52℃之间。
+```
+
+Before the fix, `detect_unit_facet()` did not inspect `summary`, so:
+
+```text
+供油温度范围 -> None
+油箱温度控制 -> None
+油压差范围（运行） -> pressure_differential
+Trane 低油温起动抑制设定 -> temperature
+```
+
+This was case (b): facet hints for Gree historical candidates were incomplete.
+
+### Y2 fix
+
+Updated `detect_unit_facet()` to extract units from additional payload text
+fields:
+
+```text
+title
+summary
+description
+evidence_quote
+value
+default_value
+range_min
+range_max
+value_summary
+```
+
+This stays unit-based: it reads physical units in text and does not enumerate
+specific parameter names.
+
+Added tests:
+
+```text
+detect_unit_facet("供油温度范围", {"summary": "正常运行供油温度应稳定在35～50℃。"}) -> temperature
+detect_unit_facet("油压差范围（运行）", {"summary": "正常运行供油压力比油箱压力高150～250kPa。"}) -> pressure_differential
+```
+
+### Y3 verification
+
+Oracle backup:
+
+```text
+/tmp/y3_pre_oracle_20260514T071310Z.sql
+```
+
+Oracle command:
+
+```text
+rm -rf /tmp/knowfabric_embedding_cache
+OMLX_API_KEY=<redacted> venv/bin/python scripts/verify_cross_publisher_merge.py --skip-precheck
+```
+
+Oracle result:
+
+```text
+RESULT: PASS - Cross-publisher merge plumbing verified end-to-end.
+```
+
+Clean-slate run:
+
+```text
+output/diagnostic/20260514T151500Z_y3_unit_summary_fix_y1_trace/
+```
+
+Apply evolution:
+
+```text
+Gree apply                         -> total chiller KO = 16
+AHRI apply                         -> total chiller KO = 19
+Trane apply                        -> total chiller KO = 38
+McQuay WSC/WDC/HSC/HDC apply       -> total chiller KO = 37
+McQuay single/double apply         -> total chiller KO = 37
+After regroup                      -> total chiller KO = 34
+```
+
+Regroup stats:
+
+```text
+{'new_merged': 0, 'updated_existing': 23, 'merged_existing': 3, 'material_conflicts': 4}
+```
+
+Final metrics:
+
+```text
+total_chiller_ko = 34
+cross_publisher_ko = 1
+max_layers = 3
+garbage_oil_temp_pressure_mix = 0
+parameter_spec_pname_numeric_or_placeholder = 0
+```
+
+Final cross-publisher KO:
+
+```text
+hvac:centrifugal_chiller:parameter:supply_oil_temperature_range
+  n = 2
+  pubs = {Gree, McQuay}
+  consensus_state = agreed
+  source_names = {供油温度范围}
+```
+
+Additional trace finding:
+
+- During Trane apply, Gree and Trane oil-temperature names did merge:
+
+```text
+供油温度范围                       facet=temperature
+油箱温度控制                       facet=temperature
+启动限制最低油温默认设定           facet=temperature
+润滑油温度控制设定范围             facet=temperature
+低油温起动抑制设定                 facet=temperature
+canonical_key = hvac:centrifugal_chiller:parameter:supply_oil_temperature_range
+```
+
+- Relevant pairwise cosine values were above threshold:
+
+```text
+供油温度范围 - 低油温起动抑制设定       0.8191
+供油温度范围 - 润滑油温度控制设定范围   0.8811
+油箱温度控制 - 低油温起动抑制设定       0.8566
+油箱温度控制 - 润滑油温度控制设定范围   0.8846
+```
+
+- Later McQuay applies introduced other temperature names such as oil-cooler /
+  inverter-cooling inlet temperature. Unit facet correctly keeps all of these as
+  `temperature`, so it cannot distinguish reference point within the same
+  physical quantity family.
+
+Conclusion:
+
+- The X4 regression was caused by missing unit extraction from Gree summary text.
+- That specific regression is fixed.
+- The remaining same-temperature drift is outside unit-facet scope and needs
+  Tier 2 reference-point modeling, e.g. Brick tag mapping, not threshold tuning
+  or YAML name-pair hardcoding.

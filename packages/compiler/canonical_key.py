@@ -48,8 +48,16 @@ def _save_registry(data: dict[str, Any]) -> None:
         yaml.safe_dump(data, fh, allow_unicode=True, sort_keys=False, default_flow_style=False)
 
 
-def _hash_inputs(names: list[str], knowledge_object_type: str = "") -> str:
-    payload = json.dumps({"names": sorted(names), "type": knowledge_object_type}, ensure_ascii=False)
+def _hash_inputs(
+    names: list[str],
+    knowledge_object_type: str = "",
+    facet_hints: dict[str, str | None] | None = None,
+) -> str:
+    payload = json.dumps(
+        {"names": sorted(names), "type": knowledge_object_type, "facet_hints": facet_hints or {}},
+        ensure_ascii=False,
+        sort_keys=True,
+    )
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]
 
 
@@ -470,6 +478,65 @@ def _dump_embedding_cluster_trace(
         json.dump(payload, fh, ensure_ascii=False, indent=2)
 
 
+def _dump_grouping_trace(
+    *,
+    names: list[str],
+    embeddings: list[list[float]],
+    threshold: float,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    facet_hints: dict[str, str | None],
+    raw_clusters: list[list[str]],
+    tightened_clusters: list[list[str]],
+    facet_clusters: list[list[str]],
+    mapping: dict[str, str],
+) -> None:
+    trace_dir = os.environ.get("KNOWFABRIC_GROUPING_TRACE_DIR")
+    if not trace_dir:
+        return
+
+    from datetime import datetime as _dt, timezone as _tz
+
+    out_dir = Path(trace_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    pairwise = []
+    if len(names) <= 80:
+        from packages.compiler.clustering import cosine
+        for i, left in enumerate(names):
+            for j in range(i + 1, len(names)):
+                pairwise.append({
+                    "left": left,
+                    "right": names[j],
+                    "cosine": round(cosine(embeddings[i], embeddings[j]), 4),
+                })
+    entry = {
+        "ts": _dt.now(_tz.utc).isoformat(),
+        "stage": "group_via_embedding",
+        "equipment_class_id": equipment_class_id,
+        "knowledge_object_type": knowledge_object_type,
+        "threshold": threshold,
+        "input_names": sorted(names),
+        "input_order": names,
+        "facet_hints": {name: facet_hints.get(name) for name in sorted(names)},
+        "raw_clusters": [
+            {"size": len(cluster), "members": cluster}
+            for cluster in sorted(raw_clusters, key=len, reverse=True)
+        ],
+        "tightened_clusters": [
+            {"size": len(cluster), "members": cluster}
+            for cluster in sorted(tightened_clusters, key=len, reverse=True)
+        ],
+        "facet_split_clusters": [
+            {"size": len(cluster), "members": cluster}
+            for cluster in sorted(facet_clusters, key=len, reverse=True)
+        ],
+        "mapping": {name: mapping[name] for name in sorted(mapping)},
+        "pairwise_cosines": pairwise,
+    }
+    with open(out_dir / "grouping_trace.jsonl", "a", encoding="utf-8") as fh:
+        fh.write(json.dumps(entry, ensure_ascii=False) + "\n")
+
+
 def _dump_refinement_trace(cluster_names: list[str], groups: list[dict], llm_response: dict) -> None:
     """N3: dump what LLM refinement did to each cluster."""
     import json as _json, os as _os
@@ -558,6 +625,7 @@ def _group_via_embedding(
     equipment_class_id: str,
     knowledge_object_type: str,
     backend_name: str | None = None,
+    facet_hints: dict[str, str | None] | None = None,
 ) -> dict[str, str]:
     """H2: embedding-first grouping — BGE-M3 → cosine clustering → LLM refine."""
     cleaned = [str(n).strip() for n in names if str(n).strip()]
@@ -574,12 +642,13 @@ def _group_via_embedding(
     from packages.compiler.clustering import cluster_by_cosine
     threshold = 0.78
     raw_clusters = cluster_by_cosine(cleaned, embeddings, threshold=threshold)
-    clusters = _tighten_oversize_embedding_clusters(
+    tightened_clusters = _tighten_oversize_embedding_clusters(
         cleaned,
         embeddings,
         raw_clusters,
         threshold=threshold,
     )
+    clusters = _split_clusters_by_facet(tightened_clusters, facet_hints or {})
     _dump_embedding_cluster_trace(
         cleaned,
         clusters,
@@ -643,8 +712,47 @@ def _group_via_embedding(
                 mapping[n] = ck
             _register(cluster_names, ck)
 
-    HASH_CACHE[_hash_inputs(cleaned, knowledge_object_type)] = mapping
+    _dump_grouping_trace(
+        names=cleaned,
+        embeddings=embeddings,
+        threshold=threshold,
+        equipment_class_id=equipment_class_id,
+        knowledge_object_type=knowledge_object_type,
+        facet_hints=facet_hints or {},
+        raw_clusters=raw_clusters,
+        tightened_clusters=tightened_clusters,
+        facet_clusters=clusters,
+        mapping=mapping,
+    )
+    HASH_CACHE[_hash_inputs(cleaned, knowledge_object_type, facet_hints)] = mapping
     return mapping
+
+
+def _split_clusters_by_facet(
+    clusters: list[list[str]],
+    facet_hints: dict[str, str | None],
+) -> list[list[str]]:
+    """Split embedding clusters when known unit facets are dimensionally incompatible."""
+
+    refined: list[list[str]] = []
+    for cluster in clusters:
+        known_facets = {facet_hints.get(name) for name in cluster if facet_hints.get(name)}
+        if len(known_facets) < 2:
+            refined.append(cluster)
+            continue
+
+        by_facet: dict[str, list[str]] = {}
+        unknown: list[str] = []
+        for name in cluster:
+            facet = facet_hints.get(name)
+            if facet:
+                by_facet.setdefault(facet, []).append(name)
+            else:
+                unknown.append(name)
+        refined.extend(by_facet.values())
+        if unknown:
+            refined.append(unknown)
+    return refined
 
 
 USE_EMBEDDING_FIRST = os.environ.get("KNOWFABRIC_USE_EMBEDDING_FIRST", "1") == "1"
@@ -657,6 +765,7 @@ def group_and_normalize(
     equipment_class_id: str,
     knowledge_object_type: str,
     backend_name: str | None = None,
+    facet_hints: dict[str, str | None] | None = None,
 ) -> dict[str, str]:
     """Group names by concept and normalize each group to a canonical key.
 
@@ -667,7 +776,7 @@ def group_and_normalize(
     if not cleaned:
         return {}
 
-    input_hash = _hash_inputs(cleaned, knowledge_object_type)
+    input_hash = _hash_inputs(cleaned, knowledge_object_type, facet_hints)
     if input_hash in HASH_CACHE:
         cached = HASH_CACHE[input_hash]
         if isinstance(cached, dict):
@@ -680,6 +789,7 @@ def group_and_normalize(
             equipment_class_id=equipment_class_id,
             knowledge_object_type=knowledge_object_type,
             backend_name=backend_name,
+            facet_hints=facet_hints,
         )
 
     # Fallback: E2 batched-LLM with sanity checks

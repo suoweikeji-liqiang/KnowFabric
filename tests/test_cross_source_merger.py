@@ -216,16 +216,16 @@ def test_empty_value_short_circuit():
     assert _values_agree("none", "N/A") is True
 
 
-def test_multi_facet_detection():
-    """E3: same concept different facets -> multi_facet, not conflict."""
+def test_keyword_facet_detection_removed_from_consensus():
+    """String keyword facets are not used to override value disagreement."""
     from packages.compiler.cross_source_merger import _compute_consensus_state
     layers = [
         {"value_summary": "Setpoint: 44F", "citation": "Trane CVGF p.29"},
         {"value_summary": "Limit: 38F (cutout)", "citation": "Carrier 19XR p.37"},
     ]
     state, summary = _compute_consensus_state(layers)
-    assert state == "multi_facet", f"Expected multi_facet, got {state}"
-    assert "setpoint" in (summary or "").lower()
+    assert state == "material_conflict"
+    assert "disagree" in (summary or "").lower()
 
 
 def test_merger_sanity_pathological_split(monkeypatch):
@@ -263,6 +263,62 @@ def test_merger_sanity_pathological_split(monkeypatch):
     assert len(unique_keys) >= MERGER_MAX_GROUP_CANDIDATES, \
         f"Expected >={MERGER_MAX_GROUP_CANDIDATES} unique keys after split, got {len(unique_keys)}"
     assert _values_agree(0, 0) is True
+
+
+def test_merge_candidates_splits_distinct_same_document_parameter_names(monkeypatch):
+    """A single manual's distinct parameters must not disappear into one KO."""
+
+    from packages.compiler.cross_source_merger import merge_candidates
+
+    names = [
+        "供油温度范围",
+        "油压差范围（运行）",
+        "油压差范围（启动）",
+        "油箱温度控制",
+    ]
+    monkeypatch.setattr(
+        "packages.compiler.cross_source_merger.group_and_normalize",
+        lambda names, **_kwargs: {
+            name: "hvac:centrifugal_chiller:parameter:overmerged_oil_group"
+            for name in names
+        },
+    )
+    candidates = [
+        {
+            "title": name,
+            "summary": name,
+            "structured_payload": {"parameter_name": name},
+            "confidence_score": 0.95,
+            "trust_level": "L3",
+            "publisher": "Gree",
+            "citation": "Gree p.66",
+            "authority_level": "oem_manual",
+            "evidence": [{
+                "chunk_id": f"chunk_{idx}",
+                "doc_id": "doc_gree",
+                "page_id": "page_66",
+                "page_no": 66,
+                "evidence_text": name,
+                "evidence_role": "primary",
+            }],
+        }
+        for idx, name in enumerate(names)
+    ]
+
+    merged = merge_candidates(
+        candidates,
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        ontology_class_key="hvac:centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+    )
+
+    merged_names = {
+        ko["structured_payload_json"]["parameter_name"]
+        for ko in merged
+    }
+    assert merged_names == set(names)
+    assert all(len(ko["authority_summary_json"]["layers"]) == 1 for ko in merged)
 
 
 def test_consensus_state_scoring():

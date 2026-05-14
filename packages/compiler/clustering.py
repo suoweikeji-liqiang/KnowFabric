@@ -1,4 +1,4 @@
-"""Cosine-similarity hierarchical clustering via union-find.
+"""Cosine-similarity clustering via union-find.
 
 Calibrated for BGE-M3 4-bit on chiller domain parameter names.
 Threshold 0.78: same-concept sim ≥0.80, different-concept sim ≤0.66, gap 0.14.
@@ -36,23 +36,63 @@ class _UnionFind:
             self.parent[ri] = rj
 
 
+def _member_indices(uf: _UnionFind, n: int, root: int) -> list[int]:
+    return [idx for idx in range(n) if uf.find(idx) == root]
+
+
+def _can_complete_link(
+    uf: _UnionFind,
+    embeddings: list[list[float]],
+    *,
+    i: int,
+    j: int,
+    threshold: float,
+) -> bool:
+    n = len(embeddings)
+    left = _member_indices(uf, n, uf.find(i))
+    right = _member_indices(uf, n, uf.find(j))
+    merged = list(dict.fromkeys(left + right))
+    for a_idx, a in enumerate(merged):
+        for b in merged[a_idx + 1:]:
+            if cosine(embeddings[a], embeddings[b]) < threshold:
+                return False
+    return True
+
+
 def cluster_by_cosine(
     names: list[str],
     embeddings: list[list[float]],
     *,
     threshold: float = DEFAULT_THRESHOLD,
+    linkage: str = "complete",
 ) -> list[list[str]]:
-    """Greedy single-linkage clustering: any pair with sim ≥ threshold gets merged."""
+    """Greedy clustering by cosine similarity.
+
+    ``single`` merges when any pair crosses the threshold. ``complete`` only
+    merges clusters when every pair in the merged cluster remains above it.
+    """
     n = len(names)
     if n != len(embeddings):
         raise ValueError(f"names ({n}) and embeddings ({len(embeddings)}) length mismatch")
+    if linkage not in {"single", "complete"}:
+        raise ValueError("linkage must be 'single' or 'complete'")
     if n == 0:
         return []
 
     uf = _UnionFind(n)
     for i in range(n):
         for j in range(i + 1, n):
-            if cosine(embeddings[i], embeddings[j]) >= threshold:
+            if cosine(embeddings[i], embeddings[j]) < threshold:
+                continue
+            if linkage == "complete" and not _can_complete_link(
+                uf,
+                embeddings,
+                i=i,
+                j=j,
+                threshold=threshold,
+            ):
+                continue
+            if uf.find(i) != uf.find(j):
                 uf.union(i, j)
 
     clusters: dict[int, list[str]] = {}

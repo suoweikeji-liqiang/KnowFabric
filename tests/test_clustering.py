@@ -48,6 +48,32 @@ def test_one_pair_above_threshold_one_isolated():
     assert lens == [1, 2]
 
 
+def test_complete_linkage_blocks_semantic_chain_merge():
+    """A-B and B-C edges must not force A/B/C into one complete-linkage cluster."""
+
+    # Pairwise cosine: A-B = 0.85, B-C = 0.85, A-C = 0.60.
+    embeddings = _fake_emb([
+        [1.0, 0.0, 0.0],
+        [0.85, 0.526782687642637, 0.0],
+        [0.60, 0.6454274643132343, 0.4727439401643625],
+    ])
+
+    single_clusters = cluster_by_cosine(
+        ["a", "b", "c"],
+        embeddings,
+        threshold=DEFAULT_THRESHOLD,
+        linkage="single",
+    )
+    complete_clusters = cluster_by_cosine(
+        ["a", "b", "c"],
+        embeddings,
+        threshold=DEFAULT_THRESHOLD,
+    )
+
+    assert [sorted(cluster) for cluster in single_clusters] == [["a", "b", "c"]]
+    assert sorted(sorted(cluster) for cluster in complete_clusters) == [["a", "b"], ["c"]]
+
+
 def test_large_input_no_crash():
     import random
     random.seed(42)
