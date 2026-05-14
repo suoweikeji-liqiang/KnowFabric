@@ -97,6 +97,17 @@ def test_summarize_review_pipeline_stats_combines_candidates_packs_and_apply(mon
     monkeypatch.setattr("scripts.generate_chunk_backfill_candidates.SessionLocal", session_factory)
     monkeypatch.setattr("scripts.build_manual_fixture_from_review_candidates.SessionLocal", session_factory)
     monkeypatch.setattr("scripts.backfill_manual_knowledge_from_chunks.SessionLocal", session_factory)
+    monkeypatch.setattr("scripts.apply_review_packs_batch.SessionLocal", session_factory)
+
+    def successful_merger(**_kwargs):
+        return {
+            "new_merged": 1,
+            "updated_existing": 0,
+            "material_conflicts": 0,
+            "groups_processed": 1,
+        }
+
+    monkeypatch.setattr("scripts.apply_review_packs_batch.apply_with_merger", successful_merger)
 
     payload = generate_chunk_backfill_candidates(
         "hvac",
@@ -213,7 +224,7 @@ def test_summarize_review_pipeline_stats_combines_candidates_packs_and_apply(mon
             "ready_to_apply": True,
             "readiness_status": "ready",
             "readiness_blocker": None,
-            "apply_status": "applied",
+            "apply_status": "applied_merger",
         },
         {
             "pack_file": "hvac__doc_guoxiang_kms_manual__air_cooled_modular_heat_pump.json",

@@ -1,0 +1,36 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-14T05:21:12.755650+00:00",
+  "pack_dir": "output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/gree/review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 1,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_99fc08961aa540f4__centrifugal_chiller.json",
+      "pack_path": "output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/gree/review_packs/hvac__doc_99fc08961aa540f4__centrifugal_chiller.json",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_class_key": "hvac:centrifugal_chiller",
+      "candidate_count": 17,
+      "accepted_count": 17,
+      "rejected_count": 0,
+      "pending_count": 0,
+      "status": "ready",
+      "blocker": null,
+      "ready_manual_entries": 17,
+      "fixture_equipment_class_key": "hvac:centrifugal_chiller"
+    }
+  ]
+}

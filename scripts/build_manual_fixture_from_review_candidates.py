@@ -250,6 +250,8 @@ def _base_manual_entry(
         "confidence_score": entry["confidence_score"],
         "trust_level": curation["trust_level"],
         "review_status": curation.get("review_status", "approved"),
+        "publisher": curation.get("publisher") or entry.get("publisher"),
+        "citation": curation.get("citation") or entry.get("citation"),
         "curated_against_ontology_version": entry.get("curated_against_ontology_version"),
         "compiler_metadata": entry.get("compile_metadata", {}),
         "health_signals": {

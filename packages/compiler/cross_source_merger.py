@@ -138,6 +138,48 @@ FACET_KEYWORDS = [
 MERGER_MAX_GROUP_CANDIDATES = 5  # E3: only for LLM path. Embedding path handles grouping via clustering.
 
 
+def _dedupe_and_migrate_evidence(session: Any, *, target_id: str, src_id: str) -> None:
+    """Move evidence between KOs without violating the evidence ref uniqueness."""
+
+    if target_id == src_id:
+        return
+
+    sql_text = __import__('sqlalchemy').text
+    session.execute(
+        sql_text(
+            "DELETE FROM knowledge_object_evidence AS duplicate "
+            "USING knowledge_object_evidence AS kept "
+            "WHERE duplicate.knowledge_object_id = :src "
+            "AND kept.knowledge_object_id = :src "
+            "AND duplicate.knowledge_evidence_id > kept.knowledge_evidence_id "
+            "AND duplicate.chunk_id = kept.chunk_id "
+            "AND duplicate.evidence_role = kept.evidence_role"
+        ),
+        {"src": src_id},
+    )
+    session.execute(
+        sql_text(
+            "DELETE FROM knowledge_object_evidence AS src_ev "
+            "WHERE src_ev.knowledge_object_id = :src "
+            "AND EXISTS ("
+            "  SELECT 1 FROM knowledge_object_evidence AS target_ev "
+            "  WHERE target_ev.knowledge_object_id = :target "
+            "  AND target_ev.chunk_id = src_ev.chunk_id "
+            "  AND target_ev.evidence_role = src_ev.evidence_role"
+            ")"
+        ),
+        {"target": target_id, "src": src_id},
+    )
+    session.execute(
+        sql_text(
+            "UPDATE knowledge_object_evidence "
+            "SET knowledge_object_id = :target "
+            "WHERE knowledge_object_id = :src"
+        ),
+        {"target": target_id, "src": src_id},
+    )
+
+
 def _detect_facets(layers: list[dict]) -> set[str]:
     facets = set()
     for layer in layers:
@@ -470,10 +512,8 @@ def _ko_to_candidates(ko_row, session=None) -> list[dict[str, Any]]:
     for ev in evidence_rows:
         layer = layer_by_doc.get(str(ev.get("doc_id") or ""), {})
         ev_payload = dict(payload)
-        ev_payload["parameter_name"] = _source_name_from_evidence(
-            ev.get("evidence_text", ""),
-            fallback_name,
-        )
+        layer_name = str(layer.get("value_summary") or "").strip()
+        ev_payload["parameter_name"] = layer_name if _looks_like_parameter_name(layer_name) else fallback_name
         expanded.append({
             **base,
             "title": ev_payload["parameter_name"] or base.get("title"),
@@ -560,20 +600,8 @@ def merge_with_existing(
             # N1: multiple old KOs merge into one → keep earliest, migrate others
             target_id = min(matched_ids)
             ko_dict["knowledge_object_id"] = target_id
-            # Migrate evidence from other matched KOs (skip duplicates)
             for src_id in matched_ids - {target_id}:
-                # Delete duplicate evidence in target first, then migrate
-                session.execute(
-                    __import__('sqlalchemy').text(
-                        "DELETE FROM knowledge_object_evidence WHERE knowledge_object_id = :target "
-                        "AND (chunk_id, evidence_role) IN (SELECT chunk_id, evidence_role FROM knowledge_object_evidence WHERE knowledge_object_id = :src)"
-                    ), {"target": target_id, "src": src_id}
-                )
-                session.execute(
-                    __import__('sqlalchemy').text(
-                        "UPDATE knowledge_object_evidence SET knowledge_object_id = :target WHERE knowledge_object_id = :src"
-                    ), {"target": target_id, "src": src_id}
-                )
+                _dedupe_and_migrate_evidence(session, target_id=target_id, src_id=src_id)
                 session.execute(
                     __import__('sqlalchemy').text("DELETE FROM knowledge_object WHERE knowledge_object_id = :src"),
                     {"src": src_id}
@@ -610,10 +638,10 @@ def merge_with_existing(
         ).first()
         if ck_conflict:
             # Migrate evidence from conflict KO to this one, then delete conflict
-            session.execute(
-                __import__('sqlalchemy').text(
-                    "UPDATE knowledge_object_evidence SET knowledge_object_id = :target WHERE knowledge_object_id = :src"
-                ), {"target": ko_dict["knowledge_object_id"], "src": ck_conflict.knowledge_object_id}
+            _dedupe_and_migrate_evidence(
+                session,
+                target_id=ko_dict["knowledge_object_id"],
+                src_id=ck_conflict.knowledge_object_id,
             )
             session.execute(
                 __import__('sqlalchemy').text("DELETE FROM knowledge_object WHERE knowledge_object_id = :src"),

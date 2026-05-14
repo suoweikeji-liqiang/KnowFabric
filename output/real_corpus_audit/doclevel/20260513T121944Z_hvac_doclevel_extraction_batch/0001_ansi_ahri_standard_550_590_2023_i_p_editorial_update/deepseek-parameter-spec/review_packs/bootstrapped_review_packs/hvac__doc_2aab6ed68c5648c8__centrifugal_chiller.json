@@ -1,0 +1,737 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-13T12:35:25.802339+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "upstream_compiler_run": {
+    "compiler_run_id": "20260513T121944Z_hvac_doclevel_extraction_batch",
+    "pipeline": "hvac_doclevel_extraction_batch",
+    "started_at": "2026-05-13T12:35:25.795145+00:00",
+    "finished_at": null,
+    "domain_id": "hvac",
+    "package_version": null,
+    "ontology_version": null,
+    "llm_backend": null,
+    "parameters": {
+      "backend": "deepseek-parameter-spec"
+    }
+  },
+  "upstream_source_manifest": [
+    {
+      "source_id": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update",
+      "source_type": "document",
+      "path": "/Users/asteroida/work/KnowFabric/.playwright-cli/ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+      "content_sha256": "4cba5318124a6aeb17a96dfc581efe525516eb38095d00e1b7d4602d786cdb58",
+      "domain_id": "hvac",
+      "doc_ids": [],
+      "authority_levels": [
+        "industry_standard_or_reference"
+      ],
+      "is_redistributable": null,
+      "metadata": {
+        "row_index": 1,
+        "brand": "AHRI",
+        "batch_group": "real_corpus_authority_audit",
+        "priority": "P0_official_reference",
+        "document_kind": "standard_rating",
+        "equipment_scope": "water_chilling_package",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_or_section_context"
+      }
+    }
+  ],
+  "domain_id": "hvac",
+  "doc_id": "doc_2aab6ed68c5648c8",
+  "doc_name": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+  "equipment_class": {
+    "equipment_class_id": "centrifugal_chiller",
+    "equipment_class_key": "hvac:centrifugal_chiller",
+    "label": "Centrifugal Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L2",
+    "candidate_count": 8,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_88bb408cf89c1b98",
+      "domain_id": "hvac",
+      "doc_id": "doc_2aab6ed68c5648c8",
+      "doc_name": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_5feb679942cd4c43",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:standard_rating_conditions_cooling_mode_evaporator",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporator Water Temperatures",
+        "title": "Standard Rating Conditions - Cooling Mode Evaporator",
+        "summary": "Standard cooling mode evaporator entering/leaving water temperatures: 54.00°F entering, 44.00°F leaving."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "Standard Rating Conditions\nOperating Category Conditions Cooling Mode Evaporator2 Cooling Mode Heat Rejection Heat Exchanger\nTower (Water Conditions)3 Heat/Recovery (Water Conditions)4 Evaporatively-cooled Entering Temperature5, 7 Air-cooled (AC) Entering Temperature5, 7 Without Condenser\nAir-cooled Refrigerant Temperature Water & Evaporatively Cooled Refrigerant Temperature\nEntering Temperature, Leaving Temperature, Flow Rate, Entering Temperature, Leaving Temperature, Flow Rate, Entering Temperature, Leaving Temperature,  Dry-Bulb,  Wet-Bulb, Dry-Bulb, Wet-Bulb,  SDT,  LIQ,  SDT,  LIQ,\nºF ºF gpm/tonR ºF ºF gpm/tonR ºF ºF ºF ºF ºF ºF ºF ºF ºF ºF\nAll Cooling Standard 54.00 44.00 Note - 8 85.00 94.30 Note - 9 -- -- 95.00 75.00 95.00 -- 125.00 105.00 105.00 98.00\nAC Heat Pump High Heating6 Low -- 105.00 Note - 1 -- -- -- -- -- -- -- 47.00 43.00 -- -- -- -- Medium -- 120.00 Note - 1 -- -- -- -- -- -- -- 47.00 43.00 -- -- -- -- High -- 140.00 Note - 1 -- -- -- -- -- -- -- 47.00 43.00 -- -- -- --\nAC Heat Pump Low Heating6 Low -- 105.00 Note - 1 -- -- -- -- -- -- -- 17.00 15.00 -- -- -- --\nMedium -- 120.00 Note - 1 -- -- -- -- -- -- -- 17.00 15.00 -- -- -- --\nHigh -- 140.00 Note - 1 -- -- -- -- -- -- -- 17.00 15.00 -- -- -- --\nWater Cooled Heating Low -- 44.00 Note - 8 -- -- -- 95.00 105.00 -- -- -- -- -- -- -- -- Medium  -- 44.00 Note - 8 -- -- -- 105.00 120.00 -- -- -- -- -- -- -- -- High -- 44.00 Note - 8 -- -- -- 120.00 140.00 -- -- -- -- -- -- -- -- Boost -- 65.00 Note - 8 -- -- -- 120.00 140.00 -- -- -- -- -- -- -- --\nHeat Recovery Low -- 44.00 Note - 8 75.00 -- Note - 9 95.00 105.00 40.00 38.00 40.00 38.00 -- -- -- --\nMedium -- 44.00 Note - 8 75.00 -- Note - 9 105.00 120.00 40.00 38.00 40.00 38.00 -- -- -- --\nHot Water 1 -- 44.00 Note - 8 75.00 -- Note - 9 90.00 140.00 40.00 38.00 40.00 38.00 -- -- -- -- Hot Water 2 -- 44.00 Note - 8 75.00 -- Note - 9 120.00 140.00 40.00 38.00 40.00 38.00 -- -- -- --\nNotes:\n1.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.888,
+        "matched_aliases": [
+          "Centrifugal Chiller",
+          "centrifugal chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_5feb679942cd4c43"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Standard cooling mode evaporator entering/leaving water temperatures are clearly specified as 54.00°F and 44.00°F in Table 4, providing key operational parameters for centrifugal chillers.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "Standard Rating Conditions - Cooling Mode Evaporator",
+        "summary": "Standard cooling mode evaporator entering/leaving water temperatures: 54.00°F entering, 44.00°F leaving.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:standard_rating_conditions_cooling_mode_evaporator",
+        "structured_payload": {
+          "parameter_name": "Evaporator Water Temperatures",
+          "title": "Standard Rating Conditions - Cooling Mode Evaporator",
+          "summary": "Standard cooling mode evaporator entering/leaving water temperatures: 54.00°F entering, 44.00°F leaving."
+        },
+        "applicability": {
+          "equipment_classes": [
+            "centrifugal_chiller",
+            "screw_chiller",
+            "scroll_chiller",
+            "reciprocating_chiller"
+          ],
+          "standard_id": "AHRI 550/590-2023"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Standard Rating Conditions\nOperating Category Conditions Cooling Mode Evaporator2 Cooling Mode Heat Rejection Heat Exchanger\nTower (Water Conditions)3 Heat/Recovery (Water Conditions)4 Evaporatively-cooled Entering Temperature5, 7 Air-cooled (AC) Entering Temperature5, 7 Without Condenser\nAir-cooled Refrigerant Temperature Water & Evaporatively Cooled Refrigerant Temperature\nEntering Temperature, Leaving Temperature, Flow Rate, Entering Temperature, Leaving Temperature, Flow Rate, Entering Temperature, Leaving Temperature,  Dry-Bulb,  Wet-Bulb, Dry-Bulb, Wet-Bulb,  SDT,  LIQ,  SDT,  LIQ,\nºF ºF gpm/tonR ºF ºF gpm/tonR ºF ºF ºF ºF ºF ºF ºF ºF ºF ºF\nAll Cooling Standard 54.00 44.00 Note - 8 85.00 94.30 Note - 9 -- -- 95.00 75.00 95.00 -- 125.00 105.00 105.00 98.00\nAC Heat Pump High Heating6 Low -- 105.00 Note - 1 -- -- -- -- -- -- -- 47.00 43.00 -- -- -- -- Medium -- 120.00 Note - 1 -- -- -- -- -- -- -- 47.00 43.00 -- -- -- -- High -- 140.00 Note - 1 -- -- -- -- -- -- -- 47.00 43.00 -- -- -- --\nAC Heat Pump Low Heating6 Low -- 105.00 Note - 1 -- -- -- -- -- -- -- 17.00 15.00 -- -- -- --\nMedium -- 120.00 Note - 1 -- -- -- -- -- -- -- 17.00 15.00 -- -- -- --\nHigh -- 140.00 Note - 1 -- -- -- -- -- -- -- 17.00 15.00 -- -- -- --\nWater Cooled Heating Low -- 44.00 Note - 8 -- -- -- 95.00 105.00 -- -- -- -- -- -- -- -- Medium  -- 44.00 Note - 8 -- -- -- 105.00 120.00 -- -- -- -- -- -- -- -- High -- 44.00 Note - 8 -- -- -- 120.00 140.00 -- -- -- -- -- -- -- -- Boost -- 65.00 Note - 8 -- -- -- 120.00 140.00 -- -- -- -- -- -- -- --\nHeat Recovery Low -- 44.00 Note - 8 75.00 -- Note - 9 95.00 105.00 40.00 38.00 40.00 38.00 -- -- -- --\nMedium -- 44.00 Note - 8 75.00 -- Note - 9 105.00 120.00 40.00 38.00 40.00 38.00 -- -- -- --\nHot Water 1 -- 44.00 Note - 8 75.00 -- Note - 9 90.00 140.00 40.00 38.00 40.00 38.00 -- -- -- -- Hot Water 2 -- 44.00 Note - 8 75.00 -- Note - 9 120.00 140.00 40.00 38.00 40.00 38.00 -- -- -- --\nNotes:\n1.",
+        "evidence_role": "primary",
+        "publisher": "AHRI",
+        "citation": "ANSI/AHRI Standard 550/590 (I-P)-2023 p.24"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_eb2c1f3fa8335500",
+      "domain_id": "hvac",
+      "doc_id": "doc_2aab6ed68c5648c8",
+      "doc_name": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_580a11c3e1fc4722",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:fouling_factor_allowance_cooling_mode_evaporator",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporator Fouling Factor Allowance",
+        "title": "Fouling Factor Allowance - Cooling Mode Evaporator",
+        "summary": "Rating fouling factor allowance for cooling mode evaporator: 0.000100 h·ft2·ºF/Btu."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The water flow rate used for the heating tests of reverse cycle air to water heat pumps shall be the flow rate determined dur ing the cooling test.\n2. The rating Fouling Factor Allowance for the cooling mode Evaporator or the heating Condenser for AC reversible cycles shall be R foul = 0.000100 h·ft2·ºF/Btu.\n3. The rating Fouling Factor Allowance for tower heat exchangers shall be R foul = 0.000250 h·ft2·ºF/Btu.\n4. The rating Fouling Factor Allowance for heating and heat recovery heat exchangers shall be R foul = 0.000100 h·ft2·ºF/Btu for closed loop and R foul = 0.000250 h·ft2·ºF/Btu for open loop systems.\n5. Evaporatively cooled Condensers and Air-Cooled Condensers shall be rated with a Fouling Factor Allowance of zero, R foul = 0.000¯ h·ft2·ºF/Btu.\n6. A reversible cycle is assumed where the cooling mode Evaporator becomes the condenser circuit in the heating mode.\n7. Air-cooled & evaporatively-cooled unit ratings are at standard atmospheric condition (sea level).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.888,
+        "matched_aliases": [
+          "Centrifugal Chiller",
+          "centrifugal chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_580a11c3e1fc4722"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Rating fouling factor allowance for cooling mode evaporator is explicitly given as 0.000100 h·ft2·°F/Btu in Note 2 on page 24, directly supported by evidence.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "Fouling Factor Allowance - Cooling Mode Evaporator",
+        "summary": "Rating fouling factor allowance for cooling mode evaporator: 0.000100 h·ft2·ºF/Btu.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:fouling_factor_allowance_cooling_mode_evaporator",
+        "structured_payload": {
+          "parameter_name": "Evaporator Fouling Factor Allowance",
+          "title": "Fouling Factor Allowance - Cooling Mode Evaporator",
+          "summary": "Rating fouling factor allowance for cooling mode evaporator: 0.000100 h·ft2·ºF/Btu."
+        },
+        "applicability": {
+          "equipment_classes": [
+            "centrifugal_chiller",
+            "screw_chiller",
+            "scroll_chiller",
+            "reciprocating_chiller"
+          ],
+          "standard_id": "AHRI 550/590-2023"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The water flow rate used for the heating tests of reverse cycle air to water heat pumps shall be the flow rate determined dur ing the cooling test.\n2. The rating Fouling Factor Allowance for the cooling mode Evaporator or the heating Condenser for AC reversible cycles shall be R foul = 0.000100 h·ft2·ºF/Btu.\n3. The rating Fouling Factor Allowance for tower heat exchangers shall be R foul = 0.000250 h·ft2·ºF/Btu.\n4. The rating Fouling Factor Allowance for heating and heat recovery heat exchangers shall be R foul = 0.000100 h·ft2·ºF/Btu for closed loop and R foul = 0.000250 h·ft2·ºF/Btu for open loop systems.\n5. Evaporatively cooled Condensers and Air-Cooled Condensers shall be rated with a Fouling Factor Allowance of zero, R foul = 0.000¯ h·ft2·ºF/Btu.\n6. A reversible cycle is assumed where the cooling mode Evaporator becomes the condenser circuit in the heating mode.\n7. Air-cooled & evaporatively-cooled unit ratings are at standard atmospheric condition (sea level).",
+        "evidence_role": "primary",
+        "publisher": "AHRI",
+        "citation": "ANSI/AHRI Standard 550/590 (I-P)-2023 p.24"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9065fe32d46bf248",
+      "domain_id": "hvac",
+      "doc_id": "doc_2aab6ed68c5648c8",
+      "doc_name": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+      "page_no": 24,
+      "chunk_id": "chunk_580a11c3e1fc4722",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:fouling_factor_allowance_tower_heat_exchanger",
+      "structured_payload_candidate": {
+        "parameter_name": "Tower Heat Exchanger Fouling Factor Allowance",
+        "title": "Fouling Factor Allowance - Tower Heat Exchanger",
+        "summary": "Rating fouling factor allowance for tower heat exchangers: 0.000250 h·ft2·ºF/Btu."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "The water flow rate used for the heating tests of reverse cycle air to water heat pumps shall be the flow rate determined dur ing the cooling test.\n2. The rating Fouling Factor Allowance for the cooling mode Evaporator or the heating Condenser for AC reversible cycles shall be R foul = 0.000100 h·ft2·ºF/Btu.\n3. The rating Fouling Factor Allowance for tower heat exchangers shall be R foul = 0.000250 h·ft2·ºF/Btu.\n4. The rating Fouling Factor Allowance for heating and heat recovery heat exchangers shall be R foul = 0.000100 h·ft2·ºF/Btu for closed loop and R foul = 0.000250 h·ft2·ºF/Btu for open loop systems.\n5. Evaporatively cooled Condensers and Air-Cooled Condensers shall be rated with a Fouling Factor Allowance of zero, R foul = 0.000¯ h·ft2·ºF/Btu.\n6. A reversible cycle is assumed where the cooling mode Evaporator becomes the condenser circuit in the heating mode.\n7. Air-cooled & evaporatively-cooled unit ratings are at standard atmospheric condition (sea level).",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.888,
+        "matched_aliases": [
+          "Centrifugal Chiller",
+          "centrifugal chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_580a11c3e1fc4722"
+      ],
+      "source_page_nos": [
+        24
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Tower heat exchanger fouling factor allowance is explicitly stated as 0.000250 h·ft2·°F/Btu in Note 3 on page 24, directly supported by evidence.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "Fouling Factor Allowance - Tower Heat Exchanger",
+        "summary": "Rating fouling factor allowance for tower heat exchangers: 0.000250 h·ft2·ºF/Btu.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:fouling_factor_allowance_tower_heat_exchanger",
+        "structured_payload": {
+          "parameter_name": "Tower Heat Exchanger Fouling Factor Allowance",
+          "title": "Fouling Factor Allowance - Tower Heat Exchanger",
+          "summary": "Rating fouling factor allowance for tower heat exchangers: 0.000250 h·ft2·ºF/Btu."
+        },
+        "applicability": {
+          "equipment_classes": [
+            "centrifugal_chiller",
+            "screw_chiller",
+            "scroll_chiller",
+            "reciprocating_chiller"
+          ],
+          "standard_id": "AHRI 550/590-2023"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "The water flow rate used for the heating tests of reverse cycle air to water heat pumps shall be the flow rate determined dur ing the cooling test.\n2. The rating Fouling Factor Allowance for the cooling mode Evaporator or the heating Condenser for AC reversible cycles shall be R foul = 0.000100 h·ft2·ºF/Btu.\n3. The rating Fouling Factor Allowance for tower heat exchangers shall be R foul = 0.000250 h·ft2·ºF/Btu.\n4. The rating Fouling Factor Allowance for heating and heat recovery heat exchangers shall be R foul = 0.000100 h·ft2·ºF/Btu for closed loop and R foul = 0.000250 h·ft2·ºF/Btu for open loop systems.\n5. Evaporatively cooled Condensers and Air-Cooled Condensers shall be rated with a Fouling Factor Allowance of zero, R foul = 0.000¯ h·ft2·ºF/Btu.\n6. A reversible cycle is assumed where the cooling mode Evaporator becomes the condenser circuit in the heating mode.\n7. Air-cooled & evaporatively-cooled unit ratings are at standard atmospheric condition (sea level).",
+        "evidence_role": "primary",
+        "publisher": "AHRI",
+        "citation": "ANSI/AHRI Standard 550/590 (I-P)-2023 p.24"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_3b342118dae19372",
+      "domain_id": "hvac",
+      "doc_id": "doc_2aab6ed68c5648c8",
+      "doc_name": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+      "page_no": 27,
+      "chunk_id": "chunk_f4dfa2b43a47439d",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:part_load_conditions_air_cooled_condenser_entering_dry_bulb_temperatures",
+      "structured_payload_candidate": {
+        "parameter_name": "Air-cooled Condenser EDB at Part-load",
+        "title": "Part-load Conditions - Air-cooled Condenser Entering Dry-bulb Temperatures",
+        "summary": "IPLV.IP air-cooled condenser entering dry-bulb temperatures: 100% load 95°F, 75% load 80°F, 50% load 65°F, 25% load 55°F."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "Part-load Conditions for Rating\nIPLV.IP NPLV.IP\nEvaporator (All Types)\nAll loads LWT2, ºF  44.00  User defined LWT\nFlow Rate3, gpm/tonR  Per Table 4 Per Table 43\nRfoul, h·ft2·ºF/Btu 0.000100   User defined\nWater-cooled Condenser 1,2\n100% load EWT, ºF 85.00  User defined EWT\n75% load EWT, ºF 75.00  Equation 24\n50% load EWT, ºF 65.00  Equation 24\n25% load EWT, ºF 65.00  Equation 24\nFlow rate3, gpm/tonR  Note3 User defined flow rate\nRfoul, h·ft2·ºF/Btu 0.000250   User defined\nAir-cooled Condenser1,4\nUser defined EDB\nEquation 23\nEquation 23\nEquation 23\nUser defined 100% load EDB, ºF 95.0\n75% load EDB, ºF 80.0\n50% load EDB, ºF 65.0\n25% load EDB, ºF 55.0\nRfoul, h·ft2·ºF/Btu 0.000\nEvaporatively-cooled Condenser1,4\nUser defined EWB\nEquation 25\nEquation 25\nEquation 25\nUser defined 100% load EWB, ºF 75.00\n75% load EWB, ºF 68.75\n50% load EWB, ºF 62.50\n25% load EWB, ºF 56.25\nRfoul, h·ft2·ºF/Btu 0.000\nAir-cooled Without Condenser\nUser defined SDT\nEquation 26\nEquation 26\nEquation 26\nUser defined 100% load SDT, ºF 125.00\n75% load SDT, ºF 107.50\n50% load SDT, ºF 90.00\n25% load SDT, ºF 72.50\nRfoul, h·ft2·ºF/Btu 0.000\nWater-cooled or Evaporatively -\ncooled Without Condenser\nUser defined SDT\nEquation 27 or 28\nEquation 27 or 28\nEquation 27 or 28\nUser defined 100% load SDT, ºF 105.00\n75% load SDT, ºF 95.00\n50% load SDT, ºF 85.00\n25% load SDT, ºF 75.00\nRfoul, h·ft2·ºF/Btu 0.000\nNotes:\n1.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.888,
+        "matched_aliases": [
+          "Centrifugal Chiller",
+          "centrifugal chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_f4dfa2b43a47439d"
+      ],
+      "source_page_nos": [
+        27
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Air-cooled condenser entering dry-bulb temperatures for part-load IPLV.IP are directly shown in Table 6 on page 27, including 95°F, 80°F, 65°F, 55°F.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "Part-load Conditions - Air-cooled Condenser Entering Dry-bulb Temperatures",
+        "summary": "IPLV.IP air-cooled condenser entering dry-bulb temperatures: 100% load 95°F, 75% load 80°F, 50% load 65°F, 25% load 55°F.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:part_load_conditions_air_cooled_condenser_entering_dry_bulb_temperatures",
+        "structured_payload": {
+          "parameter_name": "Air-cooled Condenser EDB at Part-load",
+          "title": "Part-load Conditions - Air-cooled Condenser Entering Dry-bulb Temperatures",
+          "summary": "IPLV.IP air-cooled condenser entering dry-bulb temperatures: 100% load 95°F, 75% load 80°F, 50% load 65°F, 25% load 55°F."
+        },
+        "applicability": {
+          "equipment_classes": [
+            "centrifugal_chiller",
+            "screw_chiller",
+            "scroll_chiller",
+            "reciprocating_chiller"
+          ],
+          "standard_id": "AHRI 550/590-2023"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Part-load Conditions for Rating\nIPLV.IP NPLV.IP\nEvaporator (All Types)\nAll loads LWT2, ºF  44.00  User defined LWT\nFlow Rate3, gpm/tonR  Per Table 4 Per Table 43\nRfoul, h·ft2·ºF/Btu 0.000100   User defined\nWater-cooled Condenser 1,2\n100% load EWT, ºF 85.00  User defined EWT\n75% load EWT, ºF 75.00  Equation 24\n50% load EWT, ºF 65.00  Equation 24\n25% load EWT, ºF 65.00  Equation 24\nFlow rate3, gpm/tonR  Note3 User defined flow rate\nRfoul, h·ft2·ºF/Btu 0.000250   User defined\nAir-cooled Condenser1,4\nUser defined EDB\nEquation 23\nEquation 23\nEquation 23\nUser defined 100% load EDB, ºF 95.0\n75% load EDB, ºF 80.0\n50% load EDB, ºF 65.0\n25% load EDB, ºF 55.0\nRfoul, h·ft2·ºF/Btu 0.000\nEvaporatively-cooled Condenser1,4\nUser defined EWB\nEquation 25\nEquation 25\nEquation 25\nUser defined 100% load EWB, ºF 75.00\n75% load EWB, ºF 68.75\n50% load EWB, ºF 62.50\n25% load EWB, ºF 56.25\nRfoul, h·ft2·ºF/Btu 0.000\nAir-cooled Without Condenser\nUser defined SDT\nEquation 26\nEquation 26\nEquation 26\nUser defined 100% load SDT, ºF 125.00\n75% load SDT, ºF 107.50\n50% load SDT, ºF 90.00\n25% load SDT, ºF 72.50\nRfoul, h·ft2·ºF/Btu 0.000\nWater-cooled or Evaporatively -\ncooled Without Condenser\nUser defined SDT\nEquation 27 or 28\nEquation 27 or 28\nEquation 27 or 28\nUser defined 100% load SDT, ºF 105.00\n75% load SDT, ºF 95.00\n50% load SDT, ºF 85.00\n25% load SDT, ºF 75.00\nRfoul, h·ft2·ºF/Btu 0.000\nNotes:\n1.",
+        "evidence_role": "primary",
+        "publisher": "AHRI",
+        "citation": "ANSI/AHRI Standard 550/590 (I-P)-2023 p.27"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_fad0a2200f2c5f0d",
+      "domain_id": "hvac",
+      "doc_id": "doc_2aab6ed68c5648c8",
+      "doc_name": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+      "page_no": 27,
+      "chunk_id": "chunk_f4dfa2b43a47439d",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:part_load_conditions_evaporator_leaving_water_temperature",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporator LWT at Part-load",
+        "title": "Part-load Conditions - Evaporator Leaving Water Temperature",
+        "summary": "IPLV.IP evaporator leaving water temperature: 44.00°F for all loads."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "Part-load Conditions for Rating\nIPLV.IP NPLV.IP\nEvaporator (All Types)\nAll loads LWT2, ºF  44.00  User defined LWT\nFlow Rate3, gpm/tonR  Per Table 4 Per Table 43\nRfoul, h·ft2·ºF/Btu 0.000100   User defined\nWater-cooled Condenser 1,2\n100% load EWT, ºF 85.00  User defined EWT\n75% load EWT, ºF 75.00  Equation 24\n50% load EWT, ºF 65.00  Equation 24\n25% load EWT, ºF 65.00  Equation 24\nFlow rate3, gpm/tonR  Note3 User defined flow rate\nRfoul, h·ft2·ºF/Btu 0.000250   User defined\nAir-cooled Condenser1,4\nUser defined EDB\nEquation 23\nEquation 23\nEquation 23\nUser defined 100% load EDB, ºF 95.0\n75% load EDB, ºF 80.0\n50% load EDB, ºF 65.0\n25% load EDB, ºF 55.0\nRfoul, h·ft2·ºF/Btu 0.000\nEvaporatively-cooled Condenser1,4\nUser defined EWB\nEquation 25\nEquation 25\nEquation 25\nUser defined 100% load EWB, ºF 75.00\n75% load EWB, ºF 68.75\n50% load EWB, ºF 62.50\n25% load EWB, ºF 56.25\nRfoul, h·ft2·ºF/Btu 0.000\nAir-cooled Without Condenser\nUser defined SDT\nEquation 26\nEquation 26\nEquation 26\nUser defined 100% load SDT, ºF 125.00\n75% load SDT, ºF 107.50\n50% load SDT, ºF 90.00\n25% load SDT, ºF 72.50\nRfoul, h·ft2·ºF/Btu 0.000\nWater-cooled or Evaporatively -\ncooled Without Condenser\nUser defined SDT\nEquation 27 or 28\nEquation 27 or 28\nEquation 27 or 28\nUser defined 100% load SDT, ºF 105.00\n75% load SDT, ºF 95.00\n50% load SDT, ºF 85.00\n25% load SDT, ºF 75.00\nRfoul, h·ft2·ºF/Btu 0.000\nNotes:\n1.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.888,
+        "matched_aliases": [
+          "Centrifugal Chiller",
+          "centrifugal chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_f4dfa2b43a47439d"
+      ],
+      "source_page_nos": [
+        27
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evaporator leaving water temperature of 44.00°F for all loads is directly specified in Table 6 on page 27.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "Part-load Conditions - Evaporator Leaving Water Temperature",
+        "summary": "IPLV.IP evaporator leaving water temperature: 44.00°F for all loads.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:part_load_conditions_evaporator_leaving_water_temperature",
+        "structured_payload": {
+          "parameter_name": "Evaporator LWT at Part-load",
+          "title": "Part-load Conditions - Evaporator Leaving Water Temperature",
+          "summary": "IPLV.IP evaporator leaving water temperature: 44.00°F for all loads."
+        },
+        "applicability": {
+          "equipment_classes": [
+            "centrifugal_chiller",
+            "screw_chiller",
+            "scroll_chiller",
+            "reciprocating_chiller"
+          ],
+          "standard_id": "AHRI 550/590-2023"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Part-load Conditions for Rating\nIPLV.IP NPLV.IP\nEvaporator (All Types)\nAll loads LWT2, ºF  44.00  User defined LWT\nFlow Rate3, gpm/tonR  Per Table 4 Per Table 43\nRfoul, h·ft2·ºF/Btu 0.000100   User defined\nWater-cooled Condenser 1,2\n100% load EWT, ºF 85.00  User defined EWT\n75% load EWT, ºF 75.00  Equation 24\n50% load EWT, ºF 65.00  Equation 24\n25% load EWT, ºF 65.00  Equation 24\nFlow rate3, gpm/tonR  Note3 User defined flow rate\nRfoul, h·ft2·ºF/Btu 0.000250   User defined\nAir-cooled Condenser1,4\nUser defined EDB\nEquation 23\nEquation 23\nEquation 23\nUser defined 100% load EDB, ºF 95.0\n75% load EDB, ºF 80.0\n50% load EDB, ºF 65.0\n25% load EDB, ºF 55.0\nRfoul, h·ft2·ºF/Btu 0.000\nEvaporatively-cooled Condenser1,4\nUser defined EWB\nEquation 25\nEquation 25\nEquation 25\nUser defined 100% load EWB, ºF 75.00\n75% load EWB, ºF 68.75\n50% load EWB, ºF 62.50\n25% load EWB, ºF 56.25\nRfoul, h·ft2·ºF/Btu 0.000\nAir-cooled Without Condenser\nUser defined SDT\nEquation 26\nEquation 26\nEquation 26\nUser defined 100% load SDT, ºF 125.00\n75% load SDT, ºF 107.50\n50% load SDT, ºF 90.00\n25% load SDT, ºF 72.50\nRfoul, h·ft2·ºF/Btu 0.000\nWater-cooled or Evaporatively -\ncooled Without Condenser\nUser defined SDT\nEquation 27 or 28\nEquation 27 or 28\nEquation 27 or 28\nUser defined 100% load SDT, ºF 105.00\n75% load SDT, ºF 95.00\n50% load SDT, ºF 85.00\n25% load SDT, ºF 75.00\nRfoul, h·ft2·ºF/Btu 0.000\nNotes:\n1.",
+        "evidence_role": "primary",
+        "publisher": "AHRI",
+        "citation": "ANSI/AHRI Standard 550/590 (I-P)-2023 p.27"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9cd65cf18fdb1109",
+      "domain_id": "hvac",
+      "doc_id": "doc_2aab6ed68c5648c8",
+      "doc_name": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+      "page_no": 27,
+      "chunk_id": "chunk_f4dfa2b43a47439d",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:part_load_conditions_fouling_factor_allowance_for_water_cooled_condenser",
+      "structured_payload_candidate": {
+        "parameter_name": "Water-cooled Condenser Fouling Factor at Part-load",
+        "title": "Part-load Conditions - Fouling Factor Allowance for Water-cooled Condenser",
+        "summary": "IPLV.IP water-cooled condenser fouling factor allowance: 0.000250 h·ft2·ºF/Btu."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "Part-load Conditions for Rating\nIPLV.IP NPLV.IP\nEvaporator (All Types)\nAll loads LWT2, ºF  44.00  User defined LWT\nFlow Rate3, gpm/tonR  Per Table 4 Per Table 43\nRfoul, h·ft2·ºF/Btu 0.000100   User defined\nWater-cooled Condenser 1,2\n100% load EWT, ºF 85.00  User defined EWT\n75% load EWT, ºF 75.00  Equation 24\n50% load EWT, ºF 65.00  Equation 24\n25% load EWT, ºF 65.00  Equation 24\nFlow rate3, gpm/tonR  Note3 User defined flow rate\nRfoul, h·ft2·ºF/Btu 0.000250   User defined\nAir-cooled Condenser1,4\nUser defined EDB\nEquation 23\nEquation 23\nEquation 23\nUser defined 100% load EDB, ºF 95.0\n75% load EDB, ºF 80.0\n50% load EDB, ºF 65.0\n25% load EDB, ºF 55.0\nRfoul, h·ft2·ºF/Btu 0.000\nEvaporatively-cooled Condenser1,4\nUser defined EWB\nEquation 25\nEquation 25\nEquation 25\nUser defined 100% load EWB, ºF 75.00\n75% load EWB, ºF 68.75\n50% load EWB, ºF 62.50\n25% load EWB, ºF 56.25\nRfoul, h·ft2·ºF/Btu 0.000\nAir-cooled Without Condenser\nUser defined SDT\nEquation 26\nEquation 26\nEquation 26\nUser defined 100% load SDT, ºF 125.00\n75% load SDT, ºF 107.50\n50% load SDT, ºF 90.00\n25% load SDT, ºF 72.50\nRfoul, h·ft2·ºF/Btu 0.000\nWater-cooled or Evaporatively -\ncooled Without Condenser\nUser defined SDT\nEquation 27 or 28\nEquation 27 or 28\nEquation 27 or 28\nUser defined 100% load SDT, ºF 105.00\n75% load SDT, ºF 95.00\n50% load SDT, ºF 85.00\n25% load SDT, ºF 75.00\nRfoul, h·ft2·ºF/Btu 0.000\nNotes:\n1.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.888,
+        "matched_aliases": [
+          "Centrifugal Chiller",
+          "centrifugal chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_f4dfa2b43a47439d"
+      ],
+      "source_page_nos": [
+        27
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Water-cooled condenser fouling factor allowance of 0.000250 h·ft2·°F/Btu is directly shown in Table 6 on page 27.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "Part-load Conditions - Fouling Factor Allowance for Water-cooled Condenser",
+        "summary": "IPLV.IP water-cooled condenser fouling factor allowance: 0.000250 h·ft2·ºF/Btu.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:part_load_conditions_fouling_factor_allowance_for_water_cooled_condenser",
+        "structured_payload": {
+          "parameter_name": "Water-cooled Condenser Fouling Factor at Part-load",
+          "title": "Part-load Conditions - Fouling Factor Allowance for Water-cooled Condenser",
+          "summary": "IPLV.IP water-cooled condenser fouling factor allowance: 0.000250 h·ft2·ºF/Btu."
+        },
+        "applicability": {
+          "equipment_classes": [
+            "centrifugal_chiller",
+            "screw_chiller",
+            "scroll_chiller",
+            "reciprocating_chiller"
+          ],
+          "standard_id": "AHRI 550/590-2023"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Part-load Conditions for Rating\nIPLV.IP NPLV.IP\nEvaporator (All Types)\nAll loads LWT2, ºF  44.00  User defined LWT\nFlow Rate3, gpm/tonR  Per Table 4 Per Table 43\nRfoul, h·ft2·ºF/Btu 0.000100   User defined\nWater-cooled Condenser 1,2\n100% load EWT, ºF 85.00  User defined EWT\n75% load EWT, ºF 75.00  Equation 24\n50% load EWT, ºF 65.00  Equation 24\n25% load EWT, ºF 65.00  Equation 24\nFlow rate3, gpm/tonR  Note3 User defined flow rate\nRfoul, h·ft2·ºF/Btu 0.000250   User defined\nAir-cooled Condenser1,4\nUser defined EDB\nEquation 23\nEquation 23\nEquation 23\nUser defined 100% load EDB, ºF 95.0\n75% load EDB, ºF 80.0\n50% load EDB, ºF 65.0\n25% load EDB, ºF 55.0\nRfoul, h·ft2·ºF/Btu 0.000\nEvaporatively-cooled Condenser1,4\nUser defined EWB\nEquation 25\nEquation 25\nEquation 25\nUser defined 100% load EWB, ºF 75.00\n75% load EWB, ºF 68.75\n50% load EWB, ºF 62.50\n25% load EWB, ºF 56.25\nRfoul, h·ft2·ºF/Btu 0.000\nAir-cooled Without Condenser\nUser defined SDT\nEquation 26\nEquation 26\nEquation 26\nUser defined 100% load SDT, ºF 125.00\n75% load SDT, ºF 107.50\n50% load SDT, ºF 90.00\n25% load SDT, ºF 72.50\nRfoul, h·ft2·ºF/Btu 0.000\nWater-cooled or Evaporatively -\ncooled Without Condenser\nUser defined SDT\nEquation 27 or 28\nEquation 27 or 28\nEquation 27 or 28\nUser defined 100% load SDT, ºF 105.00\n75% load SDT, ºF 95.00\n50% load SDT, ºF 85.00\n25% load SDT, ºF 75.00\nRfoul, h·ft2·ºF/Btu 0.000\nNotes:\n1.",
+        "evidence_role": "primary",
+        "publisher": "AHRI",
+        "citation": "ANSI/AHRI Standard 550/590 (I-P)-2023 p.27"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c2c03c069d45e48f",
+      "domain_id": "hvac",
+      "doc_id": "doc_2aab6ed68c5648c8",
+      "doc_name": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+      "page_no": 27,
+      "chunk_id": "chunk_f4dfa2b43a47439d",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:part_load_conditions_fouling_factor_allowance_for_evaporator",
+      "structured_payload_candidate": {
+        "parameter_name": "Evaporator Fouling Factor at Part-load",
+        "title": "Part-load Conditions - Fouling Factor Allowance for Evaporator",
+        "summary": "IPLV.IP evaporator fouling factor allowance: 0.000100 h·ft2·ºF/Btu."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "Part-load Conditions for Rating\nIPLV.IP NPLV.IP\nEvaporator (All Types)\nAll loads LWT2, ºF  44.00  User defined LWT\nFlow Rate3, gpm/tonR  Per Table 4 Per Table 43\nRfoul, h·ft2·ºF/Btu 0.000100   User defined\nWater-cooled Condenser 1,2\n100% load EWT, ºF 85.00  User defined EWT\n75% load EWT, ºF 75.00  Equation 24\n50% load EWT, ºF 65.00  Equation 24\n25% load EWT, ºF 65.00  Equation 24\nFlow rate3, gpm/tonR  Note3 User defined flow rate\nRfoul, h·ft2·ºF/Btu 0.000250   User defined\nAir-cooled Condenser1,4\nUser defined EDB\nEquation 23\nEquation 23\nEquation 23\nUser defined 100% load EDB, ºF 95.0\n75% load EDB, ºF 80.0\n50% load EDB, ºF 65.0\n25% load EDB, ºF 55.0\nRfoul, h·ft2·ºF/Btu 0.000\nEvaporatively-cooled Condenser1,4\nUser defined EWB\nEquation 25\nEquation 25\nEquation 25\nUser defined 100% load EWB, ºF 75.00\n75% load EWB, ºF 68.75\n50% load EWB, ºF 62.50\n25% load EWB, ºF 56.25\nRfoul, h·ft2·ºF/Btu 0.000\nAir-cooled Without Condenser\nUser defined SDT\nEquation 26\nEquation 26\nEquation 26\nUser defined 100% load SDT, ºF 125.00\n75% load SDT, ºF 107.50\n50% load SDT, ºF 90.00\n25% load SDT, ºF 72.50\nRfoul, h·ft2·ºF/Btu 0.000\nWater-cooled or Evaporatively -\ncooled Without Condenser\nUser defined SDT\nEquation 27 or 28\nEquation 27 or 28\nEquation 27 or 28\nUser defined 100% load SDT, ºF 105.00\n75% load SDT, ºF 95.00\n50% load SDT, ºF 85.00\n25% load SDT, ºF 75.00\nRfoul, h·ft2·ºF/Btu 0.000\nNotes:\n1.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.888,
+        "matched_aliases": [
+          "Centrifugal Chiller",
+          "centrifugal chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_f4dfa2b43a47439d"
+      ],
+      "source_page_nos": [
+        27
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Evaporator fouling factor allowance of 0.000100 h·ft2·°F/Btu is directly shown in Table 6 on page 27.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "Part-load Conditions - Fouling Factor Allowance for Evaporator",
+        "summary": "IPLV.IP evaporator fouling factor allowance: 0.000100 h·ft2·ºF/Btu.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:part_load_conditions_fouling_factor_allowance_for_evaporator",
+        "structured_payload": {
+          "parameter_name": "Evaporator Fouling Factor at Part-load",
+          "title": "Part-load Conditions - Fouling Factor Allowance for Evaporator",
+          "summary": "IPLV.IP evaporator fouling factor allowance: 0.000100 h·ft2·ºF/Btu."
+        },
+        "applicability": {
+          "equipment_classes": [
+            "centrifugal_chiller",
+            "screw_chiller",
+            "scroll_chiller",
+            "reciprocating_chiller"
+          ],
+          "standard_id": "AHRI 550/590-2023"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "Part-load Conditions for Rating\nIPLV.IP NPLV.IP\nEvaporator (All Types)\nAll loads LWT2, ºF  44.00  User defined LWT\nFlow Rate3, gpm/tonR  Per Table 4 Per Table 43\nRfoul, h·ft2·ºF/Btu 0.000100   User defined\nWater-cooled Condenser 1,2\n100% load EWT, ºF 85.00  User defined EWT\n75% load EWT, ºF 75.00  Equation 24\n50% load EWT, ºF 65.00  Equation 24\n25% load EWT, ºF 65.00  Equation 24\nFlow rate3, gpm/tonR  Note3 User defined flow rate\nRfoul, h·ft2·ºF/Btu 0.000250   User defined\nAir-cooled Condenser1,4\nUser defined EDB\nEquation 23\nEquation 23\nEquation 23\nUser defined 100% load EDB, ºF 95.0\n75% load EDB, ºF 80.0\n50% load EDB, ºF 65.0\n25% load EDB, ºF 55.0\nRfoul, h·ft2·ºF/Btu 0.000\nEvaporatively-cooled Condenser1,4\nUser defined EWB\nEquation 25\nEquation 25\nEquation 25\nUser defined 100% load EWB, ºF 75.00\n75% load EWB, ºF 68.75\n50% load EWB, ºF 62.50\n25% load EWB, ºF 56.25\nRfoul, h·ft2·ºF/Btu 0.000\nAir-cooled Without Condenser\nUser defined SDT\nEquation 26\nEquation 26\nEquation 26\nUser defined 100% load SDT, ºF 125.00\n75% load SDT, ºF 107.50\n50% load SDT, ºF 90.00\n25% load SDT, ºF 72.50\nRfoul, h·ft2·ºF/Btu 0.000\nWater-cooled or Evaporatively -\ncooled Without Condenser\nUser defined SDT\nEquation 27 or 28\nEquation 27 or 28\nEquation 27 or 28\nUser defined 100% load SDT, ºF 105.00\n75% load SDT, ºF 95.00\n50% load SDT, ºF 85.00\n25% load SDT, ºF 75.00\nRfoul, h·ft2·ºF/Btu 0.000\nNotes:\n1.",
+        "evidence_role": "primary",
+        "publisher": "AHRI",
+        "citation": "ANSI/AHRI Standard 550/590 (I-P)-2023 p.27"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_1d92bd76a9241546",
+      "domain_id": "hvac",
+      "doc_id": "doc_2aab6ed68c5648c8",
+      "doc_name": "ANSI-AHRI-Standard-550-590-2023-I-P-editorial-update.pdf",
+      "page_no": 26,
+      "chunk_id": "chunk_a68e29daefc7427a",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:iplv_ip_weighting_factors",
+      "structured_payload_candidate": {
+        "parameter_name": "IPLV.IP Weighting Factors",
+        "title": "IPLV.IP Weighting Factors",
+        "summary": "IPLV.IP weighting factors: 0.01 at 100% load, 0.42 at 75% load, 0.45 at 50% load, 0.12 at 25% load."
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "For Water-chilling Packages covered by this standard, the IPLV.IP\nor NPLV.IP shall be calculated as follows:\nDetermine the Part-load energy efficiency at 100%, 75%, 50%, and 25% load points at the conditions specified in\nTable 6.\nUse Equation 22a to calculate the IPLV.IP or NPLV.IP for units rated with COP R and EER.\nIPLV.IP or NPLV.IP = 0.01·A + 0.42·B + 0.45·C + 0.12·D         22a\nFor COPR and EER where:\nA = COPR or EER at 100% load\nB = COPR or EER at 75% load\nC = COPR or EER at 50% load\nD = COPR or EER at 25% load\nUse Equation 22b to calculate the IPLV.IP or NPLV.IP for units rated with kW/ tonR:\nIPLV.IP or NPLV.IP= 10.01A+ 0.42B + 0.45C + 0.12D       22b\nWhere:\nA = Power Input per Capacity, kW/tonR at 100% load\nB = Power Input per Capacity, kW/tonR at 75% load\nC = Power Input per Capacity, kW/tonR at 50% load\nD = Power Input per Capacity, kW/tonR at 25% load.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 0.888,
+        "matched_aliases": [
+          "Centrifugal Chiller",
+          "centrifugal chiller"
+        ],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_a68e29daefc7427a"
+      ],
+      "source_page_nos": [
+        26
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "IPLV.IP weighting factors (0.01, 0.42, 0.45, 0.12) are explicitly given in equations 22a and 22b on page 26.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "IPLV.IP Weighting Factors",
+        "summary": "IPLV.IP weighting factors: 0.01 at 100% load, 0.42 at 75% load, 0.45 at 50% load, 0.12 at 25% load.",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:iplv_ip_weighting_factors",
+        "structured_payload": {
+          "parameter_name": "IPLV.IP Weighting Factors",
+          "title": "IPLV.IP Weighting Factors",
+          "summary": "IPLV.IP weighting factors: 0.01 at 100% load, 0.42 at 75% load, 0.45 at 50% load, 0.12 at 25% load."
+        },
+        "applicability": {
+          "equipment_classes": [
+            "centrifugal_chiller",
+            "screw_chiller",
+            "scroll_chiller",
+            "reciprocating_chiller"
+          ],
+          "standard_id": "AHRI 550/590-2023"
+        },
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "For Water-chilling Packages covered by this standard, the IPLV.IP\nor NPLV.IP shall be calculated as follows:\nDetermine the Part-load energy efficiency at 100%, 75%, 50%, and 25% load points at the conditions specified in\nTable 6.\nUse Equation 22a to calculate the IPLV.IP or NPLV.IP for units rated with COP R and EER.\nIPLV.IP or NPLV.IP = 0.01·A + 0.42·B + 0.45·C + 0.12·D         22a\nFor COPR and EER where:\nA = COPR or EER at 100% load\nB = COPR or EER at 75% load\nC = COPR or EER at 50% load\nD = COPR or EER at 25% load\nUse Equation 22b to calculate the IPLV.IP or NPLV.IP for units rated with kW/ tonR:\nIPLV.IP or NPLV.IP= 10.01A+ 0.42B + 0.45C + 0.12D       22b\nWhere:\nA = Power Input per Capacity, kW/tonR at 100% load\nB = Power Input per Capacity, kW/tonR at 75% load\nC = Power Input per Capacity, kW/tonR at 50% load\nD = Power Input per Capacity, kW/tonR at 25% load.",
+        "evidence_role": "primary",
+        "publisher": "AHRI",
+        "citation": "ANSI/AHRI Standard 550/590 (I-P)-2023 p.26"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-13T12:35:25.805259+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 8
+  },
+  "approval_metadata": {
+    "operator_review": "approved_all_8_with_applicability_equipment_classes",
+    "updated_by": "codex_q3_apply_prep"
+  }
+}

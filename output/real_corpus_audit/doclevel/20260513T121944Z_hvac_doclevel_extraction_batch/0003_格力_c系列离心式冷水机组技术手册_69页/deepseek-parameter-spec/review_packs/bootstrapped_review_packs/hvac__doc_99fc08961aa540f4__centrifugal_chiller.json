@@ -1,0 +1,1314 @@
+{
+  "review_mode": "chunk_backfill_review_pack",
+  "generated_at": "2026-05-13T12:42:11.931374+00:00",
+  "source_generation_mode": "llm_doclevel_batch",
+  "source_review_mode": "chunk_backfill_review_scaffold",
+  "upstream_compiler_run": {
+    "compiler_run_id": "20260513T121944Z_hvac_doclevel_extraction_batch",
+    "pipeline": "hvac_doclevel_extraction_batch",
+    "started_at": "2026-05-13T12:42:11.925844+00:00",
+    "finished_at": null,
+    "domain_id": "hvac",
+    "package_version": null,
+    "ontology_version": null,
+    "llm_backend": null,
+    "parameters": {
+      "backend": "deepseek-parameter-spec"
+    }
+  },
+  "upstream_source_manifest": [
+    {
+      "source_id": "【格力】C系列离心式冷水机组技术手册（69页）-",
+      "source_type": "document",
+      "path": "/Users/asteroida/work/KnowFabric/storage/documents/doc_99fc08961aa540f4/【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "content_sha256": "99d82adaba98a7aa45f8be63c2c4e15dd00f87ca4be7168219b9c2f04d4798d8",
+      "domain_id": "hvac",
+      "doc_ids": [],
+      "authority_levels": [
+        "oem_manual_or_vendor_doc"
+      ],
+      "is_redistributable": null,
+      "metadata": {
+        "row_index": 3,
+        "brand": "Gree",
+        "batch_group": "real_corpus_authority_audit",
+        "priority": "P1_batch_extract",
+        "document_kind": "technical_service_manual",
+        "equipment_scope": "centrifugal_chiller",
+        "text_quality": "good_text",
+        "recommended_mode": "doc_level_or_section_context"
+      }
+    }
+  ],
+  "domain_id": "hvac",
+  "doc_id": "doc_99fc08961aa540f4",
+  "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+  "equipment_class": {
+    "equipment_class_id": "centrifugal_chiller",
+    "equipment_class_key": "hvac:centrifugal_chiller",
+    "label": "Centrifugal Chiller",
+    "supported_knowledge_anchors": [
+      "fault_code",
+      "parameter_spec",
+      "maintenance_procedure",
+      "performance_spec"
+    ]
+  },
+  "filters_applied": {},
+  "review_metadata": {
+    "default_trust_level": "L2",
+    "candidate_count": 17,
+    "workflow": [
+      "Set review_decision to accepted or rejected.",
+      "Accepted entries must complete the curation block before fixture build.",
+      "Reviewed files can be passed to build_manual_fixture_from_review_candidates.py."
+    ]
+  },
+  "candidate_entries": [
+    {
+      "candidate_id": "cand_a4ce3d4dd1519687",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 41,
+      "chunk_id": "chunk_466b8e6dc1434836",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "油压差报警/保护",
+        "fault_meaning": "压缩机油压差报警/保护",
+        "title": "油压差报警/保护",
+        "summary": "运行时油压差过低时报警或保护停机，启动时压差低于设定值主机不起动。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_466b8e6dc1434836"
+      ],
+      "source_page_nos": [
+        41
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Directly from a fault table with clear meaning, source, and protective action.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "油压差报警/保护",
+        "summary": "运行时油压差过低时报警或保护停机，启动时压差低于设定值主机不起动。",
+        "canonical_key": "hvac:centrifugal_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "油压差报警/保护",
+          "fault_meaning": "压缩机油压差报警/保护",
+          "title": "油压差报警/保护",
+          "summary": "运行时油压差过低时报警或保护停机，启动时压差低于设定值主机不起动。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.41"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_cbf541cb5c31c612",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 41,
+      "chunk_id": "chunk_466b8e6dc1434836",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "供油温度高温报警/保护",
+        "fault_meaning": "供油温度高温报警/保护",
+        "title": "供油温度高温报警/保护",
+        "summary": "供油温度高于一定值时报警或保护停机。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_466b8e6dc1434836"
+      ],
+      "source_page_nos": [
+        41
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code from table with signal source and operational response.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "供油温度高温报警/保护",
+        "summary": "供油温度高于一定值时报警或保护停机。",
+        "canonical_key": "hvac:centrifugal_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "供油温度高温报警/保护",
+          "fault_meaning": "供油温度高温报警/保护",
+          "title": "供油温度高温报警/保护",
+          "summary": "供油温度高于一定值时报警或保护停机。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.41"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_07c24e3b2e8195e9",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 41,
+      "chunk_id": "chunk_466b8e6dc1434836",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "油泵过载保护",
+        "fault_meaning": "油泵过载保护",
+        "title": "油泵过载保护",
+        "summary": "油泵过载导致保护停机。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_466b8e6dc1434836"
+      ],
+      "source_page_nos": [
+        41
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code with source (thermal relay) and protective action.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "油泵过载保护",
+        "summary": "油泵过载导致保护停机。",
+        "canonical_key": "hvac:centrifugal_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "油泵过载保护",
+          "fault_meaning": "油泵过载保护",
+          "title": "油泵过载保护",
+          "summary": "油泵过载导致保护停机。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.41"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_c497f613a2547e22",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 41,
+      "chunk_id": "chunk_466b8e6dc1434836",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "主机绕组过热保护",
+        "fault_meaning": "主机绕组过热保护",
+        "title": "主机绕组过热保护",
+        "summary": "电机绕组过热保护开关断开时保护停机。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_466b8e6dc1434836"
+      ],
+      "source_page_nos": [
+        41
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code with source (overheat switch) and trip logic.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "主机绕组过热保护",
+        "summary": "电机绕组过热保护开关断开时保护停机。",
+        "canonical_key": "hvac:centrifugal_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "主机绕组过热保护",
+          "fault_meaning": "主机绕组过热保护",
+          "title": "主机绕组过热保护",
+          "summary": "电机绕组过热保护开关断开时保护停机。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.41"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_d13c6c18cb169f3a",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 41,
+      "chunk_id": "chunk_466b8e6dc1434836",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "压缩机高压报警/保护",
+        "fault_meaning": "压缩机高压报警/保护",
+        "title": "压缩机高压报警/保护",
+        "summary": "冷凝压力超过设定值时报警或保护停机。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_466b8e6dc1434836"
+      ],
+      "source_page_nos": [
+        41
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code: high condenser pressure protection with source and action.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "压缩机高压报警/保护",
+        "summary": "冷凝压力超过设定值时报警或保护停机。",
+        "canonical_key": "hvac:centrifugal_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "压缩机高压报警/保护",
+          "fault_meaning": "压缩机高压报警/保护",
+          "title": "压缩机高压报警/保护",
+          "summary": "冷凝压力超过设定值时报警或保护停机。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.41"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_4fc792d87bf245f0",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 41,
+      "chunk_id": "chunk_466b8e6dc1434836",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "压缩机低压报警/保护",
+        "fault_meaning": "压缩机低压报警/保护",
+        "title": "压缩机低压报警/保护",
+        "summary": "蒸发压力低于设定值时报警或保护停机。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_466b8e6dc1434836"
+      ],
+      "source_page_nos": [
+        41
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code: low evaporator pressure protection with source and action.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "压缩机低压报警/保护",
+        "summary": "蒸发压力低于设定值时报警或保护停机。",
+        "canonical_key": "hvac:centrifugal_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "压缩机低压报警/保护",
+          "fault_meaning": "压缩机低压报警/保护",
+          "title": "压缩机低压报警/保护",
+          "summary": "蒸发压力低于设定值时报警或保护停机。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.41"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f6e71aee84661e0d",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 41,
+      "chunk_id": "chunk_466b8e6dc1434836",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "防冻保护",
+        "fault_meaning": "防冻保护",
+        "title": "防冻保护",
+        "summary": "冷冻水出水温度低于设定值时保护停机。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_466b8e6dc1434836"
+      ],
+      "source_page_nos": [
+        41
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code: antifreeze protection based on chilled water outlet temperature.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "防冻保护",
+        "summary": "冷冻水出水温度低于设定值时保护停机。",
+        "canonical_key": "hvac:centrifugal_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "防冻保护",
+          "fault_meaning": "防冻保护",
+          "title": "防冻保护",
+          "summary": "冷冻水出水温度低于设定值时保护停机。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "39 维修篇\n1 机组故障一览表\n故障显示  故障名称  故障信号来源  保护说明\n油压差报\n警/保护 压缩机油\n压差报警/\n保护 供油压力\n油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主\n电动机、压缩机各轴承处润滑充分，即保证充分供\n油，需要足够的油压差，运行时当压差过低时机组\n报警或者保护停机，在机组起动时，压差低于设定\n值主机将不起动\n供油温度\n报警/保\n护 供油温度\n高温报警 /\n保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油\n膜刚度不足，承载能力不够而导致轴承损坏，在机\n组运行过程中控制供油温度，当温度高于一定值时\n机组会报警或者保护停机\n油泵过载\n保护 油泵过载\n保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑\n油供给中断，对机组造成损害，如果检测到机组油\n泵过载，机组将保护停机\n主机绕组\n过热保护  主机绕组\n过热保护 电机绕组过热\n保护开关 主机绕组过热将可能导致机组主电机损坏，机组在\n运行过程中将检测电机绕组过热保护开关，如果检\n测开关断开，机组将保护停机\n启动柜故\n障 启动动作\n异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而\n导致主电机的损坏，为了避免这种情况，开机后将\n检测主机电流，如果电流过大，机组将保护停机\n压缩机高\n压报警/\n保护 压缩机高\n压报警/保\n护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证\n冷凝器的安全，机组运行过程中控制机组的冷凝压\n力，当机组压力超过设定值，机组将报警或保护停\n机\n压缩机低\n压报警/\n保护 压缩机低\n压报警/保\n护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度\n将可能导致蒸发器铜管内水结冰而损坏蒸发器，机\n组运行过程中控制机组的蒸发压力，当机组压力低\n于设定值，机组将报警或保护停机\n防冻保护  防冻保护 冷冻水出水温\n度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸\n发管内结冰而损坏铜管和蒸发器，机组运行过程中\n严格控制机组的冷冻水出水温度，当机组冷冻水出\n水温度低于设定值时，机组将保护停机\n冷冻水水\n流开关保\n护/冷却\n水水流开\n关保护 冷冻水水\n流开关保\n护/冷却水\n水流开关\n保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力\n过低，水流量过少将导致冷凝压力迅速升高或蒸发\n压力迅速降低而导致设备故障，为保证设备的安全，\n应当保证水流量，水流量少断水，机组将保护停机\n缺逆相保\n护 缺逆相保\n护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，\n当机组出现缺逆相时启动柜将给出信号，而机组将\n保护停机\n传感器故\n障 传感器故\n障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而\n有可能导致机组损坏，当然针对不同的传感器给出\n不同的处理方式，比如蒸发、冷凝压力传感器和水\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.41"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_83cee6eb0c8c0f9f",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 42,
+      "chunk_id": "chunk_efa2014affc841d3",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "喘振保护",
+        "fault_meaning": "喘振保护",
+        "title": "喘振保护",
+        "summary": "检测到主机电流周期性波动次数达到设定值时保护停机。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "40 温传感器，机组保护停机，如果是邮箱温度传感器，\n则机组报警\n喘振保护  喘振保护 主机电流 “喘振”表现为机组的电流周期性变化，因此在机\n组起动后，检测主机电流，如果在一定时间内，主\n机电流的波动次数达到设定值，则判断机组为喘振\n故障，机组保护停机\n频繁启停\n禁止开机  频繁启停\n保护 启停次数和时\n间记录 机组频繁起动，对机组寿命产生影响，为了避免机\n组频繁起停，设定机组在12小时内开机次数超过 8\n次时，报警，禁止启动。此报警不能清除，必须等\n待到下个 12小时计算周期开始后，才可重新启动机\n组。\n变频器故\n障 变频器故\n障保护 变频器故障开\n关 变频器出现故障可能失去对电流频率的调控能力从\n而影响机组性能，因此如果在机组运行过程中出现\n变频器故障，机组将显示故障，当机组起动时出现\n此故障，则机组故障 停机，必须消除后才能开机。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_efa2014affc841d3"
+      ],
+      "source_page_nos": [
+        42
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code: surge protection detection method and action described.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "喘振保护",
+        "summary": "检测到主机电流周期性波动次数达到设定值时保护停机。",
+        "canonical_key": "hvac:centrifugal_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "喘振保护",
+          "fault_meaning": "喘振保护",
+          "title": "喘振保护",
+          "summary": "检测到主机电流周期性波动次数达到设定值时保护停机。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "40 温传感器，机组保护停机，如果是邮箱温度传感器，\n则机组报警\n喘振保护  喘振保护 主机电流 “喘振”表现为机组的电流周期性变化，因此在机\n组起动后，检测主机电流，如果在一定时间内，主\n机电流的波动次数达到设定值，则判断机组为喘振\n故障，机组保护停机\n频繁启停\n禁止开机  频繁启停\n保护 启停次数和时\n间记录 机组频繁起动，对机组寿命产生影响，为了避免机\n组频繁起停，设定机组在12小时内开机次数超过 8\n次时，报警，禁止启动。此报警不能清除，必须等\n待到下个 12小时计算周期开始后，才可重新启动机\n组。\n变频器故\n障 变频器故\n障保护 变频器故障开\n关 变频器出现故障可能失去对电流频率的调控能力从\n而影响机组性能，因此如果在机组运行过程中出现\n变频器故障，机组将显示故障，当机组起动时出现\n此故障，则机组故障 停机，必须消除后才能开机。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.42"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_9c74b04a888ec27f",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 42,
+      "chunk_id": "chunk_efa2014affc841d3",
+      "knowledge_object_type": "fault_code",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:fault_code:candidate",
+      "structured_payload_candidate": {
+        "fault_code": "频繁启停禁止开机",
+        "fault_meaning": "频繁启停保护",
+        "title": "频繁启停禁止开机",
+        "summary": "12小时内开机次数超过8次时报警，禁止启动。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "40 温传感器，机组保护停机，如果是邮箱温度传感器，\n则机组报警\n喘振保护  喘振保护 主机电流 “喘振”表现为机组的电流周期性变化，因此在机\n组起动后，检测主机电流，如果在一定时间内，主\n机电流的波动次数达到设定值，则判断机组为喘振\n故障，机组保护停机\n频繁启停\n禁止开机  频繁启停\n保护 启停次数和时\n间记录 机组频繁起动，对机组寿命产生影响，为了避免机\n组频繁起停，设定机组在12小时内开机次数超过 8\n次时，报警，禁止启动。此报警不能清除，必须等\n待到下个 12小时计算周期开始后，才可重新启动机\n组。\n变频器故\n障 变频器故\n障保护 变频器故障开\n关 变频器出现故障可能失去对电流频率的调控能力从\n而影响机组性能，因此如果在机组运行过程中出现\n变频器故障，机组将显示故障，当机组起动时出现\n此故障，则机组故障 停机，必须消除后才能开机。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_efa2014affc841d3"
+      ],
+      "source_page_nos": [
+        42
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Fault code: frequent start protection with threshold and lockout rule.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "频繁启停禁止开机",
+        "summary": "12小时内开机次数超过8次时报警，禁止启动。",
+        "canonical_key": "hvac:centrifugal_chiller:fault_code:candidate",
+        "structured_payload": {
+          "fault_code": "频繁启停禁止开机",
+          "fault_meaning": "频繁启停保护",
+          "title": "频繁启停禁止开机",
+          "summary": "12小时内开机次数超过8次时报警，禁止启动。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "40 温传感器，机组保护停机，如果是邮箱温度传感器，\n则机组报警\n喘振保护  喘振保护 主机电流 “喘振”表现为机组的电流周期性变化，因此在机\n组起动后，检测主机电流，如果在一定时间内，主\n机电流的波动次数达到设定值，则判断机组为喘振\n故障，机组保护停机\n频繁启停\n禁止开机  频繁启停\n保护 启停次数和时\n间记录 机组频繁起动，对机组寿命产生影响，为了避免机\n组频繁起停，设定机组在12小时内开机次数超过 8\n次时，报警，禁止启动。此报警不能清除，必须等\n待到下个 12小时计算周期开始后，才可重新启动机\n组。\n变频器故\n障 变频器故\n障保护 变频器故障开\n关 变频器出现故障可能失去对电流频率的调控能力从\n而影响机组性能，因此如果在机组运行过程中出现\n变频器故障，机组将显示故障，当机组起动时出现\n此故障，则机组故障 停机，必须消除后才能开机。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.42"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_5a14f734ac841256",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 66,
+      "chunk_id": "chunk_b32ec1ce50cd4904",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "供油温度范围",
+        "title": "供油温度范围",
+        "summary": "正常运行供油温度应稳定在35～50℃。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "64 厂已整定好，现场一般不再作调整。\n油温调节阀是调节供给油冷却器的冷媒液的量来调节油温，用手动调节时，关小油温调节器，\n冷却效果将急剧降低，油温将上升；若开大油温调节阀，油温将降低。\n制冷机停机期间，保持油箱中油温在48℃～52℃之间。电加热器在制冷机运行中自动切断加\n热，而当制冷机停机 后又自动投入加热。\n油压的调整\n供油压力采用油泵出口上的调压阀来进行调节，该调节阀并兼做安全阀，一旦油压超过系统\n预告设定的压力，它将自动（也可手动）将供油的一部分放回油箱，保证供油系统安全。\na) 机组在未启动时，起动油泵。供油压力比油箱内压力高250～350kPa，机组正常运行\n时，供油压力与油箱内压力差约为150～250kPa，这是因为在运行中，油中混入了制\n冷剂，粘度下降，故压力差比只开油泵时的压力差小，这是正常的。调压阀在制造厂\n已调好，油压已在上述数据范围内，用户不必作调整。\nb) 机组在启动的一瞬间，由于没箱内油压下降，大量制冷剂混入油内，油压有一个急剧\n下降过程，当机组达到额定转速后油压将自动回升 (比油箱压力高 150～250kPa)，机\n组启动瞬间，只要供油压力差(供油压力和油箱压力差)不小于 100kPa，均为正常现\n象，不必调节压阀。\nc) 油压表前截止阀不能开满，只需微启，否则由于油压波动，可能冲坏油压表。\nd) 如果油压设置太高，可能造成跑油，所以一定要控制好油压差。\n正常运行时润滑油系统的参数\na) 油位稳定无变化，油位在油位计正常范围内(油位视镜下刻线内)；\nb) 油压稳定，供油压力比油箱压力高 150～250kPa范围内。\nc) 供油温度稳定，在35～50℃范围内。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_b32ec1ce50cd4904"
+      ],
+      "source_page_nos": [
+        66
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Normal operating oil supply temperature range clearly stated.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "供油温度范围",
+        "summary": "正常运行供油温度应稳定在35～50℃。",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "供油温度范围",
+          "title": "供油温度范围",
+          "summary": "正常运行供油温度应稳定在35～50℃。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "64 厂已整定好，现场一般不再作调整。\n油温调节阀是调节供给油冷却器的冷媒液的量来调节油温，用手动调节时，关小油温调节器，\n冷却效果将急剧降低，油温将上升；若开大油温调节阀，油温将降低。\n制冷机停机期间，保持油箱中油温在48℃～52℃之间。电加热器在制冷机运行中自动切断加\n热，而当制冷机停机 后又自动投入加热。\n油压的调整\n供油压力采用油泵出口上的调压阀来进行调节，该调节阀并兼做安全阀，一旦油压超过系统\n预告设定的压力，它将自动（也可手动）将供油的一部分放回油箱，保证供油系统安全。\na) 机组在未启动时，起动油泵。供油压力比油箱内压力高250～350kPa，机组正常运行\n时，供油压力与油箱内压力差约为150～250kPa，这是因为在运行中，油中混入了制\n冷剂，粘度下降，故压力差比只开油泵时的压力差小，这是正常的。调压阀在制造厂\n已调好，油压已在上述数据范围内，用户不必作调整。\nb) 机组在启动的一瞬间，由于没箱内油压下降，大量制冷剂混入油内，油压有一个急剧\n下降过程，当机组达到额定转速后油压将自动回升 (比油箱压力高 150～250kPa)，机\n组启动瞬间，只要供油压力差(供油压力和油箱压力差)不小于 100kPa，均为正常现\n象，不必调节压阀。\nc) 油压表前截止阀不能开满，只需微启，否则由于油压波动，可能冲坏油压表。\nd) 如果油压设置太高，可能造成跑油，所以一定要控制好油压差。\n正常运行时润滑油系统的参数\na) 油位稳定无变化，油位在油位计正常范围内(油位视镜下刻线内)；\nb) 油压稳定，供油压力比油箱压力高 150～250kPa范围内。\nc) 供油温度稳定，在35～50℃范围内。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.66"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_73d243d5c55931a0",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 66,
+      "chunk_id": "chunk_b32ec1ce50cd4904",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "油压差范围（运行）",
+        "title": "油压差范围（运行）",
+        "summary": "正常运行供油压力比油箱压力高150～250kPa。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "64 厂已整定好，现场一般不再作调整。\n油温调节阀是调节供给油冷却器的冷媒液的量来调节油温，用手动调节时，关小油温调节器，\n冷却效果将急剧降低，油温将上升；若开大油温调节阀，油温将降低。\n制冷机停机期间，保持油箱中油温在48℃～52℃之间。电加热器在制冷机运行中自动切断加\n热，而当制冷机停机 后又自动投入加热。\n油压的调整\n供油压力采用油泵出口上的调压阀来进行调节，该调节阀并兼做安全阀，一旦油压超过系统\n预告设定的压力，它将自动（也可手动）将供油的一部分放回油箱，保证供油系统安全。\na) 机组在未启动时，起动油泵。供油压力比油箱内压力高250～350kPa，机组正常运行\n时，供油压力与油箱内压力差约为150～250kPa，这是因为在运行中，油中混入了制\n冷剂，粘度下降，故压力差比只开油泵时的压力差小，这是正常的。调压阀在制造厂\n已调好，油压已在上述数据范围内，用户不必作调整。\nb) 机组在启动的一瞬间，由于没箱内油压下降，大量制冷剂混入油内，油压有一个急剧\n下降过程，当机组达到额定转速后油压将自动回升 (比油箱压力高 150～250kPa)，机\n组启动瞬间，只要供油压力差(供油压力和油箱压力差)不小于 100kPa，均为正常现\n象，不必调节压阀。\nc) 油压表前截止阀不能开满，只需微启，否则由于油压波动，可能冲坏油压表。\nd) 如果油压设置太高，可能造成跑油，所以一定要控制好油压差。\n正常运行时润滑油系统的参数\na) 油位稳定无变化，油位在油位计正常范围内(油位视镜下刻线内)；\nb) 油压稳定，供油压力比油箱压力高 150～250kPa范围内。\nc) 供油温度稳定，在35～50℃范围内。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_b32ec1ce50cd4904"
+      ],
+      "source_page_nos": [
+        66
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Oil pressure differential in normal operation specified with values.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "油压差范围（运行）",
+        "summary": "正常运行供油压力比油箱压力高150～250kPa。",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "油压差范围（运行）",
+          "title": "油压差范围（运行）",
+          "summary": "正常运行供油压力比油箱压力高150～250kPa。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "64 厂已整定好，现场一般不再作调整。\n油温调节阀是调节供给油冷却器的冷媒液的量来调节油温，用手动调节时，关小油温调节器，\n冷却效果将急剧降低，油温将上升；若开大油温调节阀，油温将降低。\n制冷机停机期间，保持油箱中油温在48℃～52℃之间。电加热器在制冷机运行中自动切断加\n热，而当制冷机停机 后又自动投入加热。\n油压的调整\n供油压力采用油泵出口上的调压阀来进行调节，该调节阀并兼做安全阀，一旦油压超过系统\n预告设定的压力，它将自动（也可手动）将供油的一部分放回油箱，保证供油系统安全。\na) 机组在未启动时，起动油泵。供油压力比油箱内压力高250～350kPa，机组正常运行\n时，供油压力与油箱内压力差约为150～250kPa，这是因为在运行中，油中混入了制\n冷剂，粘度下降，故压力差比只开油泵时的压力差小，这是正常的。调压阀在制造厂\n已调好，油压已在上述数据范围内，用户不必作调整。\nb) 机组在启动的一瞬间，由于没箱内油压下降，大量制冷剂混入油内，油压有一个急剧\n下降过程，当机组达到额定转速后油压将自动回升 (比油箱压力高 150～250kPa)，机\n组启动瞬间，只要供油压力差(供油压力和油箱压力差)不小于 100kPa，均为正常现\n象，不必调节压阀。\nc) 油压表前截止阀不能开满，只需微启，否则由于油压波动，可能冲坏油压表。\nd) 如果油压设置太高，可能造成跑油，所以一定要控制好油压差。\n正常运行时润滑油系统的参数\na) 油位稳定无变化，油位在油位计正常范围内(油位视镜下刻线内)；\nb) 油压稳定，供油压力比油箱压力高 150～250kPa范围内。\nc) 供油温度稳定，在35～50℃范围内。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.66"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_41b70d505dd3a7ab",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 66,
+      "chunk_id": "chunk_b32ec1ce50cd4904",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "油压差范围（启动）",
+        "title": "油压差范围（启动）",
+        "summary": "启动油泵时供油压力比油箱压力高250～350kPa。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "64 厂已整定好，现场一般不再作调整。\n油温调节阀是调节供给油冷却器的冷媒液的量来调节油温，用手动调节时，关小油温调节器，\n冷却效果将急剧降低，油温将上升；若开大油温调节阀，油温将降低。\n制冷机停机期间，保持油箱中油温在48℃～52℃之间。电加热器在制冷机运行中自动切断加\n热，而当制冷机停机 后又自动投入加热。\n油压的调整\n供油压力采用油泵出口上的调压阀来进行调节，该调节阀并兼做安全阀，一旦油压超过系统\n预告设定的压力，它将自动（也可手动）将供油的一部分放回油箱，保证供油系统安全。\na) 机组在未启动时，起动油泵。供油压力比油箱内压力高250～350kPa，机组正常运行\n时，供油压力与油箱内压力差约为150～250kPa，这是因为在运行中，油中混入了制\n冷剂，粘度下降，故压力差比只开油泵时的压力差小，这是正常的。调压阀在制造厂\n已调好，油压已在上述数据范围内，用户不必作调整。\nb) 机组在启动的一瞬间，由于没箱内油压下降，大量制冷剂混入油内，油压有一个急剧\n下降过程，当机组达到额定转速后油压将自动回升 (比油箱压力高 150～250kPa)，机\n组启动瞬间，只要供油压力差(供油压力和油箱压力差)不小于 100kPa，均为正常现\n象，不必调节压阀。\nc) 油压表前截止阀不能开满，只需微启，否则由于油压波动，可能冲坏油压表。\nd) 如果油压设置太高，可能造成跑油，所以一定要控制好油压差。\n正常运行时润滑油系统的参数\na) 油位稳定无变化，油位在油位计正常范围内(油位视镜下刻线内)；\nb) 油压稳定，供油压力比油箱压力高 150～250kPa范围内。\nc) 供油温度稳定，在35～50℃范围内。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_b32ec1ce50cd4904"
+      ],
+      "source_page_nos": [
+        66
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Oil pressure differential at startup specified.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "油压差范围（启动）",
+        "summary": "启动油泵时供油压力比油箱压力高250～350kPa。",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "油压差范围（启动）",
+          "title": "油压差范围（启动）",
+          "summary": "启动油泵时供油压力比油箱压力高250～350kPa。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "64 厂已整定好，现场一般不再作调整。\n油温调节阀是调节供给油冷却器的冷媒液的量来调节油温，用手动调节时，关小油温调节器，\n冷却效果将急剧降低，油温将上升；若开大油温调节阀，油温将降低。\n制冷机停机期间，保持油箱中油温在48℃～52℃之间。电加热器在制冷机运行中自动切断加\n热，而当制冷机停机 后又自动投入加热。\n油压的调整\n供油压力采用油泵出口上的调压阀来进行调节，该调节阀并兼做安全阀，一旦油压超过系统\n预告设定的压力，它将自动（也可手动）将供油的一部分放回油箱，保证供油系统安全。\na) 机组在未启动时，起动油泵。供油压力比油箱内压力高250～350kPa，机组正常运行\n时，供油压力与油箱内压力差约为150～250kPa，这是因为在运行中，油中混入了制\n冷剂，粘度下降，故压力差比只开油泵时的压力差小，这是正常的。调压阀在制造厂\n已调好，油压已在上述数据范围内，用户不必作调整。\nb) 机组在启动的一瞬间，由于没箱内油压下降，大量制冷剂混入油内，油压有一个急剧\n下降过程，当机组达到额定转速后油压将自动回升 (比油箱压力高 150～250kPa)，机\n组启动瞬间，只要供油压力差(供油压力和油箱压力差)不小于 100kPa，均为正常现\n象，不必调节压阀。\nc) 油压表前截止阀不能开满，只需微启，否则由于油压波动，可能冲坏油压表。\nd) 如果油压设置太高，可能造成跑油，所以一定要控制好油压差。\n正常运行时润滑油系统的参数\na) 油位稳定无变化，油位在油位计正常范围内(油位视镜下刻线内)；\nb) 油压稳定，供油压力比油箱压力高 150～250kPa范围内。\nc) 供油温度稳定，在35～50℃范围内。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.66"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_541c9e4f1b6ea5f2",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 13,
+      "chunk_id": "chunk_cb7556b14069421f",
+      "knowledge_object_type": "parameter_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:parameter_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "油箱温度控制",
+        "title": "油箱温度控制",
+        "summary": "停机时油箱温度保持在48～52℃之间。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "11 根据冷冻水出温和设定的 PID参数自动控制导叶开闭和电机的频率（对变频电机），进行压\n缩机容量调节，使冷冻水出温恒定在7±0.3℃。\n容量调节定义下面三种动作：其中导叶开度、电机频率均指输出值。\n能力保持：导叶和电机频率均为保持动作。\n能力增大：导叶开度增大或电机频率增大。\n能力减少：电机频率减少或导叶开度减少。\n为减少频率输出波动，当需要调节输出频率时，如果设定温度与出水温度的偏差绝对值小于\n等于0.3℃，输出频率保持不变；当偏差绝对值大于0.3℃时才调节频率，如果需要调节的是导\n叶开度，则任何时候只要能力需求变了都调节。\n4）导叶的调节方法\n在机组启动前可全程手动开闭导叶，用以检查、 调校电动执行器限位开关及导叶开度测量电\n路。系统上电或发出启动命令后，导叶将自动关至零位。\n在开机时，无论导叶是手动调节还是自动调节，每个周期执行三种导叶动作中的一个：保持；\n增大导叶开度；减少导叶开度。\n导叶进入自动运行后，在5％～100％间运行。导叶开度不得小于 5％。\n在机组启动完毕导叶自动开至 10％后，可在0％～100％间手动开闭导叶此时应注意观察冷\n冻水出水温度及时调节导叶开度使机组正常运行。手动调节代替容量调节PID算法，其它保护均\n有效。当选择导叶给定控制方式，并设定 好给定值，按确定键后，导叶将自动开闭至给定值。\n在关机时使用手动调节开关导叶，或者在执行关机动作时，导叶按照定位数值直接输出。\n5）压缩机关机\n变频电机频率不变，导叶逐步关闭至 10%（以反馈开度作为控制，如果反馈开度在 20个动\n作周期内没有到达 20％位置，则直接关主电机。），关主电机，关导叶至零，延时3分钟关油泵。\n6）压缩机油加热器控制\n压缩机油加热器由油加热交流接触器控制。保证压缩机停机后，油箱温度保持在48～52℃之\n间。开机且油泵开启时油加热器断开，否则按照以下条件运行：\n油箱温度≤48℃，油加热器接通；\n油箱温度≥52℃，油加热器断开；\n48℃＜油箱温度＜52℃，油加热器接触器保持状态。\n油箱温度传感器故障时，关闭油加热器并显示故障，但运行中的主机不停 机。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_cb7556b14069421f"
+      ],
+      "source_page_nos": [
+        13
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Oil tank temperature control setpoint range for shutdown condition provided.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "油箱温度控制",
+        "summary": "停机时油箱温度保持在48～52℃之间。",
+        "canonical_key": "hvac:centrifugal_chiller:parameter_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "油箱温度控制",
+          "title": "油箱温度控制",
+          "summary": "停机时油箱温度保持在48～52℃之间。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "11 根据冷冻水出温和设定的 PID参数自动控制导叶开闭和电机的频率（对变频电机），进行压\n缩机容量调节，使冷冻水出温恒定在7±0.3℃。\n容量调节定义下面三种动作：其中导叶开度、电机频率均指输出值。\n能力保持：导叶和电机频率均为保持动作。\n能力增大：导叶开度增大或电机频率增大。\n能力减少：电机频率减少或导叶开度减少。\n为减少频率输出波动，当需要调节输出频率时，如果设定温度与出水温度的偏差绝对值小于\n等于0.3℃，输出频率保持不变；当偏差绝对值大于0.3℃时才调节频率，如果需要调节的是导\n叶开度，则任何时候只要能力需求变了都调节。\n4）导叶的调节方法\n在机组启动前可全程手动开闭导叶，用以检查、 调校电动执行器限位开关及导叶开度测量电\n路。系统上电或发出启动命令后，导叶将自动关至零位。\n在开机时，无论导叶是手动调节还是自动调节，每个周期执行三种导叶动作中的一个：保持；\n增大导叶开度；减少导叶开度。\n导叶进入自动运行后，在5％～100％间运行。导叶开度不得小于 5％。\n在机组启动完毕导叶自动开至 10％后，可在0％～100％间手动开闭导叶此时应注意观察冷\n冻水出水温度及时调节导叶开度使机组正常运行。手动调节代替容量调节PID算法，其它保护均\n有效。当选择导叶给定控制方式，并设定 好给定值，按确定键后，导叶将自动开闭至给定值。\n在关机时使用手动调节开关导叶，或者在执行关机动作时，导叶按照定位数值直接输出。\n5）压缩机关机\n变频电机频率不变，导叶逐步关闭至 10%（以反馈开度作为控制，如果反馈开度在 20个动\n作周期内没有到达 20％位置，则直接关主电机。），关主电机，关导叶至零，延时3分钟关油泵。\n6）压缩机油加热器控制\n压缩机油加热器由油加热交流接触器控制。保证压缩机停机后，油箱温度保持在48～52℃之\n间。开机且油泵开启时油加热器断开，否则按照以下条件运行：\n油箱温度≤48℃，油加热器接通；\n油箱温度≥52℃，油加热器断开；\n48℃＜油箱温度＜52℃，油加热器接触器保持状态。\n油箱温度传感器故障时，关闭油加热器并显示故障，但运行中的主机不停 机。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.13"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_f68910d44b35a37e",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 3,
+      "chunk_id": "chunk_da79b7cc085a43b0",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:performance_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "名义制冷量",
+        "title": "制冷量范围",
+        "summary": "LSBLX系列离心式冷水机组名义制冷量2000～4000kW。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_da79b7cc085a43b0"
+      ],
+      "source_page_nos": [
+        3
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Nominal cooling capacity range for the series from product table.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "制冷量范围",
+        "summary": "LSBLX系列离心式冷水机组名义制冷量2000～4000kW。",
+        "canonical_key": "hvac:centrifugal_chiller:performance_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "名义制冷量",
+          "title": "制冷量范围",
+          "summary": "LSBLX系列离心式冷水机组名义制冷量2000～4000kW。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "1 产品篇\n1 产品种类\n型号 LSBLX2000 LSBLX2400 LSBLX2800\n制冷量kW 2000 2400 2800\n型号 LSBLX3200 LSBLX3600 LSBLX4000\n制冷量kW 3200 3600 4000\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.3"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_2ddc2294e6eb44ed",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 7,
+      "chunk_id": "chunk_dd720fd8c57c4403",
+      "knowledge_object_type": "performance_spec",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:performance_spec:candidate",
+      "structured_payload_candidate": {
+        "parameter_name": "冷量调节范围",
+        "title": "冷量调节范围",
+        "summary": "机组可在10～100%负荷内无级调节。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_dd720fd8c57c4403"
+      ],
+      "source_page_nos": [
+        7
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Cooling capacity modulation range specified as 10-100% from technical parameter table.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "冷量调节范围",
+        "summary": "机组可在10～100%负荷内无级调节。",
+        "canonical_key": "hvac:centrifugal_chiller:performance_spec:candidate",
+        "structured_payload": {
+          "parameter_name": "冷量调节范围",
+          "title": "冷量调节范围",
+          "summary": "机组可在10～100%负荷内无级调节。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "5 4 产品技术参数表\n机组名义工况性能参数表\n型号LSBLX 2000 2400 2800 3200 3600 4000\n冷量调节  % 10～100%\nkW 2000 2400 2800 3200 3600 4000 制冷量 RT 568 682 796 909 1022 1136\n操作系统 中文彩色液晶触摸屏\n安全保护装置 压缩机油压差保护；油箱温度高温保护；油泵过载保护；主机\n电流过高保护；防喘振保护；主机绕组过热保护；压缩机高压\n保护；压缩机低压保护；防冻保护；水流开关保护；传感器故\n障保护；\n电源 V-ph-Hz  380/6000/10000V 3N ～50Hz 电机\n功率 kW 383 452 520 590 665 750\n名称  R134a\n充注量 kg 750 800 850 950 1000 1050 制冷剂\n流量控制   孔板＋电子阀节流\n种类  68 号合成脂类润滑油 冷冻油 灌注量 L 80 80 80 100 100 125\n型式  满液式蒸发器\n水流量 m3/h 345 414 485 550 620 688\n水压降 kPa 90 90 90 115 115 115\n流程数  2 2 2 2 2 2 蒸发器\n接管尺寸  mm 250 250 250 300 300 300\n型式  卧式壳管式冷凝器\n水流量 m3/h 420 505 590 670 760 826\n水压降 kPa 85 85 85 115 115 115\n流程数  2 2 2 2 2 2 冷凝器\n接管尺寸  mm 250 250 300 300 300 350\n宽 mm 4800 4800 4800 5150 5150 5150\n深 mm 2010 2010 2010 2420 2420 2420 外型\n尺寸\n高 mm 2450 2450 2450 2650 2650 2650\n运输净重  kg 10500 11100 11700 14200 14800 15400 机组\n重量 运行重量  kg 11500 12500 13500 15750 16750 17500\n说明：\na.制冷量以 GB/T18430.1-2001 标准为依据，机组制冷量是在名义工况下测定的。\nb.主机提供冷冻水泵﹑冷却水泵﹑冷却塔的控制输出接口，其交流接触器由用户自备。\nc.冷冻水﹑冷却水出入口连接法兰盘由厂家提供。\nd.本公司保留变更产品设计恕不预先通 知的权利。\ne.具体的机组参数以 产品铭牌为准。\nf.如有特殊要求，请另行联系。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn.",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.7"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_6db76cf97cd7489e",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 63,
+      "chunk_id": "chunk_86dc890ab71b4ef2",
+      "knowledge_object_type": "operational_sequence",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:operational_sequence:candidate",
+      "structured_payload_candidate": {
+        "sequence_steps": [
+          "水泵启动",
+          "5分钟后油泵启动",
+          "1分钟后主电机启动"
+        ],
+        "title": "开机顺序",
+        "summary": "水泵启动5分钟后油泵启动，1分钟后主电机启动。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "61 e) 压缩机进口导叶全闭(若接线或机器内无异常时，上次停车后导叶自动回复到全闭位\n置)。\nf) 检查微机控制柜和启动柜。\ng) 蒸发器和冷凝器通水时，由排气阀将水室和水管中的空气排出(排气阀在机组水室上\n方)。\nh) 启动油泵，油压应正常(油泵起动后，供油压力应比油箱压力高 250～350kPa)。\ni) 确认冷水泵、冷却水泵和冷却塔运行正常，水量符合额定值。冷却水进水温度在20℃～\n34℃，冷冻水进水温度在7℃～34℃内。\n注意：温度高于43℃的水不得流入蒸发器或冷凝器 ，否则，压力过高的制冷剂会 从安全阀排放出\n去，引起制冷剂的损失。\n5.2.2 运行方法\n1）制冷机的运行\n起动联锁\n制冷机起动时，如果起动联锁回路处于下列任一状态，即使按下主页界面下的“开机”键，\n制冷机不会起动。\na) 进口导叶没有全闭；\nb) 故障保护回路没有复位；\nc) 主电动机的起动柜内接触器不处于起动位置上；\nd) 油箱内油温不到45℃；\ne) 供油压差(供油压力与油箱内压力之差)不足250kPa；\nf) 制冷机停车后再启动的时间间隔未达到 20分钟；\ng) 冷水泵或冷却水泵没有运转。\n制冷机的运行方法\n本制冷机能实现全自动运行。当然，为了特殊用途，也设有手动开闭进口导叶的装置，但一\n般情况下应按全自动方式操作。\n经检查启动条件具备后，全自动运行的方式如下：\n在触摸屏主页上按下“开机”，输入正确密码后，系统按如下顺序依次动作进入自动启动、\n运行状态。\na) 水泵启动 5分钟后，油泵起动，1分钟后，主电机主动起动。主电动机起动后，约15～\n30秒钟达到转速。(若油箱内油温不到 45℃或油压差不到250kPa或水温小于设定温度\n或压缩机停机时间不到 20分钟，主电机不会自动启动)。\nb) 达到满转速后约30秒钟，进口导叶自动打开，并按所需制冷量自动动作输出冷水。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_86dc890ab71b4ef2"
+      ],
+      "source_page_nos": [
+        63
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Startup sequence with timings from operating procedure section.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "开机顺序",
+        "summary": "水泵启动5分钟后油泵启动，1分钟后主电机启动。",
+        "canonical_key": "hvac:centrifugal_chiller:operational_sequence:candidate",
+        "structured_payload": {
+          "sequence_steps": [
+            "水泵启动",
+            "5分钟后油泵启动",
+            "1分钟后主电机启动"
+          ],
+          "title": "开机顺序",
+          "summary": "水泵启动5分钟后油泵启动，1分钟后主电机启动。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "61 e) 压缩机进口导叶全闭(若接线或机器内无异常时，上次停车后导叶自动回复到全闭位\n置)。\nf) 检查微机控制柜和启动柜。\ng) 蒸发器和冷凝器通水时，由排气阀将水室和水管中的空气排出(排气阀在机组水室上\n方)。\nh) 启动油泵，油压应正常(油泵起动后，供油压力应比油箱压力高 250～350kPa)。\ni) 确认冷水泵、冷却水泵和冷却塔运行正常，水量符合额定值。冷却水进水温度在20℃～\n34℃，冷冻水进水温度在7℃～34℃内。\n注意：温度高于43℃的水不得流入蒸发器或冷凝器 ，否则，压力过高的制冷剂会 从安全阀排放出\n去，引起制冷剂的损失。\n5.2.2 运行方法\n1）制冷机的运行\n起动联锁\n制冷机起动时，如果起动联锁回路处于下列任一状态，即使按下主页界面下的“开机”键，\n制冷机不会起动。\na) 进口导叶没有全闭；\nb) 故障保护回路没有复位；\nc) 主电动机的起动柜内接触器不处于起动位置上；\nd) 油箱内油温不到45℃；\ne) 供油压差(供油压力与油箱内压力之差)不足250kPa；\nf) 制冷机停车后再启动的时间间隔未达到 20分钟；\ng) 冷水泵或冷却水泵没有运转。\n制冷机的运行方法\n本制冷机能实现全自动运行。当然，为了特殊用途，也设有手动开闭进口导叶的装置，但一\n般情况下应按全自动方式操作。\n经检查启动条件具备后，全自动运行的方式如下：\n在触摸屏主页上按下“开机”，输入正确密码后，系统按如下顺序依次动作进入自动启动、\n运行状态。\na) 水泵启动 5分钟后，油泵起动，1分钟后，主电机主动起动。主电动机起动后，约15～\n30秒钟达到转速。(若油箱内油温不到 45℃或油压差不到250kPa或水温小于设定温度\n或压缩机停机时间不到 20分钟，主电机不会自动启动)。\nb) 达到满转速后约30秒钟，进口导叶自动打开，并按所需制冷量自动动作输出冷水。\nhttp://www.coolling.net/\nR6Q·v~[¶Qett\u0006ÿ\u001awww.zhilengbj.cn",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.63"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    },
+    {
+      "candidate_id": "cand_96156750ffb16a3a",
+      "domain_id": "hvac",
+      "doc_id": "doc_99fc08961aa540f4",
+      "doc_name": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf",
+      "page_no": 59,
+      "chunk_id": "chunk_50d0eea5fe2643da",
+      "knowledge_object_type": "maintenance_procedure",
+      "canonical_key_candidate": "hvac:centrifugal_chiller:maintenance_procedure:candidate",
+      "structured_payload_candidate": {
+        "procedure_name": "气密试验",
+        "title": "气密试验",
+        "summary": "充入1150±50kPa氮气，24h压力降不超过11.5kPa为合格。"
+      },
+      "confidence_score": 0.95,
+      "review_status": "candidate",
+      "evidence_text": "57 5.2 重要的操作方法\n5.2.1 使用前的准备与检查\n1）泄漏检查\n机组安装或解体检修组装后，在充入油和制冷剂之前，必须进行泄漏检查。泄漏检查由气密\n试验和真空试验组成（需准备干燥气源和真空泵）。空气或其他不凝结气体一旦混入机内，冷凝\n压力就会升高，电力消耗要增大，制冷量将减少，而且空气中的水分会使机器内发生腐蚀，因此，\n应充分注意泄漏检查的重要性。\n2）气密试验\n从制冷剂充入阀向机内充入1150±50kPa(表压) 左右的氮气或干燥空气，采用 0～2000kPa精\n密压力表（0.4级），24h后压力降不超过11.5kPa为合格，否则须用发泡剂或肥皂水检查各结合\n部和管接头各焊缝部位，确认其有无泄漏，若发现有泄漏，应找出原因并在泄压后加以排除，排\n除漏点重新作气密试验加以确认。\n3）真空试验\n气密试验合格后，再进行真空试验。首先，打开制冷剂充入阀和油充入阀，将机内的正压泄\n掉。机内压力达到大气压后，将上述阀关闭。随后将机内抽至绝对压力为 1kPa（7.5mmHg）以 下\n的真空，停放1～2小时后，若目测机内压力不回升，再放置24小时后用高精密度真空表测量机\n内压力的回升。若机内压力的回升超过 0.4 kPa (3mmHg),则应重 新进行气密试验，找出泄漏部位\n加以排除，然后再进行真空干燥和真空试验，直至合格。\n注意：机组处在真空状态时，千万不可 起动电机、压缩机和油泵电机，也不可作绝缘试验，\n否则可能会发生绝缘破坏和其他严重损 坏。\n4）真空干燥\n如果机组作真空试验不合格，说明机组内有水分和湿空气存在，此时需要对系统进行抽真空\n和除湿，建议采用以下办法对系统进行干燥。\na）将一台大功率真空泵（带湿球温度指示仪式真空计）与机组上制冷剂充注阀相连，然\n后启动真空泵。若有条件，可向蒸发器和冷凝器 通不超过50℃的热水（不能用蒸气），这可\n以缩短真空干燥的时间，达到较好的效果。\nb）随着机内压力的降低，湿球温度指示仪或真空计中的温度和压力也会降低，一直降到\n水的饱和温度和饱和压力为止，这时机组内的水分开始汽化，只要汽化过程未结束，温度和压\n力就恒定不变。汽化过程一旦结束，压力和温度都会不断下降，最后降至1.",
+      "curated_against_ontology_version": "0.2.0",
+      "equipment_class_candidate": {
+        "equipment_class_id": "centrifugal_chiller",
+        "equipment_class_key": "hvac:centrifugal_chiller",
+        "label": "Centrifugal Chiller",
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "supported_knowledge_anchors": [
+          "fault_code",
+          "parameter_spec",
+          "maintenance_procedure",
+          "performance_spec"
+        ]
+      },
+      "compile_metadata": {
+        "method": "llm_doclevel_batch",
+        "backend_name": "deepseek-parameter-spec",
+        "model": "deepseek-v4-flash"
+      },
+      "source_chunk_ids": [
+        "chunk_50d0eea5fe2643da"
+      ],
+      "source_page_nos": [
+        59
+      ],
+      "trust_level": "L3",
+      "judge_verdict": "accepted",
+      "judge_reason": "Airtightness test procedure with pressure, duration, and acceptance criteria.",
+      "review_decision": "accepted",
+      "review_notes": "",
+      "curation": {
+        "title": "气密试验",
+        "summary": "充入1150±50kPa氮气，24h压力降不超过11.5kPa为合格。",
+        "canonical_key": "hvac:centrifugal_chiller:maintenance_procedure:candidate",
+        "structured_payload": {
+          "procedure_name": "气密试验",
+          "title": "气密试验",
+          "summary": "充入1150±50kPa氮气，24h压力降不超过11.5kPa为合格。"
+        },
+        "applicability": {},
+        "trust_level": "L3",
+        "review_status": "approved",
+        "evidence_text": "57 5.2 重要的操作方法\n5.2.1 使用前的准备与检查\n1）泄漏检查\n机组安装或解体检修组装后，在充入油和制冷剂之前，必须进行泄漏检查。泄漏检查由气密\n试验和真空试验组成（需准备干燥气源和真空泵）。空气或其他不凝结气体一旦混入机内，冷凝\n压力就会升高，电力消耗要增大，制冷量将减少，而且空气中的水分会使机器内发生腐蚀，因此，\n应充分注意泄漏检查的重要性。\n2）气密试验\n从制冷剂充入阀向机内充入1150±50kPa(表压) 左右的氮气或干燥空气，采用 0～2000kPa精\n密压力表（0.4级），24h后压力降不超过11.5kPa为合格，否则须用发泡剂或肥皂水检查各结合\n部和管接头各焊缝部位，确认其有无泄漏，若发现有泄漏，应找出原因并在泄压后加以排除，排\n除漏点重新作气密试验加以确认。\n3）真空试验\n气密试验合格后，再进行真空试验。首先，打开制冷剂充入阀和油充入阀，将机内的正压泄\n掉。机内压力达到大气压后，将上述阀关闭。随后将机内抽至绝对压力为 1kPa（7.5mmHg）以 下\n的真空，停放1～2小时后，若目测机内压力不回升，再放置24小时后用高精密度真空表测量机\n内压力的回升。若机内压力的回升超过 0.4 kPa (3mmHg),则应重 新进行气密试验，找出泄漏部位\n加以排除，然后再进行真空干燥和真空试验，直至合格。\n注意：机组处在真空状态时，千万不可 起动电机、压缩机和油泵电机，也不可作绝缘试验，\n否则可能会发生绝缘破坏和其他严重损 坏。\n4）真空干燥\n如果机组作真空试验不合格，说明机组内有水分和湿空气存在，此时需要对系统进行抽真空\n和除湿，建议采用以下办法对系统进行干燥。\na）将一台大功率真空泵（带湿球温度指示仪式真空计）与机组上制冷剂充注阀相连，然\n后启动真空泵。若有条件，可向蒸发器和冷凝器 通不超过50℃的热水（不能用蒸气），这可\n以缩短真空干燥的时间，达到较好的效果。\nb）随着机内压力的降低，湿球温度指示仪或真空计中的温度和压力也会降低，一直降到\n水的饱和温度和饱和压力为止，这时机组内的水分开始汽化，只要汽化过程未结束，温度和压\n力就恒定不变。汽化过程一旦结束，压力和温度都会不断下降，最后降至1.",
+        "evidence_role": "primary",
+        "publisher": "Gree",
+        "citation": "【格力】C系列离心式冷水机组技术手册（69页）-.pdf p.59"
+      },
+      "curation_checklist": [
+        "Confirm or reject this candidate.",
+        "For accepted entries, fill title and summary.",
+        "Adjust structured_payload and applicability to match the manual evidence.",
+        "Keep doc/page/chunk traceability unchanged."
+      ]
+    }
+  ],
+  "bootstrap_metadata": {
+    "generated_at": "2026-05-13T12:42:11.935860+00:00",
+    "target_decisions": [
+      "accepted",
+      "pending"
+    ],
+    "entries_updated": 17
+  },
+  "approval_metadata": {
+    "operator_review": "approved_all_17_by_human_operator",
+    "updated_by": "codex_q1_apply_prep"
+  }
+}

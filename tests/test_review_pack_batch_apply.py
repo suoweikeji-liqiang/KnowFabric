@@ -283,6 +283,75 @@ def test_apply_review_packs_counts_successful_merger_apply(monkeypatch) -> None:
         assert report["summary"]["failed"] == 0
 
 
+def test_apply_review_packs_allows_merger_to_group_mixed_knowledge_types(monkeypatch, tmp_path: Path) -> None:
+    """Mixed-type review packs must not be forced into the first accepted type."""
+
+    pack_path = tmp_path / "mixed_pack.json"
+    pack_path.write_text(
+        json.dumps({
+            "review_mode": "chunk_backfill_review_pack",
+            "domain_id": "hvac",
+            "doc_id": "doc_mixed",
+            "doc_name": "Mixed.pdf",
+            "equipment_class": {
+                "equipment_class_id": "centrifugal_chiller",
+                "equipment_class_key": "hvac:centrifugal_chiller",
+                "label": "Centrifugal Chiller",
+            },
+            "candidate_entries": [
+                {"review_decision": "accepted"},
+                {"review_decision": "accepted"},
+            ],
+        }),
+        encoding="utf-8",
+    )
+
+    monkeypatch.setattr(
+        "scripts.apply_review_packs_batch.build_manual_fixture_from_review_candidate_file",
+        lambda _path: {
+            "equipment_class_id": "centrifugal_chiller",
+            "equipment_class_key": "hvac:centrifugal_chiller",
+            "manual_entries": [
+                {"knowledge_object_type": "fault_code"},
+                {"knowledge_object_type": "parameter_spec"},
+            ],
+        },
+    )
+
+    class DummySession:
+        def commit(self) -> None:
+            pass
+
+        def rollback(self) -> None:
+            pass
+
+        def close(self) -> None:
+            pass
+
+    captured = {}
+
+    def successful_merger(**kwargs):
+        captured["knowledge_object_type"] = kwargs["knowledge_object_type"]
+        return {
+            "new_merged": 2,
+            "updated_existing": 0,
+            "material_conflicts": 0,
+            "groups_processed": 2,
+        }
+
+    monkeypatch.setattr("scripts.apply_review_packs_batch.SessionLocal", lambda: DummySession())
+    monkeypatch.setattr("scripts.apply_review_packs_batch.apply_with_merger", successful_merger)
+
+    report = apply_review_pack_paths(
+        [pack_path],
+        source_label=str(tmp_path),
+        fixtures_output_dir=tmp_path / "fixtures",
+    )
+
+    assert report["summary"]["applied"] == 1
+    assert captured["knowledge_object_type"] == ""
+
+
 def test_apply_review_packs_writes_compiler_run_audit_packet(monkeypatch) -> None:
     """Batch apply reports must preserve compiler run and source manifest audit data."""
 

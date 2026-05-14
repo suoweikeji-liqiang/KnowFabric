@@ -98,14 +98,16 @@ def apply_visual_evidence(
 # --- Task E: merger-aware apply path (docs/36 §4.2) ---
 
 
-def candidate_to_merger_dict(candidate: dict[str, Any]) -> dict[str, Any]:
-    """Convert a review-pack candidate entry to the dict format merge_candidates expects.
+def _candidate_evidence(candidate: dict[str, Any]) -> list[dict[str, Any]]:
+    nested = _nested_chain_evidence(candidate)
+    if nested:
+        return [nested]
 
-    Ensures evidence[].doc_id is doc_xxx format (D2 fix).
-    """
     evidence = candidate.get("evidence") or []
-    if not isinstance(evidence, list):
-        evidence = [evidence] if evidence else []
+    if isinstance(evidence, dict):
+        evidence = [evidence]
+    if not evidence and candidate.get("chunk_id"):
+        evidence = [candidate]
 
     ev_dicts = []
     for ev in evidence:
@@ -118,6 +120,34 @@ def candidate_to_merger_dict(candidate: dict[str, Any]) -> dict[str, Any]:
                 "evidence_text": ev.get("evidence_text", ""),
                 "evidence_role": ev.get("evidence_role", "primary"),
             })
+    return ev_dicts
+
+
+def _nested_chain_evidence(candidate: dict[str, Any]) -> dict[str, Any] | None:
+    chunk = candidate.get("chunk")
+    page = candidate.get("page")
+    doc = candidate.get("doc")
+    evidence = candidate.get("evidence")
+    if not all(isinstance(item, dict) for item in (chunk, page, doc, evidence)):
+        return None
+    if not chunk.get("chunk_id"):
+        return None
+    return {
+        "chunk_id": chunk.get("chunk_id", ""),
+        "doc_id": doc.get("doc_id", ""),
+        "page_id": page.get("page_id", ""),
+        "page_no": page.get("page_no", 0),
+        "evidence_text": evidence.get("evidence_text", ""),
+        "evidence_role": evidence.get("evidence_role", "primary"),
+    }
+
+
+def candidate_to_merger_dict(candidate: dict[str, Any]) -> dict[str, Any]:
+    """Convert a review-pack candidate entry to the dict format merge_candidates expects.
+
+    Ensures evidence[].doc_id is doc_xxx format (D2 fix).
+    """
+    ev_dicts = _candidate_evidence(candidate)
 
     authority = candidate.get("authority_summary_json") or {}
     layers = authority.get("layers", []) if isinstance(authority, dict) else []

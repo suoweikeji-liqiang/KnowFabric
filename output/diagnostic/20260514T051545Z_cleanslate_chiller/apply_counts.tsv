@@ -1,0 +1,7 @@
+step	publisher	pack_dir	backup_path	applied	failed	total_chiller_ko
+gree	Gree	output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/gree/review_packs	/tmp/t4_pre_apply_gree_20260514T052139Z.sql	1	0	7
+ahri	AHRI	output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/ahri/review_packs	/tmp/t4_pre_apply_ahri_20260514T052141Z.sql	1	0	9
+trane	Trane	output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/trane_cvgf/review_packs	/tmp/t4_pre_apply_trane_20260514T052142Z.sql	1	0	26
+mcquay_wsc_wdc_hsc_hdc	McQuay	output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/mcquay_wsc_wdc_hsc_hdc/review_packs	/tmp/t4_pre_apply_mcquay_wsc_wdc_hsc_hdc_20260514T052144Z.sql	1	0	25
+mcquay_single_double	McQuay	output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/mcquay_single_double/review_packs	/tmp/t4_pre_apply_mcquay_single_double_20260514T052145Z.sql	0	1	25
+mcquay_single_double_retry	McQuay	output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/mcquay_single_double/review_packs	/tmp/t4_pre_retry_apply_mcquay_single_double_20260514T052314Z.sql	1	0	24

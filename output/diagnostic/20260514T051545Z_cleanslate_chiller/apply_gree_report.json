@@ -1,0 +1,64 @@
+{
+  "apply_mode": "chunk_backfill_review_pack_batch",
+  "generated_at": "2026-05-14T05:21:41.140744+00:00",
+  "compiler_run": {
+    "compiler_run_id": "run_20260514T051545Z_cleanslate_chiller_gree",
+    "pipeline": "review_pack_batch_apply",
+    "started_at": "2026-05-14T05:21:40.516989+00:00",
+    "finished_at": "2026-05-14T05:21:41.140744+00:00",
+    "domain_id": "hvac",
+    "package_version": "2.0.0-alpha",
+    "ontology_version": "2.0.0-alpha",
+    "llm_backend": null,
+    "parameters": {
+      "use_merger": true
+    }
+  },
+  "source_manifest": [
+    {
+      "source_id": "hvac__doc_99fc08961aa540f4__centrifugal_chiller",
+      "source_type": "review_pack",
+      "path": "output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/gree/review_packs/hvac__doc_99fc08961aa540f4__centrifugal_chiller.json",
+      "content_sha256": "1195f80b5b4bda89f5c44aa51a5fa6bb9fb1b6bc0d82e59779138375bd6a6634",
+      "domain_id": "hvac",
+      "doc_ids": [],
+      "authority_levels": [],
+      "is_redistributable": null,
+      "metadata": {
+        "review_mode": "chunk_backfill_review_pack",
+        "candidate_count": 17,
+        "upstream_compiler_run_id": "20260513T121944Z_hvac_doclevel_extraction_batch",
+        "upstream_pipeline": "hvac_doclevel_extraction_batch"
+      }
+    }
+  ],
+  "pack_dir": "output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/gree/review_packs",
+  "fixtures_output_dir": "output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_gree_fixtures",
+  "total_pack_files": 1,
+  "summary": {
+    "applied": 1,
+    "skipped_pending": 0,
+    "skipped_no_accepted": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_99fc08961aa540f4__centrifugal_chiller.json",
+      "pack_path": "output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/gree/review_packs/hvac__doc_99fc08961aa540f4__centrifugal_chiller.json",
+      "candidate_count": 17,
+      "accepted_count": 17,
+      "rejected_count": 0,
+      "pending_count": 0,
+      "status": "applied_merger",
+      "equipment_class_key": "hvac:centrifugal_chiller",
+      "knowledge_object_count": 7,
+      "merger_stats": {
+        "new_merged": 7,
+        "updated_existing": 0,
+        "material_conflicts": 3,
+        "groups_processed": 5
+      }
+    }
+  ],
+  "compiler_audit_packet_path": "output/diagnostic/20260514T051545Z_cleanslate_chiller/review_pack_compiler_audit_packet.json"
+}

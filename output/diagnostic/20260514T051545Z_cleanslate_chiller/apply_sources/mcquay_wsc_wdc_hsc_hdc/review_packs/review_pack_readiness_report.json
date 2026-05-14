@@ -1,0 +1,36 @@
+{
+  "readiness_mode": "chunk_backfill_review_pack_readiness",
+  "generated_at": "2026-05-14T05:21:13.638165+00:00",
+  "pack_dir": "output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/mcquay_wsc_wdc_hsc_hdc/review_packs",
+  "ignored_files": [
+    "review_pack_manifest.json",
+    "review_pack_apply_report.json",
+    "review_pack_readiness_report.json",
+    "review_pack_bootstrap_report.json"
+  ],
+  "total_pack_files": 1,
+  "summary": {
+    "ready": 1,
+    "blocked_pending": 0,
+    "blocked_no_accepted": 0,
+    "blocked_invalid": 0
+  },
+  "results": [
+    {
+      "pack_file": "hvac__doc_cade8d8ac44c4bd6__centrifugal_chiller.json",
+      "pack_path": "output/diagnostic/20260514T051545Z_cleanslate_chiller/apply_sources/mcquay_wsc_wdc_hsc_hdc/review_packs/hvac__doc_cade8d8ac44c4bd6__centrifugal_chiller.json",
+      "doc_id": "doc_cade8d8ac44c4bd6",
+      "doc_name": "【麦克维尔】WSC WDC HSC HDC单／双压缩机离心式安装维护手册（49页）-制冷百家网.pdf",
+      "equipment_class_id": "centrifugal_chiller",
+      "equipment_class_key": "hvac:centrifugal_chiller",
+      "candidate_count": 10,
+      "accepted_count": 10,
+      "rejected_count": 0,
+      "pending_count": 0,
+      "status": "ready",
+      "blocker": null,
+      "ready_manual_entries": 10,
+      "fixture_equipment_class_key": "hvac:centrifugal_chiller"
+    }
+  ]
+}

@@ -131,13 +131,12 @@ def _apply_pack_with_merger(
     try:
         ec_id = fixture.get("equipment_class_id", "")
         ock = fixture.get("equipment_class_key", f"hvac:{ec_id}")
-        ko_type = accepted[0].get("knowledge_object_type", "parameter_spec") if accepted else "parameter_spec"
         stats = apply_with_merger(
             session=db,
             verified_candidates=accepted,
             equipment_class_id=ec_id,
             ontology_class_key=ock,
-            knowledge_object_type=ko_type,
+            knowledge_object_type="",
             backend_name=merger_backend,
             package_version=package_version,
             ontology_version=ontology_version,

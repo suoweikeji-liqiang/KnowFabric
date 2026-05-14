@@ -1,0 +1,6 @@
+                   canonical_key                   | n |      pubs      | consensus_state 
+---------------------------------------------------+---+----------------+-----------------
+ hvac:centrifugal_chiller:parameter:key_52a46b11d3 | 5 | {Gree,Trane}   | agreed
+ hvac:centrifugal_chiller:parameter:key_1f4206db93 | 2 | {McQuay,Trane} | agreed
+(2 rows)
+

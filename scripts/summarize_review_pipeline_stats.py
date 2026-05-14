@@ -56,6 +56,12 @@ def _doc_record(base: dict[str, Any] | None = None) -> dict[str, Any]:
     return record
 
 
+def _apply_count_key(status: str | None) -> str | None:
+    if status == "applied_merger":
+        return "applied"
+    return status
+
+
 def summarize_review_pipeline_stats(
     *,
     candidate_path: str | Path | None = None,
@@ -134,8 +140,9 @@ def summarize_review_pipeline_stats(
                 doc_record["packs_ready_to_apply"] += 1
             if summary["readiness_status"] in doc_record["readiness_status_counts"]:
                 doc_record["readiness_status_counts"][summary["readiness_status"]] += 1
-            if summary["apply_status"] in doc_record["apply_status_counts"]:
-                doc_record["apply_status_counts"][summary["apply_status"]] += 1
+            apply_count_key = _apply_count_key(summary["apply_status"])
+            if apply_count_key in doc_record["apply_status_counts"]:
+                doc_record["apply_status_counts"][apply_count_key] += 1
 
     overall_readiness_counts = readiness_report.get("summary", {}) if readiness_report else {}
     overall_apply_counts = apply_report.get("summary", {}) if apply_report else {}

@@ -217,7 +217,7 @@ def test_empty_value_short_circuit():
 
 
 def test_multi_facet_detection():
-    """E3: same concept different facets → multi_facet, not conflict."""
+    """E3: same concept different facets -> multi_facet, not conflict."""
     from packages.compiler.cross_source_merger import _compute_consensus_state
     layers = [
         {"value_summary": "Setpoint: 44F", "citation": "Trane CVGF p.29"},
@@ -233,7 +233,7 @@ def test_merger_sanity_pathological_split(monkeypatch):
     monkeypatch.setenv("KNOWFABRIC_USE_EMBEDDING_FIRST", "0")
     import importlib, packages.compiler.cross_source_merger as ckmod
     importlib.reload(ckmod)
-    from packages.compiler.cross_source_merger import merge_candidates, MERGER_MAX_GROUP_CANDIDATES
+    from packages.compiler.cross_source_merger import MERGER_MAX_GROUP_CANDIDATES
     from unittest.mock import patch
 
     candidates = []
@@ -261,7 +261,7 @@ def test_merger_sanity_pathological_split(monkeypatch):
     # Sanity check should split them into multiple KOs
     unique_keys = {ko["canonical_key"] for ko in merged_result}
     assert len(unique_keys) >= MERGER_MAX_GROUP_CANDIDATES, \
-        f"Expected ≥{MERGER_MAX_GROUP_CANDIDATES} unique keys after split, got {len(unique_keys)}"
+        f"Expected >={MERGER_MAX_GROUP_CANDIDATES} unique keys after split, got {len(unique_keys)}"
     assert _values_agree(0, 0) is True
 
 
