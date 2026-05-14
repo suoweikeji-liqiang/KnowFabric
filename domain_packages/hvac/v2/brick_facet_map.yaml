@@ -1,0 +1,99 @@
+version: 0.1.0
+source:
+  schema: Brick 1.4
+  url: https://brickschema.org/schema/Brick.ttl
+  note: Chiller-relevant point hierarchy for reference-point subtype detection.
+
+brick_reference_points:
+  Temperature_Sensor:
+    parent: Sensor
+    facet_subtype: temperature
+    keywords: [temperature, temp, 温度]
+  Oil_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: oil_temperature
+    keywords: [oil temperature, oil temp, lubricating oil temperature, 油温, 油箱温度, 供油温度, 润滑油温度]
+  Cooling_Water_Inlet_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: cooling_water_inlet_temperature
+    keywords: [cooling water inlet temperature, cooling water entering temperature, cooling water entering, 冷却水进水温度, 冷却水入水温度, 油冷/变频器冷却最低进水温度]
+  Cooling_Water_Outlet_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: cooling_water_outlet_temperature
+    keywords: [cooling water outlet temperature, cooling water leaving temperature, cooling water leaving, 冷却水出水温度, 冷却水出水, 冷却水离水温度]
+  Chilled_Water_Supply_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: chilled_water_supply_temperature
+    keywords: [chilled water supply temperature, leaving chilled water temperature, chilled water leaving temperature, 冷冻水供水温度, 冷冻水出水温度, 冷冻水离水温度]
+  Chilled_Water_Return_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: chilled_water_return_temperature
+    keywords: [chilled water return temperature, entering chilled water temperature, chilled water entering temperature, 冷冻水回水温度, 冷冻水进水温度, 冷冻水入水温度]
+  Condenser_Water_Inlet_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: condenser_water_inlet_temperature
+    keywords: [condenser water inlet temperature, condenser water entering temperature, condenser entering water temperature, 冷凝器进水温度, 冷凝水进水温度, 冷凝器入水温度]
+  Condenser_Water_Outlet_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: condenser_water_outlet_temperature
+    keywords: [condenser water outlet temperature, condenser water leaving temperature, condenser leaving water temperature, 冷凝器出水温度, 冷凝水出水温度, 冷凝器离水温度]
+  Refrigerant_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: refrigerant_temperature
+    keywords: [refrigerant temperature, refrigerant temp, refrigerant saturated temperature, 制冷剂温度, 冷媒温度, 制冷剂饱和温度]
+  Ambient_Air_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: ambient_air_temperature
+    keywords: [ambient air temperature, outdoor air temperature, outside air temperature, 环境温度, 室外空气温度, 室外温度]
+  Evaporator_Saturation_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: evaporator_saturation_temperature
+    keywords: [evaporator saturation temperature, evaporator saturated temperature, saturated evaporator temperature, 蒸发器饱和温度, 蒸发饱和温度, 蒸发温度]
+  Evaporator_Entering_Water_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: evaporator_entering_water_temperature
+    keywords: [evaporator entering water temperature, evaporator inlet water temperature, entering evaporator water temperature, 蒸发器进水温度, 蒸发器入水温度, 蒸发器水侧进水温度]
+  Evaporator_Leaving_Water_Temperature_Sensor:
+    parent: Temperature_Sensor
+    facet_subtype: evaporator_leaving_water_temperature
+    keywords: [evaporator leaving water temperature, evaporator outlet water temperature, leaving evaporator water temperature, 蒸发器出水温度, 蒸发器离水温度, 蒸发器水侧出水温度]
+  Pressure_Sensor:
+    parent: Sensor
+    facet_subtype: pressure
+    keywords: [pressure, pressure sensor, 压力, 压力传感器]
+  Oil_Pressure_Sensor:
+    parent: Pressure_Sensor
+    facet_subtype: oil_pressure
+    keywords: [oil pressure, lubricating oil pressure, oil supply pressure, 油压, 供油压力, 润滑油压力]
+  Refrigerant_Pressure_Sensor:
+    parent: Pressure_Sensor
+    facet_subtype: refrigerant_pressure
+    keywords: [refrigerant pressure, refrigerant suction pressure, refrigerant discharge pressure, 制冷剂压力, 冷媒压力, 冷媒吸气压力]
+  Differential_Pressure_Sensor:
+    parent: Pressure_Sensor
+    facet_subtype: differential_pressure
+    keywords: [differential pressure, pressure differential, delta p, 压差, 差压, ΔP]
+  Water_Pressure_Sensor:
+    parent: Pressure_Sensor
+    facet_subtype: water_pressure
+    keywords: [water pressure, chilled water pressure, condenser water pressure, 水压, 冷冻水压力, 冷却水压力]
+  Chilled_Water_Differential_Pressure_Sensor:
+    parent: Differential_Pressure_Sensor
+    facet_subtype: chilled_water_differential_pressure
+    keywords: [chilled water differential pressure, chilled water delta p, chilled water pressure differential, 冷冻水压差, 冷冻水差压, 冷冻水ΔP]
+  Condenser_Water_Differential_Pressure_Sensor:
+    parent: Differential_Pressure_Sensor
+    facet_subtype: condenser_water_differential_pressure
+    keywords: [condenser water differential pressure, condenser water delta p, condenser water pressure differential, 冷凝水压差, 冷却水压差, 冷凝器水压差]
+  Current_Sensor:
+    parent: Sensor
+    facet_subtype: current
+    keywords: [current, electrical current, 电流]
+  Compressor_Motor_Current_Sensor:
+    parent: Current_Sensor
+    facet_subtype: compressor_motor_current
+    keywords: [compressor motor current, compressor current, motor current, 压缩机电机电流, 压缩机电流, 主机电流]
+  Motor_Current_Sensor:
+    parent: Current_Sensor
+    facet_subtype: motor_current
+    keywords: [motor current, drive motor current, equipment motor current, 电机电流, 马达电流, 驱动电机电流]

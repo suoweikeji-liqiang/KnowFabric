@@ -625,7 +625,7 @@ def _group_via_embedding(
     equipment_class_id: str,
     knowledge_object_type: str,
     backend_name: str | None = None,
-    facet_hints: dict[str, str | None] | None = None,
+    facet_hints: dict[str, Any] | None = None,
 ) -> dict[str, str]:
     """H2: embedding-first grouping — BGE-M3 → cosine clustering → LLM refine."""
     cleaned = [str(n).strip() for n in names if str(n).strip()]
@@ -730,29 +730,74 @@ def _group_via_embedding(
 
 def _split_clusters_by_facet(
     clusters: list[list[str]],
-    facet_hints: dict[str, str | None],
+    facet_hints: dict[str, Any],
 ) -> list[list[str]]:
     """Split embedding clusters when known unit facets are dimensionally incompatible."""
 
     refined: list[list[str]] = []
     for cluster in clusters:
-        known_facets = {facet_hints.get(name) for name in cluster if facet_hints.get(name)}
-        if len(known_facets) < 2:
-            refined.append(cluster)
-            continue
-
-        by_facet: dict[str, list[str]] = {}
-        unknown: list[str] = []
-        for name in cluster:
-            facet = facet_hints.get(name)
-            if facet:
-                by_facet.setdefault(facet, []).append(name)
-            else:
-                unknown.append(name)
-        refined.extend(by_facet.values())
-        if unknown:
-            refined.append(unknown)
+        quantity_groups = _split_by_quantity(cluster, facet_hints)
+        for quantity_group in quantity_groups:
+            refined.extend(_split_by_subtype(quantity_group, facet_hints))
     return refined
+
+
+def _facet_quantity(hint: Any) -> str | None:
+    if isinstance(hint, (list, tuple)):
+        return str(hint[0]) if hint and hint[0] else None
+    return str(hint) if hint else None
+
+
+def _facet_subtype(hint: Any) -> str | None:
+    if isinstance(hint, (list, tuple)) and len(hint) > 1:
+        return str(hint[1]) if hint[1] else None
+    return None
+
+
+def _split_by_quantity(cluster: list[str], facet_hints: dict[str, Any]) -> list[list[str]]:
+    known_quantities = {
+        _facet_quantity(facet_hints.get(name))
+        for name in cluster
+        if _facet_quantity(facet_hints.get(name))
+    }
+    if len(known_quantities) < 2:
+        return [cluster]
+
+    by_quantity: dict[str, list[str]] = {}
+    unknown: list[str] = []
+    for name in cluster:
+        quantity = _facet_quantity(facet_hints.get(name))
+        if quantity:
+            by_quantity.setdefault(quantity, []).append(name)
+        else:
+            unknown.append(name)
+    groups = list(by_quantity.values())
+    if unknown:
+        groups.append(unknown)
+    return groups
+
+
+def _split_by_subtype(cluster: list[str], facet_hints: dict[str, Any]) -> list[list[str]]:
+    known_subtypes = {
+        _facet_subtype(facet_hints.get(name))
+        for name in cluster
+        if _facet_subtype(facet_hints.get(name))
+    }
+    has_unknown_subtype = any(
+        _facet_quantity(facet_hints.get(name)) and not _facet_subtype(facet_hints.get(name))
+        for name in cluster
+    )
+    if len(known_subtypes) < 2 or has_unknown_subtype:
+        return [cluster]
+
+    by_subtype: dict[str, list[str]] = {}
+    for name in cluster:
+        subtype = _facet_subtype(facet_hints.get(name))
+        if subtype:
+            by_subtype.setdefault(subtype, []).append(name)
+        else:
+            return [cluster]
+    return list(by_subtype.values())
 
 
 USE_EMBEDDING_FIRST = os.environ.get("KNOWFABRIC_USE_EMBEDDING_FIRST", "1") == "1"
@@ -765,7 +810,7 @@ def group_and_normalize(
     equipment_class_id: str,
     knowledge_object_type: str,
     backend_name: str | None = None,
-    facet_hints: dict[str, str | None] | None = None,
+    facet_hints: dict[str, Any] | None = None,
 ) -> dict[str, str]:
     """Group names by concept and normalize each group to a canonical key.
 

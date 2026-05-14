@@ -13,7 +13,7 @@ from typing import Any
 from packages.compiler.authority_arbitration import arbitrate
 from packages.compiler.canonical_key import group_and_normalize, resolve_single_name
 from packages.compiler.llm_compiler import _hashed_slug, _slugify_part
-from packages.compiler.unit_facet_detector import detect_unit_facet
+from packages.compiler.unit_facet_detector import detect_facet_v2
 
 AUTHORITY_RANK = {
     "field_observation": 6,
@@ -327,12 +327,12 @@ def merge_candidates(
     """
     # Step 1: Normalize canonical keys and group
     names_by_candidate = []
-    facet_hints: dict[str, str | None] = {}
+    facet_hints: dict[str, tuple[str | None, str | None]] = {}
     for c in candidates:
         payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
         name = payload.get("parameter_name") or c.get("title") or c.get("summary", "")
         names_by_candidate.append(name)
-        facet_hints[str(name)] = detect_unit_facet(str(name), payload if isinstance(payload, dict) else {})
+        facet_hints[str(name)] = detect_facet_v2(str(name), payload if isinstance(payload, dict) else {})
 
     # Phase 1: LLM-assisted cross-lingual grouping (T1 plumbing fix, docs/35 §T1)
     canonical_map: dict[str, str] = {}

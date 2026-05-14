@@ -8,7 +8,19 @@ parameter names.
 from __future__ import annotations
 
 import re
+from functools import lru_cache
+from pathlib import Path
 from typing import Any
+
+import yaml
+
+BRICK_FACET_MAP_PATH = (
+    Path(__file__).resolve().parents[2]
+    / "domain_packages"
+    / "hvac"
+    / "v2"
+    / "brick_facet_map.yaml"
+)
 
 UNIT_TO_FACET = {
     "c": "temperature",
@@ -83,22 +95,7 @@ def _has_pressure_differential_marker(text: str) -> bool:
     return any(pattern in lower for pattern in DIFFERENTIAL_PRESSURE_PATTERNS)
 
 
-def _facet_from_text_units(text: str) -> str | None:
-    for match in UNIT_RE.finditer(text):
-        facet = _lookup_unit(match.group(1))
-        if facet:
-            return facet
-    return None
-
-
-def detect_unit_facet(parameter_name: str, structured_payload: dict[str, Any] | None = None) -> str | None:
-    """Return a physical quantity facet inferred from units, or None.
-
-    Known pressure units are promoted to ``pressure_differential`` when the
-    name/value text explicitly carries a differential-pressure marker.
-    """
-
-    payload = structured_payload or {}
+def _payload_text(parameter_name: str, payload: dict[str, Any]) -> str:
     text_parts = [parameter_name]
     for key in (
         "title",
@@ -114,7 +111,54 @@ def detect_unit_facet(parameter_name: str, structured_payload: dict[str, Any] | 
         value = payload.get(key)
         if value is not None:
             text_parts.append(str(value))
-    combined_text = " ".join(text_parts)
+    return " ".join(text_parts)
+
+
+def _facet_from_text_units(text: str) -> str | None:
+    for match in UNIT_RE.finditer(text):
+        facet = _lookup_unit(match.group(1))
+        if facet:
+            return facet
+    return None
+
+
+@lru_cache(maxsize=1)
+def _load_brick_reference_points() -> list[dict[str, Any]]:
+    if not BRICK_FACET_MAP_PATH.exists():
+        return []
+    data = yaml.safe_load(BRICK_FACET_MAP_PATH.read_text(encoding="utf-8")) or {}
+    points = data.get("brick_reference_points") or {}
+    loaded: list[dict[str, Any]] = []
+    for tag, config in points.items():
+        if not isinstance(config, dict):
+            continue
+        subtype = str(config.get("facet_subtype") or "").strip()
+        keywords = [str(k).strip().lower() for k in config.get("keywords") or [] if str(k).strip()]
+        if subtype and keywords:
+            loaded.append({"tag": tag, "subtype": subtype, "keywords": keywords})
+    loaded.sort(key=lambda item: max(len(k) for k in item["keywords"]), reverse=True)
+    return loaded
+
+
+def detect_brick_subtype(parameter_name: str, structured_payload: dict[str, Any] | None = None) -> str | None:
+    """Detect a Brick reference-point subtype from name and payload text."""
+
+    text = _payload_text(parameter_name, structured_payload or {}).lower()
+    for point in _load_brick_reference_points():
+        if any(keyword in text for keyword in point["keywords"]):
+            return str(point["subtype"])
+    return None
+
+
+def detect_unit_facet(parameter_name: str, structured_payload: dict[str, Any] | None = None) -> str | None:
+    """Return a physical quantity facet inferred from units, or None.
+
+    Known pressure units are promoted to ``pressure_differential`` when the
+    name/value text explicitly carries a differential-pressure marker.
+    """
+
+    payload = structured_payload or {}
+    combined_text = _payload_text(parameter_name, payload)
 
     facet = _lookup_unit(payload.get("unit"))
     if facet == "pressure" and _has_pressure_differential_marker(combined_text):
@@ -131,3 +175,13 @@ def detect_unit_facet(parameter_name: str, structured_payload: dict[str, Any] | 
     if _has_pressure_differential_marker(combined_text):
         return "pressure_differential"
     return None
+
+
+def detect_facet_v2(
+    parameter_name: str,
+    structured_payload: dict[str, Any] | None = None,
+) -> tuple[str | None, str | None]:
+    """Return physical quantity and Brick reference-point subtype."""
+
+    payload = structured_payload or {}
+    return detect_unit_facet(parameter_name, payload), detect_brick_subtype(parameter_name, payload)

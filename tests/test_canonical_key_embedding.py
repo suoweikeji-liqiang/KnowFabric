@@ -89,6 +89,35 @@ def test_embedding_cluster_splits_by_unit_facet():
     assert mapping["油压差范围（运行）"] != mapping["供油温度范围"]
 
 
+def test_embedding_cluster_splits_by_brick_reference_subtype():
+    """Same physical unit family but different reference points must split."""
+
+    _clear()
+    names = ["油温控制设定值", "Cooling Water Inlet Temperature"]
+    fake_embs = [
+        [1.0, 0.0, 0.0],
+        [0.95, 0.1, 0.0],
+    ]
+    facet_hints = {
+        "油温控制设定值": ("temperature", "oil_temperature"),
+        "Cooling Water Inlet Temperature": (
+            "temperature",
+            "cooling_water_inlet_temperature",
+        ),
+    }
+
+    with patch("packages.compiler.embedding_client.embed_batch", return_value=fake_embs):
+        mapping = _group_via_embedding(
+            names,
+            domain_id="hvac",
+            equipment_class_id="centrifugal_chiller",
+            knowledge_object_type="parameter_spec",
+            facet_hints=facet_hints,
+        )
+
+    assert mapping["油温控制设定值"] != mapping["Cooling Water Inlet Temperature"]
+
+
 def test_embedding_first_is_default():
     assert USE_EMBEDDING_FIRST is True, "KNOWFABRIC_USE_EMBEDDING_FIRST must default to 1"
 
