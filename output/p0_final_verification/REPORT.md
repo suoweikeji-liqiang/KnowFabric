@@ -1,5 +1,46 @@
 # P0 Final Verification Report
 
+## 2026-05-14 Milestone: First Clean Cross-Publisher Merge
+
+KnowFabric reached its first 100% clean production cross-publisher merge KO:
+
+```text
+canonical_key = hvac:centrifugal_chiller:parameter:supply_oil_temperature_range
+publishers = Gree + McQuay
+consensus_state = agreed
+source_names = {供油温度范围}
+```
+
+Current verification baseline:
+
+```text
+oracle = PASS
+garbage_oil_temp_pressure_mix = 0
+parameter_name_corrupted = 0
+max_layers = 3
+```
+
+Remaining limitation:
+
+```text
+Unit facets distinguish physical quantity families such as temperature vs
+pressure differential, but they do not distinguish reference points inside the
+same facet. Temperature still needs Tier 2 modeling to separate oil temperature,
+cooling-water inlet temperature, and chilled-water leaving/supply temperature.
+```
+
+Key fixes that produced this baseline:
+
+```text
+P0 plumbing fix
+5a5634e oversize sanity
+U1 parameter_name pollution fix
+U2 candidate persistence / same-document split
+V1 complete-linkage clustering
+X4 unit-based facet split
+Y1 detector reads summary/evidence text units
+```
+
 ## 1) Oracle output
 
 Command:
