@@ -1116,3 +1116,183 @@ Conclusion:
 - The remaining same-temperature drift is outside unit-facet scope and needs
   Tier 2 reference-point modeling, e.g. Brick tag mapping, not threshold tuning
   or YAML name-pair hardcoding.
+
+## 13) 2026-05-14 Brick Validation Round
+
+### Pre-Brick Baseline
+
+Backup before validation:
+
+```text
+/tmp/aa1_pre_brick_validation_20260514T082059Z.sql
+```
+
+Baseline SQL artifact:
+
+```text
+output/diagnostic/20260514T163000Z_aa3_brick_validation/pre_brick_baseline.txt
+```
+
+Actual baseline on this machine was `34` centrifugal-chiller KOs, not `30`.
+The baseline already contained the first clean cross-publisher KO:
+
+```text
+hvac:centrifugal_chiller:parameter:supply_oil_temperature_range
+publishers = {Gree, McQuay}
+```
+
+### Oracle
+
+Command:
+
+```text
+rm -rf /tmp/knowfabric_embedding_cache
+OMLX_API_KEY=<redacted> venv/bin/python scripts/verify_cross_publisher_merge.py --skip-precheck
+```
+
+Result:
+
+```text
+RESULT: PASS - Cross-publisher merge plumbing verified end-to-end.
+```
+
+### Clean-Slate Run
+
+Run artifacts:
+
+```text
+output/diagnostic/20260514T163000Z_aa3_brick_validation/apply_counts.tsv
+output/diagnostic/20260514T163000Z_aa3_brick_validation/cross_publisher_quality.txt
+output/diagnostic/20260514T163000Z_aa3_brick_validation/oil_and_water_temperature_kos.txt
+output/diagnostic/20260514T163000Z_aa3_brick_validation/grouping_trace.jsonl
+output/diagnostic/20260514T163000Z_aa3_brick_validation/metrics.tsv
+```
+
+Apply evolution:
+
+```text
+Gree apply                         -> total chiller KO = 16
+AHRI apply                         -> total chiller KO = 19
+Trane apply                        -> total chiller KO = 38
+McQuay WSC/WDC/HSC/HDC apply       -> total chiller KO = 41
+McQuay single/double apply         -> total chiller KO = 41
+After regroup                      -> total chiller KO = 37
+```
+
+Regroup stats:
+
+```text
+{'new_merged': 0, 'updated_existing': 25, 'merged_existing': 4, 'material_conflicts': 5}
+```
+
+Final metrics:
+
+```text
+total_chiller_ko = 37
+cross_publisher_ko = 0
+cross_publisher_with_trane = 0
+max_layers = 6
+garbage_oil_temp_pressure_mix = 0
+parameter_spec_pname_numeric_or_placeholder = 0
+```
+
+Cross-publisher KO list:
+
+```text
+(0 rows)
+```
+
+### Facet/Subtype Findings
+
+No final cross-publisher KOs existed after regroup, so there was no final
+cross-publisher facet-consistency row to validate.
+
+Brick subtype detection did work on important intermediate grouping boundaries:
+
+```text
+供油温度范围                       -> (temperature, oil_temperature)
+油箱温度控制                       -> (temperature, oil_temperature)
+低油温起动抑制设定                 -> (temperature, oil_temperature)
+润滑油温度控制设定范围             -> (temperature, oil_temperature)
+油冷/变频器冷却最低进水温度         -> (temperature, cooling_water_inlet_temperature)
+最低冷冻水出水温度                 -> (None, chilled_water_supply_temperature)
+```
+
+In the Trane apply trace, Gree and Trane oil-temperature concepts were clustered
+together with matching subtype:
+
+```text
+供油温度范围                       hint = [temperature, oil_temperature]
+油箱温度控制                       hint = [temperature, oil_temperature]
+启动限制最低油温默认设定           hint = [temperature, oil_temperature]
+润滑油温度控制设定范围             hint = [temperature, oil_temperature]
+低油温起动抑制设定                 hint = [temperature, oil_temperature]
+canonical_key = hvac:centrifugal_chiller:parameter:supply_oil_temperature_range
+```
+
+Relevant pairwise similarities:
+
+```text
+供油温度范围 - 低油温起动抑制设定       0.8191
+供油温度范围 - 润滑油温度控制设定范围   0.8811
+油箱温度控制 - 低油温起动抑制设定       0.8566
+油箱温度控制 - 润滑油温度控制设定范围   0.8846
+```
+
+Brick also separated one key reference-point boundary:
+
+```text
+润滑油温度控制设定范围 / 低油温起动抑制设定
+  -> oil_temperature
+
+油冷/变频器冷却最低进水温度
+  -> cooling_water_inlet_temperature
+```
+
+### Failure Analysis
+
+The AA hard metric did **not** pass:
+
+```text
+required cross_publisher_ko >= 2
+actual cross_publisher_ko = 0
+```
+
+The final DB after regroup no longer contained a Gree temperature
+`parameter_spec`; Gree parameter_spec survived only as oil pressure differential:
+
+```text
+hvac:centrifugal_chiller:parameter:key_f538ca006e
+title = 油压差范围（运行）
+publishers = {Gree}
+```
+
+This means Brick subtype detection was not the only limiting factor. The trace
+shows the Gree+Trane oil-temperature merge existed during Trane apply, but later
+apply/regroup persistence removed or rewrote the Gree temperature parameter
+layers before final verification. That is a persistence/regroup continuity
+problem, not evidence that Brick reference-point modeling failed.
+
+Known Brick map gap observed but not changed in this round:
+
+```text
+油冷/变频器冷却最高进水温度 -> (temperature, temperature)
+油冷/变频器冷却最低进水温度 -> (temperature, cooling_water_inlet_temperature)
+```
+
+The `最高进水温度` variant did not hit the cooling-water-inlet subtype because
+the initial Brick keyword set covered the explicit `最低进水温度` string but not
+the parallel max/inlet wording. Per the round constraint, the map was not
+patched in-place.
+
+No threshold tuning, canonical-key YAML name-pair additions, LLM re-extraction,
+NIM integration, or oracle edits were performed.
+
+### Embedding Context
+
+Operator-provided model sweep data is consistent with this result: nine generic
+cloud embedding models, including NVIDIA NemoRetriever-family models, BGE-M3
+fp16, Qwen3 4B/8B, and Gemini embedding, did not simultaneously satisfy
+`POS_LANG >= 0.75`, `POS_REF >= 0.78`, and `NEG_REF < 0.78`. Reference-point
+separation still needs structured Brick-style semantics rather than generic
+embedding alone.
