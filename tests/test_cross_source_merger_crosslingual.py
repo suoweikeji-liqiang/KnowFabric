@@ -119,5 +119,5 @@ def test_crosslingual_different_values_produces_conflict():
         )
 
     assert len(merged) == 1
-    assert merged[0]["consensus_state"] == "material_conflict"
+    assert merged[0]["consensus_state"] == "value_disagreement"
     assert len(merged[0]["authority_summary_json"]["layers"]) == 2

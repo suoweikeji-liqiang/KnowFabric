@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from enum import StrEnum
 from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -22,6 +23,18 @@ KnowledgeObjectType = Literal[
     "symptom",
     "diagnostic_step",
 ]
+
+
+class ConsensusState(StrEnum):
+    """Authority consensus states exposed to semantic consumers."""
+
+    SINGLE_SOURCE = "single_source"
+    AGREED = "agreed"
+    PARTIAL_CONFLICT = "partial_conflict"
+    VALUE_DISAGREEMENT = "value_disagreement"
+    OVER_MERGE = "over_merge"
+    MATERIAL_CONFLICT = "material_conflict"
+    UNDETERMINED = "undetermined"
 
 
 class SemanticBaseModel(BaseModel):

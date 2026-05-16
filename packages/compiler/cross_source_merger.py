@@ -14,6 +14,7 @@ from packages.compiler.authority_arbitration import arbitrate
 from packages.compiler.canonical_key import group_and_normalize, resolve_single_name
 from packages.compiler.llm_compiler import _hashed_slug, _knowledge_type_prefix, _slugify_part
 from packages.compiler.unit_facet_detector import detect_facet_v2
+from packages.core.semantic_contract_v2 import ConsensusState
 
 AUTHORITY_RANK = {
     "field_observation": 6,
@@ -310,21 +311,83 @@ def _compute_consensus_state(layers: list[dict[str, Any]]) -> tuple[str, str | N
 
     # R3: only one source has a value → agreed (insufficient data for conflict)
     if len(non_empty) == 1:
-        return "agreed", None
+        return ConsensusState.AGREED.value, None
 
     base = non_empty[0]
     all_agree = all(_values_agree(base, v) for v in non_empty[1:])
     if all_agree:
-        return "agreed", None
+        return ConsensusState.AGREED.value, None
 
     if len(non_empty) == 2:
-        return "material_conflict", "Two sources disagree on value"
+        return (
+            classify_conflicting_layers(layers),
+            "Two sources disagree on value",
+        )
 
     agree_count = sum(1 for v in non_empty if _values_agree(base, v))
     if agree_count > len(non_empty) // 2:
-        return "partial_conflict", f"{agree_count}/{len(non_empty)} sources agree on value; minority diverges"
+        return ConsensusState.PARTIAL_CONFLICT.value, f"{agree_count}/{len(non_empty)} sources agree on value; minority diverges"
 
-    return "material_conflict", f"Significant value disagreement across {len(non_empty)} sources"
+    return (
+        classify_conflicting_layers(layers),
+        f"Significant value disagreement across {len(non_empty)} sources",
+    )
+
+
+def classify_conflicting_layers(layers: list[dict[str, Any]]) -> str:
+    """Classify non-agreeing layers as value disagreement or over-merge."""
+
+    signatures = [_layer_facet_signature(layer) for layer in layers]
+    if not signatures:
+        return ConsensusState.MATERIAL_CONFLICT.value
+
+    saw_signal = False
+    saw_partial = False
+    for axis in range(7):
+        values = [sig[axis] for sig in signatures]
+        known = {value for value in values if value}
+        if len(known) > 1:
+            return ConsensusState.OVER_MERGE.value
+        if len(known) == 1:
+            if axis != 0:
+                saw_signal = True
+            if any(value is None for value in values):
+                saw_partial = True
+
+    if saw_partial:
+        return ConsensusState.PARTIAL_CONFLICT.value
+    if saw_signal or (_all_layers_share_source_name(layers) and _layers_have_explicit_parameter_names(layers)):
+        return ConsensusState.VALUE_DISAGREEMENT.value
+    return ConsensusState.MATERIAL_CONFLICT.value
+
+
+def _layer_facet_signature(layer: dict[str, Any]) -> tuple[str | None, ...]:
+    payload = layer.get("structured_payload") or {}
+    if not isinstance(payload, dict):
+        payload = {}
+    name = str(layer.get("source_name") or payload.get("parameter_name") or "")
+    facet_payload = dict(payload)
+    for key in ("value_summary", "citation"):
+        if layer.get(key) is not None:
+            facet_payload.setdefault(key, layer.get(key))
+    return detect_facet_v2(name, facet_payload)
+
+
+def _all_layers_share_source_name(layers: list[dict[str, Any]]) -> bool:
+    names = {
+        str(layer.get("source_name") or "").strip().lower()
+        for layer in layers
+        if str(layer.get("source_name") or "").strip()
+    }
+    return len(names) == 1
+
+
+def _layers_have_explicit_parameter_names(layers: list[dict[str, Any]]) -> bool:
+    for layer in layers:
+        payload = layer.get("structured_payload") or {}
+        if isinstance(payload, dict) and str(payload.get("parameter_name") or "").strip():
+            return True
+    return False
 
 
 def _extract_value_summary(candidate: dict[str, Any]) -> str | None:
@@ -755,7 +818,7 @@ def merge_candidates(
             "applicability_json": group[0].get("applicability", {}),
             "confidence_score": best_confidence,
             "trust_level": best_trust,
-            "review_status": "pending" if consensus_state == "material_conflict" else "published",
+            "review_status": "pending" if consensus_state == ConsensusState.OVER_MERGE.value else "published",
             "primary_chunk_id": primary_chunk_id,
             "authority_summary_json": authority_summary,
             "consensus_state": consensus_state,
@@ -1011,7 +1074,10 @@ def merge_with_existing(
             "evidence_rows": _summarize_evidence_rows(evidence_rows),
         }
 
-        if ko_dict["consensus_state"] == "material_conflict":
+        if ko_dict["consensus_state"] in {
+            ConsensusState.OVER_MERGE.value,
+            ConsensusState.MATERIAL_CONFLICT.value,
+        }:
             ko_dict["review_status"] = "conflict_review_required"
             stats["material_conflicts"] += 1
 

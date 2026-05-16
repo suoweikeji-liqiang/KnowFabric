@@ -160,7 +160,7 @@ sw_base_model 各子项目消费 KnowFabric 的方式：
 | 字段 | 类型 | 说明 |
 |------|------|------|
 | `trust_level` | string | L1/L2/L3/L4，单源信号强度 |
-| `consensus_state` | string | `single_source` / `agreed` / `partial_conflict` / `material_conflict` |
+| `consensus_state` | string | `single_source` / `agreed` / `partial_conflict` / `value_disagreement` / `over_merge` / `material_conflict` |
 | `highest_authority_level` | string | 所有支撑源中最高的 authority_level |
 | `authority_layers` | array | 所有支撑源的列表，每条含 level + publisher + citation + value_summary |
 | `conflict_summary` | string \| null | 当 consensus_state 为冲突时填充 |
@@ -347,8 +347,10 @@ KnowFabric 在编译 KO 时按以下逻辑设置 `consensus_state`：
 
 - 单源 → `single_source`
 - 多源同值（容差内）→ `agreed`
-- 多源值差异在领域可接受范围（如默认值 10°F vs 12°F 仅 ±20%）→ `partial_conflict` + `conflict_summary` 描述差异
-- 多源值材质性差异（如默认值 10°F vs 50°F）→ `material_conflict` + `conflict_summary` 描述
+- 多源值差异但 facet/reference-point 全部对齐 → `value_disagreement` + `conflict_summary` 描述各厂商实测/设定差异；消费方应展示为真实 OEM 分歧，而不是隐藏或自动选边
+- 多源值差异且部分 facet 识别缺失 → `partial_conflict` + `conflict_summary` 描述差异；消费方可展示主流值并标注未完全判明的分歧
+- 多源值差异且 facet/reference-point/subsystem/refrigerant 等维度互斥 → `over_merge`；这是 KnowFabric 内部该拆未拆的质量问题，sw_base_model 不应向最终用户展示，应进入 review queue
+- `material_conflict` 是旧版兼容状态。新编译流程不再主动生成；消费方收到时按“未 retag 的旧冲突”处理，优先进入 review 或降级展示
 
 ### 11.3 冲突仲裁原则（agent 消费时遵守）
 
