@@ -1,0 +1,75 @@
+{
+  "stats_mode": "chunk_backfill_review_pipeline_stats",
+  "candidate_source": null,
+  "pack_dir": "output/diagnostic/20260516T151729Z_line2_scanned_visual/20260516T152743Z_visual_parameter_batch/01_麦克维尔磁悬浮变频离心式冷水机组_WMC_WME_9d2d8187/review_packs",
+  "readiness_report_path": null,
+  "apply_report_path": null,
+  "overall": {
+    "scanned_chunks": 0,
+    "matched_chunks": 0,
+    "candidate_entries": 0,
+    "candidate_hit_rate": 0.0,
+    "review_packs_total": 1,
+    "review_packs_ready_to_apply": 1,
+    "review_packs_pending": 0,
+    "review_packs_rejected_only": 0,
+    "readiness_status_counts": {
+      "ready": 0,
+      "blocked_pending": 0,
+      "blocked_no_accepted": 0,
+      "blocked_invalid": 0
+    },
+    "apply_status_counts": {
+      "applied": 0,
+      "skipped_pending": 0,
+      "skipped_no_accepted": 0,
+      "failed": 0
+    }
+  },
+  "documents": [
+    {
+      "doc_id": "doc_8b909577398744ba",
+      "doc_name": "01_麦克维尔磁悬浮变频离心式冷水机组_WMC、WME.pdf",
+      "scanned_chunks": 0,
+      "matched_chunks": 0,
+      "candidate_entries": 0,
+      "candidate_hit_rate": 0.0,
+      "review_decisions": {
+        "accepted": 17,
+        "rejected": 0,
+        "pending": 0
+      },
+      "packs_total": 1,
+      "packs_ready_to_apply": 1,
+      "readiness_status_counts": {
+        "ready": 0,
+        "blocked_pending": 0,
+        "blocked_no_accepted": 0,
+        "blocked_invalid": 0
+      },
+      "apply_status_counts": {
+        "applied": 0,
+        "skipped_pending": 0,
+        "skipped_no_accepted": 0,
+        "failed": 0
+      }
+    }
+  ],
+  "review_packs": [
+    {
+      "pack_file": "hvac__doc_8b909577398744ba__magnetic_bearing_chiller.json",
+      "doc_id": "doc_8b909577398744ba",
+      "doc_name": "01_麦克维尔磁悬浮变频离心式冷水机组_WMC、WME.pdf",
+      "equipment_class_id": "magnetic_bearing_chiller",
+      "equipment_class_key": "hvac:magnetic_bearing_chiller",
+      "candidate_count": 17,
+      "accepted_count": 17,
+      "rejected_count": 0,
+      "pending_count": 0,
+      "ready_to_apply": true,
+      "readiness_status": null,
+      "readiness_blocker": null,
+      "apply_status": null
+    }
+  ]
+}

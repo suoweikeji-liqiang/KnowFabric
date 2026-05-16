@@ -1,0 +1,38 @@
+doc_id,file_name,page_no,error
+doc_8b909577398744ba,01_麦克维尔磁悬浮变频离心式冷水机组_WMC、WME.pdf,5,"Expecting ',' delimiter: line 434 column 6 (char 11556)"
+doc_34e59fab0b494f7d,08_麦克维尔单螺杆式冷水机组_WHS.C.pdf,6,"Expecting ',' delimiter: line 446 column 6 (char 11627)"
+doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf,13,"Expecting ',' delimiter: line 518 column 6 (char 12822)"
+doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf,14,"Expecting ',' delimiter: line 506 column 6 (char 12651)"
+doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf,26,"Expecting ',' delimiter: line 434 column 6 (char 11591)"
+doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf,6,"Expecting ',' delimiter: line 530 column 6 (char 12902)"
+doc_5faa3373b945486d,ETW离心高温水源热泵技术手册（73页）.pdf,8,"Expecting ',' delimiter: line 470 column 6 (char 12144)"
+doc_c33e7b4d18e442e9,LMS系列四管制风冷螺杆机组（23-F-I）0000(1).pdf,8,"Expecting ',' delimiter: line 482 column 6 (char 12210)"
+doc_fd0c92db05ea4570,MC系列H高效空气源螺杆式热泵机组.pdf,8,"Expecting ',' delimiter: line 494 column 6 (char 12481)"
+doc_e4d3b0ac1dbc40c6,MC系列H高效降膜离心机组.pdf,12,MiMo visual parameter request failed: <urlopen error [Errno 32] Broken pipe>
+doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf,21,"Expecting ',' delimiter: line 422 column 6 (char 11515)"
+doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf,17,"Expecting ',' delimiter: line 422 column 6 (char 11381)"
+doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf,15,"Expecting ',' delimiter: line 482 column 6 (char 12175)"
+doc_6a66ce78e29e4d84,VAE-2404-组合式空调机组-落地系列.pdf,7,"Expecting ',' delimiter: line 506 column 6 (char 12573)"
+doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf,10,"Expecting ',' delimiter: line 494 column 6 (char 12454)"
+doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf,9,"Expecting ',' delimiter: line 482 column 6 (char 12211)"
+doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf,6,"Expecting ',' delimiter: line 482 column 6 (char 12236)"
+doc_ae0d6a9533d64270,quanrejioahuanqi.pdf,5,MiMo visual parameter request failed: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>
+doc_ae0d6a9533d64270,quanrejioahuanqi.pdf,11,"Expecting ',' delimiter: line 458 column 6 (char 11788)"
+doc_ae0d6a9533d64270,quanrejioahuanqi.pdf,12,"Expecting ',' delimiter: line 482 column 6 (char 12287)"
+doc_4074061206b94f00,干式双螺杆冷水机组.pdf,6,"Expecting ',' delimiter: line 518 column 6 (char 12977)"
+doc_4074061206b94f00,干式双螺杆冷水机组.pdf,7,"Expecting ',' delimiter: line 506 column 6 (char 12658)"
+doc_4074061206b94f00,干式双螺杆冷水机组.pdf,8,Expecting value: line 1 column 1 (char 0)
+doc_4074061206b94f00,干式双螺杆冷水机组.pdf,9,Expecting value: line 1 column 1 (char 0)
+doc_4074061206b94f00,干式双螺杆冷水机组.pdf,10,Expecting value: line 1 column 1 (char 0)
+doc_d7623d21517a41fd,水冷式冷水机组安装、使用、维护说明书.pdf,46,MiMo visual parameter request failed: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>
+doc_3b380fd616ba44f6,水水螺杆式水源热泵冷水机组满液134a青干系列手册.pdf,6,"Expecting ',' delimiter: line 482 column 6 (char 12226)"
+doc_3b380fd616ba44f6,水水螺杆式水源热泵冷水机组满液134a青干系列手册.pdf,7,"Expecting ',' delimiter: line 494 column 6 (char 12293)"
+doc_da33f5efd07f4d4c,水源热泵螺杆机.pdf,19,Expecting value: line 1 column 1 (char 0)
+doc_e6afb1b0f9f44b93,离心机WSCWCC-C023_CH1709-5000-A.pdf,11,"Expecting ',' delimiter: line 554 column 6 (char 13247)"
+doc_043a99c6c33d46e4,超高效螺杆冷水热泵机组泰坦系列.pdf,4,"Expecting ',' delimiter: line 482 column 6 (char 12320)"
+doc_043a99c6c33d46e4,超高效螺杆冷水热泵机组泰坦系列.pdf,5,"Expecting ',' delimiter: line 482 column 6 (char 12344)"
+doc_043a99c6c33d46e4,超高效螺杆冷水热泵机组泰坦系列.pdf,6,"Expecting ',' delimiter: line 494 column 6 (char 12506)"
+doc_66f21cfe6cf04ac1,风冷冷水(热泵)机组06001-2015LK1869--CGHR14BNAR--A2015CCC0703-2136901.pdf,1,MiMo visual parameter request failed: <urlopen error [Errno 32] Broken pipe>
+doc_9650969ce6cb4585,风冷冷水(热泵)机组06001-2015LK1870--CGHR12BNAR--A2015CCC0703-2136900 (1).pdf,9,MiMo visual parameter request failed: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>
+doc_f981b97d70114c28,风冷冷水(热泵)机组06001-2015LK1871--CGHR09BNAR--A2015CCC0703-2136899.pdf,44,Unterminated string starting at: line 1 column 2 (char 1)
+doc_182078164f644141,风冷冷水（热泵）空调热水机组2015JC16--CGHR14BH.pdf,3,"Expecting ',' delimiter: line 518 column 6 (char 13144)"

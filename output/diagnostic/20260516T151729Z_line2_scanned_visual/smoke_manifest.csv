@@ -1,0 +1,4 @@
+priority,domain,brand,size_mb,filename,path,source,local_path,status,page_count,text_quality,sample_text_chars,text_quality_error
+P1,Chiller,麦克维尔,33,02 麦克维尔离心式冷水机组 WSC、WDC、WCC.pdf,/Volumes/TSD302/pan/中央空调2/a00238中央空调资料合集/06、麦克维尔/样本手册/二、水冷冷水机组/02 麦克维尔离心式冷水机组 WSC、WDC、WCC.pdf,a00238,/Users/asteroida/work/KnowFabric/storage/authority_sources/hvac/_phase1_batch/chiller_cn/麦克维尔/02_麦克维尔离心式冷水机组_WSC、WDC、WCC.pdf,copied,12,scanned,0,
+P1,AHU,美意,8,MAH组合式空气处理机组.pdf,/Volumes/TSD302/pan/中央空调2/a00238中央空调资料合集/19、美意中央空调/样本手册/MAH组合式空气处理机组.pdf,a00238,/Users/asteroida/work/KnowFabric/storage/authority_sources/hvac/_phase1_batch/ahu_cn/美意/MAH组合式空气处理机组.pdf,copied,20,scanned,0,
+P1,Chiller,三菱重工,19,【三菱重工】ETW离心高温水源热泵技术手册（73页）.pdf,/Volumes/TSD302/pan/中央空调2/a00238中央空调资料合集/07、三菱重工/技术手册/【三菱重工】ETW离心高温水源热泵技术手册（73页）.pdf,a00238,/Users/asteroida/work/KnowFabric/storage/authority_sources/hvac/_phase1_batch/chiller_cn/三菱重工/ETW离心高温水源热泵技术手册（73页）.pdf,copied,73,scanned,440,
