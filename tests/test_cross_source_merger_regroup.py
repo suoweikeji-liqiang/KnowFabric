@@ -191,3 +191,12 @@ def test_ko_to_candidates_matches_layers_by_chunk_not_only_doc() -> None:
     assert names == ["供油温度范围", "油压差范围（运行）"]
     assert candidates[1]["structured_payload"]["range_min"] == "150"
     assert candidates[1]["structured_payload"]["unit"] == "kPa"
+
+
+def test_ko_to_candidates_uses_layer_summary_when_expanding_overmerged_ko() -> None:
+    """Expanded regroup candidates must not inherit stale aggregate KO summaries."""
+
+    candidates = _ko_to_candidates(_MultiLayerSameDocKo(), session=_MultiLayerSameDocSession())
+
+    assert candidates[0]["summary"] == "供油温度稳定，在35-50范围内"
+    assert candidates[1]["summary"] == "供油压力比油箱压力高150-250kPa"

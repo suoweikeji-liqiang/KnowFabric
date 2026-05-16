@@ -24,7 +24,11 @@ brick_reference_points:
   Chilled_Water_Supply_Temperature_Sensor:
     parent: Temperature_Sensor
     facet_subtype: chilled_water_supply_temperature
-    keywords: [chilled water supply temperature, leaving chilled water temperature, chilled water leaving temperature, 冷冻水供水温度, 冷冻水出水温度, 冷冻水离水温度]
+    keywords: [chilled water supply temperature, leaving chilled water temperature, chilled water leaving temperature, chilled water setpoint, leaving chilled water setpoint, 冷冻水供水温度, 冷冻水出水温度, 冷冻水离水温度, 冷冻水设定, 外部冷冻水设定, 外部冷冻水设定范围]
+  Chilled_Water_Temperature_Reset_Range:
+    parent: Chilled_Water_Supply_Temperature_Sensor
+    facet_subtype: chilled_water_temperature_reset_range
+    keywords: [chilled water temperature reset range, leaving chilled water reset range, remote chilled water reset, 远程模式下冷冻水出水温度重设范围, 冷冻水出水温度重设范围, 冷冻水出水温度重置范围]
   Chilled_Water_Return_Temperature_Sensor:
     parent: Temperature_Sensor
     facet_subtype: chilled_water_return_temperature
@@ -97,3 +101,375 @@ brick_reference_points:
     parent: Current_Sensor
     facet_subtype: motor_current
     keywords: [motor current, drive motor current, equipment motor current, 电机电流, 马达电流, 驱动电机电流]
+  Current_Limit_Percentage:
+    parent: Current_Sensor
+    facet_subtype: current_limit_percentage
+    keywords: [current limit percentage, demand limit percentage, current limit setpoint, demand limit setpoint, limit current percentage, 限流百分比, 基本需求量限, 电流限制百分比, 需求量限]
+  Line_Voltage_Percentage:
+    parent: Sensor
+    facet_subtype: line_voltage_percentage
+    keywords: [line voltage percentage, voltage percentage, voltage percent, line voltage percent, 线电压百分比, 电压百分比]
+  Refrigerant_Discharge_Pressure:
+    parent: Refrigerant_Pressure_Sensor
+    facet_subtype: refrigerant_discharge_pressure
+    keywords: [discharge pressure, head pressure, refrigerant discharge pressure, 排气压力, 高压压力, 排气端压力]
+  Refrigerant_Suction_Pressure:
+    parent: Refrigerant_Pressure_Sensor
+    facet_subtype: refrigerant_suction_pressure
+    keywords: [suction pressure, refrigerant suction pressure, low side pressure, 吸气压力, 低压压力, 吸气端压力]
+  Refrigerant_Condensing_Pressure:
+    parent: Refrigerant_Pressure_Sensor
+    facet_subtype: refrigerant_condensing_pressure
+    keywords: [condensing pressure, condenser pressure, refrigerant condensing pressure, 冷凝压力, 冷凝器压力, 冷媒冷凝压力]
+  Refrigerant_Evaporating_Pressure:
+    parent: Refrigerant_Pressure_Sensor
+    facet_subtype: refrigerant_evaporating_pressure
+    keywords: [evaporating pressure, evaporator pressure, refrigerant evaporating pressure, 蒸发压力, 蒸发器压力, 冷媒蒸发压力]
+  Refrigerant_Working_Pressure:
+    parent: Refrigerant_Pressure_Sensor
+    facet_subtype: refrigerant_working_pressure
+    keywords: [refrigerant working pressure, refrigerant side working pressure, refrigerant-side pressure, 制冷剂侧工作压力, 冷媒侧工作压力, 制冷剂工作压力]
+  Water_Working_Pressure:
+    parent: Water_Pressure_Sensor
+    facet_subtype: water_working_pressure
+    keywords: [water working pressure, water side working pressure, water box working pressure, 水侧工作压力, 水室设计工作压力, 冷却水回路工作压力]
+  Test_Pressure:
+    parent: Pressure_Sensor
+    facet_subtype: test_pressure
+    keywords: [test pressure, pressure test, leak test pressure, 密封性试验压力, 试验压力, 耐压试验压力]
+  Setting_Pressure:
+    parent: Pressure_Sensor
+    facet_subtype: setting_pressure
+    keywords: [pressure setpoint, pressure setting, setting pressure, 压力设定值, 压力设定, 设定压力]
+  Differential_Pressure_Minimum_Setpoint:
+    parent: Differential_Pressure_Sensor
+    facet_subtype: differential_pressure_minimum_setpoint
+    keywords: [minimum differential pressure setpoint, minimum pressure differential setpoint, min differential pressure, 最小压差设定值, 最小压差, 最低压差]
+  Differential_Pressure_Activation_Setpoint:
+    parent: Differential_Pressure_Sensor
+    facet_subtype: differential_pressure_activation_setpoint
+    keywords: [active differential pressure, activation differential pressure, differential pressure activation, 激活压差, 启用压差, 压差激活]
+  Differential_Pressure_Max_Load_Point:
+    parent: Differential_Pressure_Sensor
+    facet_subtype: differential_pressure_max_load_point
+    keywords: [maximum load point delta p, max load point delta p, maximum load ΔP, 最大负载点 ΔP, 最大负载点, 最大负载压差]
+  Refrigerant_Suction_Temperature:
+    parent: Refrigerant_Temperature_Sensor
+    facet_subtype: refrigerant_suction_temperature
+    keywords: [suction temperature, refrigerant suction temperature, suction gas temperature, 吸气温度, 制冷剂吸气温度, 冷媒吸气温度]
+  Refrigerant_Discharge_Temperature:
+    parent: Refrigerant_Temperature_Sensor
+    facet_subtype: refrigerant_discharge_temperature
+    keywords: [discharge temperature, refrigerant discharge temperature, discharge superheat, 排气温度, 制冷剂排气温度, 排气过热度]
+  Motor_Winding_Temperature:
+    parent: Temperature_Sensor
+    facet_subtype: motor_winding_temperature
+    keywords: [motor winding temperature, winding temperature, stator temperature, 电机绕组温度, 绕组温度, 定子温度]
+  Thrust_Bearing_Temperature:
+    parent: Temperature_Sensor
+    facet_subtype: thrust_bearing_temperature
+    keywords: [thrust bearing temperature, thrust bearing oil temperature, thrust bearing temp, 推力轴承温度, 推力轴承油温, 推力轴承—油温传感器]
+  Compressor_Body_Temperature:
+    parent: Temperature_Sensor
+    facet_subtype: compressor_body_temperature
+    keywords: [compressor body temperature, compressor shell temperature, compressor temperature, 压缩机机体温度, 压缩机壳体温度, 压缩机温度]
+  Air_Flow_Range:
+    parent: Flow_Sensor
+    facet_subtype: air_flow_range
+    keywords: [air flow range, airflow range, air volume range, air_flow_range, 风量范围, 送风量范围]
+  Air_Leakage_Rate:
+    parent: Flow_Sensor
+    facet_subtype: air_leakage_rate
+    keywords: [air leakage rate, casing leakage rate, leakage rate, air_leakage_rate, 漏风率, 箱体漏风率]
+  Humidification_Rate:
+    parent: Sensor
+    facet_subtype: humidification_rate
+    keywords: [humidification rate, humidification capacity, humidifier capacity, 加湿量, 加湿能力, 加湿器容量]
+  Water_Flow_Lower_Bound:
+    parent: Flow_Sensor
+    facet_subtype: water_flow_lower_bound
+    keywords: [water flow lower bound, minimum water flow, water flow variation lower limit, 水流变化下限, 最小水流量, 热水流量变化下限]
+  Drain_Pipe_Size:
+    parent: Sensor
+    facet_subtype: drain_pipe_size
+    keywords: [drain pipe size, condensate drain size, drain connection size, 排水管接口尺寸, 排水管径, 冷凝水排水管尺寸]
+  Evaporator_Pipe_Size:
+    parent: Sensor
+    facet_subtype: evaporator_pipe_size
+    keywords: [evaporator pipe size, evaporator connection size, evaporator nozzle size, 蒸发器管径, 蒸发器接管尺寸, 蒸发器接口尺寸]
+  Condenser_Pipe_Size:
+    parent: Sensor
+    facet_subtype: condenser_pipe_size
+    keywords: [condenser pipe size, condenser connection size, condenser nozzle size, 冷凝器管径, 冷凝器接管尺寸, 冷凝器接口尺寸]
+  Condenser_Flow_Differential_Pressure:
+    parent: Condenser_Water_Differential_Pressure_Sensor
+    facet_subtype: condenser_flow_differential_pressure
+    keywords: [condenser flow differential pressure, condenser low flow pressure differential, condenser pressure drop requirement, 冷凝器流量过小, 冷凝器压差要求, 冷凝器流量过小 - 压差要求]
+  Capacity_Control_Range:
+    parent: Sensor
+    facet_subtype: capacity_control_range
+    keywords: [capacity control range, capacity modulation range, load limit setting, 能量调节范围, 容量调节范围, 最大负荷设定]
+  Nominal_Cooling_Capacity:
+    parent: Sensor
+    facet_subtype: nominal_cooling_capacity
+    keywords: [nominal cooling capacity, rated cooling capacity, cooling capacity, 制冷量, 名义制冷量, 额定制冷量]
+  Nominal_Heating_Capacity:
+    parent: Sensor
+    facet_subtype: nominal_heating_capacity
+    keywords: [nominal heating capacity, rated heating capacity, heating capacity, 名义制热量, 额定制热量, 制热量]
+  Cooling_Input_Power:
+    parent: Sensor
+    facet_subtype: cooling_input_power
+    keywords: [nominal cooling input power, cooling input power, rated cooling input power, 制冷输入功率, 名义制冷输入功率, 制冷功率]
+  Compressor_Capacity_Transition:
+    parent: Sensor
+    facet_subtype: compressor_capacity_transition
+    keywords: [compressor capacity transition, compressor staging capacity, compressor conversion capacity, 压缩机转换能量, 压缩机容量转换, 压缩机级数转换]
+  Environment_Temperature_Humidity_Limits:
+    parent: Temperature_Sensor
+    facet_subtype: environment_temperature_humidity_limits
+    keywords: [room temperature and humidity limits, ambient installation limits, installation environment requirement, 安装环境要求, 安装环境温度, 安装环境温度要求]
+  Oil_Temperature_High_Fault:
+    parent: Oil_Temperature_Sensor
+    facet_subtype: oil_temperature_high_fault
+    keywords: [oil temperature high fault, lubricating oil high temperature, supply oil high temperature, 润滑油温度过高, 供油温度高温报警, 供油温度高温报警/保护]
+  Oil_Temperature_Low_Fault:
+    parent: Oil_Temperature_Sensor
+    facet_subtype: oil_temperature_low_fault
+    keywords: [oil temperature low fault, low oil temperature alarm, low lubricating oil temperature, 油温低报警, 润滑油温度过低, 低油温报警]
+  Prestart_Alarm:
+    parent: Sensor
+    facet_subtype: prestart_alarm
+    keywords: [prestart alarm, pre-start alarm, startup inhibit alarm, 预启动报警, 启动前报警, 开机前报警]
+  Power_Supply:
+    parent: Sensor
+    facet_subtype: power_supply
+    keywords: [power supply, supply voltage, electrical supply, 电源, 配电电源, 供电电源]
+  Restart_Voltage:
+    parent: Sensor
+    facet_subtype: restart_voltage
+    keywords: [restart voltage, restart volts, voltage restart threshold, 重启电压, 再启动电压, 恢复启动电压]
+  Phase_Reversal_Fault:
+    parent: Sensor
+    facet_subtype: phase_reversal_fault
+    keywords: [phase reversal trip, reverse phase fault, phase sequence fault, 相序反, 逆相, 相序反脱扣]
+  Protective_Limit:
+    parent: Sensor
+    facet_subtype: protective_limit
+    keywords: [protective limit, protection limit, safety limit, 保护限, 保护限制, 安全限制]
+  Surge_Protection_Limit:
+    parent: Sensor
+    facet_subtype: surge_protection_limit
+    keywords: [surge protection limit, excessive surge limit, surge warning limit, 喘振保护, 波动保护, 过量波动限定]
+  Heat_Recovery_Efficiency:
+    parent: Sensor
+    facet_subtype: heat_recovery_efficiency
+    keywords: [heat recovery efficiency, energy recovery percentage, heat_recovery_efficiency, 热回收效率, 液体循环热回收效率, 能量回收效率]
+  Filter_Efficiency:
+    parent: Sensor
+    facet_subtype: filter_efficiency
+    keywords: [filter efficiency, high efficiency filter, filter rating, 高效过滤器效率, 过滤效率, 过滤器效率]
+  Spray_Humidifier_Efficiency:
+    parent: Sensor
+    facet_subtype: spray_humidifier_efficiency
+    keywords: [spray humidifier efficiency, high pressure spray humidification efficiency, humidifier efficiency, 高压喷雾加湿效率, 喷雾加湿效率, 加湿效率]
+  Face_Velocity_Limits:
+    parent: Flow_Sensor
+    facet_subtype: face_velocity_limits
+    keywords: [face velocity limits, coil face velocity, filter face velocity, face_velocity_limits, 迎面风速, 面风速限制]
+  Subcooling:
+    parent: Temperature_Sensor
+    facet_subtype: subcooling
+    keywords: [subcooling, subcooling degree, liquid subcooling, 过冷度, 液体过冷度, 制冷剂过冷度]
+  Cooling_Test_Condition:
+    parent: Sensor
+    facet_subtype: cooling_test_condition
+    keywords: [cooling condition, cooling test condition, rated cooling condition, 制冷工况, 制冷测试工况, 额定制冷工况]
+  Water_Pipe_Torque:
+    parent: Sensor
+    facet_subtype: water_pipe_torque
+    keywords: [water pipe torque, pipe tightening torque, connection torque, Water Pipe Torque, 水管扭矩, 管接头扭矩]
+  Drain_Pan_Trap_Depth:
+    parent: Sensor
+    facet_subtype: drain_pan_trap_depth
+    keywords: [drain pan trap depth, condensate trap depth, drain trap height, Drain Pan Trap Depth, 水封高度, 存水弯高度]
+  Drain_Pan_Design:
+    parent: Sensor
+    facet_subtype: drain_pan_design
+    keywords: [drain pan design, beveled drain pan, condensate pan discharge, Double beveled water drain pan, 接水盘设计, 冷凝水盘排水]
+  Model_Naming:
+    parent: Sensor
+    facet_subtype: model_naming
+    keywords: [model naming, model nomenclature, model number definition, 型号说明, 模数定义, 命名规则]
+  Modular_Airflow_P:
+    parent: Air_Flow_Range
+    facet_subtype: modular_airflow_p
+    keywords: [Modular P Airflow, modular p airflow, module p air flow, P模数风量, P模块风量, P型模块风量]
+  Modular_Airflow_R:
+    parent: Air_Flow_Range
+    facet_subtype: modular_airflow_r
+    keywords: [Modular R Airflow, modular r airflow, module r air flow, R模数风量, R模块风量, R型模块风量]
+  External_Static_Pressure_Code:
+    parent: Pressure_Sensor
+    facet_subtype: external_static_pressure_code
+    keywords: [external static pressure code, esp code, static pressure code, 机外全压代号, 静压代号, 机外静压代号]
+  Working_Pressure:
+    parent: Pressure_Sensor
+    facet_subtype: working_pressure
+    keywords: [working pressure, design working pressure, operating pressure, 工作压力, 设计工作压力, 运行压力]
+  Evaporator_Design_Working_Pressure:
+    parent: Water_Working_Pressure
+    facet_subtype: evaporator_design_working_pressure
+    keywords: [evaporator design working pressure, evaporator water design pressure, evaporator working pressure, 蒸发器设计工作压力, 蒸发器工作压力, 蒸发器水侧承压]
+  Water_Side_Maximum_Pressure:
+    parent: Water_Working_Pressure
+    facet_subtype: water_side_maximum_pressure
+    keywords: [water side maximum pressure, maximum water side pressure, water side pressure rating, 水侧最大承压, 水侧最大压力, 水侧承压]
+  Installation_Clearance:
+    parent: Sensor
+    facet_subtype: installation_clearance
+    keywords: [installation clearance, service clearance, installation space, 安装空间要求, 安装空间, 机组安装空间要求]
+  Nominal_Heating_Test_Conditions:
+    parent: Sensor
+    facet_subtype: nominal_heating_test_conditions
+    keywords: [nominal heating test conditions, rated heating condition, heating test condition, nominal_heating_test_conditions, 制热设计工况, 制热工况条件]
+  Hot_Water_Outlet_Temperature_Maximum:
+    parent: Temperature_Sensor
+    facet_subtype: hot_water_outlet_temperature_maximum
+    keywords: [maximum hot water outlet temperature, max hot water outlet temperature, hot water leaving maximum, maximum_hot_water_outlet_temperature, 最高热水出水温度, 热水出水最高温度]
+  Water_Flow_Variation_Limits:
+    parent: Flow_Sensor
+    facet_subtype: water_flow_variation_limits
+    keywords: [water flow variation limits, water flow variation, flow variation limits, water_flow_variation_limits, 水流量变化范围, 水流变化限制]
+  Oil_Pressure_Differential_Fault:
+    parent: Differential_Pressure_Sensor
+    facet_subtype: oil_pressure_differential_fault
+    keywords: [oil pressure differential alarm, oil pressure differential fault, oil pressure differential protection, low oil pressure differential, 油压差报警, 油压差保护, 油压差报警/保护, 油压差过低]
+  Low_Oil_Pressure_Fault:
+    parent: Oil_Pressure_Sensor
+    facet_subtype: low_oil_pressure_fault
+    keywords: [low oil pressure alert, low oil pressure alarm, oil pressure low, 低油压报警, 低油压故障, 油压过低]
+  Freeze_Protection_Fault:
+    parent: Sensor
+    facet_subtype: freeze_protection_fault
+    keywords: [freeze protection, anti-freeze, freeze alarm, 防冻保护, 防冻报警, 冻结保护]
+  Low_Water_Flow_Fault:
+    parent: Sensor
+    facet_subtype: low_water_flow_fault
+    keywords: [low water flow, water flow loss, water flow failure, 缺水保护, 水流量过低, 水流缺失]
+  Overcurrent_Fault:
+    parent: Sensor
+    facet_subtype: overcurrent_fault
+    keywords: [overcurrent, overload, over current protection, 过电流, 过载, 过流保护]
+  Low_Refrigerant_Charge_Fault:
+    parent: Sensor
+    facet_subtype: low_refrigerant_charge_fault
+    keywords: [low refrigerant charge, low charge, refrigerant shortage, 制冷剂不足, 制冷剂缺乏, 缺冷媒]
+  High_Discharge_Pressure_Fault:
+    parent: Refrigerant_Discharge_Pressure
+    facet_subtype: high_discharge_pressure_fault
+    keywords: [high discharge pressure, high head pressure, discharge pressure high, 高排气压力报警, 排气压力高, 高压报警]
+  Low_Suction_Pressure_Fault:
+    parent: Refrigerant_Suction_Pressure
+    facet_subtype: low_suction_pressure_fault
+    keywords: [low suction pressure, low side pressure alarm, suction pressure low, 低吸气压力报警, 吸气压力低, 低压报警]
+  Start_Cycle_Limit:
+    parent: Sensor
+    facet_subtype: start_cycle_limit
+    keywords: [start cycle limit, start limit, restart count limit, 启停次数限制, 启动次数限制, 重启次数限制]
+  Oil_Change_Interval:
+    parent: Sensor
+    facet_subtype: oil_change_interval
+    keywords: [oil change interval, oil replacement interval, lubricating oil change interval, 油换周期, 换油周期, 润滑油更换周期]
+  Filter_Replacement_Interval:
+    parent: Sensor
+    facet_subtype: filter_replacement_interval
+    keywords: [filter replacement, filter replacement interval, filter element replacement, 滤芯更换, 过滤器更换, 滤网更换]
+  Seasonal_Maintenance:
+    parent: Sensor
+    facet_subtype: seasonal_maintenance
+    keywords: [seasonal maintenance, annual maintenance, seasonal service, 季节性维护, 年度维护, 换季维护]
+  Cleaning_Interval:
+    parent: Sensor
+    facet_subtype: cleaning_interval
+    keywords: [cleaning interval, cleaning cycle, clean interval, 清洗周期, 清洗间隔, 清洁周期]
+  Oil_Heater_Preheat_Duration:
+    parent: Sensor
+    facet_subtype: oil_heater_preheat_duration
+    keywords: [oil heater preheat duration, oil heater preheat time, preheat duration, 油加热器预热时间, 预热时间, 油加热预热时间]
+  Annual_Inspection:
+    parent: Sensor
+    facet_subtype: annual_inspection
+    keywords: [annual inspection, annual check, annual overhaul, 年度检查, 年检, 年度检修]
+
+fault_polarity:
+  high:
+    keywords: [high, high limit, over, 高, 过高, 超限, 高温, 高压]
+  low:
+    keywords: [low, low limit, under, 低, 过低, 不足, 低温, 低压]
+  loss:
+    keywords: [loss, lost, missing, no signal, 丢失, 断线, 无信号, 信号丢失]
+  sensor_fault:
+    keywords: [sensor fault, sensor failure, transducer fault, 传感器故障, 传感器, 探头故障]
+  range_out:
+    keywords: [out of range, range out, 越限, 超范围, 范围外]
+
+refrigerant:
+  R22:
+    keywords: [R22, R-22, HCFC-22, R 22, R22制冷剂]
+  R134a:
+    keywords: [R134a, R-134a, HFC-134a, R 134a, R134a制冷剂]
+  R410A:
+    keywords: [R410A, R-410A, HFC-410A, R 410A]
+  R407C:
+    keywords: [R407C, R-407C, HFC-407C, R 407C]
+  R32:
+    keywords: [R32, R-32, HFC-32, R 32]
+  Ammonia:
+    keywords: [ammonia, NH3, R717, R-717, 氨]
+
+subsystem:
+  Oil_System:
+    keywords: [oil, lubrication, oil system, 油, 润滑, 油系统]
+  Water_System:
+    keywords: [water, water side, water system, 水, 水系统, 水侧, 水压差]
+  Refrigerant_System:
+    keywords: [refrigerant, refrigerant side, discharge pressure, suction pressure, 制冷剂, 冷媒, 制冷剂侧, 排气压力, 吸气压力]
+  Electrical_System:
+    keywords: [electrical, power supply, electric, 电气, 电源, 配电]
+  Control_System:
+    keywords: [control, controller, 控制, 控制器, 自控]
+  Bearing_System:
+    keywords: [bearing, thrust bearing, 轴承, 推力轴承]
+  Compressor_System:
+    keywords: [compressor, 压缩机]
+
+operating_condition:
+  Outdoor_Air_Condition:
+    keywords: [outdoor air condition, fresh air condition, 新风工况]
+  Return_Air_Condition:
+    keywords: [return air condition, return-air condition, 回风工况, 室内工况]
+  Mixed_Air_Condition:
+    keywords: [mixed air condition, mixed-air condition, 混风工况]
+  Standard_Cooling_Condition:
+    keywords: [standard cooling, rated cooling, standard cooling condition, 标准制冷工况, 额定制冷工况]
+  Standard_Heating_Condition:
+    keywords: [standard heating, rated heating, standard heating condition, 标准制热工况, 额定制热工况]
+  High_Temperature_Condition:
+    keywords: [high temperature, hot condition, high ambient condition, 高温工况]
+  Low_Temperature_Condition:
+    keywords: [low temperature, cold condition, low ambient condition, 低温工况]
+  Part_Load_Condition:
+    keywords: [part load, part-load, IPLV, 部分负荷工况]
+
+document_type:
+  Test_Method:
+    keywords: [test method, testing method, 测试方法, 试验方法]
+  Performance_Rating:
+    keywords: [performance rating, rating condition, 性能评级, 评级]
+  Certification_Requirement:
+    keywords: [certification, certification requirement, 认证要求, 认证]
+  Energy_Efficiency_Class:
+    keywords: [energy efficiency class, efficiency grade, 能效等级, 能效]
+  Design_Guideline:
+    keywords: [design guideline, application guide, design guide, 设计指南, 设计导则]

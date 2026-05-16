@@ -20,6 +20,9 @@ from scripts.run_hvac_doclevel_extraction_batch import (
     render_report,
     task_complete_for_backends,
     task_status_from_backend_results,
+    triage_source_item,
+    virtual_equipment_match,
+    write_triage_skip_task,
 )
 
 
@@ -126,6 +129,16 @@ def test_backend_config_resolves_deepseek_from_same_local_env(monkeypatch) -> No
 
     assert resolved["api_base_url"] == "https://api.deepseek.com"
     assert resolved["api_key"] == "deepseek-key"
+
+
+def test_virtual_equipment_match_supports_standard_reference_without_schema_change() -> None:
+    match = virtual_equipment_match("standard_reference")
+
+    assert match is not None
+    assert match["equipment_class_id"] == "standard_reference"
+    assert match["equipment_class_key"] == "hvac:standard_reference"
+    assert match["selection_method"] == "input_filter_virtual"
+    assert "application_guidance" in match["knowledge_anchors"]
 
 
 def test_task_complete_requires_all_requested_backends_ok() -> None:
@@ -331,6 +344,50 @@ def test_doclevel_candidate_payload_includes_compiler_run() -> None:
     assert payload["compiler_run"]["compiler_run_id"] == "run_001"
     assert payload["compiler_run"]["pipeline"] == "hvac_doclevel_extraction_batch"
     assert payload["source_manifest"][0]["content_sha256"] == "a" * 64
+
+
+def test_doclevel_triage_discards_vendor_low_text() -> None:
+    item = SourceItem(
+        row_index=1,
+        path=Path("/tmp/brochure.pdf"),
+        batch_group="B_oem_manual_text_first",
+        priority="low",
+        brand="Vendor",
+        authority_level="vendor_app_note",
+        document_kind="brochure",
+        equipment_scope="general_hvac",
+        page_count="138",
+        text_quality="low_or_no_text",
+        recommended_mode="unknown",
+        raw={"size_mb": "10"},
+    )
+
+    result = triage_source_item(item)
+
+    assert result.decision == "DISCARD"
+
+
+def test_doclevel_triage_skip_writes_review_queue(tmp_path: Path) -> None:
+    item = SourceItem(
+        row_index=2,
+        path=Path("/tmp/gb_standard.doc"),
+        batch_group="A_standard_authority_first",
+        priority="high",
+        brand="GB",
+        authority_level="industry_standard",
+        document_kind="standard",
+        equipment_scope="general_hvac",
+        page_count="14",
+        text_quality="unknown",
+        recommended_mode="unknown",
+        raw={},
+    )
+    task = write_triage_skip_task(tmp_path / "0002_gb", item, "MANUAL_REVIEW", "review needed")
+
+    assert task["status"] == "manual_review"
+    queue = tmp_path / "review_queue.jsonl"
+    assert queue.exists()
+    assert "gb_standard.doc" in queue.read_text(encoding="utf-8")
 
 
 def _judge_entry(candidate_id: str, ko_type: str, title: str) -> dict:

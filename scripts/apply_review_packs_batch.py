@@ -409,7 +409,7 @@ def main(argv: list[str] | None = None) -> int:
         f"failed {report['summary']['failed']} pack(s). "
         f"Report: {report['report_path']}"
     )
-    return 0
+    return 1 if report["summary"]["failed"] > 0 else 0
 
 
 if __name__ == "__main__":

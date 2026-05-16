@@ -323,6 +323,43 @@ def test_merge_candidates_splits_distinct_same_document_parameter_names(monkeypa
     assert all(len(ko["authority_summary_json"]["layers"]) == 1 for ko in merged)
 
 
+def test_merge_candidates_caps_embedding_path_group_layers(monkeypatch):
+    """Final merger grouping must not emit a KO with more than 8 layers."""
+
+    from packages.compiler.cross_source_merger import merge_candidates
+
+    candidates = []
+    for idx in range(9):
+        title = f"Distinct Param {idx}"
+        candidate = _make_candidate(
+            title,
+            value=str(idx),
+            publisher="Carrier" if idx % 2 else "York",
+            doc_id=f"doc_{idx}",
+            chunk_id=f"chunk_{idx}",
+        )
+        candidate["structured_payload"]["parameter_name"] = title
+        candidates.append(candidate)
+
+    monkeypatch.setattr(
+        "packages.compiler.cross_source_merger.group_and_normalize",
+        lambda names, **_kwargs: {
+            name: "hvac:centrifugal_chiller:parameter:oversize_group"
+            for name in names
+        },
+    )
+
+    merged = merge_candidates(
+        candidates,
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        ontology_class_key="hvac:centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+    )
+
+    assert max(len(ko["authority_summary_json"]["layers"]) for ko in merged) <= 8
+
+
 def test_build_contextual_name_includes_summary_and_value_fields():
     payload = {
         "parameter_name": "供油温度范围",
@@ -393,6 +430,9 @@ def test_merge_candidates_uses_contextual_names_without_changing_facet_source(mo
                 "range_min": "35",
                 "range_max": "50",
                 "unit": "℃",
+                "title": "fallback title",
+                "summary": "candidate summary should be available to embedding",
+                "value_summary": "[35, 50]",
             },
         )
     ]

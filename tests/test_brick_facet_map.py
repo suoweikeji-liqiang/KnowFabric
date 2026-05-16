@@ -40,7 +40,7 @@ def test_detects_cooling_water_inlet_temperature_subtype_zh():
 
 
 def test_detect_facet_v2_returns_quantity_and_reference_point():
-    assert detect_facet_v2("油箱温度", {"summary": "油箱温度保持在48～52℃之间"}) == (
+    assert detect_facet_v2("油箱温度", {"summary": "油箱温度保持在48～52℃之间"})[:2] == (
         "temperature",
         "oil_temperature",
     )
@@ -62,11 +62,11 @@ def test_split_clusters_by_different_brick_subtype():
     ]
 
 
-def test_unknown_subtype_does_not_force_split():
+def test_known_subtype_splits_from_unknown_subtype():
     clusters = [["油箱温度", "Generic Temperature"]]
     facet_hints = {
         "油箱温度": ("temperature", "oil_temperature"),
         "Generic Temperature": ("temperature", None),
     }
 
-    assert _split_clusters_by_facet(clusters, facet_hints) == clusters
+    assert _split_clusters_by_facet(clusters, facet_hints) == [["油箱温度"], ["Generic Temperature"]]

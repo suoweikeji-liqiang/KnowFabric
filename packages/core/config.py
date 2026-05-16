@@ -39,6 +39,10 @@ class Settings(BaseSettings):
     llm_backend_config_path: str | None = None
     llm_backend_name: str | None = None
     llm_enabled_types: str = "maintenance_procedure,application_guidance"
+    llm_max_concurrent: int = 8
+    llm_max_rpm: int = 60
+    llm_max_retries: int = 5
+    extraction_doc_concurrency: int = 8
 
     class Config:
         env_file = str(ENV_FILE)

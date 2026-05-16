@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import re
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
@@ -13,6 +14,7 @@ from urllib import error, request
 
 from packages.compiler.contracts import DEFAULT_COMPILER_VERSION, DocumentExtractionResponse, build_compile_metadata
 from packages.core.config import settings
+from packages.compiler.rate_limited_client import MaxRetriesExceeded, global_rate_limited_client
 from packages.db.models import ContentChunk, Document, DocumentPage
 
 LLM_HARD_TYPES = (
@@ -42,6 +44,12 @@ class OpenAICompatibleBackend:
     api_key: str | None = None
     timeout_seconds: int = 30
     request_options: dict[str, Any] | None = None
+    request_headers: dict[str, str] | None = None
+    min_interval_seconds: float = 0.0
+    max_retries: int = 0
+
+
+_BACKEND_LAST_REQUEST_AT: dict[str, float] = {}
 
 
 def response_content_text(body: dict[str, Any]) -> str:
@@ -168,6 +176,9 @@ def backend_from_dict(payload: dict[str, Any]) -> OpenAICompatibleBackend:
     request_options = payload.get("request_options")
     if request_options is not None and not isinstance(request_options, dict):
         raise ValueError("backend request_options must be an object")
+    request_headers = payload.get("request_headers")
+    if request_headers is not None and not isinstance(request_headers, dict):
+        raise ValueError("backend request_headers must be an object")
     return OpenAICompatibleBackend(
         name=str(payload.get("name") or model),
         api_base_url=api_base_url,
@@ -175,6 +186,9 @@ def backend_from_dict(payload: dict[str, Any]) -> OpenAICompatibleBackend:
         api_key=str(api_key) if api_key else None,
         timeout_seconds=timeout_seconds,
         request_options=dict(request_options or {}),
+        request_headers={str(k): str(v) for k, v in dict(request_headers or {}).items()},
+        min_interval_seconds=float(payload.get("min_interval_seconds") or 0.0),
+        max_retries=int(payload.get("max_retries") or 0),
     )
 
 
@@ -629,10 +643,34 @@ def _request_json_completion(
     recorder: Callable[[dict[str, Any]], None] | None = None,
 ) -> dict[str, Any]:
     payload = _chat_completion_payload(messages, backend, response_format=response_format)
+    body = _post_chat_completion(payload, backend)
+    if recorder is not None:
+        recorder({"request": payload, "response": body})
+
+    content = response_content_text(body)
+    if not content:
+        raise RuntimeError("LLM compile returned empty content")
+    return parse_json_response_content(content)
+
+
+def _post_chat_completion(payload: dict[str, Any], backend: OpenAICompatibleBackend) -> dict[str, Any]:
+    try:
+        return global_rate_limited_client().call_sync(_post_chat_completion_once, payload, backend)
+    except MaxRetriesExceeded as exc:
+        raise RuntimeError(f"LLM compile request failed after retries: {exc}") from exc
+    except error.HTTPError as exc:
+        raise RuntimeError(f"LLM compile request failed: {exc}") from exc
+    except error.URLError as exc:
+        raise RuntimeError(f"LLM compile request failed: {exc}") from exc
+
+
+def _post_chat_completion_once(payload: dict[str, Any], backend: OpenAICompatibleBackend) -> dict[str, Any]:
+    _throttle_backend_request(backend)
     base_url = backend.api_base_url.rstrip("/")
     headers = {
         "Content-Type": "application/json",
     }
+    headers.update(backend.request_headers or {})
     if backend.api_key:
         headers["Authorization"] = f"Bearer {backend.api_key}"
     req = request.Request(
@@ -641,18 +679,29 @@ def _request_json_completion(
         headers=headers,
         method="POST",
     )
-    try:
-        with request.urlopen(req, timeout=backend.timeout_seconds) as response:
-            body = json.loads(response.read().decode("utf-8"))
-    except error.URLError as exc:
-        raise RuntimeError(f"LLM compile request failed: {exc}") from exc
-    if recorder is not None:
-        recorder({"request": payload, "response": body})
+    with request.urlopen(req, timeout=backend.timeout_seconds) as response:
+        return json.loads(response.read().decode("utf-8"))
 
-    content = response_content_text(body)
-    if not content:
-        raise RuntimeError("LLM compile returned empty content")
-    return parse_json_response_content(content)
+
+def _throttle_backend_request(backend: OpenAICompatibleBackend) -> None:
+    interval = float(backend.min_interval_seconds or 0.0)
+    if interval <= 0:
+        return
+    now = time.monotonic()
+    last = _BACKEND_LAST_REQUEST_AT.get(backend.name)
+    if last is not None and now - last < interval:
+        time.sleep(interval - (now - last))
+    _BACKEND_LAST_REQUEST_AT[backend.name] = time.monotonic()
+
+
+def _retry_delay_seconds(exc: error.HTTPError, attempt: int) -> float:
+    retry_after = exc.headers.get("Retry-After") if exc.headers else None
+    if retry_after:
+        try:
+            return max(1.0, float(retry_after))
+        except ValueError:
+            pass
+    return min(60.0, 2.0 ** attempt)
 
 
 def _chat_completion_payload(
@@ -742,7 +791,7 @@ def _knowledge_type_prefix(knowledge_object_type: str) -> str:
 
 
 def _slugify_part(value: str) -> str:
-    collapsed = re.sub(r"[^a-zA-Z0-9]+", "_", value.strip().lower()).strip("_")
+    collapsed = re.sub(r"[^a-zA-Z0-9\u4e00-\u9fff]+", "_", value.strip().lower()).strip("_")
     return collapsed
 
 

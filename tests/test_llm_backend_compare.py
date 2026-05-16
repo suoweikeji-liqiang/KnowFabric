@@ -79,6 +79,29 @@ def test_backend_request_options_are_applied_to_chat_payload() -> None:
     assert payload["response_format"] == {"type": "json_object"}
 
 
+def test_backend_from_dict_preserves_openrouter_headers_and_retry_options() -> None:
+    backend = backend_from_dict(
+        {
+            "name": "openrouter-deepseek-v4-flash",
+            "api_base_url": "https://openrouter.ai/api/v1",
+            "model": "deepseek/deepseek-v4-flash:free",
+            "request_headers": {
+                "HTTP-Referer": "https://github.com/suoweikeji-liqiang/KnowFabric",
+                "X-Title": "KnowFabric",
+            },
+            "min_interval_seconds": 3.4,
+            "max_retries": 5,
+        }
+    )
+
+    assert backend.request_headers == {
+        "HTTP-Referer": "https://github.com/suoweikeji-liqiang/KnowFabric",
+        "X-Title": "KnowFabric",
+    }
+    assert backend.min_interval_seconds == 3.4
+    assert backend.max_retries == 5
+
+
 def test_deepseek_v4_json_payload_disables_thinking_by_default() -> None:
     backend = backend_from_dict(
         {

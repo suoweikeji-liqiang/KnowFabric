@@ -13,7 +13,7 @@ from packages.storage.manager import StorageManager
 class IngestService:
     """Document ingestion service."""
 
-    SUPPORTED_EXTENSIONS = {'.pdf'}
+    SUPPORTED_EXTENSIONS = {'.pdf', '.docx', '.doc', '.xlsx'}
 
     def __init__(self, storage_manager: StorageManager):
         self.storage = storage_manager
@@ -64,6 +64,7 @@ class IngestService:
         doc = Document(
             doc_id=doc_id,
             file_hash=file_hash,
+            file_sha256=file_hash,
             storage_path=storage_path,
             file_name=file_name,
             file_ext=file_ext,

@@ -127,7 +127,7 @@ def test_normalize_llm_canonical_key_namespaces_plain_language_keys() -> None:
     assert key == "hvac:ahu:maintenance:inspect_and_calibrate_ahu_for_correct_airflow"
 
 
-def test_normalize_llm_canonical_key_uses_hash_for_non_ascii_names() -> None:
+def test_normalize_llm_canonical_key_preserves_cjk_names() -> None:
     key = normalize_llm_canonical_key(
         "启动限制最低油温默认设定",
         domain_id="hvac",
@@ -136,7 +136,7 @@ def test_normalize_llm_canonical_key_uses_hash_for_non_ascii_names() -> None:
         fallback_text="启动限制最低油温默认设定",
     )
 
-    assert key.startswith("hvac:centrifugal_chiller:parameter:key_")
+    assert key == "hvac:centrifugal_chiller:parameter:启动限制最低油温默认设定"
     assert not key.endswith(":parameter:")
 
 

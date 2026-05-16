@@ -6,8 +6,10 @@ from __future__ import annotations
 import argparse
 import copy
 import contextlib
+import concurrent.futures
 import http.client
 import json
+import os
 import re
 import signal
 import sys
@@ -36,6 +38,7 @@ from packages.core.config import settings
 from packages.core.sw_base_model_ontology_client import SwBaseModelOntologyClient
 from packages.db.models import ContentChunk, Document, DocumentPage
 from packages.db.session import SessionLocal
+from packages.ingest.document_triage import ProcessingDecision, triage_document
 from packages.storage.manager import StorageManager
 from scripts.build_review_packs_from_candidates import write_review_packs_from_candidate_file
 from scripts.bootstrap_review_packs_batch import bootstrap_review_pack_directory
@@ -56,6 +59,28 @@ SUPPORTED_TYPES = (
     "symptom",
 )
 MALFORMED_JUDGE_VERDICT_REASON = "Judge verdict omitted required fields."
+VIRTUAL_EQUIPMENT_CLASSES = {
+    "standard_reference": {
+        "label": "Standard Reference",
+        "knowledge_anchors": ("application_guidance", "performance_spec", "operational_sequence", "parameter_spec"),
+    },
+    "system_standard": {
+        "label": "System Standard",
+        "knowledge_anchors": ("application_guidance", "performance_spec", "operational_sequence", "parameter_spec"),
+    },
+    "water_source_heat_pump": {
+        "label": "Water Source Heat Pump",
+        "knowledge_anchors": ("fault_code", "parameter_spec", "maintenance_procedure", "performance_spec"),
+    },
+    "magnetic_bearing_chiller": {
+        "label": "Magnetic Bearing Chiller",
+        "knowledge_anchors": ("fault_code", "parameter_spec", "maintenance_procedure", "performance_spec"),
+    },
+    "scroll_chiller": {
+        "label": "Scroll Chiller",
+        "knowledge_anchors": ("fault_code", "parameter_spec", "maintenance_procedure", "performance_spec"),
+    },
+}
 
 
 class HvacDocCandidate(BaseModel):
@@ -136,6 +161,66 @@ def assemble_doc_text(rows: list[tuple[ContentChunk, DocumentPage, Document]]) -
     return "\n\n".join(parts)
 
 
+def split_rows_into_sections(
+    rows: list[tuple[ContentChunk, DocumentPage, Document]],
+    *,
+    max_tokens: int = 30000,
+    min_tokens_before_heading: int = 1200,
+) -> list[dict[str, Any]]:
+    """Split chunk rows into chapter/clause-ish sections for bounded LLM calls."""
+
+    sections, current, current_tokens, current_title = [], [], 0, ""
+    for row in rows:
+        text = row_text(row)
+        row_tokens = max(1, estimate_tokens(text))
+        heading = section_heading(text)
+        should_split = bool(current) and (
+            current_tokens + row_tokens > max_tokens
+            or (heading and current_tokens >= min_tokens_before_heading)
+        )
+        if should_split:
+            sections.append(build_section(len(sections) + 1, current, current_title, current_tokens))
+            current, current_tokens, current_title = [], 0, ""
+        if heading and not current_title:
+            current_title = heading
+        current.append(row)
+        current_tokens += row_tokens
+    if current:
+        sections.append(build_section(len(sections) + 1, current, current_title, current_tokens))
+    return sections
+
+
+def row_text(row: tuple[ContentChunk, DocumentPage, Document]) -> str:
+    chunk, _, _ = row
+    return sanitize_text(chunk.cleaned_text or chunk.text_excerpt or "")
+
+
+def section_heading(text: str) -> str | None:
+    first = next((line.strip() for line in text.splitlines() if line.strip()), "")
+    if not first or len(first) > 180:
+        return None
+    patterns = [
+        r"^(?:chapter|section)\s+\d+(?:\.\d+)*\b.{0,140}$",
+        r"^\d+\.\s+.{2,160}$",
+        r"^\d+(?:\.\d+)+\.?\s+.{2,160}$",
+        r"^[A-Z](?:\.\d+)+\s+.{2,160}$",
+        r"^第[一二三四五六七八九十百千万\d]+[章节篇]\s*.{0,160}$",
+    ]
+    return first if any(re.match(pattern, first, flags=re.IGNORECASE) for pattern in patterns) else None
+
+
+def build_section(index: int, rows: list[tuple[ContentChunk, DocumentPage, Document]], title: str, tokens: int) -> dict[str, Any]:
+    pages = [row[1].page_no for row in rows]
+    return {
+        "section_id": f"section_{index:03d}",
+        "title": title or f"pages {min(pages)}-{max(pages)}",
+        "page_start": min(pages),
+        "page_end": max(pages),
+        "token_estimate": tokens,
+        "rows": list(rows),
+    }
+
+
 def sanitize_text(text: str) -> str:
     return "".join(char if char in "\n\r\t" or ord(char) >= 32 else " " for char in text)
 
@@ -147,7 +232,23 @@ def estimate_tokens(text: str) -> int:
 
 def known_equipment_scope(item: SourceItem, valid_ids: set[str]) -> str | None:
     scopes = [part.strip() for part in item.equipment_scope.split(",") if part.strip()]
-    return scopes[0] if len(scopes) == 1 and scopes[0] in valid_ids else None
+    known_ids = valid_ids | set(VIRTUAL_EQUIPMENT_CLASSES)
+    return scopes[0] if len(scopes) == 1 and scopes[0] in known_ids else None
+
+
+def virtual_equipment_match(equipment_id: str) -> dict[str, Any] | None:
+    config = VIRTUAL_EQUIPMENT_CLASSES.get(equipment_id)
+    if not config:
+        return None
+    return {
+        "equipment_class_id": equipment_id,
+        "equipment_class_key": f"hvac:{equipment_id}",
+        "label": config["label"],
+        "confidence": 1.0,
+        "matched_aliases": [],
+        "selection_method": "input_filter_virtual",
+        "knowledge_anchors": list(config["knowledge_anchors"]),
+    }
 
 
 def resolve_equipment(rows: list[tuple[ContentChunk, DocumentPage, Document]], item: SourceItem) -> tuple[dict[str, Any], list[dict[str, Any]], str]:
@@ -159,6 +260,10 @@ def resolve_equipment(rows: list[tuple[ContentChunk, DocumentPage, Document]], i
         db.close()
     text = normalize_text(" ".join([item.path.name, rows[0][2].file_name] + [chunk.cleaned_text for chunk, _, _ in rows]))
     equipment_id = known_equipment_scope(item, {profile.ontology_class_id for profile in profiles})
+    if equipment_id:
+        virtual_match = virtual_equipment_match(equipment_id)
+        if virtual_match is not None:
+            return virtual_match, [], client.ontology_version()
     match, alternatives = match_equipment_class(profiles, text, equipment_id)
     if match is None:
         match, alternatives = match_equipment_class(profiles, text, "controller")
@@ -520,6 +625,10 @@ def backend_result(args, backend_name: str, item: SourceItem, rows, equipment, o
         return summarize_existing_backend(backend, pricing, backend_dir)
     raw_holder: dict[str, Any] = {}
     try:
+        if args.section_aware:
+            return execute_section_aware_backend_result(
+                args, item, rows, equipment, ontology_version, output_dir, backend_dir, backend, pricing, raw_holder
+            )
         return execute_backend_result(
             args, item, rows, equipment, ontology_version, output_dir, backend_dir, backend, pricing, raw_holder
         )
@@ -566,6 +675,81 @@ def execute_backend_result(
     return summary
 
 
+def execute_section_aware_backend_result(
+    args, item, rows, equipment, ontology_version, output_dir, backend_dir, backend, pricing, raw_holder
+) -> dict[str, Any]:
+    audit_paths: list[str] = []
+    recorder, audit_path = build_backend_llm_audit_recorder(
+        output_dir, item, backend, call_site="hvac_doclevel_section_extract"
+    )
+    sections = split_rows_into_sections(
+        rows,
+        max_tokens=args.section_max_tokens,
+        min_tokens_before_heading=args.section_min_heading_tokens,
+    )
+    write_sections_manifest(backend_dir, sections)
+    raw_dicts, anchored, rejected, entries, section_errors, raw_sections = collect_section_entries(
+        args, item, sections, backend, ontology_version, recorder, audit_paths
+    )
+    if not entries and section_errors:
+        raise RuntimeError(f"all section-aware extraction calls failed: {len(section_errors)} section error(s)")
+    raw = combined_section_raw(raw_sections, section_errors)
+    raw_holder["raw"] = raw
+    accepted, judge_rejected, raw_judge, judge_cost = run_judge_if_requested(args, entries, rows[0][2], equipment)
+    final_entries = accepted if args.judge_backend else entries
+    source_manifest = [build_source_manifest_entry(item).model_dump(mode="json")]
+    write_backend_outputs(backend_dir, final_entries, raw_dicts, rejected, judge_rejected, raw, raw_judge, args, source_manifest)
+    print_section_backend_done(backend, item, sections, raw_dicts, anchored, final_entries, section_errors)
+    summary = summarize_backend(
+        backend, pricing, raw, raw_judge, judge_cost, bool(args.judge_backend),
+        raw_dicts, anchored, rejected, judge_rejected, final_entries, backend_dir,
+    )
+    summary.update(section_summary_fields(sections, section_errors, raw_sections, audit_path, audit_paths))
+    return summary
+
+
+def collect_section_entries(args, item, sections, backend, ontology_version, recorder, audit_paths):
+    raw_dicts, anchored_all, rejected_all, entries, errors, raws = [], [], [], [], [], []
+    for section in sections:
+        try:
+            section_result = extract_section_entries(args, item, section, backend, ontology_version, recorder, audit_paths)
+            raw_dicts.extend(section_result["raw_dicts"])
+            anchored_all.extend(section_result["anchored"])
+            rejected_all.extend(section_result["rejected"])
+            entries.extend(section_result["entries"])
+            raws.append(section_result["raw"])
+        except Exception as exc:
+            errors.append(section_error(section, exc))
+        if args.section_sleep_seconds > 0:
+            time.sleep(args.section_sleep_seconds)
+    return raw_dicts, anchored_all, rejected_all, dedupe_entries(entries), errors, raws
+
+
+def extract_section_entries(args, item, section, backend, ontology_version, recorder, audit_paths) -> dict[str, Any]:
+    section_args = copy.copy(args)
+    section_args.target_candidates = args.section_target_candidates
+    equipment, _, _ = resolve_equipment(section["rows"], item)
+    print_section_backend_start(backend, item, section, equipment)
+    candidates, raw = extract_one(
+        backend,
+        item,
+        section["rows"],
+        equipment,
+        section_args,
+        request_recorder=capture_recorder_path(recorder, audit_paths),
+    )
+    raw_dicts = [with_section_metadata(candidate.model_dump(), section, equipment) for candidate in candidates]
+    anchored, rejected = anchor_candidates(raw_dicts, section["rows"])
+    entries = [
+        enrich_section_entry(candidate_entry(row, section["rows"][0][2], equipment, backend, ontology_version), section)
+        for row in anchored
+    ]
+    raw["section_id"] = section["section_id"]
+    raw["section_title"] = section["title"]
+    raw["equipment_class_id"] = equipment["equipment_class_id"]
+    return {"raw_dicts": raw_dicts, "anchored": anchored, "rejected": rejected, "entries": entries, "raw": raw}
+
+
 def print_backend_start(backend, item: SourceItem, rows) -> None:
     pages = len({row[1].page_no for row in rows})
     print(
@@ -581,6 +765,99 @@ def print_backend_done(backend, item: SourceItem, raw_dicts, anchored, final_ent
         f"anchored={len(anchored)} final={len(final_entries)}",
         flush=True,
     )
+
+
+def print_section_backend_start(backend, item: SourceItem, section: dict[str, Any], equipment: dict[str, Any]) -> None:
+    print(
+        f"start backend={backend.name} task={item.row_index} {section['section_id']} "
+        f"pages={section['page_start']}-{section['page_end']} tokens={section['token_estimate']} "
+        f"equipment={equipment['equipment_class_id']} timeout={backend.timeout_seconds}s",
+        flush=True,
+    )
+
+
+def print_section_backend_done(backend, item: SourceItem, sections, raw_dicts, anchored, final_entries, errors) -> None:
+    print(
+        f"done backend={backend.name} task={item.row_index} sections={len(sections)} "
+        f"errors={len(errors)} raw={len(raw_dicts)} anchored={len(anchored)} final={len(final_entries)}",
+        flush=True,
+    )
+
+
+def write_sections_manifest(backend_dir: Path, sections: list[dict[str, Any]]) -> None:
+    payload = [{key: value for key, value in section.items() if key != "rows"} for section in sections]
+    write_json(backend_dir / "sections.json", payload)
+
+
+def with_section_metadata(candidate: dict[str, Any], section: dict[str, Any], equipment: dict[str, Any]) -> dict[str, Any]:
+    payload = dict(candidate.get("structured_payload") or {})
+    payload.setdefault("section_id", section["section_id"])
+    payload.setdefault("section_title", section["title"])
+    payload.setdefault("equipment_class_id", equipment["equipment_class_id"])
+    candidate["structured_payload"] = payload
+    candidate["section_id"] = section["section_id"]
+    candidate["section_title"] = section["title"]
+    return candidate
+
+
+def enrich_section_entry(entry: dict[str, Any], section: dict[str, Any]) -> dict[str, Any]:
+    entry = copy.deepcopy(entry)
+    entry["compile_metadata"] = {
+        **entry.get("compile_metadata", {}),
+        "section_id": section["section_id"],
+        "section_title": section["title"],
+        "section_page_start": section["page_start"],
+        "section_page_end": section["page_end"],
+    }
+    return entry
+
+
+def dedupe_entries(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    deduped: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        deduped.setdefault(entry["candidate_id"], entry)
+    return list(deduped.values())
+
+
+def section_error(section: dict[str, Any], exc: Exception) -> dict[str, Any]:
+    return {
+        "section_id": section["section_id"],
+        "title": section["title"],
+        "page_start": section["page_start"],
+        "page_end": section["page_end"],
+        "error_type": type(exc).__name__,
+        "error": str(exc),
+    }
+
+
+def combined_section_raw(raw_sections: list[dict[str, Any]], errors: list[dict[str, Any]]) -> dict[str, Any]:
+    prompt = sum(usage(raw)["prompt_tokens"] for raw in raw_sections)
+    completion = sum(usage(raw)["completion_tokens"] for raw in raw_sections)
+    elapsed = round(sum(float(raw.get("elapsed_seconds") or 0.0) for raw in raw_sections), 3)
+    return {
+        "response": {"usage": {"prompt_tokens": prompt, "completion_tokens": completion, "total_tokens": prompt + completion}},
+        "elapsed_seconds": elapsed,
+        "section_count": len(raw_sections) + len(errors),
+        "successful_sections": len(raw_sections),
+        "failed_sections": len(errors),
+        "section_errors": errors,
+        "sections": raw_sections,
+    }
+
+
+def section_summary_fields(sections, errors, raw_sections, audit_path, audit_paths) -> dict[str, Any]:
+    equipment_counts = Counter(str(raw.get("equipment_class_id") or "unknown") for raw in raw_sections)
+    payload = {
+        "section_aware": True,
+        "section_count": len(sections),
+        "section_failed": len(errors),
+        "section_errors": errors,
+        "section_equipment_counts": dict(equipment_counts),
+        "sections_path": str(Path(raw_sections[0].get("sections_path", ""))) if raw_sections and raw_sections[0].get("sections_path") else "",
+    }
+    if audit_paths:
+        payload["llm_audit_path"] = str(audit_path)
+    return payload
 
 
 def run_judge_if_requested(args, entries, doc, equipment) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any], float]:
@@ -767,14 +1044,31 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     }
     summary = build_run_summary(batch_dir=batch_dir, items=items, tasks=tasks, parameters=batch_parameters(args))
     write_batch_summary(batch_dir, summary)
+    pending = [item for item in items if item.row_index not in completed_indexes]
     for item in items:
         if item.row_index in completed_indexes:
             print(f"skip completed task={item.row_index}", flush=True)
-            continue
-        tasks = replace_task(tasks, run_item(args, item, batch_dir))
-        summary = build_run_summary(batch_dir=batch_dir, items=items, tasks=tasks, parameters=batch_parameters(args))
-        write_batch_summary(batch_dir, summary)
+    doc_concurrency = _doc_concurrency()
+    if doc_concurrency <= 1 or len(pending) <= 1:
+        for item in pending:
+            tasks = replace_task(tasks, run_item(args, item, batch_dir))
+            summary = build_run_summary(batch_dir=batch_dir, items=items, tasks=tasks, parameters=batch_parameters(args))
+            write_batch_summary(batch_dir, summary)
+        return summary
+    with concurrent.futures.ThreadPoolExecutor(max_workers=doc_concurrency) as executor:
+        futures = {executor.submit(run_item, args, item, batch_dir): item for item in pending}
+        for future in concurrent.futures.as_completed(futures):
+            tasks = replace_task(tasks, future.result())
+            summary = build_run_summary(batch_dir=batch_dir, items=items, tasks=tasks, parameters=batch_parameters(args))
+            write_batch_summary(batch_dir, summary)
     return summary
+
+
+def _doc_concurrency() -> int:
+    try:
+        return max(1, int(os.getenv("EXTRACTION_DOC_CONCURRENCY", str(settings.extraction_doc_concurrency))))
+    except ValueError:
+        return max(1, int(settings.extraction_doc_concurrency))
 
 
 def batch_parameters(args: argparse.Namespace) -> dict[str, Any]:
@@ -785,7 +1079,14 @@ def batch_parameters(args: argparse.Namespace) -> dict[str, Any]:
         "limit": args.limit,
         "knowledge_types": list(args.knowledge_types),
         "target_candidates": args.target_candidates,
+        "section_aware": bool(args.section_aware),
+        "section_max_tokens": args.section_max_tokens,
+        "section_target_candidates": args.section_target_candidates,
         "execute": bool(args.execute),
+        "ignore_triage": bool(args.ignore_triage),
+        "doc_concurrency": _doc_concurrency(),
+        "llm_max_concurrent": int(os.getenv("LLM_MAX_CONCURRENT", str(settings.llm_max_concurrent))),
+        "llm_max_rpm": int(os.getenv("LLM_MAX_RPM", str(settings.llm_max_rpm))),
     }
 
 
@@ -888,17 +1189,107 @@ def run_item(args: argparse.Namespace, item: SourceItem, batch_dir: Path) -> dic
     task_dir.mkdir(parents=True, exist_ok=True)
     try:
         print(f"start task={item.row_index} file={item.path.name}", flush=True)
+        if not args.ignore_triage:
+            preflight = triage_source_item(item)
+            if preflight.decision != ProcessingDecision.KEEP_TEXT:
+                return write_triage_skip_task(task_dir, item, preflight.decision.value, preflight.reason)
         doc_id, rows, processing = ensure_rows(item, args)
+        if not args.ignore_triage:
+            db_decision = triage_decision_for_rows(rows)
+            if db_decision["decision"] != ProcessingDecision.KEEP_TEXT.value:
+                return write_triage_skip_task(task_dir, item, db_decision["decision"], db_decision["reason"], doc_id=doc_id)
         equipment, alternatives, ontology_version = resolve_equipment(rows, item)
         results = [backend_result(args, name, item, rows, equipment, ontology_version, task_dir) for name in args.backends]
         task = build_task_summary(item, doc_id, rows, equipment, alternatives, processing, results, task_dir)
         print(f"done task={item.row_index}", flush=True)
         return task
     except Exception as exc:
-        task = {"row_index": item.row_index, "file_name": item.path.name, "status": "failed", "error": str(exc), "task_dir": str(task_dir)}
+        task = {
+            "row_index": item.row_index,
+            "file_name": item.path.name,
+            "status": "failed",
+            "error": str(exc),
+            "backend_results": [],
+            "task_dir": str(task_dir),
+        }
         write_json(task_dir / "task_summary.json", task)
         print(f"failed task={item.row_index}: {type(exc).__name__}: {exc}", flush=True)
         return task
+
+
+def triage_source_item(item: SourceItem):
+    class SourceDoc:
+        file_ext = item.path.suffix.lower().lstrip(".")
+        authority_level = item.authority_level
+        text_quality = item.text_quality
+        document_kind = item.document_kind
+        file_size_mb = item.raw.get("size_mb")
+        page_count = item.page_count
+        authority_metadata_json = item.raw
+
+    return triage_document(SourceDoc())
+
+
+def triage_decision_for_rows(rows: list[tuple[ContentChunk, DocumentPage, Document]]) -> dict[str, str]:
+    doc = rows[0][2]
+    decision = doc.processing_decision or triage_document(doc).decision.value
+    reason = doc.processing_decision_reason or triage_document(doc).reason
+    return {"decision": decision, "reason": reason}
+
+
+def write_triage_skip_task(
+    task_dir: Path,
+    item: SourceItem,
+    decision: str,
+    reason: str,
+    *,
+    doc_id: str | None = None,
+) -> dict[str, Any]:
+    task_dir.mkdir(parents=True, exist_ok=True)
+    queue_file = "review_queue.jsonl" if decision == ProcessingDecision.MANUAL_REVIEW.value else "visual_pipeline_queue.jsonl"
+    if decision == ProcessingDecision.DISCARD.value:
+        status = "discarded"
+        print(f"discarded task={item.row_index} reason={reason}", flush=True)
+    elif decision == ProcessingDecision.MANUAL_REVIEW.value:
+        status = "manual_review"
+        append_jsonl(task_dir.parent / queue_file, triage_queue_row(item, decision, reason, doc_id))
+        print(f"manual_review task={item.row_index} reason={reason}", flush=True)
+    else:
+        status = "route_to_visual_pipeline"
+        append_jsonl(task_dir.parent / queue_file, triage_queue_row(item, decision, reason, doc_id))
+        print(f"route_to_visual_pipeline task={item.row_index} decision={decision} reason={reason}", flush=True)
+    task = {
+        "status": status,
+        "row_index": item.row_index,
+        "file_name": item.path.name,
+        "source_path": str(item.path),
+        "doc_id": doc_id,
+        "processing_decision": decision,
+        "processing_decision_reason": reason,
+        "backend_results": [],
+        "task_dir": str(task_dir),
+    }
+    write_json(task_dir / "task_summary.json", task)
+    return task
+
+
+def triage_queue_row(item: SourceItem, decision: str, reason: str, doc_id: str | None) -> dict[str, Any]:
+    return {
+        "row_index": item.row_index,
+        "doc_id": doc_id,
+        "path": str(item.path),
+        "file_name": item.path.name,
+        "decision": decision,
+        "reason": reason,
+        "authority_level": item.authority_level,
+        "text_quality": item.text_quality,
+    }
+
+
+def append_jsonl(path: Path, row: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
 def build_task_summary(item, doc_id, rows, equipment, alternatives, processing, results, task_dir) -> dict[str, Any]:
@@ -940,10 +1331,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output-dir", default="output/hvac_doclevel_extraction_batch")
     parser.add_argument("--limit", type=int, default=1)
     parser.add_argument("--execute", action="store_true", help="Import/parse/chunk before extraction if needed")
+    parser.add_argument("--ignore-triage", action="store_true", help="Run selected manifest rows even if DB triage is not KEEP_TEXT")
     parser.add_argument("--backends", default="deepseek-parameter-spec,mimo-v2.5-pro")
     parser.add_argument("--judge-backend", default="", help="Optional second backend to model-review anchored candidates")
     parser.add_argument("--knowledge-types", default=",".join(SUPPORTED_TYPES))
     parser.add_argument("--target-candidates", type=int, default=10)
+    parser.add_argument("--section-aware", action="store_true", help="Split each document into chapter/clause-sized extraction calls")
+    parser.add_argument("--section-max-tokens", type=int, default=30000)
+    parser.add_argument("--section-min-heading-tokens", type=int, default=1200)
+    parser.add_argument("--section-target-candidates", type=int, default=20)
+    parser.add_argument("--section-sleep-seconds", type=float, default=0.5)
     parser.add_argument("--default-trust-level", default="L3")
     parser.add_argument("--resume-dir", help="Existing batch run directory to resume")
     parser.add_argument("--force", action="store_true", help="Re-run tasks/backends even if output already exists")

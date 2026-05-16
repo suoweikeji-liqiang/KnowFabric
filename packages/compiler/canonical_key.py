@@ -7,8 +7,10 @@ Hash cache ensures determinism: same sorted inputs always produce the same key.
 from __future__ import annotations
 
 import hashlib
+import asyncio
 import json
 import os
+import threading
 from pathlib import Path
 from typing import Any
 
@@ -19,8 +21,10 @@ from packages.compiler.llm_compiler import (
     _knowledge_type_prefix,
     _request_json_completion,
     _slugify_part,
+    backend_from_dict,
     resolve_backend,
 )
+from packages.compiler.rate_limited_client import RateLimitedClient
 
 REGISTRY_PATH = Path(__file__).resolve().parent / "canonical_key_registry.yaml"
 TERMINOLOGY_PATHS = [
@@ -33,6 +37,20 @@ CONCEPT_GROUP_TASK = "concept_group_and_normalize"
 BATCH_SIZE = 30  # E2: max names per LLM call
 MAX_GROUP_SIZE = 10  # E2: sanity — no single concept should have >10 true synonyms
 EMBEDDING_RECLUSTER_MAX_SIZE = 8  # Rich-state guard: keep regroup layers below super-KO size
+EMBEDDING_CLUSTER_THRESHOLD = 0.90
+SAME_FACET_RECLUSTER_THRESHOLD = 0.85
+LLM_ARBITER_CACHE_VERSION = "phase2_strict_v1"
+
+
+def _is_degenerate_slug(slug: str) -> bool:
+    return len(slug) <= 2 or slug.isdigit()
+
+
+def _safe_slug_for_name(name: str) -> str:
+    slug = _slugify_part(name)
+    if not slug or _is_degenerate_slug(slug):
+        return _hashed_slug(name)
+    return slug
 
 
 def _load_registry() -> dict[str, Any]:
@@ -52,9 +70,15 @@ def _hash_inputs(
     names: list[str],
     knowledge_object_type: str = "",
     facet_hints: dict[str, str | None] | None = None,
+    publisher_hints: dict[str, str | None] | None = None,
 ) -> str:
     payload = json.dumps(
-        {"names": sorted(names), "type": knowledge_object_type, "facet_hints": facet_hints or {}},
+        {
+            "names": sorted(names),
+            "type": knowledge_object_type,
+            "facet_hints": facet_hints or {},
+            "publisher_hints": publisher_hints or {},
+        },
         ensure_ascii=False,
         sort_keys=True,
     )
@@ -97,8 +121,16 @@ def _lookup_registry(names: list[str], type_prefix: str) -> str | None:
                 matches.append(existing_key)
     if not matches:
         return None
-    semantic = [k for k in matches if not k.split(":")[-1].startswith("key_")]
-    return semantic[0] if semantic else matches[0]
+    non_degenerate = [k for k in matches if not _is_degenerate_slug(k.split(":")[-1])]
+    if not non_degenerate:
+        return None
+    semantic = [k for k in non_degenerate if not k.split(":")[-1].startswith("key_")]
+    if semantic:
+        return semantic[0]
+    readable_name = next((name for name in names if not _safe_slug_for_name(name).startswith("key_")), "")
+    if readable_name:
+        return None
+    return non_degenerate[0]
 
 
 def _build_prompt(
@@ -201,9 +233,7 @@ def _llm_group_and_normalize(
         domain_slug = _slugify_part(domain_id)
         equipment_slug = _slugify_part(equipment_class_id)
         type_prefix = _knowledge_type_prefix(knowledge_object_type)
-        slug = _slugify_part(names[0]) if names else "unknown"
-        if not slug:
-            slug = _hashed_slug(names[0]) if names else "unknown"
+        slug = _safe_slug_for_name(names[0]) if names else "unknown"
         return [{
             "canonical_key": f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}",
             "normalized_name": slug,
@@ -240,9 +270,7 @@ def _llm_group_and_normalize(
     type_prefix = _knowledge_type_prefix(knowledge_object_type)
     for name in names:
         if name not in seen_names:
-            slug = _slugify_part(name)
-            if not slug:
-                slug = _hashed_slug(name)
+            slug = _safe_slug_for_name(name)
             validated.append({
                 "canonical_key": f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}",
                 "normalized_name": slug,
@@ -334,7 +362,7 @@ def _sanity_check_groups(groups: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
         if len(members) > MAX_GROUP_SIZE:
             for n in members:
-                slug = _slugify_part(n) or _hashed_slug(n)
+                slug = _safe_slug_for_name(n)
                 sane.append({
                     "canonical_key": slug,
                     "normalized_name": n,
@@ -346,7 +374,7 @@ def _sanity_check_groups(groups: list[dict[str, Any]]) -> list[dict[str, Any]]:
         slug = ck.split(":")[-1] if ":" in ck else ck
         if len(slug) <= 2 or slug.isdigit():
             for n in members:
-                slug = _slugify_part(n) or _hashed_slug(n)
+                slug = _safe_slug_for_name(n)
                 sane.append({
                     "canonical_key": slug,
                     "normalized_name": n,
@@ -436,6 +464,18 @@ def _tighten_oversize_embedding_clusters(
                 refined.extend([[n] for n in sub_cluster])
             else:
                 refined.append(sub_cluster)
+    return refined
+
+
+def _enforce_embedding_cluster_size(clusters: list[list[str]]) -> list[list[str]]:
+    """Final guard: no embedding-path output cluster may exceed layer sanity size."""
+
+    refined: list[list[str]] = []
+    for cluster in clusters:
+        if len(cluster) <= EMBEDDING_RECLUSTER_MAX_SIZE:
+            refined.append(cluster)
+        else:
+            refined.extend([[name] for name in cluster])
     return refined
 
 
@@ -565,7 +605,7 @@ def _llm_refine_cluster(
     """Ask LLM whether cluster names are same concept or should split by facet."""
     backend = resolve_backend(backend_name=backend_name)
     if backend is None or len(cluster_names) <= 1:
-        suggested_ck = _slugify_part(cluster_names[0]) if cluster_names else "unknown"
+        suggested_ck = _safe_slug_for_name(cluster_names[0]) if cluster_names else "unknown"
         return [{"canonical_key": suggested_ck, "member_names": cluster_names,
                  "rationale": "No LLM backend or single name; trusted embedding cluster"}]
 
@@ -609,11 +649,11 @@ def _llm_refine_cluster(
         missing = [n for n in cluster_names if n not in covered]
         if missing:
             for n in missing:
-                groups.append({"canonical_key": _slugify_part(n) or _hashed_slug(n),
+                               groups.append({"canonical_key": _safe_slug_for_name(n),
                                "member_names": [n], "rationale": "LLM did not assign; mechanical fallback"})
         return groups
     except Exception:
-        suggested_ck = _slugify_part(cluster_names[0]) if cluster_names else "unknown"
+        suggested_ck = _safe_slug_for_name(cluster_names[0]) if cluster_names else "unknown"
         return [{"canonical_key": suggested_ck, "member_names": cluster_names,
                  "rationale": "LLM refinement failed; trusted embedding cluster"}]
 
@@ -626,6 +666,7 @@ def _group_via_embedding(
     knowledge_object_type: str,
     backend_name: str | None = None,
     facet_hints: dict[str, Any] | None = None,
+    publisher_hints: dict[str, Any] | None = None,
 ) -> dict[str, str]:
     """H2: embedding-first grouping — BGE-M3 → cosine clustering → LLM refine."""
     cleaned = [str(n).strip() for n in names if str(n).strip()]
@@ -640,7 +681,7 @@ def _group_via_embedding(
 
     # 2. Clustering
     from packages.compiler.clustering import cluster_by_cosine
-    threshold = 0.78
+    threshold = EMBEDDING_CLUSTER_THRESHOLD
     raw_clusters = cluster_by_cosine(cleaned, embeddings, threshold=threshold)
     tightened_clusters = _tighten_oversize_embedding_clusters(
         cleaned,
@@ -648,14 +689,28 @@ def _group_via_embedding(
         raw_clusters,
         threshold=threshold,
     )
-    clusters = _split_clusters_by_facet(tightened_clusters, facet_hints or {})
+    clusters = _split_clusters_by_facet(
+        tightened_clusters,
+        facet_hints or {},
+        knowledge_object_type=knowledge_object_type,
+    )
     clusters = _recluster_compatible_facet_clusters(
         clusters,
         cleaned,
         embeddings,
         facet_hints or {},
         threshold=threshold,
+        knowledge_object_type=knowledge_object_type,
     )
+    clusters = _apply_llm_arbiter(
+        clusters,
+        domain_id=domain_id,
+        equipment_class_id=equipment_class_id,
+        knowledge_object_type=knowledge_object_type,
+        backend_name=backend_name,
+        publisher_hints=publisher_hints or {},
+    )
+    clusters = _enforce_embedding_cluster_size(clusters)
     _dump_embedding_cluster_trace(
         cleaned,
         clusters,
@@ -684,7 +739,7 @@ def _group_via_embedding(
             if yaml_key:
                 ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{yaml_key}"
             else:
-                slug = _slugify_part(n) or _hashed_slug(n)
+                slug = _safe_slug_for_name(n)
                 ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
             mapping[n] = ck
             _register([n], ck)
@@ -698,7 +753,7 @@ def _group_via_embedding(
             if yaml_ck:
                 ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{yaml_ck}"
             else:
-                suggested_ck = _slugify_part(cluster_names[0]) or _hashed_slug(cluster_names[0])
+                suggested_ck = _safe_slug_for_name(cluster_names[0])
                 ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{suggested_ck}"
             for n in cluster_names:
                 mapping[n] = ck
@@ -713,7 +768,7 @@ def _group_via_embedding(
             if yaml_ck:
                 ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{yaml_ck}"
             else:
-                suggested_ck = _slugify_part(cluster_names[0]) or _hashed_slug(cluster_names[0])
+                suggested_ck = _safe_slug_for_name(cluster_names[0])
                 ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{suggested_ck}"
             for n in cluster_names:
                 mapping[n] = ck
@@ -731,33 +786,499 @@ def _group_via_embedding(
         facet_clusters=clusters,
         mapping=mapping,
     )
-    HASH_CACHE[_hash_inputs(cleaned, knowledge_object_type, facet_hints)] = mapping
+    HASH_CACHE[_hash_inputs(cleaned, knowledge_object_type, facet_hints, publisher_hints)] = mapping
     return mapping
+
+
+def _apply_llm_arbiter(
+    clusters: list[list[str]],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    backend_name: str | None = None,
+    publisher_hints: dict[str, Any] | None = None,
+) -> list[list[str]]:
+    """Use scoped LLM adjudication only for small multi-publisher clusters."""
+
+    publisher_hints = publisher_hints or {}
+    refined_by_index: dict[int, list[list[str]]] = {}
+    pending: list[tuple[int, list[str]]] = []
+    for idx, cluster in enumerate(clusters):
+        publishers = {
+            str(publisher_hints.get(name) or "").strip()
+            for name in cluster
+            if str(publisher_hints.get(name) or "").strip()
+        }
+        should_call = 2 <= len(cluster) <= 8 and len(publishers) >= 2
+        if not should_call:
+            refined_by_index[idx] = [cluster]
+            continue
+        pending.append((idx, cluster))
+    if pending:
+        refined_by_index.update(_run_arbiter_coroutine(_arbitrate_all_clusters(
+            pending,
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+            backend_name=backend_name,
+            client=RateLimitedClient.from_env(),
+        )))
+    refined: list[list[str]] = []
+    for idx in range(len(clusters)):
+        refined.extend(refined_by_index[idx])
+    return refined
+
+
+async def _arbitrate_all_clusters(
+    indexed_clusters: list[tuple[int, list[str]]],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    backend_name: str | None,
+    client: RateLimitedClient,
+) -> dict[int, list[list[str]]]:
+    results = await asyncio.gather(*[
+        _arbitrate_one_cluster(
+            idx,
+            cluster,
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+            backend_name=backend_name,
+            client=client,
+        )
+        for idx, cluster in indexed_clusters
+    ])
+    return dict(results)
+
+
+async def _arbitrate_one_cluster(
+    idx: int,
+    cluster: list[str],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    backend_name: str | None,
+    client: RateLimitedClient,
+) -> tuple[int, list[list[str]]]:
+    try:
+        groups = await client.call(
+            _llm_adjudicate_cluster,
+            cluster,
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+            backend_name=backend_name,
+        )
+        return idx, groups
+    except Exception:
+        return idx, [cluster]
+
+
+def _run_arbiter_coroutine(coro):
+    try:
+        asyncio.get_running_loop()
+    except RuntimeError:
+        return asyncio.run(coro)
+
+    result: dict[str, Any] = {}
+    error: dict[str, BaseException] = {}
+
+    def _runner() -> None:
+        try:
+            result["value"] = asyncio.run(coro)
+        except BaseException as exc:
+            error["error"] = exc
+
+    thread = threading.Thread(target=_runner, daemon=True)
+    thread.start()
+    thread.join()
+    if error:
+        raise error["error"]
+    return result["value"]
+
+
+def _llm_adjudicate_cluster(
+    cluster_names: list[str],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    backend_name: str | None = None,
+) -> list[list[str]]:
+    """Ask the final arbiter whether one small cross-publisher cluster should split."""
+
+    cache_path = _llm_arbiter_cache_path(cluster_names, equipment_class_id, knowledge_object_type)
+    if cache_path.exists():
+        return _validate_arbiter_groups(cluster_names, json.loads(cache_path.read_text(encoding="utf-8")))
+
+    backend = _resolve_arbiter_backend(backend_name)
+    if backend is None:
+        return [cluster_names]
+
+    payload = _request_json_completion(
+        _build_llm_arbiter_messages(
+            cluster_names,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+        ),
+        backend,
+        response_format={"type": "json_object"},
+    )
+    groups = _validate_arbiter_groups(cluster_names, payload)
+    if _arbiter_needs_repair(groups):
+        repair_payload = _request_json_completion(
+            _build_llm_arbiter_repair_prompt(
+                cluster_names,
+                groups,
+                equipment_class_id=equipment_class_id,
+                knowledge_object_type=knowledge_object_type,
+            ),
+            backend,
+            response_format={"type": "json_object"},
+        )
+        groups = _validate_arbiter_groups(cluster_names, repair_payload)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps({"groups": [{"member_names": group} for group in groups]}, ensure_ascii=False, indent=2), encoding="utf-8")
+    return groups
+
+
+def _resolve_arbiter_backend(backend_name: str | None):
+    name = backend_name or "deepseek-parameter-spec"
+    config_path = Path(__file__).resolve().parents[2] / "scripts" / "llm_backends.json"
+    try:
+        if config_path.exists():
+            local_env = _read_local_llm_env()
+            data = json.loads(config_path.read_text(encoding="utf-8"))
+            for item in data.get("backends", []):
+                if item.get("name") != name:
+                    continue
+                resolved = dict(item)
+                api_key_env = resolved.get("api_key_env")
+                if api_key_env and not resolved.get("api_key"):
+                    resolved["api_key"] = os.getenv(str(api_key_env)) or local_env.get(str(api_key_env))
+                api_base_env = resolved.get("api_base_url_env")
+                if api_base_env:
+                    resolved["api_base_url"] = (
+                        os.getenv(str(api_base_env))
+                        or local_env.get(str(api_base_env))
+                        or resolved.get("api_base_url")
+                    )
+                return backend_from_dict(resolved)
+        return resolve_backend(config_path=config_path, backend_name=name)
+    except Exception:
+        return resolve_backend(backend_name=backend_name)
+
+
+def _read_local_llm_env() -> dict[str, str]:
+    path = Path(__file__).resolve().parents[2] / ".env.llm.local"
+    if not path.exists():
+        return {}
+    values: dict[str, str] = {}
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        values[key.strip()] = value.strip().strip("\"'")
+    return values
+
+
+def _llm_arbiter_cache_path(
+    member_names: list[str],
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> Path:
+    payload = json.dumps(
+        {
+            "member_names": sorted(member_names),
+            "equipment_class_id": equipment_class_id,
+            "knowledge_object_type": knowledge_object_type,
+            "arbiter_version": LLM_ARBITER_CACHE_VERSION,
+        },
+        ensure_ascii=False,
+        sort_keys=True,
+    )
+    digest = hashlib.sha1(payload.encode("utf-8")).hexdigest()
+    return Path("/tmp/knowfabric_llm_arbiter_cache") / f"{digest}.json"
+
+
+def _build_llm_arbiter_messages(
+    member_names: list[str],
+    *,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> list[dict[str, str]]:
+    if len(member_names) > 3:
+        return _build_llm_arbiter_strict_prompt(
+            member_names,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+        )
+    return _build_llm_arbiter_prompt(
+        member_names,
+        equipment_class_id=equipment_class_id,
+        knowledge_object_type=knowledge_object_type,
+    )
+
+
+def _build_llm_arbiter_strict_prompt(
+    member_names: list[str],
+    *,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> list[dict[str, str]]:
+    system = (
+        "You are the final strict arbiter for HVAC knowledge-object merging.\n\n"
+        "Only merge candidates when ALL THREE checks are yes:\n"
+        "1. Same physical quantity? temperature / pressure / flow / count / time / current / etc.\n"
+        "2. Same subsystem facet? oil_system / water_system / refrigerant_system / electrical_system / "
+        "bearing_system / control_system / air_system.\n"
+        "3. Same polarity or direction? For faults: high vs low vs loss vs sensor_fault. "
+        "For specs: max vs min vs range vs setpoint.\n\n"
+        "If any answer is no or unknown, split into multiple KOs. Different values alone can still merge "
+        "when the concept is the same.\n\n"
+        "Return strict JSON only:\n"
+        "{\"merge\": true/false, \"rationale\": \"...\", \"split_groups\": [[...], [...]]}\n"
+        "When merge=true, split_groups may be omitted. When merge=false, every input name must appear in "
+        "exactly one split group."
+    )
+    user = json.dumps(
+        {
+            "equipment_class": equipment_class_id,
+            "parameter_type": knowledge_object_type,
+            "candidate_names": member_names,
+        },
+        ensure_ascii=False,
+    )
+    return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+
+
+def _build_llm_arbiter_prompt(
+    member_names: list[str],
+    *,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> list[dict[str, str]]:
+    system = (
+        "You are validating whether a set of parameter names from chiller manuals "
+        "refer to the SAME physical quantity, SAME reference-point, AND SAME facet.\n\n"
+        "Rules:\n"
+        "1. Cross-language translations of same concept = SAME group\n"
+        "   (e.g. 'Oil Pressure Differential' + '油压差' -> same)\n"
+        "2. Different physical quantities (temperature vs pressure differential vs time vs speed vs current) = SPLIT\n"
+        "3. Different reference-points (oil tank vs cooling water inlet) = SPLIT\n"
+        "4. Different equipment subsystems (oil cooler vs air-cooled condenser) = SPLIT\n"
+        "5. Different control functions using the same unit = SPLIT\n"
+        "   (e.g. active current limit setpoint vs hot gas bypass start current trigger = split)\n"
+        "6. Time duration and actuator speed/opening time are different facets = SPLIT\n"
+        "   (e.g. soft-load time vs guide-vane opening speed/time = split)\n"
+        "7. Same physical quantity + same ref-point + different value range = SAME\n"
+        "   (e.g. Trane '100A' + Carrier '120A' both current limit setpoint = same group, "
+        "just disagree on value -> consensus=partial_conflict)\n\n"
+        "Known chiller split examples:\n"
+        "- '油冷/变频器冷却最高进水温度' and 'Air-cooled Condenser EDB at Part-load' are SPLIT: "
+        "oil-cooler/inverter cooling water inlet vs air-cooled condenser dry-bulb.\n"
+        "- 'Active Current Limit Setpoint' and '热气旁通启动点电流值' are SPLIT: "
+        "main current-limit control vs hot-gas-bypass trigger.\n"
+        "  Hot-gas bypass / 热气旁通 is its own subsystem and MUST NOT be grouped with "
+        "Active/BAS/External Current Limit Setpoint even when both use %RLA/current values.\n"
+        "- '电流限制控制软载时间' and '导叶速度出厂设置值' are SPLIT: "
+        "soft-load delay/control time vs guide-vane actuator speed/opening time.\n\n"
+        "Known chiller same-group examples:\n"
+        "- '油箱温度控制', '润滑油温度控制设定范围', '低油温起动抑制设定', and '供油温度范围' "
+        "are the SAME lubrication-oil temperature control facet unless the name says oil-cooler water inlet.\n"
+        "- Do not split lubrication-oil temperature just because the wording says oil tank, lubricating oil, "
+        "supply oil, or low-oil start inhibit; these are the same oil-temperature control family.\n\n"
+        "Output JSON:\n"
+        "{\"groups\": [{\"member_names\": [...], \"rationale\": \"...\"}, ...]}\n\n"
+        "Every input name must appear in exactly ONE group."
+    )
+    numbered = "\n".join(f"{idx}. {name}" for idx, name in enumerate(member_names, start=1))
+    user = (
+        f"Equipment class: {equipment_class_id}\n"
+        f"Parameter type: {knowledge_object_type}\n"
+        f"Candidate names (n={len(member_names)}):\n{numbered}"
+    )
+    return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+
+
+def _build_llm_arbiter_repair_prompt(
+    member_names: list[str],
+    previous_groups: list[list[str]],
+    *,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> list[dict[str, str]]:
+    system = (
+        "You repair an invalid chiller parameter grouping. Return corrected JSON only.\n\n"
+        "The previous grouping violated hard rules:\n"
+        "- Hot-gas bypass / 热气旁通 current trigger MUST be split from Active/BAS/External Current Limit Setpoint.\n"
+        "- Oil-cooler/inverter cooling water inlet temperature MUST be split from air-cooled condenser dry-bulb "
+        "and evaporator water temperatures.\n"
+        "- Guide-vane speed/opening time MUST be split from soft-load/filter/current-limit time settings.\n"
+        "- Lubrication-oil temperature names MAY stay together when they mean oil tank/lubricating oil/supply oil.\n\n"
+        "Output JSON: {\"groups\": [{\"member_names\": [...], \"rationale\": \"...\"}, ...]}\n"
+        "Every input name must appear in exactly ONE group."
+    )
+    user = json.dumps(
+        {
+            "equipment_class": equipment_class_id,
+            "parameter_type": knowledge_object_type,
+            "candidate_names": member_names,
+            "invalid_previous_groups": previous_groups,
+        },
+        ensure_ascii=False,
+    )
+    return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+
+
+def _arbiter_needs_repair(groups: list[list[str]]) -> bool:
+    return any(
+        _mixes_hot_gas_bypass_with_current_limit(group)
+        or _mixes_oil_cooler_with_condenser_or_evaporator(group)
+        or _mixes_guide_vane_with_soft_load_time(group)
+        for group in groups
+    )
+
+
+def _mixes_hot_gas_bypass_with_current_limit(group: list[str]) -> bool:
+    has_bypass = any(_contains_any(name, ["热气旁通", "hot gas bypass"]) for name in group)
+    has_current_limit = any(
+        _contains_any(name, ["current limit", "电流限制"])
+        and not _contains_any(name, ["热气旁通", "hot gas bypass"])
+        for name in group
+    )
+    return has_bypass and has_current_limit
+
+
+def _mixes_oil_cooler_with_condenser_or_evaporator(group: list[str]) -> bool:
+    has_oil_cooler = any(_contains_any(name, ["油冷", "inverter cooling", "oil cooler"]) for name in group)
+    has_other_heat_exchanger = any(
+        _contains_any(name, ["air-cooled condenser", "evaporator water", "冷冻水", "冷却水"])
+        and not _contains_any(name, ["油冷", "inverter cooling", "oil cooler"])
+        for name in group
+    )
+    return has_oil_cooler and has_other_heat_exchanger
+
+
+def _mixes_guide_vane_with_soft_load_time(group: list[str]) -> bool:
+    has_guide_vane = any(_contains_any(name, ["导叶", "guide vane"]) for name in group)
+    has_soft_load_time = any(
+        _contains_any(name, ["soft load", "软载", "filter time", "滤波器时间", "重启抑制"])
+        and not _contains_any(name, ["导叶", "guide vane"])
+        for name in group
+    )
+    return has_guide_vane and has_soft_load_time
+
+
+def _contains_any(value: str, needles: list[str]) -> bool:
+    text = value.lower()
+    return any(needle.lower() in text for needle in needles)
+
+
+def _validate_arbiter_groups(cluster_names: list[str], payload: dict[str, Any]) -> list[list[str]]:
+    if isinstance(payload, dict) and payload.get("merge") is True:
+        return [cluster_names]
+    if isinstance(payload, dict) and payload.get("merge") is False:
+        split_groups = payload.get("split_groups")
+        if isinstance(split_groups, list):
+            return _validate_name_groups(cluster_names, split_groups)
+
+    groups = payload.get("groups") if isinstance(payload, dict) else None
+    if not isinstance(groups, list) or not groups:
+        return [cluster_names]
+    raw_groups = []
+    for group in groups:
+        if not isinstance(group, dict):
+            return [cluster_names]
+        raw_groups.append(group.get("member_names"))
+    return _validate_name_groups(cluster_names, raw_groups)
+
+def _validate_name_groups(cluster_names: list[str], raw_groups: list[Any]) -> list[list[str]]:
+    expected = set(cluster_names)
+    seen: set[str] = set()
+    refined: list[list[str]] = []
+    for members in raw_groups:
+        if not isinstance(members, list):
+            return [cluster_names]
+        cleaned = [str(name).strip() for name in members if str(name).strip()]
+        if not cleaned:
+            return [cluster_names]
+        if any(name not in expected or name in seen for name in cleaned):
+            return [cluster_names]
+        seen.update(cleaned)
+        refined.append(cleaned)
+
+    if seen != expected:
+        return [cluster_names]
+    return refined
 
 
 def _split_clusters_by_facet(
     clusters: list[list[str]],
     facet_hints: dict[str, Any],
+    knowledge_object_type: str | None = None,
 ) -> list[list[str]]:
-    """Split embedding clusters when known unit facets are dimensionally incompatible."""
+    """Split embedding clusters when any known facet axis is incompatible."""
 
     refined: list[list[str]] = []
     for cluster in clusters:
-        quantity_groups = _split_by_quantity(cluster, facet_hints)
-        for quantity_group in quantity_groups:
-            refined.extend(_split_by_subtype(quantity_group, facet_hints))
+        refined.extend(_split_by_all_facet_axes(cluster, facet_hints, knowledge_object_type))
     return refined
 
 
+def _split_by_all_facet_axes(
+    cluster: list[str],
+    facet_hints: dict[str, Any],
+    knowledge_object_type: str | None,
+) -> list[list[str]]:
+    groups = [cluster]
+    for axis in _active_facet_axes(knowledge_object_type):
+        next_groups: list[list[str]] = []
+        for group in groups:
+            next_groups.extend(_split_by_axis(group, facet_hints, axis))
+        groups = next_groups
+    return groups
+
+
+def _active_facet_axes(knowledge_object_type: str | None) -> tuple[int, ...]:
+    axes = [0, 1, 3, 4, 5, 6]
+    if knowledge_object_type == "fault_code":
+        axes.insert(2, 2)
+    return tuple(axes)
+
+
+def _split_by_axis(cluster: list[str], facet_hints: dict[str, Any], axis: int) -> list[list[str]]:
+    values = [_facet_axis_value(facet_hints.get(name), axis) for name in cluster]
+    known_values = {value for value in values if value}
+    if len(known_values) == 0:
+        return [cluster]
+    if len(known_values) == 1 and all(value or axis == 0 for value in values):
+        return [cluster]
+
+    by_value: dict[str, list[str]] = {}
+    for name, value in zip(cluster, values):
+        by_value.setdefault(value or "__unknown__", []).append(name)
+    return list(by_value.values())
+
+
 def _facet_quantity(hint: Any) -> str | None:
-    if isinstance(hint, (list, tuple)):
-        return str(hint[0]) if hint and hint[0] else None
-    return str(hint) if hint else None
+    return _facet_axis_value(hint, 0)
 
 
 def _facet_subtype(hint: Any) -> str | None:
-    if isinstance(hint, (list, tuple)) and len(hint) > 1:
-        return str(hint[1]) if hint[1] else None
+    return _facet_axis_value(hint, 1)
+
+
+def _facet_axis_value(hint: Any, axis: int) -> str | None:
+    if isinstance(hint, (list, tuple)):
+        return str(hint[axis]) if len(hint) > axis and hint[axis] else None
+    if axis == 0:
+        return str(hint) if hint else None
     return None
 
 
@@ -814,18 +1335,19 @@ def _recluster_compatible_facet_clusters(
     facet_hints: dict[str, Any],
     *,
     threshold: float,
+    knowledge_object_type: str | None = None,
 ) -> list[list[str]]:
     """Reconnect split fragments that have the same known facet/subtype."""
 
     index_by_name = {name: idx for idx, name in enumerate(names)}
-    grouped: dict[tuple[str, str | None], list[str]] = {}
+    grouped: dict[tuple[tuple[int, str], ...], list[str]] = {}
     passthrough: list[list[str]] = []
     for cluster in clusters:
-        keys = {_facet_group_key(name, facet_hints) for name in cluster}
+        keys = {_facet_group_key(name, facet_hints, knowledge_object_type) for name in cluster}
         keys.discard(None)
         if len(keys) == 1:
             key = next(iter(keys))
-            if all(_facet_group_key(name, facet_hints) == key for name in cluster):
+            if all(_facet_group_key(name, facet_hints, knowledge_object_type) == key for name in cluster):
                 grouped.setdefault(key, []).extend(cluster)
                 continue
         passthrough.append(cluster)
@@ -839,19 +1361,36 @@ def _recluster_compatible_facet_clusters(
             continue
         indices = [index_by_name[name] for name in deduped]
         sub_embeddings = [embeddings[idx] for idx in indices]
-        reclustered.extend(cluster_by_cosine(deduped, sub_embeddings, threshold=threshold))
+        reclustered.extend(
+            cluster_by_cosine(
+                deduped,
+                sub_embeddings,
+                threshold=min(threshold, SAME_FACET_RECLUSTER_THRESHOLD),
+            )
+        )
     return passthrough + reclustered
 
 
-def _facet_group_key(name: str, facet_hints: dict[str, Any]) -> tuple[str, str] | None:
+def _facet_group_key(
+    name: str,
+    facet_hints: dict[str, Any],
+    knowledge_object_type: str | None = None,
+) -> tuple[tuple[int, str], ...] | None:
     hint = facet_hints.get(name)
-    subtype = _facet_subtype(hint)
+    axes = _active_facet_axes(knowledge_object_type)
+    subtype = _facet_axis_value(hint, 1)
+    parts_list: list[tuple[int, str]] = []
     if subtype:
-        return "subtype", subtype
-    quantity = _facet_quantity(hint)
-    if not quantity:
+        parts_list.append((1, subtype))
+        axes = tuple(axis for axis in axes if axis != 0)
+    for axis in axes:
+        value = _facet_axis_value(hint, axis)
+        if value and (axis, value) not in parts_list:
+            parts_list.append((axis, value))
+    parts = tuple(parts_list)
+    if not parts:
         return None
-    return "quantity", quantity
+    return parts
 
 
 USE_EMBEDDING_FIRST = os.environ.get("KNOWFABRIC_USE_EMBEDDING_FIRST", "1") == "1"
@@ -865,6 +1404,7 @@ def group_and_normalize(
     knowledge_object_type: str,
     backend_name: str | None = None,
     facet_hints: dict[str, Any] | None = None,
+    publisher_hints: dict[str, Any] | None = None,
 ) -> dict[str, str]:
     """Group names by concept and normalize each group to a canonical key.
 
@@ -875,7 +1415,7 @@ def group_and_normalize(
     if not cleaned:
         return {}
 
-    input_hash = _hash_inputs(cleaned, knowledge_object_type, facet_hints)
+    input_hash = _hash_inputs(cleaned, knowledge_object_type, facet_hints, publisher_hints)
     if input_hash in HASH_CACHE:
         cached = HASH_CACHE[input_hash]
         if isinstance(cached, dict):
@@ -889,6 +1429,7 @@ def group_and_normalize(
             knowledge_object_type=knowledge_object_type,
             backend_name=backend_name,
             facet_hints=facet_hints,
+            publisher_hints=publisher_hints,
         )
 
     # Fallback: E2 batched-LLM with sanity checks
@@ -951,9 +1492,7 @@ def _llm_normalize(
     domain_slug = _slugify_part(domain_id)
     equipment_slug = _slugify_part(equipment_class_id)
     type_prefix = _knowledge_type_prefix(knowledge_object_type)
-    slug = _slugify_part(names[0])
-    if not slug:
-        slug = _hashed_slug(names[0])
+    slug = _safe_slug_for_name(names[0])
     return f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
 
 
@@ -1067,9 +1606,7 @@ def resolve_single_name(
 
     domain_slug = _slugify_part(domain_id)
     equipment_slug = _slugify_part(equipment_class_id)
-    slug = _slugify_part(cleaned)
-    if not slug:
-        slug = _hashed_slug(cleaned)
+    slug = _safe_slug_for_name(cleaned)
     canonical_key = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
 
     _register([cleaned], canonical_key)

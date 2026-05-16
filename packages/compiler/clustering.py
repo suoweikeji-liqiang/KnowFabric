@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import math
 
+import numpy as np
+
 DEFAULT_THRESHOLD = 0.78
 
 
@@ -41,22 +43,31 @@ def _member_indices(uf: _UnionFind, n: int, root: int) -> list[int]:
 
 
 def _can_complete_link(
-    uf: _UnionFind,
-    embeddings: list[list[float]],
+    sim_matrix: np.ndarray,
     *,
-    i: int,
-    j: int,
+    left: list[int],
+    right: list[int],
     threshold: float,
 ) -> bool:
-    n = len(embeddings)
-    left = _member_indices(uf, n, uf.find(i))
-    right = _member_indices(uf, n, uf.find(j))
-    merged = list(dict.fromkeys(left + right))
-    for a_idx, a in enumerate(merged):
-        for b in merged[a_idx + 1:]:
-            if cosine(embeddings[a], embeddings[b]) < threshold:
-                return False
-    return True
+    return bool(np.all(sim_matrix[np.ix_(left, right)] >= threshold))
+
+
+def _cosine_similarity_matrix(embeddings: list[list[float]]) -> np.ndarray:
+    matrix = np.asarray(embeddings, dtype=float)
+    if matrix.ndim != 2:
+        raise ValueError("embeddings must be a 2D list of vectors")
+    norms = np.linalg.norm(matrix, axis=1, keepdims=True)
+    normalized = np.divide(matrix, norms, out=np.zeros_like(matrix), where=norms != 0)
+    return normalized @ normalized.T
+
+
+def _row_masks(eligible: np.ndarray) -> list[int]:
+    """Return bit masks of threshold-eligible neighbors for each row."""
+
+    return [
+        sum(1 << int(idx) for idx in np.flatnonzero(row))
+        for row in eligible
+    ]
 
 
 def cluster_by_cosine(
@@ -79,21 +90,33 @@ def cluster_by_cosine(
     if n == 0:
         return []
 
+    sim_matrix = _cosine_similarity_matrix(embeddings)
+    eligible = sim_matrix >= threshold
     uf = _UnionFind(n)
+    cluster_masks = {idx: 1 << idx for idx in range(n)}
+    common_masks = {idx: mask for idx, mask in enumerate(_row_masks(eligible))}
     for i in range(n):
         for j in range(i + 1, n):
-            if cosine(embeddings[i], embeddings[j]) < threshold:
+            if not eligible[i, j]:
                 continue
-            if linkage == "complete" and not _can_complete_link(
-                uf,
-                embeddings,
-                i=i,
-                j=j,
-                threshold=threshold,
-            ):
+            ri, rj = uf.find(i), uf.find(j)
+            if ri == rj:
                 continue
-            if uf.find(i) != uf.find(j):
-                uf.union(i, j)
+            if linkage == "complete":
+                if cluster_masks[rj] & ~common_masks[ri]:
+                    continue
+                if cluster_masks[ri] & ~common_masks[rj]:
+                    continue
+            merged_mask = cluster_masks[ri] | cluster_masks[rj]
+            merged_common = common_masks[ri] & common_masks[rj]
+            uf.union(ri, rj)
+            new_root = uf.find(rj)
+            cluster_masks.pop(ri, None)
+            cluster_masks.pop(rj, None)
+            common_masks.pop(ri, None)
+            common_masks.pop(rj, None)
+            cluster_masks[new_root] = merged_mask
+            common_masks[new_root] = merged_common
 
     clusters: dict[int, list[str]] = {}
     for i in range(n):

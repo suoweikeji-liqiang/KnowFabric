@@ -12,7 +12,7 @@ from typing import Any
 
 from packages.compiler.authority_arbitration import arbitrate
 from packages.compiler.canonical_key import group_and_normalize, resolve_single_name
-from packages.compiler.llm_compiler import _hashed_slug, _slugify_part
+from packages.compiler.llm_compiler import _hashed_slug, _knowledge_type_prefix, _slugify_part
 from packages.compiler.unit_facet_detector import detect_facet_v2
 
 AUTHORITY_RANK = {
@@ -27,6 +27,124 @@ AUTHORITY_RANK = {
 }
 
 NUMERIC_TOLERANCE = 0.05
+FINAL_MAX_GROUP_LAYERS = 8
+
+
+def _safe_slug_for_merger(name: str) -> str:
+    slug = _slugify_part(name)
+    if not slug or len(slug) <= 2 or slug.isdigit():
+        return _hashed_slug(name)
+    return slug
+
+
+def _normalize_canonical_key_for_anchor(
+    canonical_key: str,
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+    fallback_name: str,
+) -> str:
+    """Ensure persisted canonical keys match the final ontology anchor."""
+
+    domain_slug = _slugify_part(domain_id)
+    equipment_slug = _slugify_part(equipment_class_id)
+    type_prefix = _knowledge_type_prefix(knowledge_object_type)
+    parts = [part for part in str(canonical_key or "").split(":") if part]
+    suffix = parts[-1] if len(parts) >= 4 else str(canonical_key or "")
+    if not suffix or suffix.startswith("key_") or len(suffix) <= 2 or suffix.isdigit():
+        suffix = _safe_slug_for_merger(fallback_name or suffix or "unknown")
+    return f"{domain_slug}:{equipment_slug}:{type_prefix}:{suffix}"
+
+
+def _normalize_existing_ko_keys(
+    session: Any,
+    existing_kos: list[Any],
+    *,
+    domain_id: str,
+    equipment_class_id: str,
+    knowledge_object_type: str,
+) -> None:
+    """Re-key existing rows in-place before regrouping.
+
+    Regroup may split old clusters and leave some rows unmatched by source name.
+    Those rows still need structural key repair, otherwise legacy prefixes and
+    CJK hash fallbacks survive the regroup pass.
+    """
+
+    if not existing_kos:
+        return
+
+    from packages.db.models_v2 import KnowledgeObjectV2
+
+    ko_ids = {ko.knowledge_object_id for ko in existing_kos}
+    reserved = {
+        key
+        for (key,) in session.query(KnowledgeObjectV2.canonical_key)
+        .filter(~KnowledgeObjectV2.knowledge_object_id.in_(ko_ids))
+        .all()
+    }
+    used: set[str] = set()
+    final_keys: dict[str, str] = {}
+    for ko in sorted(existing_kos, key=lambda item: item.knowledge_object_id):
+        normalized = _normalize_canonical_key_for_anchor(
+            ko.canonical_key,
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+            fallback_name=ko.title or "unknown",
+        )
+        candidate = _unique_canonical_key(normalized, reserved | used)
+        used.add(candidate)
+        if ko.canonical_key != candidate:
+            final_keys[ko.knowledge_object_id] = candidate
+    if not final_keys:
+        return
+
+    # Move through unique temporary keys first. PostgreSQL checks unique
+    # constraints row-by-row for this table, so direct swaps collide.
+    for ko in existing_kos:
+        if ko.knowledge_object_id in final_keys:
+            ko.canonical_key = f"__phase2_tmp__:{ko.knowledge_object_id}"
+            session.add(ko)
+    session.flush()
+
+    for ko in existing_kos:
+        final_key = final_keys.get(ko.knowledge_object_id)
+        if final_key:
+            ko.canonical_key = final_key
+            session.add(ko)
+    session.flush()
+
+
+def _unique_canonical_key(base_key: str, reserved: set[str]) -> str:
+    if base_key not in reserved:
+        return base_key
+    counter = 2
+    while f"{base_key}_{counter}" in reserved:
+        counter += 1
+    return f"{base_key}_{counter}"
+
+
+def _split_oversize_groups_by_source_name(
+    groups: dict[str, list[dict[str, Any]]],
+) -> dict[str, list[dict[str, Any]]]:
+    refined: dict[str, list[dict[str, Any]]] = {}
+    for canonical_key, group in groups.items():
+        if len(group) <= FINAL_MAX_GROUP_LAYERS:
+            refined[canonical_key] = group
+            continue
+
+        by_name: dict[str, list[dict[str, Any]]] = {}
+        for candidate in group:
+            by_name.setdefault(_candidate_source_name(candidate) or "unknown", []).append(candidate)
+
+        for name, name_group in by_name.items():
+            slug = _safe_slug_for_merger(name)
+            for offset in range(0, len(name_group), FINAL_MAX_GROUP_LAYERS):
+                suffix = slug if offset == 0 else f"{slug}_{offset // FINAL_MAX_GROUP_LAYERS + 1}"
+                refined[f"{canonical_key}_{suffix}"] = name_group[offset:offset + FINAL_MAX_GROUP_LAYERS]
+    return refined
 
 
 def _coerce_numeric(value: Any) -> float | None:
@@ -314,9 +432,72 @@ def _split_same_document_name_conflicts(
         for candidate in group:
             by_name.setdefault(_candidate_source_name(candidate) or "unknown", []).append(candidate)
         for name, name_group in by_name.items():
-            suffix = _slugify_part(name) or _hashed_slug(name)
+            suffix = _safe_slug_for_merger(name)
             refined[f"{canonical_key}_{suffix}"] = name_group
     return refined
+
+
+def _split_fault_code_groups(
+    groups: dict[str, list[dict[str, Any]]],
+) -> dict[str, list[dict[str, Any]]]:
+    refined: dict[str, list[dict[str, Any]]] = {}
+    for canonical_key, group in groups.items():
+        by_signature: dict[tuple[str, str, str], list[dict[str, Any]]] = {}
+        for candidate in group:
+            signature = _fault_signature(candidate)
+            by_signature.setdefault(signature, []).append(candidate)
+        if len(by_signature) <= 1:
+            refined[canonical_key] = group
+            continue
+        for signature, signature_group in by_signature.items():
+            name = _candidate_source_name(signature_group[0]) or "_".join(signature)
+            refined[f"{canonical_key}_{_safe_slug_for_merger(name)}"] = signature_group
+    return refined
+
+
+def _fault_signature(candidate: dict[str, Any]) -> tuple[str, str, str]:
+    payload = candidate.get("structured_payload") or candidate.get("structured_payload_candidate") or {}
+    name = _candidate_source_name(candidate)
+    text = " ".join(str(payload.get(key) or "") for key in ("parameter_name", "title", "summary", "condition", "trigger_condition"))
+    text = f"{name} {candidate.get('summary', '')} {text}".lower()
+    facets = detect_facet_v2(name, payload if isinstance(payload, dict) else {})
+    quantity = facets[0] if len(facets) > 0 else None
+    subtype = facets[1] if len(facets) > 1 else None
+    polarity = facets[2] if len(facets) > 2 else None
+    subsystem = facets[4] if len(facets) > 4 else None
+    return (
+        subtype or subsystem or quantity or "unknown_subsystem",
+        polarity or _detect_fault_polarity(text),
+        _trigger_condition_signature(text),
+    )
+
+
+def _detect_fault_polarity(text: str) -> str:
+    if _contains_any(text, ["传感器", "sensor fault", "sensor failure", "断线"]):
+        return "sensor_fault"
+    if _contains_any(text, ["丢失", "无信号", "loss", "lost", "missing", "no signal"]):
+        return "loss"
+    if _contains_any(text, ["过高", "高温", "高压", "超限", "high", "over"]):
+        return "high"
+    if _contains_any(text, ["过低", "低温", "低压", "不足", "low", "under"]):
+        return "low"
+    if _contains_any(text, ["越限", "out of range", "range out"]):
+        return "range_out"
+    return "unknown"
+
+
+def _trigger_condition_signature(text: str) -> str:
+    for marker in ("油", "水", "制冷剂", "冷媒", "轴承", "电机", "相序", "压缩机"):
+        if marker in text:
+            return marker
+    for marker in ("oil", "water", "refrigerant", "bearing", "motor", "phase", "compressor"):
+        if marker in text:
+            return marker
+    return "unknown"
+
+
+def _contains_any(value: str, needles: list[str]) -> bool:
+    return any(needle.lower() in value for needle in needles)
 
 
 def _prefer_raw_canonical_key(
@@ -394,6 +575,7 @@ def merge_candidates(
     names_by_candidate = []
     raw_names_by_candidate = []
     facet_hints: dict[str, tuple[str | None, str | None]] = {}
+    publisher_hints: dict[str, str | None] = {}
     for c in candidates:
         payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
         raw_payload = payload if isinstance(payload, dict) else {}
@@ -404,7 +586,12 @@ def merge_candidates(
         contextual_name = _build_contextual_name(context_payload)
         names_by_candidate.append(contextual_name)
         raw_names_by_candidate.append(name)
-        facet_hints[contextual_name] = detect_facet_v2(str(name), raw_payload)
+        facet_payload = dict(raw_payload)
+        facet_payload.setdefault("title", c.get("title"))
+        facet_payload.setdefault("summary", c.get("summary"))
+        facet_payload.setdefault("value_summary", _extract_value_summary(c))
+        facet_hints[contextual_name] = detect_facet_v2(str(name), facet_payload)
+        publisher_hints[contextual_name] = c.get("publisher")
 
     # Phase 1: LLM-assisted cross-lingual grouping (T1 plumbing fix, docs/35 §T1)
     canonical_map: dict[str, str] = {}
@@ -416,6 +603,7 @@ def merge_candidates(
             knowledge_object_type=knowledge_object_type,
             backend_name=backend_name,
             facet_hints=facet_hints,
+            publisher_hints=publisher_hints,
         )
     except Exception:
         canonical_map = {}
@@ -442,8 +630,11 @@ def merge_candidates(
         equipment_class_id=equipment_class_id,
         knowledge_object_type=knowledge_object_type,
     )
+    if knowledge_object_type == "fault_code":
+        groups = _split_fault_code_groups(groups)
     if protect_single_source_distinct_names:
         groups = _split_same_document_name_conflicts(groups)
+    groups = _split_oversize_groups_by_source_name(groups)
 
     # E3 defensive sanity: force-split pathological groups (LLM path only)
     # Embedding-first path handles grouping via clustering — trust it.
@@ -457,7 +648,7 @@ def merge_candidates(
                     for c in group:
                         payload = c.get("structured_payload") or c.get("structured_payload_candidate") or {}
                         fallback_name = payload.get("parameter_name") or c.get("title", "unknown")
-                        slug = _slugify_part(fallback_name) or _hashed_slug(fallback_name)
+                        slug = _safe_slug_for_merger(fallback_name)
                         split_groups[f"{ck}_{slug}"] = [c]
                 else:
                     split_groups[ck] = group
@@ -468,6 +659,13 @@ def merge_candidates(
     # Step 2: Build merged KOs
     merged = []
     for canonical_key, group in groups.items():
+        canonical_key = _normalize_canonical_key_for_anchor(
+            canonical_key,
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+            fallback_name=_candidate_source_name(group[0]) or group[0].get("title", "unknown"),
+        )
         layers = []
         evidence_rows = []
         primary_chunk_id = None
@@ -667,9 +865,17 @@ def _ko_to_candidates(ko_row, session=None) -> list[dict[str, Any]]:
         ev_payload = dict(layer_payload if isinstance(layer_payload, dict) else payload)
         layer_name = str(layer.get("source_name") or "").strip()
         ev_payload["parameter_name"] = layer_name if _looks_like_parameter_name(layer_name) else fallback_name
+        layer_summary = (
+            ev_payload.get("summary")
+            or ev_payload.get("evidence_quote")
+            or ev.get("evidence_text")
+            or layer.get("value_summary")
+            or ev_payload["parameter_name"]
+        )
         expanded.append({
             **base,
             "title": ev_payload["parameter_name"] or base.get("title"),
+            "summary": str(layer_summary or ""),
             "structured_payload": ev_payload,
             "authority_level": layer.get("authority_level", base.get("authority_level")),
             "publisher": layer.get("publisher", base.get("publisher")),
@@ -703,6 +909,13 @@ def merge_with_existing(
         .filter(KnowledgeObjectV2.ontology_class_id == equipment_class_id)
         .filter(KnowledgeObjectV2.knowledge_object_type == knowledge_object_type)
         .all()
+    )
+    _normalize_existing_ko_keys(
+        session,
+        existing_kos,
+        domain_id=domain_id,
+        equipment_class_id=equipment_class_id,
+        knowledge_object_type=knowledge_object_type,
     )
 
     # N1: name-based matching (not canonical_key)
@@ -740,6 +953,13 @@ def merge_with_existing(
     removed_ko_ids: set[str] = set()
     assigned_ko_ids: set[str] = set()
     for ko_dict in merged:
+        ko_dict["canonical_key"] = _normalize_canonical_key_for_anchor(
+            ko_dict["canonical_key"],
+            domain_id=domain_id,
+            equipment_class_id=equipment_class_id,
+            knowledge_object_type=knowledge_object_type,
+            fallback_name=ko_dict.get("title", "unknown"),
+        )
         canonical_key = ko_dict["canonical_key"]
         evidence_rows = ko_dict.pop("evidence_rows", [])
 
@@ -812,6 +1032,18 @@ def merge_with_existing(
             KnowledgeObjectV2.knowledge_object_id != ko_dict["knowledge_object_id"],
             KnowledgeObjectV2.ontology_class_id == equipment_class_id,
         ).first()
+        if ck_conflict:
+            target_exists = session.query(KnowledgeObjectV2).filter(
+                KnowledgeObjectV2.knowledge_object_id == ko_dict["knowledge_object_id"]
+            ).first()
+            if not target_exists:
+                assigned_ko_ids.discard(ko_dict["knowledge_object_id"])
+                ko_dict["knowledge_object_id"] = ck_conflict.knowledge_object_id
+                assigned_ko_ids.add(ko_dict["knowledge_object_id"])
+                decision["knowledge_object_id"] = ko_dict["knowledge_object_id"]
+                decision["canonical_key_conflict_adopted"] = ck_conflict.knowledge_object_id
+                ck_conflict = None
+
         if ck_conflict:
             # Migrate evidence from conflict KO to this one, then delete conflict
             _dedupe_and_migrate_evidence(

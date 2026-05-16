@@ -118,8 +118,40 @@ def test_resolve_single_name_handles_special_chars():
         knowledge_object_type="parameter_spec",
     )
     assert key.startswith("hvac:centrifugal_chiller:parameter:")
-    # Non-ASCII chars slug to empty, falls back to hashed key
-    assert "key_" in key or len(key.split(":")[-1]) > 0
+    assert key.rsplit(":", 1)[-1] == "冷冻水出水温度设定值"
+
+
+def test_resolve_single_name_rejects_degenerate_numeric_slug():
+    _clear_cache()
+    key = resolve_single_name(
+        "1分钟限制开机计时器",
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+    )
+    assert key.startswith("hvac:centrifugal_chiller:parameter:")
+    assert key.rsplit(":", 1)[-1] != "1"
+    assert key.rsplit(":", 1)[-1] == "1分钟限制开机计时器"
+
+
+def test_resolve_single_name_ignores_legacy_hash_registry_for_readable_cjk():
+    _clear_cache()
+    from packages.compiler.canonical_key import _save_registry
+
+    _save_registry({
+        "canonical_keys": {
+            "hvac:centrifugal_chiller:parameter:key_9fc1319bb1": ["启动电流"],
+        }
+    })
+
+    key = resolve_single_name(
+        "启动电流",
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+    )
+
+    assert key == "hvac:centrifugal_chiller:parameter:启动电流"
 
 
 def test_different_types_produce_different_prefixes():

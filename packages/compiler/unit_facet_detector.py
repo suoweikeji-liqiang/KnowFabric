@@ -140,6 +140,26 @@ def _load_brick_reference_points() -> list[dict[str, Any]]:
     return loaded
 
 
+@lru_cache(maxsize=1)
+def _load_orthogonal_axes() -> dict[str, list[dict[str, Any]]]:
+    if not BRICK_FACET_MAP_PATH.exists():
+        return {}
+    data = yaml.safe_load(BRICK_FACET_MAP_PATH.read_text(encoding="utf-8")) or {}
+    axes: dict[str, list[dict[str, Any]]] = {}
+    for axis in ("fault_polarity", "refrigerant", "subsystem", "operating_condition", "document_type"):
+        values = data.get(axis) or {}
+        loaded: list[dict[str, Any]] = []
+        for value, config in values.items():
+            if not isinstance(config, dict):
+                continue
+            keywords = [str(k).strip().lower() for k in config.get("keywords") or [] if str(k).strip()]
+            if keywords:
+                loaded.append({"value": str(value), "keywords": keywords})
+        loaded.sort(key=lambda item: max(len(k) for k in item["keywords"]), reverse=True)
+        axes[axis] = loaded
+    return axes
+
+
 def detect_brick_subtype(parameter_name: str, structured_payload: dict[str, Any] | None = None) -> str | None:
     """Detect a Brick reference-point subtype from name and payload text."""
 
@@ -147,6 +167,20 @@ def detect_brick_subtype(parameter_name: str, structured_payload: dict[str, Any]
     for point in _load_brick_reference_points():
         if any(keyword in text for keyword in point["keywords"]):
             return str(point["subtype"])
+    return None
+
+
+def detect_orthogonal_facet(
+    axis: str,
+    parameter_name: str,
+    structured_payload: dict[str, Any] | None = None,
+) -> str | None:
+    """Detect one non-physical facet axis from name and payload text."""
+
+    text = _payload_text(parameter_name, structured_payload or {}).lower()
+    for item in _load_orthogonal_axes().get(axis, []):
+        if any(keyword in text for keyword in item["keywords"]):
+            return str(item["value"])
     return None
 
 
@@ -180,8 +214,21 @@ def detect_unit_facet(parameter_name: str, structured_payload: dict[str, Any] | 
 def detect_facet_v2(
     parameter_name: str,
     structured_payload: dict[str, Any] | None = None,
-) -> tuple[str | None, str | None]:
-    """Return physical quantity and Brick reference-point subtype."""
+) -> tuple[str | None, str | None, str | None, str | None, str | None, str | None, str | None]:
+    """Return all clustering facets.
+
+    Tuple order:
+    ``physical_quantity, reference_point, fault_polarity, refrigerant,
+    subsystem, operating_condition, document_type``.
+    """
 
     payload = structured_payload or {}
-    return detect_unit_facet(parameter_name, payload), detect_brick_subtype(parameter_name, payload)
+    return (
+        detect_unit_facet(parameter_name, payload),
+        detect_brick_subtype(parameter_name, payload),
+        detect_orthogonal_facet("fault_polarity", parameter_name, payload),
+        detect_orthogonal_facet("refrigerant", parameter_name, payload),
+        detect_orthogonal_facet("subsystem", parameter_name, payload),
+        detect_orthogonal_facet("operating_condition", parameter_name, payload),
+        detect_orthogonal_facet("document_type", parameter_name, payload),
+    )

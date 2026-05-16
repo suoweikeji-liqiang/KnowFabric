@@ -127,7 +127,7 @@ def test_embedding_reclusters_same_brick_subtype_after_contaminant_split():
     fake_embs = [
         [1.0, 0.0, 0.0],
         [0.85, 0.526782687642637, 0.0],
-        [0.85, -0.526782687642637, 0.0],
+        [0.95, -0.31224989991992, 0.0],
     ]
     facet_hints = {
         "低油温起动抑制设定": ("temperature", "oil_temperature"),
@@ -205,6 +205,25 @@ def test_oversize_embedding_cluster_is_tightened(monkeypatch):
     assert round(calls["threshold"], 2) == 0.83
     assert calls["max_size"] == 8
     assert [len(cluster) for cluster in refined] == [6, 5]
+
+
+def test_embedding_path_never_emits_cluster_above_layer_guard():
+    _clear()
+    names = [f"Dense Param {idx}" for idx in range(9)]
+    fake_embs = [[1.0, 0.0, 0.0] for _ in names]
+
+    with patch("packages.compiler.embedding_client.embed_batch", return_value=fake_embs):
+        mapping = _group_via_embedding(
+            names,
+            domain_id="hvac",
+            equipment_class_id="centrifugal_chiller",
+            knowledge_object_type="parameter_spec",
+        )
+
+    grouped: dict[str, list[str]] = {}
+    for name, key in mapping.items():
+        grouped.setdefault(key, []).append(name)
+    assert max(len(members) for members in grouped.values()) <= 8
 
 
 def test_group_and_normalize_dispatches_to_embedding(monkeypatch):
