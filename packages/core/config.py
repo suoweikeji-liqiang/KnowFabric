@@ -43,6 +43,9 @@ class Settings(BaseSettings):
     llm_max_rpm: int = 60
     llm_max_retries: int = 5
     extraction_doc_concurrency: int = 8
+    llm_max_concurrent_mimo: int = 8
+    llm_max_rpm_mimo: int = 30
+    llm_max_retries_mimo: int = 5
 
     class Config:
         env_file = str(ENV_FILE)

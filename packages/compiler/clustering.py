@@ -70,6 +70,40 @@ def _row_masks(eligible: np.ndarray) -> list[int]:
     ]
 
 
+def _cluster_by_cosine_large(
+    names: list[str],
+    eligible: np.ndarray,
+    pair_rows: np.ndarray,
+    pair_cols: np.ndarray,
+    *,
+    linkage: str,
+) -> list[list[str]]:
+    """Large-N clustering without Python bigint row masks."""
+
+    n = len(names)
+    uf = _UnionFind(n)
+    cluster_members: dict[int, list[int]] = {idx: [idx] for idx in range(n)}
+    for i_raw, j_raw in zip(pair_rows, pair_cols):
+        i, j = int(i_raw), int(j_raw)
+        ri, rj = uf.find(i), uf.find(j)
+        if ri == rj:
+            continue
+        if linkage == "complete":
+            left = cluster_members[ri]
+            right = cluster_members[rj]
+            if not bool(np.all(eligible[np.ix_(left, right)])):
+                continue
+        uf.union(ri, rj)
+        new_root = uf.find(rj)
+        merged = cluster_members.pop(ri, []) + cluster_members.pop(rj, [])
+        cluster_members[new_root] = merged
+
+    clusters: dict[int, list[str]] = {}
+    for i in range(n):
+        clusters.setdefault(uf.find(i), []).append(names[i])
+    return list(clusters.values())
+
+
 def cluster_by_cosine(
     names: list[str],
     embeddings: list[list[float]],
@@ -92,31 +126,39 @@ def cluster_by_cosine(
 
     sim_matrix = _cosine_similarity_matrix(embeddings)
     eligible = sim_matrix >= threshold
+    pair_rows, pair_cols = np.nonzero(np.triu(eligible, k=1))
+    if n > 2048:
+        return _cluster_by_cosine_large(
+            names,
+            eligible,
+            pair_rows,
+            pair_cols,
+            linkage=linkage,
+        )
+
     uf = _UnionFind(n)
     cluster_masks = {idx: 1 << idx for idx in range(n)}
     common_masks = {idx: mask for idx, mask in enumerate(_row_masks(eligible))}
-    for i in range(n):
-        for j in range(i + 1, n):
-            if not eligible[i, j]:
+    for i_raw, j_raw in zip(pair_rows, pair_cols):
+        i, j = int(i_raw), int(j_raw)
+        ri, rj = uf.find(i), uf.find(j)
+        if ri == rj:
+            continue
+        if linkage == "complete":
+            if cluster_masks[rj] & ~common_masks[ri]:
                 continue
-            ri, rj = uf.find(i), uf.find(j)
-            if ri == rj:
+            if cluster_masks[ri] & ~common_masks[rj]:
                 continue
-            if linkage == "complete":
-                if cluster_masks[rj] & ~common_masks[ri]:
-                    continue
-                if cluster_masks[ri] & ~common_masks[rj]:
-                    continue
-            merged_mask = cluster_masks[ri] | cluster_masks[rj]
-            merged_common = common_masks[ri] & common_masks[rj]
-            uf.union(ri, rj)
-            new_root = uf.find(rj)
-            cluster_masks.pop(ri, None)
-            cluster_masks.pop(rj, None)
-            common_masks.pop(ri, None)
-            common_masks.pop(rj, None)
-            cluster_masks[new_root] = merged_mask
-            common_masks[new_root] = merged_common
+        merged_mask = cluster_masks[ri] | cluster_masks[rj]
+        merged_common = common_masks[ri] & common_masks[rj]
+        uf.union(ri, rj)
+        new_root = uf.find(rj)
+        cluster_masks.pop(ri, None)
+        cluster_masks.pop(rj, None)
+        common_masks.pop(ri, None)
+        common_masks.pop(rj, None)
+        cluster_masks[new_root] = merged_mask
+        common_masks[new_root] = merged_common
 
     clusters: dict[int, list[str]] = {}
     for i in range(n):

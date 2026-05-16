@@ -731,6 +731,7 @@ def _group_via_embedding(
     domain_slug = _slugify_part(domain_id)
     equipment_slug = _slugify_part(equipment_class_id)
     type_prefix = _knowledge_type_prefix(knowledge_object_type)
+    registrations: list[tuple[list[str], str]] = []
 
     for cluster_names in clusters:
         if len(cluster_names) == 1:
@@ -742,7 +743,7 @@ def _group_via_embedding(
                 slug = _safe_slug_for_name(n)
                 ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{slug}"
             mapping[n] = ck
-            _register([n], ck)
+            registrations.append(([n], ck))
         elif len(cluster_names) <= 100:
             # N3: trust embedding cluster. Prefer YAML key as canonical_key name.
             yaml_ck = None
@@ -757,7 +758,7 @@ def _group_via_embedding(
                 ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{suggested_ck}"
             for n in cluster_names:
                 mapping[n] = ck
-            _register(cluster_names, ck)
+            registrations.append((cluster_names, ck))
         else:
             # Oversize cluster (>100): trust embedding, use best YAML name as key
             yaml_ck = None
@@ -772,7 +773,8 @@ def _group_via_embedding(
                 ck = f"{domain_slug}:{equipment_slug}:{type_prefix}:{suggested_ck}"
             for n in cluster_names:
                 mapping[n] = ck
-            _register(cluster_names, ck)
+            registrations.append((cluster_names, ck))
+    _register_many(registrations)
 
     _dump_grouping_trace(
         names=cleaned,
@@ -1515,6 +1517,41 @@ def _register(names: list[str], canonical_key: str) -> None:
     for name in names:
         if name not in existing:
             existing.append(name)
+    _save_registry(registry)
+
+
+def _register_many(registrations: list[tuple[list[str], str]]) -> None:
+    """Batch append canonical-key aliases with the same semantics as _register."""
+    if not registrations:
+        return
+
+    registry = _load_registry()
+    keys = registry.setdefault("canonical_keys", {})
+    names_by_target: dict[str, set[str]] = {}
+    all_names: set[str] = set()
+    for names, canonical_key in registrations:
+        target_names = names_by_target.setdefault(canonical_key, set())
+        for name in names:
+            if name:
+                target_names.add(name)
+                all_names.add(name)
+
+    for existing_key, aliases in list(keys.items()):
+        target_names = names_by_target.get(existing_key, set())
+        keys[existing_key] = [
+            alias for alias in aliases
+            if alias not in all_names or alias in target_names
+        ]
+        if not keys[existing_key]:
+            del keys[existing_key]
+
+    for canonical_key, names in names_by_target.items():
+        existing = keys.setdefault(canonical_key, [])
+        existing_set = set(existing)
+        for name in names:
+            if name not in existing_set:
+                existing.append(name)
+                existing_set.add(name)
     _save_registry(registry)
 
 
