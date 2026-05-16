@@ -17,6 +17,27 @@ tmp/
 output/demo/
 output/playwright/
 output/llm-compare*/
+
+# Transient pipeline outputs — commit specific REPORT.md via `git add -f` if needed
+output/diagnostic/
+output/visual_parameter_batch/
+output/hvac_authority_batch_pipeline/
+output/hvac_standard_reference_*/
+output/hvac_doclevel_extraction_batch/
+output/hvac_source_batch/
+output/ashrae_guideline36_*/
+output/multimodal_validation/
+output/visual_semantic_validation/
+output/parameter_spec_vertical/
+output/llm_comparison/
+output/chiller_visual_import/
+output/visual_evidence_batch/
+output/w3_multisource_*/
+output/e2e_smoke/
+output/e4_verification/
+output/ontology_export/
+output/backups/
+output/real_corpus_audit/
 llm_backends*.json
 scripts/llm_backends.json
 !scripts/llm_backends.example.json

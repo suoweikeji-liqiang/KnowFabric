@@ -1,4 +1,0 @@
-{
-  "error": "LLM JSON request failed after 3 attempts: LLM compile returned empty content",
-  "error_type": "RuntimeError"
-}

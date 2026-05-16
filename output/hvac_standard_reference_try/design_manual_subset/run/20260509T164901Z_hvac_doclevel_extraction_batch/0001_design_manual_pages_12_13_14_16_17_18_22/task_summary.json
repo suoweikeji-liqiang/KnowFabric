@@ -1,7 +1,0 @@
-{
-  "row_index": 1,
-  "file_name": "design_manual_pages_12_13_14_16_17_18_22.pdf",
-  "status": "failed",
-  "error": "[Errno 2] No such file or directory: '/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/design_manual_subset/design_manual_pages_12_13_14_16_17_18_22.pdf'",
-  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/design_manual_subset/run/20260509T164901Z_hvac_doclevel_extraction_batch/0001_design_manual_pages_12_13_14_16_17_18_22"
-}

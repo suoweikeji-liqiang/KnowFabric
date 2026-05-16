@@ -1,7 +1,0 @@
-{
-  "row_index": 3,
-  "file_name": "【约克】RWF螺杆压缩机组100-480安装、操作、维护手册（47页）-制冷百家网.pdf",
-  "status": "failed",
-  "error": "cannot access local variable 'raw' where it is not associated with a value",
-  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_authority_batch_pipeline/oem_text_batches/20260508T085745Z_hvac_doclevel_extraction_batch/0003_约克_rwf螺杆压缩机组100_480安装_操作_维护手册_47页_制冷百家网"
-}

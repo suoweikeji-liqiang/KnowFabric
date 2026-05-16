@@ -1,4 +1,0 @@
-{
-  "error": "LLM JSON request failed after 3 attempts: Expecting property name enclosed in double quotes: line 101 column 6 (char 3803)",
-  "error_type": "RuntimeError"
-}

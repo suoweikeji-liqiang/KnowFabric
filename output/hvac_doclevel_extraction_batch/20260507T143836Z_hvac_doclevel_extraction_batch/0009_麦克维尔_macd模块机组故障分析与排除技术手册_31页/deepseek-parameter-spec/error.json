@@ -1,4 +1,0 @@
-{
-  "error": "LLM JSON request failed after 3 attempts: Unterminated string starting at: line 34 column 23 (char 1301)",
-  "error_type": "RuntimeError"
-}

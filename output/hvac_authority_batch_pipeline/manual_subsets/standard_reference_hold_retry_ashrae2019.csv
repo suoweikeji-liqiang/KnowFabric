@@ -1,2 +1,0 @@
-batch_group,batch_reason,extraction_priority,publisher_or_brand_guess,authority_level_guess,document_kind_guess,equipment_scope_guess,page_count,text_quality,recommended_extraction_mode,size_mb,path
-A_standard_authority_first,official/high-authority references; use section/chapter mode and avoid split duplicates,P0_official_reference,ASHRAE,industry_standard_or_reference,standard_handbook,general_hvac,,unknown,doc_level_or_section_context,35.14,/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE手册2019.pdf

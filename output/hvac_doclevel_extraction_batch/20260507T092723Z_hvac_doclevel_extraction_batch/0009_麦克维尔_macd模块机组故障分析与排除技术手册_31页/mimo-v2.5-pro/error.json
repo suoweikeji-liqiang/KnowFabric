@@ -1,4 +1,0 @@
-{
-  "error": "LLM compile request failed: HTTP Error 400: Bad Request",
-  "error_type": "RuntimeError"
-}

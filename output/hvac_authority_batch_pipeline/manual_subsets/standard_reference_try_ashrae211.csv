@@ -1,2 +1,0 @@
-batch_group,batch_reason,extraction_priority,publisher_or_brand_guess,authority_level_guess,document_kind_guess,equipment_scope_guess,page_count,text_quality,recommended_extraction_mode,size_mb,path
-A_standard_authority_first,official/high-authority references; use section/chapter mode and avoid split duplicates,P0_official_reference,ASHRAE,industry_standard_or_reference,standard_handbook,general_hvac,19,good_text,doc_level_or_section_context,3.51,/Volumes/TSD302/19.暖通论文/英文文献/手册与标准/ASHRAE 211能源审计最佳实践.pdf

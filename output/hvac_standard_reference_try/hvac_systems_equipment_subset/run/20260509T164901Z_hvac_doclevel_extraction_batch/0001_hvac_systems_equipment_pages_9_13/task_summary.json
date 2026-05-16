@@ -1,7 +1,0 @@
-{
-  "row_index": 1,
-  "file_name": "hvac_systems_equipment_pages_9_13.pdf",
-  "status": "failed",
-  "error": "[Errno 2] No such file or directory: '/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/hvac_systems_equipment_subset/hvac_systems_equipment_pages_9_13.pdf'",
-  "task_dir": "/Users/asteroida/work/KnowFabric/output/hvac_standard_reference_try/hvac_systems_equipment_subset/run/20260509T164901Z_hvac_doclevel_extraction_batch/0001_hvac_systems_equipment_pages_9_13"
-}
