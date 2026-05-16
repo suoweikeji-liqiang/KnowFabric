@@ -7,8 +7,9 @@ consensus_state, and produces merged KO + evidence rows ready for persistence.
 from __future__ import annotations
 
 import hashlib
+import re
 from datetime import datetime, timezone
-from typing import Any
+from typing import Any, Mapping
 
 from packages.compiler.authority_arbitration import arbitrate
 from packages.compiler.canonical_key import group_and_normalize, resolve_single_name
@@ -31,6 +32,27 @@ NUMERIC_TOLERANCE = 0.05
 FINAL_MAX_GROUP_LAYERS = 8
 
 
+def assert_valid_ko_identity(ko: Mapping[str, Any], *, context: str = "knowledge_object") -> None:
+    """Fail fast when a KO identity would violate the semantic key contract."""
+
+    ontology_class_id = str(ko.get("ontology_class_id") or "").strip()
+    if not ontology_class_id:
+        raise ValueError(f"{context}: ontology_class_id must be non-empty")
+
+    canonical_key = str(ko.get("canonical_key") or "").strip()
+    if not canonical_key:
+        raise ValueError(f"{context}: canonical_key must be non-empty")
+    if "::" in canonical_key or not re.match(r"^[^:]+:[^:]+:[^:]+:.+$", canonical_key):
+        raise ValueError(f"{context}: canonical_key must have non-empty domain/ontology/type/suffix")
+
+    canonical_ontology = canonical_key.split(":", 3)[1]
+    if canonical_ontology != ontology_class_id:
+        raise ValueError(
+            f"{context}: canonical_key ontology '{canonical_ontology}' "
+            f"does not match ontology_class_id '{ontology_class_id}'"
+        )
+
+
 def _safe_slug_for_merger(name: str) -> str:
     slug = _slugify_part(name)
     if not slug or len(slug) <= 2 or slug.isdigit():
@@ -51,11 +73,22 @@ def _normalize_canonical_key_for_anchor(
     domain_slug = _slugify_part(domain_id)
     equipment_slug = _slugify_part(equipment_class_id)
     type_prefix = _knowledge_type_prefix(knowledge_object_type)
+    if not domain_slug:
+        raise ValueError("canonical_key normalization requires non-empty domain_id")
+    if not equipment_slug:
+        raise ValueError("canonical_key normalization requires non-empty equipment_class_id")
+    if not type_prefix:
+        raise ValueError("canonical_key normalization requires non-empty knowledge_object_type")
     parts = [part for part in str(canonical_key or "").split(":") if part]
     suffix = parts[-1] if len(parts) >= 4 else str(canonical_key or "")
     if not suffix or suffix.startswith("key_") or len(suffix) <= 2 or suffix.isdigit():
         suffix = _safe_slug_for_merger(fallback_name or suffix or "unknown")
-    return f"{domain_slug}:{equipment_slug}:{type_prefix}:{suffix}"
+    normalized = f"{domain_slug}:{equipment_slug}:{type_prefix}:{suffix}"
+    assert_valid_ko_identity(
+        {"ontology_class_id": equipment_slug, "canonical_key": normalized},
+        context="normalized canonical_key",
+    )
+    return normalized
 
 
 def _normalize_existing_ko_keys(
@@ -829,6 +862,7 @@ def merge_candidates(
             "ontology_version": ontology_version,
             "evidence_rows": evidence_rows,
         })
+        assert_valid_ko_identity(merged[-1], context="merged KO")
 
     return merged
 
@@ -1080,6 +1114,8 @@ def merge_with_existing(
         }:
             ko_dict["review_status"] = "conflict_review_required"
             stats["material_conflicts"] += 1
+
+        assert_valid_ko_identity(ko_dict, context="merge_with_existing upsert")
 
         # Preserve primary_chunk_id if missing
         if ko_dict["knowledge_object_id"] in removed_ko_ids:

@@ -1,0 +1,686 @@
+knowledge_object_id,title,old_ontology_class_id,new_ontology_class_id,old_canonical_key,new_canonical_key,primary_doc_id,primary_file_name
+ko_00824f0abfb8e58f,水流量,,screw_chiller,hvac::performance_spec:水流量_水流量,hvac:screw_chiller:performance_spec:水流量,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_01420ed67a14ce94,制冷最大负荷工况热泵侧进口水温,,centrifugal_chiller,hvac::performance_spec:制冷最大负荷工况热泵侧进口水温,hvac:centrifugal_chiller:performance_spec:制冷最大负荷工况热泵侧进口水温,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_02551d835b7350a4,制冷IPLV,,centrifugal_chiller,hvac::performance_spec:制冷iplv,hvac:centrifugal_chiller:performance_spec:制冷iplv_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_02d1e055e7657c59,冷冻水流量,,screw_chiller,hvac::performance_spec:冷冻水流量_冷冻水流量,hvac:screw_chiller:performance_spec:冷冻水流量_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_02e3bbc496488d88,过滤网材质,,ahu,hvac::performance_spec:过滤网材质,hvac:ahu:performance_spec:过滤网材质_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_02eaae48755c6fb7,最高承压,,screw_chiller,hvac::performance_spec:最高承压,hvac:screw_chiller:performance_spec:最高承压_2,doc_c33e7b4d18e442e9,LMS系列四管制风冷螺杆机组（23-F-I）0000(1).pdf
+ko_02f2b49e2012a5e7,冷凝器水压降,,screw_chiller,hvac::performance_spec:冷凝器水压降_冷凝器水压降_2,hvac:screw_chiller:performance_spec:冷凝器水压降,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_03bfc0bb1856c19c,制冷EER,,screw_chiller,hvac::performance_spec:制冷eer,hvac:screw_chiller:performance_spec:制冷eer_2,doc_ad692853c2824f33,倒M高效降膜风冷螺杆_18.pdf
+ko_03c97b7a3097f668,水侧压降,,centrifugal_chiller,hvac::performance_spec:水侧压降_水侧压降,hvac:centrifugal_chiller:performance_spec:水侧压降,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_03d03fb933f78e56,制冷名义工况热泵侧水流量,,centrifugal_chiller,hvac::performance_spec:制冷名义工况热泵侧水流量,hvac:centrifugal_chiller:performance_spec:制冷名义工况热泵侧水流量,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_05467823652152df,湿膜加湿器运行重量,,ahu,hvac::performance_spec:湿膜加湿器运行重量,hvac:ahu:performance_spec:湿膜加湿器运行重量_2,doc_6a66ce78e29e4d84,VAE-2404-组合式空调机组-落地系列.pdf
+ko_056e7bc1f86ff198,名义工况下全热回收源水侧进水温度,,screw_chiller,hvac::performance_spec:名义工况下全热回收源水侧进水温度,hvac:screw_chiller:performance_spec:名义工况下全热回收源水侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_06278a004d0ed2a1,"名义工况下, 机组制冷水侧进出口水温",,water_source_heat_pump,hvac::performance_spec:名义工况下_机组制冷水侧进出口水温,hvac:water_source_heat_pump:performance_spec:名义工况下_机组制冷水侧进出口水温_2,doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_0671c83b515d360c,机组重量 (立式),,ahu,hvac::performance_spec:机组重量_立式,hvac:ahu:performance_spec:机组重量_立式_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_06f1cc43cff68c78,水压力,,ahu,hvac::performance_spec:水压力,hvac:ahu:performance_spec:水压力_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_077ab8541ff53152,名义工况下，机组制热源水侧进水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组制热源水侧进水温度_名义工况下_机组制热源水侧进水温度_2,hvac:screw_chiller:performance_spec:名义工况下_机组制热源水侧进水温度,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_07d7122ab0a26872,制热输入功率,,water_source_heat_pump,hvac::performance_spec:制热输入功率_制热输入功率_5,hvac:water_source_heat_pump:performance_spec:制热输入功率,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_08e4b0e8ddead909,蒸发器 水流量,,screw_chiller,hvac::performance_spec:蒸发器_水流量,hvac:screw_chiller:performance_spec:蒸发器_水流量_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_09767f6ecd42e24f,保温材料,,screw_chiller,hvac::performance_spec:保温材料,hvac:screw_chiller:performance_spec:保温材料_2,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_09a32df98a96575f,生活热水量,,screw_chiller,hvac::performance_spec:水流量_生活热水量,hvac:screw_chiller:performance_spec:生活热水量_2,doc_727ebd66b2914838,风冷螺杆201103.pdf
+ko_09e150d15bbbdb73,名义工况余热回收生活热水进出水温度,,screw_chiller,hvac::performance_spec:名义工况余热回收生活热水进出水温度,hvac:screw_chiller:performance_spec:名义工况余热回收生活热水进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_0a6f6b2683dcfbad,产热水量,,air_cooled_modular_heat_pump,hvac::performance_spec:空调额定水流量_产热水量,hvac:air_cooled_modular_heat_pump:performance_spec:产热水量_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_0ae88de719985370,启动方式,,screw_chiller,hvac::performance_spec:启动方式,hvac:screw_chiller:performance_spec:启动方式_2,doc_71aa56acd1254dec,09_麦克维尔单螺杆式冷水机组_WMD.pdf
+ko_0b0c6046e228414d,制冷最大负荷工况使用侧出口水温,,centrifugal_chiller,hvac::performance_spec:制冷最大负荷工况使用侧出口水温,hvac:centrifugal_chiller:performance_spec:制冷最大负荷工况使用侧出口水温,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_0b4510fe14eab9dd,总输入功率,,screw_chiller,hvac::performance_spec:总输入功率,hvac:screw_chiller:performance_spec:总输入功率_2,doc_c33e7b4d18e442e9,LMS系列四管制风冷螺杆机组（23-F-I）0000(1).pdf
+ko_0bfd36ec38711c08,冷却水温度差,,chiller,hvac::performance_spec:冷却水温度差,hvac:chiller:performance_spec:冷却水温度差,doc_d7623d21517a41fd,水冷式冷水机组安装、使用、维护说明书.pdf
+ko_0c0b21b903fcda4a,名义功率,,screw_chiller,hvac::performance_spec:名义功率_名义功率_2,hvac:screw_chiller:performance_spec:名义功率,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_0c84d414b4aec1d3,热水出口温度,,water_source_heat_pump,hvac::performance_spec:热水出口温度,hvac:water_source_heat_pump:performance_spec:热水出口温度_2,doc_5faa3373b945486d,ETW离心高温水源热泵技术手册（73页）.pdf
+ko_0caa1d48f7489a1d,蒸发器冷冻水水流量,,screw_chiller,hvac::performance_spec:蒸发器冷冻水水流量,hvac:screw_chiller:performance_spec:蒸发器冷冻水水流量_2,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_0cbed54cb2a95694,冷冻水进水温度,,screw_chiller,hvac::performance_spec:冷冻水进水温度,hvac:screw_chiller:performance_spec:冷冻水进水温度_2,doc_bc457b67453f492b,07_麦克维尔单螺杆式冷水机组_WHS.B、HHS.B.pdf
+ko_0ced4f6a1232b8a7,名义工况下制冷负载侧进出水温度,,screw_chiller,hvac::performance_spec:名义工况下制冷负载侧进出水温度,hvac:screw_chiller:performance_spec:名义工况下制冷负载侧进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_0d5aa4e054c16199,冰水器耐压,,screw_chiller,hvac::performance_spec:冷凝器水侧耐压_冰水器耐压,hvac:screw_chiller:performance_spec:冰水器耐压,doc_4074061206b94f00,干式双螺杆冷水机组.pdf
+ko_0f494d201b166aea,蒸发器负载水水流量,,screw_chiller,hvac::performance_spec:蒸发器负载水水流量_蒸发器负载水水流量,hvac:screw_chiller:performance_spec:蒸发器负载水水流量,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_0fbed057d3b7219a,盘管水压降,,ahu,hvac::performance_spec:盘管水压降,hvac:ahu:performance_spec:盘管水压降,doc_f9572a136f664dc5,特灵组合式空气处理机组.pdf
+ko_0fe181e30c4b4cda,一定条件下，机组余热回收生活热水进出水温度,,screw_chiller,hvac::performance_spec:一定条件下_机组余热回收生活热水进出水温度,hvac:screw_chiller:performance_spec:一定条件下_机组余热回收生活热水进出水温度_2,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_10900de0920c8434,热回收侧热水出水温度,,screw_chiller,hvac::performance_spec:热回收侧热水出水温度,hvac:screw_chiller:performance_spec:热回收侧热水出水温度_2,doc_fd0c92db05ea4570,MC系列H高效空气源螺杆式热泵机组.pdf
+ko_111c72d2594e0a09,进出水管管径,,ahu,hvac::performance_spec:进出水管管径,hvac:ahu:performance_spec:进出水管管径,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_11becc6d84e45ec3,制冷量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_17,hvac:water_source_heat_pump:performance_spec:制冷量,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf
+ko_11d54400ac0e9110,制冷工况冷凝器进水温度(℃),,water_source_heat_pump,hvac::performance_spec:制冷工况冷凝器进水温度,hvac:water_source_heat_pump:performance_spec:制冷工况冷凝器进水温度,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_1293c318da0b1aaa,IPLV,,screw_chiller,hvac::performance_spec:hvac::performance_spec:iplv_iplv,hvac:screw_chiller:performance_spec:iplv,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_132f7a0333ae837d,气管尺寸,,ahu,hvac::performance_spec:气管尺寸,hvac:ahu:performance_spec:气管尺寸_2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_13462eb3064f1fe2,水侧最大工作压力,,air_cooled_modular_heat_pump,hvac::performance_spec:水侧最大工作压力,hvac:air_cooled_modular_heat_pump:performance_spec:水侧最大工作压力_2,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_13f000a0cb0d8a34,热泵制热名义工况使用侧水流量,,centrifugal_chiller,hvac::performance_spec:热泵制热名义工况使用侧水流量,hvac:centrifugal_chiller:performance_spec:热泵制热名义工况使用侧水流量_2,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_13f2281a889b634d,cooling coil operating water pressure,,ahu,hvac::performance_spec:cooling_coil_operating_water_pressure,hvac:ahu:performance_spec:cooling_coil_operating_water_pressure_2,doc_caaa2ea18c4a49de,daikin_ah_models_ahu_technical_catalog_air_handling_unit_ah_models_pdf.pdf
+ko_14745867a05151e9,压缩机起动电流,,screw_chiller,hvac::performance_spec:压缩机起动电流_压缩机起动电流,hvac:screw_chiller:performance_spec:压缩机起动电流_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_147b060a0c4848c7,空调制热实测工况_使用侧出口水温,,air_cooled_modular_heat_pump,hvac::performance_spec:空调制热实测工况_使用侧出口水温,hvac:air_cooled_modular_heat_pump:performance_spec:空调制热实测工况_使用侧出口水温,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_157eabfc7f467b70,名义制热量,,air_cooled_modular_heat_pump,hvac::performance_spec:hvac::performance_spec:名义制热量_名义制热量_2,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_163b711c623ba85b,名义工况下，负载侧进出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_负载侧进出水温度_名义工况下_负载侧进出水温度_2,hvac:water_source_heat_pump:performance_spec:名义工况下_负载侧进出水温度_2,doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_1675387e77dd1f25,机组重量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:机组重量_机组重量_2,hvac:screw_chiller:performance_spec:机组重量,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_16f6d93504428918,水流量,,screw_chiller,hvac::performance_spec:水流量_水流量_2,hvac:screw_chiller:performance_spec:水流量_2,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_17451923e6c3e217,制冷实测工况_热源侧干球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_干球温度_制冷实测工况_热源侧干球温度,hvac:air_cooled_modular_heat_pump:performance_spec:制冷实测工况_热源侧干球温度_2,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_17460360b83ceaed,fan bearing life,,ahu,hvac::performance_spec:fan_bearing_life,hvac:ahu:performance_spec:fan_bearing_life_2,doc_caaa2ea18c4a49de,daikin_ah_models_ahu_technical_catalog_air_handling_unit_ah_models_pdf.pdf
+ko_1788d39a2c50f6c3,机组启动电流,,screw_chiller,hvac::performance_spec:机组启动电流,hvac:screw_chiller:performance_spec:机组启动电流_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_17ff9efcbff31940,"名义工况下, 机组制冷水侧进出口水温度",,water_source_heat_pump,hvac::performance_spec:名义工况下_机组制冷水侧进出口水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组制冷水侧进出口水温度_2,doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_18714175e424d253,混合制冷剂的制冷剂编号,,air_cooled_modular_heat_pump,hvac::performance_spec:混合制冷剂的制冷剂编号,hvac:air_cooled_modular_heat_pump:performance_spec:混合制冷剂的制冷剂编号_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_18e6bc3d32c08f06,水侧重量,,air_cooled_modular_heat_pump,hvac::performance_spec:水侧重量,hvac:air_cooled_modular_heat_pump:performance_spec:水侧重量_2,doc_d91d6f2fd782435a,风冷冷水(热泵)机组06001-2015LK1868--CGHR16BNAR--A2015CCC0703-2136902.pdf
+ko_194398be01766635,冰水器冷媒侧耐压,,screw_chiller,hvac::performance_spec:冰水器冷媒侧耐压,hvac:screw_chiller:performance_spec:冰水器冷媒侧耐压_2,doc_4074061206b94f00,干式双螺杆冷水机组.pdf
+ko_1950b1914522d7be,水流量,,ahu,hvac::performance_spec:水流量_水流量_6,hvac:ahu:performance_spec:水流量,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_1a4892c3a67cc30f,制冷工况冷凝器出水温度(℃),,water_source_heat_pump,hvac::performance_spec:制冷工况冷凝器出水温度,hvac:water_source_heat_pump:performance_spec:制冷工况冷凝器出水温度,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_1a6661fea5e79cfd,制冷量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_2,hvac:water_source_heat_pump:performance_spec:制冷量_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_1b7d3a28aeae433a,"名义工况下, 机组全热回收, 负载水出水温度",,water_source_heat_pump,hvac::performance_spec:名义工况下_机组全热回收_负载水出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组全热回收_负载水出水温度_2,doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_1c3fd1d508a9ff11,机组防水等级,,air_cooled_modular_heat_pump,hvac::performance_spec:机组防水等级_机组防水等级,hvac:air_cooled_modular_heat_pump:performance_spec:机组防水等级,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_1c7a016a03a2be84,最大输入电流,,air_cooled_modular_heat_pump,hvac::performance_spec:最大输入电流,hvac:air_cooled_modular_heat_pump:performance_spec:最大输入电流,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_1cd083ffa7cc0257,蒸发器负载水水流量,,screw_chiller,hvac::performance_spec:蒸发器负载水水流量_蒸发器负载水水流量_2,hvac:screw_chiller:performance_spec:蒸发器负载水水流量_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_1cde078fa7031818,额定时运转温度范围,,water_source_heat_pump,hvac::performance_spec:额定时运转温度范围,hvac:water_source_heat_pump:performance_spec:额定时运转温度范围_2,doc_5faa3373b945486d,ETW离心高温水源热泵技术手册（73页）.pdf
+ko_1cffba4806586ea8,最大工作电流,,screw_chiller,hvac::performance_spec:最大工作电流_最大工作电流_2,hvac:screw_chiller:performance_spec:最大工作电流,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_1d65239085e24731,压降,,ahu,hvac::performance_spec:机外静压,hvac:ahu:performance_spec:压降,doc_e2198c58886c45f6,MAH组合式空气处理机组.pdf
+ko_1dae25e6f5ac314e,冷冻水流量,,water_source_heat_pump,hvac::performance_spec:冷冻水流量_冷冻水流量_2,hvac:water_source_heat_pump:performance_spec:冷冻水流量,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_1dc8b8c821668dca,蒸发器水压降,,screw_chiller,hvac::performance_spec:蒸发器水压降_蒸发器水压降_2,hvac:screw_chiller:performance_spec:蒸发器水压降,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_1deb8bcac05d0d9f,部分热回收水流量,,screw_chiller,hvac::performance_spec:部分热回收水流量_部分热回收水流量,hvac:screw_chiller:performance_spec:部分热回收水流量,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_1e0c3df22724b03b,空调制热实测工况_热源侧干球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:空调制热实测工况_热源侧干球温度,hvac:air_cooled_modular_heat_pump:performance_spec:空调制热实测工况_热源侧干球温度_2,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_1ec9578a5a2da040,电机功率 (II),,ahu,hvac::performance_spec:电机功率_ii,hvac:ahu:performance_spec:电机功率_ii_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_1ee52f9417632267,宽(B),,centrifugal_chiller,hvac::performance_spec:宽_b,hvac:centrifugal_chiller:performance_spec:宽_b_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_1ef4bf919eda2bf2,输入功率,,centrifugal_chiller,hvac::performance_spec:hvac::performance_spec:输入功率_输入功率_4,hvac:centrifugal_chiller:performance_spec:输入功率,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_1f1737ce8b46b314,冷凝器接管通径,,centrifugal_chiller,hvac::performance_spec:冷凝器接管通径,hvac:centrifugal_chiller:performance_spec:冷凝器接管通径_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_1f23d5f1737bdd45,水流量,,screw_chiller,hvac::performance_spec:水流量_水流量_3,hvac:screw_chiller:performance_spec:水流量_3,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_1fe8803f802ce44a,制冷输入功率,,screw_chiller,hvac::performance_spec:制冷输入功率_制冷输入功率,hvac:screw_chiller:performance_spec:制冷输入功率,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_2066e20fd77e21e7,热回收水压降,,water_source_heat_pump,hvac::performance_spec:热回收水压降,hvac:water_source_heat_pump:performance_spec:热回收水压降_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_2081fa9ebe525072,全热回收换热器可选 水压降,,screw_chiller,hvac::performance_spec:全热回收换热器可选_水压降,hvac:screw_chiller:performance_spec:全热回收换热器可选_水压降_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_20a8fc63db2eebc1,能量调节范围,,screw_chiller,hvac::performance_spec:能量调节范围,hvac:screw_chiller:performance_spec:能量调节范围_2,doc_46b7322e023645a5,R134a满液式水冷螺杆样本DJ-17-CC-01A_重.pdf
+ko_20d683e05556666f,冷凝器 水压降,,screw_chiller,hvac::performance_spec:冷凝器_水压降,hvac:screw_chiller:performance_spec:冷凝器_水压降_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_21417ac025494b76,油泵马达额定输出,,water_source_heat_pump,hvac::performance_spec:油泵马达额定输出,hvac:water_source_heat_pump:performance_spec:油泵马达额定输出_2,doc_5faa3373b945486d,ETW离心高温水源热泵技术手册（73页）.pdf
+ko_218d6bc820d06a76,液管尺寸,,ahu,hvac::performance_spec:液管尺寸,hvac:ahu:performance_spec:液管尺寸_2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_224efd02bf5c0471,制冷输入功率kW,,screw_chiller,hvac::performance_spec:制冷输入功率kw,hvac:screw_chiller:performance_spec:制冷输入功率kw_2,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_229a26951d59b56f,主电机额定输出,,water_source_heat_pump,hvac::performance_spec:主电机额定输出,hvac:water_source_heat_pump:performance_spec:主电机额定输出_2,doc_5faa3373b945486d,ETW离心高温水源热泵技术手册（73页）.pdf
+ko_233958137e9db54c,空调制热实测工况_使用侧水流量,,air_cooled_modular_heat_pump,hvac::performance_spec:空调制热实测工况_使用侧水流量,hvac:air_cooled_modular_heat_pump:performance_spec:空调制热实测工况_使用侧水流量,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_2365545b73fedbe4,冷凝器水压降kPa,,screw_chiller,hvac::performance_spec:冷凝器水压降kpa,hvac:screw_chiller:performance_spec:冷凝器水压降kpa_2,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_23c29e6b0397c5fe,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_5,hvac:screw_chiller:performance_spec:制冷量,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_23e2d272129df064,供冷,,ahu,hvac::performance_spec:key_6f7f6ff49a,hvac:ahu:performance_spec:供冷,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_240f6dcf7bd549d6,制冷COP,,screw_chiller,hvac::performance_spec:制冷cop_制冷cop_2,hvac:screw_chiller:performance_spec:制冷cop,doc_9773977431814c79,干式风冷螺杆式冷（热）水机组.pdf
+ko_2415183bad851665,实用制热工况下负载侧进水温度,,screw_chiller,hvac::performance_spec:实用制热工况下负载侧进水温度,hvac:screw_chiller:performance_spec:实用制热工况下负载侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_245ac44eea082769,蒸发器水压降,,screw_chiller,hvac::performance_spec:蒸发器水压降_蒸发器水压降,hvac:screw_chiller:performance_spec:蒸发器水压降_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_245f8c88225901fc,余热回收换热器可选制热量,,screw_chiller,hvac::performance_spec:余热回收换热器可选制热量,hvac:screw_chiller:performance_spec:余热回收换热器可选制热量,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_24707c8e32d9ee26,实用制热量,,screw_chiller,hvac::performance_spec:实用制热量,hvac:screw_chiller:performance_spec:实用制热量_2,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_247d220c3f234926,热泵制热名义工况热泵侧水流量,,centrifugal_chiller,hvac::performance_spec:热泵制热名义工况热泵侧水流量,hvac:centrifugal_chiller:performance_spec:热泵制热名义工况热泵侧水流量,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_2494c34c64ff654f,制热最大运行工况 冷媒水出水温度 t4,,air_cooled_modular_heat_pump,hvac::performance_spec:制热最大运行工况_冷媒水出水温度_t4,hvac:air_cooled_modular_heat_pump:performance_spec:制热最大运行工况_冷媒水出水温度_t4_2,doc_f981b97d70114c28,风冷冷水(热泵)机组06001-2015LK1871--CGHR09BNAR--A2015CCC0703-2136899.pdf
+ko_24a577c8118a0cc7,制热最大运行工况 额定功率,,air_cooled_modular_heat_pump,hvac::performance_spec:制热最大运行工况_额定功率,hvac:air_cooled_modular_heat_pump:performance_spec:制热最大运行工况_额定功率_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_2516fd34054fd898,蒸发器源水水流量,,screw_chiller,hvac::performance_spec:蒸发器源水水流量_蒸发器源水水流量_2,hvac:screw_chiller:performance_spec:蒸发器源水水流量,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_2522ef9d2da1235a,制热量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:制热量_制热量,hvac:water_source_heat_pump:performance_spec:制热量,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_2531ad457e190296,机组内部阻力增加,,ahu,hvac::performance_spec:机组内部阻力增加,hvac:ahu:performance_spec:机组内部阻力增加_2,doc_6a66ce78e29e4d84,VAE-2404-组合式空调机组-落地系列.pdf
+ko_254362321d43f2bb,频率波动范围,,centrifugal_chiller,hvac::performance_spec:频率波动范围,hvac:centrifugal_chiller:performance_spec:频率波动范围,doc_6de9539b3c82422e,10_麦克维尔两级压缩离心式冷水机组_WTC.pdf
+ko_25797f9662e875b1,名义工况下，机组全热回收，负载侧出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_机组全热回收_负载侧出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组全热回收_负载侧出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_25a9709b6b31e94f,名义工况下，机组全热回收生活热水进出水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组全热回收生活热水进出水温度,hvac:screw_chiller:performance_spec:名义工况下_机组全热回收生活热水进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_25c91577d109bab9,制热量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制热量_制热量_4,hvac:screw_chiller:performance_spec:制热量,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_25ec0a954806662a,运转电流,,ahu,hvac::performance_spec:运转电流,hvac:ahu:performance_spec:运转电流_2,doc_ae0d6a9533d64270,quanrejioahuanqi.pdf
+ko_25ec3d8ca52ef49f,防水程度符号,,air_cooled_modular_heat_pump,hvac::performance_spec:机组防水等级_防水程度符号,hvac:air_cooled_modular_heat_pump:performance_spec:防水程度符号,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_25ee683ca2423992,降噪包装降噪量,,screw_chiller,hvac::performance_spec:降噪包装降噪量,hvac:screw_chiller:performance_spec:降噪包装降噪量_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_26db47ab62bd4d49,制冷COP,,centrifugal_chiller,hvac::performance_spec:制冷cop_制冷cop,hvac:centrifugal_chiller:performance_spec:制冷cop_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_26edb5d190faeabe,水源水压降,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:水源水压降,hvac:water_source_heat_pump:performance_spec:水源水压降,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_278a800b8534a009,名义功率,,screw_chiller,hvac::performance_spec:名义功率_名义功率,hvac:screw_chiller:performance_spec:名义功率_2,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_27e6d1264847e1be,制热最大运行工况 湿球温度 t2,,air_cooled_modular_heat_pump,hvac::performance_spec:制热最大运行工况_湿球温度_t2,hvac:air_cooled_modular_heat_pump:performance_spec:制热最大运行工况_湿球温度_t2_2,doc_f981b97d70114c28,风冷冷水(热泵)机组06001-2015LK1871--CGHR09BNAR--A2015CCC0703-2136899.pdf
+ko_2817e3a36c44cd5b,制冷最大运行工况 冷媒水出水温度 t4,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_冷媒水出水温度_t4,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_冷媒水出水温度_t4_2,doc_f981b97d70114c28,风冷冷水(热泵)机组06001-2015LK1871--CGHR09BNAR--A2015CCC0703-2136899.pdf
+ko_281c58329c452e2d,高(C),,centrifugal_chiller,hvac::performance_spec:高_c,hvac:centrifugal_chiller:performance_spec:高_c_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_284f9f401a90bdf1,气密性试验（充压压力）,,centrifugal_chiller,hvac::performance_spec:气密性试验_充压压力,hvac:centrifugal_chiller:performance_spec:气密性试验_充压压力_2,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_2859fe2c7d3c8374,冷凝器水侧耐压,,screw_chiller,hvac::performance_spec:冷凝器水侧耐压_冷凝器水侧耐压,hvac:screw_chiller:performance_spec:冷凝器水侧耐压_2,doc_4074061206b94f00,干式双螺杆冷水机组.pdf
+ko_28ea2eba7e294b36,蒸发器源侧水流量,,water_source_heat_pump,hvac::performance_spec:蒸发器源侧水流量,hvac:water_source_heat_pump:performance_spec:蒸发器源侧水流量_2,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf
+ko_294b33181f99b1d1,名义工况全热回收生活热水进出水温度,,screw_chiller,hvac::performance_spec:名义工况全热回收生活热水进出水温度,hvac:screw_chiller:performance_spec:名义工况全热回收生活热水进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_295ae9f070703405,输入功率,,screw_chiller,hvac::performance_spec:hvac::performance_spec:输入功率_输入功率_6,hvac:screw_chiller:performance_spec:输入功率,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_296ee39ec21782c9,制冷最大运行工况 冷媒水出水温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_冷媒水出水温度,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_冷媒水出水温度_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_29afd49b9fcb3a52,净重,,screw_chiller,hvac::performance_spec:key_0991e99b34,hvac:screw_chiller:performance_spec:净重,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_29db29adddab7b06,输入功率-制热,,ahu,hvac::performance_spec:输入功率_制热,hvac:ahu:performance_spec:输入功率_制热_2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_29f89c818a8bc6f2,冷凝器数量,,screw_chiller,hvac::performance_spec:冷凝器数量,hvac:screw_chiller:performance_spec:冷凝器数量_2,doc_71aa56acd1254dec,09_麦克维尔单螺杆式冷水机组_WMD.pdf
+ko_2a3e2cbb94de1933,部分热回收量,,screw_chiller,hvac::performance_spec:部分热回收量_部分热回收量,hvac:screw_chiller:performance_spec:部分热回收量,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_2a48a81c382ba634,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_16,hvac:screw_chiller:performance_spec:制冷量_2,doc_9773977431814c79,干式风冷螺杆式冷（热）水机组.pdf
+ko_2a5b4a6ea2495ce2,水侧压降,,centrifugal_chiller,hvac::performance_spec:水侧压降_水侧压降_2,hvac:centrifugal_chiller:performance_spec:水侧压降_2,doc_61856ab3e0514e0a,MC系列高效变频离心机样本DJ-17-LC-01A.pdf
+ko_2ad433c494963c4d,cooling coil face velocity,,ahu,hvac::performance_spec:cooling_coil_face_velocity,hvac:ahu:performance_spec:cooling_coil_face_velocity,doc_caaa2ea18c4a49de,daikin_ah_models_ahu_technical_catalog_air_handling_unit_ah_models_pdf.pdf
+ko_2aef2f163a84fc6b,蒸发器源水水流量,,screw_chiller,hvac::performance_spec:蒸发器源水水流量_蒸发器源水水流量,hvac:screw_chiller:performance_spec:蒸发器源水水流量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_2b5b1eab0b2ba5de,启动电流 (单台),,screw_chiller,hvac::performance_spec:启动电流_单台,hvac:screw_chiller:performance_spec:启动电流_单台_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_2b6529cf3bbe40e8,全热回收换热器可选 换热器进出口管径,,screw_chiller,hvac::performance_spec:全热回收换热器可选_换热器进出口管径,hvac:screw_chiller:performance_spec:全热回收换热器可选_换热器进出口管径_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_2c53c493144fede4,空调侧换热器出水温度,,screw_chiller,hvac::performance_spec:空调侧换热器出水温度,hvac:screw_chiller:performance_spec:空调侧换热器出水温度_2,doc_fd0c92db05ea4570,MC系列H高效空气源螺杆式热泵机组.pdf
+ko_2c8dea230686efc2,制冷最大运行工况 冷媒水进水温度 t3,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_冷媒水进水温度_t3,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_冷媒水进水温度_t3_2,doc_f981b97d70114c28,风冷冷水(热泵)机组06001-2015LK1871--CGHR09BNAR--A2015CCC0703-2136899.pdf
+ko_2d5af0adf9fb2bff,制热水实测工况_初始水温,,air_cooled_modular_heat_pump,hvac::performance_spec:制热水实测工况_初始水温,hvac:air_cooled_modular_heat_pump:performance_spec:制热水实测工况_初始水温_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_2dc3213146fc70d1,冷水出水温度,,screw_chiller,hvac::performance_spec:冷水出水温度,hvac:screw_chiller:performance_spec:冷水出水温度_2,doc_4074061206b94f00,干式双螺杆冷水机组.pdf
+ko_2e730f563f9f32a4,制冷名义工况热泵侧进口水温,,centrifugal_chiller,hvac::performance_spec:制冷名义工况热泵侧进口水温,hvac:centrifugal_chiller:performance_spec:制冷名义工况热泵侧进口水温,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_2ed08045c0e9bde3,名义工况下，机组制热水侧进出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_机组制热水侧进出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组制热水侧进出水温度_2,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf
+ko_2f667593891f282c,供热工况 进水温度,,ahu,hvac::performance_spec:供热工况_进水温度,hvac:ahu:performance_spec:供热工况_进水温度_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_3088a6307911b411,额定风量,,ahu,hvac::performance_spec:额定风量,hvac:ahu:performance_spec:额定风量_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_30fea8beef05eb84,机组最大运行电流,,screw_chiller,hvac::performance_spec:机组最大运行电流_机组最大运行电流,hvac:screw_chiller:performance_spec:机组最大运行电流_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_314128494a99b89e,WPS.C热泵启动范围 - 冷却水出水温度,,water_source_heat_pump,hvac::performance_spec:wps_c热泵启动范围_冷却水出水温度,hvac:water_source_heat_pump:performance_spec:wps_c热泵启动范围_冷却水出水温度_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_315ba97c0028858e,制冷量,,centrifugal_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_9,hvac:centrifugal_chiller:performance_spec:制冷量,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_317728da6e809725,名义工况下，负载侧出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_负载侧出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_负载侧出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_319ae65bb245d33a,冷凝器进出口管径,,screw_chiller,hvac::performance_spec:蒸发器进出口管径_冷凝器进出口管径,hvac:screw_chiller:performance_spec:冷凝器进出口管径,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_31d01c2dfad365c2,冷凝器侧冷却水水压,,screw_chiller,hvac::performance_spec:冷凝器侧冷却水水压_冷凝器侧冷却水水压,hvac:screw_chiller:performance_spec:冷凝器侧冷却水水压_2,doc_0fc0790ebc614e32,YCBLG_系列半封闭螺杆式之之醇机组说明书.pdf
+ko_31e7f8f73f67ed7d,冷凝器接管直径,,screw_chiller,hvac::performance_spec:蒸发器接管直径_冷凝器接管直径,hvac:screw_chiller:performance_spec:冷凝器接管直径,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_322c417ae51af5c3,最大运行功率,,ahu,hvac::performance_spec:最大运行功率,hvac:ahu:performance_spec:最大运行功率_2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_32a926ead6cd0f8b,热源水入口温度,,water_source_heat_pump,hvac::performance_spec:热源水入口温度,hvac:water_source_heat_pump:performance_spec:热源水入口温度_2,doc_5faa3373b945486d,ETW离心高温水源热泵技术手册（73页）.pdf
+ko_3371c76d9b309723,供冷工况 (湿球温度),,ahu,hvac::performance_spec:供冷工况_湿球温度,hvac:ahu:performance_spec:供冷工况_湿球温度_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_33a96a59e127e69a,名义制热量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:名义制热量_名义制热量,hvac:screw_chiller:performance_spec:名义制热量_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_33aea1db29f1347a,运行重量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:运行重量_运行重量_3,hvac:screw_chiller:performance_spec:运行重量,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_33cf6099e52d713f,热泵制热名义工况热泵侧进口水温,,centrifugal_chiller,hvac::performance_spec:热泵制热名义工况热泵侧进口水温,hvac:centrifugal_chiller:performance_spec:热泵制热名义工况热泵侧进口水温,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_33d1fd01fe33af92,噪音数据,,screw_chiller,hvac::performance_spec:噪音数据_噪音数据_2,hvac:screw_chiller:performance_spec:噪音数据,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_34b6ee3faf5dae11,名义工况负载侧进水温度,,screw_chiller,hvac::performance_spec:名义工况负载侧进水温度,hvac:screw_chiller:performance_spec:名义工况负载侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_34f039835e546c9e,余热回收制热量,,screw_chiller,hvac::performance_spec:余热回收制热量,hvac:screw_chiller:performance_spec:余热回收制热量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_3661f12550157858,制热输入功率,,screw_chiller,hvac::performance_spec:制热输入功率_制热输入功率_3,hvac:screw_chiller:performance_spec:制热输入功率,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_367f1c8af4bbd1a5,蒸发器内部水量,,screw_chiller,hvac::performance_spec:蒸发器内部水量,hvac:screw_chiller:performance_spec:蒸发器内部水量_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_36e42aa1c35f4713,供冷进风干球温度,,ahu,hvac::performance_spec:供冷进风干球温度,hvac:ahu:performance_spec:供冷进风干球温度_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_3715321cb99abc89,电机数量,,ahu,hvac::performance_spec:电机数量,hvac:ahu:performance_spec:电机数量_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_373f032770dbb5a9,名义工况 实用制热机组负载侧进水温度,,screw_chiller,hvac::performance_spec:名义工况_实用制热机组负载侧进水温度,hvac:screw_chiller:performance_spec:名义工况_实用制热机组负载侧进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_375ba1b9eb04b397,名义工况下，机组全热回收，生活热水进出水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组全热回收_生活热水进出水温度,hvac:screw_chiller:performance_spec:名义工况下_机组全热回收_生活热水进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_37be0bc0bbed724a,WPS.C热泵启动范围 - 冷冻水进水温度,,water_source_heat_pump,hvac::performance_spec:wps_c热泵启动范围_冷冻水进水温度,hvac:water_source_heat_pump:performance_spec:wps_c热泵启动范围_冷冻水进水温度_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_38a637614b8bc575,名义工况下，机组制冷水侧进/出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_机组制冷水侧进_出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组制冷水侧进_出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_38cb281551b8eb9b,冷凝器源水水流量,,screw_chiller,hvac::performance_spec:冷凝器源水水流量_冷凝器源水水流量,hvac:screw_chiller:performance_spec:冷凝器源水水流量,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_390189481e826e63,名义工况 全热回收 生活热水出水温度,,screw_chiller,hvac::performance_spec:名义工况_全热回收_生活热水出水温度,hvac:screw_chiller:performance_spec:名义工况_全热回收_生活热水出水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_39ab6c4a4da639fb,fire damping characteristic,,ahu,hvac::performance_spec:fire_damping_characteristic,hvac:ahu:performance_spec:fire_damping_characteristic_2,doc_caaa2ea18c4a49de,daikin_ah_models_ahu_technical_catalog_air_handling_unit_ah_models_pdf.pdf
+ko_39f67f033371b1f3,蒸发器 接管直径,,screw_chiller,hvac::performance_spec:蒸发器_接管直径,hvac:screw_chiller:performance_spec:蒸发器_接管直径_2,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_3a187728dc65e3df,COP,,screw_chiller,hvac::performance_spec:hvac::performance_spec:cop_cop_2,hvac:screw_chiller:performance_spec:cop,doc_34e59fab0b494f7d,08_麦克维尔单螺杆式冷水机组_WHS.C.pdf
+ko_3ab0aaf4edda03b8,电压相不平衡率,,screw_chiller,hvac::performance_spec:电压相不平衡率,hvac:screw_chiller:performance_spec:电压相不平衡率,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_3ac3ed118a4deba0,压缩机输入功率,,screw_chiller,hvac::performance_spec:压缩机输入功率,hvac:screw_chiller:performance_spec:压缩机输入功率_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_3b68d5be85651959,空调水泵功率,,air_cooled_modular_heat_pump,hvac::performance_spec:空调水泵功率,hvac:air_cooled_modular_heat_pump:performance_spec:空调水泵功率_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_3b7d5fd4682f75f6,制冷剂,,screw_chiller,hvac::performance_spec:制冷剂,hvac:screw_chiller:performance_spec:制冷剂_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_3ba99fe964826853,蒸发器冷冻水水流量 m³/h,,screw_chiller,hvac::performance_spec:蒸发器冷冻水水流量_m_h,hvac:screw_chiller:performance_spec:蒸发器冷冻水水流量_m_h_2,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_3bdb1591b0310048,名义制热量工况,,screw_chiller,hvac::performance_spec:名义制热量工况,hvac:screw_chiller:performance_spec:名义制热量工况_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_3c14d31c4ed39e32,运动粘度,,screw_chiller,hvac::performance_spec:运动粘度,hvac:screw_chiller:performance_spec:运动粘度_2,doc_1f7a3ec0bcfa44f1,LM系列螺杆机说明书.pdf
+ko_3c33dfbdc9aed140,机外余压 (II),,ahu,hvac::performance_spec:机外余压_ii,hvac:ahu:performance_spec:机外余压_ii_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_3c78d3811c54b7e9,额定电压,,air_cooled_modular_heat_pump,hvac::performance_spec:额定电压_额定电压,hvac:air_cooled_modular_heat_pump:performance_spec:额定电压,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_3d1e785f7a61872a,冷冻水出口温度,,screw_chiller,hvac::performance_spec:冷冻水出口温度,hvac:screw_chiller:performance_spec:冷冻水出口温度_2,doc_c964d83ab5794b32,H-A高效降膜定频螺杆.pdf
+ko_3d54c1f3fa0d4d9d,冷凝器水压降,,screw_chiller,hvac::performance_spec:冷凝器水压降_冷凝器水压降,hvac:screw_chiller:performance_spec:冷凝器水压降_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_3d7137787f369369,长×宽×高,,screw_chiller,hvac::performance_spec:长_宽_高,hvac:screw_chiller:performance_spec:长_宽_高_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_3dbf167ffd51192d,实用制热工况下源水侧进水温度,,screw_chiller,hvac::performance_spec:实用制热工况下源水侧进水温度,hvac:screw_chiller:performance_spec:实用制热工况下源水侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_3e379e956dbb6132,冷水出口温度,,screw_chiller,hvac::performance_spec:冷水出口温度,hvac:screw_chiller:performance_spec:冷水出口温度_2,doc_727ebd66b2914838,风冷螺杆201103.pdf
+ko_3e4f7548094ee22c,热水进出水温度,,ahu,hvac::performance_spec:热水进出水温度,hvac:ahu:performance_spec:热水进出水温度_2,doc_385b11a445794b02,VAC-2401-组合式空调机组.pdf
+ko_3ee370c7183a5cb0,最低冷凝器进水温度,,centrifugal_chiller,hvac::performance_spec:hvac::performance_spec:最低冷凝器进水温度,hvac:centrifugal_chiller:performance_spec:最低冷凝器进水温度_2,doc_6de9539b3c82422e,10_麦克维尔两级压缩离心式冷水机组_WTC.pdf
+ko_3eef07e8818833d7,供冷量,,ahu,hvac::performance_spec:供冷量,hvac:ahu:performance_spec:供冷量_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_3fd946022214d72c,名义工况下，机组全热回收，冷冻水进水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组全热回收_冷冻水进水温度,hvac:screw_chiller:performance_spec:名义工况下_机组全热回收_冷冻水进水温度_2,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_400c3b8d5de277d8,制冷最大运行工况 额定电流,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_额定电流,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_额定电流_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_401145510bd0bbdf,名义工况下，机组全热回收，蒸发器侧进水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组全热回收_蒸发器侧进水温度,hvac:screw_chiller:performance_spec:名义工况下_机组全热回收_蒸发器侧进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_401c9552fdb9a68b,"名义工况下, 机组制热源水侧进水温度",,water_source_heat_pump,hvac::performance_spec:名义工况下_机组制热源水侧进水温度_名义工况下_机组制热源水侧进水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组制热源水侧进水温度_2,doc_3b380fd616ba44f6,水水螺杆式水源热泵冷水机组满液134a青干系列手册.pdf
+ko_4059e8b7e3c82a3a,冷凝器 水侧压降,,screw_chiller,hvac::performance_spec:冷凝器_水侧压降,hvac:screw_chiller:performance_spec:冷凝器_水侧压降_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_40f6b532a1dacf44,冷冻油填充量,,screw_chiller,hvac::performance_spec:冷冻油填充量_冷冻油填充量_2,hvac:screw_chiller:performance_spec:冷冻油填充量,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_4133e049d54a4ac2,冷水进水温度波动速率,,screw_chiller,hvac::performance_spec:冷水进水温度波动速率,hvac:screw_chiller:performance_spec:冷水进水温度波动速率_2,doc_552685ec8e6f4d83,螺杆机PFS-C007_CH1707-3000-A（新）.pdf
+ko_419d890df3aaf931,压力损失,,screw_chiller,hvac::performance_spec:压力损失_压力损失_3,hvac:screw_chiller:performance_spec:压力损失,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_4221471d29114b84,盘管面积,,ahu,hvac::performance_spec:盘管面积,hvac:ahu:performance_spec:盘管面积_2,doc_f9572a136f664dc5,特灵组合式空气处理机组.pdf
+ko_424dfe30f971d583,配置功率,,centrifugal_chiller,hvac::performance_spec:配置功率,hvac:centrifugal_chiller:performance_spec:配置功率_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_424fdfc4f74be511,余热回收 水流量,,screw_chiller,hvac::performance_spec:余热回收_水流量,hvac:screw_chiller:performance_spec:余热回收_水流量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_42554e09603500de,制冷能效比EER,,screw_chiller,hvac::performance_spec:制冷能效比eer,hvac:screw_chiller:performance_spec:制冷能效比eer_2,doc_9773977431814c79,干式风冷螺杆式冷（热）水机组.pdf
+ko_42cbc67a7b789a96,最大输入功率,,air_cooled_modular_heat_pump,hvac::performance_spec:最大输入功率,hvac:air_cooled_modular_heat_pump:performance_spec:最大输入功率_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_4391a9e3cbc2e379,室内机风量,,ahu,hvac::performance_spec:室内机风量,hvac:ahu:performance_spec:室内机风量_2,doc_4a258cffa37743c7,组合式风冷直膨热回收机组样本HC.pdf
+ko_44e3614f57e1a038,电机功率,,ahu,hvac::performance_spec:电机功率,hvac:ahu:performance_spec:电机功率_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_453e92daf695e6ec,机组水侧标准设计压力,,screw_chiller,hvac::performance_spec:机组水侧标准设计压力_机组水侧标准设计压力_4,hvac:screw_chiller:performance_spec:机组水侧标准设计压力,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_4547904b06d3e63b,蒸发器水流量,,screw_chiller,hvac::performance_spec:水流量_蒸发器水流量,hvac:screw_chiller:performance_spec:蒸发器水流量_2,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_454f668593e48843,名义工况下，机组全热回收，负载侧进水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_机组全热回收_负载侧进水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组全热回收_负载侧进水温度_2,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf
+ko_45cb861c2f958ff8,高档输入功率,,ahu,hvac::performance_spec:高档输入功率,hvac:ahu:performance_spec:高档输入功率_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_45dd31cc28e3f650,标准工况: 进风湿球温度,,ahu,hvac::performance_spec:标准工况_进风湿球温度,hvac:ahu:performance_spec:标准工况_进风湿球温度_2,doc_4e98e79467814520,空气处理机组（超薄吊顶_青锋系列）p-MAH-V1.1-P.pdf
+ko_4605857a9c359c0a,空调制热实测工况_热源侧湿球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_干球温度_空调制热实测工况_热源侧湿球温度,hvac:air_cooled_modular_heat_pump:performance_spec:空调制热实测工况_热源侧湿球温度_2,doc_8394027d4c744e50,风冷冷水（热泵）空调热水机组2015JC15--CGHR16BH.pdf
+ko_46862cfebc64d5e1,相对湿度,,screw_chiller,hvac::performance_spec:hvac::performance_spec:相对湿度,hvac:screw_chiller:performance_spec:相对湿度_2,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_46a1d9391cffe711,机组外形尺寸 (板式过滤器+盘管+风机) 宽,,ahu,hvac::performance_spec:机组外形尺寸_板式过滤器_盘管_风机_宽,hvac:ahu:performance_spec:机组外形尺寸_板式过滤器_盘管_风机_宽_2,doc_f9572a136f664dc5,特灵组合式空气处理机组.pdf
+ko_476665b1c1bf1ff8,名义工况下，机组制冷源水侧进出水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组制冷源水侧进出水温度_名义工况下_机组制冷源水侧进出水温度,hvac:screw_chiller:performance_spec:名义工况下_机组制冷源水侧进出水温度,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_47efb30269327e6e,制冰冷量,,screw_chiller,hvac::performance_spec:制冰冷量,hvac:screw_chiller:performance_spec:制冰冷量,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_48db1a15b7c876c6,冷却水进出水管外径,,screw_chiller,hvac::performance_spec:冷冻水进出水管外径_冷却水进出水管外径,hvac:screw_chiller:performance_spec:冷却水进出水管外径,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_49c46711e39ce71c,余热回收水流量,,screw_chiller,hvac::performance_spec:余热回收水流量,hvac:screw_chiller:performance_spec:余热回收水流量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_4abf50ff623a3780,名义工况下，负载侧进水温度,,screw_chiller,hvac::performance_spec:名义工况下_负载侧进水温度,hvac:screw_chiller:performance_spec:名义工况下_负载侧进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_4adce3d9639c5f00,WPS.CDFHT启动范围 - 冷冻水进水温度,,water_source_heat_pump,hvac::performance_spec:wps_cdfht启动范围_冷冻水进水温度,hvac:water_source_heat_pump:performance_spec:wps_cdfht启动范围_冷冻水进水温度,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_4b0374821f0c2aec,"名义工况下, 机组制热源水侧进出口水温度",,water_source_heat_pump,hvac::performance_spec:名义工况下_机组制热源水侧进出口水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组制热源水侧进出口水温度_2,doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_4b3f20898af570b8,冷却水进水温度,,screw_chiller,hvac::performance_spec:hvac::performance_spec:冷却水进水温度,hvac:screw_chiller:performance_spec:冷却水进水温度_2,doc_bc457b67453f492b,07_麦克维尔单螺杆式冷水机组_WHS.B、HHS.B.pdf
+ko_4b85b2cdb91d9ec0,机组运行重量,,screw_chiller,hvac::performance_spec:机组运行重量_机组运行重量,hvac:screw_chiller:performance_spec:机组运行重量_2,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_4b87f9049e284515,新风工况: 进风干球温度,,ahu,hvac::performance_spec:新风工况_进风干球温度,hvac:ahu:performance_spec:新风工况_进风干球温度_2,doc_4e98e79467814520,空气处理机组（超薄吊顶_青锋系列）p-MAH-V1.1-P.pdf
+ko_4b8ed8c339e3d040,凝固点,,screw_chiller,hvac::performance_spec:凝固点,hvac:screw_chiller:performance_spec:凝固点_2,doc_1f7a3ec0bcfa44f1,LM系列螺杆机说明书.pdf
+ko_4b910e2d7617a710,冷却水压降,,screw_chiller,hvac::performance_spec:hvac::performance_spec:冷却水压降,hvac:screw_chiller:performance_spec:冷却水压降_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_4bb52bf1e61d0fdb,全热回收制热量,,screw_chiller,hvac::performance_spec:全热回收制热量,hvac:screw_chiller:performance_spec:全热回收制热量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_4c21c16e47eed173,名义工况下，机组制冷源水侧进出水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组制冷源水侧进出水温度_名义工况下_机组制冷源水侧进出水温度_2,hvac:screw_chiller:performance_spec:名义工况下_机组制冷源水侧进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_4c594074a3844f0e,冷冻水进出水管外径,,screw_chiller,hvac::performance_spec:冷冻水进出水管外径_冷冻水进出水管外径,hvac:screw_chiller:performance_spec:冷冻水进出水管外径_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_4c70fd75175494cc,最大冷却水流量,,screw_chiller,hvac::performance_spec:最大冷却水流量,hvac:screw_chiller:performance_spec:最大冷却水流量_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_4c9b0d6e96c408df,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_7,hvac:screw_chiller:performance_spec:制冷量_3,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_4ce04c93c1668772,名义工况下，机组制热负载侧进水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组制热负载侧进水温度,hvac:screw_chiller:performance_spec:名义工况下_机组制热负载侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_4cf867affed614c3,内部系统最小冷冻液量,,screw_chiller,hvac::performance_spec:内部系统最小冷冻液量,hvac:screw_chiller:performance_spec:内部系统最小冷冻液量_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_4d0e525bac4e8d61,冷凝器 水流量,,screw_chiller,hvac::performance_spec:冷凝器_水流量,hvac:screw_chiller:performance_spec:冷凝器_水流量_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_4da60a82bb8f0194,海拔高度,,screw_chiller,hvac::performance_spec:hvac::performance_spec:海拔高度,hvac:screw_chiller:performance_spec:海拔高度_2,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_4dfafb894ff8e803,蓄冰制冷COP,,centrifugal_chiller,hvac::performance_spec:蓄冰制冷cop,hvac:centrifugal_chiller:performance_spec:蓄冰制冷cop_2,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_4e0d0643a1520587,全热回收 接管直径,,screw_chiller,hvac::performance_spec:全热回收_接管直径,hvac:screw_chiller:performance_spec:全热回收_接管直径_2,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_4e0f03db7a34139a,水侧标准承压,,screw_chiller,hvac::performance_spec:水侧标准承压,hvac:screw_chiller:performance_spec:水侧标准承压,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_4e10f08b50412cf4,全热回收换热器可选 制热量,,screw_chiller,hvac::performance_spec:全热回收换热器可选_制热量,hvac:screw_chiller:performance_spec:全热回收换热器可选_制热量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_4e94733f46e8b8a1,名义制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:名义制冷量_名义制冷量_3,hvac:screw_chiller:performance_spec:名义制冷量,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_4f3c9bea62d471c4,名义工况下，负载侧进/出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_负载侧进_出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_负载侧进_出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_4f473c89ca544582,水流量,,water_source_heat_pump,hvac::performance_spec:水流量_水流量_5,hvac:water_source_heat_pump:performance_spec:水流量,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_4f5d750c3638af0b,机组运行范围-冷冻水进水温度,,screw_chiller,hvac::performance_spec:机组运行范围_冷冻水进水温度,hvac:screw_chiller:performance_spec:机组运行范围_冷冻水进水温度_2,doc_34e59fab0b494f7d,08_麦克维尔单螺杆式冷水机组_WHS.C.pdf
+ko_4fdde6b83e7f5afb,主电源电压,,screw_chiller,hvac::performance_spec:主电源电压,hvac:screw_chiller:performance_spec:主电源电压,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_5042a42b9bc419bd,IPLV,,screw_chiller,hvac::performance_spec:hvac::performance_spec:iplv_iplv_2,hvac:screw_chiller:performance_spec:iplv_2,doc_34e59fab0b494f7d,08_麦克维尔单螺杆式冷水机组_WHS.C.pdf
+ko_504fddd666aecf44,最大电流,,screw_chiller,hvac::performance_spec:最大电流,hvac:screw_chiller:performance_spec:最大电流_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_506096368bd2a4cc,名义制热压缩机输入功率,,screw_chiller,hvac::performance_spec:名义制热压缩机输入功率,hvac:screw_chiller:performance_spec:名义制热压缩机输入功率_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_50ba7b70aaabb2af,运转噪音(名义值)（高/中/低）,,ahu,hvac::performance_spec:最低运行噪音_运转噪音_名义值_高_中_低,hvac:ahu:performance_spec:运转噪音_名义值_高_中_低,doc_ae0d6a9533d64270,quanrejioahuanqi.pdf
+ko_51976d98a81099fb,外形尺寸长,,screw_chiller,hvac::performance_spec:外形尺寸长,hvac:screw_chiller:performance_spec:外形尺寸长_2,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_520bbf11b4275fe0,空调制热量,,air_cooled_modular_heat_pump,hvac::performance_spec:空调制热量,hvac:air_cooled_modular_heat_pump:performance_spec:空调制热量,doc_94991c16146a4c55,风冷冷水（热泵）空调热水机组2015JC13--CGHR12BH.pdf
+ko_522a98d6f930b50d,冷却水出水温度,,screw_chiller,hvac::performance_spec:冷却水出水温度,hvac:screw_chiller:performance_spec:冷却水出水温度_2,doc_bc457b67453f492b,07_麦克维尔单螺杆式冷水机组_WHS.B、HHS.B.pdf
+ko_523e0f5216400a20,风量 (迎面风速 2.5m/s),,ahu,hvac::performance_spec:风量_迎面风速_2_5m_s,hvac:ahu:performance_spec:风量_迎面风速_2_5m_s_2,doc_f9572a136f664dc5,特灵组合式空气处理机组.pdf
+ko_525dc82600886d97,机组外形尺寸,,air_cooled_modular_heat_pump,hvac::performance_spec:机组外形尺寸_机组外形尺寸_2,hvac:air_cooled_modular_heat_pump:performance_spec:机组外形尺寸_2,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_526091a1ad77a6a3,机组制冷量范围,,screw_chiller,hvac::performance_spec:机组制冷量范围,hvac:screw_chiller:performance_spec:机组制冷量范围,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_526c297e1a7d7df8,供热,,ahu,hvac::performance_spec:key_7c05950a3b,hvac:ahu:performance_spec:供热,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_52be43c22e9aa31a,长度,,air_cooled_modular_heat_pump,hvac::performance_spec:key_a5394989b6,hvac:air_cooled_modular_heat_pump:performance_spec:长度,doc_241df464e7ea41df,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf
+ko_54907ce268fbe3cb,全热回收量,,screw_chiller,hvac::performance_spec:全热回收量_全热回收量,hvac:screw_chiller:performance_spec:全热回收量,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_54973f33bff8496d,冷却水流量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:冷却水流量_冷却水流量_3,hvac:screw_chiller:performance_spec:冷却水流量,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_5554186806fe39e0,频率,,screw_chiller,hvac::performance_spec:额定频率,hvac:screw_chiller:performance_spec:频率,doc_bc457b67453f492b,07_麦克维尔单螺杆式冷水机组_WHS.B、HHS.B.pdf
+ko_55864e847626c726,空调水机压降,,air_cooled_modular_heat_pump,hvac::performance_spec:空调水机压降,hvac:air_cooled_modular_heat_pump:performance_spec:空调水机压降,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_55d99a7d0321ce74,进出水管尺寸,,screw_chiller,hvac::performance_spec:进出水管尺寸,hvac:screw_chiller:performance_spec:进出水管尺寸_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_56ca168ad831bd0a,额定电压或额定电压范围,,air_cooled_modular_heat_pump,hvac::performance_spec:额定电压或额定电压范围,hvac:air_cooled_modular_heat_pump:performance_spec:额定电压或额定电压范围,doc_d91d6f2fd782435a,风冷冷水(热泵)机组06001-2015LK1868--CGHR16BNAR--A2015CCC0703-2136902.pdf
+ko_571d0997963d9a8e,外形尺寸 长,,screw_chiller,hvac::performance_spec:外形尺寸_长,hvac:screw_chiller:performance_spec:外形尺寸_长_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_573f5d9d47f1274a,冷凝器负载水水流量,,screw_chiller,hvac::performance_spec:冷凝器负载水水流量_冷凝器负载水水流量,hvac:screw_chiller:performance_spec:冷凝器负载水水流量,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_5742ed57788f77bf,名义工况 全热回收 蒸发器侧进水温度,,screw_chiller,hvac::performance_spec:名义工况_全热回收_蒸发器侧进水温度,hvac:screw_chiller:performance_spec:名义工况_全热回收_蒸发器侧进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_57688b60059f09c0,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_8,hvac:screw_chiller:performance_spec:制冷量_4,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_57d873b184c28f8e,制热输入功率,,screw_chiller,hvac::performance_spec:制热输入功率_制热输入功率_2,hvac:screw_chiller:performance_spec:制热输入功率_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_583c90010d9826e0,加湿器混风工况,,ahu,hvac::performance_spec:加湿器混风工况,hvac:ahu:performance_spec:加湿器混风工况_2,doc_6a66ce78e29e4d84,VAE-2404-组合式空调机组-落地系列.pdf
+ko_5889c84743dcfe9d,全年综合能效 ACOP,,water_source_heat_pump,hvac::performance_spec:全年综合能效_acop,hvac:water_source_heat_pump:performance_spec:全年综合能效_acop,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_58b98d232174fa57,名义制热量,,air_cooled_modular_heat_pump,hvac::performance_spec:hvac::performance_spec:名义制热量_名义制热量_3,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量_2,doc_9650969ce6cb4585,风冷冷水(热泵)机组06001-2015LK1870--CGHR12BNAR--A2015CCC0703-2136900 (1).pdf
+ko_591ae739b27c71b9,制冷额定总输入功率,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷额定总输入功率,hvac:air_cooled_modular_heat_pump:performance_spec:制冷额定总输入功率_2,doc_241df464e7ea41df,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf
+ko_5a1a837ac039244e,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_13,hvac:screw_chiller:performance_spec:制冷量_5,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_5a9988fee7d457f2,机组净重,,screw_chiller,hvac::performance_spec:机组净重,hvac:screw_chiller:performance_spec:机组净重_2,doc_c33e7b4d18e442e9,LMS系列四管制风冷螺杆机组（23-F-I）0000(1).pdf
+ko_5b233681bacd659e,运行重量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:运行重量_运行重量_5,hvac:screw_chiller:performance_spec:运行重量_2,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_5b32923aceb9c6e4,电压波动,,screw_chiller,hvac::performance_spec:电压波动,hvac:screw_chiller:performance_spec:电压波动,doc_71aa56acd1254dec,09_麦克维尔单螺杆式冷水机组_WMD.pdf
+ko_5b39bb745f547d46,名义工况 负载侧进水温度 (制热),,screw_chiller,hvac::performance_spec:名义工况_负载侧进水温度_制热,hvac:screw_chiller:performance_spec:名义工况_负载侧进水温度_制热_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_5c0112e747963332,运输重量,,centrifugal_chiller,hvac::performance_spec:运输重量_运输重量_2,hvac:centrifugal_chiller:performance_spec:运输重量_2,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_5c3168e8231c0d9f,启动电流,,water_source_heat_pump,hvac::performance_spec:启动电流_启动电流_2,hvac:water_source_heat_pump:performance_spec:启动电流_2,doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf
+ko_5c73ce769bd78463,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量,hvac:screw_chiller:performance_spec:制冷量_6,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_5e16c20d96725e73,热水水压降,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:热水水压降,hvac:water_source_heat_pump:performance_spec:热水水压降_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_5e516cd3f6da083e,输入功率,,screw_chiller,hvac::performance_spec:hvac::performance_spec:输入功率_输入功率_3,hvac:screw_chiller:performance_spec:输入功率_2,doc_71aa56acd1254dec,09_麦克维尔单螺杆式冷水机组_WMD.pdf
+ko_5ec8c7bd1eefbcd3,外形尺寸 高,,screw_chiller,hvac::performance_spec:外形尺寸_高,hvac:screw_chiller:performance_spec:外形尺寸_高_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_5ecdf3e3ea31ffbf,输入功率,,screw_chiller,hvac::performance_spec:hvac::performance_spec:输入功率_输入功率,hvac:screw_chiller:performance_spec:输入功率_3,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_5f248f7d78e7623d,制热COP,,centrifugal_chiller,hvac::performance_spec:制热cop,hvac:centrifugal_chiller:performance_spec:制热cop_2,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_5f285adaeb020109,蒸发器接管通径,,centrifugal_chiller,hvac::performance_spec:蒸发器接管通径,hvac:centrifugal_chiller:performance_spec:蒸发器接管通径_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_5f4c4bc4707e683d,制热量kW,,screw_chiller,hvac::performance_spec:制热量kw,hvac:screw_chiller:performance_spec:制热量kw_2,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_5fa07a8d196a48d8,air pressure sealing,,ahu,hvac::performance_spec:air_pressure_sealing,hvac:ahu:performance_spec:air_pressure_sealing_2,doc_caaa2ea18c4a49de,daikin_ah_models_ahu_technical_catalog_air_handling_unit_ah_models_pdf.pdf
+ko_5fb57e4ee3e349d9,供冷工况 进出水温度,,ahu,hvac::performance_spec:供冷工况_进出水温度,hvac:ahu:performance_spec:供冷工况_进出水温度_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_5fe94c96007f19b3,标准工况: 进风干球温度,,ahu,hvac::performance_spec:标准工况_进风干球温度,hvac:ahu:performance_spec:标准工况_进风干球温度_2,doc_4e98e79467814520,空气处理机组（超薄吊顶_青锋系列）p-MAH-V1.1-P.pdf
+ko_602d149bd5544157,制冷实测工况_使用侧出口水温,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷实测工况_使用侧出口水温,hvac:air_cooled_modular_heat_pump:performance_spec:制冷实测工况_使用侧出口水温,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_6084f0ccd4d6541d,冷冻油填充量,,screw_chiller,hvac::performance_spec:冷冻油填充量_冷冻油填充量,hvac:screw_chiller:performance_spec:冷冻油填充量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_610b1e15acc11716,水源水流量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:水源水流量,hvac:water_source_heat_pump:performance_spec:水源水流量,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_61263b7b40916080,电机功率 (III),,ahu,hvac::performance_spec:电机功率_iii,hvac:ahu:performance_spec:电机功率_iii_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_6127ec94f4614381,性能系数 EER,,water_source_heat_pump,hvac::performance_spec:性能系数_eer,hvac:water_source_heat_pump:performance_spec:性能系数_eer_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_612d4469ba2e36b1,制冷实测工况_热源侧干球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷实测工况_热源侧干球温度,hvac:air_cooled_modular_heat_pump:performance_spec:制冷实测工况_热源侧干球温度_3,doc_182078164f644141,风冷冷水（热泵）空调热水机组2015JC16--CGHR14BH.pdf
+ko_617fce4168cd10e2,标准制冷量,,screw_chiller,hvac::performance_spec:标准制冷量,hvac:screw_chiller:performance_spec:标准制冷量_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_61e4a73bbd2b97a1,全热回收量,,screw_chiller,hvac::performance_spec:全热回收量_全热回收量_3,hvac:screw_chiller:performance_spec:全热回收量_2,doc_fd0c92db05ea4570,MC系列H高效空气源螺杆式热泵机组.pdf
+ko_636c62fd447d5c47,生活热水出水温度,,water_source_heat_pump,hvac::performance_spec:生活热水出水温度,hvac:water_source_heat_pump:performance_spec:生活热水出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_63970f5034fa6e38,制冷干球温度,,screw_chiller,hvac::performance_spec:制冷干球温度,hvac:screw_chiller:performance_spec:制冷干球温度_2,doc_727ebd66b2914838,风冷螺杆201103.pdf
+ko_643a127381e606d0,名义风量,,ahu,hvac::performance_spec:名义风量,hvac:ahu:performance_spec:名义风量_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_64ba019b39eaafd9,外壳外部直径,,screw_chiller,hvac::performance_spec:外壳外部直径,hvac:screw_chiller:performance_spec:外壳外部直径_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_64bdf61f9a88313a,机组运输重量,,screw_chiller,hvac::performance_spec:机组运输重量,hvac:screw_chiller:performance_spec:机组运输重量_2,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_64c2038875b645a5,冷凝器侧冷却水进出水温差,,screw_chiller,hvac::performance_spec:冷凝器侧冷却水进出水温差,hvac:screw_chiller:performance_spec:冷凝器侧冷却水进出水温差_2,doc_0fc0790ebc614e32,YCBLG_系列半封闭螺杆式之之醇机组说明书.pdf
+ko_657695b727e18567,制冷量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_15,hvac:water_source_heat_pump:performance_spec:制冷量_3,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_6581cff28de7f23e,热源水条件,,water_source_heat_pump,hvac::performance_spec:热源水条件,hvac:water_source_heat_pump:performance_spec:热源水条件_2,doc_5faa3373b945486d,ETW离心高温水源热泵技术手册（73页）.pdf
+ko_65b9a061384f1cf2,10%负荷,,centrifugal_chiller,hvac::performance_spec:10_负荷,hvac:centrifugal_chiller:performance_spec:10_负荷_2,doc_61856ab3e0514e0a,MC系列高效变频离心机样本DJ-17-LC-01A.pdf
+ko_65b9d6d759510396,制冷工况蒸发器进水温度(℃),,water_source_heat_pump,hvac::performance_spec:制冷工况蒸发器进水温度,hvac:water_source_heat_pump:performance_spec:制冷工况蒸发器进水温度,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_65e3ef0c560c7055,制冷工况蒸发器出水温度(℃),,water_source_heat_pump,hvac::performance_spec:制冷工况蒸发器出水温度,hvac:water_source_heat_pump:performance_spec:制冷工况蒸发器出水温度,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_662ba0c8f07aae91,速度,,ahu,hvac::performance_spec:key_f2fdffbb9e,hvac:ahu:performance_spec:速度,doc_e2198c58886c45f6,MAH组合式空气处理机组.pdf
+ko_66e1f87ee0109d07,机外余压,,ahu,hvac::performance_spec:机外余压,hvac:ahu:performance_spec:机外余压_2,doc_f9572a136f664dc5,特灵组合式空气处理机组.pdf
+ko_670f7a285a7d0ce6,额定供冷量,,ahu,hvac::performance_spec:额定供冷量,hvac:ahu:performance_spec:额定供冷量_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_6718ae939ea97fff,最大允许压力,,screw_chiller,hvac::performance_spec:最大允许压力,hvac:screw_chiller:performance_spec:最大允许压力_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_67975c815c8a158c,机组重量 (卧式/吊式),,ahu,hvac::performance_spec:机组重量_卧式_吊式,hvac:ahu:performance_spec:机组重量_卧式_吊式_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_682abc0ef8ee0d54,外型尺寸 长,,screw_chiller,hvac::performance_spec:外型尺寸_长,hvac:screw_chiller:performance_spec:外型尺寸_长_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_683409d3036b2d2d,最大水侧工作压力,,air_cooled_modular_heat_pump,hvac::performance_spec:最大水侧工作压力,hvac:air_cooled_modular_heat_pump:performance_spec:最大水侧工作压力_2,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_6839b78383415d11,水压降kPa,,screw_chiller,hvac::performance_spec:水压降kpa,hvac:screw_chiller:performance_spec:水压降kpa_2,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_683cc2a83a135864,冷冻水温度差,,chiller,hvac::performance_spec:冷冻水温度差,hvac:chiller:performance_spec:冷冻水温度差,doc_d7623d21517a41fd,水冷式冷水机组安装、使用、维护说明书.pdf
+ko_686de28f47e9e067,箱体形式,,ahu,hvac::performance_spec:箱体形式,hvac:ahu:performance_spec:箱体形式_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_68f9a5812b6e0561,最大启动电流,,screw_chiller,hvac::performance_spec:hvac::performance_spec:最大启动电流,hvac:screw_chiller:performance_spec:最大启动电流_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_691fb3d711f5b7e9,冷量计算基础,,ahu,hvac::performance_spec:冷量计算基础,hvac:ahu:performance_spec:冷量计算基础_2,doc_f9572a136f664dc5,特灵组合式空气处理机组.pdf
+ko_69c29fe86f87ab1c,名义工况 实用制热机组源侧进水温度,,screw_chiller,hvac::performance_spec:名义工况_实用制热机组源侧进水温度,hvac:screw_chiller:performance_spec:名义工况_实用制热机组源侧进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_6aeba7f689487ca1,电加热外径,,air_cooled_modular_heat_pump,hvac::performance_spec:电加热外径,hvac:air_cooled_modular_heat_pump:performance_spec:电加热外径_2,doc_241df464e7ea41df,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf
+ko_6b56d84cd11b9ef9,名义工况下，生活热水进出水温度,,screw_chiller,hvac::performance_spec:名义工况下_生活热水进出水温度,hvac:screw_chiller:performance_spec:名义工况下_生活热水进出水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_6bbd88dc46011158,制冷量kW,,screw_chiller,hvac::performance_spec:制冷量kw,hvac:screw_chiller:performance_spec:制冷量kw_2,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_6c7b5294f0a4b979,名义工况下，机组全热回收，生活热水出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_机组全热回收_生活热水出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组全热回收_生活热水出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_6d416ffe70f675d4,全热回收换热器可选水压降,,screw_chiller,hvac::performance_spec:全热回收换热器可选水压降,hvac:screw_chiller:performance_spec:全热回收换热器可选水压降_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_6d713de2194c25a6,制热水实测工况_干球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制热水实测工况_干球温度,hvac:air_cooled_modular_heat_pump:performance_spec:制热水实测工况_干球温度_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_6e707a4f06de4e48,空调额定水流量,,air_cooled_modular_heat_pump,hvac::performance_spec:空调额定水流量_空调额定水流量,hvac:air_cooled_modular_heat_pump:performance_spec:空调额定水流量,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_6f264f7f29cec9ec,毛重,,ahu,hvac::performance_spec:key_7711ba81dd,hvac:ahu:performance_spec:毛重,doc_ae0d6a9533d64270,quanrejioahuanqi.pdf
+ko_6f3ae63a631559ef,部分热回收水流量,,screw_chiller,hvac::performance_spec:部分热回收水流量_部分热回收水流量_2,hvac:screw_chiller:performance_spec:部分热回收水流量_2,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_707faead50040041,名义工况下，机组制热源水侧出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_机组制热源水侧出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组制热源水侧出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_71548d468fa9f92e,机组外形尺寸,,ahu,hvac::performance_spec:机组外形尺寸_机组外形尺寸,hvac:ahu:performance_spec:机组外形尺寸,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_7256f7ef62493693,cooling coil tube diameter,,ahu,hvac::performance_spec:cooling_coil_tube_diameter,hvac:ahu:performance_spec:cooling_coil_tube_diameter_2,doc_caaa2ea18c4a49de,daikin_ah_models_ahu_technical_catalog_air_handling_unit_ah_models_pdf.pdf
+ko_72bc8a575e66fc0b,综合性能,,water_source_heat_pump,hvac::performance_spec:综合性能,hvac:water_source_heat_pump:performance_spec:综合性能_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_7384edf7bc30606c,供冷工况 进风湿球温度,,ahu,hvac::performance_spec:供冷工况_进风湿球温度,hvac:ahu:performance_spec:供冷工况_进风湿球温度_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_7386cd9a4c50ab0e,接管通径,,centrifugal_chiller,hvac::performance_spec:接管通径_接管通径_2,hvac:centrifugal_chiller:performance_spec:接管通径,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_7401a71cdf0e021d,U型折流板,,air_cooled_modular_heat_pump,hvac::performance_spec:u型折流板,hvac:air_cooled_modular_heat_pump:performance_spec:u型折流板_2,doc_241df464e7ea41df,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf
+ko_74e570a7ae3f13ba,机组水阻力,,screw_chiller,hvac::performance_spec:机组水阻力,hvac:screw_chiller:performance_spec:机组水阻力_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_75143c096a870d93,冷冻油填充量L,,screw_chiller,hvac::performance_spec:冷冻油填充量l,hvac:screw_chiller:performance_spec:冷冻油填充量l,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_752594f93de4ea3f,防触电保护类型,,air_cooled_modular_heat_pump,hvac::performance_spec:防触电保护类型,hvac:air_cooled_modular_heat_pump:performance_spec:防触电保护类型_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_75592cb1a48a6e12,压力损失,,screw_chiller,hvac::performance_spec:压力损失_压力损失,hvac:screw_chiller:performance_spec:压力损失_2,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_7672edf84a599938,供热量,,ahu,hvac::performance_spec:供热量,hvac:ahu:performance_spec:供热量_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_76f9dc3e4f19bc68,工作压力,,ahu,hvac::performance_spec:工作压力,hvac:ahu:performance_spec:工作压力_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_7754fad4c6588045,蒸发器侧乙二醇溶液水压,,screw_chiller,hvac::performance_spec:冷凝器侧冷却水水压_蒸发器侧乙二醇溶液水压,hvac:screw_chiller:performance_spec:蒸发器侧乙二醇溶液水压,doc_0fc0790ebc614e32,YCBLG_系列半封闭螺杆式之之醇机组说明书.pdf
+ko_7767c0b952411b0f,制热量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制热量_制热量_3,hvac:screw_chiller:performance_spec:制热量_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_77f15ec000d1d115,工作环境温度,,screw_chiller,hvac::performance_spec:hvac::performance_spec:工作环境温度,hvac:screw_chiller:performance_spec:工作环境温度,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_78123f10f2ad3e23,压力损失,,screw_chiller,hvac::performance_spec:压力损失_压力损失_2,hvac:screw_chiller:performance_spec:压力损失_3,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_7841429b8ad5495b,变频启动电流,,screw_chiller,hvac::performance_spec:变频启动电流,hvac:screw_chiller:performance_spec:变频启动电流_2,doc_aa52339cfea4496c,高效降膜变频水冷螺杆.pdf
+ko_7850801acd483fd0,制冷性能系数,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷性能系数,hvac:air_cooled_modular_heat_pump:performance_spec:制冷性能系数_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_785d91ad60298970,全热回收 水压降,,screw_chiller,hvac::performance_spec:全热回收_水压降,hvac:screw_chiller:performance_spec:全热回收_水压降_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_78814c87d119f9d9,进出水管,,ahu,hvac::performance_spec:进出水管,hvac:ahu:performance_spec:进出水管_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_78f26de317b9bf4e,名义工况制热负载侧进水温度,,water_source_heat_pump,hvac::performance_spec:名义工况制热负载侧进水温度,hvac:water_source_heat_pump:performance_spec:名义工况制热负载侧进水温度_2,doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf
+ko_7919946466cb80e1,名义制冷压缩机输入功率,,screw_chiller,hvac::performance_spec:名义制冷压缩机输入功率,hvac:screw_chiller:performance_spec:名义制冷压缩机输入功率_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_79239e342ca77fef,大气腐蚀性气体成分,,screw_chiller,hvac::performance_spec:hvac::performance_spec:大气腐蚀性气体成分,hvac:screw_chiller:performance_spec:大气腐蚀性气体成分_2,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_792ed6d8261a56c0,制冷 IPLV,,screw_chiller,hvac::performance_spec:制冷_iplv,hvac:screw_chiller:performance_spec:制冷_iplv_2,doc_c964d83ab5794b32,H-A高效降膜定频螺杆.pdf
+ko_792fc2051dbe2308,供热工况 进风温度,,ahu,hvac::performance_spec:供热工况_进风温度,hvac:ahu:performance_spec:供热工况_进风温度_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_797b5d6cba7eb064,"名义工况下, 负载侧进出口水温度",,water_source_heat_pump,hvac::performance_spec:名义工况下_负载侧进出口水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_负载侧进出口水温度_2,doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_7990313b7a934356,冷冻水压降,,screw_chiller,hvac::performance_spec:hvac::performance_spec:冷冻水压降_冷冻水压降,hvac:screw_chiller:performance_spec:冷冻水压降_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_79b66572cc939606,制热量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制热量_制热量_5,hvac:screw_chiller:performance_spec:制热量_3,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_79c372fb2d473a39,制热水实测工况_湿球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制热水实测工况_湿球温度,hvac:air_cooled_modular_heat_pump:performance_spec:制热水实测工况_湿球温度,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_79e5e1e227efa1b2,噪音数据,,screw_chiller,hvac::performance_spec:噪音数据_噪音数据,hvac:screw_chiller:performance_spec:噪音数据_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_7a8a3d610a1612c8,管数量,,screw_chiller,hvac::performance_spec:管数量,hvac:screw_chiller:performance_spec:管数量_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_7ab5fbaefaa2f441,制热最大运行工况 湿球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制热最大运行工况_湿球温度,hvac:air_cooled_modular_heat_pump:performance_spec:制热最大运行工况_湿球温度_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_7b62769d94bfbf58,蒸发器 水侧压降,,screw_chiller,hvac::performance_spec:蒸发器_水侧压降,hvac:screw_chiller:performance_spec:蒸发器_水侧压降_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_7c6e34c69ec70cd9,最大工作电流,,screw_chiller,hvac::performance_spec:最大工作电流_最大工作电流,hvac:screw_chiller:performance_spec:最大工作电流_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_7d0d7b7f9552b00b,全热回收 水侧压降,,screw_chiller,hvac::performance_spec:全热回收_水侧压降,hvac:screw_chiller:performance_spec:全热回收_水侧压降_2,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_7e3a4d71a2450583,制冷最大运行工况 冷媒水进水温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_冷媒水进水温度,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_冷媒水进水温度_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_7ee41582db097133,R22充注量,,screw_chiller,hvac::performance_spec:r22充注量,hvac:screw_chiller:performance_spec:r22充注量_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_7f861f10f77ab82f,制热量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制热量_制热量_6,hvac:screw_chiller:performance_spec:制热量_4,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_80bf167042fa16b1,进风干球温度,,ahu,hvac::performance_spec:进风干球温度,hvac:ahu:performance_spec:进风干球温度_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_81e98d31a741810f,机组水侧标准设计压力,,water_source_heat_pump,hvac::performance_spec:机组水侧标准设计压力_机组水侧标准设计压力_5,hvac:water_source_heat_pump:performance_spec:机组水侧标准设计压力,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_81f01a6255eca5d7,"名义工况下, 负载侧进出水温度",,water_source_heat_pump,hvac::performance_spec:名义工况下_负载侧进出水温度_名义工况下_负载侧进出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_负载侧进出水温度_3,doc_3b380fd616ba44f6,水水螺杆式水源热泵冷水机组满液134a青干系列手册.pdf
+ko_8200692a383e62e0,冷冻水管管径,,ahu,hvac::performance_spec:冷冻水管管径,hvac:ahu:performance_spec:冷冻水管管径,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_82087c87f3c75375,水阻力 (卧式/吊式),,ahu,hvac::performance_spec:水阻力_卧式_吊式,hvac:ahu:performance_spec:水阻力_卧式_吊式_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_8245863a05c941e7,名义工况 全热回收 生活热水进水温度,,screw_chiller,hvac::performance_spec:名义工况_全热回收_生活热水进水温度,hvac:screw_chiller:performance_spec:名义工况_全热回收_生活热水进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_824d4e23ba9ee7a2,体积浓度,,screw_chiller,hvac::performance_spec:体积浓度,hvac:screw_chiller:performance_spec:体积浓度_2,doc_552685ec8e6f4d83,螺杆机PFS-C007_CH1707-3000-A（新）.pdf
+ko_82fd1f8631253b2c,加湿量,,ahu,hvac::performance_spec:hvac::performance_spec:加湿量_加湿量,hvac:ahu:performance_spec:加湿量,doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf
+ko_8383bbc3aa7833b7,冷却水流量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:冷却水流量_冷却水流量_2,hvac:screw_chiller:performance_spec:冷却水流量_2,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_83e28b9c3124692d,机组重量,,ahu,hvac::performance_spec:hvac::performance_spec:机组重量_机组重量_4,hvac:ahu:performance_spec:机组重量_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_83e7636f8d38797b,制冷剂/充注量,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷剂_充注量,hvac:air_cooled_modular_heat_pump:performance_spec:制冷剂_充注量_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_84d57fb72361670d,蒸发器进出口管径,,screw_chiller,hvac::performance_spec:蒸发器进出口管径_蒸发器进出口管径,hvac:screw_chiller:performance_spec:蒸发器进出口管径_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_8519f9f2215fa3d2,机组最大电流为额定电流的倍数,,water_source_heat_pump,hvac::performance_spec:机组最大电流为额定电流的倍数_机组最大电流为额定电流的倍数_2,hvac:water_source_heat_pump:performance_spec:机组最大电流为额定电流的倍数_2,doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_85218cf5a7622181,水流量m3/h,,screw_chiller,hvac::performance_spec:水流量_水流量m3_h,hvac:screw_chiller:performance_spec:水流量m3_h_2,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_85c7c664308afc81,空调水侧压降,,air_cooled_modular_heat_pump,hvac::performance_spec:空调水侧压降,hvac:air_cooled_modular_heat_pump:performance_spec:空调水侧压降_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_8633684d622e7499,接管通径,,centrifugal_chiller,hvac::performance_spec:接管通径_接管通径,hvac:centrifugal_chiller:performance_spec:接管通径_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_866211813ce67cca,润滑油加注量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:润滑油加注量,hvac:screw_chiller:performance_spec:润滑油加注量_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_86cd14d6833133d7,蒸发器侧乙二醇溶液出口温度,,screw_chiller,hvac::performance_spec:蒸发器侧乙二醇溶液出口温度,hvac:screw_chiller:performance_spec:蒸发器侧乙二醇溶液出口温度_2,doc_0fc0790ebc614e32,YCBLG_系列半封闭螺杆式之之醇机组说明书.pdf
+ko_8763c06bd33fdcae,工厂保温层厚度,,screw_chiller,hvac::performance_spec:工厂保温层厚度,hvac:screw_chiller:performance_spec:工厂保温层厚度_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_87e776409dcdd975,名义工况下全热回收生活热水进出水温度,,screw_chiller,hvac::performance_spec:名义工况下全热回收生活热水进出水温度,hvac:screw_chiller:performance_spec:名义工况下全热回收生活热水进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_87f96430e3710a02,制冷低温工况使用侧出口水温,,centrifugal_chiller,hvac::performance_spec:制冷低温工况使用侧出口水温,hvac:centrifugal_chiller:performance_spec:制冷低温工况使用侧出口水温_2,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_87fecd67b9e06ecd,最小冷冻液流量,,screw_chiller,hvac::performance_spec:最大冷冻液流量_最小冷冻液流量,hvac:screw_chiller:performance_spec:最小冷冻液流量,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_88def68888adaf04,名义工况负载侧进出水温度,,screw_chiller,hvac::performance_spec:名义工况负载侧进出水温度,hvac:screw_chiller:performance_spec:名义工况负载侧进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_89215ecfa576f93c,名义制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:名义制冷量_名义制冷量_2,hvac:screw_chiller:performance_spec:名义制冷量_2,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_89b260c0da232b71,制热最大运行工况 冷媒水出水温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制热最大运行工况_冷媒水出水温度,hvac:air_cooled_modular_heat_pump:performance_spec:制热最大运行工况_冷媒水出水温度_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_8a21d8ce0a1fe9e7,制冷剂侧EER,,centrifugal_chiller,hvac::performance_spec:制冷剂侧eer,hvac:centrifugal_chiller:performance_spec:制冷剂侧eer_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_8a454dc7e6b2b9ef,全热回收换热器可选水流量,,screw_chiller,hvac::performance_spec:全热回收换热器可选水流量,hvac:screw_chiller:performance_spec:全热回收换热器可选水流量_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_8afb957d732617d6,全热回收 制热量,,screw_chiller,hvac::performance_spec:全热回收_制热量,hvac:screw_chiller:performance_spec:全热回收_制热量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_8b169703e4a2673c,冷冻液入口温度,,screw_chiller,hvac::performance_spec:冷冻液入口温度,hvac:screw_chiller:performance_spec:冷冻液入口温度_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_8b5ffe1dd2f3af0c,制冷最大运行工况 干球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_干球温度_制冷最大运行工况_干球温度,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_干球温度_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_8b608eaf515b2158,机组水侧标准设计压力,,water_source_heat_pump,hvac::performance_spec:机组水侧标准设计压力_机组水侧标准设计压力_3,hvac:water_source_heat_pump:performance_spec:机组水侧标准设计压力_2,doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf
+ko_8b9bc2c51c917c6c,制热计算工况,,ahu,hvac::performance_spec:制热计算工况,hvac:ahu:performance_spec:制热计算工况_2,doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf
+ko_8bc07770cc464cc2,冷凝器水侧压降,,water_source_heat_pump,hvac::performance_spec:冷凝器水侧压降,hvac:water_source_heat_pump:performance_spec:冷凝器水侧压降,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_8c0c02bcada8b926,热回收效率,,ahu,hvac::performance_spec:热回收效率,hvac:ahu:performance_spec:热回收效率_2,doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf
+ko_8c32cc05886ef6e8,全热回收量,,screw_chiller,hvac::performance_spec:全热回收量_全热回收量_2,hvac:screw_chiller:performance_spec:全热回收量_3,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_8c551891d06782e6,综合性能系数,,air_cooled_modular_heat_pump,hvac::performance_spec:综合性能系数,hvac:air_cooled_modular_heat_pump:performance_spec:综合性能系数_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_8ccf9a7467b08eb4,名义工况下，机组全热回收，负载出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_机组全热回收_负载出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组全热回收_负载出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_8cf47421ffd8edef,空调制热实测工况_热源侧湿球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:空调制热实测工况_热源侧湿球温度,hvac:air_cooled_modular_heat_pump:performance_spec:空调制热实测工况_热源侧湿球温度_3,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_8d1c6b47f3f133bd,名义工况下制冷源水侧进出水温度,,screw_chiller,hvac::performance_spec:名义工况下制冷源水侧进出水温度,hvac:screw_chiller:performance_spec:名义工况下制冷源水侧进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_8d8546cc72cccaf0,WPS.CFFHT启动范围 - 冷冻水进水温度,,water_source_heat_pump,hvac::performance_spec:wps_cffht启动范围_冷冻水进水温度,hvac:water_source_heat_pump:performance_spec:wps_cffht启动范围_冷冻水进水温度,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_8e076bcbcd944b02,余热回收换热器可选水流量,,screw_chiller,hvac::performance_spec:余热回收换热器可选水流量,hvac:screw_chiller:performance_spec:余热回收换热器可选水流量_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_8e42023a7ee24ab5,冰点温度,,screw_chiller,hvac::performance_spec:冰点温度,hvac:screw_chiller:performance_spec:冰点温度_2,doc_552685ec8e6f4d83,螺杆机PFS-C007_CH1707-3000-A（新）.pdf
+ko_8e95f60abe7163ee,制热水消耗功,,air_cooled_modular_heat_pump,hvac::performance_spec:制热水消耗功,hvac:air_cooled_modular_heat_pump:performance_spec:制热水消耗功_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_8ec2f0ad2525ac63,色度,,screw_chiller,hvac::performance_spec:key_dc82842ec4,hvac:screw_chiller:performance_spec:色度,doc_1f7a3ec0bcfa44f1,LM系列螺杆机说明书.pdf
+ko_8ecba8778c9c4859,给效率（冷）,,ahu,hvac::performance_spec:给效率_冷,hvac:ahu:performance_spec:给效率_冷_2,doc_ae0d6a9533d64270,quanrejioahuanqi.pdf
+ko_8f462fefa64fe144,机组水侧标准设计压力,,screw_chiller,hvac::performance_spec:机组水侧标准设计压力_机组水侧标准设计压力_2,hvac:screw_chiller:performance_spec:机组水侧标准设计压力_2,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_9000e2d30e0cc723,冷凝器耐压,,screw_chiller,hvac::performance_spec:冷凝器耐压,hvac:screw_chiller:performance_spec:冷凝器耐压_2,doc_4074061206b94f00,干式双螺杆冷水机组.pdf
+ko_9029e073ab5dc102,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_14,hvac:screw_chiller:performance_spec:制冷量_7,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_907de6da245831c9,空调制热实测工况_热源侧干球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_干球温度_空调制热实测工况_热源侧干球温度,hvac:air_cooled_modular_heat_pump:performance_spec:空调制热实测工况_热源侧干球温度_3,doc_8394027d4c744e50,风冷冷水（热泵）空调热水机组2015JC15--CGHR16BH.pdf
+ko_90b5e130ef004040,运行重量,,centrifugal_chiller,hvac::performance_spec:hvac::performance_spec:运行重量_运行重量_4,hvac:centrifugal_chiller:performance_spec:运行重量,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_9114c1a625a06f70,名义工况全热回水源水侧进水温度,,screw_chiller,hvac::performance_spec:名义工况全热回水源水侧进水温度,hvac:screw_chiller:performance_spec:名义工况全热回水源水侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_91c4742fa533d523,外型尺寸 高,,screw_chiller,hvac::performance_spec:外型尺寸_高,hvac:screw_chiller:performance_spec:外型尺寸_高_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_91f3565fba7af318,耗电量,,water_source_heat_pump,hvac::performance_spec:耗电量_耗电量_2,hvac:water_source_heat_pump:performance_spec:耗电量,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_92142ad8d4a996dc,名义工况下余热回收生活热水进出水温度,,screw_chiller,hvac::performance_spec:名义工况下余热回收生活热水进出水温度,hvac:screw_chiller:performance_spec:名义工况下余热回收生活热水进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_921f4ee276eddf37,性能系数,,air_cooled_modular_heat_pump,hvac::performance_spec:性能系数,hvac:air_cooled_modular_heat_pump:performance_spec:性能系数_2,doc_94991c16146a4c55,风冷冷水（热泵）空调热水机组2015JC13--CGHR12BH.pdf
+ko_9282aa11af1173b3,水管管径,,ahu,hvac::performance_spec:水管管径,hvac:ahu:performance_spec:水管管径_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_928a9df107713b43,机外余压 (III),,ahu,hvac::performance_spec:机外余压_iii,hvac:ahu:performance_spec:机外余压_iii_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_93f96722d27ba4ab,蒸发器型式,,screw_chiller,hvac::performance_spec:蒸发器型式,hvac:screw_chiller:performance_spec:蒸发器型式_2,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_93fbd920a10f990d,制冷 COP,,screw_chiller,hvac::performance_spec:制冷_cop,hvac:screw_chiller:performance_spec:制冷_cop_2,doc_c964d83ab5794b32,H-A高效降膜定频螺杆.pdf
+ko_94238aef9f66ba6d,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_3,hvac:screw_chiller:performance_spec:制冷量_8,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_9493ee9441c67810,名义工况 制冷源侧出水温度,,screw_chiller,hvac::performance_spec:名义工况_制冷源侧出水温度,hvac:screw_chiller:performance_spec:名义工况_制冷源侧出水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_95a037a0b6d084f1,名义工况下，机组全热回收，生活热水进水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组全热回收_生活热水进水温度,hvac:screw_chiller:performance_spec:名义工况下_机组全热回收_生活热水进水温度_2,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_96bf8d8a9d5a4a8a,冷媒进出口尺寸,,air_cooled_modular_heat_pump,hvac::performance_spec:冷媒进出口尺寸,hvac:air_cooled_modular_heat_pump:performance_spec:冷媒进出口尺寸_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_972442c36212197f,电机形式,,ahu,hvac::performance_spec:电机形式,hvac:ahu:performance_spec:电机形式_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_973a2c6f3f579685,冷却水进水温度范围,,centrifugal_chiller,hvac::performance_spec:冷却水进水温度范围,hvac:centrifugal_chiller:performance_spec:冷却水进水温度范围_2,doc_c0e98222695c4dd3,CE系列离心式冷水机组使用说明书.pdf
+ko_97b9be193b2efe45,供热进风干球温度,,ahu,hvac::performance_spec:供热进风干球温度,hvac:ahu:performance_spec:供热进风干球温度_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_9811b3e1feefaa71,堵转电流,,centrifugal_chiller,hvac::performance_spec:堵转电流,hvac:centrifugal_chiller:performance_spec:堵转电流_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_982709075bcb1633,名义工况 负载侧出水温度,,screw_chiller,hvac::performance_spec:名义工况_负载侧出水温度,hvac:screw_chiller:performance_spec:名义工况_负载侧出水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_9851241586a2939e,电源,,ahu,hvac::performance_spec:hvac::performance_spec:key_e2d69e9008,hvac:ahu:performance_spec:电源,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_98ba4f8e70a1eee2,制冷消耗功率,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷消耗功率,hvac:air_cooled_modular_heat_pump:performance_spec:制冷消耗功率_2,doc_94991c16146a4c55,风冷冷水（热泵）空调热水机组2015JC13--CGHR12BH.pdf
+ko_99089bbbfc8a3f97,余热回收换热器可选 制热量,,screw_chiller,hvac::performance_spec:余热回收换热器可选_制热量,hvac:screw_chiller:performance_spec:余热回收换热器可选_制热量,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_9929365b7e6e38c4,名义工况下，机组制冷水侧进出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_机组制冷水侧进出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组制冷水侧进出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_996c26c86040a57b,制冷输入功率,,water_source_heat_pump,hvac::performance_spec:制冷输入功率_制冷输入功率_5,hvac:water_source_heat_pump:performance_spec:制冷输入功率,doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf
+ko_9971bc4aeb92232d,制热量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:制热量_制热量_8,hvac:water_source_heat_pump:performance_spec:制热量_2,doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_998d29a1fecc0704,制冷实测工况_使用侧水流量,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷实测工况_使用侧水流量,hvac:air_cooled_modular_heat_pump:performance_spec:制冷实测工况_使用侧水流量_2,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_99fd1f7fb9b51e33,蒸发器水压降,,screw_chiller,hvac::performance_spec:蒸发器水压降_蒸发器水压降_4,hvac:screw_chiller:performance_spec:蒸发器水压降_3,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_9a4d7a62b2d7bbe4,名义工况 制冷源侧进水温度,,screw_chiller,hvac::performance_spec:名义工况_制冷源侧进水温度,hvac:screw_chiller:performance_spec:名义工况_制冷源侧进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_9afbf3823c6fd5c9,制冷最大运行工况 干球温度 t1,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_干球温度_制冷最大运行工况_干球温度_t1,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_干球温度_t1_2,doc_f981b97d70114c28,风冷冷水(热泵)机组06001-2015LK1871--CGHR09BNAR--A2015CCC0703-2136899.pdf
+ko_9b777925d5493dbc,实用制热机组参数 制热输入功率,,screw_chiller,hvac::performance_spec:实用制热机组参数_制热输入功率,hvac:screw_chiller:performance_spec:实用制热机组参数_制热输入功率_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_9b9bd73303d75cdb,制冷名义热回收量,,screw_chiller,hvac::performance_spec:制冷名义热回收量,hvac:screw_chiller:performance_spec:制冷名义热回收量_2,doc_727ebd66b2914838,风冷螺杆201103.pdf
+ko_9cdcdf32b7b59e4f,蒸发器进出水温差,,screw_chiller,hvac::performance_spec:蒸发器进出水温差,hvac:screw_chiller:performance_spec:蒸发器进出水温差,doc_552685ec8e6f4d83,螺杆机PFS-C007_CH1707-3000-A（新）.pdf
+ko_9d1875ddc61af2b7,机组最大电流为额定电流的倍数,,screw_chiller,hvac::performance_spec:机组最大电流为额定电流的倍数_机组最大电流为额定电流的倍数,hvac:screw_chiller:performance_spec:机组最大电流为额定电流的倍数_2,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_9d4aa46bfb5783f6,频率,,screw_chiller,hvac::performance_spec:hvac::performance_spec:key_33b527300b,hvac:screw_chiller:performance_spec:频率_2,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_9f317ffac8284bc9,水量,,ahu,hvac::performance_spec:空调额定水流量_key_9977379a94,hvac:ahu:performance_spec:水量,doc_4e98e79467814520,空气处理机组（超薄吊顶_青锋系列）p-MAH-V1.1-P.pdf
+ko_9f8f7684702a97d7,制热输入功率,,screw_chiller,hvac::performance_spec:制热输入功率_制热输入功率,hvac:screw_chiller:performance_spec:制热输入功率_3,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_9ffc1da667f317bb,冷凝器冷却水水流量,,screw_chiller,hvac::performance_spec:冷凝器冷却水水流量,hvac:screw_chiller:performance_spec:冷凝器冷却水水流量_2,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_a13ccd9740513f45,风量,,ahu,hvac::performance_spec:key_20a12cff49,hvac:ahu:performance_spec:风量,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_a14436d9678ab5c5,冷凝器水压降,,screw_chiller,hvac::performance_spec:冷凝器水压降_冷凝器水压降_3,hvac:screw_chiller:performance_spec:冷凝器水压降_3,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_a2030b86403b251e,流量,,centrifugal_chiller,hvac::performance_spec:hvac::performance_spec:key_1b2abbc587,hvac:centrifugal_chiller:performance_spec:流量,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_a226a5112f58a2b1,WPS.CFFST启动范围 - 冷冻水进水温度,,water_source_heat_pump,hvac::performance_spec:wps_cffst启动范围_冷冻水进水温度,hvac:water_source_heat_pump:performance_spec:wps_cffst启动范围_冷冻水进水温度,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_a2a0b2a7b167a71e,机组运行电流,,screw_chiller,hvac::performance_spec:机组运行电流,hvac:screw_chiller:performance_spec:机组运行电流_2,doc_e0e2301451824224,满液式水地源螺杆热泵机组.pdf
+ko_a2d81a1791f0e3bc,长(A),,centrifugal_chiller,hvac::performance_spec:长_a,hvac:centrifugal_chiller:performance_spec:长_a_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_a3302ce488e91746,运输重量,,screw_chiller,hvac::performance_spec:运输重量_运输重量,hvac:screw_chiller:performance_spec:运输重量_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_a3488db76f7fef84,闪点,,screw_chiller,hvac::performance_spec:key_058417247a,hvac:screw_chiller:performance_spec:闪点,doc_1f7a3ec0bcfa44f1,LM系列螺杆机说明书.pdf
+ko_a37e0a25f5d56796,水流量,,centrifugal_chiller,hvac::performance_spec:水流量_水流量_4,hvac:centrifugal_chiller:performance_spec:水流量,doc_61856ab3e0514e0a,MC系列高效变频离心机样本DJ-17-LC-01A.pdf
+ko_a3c562d313e3cfd0,冷冻水进水温度范围,,centrifugal_chiller,hvac::performance_spec:冷冻水进水温度范围,hvac:centrifugal_chiller:performance_spec:冷冻水进水温度范围_2,doc_c0e98222695c4dd3,CE系列离心式冷水机组使用说明书.pdf
+ko_a47931b0cc03b8e8,外形尺寸宽,,screw_chiller,hvac::performance_spec:hvac::performance_spec:外形尺寸宽,hvac:screw_chiller:performance_spec:外形尺寸宽_2,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_a4c661e3cff12c14,全热,,ahu,hvac::performance_spec:key_3cc09fe806,hvac:ahu:performance_spec:全热,doc_f9572a136f664dc5,特灵组合式空气处理机组.pdf
+ko_a62d5c9bc58633f6,热回收水流量,,water_source_heat_pump,hvac::performance_spec:热回收水流量,hvac:water_source_heat_pump:performance_spec:热回收水流量_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_a6488dd1e1ebb4c0,制热量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:制热量_制热量_7,hvac:water_source_heat_pump:performance_spec:制热量_3,doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf
+ko_a669c10a570e78dc,名义制热输入功率,,air_cooled_modular_heat_pump,hvac::performance_spec:名义制热输入功率,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热输入功率_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_a73547a421889aea,名义工况下负载侧进出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下负载侧进出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下负载侧进出水温度_2,doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf
+ko_a8416ff81f95b8d2,名义制冷量工况,,screw_chiller,hvac::performance_spec:名义制冷量工况,hvac:screw_chiller:performance_spec:名义制冷量工况_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_a86ca74f4a3cd3a5,COP,,screw_chiller,hvac::performance_spec:hvac::performance_spec:cop_cop,hvac:screw_chiller:performance_spec:cop_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_a8a74f5e05aee593,电源,,ahu,hvac::performance_spec:机组使用电源,hvac:ahu:performance_spec:电源_2,doc_ae0d6a9533d64270,quanrejioahuanqi.pdf
+ko_a8ea48d95f049f02,机组最大运行电流,,screw_chiller,hvac::performance_spec:机组最大运行电流_机组最大运行电流_2,hvac:screw_chiller:performance_spec:机组最大运行电流_3,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_a901a22a05e7051f,机组名义制冷量,,screw_chiller,hvac::performance_spec:机组名义制冷量,hvac:screw_chiller:performance_spec:机组名义制冷量_2,doc_d043b82f94ee4979,R22满液式水冷螺杆样本DJ-17-CB-01A.pdf
+ko_a9d2965a8983d754,水回路管程数,,screw_chiller,hvac::performance_spec:水回路管程数,hvac:screw_chiller:performance_spec:水回路管程数_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_aa440f4d21dc0f9a,空调水泵电流,,air_cooled_modular_heat_pump,hvac::performance_spec:空调水泵电流,hvac:air_cooled_modular_heat_pump:performance_spec:空调水泵电流_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_aa6cd3fc661089f9,冷凝器负载侧水流量,,water_source_heat_pump,hvac::performance_spec:冷凝器负载侧水流量,hvac:water_source_heat_pump:performance_spec:冷凝器负载侧水流量_2,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf
+ko_aaab40af18711cee,制热输入功率,,water_source_heat_pump,hvac::performance_spec:制热输入功率_制热输入功率_6,hvac:water_source_heat_pump:performance_spec:制热输入功率_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_aab91896623f0431,最大启动电流(热回收工况55℃),,water_source_heat_pump,hvac::performance_spec:最大启动电流_热回收工况55,hvac:water_source_heat_pump:performance_spec:最大启动电流_热回收工况55,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_aabe7786c3bfb4e1,最大冷冻液流量,,screw_chiller,hvac::performance_spec:最大冷冻液流量_最大冷冻液流量,hvac:screw_chiller:performance_spec:最大冷冻液流量_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_aad7663a540a5d2d,充注量,,screw_chiller,hvac::performance_spec:充注量,hvac:screw_chiller:performance_spec:充注量_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_ab96e0050d2ca224,全热回收水流量,,screw_chiller,hvac::performance_spec:全热回收水流量_全热回收水流量_2,hvac:screw_chiller:performance_spec:全热回收水流量,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_ac559512ca6a2b7a,总酸值,,screw_chiller,hvac::performance_spec:总酸值,hvac:screw_chiller:performance_spec:总酸值_2,doc_1f7a3ec0bcfa44f1,LM系列螺杆机说明书.pdf
+ko_ad79f1898372805f,制热最大运行工况 电压,,air_cooled_modular_heat_pump,hvac::performance_spec:额定电压_制热最大运行工况_电压,hvac:air_cooled_modular_heat_pump:performance_spec:制热最大运行工况_电压,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_ae8077ca32e44170,机组运输重量kg,,screw_chiller,hvac::performance_spec:机组运输重量kg,hvac:screw_chiller:performance_spec:机组运输重量kg_2,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_aeaa31052b4f0e85,水阻力,,screw_chiller,hvac::performance_spec:hvac::performance_spec:水阻力,hvac:screw_chiller:performance_spec:水阻力_2,doc_c33e7b4d18e442e9,LMS系列四管制风冷螺杆机组（23-F-I）0000(1).pdf
+ko_af32baa70e8e27b3,名义工况制热源水侧进水温度,,screw_chiller,hvac::performance_spec:名义工况制热源水侧进水温度,hvac:screw_chiller:performance_spec:名义工况制热源水侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_afc939344263228d,电机功率 I,,ahu,hvac::performance_spec:电机功率_i,hvac:ahu:performance_spec:电机功率_i_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_b0a2135345187291,压缩机运行电流,,screw_chiller,hvac::performance_spec:压缩机起动电流_压缩机运行电流,hvac:screw_chiller:performance_spec:压缩机运行电流,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_b0bf982080bf85e5,名义制冷量,,air_cooled_modular_heat_pump,hvac::performance_spec:hvac::performance_spec:名义制冷量_名义制冷量_5,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷量,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_b0e9d69099b012b0,传动方式,,ahu,hvac::performance_spec:传动方式,hvac:ahu:performance_spec:传动方式_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_b0ebe7167028cc96,余热回收水压降,,screw_chiller,hvac::performance_spec:余热回收水压降,hvac:screw_chiller:performance_spec:余热回收水压降_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_b1f6850c8829d092,过滤网厚度,,ahu,hvac::performance_spec:过滤网厚度,hvac:ahu:performance_spec:过滤网厚度_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_b210afd2d6b1bfd5,名义产热水量,,air_cooled_modular_heat_pump,hvac::performance_spec:空调额定水流量_名义产热水量,hvac:air_cooled_modular_heat_pump:performance_spec:名义产热水量,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_b21423c9013ac090,名义工况下，机组全热回收，源水侧进水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组全热回收_源水侧进水温度,hvac:screw_chiller:performance_spec:名义工况下_机组全热回收_源水侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_b249921f3adc7948,冷凝器负载水水流量,,screw_chiller,hvac::performance_spec:冷凝器负载水水流量_冷凝器负载水水流量_2,hvac:screw_chiller:performance_spec:冷凝器负载水水流量_2,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_b332b620169177a0,制热水能效比,,air_cooled_modular_heat_pump,hvac::performance_spec:制热水能效比,hvac:air_cooled_modular_heat_pump:performance_spec:制热水能效比_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_b36b8ef476e666d4,机组重量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:机组重量_机组重量_3,hvac:screw_chiller:performance_spec:机组重量_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_b38e3ac986f7e772,外型尺寸 宽,,screw_chiller,hvac::performance_spec:外型尺寸_宽,hvac:screw_chiller:performance_spec:外型尺寸_宽_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_b3ce7d6b576cc94d,风机数量,,ahu,hvac::performance_spec:风机数量,hvac:ahu:performance_spec:风机数量_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_b4166022f880154e,电加热功率,,air_cooled_modular_heat_pump,hvac::performance_spec:电加热功率,hvac:air_cooled_modular_heat_pump:performance_spec:电加热功率_2,doc_241df464e7ea41df,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf
+ko_b4919199d9f029ac,使用电源,,air_cooled_modular_heat_pump,hvac::performance_spec:使用电源,hvac:air_cooled_modular_heat_pump:performance_spec:使用电源,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_b4aef456cf6e01c5,蒸发器数量,,screw_chiller,hvac::performance_spec:蒸发器数量,hvac:screw_chiller:performance_spec:蒸发器数量_2,doc_71aa56acd1254dec,09_麦克维尔单螺杆式冷水机组_WMD.pdf
+ko_b554ed5e77b42bdf,制冷输入功率,,water_source_heat_pump,hvac::performance_spec:制冷输入功率_制冷输入功率_6,hvac:water_source_heat_pump:performance_spec:制冷输入功率_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_b557902452ae0050,蒸发器 水压降,,screw_chiller,hvac::performance_spec:蒸发器_水压降,hvac:screw_chiller:performance_spec:蒸发器_水压降_2,doc_45308079fca94508,MC-H水冷螺杆样本DJ-17-CA-01A.pdf
+ko_b5fd9c6b22212366,制冷系统最大工作压力,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷系统最大工作压力,hvac:air_cooled_modular_heat_pump:performance_spec:制冷系统最大工作压力,doc_d91d6f2fd782435a,风冷冷水(热泵)机组06001-2015LK1868--CGHR16BNAR--A2015CCC0703-2136902.pdf
+ko_b61266fb1a3a99fd,电源性质符号,,air_cooled_modular_heat_pump,hvac::performance_spec:电源性质符号,hvac:air_cooled_modular_heat_pump:performance_spec:电源性质符号,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_b6fcbf3678206d8c,送风余压,,ahu,hvac::performance_spec:送风余压,hvac:ahu:performance_spec:送风余压_2,doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf
+ko_b75b13a8c47851fc,风机功率,,screw_chiller,hvac::performance_spec:风机功率,hvac:screw_chiller:performance_spec:风机功率_2,doc_c33e7b4d18e442e9,LMS系列四管制风冷螺杆机组（23-F-I）0000(1).pdf
+ko_b81a5ace0e28261d,电机额定电流,,centrifugal_chiller,hvac::performance_spec:电机额定电流,hvac:centrifugal_chiller:performance_spec:电机额定电流,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_b86dd7d515718479,名义制冷输入功率,,air_cooled_modular_heat_pump,hvac::performance_spec:名义制冷输入功率,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷输入功率_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_b8c1d9e15c121195,制热量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制热量_制热量_2,hvac:screw_chiller:performance_spec:制热量_5,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_b8f77e8cac4560db,制冷名义工况使用侧水流量,,centrifugal_chiller,hvac::performance_spec:制冷名义工况使用侧水流量,hvac:centrifugal_chiller:performance_spec:制冷名义工况使用侧水流量,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_b934f73ab71605ec,水压降,,screw_chiller,hvac::performance_spec:水压降,hvac:screw_chiller:performance_spec:水压降_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_b9382041aeb56943,效率,,ahu,hvac::performance_spec:key_ee724d77fc,hvac:ahu:performance_spec:效率,doc_e2198c58886c45f6,MAH组合式空气处理机组.pdf
+ko_b94f83fb32ba442b,排风余压,,ahu,hvac::performance_spec:排风余压,hvac:ahu:performance_spec:排风余压_2,doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf
+ko_ba9c22beefc121a5,WPS.CDFST启动范围 - 冷冻水进水温度,,water_source_heat_pump,hvac::performance_spec:wps_cdfst启动范围_冷冻水进水温度,hvac:water_source_heat_pump:performance_spec:wps_cdfst启动范围_冷冻水进水温度,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_ba9da9570cc0a8eb,启动电流,,screw_chiller,hvac::performance_spec:启动电流_启动电流,hvac:screw_chiller:performance_spec:启动电流_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_babd019aefcbd878,热交换器最大工作压力,,air_cooled_modular_heat_pump,hvac::performance_spec:热交换器最大工作压力,hvac:air_cooled_modular_heat_pump:performance_spec:热交换器最大工作压力,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_babd82e177d635dd,部分热回收量,,screw_chiller,hvac::performance_spec:部分热回收量_部分热回收量_2,hvac:screw_chiller:performance_spec:部分热回收量_2,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_bb07162fb68192f8,羟基值,,screw_chiller,hvac::performance_spec:羟基值,hvac:screw_chiller:performance_spec:羟基值_2,doc_1f7a3ec0bcfa44f1,LM系列螺杆机说明书.pdf
+ko_bb674d8adee51b1c,出风方式,,ahu,hvac::performance_spec:出风方式,hvac:ahu:performance_spec:出风方式_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_bb737443a232273a,"名义工况下, 生活热水出水温度",,water_source_heat_pump,hvac::performance_spec:名义工况下_生活热水出水温度_名义工况下_生活热水出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_生活热水出水温度_2,doc_b9c9d76283cc4f38,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_bbee137ee59ec8f2,热水性能系数,,air_cooled_modular_heat_pump,hvac::performance_spec:热水性能系数,hvac:air_cooled_modular_heat_pump:performance_spec:热水性能系数,doc_94991c16146a4c55,风冷冷水（热泵）空调热水机组2015JC13--CGHR12BH.pdf
+ko_bc863390e545426c,余热回收换热器可选 水流量,,screw_chiller,hvac::performance_spec:余热回收换热器可选_水流量,hvac:screw_chiller:performance_spec:余热回收换热器可选_水流量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_bd4eebc2194d6871,振动测定（振幅）,,centrifugal_chiller,hvac::performance_spec:振动测定_振幅,hvac:centrifugal_chiller:performance_spec:振动测定_振幅_2,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_bd60083d9f65ff23,EER,,screw_chiller,hvac::performance_spec:eer,hvac:screw_chiller:performance_spec:eer_2,doc_c33e7b4d18e442e9,LMS系列四管制风冷螺杆机组（23-F-I）0000(1).pdf
+ko_bd8064b3d40c6609,外形尺寸高,,screw_chiller,hvac::performance_spec:外形尺寸高,hvac:screw_chiller:performance_spec:外形尺寸高_2,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_bda364cb7ce2ec14,冷凝器源侧水流量,,water_source_heat_pump,hvac::performance_spec:冷凝器源侧水流量,hvac:water_source_heat_pump:performance_spec:冷凝器源侧水流量_2,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf
+ko_bdf92004a5c59aaf,制冷输入功率,,screw_chiller,hvac::performance_spec:制冷输入功率_制冷输入功率_3,hvac:screw_chiller:performance_spec:制冷输入功率_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_be725e09710f20d2,机组启动范围-冷冻水进水温度,,screw_chiller,hvac::performance_spec:机组启动范围_冷冻水进水温度,hvac:screw_chiller:performance_spec:机组启动范围_冷冻水进水温度_2,doc_34e59fab0b494f7d,08_麦克维尔单螺杆式冷水机组_WHS.C.pdf
+ko_bee0ba72a41e8897,实用制热机组参数 制热量,,screw_chiller,hvac::performance_spec:实用制热机组参数_制热量,hvac:screw_chiller:performance_spec:实用制热机组参数_制热量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_bf1a7157a38b99ce,机组噪声,,ahu,hvac::performance_spec:机组噪声,hvac:ahu:performance_spec:机组噪声_2,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_bfbdc7e0fb1c5aed,冷凝器水流量,,screw_chiller,hvac::performance_spec:冷凝器水流量,hvac:screw_chiller:performance_spec:冷凝器水流量_2,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_c01f1955f8c982ed,名义制冷量1,,ahu,hvac::performance_spec:名义制冷量1,hvac:ahu:performance_spec:名义制冷量1_2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_c117bab203166cd9,供冷进风湿球温度,,ahu,hvac::performance_spec:供冷进风湿球温度,hvac:ahu:performance_spec:供冷进风湿球温度_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_c178f541bc2823d3,蒸发器接管直径,,screw_chiller,hvac::performance_spec:蒸发器接管直径_蒸发器接管直径,hvac:screw_chiller:performance_spec:蒸发器接管直径_2,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_c194d0ea6e5af64f,名义工况下，负载出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_负载出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_负载出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_c251982efdee084f,蓄冰制冷量,,centrifugal_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_蓄冰制冷量,hvac:centrifugal_chiller:performance_spec:蓄冰制冷量_2,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_c25206e3a92ee95d,冷却水进口温度,,screw_chiller,hvac::performance_spec:冷却水进口温度,hvac:screw_chiller:performance_spec:冷却水进口温度_2,doc_c964d83ab5794b32,H-A高效降膜定频螺杆.pdf
+ko_c26c28d219863e7b,额定气侧最大工作压力,,air_cooled_modular_heat_pump,hvac::performance_spec:额定气侧最大工作压力,hvac:air_cooled_modular_heat_pump:performance_spec:额定气侧最大工作压力,doc_d91d6f2fd782435a,风冷冷水(热泵)机组06001-2015LK1868--CGHR16BNAR--A2015CCC0703-2136902.pdf
+ko_c28d4bea88831452,供冷工况 进风干球温度,,ahu,hvac::performance_spec:供冷工况_进风干球温度,hvac:ahu:performance_spec:供冷工况_进风干球温度_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_c2ed62a36f5968d8,全热回收水压降,,screw_chiller,hvac::performance_spec:全热回收水压降,hvac:screw_chiller:performance_spec:全热回收水压降_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_c318e02787c079a7,机组重量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:机组重量_机组重量,hvac:screw_chiller:performance_spec:机组重量_3,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_c3946df6cdd62176,冷凝器侧冷却水进口温度,,screw_chiller,hvac::performance_spec:冷凝器侧冷却水进口温度,hvac:screw_chiller:performance_spec:冷凝器侧冷却水进口温度_2,doc_0fc0790ebc614e32,YCBLG_系列半封闭螺杆式之之醇机组说明书.pdf
+ko_c3cf1edc5860d43f,机组启动范围-冷冻水出水温度,,screw_chiller,hvac::performance_spec:机组启动范围_冷冻水出水温度,hvac:screw_chiller:performance_spec:机组启动范围_冷冻水出水温度,doc_34e59fab0b494f7d,08_麦克维尔单螺杆式冷水机组_WHS.C.pdf
+ko_c45918e2912d70bd,制热性能系数,,air_cooled_modular_heat_pump,hvac::performance_spec:制热性能系数,hvac:air_cooled_modular_heat_pump:performance_spec:制热性能系数_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_c48593a3b88d44c0,名义工况 负载侧进水温度,,screw_chiller,hvac::performance_spec:名义工况_负载侧进水温度,hvac:screw_chiller:performance_spec:名义工况_负载侧进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_c48a423ce3d3f45e,机组额定电流,,centrifugal_chiller,hvac::performance_spec:机组额定电流_机组额定电流_2,hvac:centrifugal_chiller:performance_spec:机组额定电流_2,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_c49f022ab7e8e1c5,制热最大运行工况 冷媒水进水温度 t3,,air_cooled_modular_heat_pump,hvac::performance_spec:制热最大运行工况_冷媒水进水温度_t3,hvac:air_cooled_modular_heat_pump:performance_spec:制热最大运行工况_冷媒水进水温度_t3_2,doc_f981b97d70114c28,风冷冷水(热泵)机组06001-2015LK1871--CGHR09BNAR--A2015CCC0703-2136899.pdf
+ko_c5a7e064e4a2dd4d,新风风量,,ahu,hvac::performance_spec:新风风量,hvac:ahu:performance_spec:新风风量_2,doc_ae0d6a9533d64270,quanrejioahuanqi.pdf
+ko_c70213787c430431,额定电流,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:额定电流,hvac:water_source_heat_pump:performance_spec:额定电流_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_c7e18135ec445e52,能效比,,air_cooled_modular_heat_pump,hvac::performance_spec:能效比,hvac:air_cooled_modular_heat_pump:performance_spec:能效比_2,doc_472df0b1bd904961,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf
+ko_c7ec0f10806d0fa7,热水水流量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:热水水流量,hvac:water_source_heat_pump:performance_spec:热水水流量_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_c8b091ced06784fe,整机重量,,air_cooled_modular_heat_pump,hvac::performance_spec:整机重量,hvac:air_cooled_modular_heat_pump:performance_spec:整机重量,doc_8394027d4c744e50,风冷冷水（热泵）空调热水机组2015JC15--CGHR16BH.pdf
+ko_c909c9c5868620da,蒸发器水侧压降,,water_source_heat_pump,hvac::performance_spec:蒸发器水侧压降,hvac:water_source_heat_pump:performance_spec:蒸发器水侧压降_2,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_c986d239c3ba9654,全热回收水流量,,screw_chiller,hvac::performance_spec:全热回收水流量_全热回收水流量,hvac:screw_chiller:performance_spec:全热回收水流量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_c9dca384f858cce3,制冰量,,screw_chiller,hvac::performance_spec:制冰量,hvac:screw_chiller:performance_spec:制冰量_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_c9f5fb29e9d29273,名义制冷量2,,ahu,hvac::performance_spec:名义制冷量2,hvac:ahu:performance_spec:名义制冷量2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_ca55379455782173,名义制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:名义制冷量_名义制冷量_4,hvac:screw_chiller:performance_spec:名义制冷量_3,doc_46b7322e023645a5,R134a满液式水冷螺杆样本DJ-17-CC-01A_重.pdf
+ko_ca723760bc2e3543,制冷输入功率,,screw_chiller,hvac::performance_spec:制冷输入功率_制冷输入功率_2,hvac:screw_chiller:performance_spec:制冷输入功率_3,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_cb8a11500e311ee5,最大运行电流,,ahu,hvac::performance_spec:最大运行电流,hvac:ahu:performance_spec:最大运行电流_2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_cc1494da84369697,长度,,air_cooled_modular_heat_pump,hvac::performance_spec:外壳长度,hvac:air_cooled_modular_heat_pump:performance_spec:长度_2,doc_241df464e7ea41df,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf
+ko_cc43eb6a412a316a,压缩机型式,,screw_chiller,hvac::performance_spec:压缩机型式,hvac:screw_chiller:performance_spec:压缩机型式_2,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_cc75f17331eb583e,压缩机数量,,screw_chiller,hvac::performance_spec:压缩机数量,hvac:screw_chiller:performance_spec:压缩机数量_2,doc_71aa56acd1254dec,09_麦克维尔单螺杆式冷水机组_WMD.pdf
+ko_cc9b120811ce9fc5,电机配置功率,,centrifugal_chiller,hvac::performance_spec:电机配置功率,hvac:centrifugal_chiller:performance_spec:电机配置功率_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_cd7cc61636180a49,输入功率-制冷,,ahu,hvac::performance_spec:输入功率_制冷,hvac:ahu:performance_spec:输入功率_制冷_2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_cdb55f1b6e80b40d,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_12,hvac:screw_chiller:performance_spec:制冷量_9,doc_fd0c92db05ea4570,MC系列H高效空气源螺杆式热泵机组.pdf
+ko_ce947e83849eadce,冷凝器冷却水水流量 m³/h,,screw_chiller,hvac::performance_spec:冷凝器冷却水水流量_m_h,hvac:screw_chiller:performance_spec:冷凝器冷却水水流量_m_h_2,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_ceb9f67c9d390773,额定供热量,,ahu,hvac::performance_spec:额定供热量,hvac:ahu:performance_spec:额定供热量_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_cec07190fcca016c,冷凝器源水水流量,,screw_chiller,hvac::performance_spec:冷凝器源水水流量_冷凝器源水水流量_2,hvac:screw_chiller:performance_spec:冷凝器源水水流量_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_cec1f4977a24d9b6,名义工况下制热负载侧进水温度,,screw_chiller,hvac::performance_spec:名义工况下制热负载侧进水温度,hvac:screw_chiller:performance_spec:名义工况下制热负载侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_cf473778256bcc17,冷冻水出水温度,,screw_chiller,hvac::performance_spec:hvac::performance_spec:冷冻水出水温度,hvac:screw_chiller:performance_spec:冷冻水出水温度_2,doc_bc457b67453f492b,07_麦克维尔单螺杆式冷水机组_WHS.B、HHS.B.pdf
+ko_d06325bf61b17afa,制热输入功率,,water_source_heat_pump,hvac::performance_spec:制热输入功率_制热输入功率_4,hvac:water_source_heat_pump:performance_spec:制热输入功率_3,doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf
+ko_d06ab7bed3218be4,外壳厚度,,screw_chiller,hvac::performance_spec:外壳厚度,hvac:screw_chiller:performance_spec:外壳厚度_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_d0a71ee484234a85,管材料,,screw_chiller,hvac::performance_spec:管材料,hvac:screw_chiller:performance_spec:管材料_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_d12a0c0caee78210,加湿器功率,,ahu,hvac::performance_spec:加湿器功率,hvac:ahu:performance_spec:加湿器功率_2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_d154d2f0dfdb0532,机组额定电流,,screw_chiller,hvac::performance_spec:机组额定电流_机组额定电流,hvac:screw_chiller:performance_spec:机组额定电流_2,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_d1d7008d6881f4b2,制冷剂最大工作压力,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷剂最大工作压力,hvac:air_cooled_modular_heat_pump:performance_spec:制冷剂最大工作压力_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_d2046a073ad92d60,R134a充注量,,water_source_heat_pump,hvac::performance_spec:r134a充注量_r134a充注量_2,hvac:water_source_heat_pump:performance_spec:r134a充注量_2,doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf
+ko_d2120e93d4edee95,蒸发器负载侧水流量,,water_source_heat_pump,hvac::performance_spec:蒸发器负载水水流量_蒸发器负载侧水流量,hvac:water_source_heat_pump:performance_spec:蒸发器负载侧水流量_2,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf
+ko_d2e1d1e67c798350,制热干球温度,,screw_chiller,hvac::performance_spec:制热干球温度,hvac:screw_chiller:performance_spec:制热干球温度,doc_727ebd66b2914838,风冷螺杆201103.pdf
+ko_d2e45b8b996a3230,制热最大运行工况 冷媒水进水温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制热最大运行工况_冷媒水进水温度,hvac:air_cooled_modular_heat_pump:performance_spec:制热最大运行工况_冷媒水进水温度_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_d3cdbec08914f92c,机组水侧标准设计压力,,screw_chiller,hvac::performance_spec:机组水侧标准设计压力_机组水侧标准设计压力,hvac:screw_chiller:performance_spec:机组水侧标准设计压力_3,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_d57a796d38e1770b,制冷最大运行工况 额定功率,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_额定功率,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_额定功率_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_d57c9e8c77f4bf8b,噪声,,screw_chiller,hvac::performance_spec:key_5ad6e8ac01,hvac:screw_chiller:performance_spec:噪声,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_d64f2aa5314f04a1,机外余压 (I),,ahu,hvac::performance_spec:机外余压_i,hvac:ahu:performance_spec:机外余压_i_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_d6f60d5923978a90,名义工况下，机组全热回收源水侧进水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组全热回收源水侧进水温度,hvac:screw_chiller:performance_spec:名义工况下_机组全热回收源水侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_d7126a5fca397faa,耗电量,,water_source_heat_pump,hvac::performance_spec:耗电量_耗电量,hvac:water_source_heat_pump:performance_spec:耗电量_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_d7b10bdfdfe870fd,制热能效比COP,,screw_chiller,hvac::performance_spec:制热能效比cop,hvac:screw_chiller:performance_spec:制热能效比cop,doc_9773977431814c79,干式风冷螺杆式冷（热）水机组.pdf
+ko_d94d96b8f75dc17f,名义工况 余热回收 生活热水进水温度,,screw_chiller,hvac::performance_spec:名义工况_余热回收_生活热水进水温度,hvac:screw_chiller:performance_spec:名义工况_余热回收_生活热水进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_d9b90bb6ed76754b,供热热水进水温度,,ahu,hvac::performance_spec:供热热水进水温度,hvac:ahu:performance_spec:供热热水进水温度,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_d9f823b153e27b57,全热回收换热器可选制热量,,screw_chiller,hvac::performance_spec:全热回收换热器可选制热量,hvac:screw_chiller:performance_spec:全热回收换热器可选制热量_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_db436b3c7ef8837f,运行重量,,screw_chiller,hvac::performance_spec:运输重量_运行重量,hvac:screw_chiller:performance_spec:运行重量_3,doc_14e954d4563b4a1b,R134a满液螺杆机组.pdf
+ko_dbc6e9ba7acfb353,冷凝水管管径,,ahu,hvac::performance_spec:冷凝水管管径,hvac:ahu:performance_spec:冷凝水管管径_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_dcf57fe93db64dc0,空调制热消耗功率,,air_cooled_modular_heat_pump,hvac::performance_spec:空调制热消耗功率,hvac:air_cooled_modular_heat_pump:performance_spec:空调制热消耗功率_2,doc_94991c16146a4c55,风冷冷水（热泵）空调热水机组2015JC13--CGHR12BH.pdf
+ko_dd1773997971257c,制冷最大运行工况 湿球温度,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷最大运行工况_干球温度_制冷最大运行工况_湿球温度,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_湿球温度_2,doc_d91d6f2fd782435a,风冷冷水(热泵)机组06001-2015LK1868--CGHR16BNAR--A2015CCC0703-2136902.pdf
+ko_dd18ff8c0945b845,名义工况下制热源水侧进水温度,,screw_chiller,hvac::performance_spec:名义工况下制热源水侧进水温度,hvac:screw_chiller:performance_spec:名义工况下制热源水侧进水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_dd625848fa5964d4,名义工况下，机组制冷冷冻水出水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组制冷冷冻水出水温度,hvac:screw_chiller:performance_spec:名义工况下_机组制冷冷冻水出水温度,doc_fd82ea40997c436d,10.10水冷螺杆式冷水机组满液r22E系列mswv0..pdf
+ko_de28f95d0eac8617,制热水实测工况_终止水温,,air_cooled_modular_heat_pump,hvac::performance_spec:制热水实测工况_终止水温,hvac:air_cooled_modular_heat_pump:performance_spec:制热水实测工况_终止水温,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_de98a59d2099b83f,满载电流,,screw_chiller,hvac::performance_spec:hvac::performance_spec:满载电流,hvac:screw_chiller:performance_spec:满载电流_2,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_deaaa72562b935a8,热泵制热名义工况使用侧出口水温,,centrifugal_chiller,hvac::performance_spec:热泵制热名义工况使用侧出口水温,hvac:centrifugal_chiller:performance_spec:热泵制热名义工况使用侧出口水温,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_ded7afa0007a7797,名义制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:名义制冷量_名义制冷量,hvac:screw_chiller:performance_spec:名义制冷量_4,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_def8f3bcb0286c28,名义工况下，机组制冷负载侧进出水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组制冷负载侧进出水温度,hvac:screw_chiller:performance_spec:名义工况下_机组制冷负载侧进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_df29995b141df49e,最大启动电流(热回收工况45℃),,water_source_heat_pump,hvac::performance_spec:最大启动电流_热回收工况45,hvac:water_source_heat_pump:performance_spec:最大启动电流_热回收工况45_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_dfb0b8d4da3b2e40,水阻力 (立式),,ahu,hvac::performance_spec:水阻力_立式,hvac:ahu:performance_spec:水阻力_立式_2,doc_70d93ac2ac9c4fd4,美意空气处理机组7.9-2ok_OEM.pdf
+ko_e0286f9166d38ffb,名义制冷输入电流,,air_cooled_modular_heat_pump,hvac::performance_spec:名义制冷输入电流,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷输入电流_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_e051121b1addd521,性能系数 COP,,water_source_heat_pump,hvac::performance_spec:性能系数_cop,hvac:water_source_heat_pump:performance_spec:性能系数_cop_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_e0bdfd32498d0944,加湿器混风进风工况,,ahu,hvac::performance_spec:加湿器混风进风工况,hvac:ahu:performance_spec:加湿器混风进风工况_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_e101f628738c63a1,热泵制热融霜工况使用侧出口水温,,centrifugal_chiller,hvac::performance_spec:热泵制热融霜工况使用侧出口水温,hvac:centrifugal_chiller:performance_spec:热泵制热融霜工况使用侧出口水温,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_e1c18677570a9686,制冷剂充灌量,,water_source_heat_pump,hvac::performance_spec:制冷剂充灌量,hvac:water_source_heat_pump:performance_spec:制冷剂充灌量,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_e21a552c6fc5cf44,热回收水进出水管外径,,water_source_heat_pump,hvac::performance_spec:冷冻水进出水管外径_热回收水进出水管外径,hvac:water_source_heat_pump:performance_spec:热回收水进出水管外径,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_e21ab76657f29980,名义工况下，机组余热回收生活热水进出水温度,,screw_chiller,hvac::performance_spec:名义工况下_机组余热回收生活热水进出水温度,hvac:screw_chiller:performance_spec:名义工况下_机组余热回收生活热水进出水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_e21ed462f1618aad,机组星型起动电流,,centrifugal_chiller,hvac::performance_spec:机组星型起动电流,hvac:centrifugal_chiller:performance_spec:机组星型起动电流_2,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_e2a2a55caebca4c7,制热水制热量,,air_cooled_modular_heat_pump,hvac::performance_spec:制热水制热量,hvac:air_cooled_modular_heat_pump:performance_spec:制热水制热量_2,doc_85ced8934a4e4cad,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf
+ko_e37108bae3a8c036,标准工况: 出水温度,,ahu,hvac::performance_spec:标准工况_出水温度,hvac:ahu:performance_spec:标准工况_出水温度_2,doc_4e98e79467814520,空气处理机组（超薄吊顶_青锋系列）p-MAH-V1.1-P.pdf
+ko_e39a2781474430d6,名义工况下，机组制热源水侧进/出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_机组制热源水侧进_出水温度,hvac:water_source_heat_pump:performance_spec:名义工况下_机组制热源水侧进_出水温度_2,doc_25cd05f610454bae,p-mwh-1212-v1.1-d青干系列水水螺杆式水源热泵冷水机组满液134a青干系列.pdf
+ko_e3a8fa0d561b0e9d,制冷量,,centrifugal_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_11,hvac:centrifugal_chiller:performance_spec:制冷量_2,doc_2f81c916e5184295,MC-H系列高效降膜式离心机样本DJ-17-LA-01A.pdf
+ko_e4847b1af224dca6,热泵制热最大负荷工况热泵侧进口水温,,centrifugal_chiller,hvac::performance_spec:热泵制热最大负荷工况热泵侧进口水温,hvac:centrifugal_chiller:performance_spec:热泵制热最大负荷工况热泵侧进口水温,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_e4bca7befcd6df6c,重量,,ahu,hvac::performance_spec:key_0a4f2ecb1c,hvac:ahu:performance_spec:重量,doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf
+ko_e56480fb35da00a7,冷却水进水温度波动速率,,screw_chiller,hvac::performance_spec:冷却水进水温度波动速率,hvac:screw_chiller:performance_spec:冷却水进水温度波动速率_2,doc_552685ec8e6f4d83,螺杆机PFS-C007_CH1707-3000-A（新）.pdf
+ko_e632a6b6d761aa37,供热热水出水温度,,ahu,hvac::performance_spec:供热热水出水温度,hvac:ahu:performance_spec:供热热水出水温度,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_e6540b5e5332edc7,电机最大运行电流,,centrifugal_chiller,hvac::performance_spec:电机最大运行电流,hvac:centrifugal_chiller:performance_spec:电机最大运行电流_2,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_e6805c75dc1a4431,制冷输入功率,,screw_chiller,hvac::performance_spec:制冷输入功率_制冷输入功率_4,hvac:screw_chiller:performance_spec:制冷输入功率_4,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_e6e2a73b80ae337b,制冷最大运行工况 电压,,air_cooled_modular_heat_pump,hvac::performance_spec:额定电压_制冷最大运行工况_电压,hvac:air_cooled_modular_heat_pump:performance_spec:制冷最大运行工况_电压_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_e721beb2ceeed964,名义使用电源,,air_cooled_modular_heat_pump,hvac::performance_spec:名义使用电源,hvac:air_cooled_modular_heat_pump:performance_spec:名义使用电源_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_e73a1addefc6bc4c,供冷进水温度,,ahu,hvac::performance_spec:供冷进水温度,hvac:ahu:performance_spec:供冷进水温度,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_e76c9eecf3ad50bb,制热最大运行工况 额定电流,,air_cooled_modular_heat_pump,hvac::performance_spec:制热最大运行工况_额定电流,hvac:air_cooled_modular_heat_pump:performance_spec:制热最大运行工况_额定电流_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_e79227e87ee42742,冷凝器水压降,,screw_chiller,hvac::performance_spec:冷凝器水压降_冷凝器水压降_4,hvac:screw_chiller:performance_spec:冷凝器水压降_4,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_e9cacf61d604e427,盘管迎面风速,,ahu,hvac::performance_spec:盘管迎面风速,hvac:ahu:performance_spec:盘管迎面风速_2,doc_385b11a445794b02,VAC-2401-组合式空调机组.pdf
+ko_ea6284dcda3e2b0e,温度控制,,screw_chiller,hvac::performance_spec:温度控制,hvac:screw_chiller:performance_spec:温度控制_2,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_ea748b0ef9e4e0e3,制冷能效 COP,,screw_chiller,hvac::performance_spec:制冷能效_cop,hvac:screw_chiller:performance_spec:制冷能效_cop,doc_e0e2301451824224,满液式水地源螺杆热泵机组.pdf
+ko_eacafc0700cfcde2,蒸发器水流量,,water_source_heat_pump,hvac::performance_spec:蒸发器水流量,hvac:water_source_heat_pump:performance_spec:蒸发器水流量,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_eb13c84bd93a04e3,制热量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:制热量_制热量_9,hvac:water_source_heat_pump:performance_spec:制热量_4,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf
+ko_eb58fd2eb3b239dc,制冷剂类型,,ahu,hvac::performance_spec:制冷剂类型,hvac:ahu:performance_spec:制冷剂类型_2,doc_2c3038ab09db452e,VAC-VAVM-2401-直流变频直膨组合式空气处理机组.pdf
+ko_ec915c965a3ae089,最低运行噪音,,ahu,hvac::performance_spec:最低运行噪音_最低运行噪音,hvac:ahu:performance_spec:最低运行噪音_2,doc_ae0d6a9533d64270,quanrejioahuanqi.pdf
+ko_edd20f9e8cd191af,名义工况 余热回收 生活热水出水温度,,screw_chiller,hvac::performance_spec:名义工况_余热回收_生活热水出水温度,hvac:screw_chiller:performance_spec:名义工况_余热回收_生活热水出水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_ee378d891626febd,电压波动范围,,screw_chiller,hvac::performance_spec:hvac::performance_spec:电压波动范围,hvac:screw_chiller:performance_spec:电压波动范围,doc_988e2416d642411c,06_麦克维尔单螺杆式冷水机组_PFS.XE.pdf
+ko_ee5579b7f23825bd,名义制热输入电流,,air_cooled_modular_heat_pump,hvac::performance_spec:名义制热输入电流,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热输入电流_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_eea19d99eb96273c,湿球温度,,ahu,hvac::performance_spec:湿球温度,hvac:ahu:performance_spec:湿球温度_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_eeb8a7604136f7df,输入功率,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:输入功率_输入功率_7,hvac:water_source_heat_pump:performance_spec:输入功率,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_eecb56a65f0b33ef,蓄冰输入功率,,centrifugal_chiller,hvac::performance_spec:蓄冰输入功率,hvac:centrifugal_chiller:performance_spec:蓄冰输入功率_2,doc_a856524d7a9045e3,MC系列高效降膜离心机组.pdf
+ko_eef6f6f179756406,制冷计算工况,,ahu,hvac::performance_spec:制冷计算工况,hvac:ahu:performance_spec:制冷计算工况_2,doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf
+ko_ef1f2ffc7b868f3b,名义工况 制热源侧进水温度,,screw_chiller,hvac::performance_spec:名义工况_制热源侧进水温度,hvac:screw_chiller:performance_spec:名义工况_制热源侧进水温度_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_ef7149c6dda1ffa6,折流板数,,air_cooled_modular_heat_pump,hvac::performance_spec:折流板数,hvac:air_cooled_modular_heat_pump:performance_spec:折流板数_2,doc_241df464e7ea41df,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf
+ko_ef851f5b2725f90c,冷却水流量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:冷却水流量_冷却水流量,hvac:screw_chiller:performance_spec:冷却水流量_3,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_ef9d18f83b24925f,机组运行重量kg,,screw_chiller,hvac::performance_spec:机组运行重量_机组运行重量kg,hvac:screw_chiller:performance_spec:机组运行重量kg,doc_9b62f6bb79334703,水冷螺杆式冷水机组满液r22E系列P-MSW-1310-V1.3-P.pdf
+ko_efe488bdbcc63938,输入功率,,screw_chiller,hvac::performance_spec:hvac::performance_spec:输入功率_输入功率_5,hvac:screw_chiller:performance_spec:输入功率_4,doc_fd0c92db05ea4570,MC系列H高效空气源螺杆式热泵机组.pdf
+ko_eff82db5737a9c85,名义工况制冷源水侧进出水温度,,screw_chiller,hvac::performance_spec:名义工况制冷源水侧进出水温度,hvac:screw_chiller:performance_spec:名义工况制冷源水侧进出水温度_2,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_f035c715283cde38,制冷量,,centrifugal_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_10,hvac:centrifugal_chiller:performance_spec:制冷量_3,doc_61856ab3e0514e0a,MC系列高效变频离心机样本DJ-17-LC-01A.pdf
+ko_f0a66f0522314dd5,冷冻水压降,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:冷冻水压降_冷冻水压降_2,hvac:water_source_heat_pump:performance_spec:冷冻水压降,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_f0e422ecd081950b,电源侧运转电流,,water_source_heat_pump,hvac::performance_spec:电源侧运转电流,hvac:water_source_heat_pump:performance_spec:电源侧运转电流_2,doc_5faa3373b945486d,ETW离心高温水源热泵技术手册（73页）.pdf
+ko_f110689793022715,加湿量,,ahu,hvac::performance_spec:hvac::performance_spec:加湿量_加湿量_2,hvac:ahu:performance_spec:加湿量_2,doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf
+ko_f11eee1e37c28392,能效等级,,screw_chiller,hvac::performance_spec:能效等级,hvac:screw_chiller:performance_spec:能效等级_2,doc_c964d83ab5794b32,H-A高效降膜定频螺杆.pdf
+ko_f1b8c21ed99559b4,热回收量,,water_source_heat_pump,hvac::performance_spec:热回收量,hvac:water_source_heat_pump:performance_spec:热回收量_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_f30403e331e09e20,制冰输入功率,,screw_chiller,hvac::performance_spec:制冰输入功率,hvac:screw_chiller:performance_spec:制冰输入功率,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_f33342be04129a17,WPS.CDFST启动范围 - 冷却水出水温度,,water_source_heat_pump,hvac::performance_spec:wps_cdfst启动范围_冷却水出水温度,hvac:water_source_heat_pump:performance_spec:wps_cdfst启动范围_冷却水出水温度,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_f3b9c2b4407f0d94,运行重量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:运行重量_运行重量,hvac:screw_chiller:performance_spec:运行重量_4,doc_809485234940447b,03_麦克维尔单螺杆式冷水机组_PFS.pdf
+ko_f3dff973c58867a6,运行重量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:运行重量_运行重量_2,hvac:screw_chiller:performance_spec:运行重量_5,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_f46194e2bc9735bf,比热,,screw_chiller,hvac::performance_spec:key_0483d36dd4,hvac:screw_chiller:performance_spec:比热,doc_552685ec8e6f4d83,螺杆机PFS-C007_CH1707-3000-A（新）.pdf
+ko_f4a038a768f6a1a1,水量,,ahu,hvac::performance_spec:水流量_key_9977379a94,hvac:ahu:performance_spec:水量_2,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_f4e07a94eb535a34,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_6,hvac:screw_chiller:performance_spec:制冷量_10,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_f4fd49994047e692,制冷量,,air_cooled_modular_heat_pump,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_18,hvac:air_cooled_modular_heat_pump:performance_spec:制冷量,doc_182078164f644141,风冷冷水（热泵）空调热水机组2015JC16--CGHR14BH.pdf
+ko_f52229c54444cb81,承重重量,,air_cooled_modular_heat_pump,hvac::performance_spec:承重重量,hvac:air_cooled_modular_heat_pump:performance_spec:承重重量_2,doc_9650969ce6cb4585,风冷冷水(热泵)机组06001-2015LK1870--CGHR12BNAR--A2015CCC0703-2136900 (1).pdf
+ko_f5440db8d8bbfa84,额定功耗,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:额定功耗,hvac:water_source_heat_pump:performance_spec:额定功耗_2,doc_5faa3373b945486d,ETW离心高温水源热泵技术手册（73页）.pdf
+ko_f573481b14d4d884,功率,,ahu,hvac::performance_spec:key_a89cb40064,hvac:ahu:performance_spec:功率,doc_37a7f7eb789048cc,5-吊顶热回收空气处理机组.pdf
+ko_f5f9e8b5ccb1c6b0,余热回收 制热量,,screw_chiller,hvac::performance_spec:余热回收_制热量,hvac:screw_chiller:performance_spec:余热回收_制热量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_f601570189eb9382,全热回收 水流量,,screw_chiller,hvac::performance_spec:全热回收_水流量,hvac:screw_chiller:performance_spec:全热回收_水流量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_f6a5b950b7440ead,全热回收换热器可选 水流量,,screw_chiller,hvac::performance_spec:全热回收换热器可选_水流量,hvac:screw_chiller:performance_spec:全热回收换热器可选_水流量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_f6ca3fab0de3eb64,制冷回路吸气侧和排气侧的允许工作过压,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷回路吸气侧和排气侧的允许工作过压,hvac:air_cooled_modular_heat_pump:performance_spec:制冷回路吸气侧和排气侧的允许工作过压_2,doc_ced95095a3c74169,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf
+ko_f6dbdacc9843329e,供电电压,,screw_chiller,hvac::performance_spec:供电电压,hvac:screw_chiller:performance_spec:供电电压_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_f7180b544e61aa94,蒸发器水压降,,screw_chiller,hvac::performance_spec:蒸发器水压降_蒸发器水压降_3,hvac:screw_chiller:performance_spec:蒸发器水压降_4,doc_9ed23ce5a2854e7c,0910_XH3水水螺杆C.pdf
+ko_f786e5cd80c22e44,标准工况: 进水温度,,ahu,hvac::performance_spec:标准工况_进水温度,hvac:ahu:performance_spec:标准工况_进水温度_2,doc_4e98e79467814520,空气处理机组（超薄吊顶_青锋系列）p-MAH-V1.1-P.pdf
+ko_f78edeed9bcb0fd9,输入功率,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:输入功率_输入功率_2,hvac:water_source_heat_pump:performance_spec:输入功率_2,doc_bd77ca88132e4b0a,03_麦克维尔单螺杆式水源热泵机组(R134a)_WPS.pdf
+ko_f808aae9311ff221,名义工况全热回收源水侧进水温度,,water_source_heat_pump,hvac::performance_spec:名义工况全热回收源水侧进水温度,hvac:water_source_heat_pump:performance_spec:名义工况全热回收源水侧进水温度_2,doc_0e16ceb13bee492b,MWH1109XH01水水螺杆式水源热泵机组（c系列R134a）_11.9.14-1.pdf
+ko_f81251ac89a55229,风机类型,,centrifugal_chiller,hvac::performance_spec:风机类型,hvac:centrifugal_chiller:performance_spec:风机类型,doc_63f0bd02957d4722,超薄吊顶式空气处理机组MPAXH10.pdf
+ko_f86bb3baafc99182,电压相不平衡,,centrifugal_chiller,hvac::performance_spec:电压相不平衡,hvac:centrifugal_chiller:performance_spec:电压相不平衡,doc_6de9539b3c82422e,10_麦克维尔两级压缩离心式冷水机组_WTC.pdf
+ko_f87dce2d7b483c21,热泵制热最大负荷工况使用侧出口水温,,centrifugal_chiller,hvac::performance_spec:热泵制热最大负荷工况使用侧出口水温,hvac:centrifugal_chiller:performance_spec:热泵制热最大负荷工况使用侧出口水温,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_fa62d53216cb84c3,加湿器新风工况,,ahu,hvac::performance_spec:加湿器新风工况,hvac:ahu:performance_spec:加湿器新风工况_2,doc_6a66ce78e29e4d84,VAE-2404-组合式空调机组-落地系列.pdf
+ko_fac909125a230dda,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_4,hvac:screw_chiller:performance_spec:制冷量_11,doc_34e59fab0b494f7d,08_麦克维尔单螺杆式冷水机组_WHS.C.pdf
+ko_fb3a8e3dc9fbb89f,R134a充注量,,screw_chiller,hvac::performance_spec:r134a充注量_r134a充注量,hvac:screw_chiller:performance_spec:r134a充注量_2,doc_308d5eac93674c21,090507辰星二代水源螺杆R134a.pdf
+ko_fb654e296e786799,fan balancing,,ahu,hvac::performance_spec:fan_balancing,hvac:ahu:performance_spec:fan_balancing_2,doc_caaa2ea18c4a49de,daikin_ah_models_ahu_technical_catalog_air_handling_unit_ah_models_pdf.pdf
+ko_fb6553876a974712,电机星三角转换电流,,centrifugal_chiller,hvac::performance_spec:电机星三角转换电流,hvac:centrifugal_chiller:performance_spec:电机星三角转换电流_2,doc_61856ab3e0514e0a,MC系列高效变频离心机样本DJ-17-LC-01A.pdf
+ko_fbd36419a2a54959,最高出水温度,,water_source_heat_pump,hvac::performance_spec:名义工况下_生活热水出水温度_最高出水温度,hvac:water_source_heat_pump:performance_spec:最高出水温度_2,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_fc4416345e549612,实用制热输入功率,,screw_chiller,hvac::performance_spec:实用制热输入功率,hvac:screw_chiller:performance_spec:实用制热输入功率_2,doc_e2b7a25c54bb445c,MWH1109XH01水水螺杆冷水机组（C系列R22）.pdf
+ko_fcf01eadef9334c3,热水进/出水温度,,ahu,hvac::performance_spec:热水进_出水温度,hvac:ahu:performance_spec:热水进_出水温度,doc_f97a69993a6e4511,VAH-2405-空气处理机组一吊顶系列.pdf
+ko_fd08200d99c79993,密度,,screw_chiller,hvac::performance_spec:key_f90554a29e,hvac:screw_chiller:performance_spec:密度,doc_552685ec8e6f4d83,螺杆机PFS-C007_CH1707-3000-A（新）.pdf
+ko_fd902d64201b8b18,机身厚度,,ahu,hvac::performance_spec:机身厚度,hvac:ahu:performance_spec:机身厚度_2,doc_ae0d6a9533d64270,quanrejioahuanqi.pdf
+ko_fdda3fbe6156dd39,油分离效率,,screw_chiller,hvac::performance_spec:油分离效率,hvac:screw_chiller:performance_spec:油分离效率_2,doc_aa52339cfea4496c,高效降膜变频水冷螺杆.pdf
+ko_fe42461dc862c81d,制冷名义工况使用侧出口水温,,centrifugal_chiller,hvac::performance_spec:制冷名义工况使用侧出口水温,hvac:centrifugal_chiller:performance_spec:制冷名义工况使用侧出口水温_2,doc_9cd6680a1a704130,CC系列离心机组.pdf
+ko_fe64ebf9ef6846c3,温度效率（冷）,,ahu,hvac::performance_spec:温度效率_冷,hvac:ahu:performance_spec:温度效率_冷_2,doc_ae0d6a9533d64270,quanrejioahuanqi.pdf

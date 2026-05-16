@@ -1,0 +1,9 @@
+knowledge_object_id,title,old_ontology_class_id,new_ontology_class_id,old_canonical_key,new_canonical_key,primary_doc_id,primary_file_name
+ko_11becc6d84e45ec3,制冷量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_17,hvac:water_source_heat_pump:performance_spec:制冷量,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf
+ko_2a48a81c382ba634,制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:制冷量_制冷量_16,hvac:screw_chiller:performance_spec:制冷量_2,doc_9773977431814c79,干式风冷螺杆式冷（热）水机组.pdf
+ko_33a96a59e127e69a,名义制热量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:名义制热量_名义制热量,hvac:screw_chiller:performance_spec:名义制热量_2,doc_14e744733fa547fb,MAS风冷螺杆样本.pdf
+ko_4e94733f46e8b8a1,名义制冷量,,screw_chiller,hvac::performance_spec:hvac::performance_spec:名义制冷量_名义制冷量_3,hvac:screw_chiller:performance_spec:名义制冷量,doc_b9f6ab162a964ef3,7，水冷螺杆冷水.pdf
+ko_4f473c89ca544582,水流量,,water_source_heat_pump,hvac::performance_spec:水流量_水流量_5,hvac:water_source_heat_pump:performance_spec:水流量,doc_ca9bf7b44c414517,满液螺杆式水地源热泵样本DJ-17-CD-01A.pdf
+ko_591ae739b27c71b9,制冷额定总输入功率,,air_cooled_modular_heat_pump,hvac::performance_spec:制冷额定总输入功率,hvac:air_cooled_modular_heat_pump:performance_spec:制冷额定总输入功率_2,doc_241df464e7ea41df,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf
+ko_6718ae939ea97fff,最大允许压力,,screw_chiller,hvac::performance_spec:最大允许压力,hvac:screw_chiller:performance_spec:最大允许压力_2,doc_9c740929db094ed8,水冷低温螺杆式冷水机组手册.pdf
+ko_eb13c84bd93a04e3,制热量,,water_source_heat_pump,hvac::performance_spec:hvac::performance_spec:制热量_制热量_9,hvac:water_source_heat_pump:performance_spec:制热量_4,doc_5c7b31cc79e0467a,莫问系列R134a满液式水水螺杆水源热泵冷水机组样本.pdf

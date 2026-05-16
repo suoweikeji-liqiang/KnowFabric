@@ -76,11 +76,11 @@ def test_agreed_values_still_return_agreed():
 
 def test_retag_report_is_idempotent():
     rows = [
-        {"knowledge_object_id": "ko_a", "consensus_state": "material_conflict", "authority_summary_json": {"layers": [
+        {"knowledge_object_id": "ko_a", "ontology_class_id": "centrifugal_chiller", "canonical_key": "hvac:centrifugal_chiller:fault:油温高报警", "consensus_state": "material_conflict", "authority_summary_json": {"layers": [
             _layer("油温高报警", "80℃", "A", unit="℃", summary="oil system"),
             _layer("油温高报警", "75℃", "B", unit="℃", summary="oil system"),
         ]}},
-        {"knowledge_object_id": "ko_b", "consensus_state": "value_disagreement", "authority_summary_json": {"layers": [
+        {"knowledge_object_id": "ko_b", "ontology_class_id": "centrifugal_chiller", "canonical_key": "hvac:centrifugal_chiller:fault:油温高报警_2", "consensus_state": "value_disagreement", "authority_summary_json": {"layers": [
             _layer("油温高报警", "80℃", "A", unit="℃", summary="oil system"),
             _layer("油温高报警", "75℃", "B", unit="℃", summary="oil system"),
         ]}},

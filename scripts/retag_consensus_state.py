@@ -16,7 +16,7 @@ from sqlalchemy import text
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from packages.compiler.cross_source_merger import classify_conflicting_layers
+from packages.compiler.cross_source_merger import assert_valid_ko_identity, classify_conflicting_layers
 from packages.core.semantic_contract_v2 import ConsensusState
 from packages.db.session import SessionLocal
 
@@ -74,6 +74,7 @@ def retag_consensus_states(rows: list[dict[str, Any]], *, apply: bool = False) -
     output_rows = []
     counts: Counter[str] = Counter()
     for row in rows:
+        assert_valid_ko_identity(row, context=f"retag row {row.get('knowledge_object_id')}")
         old_state = str(row.get("consensus_state") or "")
         new_state = _retag_state(row)
         counts[new_state] += 1
