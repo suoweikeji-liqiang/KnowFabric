@@ -1,0 +1,40 @@
+ko_id,ontology_class,type,title,canonical_key,layers,publisher,source_name,value_summary,evidence_text,audit_verdict
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,电源,hvac:screw_chiller:parameter:power_supply,6,麦克维尔,电源,电源,电源为380V/3N~/50Hz,likely_true_value_conflict
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,电源,hvac:screw_chiller:parameter:power_supply,6,麦克维尔,电源,电源,机组电源为380V/3N~/50Hz。,likely_true_value_conflict
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,电源,hvac:screw_chiller:parameter:power_supply,6,麦克维尔,电源,电源,电源 380V/3N~/50Hz,likely_true_value_conflict
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,电源,hvac:screw_chiller:parameter:power_supply,6,顿汉布什,Power supply,Power supply,Power supply is 380V/3φ/50Hz.,likely_true_value_conflict
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,电源,hvac:screw_chiller:parameter:power_supply,6,麦克维尔,电源,3相380V、50Hz,电源为3相380V、50Hz；电压波动±10%，频率波动±5%，电压不平衡度5%以内。,likely_true_value_conflict
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,电源,hvac:screw_chiller:parameter:power_supply,6,麦克维尔,Power supply,Power supply,"Power supply: 380V, 50Hz, 3-phase.",likely_true_value_conflict
+ko_0d07e38beb2cde12,centrifugal_chiller,performance_spec,制冷量,hvac:centrifugal_chiller:performance_spec:制冷量,5,McQuay,制冷量,1385.5kW,制冷量 kW 1385.5,likely_true_value_conflict_model_capacity
+ko_0d07e38beb2cde12,centrifugal_chiller,performance_spec,制冷量,hvac:centrifugal_chiller:performance_spec:制冷量,5,McQuay,制冷量,1028.2kW,制冷量 kW 1028.2,likely_true_value_conflict_model_capacity
+ko_0d07e38beb2cde12,centrifugal_chiller,performance_spec,制冷量,hvac:centrifugal_chiller:performance_spec:制冷量,5,McQuay,制冷量,1196.2kW,制冷量 kW 1196.2,likely_true_value_conflict_model_capacity
+ko_0d07e38beb2cde12,centrifugal_chiller,performance_spec,制冷量,hvac:centrifugal_chiller:performance_spec:制冷量,5,特灵,制冷量,制冷量,CVHE/G冷水机组常规工况制冷量范围400~1400冷吨。,likely_true_value_conflict_model_capacity
+ko_0d07e38beb2cde12,centrifugal_chiller,performance_spec,制冷量,hvac:centrifugal_chiller:performance_spec:制冷量,5,特灵,制冷量,制冷量,CDHG机组冷量范围2250~2600冷吨。,likely_true_value_conflict_model_capacity
+ko_37cb42dd46d6f20d,centrifugal_chiller,parameter_spec,供油温度范围,hvac:centrifugal_chiller:parameter:supply_oil_temperature_range,5,McQuay,供油温度范围,供油温度范围,温度控制阀控制油温在35ºC-41ºC之间,likely_true_value_conflict
+ko_37cb42dd46d6f20d,centrifugal_chiller,parameter_spec,供油温度范围,hvac:centrifugal_chiller:parameter:supply_oil_temperature_range,5,麦克维尔,供油温度范围,供油温度范围,供油温度在32°C-43°C范围之内,likely_true_value_conflict
+ko_37cb42dd46d6f20d,centrifugal_chiller,parameter_spec,供油温度范围,hvac:centrifugal_chiller:parameter:supply_oil_temperature_range,5,格力,供油温度,供油温度,正常运行供油温度应稳定在35～50℃范围内。,likely_true_value_conflict
+ko_37cb42dd46d6f20d,centrifugal_chiller,parameter_spec,供油温度范围,hvac:centrifugal_chiller:parameter:supply_oil_temperature_range,5,格力,供油温度,供油温度,供油温度正常值为40～45℃,likely_true_value_conflict
+ko_37cb42dd46d6f20d,centrifugal_chiller,parameter_spec,供油温度范围,hvac:centrifugal_chiller:parameter:supply_oil_temperature_range,5,格力,供油温度调节范围,供油温度调节范围,运行中供油温度调节在40℃～46℃,likely_true_value_conflict
+ko_43f6959cb535869f,centrifugal_chiller,performance_spec,COP,hvac:centrifugal_chiller:performance_spec:cop,4,McQuay,COP,5.89,COP 5.89,likely_true_value_conflict_model_efficiency
+ko_43f6959cb535869f,centrifugal_chiller,performance_spec,COP,hvac:centrifugal_chiller:performance_spec:cop,4,McQuay,COP,5.96,COP 5.96,likely_true_value_conflict_model_efficiency
+ko_43f6959cb535869f,centrifugal_chiller,performance_spec,COP,hvac:centrifugal_chiller:performance_spec:cop,4,McQuay,COP,5.32,COP 5.32,likely_true_value_conflict_model_efficiency
+ko_43f6959cb535869f,centrifugal_chiller,performance_spec,COP,hvac:centrifugal_chiller:performance_spec:cop,4,特灵,COP,COP,CDHG机组在AHRI工况下COP可达7.0。,likely_true_value_conflict_model_efficiency
+ko_2fa16cc7f194aada,ahu,maintenance_procedure,防冻措施,hvac:ahu:maintenance:防冻措施,4,特灵,防冻措施,防冻措施,机组不使用的季节，必须及时将盘管内余水排尽，以防止冬季换热器铜管冻裂。,likely_clean_procedure_merge
+ko_2fa16cc7f194aada,ahu,maintenance_procedure,防冻措施,hvac:ahu:maintenance:防冻措施,4,美的,冬季防冻措施,冬季防冻措施,若需停机，必须保持盘管内供水连续流动并注入防冻液，且关闭新风阀。若长时间停运，应将盘管内的水放空。,likely_clean_procedure_merge
+ko_2fa16cc7f194aada,ahu,maintenance_procedure,防冻措施,hvac:ahu:maintenance:防冻措施,4,格力,冬季防冻操作,冬季防冻操作,冬季不运行时应放空表冷器内水并用压缩空气吹出存水，防止冻坏。,likely_clean_procedure_merge
+ko_2fa16cc7f194aada,ahu,maintenance_procedure,防冻措施,hvac:ahu:maintenance:防冻措施,4,unknown,冬季表冷器防冻,冬季表冷器防冻,冬季表冷器须排尽管内水，所有残留水都应吹去,likely_clean_procedure_merge
+ko_027e9a5b2270a5a8,screw_chiller,parameter_spec,制冷设计工况,hvac:screw_chiller:parameter:制冷设计工况,3,欧科,制冷设计工况,制冷设计工况,制冷设计工况：室外干球温度35℃，出水温度7℃，水流量0.172m3/(h·kW),needs_human_review
+ko_027e9a5b2270a5a8,screw_chiller,parameter_spec,制冷设计工况,hvac:screw_chiller:parameter:制冷设计工况,3,格力,制冷名义工况,出水温度7℃，干球温度35℃,制冷名义工况：出水温度7℃，空气侧干球温度35℃。,needs_human_review
+ko_027e9a5b2270a5a8,screw_chiller,parameter_spec,制冷设计工况,hvac:screw_chiller:parameter:制冷设计工况,3,格力,制冷运行范围,出水温度5～15℃，环境干球温度18～48℃,制冷运行范围：出水温度5～15℃，环境干球温度18～48℃。,needs_human_review
+ko_09bb986e1d228f3e,centrifugal_chiller,parameter_spec,电流限定设定点,hvac:centrifugal_chiller:parameter:电流限定设定点,3,York,电流限定设定点,50安培,电流限定设定点是50%，可计算如下：,needs_human_review_possible_overmerge
+ko_09bb986e1d228f3e,centrifugal_chiller,parameter_spec,电流限定设定点,hvac:centrifugal_chiller:parameter:电流限定设定点,3,Carrier,软停机电流极限值设定范围,"[40, 100]",设定范围为40%至100%,needs_human_review_possible_overmerge
+ko_09bb986e1d228f3e,centrifugal_chiller,parameter_spec,电流限定设定点,hvac:centrifugal_chiller:parameter:电流限定设定点,3,Carrier,软停机电流极限值设定范围,"[40, 100]",设定范围为40%至100%,needs_human_review_possible_overmerge
+ko_54faa91286e39dd5,screw_chiller,parameter_spec,制冷温度设置,hvac:screw_chiller:parameter:制冷温度设置,3,天加,制冷温度设置,制冷温度设置,冷冻水出水温度设定值，允许设置范围为6~12℃，出厂默认7℃。,likely_true_value_conflict
+ko_54faa91286e39dd5,screw_chiller,parameter_spec,制冷温度设置,hvac:screw_chiller:parameter:制冷温度设置,3,格力,冷冻水出水温度设定,冷冻水出水温度设定,制冷或低温模式下可设定冷冻水出水温度,likely_true_value_conflict
+ko_54faa91286e39dd5,screw_chiller,parameter_spec,制冷温度设置,hvac:screw_chiller:parameter:制冷温度设置,3,约克,冷冻水出口温度,冷冻水出口温度,标准空调机组冷冻水出口温度设定范围为4.5°C至15°C。,likely_true_value_conflict
+ko_60ba1c90c2584f3e,screw_chiller,operational_sequence,压缩机启停控制逻辑,hvac:screw_chiller:operational_sequence:压缩机启停控制逻辑,3,天加,压缩机启停控制逻辑,压缩机启停控制逻辑,机组根据冷热量需求自动启停压缩机，先启动累计运行时间最短的压缩机，当需求超过单台容量110%时启动第二台，并平衡容量。,needs_human_review
+ko_60ba1c90c2584f3e,screw_chiller,operational_sequence,压缩机启停控制逻辑,hvac:screw_chiller:operational_sequence:压缩机启停控制逻辑,3,麦克维尔,超前-滞后平衡,超前-滞后平衡,累计运行时间长的压缩机为超前压缩机先启动，负荷需求超过其制冷量时启动滞后压缩机；负荷减少至单台冷量时关闭滞后压缩机,needs_human_review
+ko_60ba1c90c2584f3e,screw_chiller,operational_sequence,压缩机启停控制逻辑,hvac:screw_chiller:operational_sequence:压缩机启停控制逻辑,3,麦克维尔,超前—滞后负荷平衡,超前—滞后负荷平衡,控制器自动超前运行时间少的压缩机，滞后启动运行时间长的压缩机。,needs_human_review
+ko_724b3ec6d034c43e,centrifugal_chiller,fault_code,启动过频报警,hvac:centrifugal_chiller:fault_code:启动过频报警,3,Carrier,启动过频报警,8次次/12小时,如果12小时内启动次数超过8次，会发出启动过频报警,likely_true_fault_merge_value_conflict
+ko_724b3ec6d034c43e,centrifugal_chiller,fault_code,启动过频报警,hvac:centrifugal_chiller:fault_code:启动过频报警,3,格力,频繁启停保护,频繁启停保护,12小时内开机次数超过8次时报警禁止启动,likely_true_fault_merge_value_conflict
+ko_724b3ec6d034c43e,centrifugal_chiller,fault_code,启动过频报警,hvac:centrifugal_chiller:fault_code:启动过频报警,3,格力,频繁启停禁止开机,频繁启停禁止开机,12小时内开机次数超过8次时报警，禁止启动。,likely_true_fault_merge_value_conflict

@@ -1,5 +1,501 @@
 # P0 Final Verification Report
 
+## 2026-05-15 NN Round: Section-Aware Retry for MM Failed Docs
+
+NN retried the 40 MM `extraction_failed` PDFs with `--section-aware` DeepSeek doc-level extraction. The smoke target, ASHRAE Guideline 36-2021, produced 140 anchored candidates from 7 sections, so the full retry proceeded. Non-PDF skipped rows from MM were not part of NN.
+
+Run artifacts:
+
+```text
+run_root = output/diagnostic/20260514T175511Z_nn_section_aware_failed_docs
+strategy_manifest = output/diagnostic/20260514T175511Z_nn_section_aware_failed_docs/failed_doc_strategy.csv
+retry_manifest = output/diagnostic/20260514T175511Z_nn_section_aware_failed_docs/manifests/nn_failed_40_section_aware_manifest.csv
+final_failed_docs = output/diagnostic/20260514T175511Z_nn_section_aware_failed_docs/final_failed_docs.csv
+section_min_heading_tokens = 24000
+section_max_tokens = 30000
+oracle = PASS
+```
+
+Processing outcome:
+
+```text
+completed_docs = 40/40
+failed_docs = 0
+review_candidates = 5543
+section_calls = 298
+total_tokens = 9,012,684
+actual_cost_rmb = ¥9.9382
+max_layers_global = 8
+degenerate_canonical_key = 0
+```
+
+Final SQL by ontology class:
+
+| ontology_class_id | total | cross_pub | max_layers |
+|---|---:|---:|---:|
+| `centrifugal_chiller` | 646 | 20 | 8 |
+| `ahu` | 430 | 0 | 8 |
+| `water_source_heat_pump` | 64 | 0 | 8 |
+| `chiller` | 60 | 0 | 5 |
+| `hot_water_plant` | 42 | 0 | 6 |
+| `screw_chiller` | 27 | 0 | 5 |
+| `variable_frequency_drive` | 8 | 0 | 2 |
+| `cooling_tower` | 1 | 0 | 1 |
+| `condenser_water_pump` | 1 | 0 | 2 |
+| `chilled_water_pump` | 1 | 0 | 2 |
+
+
+Cross-publisher sample after NN:
+
+| ontology_class_id | canonical_key | layers | publishers | consensus |
+|---|---|---:|---|---|
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:fault_code:key_20afb231fb` | 7 | Carrier,Gree,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:fault_code:key_90cab05c63` | 7 | Carrier,Gree,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:chilled_water_setpoint` | 7 | McQuay,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:key_46778a30cd` | 6 | Carrier,McQuay | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:fault_code:prestart_alert_low_line_voltage` | 5 | Carrier,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:fault_code:key_3c9e270d6a` | 4 | Carrier,Gree | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:key_b7acb73d44` | 4 | Carrier,York | partial_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:fault_code:key_ad1158e75e` | 3 | Carrier,McQuay,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:fault_code:key_ea3b6f9bfe` | 3 | Carrier,McQuay | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:fault_code:recycle_alert` | 3 | Carrier,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:fault_code:spare_sensor_alert` | 3 | Carrier,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:key_00a3b7daa5` | 3 | Carrier,McQuay | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:key_9d0ef7d66a` | 3 | Carrier,York | partial_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:key_f288bed573` | 3 | McQuay,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:psio_09` | 3 | Carrier,York | partial_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:performance_spec:key_33b527300b` | 3 | McQuay,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:key_69d0af87ee` | 2 | Carrier,McQuay | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:lcsss_x` | 2 | Carrier,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:minimum_capacity_limit` | 2 | Trane,York | material_conflict |
+| `centrifugal_chiller` | `hvac:centrifugal_chiller:parameter:supply_oil_temperature_range` | 2 | Gree,McQuay | agreed |
+
+
+NN conclusion:
+
+- Section-aware extraction fixed the MM failure mode: all 40 failed PDFs produced review packs and applied successfully.
+- Safety checks held: max layers stayed at 8 and degenerate canonical keys stayed at 0.
+- The growth target was not met: total KO ended at 1280, centrifugal_chiller cross_pub ended at 20, and AHU cross_pub stayed 0. The retry improved coverage but did not increase cross-publisher merging. The likely cause is data distribution and routing: most added standards are single-publisher standard material, and many ASHRAE sections routed into generic/support classes (`chiller`, `cooling_tower`, `condenser_water_pump`, `controller`) rather than matching existing OEM ontology classes.
+
+## 2026-05-15 MM Round: KEEP_TEXT Bulk Apply
+
+MM used `deepseek-parameter-spec` for the KEEP_TEXT bulk run after LL rejected MiMo for text manuals. No MiMo calls were used. The run applied successful review packs through the existing merger path and stopped on no apply failure.
+
+Run artifacts:
+
+```text
+run_root = output/diagnostic/20260514T163553Z_mm_keep_text_bulk
+subbatch_count = 15
+pre-final-regroup backup = /tmp/mm_final_regroup_pre_20260515T013838Z.sql
+failed_docs_csv = output/diagnostic/20260514T163553Z_mm_keep_text_bulk/failed_docs.csv
+final_summary = output/diagnostic/20260514T163553Z_mm_keep_text_bulk/mm_final_summary.json
+```
+
+Processing outcome:
+
+```text
+applied = 98
+extraction_failed = 40
+skipped = 2
+total_tokens = 3,898,494
+actual_cost_rmb = ¥4.2141
+oracle = PASS
+degenerate_canonical_key = 0
+max_layers_global = 8
+```
+
+Final SQL by ontology class:
+
+| ontology_class_id | total | cross_pub | max_layers |
+|---|---:|---:|---:|
+| `centrifugal_chiller` | 574 | 22 | 8 |
+| `ahu` | 464 | 0 | 8 |
+| `water_source_heat_pump` | 64 | 0 | 8 |
+| `chiller` | 64 | 0 | 7 |
+| `hot_water_plant` | 42 | 0 | 6 |
+| `screw_chiller` | 27 | 0 | 5 |
+| `variable_frequency_drive` | 8 | 0 | 2 |
+| `condenser_water_pump` | 1 | 0 | 2 |
+| `cooling_tower` | 1 | 0 | 1 |
+| `chilled_water_pump` | 1 | 0 | 2 |
+
+Expectation check:
+
+```text
+total_KO >= 2000: NOT MET (actual 1246)
+centrifugal_chiller cross_pub >= 60: NOT MET (actual 22)
+>=3 ontology_class with cross_pub > 0: NOT MET (actual 1)
+max_layers <= 12: PASS (actual 8)
+degenerate canonical_key = 0: PASS
+oracle PASS: PASS
+```
+
+Interpretation: the plumbing stayed stable, but production yield did not meet the growth target. The main blockers were 40 extraction failures and 2 unsupported file skips, concentrated in oversized standards/GB/AHRI PDFs and non-PDF files, plus final regroup aggressively consolidating or splitting low-quality cross-source candidates. This is a data/extraction coverage issue, not an apply/FK/clustering stability issue.
+
+20 cross-publisher samples:
+
+| # | ontology_class_id | layers | publishers | consensus | title | canonical_key |
+|---:|---|---:|---|---|---|---|
+| 1 | `centrifugal_chiller` | 2 | Carrier,York | `material_conflict` | 谐波滤波器允许的最大持续RMS电流等级 (790/658 HP) | `hvac:centrifugal_chiller:parameter:rms_790_658_hp` |
+| 2 | `centrifugal_chiller` | 3 | Carrier,York | `material_conflict` | 传感器出错报警 | `hvac:centrifugal_chiller:fault_code:spare_sensor_alert` |
+| 3 | `centrifugal_chiller` | 3 | Carrier,McQuay | `material_conflict` | 三相电压不平衡、缺相、错相 | `hvac:centrifugal_chiller:fault_code:key_ea3b6f9bfe` |
+| 4 | `centrifugal_chiller` | 3 | Carrier,York | `material_conflict` | 电机限流百分比(%) | `hvac:centrifugal_chiller:parameter:key_747eed8a69` |
+| 5 | `centrifugal_chiller` | 2 | Trane,York | `material_conflict` | External Current Limit Setpoint | `hvac:centrifugal_chiller:parameter:external_current_limit_setpoint` |
+| 6 | `centrifugal_chiller` | 3 | Carrier,McQuay,York | `material_conflict` | 多机组循环-触点开 | `hvac:centrifugal_chiller:fault_code:key_ad1158e75e` |
+| 7 | `centrifugal_chiller` | 3 | McQuay,York | `material_conflict` | 配电电源 | `hvac:centrifugal_chiller:parameter:key_f288bed573` |
+| 8 | `centrifugal_chiller` | 7 | Carrier,York | `material_conflict` | 油泵压力 | `hvac:centrifugal_chiller:parameter:hcfc_22` |
+| 9 | `centrifugal_chiller` | 3 | Gree,McQuay | `material_conflict` | 名义制冷量 | `hvac:centrifugal_chiller:performance_spec:key_57d142c8f8` |
+| 10 | `centrifugal_chiller` | 3 | Carrier,York | `material_conflict` | 警告-波动保护-过量波动限定 | `hvac:centrifugal_chiller:fault_code:recycle_alert` |
+| 11 | `centrifugal_chiller` | 6 | Carrier,McQuay | `material_conflict` | 冷凝器冻结点温度 | `hvac:centrifugal_chiller:parameter:key_46778a30cd` |
+| 12 | `centrifugal_chiller` | 5 | Carrier,McQuay | `partial_conflict` | 冷水进水 | `hvac:centrifugal_chiller:parameter:chw_t` |
+| 13 | `centrifugal_chiller` | 7 | Carrier,Gree,York | `material_conflict` | 油压低 | `hvac:centrifugal_chiller:fault_code:key_20afb231fb` |
+| 14 | `centrifugal_chiller` | 3 | AHRI,Carrier | `material_conflict` | Tower Heat Exchanger Fouling Factor Allowance | `hvac:centrifugal_chiller:parameter:tower_heat_exchanger_fouling_factor_allowance` |
+| 15 | `centrifugal_chiller` | 3 | Carrier,York | `material_conflict` | 次数限制 | `hvac:centrifugal_chiller:parameter:key_f5220765fd` |
+| 16 | `centrifugal_chiller` | 3 | Carrier,York | `agreed` | 远程模式下的模拟信号 | `hvac:centrifugal_chiller:parameter:key_b70c2b21bd` |
+| 17 | `centrifugal_chiller` | 4 | Carrier,Gree | `material_conflict` | 频繁启停禁止开机 | `hvac:centrifugal_chiller:fault_code:key_3c9e270d6a` |
+| 18 | `centrifugal_chiller` | 2 | Carrier,McQuay | `material_conflict` | 压缩机轴承温度报警值 | `hvac:centrifugal_chiller:parameter:key_406ab05091` |
+| 19 | `centrifugal_chiller` | 4 | Carrier,McQuay | `material_conflict` | 总充注量 | `hvac:centrifugal_chiller:parameter:key_a808b77888` |
+| 20 | `centrifugal_chiller` | 7 | Carrier,Gree,York | `material_conflict` | 推力轴承—油温传感器 | `hvac:centrifugal_chiller:fault_code:key_90cab05c63` |
+
+Representative failed/skipped docs are listed in the CSV. First examples:
+
+| doc_id | status | file_name |
+|---|---|---|
+| `doc_hvac_efficiency_maintenance_authority` | `extraction_failed` | HVAC系统效率和维护最佳实践.pdf |
+| `doc_a5de4244eeda4637` | `extraction_failed` | ASHRAE手册 - HVAC系统和设备篇.pdf |
+| `doc_4a9b0fec1dfb4103` | `extraction_failed` | ASHRAE手册2024.pdf |
+| `doc_2a7ec347e5f44d9e` | `extraction_failed` | ASHRAE手册 - 基础理论篇.pdf |
+| `doc_a3ec223669d94058` | `extraction_failed` | 10870-2014-gbt-e-300.pdf |
+| `doc_5f1c305ea2d84dd0` | `extraction_failed` | 19409-2013-gbt-e-300.pdf |
+| `doc_415e37defa514dd6` | `skipped` | 20111122 Appendix G Pressure Drop Adjustments.xlsx |
+| `doc_5c86dfacb8884193` | `extraction_failed` | ahri_550_590_2020_ip_addendum1.pdf |
+| `doc_63b3fb8f94784a18` | `extraction_failed` | ahri_550_590_551_591_2020_interpretation_1.pdf |
+| `doc_24253b6cf85e4e2d` | `extraction_failed` | ahri_550_590_551_591_2020_interpretation_2.pdf |
+| `doc_3d640f4a6f0a44c7` | `extraction_failed` | ahri_550_590_551_591_2020_interpretation_3.pdf |
+| `doc_fcf8dcbc70aa4b9f` | `extraction_failed` | ahri_551_591_2020_si_addendum1.pdf |
+
+Next-action recommendation: keep the merger/plumbing frozen and route failed standards to a section-level extraction path instead of single-call doc-level extraction. The OEM KEEP_TEXT path is viable; the standards path needs chunk/section batching before it can materially improve cross-publisher coverage.
+
+## 2026-05-15 KK Round: Visual Apply Complete
+
+KK resumed after the operator accepted JJ4 plumbing quality: 30 cross-publisher
+KOs were sample-reviewed as clean, and the previous `cross_publisher >= 50`
+target was withdrawn as data-volume-limited rather than an engineering blocker.
+
+Pre-write backup:
+
+```text
+backup = /tmp/kk1_pre_remaining_3_apply_20260515T000250Z.sql
+size = 133,117,159 bytes
+```
+
+Apply progression:
+
+```text
+starting point = JJ4 smoke state after McQuay + Carrier 19XR v2
+
+Carrier 19XL 94p:
+  pack = output/diagnostic/20260514T124900Z_visual_apply/accepted_review_packs/04_carrier_19xl
+  apply_report = output/diagnostic/20260515T000250Z_kk_remaining_3_apply/01_carrier_19xl/apply_report.json
+  apply = success, failed = 0
+  regroup = centrifugal_chiller
+  after regroup: centrifugal=660, screw=0, water=0, cross=33, max_layers=8, degenerate=0
+
+Haier ACG 89p:
+  pack = output/diagnostic/20260514T124900Z_visual_apply/accepted_review_packs/06_haier_acg
+  apply_report = output/diagnostic/20260515T000250Z_kk_remaining_3_apply/02_haier_acg/apply_report.json
+  apply = success, failed = 0
+  regroup = water_source_heat_pump
+  after regroup: centrifugal=660, screw=0, water=82, cross=33, max_layers=8, degenerate=0
+
+York RWF2 80p:
+  pack = output/diagnostic/20260514T124900Z_visual_apply/accepted_review_packs/07_york_rwf2
+  apply_report = output/diagnostic/20260515T000250Z_kk_remaining_3_apply/03_york_rwf2/apply_report.json
+  apply = success, failed = 0
+  regroup = screw_chiller
+```
+
+Final SQL:
+
+```text
+centrifugal_chiller:    total_kos=660, cross_pub=33
+screw_chiller:          total_kos=43,  cross_pub=0
+water_source_heat_pump: total_kos=82,  cross_pub=0
+max_layers=8
+degenerate_canonical_key=0
+3_publisher_or_more=3
+oracle=PASS
+```
+
+Stage evolution:
+
+```text
+HH4 final smoke: centrifugal cross_publisher = 32
+JJ4 smoke:       centrifugal cross_publisher = 30, plumbing clean, FK fixed
+KK final:        centrifugal cross_publisher = 33, screw/water baseline domains populated
+```
+
+15 deterministic cross-publisher samples, all from `centrifugal_chiller`.
+`screw_chiller` and `water_source_heat_pump` have zero cross-publisher KOs in
+this round because each is currently populated by one new publisher baseline:
+
+```text
+1.  parameter:key_31569bf758                  n=3 pubs={Carrier,McQuay}     title=压缩机数量
+2.  parameter:current_limit_soft_load_percent n=4 pubs={Carrier,Trane,York} title=限流百分比
+3.  parameter:key_1e1d96afbd                  n=2 pubs={Carrier,McQuay}     title=膨胀阀整定值
+4.  fault_code:key_5d265279f4                 n=2 pubs={Gree,York}          title=润滑油温度过高
+5.  parameter:minimum_capacity_limit          n=3 pubs={Carrier,Trane}      title=最小容量限制
+6.  fault_code:autorestart_pending            n=4 pubs={Carrier,McQuay}     title=电源紧急中断
+7.  fault_code:key_080647b71d                 n=2 pubs={Gree,York}          title=波动保护-过量波动
+8.  fault_code:line_current_imbalance         n=2 pubs={Carrier,York}       title=谐波滤波器-C相电流过高
+9.  parameter:key_8790cc8fc6                  n=2 pubs={Carrier,McQuay}     title=报警信息显示
+10. fault_code:key_3595b768a0                 n=2 pubs={McQuay,York}        title=软件狗-软件重新启动
+11. parameter:key_d590fecc53                  n=6 pubs={Carrier,York}       title=导流叶片开度
+12. fault_code:key_4b082bde4b                 n=4 pubs={Carrier,York}       title=蒸发器-压力过低-智能冻结
+13. parameter:key_aa66c82471                  n=4 pubs={Carrier,McQuay}     title=电机额定负载电压
+14. performance_spec:key_58fa717122           n=3 pubs={McQuay,York}        title=电机工作转速
+15. fault_code:key_c3db0a3e97                 n=2 pubs={McQuay,York}        title=叶片电机开关打开
+```
+
+New baseline domain samples:
+
+```text
+screw_chiller:
+  - parameter:key_6173128f63_key_6173128f63 n=8 pubs={York} title=基本注油量
+  - parameter:key_29b3058d29                n=2 pubs={York} title=模拟输入[mA]
+  - parameter:key_42cfddc42e                n=2 pubs={York} title=液击报警及故障设定值
+  - parameter:key_c839a8ff17                n=2 pubs={York} title=密码
+  - parameter:proportional_band             n=2 pubs={York} title=比例带
+
+water_source_heat_pump:
+  - performance_spec:key_49bc12cf25_key_49bc12cf25_2 n=7 pubs={Haier} title=名义制热量
+  - performance_spec:key_9c4be37d3f_key_e80458dedf   n=1 pubs={Haier} title=压缩机 型式
+  - performance_spec:key_49bc12cf25_key_57d142c8f8   n=1 pubs={Haier} title=名义制冷量
+  - parameter:key_8ec20befd3                         n=3 pubs={Haier} title=冷凝器出水温度
+  - parameter:key_5860df52a6                         n=1 pubs={Haier} title=油压差值
+```
+
+Plumbing fixes now validated in production apply flow:
+
+```text
+complete-linkage numpy implementation = no stall on large visual batches
+final layer cap = max_layers stayed at 8
+degenerate slug guard = no :[0-9]+ canonical keys
+apply_review_packs_batch exit code = failed packs now return non-zero
+merger FK migration = Carrier 19XR v2 no longer fails evidence migration
+```
+
+## 2026-05-14 II Remaining Visual Apply (Stopped)
+
+II started from the HH4 smoke state after operator sample review passed.
+
+Pre-write backup:
+
+```text
+backup = /tmp/ii1_pre_remaining_5_apply_20260514T150457Z.sql
+size = 132,548,048 bytes
+```
+
+Apply progression:
+
+```text
+baseline before II:
+  centrifugal_chiller KO = 405
+
+McQuay centrifugal 95p:
+  candidates = 537
+  apply_report = output/diagnostic/20260514T150500Z_ii_remaining_5_apply/01_mcquay_apply_report.json
+  apply_time = 350.69s
+  regroup_time = 165.10s
+  after regroup centrifugal_chiller KO = 493
+  cross_publisher = 41
+  max_layers_over_8 = 0
+  degenerate_keys = 0
+```
+
+Stop condition:
+
+```text
+failed_doc = Carrier 19XR v2 97p
+action = stopped; did not continue to Carrier 19XL / Haier ACG / York RWF2
+apply_report = output/diagnostic/20260514T150500Z_ii_remaining_5_apply/02_carrier_19xr_v2_apply_report.json
+failure = knowledge_object_evidence FK violation while migrating evidence
+target_ko = ko_74a833cfe9223e02
+src_ko = ko_1e871a7ae4c9c55d
+error = target KO is not present in knowledge_object
+```
+
+The apply script returned process exit 0 despite `failed=1`, so the compound
+shell command launched regroup. That regroup was interrupted immediately after
+the failed apply was detected.
+
+Current DB state after interrupt is partial and not accepted as II completion:
+
+```text
+failure_partial_backup = /tmp/ii_failure_partial_state_20260514T152359Z.sql
+current_centrifugal_chiller_ko = 535
+failed_state_cross_publisher_rows = 37
+failed_state_max_layers_over_8 = 0
+failed_state_degenerate_keys = 0
+summary = output/diagnostic/20260514T150500Z_ii_remaining_5_apply/ii_stopped_summary.json
+cross_publisher_top50 = output/diagnostic/20260514T150500Z_ii_remaining_5_apply/failed_state_cross_publisher_top50.tsv
+```
+
+Per II hard constraint, no UPDATE repair or further apply was attempted. Operator
+decision needed: restore `backup` or investigate/fix the evidence migration bug.
+
+## 2026-05-14 HH Rollback + Visual Apply Fix
+
+HH rolled back the failed GG partial apply and fixed the two blockers before
+any further visual-pack apply.
+
+Rollback:
+
+```text
+partial_backup = /tmp/hh1_pre_rollback_partial_20260514T141852Z.sql
+restore_source = /tmp/gg1_pre_visual_apply_20260514T124822Z.sql
+post_restore_centrifugal_chiller_ko = 32
+pre_numpy_validation_backup = /tmp/hh2_pre_numpy_validation_20260514T142752Z.sql
+```
+
+Complete-linkage performance fix:
+
+```text
+root = packages/compiler/clustering.py recomputed cosine/norm inside complete-link checks
+fix = numpy-normalize embeddings once, compute sim_matrix once, then check cached submatrices
+scale_test = 700 dense embeddings under 5s
+oracle = PASS
+```
+
+Super-KO root cause:
+
+```text
+diagnostic = output/diagnostic/20260514T142200Z_hh3_super_ko/super_ko_root_cause.jsonl
+observed_bad_key = hvac:centrifugal_chiller:parameter:1
+observed_layers = 33
+cause = _slugify_part("1分钟限制开机计时器") -> "1"
+why_guard_missed = embedding-first path and raw-key rename did not run E2 degenerate-key sanity
+fix = degenerate slug guard falls back to key_<hash>; registry lookup ignores existing degenerate keys
+```
+
+Additional smoke finding:
+
+```text
+after parameter:1 fix, York+Carrier smoke still produced >8-layer groups
+cause = final merger groups can accumulate >8 candidate layers after raw-key rename
+fix = final merger group cap splits oversize groups by source name, max 8 layers
+```
+
+HH4 smoke validation intentionally applied only the two docs that previously ran
+before the GG stop:
+
+```text
+run_dir = output/diagnostic/20260514T144800Z_hh4_york_carrier_final_smoke
+York YK apply = 19.17s, regroup = 10.68s
+Carrier 19XR apply = 174.57s, regroup = 129.45s
+final_centrifugal_chiller_ko = 405
+cross_publisher_ko = 32
+max_layers = 8
+parameter_1_count = 0
+cross_publisher_list = output/diagnostic/20260514T144800Z_hh4_york_carrier_final_smoke/cross_publisher_final.tsv
+summary = output/diagnostic/20260514T144800Z_hh4_york_carrier_final_smoke/hh4_summary.json
+```
+
+Verification:
+
+```text
+oracle = PASS
+pytest = 390 passed
+check-all = 4 gates passed
+```
+
+Per HH4 scope, the remaining visual packs were not applied:
+
+```text
+not_applied = Carrier 19XR v2, Carrier 19XL, McQuay, Haier ACG, York RWF2
+```
+
+## 2026-05-14 GG Visual Apply Round (Stopped)
+
+Goal: apply the 7 MiMo visual review packs into the chiller/screw/water-source
+domains without changing grouping, merger, Brick, unit facets, thresholds, or
+the oracle.
+
+Pre-write backup passed the non-empty guard:
+
+```text
+backup = /tmp/gg1_pre_visual_apply_20260514T124822Z.sql
+size = 131,598,457 bytes
+```
+
+The raw visual review packs were still `review_decision=pending`; the first two
+direct apply attempts were skipped by `apply_review_packs_batch.py`. A separate
+audit copy was generated under:
+
+```text
+output/diagnostic/20260514T124900Z_visual_apply/accepted_review_packs/
+```
+
+The copy promotes deterministic `judge_verdict=accepted` entries to
+`review_decision=accepted`, fills curation title/summary from the extracted
+payload/evidence, stamps publisher, and preserves the original visual outputs.
+Haier ACG was routed to `water_source_heat_pump`; RWF2 was routed to
+`screw_chiller`.
+
+Apply progression before stop:
+
+```text
+baseline centrifugal_chiller KO = 32
+after pending-pack regroup checks = 31
+
+York YK 123p:
+  candidates = 337
+  apply_report = output/diagnostic/20260514T124900Z_visual_apply/01_york_yk_accepted_apply_report.json
+  merger_stats = {new_merged: 77, updated_existing: 27, material_conflicts: 56, groups_processed: 3}
+  after regroup KO = 88
+
+Carrier 19XR 97p:
+  candidates = 543
+  apply_report = output/diagnostic/20260514T124900Z_visual_apply/02_carrier_19xr_accepted_apply_report.json
+  merger_stats = {new_merged: 150, updated_existing: 54, material_conflicts: 104, groups_processed: 3}
+  after regroup KO = 177
+```
+
+Stop condition:
+
+```text
+failed_doc = Carrier 19XR v2 97p
+action = stopped; did not continue to 19XL / McQuay / Haier / RWF2
+reason = complete-linkage clustering became CPU-bound for >40 minutes
+traceback = packages/compiler/clustering.py::_can_complete_link -> cosine
+failed_input = output/diagnostic/20260514T131045Z/merger_input.jsonl
+failed_input_shape = parameter_spec existing_count=265, new_count=411
+sample = output/diagnostic/20260514T124900Z_visual_apply/03_carrier_19xr_v2_sample.txt
+transaction = interrupted before commit; KO count remained 177
+```
+
+Partial SQL outputs:
+
+```text
+cross_publisher = output/diagnostic/20260514T124900Z_visual_apply/partial_cross_publisher_after_stop.tsv
+carrier_dedup = output/diagnostic/20260514T124900Z_visual_apply/partial_carrier_dedup_after_stop.tsv
+summary = output/diagnostic/20260514T124900Z_visual_apply/gg_visual_apply_stopped_summary.json
+```
+
+Partial state is not accepted as GG completion:
+
+```text
+cross_publisher_rows = 34
+max_layers = 33
+super_KO_present = yes
+examples = hvac:centrifugal_chiller:parameter:1 has 33 layers; ma_diffuser_full_span_ma_rating has 21 layers
+4_publisher_present = yes, supply_oil_temperature_range has {Carrier,Gree,McQuay,Trane}
+quality_gate = FAIL due super-KO / garbage merges and aborted second 19XR apply
+```
+
+No oracle, grouping, merger, Brick map, unit detector, LLM arbiter scope, or
+threshold code was changed in this round.
+
 ## 2026-05-14 Milestone: First Clean Cross-Publisher Merge
 
 KnowFabric reached its first 100% clean production cross-publisher merge KO:
@@ -87,6 +583,57 @@ hvac:centrifugal_chiller:parameter:bas_chilled_water_setpoint | 6 | {AHRI,McQuay
 hvac:centrifugal_chiller:parameter:current_limit_soft_load_time | 6 | {McQuay,Trane} | material_conflict
 hvac:centrifugal_chiller:parameter:supply_oil_temperature_range | 5 | {Gree,McQuay,Trane} | material_conflict
 hvac:centrifugal_chiller:parameter:oil_cooler_max_inlet_temperature | 3 | {AHRI,McQuay} | partial_conflict
+```
+
+## 2026-05-14 EE LLM Arbiter Round
+
+EE added a scoped LLM final adjudication stage after embedding clustering,
+unit-facet split, and Brick subtype split. Scope is intentionally narrow:
+
+```text
+trigger = cluster size 2-8 AND >=2 publishers
+backend = deepseek-parameter-spec
+cache = /tmp/knowfabric_llm_arbiter_cache
+fallback = keep stage 1-3 cluster if LLM/cache/JSON validation fails
+```
+
+Final regroup was run once from the EE pre-regroup backup:
+
+```text
+restore_point = /tmp/ee_pre_llm_arbiter_regroup_20260514T094900Z.sql
+pre_final_backup = /tmp/ee_pre_final_regroup_20260514T095632Z.sql
+regroup_stats = {'new_merged': 5, 'updated_existing': 16, 'merged_existing': 0, 'material_conflicts': 7}
+total_chiller_ko = 32
+cross_publisher_ko = 2
+cross_publisher_ko_with_3_publishers = 2
+max_layers = 5
+```
+
+Cross-publisher KOs after EE:
+
+```text
+hvac:centrifugal_chiller:parameter:supply_oil_temperature_range | 油箱温度控制 | 5 | {Gree,McQuay,Trane} | material_conflict
+hvac:centrifugal_chiller:parameter:evaporator_water_temperatures | 出水温度停机保护设定 | 3 | {AHRI,McQuay,Trane} | material_conflict
+```
+
+Specified garbage merges were removed:
+
+```text
+导叶速度出厂设置值 -> standalone McQuay KO
+热气旁通启动点电流值 -> standalone McQuay KO
+油冷/变频器冷却最低进水温度 -> standalone McQuay KO
+Air-cooled Condenser EDB at Part-load -> standalone AHRI KO
+```
+
+Residual gap:
+
+```text
+cross_publisher_ko target was >=3; final strict-quality result is 2.
+Gree/Trane oil-pressure similarity is high enough for embedding, but Brick
+subtype currently labels Gree oil pressure differential as oil_pressure and
+Trane minimum differential pressure as differential_pressure. Because EE runs
+after Brick subtype split and this round forbids changing Brick map/unit
+detector/thresholds, the LLM arbiter cannot re-merge that pressure pair.
 ```
 
 ## 1) Oracle output

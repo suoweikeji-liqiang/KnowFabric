@@ -1,0 +1,44 @@
+{
+  "rows": 136,
+  "by_domain": {
+    "AHU": 29,
+    "Chiller": 92,
+    "Standard": 15
+  },
+  "by_text_quality": {
+    "mixed": 15,
+    "text": 121
+  },
+  "by_scope": {
+    "ahu": 29,
+    "screw_chiller": 47,
+    "chiller": 4,
+    "magnetic_bearing_chiller": 2,
+    "air_cooled_modular_heat_pump": 12,
+    "water_source_heat_pump": 4,
+    "centrifugal_chiller": 23,
+    "standard_reference": 15
+  },
+  "by_publisher": {
+    "盾安": 6,
+    "大金": 2,
+    "约克": 7,
+    "麦克维尔": 31,
+    "特灵": 25,
+    "美的": 2,
+    "Clivet": 1,
+    "三菱重工": 1,
+    "格力": 23,
+    "美意": 3,
+    "unknown": 1,
+    "Carrier": 1,
+    "Holtop": 4,
+    "顿汉布什": 2,
+    "其他": 3,
+    "欧科": 2,
+    "天加": 2,
+    "日立": 2,
+    "国祥": 4,
+    "ASHRAE": 14
+  }
+}
