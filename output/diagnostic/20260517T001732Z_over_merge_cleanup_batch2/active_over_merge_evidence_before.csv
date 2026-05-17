@@ -1,0 +1,1676 @@
+knowledge_object_id,ontology_class_id,knowledge_object_type,title,canonical_key,knowledge_evidence_id,chunk_id,doc_id,page_no,evidence_text,file_name,vendor_brand,publisher
+ko_0003dc96ea6cfa09,centrifugal_chiller,parameter_spec,冷量优先控制,hvac:centrifugal_chiller:parameter:冷量优先控制,koev_09295a3e02dc9cfd,chunk_bccfb5062a1f49a4,doc_55e5ec4e4ee84e9a,38,超出额定电流110%的时间大于30秒，就会激发安全关机。,【开利】19XR离心机开机运行维护说明书97页-制冷百家网.pdf,开利,开利
+ko_0003dc96ea6cfa09,centrifugal_chiller,parameter_spec,冷量优先控制,hvac:centrifugal_chiller:parameter:冷量优先控制,koev_56baaca0074da171,visual_page_doc_d7623d21517a41fd_43,doc_d7623d21517a41fd,43,用于控制电路 保险丝、断路器 电流 A 10,水冷式冷水机组安装、使用、维护说明书.pdf,日立,日立
+ko_0375092c506a85d8,screw_chiller,parameter_spec,高压 断开,hvac:screw_chiller:parameter:高压_断开,koev_03c83834b7b88997,visual_page_doc_9c740929db094ed8_36,doc_9c740929db094ed8,36,低压 断开 MPa 0.05,水冷低温螺杆式冷水机组手册.pdf,日立,日立
+ko_0375092c506a85d8,screw_chiller,parameter_spec,高压 断开,hvac:screw_chiller:parameter:高压_断开,koev_2d332f73bdb24af8,visual_page_doc_9c740929db094ed8_36,doc_9c740929db094ed8,36,高压 断开 MPa 1.86,水冷低温螺杆式冷水机组手册.pdf,日立,日立
+ko_04dc5b2658675b79,centrifugal_chiller,fault_code,油压差过低,hvac:centrifugal_chiller:fault_code:油压差过低,koev_1a3600eeccb55965,chunk_7ec6c6a04b654d07,doc_1cee69bd44d14925,26,"CVS 系列光伏直驱变频离心式冷水机组用户说明书23
+6 常见故障及排除方法
+6.1 故障处理
+制冷机在运行中发现有与正常状态不同的运行状态时，请参照表 6.1，找出原因进行处理，以使
+机器尽快恢复正常运行。
+在发现表6.1记载的或该表记载以外的异常现象后，若让这种状态存在而继续运行，将会导致
+很大的损害(对机器本身，甚至对人身、环境)。所以，发现异常时必须尽快找出原因并消除。若一
+时判断不出或没有把握，请尽快与我公司销售服务部门联系。
+表 6.1 异常现象及原因与处理一览表
+(1) 操作显示的故障
+故障显示 原因 处理方法
+蒸发压力过低① 冷冻水量不足
+② 冷负荷少
+③ 节流孔板故障
+④ 蒸发器的传热管因水垢等污染而使传热
+恶化
+⑤ 冷媒量不足 ① 检查冷冻水回路，使冷冻水量达到额定水量
+② 检查自动起停装置的整定温度
+③ 检查膨胀节流管是否畅通
+④ 清扫传热管
+⑤ 补充冷媒至所需量
+冷凝压力过高① 冷却水量不足
+② 冷却塔的能力降低
+③ 冷冻水温度太高。制冷能力太大，使冷
+凝器负荷加大
+④ 有不凝气体存在
+⑤ 冷凝器管子因水垢等污染，传热恶化 ① 检查冷却水回路，调整至额定流量
+② 检查冷却塔
+③ 检查膨胀节流管等，使冷冻水温度尽快接近额定
+温度
+④ 排除不凝性气体
+⑤ 清扫管子
+油压差过低① 油过滤器堵塞
+② 油压调节阀 ( 泄油阀 ) 开度过大
+③ 油泵的输出油量减少
+④ 轴承磨损
+⑤ 油压表 ( 或传感器 ) 失灵
+⑥ 润滑油中混入的制冷剂过多(由于起动
+时油起泡而使油压过低 ) ① 更换油过滤芯
+② 关小油压调节阀使油压升至定油压
+③ 解体检查
+④ 更换轴承
+⑤ 检查油压表，重新标定压力传感器，必要时更换
+⑥ 制冷机停车后务必将油加热器投入，保持给定油
+温(确认油加热器有无断线，油加热器温度控制的
+整定值是否正确 )
+冷冻水过冷① 冷冻水量不足
+② 冷负荷少 ① 检查冷冻水回路，使冷冻水量达到额定值
+② 等待冷负荷回升
+油泵过负荷 ① 油泵坏
+② 油路阻力过大 ① 油泵解体检查
+② 检查油路系统，如油过滤器等，必要时更换
+油温过高① 冷媒引射系统电磁阀坏或引射管路堵塞
+② 因冷媒过滤器网堵塞而使油冷却器冷却
+用冷媒的供给量不足
+③ 轴承磨损 ① 更换电磁阀或拆检引射系统，使肌肤束带结发甲
+方
+② 清扫冷媒过滤器网
+③ 解体后修理或更换轴承
+水流开关保护① 冷冻水量不足
+② 差压计故障 ① 检查冷冻水泵及冷冻水回路，调至正常流量
+② 检修差压计
+主电机绕组过热 ① 电源相电压不平衡
+② 电源线中电压降大
+③ 极端低能头运行
+④ 因冷媒过滤器的滤网堵塞而使供给主电
+动机的冷却用制冷剂量不足 ① 采取措施使电源相电压平衡
+② 采取措施减小电源线路电压降
+③ 请参阅 5.2.1（◆低能头运行）
+④ 清扫制冷剂滤网.",CVS系列光伏直驱变频离心式冷水机组用户说明书(1).pdf,,
+ko_04dc5b2658675b79,centrifugal_chiller,fault_code,油压差过低,hvac:centrifugal_chiller:fault_code:油压差过低,koev_4daf57fc79a5d94e,visual_page_doc_db8c3548279845b5_26,doc_db8c3548279845b5,26,故障显示: 油压差过低,CVS_光伏直驱变频离心机.pdf,unknown,unknown
+ko_04dc5b2658675b79,centrifugal_chiller,fault_code,油压差过低,hvac:centrifugal_chiller:fault_code:油压差过低,koev_f241d45e165d968e,chunk_73340978cd0349ba,doc_29602c0c7a83484d,27,"CE 系列离心式水冷冷水机组用户说明书22
+注  意
+(1) 冷冻水、清洗液、制冷剂等废液、废气的处理应遵守当地法律规定，非法处理废液、废气不
+仅违法而且有害健康和环境。
+(2) 请不要弄错制冷剂的种类，这是引起火灾爆炸的原因之一。
+(3) 禁止改变安全保护装置的设定，这是引起火灾事故的原因之一。
+(4) 禁止短路安全装置而迫使机组启动，这是引起火灾爆炸的原因之一。
+(5) 在屋内进行修理时请注意通风，如果通风不充分，制冷剂泄漏时会引起缺氧。
+5 常见故障及排除方法
+制冷机在运行中发现有与正常状态不同的运行状态时，请参照下表，找出原因并进行处理，以使机
+器尽快恢复正常运行。
+在发现下表记载的或该表记载以外的异常现象后，若一时判断不出原因或没有把握，请尽快与格力
+公司销售服务部门联系。
+表 5.1 机组故障一览表
+故障显示 原  因 处理方法
+蒸发压力
+过低① 冷冻水量不足
+② 冷负荷少
+③ 节流孔板故障
+④ 蒸发器的传热管因水垢等污染而使传
+热恶化
+⑤ 冷媒量不足① 检查冷冻水回路，使冷冻水量达到额定水量
+② 检查自动起停装置的整定温度
+③ 检查膨胀节流管是否畅通
+④ 清扫传热管
+⑤ 补充冷媒至所需量
+冷凝压力
+过高① 冷却水量不足
+② 冷却塔的能力降低
+③ 冷冻水温度太高。制冷能力太大，使
+冷凝器负荷加大
+④ 有不凝气体存在
+⑤ 冷凝器管子因水垢等污染，传热恶化① 检查冷却水回路，调整至额定流量
+② 检查冷却塔
+③ 检查膨胀节流管等，使冷冻水温度尽快接近
+额定温度
+④ 排除不凝性气体
+⑤ 清扫管子
+油压差过
+低① 油过滤器堵塞
+② 油压调节阀 ( 泄油阀 ) 开度过大
+③ 油泵的输出油量减少
+④ 轴承磨损
+⑤ 油压表 ( 或传感器 ) 失灵
+⑥ 润滑油中混入的制冷剂过多(由于起
+动时油起泡而使油压过低 )① 更换油过滤芯
+② 关小油压调节阀使油压升至定油压
+③ 解体检查
+④ 更换轴承
+⑤ 检查油压表，重新标定压力传感器，必要时
+更换
+⑥ 制冷机停机后务必将油加热器投入，保持给
+定油温(确认油加热器有无断线，油加热器温
+度控制的整定值是否正确 )
+冷冻水过
+冷① 冷冻水量不足
+② 冷负荷少① 检查冷冻水回路，使冷冻水量达到额定值
+② 等待冷负荷回升
+油泵过负
+荷① 油泵坏
+② 油路阻力过大① 油泵解体检查
+② 检查油路系统，如油过滤器等，必要时更换
+油温过高① 冷媒引射系统电磁阀坏或引射管路堵
+塞
+② 因冷媒过滤器网堵塞而使油冷却器冷
+却用冷媒的供给量不足
+③ 轴承磨损① 更换电磁阀或拆检引射系统
+② 清扫冷媒过滤器网
+③ 解体后修理或更换轴承.",CE系列离心式水冷冷水机组用户说明书.pdf,,
+ko_04dc5b2658675b79,centrifugal_chiller,fault_code,油压差过低,hvac:centrifugal_chiller:fault_code:油压差过低,koev_b824b9acff5bad32,visual_page_doc_db8c3548279845b5_31,doc_db8c3548279845b5,31,供油压差过低 120 kPa（压差）报警,CVS_光伏直驱变频离心机.pdf,unknown,unknown
+ko_04dc5b2658675b79,centrifugal_chiller,fault_code,油压差过低,hvac:centrifugal_chiller:fault_code:油压差过低,koev_92a5864761767a1b,chunk_466b8e6dc1434836,doc_99fc08961aa540f4,41,"39 维修篇
+1 机组故障一览表
+故障显示  故障名称  故障信号来源  保护说明
+油压差报
+警/保护 压缩机油
+压差报警/
+保护 供油压力
+油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主
+电动机、压缩机各轴承处润滑充分，即保证充分供
+油，需要足够的油压差，运行时当压差过低时机组
+报警或者保护停机，在机组起动时，压差低于设定
+值主机将不起动
+供油温度
+报警/保
+护 供油温度
+高温报警 /
+保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油
+膜刚度不足，承载能力不够而导致轴承损坏，在机
+组运行过程中控制供油温度，当温度高于一定值时
+机组会报警或者保护停机
+油泵过载
+保护 油泵过载
+保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑
+油供给中断，对机组造成损害，如果检测到机组油
+泵过载，机组将保护停机
+主机绕组
+过热保护  主机绕组
+过热保护 电机绕组过热
+保护开关 主机绕组过热将可能导致机组主电机损坏，机组在
+运行过程中将检测电机绕组过热保护开关，如果检
+测开关断开，机组将保护停机
+启动柜故
+障 启动动作
+异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而
+导致主电机的损坏，为了避免这种情况，开机后将
+检测主机电流，如果电流过大，机组将保护停机
+压缩机高
+压报警/
+保护 压缩机高
+压报警/保
+护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证
+冷凝器的安全，机组运行过程中控制机组的冷凝压
+力，当机组压力超过设定值，机组将报警或保护停
+机
+压缩机低
+压报警/
+保护 压缩机低
+压报警/保
+护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度
+将可能导致蒸发器铜管内水结冰而损坏蒸发器，机
+组运行过程中控制机组的蒸发压力，当机组压力低
+于设定值，机组将报警或保护停机
+防冻保护  防冻保护 冷冻水出水温
+度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸
+发管内结冰而损坏铜管和蒸发器，机组运行过程中
+严格控制机组的冷冻水出水温度，当机组冷冻水出
+水温度低于设定值时，机组将保护停机
+冷冻水水
+流开关保
+护/冷却
+水水流开
+关保护 冷冻水水
+流开关保
+护/冷却水
+水流开关
+保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力
+过低，水流量过少将导致冷凝压力迅速升高或蒸发
+压力迅速降低而导致设备故障，为保证设备的安全，
+应当保证水流量，水流量少断水，机组将保护停机
+缺逆相保
+护 缺逆相保
+护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，
+当机组出现缺逆相时启动柜将给出信号，而机组将
+保护停机
+传感器故
+障 传感器故
+障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而
+有可能导致机组损坏，当然针对不同的传感器给出
+不同的处理方式，比如蒸发、冷凝压力传感器和水
+http://www.coolling.net/
+R6Q·v~[¶Qettÿwww.zhilengbj.cn.",【格力】C系列离心式冷水机组技术手册（69页）-.pdf,格力,格力
+ko_04dc5b2658675b79,centrifugal_chiller,fault_code,油压差过低,hvac:centrifugal_chiller:fault_code:油压差过低,koev_dba2f272688f6a51,chunk_94139bafd70748f6,doc_dcf25b0eb7fc4c75,41,"39 维修篇
+1 机组故障一览表
+故障显示  故障名称  故障信号来源  保护说明
+油压差报
+警/保护 压缩机油
+压差报警/
+保护 供油压力
+油箱压力 如果供油不足，轴承有烧掉的危险，为保证机组主
+电动机、压缩机各轴承处润滑充分，即保证充分供
+油，需要足够的油压差，运行时当压差过低时机组
+报警或者保护停机，在机组起动时，压差低于设定
+值主机将不起动
+供油温度
+报警/保
+护 供油温度
+高温报警 /
+保护 供油温度 供油温度升高会降低润滑油的粘度，可能使轴承油
+膜刚度不足，承载能力不够而导致轴承损坏，在机
+组运行过程中控制供油温度，当温度高于一定值时
+机组会报警或者保护停机
+油泵过载
+保护 油泵过载
+保护 油泵热继电器 油泵过载可能导致油泵损坏，并可能进而导致润滑
+油供给中断，对机组造成损害，如果检测到机组油
+泵过载，机组将保护停机
+主机绕组
+过热保护  主机绕组
+过热保护 电机绕组过热
+保护开关 主机绕组过热将可能导致机组主电机损坏，机组在
+运行过程中将检测电机绕组过热保护开关，如果检
+测开关断开，机组将保护停机
+启动柜故
+障 启动动作
+异常保护 主机电流 机组起动动作异常有可能导致主机电流过大，从而
+导致主电机的损坏，为了避免这种情况，开机后将
+检测主机电流，如果电流过大，机组将保护停机
+压缩机高
+压报警/
+保护 压缩机高
+压报警/保
+护 冷凝压力 机组冷凝器按照一类压力容器设计制造，为了保证
+冷凝器的安全，机组运行过程中控制机组的冷凝压
+力，当机组压力超过设定值，机组将报警或保护停
+机
+压缩机低
+压报警/
+保护 压缩机低
+压报警/保
+护 蒸发压力 蒸发压力过低，造成蒸发温度低，过低的蒸发温度
+将可能导致蒸发器铜管内水结冰而损坏蒸发器，机
+组运行过程中控制机组的蒸发压力，当机组压力低
+于设定值，机组将报警或保护停机
+防冻保护  防冻保护 冷冻水出水温
+度 冷冻水出水温度过低，则冷冻水可能在蒸发器的蒸
+发管内结冰而损坏铜管和蒸发器，机组运行过程中
+严格控制机组的冷冻水出水温度，当机组冷冻水出
+水温度低于设定值时，机组将保护停机
+冷冻水水
+流开关保
+护/冷却
+水水流开
+关保护 冷冻水水
+流开关保
+护/冷却水
+水流开关
+保护 水流开关 水流量少或断水，导致冷凝压力过高或者蒸发压力
+过低，水流量过少将导致冷凝压力迅速升高或蒸发
+压力迅速降低而导致设备故障，为保证设备的安全，
+应当保证水流量，水流量少断水，机组将保护停机
+缺逆相保
+护 缺逆相保
+护 启动柜 机组主电机反转将可能导致机组损毁，为保护机组，
+当机组出现缺逆相时启动柜将给出信号，而机组将
+保护停机
+传感器故
+障 传感器故
+障保护 各传感器 如果传感器出现故障，将失去对机组的控制，从而
+有可能导致机组损坏，当然针对不同的传感器给出
+不同的处理方式，比如蒸发、冷凝压力传感器和水
+http://www.coolling.net/
+R6Q·v~[¶Qettÿwww.zhilengbj.cn.",【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf,格力,格力
+ko_04dc5b2658675b79,centrifugal_chiller,fault_code,油压差过低,hvac:centrifugal_chiller:fault_code:油压差过低,koev_2189f7eb7767a5f8,chunk_7381ebf8355740dd,doc_5428f7b517964cd8,52,"48
+格力 CE 系列离心机安装、运行、维护说明书表 8.1 机组常见故障及现象一览表
+常见故障 原  因 处理方法
+低压保护
+（蒸发压力
+过低）1、冷冻水量不足
+2、冷负荷少
+3、节流电子膨胀阀流路异常
+4、蒸发器的传热管因水垢等
+污染而使传热恶化
+5、冷媒量不足1、检查冷冻水回路，使冷冻水量达到额定水量
+2、检查自动起停装置的整定温度
+3、检查流路各阀门是否全开，手动设置膨胀阀开度，
+电子膨胀阀是否动作
+4、清扫传热管
+5、补充冷媒至所需量
+高压保护
+（冷凝压力
+过高）1、冷却水量不足
+2、冷却塔的能力降低
+3、有不凝气体存在
+4、冷凝器管子因水垢等污染，传热
+恶化1、检查冷却水回路，调整至额定流量
+2、检查冷却塔
+3、排除不凝性气体
+4、清扫管子
+油压差保护
+（油压差过
+低）1、油过滤器堵塞
+2、油压调节阀 ( 泄油阀 ) 开度过大
+3、油泵的输出油量减少
+4、轴承磨损
+5、油压表 ( 或传感器 ) 失灵
+6 、润滑油中混入的制冷剂过多(由
+于起动时油起泡而使油压过低 )1、更换油过滤芯
+2、关小油压调节阀使油压升至定油压
+3、解体检查
+4、更换轴承
+5、检查油压表，重新标定压力传感器，必要时更换
+6、制冷机停机后务必将油加热器投入，保持给定油
+温 ( 确认油加热器有无断线，油加热器温度控制的
+整定值是否正确 )
+防冻保护
+（冷冻水过
+冷）1、冷冻水量不足
+2、冷负荷少1、检查冷冻水回路，使冷冻水量达到额定值
+2、等待冷负荷回升
+油泵过负荷1、油泵坏
+2、油路阻力过大1、油泵解体检查
+2、检查油路系统，如油过滤器等，必要时更换
+供油温度保
+护
+（油温过高）1、润滑油冷却阀门开度不对
+2、因冷媒过滤器堵塞而使油冷却器
+冷却用冷媒的供给量不足
+3、轴承磨损1、检查油冷却回路上的阀门，并调节至适当的开度
+2、更换过滤器滤芯
+3、解体后修理或更换轴承
+水流开关保
+护1、冷冻水量不足
+2、水流开关接管截止阀未打开
+3、压差控制器故障1、检查冷冻水泵及冷冻水回路，调至正常流量
+2、检修压差控制器
+主电机绕组
+过热1、电源相电压不平衡
+2、电源线中电压降大
+3 、因冷媒过滤器的滤网堵塞而使供
+给主电动机的冷却用制冷剂量不足1、采取措施使电源相电压平衡
+2、采取措施减小电源线路电压降
+3、清扫制冷剂滤网
+压缩机喘振1. 冷凝压力过高
+2. 蒸发压力过低
+3.",CE系列离心式冷水机组安装维护运行说明书.pdf,,
+ko_050ac03ff6e2b012,standard_reference,parameter_spec,outdoor design temperatures,hvac:standard_reference:parameter:outdoor_design_temperatures,koev_b222ae6dcba97543,chunk_f05baa299cb04dec,doc_90583657120442bb,157,"R-1234yf system enhancements and comparison to R-
+134a. Presented at SAE Alternative Refrigerant Symposium, Society of
+Automotive Engineers, Warrendale, PA.
+Meyer, J.J. 2009. Produc tion solutions for utilizati on of both R-1234yf and
+R-134a in a single global platform. SAE Paper  2009-01-0172. Society of
+Automotive Engineers, Warrendale, PA.
+Minor. B. 2008. HFO-1234yf low GWP refrigerant for MAC applications.
+Presented at Mobile AC Climate Pr otection Partnership Meeting, U.S.
+Environmental Protection Agency, Washington, D.C.
+Monfared, B., R. Furberg, and B.  Palm. 2014. Magnetic vs. vapor-
+compression household refrigerator s: A preliminary comparative life
+cycle assessment. International Journal of Refrigeration  42:69-76.
+Morishita, M., T. Uchida, G. Mathur, T. Kato et al. 2018. Evaluation of
+thermal environment in vehicles for occupant comfort using equivalent
+temperature of thermal manikin duri ng start-stop function with energy
+storage evaporators. SAE Paper  2018-01-0059.",ASHRAE手册2019.pdf,,ASHRAE
+ko_050ac03ff6e2b012,standard_reference,parameter_spec,outdoor design temperatures,hvac:standard_reference:parameter:outdoor_design_temperatures,koev_611e886c0261beb4,chunk_1f27630738f14614,doc_2a7ec347e5f44d9e,484,"18.14 2017 ASHRAE Handbook—Fundamentals (SI)
+3. INFILTRATION AND MOISTURE
+MIGRATION HEAT GAINS
+Two other load components cont ribute to space cooling load
+directly without time delay from bui lding mass: (1) infiltration, and
+(2) moisture migration th rough the building envelope.
+3.1 INFILTRATION
+Principles of estimating infilt ration in buildings, with em-
+phasis on the heating season, are discussed in Chapter 16 . When
+economically feasible, somewhat more outdoor air may be intro-
+duced to a building than the total of that exhausted, to create a
+slight overall positive pressure in the building relative to the out-
+doors. Under  these conditions, air usually exfiltrat es, rather than
+infiltrates, through the building envelope and thus effectively
+eliminates infiltration sensible an d latent heat gains.",ASHRAE手册 - 基础理论篇.pdf,,ASHRAE
+ko_050ac03ff6e2b012,standard_reference,parameter_spec,outdoor design temperatures,hvac:standard_reference:parameter:outdoor_design_temperatures,koev_9e899a2f8569b749,chunk_ba0c305d183940ce,doc_6854724bbc4b433e,501,"Board
+W a l l  N u m b e r 1234567 8 9 1 0
+U,W / ( m2·K) 0.430 0.245 0.431 0.246 0.429 0.245 0.418 0.231 0.416 0.230
+Total R 2.33 4.08 2.32 4.07 2.33 4.08 2.39 4.34 2.40 4.35
+Hour Conduction Time Factors, % Conduction Time Factors, %
+0 18.0 3.4 25.0 5.4 8.3 1.4 19.3 5.6 6.5 1.6
+1 57.1 35.9 56.1 40.9 44.0 22.3 57.5 45.0 41.1 24.9
+2 19.8 36.8 15.2 33.8 31.2 35.9 18.7 34.4 32.7 37.33 4.0 15.9 3.0 13.4 11.6 23.2 3.7 11.1 13.3 21.9
+4 0.8 5.5 0.6 4.5 3.5 10.7 0.7 2.9 4.5 9.2
+5 0.2 1.8 0.1 1.4 1.0 4.2 0.1 0.7 1.4 3.46 0.0 0.6 0.0 0.4 0.3 1.5 0.0 0.2 0.4 1.2
+7 0.0 0.2 0.0 0.1 0.1 0.5 0.0 0.0 0.1 0.4
+8 0.0 0.1 0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.19 0.0 0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0
+10 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.011 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.012 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+13 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+14 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.015 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+16 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+17 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.018 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+19 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+20 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.021 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.022 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+23 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+Total Percentage 100 100 100 100 100 100 100 100 100 100
+Layer ID from
+outdoors to indoors
+(See Table 18)F01 F01 F01 F01 F01 F01 F01 F01 F01 F01
+F09 F09 F08 F08 F10 F10 F08 F08 F10 F10F04 F04 F04 F04 F04 F04 G03 G03 G03 G03
+I02 I02 I02 I02 I02 I02 I04 I04 I04 I04
+F04 I02 F04 I02 F04 I02 G01 I04 G01 I04
+G01 F04 G01 F04 I02 F04 F02 G01 F02 G01
+F02 G01 F02 G01 F02 G01 0 F02 0 F02
+0F 0 2 0F 0 2 0F 0 2 0 0 0 0000000 0 0 0 0
+000000 0 0 0 0
+Licensed for single user.",ASHRAE_Handbook_-_Fundamentals_2021_-_SI.pdf,,
+ko_050ac03ff6e2b012,standard_reference,parameter_spec,outdoor design temperatures,hvac:standard_reference:parameter:outdoor_design_temperatures,koev_61ee112c7b2830f0,chunk_b89963a28a7444c2,doc_f962d0c0b77c426d,567,"Climatic Design Information 27.31
+Table 3B Cooling and Dehumidification Design Conditions—World Locations
+StationCooling DB/MWB Evaporation WB/MDB Dehumidification DP/MDB and HR
+Range
+of DB0.4% 1% 2% 0.4% 1% 2% 0.4% 1% 2%
+DB MWB DB MWB DB MWB WB MDB WB MDB WB MDB DP HR MDB DP HR MDB DP HR MDB
+1 2a 2b 2c 2d 2e 2f 3a 3b 3c 3d 3e 3f 4a 4b 4c 4d 4e 4f 4g 4h 4i 5
+Anyang 34.6 22.6 33.4 23.2 32.2 23.3 27.1 31.1 26.3 30.1 25.6 29.1 26.0 21.6 29.8 25.3 20.6 28.7 24.5 19.7 28.4 8.0
+Baoding 34.4 22.0 33.0 22.5 31.7 22.7 26.6 30.3 25.8 29.5 25.0 28.8 25.6 20.9 28.7 24.7 19.8 28.1 23.9 18.8 27.7 8.2
+Bayan Mod 32.8 14.9 31.5 14.4 30.0 13.8 17.7 26.7 16.7 25.9 15.8 25.6 14.9 12.5 20.7 13.6 11.4 19.8 12.4 10.5 20.4 11.5
+Beijing 34.2 21.9 32.9 21.8 31.5 21.9 26.2 30.5 25.4 29.0 24.7 28.3 25.1 20.3 28.4 24.2 19.2 27.6 23.6 18.5 27.1 8.7
+Bengbu 35.2 26.5 33.7 26.0 32.3 25.2 28.0 33.1 27.5 32.1 26.9 31.2 26.7 22.3 30.8 26.2 21.7 30.4 25.7 21.0 29.8 6.6
+Changchun 30.1 21.3 28.9 21.0 27.6 20.4 24.4 28.1 23.4 26.7 22.5 25.4 23.3 18.6 27.0 22.4 17.6 25.8 21.4 16.5 24.6 7.5
+Changsha (576790) 35.6 26.7 34.6 26.6 33.6 26.2 27.8 32.8 27.4 32.5 27.0 32.0 26.7 22.5 30.3 26.2 21.8 29.8 25.7 21.1 29.6 7.0
+Chengdu 31.5 24.7 30.6 24.3 29.6 23.9 26.5 30.0 25.7 28.9 25.1 28.1 25.6 22.2 29.0 24.9 21.2 27.8 24.3 20.5 27.2 6.8
+Dalian 30.0 23.1 28.7 22.4 27.6 22.0 25.0 28.0 24.4 26.6 23.7 25.8 24.2 19.3 26.6 23.7 18.8 25.8 23.0 18.0 25.5 5.5
+Dandong 29.3 23.9 28.0 22.8 26.9 22.1 25.1 27.8 24.4 26.4 23.7 25.5 24.3 19.3 26.4 23.8 18.7 25.6 23.2 18.0 25.0 6.8
+Datong 30.7 17.0 29.2 16.7 27.9 16.5 20.7 26.1 19.8 25.1 19.0 24.2 19.2 15.9 22.9 18.2 14.9 22.2 17.2 14.0 22.2 10.7
+Deqen 19.4 11.2 18.2 11.2 17.2 10.9 13.0 16.8 12.5 16.3 12.0 15.8 11.7 13.3 14.3 11.2 12.8 13.7 10.7 12.4 13.2 6.7
+Dinghai 32.2 27.2 31.1 26.7 30.1 26.2 27.6 31.5 27.1 30.6 26.6 29.6 26.6 22.3 30.4 26.1 21.6 29.5 25.7 21.1 28.7 5.4
+Erenhot 32.7 16.0 31.0 15.5 29.3 15.1 18.8 26.3 18.0 25.6 17.2 24.9 16.7 13.4 21.1 15.6 12.5 20.3 14.5 11.6 20.4 11.7
+Fuzhou 35.4 27.0 34.4 26.8 33.3 26.5 27.9 33.9 27.4 33.1 26.9 32.3 26.3 22.0 31.7 25.9 21.4 30.9 25.6 21.1 30.0 7.7
+Golmud 26.9 11.3 25.3 10.3 23.8 9.8 12.6 23.8 11.7 22.3 10.8 21.5 8.6 9.8 15.8 7.2 8.9 15.7 6.0 8.2 14.6 10.5
+Guangzhou 34.6 26.4 33.9 26.3 33.0 26.2 27.7 31.9 27.4 31.5 27.1 31.1 26.7 22.3 29.5 26.4 21.9 29.1 26.1 21.5 29.0 6.9
+Guilin 34.5 25.5 33.5 25.5 32.6 25.3 27.1 31.2 26.7 30.8 26.4 30.5 26.2 22.1 29.0 25.7 21.4 28.5 25.4 21.0 28.3 7.4
+Guiyang 30.5 21.3 29.5 21.3 28.6 21.0 22.9 28.0 22.5 27.4 22.1 26.7 21.6 18.6 25.2 21.1 18.0 24.9 20.7 17.5 24.5 7.0
+Hami 36.1 19.0 34.6 18.1 33.2 17.8 21.0 32.3 19.9 31.8 19.0 30.5 17.4 13.6 26.4 15.9 12.4 25.1 14.7 11.4 24.1 13.3
+Hangzhou 35.8 27.2 34.4 26.6 33.1 26.6 28.2 33.4 27.6 32.8 27.0 31.9 27.0 22.8 31.4 26.2 21.7 30.0 25.9 21.3 29.7 7.5
+Harbin 30.4 20.8 29.0 20.0 27.7 20.1 24.1 27.8 23.1 26.3 22.1 25.4 23.0 18.1 26.7 22.0 17.0 25.6 21.0 15.9 24.4 8.5
+Hefei 34.8 27.1 33.5 26.8 32.2 26.0 28.0 33.1 27.5 32.5 27.0 31.4 26.7 22.4 30.9 26.2 21.7 30.5 25.7 21.1 29.9 6.1
+Hohhot 30.9 17.7 29.4 17.3 28.0 16.7 21.1 26.7 20.0 25.2 19.1 24.4 19.4 16.1 23.9 18.4 15.1 23.0 17.3 14.1 22.1 10.5
+Jinan 34.8 22.9 33.5 23.1 32.3 22.9 26.7 31.5 26.1 30.8 25.4 29.6 25.4 20.7 29.5 24.7 19.9 29.0 24.1 19.1 28.3 7.3
+Jingdezhen 36.0 26.6 34.7 26.1 33.7 26.0 27.5 33.2 27.1 32.6 26.7 31.9 26.2 21.8 29.7 25.8 21.3 29.5 25.4 20.7 29.3 8.3
+Jinzhou 31.1 22.1 29.7 21.4 28.5 21.2 25.2 28.2 24.4 27.2 23.7 26.2 24.3 19.4 27.0 23.5 18.5 26.1 22.8 17.7 25.6 7.5
+Jixi 30.3 21.1 28.5 20.3 27.1 19.8 23.5 28.2 22.5 25.9 21.4 25.0 22.1 17.3 26.0 21.1 16.2 25.2 20.1 15.2 24.3 8.4
+Kashi 33.5 18.8 32.2 18.1 31.0 17.7 20.8 29.2 19.9 28.9 19.0 28.4 18.2 15.4 25.6 16.9 14.1 24.4 15.8 13.1 24.1 12.3
+Korla 34.9 19.2 33.7 18.6 32.4 18.1 21.0 32.0 19.8 30.8 19.0 30.0 17.3 13.9 27.2 16.0 12.7 25.4 14.9 11.9 24.7 10.6
+Kowloon 33.2 26.1 32.8 26.1 32.0 26.1 27.6 31.1 27.3 30.7 27.0 30.6 27.0 22.8 29.7 26.2 21.7 29.3 26.1 21.5 29.3 4.5
+Kunming 26.6 17.0 25.8 17.2 25.0 17.1 20.1 24.6 19.6 23.8 19.2 23.1 18.7 17.1 22.3 18.4 16.8 21.9 18.1 16.5 21.4 8.5
+Lanzhou 31.5 17.7 30.2 17.0 28.8 16.6 19.7 27.4 18.9 26.6 18.1 25.5 17.5 15.1 23.3 16.4 14.1 22.6 15.4 13.2 22.0 11.1
+Lhasa 24.8 10.7 23.6 10.8 22.5 10.4 13.1 20.6 12.6 20.0 12.2 19.4 10.7 12.7 15.1 10.2 12.2 14.6 9.8 11.9 14.5 11.7
+Liuzhou 35.2 25.5 34.3 25.6 33.6 25.5 27.2 32.2 26.8 31.8 26.5 31.5 26.0 21.6 29.6 25.6 21.1 29.3 25.3 20.7 29.1 7.0
+Longzhou 35.8 26.5 34.8 26.4 33.9 26.2 27.9 33.4 27.5 32.7 27.2 32.1 26.7 22.6 30.2 26.3 22.1 29.8 26.0 21.7 29.6 7.6
+Macau 33.1 27.3 32.4 27.2 31.7 26.9 28.1 32.0 27.7 31.3 27.4 30.9 27.1 23.0 30.4 26.7 22.4 30.0 26.6 22.3 29.8 4.2
+Mudanjiang 30.7 21.5 28.8 20.3 27.4 19.8 23.6 28.7 22.5 26.5 21.5 25.4 22.0 17.2 26.8 21.1 16.2 25.8 20.1 15.2 24.4 8.9
+Nanchang 35.7 26.8 34.6 26.7 33.5 26.5 28.1 32.6 27.7 32.2 27.2 31.8 27.0 22.8 30.6 26.5 22.2 30.4 26.1 21.6 30.1 6.9
+Nanjing 34.6 27.1 33.2 26.8 31.9 26.0 28.1 32.4 27.6 31.9 27.1 31.1 27.1 22.9 30.8 26.5 22.0 30.3 26.0 21.4 29.8 6.2
+Nanning 34.9 26.2 34.1 26.3 33.3 26.1 27.8 32.2 27.4 31.6 27.1 31.2 26.7 22.5 29.9 26.4 22.1 29.6 26.1 21.7 29.3 6.6
+Nenjiang 29.8 19.4 28.0 18.7 26.5 18.8 22.4 26.3 21.3 25.2 20.5 24.1 21.1 16.2 24.7 20.1 15.2 23.3 19.1 14.3 22.6 9.5
+Qingdao 29.2 23.6 28.2 23.6 27.3 23.4 25.8 27.5 25.3 26.9 24.8 26.4 25.3 20.7 27.0 24.8 20.0 26.5 24.3 19.4 26.0 4.5
+Qiqihar 30.7 20.8 29.1 20.3 27.7 20.0 23.7 27.6 22.6 26.8 21.7 25.7 22.5 17.5 26.4 21.3 16.2 25.0 20.3 15.2 24.0 7.9
+Shanghai 34.4 27.4 33.1 27.4 31.8 26.7 28.4 33.0 27.7 31.9 27.1 31.0 27.2 23.0 31.0 26.8 22.4 30.6 26.1 21.5 29.6 6.4
+Shantou 32.8 26.8 32.0 26.6 31.4 26.4 27.6 31.5 27.2 30.8 27.0 30.3 26.7 22.3 29.6 26.3 21.8 29.2 26.1 21.5 28.9 5.2
+Shaoguan 35.7 25.8 34.8 25.8 33.9 25.7 27.1 32.8 26.7 32.2 26.5 31.8 25.8 21.3 29.3 25.5 20.9 29.1 25.2 20.5 28.8 7.6
+Shenyang 31.1 23.2 29.9 22.7 28.8 22.0 25.3 29.6 24.5 28.3 23.8 27.1 24.0 19.0 27.9 23.4 18.3 27.1 22.6 17.4 26.3 8.0
+Shijiazhuang 34.9 22.5 33.5 22.0 32.1 22.7 26.8 30.8 25.9 29.7 25.1 29.0 25.8 21.3 29.3 24.9 20.2 28.4 24.0 19.1 27.6 8.6
+Taiyuan 31.7 20.7 30.3 20.1 29.2 19.9 23.8 28.4 22.8 27.4 22.0 26.5 22.5 18.9 26.3 21.5 17.8 25.6 20.5 16.7 24.9 10.9
+Tangshan 32.1 23.2 30.9 22.7 29.9 22.5 26.1 29.6 25.3 28.5 24.6 27.6 25.1 20.3 28.4 24.4 19.4 27.7 23.6 18.5 26.6 7.7
+Tianjin 33.5 23.1 32.2 23.0 31.1 22.8 26.6 30.1 25.8 29.5 25.2 28.7 25.5 20.7 29.0 24.8 19.8 28.2 24.1 19.0 27.7 7.2
+Urumqi 33.0 16.2 31.4 15.8 30.1 15.4 17.6 28.6 17.0 28.0 16.4 27.2 14.2 11.3 19.1 13.2 10.6 19.5 12.4 10.0 19.9 10.2
+Weifang 34.0 23.0 32.5 22.9 31.2 23.0 27.0 31.0 26.1 29.7 25.3 28.5 25.9 21.4 29.3 25.1 20.3 28.3 24.4 19.5 27.5 8.3
+Wenzhou 33.8 27.6 32.7 27.2 31.8 26.9 28.3 32.7 27.7 31.8 27.3 30.9 27.1 22.9 31.2 26.7 22.3 30.3 26.3 21.8 29.6 6.5
+Wuhan 35.1 27.3 34.0 26.9 32.9 26.5 28.3 32.9 27.9 32.5 27.4 31.8 27.2 23.0 30.8 26.7 22.3 30.7 26.2 21.7 30.4 6.1
+Xi’an 34.8 22.7 33.4 22.8 32.0 22.5 25.7 31.4 25.0 30.4 24.2 29.3 24.2 20.1 28.8 23.5 19.2 28.4 22.7 18.3 27.4 8.9
+Xiamen 32.7 26.3 32.0 26.1 31.2 26.0 27.2 31.4 26.8 30.7 26.5 30.2 26.1 21.9 29.5 25.8 21.5 28.9 25.6 21.2 28.5 5.9
+Xining 27.0 14.0 25.5 13.5 24.1 12.8 15.9 22.3 15.1 22.2 14.4 21.2 13.8 13.0 18.4 12.9 12.3 17.2 12.1 11.6 16.9 10.9
+Xuzhou 34.2 25.0 32.8 24.6 31.5 24.1 27.6 32.0 26.9 30.9 26.2 29.8 26.5 22.1 30.1 25.8 21.2 29.3 25.2 20.4 28.8 6.8
+Yaxian 32.7 26.9 32.3 26.8 31.9 26.7 28.1 31.7 27.7 31.1 27.5 30.8 27.1 22.9 30.3 26.8 22.4 30.0 26.6 22.2 29.9 5.3
+Yichang 35.3 26.2 33.9 25.9 32.6 25.3 27.8 33.1 27.2 32.1 26.7 31.0 26.6 22.5 30.9 26.0 21.7 30.3 25.5 21.1 29.6 7.2
+Yichun 29.8 20.5 28.2 19.7 26.7 19.2 22.6 27.1 21.6 25.9 20.7 24.7 21.1 16.2 25.4 20.1 15.2 24.1 19.2 14.4 23.0 10.1
+Yinchuan 31.2 19.4 30.0 18.9 28.8 18.3 21.9 28.0 20.9 27.1 20.1 26.1 20.0 16.9 25.4 19.0 15.8 24.4 18.0 14.8 23.7 10.6
+Yingkou 30.1 24.2 29.1 23.3 28.2 22.7 25.4 28.7 24.7 27.9 24.1 27.2 24.4 19.4 27.7 23.7 18.5 26.9 23.1 17.9 26.4 6.7
+Yining 33.0 19.4 31.6 18.8 30.2 18.3 20.6 30.4 19.8 29.5 19.1 28.3 17.4 13.5 24.6 16.5 12.7 23.2 15.7 12.1 22.8 12.8
+Yueyang 34.3 27.3 33.5 26.9 32.7 26.6 28.3 33.0 27.7 32.2 27.2 31.5 27.1 23.0 31.8 26.5 22.2 31.1 26.0 21.5 30.1 5.0
+MDB = mean coincident dry-bulb temp., °C MWS = mean coincident wind speed, m/s HR = humidity ratio, grams of moisture per kilogram of dry air
+MWB = mean coincident wet-bulb temp., °C StdD = standard deviation, °C A = airport DP = dew-point temperature, °C.",2001_ASHRAE_Fundamentals_Handbook.pdf,,
+ko_050ac03ff6e2b012,standard_reference,parameter_spec,outdoor design temperatures,hvac:standard_reference:parameter:outdoor_design_temperatures,koev_8adb8b05f76f60ea,chunk_1b5ea7bb05ac4591,doc_f962d0c0b77c426d,569,"Climatic Design Information 27.33
+Table 3B Cooling and Dehumidification Design Conditions—World Locations
+StationCooling DB/MWB Evaporation WB/MDB Dehumidification DP/MDB and HR
+Range
+of DB0.4% 1% 2% 0.4% 1% 2% 0.4% 1% 2%
+DB MWB DB MWB DB MWB WB MDB WB MDB WB MDB DP HR MDB DP HR MDB DP HR MDB
+1 2a 2b 2c 2d 2e 2f 3a 3b 3c 3d 3e 3f 4a 4b 4c 4d 4e 4f 4g 4h 4i 5
+Zhangjiakou 31.9 18.4 30.5 18.2 29.1 18.0 22.4 27.4 21.5 26.8 20.7 25.9 20.9 17.0 25.3 19.7 15.8 24.6 18.8 14.9 24.1 9.5
+Zhanjiang 33.9 26.5 33.1 26.6 32.3 26.6 28.0 31.4 27.7 30.9 27.4 30.6 27.2 23.1 29.8 26.9 22.6 29.5 26.6 22.2 29.4 4.7
+Zhengzhou 34.7 23.6 33.4 23.5 32.1 23.5 27.4 31.5 26.6 30.4 25.8 29.4 26.3 22.0 30.1 25.5 21.0 28.9 24.8 20.1 28.4 8.1
+COLOMBIA
+Bogota 21.1 13.3 20.2 13.5 20.0 13.5 15.3 18.9 14.9 18.6 14.6 18.2 14.1 13.8 17.5 13.8 13.5 17.0 13.1 12.9 16.5 11.5
+COOK ISLANDS
+Rarotonga Island 29.7 25.5 29.3 25.3 28.9 25.1 26.5 28.7 26.2 28.4 25.9 28.1 25.9 21.2 28.0 25.6 20.9 27.8 25.2 20.3 27.6 4.6
+CROATIA
+Pula 31.8 21.4 30.2 20.6 29.1 20.2 23.3 27.9 22.5 27.8 21.5 27.1 21.9 16.7 26.0 20.8 15.6 25.1 19.9 14.7 24.1 10.6
+Split 32.8 21.2 31.7 20.4 30.2 20.0 22.5 29.9 21.7 29.3 21.1 28.7 20.1 14.8 25.9 19.1 13.9 25.3 18.2 13.1 24.7 10.3
+Zagreb 31.1 21.3 29.5 21.0 28.1 20.1 22.5 29.4 21.6 28.1 20.8 26.9 20.2 15.1 25.6 19.2 14.2 24.9 18.5 13.5 23.6 12.3
+CUBA
+Guantanamo 34.2 25.8 34.0 25.7 33.2 25.4 27.6 32.8 27.1 32.6 26.7 32.3 26.1 21.5 31.5 25.6 20.9 31.3 25.1 20.2 30.8 8.5
+CYPRUS
+Akrotiri 32.7 21.7 31.4 22.2 30.3 22.6 25.6 29.2 25.1 28.7 24.6 28.1 24.6 19.6 27.7 24.0 18.9 27.6 23.4 18.2 27.3 7.2
+Larnaca 33.8 21.7 32.7 22.1 31.6 22.4 25.7 29.9 25.1 29.5 24.6 29.1 24.2 19.1 28.5 23.8 18.7 28.2 23.1 17.9 27.7 9.9
+Paphos 30.9 24.7 30.1 24.6 29.2 24.3 26.2 29.8 25.7 29.2 25.1 28.5 25.1 20.2 29.2 24.6 19.6 28.8 24.0 18.9 28.2 8.6
+CZECH REPUBLIC
+Brno 29.5 19.1 27.7 18.5 26.1 17.6 20.2 27.5 19.3 26.2 18.5 24.3 17.7 13.1 23.2 17.0 12.5 21.9 16.2 11.9 21.3 10.8
+Cheb 28.4 18.5 26.6 17.5 24.8 16.7 19.3 26.6 18.3 24.7 17.4 23.2 16.8 12.7 21.8 16.0 12.0 20.2 15.2 11.4 19.5 10.8
+Ostrava 29.5 19.3 27.6 18.3 25.8 17.7 20.3 27.6 19.4 26.1 18.5 24.2 17.9 13.3 22.6 17.1 12.6 21.5 16.3 12.0 21.2 11.5
+Plzen 29.0 19.4 27.1 18.5 25.3 17.7 20.3 27.5 19.3 25.5 18.4 24.0 17.9 13.4 23.6 17.0 12.7 22.6 16.1 12.0 20.8 11.3
+Praded Mountain 18.6 13.0 17.0 12.3 15.6 11.7 14.1 17.3 13.2 15.8 12.3 14.7 13.1 11.3 15.0 12.1 10.6 14.1 11.3 10.0 13.3 5.4
+Prague 28.8 18.4 26.8 17.8 25.0 17.1 19.7 26.2 18.7 24.7 17.8 23.4 17.3 12.9 22.1 16.4 12.2 20.6 15.8 11.7 20.3 11.1
+Pribyslav 27.0 18.1 25.2 17.5 23.5 16.7 19.1 25.4 18.1 23.5 17.2 22.4 16.8 12.8 21.7 16.0 12.1 20.6 15.2 11.5 19.7 10.3
+DENMARK
+Alborg 25.0 17.1 23.1 16.3 21.5 15.5 18.1 23.7 17.2 21.8 16.2 20.3 16.0 11.4 20.2 15.1 10.7 19.3 14.2 10.1 18.1 8.4
+Copenhagen 25.0 17.2 23.2 16.4 21.9 15.8 18.2 23.2 17.4 21.7 16.5 20.4 16.2 11.5 20.0 15.5 11.0 19.4 14.8 10.5 18.9 8.1
+Hammerodde 22.8 17.8 21.3 17.4 20.1 16.8 18.8 21.3 18.0 20.5 17.2 19.5 17.9 12.9 20.2 17.0 12.1 19.2 16.2 11.5 18.7 3.9
+Mon Island 23.1 18.2 21.6 17.4 20.4 16.7 19.0 21.9 18.1 20.9 17.2 19.7 17.8 12.8 20.8 16.8 12.0 20.0 16.0 11.4 19.1 5.6
+Odense 25.8 17.8 24.1 17.0 22.3 16.2 18.8 23.7 17.8 22.9 16.9 21.2 16.9 12.1 21.1 15.9 11.3 20.1 15.0 10.7 19.1 9.6
+Skagen 22.1 18.9 20.7 17.9 19.4 17.1 19.5 21.3 18.4 20.3 17.5 18.9 18.7 13.5 20.7 17.6 12.6 19.4 16.8 12.0 18.5 5.3
+Tirstrup 25.2 17.5 23.7 16.8 22.0 15.9 18.6 23.5 17.6 21.8 16.6 20.5 17.0 12.2 19.8 16.0 11.4 19.0 15.0 10.7 18.2 9.9
+ECUADOR
+Guayaquil 33.2 24.5 32.9 24.6 32.1 24.4 26.7 31.2 26.2 30.4 25.9 29.6 25.8 21.1 29.3 25.2 20.4 28.2 25.0 20.1 27.9 7.4
+Quito 22.0 12.5 21.2 12.3 20.8 12.1 14.6 19.4 14.1 19.0 13.7 18.4 13.0 13.3 16.1 12.2 12.6 15.1 12.1 12.5 14.8 10.2
+EGYPT
+Alexandria 32.5 21.6 30.9 22.9 29.9 23.1 25.0 29.7 24.4 28.8 24.0 28.5 23.5 18.3 27.9 23.0 17.8 27.5 22.5 17.2 27.4 6.3
+Cairo 38.0 20.3 36.2 20.5 35.1 20.8 24.1 31.5 23.6 30.4 23.1 30.1 22.2 17.0 26.0 21.9 16.7 25.8 21.2 16.0 25.6 13.3
+Luxor 43.1 22.2 42.0 21.9 40.9 21.7 24.0 39.4 23.3 38.7 22.7 38.2 18.9 13.8 33.4 17.8 12.9 32.6 16.9 12.2 32.5 17.0
+ESTONIA
+Kopu/Cape Ristna 22.6 17.5 21.1 17.0 19.8 16.3 18.7 21.6 17.7 20.1 16.9 19.2 17.6 12.6 20.4 16.7 11.9 19.4 15.8 11.2 18.4 4.8
+Tallinn 24.9 17.6 23.3 16.9 21.6 16.0 19.0 23.0 17.9 21.9 16.9 20.6 17.4 12.5 20.8 16.3 11.7 20.0 15.2 10.8 18.7 8.2
+FAEROE ISLANDS
+Torshavn 14.3 12.4 13.5 11.8 12.7 11.5 13.0 13.9 12.4 13.1 11.9 12.5 12.6 9.1 13.3 12.0 8.8 12.7 11.5 8.5 12.2 3.0
+FIJI
+Nadi 32.3 25.0 31.7 25.0 31.2 24.8 26.6 30.4 26.2 30.0 25.9 29.7 25.6 20.9 28.5 25.2 20.4 28.2 24.9 20.0 28.0 7.9
+Nausori 31.2 25.8 30.6 25.7 30.0 25.4 26.7 29.8 26.3 29.3 26.0 28.9 25.9 21.2 28.2 25.6 20.9 28.0 25.2 20.3 27.7 6.1
+FINLAND
+Helsinki 25.9 17.6 24.1 16.3 22.7 15.9 18.7 23.6 17.6 22.4 16.7 20.8 17.0 12.2 19.6 15.9 11.4 19.2 14.9 10.7 18.4 9.8
+Jyvaskyla 25.4 16.8 23.8 16.2 21.9 15.3 18.4 23.0 17.2 22.0 16.1 20.3 16.5 12.0 20.5 15.3 11.1 18.5 14.3 10.3 17.6 9.8
+Kauhava 25.0 16.7 23.2 16.1 21.2 15.1 18.2 22.9 17.0 21.3 16.0 20.1 16.5 11.8 20.2 15.3 10.9 18.5 14.3 10.2 17.7 10.0
+Kuopio 25.4 16.9 23.7 16.2 21.9 15.7 18.6 23.3 17.4 21.7 16.4 20.5 16.7 12.0 20.7 15.7 11.3 19.1 14.6 10.5 18.1 7.1
+Lahti 26.1 17.8 24.5 17.0 22.8 16.2 19.1 24.2 17.9 23.2 16.9 21.6 17.0 12.3 21.2 15.8 11.3 20.0 14.9 10.7 18.8 10.6
+Pello 24.2 16.0 22.2 15.4 20.3 14.3 17.4 22.0 16.2 20.4 15.1 18.8 15.5 11.1 19.1 14.4 10.3 17.9 13.3 9.6 16.8 8.8
+Pori 24.8 16.9 23.2 15.9 21.5 15.1 18.2 22.8 17.1 21.6 16.1 20.0 16.6 11.8 19.7 15.3 10.9 18.5 14.4 10.3 17.5 9.0
+Suomussalmi 24.3 16.1 22.3 15.4 20.4 14.3 17.4 22.6 16.2 20.9 15.2 19.1 15.3 11.2 19.0 14.3 10.4 17.7 13.4 9.8 16.8 8.4
+Tampere 26.1 16.8 24.4 16.3 22.8 15.4 18.5 23.7 17.3 22.4 16.2 21.1 16.4 11.8 19.6 15.2 10.9 18.9 14.2 10.2 17.6 10.4
+Turku 25.9 17.3 24.1 15.9 22.5 15.3 18.4 23.6 17.4 22.2 16.3 20.4 16.7 12.0 20.6 15.4 11.0 19.0 14.6 10.4 18.1 9.1
+FRANCE
+Bordeaux 32.1 21.2 30.0 20.8 28.1 20.0 23.0 29.6 21.8 27.5 20.9 26.1 21.1 15.9 25.9 20.0 14.8 24.0 19.1 14.0 23.1 11.3
+Clermont-Ferrand 31.9 20.9 29.8 20.0 27.9 19.6 22.0 29.5 21.0 28.1 20.0 26.5 19.5 14.8 25.0 18.6 14.0 24.3 17.8 13.3 23.2 12.6
+Dijon 30.4 20.2 28.8 19.8 27.0 19.2 21.9 27.6 20.9 26.8 19.9 25.5 20.0 15.1 25.1 18.9 14.1 23.3 18.0 13.3 22.2 11.6
+Brest 25.8 18.5 23.5 18.3 21.7 17.2 19.7 24.4 18.6 22.1 17.7 20.1 18.2 13.3 20.6 17.5 12.7 19.5 16.9 12.2 18.9 7.6
+Lyon 32.0 20.7 30.0 20.3 28.1 19.6 22.2 29.1 21.1 27.9 20.2 26.5 19.9 15.0 25.7 18.9 14.1 24.1 18.0 13.3 22.9 11.9
+Marseille 32.0 21.6 30.7 21.2 29.2 20.6 23.7 28.7 22.8 27.9 21.9 27.0 22.1 16.8 26.2 21.1 15.8 25.8 20.1 14.9 24.9 10.4
+Montpellier 32.1 21.7 30.3 21.0 29.0 20.5 24.6 27.8 23.7 27.0 22.8 26.4 23.8 18.7 26.0 22.8 17.5 25.3 21.8 16.5 24.7 10.3
+MDB = mean coincident dry-bulb temp., °C MWS = mean coincident wind speed, m/s HR = humidity ratio, grams of moisture per kilogram of dry air
+MWB = mean coincident wet-bulb temp., °C StdD = standard deviation, °C A = airport DP = dew-point temperature, °C.",2001_ASHRAE_Fundamentals_Handbook.pdf,,
+ko_050ac03ff6e2b012,standard_reference,parameter_spec,outdoor design temperatures,hvac:standard_reference:parameter:outdoor_design_temperatures,koev_81b57aaa72b3d412,chunk_6484d2588dcf444e,doc_f962d0c0b77c426d,597,"Paul
+7265800.4 5.6 2.5 10.1 6.2 19.4 12.1 27.8 16.2 31.3 18.9 34.2 22.6 35.6 23.7 34.4 23.9 31.7 22.4 26.7 17.3 17.7 12.5 9.6 7.5 32.8 22.7
+14.2 1.6 7.4 4.1 16.6 10.9 25.3 15.5 29.8 18.9 32.8 22.4 34.3 23.6 32.9 23.3 29.8 21.4 24.6 16.8 15.8 11.6 6.1 3.4 31.1 21.9
+23.1 1.0 5.6 2.6 14.3 8.9 23.2 14.5 28.3 18.2 31.5 21.6 33.1 22.9 31.8 23.0 28.3 21.1 22.8 16.0 14.1 10.3 4.6 2.6 29.4 21.1
+Rochester
+7264400.4 5.2 3.0 9.0 6.2 18.8 12.4 26.8 16.4 29.7 19.1 32.6 21.8 33.8 23.2 32.8 23.4 29.7 22.6 25.7 17.1 16.9 12.6 10.3 9.0 31.1 22.4
+13.6 1.7 6.3 3.6 15.8 11.1 24.5 16.7 28.4 18.9 31.3 21.6 32.6 23.4 31.2 23.6 28.3 21.2 23.8 16.4 15.4 12.1 6.6 5.2 29.5 21.8
+22.6 1.2 4.4 2.2 13.7 9.6 22.3 14.6 27.0 18.4 30.2 21.2 31.4 23.2 30.1 22.9 26.8 19.9 22.3 15.8 14.1 11.1 4.3 2.9 27.9 20.9
+Saint Cloud
+7265500.4 5.3 2.3 8.8 4.8 18.9 12.7 27.3 15.2 31.2 19.3 34.2 21.7 35.4 23.1 34.0 23.2 31.3 22.7 25.6 16.6 17.1 10.6 6.8 3.8 32.5 22.3
+14.1 1.4 6.9 3.7 15.7 9.9 25.1 15.2 29.5 19.6 32.5 21.6 34.1 23.2 32.8 22.6 29.7 21.2 24.1 15.6 14.8 9.3 4.8 2.5 30.8 21.7
+22.8 0.4 5.4 2.3 13.3 8.0 22.9 14.4 28.1 17.9 31.4 20.9 32.7 23.1 31.7 22.5 28.2 20.3 22.5 15.4 12.9 9.1 3.1 1.4 29.3 20.8
+MISSISSIPPI
+Jackson
+7223500.424.1 18.1 25.9 18.3 28.7 19.7 30.2 21.1 33.0 22.7 36.1 24.1 36.9 25.8 36.4 25.1 35.5 24.3 31.6 21.6 27.7 20.0 25.1 20.1 35.2 24.8
+122.7 18.0 24.7 17.8 27.6 18.8 29.5 20.9 32.2 22.2 35.1 24.2 36.0 25.3 35.6 24.9 34.3 24.1 30.7 21.3 26.7 19.8 24.1 19.8 34.1 24.7
+221.3 17.1 23.3 16.8 26.6 18.2 28.7 20.2 31.5 22.2 34.4 24.3 35.1 25.2 34.9 24.9 33.5 24.1 29.8 20.9 25.8 19.3 23.0 19.1 33.2 24.6
+Meridian
+7223400.423.6 17.7 25.8 17.7 28.8 19.2 30.4 20.6 33.2 22.6 36.3 24.2 37.4 25.6 36.4 25.0 35.7 23.4 31.6 21.4 27.3 19.5 25.0 19.8 35.3 24.7
+122.3 16.8 24.3 16.9 27.7 18.4 29.5 20.3 32.3 22.4 35.3 24.2 36.3 25.1 35.6 24.9 34.4 23.3 30.4 20.8 26.3 18.9 23.9 19.2 34.2 24.5
+221.0 16.8 23.0 16.7 26.5 17.7 28.8 19.8 31.6 22.4 34.4 24.0 35.4 25.2 34.8 24.8 33.6 23.6 29.4 20.5 25.3 18.6 22.7 18.6 33.1 24.3
+MISSOURI
+Columbia
+7244500.417.7 12.7 20.2 12.2 26.2 15.9 29.3 18.4 30.8 20.8 34.8 23.3 38.7 23.5 37.2 23.8 34.1 23.1 29.9 18.9 23.8 16.2 18.9 14.8 34.8 23.8
+115.0 10.3 18.3 11.7 24.5 15.3 28.2 18.2 30.0 20.8 33.3 23.8 36.3 24.3 35.8 23.8 32.8 23.1 28.2 18.8 22.3 15.5 17.5 13.8 33.1 23.7
+213.2 9.2 16.2 10.4 22.8 14.7 27.0 17.8 29.1 20.7 32.3 23.4 35.1 24.3 34.8 23.6 31.7 22.9 26.7 18.3 20.8 14.9 15.6 11.8 31.7 23.2
+Kansas City
+7244600.416.5 12.4 19.9 11.4 25.9 15.8 30.2 18.8 31.3 20.9 35.5 23.8 38.3 24.2 37.8 24.4 34.6 23.3 30.5 19.0 23.8 15.9 18.1 13.7 35.5 24.1
+114.8 9.8 17.8 10.7 24.2 14.8 28.4 18.6 30.5 20.3 34.1 23.7 37.1 24.1 36.5 23.8 33.3 23.2 29.0 19.1 22.0 15.0 16.8 12.7 33.8 23.9
+212.8 8.3 15.9 9.9 22.5 14.3 26.9 18.1 29.6 20.6 33.1 23.6 35.8 24.3 35.3 23.8 32.2 23.1 27.4 18.4 20.5 14.7 15.2 11.0 32.3 23.4
+WMO# = World Meteorological Organization number DB = dry-bulb temperature, °C MWB = mean coincident wet-bulb temperature, °C.",2001_ASHRAE_Fundamentals_Handbook.pdf,,
+ko_051d666042fe81b7,standard_reference,parameter_spec,Maximum solvent vapor concentration for insurance,hvac:standard_reference:parameter:maximum_solvent_vapor_concentration_for_insurance,koev_7d1128e3b112fba2,chunk_e5cee8908e524c6d,doc_6854724bbc4b433e,267,"11.20 2021 ASHRAE Handbook—Fundamentals (SI)
+and polishers; -pinene and limonene from floor waxes; and
+1-methoxy-2-propanol from spray carpet cleaners. Formaldehyde, a
+major VOC, has many sources, but  pressed-wood products appear to
+be the most significant.
+4.4 FLAMMABLE GASES AND VAPORS
+Use of flammable materials is widespread. Flammable gases and
+vapors (as defined in NFPA Standard 30) can be found at hazardous
+levels in sewage treatment plants , sewage and utility tunnels, dry-
+cleaning plants, automobile garages, and industrial finishing pro-cess plants.
+A flammable liquid’s vapor pressu re and volatility or rate of
+evaporation determine its ability to form an explosive mixture.
+These properties can be expressed by the flash point , which is the
+temperature to which a flammable liquid must be heated to produce
+a flash when a small flame is passed across the surface of the liquid.Depending on the test methods, either the open- or closed-cup flashpoint may be listed.",ASHRAE_Handbook_-_Fundamentals_2021_-_SI.pdf,,
+ko_051d666042fe81b7,standard_reference,parameter_spec,Maximum solvent vapor concentration for insurance,hvac:standard_reference:parameter:maximum_solvent_vapor_concentration_for_insurance,koev_14b79ef97ef6a0ca,chunk_4a099bbd943a445b,doc_4a9b0fec1dfb4103,513,"When  such conditions are severe, unit
+ventilators or makeup air units may be required.
+Selection
+The following factors should be co nsidered when selecting a unit
+heater:
+• Heating medium to be used
+• Type of unit• Location of unit for pr oper heat distribution
+• Permissible sound level• Rating of the unit
+• Need for filtration
+Heating Medium. The proper heating medium is usually deter-
+mined by economics and requires ex amining initial cost, operating
+cost, and conditions of use.
+Steam or hot-water unit heaters  are relatively inexpensive but
+require a boiler and piping system. The unit cost of such a systemgenerally decreases as the number of units increases. Therefore,
+steam or hot-water heating is most frequently used (1) in new
+installations involving a relatively large number of units, and (2) in
+existing systems that have sufficient capacity to handle the addi-tional load.",ASHRAE手册2024.pdf,,ASHRAE
+ko_05b9aebdde71d566,screw_chiller,parameter_spec,压力调节阀设定点,hvac:screw_chiller:parameter:压力调节阀设定点,koev_587a34454936da30,visual_page_doc_a912a4d3b13e4971_9,doc_a912a4d3b13e4971,9,排气压力限定值(压缩机保持)： 1650 kPa,WCFX-R-螺杆式冷水机组操作说明书.pdf,顿汉布什,顿汉布什
+ko_05b9aebdde71d566,screw_chiller,parameter_spec,压力调节阀设定点,hvac:screw_chiller:parameter:压力调节阀设定点,koev_2fb43564bb80d8f2,chunk_8676f2fdd3ba4053,doc_dbf54c7b3f244b28,30,当滑阀位置大于或等于70%时电磁阀开启,【约克】RWF2螺杆式机组安装运行维护手册（80页）-制冷百家网.pdf,约克,约克
+ko_09774088f47b820e,ahu,operational_sequence,Temperature Control - Cooling Mode with Cold Duct SAT > Room Temp,hvac:ahu:operational_sequence:temperature_control_cooling_mode_with_cold_duct_sat_room_temp,koev_30139a1e873f337b,chunk_0a7d373c585c4220,doc_4bbd3703c4f84be4,101,"If cold duct supply air temperature from the air handler is greater than room temperature, the active cold duct supply airflow setpoint shall be no higher than the minimum endpoint.",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_09774088f47b820e,ahu,operational_sequence,Temperature Control - Cooling Mode with Cold Duct SAT > Room Temp,hvac:ahu:operational_sequence:temperature_control_cooling_mode_with_cold_duct_sat_room_temp,koev_d51fdb63904ab3d7,chunk_0a7d373c585c4220,doc_4bbd3703c4f84be4,101,"When the Zone State is deadband, the active cold duct airflow setpoint shall be the minimum endpoint. The cold duct damper shall be modulated by a control loop to maintain the measured cold duct airflow at the active cold duct airflow setpoint. The hot duct damper shall be closed.",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_09774088f47b820e,ahu,operational_sequence,Temperature Control - Cooling Mode with Cold Duct SAT > Room Temp,hvac:ahu:operational_sequence:temperature_control_cooling_mode_with_cold_duct_sat_room_temp,koev_c47399b0cd150275,chunk_b376b23097f1483e,doc_4bbd3703c4f84be4,102,"If hot-deck supply air temperature from air handler is less than room temperature, the active hot duct airflow setpoint shall be no higher than the minimum endpoint.",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_09774088f47b820e,ahu,operational_sequence,Temperature Control - Cooling Mode with Cold Duct SAT > Room Temp,hvac:ahu:operational_sequence:temperature_control_cooling_mode_with_cold_duct_sat_room_temp,koev_02fdf672dc26eac1,chunk_133ba542e8b64f3c,doc_4bbd3703c4f84be4,105,"If cold  duct supply air temperature from  the air handler is greater than room temperature,
+the active cold duct airflow setpoint  shall be no higher than the minimum  endpoint .
+b. When the Zone Sta",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_09774088f47b820e,ahu,operational_sequence,Temperature Control - Cooling Mode with Cold Duct SAT > Room Temp,hvac:ahu:operational_sequence:temperature_control_cooling_mode_with_cold_duct_sat_room_temp,koev_c4527b9636df4a00,chunk_b647cf05d97447cb,doc_4bbd3703c4f84be4,109,"ASHRAE Guideline 36 -2021  107 1. If cold  duct supply air temperature from air handler is greater than room temperature, the
+active cold duct airflow setpoint  shall be no higher than the minimum  en",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,主电源电压波动,hvac:screw_chiller:parameter:主电源电压波动,koev_39c17dc7b1ef8a39,chunk_607f4c3604714fbf,doc_4d279e5b533046ec,6,"6⍤⍨㷡憈㷡㿖こ .͜⍤┡㷡憈㷡㿖こ .͜
+⍤┡㷡憈㷡㿖こ .͜
+1214 1466 4151
+6J36
+JJ
+4151
+51
+312121 48
+263136726
+4629
+25
+36
+⍤⍨㷡⎧㷡㿖こ .͜⍤┡㷡憈㷡㿖こ .͜
+⍤┡㷡憈㷡㿖こ .͜
+16 266 4151
+J36
+JJ
+4151
+31
+312121
+215/626
+4629
+8
+36
+:48
+26
+⍤⍨㷡⎧㷡㿖こ .͜⍤┡㷡憈㷡㿖こ .͜
+⍤┡㷡憈㷡㿖こ .͜
+6 316 294151 36
+4151 312121
+.2126 .7/6
+3626
+:J
+JJ26
+848
+46
+1.6 2126
+⍤⍨㷡憈㷡㿖こ .͜⍤┡㷡憈㷡㿖こ .͜
+⍤┡㷡憈㷡㿖こ .͜
+12129
+41466 294151
+6J36
+JJ
+4151
+51
+312121 48
+.21 26313626
+.6
+3646J!!!....⍤㷡㣧偱◜⑕咰⢡
+JJ!!....䛕㏤拺儛▜ₒ㞍偔嶰启㷡㻮捼䠱ᾶ懇枭皀䛕※㕔⏣⍤⎊┸⑈ㇿⵇ皁!!!!!!!!㞣䠱㣧偱橊⫃䂎廌唤慽姹咰⢡
+++;㣧偱◜⑕☹慽姹䠱䕜⨰㿖こ咰⢡ῧ5/4.54/4͜慽姹咰⢡J⦧※⍤⍨㷡憈⎧▐҈⍤┡㷡憈⎧▐6͜㿖⾛
+J!!!....⍤㷡㣧偱䂎廌唤慽姹咰⢡JJ!!....䛕㏤拺儛▜ₒ㞍偔嶰启㷡㻮捼䠱ᾶ懇枭皀䛕※㕔⏣⍤⎊┸⑈ㇿⵇ皁
+!!!!!!!!㞣䠱㣧偱橊⫃䂎廌唤慽姹咰⢡
+J!!!....噱⍝㣧偱◜⑕咰⢡
+JJ!!....䛕㏤拺儛▜ₒ㞍偔嶰启㷡㻮捼䠱ᾶ懇枭皀䛕※㕔⏣⍤⎊┸⑈ㇿⵇ皁
+!!!!!!!!㞣䠱㣧偱橊⫃䂎廌唤慽姹咰⢡
+++;㣧偱◜⑕☹慽姹䠱䕜⨰㿖こ咰⢡ῧ5/4.54/4͜慽姹咰⢡J⦧※⏣⍤㯎ゼᾸ⍤⍨㷡憈⎧▐҈⍤┡㷡憈⎧▐6͜㿖⾛
+J!!!....噱⍝㣧偱䂎廌唤慽姹咰⢡
+JJ!!....䛕㏤拺儛▜ₒ㞍偔嶰启㷡㻮捼䠱ᾶ懇枭皀䛕※㕔⏣⍤⎊┸⑈ㇿⵇ皁
+!!!!!!!!㞣䠱㣧偱橊⫃䂎廌唤慽姹咰⢡运行极限
+机组启动范围示意图型号冷冻水 冷却水环境
+温度
+℃制冷剂系统高
+压侧
+(中国国标 )
+MPa电源电压
+V出口温
+度℃温差
+℃流量
+L/S压力降
+KPa最大工作
+压力(表压)
+MPa出口温度
+℃温差
+℃流量
+L/S压力降
+KPa最大工作
+压力(表压)
+MPa
+YEWS100S A最小 4.5 3.5 6.5 15.41.0 25.0 3.0 12.0 8.3
+1.0 最高
+46℃2.1MPa380/400/415
+±10%最大 15.0 8.0 21.0 130.7 40.0 8.0 37.0 61.3
+YEWS130S A最小 4.5 3.5 12.0 11.41.0 25.0 3.0 12.3 11.2
+最大 15.0 8.0 36.0 83.6 40.0 8.0 37.0 79.0
+YEWS170SA最小 4.5 3.5 15.0 8.91.0 25.0 3.0 16.0 11.0
+最大 15.0 8.0 47.0 70.3 40.0 8.0 48.0 77.1
+YEWS200S A最小 4.5 3.5 19.0 11.81.0 25.0 3.0 20.5 11.8
+最大 15.0 8.0 58.0 89.4 40.0 8.0 62.0 83.6
+YEWS250S A最小 4.5 3.5 20.0 16.2 1.0 25.0 3.0 22.0 15.1
+最大 15.0 8.0 59.0 115.0 40.0 8.0 64.0 100.0
+冷水机组启动范围示意图
+蓄冰机组启动范围示意图 蓄冰机组运行范围示意图冷水机组运行范围示意图.",约克YEWS水冷螺杆机（100－250RT）..pdf,,
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,主电源电压波动,hvac:screw_chiller:parameter:主电源电压波动,koev_f909d9cc3e7a4427,chunk_129187f6ccf84612,doc_8d7dfa5b1b7c445c,6,"电源：  3相380V、50Hz  ；
+R6Q·v~[¶Qettÿwww.zhilengbj.cn.",【麦克维尔】WMD单螺杆安装维护手册（63页）-.pdf,麦克维尔,麦克维尔
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,主电源电压波动,hvac:screw_chiller:parameter:主电源电压波动,koev_0a67fd98638278f2,visual_page_doc_a912a4d3b13e4971_10,doc_a912a4d3b13e4971,10,电源电压上限值 415V,WCFX-R-螺杆式冷水机组操作说明书.pdf,顿汉布什,顿汉布什
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,主电源电压波动,hvac:screw_chiller:parameter:主电源电压波动,koev_228bea8651f29d49,chunk_357b198cb90c4675,doc_98015153b0e642eb,12,"9LHD 系列螺杆式水冷
+冷水机组技术服务手册
+技术服务需知篇表 3-3 冷却水水质
+基本项目项目 基准值倾向
+腐蚀 结垢
+酸碱度 PH（25℃） 6.5-8.0 0 0
+导电率（25℃） <800 0 0
+氯离子 Cl-Mg（Cl-）/L <200 0
+硫酸根离子 SO-2Mg（SO-2）/L <200 0
+酸消耗量（PH4.8） Mg(CaCO3)/L <100 0
+全硬度 Mg(CaCO3)/L <200 0
+参考项目铁 Fe mg(Fe)/L <1.0 0 0
+硫离子 S2-mg(S2-)/L 不得检出 0
+铵离子 NH+mg(NH+)/L <1.0 0
+二氧化硅 SiO2 Mg(SiO2)/L <50 0
+3.7 电气接线施工
+(1)	在任何电气安装工作之前应确保切断总电源，在适当的位置安装总电源开关柜。
+(2)	通过电线连接孔把主电源线、接地线接到机组电控柜内，并将接线接到相应的接线座和地线座上，
+必须保证 L1，L2，L3 各相的正确连接。
+(3)	确认主电源的电压波动是在铭牌标称值的±10％范围之内，且电压的不平衡在±2％以内，如果超
+过这个范围，请将机组保持关机状态，并立即联系当地电力部门。
+相电压不平衡的计算公式为：
+(4)	在连接主电源电缆之前，请检查各电源线相序。
+(5)	连接控制电路
+1)	将冷冻水泵、冷却水泵、冷却塔风机的交流接触器控制线、水流开关与机组电控系统正确连接。
+2)	主电源应在开机前8小时接通，并在工作季节应一直供电，使压缩机加热带在压缩机未开时能进行
+加热，使集结在压缩机内的制冷剂液体挥发，避免直接开机对压缩机产生的不良影响。
+3)	确认机组可靠接地。
+(6)	电控箱电源进线说明
+机组电控箱电源进线处配备一个可拆卸的方形钣金件，客户安装时，请将此钣金件拆下，根据客户所
+配电缆接头尺寸对此钣金件开孔，电缆线穿孔固定。
+R6Q·v~[¶Qettÿwww.zhilengbj.cn",【格力】LHD 系列水冷冷水螺杆机组技术服务手册（88页）-.pdf,格力,格力
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,主电源电压波动,hvac:screw_chiller:parameter:主电源电压波动,koev_1cb623fd10a6fd4a,chunk_4d6fd58a00354e10,doc_552f27929c374dc0,20,"大型风冷单螺杆式冷水/热泵机组
+38
+大型风冷单螺杆式冷水/热泵机组
+39
+电气参数
+机型 电源 电压 启动方式压缩机(个) 风机电机(个) 整机
+数量堵转电流
+(A)熔断电流
+(A)数量标准型
+电流(A)低噪型
+电流(A)最大运行
+电流(A)额定电流
+(A)启动电流
+（A）
+MCS050.1F/MHS050.1F
+380V/3N~/50Hz最大440V
+最小342V星三角启动1 643 160 4 4 3.3 130.4 110.1 248
+MCS060.1F/MHS060.1F 1 643 200 4 4 3.3 155.8 131 248
+MCS070.1F/MHS070.1F 1 906 200 6 4 3.3 181.3 153 350
+MCS080.1F/MHS080.1F 1 906 250 6 4 3.3 204.5 173 350
+MCS100.1F/MHS100.1F 1 1678 315 8 4 3.3 257.3 215 648
+MCS120.1F/MHS120.1F 1 1678 355 8 4 3.3 289.2 239 648
+MCS135.1F/MHS135.1F 1 2166 355 8 4 3.3 299.0 251 837
+MCS150.1F/MHS150.1F 1 2166 400 10 4 3.3 380.6 294.4 837
+MCS170.1F/MHS170.1F 1 2166 500 10 4 3.3 429.3 364.7 837
+MCS185.1F/MHS185.1F 1 2166 500 12 4 3.3 448.7 374 837
+MCS200.2F/MHS200.2F 21678 315
+14 4 3.3 499.0 416.8 881
+1678 315
+MCS220.2F/MHS220.2F 21678 315
+15 4 3.3 536.6 449.2 893
+1678 355
+MCS235.2F/MHS235.2F 21678 355
+16 4 3.3 622.0 503 921
+1678 355
+MCS260.2F/MHS260.2F 22166 355
+16 4 3.3 646.7 538.9 1117
+2166 355
+MCS285.2F/MHS285.2F 22166 355
+17 4 3.3 700.6 579.6 1162
+2166 400
+MCS310.2F/MHS310.2F 22166 400
+18 4 3.3 756.6 635.8 1166
+2166 400
+MCS330.2F/MHS330.2F 22166 400
+19 4 3.3 839.0 705 1222
+2166 500
+MCS350.2F/MHS350.2F 22166 500
+20 4 3.3 939.2 788 1226
+2166 500
+MCS380.2F/MHS380.2F 22166 500
+20 4 3.3 891.3 749.7 1226
+2166 500
+说明：
+■ 最大运行电流：机组运行范围内，进行制冷期间的最大运行电流；
+■ 额定电流工况：制冷环境温度35℃，冷冻水进出水温度12℃/7℃；
+制热时环境干球温度7℃，湿球温度6℃，热水进出水温度40℃/45℃。        ■ 相间不平衡范围：≤2%。基础图
+单位：mm
+单位：mm
+单位：mmMCS050~060/MHS050~060
+MCS070~080/MHS070~080
+MCS100/MHS100机组型号弹簧减震器承重（kg）
+A B
+MCS050.1/060.1 684 576
+MHS050.1/060.1 695 590
+机组型号弹簧减震器承重（kg）
+A B
+MCS070.1/080.1 834 711
+MHS070.1/080.1 846 719
+机组型号弹簧减震器承重（kg）
+A B C
+MCS100.1 642 642 586
+MHS100.1 652 652 596安装地基
+机组底座
+电控柜
+减振器分布安装地基
+机组底座
+电控柜
+减振器分布
+625 1720
+安装地基
+机组底座
+电控柜
+减振器分布
+170 2185.",03_麦克维尔大型风冷单螺杆式冷水热泵机组_MCS-F、MHS-F.pdf,,
+ko_0a2c2eebadb6cf7a,screw_chiller,parameter_spec,主电源电压波动,hvac:screw_chiller:parameter:主电源电压波动,koev_36c083f833df5c5d,visual_page_doc_1f7a3ec0bcfa44f1_45,doc_1f7a3ec0bcfa44f1,45,送电测量三相电压，电压应在 380V 电压 ±10% 范围以内。,LM系列螺杆机说明书.pdf,unknown,unknown
+ko_0a5634c7d18e0843,centrifugal_chiller,operational_sequence,关机顺序,hvac:centrifugal_chiller:operational_sequence:关机顺序,koev_565f70d87247c6e6,chunk_cb7556b14069421f,doc_99fc08961aa540f4,13,"11 根据冷冻水出温和设定的 PID参数自动控制导叶开闭和电机的频率（对变频电机），进行压
+缩机容量调节，使冷冻水出温恒定在7±0.3℃。
+容量调节定义下面三种动作：其中导叶开度、电机频率均指输出值。
+能力保持：导叶和电机频率均为保持动作。
+能力增大：导叶开度增大或电机频率增大。
+能力减少：电机频率减少或导叶开度减少。
+为减少频率输出波动，当需要调节输出频率时，如果设定温度与出水温度的偏差绝对值小于
+等于0.3℃，输出频率保持不变；当偏差绝对值大于0.3℃时才调节频率，如果需要调节的是导
+叶开度，则任何时候只要能力需求变了都调节。
+4）导叶的调节方法
+在机组启动前可全程手动开闭导叶，用以检查、 调校电动执行器限位开关及导叶开度测量电
+路。系统上电或发出启动命令后，导叶将自动关至零位。
+在开机时，无论导叶是手动调节还是自动调节，每个周期执行三种导叶动作中的一个：保持；
+增大导叶开度；减少导叶开度。
+导叶进入自动运行后，在5％～100％间运行。导叶开度不得小于 5％。
+在机组启动完毕导叶自动开至 10％后，可在0％～100％间手动开闭导叶此时应注意观察冷
+冻水出水温度及时调节导叶开度使机组正常运行。手动调节代替容量调节PID算法，其它保护均
+有效。当选择导叶给定控制方式，并设定 好给定值，按确定键后，导叶将自动开闭至给定值。
+在关机时使用手动调节开关导叶，或者在执行关机动作时，导叶按照定位数值直接输出。
+5）压缩机关机
+变频电机频率不变，导叶逐步关闭至 10%（以反馈开度作为控制，如果反馈开度在 20个动
+作周期内没有到达 20％位置，则直接关主电机。），关主电机，关导叶至零，延时3分钟关油泵。
+6）压缩机油加热器控制
+压缩机油加热器由油加热交流接触器控制。保证压缩机停机后，油箱温度保持在48～52℃之
+间。开机且油泵开启时油加热器断开，否则按照以下条件运行：
+油箱温度≤48℃，油加热器接通；
+油箱温度≥52℃，油加热器断开；
+48℃＜油箱温度＜52℃，油加热器接触器保持状态。
+油箱温度传感器故障时，关闭油加热器并显示故障，但运行中的主机不停 机。
+http://www.coolling.net/
+R6Q·v~[¶Qettÿwww.zhilengbj.cn",【格力】C系列离心式冷水机组技术手册（69页）-.pdf,格力,格力
+ko_0a5634c7d18e0843,centrifugal_chiller,operational_sequence,关机顺序,hvac:centrifugal_chiller:operational_sequence:关机顺序,koev_710cdff732f301cf,chunk_8a312dd569aa417f,doc_1cee69bd44d14925,22,"CVS 系列光伏直驱变频离心式冷水机组用户说明书19
+频器上的白色按钮对变频器进行充电，母线电压指示灯亮，10秒后合上变频器的主断路器；然后在
+触摸屏主页上按下“开机”，输入正确密码后，系统按如下顺序依次动作进入自动启动、运行状态。
+(1) 水泵启动5分钟后， 油泵起动， 1分钟后， 主电机自动启动。 然后， 频率逐渐增加至目标频率(若
+油箱内油温不到45℃或油压差不到130kPa或水温小于设定温度或压缩机停机时间不到20分
+钟，主电机不会自动启动 )。
+(2) 达到目标频率后，进口导叶自动打开至30%，并按“加载时优先开大进口导叶，减载时优先
+降低频率（但不得低于目标频率）”的原则，实现机组的能力调节。
+(3) 刚开机时由于冷冻水进口温度比较高，机组内制冷剂吸入流量大，负荷大，若进口导叶尚未
+开到100%开度主电动机就已达到额定电流时，导叶开大的动作将会自动停止，若在此状态下
+负荷再增大至额定电流的103%时，将会实现强制关闭导叶的动作，以防止主电动机超负荷。
+(4) 当主电动机的电流降至额定值的95%以下时，导叶再恢复自动开大动作，直至达到所需冷冻
+水出水温度和制冷量。
+(5) 当冷负荷比输出的制冷量小时，冷冻水的出口温度将会降低。该温度由装在冷冻水出口管上
+的温度传感器检测出来并将信号送给微机控制柜，微机根据这一冷负荷变小的信号，发出降
+低频率的指令，频率自动降低，这样一来，冷冻水出水温度就不会继续降低，自动地保持在
+额定温度，当冷负荷增大时，则频率自动升高以保持出水温度恒定。这就叫做冷冻水出水温
+度的自动调节。
+(6) 在冷负荷非常小的场合，当频率已降低至目标频率，进口导叶也不再关小时，而冷冻水温度
+又继续降低，一旦冷冻水出水温度降到比额定温度(标准空调工况冷冻水出水的额定温度为
+7℃ ) 低 2℃，制冷机自动停止运行。
+(7) 这时制冷机虽然停车了，但仍处于自动进行状态。当冷负荷增大，冷冻水出水温度增加至比
+额定温度高5℃时，制冷机自动地投入运行。但从自动停车到自动再起动的间隔时间，不会
+少于 20 分钟。
+警 告
+暂停状态下机组仍处于自动运行状态，不可在该状态下触碰任何电气元件或者进行任何检修操
+作，否则可能导致严重的人身伤害！
+警 告
+机组运行中不要试着拉开隔离开关使机组停电，会导致高强度电弧！在故障未完全排除前，严
+禁重新启动机组。
+注 意
+除非是机组检修或者机内制冷剂被移走，否则即使停机状态也必须保证机组控制柜和油泵控制
+柜处于通电状态。
+◆全自动运行的制冷量控制机构
+用机载变频器和装在压缩机进口处的可调导叶机构的开闭来实现制冷机制冷量的控制。机组运
+行中，保持导叶在最大开度位置，通过调整频率来实现制冷量的控制；只有在频率为目标频率且机
+组仍需卸载的情况下，导叶根据温度传感器经微机发出的信号，通过电动执行器，经连杆和齿轮驱
+动来实现关闭动作。
+◆制冷机的停机方法
+若要制冷机停止运行，首先在触摸屏主页按下“关机”，电机频率按2Hz每周期逐渐降至目标
+频率最小值，同时压缩机导叶逐步关闭至30%，之后关闭压缩机主电机。制冷机停机，进口导叶自动
+关闭，油泵还要自动延时继续运行3分钟。油泵停转后2分钟会自动停止冷冻水泵、冷却水泵和冷
+却塔的运行。满负荷下机组正常关机时间需要大约15分钟，不同负荷下，由于运行的频率值和压缩.",CVS系列光伏直驱变频离心式冷水机组用户说明书(1).pdf,,
+ko_0a5634c7d18e0843,centrifugal_chiller,operational_sequence,关机顺序,hvac:centrifugal_chiller:operational_sequence:关机顺序,koev_75e997de30ed4bb6,chunk_c4c0463b9a664535,doc_29602c0c7a83484d,26,"CE 系列离心式水冷冷水机组用户说明书21
+4.3.2 机组运转中的检查
+运行中应定时对下列项目进行检查，与机组铭牌上所列的设计值或本说明书要求进行对比，若有异
+常应查明原因，以保证必要的最佳运行状态。
+(1) 温度
+冷水进出口温度、冷却水进出口温度、供油温度、油箱温度。
+(2) 压力
+蒸发 ( 器 ) 压力、冷凝 ( 器 ) 压力、供油压差 ( 供油压力与油箱压力之差 )。
+(3) 液位
+蒸发器制冷剂液位、油箱油位。
+(4) 各部位的振动、噪声。
+(5) 主电动机电流。
+(6) 蒸发器、冷凝器水量检查及调节。
+(7) 日常检查水泵的电流、水泵的出口压力 ( 扬程 )。
+每个月检查一次水量并调节水量的大小、保证水量与机组的额定水量差别不大。这时应测定经过蒸
+发器的冷水、 经过冷凝器的冷却水进出口之间的压力降， 并与 “检查项目” 中实测的流量的水阻损失对照。
+然后按下式计算冷水、冷却水的流量。
+(m3/h)
+式中： W′——水阻损失为△ h′时的流量       (m3/h)
+W——额定水量                         (m3/h)
+△ h′ =P1-P2                           (kPa)
+P1——冷水或冷却水的进口压力          (kPa)
+P2——冷水或冷却水的出口压力          (kPa)
+△ h——额定流量时的水阻损失            (kPa)
+4.4 关机
+若要制冷机停止运行，只要在触摸屏主页上按下“关机”即能使制冷机停机。制冷机停机后，进口
+导叶自动关闭，油泵还要自动延时继续运行3分钟。油泵停转后，会自动停止冷水泵，冷却水泵和冷却
+塔的运行。
+当出现手动停机和故障停机失控时，按下控制柜上的“急停”开关强制停机。
+4.5 长期停机的注意事项
+(1) 保持机房的通风，避免阳光直射机组。如果机房灰尘较多，应当用塑料薄膜覆盖机组。
+(2) 排尽水管和制冷机水室的水，在停机过程中保持水室排水阀开启。
+(3) 保持机组控制柜处于通电状态，维持机组油箱温度。
+(4) 长期停机后若需重新开机，需要首先关闭放水阀，并清洗水系统管路。检查机组蒸发压力和
+冷凝压力，两者数值应当相近，通过该压力值查询的饱和温度应当与水温相近。开机前重新进
+行控制程序模拟启动，确认合格后才能正式开启机组。
+4.6 移机注意事项
+警  告
+(1) 请委托售货方修理修理，不当会引起电击或火灾。
+(2) 移动再安装时请委托售货方安装，不当会引起电击或火灾。
+(3) 禁止私自改造，私自改造会引起电击或火灾。.",CE系列离心式水冷冷水机组用户说明书.pdf,,
+ko_0a5634c7d18e0843,centrifugal_chiller,operational_sequence,关机顺序,hvac:centrifugal_chiller:operational_sequence:关机顺序,koev_839d008cbb2db885,chunk_799ee54883f14285,doc_5428f7b517964cd8,49,"45
+格力 CE 系列离心机安装、运行、维护说明书7 开机调试及操作指导
+7.1 操作者责任
+(1) 在操作机组前应熟悉机组及相关设备；
+(2) 做好开机前的准备工作，按需要开 / 关机组；
+(3) 记录机组的运行状况，及时发现不正常读数；
+(4) 检查设备，进行常规调整，进行控制调试，保持正常的油位和制冷剂量；
+(5) 不得随意更改厂家设置参数；
+(6) 机组停机期间保护系统不受损坏。
+7.2 准备工作
+启动机组前应对机组状态进行检查，避免影响开机的情况发生。机组启动时，如果启动联锁
+回路处于下列任一状态，即使按下“开机”键，机组也不会启动：
+(1) 进口导叶没有全闭；
+(2) 故障保护回路没有复位；
+(3) 主电动机的启动柜内接触器不处于起动位置上；
+(4) 油箱内油温不到 45℃；
+(5) 电机绕组温度高于 60℃；
+(6) 供油压差 ( 供油压力与油箱内压力之差 ) 不足 250kPa；
+(7) 冷冻水出水温度低于设定值；
+(8) 制冷机停机后再启动的时间间隔未达到 20 分钟；
+(9) 冷水泵或冷却水泵没有运转。
+注 意
+温度高于43℃的水不得流入蒸发器或冷凝器， 否则， 压力过高的制冷剂会从安全阀排放出去，
+引起制冷剂的损失。
+7.3 机组运行方法
+经检查启动条件具备后，全自动运行的方式如下：
+(1) 在触摸屏主页上按下“开机”，输入正确密码后，系统按如下顺序依次动作进入自动启动、
+运行状态。
+(2) 水泵启动5分钟后，油泵起动，1分钟后，主电机主动起动。主电动机起动后，约
+15 ～ 30 秒钟达到转速。
+(3) 电机启动后 20 秒钟，进口导叶自动打开，并按所需制冷量自动动作输出冷水。
+(4) 刚开机时由于冷水进口温度比较高，机组内制冷剂吸入流量大，负荷大，若进口导叶尚未
+开到100% 开度而主电动机就已达到额定电流时，导叶开大的动作将会自动停止，若在此
+状态下负荷再增大至额定电流的103%时，将会实现强制关闭导叶的动作，以防止主电动
+机超负荷。
+(5) 当主电动机的电流降至额定值的95%以下时，导叶再恢复自动开大动作，直至达到所需冷
+水出水温度和制冷量。
+(6) 机组根据输入的冷冻出水温度控制制冷量达到要求。当冷负荷比输出的制冷量小时，冷水",CE系列离心式冷水机组安装维护运行说明书.pdf,,
+ko_0a5634c7d18e0843,centrifugal_chiller,operational_sequence,关机顺序,hvac:centrifugal_chiller:operational_sequence:关机顺序,koev_039aff752c42beee,chunk_86dc890ab71b4ef2,doc_99fc08961aa540f4,63,"61 e) 压缩机进口导叶全闭(若接线或机器内无异常时，上次停车后导叶自动回复到全闭位
+置)。
+f) 检查微机控制柜和启动柜。
+g) 蒸发器和冷凝器通水时，由排气阀将水室和水管中的空气排出(排气阀在机组水室上
+方)。
+h) 启动油泵，油压应正常(油泵起动后，供油压力应比油箱压力高 250～350kPa)。
+i) 确认冷水泵、冷却水泵和冷却塔运行正常，水量符合额定值。冷却水进水温度在20℃～
+34℃，冷冻水进水温度在7℃～34℃内。
+注意：温度高于43℃的水不得流入蒸发器或冷凝器 ，否则，压力过高的制冷剂会 从安全阀排放出
+去，引起制冷剂的损失。
+5.2.2 运行方法
+1）制冷机的运行
+起动联锁
+制冷机起动时，如果起动联锁回路处于下列任一状态，即使按下主页界面下的“开机”键，
+制冷机不会起动。
+a) 进口导叶没有全闭；
+b) 故障保护回路没有复位；
+c) 主电动机的起动柜内接触器不处于起动位置上；
+d) 油箱内油温不到45℃；
+e) 供油压差(供油压力与油箱内压力之差)不足250kPa；
+f) 制冷机停车后再启动的时间间隔未达到 20分钟；
+g) 冷水泵或冷却水泵没有运转。
+制冷机的运行方法
+本制冷机能实现全自动运行。当然，为了特殊用途，也设有手动开闭进口导叶的装置，但一
+般情况下应按全自动方式操作。
+经检查启动条件具备后，全自动运行的方式如下：
+在触摸屏主页上按下“开机”，输入正确密码后，系统按如下顺序依次动作进入自动启动、
+运行状态。
+a) 水泵启动 5分钟后，油泵起动，1分钟后，主电机主动起动。主电动机起动后，约15～
+30秒钟达到转速。(若油箱内油温不到 45℃或油压差不到250kPa或水温小于设定温度
+或压缩机停机时间不到 20分钟，主电机不会自动启动)。
+b) 达到满转速后约30秒钟，进口导叶自动打开，并按所需制冷量自动动作输出冷水。
+http://www.coolling.net/
+R6Q·v~[¶Qettÿwww.zhilengbj.cn",【格力】C系列离心式冷水机组技术手册（69页）-.pdf,格力,格力
+ko_0a5634c7d18e0843,centrifugal_chiller,operational_sequence,关机顺序,hvac:centrifugal_chiller:operational_sequence:关机顺序,koev_c39756da5350f818,chunk_b25ba94711654e75,doc_dcf25b0eb7fc4c75,63,"61 e) 压缩机进口导叶全闭(若接线或机器内无异常时，上次停车后导叶自动回复到全闭位
+置)。
+f) 检查微机控制柜和启动柜。
+g) 蒸发器和冷凝器通水时，由排气阀将水室和水管中的空气排出(排气阀在机组水室上
+方)。
+h) 启动油泵，油压应正常(油泵起动后，供油压力应比油箱压力高 250～350kPa)。
+i) 确认冷水泵、冷却水泵和冷却塔运行正常，水量符合额定值。冷却水进水温度在20℃～
+34℃，冷冻水进水温度在7℃～34℃内。
+注意：温度高于43℃的水不得流入蒸发器或冷凝器 ，否则，压力过高的制冷剂会 从安全阀排放出
+去，引起制冷剂的损失。
+5.2.2 运行方法
+1）制冷机的运行
+起动联锁
+制冷机起动时，如果起动联锁回路处于下列任一状态，即使按下主页界面下的“开机”键，
+制冷机不会起动。
+a) 进口导叶没有全闭；
+b) 故障保护回路没有复位；
+c) 主电动机的起动柜内接触器不处于起动位置上；
+d) 油箱内油温不到45℃；
+e) 供油压差(供油压力与油箱内压力之差)不足250kPa；
+f) 制冷机停车后再启动的时间间隔未达到 20分钟；
+g) 冷水泵或冷却水泵没有运转。
+制冷机的运行方法
+本制冷机能实现全自动运行。当然，为了特殊用途，也设有手动开闭进口导叶的装置，但一
+般情况下应按全自动方式操作。
+经检查启动条件具备后，全自动运行的方式如下：
+在触摸屏主页上按下“开机”，输入正确密码后，系统按如下顺序依次动作进入自动启动、
+运行状态。
+a) 水泵启动 5分钟后，油泵起动，1分钟后，主电机主动起动。主电动机起动后，约15～
+30秒钟达到转速。(若油箱内油温不到 45℃或油压差不到250kPa或水温小于设定温度
+或压缩机停机时间不到 20分钟，主电机不会自动启动)。
+b) 达到满转速后约30秒钟，进口导叶自动打开，并按所需制冷量自动动作输出冷水。
+http://www.coolling.net/
+R6Q·v~[¶Qettÿwww.zhilengbj.cn",【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf,格力,格力
+ko_0a5634c7d18e0843,centrifugal_chiller,operational_sequence,关机顺序,hvac:centrifugal_chiller:operational_sequence:关机顺序,koev_6fa4fac793c6b788,chunk_95b75c8ec3d24675,doc_dcf25b0eb7fc4c75,64,"62 c) 刚开机时由于冷水进口温度比较高，机组内制冷剂吸入流量大，负荷大，若进口导  叶
+尚未开到 100%开度主电动机就已达到额定电流时，导叶开的动作将会自动停止，若在此
+状态下负荷再增大至额定电流的105%时，将会实现强制关闭导叶的动作，以防止主电动
+机超负荷。
+d) 当主电动机的电流降至额定值的95%以下时，导叶再恢复自动开大动作，直至达到所需
+冷水出水温度和制冷量。
+e) 当冷负荷比输出的制冷量小时，冷水的出口温度将会降低。该温度由装在冷水出口管上
+的温度传感器检测出来并将信号送给微机控制柜，微机根据这一冷负荷变小的信号，发
+出关小进口导叶开度的指令，导叶自动关小，这样一来，冷水出水温度就不会继续降低，
+自动地保持在额定温度，当冷负荷增大时，则导叶自动开大以保持出水温度恒定，从而
+实现冷水出水温度的自动调节。
+f) 在冷负荷非常小的场合，当进口导叶不再关小时，而冷水温度又继续降低，一旦冷水出
+水温度降到比额定温度(标准空调工况冷水出水的额定温度为 7℃)低2℃，制冷机自动
+停止运行。这时制冷机虽然停车了，但仍处于自动进行状态。当冷负荷增大，冷水出水
+温度增加至比额定温度高5℃时，制冷机自动地投入运行。但从自动停车到自动再起动
+的间隔时间，不会少于20分钟。
+全自动运行的制冷量控制机构
+采用进口可调导叶的开闭来实现制冷机制冷量的控制 。导叶根据温度传感器经微机发出的信
+号，通过电动执行器，经连杆和齿轮驱动来实现开闭动作。
+制冷机的停机方法
+若要制冷机停止运行，只要在触摸屏主页上按下“关机”即能使制冷机停车。制冷机停车后，
+进口导叶自动关闭，油泵还要自动延时继续运行4分钟。油泵停转后，会自动停止冷水泵，冷却
+水泵和冷却塔的运行。
+当出现手动停机和故障停机失控时，按下控制柜上的“急停”开关强制停机。
+低能头运行
+冷凝器与蒸发器之间的压差很小时的运行 状态叫低能头运行，主要由于冷水温高而冷却水温
+低造成。本制冷机的主电动机和油冷却器，是利用冷凝器与蒸发器 之间的压力差供给冷却用制冷
+液来进行冷却的，因此，当冷凝器与蒸发器之间的压差过小时，冷却用制冷剂液的供给量就要减
+少，主电动机就会有产生过热的危险。尽管主电动机上装有绕组过热保护用热电阻，但由于冷却
+的不完全均匀导致绕组温度的不均匀，为避免主电动机绕组的局部损伤和保证润滑的充分冷却，
+极端的低能头运行总是不希望的。
+在冷却水温低的季节，必须通过调节冷却水量，使冷凝压力与蒸发压力之差不低于 200kPa，
+或冷却水进口温度不低于16℃。
+手动制冷量调节
+http://www.coolling.net/
+R6Q·v~[¶Qettÿwww.zhilengbj.cn.",【格力】C系列离心式冷水机组技术服务手册（69页）-.pdf,格力,格力
+ko_0aa1d7491394e13d,ahu,fault_diagnostic_rule,AFDD Fault Condition FC#13,hvac:ahu:fault_diagnostic_rule:afdd_fault_condition_fc_13,koev_23ff52cc07e4a127,chunk_55e193d187694401,doc_4bbd3703c4f84be4,166,"FC #3 (omit if no MAT sensor) Equation: MAT AVG - ƐMAT > min[(RAT AVG + Ɛ RAT), (OAT AVG + Ɛ OAT)] Applies to OS #1 – #5 Description: MAT too high; should be between OAT and RAT Possible Diagnosis: RAT sensor error, MAT sensor error, OAT sensor error",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_0aa1d7491394e13d,ahu,fault_diagnostic_rule,AFDD Fault Condition FC#13,hvac:ahu:fault_diagnostic_rule:afdd_fault_condition_fc_13,koev_8f59ea721b88b59f,chunk_2a2e3c10c2c24238,doc_4bbd3703c4f84be4,168,"FC #13 Equation: SAT AVG > SAT SP-C + Ɛ SAT and CC ≥ 99% Applies to OS #3, #4 Description: SAT too high in full cooling Possible Diagnosis: SAT sensor error, Cooling coil valve stuck closed or actuator failure, Fouled or undersized cooling coil, CHW temperature too low or CHW unavailable, DX cooling unavailable, Gas or electric heat stuck on, Heating coil valve leaking or stuck open",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_0d80e765f6b64a5c,hot_water_plant,fault_diagnostic_rule,HW Plant – FC#9: Return Temperature Too Low (Condensing Risk),hvac:hot_water_plant:fault_diagnostic_rule:hw_plant_fc_9_return_temperature_too_low_condensing_risk,koev_dd4b427449eadc95,chunk_ff2f76edac7e437b,doc_4bbd3703c4f84be4,260,"FC#6 Equation HWST AVG + Ɛ HWT < HWSTSP Applies to OS #2, #3 Description Hot water supply temperature is too low.",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_0d80e765f6b64a5c,hot_water_plant,fault_diagnostic_rule,HW Plant – FC#9: Return Temperature Too Low (Condensing Risk),hvac:hot_water_plant:fault_diagnostic_rule:hw_plant_fc_9_return_temperature_too_low_condensing_risk,koev_e5414e53eeb6e800,chunk_09fb328603ed4810,doc_4bbd3703c4f84be4,260,"FC#9 Equation HWRT AVG + ƐHWT < CondTemp Applies to OS #2, #3 Description Hot water return temperature is too low. Condensing is likely to occur. Possible Diagnosis Hot water supply temperature setpoint is too low.",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_178654fc424a0af4,air_cooled_modular_heat_pump,performance_spec,制冷额定总输入功率,hvac:air_cooled_modular_heat_pump:performance_spec:制冷额定总输入功率,koev_967c1c930923c985,visual_page_doc_241df464e7ea41df_5,doc_241df464e7ea41df,5,制热额定总输入功率* R22 kW 37.20,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf,麦克维尔,麦克维尔
+ko_178654fc424a0af4,air_cooled_modular_heat_pump,performance_spec,制冷额定总输入功率,hvac:air_cooled_modular_heat_pump:performance_spec:制冷额定总输入功率,koev_bce1e5eefa1dbe63,visual_page_doc_241df464e7ea41df_5,doc_241df464e7ea41df,5,制冷额定总输入功率 R22 kW 33.40,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf,麦克维尔,麦克维尔
+ko_2108bb796ebd7b19,screw_chiller,maintenance_procedure,压缩机拆卸步骤,hvac:screw_chiller:maintenance:压缩机拆卸步骤,koev_6114f3f3ab5b4669,chunk_1a9520fae5d847e1,doc_af83f5144dc645da,39,"30
+压缩机的拆卸
+如需要拆卸压缩机，请按下列步骤进行：
+1．进行拆卸之前请先将冷媒回收进空气侧热交换器中。
+2．关掉电气箱中的 PCB板的 DSW3的相应开关，从而不让其他循环的压缩机运转。
+3．充分循环水侧热交换器的冷冻水，运转机组 10分钟后，检查并确认压缩机油面处于稳定状态。
+4．停止机组运转并完全关闭截止阀。
+5．确认有冷冻水通过水侧热交换器后，再次启动机组。
+6．当低压压力达到约 0.05MPa 时停止机组运转。切不可在 0.05Mpa 以下运转，否则将损坏压缩机。
+7．等待数分钟。观察低压压力，如果低压压力增加到 0.15Mpa 至0.20Mpa ，则重复上述 5和6步骤
+4至5次。
+8．切断机组电源。
+9．拆去压缩机排气口及吸气口法兰中的螺栓。（注意：为防止冷媒喷射应缓慢松开螺栓，徐徐排放残
+余冷媒。）
+10．拆去压缩机的连接电线。
+11．拆去压缩机的固定螺栓，排出侧及吸入侧的连接法兰。
+12．卸下压缩机。
+以上 1~12为正常保养程序（如：更换压缩机的轴承）中拆卸压缩机。如因压缩机故障（无法运转）而拆
+卸，请按 8~12操作。
+对于低外气温度的地区
+如果外气温度低于–9.5 ℃(DB)，请另外安装加热装置如锅炉以及和加热装置的转换控制。请确认锅炉的热
+水不会进入冷却器。如果热水进入冷却器，由于热水的温度引起高压侧压力升至饱和压力，从而导致易熔塞
+熔化动作。
+对于下雪的地区
+对于空气吸入侧及排出侧都需要安装防雪板。如果没有安装防雪板，雪可能沉积而且付在空气换热器上，
+由于机组的除霜运转是用来除去机组自身运转的结霜，而不能除去由于没有防雪板而沉积的积雪，从而可能
+导致异常的低吸入压力引起压缩机的损坏。有关防雪板事项，请与日立公司联系。
+维护保养
+R6Q·v~[¶Qÿwww.zhilengbj.cn",【日立】风冷热泵H系列螺杆机组手册（49页）.pdf,日立,日立
+ko_2108bb796ebd7b19,screw_chiller,maintenance_procedure,压缩机拆卸步骤,hvac:screw_chiller:maintenance:压缩机拆卸步骤,koev_ad61918026039f83,chunk_95cf27f38a0b4842,doc_8fa4fae883f548d2,68,"LM系列螺杆式风冷冷 (热)水机组 (R22)技术服务手册
+64 4.2关键零部件的拆装
+4.2.1 干燥过滤器的拆装
+在拆装干燥过滤器之前必须确认已经卸除其内压力，否则，极可能导致安全事故及人身伤害的
+发生。
+(1) 机组运行中未停机前，将干燥过滤器进口一侧的角阀上的开关螺母顺时针尽快旋转到底部
+（S方向） ，等待机组自动停机，或约 2分钟后手动停机；
+(2) 关闭干燥过滤器另一侧的角阀；
+(3) 拧开端盖上的锁紧 螺母，放掉该段管路中剩余的制冷剂，打开过滤器的端盖取出旧滤芯换
+上新滤芯并装上端盖；
+(4) 从角阀上的注氟嘴抽真空约 5分钟；
+(5) 把角阀上的开关螺母逆时针尽快旋出到顶部 （ O方向） ， 拆除抽真空连接管， 拧紧管口螺母；
+(6) 对端盖处及 管口螺母处检漏，如漏再拧紧。
+4.2.2 压缩机的更换
+(1) 检查制冷剂系统以及各种线路，尽量弄清出现压缩机烧毁的原因；
+(2) 回收制冷剂，在回收之前应准备好相关的设备和工具，特别注意保持工作环境的通风良好；
+(3) 将压缩机从系统中取出，同时干燥过滤器也必须被更换；
+(4) 采用高压氮气清洗，反复冲洗整个系统；",LM系列螺杆式风冷(热)水机组(R22).pdf,,
+ko_22c130aad4ba2827,standard_reference,parameter_spec,normal_boiling_point,hvac:standard_reference:parameter:normal_boiling_point,koev_db8a9c8b19c5b886,chunk_e667d000eeb04b5d,doc_2a7ec347e5f44d9e,851,"Thermophysical Properties of Refrigerants 30.55
+Refrigerant 600a (Isobutane) Properties of  Saturated Liquid and Saturated Vapor
+Temp.,*
+°CPres-
+sure,
+MPaDensity,
+kg/m3
+LiquidVolume,
+m3/kg
+VaporEnthalpy,
+kJ/kgEntropy,
+kJ/(kg·K)Specific Heat cp,
+kJ/(kg·K) cp/cv
+VaporVelocity of Sound,
+m/sViscosity,
+Pa·sThermal Cond.,
+mW/(m·K)Surface
+Tension,
+mN/mTemp.,*
+°C Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor
+–100 0.00038 683.9 65.234 –6.40 428.19 0.0671 2.5770 1.878 1.131 1.145 1558 168.3 936.5 4.40 140.0 6.03 25.52 –100
+–95 0.00062 679.1 41.078 3.04 433.86 0.1208 2.5391 1.894 1.151 1.143 1526 170.5 837.2 4.53 138.0 6.39 24.88 –95
+–90 0.00098 674.2 26.648 12.55 439.62 0.1734 2.5052 1.911 1.171 1.140 1494 172.6 753.2 4.65 136.0 6.76 24.24 –90
+–85 0.00151 669.4 17.764 22.14 445.46 0.2251 2.4750 1.927 1.191 1.138 1462 174.7 681.3 4.78 134.0 7.13 23.59 –85
+–80 0.00227 664.5 12.140 31.82 451.39 0.2759 2.4481 1.944 1.212 1.136 1431 176.7 619.2 4.91 131.9 7.50 22.96 –80
+–75 0.00333 659.5 8.4874 41.59 457.40 0.3258 2.4242 1.961 1.233 1.134 1400 178.7 565.3 5.03 129.8 7.88 22.32 –75
+–70 0.00478 654.6 6.0592 51.44 463.48 0.3749 2.4031 1.979 1.254 1.132 1370 180.6 518.1 5.16 127.7 8.27 21.68 –70
+–65 0.00671 649.6 4.4096 61.38 469.63 0.4232 2.3845 1.997 1.276 1.130 1340 182.4 476.6 5.28 125.6 8.67 21.05 –65
+–60 0.00927 644.6 3.2662 71.41 475.86 0.4708 2.3683 2.015 1.298 1.129 1309 184.2 439.8 5.41 123.5 9.06 20.41 –60
+–55 0.01258 639.5 2.4590 81.54 482.14 0.5177 2.3541 2.034 1.321 1.128 1280 185.9 407.0 5.53 121.3 9.47 19.78 –55
+–50 0.01680 634.4 1.8792 91.76 488.49 0.5640 2.3419 2.054 1.344 1.126 1250 187.5 377.6 5.65 119.2 9.88 19.16 –50
+–45 0.02211 629.3 1.4561 102.09 494.89 0.6098 2.3315 2.074 1.368 1.126 1220 189.0 351.2 5.78 117.1 10.29 18.53 –45
+–40 0.02870 624.1 1.1427 112.51 501.35 0.6549 2.3227 2.094 1.393 1.125 1191 190.4 327.4 5.90 115.0 10.71 17.91 –40
+–35 0.03680 618.9 0.90737 123.04 507.85 0.6995 2.3154 2.115 1.418 1.125 1162 191.8 305.8 6.02 112.9 11.14 17.29 –35
+–30 0.04662 613.6 0.72839 133.68 514.40 0.7437 2.3095 2.137 1.444 1.125 1133 193.0 286.2 6.14 110.8 11.57 16.67 –30
+–25 0.05843 608.3 0.59062 144.43 520.99 0.7874 2.3048 2.159 1.471 1.125 1104 194.1 268.3 6.26 108.7 12.01 16.05 –25
+–20 0.07248 602.9 0.48339 155.30 527.61 0.8306 2.3013 2.182 1.499 1.125 1075 195.1 251.9 6.38 106.6 12.45 15.44 –20
+–15 0.08905 597.4 0.39904 166.29 534.26 0.8735 2.2989 2.206 1.527 1.126 1047 196.0 236.9 6.50 104.6 12.90 14.83 –15
+–11.75b0.10133 593.8 0.35378 173.49 538.60 0.9012 2.2979 2.222 1.547 1.126 1028 196.5 227.8 6.58 103.3 13.20 14.44 –11.75
+–10 0.10845 591.9 0.33204 177.40 540.93 0.9160 2.2975 2.231 1.557 1.127 1018 196.8 223.1 6.62 102.6 13.36 14.23 –10
+–5 0.13098 586.3 0.27833 188.63 547.63 0.9582 2.2969 2.256 1.587 1.128 990 197.4 210.3 6.74 100.6 13.83 13.63 –5
+0 0.15696 580.6 0.23491 200.00 554.34 1.0000 2.2972 2.283 1.619 1.130 961 197.9 198.6 6.86 98.6 14.30 13.03 0
+2 0.16839 578.3 0.21989 204.59 557.02 1.0167 2.2975 2.293 1.632 1.131 950 198.0 194.1 6.91 97.9 14.49 12.79 2
+4 0.18045 576.0 0.20604 209.19 559.71 1.0333 2.2980 2.304 1.645 1.132 939 198.2 189.8 6.96 97.1 14.68 12.55 4
+6 0.19316 573.6 0.19324 213.82 562.40 1.0498 2.2985 2.316 1.658 1.132 928 198.3 185.6 7.01 96.3 14.88 12.32 6
+8 0.20654 571.3 0.18140 218.47 565.09 1.0663 2.2992 2.327 1.672 1.133 916 198.3 181.5 7.06 95.5 15.07 12.08 8
+10 0.22061 568.9 0.17044 223.15 567.78 1.0828 2.3000 2.338 1.686 1.135 905 198.4 177.5 7.11 94.8 15.27 11.84 10
+12 0.23541 566.5 0.16028 227.85 570.47 1.0993 2.3008 2.350 1.699 1.136 894 198.4 173.7 7.16 94.0 15.47 11.61 12
+14 0.25094 564.2 0.15086 232.57 573.15 1.1157 2.3018 2.362 1.714 1.137 883 198.4 170.0 7.21 93.3 15.67 11.38 14
+16 0.26724 561.7 0.14210 237.32 575.84 1.1320 2.3028 2.374 1.728 1.138 871 198.4 166.3 7.26 92.5 15.88 11.14 16
+18 0.28432 559.3 0.13395 242.09 578.52 1.1484 2.3039 2.386 1.743 1.140 860 198.3 162.8 7.31 91.8 16.08 10.91 18
+20 0.30222 556.9 0.12637 246.88 581.21 1.1647 2.3051 2.398 1.757 1.141 849 198.2 159.3 7.37 91.1 16.29 10.68 20
+22 0.32095 554.4 0.11930 251.70 583.89 1.1810 2.3064 2.411 1.772 1.143 838 198.1 156.0 7.42 90.3 16.50 10.45 22
+24 0.34054 551.9 0.11271 256.55 586.56 1.1972 2.3078 2.424 1.788 1.144 826 198.0 152.7 7.47 89.6 16.72 10.22 24
+26 0.36102 549.4 0.10655 261.42 589.24 1.2134 2.3093 2.437 1.803 1.146 815 197.8 149.5 7.52 88.9 16.93 9.99 26
+28 0.38240 546.9 0.10080 266.32 591.91 1.2296 2.3108 2.450 1.819 1.148 804 197.6 146.5 7.58 88.2 17.15 9.76 28
+30 0.40472 544.3 0.09542 271.24 594.57 1.2458 2.3123 2.463 1.835 1.150 793 197.4 143.4 7.63 87.5 17.37 9.53 30
+32 0.42800 541.7 0.09038 276.19 597.23 1.2619 2.3140 2.477 1.852 1.152 781 197.1 140.5 7.69 86.8 17.59 9.31 32
+34 0.45226 539.1 0.08566 281.17 599.88 1.2780 2.3157 2.491 1.869 1.154 770 196.8 137.6 7.74 86.1 17.82 9.08 34
+36 0.47753 536.5 0.08124 286.18 602.53 1.2941 2.3174 2.505 1.886 1.157 759 196.5 134.8 7.80 85.4 18.05 8.86 36
+38 0.50384 533.9 0.07708 291.22 605.17 1.3102 2.3192 2.520 1.903 1.159 747 196.2 132.1 7.85 84.7 18.29 8.63 38
+40 0.53121 531.2 0.07317 296.28 607.80 1.3263 2.3211 2.535 1.921 1.162 736 195.8 129.4 7.91 84.1 18.52 8.41 40
+42 0.55966 528.5 0.06950 301.37 610.43 1.3423 2.3230 2.550 1.939 1.165 725 195.3 126.8 7.97 83.4 18.77 8.19 42
+44 0.58923 525.8 0.06605 306.50 613.04 1.3583 2.3249 2.566 1.958 1.168 714 194.9 124.2 8.03 82.7 19.01 7.97 44
+46 0.61995 523.0 0.06279 311.65 615.65 1.3744 2.3269 2.582 1.977 1.171 702 194.4 121.7 8.09 82.1 19.26 7.75 46
+48 0.65182 520.2 0.05973 316.84 618.24 1.3904 2.3289 2.598 1.997 1.174 691 193.9 119.3 8.15 81.4 19.52 7.53 48
+50 0.68490 517.4 0.05683 322.06 620.82 1.4064 2.3309 2.615 2.017 1.178 680 193.3 116.9 8.22 80.8 19.78 7.31 50
+55 0.77299 510.2 0.05029 335.25 627.22 1.4464 2.3361 2.659 2.069 1.188 651 191.7 111.1 8.38 79.2 20.45 6.78 55
+60 0.86916 502.7 0.04459 348.66 633.53 1.4863 2.3414 2.706 2.125 1.199 622 189.9 105.6 8.56 77.6 21.16 6.24 60
+65 0.97386 495.0 0.03962 362.29 639.72 1.5263 2.3467 2.757 2.186 1.213 593 187.8 100.3 8.74 76.1 21.92 5.72 65
+70 1.0875 487.0 0.03525 376.17 645.77 1.5664 2.3520 2.812 2.252 1.229 564 185.4 95.2 8.94 74.6 22.72 5.21 70
+75 1.2107 478.6 0.03140 390.31 651.64 1.6065 2.3572 2.874 2.326 1.248 535 182.7 90.4 9.16 73.2 23.59 4.71 75
+80 1.3438 469.9 0.02799 404.73 657.31 1.6469 2.3621 2.942 2.409 1.272 505 179.7 85.6 9.39 71.8 24.53 4.21 80
+85 1.4874 460.7 0.02496 419.46 662.73 1.6874 2.3667 3.020 2.507 1.301 475 176.3 81.0 9.65 70.4 25.56 3.73 85
+90 1.6420 451.1 0.02226 434.54 667.86 1.7283 2.3708 3.110 2.625 1.338 444 172.6 76.6 9.95 69.1 26.70 3.26 90
+95 1.8081 440.7 0.01983 450.00 672.62 1.7696 2.3743 3.217 2.769 1.385 413 168.4 72.1 10.27 67.8 27.98 2.80 95
+100 1.9865 429.6 0.01764 465.90 676.94 1.8114 2.3769 3.347 2.951 1.447 381 163.8 67.8 10.65 66.6 29.44 2.36 100
+105 2.1778 417.6 0.01565 482.33 680.70 1.8539 2.3785 3.513 3.189 1.531 348 158.7 63.4 11.09 65.4 31.14 1.93 105
+110 2.3826 404.3 0.01383 499.39 683.74 1.8974 2.3785 3.736 3.517 1.650 313 153.1 59.0 11.62 64.2 33.18 1.53 110
+115 2.6019 389.4 0.01214 517.26 685.81 1.9423 2.3765 4.059 4.002 1.831 278 146.9 54.5 12.27 63.1 35.72 1.14 115
+120 2.8366 372.0 0.01056 536.26 686.46 1.9893 2.3714 4.585 4.806 2.139 240 139.9 49.8 13.09 62.2 39.05 0.78 120
+125 3.0880 350.6 0.00902 557.01 684.81 2.0400 2.3610 5.629 6.428 2.770 200 132.1 44.6 14.22 61.8 43.91 0.46 125
+130 3.3578 321.0 0.00742 581.26 678.44 2.0985 2.3396 8.91 11.56 4.77 156 123.0 38.5 15.99 63.3 52.88 0.18 130
+134.66c3.6290 225.5 0.00443 633.94 633.94 2.2259 2.2259   0 0.0 — —  0.00 134.66
+*Temperatures on ITS-90 scalebNormal boiling pointcCritical pointLicensed for single user.",ASHRAE手册 - 基础理论篇.pdf,,ASHRAE
+ko_22c130aad4ba2827,standard_reference,parameter_spec,normal_boiling_point,hvac:standard_reference:parameter:normal_boiling_point,koev_22e434804196ebd7,chunk_27c0570f32004f16,doc_472265f3b7f141f8,861,"of Sound,
+ft/sViscosity,
+lbm/ft·hThermal Cond.,
+Btu/h·ft·°FSurface
+Tension,
+dyne/cmTemp.,*
+°F Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor
+–250 0.031 38.88 2447.2 –68.630 174.981 –0.25681 0.90507 0.5440 0.2921 1.2932 5970 669.4 1.283 0.0092 0.1348 0.00257 27.27 –250
+–245 0.046 38.69 1665.0 –65.908 176.436 –0.24398 0.88493 0.5446 0.2936 1.2916 5905 676.8 1.197 0.0094 0.1333 0.00267 26.80 –245
+–240 0.068 38.50 1155.7 –63.183 177.896 –0.23143 0.86603 0.5454 0.2952 1.2899 5839 684.1 1.119 0.0096 0.1318 0.00277 26.34 –240
+–235 0.098 38.31 817.24 –60.454 179.359 –0.21915 0.84825 0.5463 0.2969 1.2884 5773 691.3 1.050 0.0098 0.1303 0.00287 25.87 –235–230 0.139 38.11 587.98 –57.720 180.827 –0.20711 0.83154 0.5472 0.2987 1.2868 5707 698.3 0.988 0.0100 0.1287 0.00297 25.40 –230
+–225 0.195 37.92 429.90 –54.981 182.297 –0.19532 0.81580 0.5483 0.3005 1.2854 5641 705.3 0.932 0.0102 0.1272 0.00308 24.94 –225
+–220 0.268 37.73 319.09 –52.237 183.770 –0.18375 0.80097 0.5494 0.3023 1.2839 5575 712.1 0.881 0.0104 0.1256 0.00318 24.48 –220–215 0.363 37.53 240.18 –49.486 185.246 –0.17239 0.78699 0.5506 0.3042 1.2826 5508 718.8 0.834 0.0106 0.1241 0.00329 24.01 –215
+–210 0.485 37.33 183.18 –46.730 186.723 –0.16124 0.77380 0.5518 0.3061 1.2814 5441 725.4 0.792 0.0108 0.1225 0.00340 23.55 –210
+–205 0.641 37.14 141.43 –43.967 188.201 –0.15029 0.76136 0.5531 0.3080 1.2803 5375 731.8 0.753 0.0110 0.1209 0.00351 23.09 –205–200 0.836 36.94 110.46 –41.197 189.680 –0.13952 0.74960 0.5545 0.3099 1.2793 5308 738.1 0.718 0.0112 0.1193 0.00362 22.62 –200
+–195 1.078 36.74 87.201 –38.421 191.159 –0.12893 0.73848 0.5559 0.3117 1.2784 5241 744.3 0.685 0.0114 0.1177 0.00373 22.16 –195
+–190 1.376 36.54 69.541 –35.636 192.637 –0.11852 0.72797 0.5574 0.3134 1.2777 5174 750.4 0.654 0.0116 0.1161 0.00385 21.70 –190–185 1.739 36.34 55.986 –32.844 194.113 –0.10827 0.71802 0.5590 0.3152 1.2772 5106 756.3 0.626 0.0118 0.1146 0.00397 21.24 –185
+–180 2.177 36.14 45.476 –30.044 195.585 –0.09817 0.70860 0.5606 0.3169 1.2769 5038 762.1 0.599 0.0120 0.1130 0.00409 20.79 –180
+–175 2.701 35.94 37.249 –27.235 197.054 –0.08822 0.69966 0.5623 0.3186 1.2768 4971 767.7 0.575 0.0122 0.1114 0.00421 20.33 –175–170 3.324 35.74 30.751 –24.417 198.516 –0.07842 0.69119 0.5641 0.3204 1.2768 4903 773.2 0.552 0.0124 0.1098 0.00433 19.87 –170
+–165 4.059 35.53 25.575 –21.589 199.972 –0.06876 0.68314 0.5659 0.3223 1.2772 4835 778.5 0.530 0.0126 0.1082 0.00446 19.42 –165
+–160 4.919 35.33 21.419 –18.752 201.420 –0.05923 0.67549 0.5679 0.3242 1.2777 4766 783.6 0.510 0.0129 0.1067 0.00459 18.96 –160–155 5.919 35.12 18.056 –15.904 202.857 –0.04982 0.66821 0.5699 0.3264 1.2784 4698 788.5 0.491 0.0131 0.1051 0.00472 18.51 –155
+–150 7.075 34.91 15.315 –13.046 204.284 –0.04053 0.66128 0.5720 0.3287 1.2794 4629 793.2 0.473 0.0133 0.1035 0.00485 18.06 –150
+–145 8.404 34.70 13.066 –10.175 205.698 –0.03136 0.65467 0.5743 0.3313 1.2806 4560 797.8 0.456 0.0135 0.1020 0.00499 17.61 –145–140 9.923 34.49 11.208 –7.293 207.098 –0.02230 0.64837 0.5766 0.3341 1.2821 4491 802.0 0.440 0.0137 0.1004 0.00513 17.16 –140
+–135 11.650 34.28 9.6646 –4.399 208.484 –0.01334 0.64235 0.5791 0.3373 1.2838 4421 806.1 0.424 0.0139 0.0989 0.00527 16.71 –135
+–130 13.604 34.06 8.3742 –1.490 209.854 –0.00449 0.63659 0.5817 0.3407 1.2857 4352 809.9 0.410 0.0141 0.0973 0.00541 16.26 –130
+–127.45b14.696 33.95 7.7972 0.000 210.547 0.00000 0.63375 0.5831 0.3425 1.2868 4316 811.8 0.402 0.0142 0.0965 0.00549 16.03 –127.45
+–125 15.805 33.84 7.2896 1.432 211.207 0.00427 0.63109 0.5844 0.3444 1.2879 4282 813.5 0.396 0.0143 0.0958 0.00556 15.82 –125
+–120 18.273 33.62 6.3731 4.368 212.542 0.01294 0.62581 0.5873 0.3483 1.2904 4212 816.8 0.383 0.0146 0.0943 0.00571 15.37 –120–115 21.030 33.40 5.5947 7.320 213.858 0.02153 0.62076 0.5903 0.3526 1.2931 4141 819.9 0.370 0.0148 0.0928 0.00587 14.93 –115
+–110 24.096 33.18 4.9305 10.288 215.154 0.03003 0.61591 0.5934 0.3572 1.2962 4071 822.7 0.358 0.0150 0.0913 0.00603 14.49 –110
+–105 27.494 32.95 4.3611 13.274 216.431 0.03845 0.61126 0.5968 0.3620 1.2996 4000 825.2 0.346 0.0152 0.0898 0.00619 14.05 –105–100 31.246 32.73 3.8708 16.277 217.685 0.04680 0.60678 0.6003 0.3670 1.3033 3929 827.5 0.335 0.0154 0.0883 0.00636 13.62 –100
+–95 35.376 32.50 3.4469 19.298 218.918 0.05508 0.60248 0.6039 0.3724 1.3074 3857 829.5 0.325 0.0157 0.0868 0.00653 13.18 –95
+–90 39.908 32.26 3.0790 22.340 220.127 0.06329 0.59833 0.6078 0.3779 1.3119 3786 831.2 0.314 0.0159 0.0854 0.00670 12.75 –90–85 44.864 32.03 2.7583 25.402 221.312 0.07144 0.59433 0.6119 0.3837 1.3168 3714 832.6 0.304 0.0161 0.0839 0.00688 12.32 –85
+–80 50.270 31.79 2.4779 28.486 222.472 0.07954 0.59047 0.6163 0.3897 1.3222 3641 833.8 0.295 0.0164 0.0825 0.00706 11.89 –80
+–75 56.151 31.54 2.2318 31.592 223.605 0.08757 0.58674 0.6208 0.3959 1.3282 3569 834.6 0.286 0.0166 0.0810 0.00725 11.46 –75–70 62.531 31.30 2.0150 34.723 224.710 0.09556 0.58312 0.6256 0.4025 1.3347 3496 835.2 0.277 0.0168 0.0796 0.00745 11.04 –70
+–65 69.437 31.05 1.8235 37.878 225.785 0.10350 0.57962 0.6307 0.4092 1.3418 3423 835.4 0.268 0.0171 0.0782 0.00765 10.62 –65
+–60 76.893 30.79 1.6538 41.060 226.830 0.11140 0.57621 0.6361 0.4163 1.3497 3349 835.4 0.260 0.0173 0.0768 0.00785 10.20 –60–55 84.927 30.54 1.5030 44.270 227.841 0.11926 0.57290 0.6419 0.4237 1.3583 3276 835.0 0.252 0.0176 0.0754 0.00806 9.78 –55
+–50 93.564 30.28 1.3685 47.509 228.818 0.12709 0.56966 0.6480 0.4315 1.3678 3201 834.4 0.244 0.0178 0.0740 0.00828 9.37 –50
+–45 102.83 30.01 1.2483 50.779 229.758 0.13489 0.56650 0.6544 0.4397 1.3782 3127 833.4 0.237 0.0181 0.0726 0.00851 8.96 –45–40 112.76 29.74 1.1406 54.082 230.660 0.14266 0.56341 0.6613 0.4484 1.3897 3052 832.0 0.230 0.0184 0.0713 0.00874 8.55 –40
+–35 123.37 29.46 1.0437 57.419 231.519 0.15040 0.56037 0.6687 0.4576 1.4024 2976 830.3 0.222 0.0186 0.0699 0.00898 8.15 –35
+–30 134.69 29.18 0.9565 60.793 232.334 0.15813 0.55737 0.6766 0.4675 1.4164 2901 828.3 0.216 0.0189 0.0686 0.00923 7.75 –30–25 146.76 28.89 0.8777 64.205 233.101 0.16585 0.55441 0.6851 0.4780 1.4320 2824 825.9 0.209 0.0192 0.0672 0.00949 7.35 –25
+–20 159.59 28.60 0.8063 67.658 233.818 0.17356 0.55148 0.6942 0.4895 1.4493 2747 823.2 0.202 0.0195 0.0659 0.00977 6.96 –20
+–15 173.23 28.30 0.7416 71.155 234.481 0.18127 0.54857 0.7041 0.5019 1.4685 2670 820.0 0.196 0.0198 0.0646 0.01005 6.57 –15–10 187.69 27.99 0.6827 74.698 235.085 0.18898 0.54566 0.7148 0.5154 1.4901 2592 816.5 0.190 0.0202 0.0633 0.01035 6.18 –10
+–5 203.01 27.67 0.6290 78.291 235.626 0.19670 0.54274 0.7265 0.5302 1.5142 2513 812.5 0.183 0.0205 0.0620 0.01066 5.80 –5
+0 219.22 27.35 0.5800 81.937 236.099 0.20444 0.53981 0.7393 0.5465 1.5414 2433 808.2 0.177 0.0208 0.0607 0.01099 5.42 0  5 236.35 27.02 0.5351 85.641 236.498 0.21220 0.53685 0.7533 0.5647 1.5722 2352 803.4 0.172 0.0212 0.0594 0.01133 5.05 5
+10 254.43 26.67 0.4939 89.407 236.817 0.21999 0.53385 0.7689 0.5850 1.6073 2271 798.1 0.166 0.0216 0.0581 0.01170 4.68 10
+15 273.50 26.31 0.4560 93.240 237.047 0.22783 0.53079 0.7863 0.6079 1.6475 2189 792.4 0.160 0.0220 0.0568 0.01210 4.32 15 20 293.58 25.94 0.4210 97.147 237.179 0.23572 0.52765 0.8058 0.6340 1.6941 2105 786.2 0.154 0.0224 0.0556 0.01252 3.96 20
+25 314.72 25.56 0.3888 101.135 237.203 0.24367 0.52442 0.8279 0.6640 1.7483 2020 779.5 0.149 0.0229 0.0543 0.01298 3.61 25
+30 336.96 25.16 0.3589 105.212 237.106 0.25171 0.52106 0.8533 0.6989 1.8122 1935 772.3 0.143 0.0234 0.0530 0.01348 3.27 30 35 360.32 24.74 0.3311 109.389 236.872 0.25984 0.51755 0.8827 0.7403 1.8884 1848 764.5 0.138 0.0240 0.0518 0.01402 2.93 35
+40 384.86 24.30 0.3052 113.680 236.482 0.26810 0.51387 0.9174 0.7899 1.9805 1759 756.1 0.133 0.0245 0.0505 0.01463 2.60 40
+45 410.60 23.83 0.2810 118.099 235.912 0.27651 0.50995 0.9591 0.8507 2.0938 1669 747.1 0.127 0.0252 0.0492 0.01532 2.28 45 50 437.61 23.33 0.2583 122.669 235.130 0.28510 0.50575 1.010 0.9268 2.2363 1576 737.4 0.122 0.0259 0.0480 0.01610 1.97 50
+55 465.94 22.80 0.2369 127.416 234.096 0.29392 0.50120 1.075 1.0249 2.4204 1480 727.0 0.116 0.0267 0.0467 0.01701 1.66 55
+60 495.62 22.22 0.2166 132.379 232.751 0.30305 0.49619 1.160 1.1561 2.6671 1379 715.8 0.111 0.0276 0.0454 0.01810 1.37 60
+65 526.74 21.58 0.1972 137.616 231.011 0.31257 0.49058 1.278 1.3410 3.0141 1274 703.7 0.105 0.0287 0.0442 0.01944 1.09 65
+70 559.37 20.87 0.1784 143.213 228.746 0.32265 0.48413 1.453 1.6213 3.5371 1163 690.6 0.099 0.0300 0.0430 0.02115 0.82 70
+75 593.59 20.04 0.1600 149.326 225.730 0.33355 0.47645 1.744 2.0966 4.4139 1043 676.0 0.092 0.0316 0.0419 0.02350 0.57 75
+80 629.53 19.02 0.1412 156.264 221.511 0.34583 0.46673 2.334 3.0762 6.1833 911 659.1 0.085 0.0338 0.0413 0.02713 0.34 80
+85 667.35 17.63 0.1205 164.880 214.864 0.36102 0.45279 4.198 6.1975 11.596 758 636.4 0.076 0.0371 0.0425 0.03436 0.14 85
+89.91c706.65 12.87 0.0777 188.859 188.859 0.40394 0.40394  00 .",ASHRAE_Handbook_-_Fundamentals_2021_-_IP_(NXPowerLite_Copy).pdf,,
+ko_22c130aad4ba2827,standard_reference,parameter_spec,normal_boiling_point,hvac:standard_reference:parameter:normal_boiling_point,koev_0cf5f72d1c012907,chunk_2a58bea0bfa84fb8,doc_2a7ec347e5f44d9e,863,"Thermophysical Properties of Refrigerants 30.67
+Refrigerant 732 (Oxyge n) Properties of Saturated Liquid and Saturated Vapor
+Temp.,*
+KAbsolute
+Pressure,
+MPaDensity,
+kg/m3
+LiquidVolume,
+m3/kg
+VaporEnthalpy,
+kJ/kgEntropy,
+kJ/(kg·K)Specific Heat cp,
+kJ/(kg·K) cp/cv
+VaporVelocity of
+Sound, m/sViscosity,
+Pa·sThermal Cond.,
+mW/(m·K)Surface
+Tension,
+mN/mTemp.,*
+K Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor
+54.36a0.00015 1306.1 96.54300 –193.61 49.11 2.0921 6.5571 1.673 0.926 1.395 1123 140.3 773.6 4.10 201.9 4.42 22.68 54.36
+55 0.00018 1303.5 80.00900 –192.55 49.68 2.1117 6.5159 1.672 0.928 1.394 1127 141.1 747.5 4.15 201.0 4.48 22.50 55
+60 0.00073 1282.0 21.46200 –184.19 54.19 2.2571 6.2301 1.673 0.948 1.390 1127 147.0 578.1 4.55 193.9 4.98 21.12 60
+65 0.00233 1259.7 7.21880 –175.81 58.66 2.3912 5.9985 1.677 0.967 1.387 1102 152.6 457.9 4.96 186.8 5.49 19.76 65
+70 0.00626 1237.0 2.89250 –167.42 63.09 2.5156 5.8086 1.678 0.978 1.387 1066 158.1 371.8 5.36 179.7 5.99 18.41 70
+75 0.01455 1213.9 1.32930 –159.02 67.45 2.6313 5.6510 1.679 0.979 1.392 1027 163.3 308.7 5.75 172.6 6.51 17.09 75
+80 0.03012 1190.5 0.68099 –150.61 71.69 2.7397 5.5185 1.682 0.974 1.402 987 168.4 261.2 6.15 165.4 7.03 15.78 80
+85 0.05683 1166.6 0.38047 –142.18 75.75 2.8417 5.4055 1.688 0.969 1.417 947 173.1 224.6 6.54 158.3 7.57 14.49 85
+90 0.09935 1142.1 0.22794 –133.69 79.55 2.9383 5.3076 1.699 0.970 1.436 906 177.3 195.6 6.94 151.0 8.12 13.22 90
+90.19b0.10133 1141.2 0.22386 –133.37 79.69 2.9419 5.3042 1.699 0.971 1.437 904 177.5 194.7 6.95 150.8 8.15 13.17 90.19
+95 0.16308 1116.9 0.14450 –125.12 83.04 3.0303 5.2215 1.715 0.982 1.460 864 181.0 172.1 7.33 143.8 8.71 11.98 95
+100 0.25400 1090.9 0.09592 –116.45 86.16 3.1185 5.1445 1.738 1.006 1.491 822 184.1 152.6 7.73 136.6 9.34 10.75 100
+105 0.37853 1063.8 0.06612 –107.64 88.85 3.2033 5.0746 1.767 1.046 1.528 779 186.4 135.9 8.13 129.2 10.01 9.56 105
+110 0.54340 1035.5 0.04699 –98.64 91.05 3.2855 5.0100 1.807 1.101 1.576 735 188.1 121.5 8.55 121.9 10.75 8.39 110
+115 0.75559 1005.6 0.03424 –89.42 92.72 3.3657 4.9495 1.858 1.177 1.638 689 189.1 108.8 8.98 114.6 11.57 7.25 115
+120 1.02230 973.9 0.02544 –79.90 93.75 3.4444 4.8915 1.927 1.276 1.721 642 189.4 97.4 9.43 107.2 12.51 6.14 120
+125 1.35090 939.7 0.01919 –70.02 94.06 3.5222 4.8349 2.021 1.411 1.835 592 189.0 87.1 9.91 99.9 13.61 5.07 125
+130 1.74910 902.5 0.01463 –59.66 93.47 3.6001 4.7780 2.153 1.600 2.000 540 187.8 77.6 10.45 92.6 14.94 4.04 130
+135 2.22500 861.0 0.01120 –48.65 91.74 3.6791 4.7191 2.354 1.886 2.252 484 185.7 68.7 11.06 85.4 16.64 3.05 135
+140 2.78780 813.2 0.00856 –36.70 88.47 3.7612 4.6552 2.691 2.370 2.682 423 182.8 60.2 11.82 78.2 18.98 2.13 140
+145 3.44770 755.1 0.00646 –23.22 82.83 3.8498 4.5812 3.368 3.369 3.561 355 178.8 51.9 12.88 71.1 22.58 1.27 145
+150 4.21860 675.5 0.00465 –6.67 72.56 3.9546 4.4828 5.464 6.625 6.315 274 172.8 42.9 14.72 64.2 29.67 0.51 150
+154.58c5.04300 436.1 0.00229 32.42 32.42 4.2008 4.2008   0 0.0 — —  0.00 154.58
+*Temperatures on ITS-90 scaleaTriple pointbNormal boiling pointcCritical point
+Refrigerant 732 (Oxygen) Properti es of Gas at 0.101 325 MPa (one standard atmosphere)
+Temp.,*
+°CDensity,
+kg/m3Enthalpy,
+kJ/kgEntropy,
+kJ/(kg· K)cp, kJ/
+(kg· K) cp/cvVel.",ASHRAE手册 - 基础理论篇.pdf,,ASHRAE
+ko_22c130aad4ba2827,standard_reference,parameter_spec,normal_boiling_point,hvac:standard_reference:parameter:normal_boiling_point,koev_1abffb4d67a1975a,chunk_66cfad60276c41ac,doc_2a7ec347e5f44d9e,865,"Thermophysical Properties of Refrigerants 30.69
+Refrigerant 740 (Argon) Properties of Sa turated Liquid and Saturated Vapor
+Temp.,*
+KAbsolute
+Pressure,
+MPaDensity,
+kg/m3
+LiquidVolume,
+m3/kg
+VaporEnthalpy,
+kJ/kgEntropy,
+kJ/(kg·K)Specific Heat
+cp, kJ/(kg·K) cp/cv
+VaporVelocity of
+Sound, m/sViscosity,
+Pa·sThermal Cond.,
+mW/(m·K)Surface
+Tension,
+mN/mTemp.,*
+K Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor Liquid Vapor
+83.81a0.06889 1416.8 0.24663 –121.44 42.28 1.3295 3.2830 1.116 0.555 1.709 862 168.1 290.2 6.86 133.6 5.36 13.42 83.81
+84 0.07045 1415.6 0.24164 –121.22 42.36 1.3321 3.2794 1.116 0.556 1.710 861 168.3 288.4 6.87 133.3 5.37 13.37 84
+86 0.08811 1403.4 0.19687 –118.98 43.13 1.3583 3.2433 1.116 0.562 1.719 847 169.9 270.9 7.05 130.4 5.52 12.86 86
+87.30b0.10132 1395.4 0.17320 –117.52 43.62 1.3750 3.2208 1.117 0.566 1.725 838 170.9 260.3 7.17 128.5 5.62 12.53 87.3
+88 0.10901 1391.1 0.16198 –116.74 43.87 1.3839 3.2090 1.118 0.568 1.728 833 171.4 254.8 7.23 127.4 5.68 12.35 88
+90 0.13351 1378.6 0.13448 –114.49 44.57 1.4090 3.1763 1.121 0.576 1.740 819 172.8 240.0 7.41 124.5 5.83 11.85 90
+92 0.16199 1366.0 0.11258 –112.23 45.23 1.4335 3.1451 1.125 0.584 1.752 805 174.2 226.4 7.60 121.6 6.00 11.36 92
+94 0.19485 1353.2 0.09496 –109.96 45.85 1.4577 3.1152 1.131 0.593 1.766 791 175.5 213.8 7.78 118.7 6.16 10.86 94
+96 0.23249 1340.3 0.08067 –107.68 46.41 1.4814 3.0865 1.137 0.603 1.782 776 176.7 202.2 7.97 115.8 6.33 10.38 96
+98 0.27532 1327.1 0.06897 –105.38 46.93 1.5048 3.0590 1.145 0.614 1.800 762 177.8 191.3 8.16 113.0 6.51 9.89 98
+100 0.32377 1313.7 0.05932 –103.06 47.40 1.5278 3.0324 1.154 0.627 1.820 747 178.9 181.3 8.35 110.2 6.69 9.42 100
+102 0.37825 1300.1 0.05129 –100.72 47.81 1.5505 3.0068 1.164 0.641 1.842 732 179.9 172.0 8.54 107.4 6.88 8.94 102
+104 0.43920 1286.2 0.04458 –98.37 48.17 1.5730 2.9819 1.175 0.656 1.867 717 180.8 163.3 8.74 104.6 7.08 8.48 104
+106 0.50706 1272.0 0.03892 –95.98 48.46 1.5952 2.9578 1.188 0.673 1.894 701 181.6 155.2 8.95 101.9 7.28 8.02 106
+108 0.58226 1257.6 0.03413 –93.57 48.68 1.6172 2.9343 1.202 0.691 1.926 685 182.4 147.6 9.15 99.1 7.50 7.56 108
+110 0.66526 1242.8 0.03004 –91.13 48.84 1.6390 2.9114 1.218 0.712 1.960 669 183.0 140.4 9.37 96.4 7.73 7.11 110
+112 0.75650 1227.6 0.02654 –88.65 48.92 1.6606 2.8890 1.235 0.736 2.000 653 183.6 133.7 9.59 93.7 7.98 6.67 112
+114 0.85644 1212.1 0.02351 –86.14 48.93 1.6821 2.8669 1.255 0.762 2.044 636 184.1 127.4 9.81 91.0 8.24 6.23 114
+116 0.96553 1196.2 0.02090 –83.59 48.85 1.7035 2.8452 1.278 0.791 2.094 619 184.5 121.4 10.04 88.4 8.52 5.80 116
+118 1.08420 1179.7 0.01862 –81.00 48.68 1.7248 2.8238 1.303 0.825 2.151 602 184.8 115.7 10.29 85.7 8.82 5.38 118
+120 1.21300 1162.8 0.01663 –78.35 48.41 1.7461 2.8025 1.332 0.863 2.216 584 185.1 110.2 10.54 83.1 9.15 4.96 120
+125 1.58230 1117.9 0.01263 –71.49 47.27 1.7995 2.7495 1.425 0.986 2.426 538 185.3 97.6 11.23 76.7 10.14 3.95 125
+130 2.02550 1068.1 0.00966 –64.16 45.30 1.8538 2.6957 1.564 1.172 2.741 488 184.8 85.9 12.03 70.4 11.45 3.00 130
+135 2.55090 1011.5 0.00739 –56.18 42.21 1.9102 2.6390 1.790 1.482 3.262 433 183.7 74.7 13.02 64.2 13.34 2.10 135
+140 3.16820 943.7 0.00559 –47.16 37.47 1.9712 2.5757 2.225 2.104 4.258 372 181.5 63.6 14.32 58.1 16.39 1.29 140
+145 3.88960 854.3 0.00409 –36.19 29.76 2.0425 2.4973 3.399 3.896 6.880 297 176.6 52.1 16.27 52.0 22.53 0.58 145
+150 4.73460 680.4 0.00253 –17.88 11.52 2.1589 2.3550 23.580 35.470 43.160 175 157.0 36.8 21.18 57.6 55.88 0.04 150
+150.69c4.86300 535.6 0.00187 –4.33 –4.33 2.2476 2.2476  0 0.0 — —  0.00 150.69
+*Temperatures on ITS-90 scaleaTriple pointbNormal boiling pointcCritical point
+Refrigerant 740 (Argon) Properties of Gas at  0.101 325 MPa (one st andard atmosphere)
+Temp.,
+°CDensity,
+kg/m3Enthalpy,
+kJ/kgEntropy,
+kJ/(kg· K)cp, kJ/
+(kg· K) cp/cvVel.",ASHRAE手册 - 基础理论篇.pdf,,ASHRAE
+ko_2ba76711e02b5977,ahu,performance_spec,制热量,hvac:ahu:performance_spec:制热量,koev_4c706e49b04dde96,visual_page_doc_63f0bd02957d4722_4,doc_63f0bd02957d4722,4,制热量kW 回风工况 4排管 17.7,超薄吊顶式空气处理机组MPAXH10.pdf,美意,美意
+ko_2ba76711e02b5977,ahu,performance_spec,制热量,hvac:ahu:performance_spec:制热量,koev_f2826330ee2373a2,visual_page_doc_63f0bd02957d4722_4,doc_63f0bd02957d4722,4,制热量kW 回风工况 6排管 22,超薄吊顶式空气处理机组MPAXH10.pdf,美意,美意
+ko_2cb2a95fb07241cc,screw_chiller,performance_spec,最大允许压力,hvac:screw_chiller:performance_spec:最大允许压力,koev_39edf2b0b0709d52,visual_page_doc_9c740929db094ed8_19,doc_9c740929db094ed8,19,最大允许压力 冷媒侧 MPa 2.2,水冷低温螺杆式冷水机组手册.pdf,日立,日立
+ko_2cb2a95fb07241cc,screw_chiller,performance_spec,最大允许压力,hvac:screw_chiller:performance_spec:最大允许压力,koev_a9d67b038b5852ba,visual_page_doc_9c740929db094ed8_19,doc_9c740929db094ed8,19,最大允许压力 水侧 MPa 0.8,水冷低温螺杆式冷水机组手册.pdf,日立,日立
+ko_3d285aa3a09556b2,screw_chiller,parameter_spec,制冷模式出水温度设定值,hvac:screw_chiller:parameter:制冷模式出水温度设定值,koev_52e223e29d827354,visual_page_doc_1f7a3ec0bcfa44f1_66,doc_1f7a3ec0bcfa44f1,66,标准空调工况出水的额定温度为 7℃,LM系列螺杆机说明书.pdf,unknown,unknown
+ko_3d285aa3a09556b2,screw_chiller,parameter_spec,制冷模式出水温度设定值,hvac:screw_chiller:parameter:制冷模式出水温度设定值,koev_66b798380f9ff709,visual_page_doc_1f7a3ec0bcfa44f1_66,doc_1f7a3ec0bcfa44f1,66,冷水出水温度增加至比设定温度高 5℃时（可根据需求适当调整），空调机组自动地投入运行。,LM系列螺杆机说明书.pdf,unknown,unknown
+ko_497eb8d85aae2821,hot_water_plant,fault_diagnostic_rule,AFDD - FC#10: Supply Temperature Sensor Deviation,hvac:hot_water_plant:fault_diagnostic_rule:afdd_fc_10_supply_temperature_sensor_deviation,koev_167c8201bb3e995b,chunk_09fb328603ed4810,doc_4bbd3703c4f84be4,260,"FC#8 Equation HWRT AVG - ƐHWT > CondTemp Applies to OS #2, #3 Description Hot water return temperature is too high for condensing to occur.",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_497eb8d85aae2821,hot_water_plant,fault_diagnostic_rule,AFDD - FC#10: Supply Temperature Sensor Deviation,hvac:hot_water_plant:fault_diagnostic_rule:afdd_fc_10_supply_temperature_sensor_deviation,koev_42002eac3c71bb39,chunk_054f4c35dd614578,doc_4bbd3703c4f84be4,260,FC#10 Equation | (∑(HW-Flow B-X * HWST B-X) / ∑HW-Flow B-X) - HWST AVG | > ƐHWT Applies to OS #2 Description Deviation between the active boiler hot water supply temperature and the common hot water supply temperature is too high.,ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_497eb8d85aae2821,hot_water_plant,fault_diagnostic_rule,AFDD - FC#10: Supply Temperature Sensor Deviation,hvac:hot_water_plant:fault_diagnostic_rule:afdd_fc_10_supply_temperature_sensor_deviation,koev_2b3eb2e958afe9bd,chunk_8d9260745b6a4dfe,doc_4bbd3703c4f84be4,261,FC#11 Equation | (∑(HW-Flow B-X * HWRT B-X) / ∑HW-Flow B-X) - HWRT AVG | > ƐHWT Applies to OS #2 Description Deviation between the active boiler hot water return temperature and the common boiler entering water temperature is too high.,ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_4a7e489f00e85fa8,centrifugal_chiller,parameter_spec,高压 断开,hvac:centrifugal_chiller:parameter:高压_断开,koev_2fae5ba660fa5f54,visual_page_doc_d7623d21517a41fd_43,doc_d7623d21517a41fd,43,高压 断开 MPa 2.15,水冷式冷水机组安装、使用、维护说明书.pdf,日立,日立
+ko_4a7e489f00e85fa8,centrifugal_chiller,parameter_spec,高压 断开,hvac:centrifugal_chiller:parameter:高压_断开,koev_548874a0ffdd427e,visual_page_doc_d7623d21517a41fd_43,doc_d7623d21517a41fd,43,低压 断开 MPa 0.25,水冷式冷水机组安装、使用、维护说明书.pdf,日立,日立
+ko_5d02f6cccbb51a2a,centrifugal_chiller,parameter_spec,抽空启动设定点,hvac:centrifugal_chiller:parameter:抽空启动设定点,koev_0699537f1381c553,chunk_42c5507a27ea4611,doc_05d74ba9556c4173,19,"19EarthW ise 抽气装置工作原理
+抽气
+图10表示了抽取抽气室中积累
+的空气/不凝性气体的过程。当抽气
+室中没有空气时，由于冷水机组的
+制冷剂蒸汽带走了的大量热量，从
+而使冷凝机组中的压缩机入口制冷
+剂具有很高的过热度。随着空气在
+抽气室中的不断积累，空气的体积
+将取代冷水机组制冷剂的体积，从
+而减少了冷水机组制冷剂与抽气装
+置制冷剂的换热面积。因此，抽气
+装置制冷剂能够获得的热量就大大
+减少，从而降低了抽气装置压缩机
+入口制冷剂的过热度。
+当冷凝机组吸气温度降低到抽
+空启动设定点时，抽气控制器将启
+动电磁阀和抽空压缩机的工作，开
+始进行抽气作业，把积累在抽气室
+中的不凝性气体抽取出去。随着抽
+气室中的空气被不断地抽走，抽气
+室中的换热盘管再次暴露给冷水机
+组的制冷剂蒸汽，因此有更多的热
+量从冷水机组制冷剂中传送到换热
+盘管表面上，同时也有更多的冷水
+机组制冷剂蒸汽被冷凝，抽气装置
+压缩机的吸气温度也开始回升。抽
+气控制器一直监测着压缩机的吸气
+温度，同时根据这个温度决定运行
+还是停止抽空作业。抽气室中无空气
+至冷凝机组压缩机
+吸气口处的R404a
+制冷剂蒸汽(90 F)
+抽气室1/2空间有空气
+抽气室换热
+管的有效换
+热面积至冷凝机组压缩机
+吸气口处的R404a
+制冷剂蒸汽(70 F)
+抽气室充满空气
+换热面积
+供冷凝制冷
+剂蒸汽用
+至冷凝机组压缩机
+吸气口处的R404a
+制冷剂蒸汽(16 F)来自膨胀阀的制冷剂液
+体/蒸 汽混合物(-16 F)
+抽气室换热
+管的有效换
+热面积
+制冷剂蒸汽
+(100 F)
+来自膨胀阀的制冷剂液
+体/蒸 汽混合物(-16 F)
+来自膨胀阀的制冷剂液
+体/蒸 汽混合物(-16 F)制冷剂蒸汽
+(100 F)空气
+空气。
+。
+。。。。。。图10－  抽气室中的空气对冷凝盘管换热面积的影响",特灵RTHD离心机组抽气装置54页.pdf,,
+ko_5d02f6cccbb51a2a,centrifugal_chiller,parameter_spec,抽空启动设定点,hvac:centrifugal_chiller:parameter:抽空启动设定点,koev_5061ec84636663cf,visual_page_doc_c0e98222695c4dd3_21,doc_c0e98222695c4dd3,21,试验时的气体温度应不低于5℃,CE系列离心式冷水机组使用说明书.pdf,unknown,unknown
+ko_69ed0c22154f8e08,air_cooled_modular_heat_pump,parameter_spec,润滑油型号,hvac:air_cooled_modular_heat_pump:parameter:润滑油型号,koev_01149bb1395ab83c,visual_page_doc_241df464e7ea41df_5,doc_241df464e7ea41df,5,润滑油 型号 R22 kW 3GS(矿物油),MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf,麦克维尔,麦克维尔
+ko_69ed0c22154f8e08,air_cooled_modular_heat_pump,parameter_spec,润滑油型号,hvac:air_cooled_modular_heat_pump:parameter:润滑油型号,koev_c77ea7e3e35cc516,visual_page_doc_241df464e7ea41df_5,doc_241df464e7ea41df,5,润滑油 型号 R407C kW ICI RL32CF(脂类油),MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf,麦克维尔,麦克维尔
+ko_7f9870a9f4f55691,air_cooled_modular_heat_pump,performance_spec,名义制冷量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷量_名义制冷量,koev_c3b0eb293336abec,visual_page_doc_85ced8934a4e4cad_3,doc_85ced8934a4e4cad,3,名义制冷量 16000 W,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf,特灵,特灵
+ko_7f9870a9f4f55691,air_cooled_modular_heat_pump,performance_spec,名义制冷量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷量_名义制冷量,koev_dcc7c727f5cb54f3,visual_page_doc_94991c16146a4c55_3,doc_94991c16146a4c55,3,名义制冷量 12000 W,风冷冷水（热泵）空调热水机组2015JC13--CGHR12BH.pdf,特灵,特灵
+ko_7f9870a9f4f55691,air_cooled_modular_heat_pump,performance_spec,名义制冷量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷量_名义制冷量,koev_fc2ce067a3d2c39a,visual_page_doc_472df0b1bd904961_3,doc_472df0b1bd904961,3,名义制冷量 8600 W,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf,特灵,特灵
+ko_7f9870a9f4f55691,air_cooled_modular_heat_pump,performance_spec,名义制冷量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷量_名义制冷量,koev_1e2acdea885f506f,visual_page_doc_241df464e7ea41df_5,doc_241df464e7ea41df,5,名义制冷量 R22 kW 97,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf,麦克维尔,麦克维尔
+ko_7f9870a9f4f55691,air_cooled_modular_heat_pump,performance_spec,名义制冷量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷量_名义制冷量,koev_5d4f4cc871c22f28,visual_page_doc_241df464e7ea41df_5,doc_241df464e7ea41df,5,名义制冷量 R407C kW 95,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf,麦克维尔,麦克维尔
+ko_7f9870a9f4f55691,air_cooled_modular_heat_pump,performance_spec,名义制冷量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷量_名义制冷量,koev_782159168e44a3f5,visual_page_doc_d91d6f2fd782435a_6,doc_d91d6f2fd782435a,6,名义制冷量 16000 W,风冷冷水(热泵)机组06001-2015LK1868--CGHR16BNAR--A2015CCC0703-2136902.pdf,特灵,特灵
+ko_7f9870a9f4f55691,air_cooled_modular_heat_pump,performance_spec,名义制冷量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷量_名义制冷量,koev_e827755df830e55b,visual_page_doc_9650969ce6cb4585_6,doc_9650969ce6cb4585,6,名义制冷量 12000 W,风冷冷水(热泵)机组06001-2015LK1870--CGHR12BNAR--A2015CCC0703-2136900 (1).pdf,特灵,特灵
+ko_7f9870a9f4f55691,air_cooled_modular_heat_pump,performance_spec,名义制冷量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制冷量_名义制冷量,koev_591571ddd53ba69a,visual_page_doc_ced95095a3c74169_7,doc_ced95095a3c74169,7,名义制冷量 16000 W,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf,特灵,特灵
+ko_899d764444a01370,screw_chiller,parameter_spec,1# 压缩机电流限定值(卸载),hvac:screw_chiller:parameter:1_压缩机电流限定值_卸载,koev_84dec79115ded720,visual_page_doc_a912a4d3b13e4971_9,doc_a912a4d3b13e4971,9,1# 压缩机电流限定值(保持)： 280.0 A,WCFX-R-螺杆式冷水机组操作说明书.pdf,顿汉布什,顿汉布什
+ko_899d764444a01370,screw_chiller,parameter_spec,1# 压缩机电流限定值(卸载),hvac:screw_chiller:parameter:1_压缩机电流限定值_卸载,koev_919095951b398ae2,visual_page_doc_a912a4d3b13e4971_9,doc_a912a4d3b13e4971,9,1# 压缩机电流限定值(卸载)： 295.0 A,WCFX-R-螺杆式冷水机组操作说明书.pdf,顿汉布什,顿汉布什
+ko_933017f2e086099d,ahu,fault_diagnostic_rule,Zone Temperature Alarms,hvac:ahu:fault_diagnostic_rule:zone_temperature_alarms,koev_59b8d93a648dc546,chunk_b41dc3b687774d6e,doc_4bbd3703c4f84be4,70,"If the zone is 2°C (3°F) above cooling setpoint for 10 minutes, generate a Level 4 alarm.",ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_933017f2e086099d,ahu,fault_diagnostic_rule,Zone Temperature Alarms,hvac:ahu:fault_diagnostic_rule:zone_temperature_alarms,koev_96633bac6711c13d,chunk_a3fc51e982764d15,doc_4bbd3703c4f84be4,70,5.3.6.1.  Zone Temperature Alarms,ashrae_guideline_36_2021_high_performance_sequences.pdf,,ASHRAE
+ko_d117735fd9164c58,air_cooled_modular_heat_pump,performance_spec,名义制热量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量_名义制热量,koev_1cb659123c0a3414,visual_page_doc_94991c16146a4c55_3,doc_94991c16146a4c55,3,名义制热量 13500 W,风冷冷水（热泵）空调热水机组2015JC13--CGHR12BH.pdf,特灵,特灵
+ko_d117735fd9164c58,air_cooled_modular_heat_pump,performance_spec,名义制热量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量_名义制热量,koev_ab8717fb402e5a03,visual_page_doc_85ced8934a4e4cad_3,doc_85ced8934a4e4cad,3,名义制热量 18000 W,风冷冷水（热泵）空调热水机组2015JC12--CGHR16DH.pdf,特灵,特灵
+ko_d117735fd9164c58,air_cooled_modular_heat_pump,performance_spec,名义制热量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量_名义制热量,koev_aec23f51475b054a,visual_page_doc_472df0b1bd904961_3,doc_472df0b1bd904961,3,名义制热量 9800 W,风冷冷水（热泵）空调热水机组2015JC14--CGHR09BH.pdf,特灵,特灵
+ko_d117735fd9164c58,air_cooled_modular_heat_pump,performance_spec,名义制热量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量_名义制热量,koev_5d815fc71d915fe6,visual_page_doc_241df464e7ea41df_5,doc_241df464e7ea41df,5,名义制热量* R407C kW 107,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf,麦克维尔,麦克维尔
+ko_d117735fd9164c58,air_cooled_modular_heat_pump,performance_spec,名义制热量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量_名义制热量,koev_989807ca1d26833a,visual_page_doc_241df464e7ea41df_5,doc_241df464e7ea41df,5,名义制热量* R22 kW 111,MCZ_MHZ系列_涡旋式风冷冷水（热泵）机组样本.pdf,麦克维尔,麦克维尔
+ko_d117735fd9164c58,air_cooled_modular_heat_pump,performance_spec,名义制热量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量_名义制热量,koev_04738fc1c386723b,visual_page_doc_9650969ce6cb4585_6,doc_9650969ce6cb4585,6,名义制热量 13500 W,风冷冷水(热泵)机组06001-2015LK1870--CGHR12BNAR--A2015CCC0703-2136900 (1).pdf,特灵,特灵
+ko_d117735fd9164c58,air_cooled_modular_heat_pump,performance_spec,名义制热量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量_名义制热量,koev_dc45fa1f3d9c4ce9,visual_page_doc_d91d6f2fd782435a_6,doc_d91d6f2fd782435a,6,名义制热量 18000 W,风冷冷水(热泵)机组06001-2015LK1868--CGHR16BNAR--A2015CCC0703-2136902.pdf,特灵,特灵
+ko_d117735fd9164c58,air_cooled_modular_heat_pump,performance_spec,名义制热量,hvac:air_cooled_modular_heat_pump:performance_spec:名义制热量_名义制热量,koev_7ceeeefd1efbe206,visual_page_doc_ced95095a3c74169_7,doc_ced95095a3c74169,7,名义制热量 18000 W,风冷冷水(热泵)机组06001-2015LK1867--CGHR16DHAR--A2015CCC0703-2136935.pdf,特灵,特灵
+ko_d53103623a638535,water_source_heat_pump,parameter_spec,设置环境温度范围,hvac:water_source_heat_pump:parameter:设置环境温度范围,koev_455937550184c668,chunk_6758efb5909f4643,doc_107115e1d5b946a4,5,"热泵  E T W   技术资料  2
+概要
+使用范围
+1
+2
+请在下述使用范围内使用热泵。要在下述使用范围使用时，请与本公司或三
+菱重工制冷制热系统㈱协商。
+(1) 主电源电压的波动 额定电压的＋10～－15% 以内
+(2) 起动时的电压降 额定电压的－10% 以内
+(3) 相间电压失衡 根据下述计算公式 相间失衡率处在 2%以内
+相间失衡率[%]
+依据(IEL61800-5(5.2.3))
+(4) 电源频率的波动 额定频率的±5% 以内
+(5) 冷冻能力与所需输入功率 依据 JIS B 8621
+(6) 压缩机的起停频率 请将 1小时的起停频率设在 5次以内
+(7) 热水与热源水水质 请满足 JRA指南的基准值
+（详情请参阅第 17.1节）
+(8) 热水与热源水压力 请在 1.0MPa(G) 以内使用
+(9) 设置环境 室内设置
+请设置在不受雨 /风/直射阳光 /盐分/蒸汽
+影响的位置上。请勿设置在油雾、尘埃、
+腐蚀性气体与可燃性气体等漂浮的环境中。请在环境温度为 0℃～40℃、环境
+湿度为 5～95%的范围内使用。
+(10) 热水与
+热源水温度范围 起动时热源水入口温度下限值：10 ℃
+起动时热水入口温度下限值：15℃
+（如果在低于上述值的状态下起动，热
+源水温度则会降低到 0℃以下，这可能
+会导致冻结。 ）
+额定时热源水入口温度下限值：35 ℃
+额定时热源水入口温度上限值：50 ℃
+额定时热水出口温度下限值：50℃
+额定时热水出口温度上限值：80℃
+注意 在上述范围外使用时，请垂询本公司。
+222   使使使用用用范范范围围围
+（最大电压[V] －最小电压[V]）
+3相平均电压[V] = ×67[%]
+R6Q·v~[¶Qÿwww.zhilengbj.cn",ETW离心高温水源热泵技术手册最新版（77页）.pdf,,
+ko_d53103623a638535,water_source_heat_pump,parameter_spec,设置环境温度范围,hvac:water_source_heat_pump:parameter:设置环境温度范围,koev_cd6b86be1241dc70,visual_page_doc_5faa3373b945486d_6,doc_5faa3373b945486d,6,请在环境温度为 0℃～40℃、环境湿度为 5～95%的范围内使用。,ETW离心高温水源热泵技术手册（73页）.pdf,三菱重工,三菱重工
+ko_d53103623a638535,water_source_heat_pump,parameter_spec,设置环境温度范围,hvac:water_source_heat_pump:parameter:设置环境温度范围,koev_009e2ce00b9ad8ea,visual_page_doc_5faa3373b945486d_12,doc_5faa3373b945486d,12,请在环境温度为 0～40℃、环境湿度为 5～95%的范围内使用,ETW离心高温水源热泵技术手册（73页）.pdf,三菱重工,三菱重工
+ko_e0075dafbff580a7,ahu,performance_spec,制冷量,hvac:ahu:performance_spec:制冷量,koev_dcef4fc8b939fe50,visual_page_doc_63f0bd02957d4722_4,doc_63f0bd02957d4722,4,制冷量kW 回风工况 4排管 11.7,超薄吊顶式空气处理机组MPAXH10.pdf,美意,美意
+ko_e0075dafbff580a7,ahu,performance_spec,制冷量,hvac:ahu:performance_spec:制冷量,koev_7fcf7b80d5033939,chunk_11fd25363783460d,doc_79470be9a10d4cb0,5,"冷盘管制冷参数
+注:进出水温度为7 /12℃。
+热盘管制热参数 (热水进出水温度60/50 ℃)
+型号 送风量                          进风温度-4 ℃                                     进风温度5 ℃                                   进风温度-12 ℃
+1 排 1                                                   排 1                                                    排
+LPCQ CMH 制热量(kW) 流量L/s 制热量(kW) 流量L/s 制热量(kW) 流量L/s
+003 2500 14.3 0.34 11.6 0.28 16.6 0.40
+004 4000 22.7 0.55 18.7 0.45 26.4 0.63
+006 6000 36.3 0.87 29.9 0.72 42.0 1.01
+008 8000 43.0 1.03 33.2 0.80 51.3 1.23
+010 10000 60.7 1.45 48.9 1.17 71.1 1.70
+012 12000 72.9 1.75 59.2 1.42 85.1 2.04
+014 14000 85.7 2.05 69.9 1.67 99.8 2.39
+016 16000 98.7 2.37 80.5 1.93 115.0 2.76
+020 20000  129.2  3.10 106.0 2.54 149.8 3.59
+025 23000  149.8  3.59 122.6 2.94 174.0 4.17
+030 27000  180.0  4.31 147.8 3.54 208.7 5.00
+035 33000  221.2  5.30 182.4 4.37 255.8 6.13
+040 38000  262.0  6.28 216.0 5.18 303.0 7.26 型号 送风量                                                 进风干球温度27 ℃/湿球温度19.5 ℃
+4排 6排
+LPCQ CMH 全热(kW) 显热(kW) 流量L/s 水阻力(kPa) 全热(kW) 显热(kW) 流量L/s 水阻力(kPa)
+003 2500  13.3 10.4 0.6 1.1 17.8 12.5 0.9 2.9
+004 4000  21.1 16.4 1.0 3.5 28.1 19.8 1.3 8.6
+006 6000  34.1 25.8 1.6 5.8 44.6 30.7 2.1 14.1
+008 8000  48.9 36.0 2.3 8.8 54.6 38.9 2.6 5.3
+010 10000  54.3 42.3 2.6 4.5 63.9 47.5 3.1
+012 12000  65.8 50.8 3.1 7.1 70.9 54.1 3.4 1.8
+014 14000  78.3 60.0 3.7 10.7 87.3 64.8 4.2 2.9
+016 16000  90.5 69.0 4.3 10.7 100.4  74.4 4.8 2.9
+020 20000  118.2 88.4 5.6 18.1 135.0  96.7 6.4 5.1
+025 23000  135.5  101.6  6.5 13.7 152.9  110.4 7.3 3.8
+030 27000  163.5  121.1  7.8 17.6 186.4  132.6  8.9 4.9
+035 33000  201.9  148.7  9.6 29.5 230.9  164.6  11.2 8.5
+040 38000  236.6  173.1  11.3 28.3 273.5  191.1  13.0 8.1
+进风干球温度34 ℃/湿球温度28 ℃
+003 2500  31.4 13.7 1.5 5.1 40.7 17.1 1.9 12.1
+004 4000  48.9 21.4 2.3 15.2 63.6 26.8 3.0 36.3
+006 6000  78.4 33.9 3.7 25.3 99.9 41.8 4.8 58.6
+008 8000  111.6 47.8 5.3 38.0 130.0  54.6 6.2 23.8
+010 10000  133.2  57.5 6.3 21.7 169.6  70.9 8.1 22.9
+012 12000  158.2  68.4 7.5 32.8 185.3  78.4 8.8 9.6
+014 14000  185.7  80.2 8.9 48.4 217.5  92.0 10.4 14.2
+016 16000  214.5  92.5 10.2 48.5 250.0  105.6  11.9 14.1
+020 20000  276.1  118.4 13.2 82.9 322.7  135.7  15.4 23.3
+025 23000  318.8  136.6  15.2 61.2 371.6  156.2  17.7 17.7
+030 27000  381.9  163.1  18.2 77.7 444.9  186.6  21.2 22.5
+035 33000  466.3  199.1  22.2 128.2  546.5  229.1  26.1 37.5
+040 38000  546.5  232.8  26.0 123.0  638.0  267.0  30.4 35.7性能参数表
+5.",LPCQ空气处理机组_LPCQ-PRC001-ZH_20160323.pdf,,
+ko_ec0f999bae1fab30,standard_reference,parameter_spec,entering_water_temperature_selection,hvac:standard_reference:parameter:entering_water_temperature_selection,koev_87a1941f6c94783b,chunk_b4ee632a131844fc,doc_38a89d59e8394e2d,139,"S e e  the  re f e re nc e s  l i s te d at the  e nd o f  thi s  c hap te r f o r a l i nk to
+thi s  val uab l e  re s o urc e .
+S TO RMWATE R  MAN AG E ME N T
+D e ve l o p me nt o f  p ro p e rti e s  f o r b ui l di ngs  and as s o c i ate d hards c ap e s  have  l e d to
+the  c re ati o n o f  i mp e rvi o us  s urf ac e s  that c o ntri b ute  to  i nc re as e d s urf ac e  runo f f  i nto
+s urf ac e  wate rways .  T hat i nc re as e d runo f f  i s  the  c aus e ,  o r at l e as t a s i gni f i c ant c o n-
+tri b uto r,  to  f l o o di ng p ro b l e ms  do wns tre am o f  any gi ve n s i te .  I n mo s t l o c al i ti e s ,
+re qui re me nts  are  i n p l ac e  f o r addre s s i ng thi s  i s s ue .  T hi s  i s  o ne  are a whe re  the
+de s i gn f e ature s  o f  the  b ui l di ng p ro j e c t have  a me as urab l e  p o s i ti ve  c o ntri b uti o n to
+©  2 0 2 3  AS H RAE  ( w w w . a s h ra e . o rg ) .  Fo r p e rs o n a l  u s e  o n l y .",ASHRAE绿色建筑指南.pdf,,ASHRAE
+ko_ec0f999bae1fab30,standard_reference,parameter_spec,entering_water_temperature_selection,hvac:standard_reference:parameter:entering_water_temperature_selection,koev_8e1028ee6fa84838,chunk_52fd5afa35834853,doc_90583657120442bb,551,"Choosing a
+value far from tg allows selection of a small, inexpensive ground
+coil, but the system’s heat pumps will have greatly reduced capacity
+and increased electric demand. Selecting twi to be 11 to 17 K higher
+than tg in cooling and 6 to 11 K lower than tg in heating is a good
+compromise between first cost and efficiency in many regions ofthe United States. The value for t
+wo can be selected by adding/
+subtracting the temperature change through the heat pump with twi,
+where the temperature change is based on the flow rate and heat
+capacity of the water and the he at rejected/absorbed by the heat
+pump.
+A final temperature to consider is the temperature penalty tp,
+which is added to the undisturbed earth temperature to represent
+the build-up or reduction of ther mal energy around each borehole
+over a period of forecast years.",ASHRAE手册2019.pdf,,ASHRAE
+ko_ec0f999bae1fab30,standard_reference,parameter_spec,entering_water_temperature_selection,hvac:standard_reference:parameter:entering_water_temperature_selection,koev_d5145c88c632ba5f,chunk_c17b7f55daea4ff8,doc_a5de4244eeda4637,852,"The drain pan must besized to contain the condensate, must be protected from high-velocity air, and should be proper ly sloped to drain condensate to
+minimize standing water. Service acc ess for installation and repairis required. Versatility of appli cation, such as multiple fan dis-
+charge directions and the ability to install piping from either side of
+the unit, is another consideration.  Weatherproofing requires careful
+attention and testing.
+Accessories
+Using standard cataloged accessories, the designer can often
+incorporate unitary products in special applications. Typical exam-
+ples (see Figures 5, 7, 8, and 9) are plenum coil housings, return air
+filter grilles, and diffuser-return grilles for single-outlet units. Air
+duct kits offered for rooftop units (see Figure 5) allow concentric or
+side-by-side ducting, as well as horizontal or vertical connections.
+Mounting curbs are available to faci litate unit support and roof flash-
+ing.",ASHRAE手册 - HVAC系统和设备篇.pdf,,ASHRAE
+ko_ec0f999bae1fab30,standard_reference,parameter_spec,entering_water_temperature_selection,hvac:standard_reference:parameter:entering_water_temperature_selection,koev_68d156105478479f,chunk_c936d7cc5eb54e4b,doc_4a9b0fec1dfb4103,875,"48.10 2024 ASHRAE Handbook—HV AC Systems and Equipment (SI)
+Add-On Heat Pumps
+An air-source heat pump can be added to new or existing gas- or
+oil-fired furnaces. This unit, typically called an add-on, dual-fuel, or
+hybrid heat pump, normally operates as a conventional heat pump.During extremely cold weather, the refrigerant circuit is turned offand the furnace provides the required space heating. These add-onheat pumps share the air distribution system with the warm-air fur-nace. The indoor coil may be either parallel to or in series with thefurnace. However, the furnace should never be upstream of theindoor coil if both systems are operated together.
+Special controls are available that prevent simultaneous opera -
+tion of the heat pump and furnace in this configuration. This oper -
+ation raises the refrigerant condensing temperature, which couldcause compressor failure.",ASHRAE手册2024.pdf,,ASHRAE
+ko_f8fea0a88ba94ce1,water_source_heat_pump,parameter_spec,额定制冷量(制冷工况),hvac:water_source_heat_pump:parameter:额定制冷量_制冷工况,koev_00a9192aaed992d4,visual_page_doc_aa01d55bf86b4b60_7,doc_aa01d55bf86b4b60,7,额定制冷量(制冷工况) A 142.9,02_麦克维尔单螺杆式水源热泵机组(R22)_WPS.pdf,麦克维尔,麦克维尔
+ko_f8fea0a88ba94ce1,water_source_heat_pump,parameter_spec,额定制冷量(制冷工况),hvac:water_source_heat_pump:parameter:额定制冷量_制冷工况,koev_c0ebe55e34f2dce1,visual_page_doc_b9c9d76283cc4f38_10,doc_b9c9d76283cc4f38,10,制冷量kW 192,p-mwh-1303-v1.1-p水水螺杆式水源热泵冷水机组满液134a青干系列.pdf,美意,美意
