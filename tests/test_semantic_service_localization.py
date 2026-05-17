@@ -62,6 +62,11 @@ def _seed_localized_fault(session_factory) -> None:
                     "source_domain": "drive",
                     "parse_status": "complete",
                     "is_active": True,
+                    # Test focus: localization + evidence preservation.
+                    # Explicitly mark redistributable so contract §11.5 gating
+                    # does not replace the verbatim text (separate concern
+                    # covered by test_api_v2_authority_contract).
+                    "is_redistributable": True,
                 }
             ],
         )

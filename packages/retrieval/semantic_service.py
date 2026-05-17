@@ -346,7 +346,17 @@ class SemanticRetrievalService:
             evidence_text = evidence.evidence_text
             redistribution_restricted = False
             if not is_redistributable and not include_restricted_evidence:
-                evidence_text = evidence_text[:200] + ("..." if len(evidence_text) > 200 else "")
+                # Contract §11.5: when redistribution is restricted, evidence_text
+                # MUST NOT leak any verbatim substring from the original source.
+                # Replace with a citation-only stub derived from non-content metadata
+                # (document name + page). Downstream still receives structured
+                # parameter value via authority_layers / structured_payload; only
+                # the prose quote is suppressed.
+                evidence_text = (
+                    f"[Restricted source: {document.file_name}, p.{evidence.page_no}] "
+                    f"Verbatim quote suppressed per redistribution policy. "
+                    f"Request with include_restricted_evidence=true for full text."
+                )
                 redistribution_restricted = True
             grouped[evidence.knowledge_object_id].append(
                 {

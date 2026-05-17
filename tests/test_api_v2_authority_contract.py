@@ -315,7 +315,8 @@ def _seed_authority_fixture(session_factory: sessionmaker) -> None:
 
 def test_redistribution_gating_paraphrases_restricted_evidence() -> None:
     """When is_redistributable=false and include_restricted_evidence is not set,
-    evidence_text should be truncated and redistribution_restricted=true."""
+    evidence_text MUST be replaced with a citation-only stub that contains NO
+    substring of the verbatim source (Contract §11.5)."""
 
     client, session_factory = _build_client()
     try:
@@ -340,7 +341,22 @@ def test_redistribution_gating_paraphrases_restricted_evidence() -> None:
 
         ashrae_evidence = ashrae_item["evidence"][0]
         assert ashrae_evidence["redistribution_restricted"] is True
-        assert len(ashrae_evidence["evidence_text"]) <= 203  # 200 + "..."
+        # Contract §11.5: no verbatim substring may leak. The seed fixture for
+        # the ASHRAE evidence contains the phrases below verbatim; the gated
+        # response must contain NONE of them.
+        forbidden_substrings = [
+            "6.5.3.2 Chilled Water Setpoint",
+            "low-temperature controls",
+            "Chilled Water Setpoint",
+        ]
+        for forbidden in forbidden_substrings:
+            assert forbidden not in ashrae_evidence["evidence_text"], (
+                f"Verbatim leak detected: {forbidden!r} appeared in restricted evidence_text"
+            )
+        # Stub must announce restriction + cite metadata-only provenance.
+        assert "Restricted source" in ashrae_evidence["evidence_text"]
+        assert "include_restricted_evidence=true" in ashrae_evidence["evidence_text"]
+        # Citation field remains separately populated (it is metadata, not body).
         assert ashrae_evidence["authority_role"] == "primary_standard"
         assert ashrae_evidence["evidence_citation"] == "ASHRAE 90.1-2022 §6.5.3.2"
 
