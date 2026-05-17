@@ -10,9 +10,41 @@ from packages.compiler.cross_source_merger import (
     _build_contextual_name,
     _coerce_numeric,
     _compute_consensus_state,
+    _extract_value_summary,
     _values_agree,
     merge_candidates,
 )
+
+
+def test_extract_value_summary_no_unit_duplication() -> None:
+    """F6: when value already ends with unit, do not duplicate."""
+
+    # Common pattern from real corpus: value contains range with unit suffix
+    cand = {"structured_payload": {"value": "20～34℃", "unit": "℃"}}
+    assert _extract_value_summary(cand) == "20～34℃", "must not become 20～34℃℃"
+
+    # Same for SEC, % and other unit strings
+    cand = {"structured_payload": {"value": "40SEC", "unit": "SEC"}}
+    assert _extract_value_summary(cand) == "40SEC", "must not become 40SECSEC"
+
+    cand = {"structured_payload": {"value": "5%", "unit": "%"}}
+    assert _extract_value_summary(cand) == "5%", "must not become 5%%"
+
+    # Normal case: value is bare number, unit appended correctly
+    cand = {"structured_payload": {"value": "15", "unit": "kPa"}}
+    assert _extract_value_summary(cand) == "15kPa"
+
+    # No unit at all
+    cand = {"structured_payload": {"value": "44"}}
+    assert _extract_value_summary(cand) == "44"
+
+    # Range fallback when no value
+    cand = {"structured_payload": {"range_min": "10", "range_max": "20"}}
+    assert _extract_value_summary(cand) == "[10, 20]"
+
+    # None payload → fall through to title
+    cand = {"title": "Some title", "structured_payload": {}}
+    assert _extract_value_summary(cand) == "Some title"
 
 
 def _make_candidate(

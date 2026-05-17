@@ -424,14 +424,22 @@ def _layers_have_explicit_parameter_names(layers: list[dict[str, Any]]) -> bool:
 
 
 def _extract_value_summary(candidate: dict[str, Any]) -> str | None:
-    """Extract a concise value summary from a candidate's structured payload."""
+    """Extract a concise value summary from a candidate's structured payload.
+
+    F6 fix: do not double-append unit when the raw value already ends in
+    the unit string (e.g. value="20～34℃" + unit="℃" must NOT produce
+    "20～34℃℃"; value="40SEC" + unit="SEC" must NOT produce "40SECSEC").
+    """
     payload = candidate.get("structured_payload") or candidate.get("structured_payload_candidate") or {}
     if isinstance(payload, str):
         return payload[:100]
     value = payload.get("value") or payload.get("default_value")
     if value is not None:
-        unit = payload.get("unit", "")
-        return f"{value}{unit}" if unit else str(value)
+        value_str = str(value).strip()
+        unit = str(payload.get("unit") or "").strip()
+        if unit and not value_str.endswith(unit):
+            return f"{value_str}{unit}"
+        return value_str
     range_min = payload.get("range_min")
     range_max = payload.get("range_max")
     if range_min is not None and range_max is not None:
