@@ -431,6 +431,30 @@ class SemanticRetrievalService:
             authority_summary = item.authority_summary_json or {}
             authority_layers = authority_summary.get("layers", []) if isinstance(authority_summary, dict) else []
             any_restricted = any(ev.get("redistribution_restricted", False) for ev in evidence)
+            # Contract §11.2: when consensus_state == "value_disagreement" and
+            # the server's arbitration was a fallback rule (no real authority-
+            # rank decision possible because all sources share the same level),
+            # the top-level range_min/max is essentially picked from an
+            # arbitrary source. It MUST NOT be treated as authoritative by
+            # consumers. Null those fields and surface a disclaimer flag so
+            # downstream evaluators walk authority_layers per-source instead.
+            deviation = item.deviation_justification_json or {}
+            arbitration = deviation.get("authority_arbitration") if isinstance(deviation, dict) else None
+            arbitration_rule = (
+                arbitration.get("arbitration_rule_applied") if isinstance(arbitration, dict) else None
+            )
+            if (
+                item.consensus_state == "value_disagreement"
+                and arbitration_rule == "fallback_highest_rank"
+            ):
+                structured_payload = dict(structured_payload)
+                if "range_min" in structured_payload:
+                    structured_payload["range_min"] = None
+                if "range_max" in structured_payload:
+                    structured_payload["range_max"] = None
+                if "value" in structured_payload:
+                    structured_payload["value"] = None
+                structured_payload["range_disclaimer"] = "arbitration_only_fallback_rank"
             items.append(
                 {
                     "knowledge_object_id": item.knowledge_object_id,
