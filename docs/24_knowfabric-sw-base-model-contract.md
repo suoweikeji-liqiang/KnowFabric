@@ -159,12 +159,21 @@ sw_base_model 各子项目消费 KnowFabric 的方式：
 
 | 字段 | 类型 | 说明 |
 |------|------|------|
-| `trust_level` | string | L1/L2/L3/L4，单源信号强度 |
+| `trust_level` | string | L1/L2/L3/L4，单源信号强度。**与 `confidence` 正交**：`trust_level` 反映"几个独立来源支持该 KO"（结构性，编译期决定），`confidence` 是单条 evidence 的抽取置信度（可为 1.0 即使 trust_level=L4）|
 | `consensus_state` | string | `single_source` / `agreed` / `partial_conflict` / `value_disagreement` / `over_merge` / `material_conflict` |
 | `highest_authority_level` | string | 所有支撑源中最高的 authority_level |
-| `authority_layers` | array | 所有支撑源的列表，每条含 level + publisher + citation + value_summary |
+| `authority_layers` | array | 所有支撑源的列表，每条含 level + publisher + citation + value_summary。**对 value_disagreement KO，这里是唯一可信的逐源范围**（见 §11.2） |
 | `conflict_summary` | string \| null | 当 consensus_state 为冲突时填充 |
 | `redistribution_restricted` | bool | 当任一支撑源 `is_redistributable=false` 时为 true |
+
+`structured_payload` 子字段（v0.2 wire 类型）：
+
+| 字段 | wire 类型 | 备注 |
+|------|----------|------|
+| `range_min` / `range_max` | `string \| null` | string 形式（如 `"-40"`、`"5%"`、`"20～34℃"`），消费方需自行 best-effort 转 number + 剥单位；当 `value_disagreement` + 服务端走 `fallback_highest_rank` 仲裁时**值为 null**（见 §11.2） |
+| `value` / `default_value` | `string \| null` | 同上 null 行为 |
+| `unit` | `string \| null` | 自由格式（kPa/PSIG/bar/SEC/% 等），无规整 |
+| `range_disclaimer` | `string \| null` | v0.2.1 起在 §11.2 null-范围场景下出现，值为 `"arbitration_only_fallback_rank"`。消费方见此 flag 时**必须**走 `authority_layers` 而不是顶层 range |
 
 新增 query 参数（v0.2 起支持）：
 
@@ -351,6 +360,14 @@ KnowFabric 在编译 KO 时按以下逻辑设置 `consensus_state`：
 - 多源值差异且部分 facet 识别缺失 → `partial_conflict` + `conflict_summary` 描述差异；消费方可展示主流值并标注未完全判明的分歧
 - 多源值差异且 facet/reference-point/subsystem/refrigerant 等维度互斥 → `over_merge`；这是 KnowFabric 内部该拆未拆的质量问题，sw_base_model 不应向最终用户展示，应进入 review queue
 - `material_conflict` 是旧版兼容状态。新编译流程不再主动生成；消费方收到时按“未 retag 的旧冲突”处理，优先进入 review 或降级展示
+
+**服务端 fallback 仲裁的 range 保护（v0.2.1 起）**：当 `consensus_state == "value_disagreement"` 且 `deviation_justification.authority_arbitration.arbitration_rule_applied == "fallback_highest_rank"` 时（典型场景：所有支撑源都是 `authority_level=unspecified`，无法按真正 authority 决策），KnowFabric **必须**：
+
+- 把 `structured_payload.range_min` / `range_max` / `value` 置为 `null`
+- 设置 `structured_payload.range_disclaimer = "arbitration_only_fallback_rank"`
+- `deviation_justification.authority_arbitration.recommended_value` 字段保留（给"明确选择 server 仲裁"的简单消费方使用）
+
+消费方默认协议：见 `range_disclaimer` flag 时**必须**遍历 `authority_layers[]` 逐源对比并输出"多 OEM 分歧" finding，**不得**信任顶层 range（因为它已是 null）。这条规则避免 Carrier 传感器量程 `[-40, 118]℃` 被错当成工艺范围用于异常判定。
 
 ### 11.3 冲突仲裁原则（agent 消费时遵守）
 
