@@ -138,6 +138,69 @@ def _make_candidate(
     }
 
 
+def test_f8_dedup_same_publisher_doc_chunk_collapses_to_single_layer():
+    """F8: two candidates with same (publisher, doc_id, chunk_id) must
+    collapse to one authority_layer; layer count must reflect real source
+    diversity, not chunk-level fanout."""
+
+    # Build two candidates from same publisher, same source doc, same chunk.
+    # Without F8 fix this produced 2 layers + 2 evidence rows; with fix it
+    # should produce 1 layer + 1 evidence row.
+    cand_a = _make_candidate(
+        "Oil Pump Pressure (HOP)",
+        value="200psig",
+        doc_id="doc_4aa04e8392ec4981",
+        chunk_id="chunk_1c0660d97d1940c2",
+        publisher="York",
+    )
+    cand_b = _make_candidate(
+        "Oil Pump Pressure (HOP)",
+        value="200psig",
+        doc_id="doc_4aa04e8392ec4981",
+        chunk_id="chunk_1c0660d97d1940c2",
+        publisher="York",
+    )
+    result = merge_candidates(
+        [cand_a, cand_b],
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        ontology_class_key="hvac:centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+    )
+    assert len(result) == 1
+    layers = result[0]["authority_summary_json"]["layers"]
+    assert len(layers) == 1, f"F8: same chunk same publisher must collapse to 1 layer, got {len(layers)}"
+    assert layers[0]["publisher"] == "York"
+    # Evidence row count likewise deduplicated
+    assert len(result[0]["evidence_rows"]) == 1
+
+
+def test_f8_two_publishers_same_chunk_keeps_both_layers():
+    """F8: different publishers on same chunk_id (rare but legitimate)
+    should NOT be deduped — they are still 2 distinct authority sources
+    even if pointing to the same underlying chunk."""
+
+    cand_york = _make_candidate(
+        "HOP", value="200psig",
+        doc_id="doc_shared", chunk_id="chunk_shared", publisher="York",
+    )
+    cand_carrier = _make_candidate(
+        "HOP", value="200psig",
+        doc_id="doc_shared", chunk_id="chunk_shared", publisher="Carrier",
+    )
+    result = merge_candidates(
+        [cand_york, cand_carrier],
+        domain_id="hvac",
+        equipment_class_id="centrifugal_chiller",
+        ontology_class_key="hvac:centrifugal_chiller",
+        knowledge_object_type="parameter_spec",
+    )
+    assert len(result) == 1
+    layers = result[0]["authority_summary_json"]["layers"]
+    publishers = {l["publisher"] for l in layers}
+    assert publishers == {"York", "Carrier"}
+
+
 def test_single_candidate_returns_single_source():
     candidates = [
         _make_candidate("CHWS Setpoint", value="44F", default_value="44F"),

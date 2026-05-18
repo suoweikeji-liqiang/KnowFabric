@@ -840,6 +840,12 @@ def merge_candidates(
             fallback_name=_candidate_source_name(group[0]) or group[0].get("title", "unknown"),
         )
         layers = []
+        # F8 fix: track (publisher, doc_id, chunk_id) tuples already added
+        # as a layer. Two candidates pointing to the same chunk from the same
+        # publisher are not independent sources — they are the same source
+        # counted twice. Skip duplicates so layer count reflects real source
+        # diversity, not chunk-level fanout from upstream pipeline.
+        seen_layer_keys: set[tuple] = set()
         evidence_rows = []
         primary_chunk_id = None
         best_confidence = 0.0
@@ -862,19 +868,44 @@ def merge_candidates(
             # by other code paths). Then enrich from prose if needed.
             if isinstance(cand_payload, dict):
                 cand_payload = dict(cand_payload)
-            layer = {
-                "authority_level": authority_level,
-                "publisher": cand.get("publisher"),
-                "citation": cand.get("citation") or cand.get("evidence_citation"),
-                "source_name": _candidate_source_name(cand),
-                "structured_payload": cand_payload,
-                "value_summary": _extract_value_summary(cand),
-                "evidence_role": "primary" if is_primary else "corroborating",
-                "doc_id": doc_id,
-                "chunk_id": primary_layer_chunk_id,
-            }
-            _enrich_layer_range_from_prose(layer, cand_evidence)
-            layers.append(layer)
+            # F8 fix: skip candidates that point to the same (publisher,
+            # doc_id, chunk_id) as a layer already added. Same chunk from
+            # same publisher is the same source, not "multi-source consensus".
+            # Note: still add to evidence_rows below (chunk content is real),
+            # but don't inflate layer count.
+            layer_key = (
+                cand.get("publisher"),
+                doc_id,
+                primary_layer_chunk_id,
+            )
+            is_duplicate_layer = layer_key in seen_layer_keys
+            if not is_duplicate_layer:
+                seen_layer_keys.add(layer_key)
+                # Re-evaluate is_primary based on accepted-layers count, not
+                # raw iteration index, so that the first accepted layer per
+                # cluster gets primary role even if it came after a duplicate.
+                is_primary = len(layers) == 0
+                layer = {
+                    "authority_level": authority_level,
+                    "publisher": cand.get("publisher"),
+                    "citation": cand.get("citation") or cand.get("evidence_citation"),
+                    "source_name": _candidate_source_name(cand),
+                    "structured_payload": cand_payload,
+                    "value_summary": _extract_value_summary(cand),
+                    "evidence_role": "primary" if is_primary else "corroborating",
+                    "doc_id": doc_id,
+                    "chunk_id": primary_layer_chunk_id,
+                }
+                _enrich_layer_range_from_prose(layer, cand_evidence)
+                layers.append(layer)
+
+            # F8: skip evidence_row creation for duplicate-layer candidates.
+            # Their chunk evidence was already attached by the original layer
+            # whose (publisher, doc_id, chunk_id) match. Adding again would
+            # produce duplicate evidence_role rows on same chunk (FK
+            # uniqueness violation downstream + inflated evidence count).
+            if is_duplicate_layer:
+                continue
 
             for ev_idx, ev in enumerate(cand_evidence):
                 auth_role = _resolve_authority_role(authority_level, is_primary)
