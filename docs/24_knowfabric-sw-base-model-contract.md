@@ -186,9 +186,12 @@ KO 元数据字段（v0.2 起强制返回）：
 
 | 参数 | 类型 | 默认 | 说明 |
 |------|------|------|------|
+| `min_trust_level` | `L1\|L2\|L3\|L4` | **`L1`** (v0.2.3 起调整，原 L4) | "minimum trust level" 即最低门槛。L1 = 含全部（最宽松），L4 = 仅含最高 trust KO（最严）。**注意**：不同 KO 类型的 trust_level 分布不同（如 parameter_spec 多 L4，fault_code 多 L3），消费方按需提升。文档约定：消费方明确需"高保真"时显式传 L3 或 L4 |
 | `min_authority_level` | string | `unspecified`（即包含全部）| 仅返回此等级及以上的 KO |
 | `consensus_filter` | string | `all` | 过滤 consensus_state（如 `agreed_only` 排除冲突）|
 | `include_restricted_evidence` | bool | `false` | 受信任内部消费方传 `true` 可获取 verbatim 全文（见 §11.5）；外部 surface 必须保持 `false` |
+
+`/fault-knowledge` endpoint 返回类型（v0.2.3 注）：实测返回三种 KO type 的 union：`fault_code`、`fault_diagnostic_rule`、`diagnostic_step`。消费方按 `knowledge_object_type` 字段分发处理（DESIGN-02 §KO Consumption Protocol v1.2 KO-8）。等价说法：`/fault-knowledge` 路径是"故障知识聚合视图"，不是单一类型 endpoint。
 
 sw_base_model 不得：
 
