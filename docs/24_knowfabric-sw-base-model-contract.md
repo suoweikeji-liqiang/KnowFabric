@@ -175,6 +175,13 @@ sw_base_model 各子项目消费 KnowFabric 的方式：
 | `unit` | `string \| null` | 自由格式（kPa/PSIG/bar/SEC/% 等），无规整 |
 | `range_disclaimer` | `string \| null` | v0.2.1 起在 §11.2 null-范围场景下出现，值为 `"arbitration_only_fallback_rank"`。消费方见此 flag 时**必须**走 `authority_layers` 而不是顶层 range |
 
+KO 元数据字段（v0.2 起强制返回）：
+
+| 字段 | wire 类型 | 备注 |
+|------|----------|------|
+| `review_status` | string enum | 取值集（v0.2.2 形式化）：`published`（默认，已发布可用）/ `approved`（人工审过 + 待出版）/ `conflict_review_required`（多源冲突，进 review queue）/ `rejected`（标记不再用，软 drop）。消费方对 `published` 直接消费；`conflict_review_required` 在 sw_base_model 端建议进入 review queue UI；`rejected` 不展示 |
+| `deviation_justification.authority_arbitration.recommended_value` | `string \| null` | server 仲裁给出的推荐值。**注意**：含范围时是 string 字面量形式如 `"[-40, 118]"`（**不是 JSON 数组**），下游需 ad-hoc parse。仅供"明确接受 server 仲裁"的简单消费方使用；按契约 §11.2 + §11.3，标准消费协议**应优先**走 `authority_layers` |
+
 新增 query 参数（v0.2 起支持）：
 
 | 参数 | 类型 | 默认 | 说明 |
