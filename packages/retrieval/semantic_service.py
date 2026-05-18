@@ -42,6 +42,27 @@ OPERATIONAL_GUIDANCE_TYPES = (
 )
 
 
+def _detect_text_language(text: str | None) -> str:
+    """F5 fix: best-effort detect language of served text content.
+
+    Returns 'zh' when ANY CJK Unified Ideograph (U+4E00–U+9FFF) is
+    present in text, 'en' otherwise. This is intentionally simple —
+    it answers "should this be labeled as Chinese to the consumer?"
+    without trying to disambiguate ja / ko / mixed scripts.
+
+    Used to override the candidate-key fallback in
+    _resolve_display_content, where the candidate key (e.g. 'en')
+    might not match the actual content language (e.g. when a KO has
+    Chinese-only content but no 'zh' localized_display entry).
+    """
+    if not text:
+        return "en"
+    for ch in text:
+        if "一" <= ch <= "鿿":
+            return "zh"
+    return "en"
+
+
 class SemanticRetrievalService:
     """Read-only access to rebuild-track ontology metadata."""
 
@@ -91,8 +112,18 @@ class SemanticRetrievalService:
                     **structured_payload,
                     **localized_structured_payload,
                 }
-            return localized_title, localized_summary, structured_payload, candidate
-        return knowledge_object.title, knowledge_object.summary, structured_payload, "en"
+            # F5 fix: candidate label is the language KEY chosen, not
+            # necessarily the actual content language. If localized_display
+            # had English-keyed entry but the title text is Chinese, return
+            # the actual content language.
+            actual_lang = _detect_text_language(localized_title or localized_summary)
+            return localized_title, localized_summary, structured_payload, actual_lang
+        # F5 fix: fallback path. No localized_display candidate matched, so
+        # we return the KO's base title/summary. The base language is
+        # whatever was stored, which may differ from the hardcoded "en"
+        # default. Detect from content.
+        fallback_lang = _detect_text_language(knowledge_object.title or knowledge_object.summary)
+        return knowledge_object.title, knowledge_object.summary, structured_payload, fallback_lang
 
     def _get_equipment_class(
         self,

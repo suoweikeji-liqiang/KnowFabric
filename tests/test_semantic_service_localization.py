@@ -218,3 +218,16 @@ def test_semantic_service_falls_back_to_english_when_language_is_missing() -> No
     assert item["title"] == "ABB A7C1 Fieldbus Communication Warning"
     assert item["display_language"] == "en"
     assert item["compilation_method"] == "llm_compiler"
+
+
+def test_detect_text_language_returns_zh_for_cjk() -> None:
+    """F5: helper returns 'zh' when any CJK ideograph is present, even
+    if the text also contains ASCII/Latin chars."""
+    from packages.retrieval.semantic_service import _detect_text_language
+
+    assert _detect_text_language("油压差报警") == "zh"
+    assert _detect_text_language("ABB A7C1 现场总线通讯警告") == "zh"
+    assert _detect_text_language("Carrier 19XR Setpoint") == "en"
+    assert _detect_text_language("CHWS setpoint 44F") == "en"
+    assert _detect_text_language("") == "en"
+    assert _detect_text_language(None) == "en"
