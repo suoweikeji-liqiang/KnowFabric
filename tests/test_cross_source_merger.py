@@ -10,10 +10,61 @@ from packages.compiler.cross_source_merger import (
     _build_contextual_name,
     _coerce_numeric,
     _compute_consensus_state,
+    _enrich_layer_range_from_prose,
+    _extract_prose_range,
     _extract_value_summary,
     _values_agree,
     merge_candidates,
 )
+
+
+def test_extract_prose_range_chinese_unit_inline() -> None:
+    """F9: Chinese prose with unit inline (20℃～34℃) yields (20, 34)."""
+    assert _extract_prose_range("冷却水进水温度应在 20℃～34℃ 之间。") == ("20", "34")
+    assert _extract_prose_range("油温在 -5℃~10℃") == ("-5", "10")
+    assert _extract_prose_range("范围 20℃到34℃") == ("20", "34")
+
+
+def test_extract_prose_range_english_unit() -> None:
+    """F9: English prose with °C/°F."""
+    assert _extract_prose_range("Range: 20°C to 34°C") == ("20", "34")
+    assert _extract_prose_range("between 20 and 34") == ("20", "34")
+
+
+def test_extract_prose_range_ambiguous_returns_none() -> None:
+    """F9: when multiple distinct ranges in prose, return None (don't guess)."""
+    assert _extract_prose_range("油温 20℃-34℃；水温 30℃-50℃") is None
+    assert _extract_prose_range("") is None
+    assert _extract_prose_range(None) is None
+
+
+def test_enrich_layer_range_populates_from_evidence() -> None:
+    """F9: layer without range_min/max gets populated from evidence_text prose."""
+    layer = {"structured_payload": {"parameter_name": "冷却水温度"}}
+    evidence = [{"evidence_text": "冷却水进水温度应在 20℃～34℃ 之间。"}]
+    _enrich_layer_range_from_prose(layer, evidence)
+    assert layer["structured_payload"]["range_min"] == "20"
+    assert layer["structured_payload"]["range_max"] == "34"
+    assert layer["structured_payload"]["range_source"] == "prose_extracted"
+
+
+def test_enrich_layer_range_skips_when_already_populated() -> None:
+    """F9: do not overwrite existing range_min/max (those are authoritative)."""
+    layer = {"structured_payload": {"range_min": "10", "range_max": "20"}}
+    evidence = [{"evidence_text": "20℃～34℃ 范围"}]
+    _enrich_layer_range_from_prose(layer, evidence)
+    assert layer["structured_payload"]["range_min"] == "10"
+    assert layer["structured_payload"]["range_max"] == "20"
+    assert "range_source" not in layer["structured_payload"]
+
+
+def test_enrich_layer_range_noop_when_no_match() -> None:
+    """F9: when evidence prose has no parseable range, leave layer unchanged."""
+    layer = {"structured_payload": {"parameter_name": "fault_name"}}
+    evidence = [{"evidence_text": "压缩机停机：油压差报警。"}]
+    _enrich_layer_range_from_prose(layer, evidence)
+    assert "range_min" not in layer["structured_payload"]
+    assert "range_max" not in layer["structured_payload"]
 
 
 def test_extract_value_summary_no_unit_duplication() -> None:

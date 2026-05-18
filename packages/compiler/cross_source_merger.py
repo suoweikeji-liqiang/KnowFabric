@@ -423,6 +423,75 @@ def _layers_have_explicit_parameter_names(layers: list[dict[str, Any]]) -> bool:
     return False
 
 
+_PROSE_RANGE_PATTERNS = [
+    # 中文: 20℃～34℃ / 20℃~34℃ / 20℃ ~ 34℃ / 20℃ 到 34℃ / 20℃ 至 34℃
+    re.compile(
+        r"(-?\d+(?:\.\d+)?)\s*[℃°]?[CF]?\s*[~～\-—–到至]\s*(-?\d+(?:\.\d+)?)\s*[℃°][CF]?",
+        re.UNICODE,
+    ),
+    # 英文 explicit unit: 20 °C to 34 °C / 20°C-34°C
+    re.compile(
+        r"(-?\d+(?:\.\d+)?)\s*°[CF]\s*(?:to|~|-|–|—)\s*(-?\d+(?:\.\d+)?)\s*°[CF]",
+        re.IGNORECASE,
+    ),
+    # 英文 to-keyword: "between 20 and 34" / "20 to 34"
+    re.compile(
+        r"(-?\d+(?:\.\d+)?)\s*(?:to|and)\s*(-?\d+(?:\.\d+)?)",
+        re.IGNORECASE,
+    ),
+]
+
+
+def _extract_prose_range(text: str | None) -> tuple[str, str] | None:
+    """F9 fallback: best-effort extract a single numeric (min, max) from prose.
+
+    Conservative — only returns a range when exactly one consistent
+    (min, max) pair is found across patterns. Returns None on
+    ambiguity (multiple distinct ranges) or no match. Keeps wire-type
+    as string (caller may pass back to structured_payload.range_min/
+    range_max which are documented as string|null in contract §4.2).
+    """
+    if not text:
+        return None
+    candidates: set[tuple[str, str]] = set()
+    for pattern in _PROSE_RANGE_PATTERNS:
+        for match in pattern.findall(text):
+            min_s, max_s = match[0], match[1]
+            try:
+                min_v = float(min_s)
+                max_v = float(max_s)
+                if min_v < max_v:
+                    candidates.add((min_s, max_s))
+            except (ValueError, TypeError):
+                continue
+        if candidates:
+            break  # use first matching pattern's results only
+    if len(candidates) == 1:
+        return candidates.pop()
+    return None
+
+
+def _enrich_layer_range_from_prose(layer: dict[str, Any], evidence: list[dict[str, Any]]) -> None:
+    """F9 fix: if a layer's structured_payload has no parseable range but
+    its evidence_text contains a prose range, populate range_min/range_max
+    in-place. Sets `range_source = "prose_extracted"` flag for transparency.
+    Forward-only fix: existing KOs in DB are not retroactively patched.
+    """
+    payload = layer.get("structured_payload")
+    if not isinstance(payload, dict):
+        return
+    if payload.get("range_min") not in (None, "") and payload.get("range_max") not in (None, ""):
+        return  # already has parseable range
+    for ev in evidence:
+        text = ev.get("evidence_text") if isinstance(ev, dict) else None
+        result = _extract_prose_range(text)
+        if result:
+            payload["range_min"] = result[0]
+            payload["range_max"] = result[1]
+            payload["range_source"] = "prose_extracted"
+            return  # use first successful evidence
+
+
 def _extract_value_summary(candidate: dict[str, Any]) -> str | None:
     """Extract a concise value summary from a candidate's structured payload.
 
@@ -788,6 +857,11 @@ def merge_candidates(
             )
             primary_layer_chunk_id = cand_evidence[0].get("chunk_id", "") if cand_evidence else ""
             cand_payload = cand.get("structured_payload") or cand.get("structured_payload_candidate") or {}
+            # F9 fix: make a shallow copy so prose-extracted range doesn't
+            # mutate the source candidate's payload (which may be referenced
+            # by other code paths). Then enrich from prose if needed.
+            if isinstance(cand_payload, dict):
+                cand_payload = dict(cand_payload)
             layer = {
                 "authority_level": authority_level,
                 "publisher": cand.get("publisher"),
@@ -799,6 +873,7 @@ def merge_candidates(
                 "doc_id": doc_id,
                 "chunk_id": primary_layer_chunk_id,
             }
+            _enrich_layer_range_from_prose(layer, cand_evidence)
             layers.append(layer)
 
             for ev_idx, ev in enumerate(cand_evidence):
