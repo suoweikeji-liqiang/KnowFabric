@@ -1,7 +1,38 @@
+> # ⚠️ HISTORICAL — DO NOT USE AS CURRENT STATE REFERENCE
+>
+> 本文件是 **2026-04-10 的 AI 辅助编译 pilot 阶段 milestone 定义**。该
+> pilot 早已 graduated 成 production compile pipeline:
+>
+> - 后续完成了 MM/NN 多轮 bulk extraction
+> - Phase 1 KEEP_TEXT (136 PDFs, KO 1280→3232)
+> - Phase 2 FIX + 2.5 (over-merge 60%→0%)
+> - Line 2 视觉抽取 (93 scanned PDFs, KO 3232→9981)
+> - Path A consensus_state 拆分 (含 value_disagreement / over_merge)
+> - Over-merge cleanup batch 1+2 (685 structural fix + 25 真 over_merge 拆)
+> - 18 天 M2 接入 phase (contract v0.2.3, production SP2 detector)
+>
+> 现在 KnowFabric KO 库稳定在 **10012 KO**, fault_code / parameter_spec /
+> maintenance_procedure / application_guidance 等多 KO 类型都已批量产生.
+> pilot 阶段定义的 "AI assisted, rule-first for high-precision types"
+> boundary 早已被实际跑通+扩展.
+>
+> **当前状态以下面 doc 为准**:
+>
+> - `.continue-here.md` (最新 handoff)
+> - `docs/41_m2_integration_phase_retrospective.md` (M2 接入 phase 18 天 trace)
+> - `sw_base_model/docs/plans/PHASE1-MILESTONES-V2.md` (Phase 1 V2)
+>
+> 本 pilot milestone def 仅作 **历史 anchor 保留**, 用于追溯当时的 boundary
+> 决策, 不反映当前事实. Gemini/Claude/Codex/外部 session 不要按这份的
+> "pilot ready, 下一步…" 行动.
+
+---
+
 # AI-Assisted Compilation Pilot Milestone
 
 **Status:** Milestone Definition and Current Completion Snapshot
 **Last Updated:** 2026-04-10
+**Reality:** pilot 早已 graduated, 历史快照
 
 This milestone defines the minimum bar for treating AI-assisted compilation as
 an operationally usable enhancement inside KnowFabric, without changing the

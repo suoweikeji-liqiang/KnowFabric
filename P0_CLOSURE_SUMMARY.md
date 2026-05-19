@@ -1,8 +1,28 @@
+> # ⚠️ HISTORICAL — DO NOT USE AS CURRENT STATE REFERENCE
+>
+> 本文件是 **2026-03-07 的 Phase 1 P0 closure snapshot**。从那以后两个多月里
+> 项目经过了 MM/NN 多轮 bulk extraction、Phase 1 KEEP_TEXT (1280→3232 KO)、
+> Phase 2 FIX (over-merge 60%→10%)、Phase 2.5 (→0%)、Line 2 视觉抽取
+> (3232→9981 KO)、Path A consensus_state 拆分、Over-merge cleanup batch 1+2、
+> M2 接入 phase (18 天双仓 integration, KO 库稳定到 10012, 契约演化到 v0.2.3,
+> production SP2 detector engine 在 sw_base_model 落地) 等大量后续工作。
+>
+> **当前状态以下面 doc 为准**:
+>
+> - `.continue-here.md` (最新 handoff)
+> - `docs/41_m2_integration_phase_retrospective.md` (M2 接入 phase 18 天完整 trace)
+> - `sw_base_model/docs/plans/PHASE1-MILESTONES-V2.md` (Phase 1 V2 5 milestone 切分)
+>
+> 本 P0 closure summary 仅作 **历史 anchor 保留**，不反映当前事实。
+> Gemini/Claude/Codex/外部 session 读这份的事实是 2-3 个月前的快照。
+
+---
+
 # Phase 1 P0 Closure Summary
 
 **Date:** 2026-03-07
 **Phase:** Phase 1 - P0 (Minimal Traceable Knowledge Spine)
-**Status:** ✅ COMPLETE
+**Status:** ✅ COMPLETE (历史快照, 后续 Phase 1 工作早已大幅推进)
 
 ---
 
